@@ -1,0 +1,51 @@
+{
+ "symbol": "?Network_Process_64D990@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Network_Process_64D990",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "8b15000000005685d27438a1000000008b35540a00008d0cc08d0c88f68449000000000175093bb449000000007e144025ff3f00004aa30000000089150000000075d35ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameInitState@@3IA",
+   "sym_key": "g_GameInitState"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_MenuInitFlags@@3IA",
+   "sym_key": "g_MenuInitFlags"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4205@@3PAEA",
+   "sym_key": "DataGlobal_8B4205"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4207@@3IA",
+   "sym_key": "DataGlobal_8B4207"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_MenuInitFlags@@3IA",
+   "sym_key": "g_MenuInitFlags"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_GameInitState@@3IA",
+   "sym_key": "g_GameInitState"
+  }
+ ]
+}

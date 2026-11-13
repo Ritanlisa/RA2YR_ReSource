@@ -1,0 +1,11 @@
+{
+ "addr": "0x64D990",
+ "name": "Network_Process_64D990",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x64D990",
+ "bytes_hex": "8b15f8418b005685d2743c8b3584eda800a1fc418b008d0cc08d0c88f6844905428b000175093bb44907428b007e1885d274144025ff3f00004aa3fc418b008915f8418b0075cf5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

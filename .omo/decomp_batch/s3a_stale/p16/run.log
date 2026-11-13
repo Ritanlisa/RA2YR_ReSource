@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> ObjectClass
+[conv] 0x64ad10 Network_Process_64AD10 -> Network_Process
+[conv] 0x64d990 ObjectClass::Network_Process_64D990 -> ObjectClass
+[conv] 0x6523a0 Network::SendUnreachable -> Network
+[conv] 0x652cf0 RadarClass::Destru_vt05 -> RadarClass
+[conv] 0x654320 RadarClass::Destru_vt34 -> RadarClass
+[conv] 0x654490 RadarClass::ProcessCellVisibility -> RadarClass
+[conv] 0x655a90 TacticalClass::FreeResources -> TacticalClass
+[conv] 0x656e50 RadarClass::IsActiveMode -> RadarClass
+[conv] 0x6593f0 RadBeam::InitState -> RadBeam
+[conv] 0x65cb50 RawFileClass::Open2 -> RawFileClass
+[conv] 0x65d660 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x660840 LoadGame::LoadTriggerEvents -> LoadGame
+[conv] 0x6613a0 ComputeColorSaturation -> _addr_66
+[conv] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> JumpjetLocomotionClass
+[conv] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x662240 ObjectClass::sub_662240 -> ObjectClass
+[conv] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> RocketLocomotionClass
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x67a390 TypeList::VoxelAnimConstructor -> TypeList
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Network_Process          rc=2
+[era] Network                  rc=2
+[era] RadarClass               rc=2
+[era] TacticalClass            rc=2
+[era] RadBeam                  rc=2
+[era] RawFileClass             rc=2
+[era] ReferenceCounted         rc=2
+[era] LoadGame                 rc=2
+[era] _addr_66                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] RocketLocomotionClass    rc=0
+[era] EventClass               rc=2
+[era] TypeList                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x64d990   MISMATCH         ObjectClass::Network_Process_64D990
+[diff] 0x6632e0   MISMATCH         RocketLocomotionClass::ComputeFloatExpression_3
+[ledger] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> COMPILE_FAIL (attempt 5)
+[ledger] 0x64ad10 Network_Process_64AD10 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x64d990 ObjectClass::Network_Process_64D990 -> NG (attempt 2)
+[ledger] 0x6523a0 Network::SendUnreachable -> COMPILE_FAIL (attempt 5)
+[ledger] 0x652cf0 RadarClass::Destru_vt05 -> COMPILE_FAIL (attempt 14)
+[ledger] 0x654320 RadarClass::Destru_vt34 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x654490 RadarClass::ProcessCellVisibility -> COMPILE_FAIL (attempt 5)
+[ledger] 0x655a90 TacticalClass::FreeResources -> COMPILE_FAIL (attempt 6)
+[ledger] 0x656e50 RadarClass::IsActiveMode -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6593f0 RadBeam::InitState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65cb50 RawFileClass::Open2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d660 ReferenceCounted::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x660840 LoadGame::LoadTriggerEvents -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> COMPILE_FAIL (attempt 3)
+[ledger] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x662240 ObjectClass::sub_662240 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> NG (attempt 15)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 14)
+[ledger] 0x67a390 TypeList::VoxelAnimConstructor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p16\batch_report.json

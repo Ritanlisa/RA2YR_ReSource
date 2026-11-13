@@ -1,0 +1,45 @@
+{
+ "symbol": "?ComputeFloatExpression_3@RocketLocomotionClass@@QAGHHHH@Z",
+ "sym_key": "RocketLocomotionClass::ComputeFloatExpression_3",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b1500000000568b48088bb1c40600000fbe8ae00400003bf175088d8ab0040000eb19578d8a180500000fbeba480500003bf75f74068d8ae40400008b50148b35000000003bd6756d8b50188b35000000003bd675608b501c8b35000000003bd67553833900740bc7403c010000008b11eb0ac7403c020000008b51048b35540a00008950288970208b74240889702489502cd94108dc0d000000008b5424108b4c240c8950188b54241489481489501cd958508bc15ec21000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E38@@3IA",
+   "sym_key": "DataGlobal_B04E38"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E3C@@3IA",
+   "sym_key": "DataGlobal_B04E3C"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E40@@3IA",
+   "sym_key": "DataGlobal_B04E40"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  }
+ ]
+}
