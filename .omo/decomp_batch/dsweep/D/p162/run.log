@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p162\part_00
+=== convert (20 addrs) ===
+[conv] 0x464b30 BuildingTypeClass::UpdatePower -> BuildingTypeClass
+[conv] 0x6afd60 ObjectClass::ProcessDeployAction -> ObjectClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x5ec3a0 SetupMultiplayerLobbyScreen -> _addr_5E
+[conv] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> ObjectClass
+[conv] 0x7afb90 StartWDTCampaign -> _addr_7A
+[conv] 0x57fbc0 CellClass::ApplyTileModification7 -> CellClass
+[conv] 0x6f3330 TechnoClass::SelectWeapon -> TechnoClass
+[conv] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> TechnoClass
+[conv] 0x684c30 TechnoClass::PostLoadInitScenario -> TechnoClass
+[conv] 0x4ba770 DSurface::CreatePrimary -> DSurface
+[conv] 0x7077c0 TechnoClass::NotifyExpired -> TechnoClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x6d6590 Tactical::PixelToCell -> Tactical
+[conv] 0x57f6a0 CellClass::ApplyTileModification6 -> CellClass
+[conv] 0x580600 CellClass::ApplyTileModification8 -> CellClass
+[conv] 0x57e2a0 CreateCliffStraightMap -> _addr_57
+[conv] 0x4d7d50 TechnoClass::SpawnInfantry -> TechnoClass
+[conv] 0x53bba0 RenderChronosphereScreenEffect -> _addr_53
+[conv] 0x5a45e0 ScatterTerrainTrees -> _addr_5A
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingTypeClass        rc=2
+[era] ObjectClass              rc=2
+[era] InfantryClass            rc=2
+[era] _addr_5E                 rc=2
+[era] _addr_7A                 rc=2
+[era] CellClass                rc=2
+[era] TechnoClass              rc=2
+[era] DSurface                 rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] _addr_57                 rc=2
+[era] _addr_53                 rc=0
+[era] _addr_5A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f3330   MISMATCH         TechnoClass::SelectWeapon
+[diff] 0x53bba0   MISMATCH         RenderChronosphereScreenEffect
+[ledger] 0x464b30 BuildingTypeClass::UpdatePower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6afd60 ObjectClass::ProcessDeployAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ec3a0 SetupMultiplayerLobbyScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7afb90 StartWDTCampaign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57fbc0 CellClass::ApplyTileModification7 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3330 TechnoClass::SelectWeapon -> NG (attempt 1)
+[ledger] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x684c30 TechnoClass::PostLoadInitScenario -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ba770 DSurface::CreatePrimary -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7077c0 TechnoClass::NotifyExpired -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d6590 Tactical::PixelToCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57f6a0 CellClass::ApplyTileModification6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x580600 CellClass::ApplyTileModification8 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57e2a0 CreateCliffStraightMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d7d50 TechnoClass::SpawnInfantry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53bba0 RenderChronosphereScreenEffect -> NG (attempt 1)
+[ledger] 0x5a45e0 ScatterTerrainTrees -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p162\batch_report.json

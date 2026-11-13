@@ -160,3 +160,4 @@
 {"layer": "D", "part": 159, "n": 20, "seconds": 39.4, "ok": true, "verdicts": {"COMPILE_FAIL": 15, "MISMATCH": 5}}
 {"layer": "D", "part": 160, "n": 20, "seconds": 35.0, "ok": true, "verdicts": {"COMPILE_FAIL": 16, "MISMATCH": 4}}
 {"layer": "D", "part": 161, "n": 20, "seconds": 38.2, "ok": true, "verdicts": {"COMPILE_FAIL": 16, "MISMATCH": 4}}
+{"layer": "D", "part": 162, "n": 20, "seconds": 46.0, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}

@@ -1,0 +1,255 @@
+{
+ "symbol": "?RenderChronosphereScreenEffect@@YIHD@Z",
+ "sym_key": "Unnamed::RenderChronosphereScreenEffect",
+ "size": 1419,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec58a1000000005355884c240b8b08565750ff517c8bf0a100000000508974244c8b10ff92800000008be8a10000000083ed20508b08896c2430896c2464ff51708bf8a100000000508b10ff52748bc88bdf990fafdef7ff89442428a1000000008b108bc18954244c8b0d0000000099f7ff8b44244cff50742bc399f7ff6a006a008bf8a10000000050897c24588b08ff515c8bd8a1000000006a006a008b1050ff525c85db894424440f84b604000085c00f84ae0400008a442413c7050000000000000000d90500000000d9050000000084c0c705000000000000000074088b0d00000000eb0d8b0d00000000a1000000002bc885c97e1f8bc1d9c9dc0500000000d9c9d8c14875f1d91d00000000d91d00000000eb04ddd8ddd88bc133d2c1e0082bc1f7350000000089442424e800000000480f842002000083f80175178b4424288b4c24245057558bd6e800000000e90f0400008bc68bcb992bc28bfbd1f8894424208bc5db44242099d95c241c2bc2d1f889442438db44243885edd9542420d9442420d8c9d944241cd84c241cdec1d95c2458ddd8d9442420d9e0d95c24180f8ebd030000d944241cd9e0d95c2450896c24388b54245085f6895424140f8e61010000d9442418d84c24188b5c24248974243481e3ffff0000d95c2454d9442414d84c2414d8442454d8742458d82d00000000d80d00000000dd542460d90500000000d8c9d8c9d95c24308b6c2430ddd855e800000000ddd8dd44246055d9542460d95c2434e800000000ddd8d944245cd9442430d84c2414d9c1d84c2418dec1d844241ce800000000d9442430d84c2418d9c9d84c24148be8dee9d8442420e80000000085ed7c093bee7c078d6effeb0233ed85c07c0d8b4c242c3bc17c078d41ffeb0233c00faf442428d90500000000d8442414d95c24148b4c244403c5bd1f00000083c7028d0c418a0180e10025ff0000000bc18bc88bd0c1e90a8bf183e11f83e61f2beebe1f0000000fafebc1ed08c1ea0503e98bca83e11f83e21f2bf1b91f0000000faff3c1ee0803f28bd083e21f83e01f2bca0fafcbc1e50ac1e605c1e9080bee03c88b4424348b7424480be94866896ffe8bcf894424340f85b9feffff8b5424388b7c244cd9442418dc050000000083fa018d0c790f94c04a8bf9d95c241884c0895424380f8461feffffe90b0200008bc68bcb992bc2d1f8894424208bc5db44242099d95c241c2bc2d1f88944245cdb44245c85edd9542420d9442420d8c9d944241cd84c241cdec1d95c2454ddd8d9442420d9e0d95c24140f8ebb010000d944241cd9e0d95c245c896c24308b54245c85f6895424180f8e73010000d9442414d84c24148b7c24248974243481e7ffff0000d95c2458d9442418d84c2418d8442458d8742454d82d00000000d80d00000000dd542438d90500000000d8c9d8c9d95c24508b6c2450ddd855e800000000ddd8dd44243855d9542454d95c243ce800000000ddd8d9442450d9442438d84c2418d9c1d84c2414dec1d844241ce800000000d9442438d84c2414d9c9d84c24188be8dee9d8442420e80000000085ed7c093bee7c078d6effeb0233ed85c07c0d8b4c242c3bc17c078d41ffeb0233c00faf442428d9442418d80500000000d95c24188b4c244403c58b542460be1f0000008d0c418954242cbd1f00000083c3028a0180e10025ff0000000bc18bd08bc881e2ffff0000c1ea0b2bf28bd00faff7c1fe08c1e60b81e200f80000c1e90603f28bd183e21f83e11f2beaba3f0000000fafefc1ed0803e98bc883e13f83e03f2bd18bcb0fafd7c1e506c1ea080bf503d08b4424340bf2668973fe8b74244848894424340f85abfeffff8b7c244c8b5424308d0c79d9442414dc050000000083fa018bd90f94c04ad95c241484c0895424300f8453feffffa100000000508b08ff5160a100000000508b10ff52605f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA4@@3MA",
+   "sym_key": "DataGlobal_A9FAA4"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA0@@3MA",
+   "sym_key": "DataGlobal_A9FAA0"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?ChronoScreenEffect_Duration@@3IA",
+   "sym_key": "ChronoScreenEffect_Duration"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA8@@3IA",
+   "sym_key": "DataGlobal_A9FAA8"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?ChronoScreenEffect_Duration@@3IA",
+   "sym_key": "ChronoScreenEffect_Duration"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "__real@8@3ff683126e978d4fe000",
+   "sym_key": "_real@8@3ff683126e978d4fe000"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA0@@3MA",
+   "sym_key": "DataGlobal_A9FAA0"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA4@@3MA",
+   "sym_key": "DataGlobal_A9FAA4"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA8@@3IA",
+   "sym_key": "DataGlobal_A9FAA8"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?DDraw__GetStatus@@YAHXZ",
+   "sym_key": "DDraw__GetStatus"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?Render_Render@@YIHHHHHH@Z",
+   "sym_key": "Render_Render"
+  },
+  {
+   "off": 506,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 512,
+   "type": "DIR32",
+   "sym": "?flt_7EAA00@@3MA",
+   "sym_key": "flt_7EAA00"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA0@@3MA",
+   "sym_key": "DataGlobal_A9FAA0"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?ComputeChronosphereDistortion@@YGNM@Z",
+   "sym_key": "ComputeChronosphereDistortion"
+  },
+  {
+   "off": 562,
+   "type": "REL32",
+   "sym": "?ComputeDistortionVariant@@YGNM@Z",
+   "sym_key": "ComputeDistortionVariant"
+  },
+  {
+   "off": 593,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 620,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 665,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 829,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 1020,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 1026,
+   "type": "DIR32",
+   "sym": "?flt_7EAA00@@3MA",
+   "sym_key": "flt_7EAA00"
+  },
+  {
+   "off": 1036,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FAA0@@3MA",
+   "sym_key": "DataGlobal_A9FAA0"
+  },
+  {
+   "off": 1056,
+   "type": "REL32",
+   "sym": "?ComputeChronosphereDistortion@@YGNM@Z",
+   "sym_key": "ComputeChronosphereDistortion"
+  },
+  {
+   "off": 1076,
+   "type": "REL32",
+   "sym": "?ComputeDistortionVariant@@YGNM@Z",
+   "sym_key": "ComputeDistortionVariant"
+  },
+  {
+   "off": 1107,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1134,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 1360,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 1390,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 1401,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}
