@@ -1,0 +1,51 @@
+{
+ "symbol": "?Destruct@RadarClass@@QAEHXZ",
+ "sym_key": "RadarClass::Destruct",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "51535556578bf98d8fc0140000c70700000000e8000000008bcfe8000000008db788140000bd1600000033db8b46ec83ee183bc3891e7411385e0d740c50e80000000083c404895e044d885e0d895e0875da8b8760120000899f5c1200003bc37417399f78120000740f50e80000000083c404899f601200008b8728120000899f781200003bc3899f64120000899f241200007417399f40120000740f50e80000000083c404899f281200008bcf899f40120000899f2c120000e8000000008b4424105f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?vt_RadarClass@@3PAXA",
+   "sym_key": "vt_RadarClass"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Release@AudioFileClass@@QAEPAIXZ",
+   "sym_key": "AudioFileClass::Release"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?FreeResources@TacticalClass@@QAEXXZ",
+   "sym_key": "TacticalClass::FreeResources"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?Destruct@MapClass@@QAEXXZ",
+   "sym_key": "MapClass::Destruct"
+  }
+ ]
+}

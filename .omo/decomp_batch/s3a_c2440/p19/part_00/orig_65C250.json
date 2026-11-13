@@ -1,0 +1,11 @@
+{
+ "addr": "0x65C250",
+ "name": "WinMain_Helper_65C250",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65C250",
+ "bytes_hex": "8b442408568bf133d28b4c24083bca885604894e0889460c894610895614c746180100000088561c88561dc70674087f0075143bc27e1050e88acb160083c404894608c6461d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

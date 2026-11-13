@@ -127925,15 +127925,15 @@
   "status": "OK"
  },
  "0x645950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 mov dl, 1",
   "name": "ParticleTypeClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ParticleTypeClass::ddtor",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x645a70": {
@@ -128499,7 +128499,7 @@
   "this_as_id": false
  },
  "0x649ca0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "BuildNetworkEventPacket",
@@ -128657,7 +128657,7 @@
   "this_as_id": false
  },
  "0x64b660": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CompressNetworkMegaMission",
@@ -128737,7 +128737,7 @@
   "this_as_id": false
  },
  "0x64dab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -128801,7 +128801,7 @@
   "this_as_id": false
  },
  "0x652110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Network_Process_652110",
@@ -129126,27 +129126,27 @@
   "status": "NG"
  },
  "0x652960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RadarClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RadarClass::Construct",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x652c00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "RadarClass::Destruct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "RadarClass::Destruct",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x652cd0": {
@@ -129336,7 +129336,7 @@
   "this_as_id": false
  },
  "0x653fa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -129777,7 +129777,7 @@
   "this_as_id": false
  },
  "0x657da0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -129849,15 +129849,15 @@
   "this_as_id": false
  },
  "0x6587a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+51 mov dword ptr [esi], 0x7eeb74",
   "name": "RadarClass::Destru_vt04",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "RadarClass::Destru_vt04",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x658890": {
@@ -130445,7 +130445,7 @@
   "this_as_id": false
  },
  "0x659ee0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130805,7 +130805,7 @@
   "status": "NG"
  },
  "0x65a970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -130937,7 +130937,7 @@
   "this_as_id": false
  },
  "0x65ad50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131338,7 +131338,7 @@
   "this_as_id": false
  },
  "0x65b530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131575,15 +131575,15 @@
   "this_as_id": false
  },
  "0x65c250": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RAMFileClass::WinMain_Helper_65C250",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_65C250",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "OK",
   "this_as_id": false
  },
  "0x65c2a0": {
@@ -131822,7 +131822,7 @@
   "status": "OK"
  },
  "0x65c610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -131908,7 +131908,7 @@
   "this_as_id": false
  },
  "0x65ca00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -131980,7 +131980,7 @@
   "this_as_id": false
  },
  "0x65cbf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131992,7 +131992,7 @@
   "this_as_id": false
  },
  "0x65cca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132232,7 +132232,7 @@
   "this_as_id": false
  },
  "0x65d6a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,21 @@
+{
+ "symbol": "?WinMain_Helper_65C250@RAMFileClass@@QAEPAV1@HH@Z",
+ "sym_key": "RAMFileClass::WinMain_Helper_65C250",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8b442408568bf133d28b4c24083bca885604894e0889460c894610895614c746180100000088561c88561dc7060000000075143bc27e1050e80000000083c404894608c6461d018bc65ec20800",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?vt_RAMFileClass@@3PAXA",
+   "sym_key": "vt_RAMFileClass"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

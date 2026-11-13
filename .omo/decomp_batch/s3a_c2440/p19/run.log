@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x645950 ParticleTypeClass::ddtor -> ParticleTypeClass
+[conv] 0x649ca0 BuildNetworkEventPacket -> _addr_64
+[conv] 0x64b660 CompressNetworkMegaMission -> _addr_64
+[conv] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> TechnoClass
+[conv] 0x652110 Network_Process_652110 -> Network_Process
+[conv] 0x652960 RadarClass::Construct -> RadarClass
+[conv] 0x652c00 RadarClass::Destruct -> RadarClass
+[conv] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> TechnoClass
+[conv] 0x657da0 Diplomacy::DlgProc -> Diplomacy
+[conv] 0x6587a0 RadarClass::Destru_vt04 -> RadarClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+[conv] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> RAMFileClass
+[conv] 0x65c610 FileClass::processAITrigger -> FileClass
+[conv] 0x65ca00 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x65cca0 RawFileClass::CloseHandle -> RawFileClass
+[conv] 0x65d6a0 ReferenceCounted::initInterface -> ReferenceCounted
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleTypeClass        rc=0
+[era] _addr_64                 rc=2
+[era] TechnoClass              rc=2
+[era] Network_Process          rc=2
+[era] RadarClass               rc=2
+[era] Diplomacy                rc=2
+[era] ObjectClass              rc=2
+[era] RadioClass               rc=2
+[era] Array                    rc=2
+[era] RadSiteClass             rc=2
+[era] RAMFileClass             rc=0
+[era] FileClass                rc=2
+[era] BufferIOFileClass        rc=2
+[era] RawFileClass             rc=2
+[era] ReferenceCounted         rc=2
+=== diffasm byte-compare ===
+[diff] 0x645950   MISMATCH         ParticleTypeClass::ddtor
+[diff] 0x652c00   MISMATCH         RadarClass::Destruct
+[diff] 0x6587a0   MISMATCH         RadarClass::Destru_vt04
+[diff] 0x65c250   MATCH            RAMFileClass::WinMain_Helper_65C250
+[ledger] 0x645950 ParticleTypeClass::ddtor -> NG (attempt 2)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 5)
+[ledger] 0x64b660 CompressNetworkMegaMission -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> COMPILE_FAIL (attempt 2)
+[ledger] 0x652110 Network_Process_652110 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x652960 RadarClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x652c00 RadarClass::Destruct -> NG (attempt 2)
+[ledger] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> COMPILE_FAIL (attempt 2)
+[ledger] 0x657da0 Diplomacy::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6587a0 RadarClass::Destru_vt04 -> NG (attempt 2)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65c250 RAMFileClass::WinMain_Helper_65C250 -> OK (attempt 5)
+[ledger] 0x65c610 FileClass::processAITrigger -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65ca00 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65cca0 RawFileClass::CloseHandle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65d6a0 ReferenceCounted::initInterface -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 16,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p19\batch_report.json
