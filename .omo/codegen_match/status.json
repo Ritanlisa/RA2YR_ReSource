@@ -132405,7 +132405,7 @@
   "this_as_id": false
  },
  "0x65d8e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "DeployScriptActionPlane",
@@ -133745,7 +133745,7 @@
   "this_as_id": false
  },
  "0x663030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134060,7 +134060,7 @@
   "this_as_id": false
  },
  "0x6639d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134538,7 +134538,7 @@
   "this_as_id": false
  },
  "0x664d20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135032,7 +135032,7 @@
   "this_as_id": false
  },
  "0x674730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135687,15 +135687,15 @@
   "this_as_id": false
  },
  "0x67abe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "_VectorClass_PBVVoxelAnimTypeClass::Cleanup2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Vector::Cleanup2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x67ac10": {
@@ -136251,15 +136251,15 @@
   "this_as_id": false
  },
  "0x67c3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+17 mov byte ptr [esi + 0xc], 1",
   "name": "Game::LockMutex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "Game::LockMutex",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x67c3f0": {
@@ -137784,7 +137784,7 @@
   "this_as_id": false
  },
  "0x684240": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137819,7 +137819,7 @@
   "this_as_id": false
  },
  "0x684370": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137879,7 +137879,7 @@
   "this_as_id": false
  },
  "0x685670": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137950,7 +137950,7 @@
   "this_as_id": false
  },
  "0x686890": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137997,7 +137997,7 @@
   "this_as_id": false
  },
  "0x688380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138139,7 +138139,7 @@
   "this_as_id": false
  },
  "0x689960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -138398,7 +138398,7 @@
   "status": "NG"
  },
  "0x68c050": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138734,7 +138734,7 @@
   "this_as_id": false
  },
  "0x68ed80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Render_Get",
@@ -138769,14 +138769,14 @@
   "this_as_id": false
  },
  "0x68f8a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_68F8A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_68F8A0",
-  "rule_violations": 13,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -139799,7 +139799,7 @@
   "this_as_id": false
  },
  "0x692300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -139823,7 +139823,7 @@
   "this_as_id": false
  },
  "0x692b60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140717,15 +140717,15 @@
   "this_as_id": false
  },
  "0x697840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 cmp dword ptr [esi + 0x2924], ebx",
   "name": "ObjectManager::CleanupArrays",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ObjectManager::CleanupArrays",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 6,
+  "status": "NG",
   "this_as_id": false
  },
  "0x697ad0": {
@@ -140764,7 +140764,7 @@
   "this_as_id": false
  },
  "0x697e70": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x663030 TechnoClass::CalculateDamage -> TechnoClass
+[conv] 0x6639d0 Network::SendMasterPlayerList -> Network
+[conv] 0x664d20 HouseClass::InitTypeVectors -> HouseClass
+[conv] 0x674730 RulesClass::SaveLoad_Prefix -> RulesClass
+[conv] 0x67abe0 _VectorClass_PBVVoxelAnimTypeClass::Cleanup2 -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67c3a0 Game::LockMutex -> Game
+[conv] 0x684240 Scenario::ClearScreen -> Scenario
+[conv] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> ObjectClass
+[conv] 0x685670 Scenario::EndGameFlow -> Scenario
+[conv] 0x686890 ScenarioClass::SetupAlliances -> ScenarioClass
+[conv] 0x688380 Multiplayer::FindStartPositions -> Multiplayer
+[conv] 0x689960 ObjectClass::sub_689960 -> ObjectClass
+[conv] 0x68c050 ObjectClass::Map_Setup -> ObjectClass
+[conv] 0x68ed80 Render_Get -> Render
+[conv] 0x68f8a0 ObjectClass::sub_68F8A0 -> ObjectClass
+[conv] 0x692300 Tactical::MouseOver -> Tactical
+[conv] 0x692b60 Viewport::ProcessScroll -> Viewport
+[conv] 0x697840 ObjectManager::CleanupArrays -> ObjectManager
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_65                 rc=2
+[era] TechnoClass              rc=2
+[era] Network                  rc=2
+[era] HouseClass               rc=2
+[era] RulesClass               rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] Game                     rc=0
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] ScenarioClass            rc=2
+[era] Multiplayer              rc=2
+[era] Render                   rc=2
+[era] Tactical                 rc=2
+[era] Viewport                 rc=2
+[era] ObjectManager            rc=0
+[era] SessionClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x67abe0   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::Cleanup2
+[diff] 0x67c3a0   MISMATCH         Game::LockMutex
+[diff] 0x697840   MISMATCH         ObjectManager::CleanupArrays
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 6)
+[ledger] 0x663030 TechnoClass::CalculateDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6639d0 Network::SendMasterPlayerList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x664d20 HouseClass::InitTypeVectors -> COMPILE_FAIL (attempt 2)
+[ledger] 0x674730 RulesClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67abe0 _VectorClass_PBVVoxelAnimTypeClass::Cleanup2 -> NG (attempt 2)
+[ledger] 0x67c3a0 Game::LockMutex -> NG (attempt 2)
+[ledger] 0x684240 Scenario::ClearScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> COMPILE_FAIL (attempt 2)
+[ledger] 0x685670 Scenario::EndGameFlow -> COMPILE_FAIL (attempt 3)
+[ledger] 0x686890 ScenarioClass::SetupAlliances -> COMPILE_FAIL (attempt 2)
+[ledger] 0x688380 Multiplayer::FindStartPositions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x689960 ObjectClass::sub_689960 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68c050 ObjectClass::Map_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68ed80 Render_Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68f8a0 ObjectClass::sub_68F8A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x692300 Tactical::MouseOver -> COMPILE_FAIL (attempt 2)
+[ledger] 0x692b60 Viewport::ProcessScroll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x697840 ObjectManager::CleanupArrays -> NG (attempt 2)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "width_mismatch": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p20\batch_report.json

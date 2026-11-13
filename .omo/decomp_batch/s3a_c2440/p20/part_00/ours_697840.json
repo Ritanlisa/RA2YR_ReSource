@@ -1,0 +1,129 @@
+{
+ "symbol": "?CleanupArrays@ObjectManager@@QAEXXZ",
+ "sym_key": "ObjectManager::CleanupArrays",
+ "size": 653,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db399e2029000074498b86142900008b0851e8000000008b862029000083c4043bc37e2633c9483bc38986202900007e198d86102900008b500883c0044189108b96202900003bca7ced399e2029000075b7399e3829000074498b862c2900008b0851e8000000008b863829000083c4043bc37e2633c9483bc38986382900007e198d86282900008b500883c0044189108b96382900003bca7ced399e3829000075b7578dbe2c2900003bfb899e282900007413389e35290000740b57e80000000083c404891f8dbe14290000889e352900003bfb899e30290000c78610290000000000007413389e1d290000740b57e80000000083c404891f8b86fc280000889e1d2900003bc3899e18290000c786f8280000000000007417389e05290000740f50e80000000083c404899efc2800008b863c280000bf000000003bc3889e05290000899e0029000089be382800007417389e45280000740f50e80000000083c404899e3c2800008b8624280000889e452800003bc3899e4028000089be202800007417389e2d280000740f50e80000000083c404899e242800008b860c28000089be082800003bc3889e2d280000899e282800005f7417389e15280000740f50e80000000083c404899e0c2800008d8eac8e0000889e15280000899e10280000c7865023000000000000899eb4230000e8000000008d8edc010000c7865023000000000000e8000000008d8e11050000e8000000008b86f0080000c786ec080000000000003bc37417389ef9080000740f50e80000000083c404899ef00800008b8690060000889ef90800003bc3899ef4080000c7868c060000000000007417389e99060000740f50e80000000083c404899e90060000889e99060000899e940600005e5bc3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_char@@3PAXA",
+   "sym_key": "vt_VectorClass_char"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_PhoneEntryClass@@3PAXA",
+   "sym_key": "vt_VectorClass_PhoneEntryClass"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_NodeNameType@@3PAXA",
+   "sym_key": "vt_VectorClass_NodeNameType"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 456,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 504,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 520,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 536,
+   "type": "REL32",
+   "sym": "?InitMessageList@ObjectManager@@QAEHXZ",
+   "sym_key": "ObjectManager::InitMessageList"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_GlobalPacketType@@3PAXA",
+   "sym_key": "vt_VectorClass_GlobalPacketType"
+  },
+  {
+   "off": 570,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 609,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_MultiMission@@3PAXA",
+   "sym_key": "vt_VectorClass_MultiMission"
+  },
+  {
+   "off": 625,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

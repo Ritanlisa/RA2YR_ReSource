@@ -1,0 +1,27 @@
+{
+ "symbol": "?LockMutex@Game@@QAEPAV1@HH@Z",
+ "sym_key": "Game::LockMutex",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c746180100000089561cc70600000000742a8b4c240c3bca740c894e04b8000000005ec20800c1e00250e80000000083c404894604c7461c010000008b065ec20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_SmudgeTypeClass_const@@3PAXA",
+   "sym_key": "vt_VectorClass_SmudgeTypeClass_const"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_SmudgeTypeClass_const@@3PAXA",
+   "sym_key": "vt_VectorClass_SmudgeTypeClass_const"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
