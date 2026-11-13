@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x686890 ScenarioClass::SetupAlliances -> ScenarioClass
+[conv] 0x688380 Multiplayer::FindStartPositions -> Multiplayer
+[conv] 0x689960 ObjectClass::sub_689960 -> ObjectClass
+[conv] 0x68c050 ObjectClass::Map_Setup -> ObjectClass
+[conv] 0x68ed80 Render_Get -> Render
+[conv] 0x68f8a0 ObjectClass::sub_68F8A0 -> ObjectClass
+[conv] 0x692300 Tactical::MouseOver -> Tactical
+[conv] 0x692b60 Viewport::ProcessScroll -> Viewport
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x69ac30 ScenarioClass::CheckExists -> ScenarioClass
+[conv] 0x69b170 ObjectClass::ParseAndApplyAlliances -> ObjectClass
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> ShipLocomotionClass
+[conv] 0x6a4f20 RadarClass::UI_Init -> RadarClass
+[conv] 0x6a5840 SidebarClass::LoadAssets -> SidebarClass
+[conv] 0x6ac5f0 TActionClass::executeHarvestAction -> TActionClass
+[conv] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> SlaveManagerClass
+[conv] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> SpawnManagerClass
+[conv] 0x6b9530 HashTable::Clear -> HashTable
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] Multiplayer              rc=2
+[era] ObjectClass              rc=2
+[era] Render                   rc=2
+[era] Tactical                 rc=2
+[era] Viewport                 rc=2
+[era] SessionClass             rc=2
+[era] IPXConnClass             rc=2
+[era] ShipLocomotionClass      rc=2
+[era] RadarClass               rc=2
+[era] SidebarClass             rc=2
+[era] TActionClass             rc=2
+[era] SlaveManagerClass        rc=2
+[era] SpawnManagerClass        rc=2
+[era] HashTable                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x686890 ScenarioClass::SetupAlliances -> COMPILE_FAIL (attempt 4)
+[ledger] 0x688380 Multiplayer::FindStartPositions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x689960 ObjectClass::sub_689960 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68c050 ObjectClass::Map_Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68ed80 Render_Get -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68f8a0 ObjectClass::sub_68F8A0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x692300 Tactical::MouseOver -> COMPILE_FAIL (attempt 4)
+[ledger] 0x692b60 Viewport::ProcessScroll -> COMPILE_FAIL (attempt 4)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 15)
+[ledger] 0x69ac30 ScenarioClass::CheckExists -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b170 ObjectClass::ParseAndApplyAlliances -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 6)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a4f20 RadarClass::UI_Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a5840 SidebarClass::LoadAssets -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ac5f0 TActionClass::executeHarvestAction -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b9530 HashTable::Clear -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p17\batch_report.json
