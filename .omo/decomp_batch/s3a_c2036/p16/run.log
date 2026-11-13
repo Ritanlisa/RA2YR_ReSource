@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x627f90 _DynamicVectorClass_PAVColorScheme::SetCapacity -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x6282e0 _VectorClass_VHSVClass::SetCapacity -> _VectorClass_VHSVClass
+[conv] 0x6284a0 _DynamicVectorClass_VHSVClass::SetCapacity_0 -> _DynamicVectorClass_VHSVClass
+[conv] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6297f0 ParasiteClass::DeploySquad -> ParasiteClass
+[conv] 0x62a4a0 BuildingClass::Deploy -> BuildingClass
+[conv] 0x62b110 _VectorClass_PAVParasiteClass::Release -> _VectorClass_PAVParasiteClass
+[conv] 0x62b250 _DynamicVectorClass_PAVParasiteClass::SetCapacity -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x62bd50 ParasiteClass::Update -> ParasiteClass
+[conv] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> ParticleSystemClass
+[conv] 0x62e4c0 ParticleClass::CreateInstance -> ParticleClass
+[conv] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> TechnoClass
+[conv] 0x635830 BuildingClass::GetDrawColor -> BuildingClass
+[conv] 0x63dd80 _VectorClass_PAVPlanningMemberClass::Release -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63df20 _DynamicVectorClass_PAVPlanningMemberClass::SetCapacity -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63e350 _VectorClass_PAVPlanningNodeClass::SetCapacity -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e490 _DynamicVectorClass_PAVPlanningNodeClass::Release -> _DynamicVectorClass_PAVPlanningNodeClass
+[conv] 0x63e690 _VectorClass_PAVEventClass::Release -> _VectorClass_PAVEventClass
+[conv] 0x63e7d0 _DynamicVectorClass_PAVEventClass::SetCapacity_0 -> _DynamicVectorClass_PAVEventClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] _DynamicVectorClass_VHSVClass rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] ParasiteClass            rc=2
+[era] BuildingClass            rc=2
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+[era] ParticleSystemClass      rc=2
+[era] ParticleClass            rc=0
+[era] TechnoClass              rc=2
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+[era] _DynamicVectorClass_PAVEventClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x627f90   MISMATCH         _DynamicVectorClass_PAVColorScheme::SetCapacity
+[diff] 0x6282e0   MISMATCH         _VectorClass_VHSVClass::SetCapacity
+[diff] 0x6284a0   MISMATCH         _DynamicVectorClass_VHSVClass::SetCapacity_0
+[diff] 0x62a4a0   MISMATCH         BuildingClass::Deploy
+[diff] 0x62b110   MISMATCH         _VectorClass_PAVParasiteClass::Release
+[diff] 0x62b250   MISMATCH         _DynamicVectorClass_PAVParasiteClass::SetCapacity
+[diff] 0x62e4c0   MISMATCH         ParticleClass::CreateInstance
+[diff] 0x63dd80   MISMATCH         _VectorClass_PAVPlanningMemberClass::Release
+[diff] 0x63df20   MISMATCH         _DynamicVectorClass_PAVPlanningMemberClass::SetCapacity
+[diff] 0x63e350   MISMATCH         _VectorClass_PAVPlanningNodeClass::SetCapacity
+[diff] 0x63e490   MISMATCH         _DynamicVectorClass_PAVPlanningNodeClass::Release
+[diff] 0x63e690   MISMATCH         _VectorClass_PAVEventClass::Release
+[diff] 0x63e7d0   MISMATCH         _DynamicVectorClass_PAVEventClass::SetCapacity_0
+[ledger] 0x627f90 _DynamicVectorClass_PAVColorScheme::SetCapacity -> NG (attempt 2)
+[ledger] 0x6282e0 _VectorClass_VHSVClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x6284a0 _DynamicVectorClass_VHSVClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6297f0 ParasiteClass::DeploySquad -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62a4a0 BuildingClass::Deploy -> NG (attempt 2)
+[ledger] 0x62b110 _VectorClass_PAVParasiteClass::Release -> NG (attempt 2)
+[ledger] 0x62b250 _DynamicVectorClass_PAVParasiteClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x62bd50 ParasiteClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62e4c0 ParticleClass::CreateInstance -> NG (attempt 14)
+[ledger] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x635830 BuildingClass::GetDrawColor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63dd80 _VectorClass_PAVPlanningMemberClass::Release -> NG (attempt 2)
+[ledger] 0x63df20 _DynamicVectorClass_PAVPlanningMemberClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x63e350 _VectorClass_PAVPlanningNodeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x63e490 _DynamicVectorClass_PAVPlanningNodeClass::Release -> NG (attempt 2)
+[ledger] 0x63e690 _VectorClass_PAVEventClass::Release -> NG (attempt 2)
+[ledger] 0x63e7d0 _DynamicVectorClass_PAVEventClass::SetCapacity_0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 11,
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p16\batch_report.json

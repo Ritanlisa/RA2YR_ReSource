@@ -1,0 +1,45 @@
+{
+ "symbol": "?CreateInstance@ParticleClass@@QAEHPAHMH@Z",
+ "sym_key": "ParticleClass::CreateInstance",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "55568bf1578b86ac00000083b894020000ff75085f5e33c05dc20c006838010000e80000000083c40485c075065f5e5dc20c008b4c24148b54241056518b8eac000000528b91940200008b0d000000008b14918bc852e8000000008bc885c9894c241475065f5e5dc20c008b7c241885ff8bef7f085f5e33c05dc20c008b96c40000008b86cc0000003bc2537c358a86c900000084c0750485d2753f8b8ed000000085c97e358b9ebc0000008d86bc00000003ca6a005150ff530884c0741c8b4c24188b86cc0000008d50018996cc0000008b96c0000000890c828b9ecc0000008bb6c00000003bdf7d028beba1000000008d7bfe8d8886000000e80000000050e80000000099f7fd83c4042bda8d4bfe3bf97e138d04be2bfb83c7028b1089500483e8044f75f58b44241889449efc5b5f5e5dc20c00",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_BuildingProductionQueue@@3PAXA",
+   "sym_key": "g_BuildingProductionQueue"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Construct@ParticleClass@@QAEHHPAXM0@Z",
+   "sym_key": "ParticleClass::Construct"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?abs32@@YAHPAXZZ",
+   "sym_key": "abs32"
+  }
+ ]
+}
