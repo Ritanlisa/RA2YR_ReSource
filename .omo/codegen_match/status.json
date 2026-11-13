@@ -86769,7 +86769,7 @@
   "this_as_id": false
  },
  "0x557fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86788,7 +86788,7 @@
   "status": "NG"
  },
  "0x558010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86992,7 +86992,7 @@
   "this_as_id": false
  },
  "0x5584f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_5584F0",
@@ -87153,7 +87153,7 @@
   "this_as_id": false
  },
  "0x558740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87257,7 +87257,7 @@
   "this_as_id": false
  },
  "0x558dd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87281,7 +87281,7 @@
   "this_as_id": false
  },
  "0x5596a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87293,7 +87293,7 @@
   "this_as_id": false
  },
  "0x559c20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87760,7 +87760,7 @@
   "this_as_id": false
  },
  "0x55a7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87772,7 +87772,7 @@
   "this_as_id": false
  },
  "0x55a8c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -87868,7 +87868,7 @@
   "this_as_id": false
  },
  "0x55aa60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88153,7 +88153,7 @@
   "this_as_id": false
  },
  "0x55ad10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -88367,14 +88367,14 @@
   "this_as_id": false
  },
  "0x55b720": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
   "name": "ObjectClass::sub_55B720",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_55B720",
-  "rule_violations": 7,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -88479,26 +88479,26 @@
   "this_as_id": false
  },
  "0x55c350": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LZOPipe::Read",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Compression::Read",
-  "rule_violations": 0,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x55c5e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LZOPipe::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LZOPipe_Destru::AddRef",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -88539,14 +88539,14 @@
   "this_as_id": false
  },
  "0x55c7c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LZOStraw::Decompress",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LCW::Decompress",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -88770,7 +88770,7 @@
   "this_as_id": false
  },
  "0x55cfd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88782,7 +88782,7 @@
   "this_as_id": false
  },
  "0x55d360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88794,7 +88794,7 @@
   "this_as_id": false
  },
  "0x55dee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88806,7 +88806,7 @@
   "this_as_id": false
  },
  "0x55e160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89057,7 +89057,7 @@
   "this_as_id": false
  },
  "0x55faa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
