@@ -1,0 +1,207 @@
+{
+ "symbol": "?WndProc@InputManager@@QAEHPAXIII@Z",
+ "sym_key": "InputManager::WndProc",
+ "size": 880,
+ "link_base": 0,
+ "bytes_hex": "83ec0c538b5c2420558bc3568bf1c1e810894424148b44241c8bcb8d5424105781e1ffff00005250894c241ce800000000a1000000008b7c24148b6c2418897c242c85c0896c241074188b088d542410528d5424305250ff51448b7c242c8b6c24108b4424243d010200000f86eb01000005fefdffff83f8070f8774020000ff248500000000a1b40a000085c00f85b90200008b86180300008b96140300002bc29933c22bd081c20001000083fa030f8c970200006a01e96c020000a1b40a000085c00f85830200008b86180300008b96140300002bc29933c22bd081c20001000083fa037c3b6a006a018bcee8000000008bcee80000000084c07508578bcee800000000558bcee800000000a1b40a00008b7c242c8b6c241085c00f852a0200008b86180300008b96140300002bc29933c22bd081c20001000083fa030f8c080200006a016a018bcee8000000008bcee80000000084c00f84de010000e9e10100006a0055576a028bcee800000000e9d70100006a0155576a028bcee800000000e9c50100006a0055576a028bcee8000000008b4424108b4c242c6a0150516a028bcee800000000e99e0100008b86180300008b96140300002bc29933c22bd081c20001000083fa030f8c7c0100006a00eb72a1b40a000085c00f856b0100008b86180300008b96140300002bc29933c22bd081c20001000083fa037c236a006a048bcee800000000578bcee800000000558bcee8000000008b7c242c8b6c24108b86180300008b96140300002bc29933c22bd081c20001000083fa030f8c080100006a016a048bcee800000000578bcee800000000e9e80000000f849d0000000500ffffff83f8050f8783000000ff2485000000008b4424283d910000000f84c6000000f7c3000000400f85ba0000006a00508bcee800000000e9ab0000008b5424286a01528bcee800000000e998000000a1b40a000085c00f858b0000008b86180300008b8e140300002bc19933c22bd081c20001000083fa027c6d6a006a0a8bcee800000000660fb644242850eb525f5e5d33c05b83c40cc21000a1b40a000085c075448b86180300008b96140300002bc29933c22bd081c20001000083fa037c266a006a018bcee8000000008bcee80000000084c07508578bcee800000000558bcee8000000008b4c24288b5424248b44242053515250e8000000005f5e5db8010000005b83c40cc21000",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "$L2121",
+   "sym_key": "$L2121"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?CheckPosition@EventQueue@@QAE_NXZ",
+   "sym_key": "EventQueue::CheckPosition"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?PushInputEvent@InputManager@@QAEDF@Z",
+   "sym_key": "InputManager::PushInputEvent"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 338,
+   "type": "REL32",
+   "sym": "?CheckPosition@EventQueue@@QAE_NXZ",
+   "sym_key": "EventQueue::CheckPosition"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?EnqueueInputEvent@InputManager@@QAEDGFFD@Z",
+   "sym_key": "InputManager::EnqueueInputEvent"
+  },
+  {
+   "off": 382,
+   "type": "REL32",
+   "sym": "?EnqueueInputEvent@InputManager@@QAEDGFFD@Z",
+   "sym_key": "InputManager::EnqueueInputEvent"
+  },
+  {
+   "off": 400,
+   "type": "REL32",
+   "sym": "?EnqueueInputEvent@InputManager@@QAEDGFFD@Z",
+   "sym_key": "InputManager::EnqueueInputEvent"
+  },
+  {
+   "off": 421,
+   "type": "REL32",
+   "sym": "?EnqueueInputEvent@InputManager@@QAEDGFFD@Z",
+   "sym_key": "InputManager::EnqueueInputEvent"
+  },
+  {
+   "off": 469,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 518,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 526,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  },
+  {
+   "off": 534,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  },
+  {
+   "off": 587,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 595,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  },
+  {
+   "off": 627,
+   "type": "DIR32",
+   "sym": "$L2122",
+   "sym_key": "$L2122"
+  },
+  {
+   "off": 664,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 683,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 693,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 742,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 768,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 813,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?CheckPosition@EventQueue@@QAE_NXZ",
+   "sym_key": "EventQueue::CheckPosition"
+  },
+  {
+   "off": 832,
+   "type": "REL32",
+   "sym": "?PushInputEvent@InputManager@@QAEDF@Z",
+   "sym_key": "InputManager::PushInputEvent"
+  },
+  {
+   "off": 840,
+   "type": "REL32",
+   "sym": "?Enqueue@EventBuffer@@QAEDF@Z",
+   "sym_key": "EventBuffer::Enqueue"
+  },
+  {
+   "off": 861,
+   "type": "REL32",
+   "sym": "?DefWindowProcA@@YGJPAXHHH@Z",
+   "sym_key": "DefWindowProcA"
+  }
+ ]
+}
