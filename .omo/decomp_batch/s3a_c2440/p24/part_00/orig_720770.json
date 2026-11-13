@@ -1,0 +1,11 @@
+{
+ "addr": "0x720770",
+ "name": "ThemeManager::Cleanup",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720770",
+ "bytes_hex": "568bf18b462485c07e3a8b46188b0851e8b8830a008b462483c40485c07e1e8d48ff33c085c9894e247e128b4e18408b1481895481fc8b4e243bc17cee8b462485c07fc68b4e2c85c97424e80079ceff8b4e2ce82879ceff8b4e2ce87077ceff8b4e2ce8b872ceffc7462c000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

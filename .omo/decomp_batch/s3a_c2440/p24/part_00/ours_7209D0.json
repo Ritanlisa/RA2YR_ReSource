@@ -1,0 +1,69 @@
+{
+ "symbol": "?Update@Movie@@QAEDXZ",
+ "sym_key": "Movie::Update",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e8000000008bd885db0f84c2000000a1d40900008bc833cb81e1ff00000033d985c00f85a9000000a1140600008bd033d381e2ff00000033da85c00f84900000008b5e0c85db0f8e850000008b4e2c85c974338b461485c07411e80000000085c075088b4e2ce8000000008b4e2ce800000000f7d81bc0f7d833c325ff00000033d884db754b8b5e0883fbff744383fbfd743ea10000000085c0753583fbfe75158b46048bce50e8000000008bce894608e8000000008b4e08518bcee80000000033c3c74608feffffff25ff00000033d88ac35e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?IsSoundEnabled@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundEnabled"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?IsBuffering@AudioSample@@QAEHXZ",
+   "sym_key": "AudioSample::IsBuffering"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?IsSoundPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundPlaying"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?SelectNextBuildableType@Movie@@QAEIPAX@Z",
+   "sym_key": "Movie::SelectNextBuildableType"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?Play@ThemeClass@@QAEHPAX@Z",
+   "sym_key": "ThemeClass::Play"
+  }
+ ]
+}

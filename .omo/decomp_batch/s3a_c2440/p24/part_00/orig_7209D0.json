@@ -1,0 +1,11 @@
+{
+ "addr": "0x7209D0",
+ "name": "Movie::Update",
+ "size": 173,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7209D0",
+ "bytes_hex": "568bf1e82866ceff85c00f849b000000a064eda80084c00f858e000000a074eca80084c00f84810000008b460c85c07e7a8b4e2c85c974298a461184c07411e8bc76ceff85c075088b4e2ce82075ceff8b4e2ce84876ceff85c00f95c084c0754a8b460883f8ff744283f8fd743d8b0dace7a80085c9753383f8fe751c8b46048bce50e8280000005068b8478400894608e87a5eceff83c4088b4e08518bcee83c010000c74608feffffff5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

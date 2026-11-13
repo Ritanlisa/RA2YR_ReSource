@@ -1,0 +1,39 @@
+{
+ "symbol": "?Cleanup@ThemeManager@@QAEXXZ",
+ "sym_key": "ThemeManager::Cleanup",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "568bf18b462485c07e398b46188b0851e8000000008b462483c40485c07e1d33c94885c08946247e138d46148b500883c0044189108b56243bca7cf08b462485c07fc783c62c85f674228bcee8000000008b0ee8000000008b0ee8000000008b0ee800000000c706000000005ec3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?RequestBuffer@ThemeClass@@QAEHXZ",
+   "sym_key": "ThemeClass::RequestBuffer"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?ProcessCallback@ThemeManager@@QAEDXZ",
+   "sym_key": "ThemeManager::ProcessCallback"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Destructor@AudioSample@@QAEXXZ",
+   "sym_key": "AudioSample::Destructor"
+  }
+ ]
+}

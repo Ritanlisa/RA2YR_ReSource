@@ -1,0 +1,11 @@
+{
+ "addr": "0x71C6B0",
+ "name": "TerrainClass::ProcessTick",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71C6B0",
+ "bytes_hex": "83ec0c568bf18a86cc00000084c0746b8a86cd000000c686cc0000000084c0755a8b466c85c075538b066a01ff90dc0000008b166a028bceff92240100008a86cd00000084c07533c686cd00000001a184eda8008d96b4000000b902000000898ec000000089028b442408894204894a08c786ac000000000000005e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
