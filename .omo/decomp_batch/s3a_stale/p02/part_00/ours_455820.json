@@ -1,0 +1,33 @@
+{
+ "symbol": "?ScanCircleForUnits2@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ScanCircleForUnits2",
+ "size": 342,
+ "link_base": 0,
+ "bytes_hex": "83ec2c55568bf157568b06ff905003000084c00f84360100008b961c0200008b8e200500008b42308ba9d00400008b4c240c89442420a100000000896c24143bc8751d8b168d44242c5056ff52488b54242833c98a480580e2000bca894c240c8bc5f7d83bc5894424288bf8894424180f8dd9000000538b5c242c3bfd0f8dbe0000008b4c24108b542418c1f91003c88b74241033cb8be881e1ff0000000fafe833d98bca0fafca03f7894c2428897424148b74241433f381e6ff00000033de8bf70faff703f5895c24203bf17d588d542420b9f801000052e8000000008bf08b442424508bcee8000000008bb6e400000085f674258b0e56ff512c83f801740a83f80f740583f80275098b1656ff92200400008b763085f675db8b44241c8b5424188b4c24288b74241447463bfa897424140f8c79ffffff8b7c242c8b6c2418403bc58944241c0f8c2dffffff5b5f5e5d83c42cc3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_TerrainTypeTable@@3IA",
+   "sym_key": "g_TerrainTypeTable"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?checkTerrainSpeed@FootClass@@QAEHH@Z",
+   "sym_key": "FootClass::checkTerrainSpeed"
+  }
+ ]
+}

@@ -17926,7 +17926,7 @@
   "status": "OK"
  },
  "0x4371d0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -18791,7 +18791,7 @@
   "this_as_id": false
  },
  "0x43a0d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19663,23 +19663,28 @@
   "this_as_id": false
  },
  "0x43fb20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessSpreadEffect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::ProcessSpreadEffect",
-  "rule_violations": 37,
+  "rule_violations": 33,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x440580": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::Unlimbo_UnitDeliveryFix",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::Unlimbo_UnitDeliveryFix",
+  "rule_violations": 48,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4415f0": {
   "attempts": 2,
@@ -19802,7 +19807,7 @@
   "this_as_id": false
  },
  "0x4456d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19989,15 +19994,15 @@
   "status": "NG"
  },
  "0x448160": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 mov eax, dword ptr [esi + 0x520]",
   "name": "BuildingClass::ProcessPrimarySelect",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "FootClass::ProcessPrimarySelect",
-  "rule_violations": 7,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 10,
+  "status": "NG",
   "this_as_id": false
  },
  "0x448260": {
@@ -20121,11 +20126,16 @@
   "this_as_id": false
  },
  "0x44acf0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessActiveUpdate",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::ProcessActiveUpdate",
+  "rule_violations": 20,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x44b760": {
   "attempts": 1,
@@ -20224,7 +20234,7 @@
   "this_as_id": false
  },
  "0x44d7d0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20513,7 +20523,7 @@
   "this_as_id": false
  },
  "0x451690": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20664,15 +20674,15 @@
   "this_as_id": false
  },
  "0x452360": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "BuildingClass::PowerOff",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BuildingClass::PowerOff",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 5,
+  "status": "NG",
   "this_as_id": false
  },
  "0x452410": {
@@ -21115,15 +21125,15 @@
   "this_as_id": false
  },
  "0x455820": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "BuildingClass::ScanCircleForUnits2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FootClass::ScanCircleForUnits2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x455980": {
@@ -21665,14 +21675,14 @@
   "this_as_id": false
  },
  "0x459470": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::UpdateDamageAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::UpdateDamageAnim",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -21696,7 +21706,7 @@
   "status": "OK"
  },
  "0x459870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21708,7 +21718,7 @@
   "this_as_id": false
  },
  "0x459880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21720,7 +21730,7 @@
   "this_as_id": false
  },
  "0x459890": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22945,7 +22955,7 @@
   "this_as_id": false
  },
  "0x45dd20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -22993,15 +23003,15 @@
   "this_as_id": false
  },
  "0x45e580": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 xor ebx, ebx",
   "name": "BuildingTypeClass::CleanupMembers",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingTypeClass::CleanupMembers",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45e750": {
@@ -23052,15 +23062,15 @@
   "this_as_id": false
  },
  "0x45e8b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "ObjectClass::sub_45E8B0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_45E8B0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x45e8f0": {
@@ -23279,14 +23289,14 @@
   "this_as_id": false
  },
  "0x464af0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingTypeClass::GetSizeInLeptons",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingTypeClass::GetSizeInLeptons",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23399,7 +23409,7 @@
   "this_as_id": false
  },
  "0x465960": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

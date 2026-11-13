@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4371d0 Helper::ProcessData -> Helper
+[conv] 0x43a0d0 Coord::Scale -> Coord
+[conv] 0x43fb20 BuildingClass::ProcessSpreadEffect -> BuildingClass
+[conv] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> BuildingClass
+[conv] 0x4456d0 BuildingClass::UpdateSidebar -> BuildingClass
+[conv] 0x448160 BuildingClass::ProcessPrimarySelect -> BuildingClass
+[conv] 0x44acf0 BuildingClass::ProcessActiveUpdate -> BuildingClass
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+[conv] 0x452360 BuildingClass::PowerOff -> BuildingClass
+[conv] 0x455820 BuildingClass::ScanCircleForUnits2 -> BuildingClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+[conv] 0x459870 BuildingClass::MissionStubReturnZero -> BuildingClass
+[conv] 0x459880 BuildingClass::MissionStubReturnZero2 -> BuildingClass
+[conv] 0x459890 BuildingClass::MissionStubReturnZero3 -> BuildingClass
+[conv] 0x45dd20 ObjectClass::sub_45DD20 -> ObjectClass
+[conv] 0x45e580 BuildingTypeClass::CleanupMembers -> BuildingTypeClass
+[conv] 0x45e8b0 ObjectClass::sub_45E8B0 -> ObjectClass
+[conv] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> BuildingTypeClass
+[conv] 0x465960 AbstractClass::LoadTheaterSHP -> AbstractClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Helper                   rc=2
+[era] Coord                    rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] BuildingTypeClass        rc=2
+[era] AbstractClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x448160   MISMATCH         BuildingClass::ProcessPrimarySelect
+[diff] 0x452360   MISMATCH         BuildingClass::PowerOff
+[diff] 0x455820   MISMATCH         BuildingClass::ScanCircleForUnits2
+[diff] 0x45e8b0   MISMATCH         ObjectClass::sub_45E8B0
+[diff] 0x45e580   MISMATCH         BuildingTypeClass::CleanupMembers
+[ledger] 0x4371d0 Helper::ProcessData -> COMPILE_FAIL (attempt 15)
+[ledger] 0x43a0d0 Coord::Scale -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43fb20 BuildingClass::ProcessSpreadEffect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4456d0 BuildingClass::UpdateSidebar -> COMPILE_FAIL (attempt 6)
+[ledger] 0x448160 BuildingClass::ProcessPrimarySelect -> NG (attempt 16)
+[ledger] 0x44acf0 BuildingClass::ProcessActiveUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> COMPILE_FAIL (attempt 14)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 6)
+[ledger] 0x452360 BuildingClass::PowerOff -> NG (attempt 14)
+[ledger] 0x455820 BuildingClass::ScanCircleForUnits2 -> NG (attempt 6)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 6)
+[ledger] 0x459870 BuildingClass::MissionStubReturnZero -> COMPILE_FAIL (attempt 2)
+[ledger] 0x459880 BuildingClass::MissionStubReturnZero2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x459890 BuildingClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45dd20 ObjectClass::sub_45DD20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45e580 BuildingTypeClass::CleanupMembers -> NG (attempt 2)
+[ledger] 0x45e8b0 ObjectClass::sub_45E8B0 -> NG (attempt 2)
+[ledger] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> COMPILE_FAIL (attempt 4)
+[ledger] 0x465960 AbstractClass::LoadTheaterSHP -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 2,
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p02\batch_report.json
