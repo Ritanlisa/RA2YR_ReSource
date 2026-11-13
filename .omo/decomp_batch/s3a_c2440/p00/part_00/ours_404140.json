@@ -1,0 +1,21 @@
+{
+ "symbol": "?DetachChannel@Voice@@QAEHXZ",
+ "sym_key": "Voice::DetachChannel",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "5153568bf15733db8dbeb00000003bfb74513bb7c00000007549f646600274098b4c240ce8000000008b0fe800000000899e70010000899e6c010000899e64010000899e68010000899e40010000899e48010000899f9c000000891f8bc75f5e5b59c38b44240c5f5e5b59c3",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::ReleaseChannel"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x404140",
+ "name": "Voice::DetachChannel",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x404140",
+ "bytes_hex": "568bf15733ff8b8eb00000003bcf74783bb1c00000007570f64618027405e84de4ffff8b8eb0000000e882e5ffff8b86b000000089b8c00000008b8eb000000089b9bc0000008b96b000000089bab40000008b86b000000089b8b80000008b8eb000000089b9900000008b96b000000089ba980000008b86b000000089b89c00000089beb00000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

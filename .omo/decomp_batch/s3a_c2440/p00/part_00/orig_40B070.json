@@ -1,0 +1,11 @@
+{
+ "addr": "0x40B070",
+ "name": "SubzoneConnectionVector::Destruct",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40B070",
+ "bytes_hex": "8a44240453568bf1a80274598b46fc558d6efc8d0cc0488d348e7831578d780133db8b46e083ee243bc3c7067c177e007411385e0d740c50e890da3b0083c404895e044f885e0d895e0875d65ff644241001740955e873da3b0083c4048bc55d5e5bc204008b460433db3bc3c7067c177e007411385e0d740c50e84eda3b0083c404895e048a44240c885e0da801895e08740956e834da3b0083c4048bc65e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

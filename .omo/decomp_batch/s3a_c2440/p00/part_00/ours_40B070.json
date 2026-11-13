@@ -1,0 +1,45 @@
+{
+ "symbol": "?Destruct@SubzoneConnectionVector@@QAEPADD@Z",
+ "sym_key": "SubzoneConnectionVector::Destruct",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "8a44240453578bf9a802745f8b47fc558d6ffc568d34c08d48ffc1e60433db03f73bcb7c2d8d79018b46e083ee243bc3c706000000007411385e0d740c50e80000000083c404895e044f885e0d895e0875d6f644241401740955e80000000083c4048bc55e5d5f5bc204008b470433db3bc3c707000000007411385f0d740c50e80000000083c404895f048a44240c885f0da801895f08740957e80000000083c4048bc75f5bc20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_SubzoneConnectionStruct@@3PAXA",
+   "sym_key": "vt_VectorClass_SubzoneConnectionStruct"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_SubzoneConnectionStruct@@3PAXA",
+   "sym_key": "vt_VectorClass_SubzoneConnectionStruct"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
