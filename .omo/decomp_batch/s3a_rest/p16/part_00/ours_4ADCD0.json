@@ -1,0 +1,87 @@
+{
+ "symbol": "?UpdateReveal@Radar@@QAGHDH@Z",
+ "sym_key": "Radar::UpdateReveal",
+ "size": 556,
+ "link_base": 0,
+ "bytes_hex": "83ec28a1640600005733ff8944240485c00f8e0a020000538b5c2438558b6c244056a1340600008b34b885f60f84d801000033c924008a8e810000008bd10bc284c00f85c20100008b0656ff502c83f806750f8bc325ff00000084db0f85a80100008b8e1c020000e8000000008bc884c90f85180100008b0e56ff512c83f8060f85f40000008b15000000008b82e4170000f6c4ff0f84df0000008b8e1c020000e80000000084c00f84cc0000008b066a006a006a00556a0056ff90880400008b8e9c0000006a00894c24188b86600200008b96a000000083c0038954241c8b8ea4000000508d54241c894c24246a0052b900000000e8000000008b0656ff502c83f80675748b0e56ff91840000008a88ee05000084c974618b8e1c020000e80000000084c07552a1730000008b166a00506a016a006a0056ff92880400008b8e9c0000006a00894c24248b86600200008b96a000000083c003895424288b8ea4000000508d542428894c24306a0052b900000000e8000000008b0656ff90840000008a88d10c000084c9747deb7233c080e1008a861b0400000bc184c0746a8b0e6a006a006a006a006a0056ff91880400008b969c0000006a00895424308b86600200008b8ea000000083c00350894c24388b96a40000008d4424346a0050b90000000089542444e8000000008b0e56ff91840000008a88d10c000084c974098b1656ff92140400008b4c2410473bf90f8c0bfeffff5e5d5b5f83c428c20c008b4424385f83c428c20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?RevealArea2@MapClass@@QAEHPAXHHH@Z",
+   "sym_key": "MapClass::RevealArea2"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 369,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?RevealArea2@MapClass@@QAEHPAXHHH@Z",
+   "sym_key": "MapClass::RevealArea2"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 490,
+   "type": "REL32",
+   "sym": "?RevealArea2@MapClass@@QAEHPAXHHH@Z",
+   "sym_key": "MapClass::RevealArea2"
+  }
+ ]
+}

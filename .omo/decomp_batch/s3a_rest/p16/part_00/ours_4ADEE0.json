@@ -1,0 +1,39 @@
+{
+ "symbol": "?ResetObjectOrders@HouseClass@@QAGHDH@Z",
+ "sym_key": "HouseClass::ResetObjectOrders",
+ "size": 287,
+ "link_base": 0,
+ "bytes_hex": "51a1640600005733ff8944240485c00f8e01010000538b5c2414558b6c241c56a1340600008b34b885f60f84d100000033c924008a8e810000008bd10bc284c00f85bb0000008b0656ff502c83f806750f8bc325ff00000084db0f85a10000008b8e1c020000e8000000008bc884c975528b0e56ff512c83f80675328b15000000008b82e4170000f6c4ff74218b8e1c020000e80000000084c074128b066a006a00556a0056ff908c040000eb538b0e56ff91840000008a88d10c000084c97440eb3533c080e1008a861b0400000bc184c0742d8b166a006a006a006a0056ff928c0400008b0656ff90840000008a88d10c000084c974098b0e56ff91180400008b4c2410473bf90f8c12ffffff5e5d5b5f59c20c008b4424145f59c20c00",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}

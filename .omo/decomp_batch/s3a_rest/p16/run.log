@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a51f0 RateScaler::Init -> RateScaler
+[conv] 0x4a5660 Dial8Class::SetValue -> Dial8Class
+[conv] 0x4a9890 DisplayClass::UpdateCellPassability -> DisplayClass
+[conv] 0x4a9dd0 DisplayClass::ProcessCellReveal -> DisplayClass
+[conv] 0x4aa440 CellClass::FindOpenNeighbor -> CellClass
+[conv] 0x4aae90 DisplayClass::HandlePlayerAction -> DisplayClass
+[conv] 0x4ac700 TacticalClass::SetDisplayMode -> TacticalClass
+[conv] 0x4acc50 CellClass::ProcessVisibility -> CellClass
+[conv] 0x4ace70 DisplayClass::LoadMapData -> DisplayClass
+[conv] 0x4adcd0 Radar::UpdateReveal -> Radar
+[conv] 0x4adee0 HouseClass::ResetObjectOrders -> HouseClass
+[conv] 0x4ae4f0 DisplayClass::Draw -> DisplayClass
+[conv] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> ObjectClass
+[conv] 0x4aed70 DrawToSurfaceSHP -> _addr_4A
+[conv] 0x4af780 DriveLocomotionClass::BeginMove -> DriveLocomotionClass
+[conv] 0x4af800 DriveLocomotionClass::LoadFromStream -> DriveLocomotionClass
+[conv] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> DriveLocomotionClass
+[conv] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> DriveLocomotionClass
+[conv] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> DriveLocomotionClass
+[conv] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> JumpjetLocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RateScaler               rc=2
+[era] Dial8Class               rc=2
+[era] DisplayClass             rc=2
+[era] CellClass                rc=2
+[era] TacticalClass            rc=2
+[era] Radar                    rc=0
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=2
+[era] _addr_4A                 rc=2
+[era] DriveLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x4adcd0   MISMATCH         Radar::UpdateReveal
+[diff] 0x4adee0   MISMATCH         HouseClass::ResetObjectOrders
+[ledger] 0x4a51f0 RateScaler::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a5660 Dial8Class::SetValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a9890 DisplayClass::UpdateCellPassability -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a9dd0 DisplayClass::ProcessCellReveal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aa440 CellClass::FindOpenNeighbor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aae90 DisplayClass::HandlePlayerAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ac700 TacticalClass::SetDisplayMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4acc50 CellClass::ProcessVisibility -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ace70 DisplayClass::LoadMapData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4adcd0 Radar::UpdateReveal -> NG (attempt 2)
+[ledger] 0x4adee0 HouseClass::ResetObjectOrders -> NG (attempt 2)
+[ledger] 0x4ae4f0 DisplayClass::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aed70 DrawToSurfaceSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4af780 DriveLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4af800 DriveLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p16\batch_report.json
