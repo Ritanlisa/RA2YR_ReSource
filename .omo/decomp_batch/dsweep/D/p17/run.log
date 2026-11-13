@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c1310 _TClassFactory_VRadSiteClass::ddtor -> _TClassFactory_VRadSiteClass
+[conv] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> _TClassFactory_VTEventClass
+[conv] 0x6c4310 _TClassFactory_VHoverLocomotionClass::ddtor -> _TClassFactory_VHoverLocomotionClass
+[conv] 0x6c4490 _TClassFactory_VRocketLocomotionClass::ddtor -> _TClassFactory_VRocketLocomotionClass
+[conv] 0x6c4610 _TClassFactory_VTunnelLocomotionClass::ddtor -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c4790 _TClassFactory_VWalkLocomotionClass::ddtor -> _TClassFactory_VWalkLocomotionClass
+[conv] 0x6c4910 _TClassFactory_VDropPodLocomotionClass::ddtor -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c4a90 _TClassFactory_VFlyLocomotionClass::ddtor -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4d90 _TClassFactory_VMechLocomotionClass::ddtor -> _TClassFactory_VMechLocomotionClass
+[conv] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> _TClassFactory_VFactoryClass
+[conv] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> _TClassFactory_VNeuronClass
+[conv] 0x6c5f90 _TClassFactory_VFoggedObjectClass::ddtor -> _TClassFactory_VFoggedObjectClass
+[conv] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> _TClassFactory_VAlphaShapeClass
+[conv] 0x77e7a0 GameConfig::BuildChecksum -> GameConfig
+[conv] 0x5b5a50 ObjectClass::sub_5B5A50 -> ObjectClass
+[conv] 0x445f00 BuildingClass::SelectTargetTypeFlags -> BuildingClass
+[conv] 0x7a2750 UI_Setup_7A2750 -> UI_Setup
+[conv] 0x408d80 sub_408D80 -> _addr_40
+[conv] 0x4750d0 INIClass::ParseFlagList -> INIClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VRadSiteClass rc=2
+[era] _TClassFactory_VTEventClass rc=2
+[era] _TClassFactory_VHoverLocomotionClass rc=2
+[era] _TClassFactory_VRocketLocomotionClass rc=2
+[era] _TClassFactory_VTunnelLocomotionClass rc=0
+[era] _TClassFactory_VWalkLocomotionClass rc=2
+[era] _TClassFactory_VDropPodLocomotionClass rc=0
+[era] _TClassFactory_VFlyLocomotionClass rc=2
+[era] _TClassFactory_VMechLocomotionClass rc=0
+[era] _TClassFactory_VShipLocomotionClass rc=2
+[era] _TClassFactory_VFactoryClass rc=2
+[era] _TClassFactory_VNeuronClass rc=2
+[era] _TClassFactory_VFoggedObjectClass rc=0
+[era] _TClassFactory_VAlphaShapeClass rc=2
+[era] GameConfig               rc=0
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=0
+[era] UI_Setup                 rc=0
+[era] _addr_40                 rc=0
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6c4610   MISMATCH         _TClassFactory_VTunnelLocomotionClass::ddtor
+[diff] 0x6c4910   MISMATCH         _TClassFactory_VDropPodLocomotionClass::ddtor
+[diff] 0x6c4d90   MISMATCH         _TClassFactory_VMechLocomotionClass::ddtor
+[diff] 0x6c5f90   MISMATCH         _TClassFactory_VFoggedObjectClass::ddtor
+[diff] 0x77e7a0   MISMATCH         GameConfig::BuildChecksum
+[diff] 0x445f00   MISMATCH         BuildingClass::SelectTargetTypeFlags
+[diff] 0x7a2750   MISMATCH         UI_Setup_7A2750
+[diff] 0x408d80   MATCH            sub_408D80
+[ledger] 0x6c1310 _TClassFactory_VRadSiteClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4310 _TClassFactory_VHoverLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4490 _TClassFactory_VRocketLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4610 _TClassFactory_VTunnelLocomotionClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c4790 _TClassFactory_VWalkLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4910 _TClassFactory_VDropPodLocomotionClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c4a90 _TClassFactory_VFlyLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4d90 _TClassFactory_VMechLocomotionClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5f90 _TClassFactory_VFoggedObjectClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e7a0 GameConfig::BuildChecksum -> NG (attempt 1)
+[ledger] 0x5b5a50 ObjectClass::sub_5B5A50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x445f00 BuildingClass::SelectTargetTypeFlags -> NG (attempt 1)
+[ledger] 0x7a2750 UI_Setup_7A2750 -> NG (attempt 1)
+[ledger] 0x408d80 sub_408D80 -> OK (attempt 1)
+[ledger] 0x4750d0 INIClass::ParseFlagList -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 4,
+  "extern_reloc": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 12.5,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p17\batch_report.json

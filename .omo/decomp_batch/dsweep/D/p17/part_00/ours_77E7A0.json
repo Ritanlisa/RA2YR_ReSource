@@ -1,0 +1,69 @@
+{
+ "symbol": "?BuildChecksum@GameConfig@@QAEHPAD@Z",
+ "sym_key": "GameConfig::BuildChecksum",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "518b150000000053568b3500000000578bf98b0d0000000033f2680000000033f1e80000000033c984c00f94c151e800000000884424148b54241481e2ff00000052e80000000083c40c8bcf8bd8e8000000008b4c24148b542414518b4c2418528b54241c51535650680000000052e80000000083c4205f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?CCINIClass_AIHash@@3IA",
+   "sym_key": "CCINIClass_AIHash"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?CCINIClass_ArtHash@@3IA",
+   "sym_key": "CCINIClass_ArtHash"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?CCINIClass_RulesHash@@3IA",
+   "sym_key": "CCINIClass_RulesHash"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?Destination@@3EA",
+   "sym_key": "Destination"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?GameOption__CheckDuplicate@@YADPAX@Z",
+   "sym_key": "GameOption__CheckDuplicate"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Hash_Check_5E9580@@YADH@Z",
+   "sym_key": "Hash_Check_5E9580"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Hash_Check_5E94D0@@YAHH@Z",
+   "sym_key": "Hash_Check_5E94D0"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?GetEntry@GameOptions@@QAEHXZ",
+   "sym_key": "GameOptions::GetEntry"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "??_C@_0BC@CPKE@?$CFd?0?$CFd?0?$CFd?0?$CFd?0?$CFd?0?$CFs?$AA@",
+   "sym_key": "??_C@_0BC@CPKE@?$CFd?0?$CFd?0?$CFd?0?$CFd?0?$CFd?0?$CFs?$AA@"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  }
+ ]
+}

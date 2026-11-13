@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A2750",
+ "name": "UI_Setup_7A2750",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A2750",
+ "bytes_hex": "515356e8b833fdff689f05000050ff15a8147e008d4c24088bf06a00e8bf1e01008d4c2408e826c4fdff83f8018d4c24080f95c3e8671f010084db74316a016a0068dc04000056ff15a4147e0033d2b98c16830068127200006830a48400e8ad26f9ff506affe845ffe3ff83c4085e5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

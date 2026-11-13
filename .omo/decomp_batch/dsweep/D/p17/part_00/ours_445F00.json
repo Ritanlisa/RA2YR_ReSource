@@ -1,0 +1,27 @@
+{
+ "symbol": "?SelectTargetTypeFlags@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::SelectTargetTypeFlags",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "51568bf1576a008b0656ff90f8030000833800741b8b0e6a0056ff91f80300008b08e8000000000fbef80b7c2408eb048b7c24088b166a0156ff92f803000083380074178b066a0156ff90f80300008b08e8000000000fbec80bf98b5424088b442408528b54240c83cf0150578bcee8000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?TechnoClass__SelectAutoTarget_Start_AU@@YIPAXPAXHHHD@Z",
+   "sym_key": "TechnoClass__SelectAutoTarget_Start_AU"
+  }
+ ]
+}

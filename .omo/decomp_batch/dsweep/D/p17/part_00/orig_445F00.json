@@ -1,0 +1,11 @@
+{
+ "addr": "0x445F00",
+ "name": "BuildingClass::SelectTargetTypeFlags",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x445F00",
+ "bytes_hex": "568bf1576a008b06ff90f8030000833800741b8b166a008bceff92f80300008b08e86acb32008b7c240c0bf8eb048b7c240c8b066a018bceff90f803000083380074158b166a018bceff92f80300008b08e83acb32000bf88b4424148b4c24105083cf0151578bcee8832e2b005f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

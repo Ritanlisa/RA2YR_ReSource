@@ -1,0 +1,11 @@
+{
+ "addr": "0x77E7A0",
+ "name": "GameConfig::BuildChecksum",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77E7A0",
+ "bytes_hex": "5156578bf98b0d1c6bb70085c97e13b8586eb7008b100594000000498954240875f28b35047eb7008b15087eb7008b0d007eb70033f268e0b8a80033f1e87eade6fff6d81bc04050e893ade6ff25ff00000050e8d8ace6ff5056e85193ffff506840a5840057e8e9a6040083c4205f5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
