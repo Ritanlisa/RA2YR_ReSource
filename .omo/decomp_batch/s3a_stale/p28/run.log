@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cde75 __setlocale_get_all -> _addr_7C
+[conv] 0x7cec87 ObjectClass::__cftoe2 -> ObjectClass
+[conv] 0x7cf0ae __ffexpm1 -> _addr_7C
+[conv] 0x7cf0f1 _isintTOS -> _addr_7C
+[conv] 0x7cf125 _usepowhlp -> _addr_7C
+[conv] 0x7cf390 __twoToTOS -> _addr_7C
+[conv] 0x7d1512 GetCurrentThreadId::_0 -> GetCurrentThreadId
+[conv] 0x7d29b2 ObjectClass::___loctotime_t -> ObjectClass
+[conv] 0x7d30d1 __commit -> _addr_7D
+[conv] 0x7d461e ___wtomb_environ -> _addr_7D
+[conv] 0x7d5ef8 __FF_MSGBANNER -> _addr_7D
+[conv] 0x7d6830 ___init_monetary -> _addr_7D
+[conv] 0x7d68fb __get_lc_lconv -> _addr_7D
+[conv] 0x7d6ea7 ObjectClass::_TranslateName -> ObjectClass
+[conv] 0x7d72d4 _CountryEnumProc_4 -> _addr_7D
+[conv] 0x7d7374 _ProcessCodePage -> _addr_7D
+[conv] 0x7d73f9 _TestDefaultLanguage -> _addr_7D
+[conv] 0x7d75e0 _memset -> _addr_7D
+[conv] 0x7d7a22 ObjectClass::__ShrMan -> ObjectClass
+[conv] 0x7d7ee0 unknown_libname_76 -> _addr_7D
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] GetCurrentThreadId       rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7cde75   MISMATCH         __setlocale_get_all
+[diff] 0x7d29b2   MISMATCH         ObjectClass::___loctotime_t
+[diff] 0x7d6ea7   MISMATCH         ObjectClass::_TranslateName
+[diff] 0x7d7a22   MISMATCH         ObjectClass::__ShrMan
+[ledger] 0x7cde75 __setlocale_get_all -> NG (attempt 6)
+[ledger] 0x7cec87 ObjectClass::__cftoe2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf0ae __ffexpm1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cf0f1 _isintTOS -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cf125 _usepowhlp -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cf390 __twoToTOS -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d1512 GetCurrentThreadId::_0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7d29b2 ObjectClass::___loctotime_t -> NG (attempt 2)
+[ledger] 0x7d30d1 __commit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d461e ___wtomb_environ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d5ef8 __FF_MSGBANNER -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d6830 ___init_monetary -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d68fb __get_lc_lconv -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d6ea7 ObjectClass::_TranslateName -> NG (attempt 2)
+[ledger] 0x7d72d4 _CountryEnumProc_4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d7374 _ProcessCodePage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d73f9 _TestDefaultLanguage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d75e0 _memset -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d7a22 ObjectClass::__ShrMan -> NG (attempt 2)
+[ledger] 0x7d7ee0 unknown_libname_76 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p28\batch_report.json

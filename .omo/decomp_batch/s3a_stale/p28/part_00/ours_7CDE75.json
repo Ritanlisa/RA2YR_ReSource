@@ -1,0 +1,105 @@
+{
+ "symbol": "?__setlocale_get_all@@YAPADXZ",
+ "sym_key": "Unnamed::__setlocale_get_all",
+ "size": 259,
+ "link_base": 0,
+ "bytes_hex": "51a100000000c74424000100000085c075126851030000e80000000083c404a300000000535556c60000a100000000576a0350e800000000bd0000000083c4088bdd8b3d0000000083c9ff33c0f2aef7d12bf98bf78b3d000000008bd183c9fff2ae8bca4fc1e902f3a58bca83e10383c50cf3a48b75008b038a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c07408c744241000000000a1000000006a03508bdde80000000083c40881fd000000000f8c72ffffff8b4424105f5e5d85c05b7507a10000000059c38b0d0000000051e800000000a10000000083c404c705000000000000000059c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?_strcats@@YAHPAXHZZ",
+   "sym_key": "_strcats"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?off_87C490@@3IA",
+   "sym_key": "off_87C490"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?asc_81C8FC@@3PAGA",
+   "sym_key": "asc_81C8FC"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?_strcats@@YAHPAXHZZ",
+   "sym_key": "_strcats"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C4C0@@3PAXA",
+   "sym_key": "DataGlobal_87C4C0"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?off_87C49C@@3IA",
+   "sym_key": "off_87C49C"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?Block@@3PADA",
+   "sym_key": "Block"
+  }
+ ]
+}

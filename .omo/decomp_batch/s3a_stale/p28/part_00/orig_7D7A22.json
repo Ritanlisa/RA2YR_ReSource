@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7A22",
+ "name": "__ShrMan",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7A22",
+ "bytes_hex": "558bec83ec0c8b450c5356576a208b7d085b83ceff998bcbc745fc03000000f7f98945f48b450c99f7f983650c008bcad3e62bdaf7d68b078bc823ce894df88bcad3e80b450c89078b45f88bcb83c704d3e0ff4dfc89450c75dc8b7df46a025b8bf76a0859c1e6023bdf7c0f8b55088bc12bc68b0410890411eb078b4508832401004b83e90479e05f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

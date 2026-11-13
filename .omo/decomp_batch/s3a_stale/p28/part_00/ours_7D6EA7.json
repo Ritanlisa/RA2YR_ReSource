@@ -1,0 +1,15 @@
+{
+ "symbol": "?_TranslateName@@YAHHHPAPAD@Z",
+ "sym_key": "ObjectClass::_TranslateName",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c241833db85ffb8010000007c458b6c241c85c0743d8d043b992bc28b55008bf08b442414d1fe8b0cf05152e80000000083c40885c0740c7c058d5e01eb108d7effeb0b8b4c24148d54f1048955003bdf7ebf5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

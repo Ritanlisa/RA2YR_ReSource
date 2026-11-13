@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D6EA7",
+ "name": "_TranslateName",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D6EA7",
+ "bytes_hex": "558bec53565733db395d0c6a01587c4385c0743f8b450c03c3992bc28bf08b4508d1feff34f08d3cf08b4510ff30e8461effff5985c059750a8b4d1083c7048939eb0b7d064e89750ceb038d5e013b5d0c7ebd5f5e5b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

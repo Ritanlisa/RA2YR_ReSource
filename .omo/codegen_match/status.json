@@ -210875,14 +210875,14 @@
   "this_as_id": false
  },
  "0x7cde75": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0x87c484]",
   "name": "__setlocale_get_all",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "__setlocale_get_all",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7cdf2e": {
@@ -211097,11 +211097,16 @@
   "this_as_id": false
  },
  "0x7cec87": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::__cftoe2",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__cftoe2",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7ced49": {
   "attempts": 3,
@@ -211181,7 +211186,7 @@
   "this_as_id": false
  },
  "0x7cf0ae": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__ffexpm1",
@@ -211192,7 +211197,7 @@
   "this_as_id": false
  },
  "0x7cf0f1": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_isintTOS",
@@ -211236,7 +211241,7 @@
   "this_as_id": false
  },
  "0x7cf125": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "_usepowhlp",
@@ -211269,7 +211274,7 @@
   "this_as_id": false
  },
  "0x7cf390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__twoToTOS",
@@ -211679,7 +211684,7 @@
   "this_as_id": false
  },
  "0x7d1512": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -211886,11 +211891,16 @@
   "this_as_id": false
  },
  "0x7d29b2": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
   "name": "ObjectClass::___loctotime_t",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "___loctotime_t",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7d2a74": {
   "attempts": 1,
@@ -212088,7 +212098,7 @@
   "this_as_id": false
  },
  "0x7d30d1": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__commit",
@@ -212332,7 +212342,7 @@
   "this_as_id": false
  },
  "0x7d461e": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "___wtomb_environ",
@@ -212744,7 +212754,7 @@
   "this_as_id": false
  },
  "0x7d5ef8": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__FF_MSGBANNER",
@@ -212823,7 +212833,7 @@
   "this_as_id": false
  },
  "0x7d6830": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "___init_monetary",
@@ -212834,7 +212844,7 @@
   "this_as_id": false
  },
  "0x7d68fb": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__get_lc_lconv",
@@ -212913,11 +212923,16 @@
   "this_as_id": false
  },
  "0x7d6ea7": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebp",
   "name": "ObjectClass::_TranslateName",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "_TranslateName",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7d6eff": {
   "attempts": 2,
@@ -212975,7 +212990,7 @@
   "this_as_id": false
  },
  "0x7d72d4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_CountryEnumProc_4",
@@ -212997,7 +213012,7 @@
   "this_as_id": false
  },
  "0x7d7374": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_ProcessCodePage",
@@ -213019,7 +213034,7 @@
   "this_as_id": false
  },
  "0x7d73f9": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "_TestDefaultLanguage",
@@ -213074,7 +213089,7 @@
   "this_as_id": false
  },
  "0x7d75e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_memset",
@@ -213230,15 +213245,15 @@
   "this_as_id": false
  },
  "0x7d7a22": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "ObjectClass::__ShrMan",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "__ShrMan",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d7aaf": {
@@ -213361,7 +213376,7 @@
   "this_as_id": false
  },
  "0x7d7ee0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_76",
