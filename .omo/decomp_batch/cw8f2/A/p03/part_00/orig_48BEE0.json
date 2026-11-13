@@ -1,0 +1,11 @@
+{
+ "addr": "0x48BEE0",
+ "name": "ConnectionClass::dtor",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48BEE0",
+ "bytes_hex": "568bf18b4620c706b4517e0050e84bcc33008b4e0483c40485c95e74068b116a01ff12c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
