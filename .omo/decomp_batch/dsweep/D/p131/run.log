@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p131\part_00
+=== convert (20 addrs) ===
+[conv] 0x433990 File::LoadFont -> File
+[conv] 0x7b3450 UDPInterfaceClass::Bind -> UDPInterfaceClass
+[conv] 0x484ae0 InfantryClass::ValidateAttackPosition -> InfantryClass
+[conv] 0x6d2b60 TacticalMap::RenderCell -> TacticalMap
+[conv] 0x4d2510 FoggedObjectClass::LoadTypeData -> FoggedObjectClass
+[conv] 0x595400 TechnoClass::PlaceNeutralBuilding -> TechnoClass
+[conv] 0x5856b0 MapClass::InitializeTileData -> MapClass
+[conv] 0x79c650 MapSeed::InsertName -> MapSeed
+[conv] 0x4a9dd0 DisplayClass::ProcessCellReveal -> DisplayClass
+[conv] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> ObjectClass
+[conv] 0x601360 Event::IsValidActionType -> Event
+[conv] 0x4f6ec0 HouseClass::SetCombatPower -> HouseClass
+[conv] 0x402c70 CreateAudioChannel -> _addr_40
+[conv] 0x7abfa0 CChatEventSink::DispatchStub_36 -> CChatEventSink
+[conv] 0x750ac0 ComputeAudioPosition -> _addr_75
+[conv] 0x4f9f90 HouseClass::SetAlliance -> HouseClass
+[conv] 0x4595c0 BuildingClass::EmptyBunker -> BuildingClass
+[conv] 0x757bf0 ObjectClass::VoxelDrawScanline -> ObjectClass
+[conv] 0x4e49a0 SetupSkirmishSpawnLocations -> _addr_4E
+[conv] 0x4e5480 SetupLobbyFactionSlots -> _addr_4E
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] File                     rc=2
+[era] UDPInterfaceClass        rc=2
+[era] InfantryClass            rc=0
+[era] TacticalMap              rc=2
+[era] FoggedObjectClass        rc=2
+[era] TechnoClass              rc=2
+[era] MapClass                 rc=0
+[era] MapSeed                  rc=2
+[era] DisplayClass             rc=2
+[era] ObjectClass              rc=2
+[era] Event                    rc=2
+[era] HouseClass               rc=2
+[era] _addr_40                 rc=0
+[era] CChatEventSink           rc=2
+[era] _addr_75                 rc=2
+[era] BuildingClass            rc=2
+[era] _addr_4E                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x484ae0   MISMATCH         InfantryClass::ValidateAttackPosition
+[diff] 0x5856b0   MISMATCH         MapClass::InitializeTileData
+[diff] 0x757bf0   MISMATCH         ObjectClass::VoxelDrawScanline
+[diff] 0x4f6ec0   MISMATCH         HouseClass::SetCombatPower
+[diff] 0x402c70   MISMATCH         CreateAudioChannel
+[ledger] 0x433990 File::LoadFont -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b3450 UDPInterfaceClass::Bind -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484ae0 InfantryClass::ValidateAttackPosition -> NG (attempt 1)
+[ledger] 0x6d2b60 TacticalMap::RenderCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2510 FoggedObjectClass::LoadTypeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x595400 TechnoClass::PlaceNeutralBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5856b0 MapClass::InitializeTileData -> NG (attempt 1)
+[ledger] 0x79c650 MapSeed::InsertName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a9dd0 DisplayClass::ProcessCellReveal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x601360 Event::IsValidActionType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f6ec0 HouseClass::SetCombatPower -> NG (attempt 1)
+[ledger] 0x402c70 CreateAudioChannel -> NG (attempt 1)
+[ledger] 0x7abfa0 CChatEventSink::DispatchStub_36 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750ac0 ComputeAudioPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f9f90 HouseClass::SetAlliance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4595c0 BuildingClass::EmptyBunker -> COMPILE_FAIL (attempt 1)
+[ledger] 0x757bf0 ObjectClass::VoxelDrawScanline -> NG (attempt 1)
+[ledger] 0x4e49a0 SetupSkirmishSpawnLocations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e5480 SetupLobbyFactionSlots -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 2,
+  "const_fold": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p131\batch_report.json

@@ -1,0 +1,135 @@
+{
+ "symbol": "?SetCombatPower@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::SetCombatPower",
+ "size": 679,
+ "link_base": 0,
+ "bytes_hex": "8b818401000053568b74240c89b1840100008b150000000085d2570f84170100008b1d000000008b79348d14b655c1e2048dacb654010000dd841a38150000dc8fc8000000c1e504dd99880100008b1d00000000dd042bdc8b18140000dc8fd0000000dd99900100008b1d00000000dd841a48150000dc8b18140000dc8fd8000000dd99980100008b1d00000000dd841a50150000dc8fe0000000dd99a00100008b1d00000000dd841a58150000dc8fe8000000dd99a80100008b1d00000000dd841a60150000dc8ff0000000dd99b00100008b1d000000008bac1a701500008d9c1a7015000089a9c00100008b5b048999c40100008b1d000000008bac1a781500008d9c1a7815000089a9c80100005d8b5b048999cc0100008b1d00000000dd841a68150000dc8b18140000dc8ff8000000e9230100008b3d000000008d14b6c1e2048b9c3a381500008dbc3a381500008999880100008d9cb6540100008b7f0489b9880100008b3d00000000c1e304dd043bdc8f18140000dd99900100008b3d00000000dd843a48150000dc8f18140000dd99980100008b3d000000008b9c3a501500008dbc3a501500008999a00100008b7f0489b9a00100008b3d000000008b9c3a581500008dbc3a581500008999a80100008b7f0489b9a80100008b3d000000008b9c3a601500008dbc3a601500008999b00100008b7f0489b9b00100008b3d000000008b9c3a701500008dbc3a701500008999c00100008b7f0489b9c40100008b3d000000008b9c3a781500008dbc3a781500008999c80100008b7f0489b9cc0100008b3d00000000dd843a68150000dc8f18140000dd99b80100008b15000000008b79300fbe9a5c1100008d14fd000000008b34b32bd75f8d14928d149203f28b15000000008991985700008b54240c89b1a05700005e89919c5700005bc20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 446,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 516,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 551,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 586,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 611,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}
