@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b8090 FormatWideStringPrefix -> _addr_7B
+[conv] 0x7b82e0 Game_Set -> Game
+[conv] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> WWMouseClass
+[conv] 0x7b92d0 WWMouseClass::updateCursor -> WWMouseClass
+[conv] 0x7ba450 FilePipe::Release -> FilePipe
+[conv] 0x7ba530 FileStraw::Release -> FileStraw
+[conv] 0x7bd170 UnitClass::Audio_Render_7BD170 -> UnitClass
+[conv] 0x7be5d0 AllocCallback::Dispatch -> AllocCallback
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+[conv] 0x7c61cf globalHelper_0C61CF -> _addr_7C
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x7c979c ___onexitinit -> _addr_7C
+[conv] 0x7cb33d ObjectClass::___initstdio -> ObjectClass
+[conv] 0x7cb3f9 __lock_file -> _addr_7C
+[conv] 0x7cb44b __unlock_file -> _addr_7C
+[conv] 0x7cbc32 _getenv -> _addr_7C
+[conv] 0x7cc1d4 __except_handler3 -> _addr_7C
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+[conv] 0x7cc752 __Getmonths -> _addr_7C
+[conv] 0x7cc7e7 __Gettnames -> _addr_7C
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=2
+[era] Game                     rc=2
+[era] WWMouseClass             rc=2
+[era] FilePipe                 rc=2
+[era] FileStraw                rc=2
+[era] UnitClass                rc=2
+[era] AllocCallback            rc=2
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b8090 FormatWideStringPrefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b82e0 Game_Set -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b92d0 WWMouseClass::updateCursor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ba450 FilePipe::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ba530 FileStraw::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bd170 UnitClass::Audio_Render_7BD170 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7be5d0 AllocCallback::Dispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c61cf globalHelper_0C61CF -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c979c ___onexitinit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cb33d ObjectClass::___initstdio -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cb3f9 __lock_file -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cb44b __unlock_file -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cbc32 _getenv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc1d4 __except_handler3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cc752 __Getmonths -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc7e7 __Gettnames -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p24\batch_report.json

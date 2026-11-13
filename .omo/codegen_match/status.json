@@ -202578,7 +202578,7 @@
   "this_as_id": false
  },
  "0x7b8090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FormatWideStringPrefix",
@@ -202612,7 +202612,7 @@
   "this_as_id": false
  },
  "0x7b82e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Game_Set",
@@ -202781,7 +202781,7 @@
   "this_as_id": false
  },
  "0x7b90c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -202793,7 +202793,7 @@
   "this_as_id": false
  },
  "0x7b92d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203083,7 +203083,7 @@
   "this_as_id": false
  },
  "0x7ba450": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203119,7 +203119,7 @@
   "this_as_id": false
  },
  "0x7ba530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203848,7 +203848,7 @@
   "this_as_id": false
  },
  "0x7bd170": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -203968,7 +203968,7 @@
   "this_as_id": false
  },
  "0x7be5d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -204004,7 +204004,7 @@
   "this_as_id": false
  },
  "0x7be670": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -204828,7 +204828,7 @@
   "this_as_id": false
  },
  "0x7c61cf": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0C61CF",
@@ -208659,7 +208659,7 @@
   "this_as_id": false
  },
  "0x7c970c": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__onexit",
@@ -208681,7 +208681,7 @@
   "this_as_id": false
  },
  "0x7c979c": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "___onexitinit",
@@ -209544,7 +209544,7 @@
   "this_as_id": false
  },
  "0x7cb33d": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -209567,7 +209567,7 @@
   "this_as_id": false
  },
  "0x7cb3f9": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__lock_file",
@@ -209589,7 +209589,7 @@
   "this_as_id": false
  },
  "0x7cb44b": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__unlock_file",
@@ -209886,7 +209886,7 @@
   "this_as_id": false
  },
  "0x7cbc32": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_getenv",
@@ -210206,7 +210206,7 @@
   "this_as_id": false
  },
  "0x7cc1d4": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__except_handler3",
@@ -210295,7 +210295,7 @@
   "this_as_id": false
  },
  "0x7cc682": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_wcsstr",
@@ -210317,7 +210317,7 @@
   "this_as_id": false
  },
  "0x7cc752": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__Getmonths",
@@ -210328,7 +210328,7 @@
   "this_as_id": false
  },
  "0x7cc7e7": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__Gettnames",
