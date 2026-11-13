@@ -89092,7 +89092,7 @@
   "this_as_id": false
  },
  "0x560480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -89344,7 +89344,7 @@
   "this_as_id": false
  },
  "0x565090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89356,15 +89356,15 @@
   "this_as_id": false
  },
  "0x565190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+9 lea edi, [esi + 0x50]",
   "name": "RadarClass::Render",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "RadarClass::Render",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5652c0": {
@@ -89562,38 +89562,38 @@
   "this_as_id": false
  },
  "0x567230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapClass::UpdateVisibility",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ShroudClass::UpdateVisibility",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5673a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapClass::RevealArea0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MapClass::RevealArea0",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5678e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapClass::RevealArea1",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MapClass::RevealArea1",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -89728,7 +89728,7 @@
   "this_as_id": false
  },
  "0x56a4c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89740,7 +89740,7 @@
   "this_as_id": false
  },
  "0x56a980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89836,14 +89836,14 @@
   "this_as_id": false
  },
  "0x56b8a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::DecompressRawCellData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::DecompressRawCellData",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -89920,7 +89920,7 @@
   "this_as_id": false
  },
  "0x56bec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90002,7 +90002,7 @@
   "this_as_id": false
  },
  "0x56cb90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90076,7 +90076,7 @@
   "status": "NG"
  },
  "0x56d6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90124,7 +90124,7 @@
   "this_as_id": false
  },
  "0x56dc20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90155,7 +90155,7 @@
   "this_as_id": false
  },
  "0x56e990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90167,7 +90167,7 @@
   "this_as_id": false
  },
  "0x56eb80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90201,7 +90201,7 @@
   "this_as_id": false
  },
  "0x56ef50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90213,7 +90213,7 @@
   "this_as_id": false
  },
  "0x56f2f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90247,7 +90247,7 @@
   "this_as_id": false
  },
  "0x56f8b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90266,7 +90266,7 @@
   "status": "NG"
  },
  "0x570050": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90278,7 +90278,7 @@
   "this_as_id": false
  },
  "0x570ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

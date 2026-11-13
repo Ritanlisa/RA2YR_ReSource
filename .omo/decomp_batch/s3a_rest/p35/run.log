@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x560480 NetworkOptions::DlgProc -> NetworkOptions
+[conv] 0x565090 MapClass::RenderMapPreview -> MapClass
+[conv] 0x565190 RadarClass::Render -> RadarClass
+[conv] 0x567230 MapClass::UpdateVisibility -> MapClass
+[conv] 0x5673a0 MapClass::RevealArea0 -> MapClass
+[conv] 0x5678e0 MapClass::RevealArea1 -> MapClass
+[conv] 0x56a4c0 ObjectClass::FlattenCliffMap -> ObjectClass
+[conv] 0x56a980 ObjectClass::RepairMapCliff -> ObjectClass
+[conv] 0x56b8a0 CellClass::DecompressRawCellData -> CellClass
+[conv] 0x56bec0 BuildingClass::SearchPlacement -> BuildingClass
+[conv] 0x56cb90 Terrain::FloodFillConnectivity -> Terrain
+[conv] 0x56d6e0 MapClass::ProcessRegion -> MapClass
+[conv] 0x56dc20 LayerClass::Pathfinding_Find -> LayerClass
+[conv] 0x56e990 Cell::UpdateTileType -> Cell
+[conv] 0x56eb80 Cell::SetTileType -> Cell
+[conv] 0x56ef50 CellClass::UpdateVariant3 -> CellClass
+[conv] 0x56f2f0 CellClass::UpdateVariant4 -> CellClass
+[conv] 0x56f8b0 CellClass::UpdateTerrain -> CellClass
+[conv] 0x570050 Terrain::ProcessCellModification -> Terrain
+[conv] 0x570ae0 CellClass::RecursiveTileUpdate -> CellClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NetworkOptions           rc=2
+[era] MapClass                 rc=2
+[era] RadarClass               rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Terrain                  rc=2
+[era] LayerClass               rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x565190   MISMATCH         RadarClass::Render
+[ledger] 0x560480 NetworkOptions::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565090 MapClass::RenderMapPreview -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565190 RadarClass::Render -> NG (attempt 2)
+[ledger] 0x567230 MapClass::UpdateVisibility -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5673a0 MapClass::RevealArea0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5678e0 MapClass::RevealArea1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56a4c0 ObjectClass::FlattenCliffMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56a980 ObjectClass::RepairMapCliff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56b8a0 CellClass::DecompressRawCellData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56bec0 BuildingClass::SearchPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56cb90 Terrain::FloodFillConnectivity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56d6e0 MapClass::ProcessRegion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56dc20 LayerClass::Pathfinding_Find -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56e990 Cell::UpdateTileType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56eb80 Cell::SetTileType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56ef50 CellClass::UpdateVariant3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56f2f0 CellClass::UpdateVariant4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x56f8b0 CellClass::UpdateTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x570050 Terrain::ProcessCellModification -> COMPILE_FAIL (attempt 2)
+[ledger] 0x570ae0 CellClass::RecursiveTileUpdate -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p35\batch_report.json

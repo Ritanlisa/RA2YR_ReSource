@@ -1,0 +1,69 @@
+{
+ "symbol": "?Render@RadarClass@@QAEPADH@Z",
+ "sym_key": "RadarClass::Render",
+ "size": 302,
+ "link_base": 0,
+ "bytes_hex": "515355568bf15733db8d7e4d53538bcfc70600000000885e10895e14e800000000c70700000000c747140a000000895f108dbe88000000bd0300000053538bcfe800000000c70700000000c747140a000000895f1083c7184d75e18dbed000000053538bcfe800000000ba0a000000c707000000008996e4000000899ee0000000c78634010000000000008d8660010000b9000100006689186689580283c0104975f3c7866411000001000000b90d00000033c08d7e18899e5c110000899e60110000889e64110000c786581100000000000089966c110000899e68110000c706000000008d6e7cf3ab8dbe88000000895d00899e80000000899e84000000c7442410030000008b0757ff500c8b442410895d0083c50483c718488944241075e6895e148bc65f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?vt_GScreenClass@@3PAXA",
+   "sym_key": "vt_GScreenClass"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?drawRadarTerrain@RadarClass@@QAEPAV1@HH@Z",
+   "sym_key": "RadarClass::drawRadarTerrain"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_ZoneConnectionClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_ZoneConnectionClass"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?RenderJammerRadius@RadarClass@@QAEPAIHPAX@Z",
+   "sym_key": "RadarClass::RenderJammerRadius"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_SubzoneTrackingStruct@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_SubzoneTrackingStruct"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::CellConstructor"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_Cell@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_Cell"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_VectorClass_CellClass"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_Cell@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_Cell"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?vt_MapClass@@3PAXA",
+   "sym_key": "vt_MapClass"
+  }
+ ]
+}
