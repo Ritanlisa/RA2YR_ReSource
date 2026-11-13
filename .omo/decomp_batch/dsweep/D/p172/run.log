@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p172\part_00
+=== convert (20 addrs) ===
+[conv] 0x70b570 TechnoClass::UpdateBodyTilt -> TechnoClass
+[conv] 0x718b70 Factory::CalculateExitCell -> Factory
+[conv] 0x685670 Scenario::EndGameFlow -> Scenario
+[conv] 0x5bdf70 MouseClass::LoadGameAssets -> MouseClass
+[conv] 0x51b350 InfantryClass::CalcMoveTarget -> InfantryClass
+[conv] 0x5ed5a0 SetupMultiplayerLobbyPlayers -> _addr_5E
+[conv] 0x785740 ObjectClass::LeaveChannelWOL -> ObjectClass
+[conv] 0x5981f0 RandomMap::LoadConfig -> RandomMap
+[conv] 0x641140 MiniMap::Render -> MiniMap
+[conv] 0x60b950 Control::RepositionControlsDialog -> Control
+[conv] 0x64b660 CompressNetworkMegaMission -> _addr_64
+[conv] 0x560480 NetworkOptions::DlgProc -> NetworkOptions
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x62f230 ParticleSystemClass::SpawnParticle -> ParticleSystemClass
+[conv] 0x550260 TacticalClass::RenderCells -> TacticalClass
+[conv] 0x5a5360 Pathfinding::ExpandNode -> Pathfinding
+[conv] 0x45dd90 BuildingTypeClass::ConstructFull -> BuildingTypeClass
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x6a8b30 SidebarClass::UpdateCameos -> SidebarClass
+[conv] 0x5b6020 ModemGame::ProcessPacket -> ModemGame
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Factory                  rc=2
+[era] Scenario                 rc=2
+[era] MouseClass               rc=2
+[era] InfantryClass            rc=2
+[era] _addr_5E                 rc=2
+[era] ObjectClass              rc=2
+[era] RandomMap                rc=2
+[era] MiniMap                  rc=2
+[era] Control                  rc=2
+[era] _addr_64                 rc=2
+[era] NetworkOptions           rc=2
+[era] ParticleSystemClass      rc=2
+[era] TacticalClass            rc=2
+[era] Pathfinding              rc=2
+[era] BuildingTypeClass        rc=2
+[era] CellClass                rc=2
+[era] SidebarClass             rc=2
+[era] ModemGame                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x70b570 TechnoClass::UpdateBodyTilt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x718b70 Factory::CalculateExitCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x685670 Scenario::EndGameFlow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bdf70 MouseClass::LoadGameAssets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51b350 InfantryClass::CalcMoveTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ed5a0 SetupMultiplayerLobbyPlayers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x785740 ObjectClass::LeaveChannelWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5981f0 RandomMap::LoadConfig -> COMPILE_FAIL (attempt 1)
+[ledger] 0x641140 MiniMap::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b950 Control::RepositionControlsDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64b660 CompressNetworkMegaMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x560480 NetworkOptions::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62f230 ParticleSystemClass::SpawnParticle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x550260 TacticalClass::RenderCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a5360 Pathfinding::ExpandNode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45dd90 BuildingTypeClass::ConstructFull -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47ca80 CellClass::DetermineTileType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a8b30 SidebarClass::UpdateCameos -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b6020 ModemGame::ProcessPacket -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p172\batch_report.json
