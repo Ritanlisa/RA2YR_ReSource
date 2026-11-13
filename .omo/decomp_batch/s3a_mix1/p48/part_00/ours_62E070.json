@@ -1,0 +1,195 @@
+{
+ "symbol": "?DestructParticleSystemClass@ParticleSystemClass@@QAEHPAH@Z",
+ "sym_key": "ParticleSystemClass::DestructParticleSystemClass",
+ "size": 550,
+ "link_base": 0,
+ "bytes_hex": "5153568b742410b800000000ba010000008bce8906894604894608c7460c00000000e8000000008bcee8000000008b86cc00000033db3bc30f84c3000000578b7c24148b86c00000008b003bc374088b086a0150ff51208b96c00000008d4c240c57518b028b15580e000068580e000089442418ff521083f8ff74308b0d680e00003bc17d26493bc1890d680e00007d1b0fbe0d5c0e0000408b098b1481895481fc8b0d680e00003bc17ce58b8ebc0000008bbec00000008d86bc00000050ff511083f8ff742d8b8ecc0000003bc17d23493bc1898ecc00000073188b8ec0000000408b1481895481fc8b8ecc0000003bc172e8399ecc0000000f8543ffffff5f8d442408899eac0000008b0d0000000050680000000089742410ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88b0d300e00008d4424085068300e000089742410ff511083f8ff742d8b0d400e00003bc17d23493bc1890d400e00007d188b0d340e0000408b1481895481fc8b0d400e00003bc17ce88b0de00e00008d4424085068e00e000089742410ff511083f8ff742d8b0d980200003bc17d23493bc1890d980200007d188b0de40e0000408b1481895481fc8b0d980200003bc17ce88b86c0000000c786bc000000000000003bc37417389ec9000000740f50e80000000083c404899ec00000008bce889ec9000000899ec4000000e8000000005e5b59c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_ParticleSystemClass_4@@3PAXA",
+   "sym_key": "vt_ParticleSystemClass_4"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?vt_ParticleSystemClass_2@@3PAXA",
+   "sym_key": "vt_ParticleSystemClass_2"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80208@@3IA",
+   "sym_key": "DataGlobal_A80208"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80208@@3IA",
+   "sym_key": "DataGlobal_A80208"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_GameCleanupState@@3IA",
+   "sym_key": "g_GameCleanupState"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_GameCleanupState@@3IA",
+   "sym_key": "g_GameCleanupState"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8020C@@3IA",
+   "sym_key": "DataGlobal_A8020C"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?g_GameCleanupState@@3IA",
+   "sym_key": "g_GameCleanupState"
+  },
+  {
+   "off": 338,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 401,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 439,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 474,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 494,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_ParticleClass@@3PAXA",
+   "sym_key": "vt_VectorClass_ParticleClass"
+  },
+  {
+   "off": 512,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 540,
+   "type": "REL32",
+   "sym": "?Dtor@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Dtor"
+  }
+ ]
+}

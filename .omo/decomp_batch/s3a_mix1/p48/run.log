@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6297f0 ParasiteClass::DeploySquad -> ParasiteClass
+[conv] 0x62bd50 ParasiteClass::Update -> ParasiteClass
+[conv] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> ParticleSystemClass
+[conv] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> TechnoClass
+[conv] 0x635830 BuildingClass::GetDrawColor -> BuildingClass
+[conv] 0x645ba0 sub_645BA0 -> _addr_64
+[conv] 0x647040 ObjectClass::UI_Create -> ObjectClass
+[conv] 0x6470f0 ObjectClass::UI_Add -> ObjectClass
+[conv] 0x6471a0 Network::AddFrameEvent -> Network
+[conv] 0x647260 ObjectClass::ProcessNetworkEvents -> ObjectClass
+[conv] 0x653100 RadarClass::Destru_vt16 -> RadarClass
+[conv] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> JumpjetLocomotionClass
+[conv] 0x667a30 RulesClass::DTOR -> RulesClass
+[conv] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> ObjectClass
+[conv] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> SidebarClass
+[conv] 0x6a6c30 SidebarClass::Redraw -> SidebarClass
+[conv] 0x6aa600 SidebarClass::UpdateProduction -> SidebarClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x6b59a0 StandardCreateUnitAtCoords -> _addr_6B
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] ParasiteClass            rc=2
+[era] ParticleSystemClass      rc=0
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] _addr_64                 rc=2
+[era] ObjectClass              rc=2
+[era] Network                  rc=2
+[era] RadarClass               rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] RulesClass               rc=2
+[era] SidebarClass             rc=2
+[era] SmudgeTypeClass          rc=2
+[era] _addr_6B                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x62e070   MISMATCH         ParticleSystemClass::DestructParticleSystemClass
+[ledger] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6297f0 ParasiteClass::DeploySquad -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62bd50 ParasiteClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> NG (attempt 3)
+[ledger] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> COMPILE_FAIL (attempt 3)
+[ledger] 0x635830 BuildingClass::GetDrawColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x645ba0 sub_645BA0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x647040 ObjectClass::UI_Create -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6470f0 ObjectClass::UI_Add -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6471a0 Network::AddFrameEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x647260 ObjectClass::ProcessNetworkEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x653100 RadarClass::Destru_vt16 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x667a30 RulesClass::DTOR -> COMPILE_FAIL (attempt 3)
+[ledger] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a6c30 SidebarClass::Redraw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6aa600 SidebarClass::UpdateProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6b59a0 StandardCreateUnitAtCoords -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p48\batch_report.json
