@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_4C1E70@@YGHHHHHHHHHH@Z",
+ "sym_key": "Unnamed::sub_4C1E70",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "83ec108d4424088d4c2414565750518b0d00000000e8000000008b0d000000008d5424088d4424285250e8000000008b4c2424e8000000008b7424388b4c24302bf083ee02e8000000008bc88b44243c2bc18b0d0000000083e8028b510483fa018b9174010000750b8b7c243433c98a0c3aeb0a8b7c243433c9668b0c7a8b15000000006a0050568b3a518d4424188d4c24205051680000000052ff57345f5e83c410c22400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_FileSystem_THEATER_PAL@@3PAXA",
+   "sym_key": "g_FileSystem_THEATER_PAL"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

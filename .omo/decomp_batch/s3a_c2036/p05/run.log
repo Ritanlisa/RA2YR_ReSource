@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c1e70 sub_4C1E70 -> _addr_4C
+[conv] 0x4c2ce0 _VectorClass_PAVEBolt::Release -> _VectorClass_PAVEBolt
+[conv] 0x4c2e20 _DynamicVectorClass_PAVEBolt::SetCapacity -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c4a40 _VectorClass_PAVEgoClass::Release -> _VectorClass_PAVEgoClass
+[conv] 0x4c4b80 _DynamicVectorClass_PAVEgoClass::SetCapacity -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c5c00 _VectorClass_PAVEMPulseClass::Release -> _VectorClass_PAVEMPulseClass
+[conv] 0x4c5d40 _DynamicVectorClass_PAVEMPulseClass::SetCapacity -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4c65e0 EventClass::Add -> EventClass
+[conv] 0x4c66c0 EventClass::AddEvent -> EventClass
+[conv] 0x4c6720 EventClass::Add2 -> EventClass
+[conv] 0x4c6970 EventClass::AddEventEx -> EventClass
+[conv] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4d82b0 FootClass::ValidatePlacement -> FootClass
+[conv] 0x4d8fb0 FootClass::MissionDispatch -> FootClass
+[conv] 0x4e0360 _VectorClass_PAVAbstractClass::Release -> _VectorClass_PAVAbstractClass
+[conv] 0x4e05c0 _VectorClass_PAVFootClass::Release -> _VectorClass_PAVFootClass
+[conv] 0x4e94a0 _VectorClass_PAVBuildingClass::Release -> _VectorClass_PAVBuildingClass
+[conv] 0x4e95e0 _DynamicVectorClass_PAVBuildingClass::SetCapacity -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e9700 _VectorClass_PAVSuperClass::Release -> _VectorClass_PAVSuperClass
+[conv] 0x4e9840 _DynamicVectorClass_PAVSuperClass::ResizeAndCopy -> _DynamicVectorClass_PAVSuperClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _DynamicVectorClass_PAVEBolt rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+[era] EventClass               rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] FootClass                rc=2
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c1e70   MISMATCH         sub_4C1E70
+[diff] 0x4c2ce0   MISMATCH         _VectorClass_PAVEBolt::Release
+[diff] 0x4c2e20   MISMATCH         _DynamicVectorClass_PAVEBolt::SetCapacity
+[diff] 0x4c4a40   MISMATCH         _VectorClass_PAVEgoClass::Release
+[diff] 0x4c4b80   MISMATCH         _DynamicVectorClass_PAVEgoClass::SetCapacity
+[diff] 0x4c5c00   MISMATCH         _VectorClass_PAVEMPulseClass::Release
+[diff] 0x4c5d40   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::SetCapacity
+[diff] 0x4e0360   MISMATCH         _VectorClass_PAVAbstractClass::Release
+[diff] 0x4e05c0   MISMATCH         _VectorClass_PAVFootClass::Release
+[diff] 0x4e94a0   MISMATCH         _VectorClass_PAVBuildingClass::Release
+[diff] 0x4e95e0   MISMATCH         _DynamicVectorClass_PAVBuildingClass::SetCapacity
+[diff] 0x4e9700   MISMATCH         _VectorClass_PAVSuperClass::Release
+[diff] 0x4e9840   MISMATCH         _DynamicVectorClass_PAVSuperClass::ResizeAndCopy
+[ledger] 0x4c1e70 sub_4C1E70 -> NG (attempt 2)
+[ledger] 0x4c2ce0 _VectorClass_PAVEBolt::Release -> NG (attempt 2)
+[ledger] 0x4c2e20 _DynamicVectorClass_PAVEBolt::SetCapacity -> NG (attempt 2)
+[ledger] 0x4c4a40 _VectorClass_PAVEgoClass::Release -> NG (attempt 2)
+[ledger] 0x4c4b80 _DynamicVectorClass_PAVEgoClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4c5c00 _VectorClass_PAVEMPulseClass::Release -> NG (attempt 2)
+[ledger] 0x4c5d40 _DynamicVectorClass_PAVEMPulseClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4c65e0 EventClass::Add -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c66c0 EventClass::AddEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c6720 EventClass::Add2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c6970 EventClass::AddEventEx -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4d82b0 FootClass::ValidatePlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d8fb0 FootClass::MissionDispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0360 _VectorClass_PAVAbstractClass::Release -> NG (attempt 2)
+[ledger] 0x4e05c0 _VectorClass_PAVFootClass::Release -> NG (attempt 2)
+[ledger] 0x4e94a0 _VectorClass_PAVBuildingClass::Release -> NG (attempt 2)
+[ledger] 0x4e95e0 _DynamicVectorClass_PAVBuildingClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4e9700 _VectorClass_PAVSuperClass::Release -> NG (attempt 2)
+[ledger] 0x4e9840 _DynamicVectorClass_PAVSuperClass::ResizeAndCopy -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 13
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p05\batch_report.json

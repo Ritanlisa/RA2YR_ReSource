@@ -46499,14 +46499,14 @@
   "this_as_id": false
  },
  "0x4c1e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+91 cmp dword ptr [ecx + 4], 1",
   "name": "sub_4C1E70",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4C1E70",
-  "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c1f20": {
@@ -46661,15 +46661,15 @@
   "this_as_id": false
  },
  "0x4c2ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVEBolt::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EBolt::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c2d90": {
@@ -46709,15 +46709,15 @@
   "this_as_id": false
  },
  "0x4c2e20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVEBolt::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EBolt::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c2ed0": {
@@ -47232,15 +47232,15 @@
   "this_as_id": false
  },
  "0x4c4a40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVEgoClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EgoClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c4af0": {
@@ -47280,15 +47280,15 @@
   "this_as_id": false
  },
  "0x4c4b80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVEgoClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EgoClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c4c30": {
@@ -47848,15 +47848,15 @@
   "this_as_id": false
  },
  "0x4c5c00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVEMPulseClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EMPulseClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c5cb0": {
@@ -47891,15 +47891,15 @@
   "status": "NG"
  },
  "0x4c5d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVEMPulseClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_EMPulseClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c5df0": {
@@ -48358,7 +48358,7 @@
   "this_as_id": false
  },
  "0x4c65e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48382,7 +48382,7 @@
   "this_as_id": false
  },
  "0x4c66c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48394,7 +48394,7 @@
   "this_as_id": false
  },
  "0x4c6720": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48442,7 +48442,7 @@
   "this_as_id": false
  },
  "0x4c6970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51335,7 +51335,7 @@
   "this_as_id": false
  },
  "0x4d2bc0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51881,7 +51881,7 @@
   "this_as_id": false
  },
  "0x4d82b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51941,7 +51941,7 @@
   "this_as_id": false
  },
  "0x4d8fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53316,15 +53316,15 @@
   "this_as_id": false
  },
  "0x4e0360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVAbstractClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AbstractClassVector::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e0410": {
@@ -53400,15 +53400,15 @@
   "this_as_id": false
  },
  "0x4e05c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVFootClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FoggedObjectClass_42::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e0670": {
@@ -58524,15 +58524,15 @@
   "this_as_id": false
  },
  "0x4e94a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVBuildingClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_Building::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9550": {
@@ -58572,15 +58572,15 @@
   "this_as_id": false
  },
  "0x4e95e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVBuildingClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ParticleSystemClass_32::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9690": {
@@ -58608,15 +58608,15 @@
   "this_as_id": false
  },
  "0x4e9700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVSuperClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_SuperClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e97b0": {
@@ -58656,15 +58656,15 @@
   "this_as_id": false
  },
  "0x4e9840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVSuperClass::ResizeAndCopy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_SuperPtr::ResizeAndCopy",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e98f0": {
