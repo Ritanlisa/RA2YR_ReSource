@@ -1,0 +1,11 @@
+{
+ "addr": "0x744640",
+ "name": "UnitClass::PowerDrainUpdate",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x744640",
+ "bytes_hex": "56578b7c240c8bf157e88274d9ff8b8ec40600008b01ff502c508bcfe8efd6d5ff8b86c406000083c004508b08ff5110508bcfe8d8d6d5ff8b86c806000085c074128b500483c00450ff5210508bcfe8bcd6d5ff8b86cc0600008bcf50e8aed6d5ff8a8ed0060000518bcfe8f0d5d5ff8a96d10600008bcf52e8e2d5d5ff8a86d20600008bcf50e8d4d5d5ff8a8e87060000518bcfe8c6d5d5ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

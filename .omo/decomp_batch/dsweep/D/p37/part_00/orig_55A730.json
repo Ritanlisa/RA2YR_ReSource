@@ -1,0 +1,11 @@
+{
+ "addr": "0x55A730",
+ "name": "Turret::GetTransform",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55A730",
+ "bytes_hex": "83ec3456578d4c240ce8224105008b7c24408d442408508b4f0881c188030000e87becf6ff8b08c1e90a41d1e983e11f83e908894c244051db4424448d4c2410dc0d08447e00d91c24e8224a05008b74244885f674308b0683f8ff7429c1e00589068b4f088d54244081c18803000052e82becf6ff8b008b0ec1e80a40d1e883e01f0bc8890e8b442444b90c0000008d74240c8bf8f3a55f5e83c434c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

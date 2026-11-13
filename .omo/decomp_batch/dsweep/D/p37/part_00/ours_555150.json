@@ -1,0 +1,75 @@
+{
+ "symbol": "?CopyTo@LightSourceClass@@QAEPAPAXD@Z",
+ "sym_key": "LightSourceClass::CopyTo",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b800000000ba01000000890689460489460889460ce8000000008b0d180400008d4424045068180400008974240cff511083f8ff742d8b0d280400003bc17d23493bc1890d280400007d188b0d1c040000408b1481895481fc8b0d280400003bc17ce88a464884c0740d6a008bcec6464800e8000000008bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_LightSourceClass_4@@3PAXA",
+   "sym_key": "vt_LightSourceClass_4"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?ScrollView@TacticalClass@@QAEDD@Z",
+   "sym_key": "TacticalClass::ScrollView"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

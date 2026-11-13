@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetTransform@LocomotionClass@@QAGPAMPAM0@Z",
+ "sym_key": "LocomotionClass::GetTransform",
+ "size": 175,
+ "link_base": 0,
+ "bytes_hex": "83ec348b44243856578d4c240c89442440e8000000008b4c24408d542408528b41088d79088b8888030000e8000000008b08c1e90a41d1e983e11f83e908894c244051db4424448b4c2410dc0d00000000d91c24e8000000008b74244885f67435813e000080bf742dd906d80d000000008d54244052d91e8b078b8888030000e8000000008b088b06c1e90a41d1e983e11f0bc189068b442444b90c0000008d74240c8bf8f3a55f5e83c434c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Identity@Matrix3x4@@QAEHXZ",
+   "sym_key": "Matrix3x4::Identity"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "__real@8@bffcc90fdaa22168c800",
+   "sym_key": "_real@8@bffcc90fdaa22168c800"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Rotate@Matrix2D@@QAEXM@Z",
+   "sym_key": "Matrix2D::Rotate"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "__real@4@40048000000000000000",
+   "sym_key": "_real@4@40048000000000000000"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  }
+ ]
+}

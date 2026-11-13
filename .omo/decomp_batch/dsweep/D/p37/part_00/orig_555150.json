@@ -1,0 +1,11 @@
+{
+ "addr": "0x555150",
+ "name": "LightSourceClass::CopyTo",
+ "size": 161,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x555150",
+ "bytes_hex": "51568bf1b201c70628d07e00c746040cd07e00c7460804d07e00c7460cfccf7e00e85a071d008b1510caab008d44240450b910caab0089742408ff521083f8ff742d8b0d20caab003bc17d23493bc1890d20caab007d188b0d14caab00408b1481895481fc8b0d20caab003bc17ce88a464884c0740d6a008bcec6464800e81df9ffff8bcee816b0ebfff644240c01740956e85639270083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

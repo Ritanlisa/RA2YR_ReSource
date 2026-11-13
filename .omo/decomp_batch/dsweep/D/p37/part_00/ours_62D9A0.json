@@ -1,0 +1,75 @@
+{
+ "symbol": "?UpdateParticle@ParticleClass@@QAEPAPAXD@Z",
+ "sym_key": "ParticleClass::UpdateParticle",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "51568bf1b8000000008906894604c746080000000089460ce8000000008b54240c8bce80e20183ca01e8000000008d442404c786ac000000000000008b0d780000005068780000008974240cff511083f8ff74358a0d880000000fbed13bc27d28fec9880d880000000fbec93bc17d198b0d7c000000408b1481895481fc0fbe0d880000003bc17ce78bcee800000000f644240c01740956e80000000083c4048bc65e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_ParticleClass_4@@3PAXA",
+   "sym_key": "vt_ParticleClass_4"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Undeploy@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Undeploy"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Dtor@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Dtor"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?UpdateAllSilos@HouseClass@@QAEDHH@Z",
+ "sym_key": "HouseClass::UpdateAllSilos",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "8b442408555633f6578bf985c07424db44241083ec08da74241cdc0d00000000dc0500000000dd1c24e80000000083c4088bf08b8f1003000033c085c9742f8d8ffc020000e800000000db871003000083ec08d8f9dc0d00000000dc0500000000dd1c24ddd8e80000000083c4083bf0745b8b6f7833f685ed7e52538b5f6c8b04b385c0743f33c980e3008a88810000008bd10bda84db752c8b882005000033d222db8a91a81600008bca0bd984db74148b106a0250ff922401000033c325ff00000033d8463bf57cb28ac35b5f5e5dc20800",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?dbl_7E3CC8@@3NA",
+   "sym_key": "dbl_7E3CC8"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?dbl_7E3CC8@@3NA",
+   "sym_key": "dbl_7E3CC8"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

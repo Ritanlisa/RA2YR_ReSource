@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F9970",
+ "name": "HouseClass::UpdateAllSilos",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F9970",
+ "bytes_hex": "8b442408535633f6578bf985c0741bdb442410da742414dc0dc83c7e00dc0538177e00e868c52c008bf08b8f1003000033c085c974228d8ffc020000e89ffc1c00dab710030000dc0dc83c7e00dc0538177e00e838c52c003bf0743c8b5f7833f685db7e338b476c8b0cb085c974248a818100000084c0751a8b91200500008a82a816000084c0740a8b016a02ff9024010000463bf37ccd5f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

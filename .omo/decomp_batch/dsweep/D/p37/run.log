@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f9970 HouseClass::UpdateAllSilos -> HouseClass
+[conv] 0x4528a0 TechnoClass::sub_4528A0 -> TechnoClass
+[conv] 0x7badc0 XSurface::DrawRectEx -> XSurface
+[conv] 0x62d9a0 ParticleClass::UpdateParticle -> ParticleClass
+[conv] 0x76ebe0 MSSfxClass::FindByName -> MSSfxClass
+[conv] 0x5eff70 Network::handleTimeout -> Network
+[conv] 0x7b7740 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740 -> ObjectClass
+[conv] 0x4a3970 LoadFileClassToBuffer -> _addr_4A
+[conv] 0x55a730 LocomotionClass::GetTransform -> LocomotionClass
+[conv] 0x72fbc0 Sides::MixFileYuriFiles3 -> Sides
+[conv] 0x699450 ScenarioClass::SaveMultiplayerSettings -> ScenarioClass
+[conv] 0x557600 ListClass::Destruct -> ListClass
+[conv] 0x644700 ParticleSystemTypeClass::PowerDrainUpdate -> ParticleSystemTypeClass
+[conv] 0x747f70 UnitTypeClass::PowerDrainUpdate -> UnitTypeClass
+[conv] 0x744640 UnitClass::PowerDrainUpdate -> UnitClass
+[conv] 0x77d3f0 ObjectClass::sub_77D3F0 -> ObjectClass
+[conv] 0x7b1ab0 WinsockInterfaceClass::WinsockInterfaceClass -> WinsockInterfaceClass
+[conv] 0x521c90 InfantryClass::PowerDrainUpdate -> InfantryClass
+[conv] 0x555150 LightSourceClass::CopyTo -> LightSourceClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] TechnoClass              rc=0
+[era] XSurface                 rc=2
+[era] ParticleClass            rc=0
+[era] MSSfxClass               rc=2
+[era] Network                  rc=2
+[era] ObjectClass              rc=0
+[era] _addr_4A                 rc=0
+[era] LocomotionClass          rc=0
+[era] Sides                    rc=2
+[era] ScenarioClass            rc=0
+[era] ListClass                rc=0
+[era] ParticleSystemTypeClass  rc=2
+[era] UnitTypeClass            rc=2
+[era] UnitClass                rc=0
+[era] WinsockInterfaceClass    rc=2
+[era] InfantryClass            rc=0
+[era] LightSourceClass         rc=0
+=== diffasm byte-compare ===
+[diff] 0x4f9970   MISMATCH         HouseClass::UpdateAllSilos
+[diff] 0x4528a0   MISMATCH         TechnoClass::sub_4528A0
+[diff] 0x62d9a0   MISMATCH         ParticleClass::UpdateParticle
+[diff] 0x7b7740   MISMATCH         ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740
+[diff] 0x77d3f0   MISMATCH         ObjectClass::sub_77D3F0
+[diff] 0x4a3970   MISMATCH         LoadFileClassToBuffer
+[diff] 0x55a730   MISMATCH         LocomotionClass::GetTransform
+[diff] 0x699450   MISMATCH         ScenarioClass::SaveMultiplayerSettings
+[diff] 0x557600   MISMATCH         ListClass::Destruct
+[diff] 0x744640   MISMATCH         UnitClass::PowerDrainUpdate
+[diff] 0x521c90   MISMATCH         InfantryClass::PowerDrainUpdate
+[diff] 0x555150   MISMATCH         LightSourceClass::CopyTo
+[ledger] 0x4f9970 HouseClass::UpdateAllSilos -> NG (attempt 1)
+[ledger] 0x4528a0 TechnoClass::sub_4528A0 -> NG (attempt 1)
+[ledger] 0x7badc0 XSurface::DrawRectEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62d9a0 ParticleClass::UpdateParticle -> NG (attempt 1)
+[ledger] 0x76ebe0 MSSfxClass::FindByName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eff70 Network::handleTimeout -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7740 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start_7B7740 -> NG (attempt 1)
+[ledger] 0x4a3970 LoadFileClassToBuffer -> NG (attempt 1)
+[ledger] 0x55a730 LocomotionClass::GetTransform -> NG (attempt 1)
+[ledger] 0x72fbc0 Sides::MixFileYuriFiles3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x699450 ScenarioClass::SaveMultiplayerSettings -> NG (attempt 1)
+[ledger] 0x557600 ListClass::Destruct -> NG (attempt 1)
+[ledger] 0x552cc0 0x552cc0 -> PENDING (attempt 1)
+[ledger] 0x644700 ParticleSystemTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747f70 UnitTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x744640 UnitClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x77d3f0 ObjectClass::sub_77D3F0 -> NG (attempt 1)
+[ledger] 0x7b1ab0 WinsockInterfaceClass::WinsockInterfaceClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x521c90 InfantryClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x555150 LightSourceClass::CopyTo -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 7,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "frame_sched": 1,
+  "codegen_shape": 3,
+  "const_fold": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p37\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x62D9A0",
+ "name": "ParticleClass::UpdateParticle",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62D9A0",
+ "bytes_hex": "51568bf1c70654f97e00c7460438f97e00c7460830f97e00c7460c28f97e00e86c73fcffb2018bcee8037f0f00c786ac000000000000008b15c83da8008d442404b9c83da8005089742408ff521083f8ff742d8b0dd83da8003bc17d23493bc1890dd83da8007d188b0dcc3da800408b1481895481fc8b0dd83da8003bc17ce88bcee85961fcfff644240c01740956e809b1190083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

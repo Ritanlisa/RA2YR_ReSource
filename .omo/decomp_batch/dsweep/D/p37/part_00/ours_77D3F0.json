@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_77D3F0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_77D3F0",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "515355568bf185f657750a5f5e5d32c05b59c204000fbe05000000008d4c24108b1851e80000000083c40433ff85db7e658d6e3685ff7c210fbe15000000003b3a7d160fbe05080000008b088d14b98d4c241052e8000000008d4c24108bf5e8000000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c0741c473bfb7c9e8d44241050e80000000083c40432c05f5e5d5b59c204008d4c241051e80000000083c404b0015f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

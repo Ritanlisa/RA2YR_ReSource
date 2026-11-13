@@ -1,0 +1,57 @@
+{
+ "symbol": "?LoadFileClassToBuffer@@YIHPAPADPA_N@Z",
+ "sym_key": "Unnamed::LoadFileClassToBuffer",
+ "size": 175,
+ "link_base": 0,
+ "bytes_hex": "83ec6c53568bdae8000000008bf032d28bcec60300e80000000085c00f858700000057568d4c2424e80000000033f68d4424208b4c24205650ff511484c074308b4424208d54242052ff502c8bf857e8000000008bf083c40485f60f94c085f674138b542420578d4c24245651ff522485f60f94c084c00f94c08d4c240c8803c744242000000000c744241800000000e8000000008d4c2420c744242000000000e8000000008bc65f5e5b83c46cc3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

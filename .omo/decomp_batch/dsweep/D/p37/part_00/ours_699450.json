@@ -1,0 +1,135 @@
+{
+ "symbol": "?SaveMultiplayerSettings@ScenarioClass@@QAEXXZ",
+ "sym_key": "ScenarioClass::SaveMultiplayerSettings",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "83ec24568bf168000000008d4c2408e8000000008a86d91e0000b9000000005068000000006800000000e8000000008a8ed81e00005168000000006800000000b900000000e8000000008a96c11f0000b9000000005268000000006800000000e8000000008a86c01f0000b9000000005068000000006800000000e8000000008d4c24046a0051b900000000e8000000008d4c2404e8000000005e83c424c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?aRa2mdIni@@3PADA",
+   "sym_key": "aRa2mdIni"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F13C@@3PADA",
+   "sym_key": "DataGlobal_83F13C"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?aMultiplayer@@3PADA",
+   "sym_key": "aMultiplayer"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F130@@3PADA",
+   "sym_key": "DataGlobal_83F130"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?aMultiplayer@@3PADA",
+   "sym_key": "aMultiplayer"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F120@@3PADA",
+   "sym_key": "DataGlobal_83F120"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?aMultiplayer@@3PADA",
+   "sym_key": "aMultiplayer"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F110@@3PADA",
+   "sym_key": "DataGlobal_83F110"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?aMultiplayer@@3PADA",
+   "sym_key": "aMultiplayer"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?WriteDigest@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::WriteDigest"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}

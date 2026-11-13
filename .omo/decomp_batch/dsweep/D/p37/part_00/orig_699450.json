@@ -1,0 +1,11 @@
+{
+ "addr": "0x699450",
+ "name": "ScenarioClass::SaveMultiplayerSettings",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x699450",
+ "bytes_hex": "83ec24568bf168446482008d4c2408e81c36fcff8a86d91e0000b9c070880050683cf18300682c648200e8e100e9ff8a8ed81e0000516830f18300682c648200b9c0708800e8c600e9ff8a96c11f0000b9c0708800526820f18300682c648200e8ab00e9ff8a86c01f0000b9c0708800506810f18300682c648200e89000e9ff8d4c24046a0051b9c0708800e84fafddff8d4c2404e81635fcff5e83c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

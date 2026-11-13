@@ -1,0 +1,69 @@
+{
+ "symbol": "?PowerDrainUpdate@InfantryClass@@QAEEPAH@Z",
+ "sym_key": "InfantryClass::PowerDrainUpdate",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e8000000008b86c40600005057e8000000008b86c80600008b8ed006000083f8ff74188b15540a0000538bda2bd83bd95b7c0433c9eb042bc203c85157e8000000008b8ed40600005157e8000000008a96dc0600008bcf8854240c8b44240c50e8000000008a8edc0600008944240c884c240c8bcf8b54240c52e8000000008a86dc0600008844240c8b4c240c518bcfe8000000008a96dc0600008bcf8854240c8b44240c50e8000000008a8edc0600008944240c884c240c8bcf8b54240c52e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?BeginPowerUpdate@FootClass@@QAEHPAX@Z",
+   "sym_key": "FootClass::BeginPowerUpdate"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  }
+ ]
+}

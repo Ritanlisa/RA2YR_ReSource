@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A3970",
+ "name": "LoadFileClassToBuffer",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A3970",
+ "bytes_hex": "83ec6c56578bfae8c41a31008bf032d28bcec60700e82607110085c0757a53568d4c2410e85700fdff33f68d4c240c8b44240c56ff501484c074298b54240c8d4c240cff522c8bd853e8595432008bf083c40485f6740f8b44240c53568d4c2414ff502485f60f95c1880f8d4c2464c744240cb0167e00c744247000000000e85c74f9ff8d4c240cc744240c68167e00e87be1f8ff8bc65b5f5e83c46cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
