@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p143\part_00
+=== convert (20 addrs) ===
+[conv] 0x579320 InitializeTileNeighborTable -> _addr_57
+[conv] 0x6579e0 Game::ManageGameSpeed -> Game
+[conv] 0x50b370 HouseClass::ShouldDisableCameo -> HouseClass
+[conv] 0x78a8f0 ObjectClass::HandleReplyWOL -> ObjectClass
+[conv] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> TechnoClass
+[conv] 0x697b70 SessionClass::CreateConnections -> SessionClass
+[conv] 0x70bf50 BuildingClass::AllocAndCtor -> BuildingClass
+[conv] 0x775db0 CacheRenderedText -> _addr_77
+[conv] 0x5e7160 ObjectClass::HandleMultiplayerMapSelection -> ObjectClass
+[conv] 0x459900 BuildingClass::SpawnParticles -> BuildingClass
+[conv] 0x4f5190 HouseClass::Constructor -> HouseClass
+[conv] 0x579010 Cliff::ProcessTransitions -> Cliff
+[conv] 0x432750 BinkMovie::InitFromFile -> BinkMovie
+[conv] 0x5ba660 Game::BuildGameSetupPacket -> Game
+[conv] 0x7b10c0 IPXInterfaceClass::Bind -> IPXInterfaceClass
+[conv] 0x597a30 MapSeedClass::AddRef -> MapSeedClass
+[conv] 0x733e10 SelectFactionThemeMusic -> _addr_73
+[conv] 0x692300 Tactical::MouseOver -> Tactical
+[conv] 0x7cfb13 ObjectClass::___sbh_alloc_block -> ObjectClass
+[conv] 0x6a6300 SidebarClass::AddCameo -> SidebarClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_57                 rc=0
+[era] Game                     rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] SessionClass             rc=2
+[era] BuildingClass            rc=0
+[era] _addr_77                 rc=0
+[era] Cliff                    rc=2
+[era] BinkMovie                rc=2
+[era] IPXInterfaceClass        rc=2
+[era] MapSeedClass             rc=2
+[era] _addr_73                 rc=2
+[era] Tactical                 rc=2
+[era] SidebarClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x579320   MISMATCH         InitializeTileNeighborTable
+[diff] 0x5ba660   MISMATCH         Game::BuildGameSetupPacket
+[diff] 0x4f5190   MISMATCH         HouseClass::Constructor
+[diff] 0x7cfb13   MISMATCH         ObjectClass::___sbh_alloc_block
+[diff] 0x70bf50   MISMATCH         BuildingClass::AllocAndCtor
+[diff] 0x459900   MISMATCH         BuildingClass::SpawnParticles
+[diff] 0x775db0   MISMATCH         CacheRenderedText
+[ledger] 0x579320 InitializeTileNeighborTable -> NG (attempt 1)
+[ledger] 0x6579e0 Game::ManageGameSpeed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50b370 HouseClass::ShouldDisableCameo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78a8f0 ObjectClass::HandleReplyWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x697b70 SessionClass::CreateConnections -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70bf50 BuildingClass::AllocAndCtor -> NG (attempt 1)
+[ledger] 0x775db0 CacheRenderedText -> NG (attempt 1)
+[ledger] 0x5e7160 ObjectClass::HandleMultiplayerMapSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459900 BuildingClass::SpawnParticles -> NG (attempt 1)
+[ledger] 0x4f5190 HouseClass::Constructor -> NG (attempt 1)
+[ledger] 0x579010 Cliff::ProcessTransitions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432750 BinkMovie::InitFromFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ba660 Game::BuildGameSetupPacket -> NG (attempt 1)
+[ledger] 0x7b10c0 IPXInterfaceClass::Bind -> COMPILE_FAIL (attempt 1)
+[ledger] 0x597a30 MapSeedClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x733e10 SelectFactionThemeMusic -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692300 Tactical::MouseOver -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cfb13 ObjectClass::___sbh_alloc_block -> NG (attempt 1)
+[ledger] 0x6a6300 SidebarClass::AddCameo -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "cc_mismatch": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p143\batch_report.json

@@ -1,0 +1,471 @@
+{
+ "symbol": "?AllocAndCtor@BuildingClass@@QAGHHH@Z",
+ "sym_key": "BuildingClass::AllocAndCtor",
+ "size": 767,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53568b742410508bcee80000000033db3bc30f8cde020000558d8e1c02000057516800000000899e14050000e8000000008dbe04030000bd08000000576800000000e80000000083c7044d75ef8d964c010000526800000000e8000000008d86e4020000506800000000e8000000008d8e18020000516800000000e8000000008d9600050000526800000000e8000000008d86b4020000506800000000e8000000008d8eb8020000516800000000e8000000008d96bc020000526800000000e8000000008d8634040000506800000000e8000000008d8ed0020000516800000000e8000000008d96d8020000526800000000e8000000008d86dc020000506800000000e8000000008d8ec0020000516800000000e8000000008d96cc020000526800000000e8000000008d86e0020000506800000000e8000000008d8ed4020000516800000000e8000000008d9618050000526800000000e8000000008d861c050000506800000000e8000000008d8e74020000516800000000e8000000008d9678020000526800000000e8000000008d8694020000506800000000e8000000008d8ecc010000516800000000e8000000008d96d0010000526800000000e8000000008d861c010000506800000000e8000000008d8ea8020000516800000000e8000000008d96ac020000526800000000e8000000008d86b0020000506800000000e8000000008d8e28040000516800000000e8000000008d962c040000526800000000e8000000008d8618010000506800000000e8000000008d8e24030000516800000000e8000000008d9630010000526800000000e8000000008d862c010000506800000000e8000000008d8ec8020000516800000000e8000000008d96d4010000526800000000e8000000008d8e88040000e8000000008d8ea4040000c7869c04000001000000899ea0040000e8000000008d8ec0040000889eb8040000899ebc040000e8000000008d8edc040000889ed4040000899ed8040000e80000000083c8ff5f8986f00400008986f404000033c05d5e5bc20c00",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?LoadState@RadioClass@@QAEHH@Z",
+   "sym_key": "RadioClass::LoadState"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 361,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 366,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 378,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 400,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 412,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 417,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 429,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 434,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 446,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 451,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 463,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 468,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 497,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 502,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 514,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 519,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 531,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 536,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 548,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 553,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 565,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 570,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 582,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 587,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 599,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 604,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 616,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 621,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 633,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 638,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 650,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 655,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHPAXH@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 666,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 693,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 716,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 739,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  }
+ ]
+}

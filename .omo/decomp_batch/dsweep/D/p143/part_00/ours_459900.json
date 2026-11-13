@@ -1,0 +1,231 @@
+{
+ "symbol": "?SpawnParticles@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::SpawnParticles",
+ "size": 666,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf1578b86200500008bb87407000085ff0f84750200000fbe4c24148b90cc0700008ba86c15000089118b88d00700000fbe5424148b1d00000000894c24188b123bd375183b0d0000000075108b80d40700008b0d000000003bc1745968000000008d4c2418e80000000084c075476800010000e80000000083c40485c0742c0fbe4c24148b969c0000006a008b196800000000568d4c241c6a0003d351578bc889542428e800000000eb0233c0558bc8e8000000008b96200500000fbe4c24148b82780700008b1089118b48040fbe5424148b1d00000000894c24188b123bd375153b0d00000000750d8b40088b0d000000003bc1745968000000008d4c2418e80000000084c075476800010000e80000000083c40485c0742c0fbe4c24148b969c0000006a008b196800000000568d4c241c6a0003d351578bc889542428e800000000eb0233c0558bc8e8000000008b96200500000fbe4c24148b82840700008b1089118b48040fbe5424148b1d00000000894c24188b123bd375153b0d00000000750d8b40088b0d000000003bc1745968000000008d4c2418e80000000084c075476800010000e80000000083c40485c0742c0fbe4c24148b969c0000006a008b196800000000568d4c241c6a0003d351578bc889542428e800000000eb0233c0558bc8e8000000008b96200500008b8a900700000fbe5424148b0189028b1d000000008b51043bc38954241875153b1500000000750d8b49088b15000000003bca746568000000008d4c2418e80000000084c075536800010000e80000000083c40485c0743a0fbe5424148b8e9c0000006a008b1a680000000003cb568d54241c6a00894c242052578bc8e800000000558bc8e8000000005f5e5d5b83c40cc35533c9e8000000005f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C870@@3IA",
+   "sym_key": "DataGlobal_89C870"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Equals@Coord3D@@QAEHPAX@Z",
+   "sym_key": "Coord3D::Equals"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?SetMember59@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetMember59"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C870@@3IA",
+   "sym_key": "DataGlobal_89C870"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?Equals@Coord3D@@QAEHPAX@Z",
+   "sym_key": "Coord3D::Equals"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?SetMember59@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetMember59"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 390,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 401,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C870@@3IA",
+   "sym_key": "DataGlobal_89C870"
+  },
+  {
+   "off": 419,
+   "type": "REL32",
+   "sym": "?Equals@Coord3D@@QAEHPAX@Z",
+   "sym_key": "Coord3D::Equals"
+  },
+  {
+   "off": 433,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 482,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "?SetMember59@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetMember59"
+  },
+  {
+   "off": 521,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 538,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 549,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C870@@3IA",
+   "sym_key": "DataGlobal_89C870"
+  },
+  {
+   "off": 567,
+   "type": "REL32",
+   "sym": "?Equals@Coord3D@@QAEHPAX@Z",
+   "sym_key": "Coord3D::Equals"
+  },
+  {
+   "off": 581,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 608,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 630,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  },
+  {
+   "off": 638,
+   "type": "REL32",
+   "sym": "?SetMember59@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetMember59"
+  },
+  {
+   "off": 654,
+   "type": "REL32",
+   "sym": "?SetMember59@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetMember59"
+  }
+ ]
+}

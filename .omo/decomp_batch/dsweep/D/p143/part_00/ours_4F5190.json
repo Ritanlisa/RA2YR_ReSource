@@ -1,0 +1,309 @@
+{
+ "symbol": "?Constructor@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::Constructor",
+ "size": 815,
+ "link_base": 0,
+ "bytes_hex": "8b442404535556578bf150e80000000033db33c953e800000000bf0a0000008d6e50c746380000000053897e4c538bcd895e48e800000000c74500000000008d6e6853897e64538bcd895e60e800000000c74500000000008dae8000000053897e7c538bcd895e78e800000000c74500000000008dae980000005389be94000000538bcd889e90000000e800000000c74500000000008daeb00000005389beac000000538bcd899ea8000000e800000000c74500000000008daec80000005389bec4000000538bcd899ec0000000e800000000c74500000000008daee00000005389bedc000000538bcd899ed8000000e800000000c74500000000008daef800000089bef000000053899ef0000000538bcd899ef4000000e800000000c745000000000089be08010000899e080100008dae1001000053538bcd899e0c010000e800000000c74500000000008dae2801000089be2001000053899e20010000538bcd899e24010000e800000000c74500000000008dae400100005389be3c010000538bcd899e38010000e8000000005333c9c745000000000089be54010000899e50010000e8000000005333c9c7866c0100000000000089be80010000899e7c010000e800000000c786540200000000000089be68020000899e640200008b0d00000000898e800200008d8e00550000899e88020000e8000000008d8e14550000e8000000008d8e28550000e8000000008d8e3c550000e8000000008d8e50550000e8000000008d8e64550000e8000000008d8e78550000e8000000008d8e8c550000e8000000008d8ea0550000e8000000008d8eb4550000e8000000008d8ec8550000e8000000008d8edc550000e8000000005333c9e8000000005333c9c786045600000000000089be18560000899e14560000e80000000089be30560000c7861c56000000000000899e2c5600008dbe70560000bd030000008bcfe80000000083c72c4d75f38b4c2414e800000000b800000000c7867060010001000000899e78600100890689460489460889460c89462489462889462c899e68600100899e6c600100889e70600100c7866460010000000000c7867c60010000002440899e746001008bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Construct@TagClassVector@@QAEPAV1@H@Z",
+   "sym_key": "TagClassVector::Construct"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_TagClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_TagClass"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 395,
+   "type": "REL32",
+   "sym": "?BuildingConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::BuildingConstructor"
+  },
+  {
+   "off": 405,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_BuildingClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_BuildingClass"
+  },
+  {
+   "off": 422,
+   "type": "REL32",
+   "sym": "?Construct@StartingTechnoVector@@QAEPAV1@H@Z",
+   "sym_key": "StartingTechnoVector::Construct"
+  },
+  {
+   "off": 435,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_HouseClass_StartingTechnoStruct@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_HouseClass_StartingTechnoStruct"
+  },
+  {
+   "off": 452,
+   "type": "REL32",
+   "sym": "?Construct@SuperClassVector@@QAEPAV1@H@Z",
+   "sym_key": "SuperClassVector::Construct"
+  },
+  {
+   "off": 462,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_SuperClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_SuperClass"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 503,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 514,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 536,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 547,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 558,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 569,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 580,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 591,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 602,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 613,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 624,
+   "type": "REL32",
+   "sym": "?Construct@CounterClass@@QAEPAIXZ",
+   "sym_key": "CounterClass::Construct"
+  },
+  {
+   "off": 632,
+   "type": "REL32",
+   "sym": "?Construct@AngerVector@@QAEPAV1@H@Z",
+   "sym_key": "AngerVector::Construct"
+  },
+  {
+   "off": 645,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_AngerStruct@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_AngerStruct"
+  },
+  {
+   "off": 662,
+   "type": "REL32",
+   "sym": "?Construct@ScoutVector@@QAEPAV1@H@Z",
+   "sym_key": "ScoutVector::Construct"
+  },
+  {
+   "off": 678,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_ScoutStruct@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_ScoutStruct"
+  },
+  {
+   "off": 702,
+   "type": "REL32",
+   "sym": "?initDropshipData@HouseClass@@QAEPAV1@XZ",
+   "sym_key": "HouseClass::initDropshipData"
+  },
+  {
+   "off": 717,
+   "type": "REL32",
+   "sym": "?Construct@BaseClass@@QAEPAIXZ",
+   "sym_key": "BaseClass::Construct"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "?vt_HouseClass@@3PAXA",
+   "sym_key": "vt_HouseClass"
+  },
+  {
+   "off": 786,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_IConnectionPoint@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_IConnectionPoint"
+  }
+ ]
+}
