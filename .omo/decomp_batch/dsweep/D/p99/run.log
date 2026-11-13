@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p99\part_00
+=== convert (20 addrs) ===
+[conv] 0x663b40 SessionClass::BuildLobbyPlayerList -> SessionClass
+[conv] 0x4684e0 BulletClass::ProcessImpact -> BulletClass
+[conv] 0x423930 AnimClass::UpdateProjectileTrajectory -> AnimClass
+[conv] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> ObjectClass
+[conv] 0x5a7d00 Map_Helper_5A7D00 -> Map_Helper
+[conv] 0x7bb920 Draw::Ellipse -> Draw
+[conv] 0x522340 InfantryClass::CalculateApproachPath -> InfantryClass
+[conv] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> ObjectClass
+[conv] 0x58d410 RandomMap::TerrainAlloc -> RandomMap
+[conv] 0x452bb0 BuildingClass::FindBridgeSegment -> BuildingClass
+[conv] 0x5c0640 Render_Play -> Render
+[conv] 0x635f80 FactoryClass::FindAvailable -> FactoryClass
+[conv] 0x65b9c0 RadSiteClass::Radiate -> RadSiteClass
+[conv] 0x7d0dba __write_lk -> _addr_7D
+[conv] 0x578100 CellSystem::UpdateVisibility -> CellSystem
+[conv] 0x501210 HouseClass::SaveToINI -> HouseClass
+[conv] 0x41b430 AircraftClass::LoadFromStream -> AircraftClass
+[conv] 0x6b1170 SlaveManagerClass::LoadManager -> SlaveManagerClass
+[conv] 0x5f7900 TechnoTypeClass::FindMatchingUnit -> TechnoTypeClass
+[conv] 0x6e2390 TActionClass::CreateWeaponImpactAtWaypoint -> TActionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SessionClass             rc=2
+[era] BulletClass              rc=2
+[era] AnimClass                rc=2
+[era] ObjectClass              rc=2
+[era] Map_Helper               rc=2
+[era] Draw                     rc=0
+[era] InfantryClass            rc=2
+[era] RandomMap                rc=2
+[era] BuildingClass            rc=0
+[era] Render                   rc=2
+[era] FactoryClass             rc=0
+[era] RadSiteClass             rc=0
+[era] _addr_7D                 rc=2
+[era] CellSystem               rc=2
+[era] HouseClass               rc=2
+[era] AircraftClass            rc=2
+[era] SlaveManagerClass        rc=0
+[era] TechnoTypeClass          rc=0
+[era] TActionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x7bb920   MISMATCH         Draw::Ellipse
+[diff] 0x452bb0   MISMATCH         BuildingClass::FindBridgeSegment
+[diff] 0x635f80   MISMATCH         FactoryClass::FindAvailable
+[diff] 0x65b9c0   MISMATCH         RadSiteClass::Radiate
+[diff] 0x6b1170   MISMATCH         SlaveManagerClass::LoadManager
+[diff] 0x5f7900   MISMATCH         TechnoTypeClass::FindMatchingUnit
+[diff] 0x6e2390   MISMATCH         TActionClass::CreateWeaponImpactAtWaypoint
+[ledger] 0x663b40 SessionClass::BuildLobbyPlayerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4684e0 BulletClass::ProcessImpact -> COMPILE_FAIL (attempt 1)
+[ledger] 0x423930 AnimClass::UpdateProjectileTrajectory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7d00 Map_Helper_5A7D00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bb920 Draw::Ellipse -> NG (attempt 1)
+[ledger] 0x522340 InfantryClass::CalculateApproachPath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58d410 RandomMap::TerrainAlloc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452bb0 BuildingClass::FindBridgeSegment -> NG (attempt 1)
+[ledger] 0x5c0640 Render_Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635f80 FactoryClass::FindAvailable -> NG (attempt 1)
+[ledger] 0x65b9c0 RadSiteClass::Radiate -> NG (attempt 1)
+[ledger] 0x7d0dba __write_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x578100 CellSystem::UpdateVisibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x501210 HouseClass::SaveToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41b430 AircraftClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1170 SlaveManagerClass::LoadManager -> NG (attempt 1)
+[ledger] 0x5f7900 TechnoTypeClass::FindMatchingUnit -> NG (attempt 1)
+[ledger] 0x6e2390 TActionClass::CreateWeaponImpactAtWaypoint -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 2,
+  "regalloc": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p99\batch_report.json

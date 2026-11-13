@@ -1,0 +1,63 @@
+{
+ "symbol": "?Radiate@RadSiteClass@@QAIHXZ",
+ "sym_key": "RadSiteClass::Radiate",
+ "size": 409,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec500fbf41420fbf51405355568b71442bc62bd657894c241c8d7c70018d347289742438463bc78954243c89742424897c2438894424200f8d4d0100008b442424895424183bd00f8d2c010000eb048b4c241c668b442418668b54242066894424148d414050b900000000668954241ae8000000008bf08d44241450b900000000e8000000008b0e8d54244852568be8ff51488b308b78048b58088b45008d4c24545155ff50488b288b48082bf52bd9897424308b70042bfe895c2428db442428897c242c83ec08db442434db442438d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e800000000dd5c24388b54243c8b4424385250e8000000008b54242c83c410c744244000000000c7442444000000008b4a483bc1894c242c7f152bc8894c2430db442430da74242cda4a4cdd5c24408d4c241451b900000000e8000000008b5424448b4c244052518bc8e8000000008b4424188b4c2424403bc1894424180f8ce2feffff8b7c24388b54243c8b4c241c8b442420403bc7894424200f8cb3feffff5f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 347,
+   "type": "REL32",
+   "sym": "?RadLevel_Increase@CellClass@@QAEXN@Z",
+   "sym_key": "CellClass::RadLevel_Increase"
+  }
+ ]
+}

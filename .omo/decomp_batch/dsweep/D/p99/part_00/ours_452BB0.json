@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindBridgeSegment@BuildingClass@@QAEHHDH@Z",
+ "sym_key": "BuildingClass::FindBridgeSegment",
+ "size": 391,
+ "link_base": 0,
+ "bytes_hex": "83ec245355568b74243c5733ffbd010000003bf78bd9896c24147c048beeeb278b83200500008a88be16000084c9741b8ba8b0040000c1ed0883fd01896c24147f09bd01000000896c24148b4424388d4c24288844241383e0038944241c8b035153ff504833d281e600ffffff8a5005897c24400bd63bef8bc2897c2418894424387f0c5f5e5d33c05b83c424c20c008a4c24138b7c243c83e1078d0c8d88f68900894c2420668b11668b490203d033d781e2ff000000c1f81033fa03c833cf8d54243881e1ff0000005233f9b9f8010000897c243ce8000000008bc8e8000000008bf085f674778b86200500008a88be16000084c974168b0e56ff51388b13538be8ff52383bc57504897424408a44243c84c074638b86200500008a88bf16000084c974538b0e56ff51388b13538be8ff52383bc575418d4424248d8e8803000050e8000000008b088b44241cc1e90c41d1e983e1033bc8751e8b6c24148b442418403bc5894424187d0d8b4c24208b442438e92dffffff8b4424405f5e5d5b83c424c20c00",
+ "relocs": [
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 324,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "symbol": "?FindAvailable@FactoryClass@@QAEXXZ",
+ "sym_key": "FactoryClass::FindAvailable",
+ "size": 394,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578b0685c0740b6a0050e80000000083c408a0c50100008974240884c075510fbe05480100008d4c2408516848010000ff501083f8ff74388a0d580100000fbed13bc27d2bfec9880d580100000fbec93bc17d1c0fbe154c010000408d0c828b14828951fc0fbe0d580100003bc17ce4538b5e145533ed85db7e718b56088b06508b3caa8bcfe80000000083f8ff750433c0eb068b4f048b048185c08944241074458b0f50e8000000008b5424108b420450e80000000083c4048d4c2410518bcfe8000000008b54241052e8000000008b471083c40485c0750d85ff74096a018bcfe800000000453beb7c8f5d85db5b743a8b06894424088b881c0200008b7930e80000000084c0740ca10000000085c074038b78308bcfe8000000008d442408b91001000050e8000000008b4e048d7e0457ff510c83c8ffc7070000000089868c0000008986900000008986940000008b460833ffc68698000000003bc7c686990000000074138a4e1184c9740c50e80000000083c404897e08897e0cc64611005f5e59c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?BuildingClass__SetType@@YAHPAXH@Z",
+   "sym_key": "BuildingClass__SetType"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?FindValue@Array@@QAEHH@Z",
+   "sym_key": "Array::FindValue"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?FinishProduction@FactoryClass@@QAEDH@Z",
+   "sym_key": "FactoryClass::FinishProduction"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?RemoveItemAt@FactoryClass@@QAEDH@Z",
+   "sym_key": "FactoryClass::RemoveItemAt"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?RemoveFromArrays@FactoryClass@@QAEPAV1@D@Z",
+   "sym_key": "FactoryClass::RemoveFromArrays"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?DecFactoryClassCounter@@YIHI@Z",
+   "sym_key": "DecFactoryClassCounter"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?EraseAt@VectorClass@@QAEDH@Z",
+   "sym_key": "VectorClass::EraseAt"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_PlanningNodeClass@@3PAXA",
+   "sym_key": "vt_VectorClass_PlanningNodeClass"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

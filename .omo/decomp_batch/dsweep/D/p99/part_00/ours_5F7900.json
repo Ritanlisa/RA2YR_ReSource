@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindMatchingUnit@TechnoTypeClass@@QAEHDDDH@Z",
+ "sym_key": "TechnoTypeClass::FindMatchingUnit",
+ "size": 364,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf933ed57896c24148b07ff50708b4c2428894424148b59783bdd7f0c5f5e5d33c05b83c408c210008b5424288b426c8b34a88a868100000084c00f85000100008b0f57ff512c8b96200500003982b80e00000f85e80000008a44242084c0740e8a866006000084c00f84d20000008b0656ff908401000083f8130f84c000000083beb4000000130f84b30000008a44242484c074188b8e1c0200006a016a0157e80000000085c00f8e930000008b8620050000508b08ff51708b54241485c2747f8a44241c84c075388bcee80000000084c0742d8b0757ff502c83f80375228b0f57ff512c83f80375568bcee80000000084c0744b8a86d303000084c0754beb3b8b1757ff522c83f82875268b87d80c000085c0741c8b86200500008a88ce0c000084c9741a8a86d303000084c0751aeb0e8a86d303000084c0750e89742410453beb7d11e9defeffff8bc65f5e5d5b83c408c210008b4424105f5e5d5b83c408c21000",
+ "relocs": [
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?CanBuild@HouseClass@@QAEHHDD@Z",
+   "sym_key": "HouseClass::CanBuild"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?AllMembersValid@Team@@QAEDXZ",
+   "sym_key": "Team::AllMembersValid"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?HasFreeLink@RadioClass@@QAEDXZ",
+   "sym_key": "RadioClass::HasFreeLink"
+  }
+ ]
+}
