@@ -1,0 +1,81 @@
+{
+ "symbol": "?processTargetSelection@HouseClass@@QAEXXZ",
+ "sym_key": "HouseClass::processTargetSelection",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578d4c2408c70600000000c744240800000000e80000000085c0742c8b46598b0085c074078b086a0150ff118b4424088d54240852ff50088b5424088d4c240851ff520484c075d4a1000000006a00508b08ff5118a1000000006a00508b10ff5218a1000000008b15000000006a016a008b085250ff51048b4658c746550000000085c074178a4e6184c9741050e80000000083c404c74658000000008d7e10c646610057c7465c00000000e80000000057e80000000083c4088d4e04e8000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_GraphicMenu@@3PAXA",
+   "sym_key": "vt_GraphicMenu"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem@@3PAXA",
+   "sym_key": "vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?CanScroll@Map@@QAEHXZ",
+   "sym_key": "Map::CanScroll"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_GraphicMenuItem@@3PAXA",
+   "sym_key": "vt_VectorClass_GraphicMenuItem"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?Destruct@MSEngine@@QAEXXZ",
+   "sym_key": "MSEngine::Destruct"
+  }
+ ]
+}

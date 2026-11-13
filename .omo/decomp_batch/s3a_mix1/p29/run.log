@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e4f50 __cfltcvt_init -> _addr_4E
+[conv] 0x4e5ac0 GDlg::LoadLetterStrings -> GDlg
+[conv] 0x4f21a0 HouseClass::processTargetSelection -> HouseClass
+[conv] 0x4f2280 ObjectClass::sub_4F2280 -> ObjectClass
+[conv] 0x4f2300 ObjectClass::ProcessGraphicMenu -> ObjectClass
+[conv] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> GraphicMenuShortcutItem
+[conv] 0x4f4e53 sub_4F4E53 -> _addr_4F
+[conv] 0x500300 CellClass::ScanOccupiers -> CellClass
+[conv] 0x506ef0 HouseClass::AutoBuildScanAndSort -> HouseClass
+[conv] 0x50ba00 ObjectClass::ComputeSessionColorVector -> ObjectClass
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x510400 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x5104a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0 -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x514310 HoverLocomotionClass::DeployAnimation -> HoverLocomotionClass
+[conv] 0x517fa0 InfantryClass::ProcessDeployment -> InfantryClass
+[conv] 0x51c8b0 InfantryClass::GetFireError -> InfantryClass
+[conv] 0x51e140 InfantryClass::SelectAutoTarget -> InfantryClass
+[conv] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> InfantryClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _addr_4E                 rc=2
+[era] GDlg                     rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] GraphicMenuShortcutItem  rc=2
+[era] _addr_4F                 rc=2
+[era] CellClass                rc=2
+[era] House                    rc=2
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] HoverLocomotionClass     rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e0d80   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface
+[diff] 0x4e0e20   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor
+[diff] 0x4f21a0   MISMATCH         HouseClass::processTargetSelection
+[diff] 0x510400   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor
+[diff] 0x5104a0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0
+[diff] 0x51e140   MISMATCH         InfantryClass::SelectAutoTarget
+[ledger] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> NG (attempt 3)
+[ledger] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> NG (attempt 3)
+[ledger] 0x4e4f50 __cfltcvt_init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e5ac0 GDlg::LoadLetterStrings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f21a0 HouseClass::processTargetSelection -> NG (attempt 2)
+[ledger] 0x4f2280 ObjectClass::sub_4F2280 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2300 ObjectClass::ProcessGraphicMenu -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f4e53 sub_4F4E53 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x500300 CellClass::ScanOccupiers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x506ef0 HouseClass::AutoBuildScanAndSort -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50ba00 ObjectClass::ComputeSessionColorVector -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x510400 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::CopyConstructor -> NG (attempt 3)
+[ledger] 0x5104a0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Constructor_0 -> NG (attempt 3)
+[ledger] 0x514310 HoverLocomotionClass::DeployAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x517fa0 InfantryClass::ProcessDeployment -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51c8b0 InfantryClass::GetFireError -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51e140 InfantryClass::SelectAutoTarget -> NG (attempt 2)
+[ledger] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "branch_polarity": 4,
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p29\batch_report.json

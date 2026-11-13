@@ -1,0 +1,63 @@
+{
+ "symbol": "?SelectAutoTarget@InfantryClass@@QAEHI_JH@Z",
+ "sym_key": "InfantryClass::SelectAutoTarget",
+ "size": 694,
+ "link_base": 0,
+ "bytes_hex": "83ec285355568b7424388be98b8e1c020000e8000000008b5c243884c00f85f00000008b86c00600008a88c30e000084c90f84dc0000008b8e1c0200008b81e054000085c00f84c20000008b10895c240cc74424100000000057df6c241083ec088d4c2428dd1c245150ff52488b1683c4108bf88d44242c5056ff52488b48048b57042bca8b50088b00894c24108b4f08c744241c000000002bd18b0f2bc18954243c8944241883ec08df6c2420db442444db442418d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e80000000053ddd8e8000000008bc88b44244833c883c40c81e1ff00000033c85f81f9000f00007d158b961c0200005e5d5b8b82e054000083c428c2100081cd000200008b86c00600008a88c60e000084c9745a8b86a405000085c07450f6401401744a8b0850ff918000000084c0743d8b86a4050000508b10ff92840000008a88940c000084c975248b86a40500008bce50e8000000003d000f00007d0f8b86a40500005e5d5b83c428c210008b0e56ff91ac02000084c075328b86c00600008a90be0e00008a88c60e000084d2750f84c9750f5e5d33c05b83c428c2100084c9740981e55bffffff83cd108b16895c2414c74424180000000083ec08df6c241cdd1c246a0056ff92f80300008b0883c41085c974178b066a0056ff90f80300008b08e8000000000fbec80be98b166a0156ff92f803000083380074178b066a0156ff90f80300008b08e8000000000fbec80be98b1656ff92ac02000084c074238b066a0056ff90f80300008b088b91ac0000008a824901000084c0740681e54bffffff8b86c00600008a88c20e000084c9750f6a0e56e80000000083c40884c074128b8e1c020000e80000000084c0750383cd208b8ec00600008a81c50e000084c0740681cd400200008b5424448b44243c5250558bcee8000000005e5d5b83c428c21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JI@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 500,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 616,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 634,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 681,
+   "type": "REL32",
+   "sym": "?SelectAutoTarget_Cloaked@FootClass@@QAEPAXHHD@Z",
+   "sym_key": "FootClass::SelectAutoTarget_Cloaked"
+  }
+ ]
+}
