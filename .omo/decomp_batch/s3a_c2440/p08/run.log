@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fe3e0 HouseClass::AutoBuild -> HouseClass
+[conv] 0x4ff550 HouseClass::DecrementUnitCount -> HouseClass
+[conv] 0x500200 BuildingPlacement::FindPosition -> BuildingPlacement
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x5082c0 HouseClass::FindAutoBuildLocation -> HouseClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x50c920 TechnoClass::FindDeployDestination -> TechnoClass
+[conv] 0x50d290 TActionClass::executeAttackAction -> TActionClass
+[conv] 0x50ea00 _VectorClass_PBVBuildingTypeClass::Destroy -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50fe20 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x512d30 _VectorClass_PBVInfantryTypeClass::Cleanup -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x513100 _VectorClass_PBVUnitTypeClass::Destructor -> _VectorClass_PBVUnitTypeClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x51cba0 InfantryClass::ValidatePlacement -> InfantryClass
+[conv] 0x51f330 InfantryClass::FindPathToBuilding -> InfantryClass
+[conv] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> TechnoClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] BuildingPlacement        rc=2
+[era] TechnoClass              rc=2
+[era] TActionClass             rc=2
+[era] _VectorClass_PBVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _VectorClass_PBVInfantryTypeClass rc=0
+[era] _VectorClass_PBVUnitTypeClass rc=0
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x50ea00   MISMATCH         _VectorClass_PBVBuildingTypeClass::Destroy
+[diff] 0x50fe20   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity
+[diff] 0x512d30   MISMATCH         _VectorClass_PBVInfantryTypeClass::Cleanup
+[diff] 0x513100   MISMATCH         _VectorClass_PBVUnitTypeClass::Destructor
+[ledger] 0x4fe3e0 HouseClass::AutoBuild -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ff550 HouseClass::DecrementUnitCount -> COMPILE_FAIL (attempt 2)
+[ledger] 0x500200 BuildingPlacement::FindPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5082c0 HouseClass::FindAutoBuildLocation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50c920 TechnoClass::FindDeployDestination -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50d290 TActionClass::executeAttackAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50ea00 _VectorClass_PBVBuildingTypeClass::Destroy -> NG (attempt 2)
+[ledger] 0x50fe20 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x512d30 _VectorClass_PBVInfantryTypeClass::Cleanup -> NG (attempt 2)
+[ledger] 0x513100 _VectorClass_PBVUnitTypeClass::Destructor -> NG (attempt 5)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51cba0 InfantryClass::ValidatePlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51f330 InfantryClass::FindPathToBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p08\batch_report.json

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroy@_VectorClass_PBVBuildingTypeClass@@QAEHXZ",
+ "sym_key": "_VectorClass_PBVBuildingTypeClass::Destroy",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7e0485ff74188b460cf6c4ff741057e80000000083c404c74604000000008b460cc746080000000080e40089460c8bc75f5ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -65341,7 +65341,7 @@
   "this_as_id": false
  },
  "0x4fe3e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65400,7 +65400,7 @@
   "this_as_id": false
  },
  "0x4ff550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65479,7 +65479,7 @@
   "this_as_id": false
  },
  "0x500200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -65834,7 +65834,7 @@
   "this_as_id": false
  },
  "0x503040": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66072,7 +66072,7 @@
   "this_as_id": false
  },
  "0x5082c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66240,14 +66240,14 @@
   "this_as_id": false
  },
  "0x5098f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::UpdateAITryFireSW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::UpdateAITryFireSW",
-  "rule_violations": 9,
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -66621,7 +66621,7 @@
   "this_as_id": false
  },
  "0x50c920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66681,7 +66681,7 @@
   "this_as_id": false
  },
  "0x50d290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -67449,15 +67449,15 @@
   "this_as_id": false
  },
  "0x50ea00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "_VectorClass_PBVBuildingTypeClass::Destroy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "_VectorClass_PBVBuildingTypeClass::Destroy",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50ea30": {
@@ -68060,15 +68060,15 @@
   "this_as_id": false
  },
  "0x50fe20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x50ff17",
   "name": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass__N_18::SetCapacity",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50ff40": {
@@ -69339,15 +69339,15 @@
   "this_as_id": false
  },
  "0x512d30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "_VectorClass_PBVInfantryTypeClass::Cleanup",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Vector::Cleanup",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x512d60": {
@@ -69461,15 +69461,15 @@
   "this_as_id": false
  },
  "0x513100": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "_VectorClass_PBVUnitTypeClass::Destructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Vector::Destructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x513130": {
@@ -70602,7 +70602,7 @@
   "status": "NG"
  },
  "0x517d90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70626,7 +70626,7 @@
   "this_as_id": false
  },
  "0x518d80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -70674,14 +70674,14 @@
   "this_as_id": false
  },
  "0x51aa40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::AssignDestination_SyncLog",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::AssignDestination_SyncLog",
-  "rule_violations": 3,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70710,14 +70710,14 @@
   "this_as_id": false
  },
  "0x51bab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::Update",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70746,14 +70746,14 @@
   "this_as_id": false
  },
  "0x51cba0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::ValidatePlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::ValidatePlacement",
-  "rule_violations": 6,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70914,7 +70914,7 @@
   "this_as_id": false
  },
  "0x51f330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71065,7 +71065,7 @@
   "this_as_id": false
  },
  "0x5202f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -71312,7 +71312,7 @@
   "this_as_id": false
  },
  "0x521d80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
