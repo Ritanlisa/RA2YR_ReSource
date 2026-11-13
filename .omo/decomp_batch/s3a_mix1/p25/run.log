@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+[conv] 0x7dabac ObjectClass::_copy_environ -> ObjectClass
+[conv] 0x7dae9f ___crtMessageBoxA -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+[conv] 0x4041d0 ObjectClass::ProcessAudioFrame -> ObjectClass
+[conv] 0x4055c0 TechnoClass::UpdateVoicePlayback -> TechnoClass
+[conv] 0x409360 sub_409360 -> _addr_40
+[conv] 0x409470 ObjectClass::sub_409470 -> ObjectClass
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x410e70 sub_410E70 -> _addr_41
+[conv] 0x415ee0 BulletClass::FlightUpdate -> BulletClass
+[conv] 0x41a160 TechnoClass::FindClosestPlacementCell -> TechnoClass
+[conv] 0x41af80 ObjectClass::SaveAircraftToINI -> ObjectClass
+[conv] 0x41c2e0 Vector::ToFacingMath -> Vector
+[conv] 0x41d860 AirstrikeClass::SpawnAircraft -> AirstrikeClass
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x427d00 AnimTypeClass::LoadFromINI -> AnimTypeClass
+[conv] 0x42b7f0 ObjectClass::SimplifyPathFilter -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] _addr_40                 rc=2
+[era] _addr_41                 rc=0
+[era] BulletClass              rc=2
+[era] Vector                   rc=2
+[era] AirstrikeClass           rc=2
+[era] Cell                     rc=2
+[era] AnimTypeClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x41af80   MISMATCH         ObjectClass::SaveAircraftToINI
+[diff] 0x410e70   MISMATCH         sub_410E70
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dabac ObjectClass::_copy_environ -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dae9f ___crtMessageBoxA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4041d0 ObjectClass::ProcessAudioFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4055c0 TechnoClass::UpdateVoicePlayback -> COMPILE_FAIL (attempt 2)
+[ledger] 0x409360 sub_409360 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x409470 ObjectClass::sub_409470 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x410e70 sub_410E70 -> NG (attempt 2)
+[ledger] 0x415ee0 BulletClass::FlightUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41a160 TechnoClass::FindClosestPlacementCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41af80 ObjectClass::SaveAircraftToINI -> NG (attempt 2)
+[ledger] 0x41c2e0 Vector::ToFacingMath -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41d860 AirstrikeClass::SpawnAircraft -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 6)
+[ledger] 0x427d00 AnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x42b7f0 ObjectClass::SimplifyPathFilter -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p25\batch_report.json

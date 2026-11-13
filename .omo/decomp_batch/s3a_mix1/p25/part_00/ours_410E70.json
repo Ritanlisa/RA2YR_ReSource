@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_410E70@@YGPADHHH@Z",
+ "sym_key": "Unnamed::sub_410E70",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "8b442404538b5c240c558b6c241456578bf8a802740b85db74076689288d78024b8bf333c0d1fef7c3feffffff74158bc556c1e01003c55057e80000000083c40c8d04b7f6c301740785c074036689285f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  }
+ ]
+}
