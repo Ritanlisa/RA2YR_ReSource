@@ -1,0 +1,75 @@
+{
+ "symbol": "?Lookup@HashTable@@QAEDPAPBDPAH@Z",
+ "sym_key": "HashTable::Lookup",
+ "size": 636,
+ "link_base": 0,
+ "bytes_hex": "83ec085355568bf133c9578b46043bc1750c5f5e5d32c05b83c408c2080048894c2414894424108b4608df6c241089442410894c2414df6c24108b5c241c53def9d95c2414ff56188a4e0cba01000000d3e28bf88b064a23fa8b2cb885ed750c5f5e5d32c05b83c408c20800538bcde80000000084c00f85fe0000008b7d088844241c85ff744b538bcfe80000000084c075158bef8b7f0885ff7436538bcfe80000000084c074eb8b5424208b4f0457890a8b47088945088b6e044d896e04e80000000057e80000000083c408c644241c018b6e088b46303be80f868c000000807e14010f84820000008a4e0c8b1e8bc5895c2420d1e8fec9894608884e0c8d0c850000000051e8000000008b4e088bf8c1e1028bd133c0c1e902893e83c404f3ab8bca83e10385edf3aa7e368b3b85ff742657ff56188a4e0cba01000000d3e28b0e4a23c28d04818b0889388b4708894f0885c08bf875da83c3044d75ce8b5c242053e80000000083c4048a44241c5f5e5d5b83c408c208008b4424208b550489108b0e8b2cb985ed8b5d08740f55e80000000055e80000000083c4088b16d9442410891cbadc5e20dfe0f6c4017404b101eb0232c9d9442410dc5e20dfe0f6c4407404b001eb0232c08b7e044f84c9897e04750884c00f84920000008b6e088b46303be80f8684000000807e1401747e8a4e0c8b1e8bc5895c2420d1e8894608fec9c1e00250884e0ce8000000008b4e088bf8c1e1028bd133c0c1e902893e83c404f3ab8bca83e10385edf3aa7e368b3b85ff742657ff56188a4e0cba01000000d3e28b0e4a23c28d04818b0889388b4708894f0885c08bf875da83c3044d75ce8b5c242053e80000000083c4045f5e5db0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 401,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 407,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 524,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 617,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

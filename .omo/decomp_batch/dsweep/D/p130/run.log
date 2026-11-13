@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p130\part_00
+=== convert (20 addrs) ===
+[conv] 0x5be6d0 MouseClass::DrawCursor -> MouseClass
+[conv] 0x733380 UpdateUnitHealthTooltip -> _addr_73
+[conv] 0x4d5350 FootClass::ProcessDeploy -> FootClass
+[conv] 0x71b920 TerrainClass::UpdateAnims -> TerrainClass
+[conv] 0x6e8de0 TeamClass::Destructor -> TeamClass
+[conv] 0x7ae1f0 HashTable::Lookup -> HashTable
+[conv] 0x5a78d0 PlaceMapSeedBuildingsStrategic -> _addr_5A
+[conv] 0x57ccf0 CellClass::CheckTilePassable -> CellClass
+[conv] 0x438bf0 ObjectClass::DispatchBuildingAudioEvents -> ObjectClass
+[conv] 0x78e950 WOLobbySmallDlgProc -> _addr_78
+[conv] 0x6d8260 MapClass::TransformCoordToScreen -> MapClass
+[conv] 0x5b3c20 MixFileClass::FromFile -> MixFileClass
+[conv] 0x51e140 InfantryClass::SelectAutoTarget -> InfantryClass
+[conv] 0x47efe0 RenderFogOfWar -> _addr_47
+[conv] 0x7ba8c0 XSurface::DrawDashedLine -> XSurface
+[conv] 0x58e740 RandomMap::CollectTerrainCells -> RandomMap
+[conv] 0x730af0 TechnoClass::ProcessSelectionExperience -> TechnoClass
+[conv] 0x735780 UnitClass::Destructor -> UnitClass
+[conv] 0x5b7360 ModemGame::ReceiveMapPreview -> ModemGame
+[conv] 0x7336c0 DrawUnitExperiencePopup -> _addr_73
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MouseClass               rc=2
+[era] _addr_73                 rc=2
+[era] FootClass                rc=2
+[era] TerrainClass             rc=2
+[era] TeamClass                rc=2
+[era] HashTable                rc=0
+[era] _addr_5A                 rc=0
+[era] CellClass                rc=0
+[era] ObjectClass              rc=0
+[era] _addr_78                 rc=0
+[era] MapClass                 rc=2
+[era] MixFileClass             rc=2
+[era] InfantryClass            rc=2
+[era] _addr_47                 rc=2
+[era] XSurface                 rc=2
+[era] RandomMap                rc=2
+[era] TechnoClass              rc=2
+[era] UnitClass                rc=2
+[era] ModemGame                rc=2
+=== diffasm byte-compare ===
+[diff] 0x7ae1f0   MISMATCH         HashTable::Lookup
+[diff] 0x5a78d0   MISMATCH         PlaceMapSeedBuildingsStrategic
+[diff] 0x57ccf0   MISMATCH         CellClass::CheckTilePassable
+[diff] 0x438bf0   MISMATCH         ObjectClass::DispatchBuildingAudioEvents
+[diff] 0x78e950   MISMATCH         WOLobbySmallDlgProc
+[ledger] 0x5be6d0 MouseClass::DrawCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x733380 UpdateUnitHealthTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d5350 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b920 TerrainClass::UpdateAnims -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e8de0 TeamClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ae1f0 HashTable::Lookup -> NG (attempt 1)
+[ledger] 0x5a78d0 PlaceMapSeedBuildingsStrategic -> NG (attempt 1)
+[ledger] 0x57ccf0 CellClass::CheckTilePassable -> NG (attempt 1)
+[ledger] 0x438bf0 ObjectClass::DispatchBuildingAudioEvents -> NG (attempt 1)
+[ledger] 0x78e950 WOLobbySmallDlgProc -> NG (attempt 1)
+[ledger] 0x6d8260 MapClass::TransformCoordToScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3c20 MixFileClass::FromFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51e140 InfantryClass::SelectAutoTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47efe0 RenderFogOfWar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ba8c0 XSurface::DrawDashedLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58e740 RandomMap::CollectTerrainCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x730af0 TechnoClass::ProcessSelectionExperience -> COMPILE_FAIL (attempt 1)
+[ledger] 0x735780 UnitClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b7360 ModemGame::ReceiveMapPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7336c0 DrawUnitExperiencePopup -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 1,
+  "frame_sched": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p130\batch_report.json
