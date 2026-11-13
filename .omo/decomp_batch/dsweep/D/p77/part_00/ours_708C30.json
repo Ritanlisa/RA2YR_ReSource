@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetAmmoCount@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetAmmoCount",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec14568bf1568b06ff90840000008b80d40300004883f8040f870b010000ff248500000000d986fc0200008b0e56dd5c2414ff91840000008b1083c40450ff527489442408db442408e9890000008d8e3c030000e8000000008b4424108b4c24148b1656ddd889442414894c2418ff9284000000db8000080000eb5bdb86f40000008b0656dd5c2414ff90840000008b0883c40450ff517489442408db442408eb358b8ebc02000085c9747de8000000008b1689442408db44240856dd5c2414ff92840000008b0883c40450ff517489442408db4424088b1656dd5c240cff92840000008b0850ff51748b54240c8b4424085250e8000000008bc88b44241033c883c40881e1ff00000033c1751ddd442410dc1d00000000dfe0f6c441750ab8010000005e8be55dc333c05e8be55dc3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "$L1948",
+   "sym_key": "$L1948"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?processPowerDrain@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::processPowerDrain"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?ProcessFactoryExit@TeleportLocomotionClass@@QAEPAIHHHHH@Z",
+ "sym_key": "TeleportLocomotionClass::ProcessFactoryExit",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4608508b08ff917c03000084c00f85fc0000008b4608508b10ff928003000084c00f85e80000008b4608508b08ff91d401000084c00f85d40000008b4608508b10ff92d801000084c00f85c00000008b46088b4c2410894c24048b88f801000085c9742c8b1050ff522c83f80f75218d442404b9f801000050e8000000006a006a016a0168b80300008bc8e8000000008b4c24148b5424048b442410518b4c2410528b54241850518d4424145250e8000000008b4e248b15b80300008d462483c4183bca752f8b56288b0dbc0300003bd175228b4e2c8b15c00300003bca75158b76086a016a00568b16ff92800400005e59c214008b5628c64630018b0889561c894e188b4e2c894e205e59c214008b56085ec782a40500000000000059c21400",
+ "relocs": [
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?ApplyDamage@Cell@@QAEXHHHD@Z",
+   "sym_key": "Cell::ApplyDamage"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?Factory__CalculateExitCell@@YADPAXHH0HD@Z",
+   "sym_key": "Factory__CalculateExitCell"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

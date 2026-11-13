@@ -1,0 +1,153 @@
+{
+ "symbol": "?Screen_Dialog@Options@@QAEDXZ",
+ "sym_key": "Options::Screen_Dialog",
+ "size": 328,
+ "link_base": 0,
+ "bytes_hex": "83ec10a0000000005355894c24148b5c24148b6c2414565788442413c70500000000000000008b3500000000b92e000000bf000000006a00f3a5c7442418ffffffffe8000000008bf085f674d98d4c2414516a0856e8000000008bcee8000000008b44241485c07d1f8b4c241ce8000000003c01741280e3008bcbe8000000008b44241485c07ce18bcee8000000008bcee8000000008b4424143dcd050000756db900000000c7442418ffffffffe8000000006a00e8000000008bf085f60f8462ffffff8d542418526a0856e8000000008bcee8000000008b44241885c07d228b4c241ce8000000003c01741581e500ffffff8bcde8000000008b44241885c07cde8bcee800000000e918ffffff3dce0500007513a10000000050e80000000083c404e9fefeffff8b0d00000000e8000000008a4424135f0fbec85e5d890d000000005b83c410c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCE70@@3EA",
+   "sym_key": "DataGlobal_ABCE70"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?CreateDialog@@YGHH@Z",
+   "sym_key": "CreateDialog"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?Process@ScreenSaver@@QAEHXZ",
+   "sym_key": "ScreenSaver::Process"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Screen_Save@Options@@QAEPAXXZ",
+   "sym_key": "Options::Screen_Save"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?LoadNetworkConfig@ScenarioClass@@QAEHXZ",
+   "sym_key": "ScenarioClass::LoadNetworkConfig"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?CreateDialog@@YGHH@Z",
+   "sym_key": "CreateDialog"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Process@ScreenSaver@@QAEHXZ",
+   "sym_key": "ScreenSaver::Process"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?ShowHotkeyOptionsDialog@@YADH@Z",
+   "sym_key": "ShowHotkeyOptionsDialog"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptions@@3IA",
+   "sym_key": "g_GameModeOptions"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?SaveGameOptions@ScenarioClass@@QAEHXZ",
+   "sym_key": "ScenarioClass::SaveGameOptions"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

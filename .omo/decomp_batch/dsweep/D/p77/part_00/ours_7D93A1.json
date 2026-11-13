@@ -1,0 +1,99 @@
+{
+ "symbol": "?__alloc_osfhnd@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::__alloc_osfhnd",
+ "size": 357,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556576a12c7442418ffffffffe8000000008b2d0000000033db83c40433ff895c24108b750085f60f84b40000008d86800400003bf00f838e000000f646040175478b460885c075276a11e8000000008b460883c40485c0750c8d4e0c51e800000000ff46086a11e80000000083c4048d7e0c57e800000000f6460401741c57e8000000008b7c24108b550083c62481c2800400003bf272a3eb2fc706ffffffff8b4d002bf1b8398ee338f7eec1fa038bc2c1e81f03d003d383faff895424140f85850000008b7c241083c32083c5044781fd00000000897c24107d6ee941ffffff6880040000e80000000033d283c4043bc274568b1d000000008d888004000083c3203bc1891d000000008904bd000000007326b10ac6400400c700ffffffff8950088848058b34bd0000000083c02481c6800400003bc672dcc1e70557897c2418e80000000083c4046a12e8000000008b44241883c4045f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3IA",
+   "sym_key": "CRTGlobal_B78A80"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?uNumber@@3IA",
+   "sym_key": "uNumber"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?uNumber@@3IA",
+   "sym_key": "uNumber"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?uNumber@@3IA",
+   "sym_key": "uNumber"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3IA",
+   "sym_key": "CRTGlobal_B78A80"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3IA",
+   "sym_key": "CRTGlobal_B78A80"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?_lock_fhandle@@YAHHZZ",
+   "sym_key": "_lock_fhandle"
+  },
+  {
+   "off": 338,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

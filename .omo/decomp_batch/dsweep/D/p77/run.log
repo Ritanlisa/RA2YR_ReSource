@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p77\part_00
+=== convert (20 addrs) ===
+[conv] 0x798f50 ObjectClass::MainLobbyDlgProcWOL_Read -> ObjectClass
+[conv] 0x5f6810 Network_Process_5F6810 -> Network_Process
+[conv] 0x600750 sub_600750 -> _addr_60
+[conv] 0x600920 sub_600920 -> _addr_60
+[conv] 0x612930 sub_612930 -> _addr_61
+[conv] 0x6e4660 TActionClass::Destructor -> TActionClass
+[conv] 0x543b10 AbstractClass::CreateInstance -> AbstractClass
+[conv] 0x4380a0 BlowPipe::Read -> BlowPipe
+[conv] 0x7d93a1 ObjectClass::__alloc_osfhnd -> ObjectClass
+[conv] 0x718100 TeleportLocomotionClass::ProcessFactoryExit -> TeleportLocomotionClass
+[conv] 0x565190 RadarClass::Render -> RadarClass
+[conv] 0x609bc0 sub_609BC0 -> _addr_60
+[conv] 0x759540 HVAAnimation::LoadFromFile -> HVAAnimation
+[conv] 0x7499f0 VoxelAnimClass::CleanupMembers -> VoxelAnimClass
+[conv] 0x5cb590 PaletteClass::Load -> PaletteClass
+[conv] 0x708c30 TechnoClass::GetAmmoCount -> TechnoClass
+[conv] 0x55fc80 Options::Screen_Dialog -> Options
+[conv] 0x5414c0 IPXManagerClass::release -> IPXManagerClass
+[conv] 0x655b20 RadarClass::InitializeHashTable -> RadarClass
+[conv] 0x7757e0 CloseDialog -> _addr_77
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] Network_Process          rc=0
+[era] _addr_60                 rc=2
+[era] _addr_61                 rc=2
+[era] TActionClass             rc=0
+[era] AbstractClass            rc=0
+[era] BlowPipe                 rc=0
+[era] TeleportLocomotionClass  rc=0
+[era] RadarClass               rc=2
+[era] HVAAnimation             rc=0
+[era] VoxelAnimClass           rc=0
+[era] PaletteClass             rc=2
+[era] TechnoClass              rc=0
+[era] Options                  rc=0
+[era] IPXManagerClass          rc=0
+[era] _addr_77                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x798f50   MISMATCH         ObjectClass::MainLobbyDlgProcWOL_Read
+[diff] 0x7d93a1   MISMATCH         ObjectClass::__alloc_osfhnd
+[diff] 0x5f6810   MISMATCH         Network_Process_5F6810
+[diff] 0x6e4660   MISMATCH         TActionClass::Destructor
+[diff] 0x543b10   MISMATCH         AbstractClass::CreateInstance
+[diff] 0x4380a0   MISMATCH         BlowPipe::Read
+[diff] 0x718100   MISMATCH         TeleportLocomotionClass::ProcessFactoryExit
+[diff] 0x759540   MISMATCH         HVAAnimation::LoadFromFile
+[diff] 0x7499f0   MISMATCH         VoxelAnimClass::CleanupMembers
+[diff] 0x708c30   MISMATCH         TechnoClass::GetAmmoCount
+[diff] 0x55fc80   MISMATCH         Options::Screen_Dialog
+[diff] 0x5414c0   MISMATCH         IPXManagerClass::release
+[diff] 0x7757e0   MISMATCH         CloseDialog
+[ledger] 0x798f50 ObjectClass::MainLobbyDlgProcWOL_Read -> NG (attempt 1)
+[ledger] 0x5f6810 Network_Process_5F6810 -> NG (attempt 1)
+[ledger] 0x600750 sub_600750 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600920 sub_600920 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x612930 sub_612930 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4660 TActionClass::Destructor -> NG (attempt 1)
+[ledger] 0x543b10 AbstractClass::CreateInstance -> NG (attempt 1)
+[ledger] 0x4380a0 BlowPipe::Read -> NG (attempt 1)
+[ledger] 0x7d93a1 ObjectClass::__alloc_osfhnd -> NG (attempt 1)
+[ledger] 0x718100 TeleportLocomotionClass::ProcessFactoryExit -> NG (attempt 1)
+[ledger] 0x565190 RadarClass::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x609bc0 sub_609BC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x759540 HVAAnimation::LoadFromFile -> NG (attempt 1)
+[ledger] 0x7499f0 VoxelAnimClass::CleanupMembers -> NG (attempt 1)
+[ledger] 0x5cb590 PaletteClass::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708c30 TechnoClass::GetAmmoCount -> NG (attempt 1)
+[ledger] 0x55fc80 Options::Screen_Dialog -> NG (attempt 1)
+[ledger] 0x5414c0 IPXManagerClass::release -> NG (attempt 1)
+[ledger] 0x655b20 RadarClass::InitializeHashTable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7757e0 CloseDialog -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "codegen_shape": 5,
+  "regalloc": 4,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p77\batch_report.json
