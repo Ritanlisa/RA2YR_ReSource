@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AD640",
+ "name": "WonlineStringDialogControl_28::Release",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AD640",
+ "bytes_hex": "53558b2dcc117e0056578b7c24148d770456ffd58bd885db752a85ff7426689c64b700c707e4787f00c70601000000ffd583c60456ff15e4117e0057e8bcb4010083c4045f5e8bc35d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

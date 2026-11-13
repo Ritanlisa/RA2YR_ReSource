@@ -1,0 +1,33 @@
+{
+ "symbol": "?CheckMissionAttack@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::CheckMissionAttack",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "568bf1576a008b8e20050000e8000000008b8e200500008bf8e8000000003bc77d138b8e20050000e800000000992bc25fd1f85ec38b8e200500006a00e800000000992bc25fd1f85ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  }
+ ]
+}

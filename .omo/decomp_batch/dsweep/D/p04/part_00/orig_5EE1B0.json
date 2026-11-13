@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EE1B0",
+ "name": "Config::SaveObserverMode",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EE1B0",
+ "bytes_hex": "83ec248d4c24006844648200e8bfe80600a1c810ac00b9c07088006a005068a41d8300682c648200e8e393f3ff8d4c24006a0051b9c0708800e84262e8ff8d4c2400e809e8060083c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

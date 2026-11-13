@@ -1,0 +1,33 @@
+{
+ "symbol": "?__fclose_lk@@YAHH@Z",
+ "sym_key": "Unnamed::__fclose_lk",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "568b74240883c8ff57f6460c83744456e800000000568bf8e8000000008b461050e80000000083c40c85c07c238b461c85c0741050e80000000083c404c7461c000000008bc7c7460c000000005f5ec383c8ffc7460c000000005f5ec3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?_flush@@YAHPAXZZ",
+   "sym_key": "_flush"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?_freebuf@@YAHHZZ",
+   "sym_key": "_freebuf"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?_close@@YAHHZZ",
+   "sym_key": "_close"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindOwner@ObjectClass@@QAGHPAHPAX@Z",
+ "sym_key": "ObjectClass::FindOwner",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "8b4c24085685c9750633c05ec20c008b74241081fe252300007509e8000000005ec20c0083feff750633c05ec20c008bcee80000000084c08bce7409e8000000005ec20c00e8000000005ec20c00",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?GetField11@Property@@QAEHXZ",
+   "sym_key": "Property::GetField11"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  }
+ ]
+}

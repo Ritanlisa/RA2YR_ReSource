@@ -1,0 +1,11 @@
+{
+ "addr": "0x458E00",
+ "name": "BuildingClass::CheckMissionAttack",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x458E00",
+ "bytes_hex": "568bf1576a008b8e20050000e88f5e00008b8e200500008bf8e8725e00003bc77d138b8e20050000e8635e0000992bc25fd1f85ec38b8e200500006a00e85e5e0000992bc25fd1f85ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

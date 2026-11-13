@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AC6B0",
+ "name": "CComObject_CChatEventSink___ATL::Release",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AC6B0",
+ "bytes_hex": "53558b2dcc117e0056578b7c24148d770456ffd58bd885db752a85ff7426689c64b700c707b4767f00c70601000000ffd583c60456ff15e4117e0057e84cc4010083c4045f5e8bc35d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

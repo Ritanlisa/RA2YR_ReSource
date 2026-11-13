@@ -1,0 +1,45 @@
+{
+ "symbol": "?UpdateLabels@NetworkLobby@@QAEXXZ",
+ "sym_key": "NetworkLobby::UpdateLabels",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "538bd985db74455556578b3d0000000033ed55e8000000008bf083c4048bd68bcbe8000000006aff8bd68bcbe8000000008b0f85c9740650e80000000083c7044581ff000000007cc95f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetResourceID3CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID3CSF"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?FillComboBoxSides@@YIDPAXH@Z",
+   "sym_key": "FillComboBoxSides"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?SetComboBoxSelection@@YIJPAXHH@Z",
+   "sym_key": "SetComboBoxSelection"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?SetOption@SessionClass@@QAEHH@Z",
+   "sym_key": "SessionClass::SetOption"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA78C",
+ "name": "__fclose_lk",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA78C",
+ "bytes_hex": "568b7424085783cffff6460c83743456e8580a0000568bf8e8ab830000ff7610e8c382000083c40c85c07d0583cfffeb128b461c85c0740b50e81eecffff83661c005983660c008bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

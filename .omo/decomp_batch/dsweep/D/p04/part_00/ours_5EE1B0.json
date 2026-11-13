@@ -1,0 +1,69 @@
+{
+ "symbol": "?SaveObserverMode@Config@@QAEXXZ",
+ "sym_key": "Config::SaveObserverMode",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "83ec248d4c24006800000000e800000000a1000000006a005068000000006800000000b900000000e8000000008d4c24006a0051b900000000e8000000008d4c2400e80000000083c424c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?aRa2mdIni@@3PADA",
+   "sym_key": "aRa2mdIni"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_MenuStateFlags@@3IA",
+   "sym_key": "g_MenuStateFlags"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831DA4@@3PADA",
+   "sym_key": "DataGlobal_831DA4"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?aMultiplayer@@3PADA",
+   "sym_key": "aMultiplayer"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetInt@INIClass@@QAEDPAX0HH@Z",
+   "sym_key": "INIClass::SetInt"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_RA2MD@@3IA",
+   "sym_key": "CCINIClass_INI_RA2MD"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?WriteDigest@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::WriteDigest"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}

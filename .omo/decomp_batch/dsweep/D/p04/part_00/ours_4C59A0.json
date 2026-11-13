@@ -1,0 +1,45 @@
+{
+ "symbol": "?Stat@EMPulseClass@@QAEHPAI@Z",
+ "sym_key": "EMPulseClass::Stat",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000000fbf46248b7c240c508bcfe8000000000fbf4e26518bcfe8000000008b562852e8000000008b462c50e8000000008b4e3051e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHPAX@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Add_WORD@Checksummer@@QAEHPAX@Z",
+   "sym_key": "Checksummer::Add_WORD"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAX@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

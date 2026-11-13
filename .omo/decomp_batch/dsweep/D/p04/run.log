@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x458e00 BuildingClass::CheckMissionAttack -> BuildingClass
+[conv] 0x792ec0 CreateGameWOL_Create -> CreateGameWOL
+[conv] 0x4e14c0 GadgetClass::DestroyChain -> GadgetClass
+[conv] 0x5ee1b0 Config::SaveObserverMode -> Config
+[conv] 0x5ee6a0 NetworkLobby::UpdateLabels -> NetworkLobby
+[conv] 0x623560 GadgetClass::SetTooltip -> GadgetClass
+[conv] 0x557eb0 ListClass::Draw -> ListClass
+[conv] 0x6e56e0 TagClass::ProcessTag -> TagClass
+[conv] 0x6c9960 ObjectClass::sub_6C9960 -> ObjectClass
+[conv] 0x751080 sub_751080 -> _addr_75
+[conv] 0x7ca78c __fclose_lk -> _addr_7C
+[conv] 0x41b610 AircraftClass::PowerDrainUpdate -> AircraftClass
+[conv] 0x4c59a0 EMPulseClass::Stat -> EMPulseClass
+[conv] 0x6e45e0 ObjectClass::FindOwner -> ObjectClass
+[conv] 0x684240 Scenario::ClearScreen -> Scenario
+[conv] 0x7ac6b0 _CComObject_VCChatEventSink_ATL::Release -> _CComObject_VCChatEventSink_ATL
+[conv] 0x7ac820 _CComObject_VCNetUtilEventSink_ATL::Release -> _CComObject_VCNetUtilEventSink_ATL
+[conv] 0x7ad640 _CComObject_VCDownloadEventSink_ATL::Release -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x750fa0 AudioQueue::DrainAll -> AudioQueue
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=0
+[era] CreateGameWOL            rc=0
+[era] GadgetClass              rc=2
+[era] Config                   rc=0
+[era] NetworkLobby             rc=0
+[era] ListClass                rc=2
+[era] TagClass                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_75                 rc=0
+[era] _addr_7C                 rc=0
+[era] AircraftClass            rc=0
+[era] EMPulseClass             rc=0
+[era] Scenario                 rc=2
+[era] _CComObject_VCChatEventSink_ATL rc=0
+[era] _CComObject_VCNetUtilEventSink_ATL rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=0
+[era] AudioQueue               rc=0
+=== diffasm byte-compare ===
+[diff] 0x458e00   MATCH            BuildingClass::CheckMissionAttack
+[diff] 0x792ec0   MISMATCH         CreateGameWOL_Create
+[diff] 0x5ee1b0   MISMATCH         Config::SaveObserverMode
+[diff] 0x5ee6a0   MISMATCH         NetworkLobby::UpdateLabels
+[diff] 0x6e56e0   MISMATCH         TagClass::ProcessTag
+[diff] 0x6c9960   MATCH            ObjectClass::sub_6C9960
+[diff] 0x6e45e0   MISMATCH         ObjectClass::FindOwner
+[diff] 0x751080   MISMATCH         sub_751080
+[diff] 0x7ca78c   MISMATCH         __fclose_lk
+[diff] 0x41b610   MISMATCH         AircraftClass::PowerDrainUpdate
+[diff] 0x4c59a0   MISMATCH         EMPulseClass::Stat
+[diff] 0x7ac6b0   MISMATCH         _CComObject_VCChatEventSink_ATL::Release
+[diff] 0x7ac820   MISMATCH         _CComObject_VCNetUtilEventSink_ATL::Release
+[diff] 0x7ad640   MISMATCH         _CComObject_VCDownloadEventSink_ATL::Release
+[diff] 0x750fa0   MISMATCH         AudioQueue::DrainAll
+[ledger] 0x6dcc80 0x6dcc80 -> PENDING (attempt 1)
+[ledger] 0x458e00 BuildingClass::CheckMissionAttack -> OK (attempt 1)
+[ledger] 0x792ec0 CreateGameWOL_Create -> NG (attempt 1)
+[ledger] 0x4e14c0 GadgetClass::DestroyChain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee1b0 Config::SaveObserverMode -> NG (attempt 1)
+[ledger] 0x5ee6a0 NetworkLobby::UpdateLabels -> NG (attempt 1)
+[ledger] 0x623560 GadgetClass::SetTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557eb0 ListClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e56e0 TagClass::ProcessTag -> NG (attempt 1)
+[ledger] 0x6c9960 ObjectClass::sub_6C9960 -> OK (attempt 1)
+[ledger] 0x751080 sub_751080 -> NG (attempt 1)
+[ledger] 0x7ca78c __fclose_lk -> NG (attempt 1)
+[ledger] 0x41b610 AircraftClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x4c59a0 EMPulseClass::Stat -> NG (attempt 1)
+[ledger] 0x6e45e0 ObjectClass::FindOwner -> NG (attempt 1)
+[ledger] 0x684240 Scenario::ClearScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ac6b0 _CComObject_VCChatEventSink_ATL::Release -> NG (attempt 1)
+[ledger] 0x7ac820 _CComObject_VCNetUtilEventSink_ATL::Release -> NG (attempt 1)
+[ledger] 0x7ad640 _CComObject_VCDownloadEventSink_ATL::Release -> NG (attempt 1)
+[ledger] 0x750fa0 AudioQueue::DrainAll -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "NO_PSEUDO": 1,
+  "MATCH": 2,
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "regalloc": 4,
+  "eval_order": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 13.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p04\batch_report.json

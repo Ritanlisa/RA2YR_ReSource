@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C59A0",
+ "name": "EMPulseClass::Stat",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C59A0",
+ "bytes_hex": "56578b7c240c8bf157e862aaf4ff668b46248bcf50e876c3fdff668b4e26518bcfe86ac3fdff8b56288bcf52e87fc3fdff8b462c8bcf50e874c3fdff8b4e30518bcfe869c3fdff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

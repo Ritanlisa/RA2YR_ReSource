@@ -1,0 +1,11 @@
+{
+ "addr": "0x792EC0",
+ "name": "CreateGameWOL_Create",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x792EC0",
+ "bytes_hex": "568bf1b9c4000000e8732afeff85c0741b8b0dc87db700f7d623ce890dc87db700750933d28bc8e8f428feffe81f2cfeff684005000050ff15a8147e0085c05e740750ff15cc137e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

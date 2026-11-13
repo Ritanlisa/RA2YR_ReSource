@@ -1,0 +1,45 @@
+{
+ "symbol": "?Release@_CComObject_VCChatEventSink_ATL@@QAGJXZ",
+ "sym_key": "_CComObject_VCChatEventSink_ATL::Release",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "5153568b742408578d5e0453e8000000008bf885ff752c85f674286800000000c70600000000c70301000000e8000000008d460850e80000000056e80000000083c4048bc75f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?Addend@@3HA",
+   "sym_key": "Addend"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?vt_ATL_CComObject_CChatEventSink@@3PAXA",
+   "sym_key": "vt_ATL_CComObject_CChatEventSink"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?DeleteCriticalSection@@YGXPAX@Z",
+   "sym_key": "DeleteCriticalSection"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

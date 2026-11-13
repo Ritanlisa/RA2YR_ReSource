@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessTag@TagClass@@QAEEPAH@Z",
+ "sym_key": "TagClass::ProcessTag",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "51568bf1e8000000008b462483c004508b08ff511050e8000000008b462885c08944240474148b500483c00450ff521050e800000000894424048a4634884424048b4c2404518b4c2410e8000000005e59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  }
+ ]
+}

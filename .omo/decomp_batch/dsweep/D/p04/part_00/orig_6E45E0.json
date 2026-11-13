@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E45E0",
+ "name": "ObjectClass::FindOwner",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E45E0",
+ "bytes_hex": "8b4c240485c9750533c0c20800568b74240c81fe252300007509e8112304005ec2080083feff750633c05ec208008bcee84bc9e2ff84c08bce7409e8b0c8e2ff5ec20800e807e7e1ff5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

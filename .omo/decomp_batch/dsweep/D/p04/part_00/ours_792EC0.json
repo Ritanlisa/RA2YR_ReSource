@@ -1,0 +1,51 @@
+{
+ "symbol": "?CreateGameWOL_Create@@YIPAXPAXH@Z",
+ "sym_key": "Unnamed::CreateGameWOL_Create",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "56578bf98bf2b9c4000000e80000000085c0741b8b0d00000000f7d623ce890d00000000750933d28bc8e8000000008bcfe800000000684005000050e80000000085c05f5e740750e800000000c333c0c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChannelList@@3IA",
+   "sym_key": "g_WOL_ChannelList"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChannelList@@3IA",
+   "sym_key": "g_WOL_ChannelList"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?CloseDialog@@YIDHH@Z",
+   "sym_key": "CloseDialog"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  }
+ ]
+}
