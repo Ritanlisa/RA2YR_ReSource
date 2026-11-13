@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x7012c0 TechnoClass::FindLowestDamage -> TechnoClass
+[conv] 0x6822f0 Map_Read_6822F0 -> Map_Read
+[conv] 0x6e6080 TagTypeClass::GetAction -> TagTypeClass
+[conv] 0x5f4160 IUnknown::DropAsBomb_Track -> IUnknown
+[conv] 0x479110 CD::NeverAsk -> CD
+[conv] 0x767320 ObjectClass::sub_767320 -> ObjectClass
+[conv] 0x50d170 HouseClass::FindSWTarget -> HouseClass
+[conv] 0x7b5e30 CChatEventSink::EncodeString -> CChatEventSink
+[conv] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> ParticleSystemTypeClass
+[conv] 0x66d3a0 RulesClass::ReadColors -> RulesClass
+[conv] 0x620f60 Surface_Render -> Surface
+[conv] 0x6f4960 TechnoClass::SetHouseFlag -> TechnoClass
+[conv] 0x4054a0 Audio::UpdatePlaybackPosition -> Audio
+[conv] 0x7caa05 ___RTtypeid -> _addr_7C
+[conv] 0x7dd0f8 __wcsicmp -> _addr_7D
+[conv] 0x474540 ObjectClass::sub_474540 -> ObjectClass
+[conv] 0x51daf0 InfantryClass::PlayIdleAnim -> InfantryClass
+[conv] 0x4ded70 TechnoClass::GetThreatValue -> TechnoClass
+[conv] 0x4af800 DriveLocomotionClass::LoadFromStream -> DriveLocomotionClass
+[conv] 0x69ef10 ShipLocomotionClass::LoadFromStream -> ShipLocomotionClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Map_Read                 rc=2
+[era] TagTypeClass             rc=2
+[era] IUnknown                 rc=2
+[era] CD                       rc=0
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=0
+[era] CChatEventSink           rc=0
+[era] ParticleSystemTypeClass  rc=2
+[era] RulesClass               rc=0
+[era] Surface                  rc=0
+[era] Audio                    rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] InfantryClass            rc=0
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+=== diffasm byte-compare ===
+[diff] 0x7012c0   MISMATCH         TechnoClass::FindLowestDamage
+[diff] 0x4ded70   MISMATCH         TechnoClass::GetThreatValue
+[diff] 0x479110   MISMATCH         CD::NeverAsk
+[diff] 0x50d170   MISMATCH         HouseClass::FindSWTarget
+[diff] 0x7b5e30   MATCH            CChatEventSink::EncodeString
+[diff] 0x66d3a0   MISMATCH         RulesClass::ReadColors
+[diff] 0x620f60   MISMATCH         Surface_Render
+[diff] 0x7dd0f8   MISMATCH         __wcsicmp
+[diff] 0x51daf0   MISMATCH         InfantryClass::PlayIdleAnim
+[ledger] 0x7012c0 TechnoClass::FindLowestDamage -> NG (attempt 1)
+[ledger] 0x6822f0 Map_Read_6822F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6080 TagTypeClass::GetAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4160 IUnknown::DropAsBomb_Track -> COMPILE_FAIL (attempt 1)
+[ledger] 0x479110 CD::NeverAsk -> NG (attempt 1)
+[ledger] 0x767320 ObjectClass::sub_767320 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50d170 HouseClass::FindSWTarget -> NG (attempt 1)
+[ledger] 0x7b5e30 CChatEventSink::EncodeString -> OK (attempt 1)
+[ledger] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66d3a0 RulesClass::ReadColors -> NG (attempt 1)
+[ledger] 0x620f60 Surface_Render -> NG (attempt 1)
+[ledger] 0x6f4960 TechnoClass::SetHouseFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4054a0 Audio::UpdatePlaybackPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7caa05 ___RTtypeid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dd0f8 __wcsicmp -> NG (attempt 1)
+[ledger] 0x474540 ObjectClass::sub_474540 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51daf0 InfantryClass::PlayIdleAnim -> NG (attempt 1)
+[ledger] 0x4ded70 TechnoClass::GetThreatValue -> NG (attempt 1)
+[ledger] 0x4af800 DriveLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69ef10 ShipLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 11,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "frame_sched": 2,
+  "eval_order": 1,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p56\batch_report.json

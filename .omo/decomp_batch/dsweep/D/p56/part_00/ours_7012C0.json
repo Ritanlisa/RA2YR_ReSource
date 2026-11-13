@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindLowestDamage@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::FindLowestDamage",
+ "size": 212,
+ "link_base": 0,
+ "bytes_hex": "515355568bf18b4c240c578b065156ff90f80300008b0085c075065f5e5d5b59c38b168b98b400000056ff92840000008a88e405000084c975085f5e8bc35d5b59c333c0bfffffff7f8a86f40000008be88bcde8000000008bf085f674288b0e56ff91f40300008b0085c0740c8b80b40000003bc77d028bf88b763085f67406f646140475d83bdf7d085f5e8bc35d5b59c38bcdbfffffff7fe8000000008bf085f674288b1656ff92f40300008b0085c0740c8b80b40000003bc77d028bf88b763085f67406f646140475d88bc75f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  }
+ ]
+}

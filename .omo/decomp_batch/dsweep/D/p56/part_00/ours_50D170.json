@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindSWTarget@HouseClass@@QAEPAIPAHH@Z",
+ "sym_key": "HouseClass::FindSWTarget",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec0c5356578bf150e8000000008b3d0000000083c40433d28bd885ff0f868d000000a1000000008b0839712c740f4283c0043bd773078b0839712c75f185c9746e39712c7569e8000000008bf08d4c240c6a01518b3e56ff5748505356ff97c403000085c074338b108d4c240c5150ff52488b108b4004c1ea08c1e808668954242066894424228b44241c8b4c24205f5e89085b83c40cc208008b44241c8b154a0600005f5e89105b83c40cc208008b44241c8b0d4a0600005f5e89085b83c40cc20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetSuperWeaponTypeFlag@@YAHPAX@Z",
+   "sym_key": "GetSuperWeaponTypeFlag"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_AIProductionState@@3IA",
+   "sym_key": "g_HouseClass_AIProductionState"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_TeamClassPool@@3PAXA",
+   "sym_key": "g_TeamClassPool"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?FindBestBuildingToRepair@HouseClass@@QAEPAIXZ",
+   "sym_key": "HouseClass::FindBestBuildingToRepair"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?PlayIdleAnim@InfantryClass@@QAEDXZ",
+ "sym_key": "InfantryClass::PlayIdleAnim",
+ "size": 232,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b86c406000083f81b740f83f81c740a83f81d740583f81e75288b066a006a006a1c56ff90580500008a86db06000084c0740f8b0e6a006a006a0256ff91580500008b165355576a006a006a0056ff92580500008b8e880300008d44241050e8000000008b8ea00000008b388b969c0000008b86a40000008b1e894c24188bce895424148944241ce8000000008d4c24148be851b9f8010000e800000000c1ef0c476a01d1ef6a0083e70755575056ff93ac0100005f5d85c05b74138bcec686dc06000001e8000000005e83c410c38bcec686dc06000000e8000000005e83c410c3",
+ "relocs": [
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?GetLandHeight@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetLandHeight"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?PlayCOM_audio@FootClass@@QAEDXZ",
+   "sym_key": "FootClass::PlayCOM_audio"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?PlayCOM_audio@FootClass@@QAEDXZ",
+   "sym_key": "FootClass::PlayCOM_audio"
+  }
+ ]
+}

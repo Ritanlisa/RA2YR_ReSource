@@ -1,0 +1,99 @@
+{
+ "symbol": "?ReadColors@RulesClass@@QAEEXZ",
+ "sym_key": "RulesClass::ReadColors",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "8b4c24f083ec10535568000000008be9e80000000033db3bc30f84af0000005768000000008bcde80000000033ff3bc3894424140f8e89000000565768000000008bcde8000000008bf08d44241450568d4c24246800000000518bcd885c2424885c2425885c2426e800000000668b108bce66895424108a40028d54241088442412e8000000006a01680000000068000000008d54241c8bcee8000000006a35680000000068000000008d54241c8bcee8000000008b4c2418473bf90f8c79ffffff5e24015f5d0c015b83c410c35d33c05b83c410c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E5C@@3PADA",
+   "sym_key": "DataGlobal_839E5C"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E5C@@3PADA",
+   "sym_key": "DataGlobal_839E5C"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E5C@@3PADA",
+   "sym_key": "DataGlobal_839E5C"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E5C@@3PADA",
+   "sym_key": "DataGlobal_839E5C"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?ReadColor@INIEntry@@QAEHHPAX00@Z",
+   "sym_key": "INIEntry::ReadColor"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?System_Read@@YIDPBXH@Z",
+   "sym_key": "System_Read"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_886380@@3IA",
+   "sym_key": "DataGlobal_886380"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?System_Read_68C9C0@@YIHPAXHHHH@Z",
+   "sym_key": "System_Read_68C9C0"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_886380@@3IA",
+   "sym_key": "DataGlobal_886380"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?System_Read_68C9C0@@YIHPAXHHHH@Z",
+   "sym_key": "System_Read_68C9C0"
+  }
+ ]
+}

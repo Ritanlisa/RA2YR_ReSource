@@ -1,0 +1,81 @@
+{
+ "symbol": "?__wcsicmp@@YAFPBH0@Z",
+ "sym_key": "Unnamed::__wcsicmp",
+ "size": 316,
+ "link_base": 0,
+ "bytes_hex": "51a10000000053555685c0570f84b40000006800000000e800000000a10000000085c0741e6800000000e8000000006a13e80000000083c404c744241001000000eb08c7442410000000008b7c24188b5c241c668b0783c70225ffff000050e800000000668bf0668b0325ffff0000668974241c5083c302e80000000083c4088be86685f68b742418740b8bc625ffff00003bc574bd8b44241085c074146a13e80000000083c4048bc62bc55f5e5d5b59c36800000000e8000000008bc65f2bc55e5d5b59c38b4c241c8b7c24182bf9bb20000000668b040f663d5a00668944241c770a663d41007204015c241c668b018b74241c663d5a0089742418668944241c770e663d410072086603c3668944241c8b6c241c8bd6c1ea10668954241e668b54241883c1026685d27405663bd074a38bc65f2bc55e5d5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?InterlockedIncrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedIncrement"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA0@@3IA",
+   "sym_key": "CRTGlobal_B78BA0"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?towlower_0@@YAHHZZ",
+   "sym_key": "towlower_0"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?towlower_0@@YAHHZZ",
+   "sym_key": "towlower_0"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  }
+ ]
+}
