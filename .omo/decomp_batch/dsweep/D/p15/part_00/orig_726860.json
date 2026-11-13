@@ -1,0 +1,11 @@
+{
+ "addr": "0x726860",
+ "name": "TriggerClass::LoadTrigger",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726860",
+ "bytes_hex": "8b442408568b7424085056e8109bceff85c07c5785f674278d4c240c518bcee83c99ceffc70658587f00c746043c587f00c7460834587f00c7460c2c587f008d5624526810c1b000e89389faff8d4628506810c1b000e88589faff83c62c566810c1b000e87789faff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

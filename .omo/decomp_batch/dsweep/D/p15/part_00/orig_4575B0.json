@@ -1,0 +1,11 @@
+{
+ "addr": "0x4575B0",
+ "name": "HouseClass::Add",
+ "size": 112,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4575B0",
+ "bytes_hex": "53568bf1bb010000008a860207000084c07e4f0fbec0538b8c86e80500008b861c020000508b11ff92b80000008b8e1c02000050e867230a008bcee8a0a0ffff8b8e1c0200008899785700008b961c020000889a795700008a860207000084c07fb18b06538bceff90a00100005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

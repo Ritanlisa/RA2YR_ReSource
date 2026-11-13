@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AB10",
+ "name": "RadioClass::PowerDrainUpdate",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AB10",
+ "bytes_hex": "538b5c240856578bf153e8518ef5ff8b86e80000008bcb50e82372e4ff8b86e800000033ff85c07e408b8ee40000008b04b985c074288b500483c00450ff5210508bcbe8f871e4ff8b86e40000008b0cb88b11ff522c508bcbe8e271e4ff8b86e8000000473bf87cc05f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB12E",
+ "name": "__putws",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB12E",
+ "bytes_hex": "558bec515356be70bf870057566a01bbffff0000e8e102000056e8327a00008b7d0883c40c8945fc668b076685c0741247565047e8617e000059663bc3597413ebe6566a0ae8507e000059663bc359740233db56ff75fce8827a0000566a01e8e802000083c4108bc35f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

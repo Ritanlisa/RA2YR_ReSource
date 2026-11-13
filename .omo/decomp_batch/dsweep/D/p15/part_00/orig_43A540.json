@@ -1,0 +1,11 @@
+{
+ "addr": "0x43A540",
+ "name": "NeuronClass::Fire",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43A540",
+ "bytes_hex": "8b442408568b7424085056e8305efdff85c07c5785f674278d4c240c518bcee85c5cfdffc706f03d7e00c74604d43d7e00c74608cc3d7e00c7460cc43d7e008d5628526810c1b000e8b34c29008d4624506810c1b000e8a54c290083c62c566810c1b000e8974c290033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

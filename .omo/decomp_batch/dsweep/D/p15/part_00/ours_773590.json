@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_773590@ObjectClass@@QAEDHH@Z",
+ "sym_key": "ObjectClass::sub_773590",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf157899e10040000e8000000008d7e085768000000006a016a006800000000e80000000085c07c288bcee8000000008b0756508b08ff51148b078b4c241451538b1050ff520c8b3f6a01578b17ff523c5f5eb0015bc20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?stru_7F7C30@@3EA",
+   "sym_key": "stru_7F7C30"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?stru_7F7C60@@3EA",
+   "sym_key": "stru_7F7C60"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?CoCreateInstance@@YGJPAXHH00@Z",
+   "sym_key": "CoCreateInstance"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

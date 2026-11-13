@@ -1,0 +1,11 @@
+{
+ "addr": "0x402720",
+ "name": "Audio::GetChannelStatus",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402720",
+ "bytes_hex": "568bf1f686a4000000057407b800000f805ec38b866801000085c07507b8000007805ec3578d4e10e833e9ffff8bcee8ccfaffff8b86d40000008bceff50288b96d40000008bceff520c8bf885ff750e8b86a40000000c018986a40000008b96d40000008bceff522c8bc75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

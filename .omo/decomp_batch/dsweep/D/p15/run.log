@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x402720 Audio::GetChannelStatus -> Audio
+[conv] 0x70dc70 UnitClass::SetTurret -> UnitClass
+[conv] 0x7cb12e __putws -> _addr_7C
+[conv] 0x773590 ObjectClass::sub_773590 -> ObjectClass
+[conv] 0x43a540 NeuronClass::Fire -> NeuronClass
+[conv] 0x71f8c0 TEventClass::SaveLoad_Prefix -> TEventClass
+[conv] 0x726860 TriggerClass::LoadTrigger -> TriggerClass
+[conv] 0x76feb0 ObjectClass::TerritorySelectWDT_Process -> ObjectClass
+[conv] 0x5c3ec0 MovieClass::Create -> MovieClass
+[conv] 0x65ab10 RadioClass::PowerDrainUpdate -> RadioClass
+[conv] 0x7c97d3 _toupper -> _addr_7C
+[conv] 0x4575b0 HouseClass::Add -> HouseClass
+[conv] 0x5b9450 ObjectClass::sub_5B9450 -> ObjectClass
+[conv] 0x7b69f0 ObjectClass::sub_7B69F0 -> ObjectClass
+[conv] 0x707cb0 TechnoClass::CleanupAll -> TechnoClass
+[conv] 0x720770 ThemeManager::Cleanup -> ThemeManager
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+[conv] 0x538cc0 ObjectClass::sub_538CC0 -> ObjectClass
+[conv] 0x72b930 ObjectClass::DlgProcGameSetup_Setup_72B930 -> ObjectClass
+[conv] 0x72bb10 ObjectClass::WOLobby_Destroy -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=0
+[era] UnitClass                rc=0
+[era] _addr_7C                 rc=0
+[era] ObjectClass              rc=2
+[era] NeuronClass              rc=0
+[era] TEventClass              rc=0
+[era] TriggerClass             rc=0
+[era] MovieClass               rc=2
+[era] RadioClass               rc=0
+[era] HouseClass               rc=0
+[era] TechnoClass              rc=2
+[era] ThemeManager             rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x402720   MISMATCH         Audio::GetChannelStatus
+[diff] 0x70dc70   MISMATCH         UnitClass::SetTurret
+[diff] 0x7cb12e   MISMATCH         __putws
+[diff] 0x7c97d3   MISMATCH         _toupper
+[diff] 0x773590   MISMATCH         ObjectClass::sub_773590
+[diff] 0x7b69f0   MATCH            ObjectClass::sub_7B69F0
+[diff] 0x538cc0   MISMATCH         ObjectClass::sub_538CC0
+[diff] 0x72b930   MISMATCH         ObjectClass::DlgProcGameSetup_Setup_72B930
+[diff] 0x72bb10   MISMATCH         ObjectClass::WOLobby_Destroy
+[diff] 0x43a540   MISMATCH         NeuronClass::Fire
+[diff] 0x71f8c0   MISMATCH         TEventClass::SaveLoad_Prefix
+[diff] 0x726860   MISMATCH         TriggerClass::LoadTrigger
+[diff] 0x65ab10   MISMATCH         RadioClass::PowerDrainUpdate
+[diff] 0x4575b0   MISMATCH         HouseClass::Add
+[ledger] 0x402720 Audio::GetChannelStatus -> NG (attempt 1)
+[ledger] 0x70dc70 UnitClass::SetTurret -> NG (attempt 1)
+[ledger] 0x7cb12e __putws -> NG (attempt 1)
+[ledger] 0x773590 ObjectClass::sub_773590 -> NG (attempt 1)
+[ledger] 0x43a540 NeuronClass::Fire -> NG (attempt 1)
+[ledger] 0x71f8c0 TEventClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x726860 TriggerClass::LoadTrigger -> NG (attempt 1)
+[ledger] 0x76feb0 ObjectClass::TerritorySelectWDT_Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c3ec0 MovieClass::Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65ab10 RadioClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x7c97d3 _toupper -> NG (attempt 1)
+[ledger] 0x4575b0 HouseClass::Add -> NG (attempt 1)
+[ledger] 0x5b9450 ObjectClass::sub_5B9450 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b69f0 ObjectClass::sub_7B69F0 -> OK (attempt 1)
+[ledger] 0x707cb0 TechnoClass::CleanupAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720770 ThemeManager::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538cc0 ObjectClass::sub_538CC0 -> NG (attempt 1)
+[ledger] 0x72b930 ObjectClass::DlgProcGameSetup_Setup_72B930 -> NG (attempt 1)
+[ledger] 0x72bb10 ObjectClass::WOLobby_Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 6,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 5,
+  "regalloc": 1,
+  "branch_order": 2,
+  "extern_reloc": 1,
+  "ret_norm": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p15\batch_report.json

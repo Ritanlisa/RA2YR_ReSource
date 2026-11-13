@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B930",
+ "name": "DlgProcGameSetup_Setup_72B930",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B930",
+ "bytes_hex": "a05dfdb0005333db3ac3745e381d5cfdb0007422568b3554fbb0003bf374108bcee8aa2bf7ff56e8e1d1090083c404881d5cfdb0005ea160fdb000891d54fbb0003bc3740f50e8c2d1090083c404891d60fdb0008b0d64fdb0003bcb740c8b016a01ff10891d64fdb000881d5dfdb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x71F8C0",
+ "name": "TEventClass::SaveLoad_Prefix",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71F8C0",
+ "bytes_hex": "8b442408568b7424085056e8b00acfff85c07c5785f674278d4c240c518bcee8dc08cfffc70678557f00c746045c557f00c7460854557f00c7460c4c557f008d5628526810c1b000e833f9faff8d4630506810c1b000e825f9faff83c654566810c1b000e817f9faff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

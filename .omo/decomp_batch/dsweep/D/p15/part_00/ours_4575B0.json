@@ -1,0 +1,21 @@
+{
+ "symbol": "?Add@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::Add",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "53568bf1bb010000008b8600070000c1f81084c07e538b961c020000530fbec0528b8486e8050000508b08ff91b80000008b8e1c02000050e8000000008bcee8000000008b861c0200008898785700008b8e1c0200008899795700008b8600070000c1f81084c07fad8b165356ff92a00100005e5bc3",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?AddPower@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::AddPower"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?ClearSuperWeaponAnim@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::ClearSuperWeaponAnim"
+  }
+ ]
+}

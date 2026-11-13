@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetTurret@UnitClass@@QAEHI@Z",
+ "sym_key": "UnitClass::SetTurret",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "568bf157568b06ff90840000008a881008000084c975428b0e56ff91840000008b7c240c8bc883ff11761c6a00e800000000898624010000c78614030000000000005f5ec2040057e80000000089be140300008986240100005f5ec20400",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?processEnterTarget@UnitClass@@QAEHH@Z",
+   "sym_key": "UnitClass::processEnterTarget"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?processEnterTarget@UnitClass@@QAEHH@Z",
+   "sym_key": "UnitClass::processEnterTarget"
+  }
+ ]
+}

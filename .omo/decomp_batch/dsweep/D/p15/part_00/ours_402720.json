@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetChannelStatus@Audio@@QAEHXZ",
+ "sym_key": "Audio::GetChannelStatus",
+ "size": 88,
+ "link_base": 0,
+ "bytes_hex": "568bf1f686a0010000057407b800000f805ec38b0e85c97507b8000007805ec357e8000000008bcee8000000008b0656ff50288b0e56ff510c8bf885ff750e8b86a40000000c018986a40000008b1656ff522c8bc75f5ec3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?InitChannels@Audio@@QAEHXZ",
+   "sym_key": "Audio::InitChannels"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Cleanup@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Cleanup"
+  }
+ ]
+}
