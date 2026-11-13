@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x6915b0 TeamClass::Check -> TeamClass
+[conv] 0x691970 ScoreScreenClass::ProcessFrame -> ScoreScreenClass
+[conv] 0x6930a0 Tactical::HandleTacticalMouseInput -> Tactical
+[conv] 0x693b70 RequestNetworkFile -> _addr_69
+[conv] 0x6970a0 SessionClass::SessionClass -> SessionClass
+[conv] 0x69b700 Session::GetPlayerOption -> Session
+[conv] 0x69b720 Session::GetPlayerColor -> Session
+[conv] 0x69b7e0 SessionClass::AssignColor -> SessionClass
+[conv] 0x69db30 SHA1::Transform -> SHA1
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x69ec50 LocomotionClass::Process -> LocomotionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> ShipLocomotionClass
+[conv] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> ShipLocomotionClass
+[conv] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> ShipLocomotionClass
+[conv] 0x6a6a00 CreateTeamCommand::performAction_245 -> CreateTeamCommand
+[conv] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> TabCameoListClass
+[conv] 0x6a92e0 ObjectClass::GetSidebarTooltip -> ObjectClass
+[conv] 0x6a9540 Sidebar::UpdateProductionDisplay -> Sidebar
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] ScoreScreenClass         rc=2
+[era] Tactical                 rc=2
+[era] _addr_69                 rc=2
+[era] SessionClass             rc=2
+[era] Session                  rc=2
+[era] SHA1                     rc=2
+[era] MixFileClass             rc=2
+[era] LocomotionClass          rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] ShipLocomotionClass      rc=2
+[era] CreateTeamCommand        rc=2
+[era] TabCameoListClass        rc=2
+[era] ObjectClass              rc=2
+[era] Sidebar                  rc=2
+[era] Skirmish                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x69ec50   MISMATCH         LocomotionClass::Process
+[diff] 0x69fb20   MISMATCH         ShipLocomotionClass::ComputeAudio3DRotation_1
+[ledger] 0x6915b0 TeamClass::Check -> COMPILE_FAIL (attempt 3)
+[ledger] 0x691970 ScoreScreenClass::ProcessFrame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6930a0 Tactical::HandleTacticalMouseInput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x693b70 RequestNetworkFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6970a0 SessionClass::SessionClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b700 Session::GetPlayerOption -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69b720 Session::GetPlayerColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69b7e0 SessionClass::AssignColor -> COMPILE_FAIL (attempt 17)
+[ledger] 0x69db30 SHA1::Transform -> COMPILE_FAIL (attempt 13)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x69ec50 LocomotionClass::Process -> NG (attempt 9)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> NG (attempt 6)
+[ledger] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6a6a00 CreateTeamCommand::performAction_245 -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6a92e0 ObjectClass::GetSidebarTooltip -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6a9540 Sidebar::UpdateProductionDisplay -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p18\batch_report.json

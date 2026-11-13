@@ -1,0 +1,11 @@
+{
+ "addr": "0x69FB20",
+ "name": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
+ "size": 178,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69FB20",
+ "bytes_hex": "83ec34568b74243c578b7e2c85ff897c24087508dd0518177e00eb2b8b56208b462883faff74128b0d84eda8002bca3bc87d042bc1eb0233c02bf8897c2440db442440da742408dc1d18177e008b4c2448dfe0f6c440742d8b5608d98228030000d9e1dc1de8447e00dfe0f6c4017415d9822c030000d9e1dc1de8447e00dfe0f6c401750a85c97406c701ffffffff8d44240c515056e815acebff8bf0b90c0000008b4424448bf8f3a55f5e83c434c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x6915b0",
+  "family": "stale_stale_cw5|CW5-6/7 member chain"
+ },
+ {
+  "addr": "0x691970",
+  "family": "stale_B3"
+ },
+ {
+  "addr": "0x6930a0",
+  "family": "stale_snapshotfix2_probe"
+ },
+ {
+  "addr": "0x693b70",
+  "family": "stale_stale_cw5|CW5-10 uintN_t typedef"
+ },
+ {
+  "addr": "0x6970a0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x69b700",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x69b720",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x69b7e0",
+  "family": "stale_B1"
+ },
+ {
+  "addr": "0x69db30",
+  "family": "stale_cw3_B"
+ },
+ {
+  "addr": "0x69e930",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x69ec50",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x69f290",
+  "family": "stale_stale_cw5|CW5-1/2/3/4 call-site args"
+ },
+ {
+  "addr": "0x69fb20",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x6a0310",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6a4130",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x6a6a00",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x6a8710",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x6a92e0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6a9540",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6acd60",
+  "family": "stale_B3"
+ }
+]

@@ -1,0 +1,45 @@
+{
+ "symbol": "?ComputeAudio3DRotation_1@ShipLocomotionClass@@QAGPAMPAHPAM@Z",
+ "sym_key": "ShipLocomotionClass::ComputeAudio3DRotation_1",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "83ec348b54243856578b722c85f68974240874418b42208b4a2883f8ff74268b3d540a0000538bdf2bd83bd95b7c1233c92bf189742440db442440da742408eb1a2bc703c82bf189742440db442440da742408eb06dd0500000000dc1d000000008b742448dfe0f6c440742f33c98a4a08d98128030000d9e1dc1d00000000dfe0f6c4017415d9812c030000d9e1dc1d00000000dfe0f6c401750a85f67406c706000080bf8d44240c565052e8000000008bf0b90c0000008b4424448bf8f3a55f5e83c434c20c00",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "__real@8@3ff7a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff7a3d70a3d70a3d800"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "__real@8@3ff7a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff7a3d70a3d70a3d800"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Audio3D__ComputeRotation@@YGPAMPAX0PAM@Z",
+   "sym_key": "Audio3D__ComputeRotation"
+  }
+ ]
+}
