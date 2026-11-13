@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b2370 sub_6B2370 -> _addr_6B
+[conv] 0x6b4a10 sub_6B4A10 -> _addr_6B
+[conv] 0x6b4f00 SmudgeClass::SaveState -> SmudgeClass
+[conv] 0x6b5070 sub_6B5070 -> _addr_6B
+[conv] 0x6b5240 MapCoords::Init -> MapCoords
+[conv] 0x6b55c0 SmudgeTypeClass::GetFlag -> SmudgeTypeClass
+[conv] 0x6b6a00 sub_6B6A00 -> _addr_6B
+[conv] 0x6b6bd0 sub_6B6BD0 -> _addr_6B
+[conv] 0x6b88f0 sub_6B88F0 -> _addr_6B
+[conv] 0x6b8ac0 sub_6B8AC0 -> _addr_6B
+[conv] 0x6bb070 sub_6BB070 -> _addr_6B
+[conv] 0x6bb240 sub_6BB240 -> _addr_6B
+[conv] 0x6c68c0 sub_6C68C0 -> _addr_6C
+[conv] 0x6c6a90 sub_6C6A90 -> _addr_6C
+[conv] 0x6c89b0 ObjectClass::sub_6C89B0 -> ObjectClass
+[conv] 0x6c8c80 sub_6C8C80 -> _addr_6C
+[conv] 0x6c8e50 sub_6C8E50 -> _addr_6C
+[conv] 0x6c93f0 sub_6C93F0 -> _addr_6C
+[conv] 0x6c95c0 sub_6C95C0 -> _addr_6C
+[conv] 0x6cac10 sub_6CAC10 -> _addr_6C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=0
+[era] SmudgeClass              rc=0
+[era] MapCoords                rc=0
+[era] SmudgeTypeClass          rc=0
+[era] _addr_6C                 rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b2370   MATCH            sub_6B2370
+[diff] 0x6b4a10   MATCH            sub_6B4A10
+[diff] 0x6b5070   MATCH            sub_6B5070
+[diff] 0x6b6a00   MATCH            sub_6B6A00
+[diff] 0x6b6bd0   MATCH            sub_6B6BD0
+[diff] 0x6b88f0   MATCH            sub_6B88F0
+[diff] 0x6b8ac0   MATCH            sub_6B8AC0
+[diff] 0x6bb070   MATCH            sub_6BB070
+[diff] 0x6bb240   MATCH            sub_6BB240
+[diff] 0x6b4f00   MATCH            SmudgeClass::SaveState
+[diff] 0x6b5240   MATCH            MapCoords::Init
+[diff] 0x6b55c0   MATCH            SmudgeTypeClass::GetFlag
+[diff] 0x6c68c0   MATCH            sub_6C68C0
+[diff] 0x6c6a90   MATCH            sub_6C6A90
+[diff] 0x6c8c80   MATCH            sub_6C8C80
+[diff] 0x6c8e50   MATCH            sub_6C8E50
+[diff] 0x6c93f0   MATCH            sub_6C93F0
+[diff] 0x6c95c0   MATCH            sub_6C95C0
+[diff] 0x6cac10   MATCH            sub_6CAC10
+[diff] 0x6c89b0   MATCH            ObjectClass::sub_6C89B0
+[ledger] 0x6b2370 sub_6B2370 -> OK (attempt 3)
+[ledger] 0x6b4a10 sub_6B4A10 -> OK (attempt 4)
+[ledger] 0x6b4f00 SmudgeClass::SaveState -> OK (attempt 2)
+[ledger] 0x6b5070 sub_6B5070 -> OK (attempt 2)
+[ledger] 0x6b5240 MapCoords::Init -> OK (attempt 3)
+[ledger] 0x6b55c0 SmudgeTypeClass::GetFlag -> OK (attempt 2)
+[ledger] 0x6b6a00 sub_6B6A00 -> OK (attempt 2)
+[ledger] 0x6b6bd0 sub_6B6BD0 -> OK (attempt 3)
+[ledger] 0x6b88f0 sub_6B88F0 -> OK (attempt 2)
+[ledger] 0x6b8ac0 sub_6B8AC0 -> OK (attempt 3)
+[ledger] 0x6bb070 sub_6BB070 -> OK (attempt 2)
+[ledger] 0x6bb240 sub_6BB240 -> OK (attempt 3)
+[ledger] 0x6c68c0 sub_6C68C0 -> OK (attempt 2)
+[ledger] 0x6c6a90 sub_6C6A90 -> OK (attempt 3)
+[ledger] 0x6c89b0 ObjectClass::sub_6C89B0 -> OK (attempt 2)
+[ledger] 0x6c8c80 sub_6C8C80 -> OK (attempt 2)
+[ledger] 0x6c8e50 sub_6C8E50 -> OK (attempt 3)
+[ledger] 0x6c93f0 sub_6C93F0 -> OK (attempt 2)
+[ledger] 0x6c95c0 sub_6C95C0 -> OK (attempt 3)
+[ledger] 0x6cac10 sub_6CAC10 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p22\batch_report.json

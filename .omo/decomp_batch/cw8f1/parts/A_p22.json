@@ -1,0 +1,142 @@
+[
+ {
+  "addr": "0x6b2370",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b4a10",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b4f00",
+  "family": "cw8f1",
+  "size": 23,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b5070",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b5240",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b55c0",
+  "family": "cw8f1",
+  "size": 45,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b6a00",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b6bd0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b88f0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6b8ac0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6bb070",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6bb240",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c68c0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c6a90",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c89b0",
+  "family": "cw8f1",
+  "size": 30,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c8c80",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c8e50",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c93f0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x6c95c0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x6cac10",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ }
+]
