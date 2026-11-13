@@ -1,0 +1,93 @@
+{
+ "symbol": "?CheckDiscPresence@CD@@QAEDH@Z",
+ "sym_key": "CD::CheckDiscPresence",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "518b4424085355568bd933ed5783f8fe895c24108bf8750a5f5e5db0015b59c2040085c07c05bf020000008b3500000000e80000000083f8ff7e133bf8740583ffff750a85f68bee0f8592000000a10000000085c074253b0500000000741de80000000083f8ff7e133bf8747383ffff750a5f5e5db0015b59c20400a10000000033db85c0764985c0741c8b0d000000003bc8750233c98b348d0000000041890d00000000eb0383ceffe80000000083f8ff7e0e3bf8741683ffff741183fffe740ca100000000433bd87304ebb98bee8bcde800000000e8000000008b5c2410893d000000008b035753ff50085f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?AlwaysFindYRCD@@YAHXZ",
+   "sym_key": "AlwaysFindYRCD"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E418@@3IA",
+   "sym_key": "DataGlobal_89E418"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E414@@3IA",
+   "sym_key": "DataGlobal_89E414"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?AlwaysFindYRCD@@YAHXZ",
+   "sym_key": "AlwaysFindYRCD"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?dword_A8E950@@3IA",
+   "sym_key": "dword_A8E950"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?dword_A8E954@@3IA",
+   "sym_key": "dword_A8E954"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E8E8@@3IA",
+   "sym_key": "DataGlobal_A8E8E8"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?dword_A8E954@@3IA",
+   "sym_key": "dword_A8E954"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?AlwaysFindYRCD@@YAHXZ",
+   "sym_key": "AlwaysFindYRCD"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?dword_A8E950@@3IA",
+   "sym_key": "dword_A8E950"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?SetCurrentInstance@CD@@QAEHXZ",
+   "sym_key": "CD::SetCurrentInstance"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?sub_47AAC0@@YAHXZ",
+   "sym_key": "sub_47AAC0"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?dword_81FFB0@@3IA",
+   "sym_key": "dword_81FFB0"
+  }
+ ]
+}

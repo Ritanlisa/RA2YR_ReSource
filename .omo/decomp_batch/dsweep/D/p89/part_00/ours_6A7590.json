@@ -1,0 +1,99 @@
+{
+ "symbol": "?SwitchTab@SidebarClass@@QAEHH@Z",
+ "sym_key": "SidebarClass::SwitchTab",
+ "size": 340,
+ "link_base": 0,
+ "bytes_hex": "538bd9558b6c240c8b839c5300003be80f84390100008bc856c1e1055781c100000000e8000000008b839c53000033f68bc8c1e1052bc88d14c88d04908d3c83c68760150000008b877c1500006bc03c03c68d0cc5000000002bc88d14cd807eb000b9f801000052e8000000004683fe3c7cd48bcd89ab9c530000c1e10581c100000000e8000000008b839c5300008bc8c1e1052bc88d14c88d04908d2c83b81a000000c68560150000018b0d000000008b91c8b1500085d27405b8120000008b15000000008b0d000000002bd133f62bd0a1000000008d4c02f9b81f85eb51f7e18bfac1ef04d1e785ff7e4b8b857c1500006bc03c03c68d14c5000000002bd08d0cd5807eb000e8000000008b857c1500006bc03c03c68d0cc5000000002bc88d14cd807eb000b9f801000052e800000000463bf77cb58bcbc6050000000001e8000000005fc683a7530000015e5d5bc20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Hide@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Hide"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?SelectObject@Tactical@@QAEDH@Z",
+   "sym_key": "Tactical::SelectObject"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?Show@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Show"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?InsertOrdered@Hash@@QAEDH@Z",
+   "sym_key": "Hash::InsertOrdered"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?UpdateUIVisibility@Tactical@@QAEHXZ",
+   "sym_key": "Tactical::UpdateUIVisibility"
+  }
+ ]
+}

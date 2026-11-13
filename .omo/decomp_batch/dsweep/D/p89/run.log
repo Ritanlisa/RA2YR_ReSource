@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p89\part_00
+=== convert (20 addrs) ===
+[conv] 0x7bbb90 XSurface::BlitPart -> XSurface
+[conv] 0x689310 ScenarioClass::SaveLoad_Prefix -> ScenarioClass
+[conv] 0x68ec20 CellClass::CreateInstance -> CellClass
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+[conv] 0x727880 ObjectClass::ReadAudioEventINI -> ObjectClass
+[conv] 0x76e750 ObjectClass::Team_Start_76E750 -> ObjectClass
+[conv] 0x483780 CellClass::SpawnTiberiumTree -> CellClass
+[conv] 0x7c8b48 _qsort -> _addr_7C
+[conv] 0x621d30 sub_621D30 -> _addr_62
+[conv] 0x4a5eb0 RenderTextLabel -> _addr_4A
+[conv] 0x4a8270 CD::CheckDiscPresence -> CD
+[conv] 0x558a30 sub_558A30 -> _addr_55
+[conv] 0x447f10 BuildingClass::GetFireError -> BuildingClass
+[conv] 0x6a7590 SidebarClass::SwitchTab -> SidebarClass
+[conv] 0x5b2a30 Movement::UpdateLocomotion -> Movement
+[conv] 0x5018c0 HouseClass::NotifyPowerStateChange -> HouseClass
+[conv] 0x5c30c0 MPCooperative::BroadcastMessage -> MPCooperative
+[conv] 0x522a60 TechnoClass::HandleSpecialAction -> TechnoClass
+[conv] 0x5d1e70 DSurface::RenderToSurface -> DSurface
+[conv] 0x4aad30 DisplayClass::DispatchMode -> DisplayClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] ScenarioClass            rc=0
+[era] CellClass                rc=0
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_62                 rc=2
+[era] _addr_4A                 rc=0
+[era] CD                       rc=0
+[era] _addr_55                 rc=0
+[era] BuildingClass            rc=2
+[era] SidebarClass             rc=0
+[era] Movement                 rc=2
+[era] HouseClass               rc=2
+[era] MPCooperative            rc=2
+[era] TechnoClass              rc=0
+[era] DSurface                 rc=2
+[era] DisplayClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x689310   MISMATCH         ScenarioClass::SaveLoad_Prefix
+[diff] 0x68ec20   MISMATCH         CellClass::CreateInstance
+[diff] 0x483780   MISMATCH         CellClass::SpawnTiberiumTree
+[diff] 0x4a5eb0   MISMATCH         RenderTextLabel
+[diff] 0x4a8270   MISMATCH         CD::CheckDiscPresence
+[diff] 0x558a30   MISMATCH         sub_558A30
+[diff] 0x6a7590   MISMATCH         SidebarClass::SwitchTab
+[diff] 0x522a60   MISMATCH         TechnoClass::HandleSpecialAction
+[diff] 0x4aad30   MISMATCH         DisplayClass::DispatchMode
+[ledger] 0x7bbb90 XSurface::BlitPart -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689310 ScenarioClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x68ec20 CellClass::CreateInstance -> NG (attempt 1)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727880 ObjectClass::ReadAudioEventINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e750 ObjectClass::Team_Start_76E750 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483780 CellClass::SpawnTiberiumTree -> NG (attempt 1)
+[ledger] 0x7c8b48 _qsort -> COMPILE_FAIL (attempt 1)
+[ledger] 0x621d30 sub_621D30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5eb0 RenderTextLabel -> NG (attempt 1)
+[ledger] 0x4a8270 CD::CheckDiscPresence -> NG (attempt 1)
+[ledger] 0x558a30 sub_558A30 -> NG (attempt 1)
+[ledger] 0x447f10 BuildingClass::GetFireError -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a7590 SidebarClass::SwitchTab -> NG (attempt 1)
+[ledger] 0x5b2a30 Movement::UpdateLocomotion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5018c0 HouseClass::NotifyPowerStateChange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c30c0 MPCooperative::BroadcastMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522a60 TechnoClass::HandleSpecialAction -> NG (attempt 1)
+[ledger] 0x5d1e70 DSurface::RenderToSurface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aad30 DisplayClass::DispatchMode -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 3,
+  "codegen_shape": 2,
+  "const_fold": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p89\batch_report.json

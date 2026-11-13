@@ -1,0 +1,27 @@
+{
+ "symbol": "?DispatchMode@DisplayClass@@QAEEH@Z",
+ "sym_key": "DisplayClass::DispatchMode",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86a411000085c0742ff640140174296a008bcec786a411000000000000c786a811000000000000c786ac110000ffffffffe800000000eb0c6a008bcee8000000000fbec08b1633c98a0d0000000024000bc1506a0056ff52485ec20400",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SetBounds@Mouse@@QAEHPAX@Z",
+   "sym_key": "Mouse::SetBounds"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?TogglePower@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884D44@@3EA",
+   "sym_key": "DataGlobal_884D44"
+  }
+ ]
+}

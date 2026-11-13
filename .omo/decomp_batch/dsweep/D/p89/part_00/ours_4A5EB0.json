@@ -1,0 +1,45 @@
+{
+ "symbol": "?RenderTextLabel@@YIPAHPAHPAG00HFHHH@Z",
+ "sym_key": "Unnamed::RenderTextLabel",
+ "size": 323,
+ "link_base": 0,
+ "bytes_hex": "83ec248b44242c895424088b5424305355568b5a048d70048974241c89442410031e8b30033283c00889442418578b008d54243c508be98b0d00000000528b5424208d44244850528bf9e8000000008b44244c8bc8c1f908f6c401741a8b442440992bc2d1f8f7d803f08b44244cf6c40274042b74244084c97c1ff6c10474418d46ff8d542410894424108b4424386a00528b0850ff5114eb278d46ff8d54244c894424108b44244c24006a3c894424508b44243c528d5424188b085250ff511c8b44241c8b5424206a018b088b028b5424188b12895424288b5424188b520c8944242c895424248b54242803d18b4c242403c889542430894c24348bcfe8000000008d5424248bcf52e8000000008bcf8b44244450e8000000008b4c24188b5424386a006a005356515257e800000000897500895d045f8bc55e5d5b83c424c21c00",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?Swap@Char@@QAEDD@Z",
+   "sym_key": "Char::Swap"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?Set@Property@@QAEFF@Z",
+   "sym_key": "Property::Set"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?FontRenderer__DrawText@@YGHPAXPAHPAGHHHH@Z",
+   "sym_key": "FontRenderer__DrawText"
+  }
+ ]
+}

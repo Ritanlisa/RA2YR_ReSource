@@ -1,0 +1,27 @@
+{
+ "symbol": "?HandleSpecialAction@TechnoClass@@QAEDHH@Z",
+ "sym_key": "TechnoClass::HandleSpecialAction",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b87b80600008a886a0d000084c9750a8a88940d000084c9746b817c240c7b11000075618d77f88bcee80000000084c074538b066a0856ff90740200008b871002000085c0741e0fbe8f840600003bc174138b166a015056ff92800400005fb0015ec208008bcee8000000008b066a006a0168ea0f000056ff90740100005fb0015ec208005f32c05ec20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?AllMembersValid@Team@@QAEDXZ",
+   "sym_key": "Team::AllMembersValid"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?ClearPathIndex@FootClass@@QAEHXZ",
+   "sym_key": "FootClass::ClearPathIndex"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

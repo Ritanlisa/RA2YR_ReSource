@@ -1,0 +1,27 @@
+{
+ "symbol": "?SaveLoad_Prefix@ScenarioClass@@QAEDPAH@Z",
+ "sym_key": "ScenarioClass::SaveLoad_Prefix",
+ "size": 302,
+ "link_base": 0,
+ "bytes_hex": "51558be9e8000000008b851406000083f8ff0f9444240483f8ff7425e8000000008b95140600008b8d1c0600002bc2c78514060000ffffffff03c189851c06000053568bb5e4340000578dbde43400006a008b0668403700005556ff50108b066a006a045756ff50108b0733db85c07e1b8b95d83400008b0e6a006a048d049a5056ff51108b07433bd87ce58b068b8d003500006a006a045756890fff50108b0733db85c07e1b8b85f43400008b166a006a048d0c985156ff52108b07433bd87ce58b068b951c3500006a006a0457568917ff50108b0733db85c07e1b8b8d103500008b066a006a048d14995256ff50108b07433bd87ce58b4424108b4c2410240081e1ff0000000bc18a4c24105f5e84c95b751483bd14060000ff750be8000000008985140600005d59c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_558A30@@YGHPAXHH0@Z",
+ "sym_key": "Unnamed::sub_558A30",
+ "size": 307,
+ "link_base": 0,
+ "bytes_hex": "538b5c2410558b6c2418568b742414578b7c241455538bd68bcfe80000000085c00f850501000081fe160200007e5a81fe970400000f85ac0000006a0268f900000068a6040000682505000057e80000000068ff0000006a3868a6040000682505000057e800000000683b0100006a0068a6040000682505000057e8000000005f5e5d33c05bc2100083fe0f0f848e00000081fe11010000741a81fe16020000754555e8000000005f5e5d25ff0000005bc210008bf36a08c1fe105781e6ffff0000e8000000008bf88bc325ffff0000bb0f0400003bc3743b3d2505000074203d8606000074095f5e5d33c05bc21000c74718020000005f5e5d33c05bc2100083fe02750f6a006a00688b01000055e800000000895f185f5e5d33c05bc210008bcfe800000000b8010000005f5e5d5bc21000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?Window__ClampToScreen@@YGDPAX@Z",
+   "sym_key": "Window__ClampToScreen"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "symbol": "?SpawnTiberiumTree@CellClass@@QAEDD@Z",
+ "sym_key": "CellClass::SpawnTiberiumTree",
+ "size": 366,
+ "link_base": 0,
+ "bytes_hex": "83ec10538a5c2418555684db578be9757ca1000000008b0851e80000000083c40485c07c0c5f5e5d32c05b83c410c204008b4d44e8000000008bf083feff74419933c92bc28a8d1e010000d1f83bc87e308a851c01000084c075268b15d80700008b04b2dd80a0000000dc1d00000000dfe0f6c401750a8b85e400000085c0740c5f5e5d32c05b83c410c204008b4d44e80000000084db89442424740b83f8ff750633c0894424248b0dd80700006a076a008b1481a1000000008954241c8d8868050300e8000000008b74242433db0fbec8894c24108b4424108ad303d083e2078bc283f80873440fbf4d240fbe807a000000894c24188b54241a03c833ce81e1ff000000c1f81033f103c233c6b9f801000025ff00000033f08d442418508974241ce8000000008bf8eb028bfd85ff74128b4c24145157e80000000083c40884c075124383fb087c8c5f5e5d32c05b83c410c204008b5424246a03528bcfe8000000005f5e5d5b83c410c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHPAXZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "__real@8@3feea7c5ac471b478800",
+   "sym_key": "_real@8@3feea7c5ac471b478800"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?IsCoordValidMap@@YADHH@Z",
+   "sym_key": "IsCoordValidMap"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?FindPlacement@Crate@@QAEDHH@Z",
+   "sym_key": "Crate::FindPlacement"
+  }
+ ]
+}
