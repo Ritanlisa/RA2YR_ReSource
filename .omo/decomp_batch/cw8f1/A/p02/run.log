@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x41d240 sub_41D240 -> _addr_41
+[conv] 0x41d260 sub_41D260 -> _addr_41
+[conv] 0x41d780 AirstrikeClass::Seek -> AirstrikeClass
+[conv] 0x41e160 sub_41E160 -> _addr_41
+[conv] 0x41e330 sub_41E330 -> _addr_41
+[conv] 0x4206f0 sub_4206F0 -> _addr_42
+[conv] 0x4208c0 sub_4208C0 -> _addr_42
+[conv] 0x421cb0 sub_421CB0 -> _addr_42
+[conv] 0x421e80 sub_421E80 -> _addr_42
+[conv] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> ObjectClass
+[conv] 0x427320 sub_427320 -> _addr_42
+[conv] 0x4274f0 sub_4274F0 -> _addr_42
+[conv] 0x429010 sub_429010 -> _addr_42
+[conv] 0x4291e0 sub_4291E0 -> _addr_42
+[conv] 0x429200 sub_429200 -> _addr_42
+[conv] 0x429590 sub_429590 -> _addr_42
+[conv] 0x429760 sub_429760 -> _addr_42
+[conv] 0x42e600 sub_42E600 -> _addr_42
+[conv] 0x42ffa0 sub_42FFA0 -> _addr_42
+[conv] 0x430170 sub_430170 -> _addr_43
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_41                 rc=0
+[era] AirstrikeClass           rc=0
+[era] _addr_42                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_43                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x41d240   MATCH            sub_41D240
+[diff] 0x41d260   MATCH            sub_41D260
+[diff] 0x41e160   MATCH            sub_41E160
+[diff] 0x41e330   MATCH            sub_41E330
+[diff] 0x41d780   MATCH            AirstrikeClass::Seek
+[diff] 0x4206f0   MATCH            sub_4206F0
+[diff] 0x4208c0   MATCH            sub_4208C0
+[diff] 0x421cb0   MATCH            sub_421CB0
+[diff] 0x421e80   MATCH            sub_421E80
+[diff] 0x427320   MATCH            sub_427320
+[diff] 0x4274f0   MATCH            sub_4274F0
+[diff] 0x429010   MATCH            sub_429010
+[diff] 0x4291e0   MATCH            sub_4291E0
+[diff] 0x429200   MATCH            sub_429200
+[diff] 0x429590   MATCH            sub_429590
+[diff] 0x429760   MATCH            sub_429760
+[diff] 0x42e600   MATCH            sub_42E600
+[diff] 0x42ffa0   MATCH            sub_42FFA0
+[diff] 0x4263c0   MATCH            ObjectClass::COMStub_Ret8487648_36
+[diff] 0x430170   MATCH            sub_430170
+[ledger] 0x41d240 sub_41D240 -> OK (attempt 3)
+[ledger] 0x41d260 sub_41D260 -> OK (attempt 3)
+[ledger] 0x41d780 AirstrikeClass::Seek -> OK (attempt 2)
+[ledger] 0x41e160 sub_41E160 -> OK (attempt 2)
+[ledger] 0x41e330 sub_41E330 -> OK (attempt 3)
+[ledger] 0x4206f0 sub_4206F0 -> OK (attempt 2)
+[ledger] 0x4208c0 sub_4208C0 -> OK (attempt 4)
+[ledger] 0x421cb0 sub_421CB0 -> OK (attempt 2)
+[ledger] 0x421e80 sub_421E80 -> OK (attempt 3)
+[ledger] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> OK (attempt 3)
+[ledger] 0x427320 sub_427320 -> OK (attempt 2)
+[ledger] 0x4274f0 sub_4274F0 -> OK (attempt 3)
+[ledger] 0x429010 sub_429010 -> OK (attempt 2)
+[ledger] 0x4291e0 sub_4291E0 -> OK (attempt 3)
+[ledger] 0x429200 sub_429200 -> OK (attempt 3)
+[ledger] 0x429590 sub_429590 -> OK (attempt 2)
+[ledger] 0x429760 sub_429760 -> OK (attempt 3)
+[ledger] 0x42e600 sub_42E600 -> OK (attempt 3)
+[ledger] 0x42ffa0 sub_42FFA0 -> OK (attempt 2)
+[ledger] 0x430170 sub_430170 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p02\batch_report.json
