@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x67bce0 SmallFunc_67BCE0 -> SmallFunc
+[conv] 0x67bd30 GetINIClassKeyword -> _addr_67
+[conv] 0x67bd80 SmallFunc_67BD80 -> SmallFunc
+[conv] 0x67bdd0 RulesClass::LoadTypeList -> RulesClass
+[conv] 0x67e440 Game::LoadSaved -> Game
+[conv] 0x67fd20 LoadOptions_Load -> LoadOptions
+[conv] 0x683610 ScenarioClass::InitTimer -> ScenarioClass
+[conv] 0x6851f0 ObjectClass::ResetScenario -> ObjectClass
+[conv] 0x686b20 ScenarioClass::LoadMap -> ScenarioClass
+[conv] 0x687f10 ObjectClass::AssignSessionHouses -> ObjectClass
+[conv] 0x689b20 ScenarioClass::ReadLocalVariables -> ScenarioClass
+[conv] 0x689c60 ScenarioClass::ReadWaypoint -> ScenarioClass
+[conv] 0x68f060 Screen::TransitionRender -> Screen
+[conv] 0x68f9b0 ScoreScreen::DisplayTimeText -> ScoreScreen
+[conv] 0x68fb10 ObjectClass::sub_68FB10 -> ObjectClass
+[conv] 0x690530 ObjectClass::sub_690530 -> ObjectClass
+[conv] 0x6917f0 ScriptTypeClass::GetParameter -> ScriptTypeClass
+[conv] 0x6918a0 ScriptTypeClass::GetEvent -> ScriptTypeClass
+[conv] 0x693060 ScrollClass::GetHotspot -> ScrollClass
+[conv] 0x696200 ObjectClass::InitializeModemPortSelect -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SmallFunc                rc=2
+[era] _addr_67                 rc=2
+[era] RulesClass               rc=2
+[era] Game                     rc=2
+[era] LoadOptions              rc=2
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] Screen                   rc=2
+[era] ScoreScreen              rc=2
+[era] ScriptTypeClass          rc=2
+[era] ScrollClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x693060   MISMATCH         ScrollClass::GetHotspot
+[ledger] 0x67bce0 SmallFunc_67BCE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67bd30 GetINIClassKeyword -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67bd80 SmallFunc_67BD80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67bdd0 RulesClass::LoadTypeList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67e440 Game::LoadSaved -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67fd20 LoadOptions_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x683610 ScenarioClass::InitTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6851f0 ObjectClass::ResetScenario -> COMPILE_FAIL (attempt 2)
+[ledger] 0x686b20 ScenarioClass::LoadMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x687f10 ObjectClass::AssignSessionHouses -> COMPILE_FAIL (attempt 2)
+[ledger] 0x689b20 ScenarioClass::ReadLocalVariables -> COMPILE_FAIL (attempt 2)
+[ledger] 0x689c60 ScenarioClass::ReadWaypoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68f060 Screen::TransitionRender -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68f9b0 ScoreScreen::DisplayTimeText -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68fb10 ObjectClass::sub_68FB10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x690530 ObjectClass::sub_690530 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6917f0 ScriptTypeClass::GetParameter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6918a0 ScriptTypeClass::GetEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x693060 ScrollClass::GetHotspot -> NG (attempt 2)
+[ledger] 0x696200 ObjectClass::InitializeModemPortSelect -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p16\batch_report.json

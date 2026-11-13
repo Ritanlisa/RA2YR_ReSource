@@ -1,0 +1,11 @@
+{
+ "addr": "0x693060",
+ "name": "MouseClass::GetHotspot",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x693060",
+ "bytes_hex": "8a815a55000084c07528a09ceda80084c0751fa12473880085c07413d980d8000000d81d48177e00dfe0f6c440740332c0c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
