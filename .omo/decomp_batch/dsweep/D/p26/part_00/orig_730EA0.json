@@ -1,0 +1,11 @@
+{
+ "addr": "0x730EA0",
+ "name": "UI_Create_730EA0",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x730EA0",
+ "bytes_hex": "a1c8eca80053555685c0577e6f8be833ff85edb3017e49a1bceca8008b34b885f67434f6461401742e8b168bceff92a000000084c0750e8b068bceff909c00000084c074128b166a068bceff92740300008ad884db7425473bfd7cbb84db741ca1e07188006a00ba00200000680000803f8b8820070000e804fa01005f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

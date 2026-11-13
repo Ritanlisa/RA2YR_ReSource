@@ -1,0 +1,33 @@
+{
+ "symbol": "?HasVoiceResponse@TechnoTypeClass@@QAE_NH@Z",
+ "sym_key": "TechnoTypeClass::HasVoiceResponse",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "568bf1578dbe5001000057e80000000083c40484c0750d57e80000000083c40484c074380fbe860d02000056ff10578bf0e80000000083c40484c074168b4c240c8a840e9c02000084c074075fb0015ec2040057e80000000083c4045f32c05ec20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  }
+ ]
+}

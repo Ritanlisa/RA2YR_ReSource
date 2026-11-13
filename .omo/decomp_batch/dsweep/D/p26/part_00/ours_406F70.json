@@ -1,0 +1,99 @@
+{
+ "symbol": "?UpdateAudioVideo@@YIPAXPAXPAVObjectClass@@@Z",
+ "sym_key": "Unnamed::UpdateAudioVideo",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "83ec0ca1000000008954240085c00f8587000000a10000000085c0747e53555657c7050000000001000000e8000000008b7c24108b15000000008bf033c98bdf33ed0bce2bc20bdd2bca1b1d04000000895c2418750583f92176328b44241050e80000000083c404e800000000e800000000b900000000e800000000e800000000893500000000893d040000005f5e5dc70500000000000000005b83c40cc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E75C@@3IA",
+   "sym_key": "DataGlobal_87E75C"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E75C@@3IA",
+   "sym_key": "DataGlobal_87E75C"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E760@@3_JA",
+   "sym_key": "DataGlobal_87E760"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E760@@3_JA",
+   "sym_key": "DataGlobal_87E760"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?ProcessAudioFrame@@YAHPAX@Z",
+   "sym_key": "ProcessAudioFrame"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?UpdateVocClass@@YAHXZ",
+   "sym_key": "UpdateVocClass"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?UpdateThemes@@YAXXZ",
+   "sym_key": "UpdateThemes"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Update@Movie@@QAEDXZ",
+   "sym_key": "Movie::Update"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Audio_Update@@YAHXZ",
+   "sym_key": "Audio_Update"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E760@@3_JA",
+   "sym_key": "DataGlobal_87E760"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E760@@3_JA",
+   "sym_key": "DataGlobal_87E760"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E75C@@3IA",
+   "sym_key": "DataGlobal_87E75C"
+  }
+ ]
+}

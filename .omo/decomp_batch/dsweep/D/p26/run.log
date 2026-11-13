@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x631300 ObjectClass::sub_631300 -> ObjectClass
+[conv] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> ObjectClass
+[conv] 0x4272a0 AnimFile::QueryInterface -> AnimFile
+[conv] 0x428f70 globalHelper_028F70 -> _addr_42
+[conv] 0x452d40 ObjectClass::ProcessDataBuildingClass -> ObjectClass
+[conv] 0x466000 BuildingClass::Create -> BuildingClass
+[conv] 0x74bb20 globalHelper_04BB20 -> _addr_74
+[conv] 0x70d0d0 TechnoTypeClass::HasVoiceResponse -> TechnoTypeClass
+[conv] 0x623230 CreateMessageBox -> _addr_62
+[conv] 0x5dbec0 ObjectClass::SendMultiplayerStartSignal_Start -> ObjectClass
+[conv] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> ObjectClass
+[conv] 0x4a2a20 CStreamClass::StubReturnNullPointer -> CStreamClass
+[conv] 0x730ea0 UI_Create_730EA0 -> UI_Create
+[conv] 0x736c10 TechnoClass::sub_736C10 -> TechnoClass
+[conv] 0x406f70 UpdateAudioVideo -> _addr_40
+[conv] 0x536610 NextObjectCommandClass::performAction_30 -> NextObjectCommandClass
+[conv] 0x536a80 PrevObjectCommandClass::performAction_69 -> PrevObjectCommandClass
+[conv] 0x7baf90 XSurface::PutPixel -> XSurface
+[conv] 0x672740 RulesClass::ReadSideData -> RulesClass
+[conv] 0x7a2ea0 System_Init_7A2EA0 -> System_Init
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] AnimFile                 rc=2
+[era] _addr_42                 rc=0
+[era] BuildingClass            rc=0
+[era] _addr_74                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] _addr_62                 rc=2
+[era] CStreamClass             rc=2
+[era] UI_Create                rc=0
+[era] TechnoClass              rc=0
+[era] _addr_40                 rc=0
+[era] NextObjectCommandClass   rc=2
+[era] PrevObjectCommandClass   rc=2
+[era] XSurface                 rc=2
+[era] RulesClass               rc=2
+[era] System_Init              rc=2
+=== diffasm byte-compare ===
+[diff] 0x631300   MISMATCH         ObjectClass::sub_631300
+[diff] 0x428f70   MISMATCH         globalHelper_028F70
+[diff] 0x466000   MISMATCH         BuildingClass::Create
+[diff] 0x74bb20   MISMATCH         globalHelper_04BB20
+[diff] 0x70d0d0   MISMATCH         TechnoTypeClass::HasVoiceResponse
+[diff] 0x730ea0   MISMATCH         UI_Create_730EA0
+[diff] 0x736c10   MISMATCH         TechnoClass::sub_736C10
+[diff] 0x406f70   MISMATCH         UpdateAudioVideo
+[ledger] 0x631300 ObjectClass::sub_631300 -> NG (attempt 1)
+[ledger] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4272a0 AnimFile::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x428f70 globalHelper_028F70 -> NG (attempt 1)
+[ledger] 0x452d40 ObjectClass::ProcessDataBuildingClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x466000 BuildingClass::Create -> NG (attempt 1)
+[ledger] 0x74bb20 globalHelper_04BB20 -> NG (attempt 1)
+[ledger] 0x70d0d0 TechnoTypeClass::HasVoiceResponse -> NG (attempt 1)
+[ledger] 0x623230 CreateMessageBox -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dbec0 ObjectClass::SendMultiplayerStartSignal_Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2a20 CStreamClass::StubReturnNullPointer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x730ea0 UI_Create_730EA0 -> NG (attempt 1)
+[ledger] 0x736c10 TechnoClass::sub_736C10 -> NG (attempt 1)
+[ledger] 0x406f70 UpdateAudioVideo -> NG (attempt 1)
+[ledger] 0x536610 NextObjectCommandClass::performAction_30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536a80 PrevObjectCommandClass::performAction_69 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7baf90 XSurface::PutPixel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672740 RulesClass::ReadSideData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2ea0 System_Init_7A2EA0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 5,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p26\batch_report.json

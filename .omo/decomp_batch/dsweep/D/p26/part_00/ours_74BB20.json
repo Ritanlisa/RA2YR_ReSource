@@ -1,0 +1,57 @@
+{
+ "symbol": "?globalHelper_04BB20@@YIPAIPADH@Z",
+ "sym_key": "Unnamed::globalHelper_04BB20",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "5333c0a000000000568bd957538bf250e80000000083c40885c0747b33c9538a0d0000000051e80000000083c40885c074658b461033ff85c07e3f8b5604538b0283c02450e80000000083c40885c0741f8b4610473bf873218b4e04538b14b983c22452e80000000083c40885c075e18b46048b04b85f5e5bc36808030000e80000000083c40485c0740c538bc8e8000000005f5e5bc35f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Constructor@VoxelAnimTypeClass@@QAEPAIPAX@Z",
+   "sym_key": "VoxelAnimTypeClass::Constructor"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x406F70",
+ "name": "UpdateAudioVideo",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406F70",
+ "bytes_hex": "a15ce7870083ec0885c07571a128e7870085c074685657c7055ce7870001000000e81a2400008b0d60e787008bf08bfa8b1564e787002bc18bcf1bca894c240c750583f821762ae814d2ffffe8ff9e3400e89ab73400b9103da800e8009a3100e8fb143b00893560e78700893d64e787005fc7055ce78700000000005e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

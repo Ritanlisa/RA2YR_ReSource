@@ -1,0 +1,11 @@
+{
+ "addr": "0x70D0D0",
+ "name": "TechnoClass::HasVoiceResponse",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70D0D0",
+ "bytes_hex": "53568bf1578dbe500100008bcfe8ae2e040084c0750b8bcfe8232f040084c074578b068bceff90840000008bcf8bf0e88c2e04008b5c241084c074138a841e9c02000084c074085f5eb0015bc204008bcfe8ea2e040084c0741e8a841e9c02000084c0750b8a841eae02000084c074085f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

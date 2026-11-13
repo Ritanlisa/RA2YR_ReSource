@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_736C10@TechnoClass@@QAEDH@Z",
+ "sym_key": "TechnoClass::sub_736C10",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf1568b06ff908401000083f80575678b8e9c0000008b96a00000008b86a4000000894c24048d4c24048954240851b90000000089442410e80000000084c075368b869c03000085c0742c8b86d805000085c07407c68082000000018b1656ff92a00300008b0656ff90f8000000b0015e83c40cc2040032c05e83c40cc20400",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?IsCellVisible@Tactical@@QAE_NPAX@Z",
+   "sym_key": "Tactical::IsCellVisible"
+  }
+ ]
+}
