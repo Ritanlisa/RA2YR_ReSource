@@ -1,0 +1,45 @@
+{
+ "symbol": "?Destructor@_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass@@QAEPADD@Z",
+ "sym_key": "_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "8a44240453578bf9a802745f8b47fc558d6ffc568d34408d48ffc1e60533db03f73bcb7c2d8d79018b46ec83ee183bc3c706000000007411385e0d740c50e80000000083c404895e044f885e0d895e0875d6f644241401740955e80000000083c4048bc55e5d5f5bc204008b470433db3bc3c7070000000074148b4f0cf6c5ff740c50e80000000083c404895f048b4f0c8a44240c80e500895f08a801894f0c740957e80000000083c4048bc75f5bc20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass@@3PAXA",
+   "sym_key": "vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass@@3PAXA",
+   "sym_key": "vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

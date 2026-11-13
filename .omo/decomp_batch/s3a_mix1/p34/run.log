@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x629e90 FootClass::CreateWakes -> FootClass
+[conv] 0x62c6e0 TechnoClass::UpdateParticleSystem -> TechnoClass
+[conv] 0x62d510 ObjectClass::sub_62D510 -> ObjectClass
+[conv] 0x62f230 ParticleSystemClass::SpawnParticle -> ParticleSystemClass
+[conv] 0x630310 DecodeFrameSHP -> _addr_63
+[conv] 0x637dd0 Object_Helper_637DD0 -> Object_Helper
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> ObjectClass
+[conv] 0x63d560 BuildingClass::DrawSelectionBlip -> BuildingClass
+[conv] 0x63d910 DrawTacticalFillScanline -> _addr_63
+[conv] 0x642ff0 sub_642FF0 -> _addr_64
+[conv] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> ParticleTypeClass
+[conv] 0x64b240 KickNetworkPlayerNow -> _addr_64
+[conv] 0x650a90 AllocateTriggerLog -> _addr_65
+[conv] 0x6521c0 Network::RecordEvent -> Network
+[conv] 0x653f50 RadarClass::DrawWrapper -> RadarClass
+[conv] 0x658c60 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x658d10 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x659650 ObjectClass::RenderProjectileTrail -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] ParticleSystemClass      rc=2
+[era] _addr_63                 rc=2
+[era] Object_Helper            rc=0
+[era] ScriptAction             rc=2
+[era] BuildingClass            rc=2
+[era] _addr_64                 rc=0
+[era] ParticleTypeClass        rc=2
+[era] _addr_65                 rc=2
+[era] Network                  rc=0
+[era] RadarClass               rc=2
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x628e80   MISMATCH         _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor
+[diff] 0x637dd0   MISMATCH         Object_Helper_637DD0
+[diff] 0x642ff0   MISMATCH         sub_642FF0
+[diff] 0x64b240   MISMATCH         KickNetworkPlayerNow
+[diff] 0x6521c0   MISMATCH         Network::RecordEvent
+[diff] 0x658c60   MISMATCH         _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor
+[diff] 0x658d10   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface
+[ledger] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> NG (attempt 3)
+[ledger] 0x629e90 FootClass::CreateWakes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62c6e0 TechnoClass::UpdateParticleSystem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62d510 ObjectClass::sub_62D510 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62f230 ParticleSystemClass::SpawnParticle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x630310 DecodeFrameSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x637dd0 Object_Helper_637DD0 -> NG (attempt 2)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63d560 BuildingClass::DrawSelectionBlip -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63d910 DrawTacticalFillScanline -> COMPILE_FAIL (attempt 2)
+[ledger] 0x642ff0 sub_642FF0 -> NG (attempt 2)
+[ledger] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64b240 KickNetworkPlayerNow -> NG (attempt 2)
+[ledger] 0x650a90 AllocateTriggerLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6521c0 Network::RecordEvent -> NG (attempt 2)
+[ledger] 0x653f50 RadarClass::DrawWrapper -> COMPILE_FAIL (attempt 6)
+[ledger] 0x658c60 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor -> NG (attempt 2)
+[ledger] 0x658d10 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::QueryInterface -> NG (attempt 3)
+[ledger] 0x659650 ObjectClass::RenderProjectileTrail -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "regalloc": 2,
+  "frame_sched": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p34\batch_report.json

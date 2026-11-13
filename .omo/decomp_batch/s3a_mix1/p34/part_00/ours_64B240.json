@@ -1,0 +1,147 @@
+{
+ "symbol": "?KickNetworkPlayerNow@@YIXPAXHHHE@Z",
+ "sym_key": "Unnamed::KickNetworkPlayerNow",
+ "size": 472,
+ "link_base": 0,
+ "bytes_hex": "83ec14535556578bda8bf96a00895c241ce8000000008b15000000006a002bc283f83c0f9244241be8000000008b74243083c408a3000000008b035653ff50148be88bcf896c2420e80000000083fdff75118bcfe8000000005f5e5d5b83c414c20c008b0d000000008b14a9c6820802000001a1000000008b0ca8e80000000083f8017571833d00000000047568a00000000084c0755fe8000000008a442413c605000000000184c07507c6050000000001a10000000033c985c076328b15000000008b048a85c0741b8a90f501000084d275118a90ec01000084d27407c6800802000001a100000000413bc872ce32c9e800000000a1000000008b0ca8e80000000083f8017e188a44241384c075108b0d000000008b14a9c68247020000018b035389742418ff5010483bf00f8d8a0000008b54242c8bdec1e3058d0c7681c3000000008d04b540bba8008d2cca8d4b2089442428894c242c8d5518b9060000008bf28bfd83c218f3a58b48048bfb89088b44242c8bf0b90800000083c02083c518f3a58b7424148944242c8b4424188954241c46508b108974241883c320ff5210483bf07d118b4424288b54241c83c00489442428eba48b6c24208b5424308bcd81e2ff000000e8000000005f5e5d5b83c414c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "_time",
+   "sym_key": "time"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0489C@@3IA",
+   "sym_key": "DataGlobal_B0489C"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_time",
+   "sym_key": "time"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0489C@@3IA",
+   "sym_key": "DataGlobal_B0489C"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?CountDisconnectedHouses@Network@@QAEHXZ",
+   "sym_key": "Network::CountDisconnectedHouses"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F900@@3EA",
+   "sym_key": "DataGlobal_A8F900"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Timer__UpdateDelta@@YAHXZ",
+   "sym_key": "Timer__UpdateDelta"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BD78@@3EA",
+   "sym_key": "DataGlobal_B0BD78"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B8C1@@3EA",
+   "sym_key": "DataGlobal_A8B8C1"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?ProcessGameResults@@YIHD@Z",
+   "sym_key": "ProcessGameResults"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?CountDisconnectedHouses@Network@@QAEHXZ",
+   "sym_key": "Network::CountDisconnectedHouses"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8BB60@@3PAIA",
+   "sym_key": "DataGlobal_A8BB60"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?HandleNetworkPlayerDisconnect@@YIXHH@Z",
+   "sym_key": "HandleNetworkPlayerDisconnect"
+  }
+ ]
+}

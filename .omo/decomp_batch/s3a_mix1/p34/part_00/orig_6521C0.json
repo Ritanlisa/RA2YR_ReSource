@@ -1,0 +1,11 @@
+{
+ "addr": "0x6521C0",
+ "name": "Network::RecordEvent",
+ "size": 111,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6521C0",
+ "bytes_hex": "a184eda80089442407a1c802a8003d800000007d55a1d002a80056578d74240c8d0cc08d0488b91b0000008dbc40d402a800f3a566a5a4ff1530157e008b15d002a8005f5e890495543aa800a1d002a8004083e07fa3d002a800a1c802a80040a3c802a800b001c2700032c0c27000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
