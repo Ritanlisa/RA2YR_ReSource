@@ -20277,7 +20277,7 @@
   "this_as_id": false
  },
  "0x44e7b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20289,7 +20289,7 @@
   "this_as_id": false
  },
  "0x44e880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20301,19 +20301,19 @@
   "this_as_id": false
  },
  "0x44e8f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::OnObjectExpired",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::OnObjectExpired",
-  "rule_violations": 8,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x44eb10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20385,7 +20385,7 @@
   "this_as_id": false
  },
  "0x44f820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20421,7 +20421,7 @@
   "this_as_id": false
  },
  "0x4500a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20554,7 +20554,7 @@
   "status": "NG"
  },
  "0x451890": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -20566,7 +20566,7 @@
   "this_as_id": false
  },
  "0x451b40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20686,7 +20686,7 @@
   "this_as_id": false
  },
  "0x452410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20717,7 +20717,7 @@
   "status": "NG"
  },
  "0x4525f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20777,7 +20777,7 @@
   "this_as_id": false
  },
  "0x452820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20837,7 +20837,7 @@
   "this_as_id": false
  },
  "0x452d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20921,7 +20921,7 @@
   "this_as_id": false
  },
  "0x453bf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20993,7 +20993,7 @@
   "this_as_id": false
  },
  "0x454260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21089,7 +21089,7 @@
   "this_as_id": false
  },
  "0x454db0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21113,7 +21113,7 @@
   "this_as_id": false
  },
  "0x4556d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21137,7 +21137,7 @@
   "this_as_id": false
  },
  "0x455980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21185,7 +21185,7 @@
   "this_as_id": false
  },
  "0x455d50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21310,7 +21310,7 @@
   "this_as_id": false
  },
  "0x456980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DrawTechnoDeployCircle",
@@ -21368,7 +21368,7 @@
   "this_as_id": false
  },
  "0x4571e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

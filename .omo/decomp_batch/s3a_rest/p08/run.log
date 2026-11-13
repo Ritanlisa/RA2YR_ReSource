@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x44e7b0 BuildingClass::GetPowerOutput -> BuildingClass
+[conv] 0x44e880 BuildingClass::GetPowerDrain -> BuildingClass
+[conv] 0x44e8f0 BuildingClass::OnObjectExpired -> BuildingClass
+[conv] 0x44eb10 BuildingClass::GetCrew -> BuildingClass
+[conv] 0x44f820 Scenario::ReadTeams -> Scenario
+[conv] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> BuildingClass
+[conv] 0x451890 BuildingClass::PlayAnim -> BuildingClass
+[conv] 0x451b40 BuildingClass::StopAnim -> BuildingClass
+[conv] 0x452410 BuildingClass::EnableStuff -> BuildingClass
+[conv] 0x4525f0 BuildingClass::IsPoweredOn -> BuildingClass
+[conv] 0x452820 Warhead::RemoveFromDamageList -> Warhead
+[conv] 0x452d40 ObjectClass::ProcessDataBuildingClass -> ObjectClass
+[conv] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> BuildingClass
+[conv] 0x454260 BuildingClass::PowerDrainUpdate -> BuildingClass
+[conv] 0x454db0 BuildingClass::CleanupOccupation -> BuildingClass
+[conv] 0x4556d0 BuildingClass::ScanCircleForUnits -> BuildingClass
+[conv] 0x455980 BuildingClass::ScanCircleForTiberium -> BuildingClass
+[conv] 0x455d50 BuildingClass::AssignDestination_SyncLog -> BuildingClass
+[conv] 0x456980 DrawTechnoDeployCircle -> _addr_45
+[conv] 0x4571e0 BuildingClass::Infiltrate -> BuildingClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] Scenario                 rc=2
+[era] Warhead                  rc=2
+[era] ObjectClass              rc=2
+[era] _addr_45                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x44e7b0 BuildingClass::GetPowerOutput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44e880 BuildingClass::GetPowerDrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44e8f0 BuildingClass::OnObjectExpired -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44eb10 BuildingClass::GetCrew -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44f820 Scenario::ReadTeams -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x451890 BuildingClass::PlayAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x451b40 BuildingClass::StopAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x452410 BuildingClass::EnableStuff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4525f0 BuildingClass::IsPoweredOn -> COMPILE_FAIL (attempt 2)
+[ledger] 0x452820 Warhead::RemoveFromDamageList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x452d40 ObjectClass::ProcessDataBuildingClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x454260 BuildingClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x454db0 BuildingClass::CleanupOccupation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4556d0 BuildingClass::ScanCircleForUnits -> COMPILE_FAIL (attempt 2)
+[ledger] 0x455980 BuildingClass::ScanCircleForTiberium -> COMPILE_FAIL (attempt 2)
+[ledger] 0x455d50 BuildingClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x456980 DrawTechnoDeployCircle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4571e0 BuildingClass::Infiltrate -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p08\batch_report.json
