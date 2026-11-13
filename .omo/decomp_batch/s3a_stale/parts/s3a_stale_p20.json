@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x6c6d00",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6c8ff0",
+  "family": "stale_stale_cw5|CW5-10 uintN_t typedef"
+ },
+ {
+  "addr": "0x6c9780",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x6c9c60",
+  "family": "stale_B8"
+ },
+ {
+  "addr": "0x6cb920",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6cdff0",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x6d0fb0",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x6d5c50",
+  "family": "stale_B3"
+ },
+ {
+  "addr": "0x6d6410",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6d7840",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6d7c00",
+  "family": "stale_B5"
+ },
+ {
+  "addr": "0x6d8640",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x6da7d0",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x6dbb60",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6e1780",
+  "family": "stale_B1"
+ },
+ {
+  "addr": "0x6e35f0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x6e57c0",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x6e6e20",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6e6f20",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x6e6ff0",
+  "family": "stale_cw3_C"
+ }
+]

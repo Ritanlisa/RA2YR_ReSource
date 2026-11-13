@@ -1,0 +1,51 @@
+{
+ "symbol": "?PlayAudioAtRandomWP@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::PlayAudioAtRandomWP",
+ "size": 175,
+ "link_base": 0,
+ "bytes_hex": "81eca00100005355565733f68be933ff8d5c24208b0d0000000057e80000000084c074218b0d000000008d44241c575046e8000000008b08890b83c30481fe9001000074094781ffbe0200007cc68b15000000004e566a008d8a68050300e8000000008d4c84206a008d5424140fbf41020fbf09c1e108c1e00881c1800000000580000000894c24148b8d9000000089442418c744241c00000000e8000000005f5e5db0015b81c4a0010000c21000",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Is_Waypoint_Valid@ScenarioClass@@QAE_NI@Z",
+   "sym_key": "ScenarioClass::Is_Waypoint_Valid"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?PlayAudioAt2@@YIHHPAXH@Z",
+   "sym_key": "PlayAudioAt2"
+  }
+ ]
+}

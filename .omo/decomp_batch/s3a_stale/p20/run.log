@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x6c8ff0 DlgProcScoreScreen -> _addr_6C
+[conv] 0x6c9780 ObjectClass::sub_6C9780 -> ObjectClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x6d6410 Terrain::ClimbCheck -> Terrain
+[conv] 0x6d7840 TacticalClass::DrawMap -> TacticalClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x6d8640 ClampCoordMap -> _addr_6D
+[conv] 0x6da7d0 Tactical::AddCellToDrawList -> Tactical
+[conv] 0x6dbb60 Tactical::DrawOverlay -> Tactical
+[conv] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> TActionClass
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x6e57c0 TechnoClass::HasAnyMission -> TechnoClass
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x6e6ff0 BuildingLoadQueue::FindObject -> BuildingLoadQueue
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] BinkMovie                rc=2
+[era] SuperClass               rc=2
+[era] _addr_6D                 rc=2
+[era] TechnoClass              rc=2
+[era] Terrain                  rc=2
+[era] TacticalClass            rc=2
+[era] Tactical                 rc=2
+[era] TActionClass             rc=0
+[era] BuildingLoadQueue        rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e1780   MISMATCH         TActionClass::PlayAudioAtRandomWP
+[ledger] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c9780 ObjectClass::sub_6C9780 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d6410 Terrain::ClimbCheck -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6d7840 TacticalClass::DrawMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d8640 ClampCoordMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6da7d0 Tactical::AddCellToDrawList -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6dbb60 Tactical::DrawOverlay -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> NG (attempt 14)
+[ledger] 0x6e35f0 ObjectClass::sub_6E35F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e57c0 TechnoClass::HasAnyMission -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6e6ff0 BuildingLoadQueue::FindObject -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p20\batch_report.json
