@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x49a7e0 _RLEBlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_56 -> _RLEBlitTransLucent50_G
+[conv] 0x49a800 _RLEBlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_57 -> _RLEBlitTransLucent25_G
+[conv] 0x49a820 _RLEBlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_58 -> _RLEBlitTransXlatZRead_G
+[conv] 0x49a840 _RLEBlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_59 -> _RLEBlitTransZRemapXlatZRead_G
+[conv] 0x49a860 _RLEBlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_60 -> _RLEBlitTransDarkenZRead_G
+[conv] 0x49a880 _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61 -> _RLEBlitTransLucent75ZRead_G
+[conv] 0x49a8a0 _RLEBlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_62 -> _RLEBlitTransLucent50ZRead_G
+[conv] 0x49a8c0 _RLEBlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_63 -> _RLEBlitTransLucent25ZRead_G
+[conv] 0x49a8e0 _RLEBlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_64 -> _RLEBlitTransLucent75ZReadWarp_G
+[conv] 0x49a900 _RLEBlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_65 -> _RLEBlitTransLucent50ZReadWarp_G
+[conv] 0x49a920 _RLEBlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_66 -> _RLEBlitTransLucent25ZReadWarp_G
+[conv] 0x49a940 _RLEBlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_67 -> _RLEBlitTransXlatZReadWrite_G
+[conv] 0x49a960 _RLEBlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_68 -> _RLEBlitTransZRemapXlatZReadWrite_G
+[conv] 0x49a980 _RLEBlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_69 -> _RLEBlitTransDarkenZReadWrite_G
+[conv] 0x49b0e0 _VectorClass_PAVConvertClass::QueryInterface -> _VectorClass_PAVConvertClass
+[conv] 0x49b130 _DynamicVectorClass_PAVConvertClass::Constructor_VectorClass_ConvertClass___ -> _DynamicVectorClass_PAVConvertClass
+[conv] 0x49ecd0 CampaignClass::Constructor -> CampaignClass
+[conv] 0x49ee10 _DynamicVectorClass_PAD::Add -> _DynamicVectorClass_PAD
+[conv] 0x49efa0 _VectorClass_PAD::QueryInterface -> _VectorClass_PAD
+[conv] 0x49eff0 _VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface -> _VectorClass_PAV_DynamicVectorClass_PAD
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransLucent50_G  rc=0
+[era] _RLEBlitTransLucent25_G  rc=0
+[era] _RLEBlitTransXlatZRead_G rc=0
+[era] _RLEBlitTransZRemapXlatZRead_G rc=0
+[era] _RLEBlitTransDarkenZRead_G rc=0
+[era] _RLEBlitTransLucent75ZRead_G rc=0
+[era] _RLEBlitTransLucent50ZRead_G rc=0
+[era] _RLEBlitTransLucent25ZRead_G rc=0
+[era] _RLEBlitTransLucent75ZReadWarp_G rc=0
+[era] _RLEBlitTransLucent50ZReadWarp_G rc=0
+[era] _RLEBlitTransLucent25ZReadWarp_G rc=0
+[era] _RLEBlitTransXlatZReadWrite_G rc=0
+[era] _RLEBlitTransZRemapXlatZReadWrite_G rc=0
+[era] _RLEBlitTransDarkenZReadWrite_G rc=0
+[era] _VectorClass_PAVConvertClass rc=0
+[era] _DynamicVectorClass_PAVConvertClass rc=0
+[era] CampaignClass            rc=2
+[era] _DynamicVectorClass_PAD  rc=0
+[era] _VectorClass_PAD         rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=2
+=== diffasm byte-compare ===
+[diff] 0x49a7e0   MATCH            _RLEBlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_56
+[diff] 0x49a800   MATCH            _RLEBlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_57
+[diff] 0x49a820   MATCH            _RLEBlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_58
+[diff] 0x49a840   MATCH            _RLEBlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_59
+[diff] 0x49a860   MATCH            _RLEBlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_60
+[diff] 0x49a880   MATCH            _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61
+[diff] 0x49a8a0   MATCH            _RLEBlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_62
+[diff] 0x49a8c0   MATCH            _RLEBlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_63
+[diff] 0x49a8e0   MATCH            _RLEBlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_64
+[diff] 0x49a900   MATCH            _RLEBlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_65
+[diff] 0x49a920   MATCH            _RLEBlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_66
+[diff] 0x49a940   MATCH            _RLEBlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_67
+[diff] 0x49a960   MATCH            _RLEBlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_68
+[diff] 0x49a980   MATCH            _RLEBlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_69
+[diff] 0x49b0e0   MISMATCH         _VectorClass_PAVConvertClass::QueryInterface
+[diff] 0x49b130   MISMATCH         _DynamicVectorClass_PAVConvertClass::Constructor_VectorClass_ConvertClass___
+[diff] 0x49ee10   MISMATCH         _DynamicVectorClass_PAD::Add
+[diff] 0x49efa0   MISMATCH         _VectorClass_PAD::QueryInterface
+[ledger] 0x49a7e0 _RLEBlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_56 -> OK (attempt 2)
+[ledger] 0x49a800 _RLEBlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_57 -> OK (attempt 2)
+[ledger] 0x49a820 _RLEBlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_58 -> OK (attempt 2)
+[ledger] 0x49a840 _RLEBlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_59 -> OK (attempt 2)
+[ledger] 0x49a860 _RLEBlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_60 -> OK (attempt 2)
+[ledger] 0x49a880 _RLEBlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_61 -> OK (attempt 4)
+[ledger] 0x49a8a0 _RLEBlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_62 -> OK (attempt 2)
+[ledger] 0x49a8c0 _RLEBlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_63 -> OK (attempt 2)
+[ledger] 0x49a8e0 _RLEBlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_64 -> OK (attempt 2)
+[ledger] 0x49a900 _RLEBlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_65 -> OK (attempt 2)
+[ledger] 0x49a920 _RLEBlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_66 -> OK (attempt 2)
+[ledger] 0x49a940 _RLEBlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_67 -> OK (attempt 2)
+[ledger] 0x49a960 _RLEBlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_68 -> OK (attempt 2)
+[ledger] 0x49a980 _RLEBlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_69 -> OK (attempt 2)
+[ledger] 0x49b0e0 _VectorClass_PAVConvertClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x49b130 _DynamicVectorClass_PAVConvertClass::Constructor_VectorClass_ConvertClass___ -> NG (attempt 2)
+[ledger] 0x49ecd0 CampaignClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49ee10 _DynamicVectorClass_PAD::Add -> NG (attempt 2)
+[ledger] 0x49efa0 _VectorClass_PAD::QueryInterface -> NG (attempt 2)
+[ledger] 0x49eff0 _VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "branch_polarity": 4
+ },
+ "match_rate_of_decided_pct": 77.8,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p05\batch_report.json

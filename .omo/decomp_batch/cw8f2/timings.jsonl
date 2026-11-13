@@ -3,3 +3,4 @@
 {"layer": "A", "part": 2, "n": 20, "seconds": 53.0, "ok": true, "verdicts": {"MISMATCH": 15, "COMPILE_FAIL": 1, "MATCH": 4}}
 {"layer": "A", "part": 3, "n": 20, "seconds": 50.0, "ok": true, "verdicts": {"MISMATCH": 2, "MATCH": 18}}
 {"layer": "A", "part": 4, "n": 20, "seconds": 37.1, "ok": true, "verdicts": {"MATCH": 20}}
+{"layer": "A", "part": 5, "n": 20, "seconds": 58.0, "ok": true, "verdicts": {"MATCH": 14, "MISMATCH": 4, "COMPILE_FAIL": 2}}
