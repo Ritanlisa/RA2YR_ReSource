@@ -1,0 +1,63 @@
+{
+ "symbol": "?IsValidDestination@Cell@@QAE_NPAF@Z",
+ "sym_key": "Cell::IsValidDestination",
+ "size": 332,
+ "link_base": 0,
+ "bytes_hex": "83ec1c56578b7c24288bf16a0157b9f8010000e80000000084c075085f5e83c41cc20400a10000000085c075788a861a04000084c0746e0fbf47020fbf0fc1e008c1e1088d542418058000000081c1800000005289442420894c241cc744242400000000e8000000000fbf4f02894424148d54240c0fbf07c1e008c1e108058000000081c1800000005289442410894c2414e80000000084c0740a5f32c05e83c41cc204008b068d4c240c6a005156ff504c8b108b40048b0e56c1ea08c1e808668954242c668944242e8b54242c8954240cff91bc0000008b0e5056ff91840000008b90b40500006a006a006a00528d4424185750b9f8010000e80000000084c075085f5e83c41cc2040057b9f8010000e80000000083b8ec0000000575238b0e6a016a006aff6aff5056ff91ac01000085c0750d5fb8010000005e83c41cc204005f33c05e83c41cc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?CheckTileMatch@MapSeed@@QAE_NPAX0HDDD@Z",
+   "sym_key": "MapSeed::CheckTileMatch"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

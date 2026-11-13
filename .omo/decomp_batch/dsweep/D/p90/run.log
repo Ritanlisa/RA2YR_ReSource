@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p90\part_00
+=== convert (20 addrs) ===
+[conv] 0x53e070 sub_53E070 -> _addr_53
+[conv] 0x5bb580 Network_Find -> Network
+[conv] 0x7af970 ObjectClass::sub_7AF970 -> ObjectClass
+[conv] 0x7adb00 ObjectClass::Network_Helper_7ADB00 -> ObjectClass
+[conv] 0x552490 LCWStraw::DecompressReader -> LCWStraw
+[conv] 0x4dce80 Cell::IsValidDestination -> Cell
+[conv] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> InfantryClass
+[conv] 0x407860 AudioStream::Constructor -> AudioStream
+[conv] 0x402990 ObjectClass::sub_402990 -> ObjectClass
+[conv] 0x4db260 FootClass::CleanupDirection -> FootClass
+[conv] 0x7ae5d0 StringVector::Insert -> StringVector
+[conv] 0x689d30 PreviewClass::RenderMapPreview -> PreviewClass
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+[conv] 0x49caf0 Movie::SetupScreen -> Movie
+[conv] 0x7c30d0 ProcessAudioStreamBuffer -> _addr_7C
+[conv] 0x52ab80 WarheadTypeClass::parseVerses -> WarheadTypeClass
+[conv] 0x55b720 ObjectClass::sub_55B720 -> ObjectClass
+[conv] 0x686730 ScenarioClass::Construct -> ScenarioClass
+[conv] 0x690640 ScoreScreen::LoadAudio -> ScoreScreen
+[conv] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=0
+[era] Network                  rc=2
+[era] ObjectClass              rc=2
+[era] LCWStraw                 rc=2
+[era] Cell                     rc=0
+[era] InfantryClass            rc=2
+[era] AudioStream              rc=2
+[era] FootClass                rc=2
+[era] StringVector             rc=0
+[era] PreviewClass             rc=2
+[era] GraphicMenuAnimItem      rc=2
+[era] Movie                    rc=2
+[era] _addr_7C                 rc=0
+[era] WarheadTypeClass         rc=2
+[era] ScenarioClass            rc=2
+[era] ScoreScreen              rc=0
+=== diffasm byte-compare ===
+[diff] 0x53e070   MISMATCH         sub_53E070
+[diff] 0x7adb00   MISMATCH         ObjectClass::Network_Helper_7ADB00
+[diff] 0x4dce80   MISMATCH         Cell::IsValidDestination
+[diff] 0x7ae5d0   MISMATCH         StringVector::Insert
+[diff] 0x7c30d0   MISMATCH         ProcessAudioStreamBuffer
+[diff] 0x690640   MISMATCH         ScoreScreen::LoadAudio
+[ledger] 0x53e070 sub_53E070 -> NG (attempt 1)
+[ledger] 0x5bb580 Network_Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af970 ObjectClass::sub_7AF970 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7adb00 ObjectClass::Network_Helper_7ADB00 -> NG (attempt 1)
+[ledger] 0x552490 LCWStraw::DecompressReader -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dce80 Cell::IsValidDestination -> NG (attempt 1)
+[ledger] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407860 AudioStream::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x402990 ObjectClass::sub_402990 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db260 FootClass::CleanupDirection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ae5d0 StringVector::Insert -> NG (attempt 1)
+[ledger] 0x689d30 PreviewClass::RenderMapPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49caf0 Movie::SetupScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c30d0 ProcessAudioStreamBuffer -> NG (attempt 1)
+[ledger] 0x52ab80 WarheadTypeClass::parseVerses -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55b720 ObjectClass::sub_55B720 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x686730 ScenarioClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690640 ScoreScreen::LoadAudio -> NG (attempt 1)
+[ledger] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "branch_order": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p90\batch_report.json

@@ -1,0 +1,183 @@
+{
+ "symbol": "?sub_53E070@@YIKPAXPAI@Z",
+ "sym_key": "Unnamed::sub_53E070",
+ "size": 357,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558bdab801000000895424088be98942188b0b85c9c74308000000000f853401000056578bcde8000000008b4c241451508d4b20e8000000008b350000000085f60f84e4000000a10000000085c00f84d7000000a10000000085c00f84ca0000006800000000e800000000833d00000000020f85a90000008bcee8000000008bf856d1efe80000000083c4043bc70f838d000000a10000000085c0742f56e8000000008b0d0000000083c4048d542410528b150000000050e80000000083f801740ac7050000000001000000833d0000000001754c8bcee8000000008bf856d1efe80000000083c4043bc77334a10000000085c0742b8bcee8000000008b15000000008b0d00000000d1e86a0050e800000000a10000000050e80000000083c4046800000000e8000000008b4b1051e8000000008b4b048b034185c0894b040f84dffeffff5f5ec74308010000005d33c05b83c408c38943085d33c05b83c408c3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?UpdateStats@AudioThread@@QAEH_J@Z",
+   "sym_key": "AudioThread::UpdateStats"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA045C@@3IA",
+   "sym_key": "DataGlobal_AA045C"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_StreamBufferState@@3IA",
+   "sym_key": "g_StreamBufferState"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0418@@3EA",
+   "sym_key": "DataGlobal_AA0418"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_StreamBufferState@@3IA",
+   "sym_key": "g_StreamBufferState"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?GetChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::GetChannel"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?sub_408D30@@YAHPAX@Z",
+   "sym_key": "sub_408D30"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0460@@3IA",
+   "sym_key": "DataGlobal_AA0460"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?sub_408D40@@YAHPAX@Z",
+   "sym_key": "sub_408D40"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0460@@3IA",
+   "sym_key": "DataGlobal_AA0460"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?WriteAudioStreamToFile@@YIHHPAXH0@Z",
+   "sym_key": "WriteAudioStreamToFile"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA046C@@3IA",
+   "sym_key": "DataGlobal_AA046C"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_StreamBufferState@@3IA",
+   "sym_key": "g_StreamBufferState"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?GetChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::GetChannel"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?sub_408D40@@YAHPAX@Z",
+   "sym_key": "sub_408D40"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_StreamConfig@@3IA",
+   "sym_key": "g_StreamConfig"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?GetChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::GetChannel"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_StreamConfig@@3IA",
+   "sym_key": "g_StreamConfig"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?WriteAudioStreamToFile@@YIHHPAXH0@Z",
+   "sym_key": "WriteAudioStreamToFile"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?fflush@@YAHPAXZZ",
+   "sym_key": "fflush"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0418@@3EA",
+   "sym_key": "DataGlobal_AA0418"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  }
+ ]
+}
