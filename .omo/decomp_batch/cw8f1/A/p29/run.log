@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x75a7d0 ResetAnimSystem -> _addr_75
+[conv] 0x75a8a0 sub_75A8A0 -> _addr_75
+[conv] 0x75aa70 sub_75AA70 -> _addr_75
+[conv] 0x75cb80 WalkLocomotionClass::AddRef -> WalkLocomotionClass
+[conv] 0x75cb90 WalkLocomotionClass::Release -> WalkLocomotionClass
+[conv] 0x75cc90 sub_75CC90 -> _addr_75
+[conv] 0x75ce60 sub_75CE60 -> _addr_75
+[conv] 0x75e740 sub_75E740 -> _addr_75
+[conv] 0x75e910 sub_75E910 -> _addr_75
+[conv] 0x763380 sub_763380 -> _addr_76
+[conv] 0x763550 sub_763550 -> _addr_76
+[conv] 0x764830 sub_764830 -> _addr_76
+[conv] 0x764a00 sub_764A00 -> _addr_76
+[conv] 0x765d70 sub_765D70 -> _addr_76
+[conv] 0x765f40 sub_765F40 -> _addr_76
+[conv] 0x767110 sub_767110 -> _addr_76
+[conv] 0x7672e0 sub_7672E0 -> _addr_76
+[conv] 0x767910 sub_767910 -> _addr_76
+[conv] 0x767ae0 sub_767AE0 -> _addr_76
+[conv] 0x767e70 sub_767E70 -> _addr_76
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=0
+[era] WalkLocomotionClass      rc=0
+[era] _addr_76                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x75a7d0   MATCH            ResetAnimSystem
+[diff] 0x75a8a0   MATCH            sub_75A8A0
+[diff] 0x75aa70   MATCH            sub_75AA70
+[diff] 0x75cc90   MATCH            sub_75CC90
+[diff] 0x75ce60   MATCH            sub_75CE60
+[diff] 0x75e740   MATCH            sub_75E740
+[diff] 0x75e910   MATCH            sub_75E910
+[diff] 0x75cb80   MATCH            WalkLocomotionClass::AddRef
+[diff] 0x75cb90   MATCH            WalkLocomotionClass::Release
+[diff] 0x763380   MATCH            sub_763380
+[diff] 0x763550   MATCH            sub_763550
+[diff] 0x764830   MATCH            sub_764830
+[diff] 0x764a00   MATCH            sub_764A00
+[diff] 0x765d70   MATCH            sub_765D70
+[diff] 0x765f40   MATCH            sub_765F40
+[diff] 0x767110   MATCH            sub_767110
+[diff] 0x7672e0   MATCH            sub_7672E0
+[diff] 0x767910   MATCH            sub_767910
+[diff] 0x767ae0   MATCH            sub_767AE0
+[diff] 0x767e70   MATCH            sub_767E70
+[ledger] 0x75a7d0 ResetAnimSystem -> OK (attempt 3)
+[ledger] 0x75a8a0 sub_75A8A0 -> OK (attempt 2)
+[ledger] 0x75aa70 sub_75AA70 -> OK (attempt 3)
+[ledger] 0x75cb80 WalkLocomotionClass::AddRef -> OK (attempt 2)
+[ledger] 0x75cb90 WalkLocomotionClass::Release -> OK (attempt 2)
+[ledger] 0x75cc90 sub_75CC90 -> OK (attempt 2)
+[ledger] 0x75ce60 sub_75CE60 -> OK (attempt 3)
+[ledger] 0x75e740 sub_75E740 -> OK (attempt 2)
+[ledger] 0x75e910 sub_75E910 -> OK (attempt 3)
+[ledger] 0x763380 sub_763380 -> OK (attempt 2)
+[ledger] 0x763550 sub_763550 -> OK (attempt 4)
+[ledger] 0x764830 sub_764830 -> OK (attempt 2)
+[ledger] 0x764a00 sub_764A00 -> OK (attempt 3)
+[ledger] 0x765d70 sub_765D70 -> OK (attempt 2)
+[ledger] 0x765f40 sub_765F40 -> OK (attempt 3)
+[ledger] 0x767110 sub_767110 -> OK (attempt 2)
+[ledger] 0x7672e0 sub_7672E0 -> OK (attempt 3)
+[ledger] 0x767910 sub_767910 -> OK (attempt 2)
+[ledger] 0x767ae0 sub_767AE0 -> OK (attempt 3)
+[ledger] 0x767e70 sub_767E70 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p29\batch_report.json
