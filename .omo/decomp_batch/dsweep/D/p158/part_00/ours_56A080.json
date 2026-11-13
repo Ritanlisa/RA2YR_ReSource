@@ -1,0 +1,327 @@
+{
+ "symbol": "?PlaceTerrainCliffsRegion@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::PlaceTerrainCliffsRegion",
+ "size": 1215,
+ "link_base": 0,
+ "bytes_hex": "83ec40538bd9895c24308b83280100008b8b3001000003c8894424083bc10f8d960400008b0d000000008b15000000005556578bab240100008bb32c01000003f5896c24243bee0f8d4f0400000fbff0c1e609897424288b7c241033f88b44241081e7ff00000033c78bf833fd81e7ff00000033c78bbb3c010000894424100fbfc503f0833cb7000f84e60300008b74242803c63d0000040073160fbe35340300008b048685c074088bf8897c241ceb128b442410bf58160000897c241ca37c1600008b7738a1000000002bf0a100000000463bf08974243874083b3500000000752180bf1a0100000875186a006a02578bcbe8000000008b0d000000008b15000000003bf174208d41033bf074198d41043bf074128d41013bf0740b8d41023bf00f85d401000080bf1a010000050f85c70100008d51043bf20f85a4010000a1000000006a006aff6aff8d4c08ff8d54241c5152e8000000008a1d800000008b7424108ac38b7c2418c0f810660fbed00fbec38bce8d2c3033efc1f91081e5ff00000003d1c1f81033fd03c133c725ff00000033f8660fbec3897c241803f00fbffa0fbfee8bc7c1e00903c53d00000400730e0fbe0d340300008b048185c0750e8b442418a37c160000b8581600008a881b01000080c10488881b0100008b4c242c0fbe057a0000008d1c2833d981e3ff000000c1f81033cb8a1d7a00000003c733c125ff00000033c88ac3c0f810660fbec0660fbedb03c203de0fbfc00fbfdbc1e00903c3894c242c3d00000400730e0fbe1d340300008b048385c0750b890d7c160000b8581600008a981b01000080c30488981b0100008a1d7e0000000fbec38bc803c5c1f91003cf8bf98b4c243433f981e7ff00000033cf33c125ff00000033c88ac3c0f810660fbec003c2894c2434660fbed30fbfc003d60fbfd2c1e00903c23d00000400730e0fbe15340300008b048285c0750b890d7c160000b8581600008a881b0100008b7424388b7c241c8b6c24248b5c243c80c10488881b0100006a006a02578bcbe8000000008b0d000000008b15000000003b350000000074083b3500000000752180bf1a0100000c75186a006a04578bcbe8000000008b0d000000008b15000000003bf274208d42033bf074198d42043bf074128d42023bf0740b8d42013bf00f852301000080bf1a010000070f85160100008d4a043bf10f85f3000000a1000000006a006aff6aff8d4c10ff8d54241c5152e8000000008d442444687a000000508d4c2418e8000000008b008bc889442420c1f9100fbfc90fbfd0c1e10903ca81f900000400730e0fbe15340300008b0c8a85c9750aa37c160000b9581600008a811b010000687c000000040488811b0100008d44244c508d4c2428e8000000008b008bc8c1f9100fbfc90fbfd0c1e10903ca81f900000400730e0fbe15340300008b0c8a85c9750aa37c160000b9581600008a811b0100006880000000040488811b0100008d442450508d4c2428e8000000008b088d542440894c244052b9f8010000e80000000080801b010000046a006a04578bcbe8000000008b0d000000008b15000000008b832c0100008bbb240100004503c73be8896c24247d0d8b7424288b442414e9bffbffff8b4424148bb3300100008bab280100004003f53bc6894424140f8c7cfbffff5f5e5d5b83c440c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B4@@3IA",
+   "sym_key": "DataGlobal_ABC2B4"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1130@@3IA",
+   "sym_key": "DataGlobal_AA1130"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?PlaceCliffs@Terrain@@QAEXHHPAX@Z",
+   "sym_key": "Terrain::PlaceCliffs"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 439,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 455,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 508,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 565,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 578,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 583,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 604,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 687,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 700,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 705,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 748,
+   "type": "REL32",
+   "sym": "?PlaceCliffs@Terrain@@QAEXHHPAX@Z",
+   "sym_key": "Terrain::PlaceCliffs"
+  },
+  {
+   "off": 754,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 760,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 766,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1548@@3IA",
+   "sym_key": "DataGlobal_AA1548"
+  },
+  {
+   "off": 774,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0740@@3IA",
+   "sym_key": "DataGlobal_AA0740"
+  },
+  {
+   "off": 797,
+   "type": "REL32",
+   "sym": "?PlaceCliffs@Terrain@@QAEXHHPAX@Z",
+   "sym_key": "Terrain::PlaceCliffs"
+  },
+  {
+   "off": 803,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 809,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  },
+  {
+   "off": 874,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 895,
+   "type": "REL32",
+   "sym": "?Cell__SetTileType@@YGDPAXHHHH@Z",
+   "sym_key": "Cell__SetTileType"
+  },
+  {
+   "off": 904,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 914,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 951,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 963,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 968,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 979,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 1001,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 1034,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 1046,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 1051,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 1062,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 1084,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 1100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 1105,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1124,
+   "type": "REL32",
+   "sym": "?PlaceCliffs@Terrain@@QAEXHHPAX@Z",
+   "sym_key": "Terrain::PlaceCliffs"
+  },
+  {
+   "off": 1130,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 1136,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  }
+ ]
+}

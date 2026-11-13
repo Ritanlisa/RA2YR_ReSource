@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p158\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fd500 House::UpdateHouseAI -> House
+[conv] 0x56a080 ObjectClass::PlaceTerrainCliffsRegion -> ObjectClass
+[conv] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> ObjectClass
+[conv] 0x62a4a0 BuildingClass::Deploy -> BuildingClass
+[conv] 0x5bed40 Movie::Play -> Movie
+[conv] 0x695760 DlgProcLoadGame -> _addr_69
+[conv] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> SuperWeaponTypeClass
+[conv] 0x74c5b0 VeinholeMonsterClass::Constructor -> VeinholeMonsterClass
+[conv] 0x571050 CellClass::ProcessTileChange -> CellClass
+[conv] 0x6f7220 TechnoClass::CheckTargetLOS -> TechnoClass
+[conv] 0x76c290 ObjectClass::ConstructWDTSelection -> ObjectClass
+[conv] 0x623880 DrawTextRendererMultiline -> _addr_62
+[conv] 0x515ed0 TechnoClass::UpdateFootFacing -> TechnoClass
+[conv] 0x587c50 ObjectClass::DiagnoseMapCheck -> ObjectClass
+[conv] 0x6b8f00 DrawAffineTexture -> _addr_6B
+[conv] 0x7c4730 DrawTile4x4Block -> _addr_7C
+[conv] 0x5bfaa0 LoadVQMovie -> _addr_5B
+[conv] 0x5025f0 HouseClass::RegisterGain -> HouseClass
+[conv] 0x743270 ObjectClass::PlaceScenarioUnits -> ObjectClass
+[conv] 0x5355d0 Performance::Profile -> Performance
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] House                    rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] Movie                    rc=2
+[era] _addr_69                 rc=0
+[era] SuperWeaponTypeClass     rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] CellClass                rc=2
+[era] TechnoClass              rc=2
+[era] _addr_62                 rc=2
+[era] _addr_6B                 rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_5B                 rc=2
+[era] HouseClass               rc=2
+[era] Performance              rc=2
+=== diffasm byte-compare ===
+[diff] 0x56a080   MISMATCH         ObjectClass::PlaceTerrainCliffsRegion
+[diff] 0x695760   MISMATCH         DlgProcLoadGame
+[diff] 0x6b8f00   MISMATCH         DrawAffineTexture
+[diff] 0x7c4730   MISMATCH         DrawTile4x4Block
+[ledger] 0x4fd500 House::UpdateHouseAI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56a080 ObjectClass::PlaceTerrainCliffsRegion -> NG (attempt 1)
+[ledger] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62a4a0 BuildingClass::Deploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bed40 Movie::Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x695760 DlgProcLoadGame -> NG (attempt 1)
+[ledger] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74c5b0 VeinholeMonsterClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x571050 CellClass::ProcessTileChange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f7220 TechnoClass::CheckTargetLOS -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76c290 ObjectClass::ConstructWDTSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x623880 DrawTextRendererMultiline -> COMPILE_FAIL (attempt 1)
+[ledger] 0x515ed0 TechnoClass::UpdateFootFacing -> COMPILE_FAIL (attempt 1)
+[ledger] 0x587c50 ObjectClass::DiagnoseMapCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8f00 DrawAffineTexture -> NG (attempt 1)
+[ledger] 0x7c4730 DrawTile4x4Block -> NG (attempt 1)
+[ledger] 0x5bfaa0 LoadVQMovie -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5025f0 HouseClass::RegisterGain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x743270 ObjectClass::PlaceScenarioUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5355d0 Performance::Profile -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p158\batch_report.json

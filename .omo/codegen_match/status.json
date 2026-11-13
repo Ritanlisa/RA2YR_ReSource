@@ -63824,6 +63824,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4fd500": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "House::UpdateHouseAI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "House::UpdateHouseAI",
+  "rule_violations": 15,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4fd9a0": {
   "attempts": 1,
   "clean": false,
@@ -64230,6 +64242,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0",
   "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5025f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "HouseClass::RegisterGain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass::RegisterGain",
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -68431,6 +68455,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x515ed0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::UpdateFootFacing",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateFootFacing",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x516320": {
   "attempts": 1,
   "clean": false,
@@ -72281,6 +72317,18 @@
   "orig_name": "FindRadarClosestEnemy",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5355d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Performance::Profile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Performance::Profile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x535a60": {
@@ -87335,6 +87383,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x56a080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x34",
+  "name": "ObjectClass::PlaceTerrainCliffsRegion",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "PlaceTerrainCliffsRegion",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x56ae40": {
   "attempts": 1,
   "clean": false,
@@ -87812,6 +87872,18 @@
   "name": "CellClass::UpdateTileVariant2",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x571050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CellClass::ProcessTileChange",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CellClass::ProcessTileChange",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x572230": {
   "attempts": 1,
@@ -88961,6 +89033,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::SetTerrainType",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x587c50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::DiagnoseMapCheck",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DiagnoseMapCheck",
+  "rule_violations": 17,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -92115,6 +92199,18 @@
   "orig_name": "RandomMap::PlaceMapSeedBuildings",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5a82e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::ScatterMapSeedBuildings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScatterMapSeedBuildings",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5a8720": {
@@ -97292,6 +97388,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5bed40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Movie::Play",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Movie::Play",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5bf260": {
   "attempts": 1,
   "clean": false,
@@ -97594,6 +97702,17 @@
   "orig_name": "sub_5BF950",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5bfaa0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "LoadVQMovie",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LoadVQMovie",
+  "rule_violations": 26,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5bff00": {
@@ -115237,6 +115356,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x623880": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "DrawTextRendererMultiline",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DrawTextRendererMultiline",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x623cd0": {
   "attempts": 1,
   "clean": false,
@@ -117064,6 +117194,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TeamClass::DeployUnit",
   "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x62a4a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::Deploy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::Deploy",
+  "rule_violations": 59,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135746,6 +135888,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x695760": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+4 push ebp",
+  "name": "DlgProcLoadGame",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "DlgProcLoadGame",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x695bc0": {
   "attempts": 1,
   "clean": false,
@@ -142926,6 +143079,17 @@
   "orig_name": "sub_6B8EE0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6b8f00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x44",
+  "name": "DrawAffineTexture",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "DrawAffineTexture",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b9350": {
@@ -151285,6 +151449,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6cea20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "SuperWeaponTypeClass::SD_vt25",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SuperWeaponTypeClass::SD_vt25",
+  "rule_violations": 45,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6cee60": {
   "attempts": 1,
   "first_diff": "+6 je 0x6cee96",
@@ -158954,6 +159130,18 @@
   "orig_name": "TechnoClass::ComputeSlopePenalty",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6f7220": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::CheckTargetLOS",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::CheckTargetLOS",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6f7660": {
@@ -173041,6 +173229,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x743270": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::PlaceScenarioUnits",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "PlaceScenarioUnits",
+  "rule_violations": 13,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7436e0": {
   "attempts": 1,
   "clean": false,
@@ -175015,6 +175215,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VeinholeMonsterClass::Construct",
   "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x74c5b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "VeinholeMonsterClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VeinholeMonsterClass::Constructor",
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -184273,6 +184485,18 @@
   "orig_name": "sub_76C270",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x76c290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::ConstructWDTSelection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ConstructWDTSelection",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x76c6e0": {
@@ -198257,6 +198481,17 @@
   "name": "DecodeSHPFrame16bpp",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "DecodeSHPFrame16bpp",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c4730": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "DrawTile4x4Block",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "DrawTile4x4Block",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
