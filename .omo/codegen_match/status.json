@@ -35167,7 +35167,7 @@
   "this_as_id": false
  },
  "0x4950c0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35215,7 +35215,7 @@
   "this_as_id": false
  },
  "0x495250": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35301,7 +35301,7 @@
   "status": "OK"
  },
  "0x495590": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35392,7 +35392,7 @@
   "this_as_id": false
  },
  "0x4958d0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35650,15 +35650,15 @@
   "this_as_id": false
  },
  "0x496250": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 mov esi, dword ptr [esp + 0x10]",
   "name": "_RLEBlitTransDarken_G::Blit_RLE_Lucent50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4962d0": {
@@ -35698,15 +35698,15 @@
   "this_as_id": false
  },
  "0x4963f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 push esi",
   "name": "_RLEBlitTransLucent50_G::sub_4963F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4963F0",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x496490": {
@@ -35789,15 +35789,15 @@
   "this_as_id": false
  },
  "0x496820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "_RLEBlitTransDarkenZRead_G::sub_496820",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_496820",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4968f0": {
@@ -35837,15 +35837,15 @@
   "this_as_id": false
  },
  "0x496a80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "_RLEBlitTransLucent50ZRead_G::sub_496A80",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_496A80",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x496b80": {
@@ -36000,15 +36000,15 @@
   "this_as_id": false
  },
  "0x497390": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 mov ebx, dword ptr [esp + 0x30]",
   "name": "_RLEBlitTransDarkenZReadWrite_G::sub_497390",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "sub_497390",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x497470": {
@@ -36119,7 +36119,7 @@
   "this_as_id": false
  },
  "0x497b80": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -36143,7 +36143,7 @@
   "this_as_id": false
  },
  "0x497cf0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -36167,7 +36167,7 @@
   "this_as_id": false
  },
  "0x497e60": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -36238,15 +36238,15 @@
   "this_as_id": false
  },
  "0x4986d0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "_RLEBlitTransLucent50AlphaZRead_G::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x498880": {
@@ -37052,7 +37052,7 @@
   "this_as_id": false
  },
  "0x49a3e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -38152,7 +38152,7 @@
   "this_as_id": false
  },
  "0x49cc50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38188,7 +38188,7 @@
   "this_as_id": false
  },
  "0x49d120": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38212,7 +38212,7 @@
   "this_as_id": false
  },
  "0x49d680": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38272,7 +38272,7 @@
   "this_as_id": false
  },
  "0x49e400": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38856,7 +38856,7 @@
   "this_as_id": false
  },
  "0x49f5c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -39227,7 +39227,7 @@
   "this_as_id": false
  },
  "0x4a00b0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
