@@ -1,0 +1,123 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_76EEB0@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ConstructWDTSelection_Create_76EEB0",
+ "size": 207,
+ "link_base": 0,
+ "bytes_hex": "568bf1576a000fbebe8a040000c70500000000000000000fbe8e8a040000e80000000084c074248bcfe80000000050b900000000e80000000050b900000000e800000000c6050000000001a100000000508b08ff510ca1000000006a0050ff5018a1000000006a00508b10ff5260a1000000008b15000000006a016a008b085250ff51048b0d00000000e8000000008b8e5c0400008d4658505651e800000000a10000000083c40c8b1050ff52285f5e85c07d1aa100000000508b08ff5110a100000000508b10ff522885c07ce6c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_GameActive@@3IA",
+   "sym_key": "g_GameActive"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Find@StringList@@QAEHPAX@Z",
+   "sym_key": "StringList::Find"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Play@ThemeClass@@QAEHH@Z",
+   "sym_key": "ThemeClass::Play"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D20@@3EA",
+   "sym_key": "DataGlobal_A83D20"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?ConstructWDTSelection_Create_76EEB0_Create@@YAHPAX00@Z",
+   "sym_key": "ConstructWDTSelection_Create_76EEB0_Create"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  }
+ ]
+}

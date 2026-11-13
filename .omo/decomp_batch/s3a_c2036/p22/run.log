@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> ObjectClass
+[conv] 0x74f400 _VectorClass_PAVVeinholeMonsterClass::Release -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751970 _VectorClass_PAVVocClass::Release -> _VectorClass_PAVVocClass
+[conv] 0x751ab0 _DynamicVectorClass_PAVVocClass::SetCapacity -> _DynamicVectorClass_PAVVocClass
+[conv] 0x7536f0 _VectorClass_PAVVoxClass::Release -> _VectorClass_PAVVoxClass
+[conv] 0x753830 _DynamicVectorClass_PAVVoxClass::removeItem -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x75a4d0 _VectorClass_PAVMovieHandle::Release -> _VectorClass_PAVMovieHandle
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x7644a0 _VectorClass_PAVWaypointPathClass::Release -> _VectorClass_PAVWaypointPathClass
+[conv] 0x7645e0 _DynamicVectorClass_PAVWaypointPathClass::SetCapacity -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x765f60 Team_Create_765F60 -> Team_Create
+[conv] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x767b00 Team_Create_767B00 -> Team_Create
+[conv] 0x76a2b0 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::loopAnimation -> _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour
+[conv] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x76c290 ObjectClass::ConstructWDTSelection -> ObjectClass
+[conv] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> TechnoClass
+[conv] 0x76eeb0 TechnoClass::ConstructWDTSelection_Create_76EEB0 -> TechnoClass
+[conv] 0x76f470 ActivateScreenWDT_Create -> ActivateScreenWDT
+[conv] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> rc_ptr
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] _VectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] WaveClass                rc=2
+[era] _VectorClass_PAVWaypointPathClass rc=0
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+[era] Team_Create              rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=2
+[era] TechnoClass              rc=2
+[era] ActivateScreenWDT        rc=2
+[era] rc_ptr                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x74f400   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::Release
+[diff] 0x751970   MISMATCH         _VectorClass_PAVVocClass::Release
+[diff] 0x751ab0   MISMATCH         _DynamicVectorClass_PAVVocClass::SetCapacity
+[diff] 0x7536f0   MISMATCH         _VectorClass_PAVVoxClass::Release
+[diff] 0x753830   MISMATCH         _DynamicVectorClass_PAVVoxClass::removeItem
+[diff] 0x75a4d0   MISMATCH         _VectorClass_PAVMovieHandle::Release
+[diff] 0x7644a0   MISMATCH         _VectorClass_PAVWaypointPathClass::Release
+[diff] 0x7645e0   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::SetCapacity
+[diff] 0x76a2b0   MISMATCH         _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::loopAnimation
+[diff] 0x76eeb0   MISMATCH         TechnoClass::ConstructWDTSelection_Create_76EEB0
+[ledger] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74f400 _VectorClass_PAVVeinholeMonsterClass::Release -> NG (attempt 2)
+[ledger] 0x751970 _VectorClass_PAVVocClass::Release -> NG (attempt 2)
+[ledger] 0x751ab0 _DynamicVectorClass_PAVVocClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x7536f0 _VectorClass_PAVVoxClass::Release -> NG (attempt 2)
+[ledger] 0x753830 _DynamicVectorClass_PAVVoxClass::removeItem -> NG (attempt 2)
+[ledger] 0x75a4d0 _VectorClass_PAVMovieHandle::Release -> NG (attempt 2)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7644a0 _VectorClass_PAVWaypointPathClass::Release -> NG (attempt 2)
+[ledger] 0x7645e0 _DynamicVectorClass_PAVWaypointPathClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x765f60 Team_Create_765F60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x767b00 Team_Create_767B00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76a2b0 _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::loopAnimation -> NG (attempt 2)
+[ledger] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76c290 ObjectClass::ConstructWDTSelection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76eeb0 TechnoClass::ConstructWDTSelection_Create_76EEB0 -> NG (attempt 2)
+[ledger] 0x76f470 ActivateScreenWDT_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f500 rc_ptr::ConstructWDTSelection_Create_76F500 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "codegen_shape": 10
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p22\batch_report.json
