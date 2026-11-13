@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x63e990 _VectorClass_PAVPlanningTokenClass::Release -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x63ead0 _DynamicVectorClass_PAVPlanningTokenClass::SetCapacity_1 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x645ba0 sub_645BA0 -> _addr_64
+[conv] 0x647040 ObjectClass::UI_Create -> ObjectClass
+[conv] 0x6470f0 ObjectClass::UI_Add -> ObjectClass
+[conv] 0x6471a0 Network::AddFrameEvent -> Network
+[conv] 0x647260 ObjectClass::ProcessNetworkEvents -> ObjectClass
+[conv] 0x653100 RadarClass::Destru_vt16 -> RadarClass
+[conv] 0x65a280 _VectorClass_PAVRadBeam::Release -> _VectorClass_PAVRadBeam
+[conv] 0x65a3c0 _DynamicVectorClass_PAVRadBeam::SetCapacity -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65bf90 _VectorClass_PAVRadSiteClass::Release -> _VectorClass_PAVRadSiteClass
+[conv] 0x65c0d0 _DynamicVectorClass_PAVRadSiteClass::SetCapacity -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x660d20 _VectorClass_PAVRadarEventClass::Release -> _VectorClass_PAVRadarEventClass
+[conv] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> JumpjetLocomotionClass
+[conv] 0x664850 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::SetCapacity -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x664990 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Release -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x667a30 RulesClass::DTOR -> RulesClass
+[conv] 0x67ab30 _VectorClass_PBVVoxelAnimTypeClass::SetCapacity -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67acd0 _DynamicVectorClass_PBVVoxelAnimTypeClass::Remove -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67aeb0 _VectorClass_PBVSmudgeTypeClass::Release -> _VectorClass_PBVSmudgeTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=0
+[era] _addr_64                 rc=2
+[era] ObjectClass              rc=2
+[era] Network                  rc=2
+[era] RadarClass               rc=2
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] _DynamicVectorClass_PAVRadBeam rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] _DynamicVectorClass_PAVRadSiteClass rc=0
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] RulesClass               rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x63e990   MISMATCH         _VectorClass_PAVPlanningTokenClass::Release
+[diff] 0x63ead0   MISMATCH         _DynamicVectorClass_PAVPlanningTokenClass::SetCapacity_1
+[diff] 0x65a280   MISMATCH         _VectorClass_PAVRadBeam::Release
+[diff] 0x65a3c0   MISMATCH         _DynamicVectorClass_PAVRadBeam::SetCapacity
+[diff] 0x65bf90   MISMATCH         _VectorClass_PAVRadSiteClass::Release
+[diff] 0x65c0d0   MISMATCH         _DynamicVectorClass_PAVRadSiteClass::SetCapacity
+[diff] 0x660d20   MISMATCH         _VectorClass_PAVRadarEventClass::Release
+[diff] 0x664850   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::SetCapacity
+[diff] 0x664990   MISMATCH         _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Release
+[diff] 0x67ab30   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::SetCapacity
+[diff] 0x67acd0   MISMATCH         _DynamicVectorClass_PBVVoxelAnimTypeClass::Remove
+[diff] 0x67aeb0   MISMATCH         _VectorClass_PBVSmudgeTypeClass::Release
+[ledger] 0x63e990 _VectorClass_PAVPlanningTokenClass::Release -> NG (attempt 2)
+[ledger] 0x63ead0 _DynamicVectorClass_PAVPlanningTokenClass::SetCapacity_1 -> NG (attempt 2)
+[ledger] 0x645ba0 sub_645BA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x647040 ObjectClass::UI_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6470f0 ObjectClass::UI_Add -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6471a0 Network::AddFrameEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x647260 ObjectClass::ProcessNetworkEvents -> COMPILE_FAIL (attempt 2)
+[ledger] 0x653100 RadarClass::Destru_vt16 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65a280 _VectorClass_PAVRadBeam::Release -> NG (attempt 2)
+[ledger] 0x65a3c0 _DynamicVectorClass_PAVRadBeam::SetCapacity -> NG (attempt 2)
+[ledger] 0x65bf90 _VectorClass_PAVRadSiteClass::Release -> NG (attempt 2)
+[ledger] 0x65c0d0 _DynamicVectorClass_PAVRadSiteClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x660d20 _VectorClass_PAVRadarEventClass::Release -> NG (attempt 2)
+[ledger] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x664850 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x664990 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::Release -> NG (attempt 2)
+[ledger] 0x667a30 RulesClass::DTOR -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67ab30 _VectorClass_PBVVoxelAnimTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x67acd0 _DynamicVectorClass_PBVVoxelAnimTypeClass::Remove -> NG (attempt 2)
+[ledger] 0x67aeb0 _VectorClass_PBVSmudgeTypeClass::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 12
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p17\batch_report.json
