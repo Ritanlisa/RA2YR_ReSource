@@ -1,0 +1,11 @@
+{
+ "addr": "0x631F40",
+ "name": "GameClass::saveGameState",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631F40",
+ "bytes_hex": "8a442404568bf1a801c706a4fd7e00740956e8e66b190083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
