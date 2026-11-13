@@ -1,0 +1,33 @@
+{
+ "symbol": "?IncrementPriority@AudioQueue@@QAEPAHXZ",
+ "sym_key": "AudioQueue::IncrementPriority",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07426b900000000e80000000085c074188b90880000008bc842899088000000e80000000085c075e8c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E81C@@3IA",
+   "sym_key": "DataGlobal_87E81C"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E810@@3VAudioQueue@@A",
+   "sym_key": "DataGlobal_87E810"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

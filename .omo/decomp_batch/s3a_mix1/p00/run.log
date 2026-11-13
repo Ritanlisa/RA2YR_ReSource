@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x401080 Audio::InitChannels -> Audio
+[conv] 0x4015c0 sub_4015C0 -> _addr_40
+[conv] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> TechnoClass
+[conv] 0x4054a0 Audio::UpdatePlaybackPosition -> Audio
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x406820 sub_406820 -> _addr_40
+[conv] 0x406e80 AudioMixer::Shutdown -> AudioMixer
+[conv] 0x407680 StartAddress -> _addr_40
+[conv] 0x407b60 ThreadAudioMixerMain -> _addr_40
+[conv] 0x408200 AudioQueue::IncrementPriority -> AudioQueue
+[conv] 0x408230 AudioTimer::DecrementAll -> AudioTimer
+[conv] 0x408390 sub_408390 -> _addr_40
+[conv] 0x4083d0 Mixer::RequestAllBuffers -> Mixer
+[conv] 0x409c40 AudioBuffer::InitializePlayback -> AudioBuffer
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x4128f0 sub_4128F0 -> _addr_41
+[conv] 0x4151e0 AircraftClass::ProcessLanding -> AircraftClass
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=2
+[era] _addr_40                 rc=2
+[era] TechnoClass              rc=2
+[era] VocClass                 rc=2
+[era] AudioMixer               rc=2
+[era] AudioQueue               rc=0
+[era] AudioTimer               rc=0
+[era] Mixer                    rc=0
+[era] AudioBuffer              rc=2
+[era] Math                     rc=2
+[era] _addr_41                 rc=2
+[era] AircraftClass            rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x408390   MISMATCH         sub_408390
+[diff] 0x408200   MISMATCH         AudioQueue::IncrementPriority
+[diff] 0x408230   MISMATCH         AudioTimer::DecrementAll
+[diff] 0x4083d0   MISMATCH         Mixer::RequestAllBuffers
+[ledger] 0x401080 Audio::InitChannels -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4015c0 sub_4015C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4054a0 Audio::UpdatePlaybackPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 5)
+[ledger] 0x406820 sub_406820 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x406e80 AudioMixer::Shutdown -> COMPILE_FAIL (attempt 4)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 6)
+[ledger] 0x407b60 ThreadAudioMixerMain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x408200 AudioQueue::IncrementPriority -> NG (attempt 4)
+[ledger] 0x408230 AudioTimer::DecrementAll -> NG (attempt 4)
+[ledger] 0x408390 sub_408390 -> NG (attempt 4)
+[ledger] 0x4083d0 Mixer::RequestAllBuffers -> NG (attempt 4)
+[ledger] 0x409c40 AudioBuffer::InitializePlayback -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4128f0 sub_4128F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4151e0 AircraftClass::ProcessLanding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p00\batch_report.json

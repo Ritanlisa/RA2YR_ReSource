@@ -1,0 +1,11 @@
+{
+ "addr": "0x4083D0",
+ "name": "Mixer::RequestAllBuffers",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4083D0",
+ "bytes_hex": "a11ce887005685c0742db910e88700e8dcefffff8bf085f6741d8b4e14ba0040000083c110e876edffff8bcee8dfefffff8bf085f675e35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

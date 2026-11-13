@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_408390@@YAHXZ",
+ "sym_key": "Unnamed::sub_408390",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0742cb900000000e8000000008bf085f6741a8b4e1433d283c110e8000000008bcee8000000008bf085f675e68bc65ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E81C@@3IA",
+   "sym_key": "DataGlobal_87E81C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E810@@3VAudioQueue@@A",
+   "sym_key": "DataGlobal_87E810"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

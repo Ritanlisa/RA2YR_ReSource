@@ -1,0 +1,39 @@
+{
+ "symbol": "?RequestAllBuffers@Mixer@@QAEHXZ",
+ "sym_key": "Mixer::RequestAllBuffers",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0742fb900000000e8000000008bf085f6741d8b4e14ba0040000083c110e8000000008bcee8000000008bf085f675e38bc65ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E81C@@3IA",
+   "sym_key": "DataGlobal_87E81C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E810@@3VAudioQueue@@A",
+   "sym_key": "DataGlobal_87E810"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

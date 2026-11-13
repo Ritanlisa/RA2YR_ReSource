@@ -1,0 +1,11 @@
+{
+ "addr": "0x408200",
+ "name": "AudioQueue::IncrementPriority",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408200",
+ "bytes_hex": "a11ce8870085c07426b910e88700e8adf1ffff85c074188b8888000000418988880000008bc8e8b5f1ffff85c075e8c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
