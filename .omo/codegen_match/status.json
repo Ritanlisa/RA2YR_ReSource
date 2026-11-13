@@ -15876,15 +15876,15 @@
   "this_as_id": false
  },
  "0x42f380": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "HouseClass::FailedToPlaceNode",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "HouseClass::FailedToPlaceNode",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x42f3a0": {
@@ -16539,19 +16539,19 @@
   "this_as_id": false
  },
  "0x430f70": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "PlayerClass::FindNearestWaypoint",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlayerClass::FindNearestWaypoint",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x431090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -17447,25 +17447,25 @@
   "this_as_id": false
  },
  "0x435340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "sub_435340",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_435340",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4353f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "sub_4353F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_4353F0",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x435560": {
@@ -19434,7 +19434,7 @@
   "this_as_id": false
  },
  "0x43b680": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -19458,14 +19458,14 @@
   "this_as_id": false
  },
  "0x43bcf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::Dtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::Dtor",
-  "rule_violations": 13,
+  "rule_violations": 12,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19566,7 +19566,7 @@
   "this_as_id": false
  },
  "0x43e940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19614,7 +19614,7 @@
   "this_as_id": false
  },
  "0x43ef90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19657,14 +19657,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x4415f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessDemolish",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::ProcessDemolish",
-  "rule_violations": 26,
+  "rule_violations": 24,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19885,7 +19885,7 @@
   "this_as_id": false
  },
  "0x447780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20024,7 +20024,7 @@
   "this_as_id": false
  },
  "0x449540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20230,14 +20230,14 @@
   "status": "NG"
  },
  "0x44e440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessPowerPlantEffect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::ProcessPowerPlantEffect",
-  "rule_violations": 4,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -20441,7 +20441,7 @@
   "this_as_id": false
  },
  "0x4509d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20994,7 +20994,7 @@
   "this_as_id": false
  },
  "0x454730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21006,7 +21006,7 @@
   "this_as_id": false
  },
  "0x4547c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21018,7 +21018,7 @@
   "this_as_id": false
  },
  "0x454930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21030,7 +21030,7 @@
   "this_as_id": false
  },
  "0x4549b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21138,7 +21138,7 @@
   "this_as_id": false
  },
  "0x455c20": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -22886,7 +22886,7 @@
   "this_as_id": false
  },
  "0x45b1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

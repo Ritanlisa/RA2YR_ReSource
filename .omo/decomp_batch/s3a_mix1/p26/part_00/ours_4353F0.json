@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4353F0@@YGDHHHHHHHHHH@Z",
+ "sym_key": "Unnamed::sub_4353F0",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f65775075f32c05ec228008b7c24188bce57e8000000008a464084c075348b4424308b4c242c8b542428508b442428518b4c2428528b542428508b442424518b4c24245257505156e8000000005f5ec228008b5424288b4424248b4c2420538b5c2434558b6c24345355528b542430508b44242c518b4c242c5257505156c7462c02000000e80000000053558b5424388b4424348b4c2430528b542430508b44242c518b4c242c475257505156e8000000005d5bc7462c010000005f5ec22800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHHHHHHHHH@Z",
+   "sym_key": "Font__Print"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHHHHHHHHH@Z",
+   "sym_key": "Font__Print"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHHHHHHHHH@Z",
+   "sym_key": "Font__Print"
+  }
+ ]
+}

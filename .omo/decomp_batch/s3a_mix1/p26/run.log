@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x42f380 HouseClass::FailedToPlaceNode -> HouseClass
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x431090 Radar::FindNearestRadarTarget -> Radar
+[conv] 0x435340 sub_435340 -> _addr_43
+[conv] 0x4353f0 sub_4353F0 -> _addr_43
+[conv] 0x43b680 BuildingClass::ctor -> BuildingClass
+[conv] 0x43bcf0 BuildingClass::Dtor -> BuildingClass
+[conv] 0x43e940 TechnoClass::ComputeTargetAngle -> TechnoClass
+[conv] 0x43ef90 BuildingClass::GetProductionFrame -> BuildingClass
+[conv] 0x4415f0 BuildingClass::ProcessDemolish -> BuildingClass
+[conv] 0x447780 BuildingClass::StartProduction -> BuildingClass
+[conv] 0x449540 AnimClass::resetAnimation -> AnimClass
+[conv] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> BuildingClass
+[conv] 0x4509d0 BuildingClass::UpdateAnimFrames -> BuildingClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+[conv] 0x4547c0 BuildingClass::UpdateAnimationSlots -> BuildingClass
+[conv] 0x454930 BuildingClass::ProcessDamageAnim -> BuildingClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+[conv] 0x45b1c0 MapData::InitHeights -> MapData
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] PlayerClass              rc=2
+[era] Radar                    rc=2
+[era] _addr_43                 rc=0
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] AnimClass                rc=2
+[era] Animation                rc=2
+[era] MapData                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x42f380   MISMATCH         HouseClass::FailedToPlaceNode
+[diff] 0x435340   MISMATCH         sub_435340
+[diff] 0x4353f0   MISMATCH         sub_4353F0
+[ledger] 0x42f380 HouseClass::FailedToPlaceNode -> NG (attempt 3)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 6)
+[ledger] 0x431090 Radar::FindNearestRadarTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x435340 sub_435340 -> NG (attempt 2)
+[ledger] 0x4353f0 sub_4353F0 -> NG (attempt 2)
+[ledger] 0x43b680 BuildingClass::ctor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43bcf0 BuildingClass::Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43e940 TechnoClass::ComputeTargetAngle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43ef90 BuildingClass::GetProductionFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4415f0 BuildingClass::ProcessDemolish -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447780 BuildingClass::StartProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x449540 AnimClass::resetAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4509d0 BuildingClass::UpdateAnimFrames -> COMPILE_FAIL (attempt 2)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4547c0 BuildingClass::UpdateAnimationSlots -> COMPILE_FAIL (attempt 2)
+[ledger] 0x454930 BuildingClass::ProcessDamageAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 4)
+[ledger] 0x455c20 TechnoClass::GetScreenCoords -> COMPILE_FAIL (attempt 14)
+[ledger] 0x45b1c0 MapData::InitHeights -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p26\batch_report.json

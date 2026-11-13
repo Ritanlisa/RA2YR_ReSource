@@ -1,0 +1,8 @@
+{
+ "symbol": "?FailedToPlaceNode@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::FailedToPlaceNode",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b4c240485c9740a8b410c4089410cc2040033c0c20400",
+ "relocs": []
+}

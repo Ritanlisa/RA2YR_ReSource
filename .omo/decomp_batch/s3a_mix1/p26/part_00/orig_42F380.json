@@ -1,0 +1,11 @@
+{
+ "addr": "0x42F380",
+ "name": "HouseClass::FailedToPlaceNode",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42F380",
+ "bytes_hex": "8b44240485c07503c204008b480c4189480c8bc1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
