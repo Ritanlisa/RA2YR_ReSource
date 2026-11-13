@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x552d60 LoadingScreen::Render -> LoadingScreen
+[conv] 0x5565a0 LinkClass::Destruct -> LinkClass
+[conv] 0x556640 LinkClass::FindPrev -> LinkClass
+[conv] 0x556670 LinkClass::FindNext -> LinkClass
+[conv] 0x5566a0 LinkClass::InsertAfter -> LinkClass
+[conv] 0x556730 LinkClass::RemoveNode -> LinkClass
+[conv] 0x556c00 ObjectClass::Render_Render_556C00 -> ObjectClass
+[conv] 0x557eb0 ListClass::Draw -> ListClass
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x571490 CellClass::PropagateTerrainVariant2 -> CellClass
+[conv] 0x573540 Terrain::RecursiveModify -> Terrain
+[conv] 0x574000 TerrainClass::ProcessSlope -> TerrainClass
+[conv] 0x574c20 MapClass::ApplyTerrainDamage -> MapClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] LoadingScreen            rc=2
+[era] LinkClass                rc=2
+[era] ListClass                rc=2
+[era] _addr_55                 rc=2
+[era] MapClass                 rc=2
+[era] CellClass                rc=2
+[era] Terrain                  rc=2
+[era] TerrainClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x552d60 LoadingScreen::Render -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5565a0 LinkClass::Destruct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556640 LinkClass::FindPrev -> COMPILE_FAIL (attempt 4)
+[ledger] 0x556670 LinkClass::FindNext -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5566a0 LinkClass::InsertAfter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556730 LinkClass::RemoveNode -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556c00 ObjectClass::Render_Render_556C00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x557eb0 ListClass::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 3)
+[ledger] 0x571490 CellClass::PropagateTerrainVariant2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x573540 Terrain::RecursiveModify -> COMPILE_FAIL (attempt 3)
+[ledger] 0x574000 TerrainClass::ProcessSlope -> COMPILE_FAIL (attempt 3)
+[ledger] 0x574c20 MapClass::ApplyTerrainDamage -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p09\batch_report.json

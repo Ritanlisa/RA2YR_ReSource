@@ -7,3 +7,4 @@
 {"part": 6, "n": 20, "seconds": 65.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 7, "n": 20, "seconds": 64.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 8, "n": 20, "seconds": 47.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 9, "n": 20, "seconds": 54.9, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
