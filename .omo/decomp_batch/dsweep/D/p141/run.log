@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p141\part_00
+=== convert (20 addrs) ===
+[conv] 0x594870 ObjectClass::PlaceRandomWaypoints -> ObjectClass
+[conv] 0x411820 ManageMultimediaTimer -> _addr_41
+[conv] 0x5a0410 MapClass::GrowLayer -> MapClass
+[conv] 0x50d6d0 ObjectClass::SelectSimilarBuildingTypes -> ObjectClass
+[conv] 0x72b530 PaletteManager::Load -> PaletteManager
+[conv] 0x561400 VideoSettingsDialogProc -> _addr_56
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x401c00 LoadSampleAudioMixer -> _addr_40
+[conv] 0x555da0 LightConvertClass::Constructor -> LightConvertClass
+[conv] 0x72ec70 SetupMouseClassResources -> _addr_72
+[conv] 0x6b59a0 StandardCreateUnitAtCoords -> _addr_6B
+[conv] 0x6b5c90 TimedCreateUnitAtCoords -> _addr_6B
+[conv] 0x74ea70 ObjectClass::LoadVeinholeMonsters -> ObjectClass
+[conv] 0x51c8b0 InfantryClass::GetFireError -> InfantryClass
+[conv] 0x55cc20 ScreenCapture::Frame -> ScreenCapture
+[conv] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> SuperWeaponTypeClass
+[conv] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> BuildingTypeClass
+[conv] 0x56c210 Object::FindNearestObjectAtCell -> Object
+[conv] 0x5f3e70 TechnoClass::DetectCloaked -> TechnoClass
+[conv] 0x7bb050 XSurface::FillRectEx -> XSurface
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_41                 rc=2
+[era] MapClass                 rc=2
+[era] PaletteManager           rc=0
+[era] _addr_56                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_40                 rc=0
+[era] LightConvertClass        rc=2
+[era] _addr_72                 rc=0
+[era] _addr_6B                 rc=2
+[era] InfantryClass            rc=2
+[era] ScreenCapture            rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] BuildingTypeClass        rc=2
+[era] Object                   rc=0
+[era] XSurface                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x50d6d0   MISMATCH         ObjectClass::SelectSimilarBuildingTypes
+[diff] 0x401c00   MISMATCH         LoadSampleAudioMixer
+[diff] 0x72ec70   MISMATCH         SetupMouseClassResources
+[diff] 0x56c210   MISMATCH         Object::FindNearestObjectAtCell
+[ledger] 0x594870 ObjectClass::PlaceRandomWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x411820 ManageMultimediaTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a0410 MapClass::GrowLayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50d6d0 ObjectClass::SelectSimilarBuildingTypes -> NG (attempt 1)
+[ledger] 0x72b530 PaletteManager::Load -> PENDING (attempt 1)
+[ledger] 0x561400 VideoSettingsDialogProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x401c00 LoadSampleAudioMixer -> NG (attempt 1)
+[ledger] 0x555da0 LightConvertClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72ec70 SetupMouseClassResources -> NG (attempt 1)
+[ledger] 0x6b59a0 StandardCreateUnitAtCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b5c90 TimedCreateUnitAtCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ea70 ObjectClass::LoadVeinholeMonsters -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51c8b0 InfantryClass::GetFireError -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55cc20 ScreenCapture::Frame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56c210 Object::FindNearestObjectAtCell -> NG (attempt 1)
+[ledger] 0x5f3e70 TechnoClass::DetectCloaked -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bb050 XSurface::FillRectEx -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 4,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p141\batch_report.json

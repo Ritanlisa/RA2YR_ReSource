@@ -1,0 +1,135 @@
+{
+ "symbol": "?FindNearestObjectAtCell@Object@@QAEPAIPAH@Z",
+ "sym_key": "Object::FindNearestObjectAtCell",
+ "size": 680,
+ "link_base": 0,
+ "bytes_hex": "83ec5c538b5c246455568b03579981e2ff000000894c241003c233c98bf88b43049981e2ff000000894c242003c2894c24248bf0a030160000c1ff08c1fe08a801897c241489742470897c24288974242c756e8ad0680000000080ca01890d5a260000881530160000c7056a260000ffff0000c7057a26000001000000c7059a26000000000100c705aa260000ffff0100c7058a2600000000ffffc705ba26000001000100c705ca2600000100ffffc705da260000ffffffffe80000000083c404b85a2600008944241c668b08668b40026603c603cf0fbff88b4424188bd733d00fbfe98b4c241081e2ff00000033c28b89f4000000894424188d042f3bc10f8e4f0100008bd52bd73bd10f8d430100008bd72bd53bd10f8d370100008b5424108b92f80000008d0c513bc10f87220100008bc7c1e00903c53d0000040073118b5424108b8a3c0100008b048185c0750f8b542418b85816000089157c1600008bb0e400000085f60f84cb000000f646140174178a861a04000084c0750d83be20020000020f84a30000008b0656ff502c83f806744c8b0e8d5424485256ff51488b4b088b50082bca8b5304518b48042bd18b0b528b102bca518d4c2460e8000000008b10895424308b4804894c24348b50088d4c243089542438e800000000eb448bc58bcfc1e00805800000008d54243cc1e1088944243c81c1800000008d442460894c244052508bcbc744244c00000000e8000000008bc8e8000000003db50000007f0889442424897424208b763085f60f8535ffffff8b4c24288b5424148b74247081e1ff00000080e2000bca894c24148b44241c83c0048bc881f9ea260000894c241c7d218b4c242c8b7c241481e1ff00000081e600ffffff0bce894c24708bf1e940feffff8b4424205f5e5d85c05b740c817c2414b50000007e0233c083c45cc20400",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?nullsub_167@@YAHPBX0@Z",
+   "sym_key": "nullsub_167"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 476,
+   "type": "REL32",
+   "sym": "?Length@Coord@@QAE_JXZ",
+   "sym_key": "Coord::Length"
+  },
+  {
+   "off": 532,
+   "type": "REL32",
+   "sym": "?Subtract@Vector3@@QAEPAHPAX0@Z",
+   "sym_key": "Vector3::Subtract"
+  },
+  {
+   "off": 539,
+   "type": "REL32",
+   "sym": "?Length@Coord@@QAE_JXZ",
+   "sym_key": "Coord::Length"
+  },
+  {
+   "off": 607,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}
