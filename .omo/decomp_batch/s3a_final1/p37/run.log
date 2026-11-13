@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cc1d4 __except_handler3 -> _addr_7C
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+[conv] 0x7cc752 __Getmonths -> _addr_7C
+[conv] 0x7cc7e7 __Gettnames -> _addr_7C
+[conv] 0x7cd460 _tmpnam -> _addr_7C
+[conv] 0x7cdf2e __expandlocale -> _addr_7C
+[conv] 0x7ce18d __flsbuf -> _addr_7C
+[conv] 0x7ce9e6 _write_char -> _addr_7C
+[conv] 0x7cec87 ObjectClass::__cftoe2 -> ObjectClass
+[conv] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> _addr_7D
+[conv] 0x7d0703 __filbuf -> _addr_7D
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x7d2169 _fgetc_0 -> _addr_7D
+[conv] 0x7d219a __whiteout -> _addr_7D
+[conv] 0x7d2da6 ObjectClass::__getstream -> ObjectClass
+[conv] 0x7d57fe _asctime -> _addr_7D
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+[conv] 0x7d6494 __free_lc_time -> _addr_7D
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cc1d4 __except_handler3 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cc752 __Getmonths -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc7e7 __Gettnames -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cd460 _tmpnam -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cdf2e __expandlocale -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ce18d __flsbuf -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ce9e6 _write_char -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cec87 ObjectClass::__cftoe2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d0703 __filbuf -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d2169 _fgetc_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d219a __whiteout -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d2da6 ObjectClass::__getstream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d57fe _asctime -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d6494 __free_lc_time -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p37\batch_report.json
