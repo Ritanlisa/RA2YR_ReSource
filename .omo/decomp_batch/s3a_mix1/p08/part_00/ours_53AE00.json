@@ -1,0 +1,45 @@
+{
+ "symbol": "?Weapon_Get@@YAHXZ",
+ "sym_key": "Unnamed::Weapon_Get",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d0000000068630400005033d2e8000000008b1500000000b90300000085d274068b8a546001006a006896000000684640000051506a006a00b900000000e800000000c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Ion_cpp@@3EA",
+   "sym_key": "g_Str_File_Ion_cpp"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?aMsgLightningst@@3EA",
+   "sym_key": "aMsgLightningst"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_GameNetworkObject@@3VMessageListClass@@A",
+   "sym_key": "g_GameNetworkObject"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  }
+ ]
+}

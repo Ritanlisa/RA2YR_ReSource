@@ -1,0 +1,45 @@
+{
+ "symbol": "?Weapon_Get_53B410@@YAHXZ",
+ "sym_key": "Unnamed::Weapon_Get_53B410",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c0a000000000683b0500005033d2e8000000008b1500000000b90300000085d274068b8a546001006a006896000000684640000051506a006a00b900000000e800000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aMsgDominatorac@@3HA",
+   "sym_key": "aMsgDominatorac"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Ion_cpp@@3EA",
+   "sym_key": "g_Str_File_Ion_cpp"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_GameNetworkObject@@3VMessageListClass@@A",
+   "sym_key": "g_GameNetworkObject"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?AddMessage@MessageListClass@@QAEHPAXH0HHHD@Z",
+   "sym_key": "MessageListClass::AddMessage"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x53AE00",
+ "name": "Weapon_Get",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53AE00",
+ "bytes_hex": "6863040000683480820033d2b99c808200e84aa01f008b154c3da800b90300000085d274068b8a546001006a006896000000684640000051506a006a00b960bca800e8598d0900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
