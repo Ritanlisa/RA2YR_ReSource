@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_63B090@@YAXXZ",
+ "sym_key": "Unnamed::sub_63B090",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  }
+ ]
+}

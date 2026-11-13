@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x629150 sub_629150 -> _addr_62
+[conv] 0x6296b0 ParasiteClass::SaveParasite -> ParasiteClass
+[conv] 0x62b5a0 sub_62B5A0 -> _addr_62
+[conv] 0x62da40 sub_62DA40 -> _addr_62
+[conv] 0x62dc10 sub_62DC10 -> _addr_62
+[conv] 0x6309a0 sub_6309A0 -> _addr_63
+[conv] 0x630b70 sub_630B70 -> _addr_63
+[conv] 0x6333d0 sub_6333D0 -> _addr_63
+[conv] 0x6335a0 sub_6335A0 -> _addr_63
+[conv] 0x63b090 sub_63B090 -> _addr_63
+[conv] 0x63f4c0 sub_63F4C0 -> _addr_63
+[conv] 0x63f690 sub_63F690 -> _addr_63
+[conv] 0x6404f0 sub_6404F0 -> _addr_64
+[conv] 0x6406c0 sub_6406C0 -> _addr_64
+[conv] 0x642790 sub_642790 -> _addr_64
+[conv] 0x642960 sub_642960 -> _addr_64
+[conv] 0x643eb0 sub_643EB0 -> _addr_64
+[conv] 0x644080 sub_644080 -> _addr_64
+[conv] 0x644830 ParticleSystemTypeClass::SaveLoad_Prefix_0 -> ParticleSystemTypeClass
+[conv] 0x6449f0 sub_6449F0 -> _addr_64
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=0
+[era] ParasiteClass            rc=0
+[era] _addr_63                 rc=0
+[era] _addr_64                 rc=0
+[era] ParticleSystemTypeClass  rc=0
+=== diffasm byte-compare ===
+[diff] 0x629150   MATCH            sub_629150
+[diff] 0x62b5a0   MATCH            sub_62B5A0
+[diff] 0x62da40   MATCH            sub_62DA40
+[diff] 0x62dc10   MATCH            sub_62DC10
+[diff] 0x6296b0   MATCH            ParasiteClass::SaveParasite
+[diff] 0x6309a0   MATCH            sub_6309A0
+[diff] 0x630b70   MATCH            sub_630B70
+[diff] 0x6333d0   MATCH            sub_6333D0
+[diff] 0x6335a0   MATCH            sub_6335A0
+[diff] 0x63b090   MATCH            sub_63B090
+[diff] 0x63f4c0   MATCH            sub_63F4C0
+[diff] 0x63f690   MATCH            sub_63F690
+[diff] 0x6404f0   MATCH            sub_6404F0
+[diff] 0x6406c0   MATCH            sub_6406C0
+[diff] 0x642790   MATCH            sub_642790
+[diff] 0x642960   MATCH            sub_642960
+[diff] 0x643eb0   MATCH            sub_643EB0
+[diff] 0x644080   MATCH            sub_644080
+[diff] 0x6449f0   MATCH            sub_6449F0
+[diff] 0x644830   MATCH            ParticleSystemTypeClass::SaveLoad_Prefix_0
+[ledger] 0x629150 sub_629150 -> OK (attempt 3)
+[ledger] 0x6296b0 ParasiteClass::SaveParasite -> OK (attempt 2)
+[ledger] 0x62b5a0 sub_62B5A0 -> OK (attempt 4)
+[ledger] 0x62da40 sub_62DA40 -> OK (attempt 2)
+[ledger] 0x62dc10 sub_62DC10 -> OK (attempt 3)
+[ledger] 0x6309a0 sub_6309A0 -> OK (attempt 2)
+[ledger] 0x630b70 sub_630B70 -> OK (attempt 3)
+[ledger] 0x6333d0 sub_6333D0 -> OK (attempt 2)
+[ledger] 0x6335a0 sub_6335A0 -> OK (attempt 3)
+[ledger] 0x63b090 sub_63B090 -> OK (attempt 3)
+[ledger] 0x63f4c0 sub_63F4C0 -> OK (attempt 2)
+[ledger] 0x63f690 sub_63F690 -> OK (attempt 3)
+[ledger] 0x6404f0 sub_6404F0 -> OK (attempt 2)
+[ledger] 0x6406c0 sub_6406C0 -> OK (attempt 3)
+[ledger] 0x642790 sub_642790 -> OK (attempt 2)
+[ledger] 0x642960 sub_642960 -> OK (attempt 3)
+[ledger] 0x643eb0 sub_643EB0 -> OK (attempt 2)
+[ledger] 0x644080 sub_644080 -> OK (attempt 3)
+[ledger] 0x644830 ParticleSystemTypeClass::SaveLoad_Prefix_0 -> OK (attempt 2)
+[ledger] 0x6449f0 sub_6449F0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p18\batch_report.json
