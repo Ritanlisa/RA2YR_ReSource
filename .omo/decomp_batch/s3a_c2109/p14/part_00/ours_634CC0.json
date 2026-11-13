@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindBuildingMatch@ScriptAction@@QAEHPAH@Z",
+ "sym_key": "ScriptAction::FindBuildingMatch",
+ "size": 323,
+ "link_base": 0,
+ "bytes_hex": "81ecf4000000535556578bbc24080100008bd957895c2420e8000000008bf083c4048d5424108b4e048d46045250895c2418ff511083f8ff750433f6eb1e8b4e1483f90175048bf3eb124885c07d038d41ff508bcee8000000008bf057e8000000008b481483c4044978088b40088b0c88eb0233c93bf10f84a7000000578bcee80000000083f8ff750433c0eb068b4e048b04818b70048b4330b91b0000008d7c242cf3a585c0894424108bf874758d54242c8d4c2420e8000000008b288b50048b400833db85ff89542418894424147e528b4c241c8b51248b349a8b467085c0743cb91b0000008dbc2498000000f3a58d9424980000008d4c2420e8000000003b2875168b4c24188b50043bca750b8b5424148b48083bd174198b7c2410433bdf7cae5f5e5d83c8ff5b81c4f4000000c204005f5e8bc35d5b81c4f4000000c20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?GetAt_Wrap@ArrayClass@@QAEHH@Z",
+   "sym_key": "ArrayClass::GetAt_Wrap"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?FindValue@Array@@QAEHH@Z",
+   "sym_key": "Array::FindValue"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}

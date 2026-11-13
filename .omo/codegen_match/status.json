@@ -119295,7 +119295,7 @@
   "this_as_id": false
  },
  "0x6242b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -119470,14 +119470,14 @@
   "this_as_id": false
  },
  "0x624ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Dialog::BindGadgetData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Dialog::BindGadgetData",
-  "rule_violations": 12,
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -119867,7 +119867,7 @@
   "this_as_id": false
  },
  "0x6263d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119995,19 +119995,19 @@
   "this_as_id": false
  },
  "0x6272a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "FileSystem::FlushTempFiles",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FileSystem::FlushTempFiles",
-  "rule_violations": 11,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 7,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6274f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -120031,7 +120031,7 @@
   "this_as_id": false
  },
  "0x6278c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -120055,14 +120055,14 @@
   "this_as_id": false
  },
  "0x627b20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ColorSchemeClass::LoadAllSchemes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ColorSchemeClass::LoadAllSchemes",
-  "rule_violations": 16,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -121825,14 +121825,14 @@
   "this_as_id": false
  },
  "0x62e650": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ScenarioClass::DestroyAndClearVector",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScenarioClass::DestroyAndClearVector",
-  "rule_violations": 6,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -123786,15 +123786,15 @@
   "this_as_id": false
  },
  "0x634cc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x100",
   "name": "ScriptAction::FindBuildingMatch",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ScriptAction::FindBuildingMatch",
-  "rule_violations": 7,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 5,
+  "status": "NG",
   "this_as_id": false
  },
  "0x634e10": {
@@ -124322,14 +124322,14 @@
   "this_as_id": false
  },
  "0x637270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::ExecutePlanningQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ExecutePlanningQueue",
-  "rule_violations": 10,
+  "rule_violations": 8,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -128463,7 +128463,7 @@
   "this_as_id": false
  },
  "0x6475f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128766,7 +128766,7 @@
   "status": "NG"
  },
  "0x64dea0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128789,7 +128789,7 @@
   "this_as_id": false
  },
  "0x6516f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LogMultiplayToSync_MPDEBUG",
@@ -130815,14 +130815,14 @@
   "status": "NG"
  },
  "0x65a970": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RadioClass::RemoveElement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_flat::RemoveElement",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -132426,7 +132426,7 @@
   "this_as_id": false
  },
  "0x65dd30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134082,14 +134082,14 @@
   "this_as_id": false
  },
  "0x663b40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SessionClass::BuildLobbyPlayerList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SessionClass::BuildLobbyPlayerList",
-  "rule_violations": 14,
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -134596,7 +134596,7 @@
   "this_as_id": false
  },
  "0x668bf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134608,7 +134608,7 @@
   "this_as_id": false
  },
  "0x668fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134656,7 +134656,7 @@
   "this_as_id": false
  },
  "0x66cf70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134759,7 +134759,7 @@
   "this_as_id": false
  },
  "0x672280": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

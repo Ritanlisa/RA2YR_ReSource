@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x6242b0 ObjectClass::sub_6242B0 -> ObjectClass
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+[conv] 0x6263d0 FileExtension::MapHandler -> FileExtension
+[conv] 0x6272a0 FileSystem::FlushTempFiles -> FileSystem
+[conv] 0x6274f0 ObjectClass::sub_6274F0 -> ObjectClass
+[conv] 0x6278c0 ObjectClass::sub_6278C0 -> ObjectClass
+[conv] 0x627b20 ColorSchemeClass::LoadAllSchemes -> ColorSchemeClass
+[conv] 0x62e650 ScenarioClass::DestroyAndClearVector -> ScenarioClass
+[conv] 0x634cc0 ScriptAction::FindBuildingMatch -> ScriptAction
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x6475f0 Network::QueueProcessingLoop -> Network
+[conv] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> Multiplay
+[conv] 0x6516f0 LogMultiplayToSync_MPDEBUG -> LogMultiplayToSync
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65dd30 ObjectClass::ConstructTeamMembers -> ObjectClass
+[conv] 0x663b40 SessionClass::BuildLobbyPlayerList -> SessionClass
+[conv] 0x668bf0 RulesClass::Addition -> RulesClass
+[conv] 0x668fb0 RulesClass::LoadSpecialWeapons -> RulesClass
+[conv] 0x66cf70 RulesClass::ReadCountryList -> RulesClass
+[conv] 0x672280 RulesClass::readCrateRules -> RulesClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Dialog                   rc=2
+[era] FileExtension            rc=2
+[era] FileSystem               rc=0
+[era] ColorSchemeClass         rc=2
+[era] ScenarioClass            rc=2
+[era] ScriptAction             rc=0
+[era] TechnoClass              rc=2
+[era] Network                  rc=2
+[era] Multiplay                rc=2
+[era] LogMultiplayToSync       rc=2
+[era] RadioClass               rc=2
+[era] SessionClass             rc=2
+[era] RulesClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x6272a0   MISMATCH         FileSystem::FlushTempFiles
+[diff] 0x634cc0   MISMATCH         ScriptAction::FindBuildingMatch
+[ledger] 0x6242b0 ObjectClass::sub_6242B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6263d0 FileExtension::MapHandler -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6272a0 FileSystem::FlushTempFiles -> NG (attempt 2)
+[ledger] 0x6274f0 ObjectClass::sub_6274F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6278c0 ObjectClass::sub_6278C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x627b20 ColorSchemeClass::LoadAllSchemes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62e650 ScenarioClass::DestroyAndClearVector -> COMPILE_FAIL (attempt 2)
+[ledger] 0x634cc0 ScriptAction::FindBuildingMatch -> NG (attempt 5)
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6475f0 Network::QueueProcessingLoop -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6516f0 LogMultiplayToSync_MPDEBUG -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65dd30 ObjectClass::ConstructTeamMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x663b40 SessionClass::BuildLobbyPlayerList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x668bf0 RulesClass::Addition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x668fb0 RulesClass::LoadSpecialWeapons -> COMPILE_FAIL (attempt 2)
+[ledger] 0x66cf70 RulesClass::ReadCountryList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x672280 RulesClass::readCrateRules -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p14\batch_report.json
