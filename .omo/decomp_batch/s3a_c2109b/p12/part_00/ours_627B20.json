@@ -1,0 +1,51 @@
+{
+ "symbol": "?LoadAllSchemes@ColorSchemeClass@@QAEHH@Z",
+ "sym_key": "ColorSchemeClass::LoadAllSchemes",
+ "size": 520,
+ "link_base": 0,
+ "bytes_hex": "81ec100100008b510c8b8424140100008901538b42085533db5685c057894c241c89542414895c24180f8ecc010000895c24108b3a8b4c241003f98b471085c07e2433ed8b77048bc503f0438bce81c504010000e80000000084c074283b5f1072e28b5424148b4c241833db8d41018b4a083bc1894424180f837d0100008344241018ebae85f6897424100f846a0100008b5424108d4c242052e8000000008b44241c8d4c2420518b780cff570433d2f777088b078d14528b7cd0108d04d04f8944241478308befc1e50603efc1e5028b70048d4c242003f5518bcee80000000084c075154f81ed0401000085ff7c068b442414ebda33f6eb0681c6000100008b5424108b4c241c8b3e52e800000000894424108b870001000085c074518b401033ed85c0894424147e298b8f000100008b49048b34a985f674148bcee80000000056e8000000008b44241883c404453be87cd78b8f0001000085c974078b116a0151ff12c78700010000000000008b4c24108b54241c898f000100008b4c24188b520c895424143b4a08736e8d0449c1e003894424108b3a8be803ef3b5d1073368bf3c1e60603f3c1e6028b55048bc603c2438bf881c6040100008bcfe80000000084c074283b5d1072e08b4424108b4c24188b5424148b72084183c01833db3bce894c241889442410730eeba885ff897c24100f8596feffff5f5e5d5b81c410010000c20400",
+ "relocs": [
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?IsZero@Flag@@QAEHXZ",
+   "sym_key": "Flag::IsZero"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?CopyUpper@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyUpper"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?Load@MIXFile@@QAEPAIPAX@Z",
+   "sym_key": "MIXFile::Load"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?Destructor@ColorScheme@@QAEHXZ",
+   "sym_key": "ColorScheme::Destructor"
+  },
+  {
+   "off": 324,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?IsZero@Flag@@QAEHXZ",
+   "sym_key": "Flag::IsZero"
+  }
+ ]
+}

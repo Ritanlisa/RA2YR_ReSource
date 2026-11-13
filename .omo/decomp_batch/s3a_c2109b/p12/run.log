@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x5fe620 LoadBuildingTypeClassSHPs -> _addr_5F
+[conv] 0x5fede0 OverlayTypeClass::GetCategory -> OverlayTypeClass
+[conv] 0x60f320 Dialog::SubclassEditControl -> Dialog
+[conv] 0x61ef70 FormatHotkeyDisplayString -> _addr_61
+[conv] 0x620720 DrawScrollArrowUI -> _addr_62
+[conv] 0x623880 DrawTextRendererMultiline -> _addr_62
+[conv] 0x6242b0 ObjectClass::sub_6242B0 -> ObjectClass
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+[conv] 0x6263d0 FileExtension::MapHandler -> FileExtension
+[conv] 0x6274f0 ObjectClass::sub_6274F0 -> ObjectClass
+[conv] 0x6278c0 ObjectClass::sub_6278C0 -> ObjectClass
+[conv] 0x627b20 ColorSchemeClass::LoadAllSchemes -> ColorSchemeClass
+[conv] 0x62e650 ScenarioClass::DestroyAndClearVector -> ScenarioClass
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x6475f0 Network::QueueProcessingLoop -> Network
+[conv] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> Multiplay
+[conv] 0x6516f0 LogMultiplayToSync_MPDEBUG -> LogMultiplayToSync
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65dd30 ObjectClass::ConstructTeamMembers -> ObjectClass
+[conv] 0x663b40 SessionClass::BuildLobbyPlayerList -> SessionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5F                 rc=0
+[era] OverlayTypeClass         rc=2
+[era] Dialog                   rc=2
+[era] _addr_61                 rc=0
+[era] _addr_62                 rc=2
+[era] ObjectClass              rc=2
+[era] FileExtension            rc=0
+[era] ColorSchemeClass         rc=0
+[era] ScenarioClass            rc=2
+[era] TechnoClass              rc=2
+[era] Network                  rc=2
+[era] Multiplay                rc=2
+[era] LogMultiplayToSync       rc=2
+[era] RadioClass               rc=2
+[era] SessionClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x5fe620   MISMATCH         LoadBuildingTypeClassSHPs
+[diff] 0x60f320   MISMATCH         Dialog::SubclassEditControl
+[diff] 0x61ef70   MISMATCH         FormatHotkeyDisplayString
+[diff] 0x620720   MISMATCH         DrawScrollArrowUI
+[diff] 0x6274f0   MISMATCH         ObjectClass::sub_6274F0
+[diff] 0x6278c0   MISMATCH         ObjectClass::sub_6278C0
+[diff] 0x6263d0   MISMATCH         FileExtension::MapHandler
+[diff] 0x627b20   MISMATCH         ColorSchemeClass::LoadAllSchemes
+[ledger] 0x5fe620 LoadBuildingTypeClassSHPs -> NG (attempt 3)
+[ledger] 0x5fede0 OverlayTypeClass::GetCategory -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60f320 Dialog::SubclassEditControl -> NG (attempt 3)
+[ledger] 0x61ef70 FormatHotkeyDisplayString -> NG (attempt 3)
+[ledger] 0x620720 DrawScrollArrowUI -> NG (attempt 3)
+[ledger] 0x623880 DrawTextRendererMultiline -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6242b0 ObjectClass::sub_6242B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6263d0 FileExtension::MapHandler -> NG (attempt 3)
+[ledger] 0x6274f0 ObjectClass::sub_6274F0 -> NG (attempt 3)
+[ledger] 0x6278c0 ObjectClass::sub_6278C0 -> NG (attempt 3)
+[ledger] 0x627b20 ColorSchemeClass::LoadAllSchemes -> NG (attempt 3)
+[ledger] 0x62e650 ScenarioClass::DestroyAndClearVector -> COMPILE_FAIL (attempt 3)
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6475f0 Network::QueueProcessingLoop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6516f0 LogMultiplayToSync_MPDEBUG -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65dd30 ObjectClass::ConstructTeamMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x663b40 SessionClass::BuildLobbyPlayerList -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "signedness": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 2,
+  "frame_sched": 3,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p12\batch_report.json

@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_6274F0@ObjectClass@@QAEHPBD@Z",
+ "sym_key": "ObjectClass::sub_6274F0",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "8b44240481ec000100005355568bf157508d4c2414e8000000008b760c8d4c241051ff560499f77e088b068d14528b5cd0108d2cd04b78628bfb8b4504c1e70603fb8d4c2410c1e7028bf75103f08bcee80000000084c075204b783e8b4d0481ef040100008bf78d54241003f1528bcee80000000084c074e081fe00ffffff74198b86000100005f5e5d8b80000100005b81c400010000c204005f5e5d33c05b81c400010000c20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?CopyUpper@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyUpper"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  }
+ ]
+}

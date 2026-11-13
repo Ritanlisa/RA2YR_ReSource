@@ -116508,14 +116508,14 @@
   "this_as_id": false
  },
  "0x5fe620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+22 jle 0x5fe763",
   "name": "LoadBuildingTypeClassSHPs",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "orig_name": "LoadBuildingTypeClassSHPs",
   "rule_violations": 12,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5fe770": {
@@ -116610,7 +116610,7 @@
   "status": "NG"
  },
  "0x5fede0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118269,15 +118269,15 @@
   "this_as_id": false
  },
  "0x60f320": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xa4",
   "name": "Dialog::SubclassEditControl",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "Dialog::SubclassEditControl",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60f4b0": {
@@ -118626,14 +118626,14 @@
   "this_as_id": false
  },
  "0x61ef70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+6 xor eax, eax",
   "name": "FormatHotkeyDisplayString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FormatHotkeyDisplayString",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x61f210": {
@@ -118670,14 +118670,14 @@
   "this_as_id": false
  },
  "0x620720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x40",
   "name": "DrawScrollArrowUI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "DrawScrollArrowUI",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x620870": {
@@ -119090,7 +119090,7 @@
   "this_as_id": false
  },
  "0x623880": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DrawTextRendererMultiline",
@@ -119295,7 +119295,7 @@
   "this_as_id": false
  },
  "0x6242b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -119470,7 +119470,7 @@
   "this_as_id": false
  },
  "0x624ca0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119867,15 +119867,15 @@
   "this_as_id": false
  },
  "0x6263d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x20c",
   "name": "FileExtension::MapHandler",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FileExtension::MapHandler",
   "rule_violations": 11,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x626660": {
@@ -120007,15 +120007,15 @@
   "this_as_id": false
  },
  "0x6274f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+33 call dword ptr [esi + 4]",
   "name": "ObjectClass::sub_6274F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_6274F0",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x627590": {
@@ -120031,15 +120031,15 @@
   "this_as_id": false
  },
  "0x6278c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+55 repne scasb al, byte ptr es:[edi]",
   "name": "ObjectClass::sub_6278C0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "sub_6278C0",
   "rule_violations": 10,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x627a10": {
@@ -120055,15 +120055,15 @@
   "this_as_id": false
  },
  "0x627b20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x118",
   "name": "ColorSchemeClass::LoadAllSchemes",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ColorSchemeClass::LoadAllSchemes",
   "rule_violations": 13,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x627d20": {
@@ -121825,7 +121825,7 @@
   "this_as_id": false
  },
  "0x62e650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -124322,7 +124322,7 @@
   "this_as_id": false
  },
  "0x637270": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -128463,7 +128463,7 @@
   "this_as_id": false
  },
  "0x6475f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128766,7 +128766,7 @@
   "status": "NG"
  },
  "0x64dea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128789,7 +128789,7 @@
   "this_as_id": false
  },
  "0x6516f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LogMultiplayToSync_MPDEBUG",
@@ -130815,7 +130815,7 @@
   "status": "NG"
  },
  "0x65a970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132426,7 +132426,7 @@
   "this_as_id": false
  },
  "0x65dd30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134082,7 +134082,7 @@
   "this_as_id": false
  },
  "0x663b40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_6278C0@ObjectClass@@QAEDPBD@Z",
+ "sym_key": "ObjectClass::sub_6278C0",
+ "size": 371,
+ "link_base": 0,
+ "bytes_hex": "81ec0802000053558bac241402000056578bd955e800000000680401000089442414e8000000008bd083c40485d2742f8bfd83c9ff33c089542414f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48b4c2410898a00010000eb08c744241400000000558d4c241ce8000000008b730c8d54241852ff560499f77e088b0e8d04528b5cc1108d34c14b78498b7c24108bebc1e50603ebc1e5028b46048d5424188bcd5203c8e80000000025ff00000081e700ffffff0bf8897c24108a44241084c00f859b0000004b81ed0401000085db7dc7eb048b7c24108d4424188d8c241801000050e8000000008b4e088b46103bc1722d8a460d84c0750485c975648b461485c0894424107e558b1603c16a005056ff520884c08844241074468b7c24108b4e108d9424180100008bc152c1e00603c141894e108b4e048d34818bcee80000000025ff00000081e700ffffff0bc7894424108b4424148986000100008a4424105f5e5d5b81c408020000c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Load@MIXFile@@QAEPAIPAX@Z",
+   "sym_key": "MIXFile::Load"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?CopyUpper@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyUpper"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Equals@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?Copy@String@@QAEPADPAX@Z",
+   "sym_key": "String::Copy"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?CopyChecked@String@@QAEPADPAX@Z",
+   "sym_key": "String::CopyChecked"
+  }
+ ]
+}

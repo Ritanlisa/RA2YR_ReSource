@@ -1,0 +1,87 @@
+{
+ "symbol": "?LoadBuildingTypeClassSHPs@@YIHH@Z",
+ "sym_key": "Unnamed::LoadBuildingTypeClassSHPs",
+ "size": 307,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ec00020000535533db33ed573bc38bf90f860d01000056a1000000008b34a88a8eaf0200008a862c0200003acb74443ac3750c389e370200000f84d50000008b86a40000003bc30f84c7000000389ea80000000f84bb00000050e80000000083c404899ea4000000889ea8000000e9a10000003ac374408d0cfd000000008d96f80100002bcf8d442410c1e10481c1000000005152535350e80000000083c414b2018d4c2410e8000000003bc38986a4000000755feb43389e3702000074558d8ef8010000680000000051538d54241c5352e80000000083c4148bd78d4c2410e800000000b2018d4c2410e8000000003bc38986a4000000751a8d4c2410e800000000b2018d4c2410e8000000008986a4000000a100000000453be80f82f5feffff5e5f5d5b81c400020000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ObjectTypeConfig@@3IA",
+   "sym_key": "g_ObjectTypeConfig"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_BuildingTypeClass_Array@@3PAXA",
+   "sym_key": "g_BuildingTypeClass_Array"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?TheaterObjectTypeClassSpecificID@@YIXPAXH@Z",
+   "sym_key": "TheaterObjectTypeClassSpecificID"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?SetRTTI71@ObjectTypeClass@@QAEXXZ",
+   "sym_key": "ObjectTypeClass::SetRTTI71"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?g_ObjectTypeConfig@@3IA",
+   "sym_key": "g_ObjectTypeConfig"
+  }
+ ]
+}

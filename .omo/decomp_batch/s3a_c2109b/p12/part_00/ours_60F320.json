@@ -1,0 +1,201 @@
+{
+ "symbol": "?SubclassEditControl@Dialog@@QAGHPAXJ@Z",
+ "sym_key": "Dialog::SubclassEditControl",
+ "size": 431,
+ "link_base": 0,
+ "bytes_hex": "a10000000081eca000000056576af050e8000000008b0d000000006a006aeb518bf8e800000000f7c7000000100f846c010000f7c7000000080f8560010000a100000000538d54242c68800000005250e80000000033c98d44242c8a0d000000008bf18a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c05b0f8506010000a10000000050e8000000008b0d000000008d5424088bf0e8000000008d5424188bcee800000000f7c700000100ba100100407405ba100101408b0d000000008b44240c6a00518b4c241c6a002bc8568b7424208b7c2428518b4c241c2bf12bcf568b7424342bc650515233d28a15000000006a00526a00e8000000006a088bf0e8000000008bf8a10000000083c40489078b0d000000006af051e800000000576aeb56894704e8000000008b15000000006a0052e800000000a1000000006a0050e8000000006a0156e8000000006a0156e8000000008b0d000000006af451e8000000006af4568bf8e8000000008b1500000000506af452e800000000576af456e8000000005fb8010000005e81c4a0000000c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJHH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GetClassNameA@@YGHHPAXH@Z",
+   "sym_key": "GetClassNameA"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Edit@@3EA",
+   "sym_key": "g_INI_Key_Edit"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?ScreenDialogToClient@@YIHHPAX@Z",
+   "sym_key": "ScreenDialogToClient"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?ScreenDialogToClient@@YIHHPAX@Z",
+   "sym_key": "ScreenDialogToClient"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?g_hInstance@@3PAXA",
+   "sym_key": "g_hInstance"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_ListBox@@3EA",
+   "sym_key": "g_INI_Key_ListBox"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?CreateWindowExA@@YGPAXHHHHHHHHHHPAXH@Z",
+   "sym_key": "CreateWindowExA"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_NewEdit@@3_KA",
+   "sym_key": "g_INI_Key_NewEdit"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJHH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 339,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 347,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 363,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 369,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 377,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJHH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJHH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 393,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  }
+ ]
+}

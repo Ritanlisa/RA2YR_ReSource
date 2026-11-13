@@ -1,0 +1,39 @@
+{
+ "symbol": "?DrawScrollArrowUI@@YIXPAH0HHD@Z",
+ "sym_key": "Unnamed::DrawScrollArrowUI",
+ "size": 212,
+ "link_base": 0,
+ "bytes_hex": "83ec385556578bf985ff8bea0f84b90000008b4c244cb07285c97402b0708b4c244885c974100fbec0508d4c2428680000000051eb0e0fbed0528d442428680000000050e8000000008a44245c83c40c33c984c0a1000000006a000f94c18d540c285250e8000000008bf083c40c85f674598b4d008b5504894c240c895424108b0656ff507c8b0e56ff9180000000c744241800000000c7442414000000008b1656ff527c8944241c8b0656ff90800000008b0f8d5424146a01894424246a00528d442418565057ff51085f5e5d83c438c20c00",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "??_C@_0P@BHGD@guparrow?$CFc?4pcx?$AA@",
+   "sym_key": "??_C@_0P@BHGD@guparrow?$CFc?4pcx?$AA@"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "??_C@_0P@INFD@gdnarrow?$CFc?4pcx?$AA@",
+   "sym_key": "??_C@_0P@INFD@gdnarrow?$CFc?4pcx?$AA@"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHHPAXH@Z",
+   "sym_key": "HashTable__Find"
+  }
+ ]
+}
