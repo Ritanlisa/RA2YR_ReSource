@@ -1,0 +1,213 @@
+{
+ "symbol": "?ProcessPacket@WinsockInterface@@QAEPADH@Z",
+ "sym_key": "WinsockInterface::ProcessPacket",
+ "size": 455,
+ "link_base": 0,
+ "bytes_hex": "8b4424045355568bf157bd060000008d7e0189068d5f0757e80000000083c4048bcb68000000006a066a18e80000000068000000008bcfe80000000081c79400000081c3940000004d75cc8dbe6a030000bd0200000033db53538bcfe800000000891fc747140a000000895f1083c7184d75e5e8000000008dbeac03000053538bcf898698030000899ea0030000c786a403000001000000899ea8030000e8000000008bcec70700000000c786c00300000a000000899ebc030000899ec4030000e80000000068000000008d4c2418e8000000008d4c2414518d4e01e8000000008d54241452e80000000083c4048d4c24146800000000e8000000008d4424148d4e2350e8000000008d4c241451e80000000083c4048d4c24146800000000e8000000008d5424148d4e4552e8000000008d44241450e8000000008b0d0000000083c404518d4c2418e8000000008d5424148d4e6752e8000000008d44241450e80000000083c4048d4c24146800000000e8000000008d4c2414518d8e89000000e8000000008d54241452e80000000083c4048d4c24146800000000e8000000008d4424148d8eab00000050e8000000008d4c241451e80000000083c4048bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@H@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?sub_7719E0@@YAHPBX0@Z",
+   "sym_key": "sub_7719E0"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?ForEach@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEach"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Assign_Alt@String@@QAEPAPAXPAX@Z",
+   "sym_key": "String::Assign_Alt"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Constructor@VectorClassUInt@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClassUInt::Constructor"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?WstringConstructor@VectorClass@@QAEPAV1@HPAX@Z",
+   "sym_key": "VectorClass::WstringConstructor"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_Wstring@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_Wstring"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?GetEnabled@Audio@@QAEPAXXZ",
+   "sym_key": "Audio::GetEnabled"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8491C4@@3PADA",
+   "sym_key": "DataGlobal_8491C4"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8491BC@@3PADA",
+   "sym_key": "DataGlobal_8491BC"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8491B4@@3PADA",
+   "sym_key": "DataGlobal_8491B4"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?aTerritory@@3HA",
+   "sym_key": "aTerritory"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 365,
+   "type": "DIR32",
+   "sym": "?aGame@@3PADA",
+   "sym_key": "aGame"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 396,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8491A0@@3PADA",
+   "sym_key": "DataGlobal_8491A0"
+  },
+  {
+   "off": 413,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 439,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

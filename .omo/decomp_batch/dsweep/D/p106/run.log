@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p106\part_00
+=== convert (20 addrs) ===
+[conv] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> HoverLocomotionClass
+[conv] 0x5f3170 NullModemClass::Negotiate -> NullModemClass
+[conv] 0x697f10 ObjectClass::ReadGameSettingsINI -> ObjectClass
+[conv] 0x7cc4a4 __wcstombs_lk -> _addr_7C
+[conv] 0x774980 WinModemClass::ReadSerial -> WinModemClass
+[conv] 0x458810 BuildingClass::BuildTurretTransform -> BuildingClass
+[conv] 0x436be0 BuildingLightClass::FindTarget -> BuildingLightClass
+[conv] 0x774f50 WinModemClass::SaveToINI -> WinModemClass
+[conv] 0x4debb0 FootClass::UpdateTeamAI -> FootClass
+[conv] 0x770270 WinsockInterface::ProcessPacket -> WinsockInterface
+[conv] 0x56eb80 Cell::SetTileType -> Cell
+[conv] 0x7414e0 UnitClass::ApproachTarget_DisallowMoving -> UnitClass
+[conv] 0x5b40b0 SearchMIXFile -> _addr_5B
+[conv] 0x4f9790 HouseClass::ProcessPowerDrain -> HouseClass
+[conv] 0x472720 CaptureManagerClass::LoadFromStream -> CaptureManagerClass
+[conv] 0x480350 TacticalClass::CheckCellVisibility -> TacticalClass
+[conv] 0x4ae4f0 DisplayClass::Draw -> DisplayClass
+[conv] 0x479740 ObjectClass::sub_479740 -> ObjectClass
+[conv] 0x5295f0 INIClass::ReadBool_Overwrite -> INIClass
+[conv] 0x69e580 MixFileClass::LoadSubFile -> MixFileClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HoverLocomotionClass     rc=2
+[era] NullModemClass           rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] WinModemClass            rc=2
+[era] BuildingClass            rc=0
+[era] BuildingLightClass       rc=2
+[era] FootClass                rc=0
+[era] WinsockInterface         rc=0
+[era] Cell                     rc=2
+[era] UnitClass                rc=2
+[era] _addr_5B                 rc=0
+[era] HouseClass               rc=2
+[era] CaptureManagerClass      rc=2
+[era] TacticalClass            rc=0
+[era] DisplayClass             rc=2
+[era] INIClass                 rc=2
+[era] MixFileClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x458810   MISMATCH         BuildingClass::BuildTurretTransform
+[diff] 0x4debb0   MISMATCH         FootClass::UpdateTeamAI
+[diff] 0x770270   MISMATCH         WinsockInterface::ProcessPacket
+[diff] 0x5b40b0   MISMATCH         SearchMIXFile
+[diff] 0x480350   MISMATCH         TacticalClass::CheckCellVisibility
+[ledger] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3170 NullModemClass::Negotiate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x697f10 ObjectClass::ReadGameSettingsINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc4a4 __wcstombs_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774980 WinModemClass::ReadSerial -> COMPILE_FAIL (attempt 1)
+[ledger] 0x458810 BuildingClass::BuildTurretTransform -> NG (attempt 1)
+[ledger] 0x436be0 BuildingLightClass::FindTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774f50 WinModemClass::SaveToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4debb0 FootClass::UpdateTeamAI -> NG (attempt 1)
+[ledger] 0x770270 WinsockInterface::ProcessPacket -> NG (attempt 1)
+[ledger] 0x56eb80 Cell::SetTileType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7414e0 UnitClass::ApproachTarget_DisallowMoving -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b40b0 SearchMIXFile -> NG (attempt 1)
+[ledger] 0x4f9790 HouseClass::ProcessPowerDrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472720 CaptureManagerClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480350 TacticalClass::CheckCellVisibility -> NG (attempt 1)
+[ledger] 0x4ae4f0 DisplayClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x479740 ObjectClass::sub_479740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5295f0 INIClass::ReadBool_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e580 MixFileClass::LoadSubFile -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 1,
+  "const_fold": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p106\batch_report.json
