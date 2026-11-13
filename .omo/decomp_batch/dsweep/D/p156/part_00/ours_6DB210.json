@@ -1,0 +1,213 @@
+{
+ "symbol": "?DrawTacticalConnectorLines@Tactical@@QAEHXZ",
+ "sym_key": "Tactical::DrawTacticalConnectorLines",
+ "size": 863,
+ "link_base": 0,
+ "bytes_hex": "81ecac0000005355568bf157b9f8010000e800000000b9f8010000e8000000008b0d000000008bf8b8ff000000bbff000000d3f88b0d00000000baff000000d3e08b0d00000000d3fb8b0d00000000d3e38b0d00000000d3fa8b0d000000008beb0be8d3e28bca0bd00bcb8954243485ff894c24380f84150200008b9fe400000085db0f84fe0000008d8424a40000008bcf50e8000000008b08894c24408b5004895424448b40088d4c24408d942488000000515289442450e8000000008b088b96b0000000894c24288b40042bca894c24288b8eb40000002bc18d8c24b00000008944243c8b035153ff50488b108954244c8b4804894c24508b50088d44244c8d4c247c50518954245ce8000000008b088b9eb00000008b54243c894c242c8b40042bcb4a894c242c8954246c8b96b40000002bc25589442434b80300000089442474894424788b44242c488944246ca1000000000fbe088b118d4c246c51680000000050ff5210a100000000550fbe108b0a8d542430528d54243052680000000050ff512c8b9fe800000085db0f84e70000008d84248c0000008bcf50e8000000008b088d5424208d4424785250894c2428e8000000008b088b96b0000000894c24148b78048b86b40000002bca8d942498000000894c24148b0b52532bf8ff51488b008d4c24248d94248000000051528944242ce8000000000fbe4c24188b1089118b8eb00000008b40048d542410894c2410528d4c241c89442420e8000000008b44241483c7c348897c245c89442458b8030000008944246089442464a1000000008b7c2434570fbe088b118d4c245c51680000000050ff5210a100000000570fbe108b0a8d54241c528d54241c52680000000050ff512cb9f8010000e80000000085c08bf80f85ebfdffff8b0d000000008d59ff85db0f8cb30000008b15000000008b3c9a8b473085c00f84980000008b078d8c24980000005157ff50488b108d4424248d8c248000000050518954242ce8000000000fbe5424188b288b8eb0000000892a8b40048944241c8d442410894c2410508d4c241ce8000000008b7f308d94248c00000052578b0fff51488b008d4c242c8d54242051528bce89442428e800000000a1000000000fbe088b118b4c2438518d4c2430518d4c242051680000000050ff522c4b0f894dffffff5f5e5d5b81c4ac000000c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?GetCoords@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetCoords"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 338,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 353,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 416,
+   "type": "REL32",
+   "sym": "?GetCoords@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetCoords"
+  },
+  {
+   "off": 437,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 504,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 544,
+   "type": "REL32",
+   "sym": "?Subtract@Vector2@@QAEPAV1@PAX@Z",
+   "sym_key": "Vector2::Subtract"
+  },
+  {
+   "off": 578,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 598,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 607,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 628,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 637,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 642,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 658,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E370@@3IA",
+   "sym_key": "DataGlobal_A8E370"
+  },
+  {
+   "off": 675,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E364@@3IA",
+   "sym_key": "DataGlobal_A8E364"
+  },
+  {
+   "off": 727,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 767,
+   "type": "REL32",
+   "sym": "?Subtract@Vector2@@QAEPAV1@PAX@Z",
+   "sym_key": "Vector2::Subtract"
+  },
+  {
+   "off": 807,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 812,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 837,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

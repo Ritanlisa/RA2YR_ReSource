@@ -1,0 +1,189 @@
+{
+ "symbol": "?LoadPaletteFromFile@@YIDHHPADHH@Z",
+ "sym_key": "Unnamed::LoadPaletteFromFile",
+ "size": 1044,
+ "link_base": 0,
+ "bytes_hex": "81ec9c090000538bd95556895c24148beb8d8424a5030000b900010000c640ff00c60000c640010083c0034975ef8b8424ac0900008d4c244850c78424a806000000000000e80000000033d233c9e80000000085c0894424108bf075308d4c242cc744244800000000e8000000008d4c2448c744244800000000e80000000032c05e5d5b81c49c090000c20c008b8424b00900005783f8020f8581010000a1000000008b0d000000008b54241825ff00000089442428a10000000081e1ff00000025ff0000008d9c24a4000000894c242c8944242483eb028dbc24a8030000c744242000010000eb048b4c242c33c080e2008a470283c703d3e833c983c3028a4ffd0bc28bd580e2000bd18a4c24288bf280e20081e6ff000000d3ee8b0d000000000bf233d28a57fed3e68a4c24248bead3ed8bd025ff0000008bce80e20080e1000bd00be98b0d00000000d3e58b0d000000008b442420d3e20bd60bd5486689138944242075818b7c24148d4c243c51578b07ff50788b58088b680c6a20e8000000008bf083c40485f674318bd533c90fafd3d1e252895e04896e08c7460c00000000c70600000000c7461002000000e800000000c70600000000eb0233f68b066a006a0056ff505c894424148b076a006a0057ff505c8bcd33d20fafcb85c97e208b5c24148d6bfe33db83c5028a1c02423bd1668b9c5ca400000066895d007ce78b0f57ff51608b1656ff52608b076a0157ff10b8020000008b5c24188b8c24b809000085c9745483f801754f8b0e8d54243c5256ff51788b50088b400c0fafc28b0e6a006a00568bf8ff515c85ff7e25ba010000008d48ff2bd033c08a4101418be88d842ca80300008a046888018d040a3bc77ce58b0e56ff51608b9424b00900008d4c24105289b424ac060000e8000000008d4c2410e8000000008b430433ff85c089bc24a40000000f84890000008d44241050ff53188b4b0cba01000000d3e28b0b4a23c28b348185f6746b8d4c2410e80000000084c075178bb60803000085f674548d4c2410e80000000084c074e983c60485f67415b9c10000008dbc24a4000000f3a58bbc24a40000008d9424a40000008d4424105250c78424ac00000000000000e80000000083c40885ff74078b0f6a0157ff11680c030000e8000000008be883c40485ed741255e80000000083c404c7450400000000eb0233ed8d4c2410e8000000008d7d04b9c10000008db424a80600008d542410f3a533f65289b508030000ff53188b4b0cba01000000d3e28b0b5f4a23c28d04818b0889283bce7406898d080300008b4304897424184089442414894304df6c2414da7308dc5b28dfe0f6c401750953e80000000083c4048d54240c52e80000000083c4048d4c242cc744244800000000e8000000008d4c2448c744244800000000e800000000b0015e5d5b81c49c090000c20c00",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?DecodeFrameSHP@@YIPAIHH@Z",
+   "sym_key": "DecodeFrameSHP"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 336,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 422,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 434,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 440,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 658,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 667,
+   "type": "REL32",
+   "sym": "?ToLower@String@@QAEXXZ",
+   "sym_key": "String::ToLower"
+  },
+  {
+   "off": 726,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NXZ",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 749,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NXZ",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 810,
+   "type": "REL32",
+   "sym": "?HashTable__RemoveHashTableEntry@@YAHPAX0@Z",
+   "sym_key": "HashTable__RemoveHashTableEntry"
+  },
+  {
+   "off": 834,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 849,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 872,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADXZ",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 976,
+   "type": "REL32",
+   "sym": "?Render_Load_6BAFA0@@YAXH@Z",
+   "sym_key": "Render_Load_6BAFA0"
+  },
+  {
+   "off": 989,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 1004,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 1009,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 1021,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 1026,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

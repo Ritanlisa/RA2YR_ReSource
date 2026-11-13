@@ -1,0 +1,189 @@
+{
+ "symbol": "?FindInfantryDeployPosition@@YIHPAHPAFH@Z",
+ "sym_key": "Unnamed::FindInfantryDeployPosition",
+ "size": 1055,
+ "link_base": 0,
+ "bytes_hex": "83ec4c535556578bea8bf16a0155b9f8010000896c243489742430e80000000084c00f848c00000055b9f8010000c744241800000000e8000000008d4c24146a006a00518bc8e80000000085c074168b1050ff522c83f80f755a8b0656ff502c83f80f754f0fbf4d00c1e1088d54241881c18000000052894c241ce8000000000fbf4d008b068d542414c1e1086a0081c1800000005256894c2420ff90d800000084c0740f5f5e5db8010000005b83c44cc204008b7c246083ff200f8d52030000a10000000033f66a07568d8868050300e800000000894424608974241c897424200fbe35200300000fbe1d280300008b151c030000897424240fbf45000fbf4d028d7433ffc7442430000000000fbeea897424108b74246083fe07896c2438773fff24b5000000008bf72bcfeb3403c78bf72bcfeb2c8bf703c7eb2603c78bf703cfeb1e8bf703cfeb182bc78bf703cfeb108bf72bc7eb0a2bc78bf72bcfeb028bf70fbe1d240300008d5c2bff3bc3895c243c7e028bc33bc57d0c81e2ff00000024000bd08bc28b5c24103bcb7e028bcb3b4c24247d138b152003000080e10081e2ff0000000bd18bca8b5424348bea33e881e5ff00000033d58bea33e981e5ff00000033d589542434895424108b54241c85d20f8ef00000000fbfe98b0d000000006a016a0081c1180200000fbff0895c241ce8000000008b15000000008bd86a636a008d8a18020000e80000000083f8327c188b4424382bf33bf07d248bce33c881e1ff00000033f1eb168b44243c03f33bf07e0c8bd633d081e2ff00000033f2a1000000006a016a008d8818020000e8000000008b0d000000008bd86a636a0081c118020000e80000000083f8327c0e8b4c24242beb8bc53bc17d19eb0b8b4c24148d042b3bc17e0c8bd033d181e2ff00000033c28b4c24408b6c242c8bd18b5c242833d68bf781e2ff00000033ca8bd133d081e2ff00000033ca894c24408bc1894c2410eb088b5c24288b6c242c663b45007513668b442412663b45027508c7442430010000008d4c24106a0151b9f8010000e80000000084c00f84c00000008b44243085c00f85b40000008d542410b9f801000052c744241c00000000e8000000008d4c24186a006a00518bc8e80000000085c074168b1050ff522c83f80f757e8b0353ff502c83f80f75730fbf4c24120fbf542410c1e108c1e20881c1800000006a0081c28000000051528d4c2450e8000000008d44244450e8000000000fbf4c24120fbf542410c1e108c1e20881c1800000005081c28000000051528d4c245ce8000000008b038d4c24506a005153ff90d800000084c00f85e0fcffff8b4424604083f807894424607e08c7442460000000008b4424204083f807894424200f8ef5fcffff8b44241c4083f8028944241c7d0dc744242000000000e9dafcffff474683fe200f8caefcffff5f5e5d33c05b83c44cc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "$L2123",
+   "sym_key": "$L2123"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 502,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 508,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 581,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 596,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 619,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 756,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 761,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 790,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 804,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 887,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 897,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 937,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  }
+ ]
+}

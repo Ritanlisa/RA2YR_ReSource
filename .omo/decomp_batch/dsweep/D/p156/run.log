@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p156\part_00
+=== convert (20 addrs) ===
+[conv] 0x75c240 Voxel::DrawHelper -> Voxel
+[conv] 0x693440 ObjectClass::ScrollMapEdge -> ObjectClass
+[conv] 0x7c4f90 DrawTileBlock8BPP -> _addr_7C
+[conv] 0x596e50 RandomMap::SetupDialog -> RandomMap
+[conv] 0x582d70 RadarClass::RenderBlips -> RadarClass
+[conv] 0x41a160 TechnoClass::FindClosestPlacementCell -> TechnoClass
+[conv] 0x457de0 BuildingClass::UnloadUnits -> BuildingClass
+[conv] 0x7c4b80 DrawTileBlock16BPP -> _addr_7C
+[conv] 0x5a6510 ScatterMapSeedBuildings2 -> _addr_5A
+[conv] 0x6db210 Tactical::DrawTacticalConnectorLines -> Tactical
+[conv] 0x4a9890 DisplayClass::UpdateCellPassability -> DisplayClass
+[conv] 0x4166c0 AircraftClass::Mission_Enter -> AircraftClass
+[conv] 0x4055c0 TechnoClass::UpdateVoicePlayback -> TechnoClass
+[conv] 0x710000 FootClass::FootClass_ImbueLocomotor -> FootClass
+[conv] 0x67cef0 SaveScenarioClassGame_AdjustMPSaveFileName -> SaveScenarioClassGame
+[conv] 0x5349c0 LoadTheaterClassMIX -> _addr_53
+[conv] 0x797800 ObjectClass::FetchWOLData -> ObjectClass
+[conv] 0x4dc340 TechnoClass::DrawFootTargetLine -> TechnoClass
+[conv] 0x688ed0 FindInfantryDeployPosition -> _addr_68
+[conv] 0x6b9d00 LoadPaletteFromFile -> _addr_6B
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Voxel                    rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=0
+[era] RandomMap                rc=2
+[era] RadarClass               rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] _addr_5A                 rc=2
+[era] Tactical                 rc=0
+[era] DisplayClass             rc=2
+[era] AircraftClass            rc=2
+[era] FootClass                rc=2
+[era] SaveScenarioClassGame    rc=2
+[era] _addr_53                 rc=2
+[era] _addr_68                 rc=0
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7c4f90   MISMATCH         DrawTileBlock8BPP
+[diff] 0x7c4b80   MISMATCH         DrawTileBlock16BPP
+[diff] 0x6db210   MISMATCH         Tactical::DrawTacticalConnectorLines
+[diff] 0x688ed0   MISMATCH         FindInfantryDeployPosition
+[diff] 0x6b9d00   MISMATCH         LoadPaletteFromFile
+[ledger] 0x75c240 Voxel::DrawHelper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x693440 ObjectClass::ScrollMapEdge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c4f90 DrawTileBlock8BPP -> NG (attempt 1)
+[ledger] 0x596e50 RandomMap::SetupDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x582d70 RadarClass::RenderBlips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41a160 TechnoClass::FindClosestPlacementCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x457de0 BuildingClass::UnloadUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c4b80 DrawTileBlock16BPP -> NG (attempt 1)
+[ledger] 0x5a6510 ScatterMapSeedBuildings2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6db210 Tactical::DrawTacticalConnectorLines -> NG (attempt 1)
+[ledger] 0x4a9890 DisplayClass::UpdateCellPassability -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4166c0 AircraftClass::Mission_Enter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4055c0 TechnoClass::UpdateVoicePlayback -> COMPILE_FAIL (attempt 1)
+[ledger] 0x710000 FootClass::FootClass_ImbueLocomotor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67cef0 SaveScenarioClassGame_AdjustMPSaveFileName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5349c0 LoadTheaterClassMIX -> COMPILE_FAIL (attempt 1)
+[ledger] 0x797800 ObjectClass::FetchWOLData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dc340 TechnoClass::DrawFootTargetLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x688ed0 FindInfantryDeployPosition -> NG (attempt 1)
+[ledger] 0x6b9d00 LoadPaletteFromFile -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p156\batch_report.json
