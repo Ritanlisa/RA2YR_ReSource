@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p124\part_00
+=== convert (20 addrs) ===
+[conv] 0x47ab10 Game::FindGameDirectoryCD -> Game
+[conv] 0x78a470 ObjectClass::HandleOnlineWOL -> ObjectClass
+[conv] 0x7cc7e7 __Gettnames -> _addr_7C
+[conv] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> ObjectClass
+[conv] 0x6591b0 TechnoClass::UpdateProjectileTrails -> TechnoClass
+[conv] 0x6ae080 HideSkirmishSpawnLocations -> _addr_6A
+[conv] 0x5ae220 CampaignClass::LoadMovieDisplay -> CampaignClass
+[conv] 0x757120 ObjectClass::RenderVoxels -> ObjectClass
+[conv] 0x79d4e0 ObjectClass::CleanupWOLSession -> ObjectClass
+[conv] 0x60f760 Dialog::InitWindow -> Dialog
+[conv] 0x5f1c60 NullModemClass::ReadPacket -> NullModemClass
+[conv] 0x674000 RulesClass::LoadSpeedTypes -> RulesClass
+[conv] 0x447540 BuildingClass::HandleRepairCursor -> BuildingClass
+[conv] 0x6ee5c0 TeamClass::SelectBestMember -> TeamClass
+[conv] 0x77dc90 OpenURLWOL -> _addr_77
+[conv] 0x454260 BuildingClass::PowerDrainUpdate -> BuildingClass
+[conv] 0x57f200 CellClass::ApplyCliffTileModifications -> CellClass
+[conv] 0x752760 UpdateThemes -> _addr_75
+[conv] 0x5447c0 TerrainTypeClass::Construct -> TerrainTypeClass
+[conv] 0x4aa050 DisplayClass::RevealFogCell -> DisplayClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_6A                 rc=2
+[era] CampaignClass            rc=2
+[era] Dialog                   rc=2
+[era] NullModemClass           rc=2
+[era] RulesClass               rc=2
+[era] BuildingClass            rc=2
+[era] TeamClass                rc=2
+[era] _addr_77                 rc=2
+[era] CellClass                rc=0
+[era] _addr_75                 rc=0
+[era] TerrainTypeClass         rc=2
+[era] DisplayClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x57f200   MISMATCH         CellClass::ApplyCliffTileModifications
+[diff] 0x752760   MISMATCH         UpdateThemes
+[ledger] 0x47ab10 Game::FindGameDirectoryCD -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78a470 ObjectClass::HandleOnlineWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc7e7 __Gettnames -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6591b0 TechnoClass::UpdateProjectileTrails -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ae080 HideSkirmishSpawnLocations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae220 CampaignClass::LoadMovieDisplay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x757120 ObjectClass::RenderVoxels -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79d4e0 ObjectClass::CleanupWOLSession -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60f760 Dialog::InitWindow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f1c60 NullModemClass::ReadPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x674000 RulesClass::LoadSpeedTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x447540 BuildingClass::HandleRepairCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ee5c0 TeamClass::SelectBestMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77dc90 OpenURLWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x454260 BuildingClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57f200 CellClass::ApplyCliffTileModifications -> NG (attempt 1)
+[ledger] 0x752760 UpdateThemes -> NG (attempt 1)
+[ledger] 0x5447c0 TerrainTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aa050 DisplayClass::RevealFogCell -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p124\batch_report.json
