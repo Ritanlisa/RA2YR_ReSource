@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x65c2a0 RAMFileClass::WinMain_Helper_65C2A0 -> RAMFileClass
+[conv] 0x65c5a0 RAMFileClass::nullsub_0_10 -> RAMFileClass
+[conv] 0x660f80 _VectorClass_PAVRadarEventClass::QueryInterface -> _VectorClass_PAVRadarEventClass
+[conv] 0x664a70 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x664ac0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67a990 _TypeList_PBVVoxelAnimTypeClass::Add -> _TypeList_PBVVoxelAnimTypeClass
+[conv] 0x67a9e0 _TypeList_PBVSmudgeTypeClass::TypeList_vt00 -> _TypeList_PBVSmudgeTypeClass
+[conv] 0x67aa30 _TypeList_PBVTerrainTypeClass::Add -> _TypeList_PBVTerrainTypeClass
+[conv] 0x67b370 TerrainTypeVector::Construct -> TerrainTypeVector
+[conv] 0x67c010 _VectorClass_PBVVoxelAnimTypeClass::Constructor -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67c060 _DynamicVectorClass_PBVVoxelAnimTypeClass::Add -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67c0b0 _VectorClass_PBVSmudgeTypeClass::QueryInterface -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67c100 _DynamicVectorClass_PBVSmudgeTypeClass::Constructor_0 -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x67c150 _VectorClass_PBVTerrainTypeClass::Constructor -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x67c1a0 _DynamicVectorClass_PBVTerrainTypeClass::Constructor_1 -> _DynamicVectorClass_PBVTerrainTypeClass
+[conv] 0x68c200 TechnoTypeVector::Construct -> TechnoTypeVector
+[conv] 0x690fe0 ScoreAnimClass::Constructor_ScoreAnimClass -> ScoreAnimClass
+[conv] 0x691000 ScoreTimeClass::Constructor_ScoreAnimClass_0 -> ScoreTimeClass
+[conv] 0x691020 ScorePrintClass::Constructor_ScoreAnimClass_1 -> ScorePrintClass
+[conv] 0x69c6c0 _TypeList_W4DiskID::QueryInterface -> _TypeList_W4DiskID
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RAMFileClass             rc=0
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _TypeList_PBVVoxelAnimTypeClass rc=0
+[era] _TypeList_PBVSmudgeTypeClass rc=0
+[era] _TypeList_PBVTerrainTypeClass rc=0
+[era] TerrainTypeVector        rc=0
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=0
+[era] TechnoTypeVector         rc=0
+[era] ScoreAnimClass           rc=0
+[era] ScoreTimeClass           rc=0
+[era] ScorePrintClass          rc=0
+[era] _TypeList_W4DiskID       rc=0
+=== diffasm byte-compare ===
+[diff] 0x65c2a0   MATCH            RAMFileClass::WinMain_Helper_65C2A0
+[diff] 0x65c5a0   MATCH            RAMFileClass::nullsub_0_10
+[diff] 0x660f80   MISMATCH         _VectorClass_PAVRadarEventClass::QueryInterface
+[diff] 0x664a70   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor
+[diff] 0x664ac0   MISMATCH         _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface
+[diff] 0x67a990   MATCH            _TypeList_PBVVoxelAnimTypeClass::Add
+[diff] 0x67a9e0   MATCH            _TypeList_PBVSmudgeTypeClass::TypeList_vt00
+[diff] 0x67aa30   MATCH            _TypeList_PBVTerrainTypeClass::Add
+[diff] 0x67b370   MISMATCH         TerrainTypeVector::Construct
+[diff] 0x67c010   MISMATCH         _VectorClass_PBVVoxelAnimTypeClass::Constructor
+[diff] 0x67c060   MISMATCH         _DynamicVectorClass_PBVVoxelAnimTypeClass::Add
+[diff] 0x67c0b0   MISMATCH         _VectorClass_PBVSmudgeTypeClass::QueryInterface
+[diff] 0x67c100   MISMATCH         _DynamicVectorClass_PBVSmudgeTypeClass::Constructor_0
+[diff] 0x67c150   MISMATCH         _VectorClass_PBVTerrainTypeClass::Constructor
+[diff] 0x67c1a0   MISMATCH         _DynamicVectorClass_PBVTerrainTypeClass::Constructor_1
+[diff] 0x68c200   MISMATCH         TechnoTypeVector::Construct
+[diff] 0x690fe0   MISMATCH         ScoreAnimClass::Constructor_ScoreAnimClass
+[diff] 0x691000   MISMATCH         ScoreTimeClass::Constructor_ScoreAnimClass_0
+[diff] 0x691020   MISMATCH         ScorePrintClass::Constructor_ScoreAnimClass_1
+[diff] 0x69c6c0   MISMATCH         _TypeList_W4DiskID::QueryInterface
+[ledger] 0x65c2a0 RAMFileClass::WinMain_Helper_65C2A0 -> OK (attempt 2)
+[ledger] 0x65c5a0 RAMFileClass::nullsub_0_10 -> OK (attempt 2)
+[ledger] 0x660f80 _VectorClass_PAVRadarEventClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x664a70 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::Constructor -> NG (attempt 2)
+[ledger] 0x664ac0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x67a990 _TypeList_PBVVoxelAnimTypeClass::Add -> OK (attempt 2)
+[ledger] 0x67a9e0 _TypeList_PBVSmudgeTypeClass::TypeList_vt00 -> OK (attempt 2)
+[ledger] 0x67aa30 _TypeList_PBVTerrainTypeClass::Add -> OK (attempt 2)
+[ledger] 0x67b370 TerrainTypeVector::Construct -> NG (attempt 2)
+[ledger] 0x67c010 _VectorClass_PBVVoxelAnimTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x67c060 _DynamicVectorClass_PBVVoxelAnimTypeClass::Add -> NG (attempt 2)
+[ledger] 0x67c0b0 _VectorClass_PBVSmudgeTypeClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x67c100 _DynamicVectorClass_PBVSmudgeTypeClass::Constructor_0 -> NG (attempt 2)
+[ledger] 0x67c150 _VectorClass_PBVTerrainTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x67c1a0 _DynamicVectorClass_PBVTerrainTypeClass::Constructor_1 -> NG (attempt 2)
+[ledger] 0x68c200 TechnoTypeVector::Construct -> NG (attempt 2)
+[ledger] 0x690fe0 ScoreAnimClass::Constructor_ScoreAnimClass -> NG (attempt 2)
+[ledger] 0x691000 ScoreTimeClass::Constructor_ScoreAnimClass_0 -> NG (attempt 2)
+[ledger] 0x691020 ScorePrintClass::Constructor_ScoreAnimClass_1 -> NG (attempt 2)
+[ledger] 0x69c6c0 _TypeList_W4DiskID::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 5,
+  "MISMATCH": 15
+ },
+ "pathologies": {
+  "branch_polarity": 9,
+  "const_fold": 3,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p21\batch_report.json

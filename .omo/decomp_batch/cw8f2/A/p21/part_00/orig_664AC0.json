@@ -1,0 +1,11 @@
+{
+ "addr": "0x664AC0",
+ "name": "RocketLocomotionClass_17::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x664AC0",
+ "bytes_hex": "568bf18b4604c7064c0c7f0085c074178a4e0d84c9741050e86040160083c404c74604000000008a442408c6460d00a801c7460800000000740956e83d40160083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
