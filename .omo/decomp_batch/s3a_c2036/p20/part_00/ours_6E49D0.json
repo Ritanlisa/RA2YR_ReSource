@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetCapacity@Tactical@@QAEDHPAH@Z",
+ "sym_key": "Tactical::SetCapacity",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c5685ed578bf10f84890000008b5c2418c746100000000085db74048bfbeb128d04ad0000000050e80000000083c4048bf885ffc746100100000075095f5e5d32c05bc208008b460885c074398b4e0c3be97d028bcd33c085c97e108b5608403bc18b5482fc895487fc7cf08a461084c074138b460850e80000000083c404c746080000000085db0f94c1897e08896e0c884e10eb068b168bceff128b460c8b4e143bc173038946145f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

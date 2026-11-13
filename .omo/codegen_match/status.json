@@ -159169,7 +159169,7 @@
   "this_as_id": false
  },
  "0x6e0aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159289,7 +159289,7 @@
   "this_as_id": false
  },
  "0x6e1530": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -160176,15 +160176,15 @@
   "this_as_id": false
  },
  "0x6e49d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x6e4a5a",
   "name": "Tactical::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "Tactical_42::SetCapacity",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e4a80": {
@@ -161166,15 +161166,15 @@
   "this_as_id": false
  },
  "0x6e6580": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVTagTypeClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TagTypeClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e6630": {
@@ -161209,15 +161209,15 @@
   "this_as_id": false
  },
  "0x6e66c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVTagTypeClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TagTypeClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6e6770": {
@@ -162154,7 +162154,7 @@
   "this_as_id": false
  },
  "0x6eaa90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162453,7 +162453,7 @@
   "this_as_id": false
  },
  "0x6ed200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164031,7 +164031,7 @@
   "this_as_id": false
  },
  "0x6f64a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164588,7 +164588,7 @@
   "this_as_id": false
  },
  "0x6ffe00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164612,7 +164612,7 @@
   "this_as_id": false
  },
  "0x700600": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164943,14 +164943,14 @@
   "this_as_id": false
  },
  "0x7049c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x80",
   "name": "DrawTacticalMapLine",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "DrawTacticalMapLine",
-  "rule_violations": 9,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x704e40": {
@@ -164965,14 +164965,14 @@
   "this_as_id": false
  },
  "0x705270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Render::DrawLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Render::DrawLine",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -166358,14 +166358,14 @@
   "this_as_id": false
  },
  "0x70e920": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "UpdateTimedStateMachine",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "UpdateTimedStateMachine",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x70ece0": {
@@ -167288,7 +167288,7 @@
   "this_as_id": false
  },
  "0x7120d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167338,7 +167338,7 @@
   "status": "NG"
  },
  "0x716290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -168742,15 +168742,15 @@
   "this_as_id": false
  },
  "0x71b2e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVTemporalClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TemporalClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x71b390": {
@@ -168785,15 +168785,15 @@
   "status": "NG"
  },
  "0x71b420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVTemporalClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TemporalClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x71b4d0": {
@@ -169047,7 +169047,7 @@
   "this_as_id": false
  },
  "0x71c070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169059,7 +169059,7 @@
   "this_as_id": false
  },
  "0x71c110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169126,7 +169126,7 @@
   "this_as_id": false
  },
  "0x71c730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

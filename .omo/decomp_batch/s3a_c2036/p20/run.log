@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e0aa0 TActionClass::executeEnterAction -> TActionClass
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x6e49d0 Tactical::SetCapacity -> Tactical
+[conv] 0x6e6580 _VectorClass_PAVTagTypeClass::Release -> _VectorClass_PAVTagTypeClass
+[conv] 0x6e66c0 _DynamicVectorClass_PAVTagTypeClass::SetCapacity -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x6eaa90 TeamClass::RecruitMember -> TeamClass
+[conv] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> ObjectClass
+[conv] 0x6f64a0 TechnoClass::DrawHealthBar -> TechnoClass
+[conv] 0x6ffe00 TechnoClass::RecordEvent -> TechnoClass
+[conv] 0x700600 TechnoClass::HandleCursor -> TechnoClass
+[conv] 0x7049c0 DrawTacticalMapLine -> _addr_70
+[conv] 0x705270 Render::DrawLine -> Render
+[conv] 0x70e920 UpdateTimedStateMachine -> _addr_70
+[conv] 0x7120d0 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x716290 TechnoTypeClass::GetModeSpecificValue -> TechnoTypeClass
+[conv] 0x71b2e0 _VectorClass_PAVTemporalClass::Release -> _VectorClass_PAVTemporalClass
+[conv] 0x71b420 _DynamicVectorClass_PAVTemporalClass::SetCapacity -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x71c070 TerrainClass::ClearCellFlags -> TerrainClass
+[conv] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> TerrainClass
+[conv] 0x71c730 TerrainClass::Update -> TerrainClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TActionClass             rc=2
+[era] ScenarioClass            rc=2
+[era] Tactical                 rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] _DynamicVectorClass_PAVTagTypeClass rc=0
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=0
+[era] Render                   rc=2
+[era] TechnoTypeClass          rc=2
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] _DynamicVectorClass_PAVTemporalClass rc=0
+[era] TerrainClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e49d0   MISMATCH         Tactical::SetCapacity
+[diff] 0x6e6580   MISMATCH         _VectorClass_PAVTagTypeClass::Release
+[diff] 0x6e66c0   MISMATCH         _DynamicVectorClass_PAVTagTypeClass::SetCapacity
+[diff] 0x7049c0   MISMATCH         DrawTacticalMapLine
+[diff] 0x70e920   MISMATCH         UpdateTimedStateMachine
+[diff] 0x71b2e0   MISMATCH         _VectorClass_PAVTemporalClass::Release
+[diff] 0x71b420   MISMATCH         _DynamicVectorClass_PAVTemporalClass::SetCapacity
+[ledger] 0x6e0aa0 TActionClass::executeEnterAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6e49d0 Tactical::SetCapacity -> NG (attempt 2)
+[ledger] 0x6e6580 _VectorClass_PAVTagTypeClass::Release -> NG (attempt 2)
+[ledger] 0x6e66c0 _DynamicVectorClass_PAVTagTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x6eaa90 TeamClass::RecruitMember -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f64a0 TechnoClass::DrawHealthBar -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ffe00 TechnoClass::RecordEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x700600 TechnoClass::HandleCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7049c0 DrawTacticalMapLine -> NG (attempt 6)
+[ledger] 0x705270 Render::DrawLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70e920 UpdateTimedStateMachine -> NG (attempt 6)
+[ledger] 0x7120d0 TechnoTypeClass::ComputeValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x716290 TechnoTypeClass::GetModeSpecificValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71b2e0 _VectorClass_PAVTemporalClass::Release -> NG (attempt 2)
+[ledger] 0x71b420 _DynamicVectorClass_PAVTemporalClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x71c070 TerrainClass::ClearCellFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71c730 TerrainClass::Update -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 5,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p20\batch_report.json

@@ -1,0 +1,285 @@
+{
+ "symbol": "?DrawTacticalMapLine@@YGDHHHHHHHDD@Z",
+ "sym_key": "Unnamed::DrawTacticalMapLine",
+ "size": 900,
+ "link_base": 0,
+ "bytes_hex": "83ec5c53568d442418578d4c246c50518b0d00000000e8000000008b0d000000008d5424188d4424785250e80000000033c0bffeffffffa0000000008b8c248c0000008a9c248c0000008d5408018b4c241c8954242c8b542418894c24288b8c248c000000895424208d54080184db895424240f8401010000a10000000083780401750e8b807401000033c98a088bf1eb0b8b907401000033f6668b328d4424288d4c243050518d4c2414897c2414e8000000006a036a03508d4c2464e8000000008b106a008d442418895424186a0050ba000000008d4c2454e8000000008b08a100000000894c24108d4c24108b10565150ff5214a10000000083780401750e8b907401000033c08a028bf0eb0b8b887401000033f6668b318d5424208d44243052508d4c2414897c2414e8000000006a036a03508d4c2454e8000000008b086a008d5424146a00894c241852ba000000008d4c2464e8000000008b008d54241489442414a10000000056528b0850ff511433c0a0000000008b0d000000008b15000000008944243ca10000000084db89442438894c244089542444744f8d4424388d542420508d4c242ce80000000084c07439a10000000083780401750c8b887401000033c08a01eb0b8b907401000033c0668b028b0d00000000508d4424248b11508d4424305051ff52308b8424840000008a0d000000008bf033d281e6ff0000008ad4d3ee8b0d0000000033c08a842486000000897c240cd3e68b0d00000000d3fa8b0d00000000d3e28b0d00000000d3f88b0d000000000bf28d542430d3e08d4c241c51528d4c24140bf0e8000000006a036a03508d4c2454e8000000008b006a008d4c24146a0051ba000000008d4c24648944241ce8000000008b10a100000000895424148d5424148b08565250ff51148d4424188d4c243050518d4c2414897c2414e8000000006a036a03508d4c2454e8000000008b106a008d442414895424146a0050ba000000008d4c2464e8000000008b08a100000000894c24148d4c24148b10565150ff52148a84248800000084c074548b0d00000000b8ffffff7f2bc1b90f00000099f7f98d4c241c8bfa8d542438528d54241ce80000000084c07453a1000000006a005768000000008b088d54242456528d5424305250ff514c5f5e5b83c45cc224008d4424388d542418508d4c2420e80000000084c07416a1000000008d54241856528b088d5424245250ff51305f5e5b83c45cc22400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_FileSystem_THEATER_PAL@@3PAXA",
+   "sym_key": "g_FileSystem_THEATER_PAL"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?Add@Coord2D@@QAEPAIPAX0@Z",
+   "sym_key": "Coord2D::Add"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?Construct@Rect@@QAEPAV1@PAXHH@Z",
+   "sym_key": "Rect::Construct"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?g_FileSystem_THEATER_PAL@@3PAXA",
+   "sym_key": "g_FileSystem_THEATER_PAL"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?Add@Coord2D@@QAEPAIPAX0@Z",
+   "sym_key": "Coord2D::Add"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?Construct@Rect@@QAEPAV1@PAXHH@Z",
+   "sym_key": "Rect::Construct"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 344,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 380,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?g_DSurface_WindowOffset@@3IA",
+   "sym_key": "g_DSurface_WindowOffset"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_FileSystem_THEATER_PAL@@3PAXA",
+   "sym_key": "g_FileSystem_THEATER_PAL"
+  },
+  {
+   "off": 473,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 503,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 523,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 544,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 560,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 568,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 593,
+   "type": "REL32",
+   "sym": "?Add@Coord2D@@QAEPAIPAX0@Z",
+   "sym_key": "Coord2D::Add"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?Construct@Rect@@QAEPAV1@PAXHH@Z",
+   "sym_key": "Rect::Construct"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 636,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 643,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 682,
+   "type": "REL32",
+   "sym": "?Add@Coord2D@@QAEPAIPAX0@Z",
+   "sym_key": "Coord2D::Add"
+  },
+  {
+   "off": 696,
+   "type": "REL32",
+   "sym": "?Construct@Rect@@QAEPAV1@PAXHH@Z",
+   "sym_key": "Rect::Construct"
+  },
+  {
+   "off": 716,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 725,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 732,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 765,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 800,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 809,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 817,
+   "type": "DIR32",
+   "sym": "?unk_843128@@3EA",
+   "sym_key": "unk_843128"
+  },
+  {
+   "off": 861,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 870,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}
