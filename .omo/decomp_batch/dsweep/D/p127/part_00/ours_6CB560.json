@@ -1,0 +1,141 @@
+{
+ "symbol": "?StartTimer@SuperClass@@QAEDHDD@Z",
+ "sym_key": "SuperClass::StartTimer",
+ "size": 590,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db385e6d0f85360200008a4424108b4e283ac3558b6c2414570f95c2c6466d0188566e885e408b796081e500ffffff897e3c896c241883cdff3ac3753a385e707435385e6074303899f500000074258b46308d7e303bc5741457e8000000008946388bc583c4043bc5892f7507a1540a00008907885e708b4e283899f400000074688b562c8b42343898a6010000755aa17f00000033c98a0d870000003bc87c2e381d8400000075043bc3753d8b0d8b0000003bcb7e3333d203c88a157700000053516877000000ff520884c0741b8a0d8700000033c08ac1fec1880d870000008b0d7b0000008934818b4e283899f5000000744f8b4624896e783bc575068b81b00000008b15540a00008b4c24203bd5895630894e348946380f84d00000008b0d540a00002bca3bc87c0b895e38896e30e9b90000002bc1896e30894638e9ac0000008b46683bc3741c8d54241888989501000052b900000000895e688974241ce800000000385e6c74168d442418b900000000508974241ce800000000885e6c385e6d745f385e6f755a385e70740b8b4e283899ed000000744a8d7e30896e788bcfe8000000008bcee800000000508d4c2414e8000000008b5424108b4424208b4c242089178b5628894634894e38389ae50000007403895e7c8b44241824010c01eb068b4424182400894424188a4424205f3ac35d7421385e6d741c385e6e7526807e70017411385e60740c8d4e30e800000000c6467001385e6e750a8a4424105e5b59c20c008b4424148bce50e8000000008a4424105e5b59c20c005e32c05b59c20c00",
+ "relocs": [
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Locomotor__GetSpeed@@YAHPAX@Z",
+   "sym_key": "Locomotor__GetSpeed"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?RemoveAt@VectorClass@@QAEDH@Z",
+   "sym_key": "VectorClass::RemoveAt"
+  },
+  {
+   "off": 375,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?RemoveAt@VectorClass@@QAEDH@Z",
+   "sym_key": "VectorClass::RemoveAt"
+  },
+  {
+   "off": 427,
+   "type": "REL32",
+   "sym": "?SetCurrentFrame@SuperClass@@QAEPAGXZ",
+   "sym_key": "SuperClass::SetCurrentFrame"
+  },
+  {
+   "off": 434,
+   "type": "REL32",
+   "sym": "?GetDefaultTimer@Super@@QAEHXZ",
+   "sym_key": "Super::GetDefaultTimer"
+  },
+  {
+   "off": 444,
+   "type": "REL32",
+   "sym": "?Start@Timer@@QAEPAV1@H@Z",
+   "sym_key": "Timer::Start"
+  },
+  {
+   "off": 537,
+   "type": "REL32",
+   "sym": "?AdvanceCountdown@SuperClass@@QAEXXZ",
+   "sym_key": "SuperClass::AdvanceCountdown"
+  },
+  {
+   "off": 568,
+   "type": "REL32",
+   "sym": "?AnnounceReady@SuperClass@@QAEDD@Z",
+   "sym_key": "SuperClass::AnnounceReady"
+  }
+ ]
+}

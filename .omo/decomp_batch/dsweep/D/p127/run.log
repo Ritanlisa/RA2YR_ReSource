@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p127\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cb560 SuperClass::StartTimer -> SuperClass
+[conv] 0x6fd210 TechnoClass::CreateFireEffect -> TechnoClass
+[conv] 0x5fd6a0 OverlayClass::WriteINI -> OverlayClass
+[conv] 0x796710 HandleWOLRematch -> _addr_79
+[conv] 0x781130 FilterWOLGameListEntry -> _addr_78
+[conv] 0x6418b0 MiniMap::SavePreviewToINI -> MiniMap
+[conv] 0x626da0 FileSystem::ProcessNextFileExtension -> FileSystem
+[conv] 0x5eb7b0 UpdateMultiplayerLobbySlots -> _addr_5E
+[conv] 0x71bb90 TerrainClass::Construct -> TerrainClass
+[conv] 0x413d20 AircraftClass::Construct -> AircraftClass
+[conv] 0x7a0430 ObjectClass::CollectWOLConnectionTokens -> ObjectClass
+[conv] 0x6ea610 TeamClass::ValidateMember -> TeamClass
+[conv] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> BuildingTypeClass
+[conv] 0x7a3b30 CNetUtilEventSink::Commit -> CNetUtilEventSink
+[conv] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> ObjectClass
+[conv] 0x57a0c0 MapClass::InitTileData -> MapClass
+[conv] 0x5f9070 ObjectTypeClass::Load2DArt -> ObjectTypeClass
+[conv] 0x6eeea0 TeamClass::ScoreMember -> TeamClass
+[conv] 0x476b20 INIClass::ReadRGBColorList -> INIClass
+[conv] 0x780e30 FormatWOLPlayerInfoForDisplay -> _addr_78
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperClass               rc=0
+[era] TechnoClass              rc=2
+[era] OverlayClass             rc=0
+[era] _addr_79                 rc=2
+[era] _addr_78                 rc=2
+[era] MiniMap                  rc=2
+[era] FileSystem               rc=2
+[era] _addr_5E                 rc=2
+[era] TerrainClass             rc=2
+[era] AircraftClass            rc=2
+[era] ObjectClass              rc=2
+[era] TeamClass                rc=2
+[era] BuildingTypeClass        rc=2
+[era] CNetUtilEventSink        rc=2
+[era] MapClass                 rc=0
+[era] ObjectTypeClass          rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6cb560   MISMATCH         SuperClass::StartTimer
+[diff] 0x5fd6a0   MISMATCH         OverlayClass::WriteINI
+[diff] 0x781130   MISMATCH         FilterWOLGameListEntry
+[diff] 0x57a0c0   MISMATCH         MapClass::InitTileData
+[ledger] 0x6cb560 SuperClass::StartTimer -> NG (attempt 1)
+[ledger] 0x6fd210 TechnoClass::CreateFireEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fd6a0 OverlayClass::WriteINI -> NG (attempt 1)
+[ledger] 0x796710 HandleWOLRematch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781130 FilterWOLGameListEntry -> NG (attempt 1)
+[ledger] 0x6418b0 MiniMap::SavePreviewToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x626da0 FileSystem::ProcessNextFileExtension -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eb7b0 UpdateMultiplayerLobbySlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71bb90 TerrainClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x413d20 AircraftClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a0430 ObjectClass::CollectWOLConnectionTokens -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ea610 TeamClass::ValidateMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45e970 BuildingTypeClass::LoadRepairAnimations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a3b30 CNetUtilEventSink::Commit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57a0c0 MapClass::InitTileData -> NG (attempt 1)
+[ledger] 0x5f9070 ObjectTypeClass::Load2DArt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eeea0 TeamClass::ScoreMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x476b20 INIClass::ReadRGBColorList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x780e30 FormatWOLPlayerInfoForDisplay -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p127\batch_report.json

@@ -1,0 +1,249 @@
+{
+ "symbol": "?WriteINI@OverlayClass@@QAEHXZ",
+ "sym_key": "OverlayClass::WriteINI",
+ "size": 595,
+ "link_base": 0,
+ "bytes_hex": "81ec90000000a10000000053555633db57538be950e80000000033c9538a0d00000000518bcde800000000a10000000033ff508b10ff928000000089442410a100000000508b08ff517c8bf0a1000000000faf7424108b10535350ff525c56508d4c2438895c2430895c2434e8000000006800200000538d8c2480000000895c2444895c242ce8000000008d4424248d4c247850e800000000c74424100002000033f68d4c24148974241451b900000000e80000000083c0446a01508d8c2480000000e80000000003f84681fe000200007cd08b442410488944241075c33bfb7429a1000000005353508b10ff525c575033c08bcda00000000050e800000000a100000000508b08ff5160a100000000508b10ff526033c053a0000000008bcd50e800000000a10000000033ff508b08ff918000000089442410a100000000508b10ff527c8bf0a1000000000faf7424108b08535350ff515c56508d4c2448895c2424895c2428895c2420e8000000006800200000538d4c2458895c2454895c2420e8000000008d5424188d4c245052e800000000c74424100002000033f68d442414b9000000005089742418e800000000051e0100006a01508d4c2458e80000000003f84681fe000200007cd18b442410488944241075c43bfb742aa1000000005353508b08ff515c33d2578a150000000050528bcde800000000a100000000508b08ff5160a100000000508b10ff52608d4c2450e8000000008d4c2440e8000000008d4c2418e8000000008d4c2478e8000000008d4c2430e8000000008d4c2424e8000000005f5e5d5b81c490000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?aOverlay@@3HA",
+   "sym_key": "aOverlay"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayPack"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?Constructor@LCWPipe@@QAEPAV1@HH@Z",
+   "sym_key": "LCWPipe::Constructor"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?SetDelegate@Pipe@@QAEXH@Z",
+   "sym_key": "Pipe::SetDelegate"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayPack"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?ReadBase64Data@INIClass@@QAEDPAXHH@Z",
+   "sym_key": "INIClass::ReadBase64Data"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayDataPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayDataPack"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 295,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?Constructor@LCWPipe@@QAEPAV1@HH@Z",
+   "sym_key": "LCWPipe::Constructor"
+  },
+  {
+   "off": 401,
+   "type": "REL32",
+   "sym": "?SetDelegate@Pipe@@QAEXH@Z",
+   "sym_key": "Pipe::SetDelegate"
+  },
+  {
+   "off": 420,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 478,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 495,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayDataPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayDataPack"
+  },
+  {
+   "off": 504,
+   "type": "REL32",
+   "sym": "?ReadBase64Data@INIClass@@QAEDPAXHH@Z",
+   "sym_key": "INIClass::ReadBase64Data"
+  },
+  {
+   "off": 509,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 520,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 535,
+   "type": "REL32",
+   "sym": "?Dtor@LCWPipe@@QAEHXZ",
+   "sym_key": "LCWPipe::Dtor"
+  },
+  {
+   "off": 544,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 553,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  },
+  {
+   "off": 562,
+   "type": "REL32",
+   "sym": "?Dtor@LCWPipe@@QAEHXZ",
+   "sym_key": "LCWPipe::Dtor"
+  },
+  {
+   "off": 571,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 580,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  }
+ ]
+}
