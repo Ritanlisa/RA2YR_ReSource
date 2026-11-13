@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x723c60 sub_723C60 -> _addr_72
+[conv] 0x7250c0 sub_7250C0 -> _addr_72
+[conv] 0x725290 sub_725290 -> _addr_72
+[conv] 0x725d90 sub_725D90 -> _addr_72
+[conv] 0x725f60 sub_725F60 -> _addr_72
+[conv] 0x726a70 sub_726A70 -> _addr_72
+[conv] 0x726c40 sub_726C40 -> _addr_72
+[conv] 0x727dc0 sub_727DC0 -> _addr_72
+[conv] 0x727f90 sub_727F90 -> _addr_72
+[conv] 0x7289c0 sub_7289C0 -> _addr_72
+[conv] 0x72a250 sub_72A250 -> _addr_72
+[conv] 0x72a420 sub_72A420 -> _addr_72
+[conv] 0x72a6b0 sub_72A6B0 -> _addr_72
+[conv] 0x72a880 sub_72A880 -> _addr_72
+[conv] 0x72b8e0 DlgProcGameSetup_Setup -> DlgProcGameSetup
+[conv] 0x72bac0 WOLobby_Load -> WOLobby
+[conv] 0x72bca0 LoginFlowWOL_Load -> LoginFlowWOL
+[conv] 0x72be80 JoinLobbyWOL_Load -> JoinLobbyWOL
+[conv] 0x72c060 GameOptionsScreenWOL_Load -> GameOptionsScreenWOL
+[conv] 0x72c240 CreateAccountWOL_Create -> CreateAccountWOL
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] DlgProcGameSetup         rc=0
+[era] WOLobby                  rc=0
+[era] LoginFlowWOL             rc=0
+[era] JoinLobbyWOL             rc=0
+[era] GameOptionsScreenWOL     rc=0
+[era] CreateAccountWOL         rc=0
+=== diffasm byte-compare ===
+[diff] 0x723c60   MATCH            sub_723C60
+[diff] 0x7250c0   MATCH            sub_7250C0
+[diff] 0x725290   MATCH            sub_725290
+[diff] 0x725d90   MATCH            sub_725D90
+[diff] 0x725f60   MATCH            sub_725F60
+[diff] 0x726a70   MATCH            sub_726A70
+[diff] 0x726c40   MATCH            sub_726C40
+[diff] 0x727dc0   MATCH            sub_727DC0
+[diff] 0x727f90   MATCH            sub_727F90
+[diff] 0x7289c0   MATCH            sub_7289C0
+[diff] 0x72a250   MATCH            sub_72A250
+[diff] 0x72a420   MATCH            sub_72A420
+[diff] 0x72a6b0   MATCH            sub_72A6B0
+[diff] 0x72a880   MATCH            sub_72A880
+[diff] 0x72b8e0   MATCH            DlgProcGameSetup_Setup
+[diff] 0x72bac0   MATCH            WOLobby_Load
+[diff] 0x72bca0   MATCH            LoginFlowWOL_Load
+[diff] 0x72be80   MATCH            JoinLobbyWOL_Load
+[diff] 0x72c060   MATCH            GameOptionsScreenWOL_Load
+[diff] 0x72c240   MATCH            CreateAccountWOL_Create
+[ledger] 0x723c60 sub_723C60 -> OK (attempt 3)
+[ledger] 0x7250c0 sub_7250C0 -> OK (attempt 2)
+[ledger] 0x725290 sub_725290 -> OK (attempt 3)
+[ledger] 0x725d90 sub_725D90 -> OK (attempt 2)
+[ledger] 0x725f60 sub_725F60 -> OK (attempt 3)
+[ledger] 0x726a70 sub_726A70 -> OK (attempt 2)
+[ledger] 0x726c40 sub_726C40 -> OK (attempt 3)
+[ledger] 0x727dc0 sub_727DC0 -> OK (attempt 2)
+[ledger] 0x727f90 sub_727F90 -> OK (attempt 3)
+[ledger] 0x7289c0 sub_7289C0 -> OK (attempt 3)
+[ledger] 0x72a250 sub_72A250 -> OK (attempt 2)
+[ledger] 0x72a420 sub_72A420 -> OK (attempt 3)
+[ledger] 0x72a6b0 sub_72A6B0 -> OK (attempt 2)
+[ledger] 0x72a880 sub_72A880 -> OK (attempt 4)
+[ledger] 0x72b8e0 DlgProcGameSetup_Setup -> OK (attempt 2)
+[ledger] 0x72bac0 WOLobby_Load -> OK (attempt 6)
+[ledger] 0x72bca0 LoginFlowWOL_Load -> OK (attempt 2)
+[ledger] 0x72be80 JoinLobbyWOL_Load -> OK (attempt 2)
+[ledger] 0x72c060 GameOptionsScreenWOL_Load -> OK (attempt 2)
+[ledger] 0x72c240 CreateAccountWOL_Create -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p26\batch_report.json

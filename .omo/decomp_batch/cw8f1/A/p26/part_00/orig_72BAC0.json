@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BAC0",
+ "name": "WOLobby_Load",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BAC0",
+ "bytes_hex": "a051fdb00084c0753d813da4008a002003000075158b0dbc4d8400ba50fdb000e8eb7dd7ffa32cfbb0008b0dc04d84006858fdb000ba54fdb000e8e1f2ffffc60551fdb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

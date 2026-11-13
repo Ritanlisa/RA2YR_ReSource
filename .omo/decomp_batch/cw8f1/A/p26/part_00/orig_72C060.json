@@ -1,0 +1,11 @@
+{
+ "addr": "0x72C060",
+ "name": "GameOptionsScreenWOL_Load",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72C060",
+ "bytes_hex": "a02dfdb00084c0753d813da4008a002003000075158b0da44d8400ba2cfdb000e84b78d7ffa34cfab0008b0da84d84006834fdb000ba30fdb000e841edffffc6052dfdb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

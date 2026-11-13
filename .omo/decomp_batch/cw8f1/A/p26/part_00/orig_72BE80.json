@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BE80",
+ "name": "JoinLobbyWOL_Load",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BE80",
+ "bytes_hex": "a039fdb00084c0753d813da4008a002003000075158b0dac4d8400ba38fdb000e82b7ad7ffa39cfab0008b0db04d84006840fdb000ba3cfdb000e821efffffc60539fdb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
