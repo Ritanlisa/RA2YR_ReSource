@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x5c2500 Campaign::SetupMovie -> Campaign
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x5c34f0 MPCooperative::ReceiveMessage -> MPCooperative
+[conv] 0x5c35f0 MPCooperative::HandleEvent -> MPCooperative
+[conv] 0x5c42d0 MPCooperative::UpdateMovieScore -> MPCooperative
+[conv] 0x5c7520 SubtractBigIntegerWithSign -> _addr_5C
+[conv] 0x5c7990 DivideBigInteger -> _addr_5C
+[conv] 0x5c80a0 ObjectClass::ComputeModularInverse -> ObjectClass
+[conv] 0x5c9b10 MPScore::DlgProc -> MPScore
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> MultiplayerSiegeAttackerTeam
+[conv] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cdee0 MSPrintAnim::Draw -> MSPrintAnim
+[conv] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> ObjectClass
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x5cf5f0 SessionClass::Destruct -> SessionClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x5d0070 SessionClass::loadSettings -> SessionClass
+[conv] 0x5d25d0 ObjectClass::sub_5D25D0 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=2
+[era] Campaign                 rc=2
+[era] _addr_5C                 rc=2
+[era] ObjectClass              rc=2
+[era] MPScore                  rc=2
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] MultiplayerSiegeAttackerTeam rc=2
+[era] MSPrintAnim              rc=2
+[era] SessionClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5c2500 Campaign::SetupMovie -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 18)
+[ledger] 0x5c34f0 MPCooperative::ReceiveMessage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c35f0 MPCooperative::HandleEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c42d0 MPCooperative::UpdateMovieScore -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c7520 SubtractBigIntegerWithSign -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c7990 DivideBigInteger -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c80a0 ObjectClass::ComputeModularInverse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c9b10 MPScore::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cdee0 MSPrintAnim::Draw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cf5f0 SessionClass::Destruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5d0070 SessionClass::loadSettings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d25d0 ObjectClass::sub_5D25D0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p17\batch_report.json
