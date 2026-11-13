@@ -1,0 +1,111 @@
+{
+ "symbol": "?BlitterCopySHP@@YIDPAH000H00HHHHH@Z",
+ "sym_key": "Unnamed::BlitterCopySHP",
+ "size": 1505,
+ "link_base": 0,
+ "bytes_hex": "83ec448b442454535556578bfa8b10894c24308bc88954244c8b400433f6c64424640089442450897424188b41088b590c894424208b4424588974245889742410895c24488b0889742414894c243c8b68048b50088b400c894424348b442470895424448d4c24588d8440e22e10008d542418c1e00389442470518d442468528b5424688d4c24545051528b5424708d4c24508974243c8974244089742430897424548974244c89742438e80000000084c00f841d050000a10000000085c074488b48048b47048b1f03c58ad02bc12ad150885424648b54244003da8bcbe80000000083e301894424148b44246025ff0000008bc883e00183e10133d9d1e00bd8895c24248b5c2448a10000000085c0747b8b0f8b54243c03ca8b50048b470403c52bc250e800000000894424108b442470c744241c000000008b480c8b70088bc18974244099f7fe894c24388bf08b442470897424608a501484d20f84b20000008b15000000008b4804668b4224660342048b54246c662b47042bc525ffff000003c233d2f7f18bf00faff18b7c24348b442430508b08ff51708be88b4424300faf6c24448b1050ff52743be80f85e20000008b442430508b08ff51748be88b44245c508b10ff52743be80f85c40000000faf5c24208bc70faf4424443bd87c028bd88b4424688a4c246484c98b000f84800000008b4c24588b54241868e80300006a006a006a00535152ff500ce9a10300008b1500000000668b422466034204662b47048b7c24342bc72bc58b6c246c4025ffff000003c58b6c246099f7fe8bf08bc7990faff5f7fd2bf08bc799f7fd8bc12bc23bc18944241c0f852fffffff8b542470c744241c00000000037210e91bffffff8b4c24588b5424186a0068e80300006a006a006a00535152ff5004e91f0300008b44245c508b08ff51748b6c24308944246c558b5500ff52748bc8a10000000085c0894c246074078b402889442428a10000000085c074078b50288954242c8a44246484c00f84bd0000008b54242c8b44246cf7d9f7da894c24608b4c245cf7d88954242c8b5424288944246c8b01f7da518954242cff50748d53ff8b4d000fafd08b4424585503c28944245cff51748d4fff8b6c24180fafc8a10000000003cd85c0895c2434894c2418742c8b50288beaf7ddc1e51f2bea8b54241003eb8d146a8b681c3bd572032b5020b801000000895424102bc303f08b150000000085d2742d8b42288be8f7ddc1e51f2be88b44241403eb8d04688b6a1c3bc572032b422089442414eb088b4c2418895c24343bdf7c06897c2434eb048b7c24348a44246484c00f84f501000085ff0f8eed0100008b5c24688b5424588b6c24788b442474897c24448bfbeb088b4424748b6c24786685ed741c55508b44241c8b1f508b44241c508b4424305650525157ff5310eb19508b4424188b2f508b442418508b44242c5650525157ff550c8b4c24188b5424608b44245803ca8b54246c894c241803d0a10000000085c08954245874458b4424288b6c24108d4445008b2d000000003b451873030345208b6c241c894424108b44244003c58be88944241c3b6c24387c118b6c24700375108b6c24382bc58944241ca10000000085c0741e8b44242c8b6c24148d4445008b2d000000003b45187303034520894424148b44244448894424440f851effffff8b7c24348b4424788b136685c07427508b442428508b44247c508b442420508b442420508b44243456508b442474505153ff5208eb248b442424508b442478508b44241c508b44241c508b44243056508b442470505153ff52048b4c24188b5424608b44246c8b6c242403ca8b54245803d083f503895424588b150000000085d2896c2424894c2418743d8b4424288b6c24108d4445008b6a1c3bc572032b42208b542440894424108b44241c03c28b5424383bc28944241c7c0d8b6c24700375102bc28944241c8b150000000085d2741a8b44242c8b6c24148d4445008b6a1c3bc572032b4220894424144f0f8511ffffff8b442430508b08ff51608b44245c508b10ff5260b0015f5e5d5b83c444c228005f5e5d32c05b83c444c22800",
+ "relocs": [
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?CalcSurfaceBlitRects@@YIDPAX0H0000@Z",
+   "sym_key": "CalcSurfaceBlitRects"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?ReadAndSeek@StreamClass@@QAEIH@Z",
+   "sym_key": "StreamClass::ReadAndSeek"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?GetSamplePosition@Audio@@QAEIH@Z",
+   "sym_key": "Audio::GetSamplePosition"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 690,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 710,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 817,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 881,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1083,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 1109,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 1165,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1187,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 1341,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 1420,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  }
+ ]
+}

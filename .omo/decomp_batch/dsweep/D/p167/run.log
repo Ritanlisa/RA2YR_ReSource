@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p167\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ba060 ModemGuest::ProcessPacket -> ModemGuest
+[conv] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> VeinholeMonsterClass
+[conv] 0x7bb350 XSurface::DrawEllipseOutline -> XSurface
+[conv] 0x445880 BuildingClass::Sell -> BuildingClass
+[conv] 0x5f0d60 Modem::DetectAndConnect -> Modem
+[conv] 0x69a3b0 MapFile::LoadDescription -> MapFile
+[conv] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> DriveLocomotionClass
+[conv] 0x4bf750 DSurface::DrawGradientLine -> DSurface
+[conv] 0x6dbe20 TacticalClass::DrawPlacementCircles -> TacticalClass
+[conv] 0x705270 Render::DrawLine -> Render
+[conv] 0x435be0 BuildingLightClass::Draw_Start -> BuildingLightClass
+[conv] 0x4373b0 BlitterCopySHP -> _addr_43
+[conv] 0x70c690 Weapon::DestroyTerrain -> Weapon
+[conv] 0x5bac60 ModemHost::StartGame -> ModemHost
+[conv] 0x574c20 MapClass::ApplyTerrainDamage -> MapClass
+[conv] 0x5dafe0 GameSetup::DisplayPlayers -> GameSetup
+[conv] 0x52f620 ParseCommandLine -> _addr_52
+[conv] 0x76d4d0 Trigger::ProcessMapEvents -> Trigger
+[conv] 0x574000 TerrainClass::ProcessSlope -> TerrainClass
+[conv] 0x5c9b10 MPScore::DlgProc -> MPScore
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ModemGuest               rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] XSurface                 rc=2
+[era] BuildingClass            rc=2
+[era] Modem                    rc=0
+[era] MapFile                  rc=2
+[era] DriveLocomotionClass     rc=2
+[era] DSurface                 rc=2
+[era] TacticalClass            rc=2
+[era] Render                   rc=2
+[era] BuildingLightClass       rc=2
+[era] _addr_43                 rc=0
+[era] Weapon                   rc=2
+[era] ModemHost                rc=2
+[era] MapClass                 rc=2
+[era] GameSetup                rc=2
+[era] _addr_52                 rc=2
+[era] Trigger                  rc=2
+[era] TerrainClass             rc=2
+[era] MPScore                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f0d60   MISMATCH         Modem::DetectAndConnect
+[diff] 0x4373b0   MISMATCH         BlitterCopySHP
+[ledger] 0x5ba060 ModemGuest::ProcessPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bb350 XSurface::DrawEllipseOutline -> COMPILE_FAIL (attempt 1)
+[ledger] 0x445880 BuildingClass::Sell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f0d60 Modem::DetectAndConnect -> NG (attempt 1)
+[ledger] 0x69a3b0 MapFile::LoadDescription -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bf750 DSurface::DrawGradientLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dbe20 TacticalClass::DrawPlacementCircles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x705270 Render::DrawLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x435be0 BuildingLightClass::Draw_Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4373b0 BlitterCopySHP -> NG (attempt 1)
+[ledger] 0x70c690 Weapon::DestroyTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bac60 ModemHost::StartGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x574c20 MapClass::ApplyTerrainDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dafe0 GameSetup::DisplayPlayers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52f620 ParseCommandLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76d4d0 Trigger::ProcessMapEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x574000 TerrainClass::ProcessSlope -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c9b10 MPScore::DlgProc -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p167\batch_report.json
