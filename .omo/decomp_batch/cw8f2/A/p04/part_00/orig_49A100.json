@@ -1,0 +1,11 @@
+{
+ "addr": "0x49A100",
+ "name": "??_Gfacet_locale_std__UAEPAXI_Z_39",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49A100",
+ "bytes_hex": "8a442404568bf1a801c706885b7e00740956e826ea320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

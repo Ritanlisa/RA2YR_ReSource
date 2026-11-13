@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x499f40 _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25 -> _BlitTransZRemapXlat_G
+[conv] 0x499f60 _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26 -> _BlitTransDarken_G
+[conv] 0x499f80 _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27 -> _BlitTransLucent75_G
+[conv] 0x499fa0 _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28 -> _BlitTransLucent50_G
+[conv] 0x499fc0 _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29 -> _BlitTransLucent25_G
+[conv] 0x499fe0 _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30 -> _BlitPlainXlatZRead_G
+[conv] 0x49a000 _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31 -> _BlitTransXlatZRead_G
+[conv] 0x49a020 _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x49a040 _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33 -> _BlitTransDarkenZRead_G
+[conv] 0x49a060 _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34 -> _BlitTransLucent75ZRead_G
+[conv] 0x49a080 _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35 -> _BlitTransLucent50ZRead_G
+[conv] 0x49a0a0 _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36 -> _BlitTransLucent25ZRead_G
+[conv] 0x49a0c0 _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37 -> _BlitTransLucent75ZReadWarp_G
+[conv] 0x49a0e0 _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38 -> _BlitTransLucent50ZReadWarp_G
+[conv] 0x49a100 _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39 -> _BlitTransLucent25ZReadWarp_G
+[conv] 0x49a120 _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40 -> _BlitPlainXlatZReadWrite_G
+[conv] 0x49a140 _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41 -> _BlitTransXlatZReadWrite_G
+[conv] 0x49a160 _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x49a180 _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x49a7c0 _RLEBlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_55 -> _RLEBlitTransLucent75_G
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransZRemapXlat_G   rc=0
+[era] _BlitTransDarken_G       rc=0
+[era] _BlitTransLucent75_G     rc=0
+[era] _BlitTransLucent50_G     rc=0
+[era] _BlitTransLucent25_G     rc=0
+[era] _BlitPlainXlatZRead_G    rc=0
+[era] _BlitTransXlatZRead_G    rc=0
+[era] _BlitTransZRemapXlatZRead_G rc=0
+[era] _BlitTransDarkenZRead_G  rc=0
+[era] _BlitTransLucent75ZRead_G rc=0
+[era] _BlitTransLucent50ZRead_G rc=0
+[era] _BlitTransLucent25ZRead_G rc=0
+[era] _BlitTransLucent75ZReadWarp_G rc=0
+[era] _BlitTransLucent50ZReadWarp_G rc=0
+[era] _BlitTransLucent25ZReadWarp_G rc=0
+[era] _BlitPlainXlatZReadWrite_G rc=0
+[era] _BlitTransXlatZReadWrite_G rc=0
+[era] _BlitTransZRemapXlatZReadWrite_G rc=0
+[era] _BlitTransDarkenZReadWrite_G rc=0
+[era] _RLEBlitTransLucent75_G  rc=0
+=== diffasm byte-compare ===
+[diff] 0x499f40   MATCH            _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25
+[diff] 0x499f60   MATCH            _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26
+[diff] 0x499f80   MATCH            _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27
+[diff] 0x499fa0   MATCH            _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28
+[diff] 0x499fc0   MATCH            _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29
+[diff] 0x499fe0   MATCH            _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30
+[diff] 0x49a000   MATCH            _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31
+[diff] 0x49a020   MATCH            _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32
+[diff] 0x49a040   MATCH            _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33
+[diff] 0x49a060   MATCH            _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34
+[diff] 0x49a080   MATCH            _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35
+[diff] 0x49a0a0   MATCH            _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36
+[diff] 0x49a0c0   MATCH            _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37
+[diff] 0x49a0e0   MATCH            _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38
+[diff] 0x49a100   MATCH            _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39
+[diff] 0x49a120   MATCH            _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40
+[diff] 0x49a140   MATCH            _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41
+[diff] 0x49a160   MATCH            _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42
+[diff] 0x49a180   MATCH            _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43
+[diff] 0x49a7c0   MATCH            _RLEBlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_55
+[ledger] 0x499f40 _BlitTransZRemapXlat_G::_Gfacet_locale_std__UAEPAXI_Z_25 -> OK (attempt 2)
+[ledger] 0x499f60 _BlitTransDarken_G::_Gfacet_locale_std__UAEPAXI_Z_26 -> OK (attempt 2)
+[ledger] 0x499f80 _BlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_27 -> OK (attempt 2)
+[ledger] 0x499fa0 _BlitTransLucent50_G::_Gfacet_locale_std__UAEPAXI_Z_28 -> OK (attempt 4)
+[ledger] 0x499fc0 _BlitTransLucent25_G::_Gfacet_locale_std__UAEPAXI_Z_29 -> OK (attempt 2)
+[ledger] 0x499fe0 _BlitPlainXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_30 -> OK (attempt 2)
+[ledger] 0x49a000 _BlitTransXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_31 -> OK (attempt 2)
+[ledger] 0x49a020 _BlitTransZRemapXlatZRead_G::_Gfacet_locale_std__UAEPAXI_Z_32 -> OK (attempt 2)
+[ledger] 0x49a040 _BlitTransDarkenZRead_G::_Gfacet_locale_std__UAEPAXI_Z_33 -> OK (attempt 2)
+[ledger] 0x49a060 _BlitTransLucent75ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_34 -> OK (attempt 2)
+[ledger] 0x49a080 _BlitTransLucent50ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_35 -> OK (attempt 2)
+[ledger] 0x49a0a0 _BlitTransLucent25ZRead_G::_Gfacet_locale_std__UAEPAXI_Z_36 -> OK (attempt 2)
+[ledger] 0x49a0c0 _BlitTransLucent75ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_37 -> OK (attempt 2)
+[ledger] 0x49a0e0 _BlitTransLucent50ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_38 -> OK (attempt 2)
+[ledger] 0x49a100 _BlitTransLucent25ZReadWarp_G::_Gfacet_locale_std__UAEPAXI_Z_39 -> OK (attempt 4)
+[ledger] 0x49a120 _BlitPlainXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_40 -> OK (attempt 2)
+[ledger] 0x49a140 _BlitTransXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_41 -> OK (attempt 2)
+[ledger] 0x49a160 _BlitTransZRemapXlatZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_42 -> OK (attempt 2)
+[ledger] 0x49a180 _BlitTransDarkenZReadWrite_G::_Gfacet_locale_std__UAEPAXI_Z_43 -> OK (attempt 2)
+[ledger] 0x49a7c0 _RLEBlitTransLucent75_G::_Gfacet_locale_std__UAEPAXI_Z_55 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p04\batch_report.json
