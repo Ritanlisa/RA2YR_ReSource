@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p152\part_00
+=== convert (20 addrs) ===
+[conv] 0x6a5840 SidebarClass::LoadAssets -> SidebarClass
+[conv] 0x41e720 TriggerClass::EvaluateCondition -> TriggerClass
+[conv] 0x706ed0 RenderTechnoClassVoxel -> _addr_70
+[conv] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> TechnoClass
+[conv] 0x5d70f0 MultiplayerGameMode::AIDecision -> MultiplayerGameMode
+[conv] 0x4fd150 BuildingClass::CalcExitCoords -> BuildingClass
+[conv] 0x5c3b10 MPCooperative::LoadSettings -> MPCooperative
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x6d2790 Cell::CreateCrater -> Cell
+[conv] 0x668bf0 RulesClass::Addition -> RulesClass
+[conv] 0x692b60 Viewport::ProcessScroll -> Viewport
+[conv] 0x74ef10 RandomMap::RemoveMatching -> RandomMap
+[conv] 0x60cf00 Control::CreateControlDialog -> Control
+[conv] 0x6a70e0 Sidebar::FlushSidebarTooltip -> Sidebar
+[conv] 0x5d3ba0 MessageListClass::AddMessage -> MessageListClass
+[conv] 0x4011c0 LoadAudioFile -> _addr_40
+[conv] 0x54f790 InputManager::WndProc -> InputManager
+[conv] 0x6f3f40 TechnoClass::Update -> TechnoClass
+[conv] 0x409880 ProcessAudioStream -> _addr_40
+[conv] 0x643720 ObjectClass::RenderBuildingProductionButton -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SidebarClass             rc=2
+[era] TriggerClass             rc=2
+[era] _addr_70                 rc=2
+[era] TechnoClass              rc=2
+[era] MultiplayerGameMode      rc=2
+[era] BuildingClass            rc=2
+[era] MPCooperative            rc=2
+[era] MapClass                 rc=2
+[era] Cell                     rc=0
+[era] RulesClass               rc=2
+[era] Viewport                 rc=2
+[era] RandomMap                rc=2
+[era] Control                  rc=2
+[era] Sidebar                  rc=2
+[era] MessageListClass         rc=2
+[era] _addr_40                 rc=2
+[era] InputManager             rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d2790   MISMATCH         Cell::CreateCrater
+[ledger] 0x6a5840 SidebarClass::LoadAssets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41e720 TriggerClass::EvaluateCondition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x706ed0 RenderTechnoClassVoxel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d70f0 MultiplayerGameMode::AIDecision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fd150 BuildingClass::CalcExitCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c3b10 MPCooperative::LoadSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d2790 Cell::CreateCrater -> NG (attempt 1)
+[ledger] 0x668bf0 RulesClass::Addition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692b60 Viewport::ProcessScroll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74ef10 RandomMap::RemoveMatching -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60cf00 Control::CreateControlDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a70e0 Sidebar::FlushSidebarTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d3ba0 MessageListClass::AddMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4011c0 LoadAudioFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54f790 InputManager::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3f40 TechnoClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x409880 ProcessAudioStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x643720 ObjectClass::RenderBuildingProductionButton -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p152\batch_report.json
