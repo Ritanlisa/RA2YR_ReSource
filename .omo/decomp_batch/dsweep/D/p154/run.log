@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p154\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f60d0 TechnoClass::DrawSelectionBox -> TechnoClass
+[conv] 0x42c900 ObjectClass::FindPathWithRetry -> ObjectClass
+[conv] 0x5b4b10 GameSetupDialogProc -> _addr_5B
+[conv] 0x785370 ObjectClass::InitializeWestwoodOnline -> ObjectClass
+[conv] 0x520f40 Mission::ProcessUnitMissionAI -> Mission
+[conv] 0x62cec0 ParticleClass::DrawParticle -> ParticleClass
+[conv] 0x407b60 ThreadAudioMixerMain -> _addr_40
+[conv] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> ObjectClass
+[conv] 0x6208f0 DrawDialogGradient -> _addr_62
+[conv] 0x5312a0 ObjectClass::ShowLoadingScreen -> ObjectClass
+[conv] 0x5f92d0 ObjectTypeClass::LoadFromINI -> ObjectTypeClass
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x43bcf0 BuildingClass::Dtor -> BuildingClass
+[conv] 0x60c0c0 RepositionDialogControls -> _addr_60
+[conv] 0x425d10 Building::ComputePosition -> Building
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x6d8700 Cell::GetAdjacentPassableMask -> Cell
+[conv] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> TechnoClass
+[conv] 0x5851b0 ObjectClass::BuildTileAdjacencyTable -> ObjectClass
+[conv] 0x51fb00 ObjectClass::PlaceScenarioInfantry -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5B                 rc=0
+[era] Mission                  rc=2
+[era] ParticleClass            rc=2
+[era] _addr_40                 rc=2
+[era] _addr_62                 rc=0
+[era] ObjectTypeClass          rc=2
+[era] TeamClass                rc=2
+[era] BuildingClass            rc=2
+[era] _addr_60                 rc=2
+[era] Building                 rc=2
+[era] _addr_4E                 rc=2
+[era] Cell                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f60d0   MISMATCH         TechnoClass::DrawSelectionBox
+[diff] 0x5851b0   MISMATCH         ObjectClass::BuildTileAdjacencyTable
+[diff] 0x5b4b10   MISMATCH         GameSetupDialogProc
+[diff] 0x6208f0   MISMATCH         DrawDialogGradient
+[diff] 0x6d8700   MISMATCH         Cell::GetAdjacentPassableMask
+[ledger] 0x6f60d0 TechnoClass::DrawSelectionBox -> NG (attempt 1)
+[ledger] 0x42c900 ObjectClass::FindPathWithRetry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b4b10 GameSetupDialogProc -> NG (attempt 1)
+[ledger] 0x785370 ObjectClass::InitializeWestwoodOnline -> COMPILE_FAIL (attempt 1)
+[ledger] 0x520f40 Mission::ProcessUnitMissionAI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62cec0 ParticleClass::DrawParticle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407b60 ThreadAudioMixerMain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6208f0 DrawDialogGradient -> NG (attempt 1)
+[ledger] 0x5312a0 ObjectClass::ShowLoadingScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f92d0 ObjectTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43bcf0 BuildingClass::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60c0c0 RepositionDialogControls -> COMPILE_FAIL (attempt 1)
+[ledger] 0x425d10 Building::ComputePosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d8700 Cell::GetAdjacentPassableMask -> NG (attempt 1)
+[ledger] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5851b0 ObjectClass::BuildTileAdjacencyTable -> NG (attempt 1)
+[ledger] 0x51fb00 ObjectClass::PlaceScenarioInfantry -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p154\batch_report.json
