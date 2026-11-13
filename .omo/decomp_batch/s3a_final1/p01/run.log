@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x41a160 TechnoClass::FindClosestPlacementCell -> TechnoClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+[conv] 0x41f490 CCINIClass::ReadInfantryTypeList -> CCINIClass
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x4228e0 AnimClass::Destruct -> AnimClass
+[conv] 0x425410 AnimClass::ProcessPower -> AnimClass
+[conv] 0x4261d0 TechnoClass::FindBuildingClass -> TechnoClass
+[conv] 0x426e80 UnitClass::sub_426E80 -> UnitClass
+[conv] 0x426ed0 UnitClass::sub_426ED0 -> UnitClass
+[conv] 0x426fd0 UnitClass::sub_426FD0 -> UnitClass
+[conv] 0x429500 ApplicationClass::sub_429500 -> ApplicationClass
+[conv] 0x42c1c0 MapClass::AllocArrays -> MapClass
+[conv] 0x430ba0 ObjectClass::PlacePlayerBeacon -> ObjectClass
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x433560 sub_433560 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x434700 ObjectClass::sub_434700 -> ObjectClass
+[conv] 0x435820 BuildingLightClass::CTOR -> BuildingLightClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] Carryall                 rc=2
+[era] TechnoClass              rc=2
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=2
+[era] AnimClass                rc=2
+[era] UnitClass                rc=2
+[era] ApplicationClass         rc=2
+[era] MapClass                 rc=2
+[era] BinkMovie                rc=2
+[era] _addr_43                 rc=2
+[era] BuildingLightClass       rc=2
+=== diffasm byte-compare ===
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 5)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 6)
+[ledger] 0x41a160 TechnoClass::FindClosestPlacementCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41f490 CCINIClass::ReadInfantryTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4228e0 AnimClass::Destruct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x425410 AnimClass::ProcessPower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4261d0 TechnoClass::FindBuildingClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x426e80 UnitClass::sub_426E80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426ed0 UnitClass::sub_426ED0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x426fd0 UnitClass::sub_426FD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x429500 ApplicationClass::sub_429500 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42c1c0 MapClass::AllocArrays -> COMPILE_FAIL (attempt 5)
+[ledger] 0x430ba0 ObjectClass::PlacePlayerBeacon -> COMPILE_FAIL (attempt 5)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 5)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x434700 ObjectClass::sub_434700 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x435820 BuildingLightClass::CTOR -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p01\batch_report.json
