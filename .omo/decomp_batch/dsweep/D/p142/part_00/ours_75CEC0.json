@@ -1,0 +1,159 @@
+{
+ "symbol": "?Construct@WarheadTypeClass@@QAEPAVObjectClass@@PAD@Z",
+ "sym_key": "WarheadTypeClass::Construct",
+ "size": 784,
+ "link_base": 0,
+ "bytes_hex": "8b442404535556578be950e80000000033db8db504010000899d98000000899d9c000000899df800000053c785fc0000000000f03f538bce899d00010000e800000000b90a000000899d14010000898d18010000c70600000000899d20010000899d2401000066899d28010000c7852c0100000000803fb001889d30010000888534010000888538010000899d3c010000889d40010000889d44010000889d45010000889d46010000889d47010000889d48010000889d49010000889d4a010000889d4b010000889d4c010000889d4d010000889d4e010000889d4f010000889d50010000889d51010000889d52010000889d53010000889d54010000889d55010000889d56010000889d57010000889d58010000889d59010000889d5a010000889d5b010000c7855c0100004727584ac785600100003998d111c78564010000b70900a0889d6c010000889d6d010000c7856801000024ddafd1889d6e010000899d70010000889d74010000889d75010000889d76010000889d77010000889d78010000888579010000889d7a010000889d7b010000899d7c010000899d80010000899d84010000899d88010000899d90010000899d94010000888598010000889d990100008885b4010000898da00100008db58c010000898dbc0100008dbda80100008d4504b90000000050899d9c010000c70600000000899dac010000899db0010000889db5010000899db8010000c70700000000899dc4010000899dc8010000894d008908894d08894d0ce8000000008b0e56ff510c8b1757ff520ca1000000008b0d000000003bc8722e381d0000000075043bc3753a8b0d000000003bcb763003c8a10000000053516800000000ff90600e000084c074188b0d000000008bc141890d000000008b0d00000000892c81a1000000008b0d000000003bc8722c381d0000000075043bc375388b0d000000003bcb762e8b150000000003c853516800000000ff520884c074188b0d000000008bc141890d000000008b0d00000000892c818db5a00000008dbda8000000b914000000c785a40000000000f03f891e8bc5f3a55f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Constructor@AnimTypeVector@@QAEPAIHH@Z",
+   "sym_key": "AnimTypeVector::Constructor"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_AnimTypeClass_const@@3PAXA",
+   "sym_key": "vt_TypeList_AnimTypeClass_const"
+  },
+  {
+   "off": 489,
+   "type": "DIR32",
+   "sym": "?vt_WarheadTypeClass_4@@3PAXA",
+   "sym_key": "vt_WarheadTypeClass_4"
+  },
+  {
+   "off": 502,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_VoxelAnimTypeClass_const@@3PAXA",
+   "sym_key": "vt_TypeList_VoxelAnimTypeClass_const"
+  },
+  {
+   "off": 532,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 560,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHPAX@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 577,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C8@@3IA",
+   "sym_key": "DataGlobal_8874C8"
+  },
+  {
+   "off": 583,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 593,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874CD@@3EA",
+   "sym_key": "DataGlobal_8874CD"
+  },
+  {
+   "off": 605,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874D4@@3IA",
+   "sym_key": "DataGlobal_8874D4"
+  },
+  {
+   "off": 616,
+   "type": "DIR32",
+   "sym": "?WarheadTypeClass_Array@@3PAVWarheadTypeClass@@A",
+   "sym_key": "WarheadTypeClass_Array"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?WarheadTypeClass_Array@@3PAVWarheadTypeClass@@A",
+   "sym_key": "WarheadTypeClass_Array"
+  },
+  {
+   "off": 639,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?g_WarheadTypePool@@3IA",
+   "sym_key": "g_WarheadTypePool"
+  },
+  {
+   "off": 654,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8874C4@@3IA",
+   "sym_key": "DataGlobal_8874C4"
+  },
+  {
+   "off": 662,
+   "type": "DIR32",
+   "sym": "?g_AnimTypePool@@3IA",
+   "sym_key": "g_AnimTypePool"
+  },
+  {
+   "off": 668,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 678,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolLocked@@3EA",
+   "sym_key": "g_AnimPoolLocked"
+  },
+  {
+   "off": 690,
+   "type": "DIR32",
+   "sym": "?g_AnimManagerConfig@@3IA",
+   "sym_key": "g_AnimManagerConfig"
+  },
+  {
+   "off": 700,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 709,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 731,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 737,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolCount@@3PAXA",
+   "sym_key": "g_AnimPoolCount"
+  }
+ ]
+}

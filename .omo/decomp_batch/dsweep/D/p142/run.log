@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p142\part_00
+=== convert (20 addrs) ===
+[conv] 0x49d390 ObjectClass::LoadCoopCampaignSave -> ObjectClass
+[conv] 0x51f800 InfantryClass::HandleCursorOverCell -> InfantryClass
+[conv] 0x67e440 Game::LoadSaved -> Game
+[conv] 0x70aa60 TechnoClass::DrawPowerIndicator -> TechnoClass
+[conv] 0x5a6d80 FindClearPlacementCell -> _addr_5A
+[conv] 0x75cec0 WarheadTypeClass::Construct -> WarheadTypeClass
+[conv] 0x7346a0 CSFClass::LoadFile -> CSFClass
+[conv] 0x6d1200 CommandClass::BuildBar -> CommandClass
+[conv] 0x42d170 Pathfinding::CalcDistance -> Pathfinding
+[conv] 0x4048b0 ObjectClass::PrefetchAudioSamples -> ObjectClass
+[conv] 0x6fb170 TechnoClass::RevealShroud -> TechnoClass
+[conv] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> JumpjetLocomotionClass
+[conv] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> ObjectClass
+[conv] 0x770550 Animation::LoadSidebarAnimations -> Animation
+[conv] 0x7cffc8 ObjectClass::___sbh_resize_block -> ObjectClass
+[conv] 0x780a90 FormatWOLPlayerInfo -> _addr_78
+[conv] 0x730100 FileTree::CleanupAll -> FileTree
+[conv] 0x51cdb0 InfantryClass::ProcessIdleAction -> InfantryClass
+[conv] 0x6e0490 ObjectClass::PlayWaypointEffect -> ObjectClass
+[conv] 0x5cb880 MSShapeAnim::Load -> MSShapeAnim
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] InfantryClass            rc=2
+[era] Game                     rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5A                 rc=0
+[era] WarheadTypeClass         rc=0
+[era] CSFClass                 rc=2
+[era] CommandClass             rc=0
+[era] Pathfinding              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Animation                rc=2
+[era] _addr_78                 rc=2
+[era] FileTree                 rc=0
+[era] MSShapeAnim              rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cffc8   MISMATCH         ObjectClass::___sbh_resize_block
+[diff] 0x6e0490   MISMATCH         ObjectClass::PlayWaypointEffect
+[diff] 0x51f800   MISMATCH         InfantryClass::HandleCursorOverCell
+[diff] 0x6fb170   MISMATCH         TechnoClass::RevealShroud
+[diff] 0x5a6d80   MISMATCH         FindClearPlacementCell
+[diff] 0x75cec0   MISMATCH         WarheadTypeClass::Construct
+[diff] 0x6d1200   MISMATCH         CommandClass::BuildBar
+[diff] 0x730100   MISMATCH         FileTree::CleanupAll
+[diff] 0x5cb880   MISMATCH         MSShapeAnim::Load
+[ledger] 0x49d390 ObjectClass::LoadCoopCampaignSave -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f800 InfantryClass::HandleCursorOverCell -> NG (attempt 1)
+[ledger] 0x67e440 Game::LoadSaved -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70aa60 TechnoClass::DrawPowerIndicator -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a6d80 FindClearPlacementCell -> NG (attempt 1)
+[ledger] 0x75cec0 WarheadTypeClass::Construct -> NG (attempt 1)
+[ledger] 0x7346a0 CSFClass::LoadFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1200 CommandClass::BuildBar -> NG (attempt 1)
+[ledger] 0x42d170 Pathfinding::CalcDistance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4048b0 ObjectClass::PrefetchAudioSamples -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fb170 TechnoClass::RevealShroud -> NG (attempt 1)
+[ledger] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770550 Animation::LoadSidebarAnimations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cffc8 ObjectClass::___sbh_resize_block -> NG (attempt 1)
+[ledger] 0x780a90 FormatWOLPlayerInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x730100 FileTree::CleanupAll -> NG (attempt 1)
+[ledger] 0x51cdb0 InfantryClass::ProcessIdleAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e0490 ObjectClass::PlayWaypointEffect -> NG (attempt 1)
+[ledger] 0x5cb880 MSShapeAnim::Load -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 2,
+  "frame_sched": 4,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p142\batch_report.json

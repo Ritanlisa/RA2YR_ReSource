@@ -1,0 +1,153 @@
+{
+ "symbol": "?HandleCursorOverCell@InfantryClass@@QAEHPAFDH@Z",
+ "sym_key": "InfantryClass::HandleCursorOverCell",
+ "size": 706,
+ "link_base": 0,
+ "bytes_hex": "83ec0c535556578bf98b8f1c020000e80000000084c0750c5f5e5d33c05b83c40cc20c008b4424288b5c24248b7424205053568bcfe8000000008be86aff8bcf896c2428e80000000085c07d208b8f1c020000e80000000084c0741183fd05750cc74424241a0000008b6c24248b8fc00600008b81700d000085c0744283fd01740583fd02753856b9f8010000e8000000008bc8e80000000084c0751656b9f8010000e8000000008bc8e80000000084c0740cc7442424000000008b6c24248b8f1c020000e80000000084c00f84e50000008b8fc00600008b417485c00f84d40000008b87c406000083f81b741383f81c740e83f81d740983f81e0f85b600000083fd01745a83fd050f85a80000008b816005000085c074478b176a0057ff92e40200000fbf4e020fbf16c1e10881c18000000050c1e2088d442414894c24188b0f81c28000000050578954241cc744242400000000ff916401000084c07508c74424240200000056b9f8010000e8000000008b150000000033ed33f68b0af6c510747a84db74768b482885c9746f8b511033c085d27e668b4904bb060000008b31807e74007405395e30744c4083c1043bc27d49ebe956b9f8010000e80000000050e80000000083c40484c0749956b9f8010000e80000000057e8000000008ac85ff6d91bc9b824000000f7d95e5d2bc15b83c40cc20c008b46608b288b8fc00600008b416c85c0747085ed746c8b8f1c020000e80000000084c0745d8a85b616000084c0743f8b168d4424105056ff52488b54242833c98a480580e2000bca8d442428894c242850b9f8010000e800000000f6d81bc0f7d8f7d824fd83c02089442424eb308a85cc0c000084c0740ac744242409000000eb1c837c24240575158b0f57ff91ac02000084c07508c74424243b0000008b8f1c020000e8000000008b1757ff92a000000084c0b80200000075048b4424245f5e5d5b83c40cc20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?HandleCursorWithCheck@FootClass@@QAEHPAXDD@Z",
+   "sym_key": "FootClass::HandleCursorWithCheck"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?ValidateAttackPosition@InfantryClass@@QAE_NXZ",
+   "sym_key": "InfantryClass::ValidateAttackPosition"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?CanMoveThroughCell@InfantryClass@@QAE_NXZ",
+   "sym_key": "InfantryClass::CanMoveThroughCell"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 446,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 452,
+   "type": "REL32",
+   "sym": "?InfantryClass__IsInBounds@@YAHPAX@Z",
+   "sym_key": "InfantryClass__IsInBounds"
+  },
+  {
+   "off": 465,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 476,
+   "type": "REL32",
+   "sym": "?globalHelper_084F10@@YGDH@Z",
+   "sym_key": "globalHelper_084F10"
+  },
+  {
+   "off": 534,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 587,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 592,
+   "type": "REL32",
+   "sym": "?CheckConnectivity@CellClass@@QAEDH@Z",
+   "sym_key": "CellClass::CheckConnectivity"
+  },
+  {
+   "off": 670,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "symbol": "?PlayWaypointEffect@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::PlayWaypointEffect",
+ "size": 633,
+ "link_base": 0,
+ "bytes_hex": "83ec2853568bf1578d4c24108b869000000050518b0d00000000e8000000008b10a1400200008954240c6a008b88a80f00006a01516a00ba640000008d4c241ce8000000008b96900000008b0d000000008d4424105250e8000000008b48088b50048b0083c2555183c05552508d4c2428e8000000008b088b1540020000894c240c6a008b82a80f00006a01506a00ba640000008d4c241ce8000000008b8e900000008d54241c518b0d0000000052e8000000008b48088b50048b0083c2555183e85552508d4c241ce8000000008b088b1540020000894c240c8b78048b58088b82a80f00006a006a01506a00ba640000008d4c241ce8000000006a006aab6a558d4c2418e8000000008b8e900000008d54241c518b0d0000000052e8000000008b48088b50048b0003cb03d751528b54241403c28d4c243050e8000000008b088b1540020000894c24108b78048b82a80f00006a006a01506a00ba640000008d4c2420e8000000008b8e900000008d542428518b0d0000000052e8000000008b48088b50048b0083ea555183e85552508d4c2428e8000000008b088b1540020000894c240c6a008b82a80f00006a01506a00ba640000008d4c241ce8000000008b8e90000000518b0d00000000e80000000084c00f84930000008b96900000008b0d000000008d4424185250e8000000008b088d542414894c241452b9f8010000be03000000e80000000084c0751a8bc64e85c07e138d442414b9f801000050e80000000084c074e60fbf4c2414c1e10881c1800000008d5424108d44240c894c240c8b0d000000005250e8000000008b4c24106a00680001000083c780680001000083c1805751e8000000005f5eb0015b83c428c21000",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?GetWorldCoords@Cell@@QAEPAIPAXH@Z",
+   "sym_key": "Cell::GetWorldCoords"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 414,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 445,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 458,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 463,
+   "type": "REL32",
+   "sym": "?Is_Waypoint_Valid@ScenarioClass@@QAE_NI@Z",
+   "sym_key": "ScenarioClass::Is_Waypoint_Valid"
+  },
+  {
+   "off": 483,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 510,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 520,
+   "type": "REL32",
+   "sym": "?SetTerrainType@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::SetTerrainType"
+  },
+  {
+   "off": 540,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 546,
+   "type": "REL32",
+   "sym": "?SetTerrainType@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::SetTerrainType"
+  },
+  {
+   "off": 582,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 589,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 618,
+   "type": "REL32",
+   "sym": "?Cell__CreateCrater@@YGDHHHHD@Z",
+   "sym_key": "Cell__CreateCrater"
+  }
+ ]
+}
