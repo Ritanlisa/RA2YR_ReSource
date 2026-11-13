@@ -1,0 +1,11 @@
+{
+ "addr": "0x711EC0",
+ "name": "TechnoClass::GetBuildCost",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x711EC0",
+ "bytes_hex": "8a81990c000084c0740ea138b2a80085c0b8ffffff7f75068b81cc060000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

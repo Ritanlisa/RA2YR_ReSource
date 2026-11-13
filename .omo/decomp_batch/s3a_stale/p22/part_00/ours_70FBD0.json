@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsDeactivated@UnitClass@@QAEDXZ",
+ "sym_key": "UnitClass::IsDeactivated",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8a81c8010000c3",
+ "relocs": []
+}

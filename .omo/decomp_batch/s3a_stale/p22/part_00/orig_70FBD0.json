@@ -1,0 +1,11 @@
+{
+ "addr": "0x70FBD0",
+ "name": "UnitClass::IsDeactivated",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70FBD0",
+ "bytes_hex": "8a81c8010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

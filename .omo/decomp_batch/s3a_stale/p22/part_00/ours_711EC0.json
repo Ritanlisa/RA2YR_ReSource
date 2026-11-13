@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetBuildCost@TechnoTypeClass@@QAEHXZ",
+ "sym_key": "TechnoTypeClass::GetBuildCost",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b819c0c000085c075078b81cc060000c3a10000000085c075078b81cc060000c3b8ffffff7fc3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  }
+ ]
+}

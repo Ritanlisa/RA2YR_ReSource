@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x70fbd0 UnitClass::IsDeactivated -> UnitClass
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x711eb0 TechnoTypeClass::GetMember388 -> TechnoTypeClass
+[conv] 0x711ec0 TechnoTypeClass::GetBuildCost -> TechnoTypeClass
+[conv] 0x712170 TechnoTypeClass::LoadExtras -> TechnoTypeClass
+[conv] 0x717800 TechnoTypeClass::GetSightRange -> TechnoTypeClass
+[conv] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> JumpjetLocomotionClass
+[conv] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> TeleportLocomotionClass
+[conv] 0x71a760 TemporalClass::ProcessTimeWarp -> TemporalClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x71abc0 FactoryClass::CompleteItem -> FactoryClass
+[conv] 0x71bdf0 ObjectClass::ProcessFoggedState -> ObjectClass
+[conv] 0x71e6a0 TActionClass::TActionClass -> TActionClass
+[conv] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> TextButtonClass
+[conv] 0x720590 ThemeClass::InitializeThemes -> ThemeClass
+[conv] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> ObjectClass
+[conv] 0x723b60 sub_723B60 -> _addr_72
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> AbstractClass
+[conv] 0x726fb0 HouseClass::FindType24 -> HouseClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=0
+[era] TechnoTypeClass          rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] TemporalClass            rc=2
+[era] ObjectClass              rc=2
+[era] FactoryClass             rc=2
+[era] TActionClass             rc=2
+[era] TextButtonClass          rc=2
+[era] ThemeClass               rc=2
+[era] _addr_72                 rc=2
+[era] TooltipClass             rc=2
+[era] AbstractClass            rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x70fbd0   MATCH            UnitClass::IsDeactivated
+[diff] 0x711eb0   MATCH            TechnoTypeClass::GetMember388
+[diff] 0x711ec0   MISMATCH         TechnoTypeClass::GetBuildCost
+[ledger] 0x70fbd0 UnitClass::IsDeactivated -> OK (attempt 6)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x711eb0 TechnoTypeClass::GetMember388 -> OK (attempt 2)
+[ledger] 0x711ec0 TechnoTypeClass::GetBuildCost -> NG (attempt 2)
+[ledger] 0x712170 TechnoTypeClass::LoadExtras -> COMPILE_FAIL (attempt 2)
+[ledger] 0x717800 TechnoTypeClass::GetSightRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71a760 TemporalClass::ProcessTimeWarp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 7)
+[ledger] 0x71abc0 FactoryClass::CompleteItem -> COMPILE_FAIL (attempt 12)
+[ledger] 0x71bdf0 ObjectClass::ProcessFoggedState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71e6a0 TActionClass::TActionClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> COMPILE_FAIL (attempt 4)
+[ledger] 0x720590 ThemeClass::InitializeThemes -> COMPILE_FAIL (attempt 6)
+[ledger] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x723b60 sub_723B60 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7248c0 TooltipClass::GetText -> COMPILE_FAIL (attempt 15)
+[ledger] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> COMPILE_FAIL (attempt 6)
+[ledger] 0x726fb0 HouseClass::FindType24 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 2,
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 66.7,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p22\batch_report.json
