@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x4b9890 DisplayBuildingInfoPanel -> _addr_4B
+[conv] 0x4c3e30 CreditsPower::Display -> CreditsPower
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+[conv] 0x4ca5a0 FactoryClass::StartProduction_2 -> FactoryClass
+[conv] 0x4d2510 FoggedObjectClass::LoadTypeData -> FoggedObjectClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4dfcb0 FootClass::FindClosestForRepair -> FootClass
+[conv] 0x4e2af0 TriColorGaugeClass::Check -> TriColorGaugeClass
+[conv] 0x4e2b20 TriColorGaugeClass::SetField -> TriColorGaugeClass
+[conv] 0x4e6190 DetectProcessorType -> _addr_4E
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x4f9f90 HouseClass::SetAlliance -> HouseClass
+[conv] 0x5009b0 HouseClass::LoadTypeList -> HouseClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x508c30 HouseClass::UpdatePower -> HouseClass
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> ObjectClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] _addr_4B                 rc=2
+[era] CreditsPower             rc=2
+[era] FactoryClass             rc=2
+[era] FoggedObjectClass        rc=2
+[era] InfantryClass            rc=2
+[era] FootClass                rc=2
+[era] TriColorGaugeClass       rc=2
+[era] _addr_4E                 rc=0
+[era] Frame                    rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] CCINIClass               rc=2
+[era] House                    rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e6190   MISMATCH         DetectProcessorType
+[diff] 0x4f6950   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex
+[diff] 0x5175f0   MISMATCH         ObjectClass::ReadRegistryOptionsWOL
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4b9890 DisplayBuildingInfoPanel -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c3e30 CreditsPower::Display -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4ca5a0 FactoryClass::StartProduction_2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d2510 FoggedObjectClass::LoadTypeData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 17)
+[ledger] 0x4dfcb0 FootClass::FindClosestForRepair -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e2af0 TriColorGaugeClass::Check -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e2b20 TriColorGaugeClass::SetField -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e6190 DetectProcessorType -> NG (attempt 3)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> NG (attempt 3)
+[ledger] 0x4f9f90 HouseClass::SetAlliance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5009b0 HouseClass::LoadTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 16)
+[ledger] 0x508c30 HouseClass::UpdatePower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> NG (attempt 3)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "cc_mismatch": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p05\batch_report.json

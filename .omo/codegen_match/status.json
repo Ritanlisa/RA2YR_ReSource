@@ -43042,7 +43042,7 @@
   "this_as_id": false
  },
  "0x4adff0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -45363,7 +45363,7 @@
   "this_as_id": false
  },
  "0x4b9890": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DisplayBuildingInfoPanel",
@@ -47187,7 +47187,7 @@
   "this_as_id": false
  },
  "0x4c3e30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49071,7 +49071,7 @@
   "this_as_id": false
  },
  "0x4c9b20": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49279,7 +49279,7 @@
   "this_as_id": false
  },
  "0x4ca5a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51186,7 +51186,7 @@
   "this_as_id": false
  },
  "0x4d2510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52147,7 +52147,7 @@
   "this_as_id": false
  },
  "0x4da030": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -53106,7 +53106,7 @@
   "this_as_id": false
  },
  "0x4dfcb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54538,7 +54538,7 @@
   "this_as_id": false
  },
  "0x4e2af0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54550,7 +54550,7 @@
   "this_as_id": false
  },
  "0x4e2b20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55344,14 +55344,14 @@
   "this_as_id": false
  },
  "0x4e6190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x40",
   "name": "DetectProcessorType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "DetectProcessorType",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e62b0": {
@@ -64112,7 +64112,7 @@
   "this_as_id": false
  },
  "0x4f4780": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64514,15 +64514,15 @@
   "this_as_id": false
  },
  "0x4f6950": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4f6990": {
@@ -64928,7 +64928,7 @@
   "this_as_id": false
  },
  "0x4f9f90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65579,7 +65579,7 @@
   "this_as_id": false
  },
  "0x5009b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65603,7 +65603,7 @@
   "this_as_id": false
  },
  "0x501160": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66094,7 +66094,7 @@
   "this_as_id": false
  },
  "0x508c30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66902,7 +66902,7 @@
   "status": "NG"
  },
  "0x50db00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70398,15 +70398,15 @@
   "this_as_id": false
  },
  "0x5175f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 push ebp",
   "name": "ObjectClass::ReadRegistryOptionsWOL",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ReadRegistryOptionsWOL",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5176a0": {
@@ -70436,14 +70436,14 @@
   "status": "NG"
  },
  "0x5176d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_5176D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_5176D0",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
