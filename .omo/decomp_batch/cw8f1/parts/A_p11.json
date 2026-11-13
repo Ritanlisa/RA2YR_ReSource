@@ -1,0 +1,142 @@
+[
+ {
+  "addr": "0x537a80",
+  "family": "cw8f1",
+  "size": 6,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x537b50",
+  "family": "cw8f1",
+  "size": 6,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x537f20",
+  "family": "cw8f1",
+  "size": 6,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x539110",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x5392e0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x539350",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x539520",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53a090",
+  "family": "cw8f1",
+  "size": 17,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53c820",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x53c9f0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53ca50",
+  "family": "cw8f1",
+  "size": 23,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53f240",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x53f2f0",
+  "family": "cw8f1",
+  "size": 19,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53f410",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x53f8a0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x53fa70",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x5406e0",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x5408b0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ },
+ {
+  "addr": "0x543120",
+  "family": "cw8f1",
+  "size": 40,
+  "cls": "D_IMM",
+  "rsub": null
+ },
+ {
+  "addr": "0x5432f0",
+  "family": "cw8f1",
+  "size": 26,
+  "cls": "D_RELOC",
+  "rsub": null
+ }
+]

@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x537a80 MultiplayerDebugCommandClass::StubReturn8550640 -> MultiplayerDebugCommandClass
+[conv] 0x537b50 ScreenCaptureCommandClass::AddRef -> ScreenCaptureCommandClass
+[conv] 0x537f20 DeleteCommandClass::AddRef -> DeleteCommandClass
+[conv] 0x539110 sub_539110 -> _addr_53
+[conv] 0x5392e0 sub_5392E0 -> _addr_53
+[conv] 0x539350 sub_539350 -> _addr_53
+[conv] 0x539520 sub_539520 -> _addr_53
+[conv] 0x53a090 LightningStorm::End -> LightningStorm
+[conv] 0x53c820 sub_53C820 -> _addr_53
+[conv] 0x53c9f0 sub_53C9F0 -> _addr_53
+[conv] 0x53ca50 sub_53CA50 -> _addr_53
+[conv] 0x53f240 sub_53F240 -> _addr_53
+[conv] 0x53f2f0 sub_53F2F0 -> _addr_53
+[conv] 0x53f410 sub_53F410 -> _addr_53
+[conv] 0x53f8a0 sub_53F8A0 -> _addr_53
+[conv] 0x53fa70 sub_53FA70 -> _addr_53
+[conv] 0x5406e0 sub_5406E0 -> _addr_54
+[conv] 0x5408b0 sub_5408B0 -> _addr_54
+[conv] 0x543120 sub_543120 -> _addr_54
+[conv] 0x5432f0 sub_5432F0 -> _addr_54
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerDebugCommandClass rc=0
+[era] ScreenCaptureCommandClass rc=0
+[era] DeleteCommandClass       rc=0
+[era] _addr_53                 rc=0
+[era] LightningStorm           rc=0
+[era] _addr_54                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x537a80   MATCH            MultiplayerDebugCommandClass::StubReturn8550640
+[diff] 0x537b50   MISMATCH         ScreenCaptureCommandClass::AddRef
+[diff] 0x537f20   MISMATCH         DeleteCommandClass::AddRef
+[diff] 0x539110   MATCH            sub_539110
+[diff] 0x5392e0   MATCH            sub_5392E0
+[diff] 0x539350   MATCH            sub_539350
+[diff] 0x539520   MATCH            sub_539520
+[diff] 0x53c820   MATCH            sub_53C820
+[diff] 0x53c9f0   MATCH            sub_53C9F0
+[diff] 0x53ca50   MATCH            sub_53CA50
+[diff] 0x53f240   MATCH            sub_53F240
+[diff] 0x53f2f0   MATCH            sub_53F2F0
+[diff] 0x53f410   MATCH            sub_53F410
+[diff] 0x53f8a0   MATCH            sub_53F8A0
+[diff] 0x53fa70   MATCH            sub_53FA70
+[diff] 0x53a090   MATCH            LightningStorm::End
+[diff] 0x5406e0   MATCH            sub_5406E0
+[diff] 0x5408b0   MATCH            sub_5408B0
+[diff] 0x543120   MATCH            sub_543120
+[diff] 0x5432f0   MATCH            sub_5432F0
+[ledger] 0x537a80 MultiplayerDebugCommandClass::StubReturn8550640 -> OK (attempt 5)
+[ledger] 0x537b50 ScreenCaptureCommandClass::AddRef -> NG (attempt 6)
+[ledger] 0x537f20 DeleteCommandClass::AddRef -> NG (attempt 6)
+[ledger] 0x539110 sub_539110 -> OK (attempt 2)
+[ledger] 0x5392e0 sub_5392E0 -> OK (attempt 4)
+[ledger] 0x539350 sub_539350 -> OK (attempt 2)
+[ledger] 0x539520 sub_539520 -> OK (attempt 3)
+[ledger] 0x53a090 LightningStorm::End -> OK (attempt 3)
+[ledger] 0x53c820 sub_53C820 -> OK (attempt 2)
+[ledger] 0x53c9f0 sub_53C9F0 -> OK (attempt 3)
+[ledger] 0x53ca50 sub_53CA50 -> OK (attempt 3)
+[ledger] 0x53f240 sub_53F240 -> OK (attempt 2)
+[ledger] 0x53f2f0 sub_53F2F0 -> OK (attempt 3)
+[ledger] 0x53f410 sub_53F410 -> OK (attempt 3)
+[ledger] 0x53f8a0 sub_53F8A0 -> OK (attempt 2)
+[ledger] 0x53fa70 sub_53FA70 -> OK (attempt 3)
+[ledger] 0x5406e0 sub_5406E0 -> OK (attempt 2)
+[ledger] 0x5408b0 sub_5408B0 -> OK (attempt 3)
+[ledger] 0x543120 sub_543120 -> OK (attempt 2)
+[ledger] 0x5432f0 sub_5432F0 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p11\batch_report.json

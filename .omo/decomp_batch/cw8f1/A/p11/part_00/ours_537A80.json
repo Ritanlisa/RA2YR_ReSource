@@ -1,0 +1,15 @@
+{
+ "symbol": "?StubReturn8550640@MultiplayerDebugCommandClass@@QAEPAPAXXZ",
+ "sym_key": "MultiplayerDebugCommandClass::StubReturn8550640",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8278F0@@3PAXA",
+   "sym_key": "DataGlobal_8278F0"
+  }
+ ]
+}

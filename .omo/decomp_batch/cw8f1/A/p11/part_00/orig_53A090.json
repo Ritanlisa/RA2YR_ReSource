@@ -1,0 +1,11 @@
+{
+ "addr": "0x53A090",
+ "name": "LightningStorm::End",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53A090",
+ "bytes_hex": "a0b4faa90084c07407c605d0faa90001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
