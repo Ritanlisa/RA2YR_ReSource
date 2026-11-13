@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x47bdb0 ObjectClass::GetBridgeCellColor -> ObjectClass
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47c620 CellClass::IsPassable -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x486ff0 Cell::IsBuildableAdvanced -> Cell
+[conv] 0x487190 Crate::FindPlacement -> Crate
+[conv] 0x488520 CheckListClass::OnClick -> CheckListClass
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+[conv] 0x48e740 ConvertClass::Construct -> ConvertClass
+[conv] 0x491210 VectorClass_ptr_ConvertClass::Constructor_ConvertClass -> VectorClass_ptr_ConvertClass
+[conv] 0x49b7e0 FillScoreScreenStats -> _addr_49
+[conv] 0x49e8e0 INISectionList::Constructor -> INISectionList
+[conv] 0x49fbe0 CounterClass::Load -> CounterClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] Cell                     rc=0
+[era] Crate                    rc=2
+[era] CheckListClass           rc=2
+[era] ColorListClass           rc=2
+[era] ConnectionClass          rc=2
+[era] ConvertClass             rc=2
+[era] VectorClass_ptr_ConvertClass rc=0
+[era] _addr_49                 rc=2
+[era] INISectionList           rc=2
+[era] CounterClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x486ff0   MISMATCH         Cell::IsBuildableAdvanced
+[diff] 0x491210   MISMATCH         VectorClass_ptr_ConvertClass::Constructor_ConvertClass
+[diff] 0x49fbe0   MISMATCH         CounterClass::Load
+[ledger] 0x47bdb0 ObjectClass::GetBridgeCellColor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47c620 CellClass::IsPassable -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 13)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x486ff0 Cell::IsBuildableAdvanced -> NG (attempt 12)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x488520 CheckListClass::OnClick -> COMPILE_FAIL (attempt 2)
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 15)
+[ledger] 0x48c8b0 ObjectClass::MainGameFrame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48e740 ConvertClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x491210 VectorClass_ptr_ConvertClass::Constructor_ConvertClass -> NG (attempt 2)
+[ledger] 0x49b7e0 FillScoreScreenStats -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49e8e0 INISectionList::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49fbe0 CounterClass::Load -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p04\batch_report.json

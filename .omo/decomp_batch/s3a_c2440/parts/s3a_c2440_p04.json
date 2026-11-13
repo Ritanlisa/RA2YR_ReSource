@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x47bdb0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x47c550",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x47c620",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x47eba0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x47f6a0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x480630",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x483480",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x484050",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x485af0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x486ff0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x487190",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x488520",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x488980",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x48bf40",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x48c8b0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x48e740",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x491210",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x49b7e0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x49e8e0",
+  "family": "C2440"
+ },
+ {
+  "addr": "0x49fbe0",
+  "family": "C2440"
+ }
+]

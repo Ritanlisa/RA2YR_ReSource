@@ -1,0 +1,15 @@
+{
+ "symbol": "?Load@CounterClass@@QAEHH@Z",
+ "sym_key": "CounterClass::Load",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "535556578bf933db3bfb7416895f04895f08c6470c01885f0dc70700000000895f108b742414538d4f086a048b065156ff500c3bc37c608b16538d4424186a045056ff520c3bc37c4e8b5424148b0f535257ff510884c074398b44241433ed3bc37f095f5e5d33c05bc204008b4f048b06536a048d14a95256ff500c3bc37c178b442414453be87ce35f5e5d33c05bc20400b8080000005f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?vt_CounterClass@@3PAXA",
+   "sym_key": "vt_CounterClass"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x49FBE0",
+ "name": "CounterClass::Load",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49FBE0",
+ "bytes_hex": "535556578bf933db3bfb7416895f04895f08c6470c01885f0dc707545c7e00895f108b742414538d4f106a048b065156ff500c3bc37c588b16538d4424186a045056ff520c3bc37c468b4424148b1753508bcfff520884c0750c5f5e5db8080000005bc204008b44241433ed3bc37e1d8b57048b0e536a048d04aa5056ff510c3bc37c0b8b442414453be87ce333c05f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

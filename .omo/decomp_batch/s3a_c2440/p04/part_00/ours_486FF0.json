@@ -1,0 +1,45 @@
+{
+ "symbol": "?IsBuildableAdvanced@Cell@@QAEDXZ",
+ "sym_key": "Cell::IsBuildableAdvanced",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "56578bf96a0157b900000000e80000000084c00f84810000008b473885c07c1b3b05240900007d138b0df40800008b14818a820503000084c074648b872001000085c0755a8b8744010000f6c405754fa04000000084c074418bb7e400000085f674128b0656ff502c83f80674318b763085f675eea04000000084c0741c8bb7e400000085f674128b0e56ff512c83f824740c8b763085f675ee5fb0015ec35f32c05ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?CheckAmbiguity@Type@@QAE_NHD@Z",
+   "sym_key": "Type::CheckAmbiguity"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x491210",
+ "name": "VectorClass_ptr_ConvertClass::Constructor_ConvertClass",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x491210",
+ "bytes_hex": "51568bf1c70658537e00e871f2ffff8b867001000050e8127933008b8e78010000c786700100000000000051e8fc78330083c408c7867801000000000000a1f8ec89008d54240452b9f8ec890089742408ff501083f8ff742d8b0d08ed89003bc17d23493bc1890d08ed89007d188b0dfcec8900408b1481895481fc8b0d08ed89003bc17ce8f644240c01740956e89a78330083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
