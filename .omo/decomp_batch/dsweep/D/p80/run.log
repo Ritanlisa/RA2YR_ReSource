@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p80\part_00
+=== convert (20 addrs) ===
+[conv] 0x77cb00 sub_77CB00 -> _addr_77
+[conv] 0x771f50 WeaponTypeClass::Destructor -> WeaponTypeClass
+[conv] 0x4737f0 ReinforcementClass::CreateObject -> ReinforcementClass
+[conv] 0x6ca1e0 ObjectClass::sub_6CA1E0 -> ObjectClass
+[conv] 0x414a80 AircraftClass::ProcessMissionTimeout -> AircraftClass
+[conv] 0x66d270 INIClass::ReadDifficultyModifiers -> INIClass
+[conv] 0x407550 sub_407550 -> _addr_40
+[conv] 0x6d9920 TacticalClass::FindBuilding -> TacticalClass
+[conv] 0x7b4da0 String::Concat2 -> String
+[conv] 0x539760 ObjectClass::Map_Reset -> ObjectClass
+[conv] 0x577920 MapClass::RemoveTriggerRef -> MapClass
+[conv] 0x6cb3a0 SuperClass::CreateChronoAnim -> SuperClass
+[conv] 0x72ade0 LoadPaletteSimple -> _addr_72
+[conv] 0x7caae4 ___RTDynamicCast -> _addr_7C
+[conv] 0x7a2600 sub_7A2600 -> _addr_7A
+[conv] 0x641db0 Surface::LoadToSurfaceSHP -> Surface
+[conv] 0x789500 FindChannelWOL -> _addr_78
+[conv] 0x4544a0 BuildingClass::UpdatePowerDrain -> BuildingClass
+[conv] 0x6c89e0 Buffer::AppendCellData -> Buffer
+[conv] 0x6c8b10 ObjectClass::sub_6C8B10 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] WeaponTypeClass          rc=2
+[era] ReinforcementClass       rc=2
+[era] ObjectClass              rc=0
+[era] AircraftClass            rc=0
+[era] INIClass                 rc=2
+[era] _addr_40                 rc=2
+[era] TacticalClass            rc=0
+[era] String                   rc=0
+[era] MapClass                 rc=0
+[era] SuperClass               rc=0
+[era] _addr_72                 rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_7A                 rc=2
+[era] Surface                  rc=2
+[era] _addr_78                 rc=0
+[era] BuildingClass            rc=0
+[era] Buffer                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x6ca1e0   MISMATCH         ObjectClass::sub_6CA1E0
+[diff] 0x539760   MISMATCH         ObjectClass::Map_Reset
+[diff] 0x6c8b10   MISMATCH         ObjectClass::sub_6C8B10
+[diff] 0x414a80   MISMATCH         AircraftClass::ProcessMissionTimeout
+[diff] 0x6d9920   MISMATCH         TacticalClass::FindBuilding
+[diff] 0x7b4da0   MATCH            String::Concat2
+[diff] 0x577920   MISMATCH         MapClass::RemoveTriggerRef
+[diff] 0x6cb3a0   MISMATCH         SuperClass::CreateChronoAnim
+[diff] 0x72ade0   MISMATCH         LoadPaletteSimple
+[diff] 0x789500   MISMATCH         FindChannelWOL
+[diff] 0x4544a0   MISMATCH         BuildingClass::UpdatePowerDrain
+[diff] 0x6c89e0   MISMATCH         Buffer::AppendCellData
+[ledger] 0x77cb00 sub_77CB00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x771f50 WeaponTypeClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4737f0 ReinforcementClass::CreateObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca1e0 ObjectClass::sub_6CA1E0 -> NG (attempt 1)
+[ledger] 0x414a80 AircraftClass::ProcessMissionTimeout -> NG (attempt 1)
+[ledger] 0x66d270 INIClass::ReadDifficultyModifiers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407550 sub_407550 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d9920 TacticalClass::FindBuilding -> NG (attempt 1)
+[ledger] 0x7b4da0 String::Concat2 -> OK (attempt 1)
+[ledger] 0x539760 ObjectClass::Map_Reset -> NG (attempt 1)
+[ledger] 0x577920 MapClass::RemoveTriggerRef -> NG (attempt 1)
+[ledger] 0x6cb3a0 SuperClass::CreateChronoAnim -> NG (attempt 1)
+[ledger] 0x72ade0 LoadPaletteSimple -> NG (attempt 1)
+[ledger] 0x7caae4 ___RTDynamicCast -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2600 sub_7A2600 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x641db0 Surface::LoadToSurfaceSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x789500 FindChannelWOL -> NG (attempt 1)
+[ledger] 0x4544a0 BuildingClass::UpdatePowerDrain -> NG (attempt 1)
+[ledger] 0x6c89e0 Buffer::AppendCellData -> NG (attempt 1)
+[ledger] 0x6c8b10 ObjectClass::sub_6C8B10 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 11,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 3,
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p80\batch_report.json

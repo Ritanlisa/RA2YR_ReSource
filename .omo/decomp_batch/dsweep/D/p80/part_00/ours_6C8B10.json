@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6C8B10@ObjectClass@@QAEHHHHH@Z",
+ "sym_key": "ObjectClass::sub_6C8B10",
+ "size": 312,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd955568b73088b4b04578b3b8d460c03cf3bc189742410760c5f5e5d33c05b83c408c2100085f6894308750c5f5e5d33c05b83c408c21000668b542424668b4424288b6c242066891666894602668b4d0866894e04668b550c8d4c2414668956068b4308518bcd894608e8000000008b7c241c8b48048b00518b175057897c242cff525c894424248b450c85c0c7442428000000000f8e860000008bf78b4d088b54242451688000000052e8000000008b53088b7b04033b8d0c023bcf774285d2894b08743b8bc8be800000008bfac1e902f3a58bc883e103f3a48b74241c8b7c242847568b0e897c242cff51748b4c242403c88b450c3bf8894c24247314eb9c8b1656ff52605f5e5d33c05b83c408c210008b4424108b7c241c894424108bf08b0f57ff51608bc65f5e5d5b83c408c21000",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Copy@CellStruct@@QAEPAIPAX@Z",
+   "sym_key": "CellStruct::Copy"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?g_SidebarButtonState@@3IA",
+   "sym_key": "g_SidebarButtonState"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?Map_Append@@YGHPAXHH@Z",
+   "sym_key": "Map_Append"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_SidebarButtonState@@3IA",
+   "sym_key": "g_SidebarButtonState"
+  }
+ ]
+}

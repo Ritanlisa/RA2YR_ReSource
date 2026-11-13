@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_6CA1E0@ObjectClass@@QAEDPAD@Z",
+ "sym_key": "ObjectClass::sub_6CA1E0",
+ "size": 303,
+ "link_base": 0,
+ "bytes_hex": "83ec488b44244c5355568bd9576a208d4c241c5051895c2420e80000000083c40c83c3048b54241433ed8d4c24126a028b3266892b51568b06c6442468008bfbff500883f8027532668b442412663d0a00742c663d0d0074076689074583c70281fd000400007d178b168d4424126a025056ff520883f80274cec644245c018b44241466c7046b00008bcbff8004080000e8000000008bf056e80000000083c40485c0740666833e3b75188a44245c84c00f846dffffff5f5e5d32c05b83c448c2040085f674f06800000000e80000000050680000000056e80000000083c41085c00f853cffffff6a2056e8000000008bf083c40885f60f8427ffffff8bcee8000000008d4c24185156e80000000083c40885c00f850affffff8b4c2414e8000000005f5e5db0015b83c448c20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "_mbstowcs",
+   "sym_key": "mbstowcs"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?Trim@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::Trim"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "??_C@_1BG@DJJM@?$AAB?$AAe?$AAg?$AAi?$AAn?$AAM?$AAo?$AAv?$AAi?$AAe?$AA?$AA@",
+   "sym_key": "??_C@_1BG@DJJM@?$AAB?$AAe?$AAg?$AAi?$AAn?$AAM?$AAo?$AAv?$AAi?$AAe?$AA?$AA@"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "??_C@_1BG@DJJM@?$AAB?$AAe?$AAg?$AAi?$AAn?$AAM?$AAo?$AAv?$AAi?$AAe?$AA?$AA@",
+   "sym_key": "??_C@_1BG@DJJM@?$AAB?$AAe?$AAg?$AAi?$AAn?$AAM?$AAo?$AAv?$AAi?$AAe?$AA?$AA@"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?_wcsnicmp@@YAHPAXHHZZ",
+   "sym_key": "_wcsnicmp"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?Trim@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::Trim"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "__wcsicmp",
+   "sym_key": "_wcsicmp"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

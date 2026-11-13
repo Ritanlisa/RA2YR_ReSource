@@ -1,0 +1,75 @@
+{
+ "symbol": "?LoadPaletteSimple@@YIHPADPAH1@Z",
+ "sym_key": "Unnamed::LoadPaletteSimple",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "83ec605355518bea8d4c2418e8000000008d4c2414e8000000008bd885db0f84c50000006800030000e80000000083c40485c0741b8d4802ba00010000c641fe00c641ff00c6010083c1034a75efeb0233c056578945008b4424748d730133ff8a0e8a56ffc1e10232c883c60381e1ff00000033c18bcfc1e20232d081e2ff00000033c28a56fec0e20281e1ff00008079084981c900ffffff418d0c49034d004781ff000100006689018851027cb153e8000000006888010000e80000000083c40885c05f5e74198b0d000000008b6d006a006a015155558bc8e800000000eb0233c08b54246c89028b4424148d4c2408c70000000000e8000000008b4c2414c701000000008d4c2414e8000000005d5b83c460c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?ReadEntireFile@CCFileClass@@QAEPAXXZ",
+   "sym_key": "CCFileClass::ReadEntireFile"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?Construct@ConvertClass@@QAEPAV1@HHHHD@Z",
+   "sym_key": "ConvertClass::Construct"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

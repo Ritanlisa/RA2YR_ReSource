@@ -1,0 +1,75 @@
+{
+ "symbol": "?RemoveTriggerRef@MapClass@@QAEHHH@Z",
+ "sym_key": "MapClass::RemoveTriggerRef",
+ "size": 315,
+ "link_base": 0,
+ "bytes_hex": "8b44240455568bf18b08508be8ff512c83f82c0f85c80000008b866c1100005333db85c00f8eab000000578b8e601100000fbf4499020fbf1499c1e00903c23d0000040073118b963c0100008b048285c074048bf8eb0d8b0499bf58160000a37c16000085ff745d33c98a4f3c3bcd75546a008bcfe8000000008b965c1100008d865c11000083c7365750ff521083f8ff742d8b8e6c1100003bc17d23493bc1898e6c1100007d188b8e60110000408b1481895481fc8b8e6c1100003bc17ce88b6c24144b8b866c110000433bd80f8c57ffffff5f55b958160000e8000000005b8b450055ff502c83f82c75498b15ac0300008d4c240c5168ac030000896c2414ff521083f8ff742d8b0df80300003bc17d23493bc1890df80300007d188b0db0030000408b1481895481fc8b0df80300003bc17ce85e5dc20800",
+ "relocs": [
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?SetTriggerTarget@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::SetTriggerTarget"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?RemoveCellReference@MapClass@@QAEHH@Z",
+   "sym_key": "MapClass::RemoveCellReference"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

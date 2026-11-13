@@ -1,0 +1,33 @@
+{
+ "symbol": "?AppendCellData@Buffer@@QAEHPAHH@Z",
+ "sym_key": "Buffer::AppendCellData",
+ "size": 310,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53558be956578b7d088b4d048b7500897c24148d470c03ce3bc1760c5f5e5d33c05b83c40cc2080085ff894508750c5f5e5d33c05b83c40cc208008b5c2424668b13668917668b430466894702668b4b1066894f04668b53148d4c2424668957068b4508518d4b08894708e8000000008b7424208b48048b00518b16505689742424ff525c894424108b431485c0c7442424000000000f8e850000008b4b108b54241051688000000052e8000000008b7d088b55040355008d0c073bca774285ff894d08743b8bc8be80000000c1e902f3a58bc883e103f3a48b7424208b4c242441568b06894c24288bf9ff50748b4c241003c88b43143bf8894c24107314eb9b8b0e56ff51605f5e5d33c05b83c40cc208008b5424148b742420895424148bfa8b0656ff50608bc75f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Copy@CellStruct@@QAEPAIPAX@Z",
+   "sym_key": "CellStruct::Copy"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_SidebarButtonState@@3IA",
+   "sym_key": "g_SidebarButtonState"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?Map_Append@@YGHPAXHH@Z",
+   "sym_key": "Map_Append"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_SidebarButtonState@@3IA",
+   "sym_key": "g_SidebarButtonState"
+  }
+ ]
+}

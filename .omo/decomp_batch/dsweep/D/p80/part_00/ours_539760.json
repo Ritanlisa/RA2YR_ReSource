@@ -1,0 +1,255 @@
+{
+ "symbol": "?Map_Reset@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Map_Reset",
+ "size": 303,
+ "link_base": 0,
+ "bytes_hex": "a10000000053a300000000a300000000a1000000005633db83ceff3bc3881d00000000891d00000000893500000000893500000000893500000000893500000000891d00000000891d00000000891d00000000891d00000000891d00000000891d000000007417381d00000000740f50e80000000083c404891d00000000a100000000881d000000003bc3891d00000000891d000000007417381d00000000740f50e80000000083c404891d00000000a100000000881d000000003bc3891d00000000891d000000007417381d00000000740f50e80000000083c404891d00000000a100000000881d00000000891d000000008b88f8ae0400898800af0400a1000000003bc374078b106a0150ff1253568bd68bce891d00000000891d00000000891d00000000e8000000005e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9F8@@3IA",
+   "sym_key": "DataGlobal_A9F9F8"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Coords@@3IA",
+   "sym_key": "LightningStorm_Coords"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA64@@3IA",
+   "sym_key": "DataGlobal_A9FA64"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Active@@3EA",
+   "sym_key": "LightningStorm_Active"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Status@@3IA",
+   "sym_key": "NukeFlash_Status"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?LightningStorm_StartTime@@3IA",
+   "sym_key": "LightningStorm_StartTime"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Duration@@3IA",
+   "sym_key": "LightningStorm_Duration"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?NukeFlash_StartTime@@3IA",
+   "sym_key": "NukeFlash_StartTime"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Duration@@3IA",
+   "sym_key": "NukeFlash_Duration"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?PsyDom_Status@@3IA",
+   "sym_key": "PsyDom_Status"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?PsyDom_Anim@@3IA",
+   "sym_key": "PsyDom_Anim"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?PsyDom_Owner@@3PAXA",
+   "sym_key": "PsyDom_Owner"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Deferment@@3IA",
+   "sym_key": "LightningStorm_Deferment"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Owner@@3PAXA",
+   "sym_key": "LightningStorm_Owner"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA70@@3IA",
+   "sym_key": "DataGlobal_A9FA70"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA6D@@3EA",
+   "sym_key": "DataGlobal_A9FA6D"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA64@@3IA",
+   "sym_key": "DataGlobal_A9FA64"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D4@@3IA",
+   "sym_key": "DataGlobal_A9F9D4"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA6D@@3EA",
+   "sym_key": "DataGlobal_A9FA6D"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA68@@3IA",
+   "sym_key": "DataGlobal_A9FA68"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9E0@@3IA",
+   "sym_key": "DataGlobal_A9F9E0"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9DD@@3EA",
+   "sym_key": "DataGlobal_A9F9DD"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D4@@3IA",
+   "sym_key": "DataGlobal_A9F9D4"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA1C@@3IA",
+   "sym_key": "DataGlobal_A9FA1C"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9DD@@3EA",
+   "sym_key": "DataGlobal_A9F9DD"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D8@@3IA",
+   "sym_key": "DataGlobal_A9F9D8"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA28@@3IA",
+   "sym_key": "DataGlobal_A9FA28"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA25@@3EA",
+   "sym_key": "DataGlobal_A9FA25"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA1C@@3IA",
+   "sym_key": "DataGlobal_A9FA1C"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA25@@3EA",
+   "sym_key": "DataGlobal_A9FA25"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA20@@3IA",
+   "sym_key": "DataGlobal_A9FA20"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?ChronoScreenEffect_Duration@@3IA",
+   "sym_key": "ChronoScreenEffect_Duration"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?ChronoScreenEffect_Status@@3IA",
+   "sym_key": "ChronoScreenEffect_Status"
+  },
+  {
+   "off": 296,
+   "type": "REL32",
+   "sym": "?UpdateSurfaceAnimations@@YIHHHHH@Z",
+   "sym_key": "UpdateSurfaceAnimations"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "symbol": "?UpdatePowerDrain@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::UpdatePowerDrain",
+ "size": 288,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578a86ed06000084c075158b4424088b4c240850518bcee8000000005f5e59c33c0a7f0e33d23c050f9fc2425f8bc25e59c38a44240884c00f84d50000008b4c240885c98bf974658b869c0000009981e2ff00000003c2c1f80833c125ff00000033c88b86a00000009981e2ff000000894c240803c28b7f30c1f80833c125ff00000033c88d442408894c240850b9f8010000e800000000578bc8e80000000084c074095fb8030000005e59c38a861a04000084c075538b0e56ff912803000084c07546a10000000085c0743da10000000085c0743d8b861c02000085c074338b0d0000000085c9742950e80000000084c0741f8b15000000008b8e1c02000052e80000000084c074095fb8030000005e59c35fb8050000005e59c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?UpdatePowerDrain@TechnoClass@@QAEHHH@Z",
+   "sym_key": "TechnoClass::UpdatePowerDrain"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?IsPassableOffset@Cell@@QAEHH@Z",
+   "sym_key": "Cell::IsPassableOffset"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}

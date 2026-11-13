@@ -1,0 +1,51 @@
+{
+ "symbol": "?ProcessMissionTimeout@AircraftClass@@QAEHXZ",
+ "sym_key": "AircraftClass::ProcessMissionTimeout",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b865802000085c00f849b0000008b86c802000085c07567a1000000005785c074248b3e8b869c0000008d4c24086a00516a405689442418ff97c40300005056ff97c80300008b86c802000085c075248b3e8b969c0000008d4424086a00506a005689542418ff97c40300005056ff97c80300008b86c80200005f85c074158b0e6a006a0156ff91e8010000b8010000005e59c38b166a016a0056ff9284040000b8010000005e59c38b8ed405000085c9740a6a006aff56e8000000008b066a016a0056ff90840400008bcee800000000dd0500000000dc481083ec08dd1c24e8000000008b74240c8b0d0000000083c40833c625ff00000081c1680503006a026a0033f0e80000000003c65e59c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?LiberateMember_Start@TeamClass@@QAEDHID@Z",
+   "sym_key": "TeamClass::LiberateMember_Start"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}
