@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x435be0 BuildingLightClass::Draw_Start -> BuildingLightClass
+[conv] 0x4361d0 BuildingLightClass::SD_vt23 -> BuildingLightClass
+[conv] 0x436be0 BuildingLightClass::FindTarget -> BuildingLightClass
+[conv] 0x4370c0 BuildingLightClass::SDDTOR -> BuildingLightClass
+[conv] 0x437a10 BlitterRLEBlitSHP -> _addr_43
+[conv] 0x437fd0 GameClass::initGameMode -> GameClass
+[conv] 0x438000 BlowPipe::Draw -> BlowPipe
+[conv] 0x438030 BlowPipe::DrawAlt -> BlowPipe
+[conv] 0x4385d0 BombClass::AbstractClass -> BombClass
+[conv] 0x438720 TechnoClass::ApplyDamageEffects -> TechnoClass
+[conv] 0x4397e0 AnimClass::InitRotation -> AnimClass
+[conv] 0x439a10 JumpjetLocomotionClass::ComputeVectorLengthMetric -> JumpjetLocomotionClass
+[conv] 0x439b00 JumpjetLocomotionClass::Update2 -> JumpjetLocomotionClass
+[conv] 0x43a130 JumpjetLocomotionClass::ComputeVectorLengthMetric_0 -> JumpjetLocomotionClass
+[conv] 0x43a350 NeuronClass::NeuronClass -> NeuronClass
+[conv] 0x43ae10 StaticButtonClass::ReleaseBuffer -> StaticButtonClass
+[conv] 0x43ae50 Vector::Clear -> Vector
+[conv] 0x43b740 BuildingClass::Construct -> BuildingClass
+[conv] 0x43c2d0 BuildingClass::MissionController -> BuildingClass
+[conv] 0x43cea0 BuildingClass::DrawFactoryProduction -> BuildingClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLightClass       rc=2
+[era] _addr_43                 rc=2
+[era] GameClass                rc=2
+[era] BlowPipe                 rc=2
+[era] BombClass                rc=2
+[era] TechnoClass              rc=2
+[era] AnimClass                rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] NeuronClass              rc=2
+[era] StaticButtonClass        rc=2
+[era] Vector                   rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x435be0 BuildingLightClass::Draw_Start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4361d0 BuildingLightClass::SD_vt23 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x436be0 BuildingLightClass::FindTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4370c0 BuildingLightClass::SDDTOR -> COMPILE_FAIL (attempt 2)
+[ledger] 0x437a10 BlitterRLEBlitSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x437fd0 GameClass::initGameMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x438000 BlowPipe::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x438030 BlowPipe::DrawAlt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4385d0 BombClass::AbstractClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x438720 TechnoClass::ApplyDamageEffects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4397e0 AnimClass::InitRotation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x439a10 JumpjetLocomotionClass::ComputeVectorLengthMetric -> COMPILE_FAIL (attempt 2)
+[ledger] 0x439b00 JumpjetLocomotionClass::Update2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43a130 JumpjetLocomotionClass::ComputeVectorLengthMetric_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43a350 NeuronClass::NeuronClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43ae10 StaticButtonClass::ReleaseBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43ae50 Vector::Clear -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43b740 BuildingClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43c2d0 BuildingClass::MissionController -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43cea0 BuildingClass::DrawFactoryProduction -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p06\batch_report.json
