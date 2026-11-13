@@ -1,0 +1,405 @@
+{
+ "symbol": "?SelectAutoTarget_Start_AU@TechnoClass@@QAIPAXPAPAHHHH@Z",
+ "sym_key": "TechnoClass::SelectAutoTarget_Start_AU",
+ "size": 4058,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec545356578b3d140500008bf147893d1405000083c9ff8b0656c744241c00000000894c2424894c242cff90840000008a88200d000084c9741a8b8e1c020000e80000000084c0740b33c05f5e5b8be55dc20c008b7c244c8b5d088bc733c325ff00000033f8f6c30175638b0e56ff512c83f80674588b1656ff522c83f802744d8b0656ff50488b088b5004c1e908c1ea0866894c24288b0e668954242a6a018b44242c568944244cff91840000008b90b40500008d4c2450518d4424385250b900000000e800000000894424288b0e56ff512c83f80f755e6aff8bcee80000000085c07d0b83e30381cb08400000eb418a868315000084c074168bd381e700ffffff81e2e70000000bfa83e3e7895d088b0656ff502c83f801751b6aff8bcee80000000085c07d0e83e30381cb104000008bfb897d08f7c700010000c7442414000000007408c74424144280000083e7048bdf740a8b4424140c04894424148b4508a960ba01007405834c241440a808741b8b4c24148bd183e18081e2007f000080ce80c1fa080bd189542414a850740a8b4424140c02894424148b0656ff90840000008a88b006000084c974208b8e580400008d865804000050ff510c8b96400400008d864004000050ff520c33c0c644240f008a86fc00000085c074288b0850ff91840000008a88e405000084c9741533d28a96fc0000008b82c002000085c00f9544240f8a4508a8030f8553020000f6442414040f84dc000000a10000000033db85c00f86cd000000a1000000008b8e1c0200008b3c98c74424340000000057e80000000084c074258b0e56ff91840000008a88c006000084c975128b869802000085c075088a44240f84c0747a8a451084c074198b971c0200008b861c0200008b4a308b90005600003bca755a8b4508f6c440740f8b8e1c020000e80000000084c074438b5424448b4c2414dd4424585268200000008d44243c6aff50576aff51e8000000008b4d0850e80000000084c074148b4424348b4c24203bc17e08897c241889442420a100000000433bd80f8233fffffff6450810740a8b4424140c0489442414a164060000c744243c0000000085c00f8e3a0100008b550c8b5d0889542444a1340600008b54243c8b8e1c0200008b3c90c7450c0000000057e80000000084c074766aff8bcee80000000085c07c698b8e1c020000e80000000084c0753185f6742d8b0656ff502c83f80f75228b0e56ff512c83f80f8d86c00600007405b8c00600008b108a820c3b000084c075298b0656ff90840000008a88c006000084c975168b869802000085c0750c8a44240f84c00f848000000083bf940000000275778b451085c074198b8f1c0200008b961c0200008b41308b8a005600003bc17557f6c740740f8b8e1c020000e80000000084c074438b4c24448b5424448b44242851dd44245c528b54241c8d4d0c5051576aff52e800000000508bcbe80000000084c074138b450c8b4c24203bc17e08897c2418894424208b44243c8b0d64060000403bc18944243c0f8cd0feffff8b4424185f5e5b8be55dc20c00a801740d8b066a0056ff901c030000eb25a802742180beac00000019750d8b0e6a0256ff911c030000eb0b8b166a0156ff921c0300006aff8bcee8000000008b450c33d28bc88b3e8a500124000bc233d289450c8a51052400560bc2c74424400200000089450c8944245cff970004000084c0741e8b0656ff90040400008b0d000000000fbe91480f00008d4410018944243c85db0f84020200008d4c245851b900000000e8000000008b54243cb9000000005250e8000000006800000000e8000000008bf883c40485ff0f84cc0100008b8e1c02000057c7450c00000000e80000000084c074298b0656ff90840000008a88c006000084c975168b869802000085c0750c8a44240f84c00f84750100008b4508f6c44074138b8e1c020000e80000000084c00f845a0100008a477484c00f844f0100008b0f57ff517883f8020f84400100008b451085c0741d8b971c0200008b861c0200008b4a308b90005600003bca0f851c0100008b5424448b4c2414dd4424585268200000008d450c6aff505781c902800000680002000051e8000000008b4d0850e80000000084c00f84e10000008b1656ff92840000008a88b006000084c90f84b70000008b96600400008b86680400003bc27c328b8664040000f6c4ff750485d2753b8b8e6c04000085c97e318b9e580400008d865804000003ca6a005150ff530884c074188b86680400008b965c0400008d4801898e68040000893c828b96480400008b86500400003bc27c328b864c040000f6c4ff750485d2753e8b8e5404000085c97e348b9e400400008d864004000003ca6a005150ff530884c0741b8b86500400008b96440400008d4801898e500400008b4d0c890c828b450c8b4c24203bc17e08897c2418894424206800000000e8000000008bf883c40485ff0f8534feffff8b4508a8107405834c24140483f805750d8b4424185f5e5b8be55dc20c008b4c243c33c03bc8668944243066894424328944242c894424247f0d8b4424185f5e5b8be55dc20c008b5c24188b4c24248bc1f7d88bf83bc1897c2438894424400f8f16040000f7d966894c24528b5424528b44245a8d0c108b4424488b54245833c881e1ff00000003d733c1b90000000033d081e2ff00000033c289442448894424108d44241050e80000000084c00f84b50100008b4c24288d54241cdd442458518d450c528b54241c508b45088d4c241c6800020000515250e800000000508d5424308bcee80000000084c00f84390100008b450c85c00f842e0100008b4d1085c9741d8b901c0200008b8e1c0200008b42308b91005600003bc20f850a0100008b4508f6c44074138b8e1c020000e80000000084c00f84ef0000008b0e56ff91840000008a88b006000084c90f84bb0000008b8e600400008b86680400008b7d0c3bc17c328b8664040000f6c4ff750485c9753b8b966c04000085d27e318b9e580400008d865804000003d16a005250ff530884c074188b86680400008b8e5c0400008d5001899668040000893c818b96480400008b86500400003bc27c328b864c040000f6c4ff750485d2753f8b8e5404000085c97e358bbe400400008d864004000003ca6a005150ff570884c0741c8b86500400008b8e440400008d50018996500400008b54241c8914818b44241c8b4c24203bc87d0d8b5d0c89442420895c2418eb048b5c241885db75248d4424108bce50e8000000008b4c242c8944241c3bc87d0c8b4c24108944242c894c24308b5424408b7c243833d781e2ff00000033fa897c24388b44245a8b4c24248d14088b44244c8b4c245833d081e2ff00000003cf33c28d54241033c85281e1ff00000033c1b9000000008944245089442414e80000000084c00f84a30100008b4424288d4c241cdd442458508d550c518b4c241c528b55088d44241c6800020000505152e800000000508d5424308bcee80000000084c00f84390100008b450c85c00f842e0100008b4d1085c9741d8b901c0200008b8e1c0200008b42308b91005600003bc20f850a0100008b4508f6c44074138b8e1c020000e80000000084c00f84ef0000008b0e56ff91840000008a88b006000084c90f84bb0000008b8e600400008b86680400008b7d0c3bc17c328b8664040000f6c4ff750485c9753b8b966c04000085d27e318b9e580400008d865804000003d16a005250ff530884c074188b86680400008b8e5c0400008d5001899668040000893c818b96480400008b86500400003bc27c328b864c040000f6c4ff750485d2753f8b8e5404000085c97e358bbe400400008d864004000003ca6a005150ff570884c0741c8b86500400008b8e440400008d50018996500400008b54241c8914818b44241c8b4c24203bc87d0d8b5d0c89442420895c2418eb048b5c241885db75248d4424108bce50e8000000008b4c242c8944241c3bc87d0c8b4c24108944242c894c24308b7c24388b4424408b4c2424403bc1894424407f1233c725ff00000033f8897c2438e9f5fbffff8b4c2424b8010000002bc13bc1894424380f8dd50300008b442424f7d8894424408b5424588b4424408b4c245a03c28b542438668944244403ca66894c24468d4c24108b44244451b90000000089442414e80000000084c00f849d0100008b5424288b7d08dd4424588d44241c528d4d0c508b44241c518d54241c6800020000525057e800000000508bd78bcee80000000084c00f84390100008b450c85c00f842e0100008b4d1085c9741d8b901c0200008b8e1c0200008b42308b91005600003bc20f850a0100008b4508f6c44074138b8e1c020000e80000000084c00f84ef0000008b0e56ff91840000008a88b006000084c90f84bb0000008b8e600400008b86680400008b7d0c3bc17c328b8664040000f6c4ff750485c9753b8b966c04000085d27e318b9e580400008d865804000003d16a005250ff530884c074188b86680400008b8e5c0400008d5001899668040000893c818b96480400008b86500400003bc27c328b864c040000f6c4ff750485d2753f8b8e5404000085c97e358bbe400400008d864004000003ca6a005150ff570884c0741c8b86500400008b8e440400008d50018996500400008b54241c8914818b44241c8b4c24203bc87d0d8b5d0c89442420895c2418eb048b5c241885db75248d4424108bce50e8000000008b4c242c8944241c3bc87d0c8b4c24108944242c894c24308b5424588b4424248b4c245a03d066895424348b54243803ca66894c24368b4424348d4c24108944241051b900000000e80000000084c00f849f0100008b5424288d44241cdd442458528d4d0c508b44241c518b4d088d54241c6800020000525051e800000000508d5424308bcee80000000084c00f84390100008b450c85c00f842e0100008b4d1085c9741d8b801c0200008b961c0200008b48308b82005600003bc80f850a0100008b4508f6c44074138b8e1c020000e80000000084c00f84ef0000008b1656ff92840000008a88b006000084c90f84bb0000008b8e600400008b86680400008b7d0c3bc17c328b8664040000f6c4ff750485c9753b8b966c04000085d27e318b9e580400008d865804000003d16a005250ff530884c074188b86680400008b965c0400008d4801898e68040000893c828b96480400008b86500400003bc27c328b864c040000f6c4ff750485d2753f8b8e5404000085c97e358bbe400400008d864004000003ca6a005150ff570884c0741c8b86500400008b96440400008d4801898e500400008b4c241c890c828b44241c8b4c24203bc87d0d8b5d0c89442420895c2418eb048b5c241885db75248d5424108bce52e8000000008b4c242c8944241c3bc87d0c8944242c8b442410894424308b4424388b4c2424403bc1894424380f8c35fcffff85db74248b7c243c8b4c24248bc79983e20303c2c1f8023bc8742f8bc7992bc2d1f83bc87424eb088b4c24248b7c243c8b542430a1000000003bd07518413bcf894c24240f8c9ef7ffff8bc35f5e5b8be55dc20c008d442430b90000000050e8000000005f5e5b8be55dc20c00",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 296,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 550,
+   "type": "DIR32",
+   "sym": "?g_AircraftClassCount@@3IA",
+   "sym_key": "g_AircraftClassCount"
+  },
+  {
+   "off": 565,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E394@@3IA",
+   "sym_key": "DataGlobal_A8E394"
+  },
+  {
+   "off": 588,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 680,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 702,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA70@@3IA",
+   "sym_key": "DataGlobal_B0EA70"
+  },
+  {
+   "off": 718,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 727,
+   "type": "REL32",
+   "sym": "?EvaluateTarget@TechnoClass@@QAEDHHHHHPAXH0@Z",
+   "sym_key": "TechnoClass::EvaluateTarget"
+  },
+  {
+   "off": 756,
+   "type": "DIR32",
+   "sym": "?g_AircraftClassCount@@3IA",
+   "sym_key": "g_AircraftClassCount"
+  },
+  {
+   "off": 786,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 817,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 843,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 856,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 871,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 1022,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 1062,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1070,
+   "type": "REL32",
+   "sym": "?EvaluateTarget@TechnoClass@@QAEDHHHHHPAXH0@Z",
+   "sym_key": "TechnoClass::EvaluateTarget"
+  },
+  {
+   "off": 1103,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 1192,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 1261,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1294,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1299,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1308,
+   "type": "DIR32",
+   "sym": "?g_CellClassManager@@3IA",
+   "sym_key": "g_CellClassManager"
+  },
+  {
+   "off": 1315,
+   "type": "REL32",
+   "sym": "?FillCurrentVector@AircraftTrackerClass@@QAEHHH@Z",
+   "sym_key": "AircraftTrackerClass::FillCurrentVector"
+  },
+  {
+   "off": 1320,
+   "type": "DIR32",
+   "sym": "?g_CellClassManager@@3IA",
+   "sym_key": "g_CellClassManager"
+  },
+  {
+   "off": 1325,
+   "type": "REL32",
+   "sym": "?VectorClass__RemoveObjectById@@YAHPAX@Z",
+   "sym_key": "VectorClass__RemoveObjectById"
+  },
+  {
+   "off": 1357,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 1421,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 1509,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EA70@@3IA",
+   "sym_key": "DataGlobal_B0EA70"
+  },
+  {
+   "off": 1533,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1542,
+   "type": "REL32",
+   "sym": "?EvaluateTarget@TechnoClass@@QAEDHHHHHPAXH0@Z",
+   "sym_key": "TechnoClass::EvaluateTarget"
+  },
+  {
+   "off": 1780,
+   "type": "DIR32",
+   "sym": "?g_CellClassManager@@3IA",
+   "sym_key": "g_CellClassManager"
+  },
+  {
+   "off": 1785,
+   "type": "REL32",
+   "sym": "?VectorClass__RemoveObjectById@@YAHPAX@Z",
+   "sym_key": "VectorClass__RemoveObjectById"
+  },
+  {
+   "off": 1942,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1970,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 2020,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 2032,
+   "type": "REL32",
+   "sym": "?SelectTechnoClassAreaTarget@@YIDPAXHH0H0H00H@Z",
+   "sym_key": "SelectTechnoClassAreaTarget"
+  },
+  {
+   "off": 2106,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 2369,
+   "type": "REL32",
+   "sym": "?EvaluateBuildingTarget@TechnoClass@@QAEHPAX@Z",
+   "sym_key": "TechnoClass::EvaluateBuildingTarget"
+  },
+  {
+   "off": 2466,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 2479,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 2529,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 2541,
+   "type": "REL32",
+   "sym": "?SelectTechnoClassAreaTarget@@YIDPAXHH0H0H00H@Z",
+   "sym_key": "SelectTechnoClassAreaTarget"
+  },
+  {
+   "off": 2615,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 2878,
+   "type": "REL32",
+   "sym": "?EvaluateBuildingTarget@TechnoClass@@QAEHPAX@Z",
+   "sym_key": "TechnoClass::EvaluateBuildingTarget"
+  },
+  {
+   "off": 3018,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 3027,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 3077,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 3087,
+   "type": "REL32",
+   "sym": "?SelectTechnoClassAreaTarget@@YIDPAXHH0H0H00H@Z",
+   "sym_key": "SelectTechnoClassAreaTarget"
+  },
+  {
+   "off": 3161,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 3424,
+   "type": "REL32",
+   "sym": "?EvaluateBuildingTarget@TechnoClass@@QAEHPAX@Z",
+   "sym_key": "TechnoClass::EvaluateBuildingTarget"
+  },
+  {
+   "off": 3496,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 3501,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 3551,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 3563,
+   "type": "REL32",
+   "sym": "?SelectTechnoClassAreaTarget@@YIDPAXHH0H0H00H@Z",
+   "sym_key": "SelectTechnoClassAreaTarget"
+  },
+  {
+   "off": 3637,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 3900,
+   "type": "REL32",
+   "sym": "?EvaluateBuildingTarget@TechnoClass@@QAEHPAX@Z",
+   "sym_key": "TechnoClass::EvaluateBuildingTarget"
+  },
+  {
+   "off": 4002,
+   "type": "DIR32",
+   "sym": "?g_TechnoHouseState@@3HA",
+   "sym_key": "g_TechnoHouseState"
+  },
+  {
+   "off": 4039,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 4045,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

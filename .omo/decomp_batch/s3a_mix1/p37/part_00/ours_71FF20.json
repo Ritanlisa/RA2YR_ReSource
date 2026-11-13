@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_71FF20@TextButtonClass@@QAEHHHHHHHHHH@Z",
+ "sym_key": "TextButtonClass::sub_71FF20",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "8b4424148b542404538b5c24205556578b7c24288bf1538b4c2424575051528bcee8000000008b4424348b4c24308b5424188986d40000008b44241c83ffff898ed000000089563889463cc70600000000740583fbff752d8bcee80000000083ffff8be875118b4e386a0051e80000000083c00889461483fbff75098b551c83c2028956188bc65f5e5d5bc22400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Construct@ToggleClass@@QAEPAV1@HHHHH@Z",
+   "sym_key": "ToggleClass::Construct"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?vt_TextButtonClass@@3PAXA",
+   "sym_key": "vt_TextButtonClass"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHPAXH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

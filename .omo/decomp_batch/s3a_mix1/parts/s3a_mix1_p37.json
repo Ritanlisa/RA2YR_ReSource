@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x6dd8b0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6f2680",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6f2720",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6f64a0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6f7ca0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6f8df0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x6ffe00",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x700600",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x7014a0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x704e40",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x705270",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x70bcb0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x70c690",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x7178c0",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x719f80",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x71b920",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x71d580",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x71ff20",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x721a50",
+  "family": "C2065"
+ },
+ {
+  "addr": "0x728280",
+  "family": "C2065"
+ }
+]

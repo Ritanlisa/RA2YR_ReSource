@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dd8b0 TerrainClass::ProcessUpdate -> TerrainClass
+[conv] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f64a0 TechnoClass::DrawHealthBar -> TechnoClass
+[conv] 0x6f7ca0 TechnoClass::EvaluateTarget -> TechnoClass
+[conv] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> TechnoClass
+[conv] 0x6ffe00 TechnoClass::RecordEvent -> TechnoClass
+[conv] 0x700600 TechnoClass::HandleCursor -> TechnoClass
+[conv] 0x7014a0 TechnoClass::ProcessCapture -> TechnoClass
+[conv] 0x704e40 DrawTacticalLaserLine -> _addr_70
+[conv] 0x705270 Render::DrawLine -> Render
+[conv] 0x70bcb0 TechnoClass::GetTargetCoords -> TechnoClass
+[conv] 0x70c690 Weapon::DestroyTerrain -> Weapon
+[conv] 0x7178c0 BuildingTypeClass::GetUpgradeOffset -> BuildingTypeClass
+[conv] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> JumpjetLocomotionClass
+[conv] 0x71b920 TerrainClass::UpdateAnims -> TerrainClass
+[conv] 0x71d580 InitializeCellSpreadTables -> _addr_71
+[conv] 0x71ff20 TextButtonClass::sub_71FF20 -> TextButtonClass
+[conv] 0x721a50 TiberiumClass::LoadFromINI -> TiberiumClass
+[conv] 0x728280 InfantryClass::SetMission -> InfantryClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainClass             rc=2
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] Render                   rc=2
+[era] Weapon                   rc=2
+[era] BuildingTypeClass        rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_71                 rc=2
+[era] TextButtonClass          rc=0
+[era] TiberiumClass            rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f2680   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface
+[diff] 0x6f2720   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor
+[diff] 0x6f8df0   MISMATCH         TechnoClass::SelectAutoTarget_Start_AU
+[diff] 0x71ff20   MISMATCH         TextButtonClass::sub_71FF20
+[ledger] 0x6dd8b0 TerrainClass::ProcessUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> NG (attempt 3)
+[ledger] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> NG (attempt 3)
+[ledger] 0x6f64a0 TechnoClass::DrawHealthBar -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f7ca0 TechnoClass::EvaluateTarget -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> NG (attempt 6)
+[ledger] 0x6ffe00 TechnoClass::RecordEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x700600 TechnoClass::HandleCursor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7014a0 TechnoClass::ProcessCapture -> COMPILE_FAIL (attempt 2)
+[ledger] 0x704e40 DrawTacticalLaserLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x705270 Render::DrawLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70bcb0 TechnoClass::GetTargetCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70c690 Weapon::DestroyTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7178c0 BuildingTypeClass::GetUpgradeOffset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71b920 TerrainClass::UpdateAnims -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71d580 InitializeCellSpreadTables -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71ff20 TextButtonClass::sub_71FF20 -> NG (attempt 6)
+[ledger] 0x721a50 TiberiumClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x728280 InfantryClass::SetMission -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p37\batch_report.json

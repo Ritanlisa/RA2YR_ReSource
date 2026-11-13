@@ -35,3 +35,4 @@
 {"part": 34, "n": 20, "seconds": 60.8, "ok": true, "verdicts": {"MISMATCH": 7, "COMPILE_FAIL": 13}}
 {"part": 35, "n": 20, "seconds": 202.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 36, "n": 20, "seconds": 72.5, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"part": 37, "n": 20, "seconds": 93.0, "ok": true, "verdicts": {"COMPILE_FAIL": 16, "MISMATCH": 4}}
