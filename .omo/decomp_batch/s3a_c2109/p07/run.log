@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x5275c0 INIClass::SetInt -> INIClass
+[conv] 0x527640 INIClass::SetIntFormat -> INIClass
+[conv] 0x527920 INIClass::ReadGUID_Overwrite -> INIClass
+[conv] 0x527c10 INIClass::SetRect -> INIClass
+[conv] 0x527c60 INIClass::ReadFloat -> INIClass
+[conv] 0x528170 INIClass::ReadDouble3 -> INIClass
+[conv] 0x5281c0 INIClass::ReadDouble2 -> INIClass
+[conv] 0x528660 INIClass::SetString -> INIClass
+[conv] 0x529350 INIClass::GetCSFString -> INIClass
+[conv] 0x5297e0 INIEntry::Write2Integers -> INIEntry
+[conv] 0x529820 INIClass::GetInt -> INIClass
+[conv] 0x529880 INIClass::ReadPoint2D_Overwrite -> INIClass
+[conv] 0x529a30 INIClass::GetCoordPair -> INIClass
+[conv] 0x529bf0 INIClass::ReadCoord3 -> INIClass
+[conv] 0x529c40 INIClass::ReadCoord2 -> INIClass
+[conv] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> INIClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x52a040 INIClass::ReadBool2 -> INIClass
+[conv] 0x52a0a0 INIClass::ReadBool -> INIClass
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] INIEntry                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x528660   MISMATCH         INIClass::SetString
+[ledger] 0x5275c0 INIClass::SetInt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527640 INIClass::SetIntFormat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527920 INIClass::ReadGUID_Overwrite -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527c10 INIClass::SetRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x527c60 INIClass::ReadFloat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x528170 INIClass::ReadDouble3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5281c0 INIClass::ReadDouble2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x528660 INIClass::SetString -> NG (attempt 2)
+[ledger] 0x529350 INIClass::GetCSFString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5297e0 INIEntry::Write2Integers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529820 INIClass::GetInt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529880 INIClass::ReadPoint2D_Overwrite -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529a30 INIClass::GetCoordPair -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529bf0 INIClass::ReadCoord3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529c40 INIClass::ReadCoord2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> COMPILE_FAIL (attempt 2)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a040 INIClass::ReadBool2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a0a0 INIClass::ReadBool -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p07\batch_report.json
