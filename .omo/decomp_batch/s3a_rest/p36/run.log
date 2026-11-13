@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x571050 CellClass::ProcessTileChange -> CellClass
+[conv] 0x572440 CellClass::UpdateVariant7 -> CellClass
+[conv] 0x5727e0 CellClass::UpdateVariant8 -> CellClass
+[conv] 0x572da0 CellClass::UpdateVariant5 -> CellClass
+[conv] 0x573170 CellClass::UpdateVariant6 -> CellClass
+[conv] 0x575220 CellClass::ApplyCliffMod2 -> CellClass
+[conv] 0x575540 CellClass::ApplyCliffMod -> CellClass
+[conv] 0x575870 CellClass::ApplyTerrainMod2 -> CellClass
+[conv] 0x575ba0 CellClass::ApplyTerrainMod -> CellClass
+[conv] 0x575ee0 UpdateTeamsInAreaMap -> _addr_57
+[conv] 0x576200 CellClass::RecursiveCraterUpdate -> CellClass
+[conv] 0x577bb0 TeamClass::DisbandTeam -> TeamClass
+[conv] 0x577c90 TActionClass::executeRepairAction -> TActionClass
+[conv] 0x577d90 LayerClass::Reveal -> LayerClass
+[conv] 0x577f30 MapClass::ClearShroud -> MapClass
+[conv] 0x579010 Cliff::ProcessTransitions -> Cliff
+[conv] 0x579b70 Cell::GetAdjacencyFlags -> Cell
+[conv] 0x57bcf0 CellClass::ApplyTileModification -> CellClass
+[conv] 0x57c2b0 CellClass::ApplyTileModification2 -> CellClass
+[conv] 0x57d530 CellClass::ApplyTileModification4 -> CellClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=2
+[era] _addr_57                 rc=2
+[era] TeamClass                rc=2
+[era] TActionClass             rc=2
+[era] LayerClass               rc=2
+[era] MapClass                 rc=2
+[era] Cliff                    rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x571050 CellClass::ProcessTileChange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x572440 CellClass::UpdateVariant7 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5727e0 CellClass::UpdateVariant8 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x572da0 CellClass::UpdateVariant5 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x573170 CellClass::UpdateVariant6 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x575220 CellClass::ApplyCliffMod2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x575540 CellClass::ApplyCliffMod -> COMPILE_FAIL (attempt 2)
+[ledger] 0x575870 CellClass::ApplyTerrainMod2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x575ba0 CellClass::ApplyTerrainMod -> COMPILE_FAIL (attempt 2)
+[ledger] 0x575ee0 UpdateTeamsInAreaMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x576200 CellClass::RecursiveCraterUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x577bb0 TeamClass::DisbandTeam -> COMPILE_FAIL (attempt 2)
+[ledger] 0x577c90 TActionClass::executeRepairAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x577d90 LayerClass::Reveal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x577f30 MapClass::ClearShroud -> COMPILE_FAIL (attempt 2)
+[ledger] 0x579010 Cliff::ProcessTransitions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x579b70 Cell::GetAdjacencyFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57bcf0 CellClass::ApplyTileModification -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57c2b0 CellClass::ApplyTileModification2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x57d530 CellClass::ApplyTileModification4 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p36\batch_report.json
