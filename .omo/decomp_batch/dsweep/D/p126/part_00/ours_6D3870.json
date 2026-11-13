@@ -1,0 +1,87 @@
+{
+ "symbol": "?ClickFindBuilding@TacticalClass@@QAEEPAH0D@Z",
+ "sym_key": "TacticalClass::ClickFindBuilding",
+ "size": 383,
+ "link_base": 0,
+ "bytes_hex": "83ec1c568bf1578b86e000000085c00f86a30000008bbee40000005333db8b0f6a008b4124c1e8100fbfc0c1e00805800000009981e2ff00000003c2c1f808c1e008500fbf4124c1e00805800000008d4c24249981e2ff00000003c2c1f808c1e00850e8000000008b4c241c8d54240c8d4424185250894c2414e8000000008b008b96b00000002bc28d4c24108d5424145183e81e526a01894424208944241ce8000000008b86e000000083c704433bd80f8267ffffff5ba10000000085c074618bf88d04808d3485ecffffff8b0d000000006a008d44240c6a008b14315089542414ba000000008d4c241ce8000000008b08894c24088b480885c97e1e8b480c85c97e178b108d44240c8d4c240850516a0189542418e80000000083ee144f75ab8a4424305f84c05e7417680000000068000000006a01e80000000083c41cc20c008b4424208b480885c97e108b480c85c97e0950506a01e8000000008b4424248b480885c97e108b480c85c97e0950506a01e80000000083c41cc20c00",
+ "relocs": [
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?TacticalClass__FindBuilding@@YGHHPAH0@Z",
+   "sym_key": "TacticalClass__FindBuilding"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?TacticalClass__FindBuilding@@YGHHPAH0@Z",
+   "sym_key": "TacticalClass__FindBuilding"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?TacticalClass__FindBuilding@@YGHHPAH0@Z",
+   "sym_key": "TacticalClass__FindBuilding"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?TacticalClass__FindBuilding@@YGHHPAH0@Z",
+   "sym_key": "TacticalClass__FindBuilding"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?TacticalClass__FindBuilding@@YGHHPAH0@Z",
+   "sym_key": "TacticalClass__FindBuilding"
+  }
+ ]
+}

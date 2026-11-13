@@ -1,0 +1,75 @@
+{
+ "symbol": "?GetStartCoords@House@@QAEPAIPAH@Z",
+ "sym_key": "House::GetStartCoords",
+ "size": 557,
+ "link_base": 0,
+ "bytes_hex": "83ec1c5355568bf133db578b4e4483f9ff0f84950100000fbe153400000033c08a8604030000894424188b028b2c88895c2410389da90200000f84b4000000e80000000083f8ff0f84d80000008b0dd80700008b0c818b86fc0200003bc374570fbf46260fbf56248bb9ec0000000fafc2c1ef0233d2f7f733c08a86fc020000480fafc703d08b81e00000008bb89402000003d78bb9e80000000fbe0d3400000003d78b018b0490508b08ff919c00000089442410eb6e0fbf46260fbf56240fafc233d2f7b1e80000008b81e00000000fbe0d340000008bb8940200008b0103d78b0490508b08ff919c00000089442410eb32389db402000075108b550055ff929c00000089442410eb1a8b4e40895c24103bcb740f8d4424188d5424105052e8000000000fbf4624c1e00805800000008d4c241c9981e2ff000000895c242403c2c1f808c1e0088944241c0fbf4626c1e00805800000009981e2ff00000003c2c1f808c1e008894424208d44241450518b0d00000000e8000000008d54241c8bce52e8000000008b4c24148b108b7c243003ca894c24148b700483e91e03f7894c24148b4c24103bcb75198b4424305f5e5d891889580489580889580c5b83c41cc20400e800000000389daa0200007404895c24188b4c24108b7c24148b41020fbf00992bc2d1f82bf80fbf410a8b4c2418992bc28d54241cd1f851522bf0e8000000008b48048b50088b1803ce8b700c8b44243003df5f89700c5e89185d8948048950085b83c41cc20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?FindBuildingByTiberiumType@@YIHH@Z",
+   "sym_key": "FindBuildingByTiberiumType"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?GetPlacementCoords@BuildingClass@@QAEDPAX0@Z",
+   "sym_key": "BuildingClass::GetPlacementCoords"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 388,
+   "type": "REL32",
+   "sym": "?CalcDrawPos@BuildingClass@@QAEPAIPAX@Z",
+   "sym_key": "BuildingClass::CalcDrawPos"
+  },
+  {
+   "off": 454,
+   "type": "REL32",
+   "sym": "?Constructor@House@@QAEXXZ",
+   "sym_key": "House::Constructor"
+  },
+  {
+   "off": 513,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}

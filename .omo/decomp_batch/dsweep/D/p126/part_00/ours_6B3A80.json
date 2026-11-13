@@ -1,0 +1,165 @@
+{
+ "symbol": "?FlowTerrainCompute@@YIDHDHH@Z",
+ "sym_key": "Unnamed::FlowTerrainCompute",
+ "size": 589,
+ "link_base": 0,
+ "bytes_hex": "83ec18a100000000894c24148bc8530faf4c242455568b7424285783cdff83cfff03ce8b350000000088542413c7442418ffffffff8b34ce89742414c744241cffffffff85ff750885ed0f84a80100008b4c242c03f98b4c243003e985ff7c1085ed7c0c3bf87d083b2d00000000720d84d20f84bd010000e97b0100008bcd0fafc8a10000000003cf8d04c8894424208a480484c9742684d274078a480684c9751b8b082bce51e80000000083c40483f80f0f8f7d010000e9360100008b188bd32bd652e80000000083c40483f80f0f8e1e010000837c2424010f85ec0000003bde7d73a1000000008b0d000000003bc8722e8a0d0000000084c9750485c075438b0d0000000085c9763903c8a1000000006a00516800000000ff500884c074238b0d000000008b15000000008bc141890d000000008d0c408d048a89388968048958088b4424148b4c242083c0f18901c6410501eb797e73a1000000008b0d000000003bc8722f8a0d0000000084c9750485c075438b0d0000000085c9763903c86a00518b0d000000006800000000ff510884c074228b0d000000008bc141890d000000008d1440a1000000008d049089388968048958088b4c24148d410f8b4c24208901c6410501eb048b4c24208a410484c0751c8a5c24138b4c242455578ad3e8000000000fbec084c0750484db7442a1000000008b7c241c4783ff02897c241c7d118a5424138b7424148b6c2418e92dfeffff8b6c24184583fd02896c24187d1c8a5424138b74241483cfffe907feffff5f5e5d32c05b83c418c208005f5e5db0015b83c418c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A0@@3IA",
+   "sym_key": "DataGlobal_8759A0"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B658@@3IA",
+   "sym_key": "DataGlobal_B0B658"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B65D@@3EA",
+   "sym_key": "DataGlobal_B0B65D"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B664@@3IA",
+   "sym_key": "DataGlobal_B0B664"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B650@@3IA",
+   "sym_key": "DataGlobal_B0B650"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B650@@3IA",
+   "sym_key": "DataGlobal_B0B650"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B654@@3IA",
+   "sym_key": "DataGlobal_B0B654"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B658@@3IA",
+   "sym_key": "DataGlobal_B0B658"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B65D@@3EA",
+   "sym_key": "DataGlobal_B0B65D"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B664@@3IA",
+   "sym_key": "DataGlobal_B0B664"
+  },
+  {
+   "off": 391,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B650@@3IA",
+   "sym_key": "DataGlobal_B0B650"
+  },
+  {
+   "off": 396,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B650@@3IA",
+   "sym_key": "DataGlobal_B0B650"
+  },
+  {
+   "off": 409,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 418,
+   "type": "DIR32",
+   "sym": "?g_SlaveMgrPool@@3IA",
+   "sym_key": "g_SlaveMgrPool"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B654@@3IA",
+   "sym_key": "DataGlobal_B0B654"
+  },
+  {
+   "off": 484,
+   "type": "REL32",
+   "sym": "?FlowTerrainCompute@@YIDHDHH@Z",
+   "sym_key": "FlowTerrainCompute"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  }
+ ]
+}

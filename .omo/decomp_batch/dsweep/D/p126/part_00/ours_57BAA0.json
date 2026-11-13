@@ -1,0 +1,105 @@
+{
+ "symbol": "?CheckTilePassable2@CellClass@@QAGDH@Z",
+ "sym_key": "CellClass::CheckTilePassable2",
+ "size": 545,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec080fbf480255560fbf10578d7802c1e10903ca8be881f900000400730e0fbe15340300008b0c8a85c9750d8b08890d7c160000b9581600008b714483fe4a7c0583fe527e1383fe5c7c0583fe5f7e0983fe640f85b80100008a10668b0f81e2ff00000024000bc24933c881e1ff00000033c1b9f80100008944241c8d44241c50e8000000008b404483f84a7c5d83f8657f588a0f8b54241c80e90280e20081e1ff0000008d44241c0bca50894c2420b9f8010000e8000000008b404483f84a7c2683f8657f218a45008b4c241c668b3f25ff00000080e1000bc14f33f881e7ff00000033c7eb1555eb1b8a078b4c241cfec080e10025ff0000000bc18d54241c8944241c528b7c24208bcfe80000000025ff00000081e600ffffff0bc683f8537c0583f85b7e1383f8607c0583f8637e0983f8650f85d60000008b44241c8d54241c528a082400fec981e1ff0000000bc8894c2420b9f8010000e8000000008b404483f84a0f8c8100000083f8657f7c8a45008b4c241c2c0280e10025ff0000008d54241c0bc152b9f801000089442420e8000000008b404483f84a7c3b83f8657f368d44241c8d4c241050518bcdc744242401000000e8000000008b108d44240c508bcf89542410e8000000005f5e32c05d83c408c20800558bcfe8000000005f5e32c05d83c408c208008a4d008b54241cfec180e20081e1ff0000008d44241c0bca50894c24208bcfe8000000005f5e32c05d83c408c20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?ApplyTileModification@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::ApplyTileModification"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 399,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 446,
+   "type": "REL32",
+   "sym": "?Sub@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Sub"
+  },
+  {
+   "off": 464,
+   "type": "REL32",
+   "sym": "?ApplyTileModification2@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::ApplyTileModification2"
+  },
+  {
+   "off": 483,
+   "type": "REL32",
+   "sym": "?ApplyTileModification2@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::ApplyTileModification2"
+  },
+  {
+   "off": 530,
+   "type": "REL32",
+   "sym": "?ApplyTileModification2@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::ApplyTileModification2"
+  }
+ ]
+}

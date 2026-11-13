@@ -1,0 +1,63 @@
+{
+ "symbol": "?UpdateLobby@MPCooperative@@QAEPBDPBDPAD@Z",
+ "sym_key": "MPCooperative::UpdateLobby",
+ "size": 594,
+ "link_base": 0,
+ "bytes_hex": "518b4424085355568bf183f80157897424100f85320200008b44241c680000000050e80000000083c40885c00f841802000050e80000000083c40483f801894424180f8c020200008bbea4010000bd080000008db7c00000008b0f8b9e48ffffff57ff510c8b176a005357ff52088b068b5e0856ff500c8b0e6a005356ff510883c71883c6184d75d08b44241885c00f8eb50100008b54241081c2b8010000895424108b5c2410c744241c080000008d73f868000000006a00e80000000083c40885c0744650e8000000008b4e108bf88b0383c4043bc872218a4e0d84c9750485c075648b4e1485c97e5d8b1603c86a005156ff520884c0744e8b46108b56048d4801894e10893c82eb3d8b0b8b46103bc172218a460d84c0750485c975298b461485c07e228b1603c16a005056ff520884c074138b46108b56048d4801894e10c70482ffffffff68000000006a00e80000000083c40885c0746e50e8000000008b8ec80000008bf88b86d000000083c4043bc172398a86cd00000084c0750885c90f859e0000008b96d400000085d20f8e900000008baec00000008d86c000000003d16a005250ff550884c074778b86d00000008b96c40000008d4801898ed0000000893c82eb5d8b96c80000008b86d00000003bc272318a86cd00000084c0750485d2753f8b8ed400000085c97e358bbec00000008d86c000000003ca6a005150ff570884c0741c8b86d00000008b96c40000008d4801898ed0000000c70482ffffffff8b44241c83c31883c618488944241c0f8577feffff8b44241848894424180f8559feffff5f5e5d5b59c20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 329,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 336,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  }
+ ]
+}

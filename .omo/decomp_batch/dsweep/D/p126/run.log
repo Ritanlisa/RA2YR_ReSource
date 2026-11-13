@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p126\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d3870 TacticalClass::ClickFindBuilding -> TacticalClass
+[conv] 0x6d3ac0 TacticalClass::ClickFindOverlay -> TacticalClass
+[conv] 0x57baa0 CellClass::CheckTilePassable2 -> CellClass
+[conv] 0x5c2a60 MPCooperative::UpdateLobby -> MPCooperative
+[conv] 0x6272a0 FileSystem::FlushTempFiles -> FileSystem
+[conv] 0x7cdb14 _setlocale -> _addr_7C
+[conv] 0x424f00 TechnoClass::CreateUnitOnCompletion -> TechnoClass
+[conv] 0x471d40 CaptureManagerClass::CaptureUnit -> CaptureManagerClass
+[conv] 0x47fb90 House::GetStartCoords -> House
+[conv] 0x527f20 INIClass::GetRect -> INIClass
+[conv] 0x432050 CCFileClass::BufferedWriter -> CCFileClass
+[conv] 0x752db0 AudioEvent::LoadFromINI -> AudioEvent
+[conv] 0x5c7740 ModInverseBigInteger -> _addr_5C
+[conv] 0x402f60 ObjectClass::ProcessAudioMixerFrame -> ObjectClass
+[conv] 0x539890 SuperWeaponClass::LoadFromSaveStream -> SuperWeaponClass
+[conv] 0x58d1c0 RandomMap::ExpandTerrainCells -> RandomMap
+[conv] 0x6d2540 Tactical::ScrollViewport -> Tactical
+[conv] 0x7abaf0 CChatEventSink::DispatchStub_35 -> CChatEventSink
+[conv] 0x6b3a80 FlowTerrainCompute -> _addr_6B
+[conv] 0x6d3040 TacticalClass::DrawTerrainPartial -> TacticalClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TacticalClass            rc=0
+[era] CellClass                rc=0
+[era] MPCooperative            rc=0
+[era] FileSystem               rc=2
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=0
+[era] CaptureManagerClass      rc=2
+[era] House                    rc=0
+[era] INIClass                 rc=2
+[era] CCFileClass              rc=2
+[era] AudioEvent               rc=2
+[era] _addr_5C                 rc=0
+[era] ObjectClass              rc=2
+[era] SuperWeaponClass         rc=2
+[era] RandomMap                rc=2
+[era] Tactical                 rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6d3870   MISMATCH         TacticalClass::ClickFindBuilding
+[diff] 0x6d3ac0   MISMATCH         TacticalClass::ClickFindOverlay
+[diff] 0x6d3040   MISMATCH         TacticalClass::DrawTerrainPartial
+[diff] 0x57baa0   MISMATCH         CellClass::CheckTilePassable2
+[diff] 0x5c2a60   MISMATCH         MPCooperative::UpdateLobby
+[diff] 0x424f00   MISMATCH         TechnoClass::CreateUnitOnCompletion
+[diff] 0x47fb90   MISMATCH         House::GetStartCoords
+[diff] 0x5c7740   MISMATCH         ModInverseBigInteger
+[diff] 0x6b3a80   MISMATCH         FlowTerrainCompute
+[ledger] 0x6d3870 TacticalClass::ClickFindBuilding -> NG (attempt 1)
+[ledger] 0x6d3ac0 TacticalClass::ClickFindOverlay -> NG (attempt 1)
+[ledger] 0x57baa0 CellClass::CheckTilePassable2 -> NG (attempt 1)
+[ledger] 0x5c2a60 MPCooperative::UpdateLobby -> NG (attempt 1)
+[ledger] 0x6272a0 FileSystem::FlushTempFiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cdb14 _setlocale -> COMPILE_FAIL (attempt 1)
+[ledger] 0x424f00 TechnoClass::CreateUnitOnCompletion -> NG (attempt 1)
+[ledger] 0x471d40 CaptureManagerClass::CaptureUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47fb90 House::GetStartCoords -> NG (attempt 1)
+[ledger] 0x527f20 INIClass::GetRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432050 CCFileClass::BufferedWriter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752db0 AudioEvent::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c7740 ModInverseBigInteger -> NG (attempt 1)
+[ledger] 0x402f60 ObjectClass::ProcessAudioMixerFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x539890 SuperWeaponClass::LoadFromSaveStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58d1c0 RandomMap::ExpandTerrainCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d2540 Tactical::ScrollViewport -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7abaf0 CChatEventSink::DispatchStub_35 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b3a80 FlowTerrainCompute -> NG (attempt 1)
+[ledger] 0x6d3040 TacticalClass::DrawTerrainPartial -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "frame_sched": 7,
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p126\batch_report.json
