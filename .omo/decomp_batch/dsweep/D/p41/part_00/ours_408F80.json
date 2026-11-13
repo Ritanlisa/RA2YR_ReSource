@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_408F80@@YIHPAH0HPAD@Z",
+ "sym_key": "Unnamed::sub_408F80",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "515355568bda578bf933d2e8000000008b44241c85c075088d4424138944241c8b4c241c8b6c2418c701000000008b47083bc57e028bc585c0746f8b57048b77148b0b5085f652537410ff51308bf085f60f94c085f67c10eb15ff51248bf085f60f94c085f67d07c747240000048084c0752083feff74288bd68bcfe8000000008b44241c2bee8b0803ce85ed89087419eb9b5f5e5db8020000005b59c208005f5e5d33c05b59c208005f5e5db8010000005b59c20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ReadAudioStream@@YIHPAXH@Z",
+   "sym_key": "ReadAudioStream"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?ReadAudioStream@@YIHPAXH@Z",
+   "sym_key": "ReadAudioStream"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4801F0",
+ "name": "TacticalClass::RenderCellFogOfWar",
+ "size": 172,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4801F0",
+ "bytes_hex": "5355568bf18b0d24738800578d7e246a0057e8f98425008886200100000fbec083f8fe7507b80f000000eb0783f8ff750233c08b5c24188b6c24145053558bcee8abedffff8b0d247388006a0157e8bd8425008886210100008b0d30b2a8008b11f6c610743f8b154c3da8008a8af501000084c9752f0fbec083f8fe7516b80f0000008bce505355e8d3efffff5f5e5d5bc2080083f8ff750233c05053558bcee8bbefffff5f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

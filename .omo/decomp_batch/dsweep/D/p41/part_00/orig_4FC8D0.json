@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FC8D0",
+ "name": "HouseClass::DestroyAllNonBuildingsNaval",
+ "size": 171,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FC8D0",
+ "bytes_hex": "51a188eca80053555733db33ff85c08be90f8e8f00000056a17ceca8008b34988bcee8292f21003bc5756d8b168bceff522c83f80674618a868100000084c075578b068bceff90840000008a88ce0c000084c974433bf7743f8b4e6c894c24108b8e7802000085c97405e801e42100a1e07188008b166a006a018b88a80f00006a016a00518d4424246a00508bceff926c0100008bfeeb01433b1d88eca8000f8c73ffffff5e5f5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

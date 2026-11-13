@@ -1,0 +1,51 @@
+{
+ "symbol": "?RenderCellFogOfWar@TacticalClass@@QAEIPAIPAH@Z",
+ "sym_key": "TacticalClass::RenderCellFogOfWar",
+ "size": 154,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1576a008d7e2457e8000000008bc88b44241833c881e1ff00000033c18986e40000000fbec03cfe7505b80f0000008b5c24188b6c2414505355e8000000006a0157e8000000008886200100008b15000000008b0af6c51074358b0d000000008a91f501000084d275250fbec03cfe75106a0f5355e8000000005f5e5d5bc208003cff750233c0505355e8000000005f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?RenderFogOfWar@@YGIPAX0I@Z",
+   "sym_key": "RenderFogOfWar"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?RenderFogOfWarOverlay@@YGPAGHPAXI@Z",
+   "sym_key": "RenderFogOfWarOverlay"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?RenderFogOfWarOverlay@@YGPAGHPAXI@Z",
+   "sym_key": "RenderFogOfWarOverlay"
+  }
+ ]
+}

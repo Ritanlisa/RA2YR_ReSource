@@ -1,0 +1,45 @@
+{
+ "symbol": "?InvalidateTileRegionMap@ObjectClass@@QAEDPAF@Z",
+ "sym_key": "ObjectClass::InvalidateTileRegionMap",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "538b5c240855566a008bf16a035356e8000000008be883c41083fdff75278bcee8000000006a006a035356e8000000008be883c41083fdff750b5e5db800ffffff5bc2040083fdffc644241000745e578b46548bfdc1e7048a4c070884c97537c6440708018b465403c75056e8000000008b4e5483c4088d04396a006a006a008d50046a0052508bcee80000000084c07505c64424140145556a035356e8000000008be883c41083fdff75a45f8b44241081e500ffffff25ff0000005e0be88bc55d5bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?ProcessRegion@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::ProcessRegion"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?BuildTileAdjacencyTable@@YAHPAX0@Z",
+   "sym_key": "BuildTileAdjacencyTable"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?CheckTileMatch@MapSeed@@QAE_NPAX0HDDD@Z",
+   "sym_key": "MapSeed::CheckTileMatch"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  }
+ ]
+}

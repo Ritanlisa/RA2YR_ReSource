@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fc820 HouseClass::DestroyAllNonBuildingsNonNaval -> HouseClass
+[conv] 0x4fc8d0 HouseClass::DestroyAllNonBuildingsNaval -> HouseClass
+[conv] 0x683560 ScenarioClass::ReadINIEntry -> ScenarioClass
+[conv] 0x445e50 BuildingClass::GetFacingToTarget -> BuildingClass
+[conv] 0x664610 Process::WaitForExit -> Process
+[conv] 0x5ea0d0 sub_5EA0D0 -> _addr_5E
+[conv] 0x4801f0 TacticalClass::RenderCellFogOfWar -> TacticalClass
+[conv] 0x6b6160 SmudgeTypeClass::ddtor -> SmudgeTypeClass
+[conv] 0x71e360 TerrainTypeClass::ddtor -> TerrainTypeClass
+[conv] 0x4e29a0 GaugeClass::SetRange -> GaugeClass
+[conv] 0x56db70 ObjectClass::InvalidateTileRegionMap -> ObjectClass
+[conv] 0x7b78d0 String::TruncateTo -> String
+[conv] 0x401b00 ObjectClass::sub_401B00 -> ObjectClass
+[conv] 0x70f120 RevealTechnoClassRadarEvent -> _addr_70
+[conv] 0x60af50 UI_Get -> UI
+[conv] 0x724ad0 ToolTipClass::initString -> ToolTipClass
+[conv] 0x7209d0 Movie::Update -> Movie
+[conv] 0x4d2810 FoggedObjectClass::PowerDrainUpdate -> FoggedObjectClass
+[conv] 0x408f80 sub_408F80 -> _addr_40
+[conv] 0x55f980 sub_55F980 -> _addr_55
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] ScenarioClass            rc=0
+[era] BuildingClass            rc=2
+[era] Process                  rc=2
+[era] _addr_5E                 rc=2
+[era] TacticalClass            rc=0
+[era] SmudgeTypeClass          rc=2
+[era] TerrainTypeClass         rc=0
+[era] GaugeClass               rc=2
+[era] ObjectClass              rc=0
+[era] String                   rc=0
+[era] _addr_70                 rc=2
+[era] UI                       rc=0
+[era] ToolTipClass             rc=2
+[era] Movie                    rc=2
+[era] FoggedObjectClass        rc=0
+[era] _addr_40                 rc=0
+[era] _addr_55                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4fc820   MISMATCH         HouseClass::DestroyAllNonBuildingsNonNaval
+[diff] 0x4fc8d0   MISMATCH         HouseClass::DestroyAllNonBuildingsNaval
+[diff] 0x683560   MISMATCH         ScenarioClass::ReadINIEntry
+[diff] 0x4801f0   MISMATCH         TacticalClass::RenderCellFogOfWar
+[diff] 0x71e360   MISMATCH         TerrainTypeClass::ddtor
+[diff] 0x56db70   MISMATCH         ObjectClass::InvalidateTileRegionMap
+[diff] 0x401b00   MISMATCH         ObjectClass::sub_401B00
+[diff] 0x7b78d0   MISMATCH         String::TruncateTo
+[diff] 0x60af50   MISMATCH         UI_Get
+[diff] 0x4d2810   MISMATCH         FoggedObjectClass::PowerDrainUpdate
+[diff] 0x408f80   MISMATCH         sub_408F80
+[diff] 0x55f980   MISMATCH         sub_55F980
+[ledger] 0x4fc820 HouseClass::DestroyAllNonBuildingsNonNaval -> NG (attempt 1)
+[ledger] 0x4fc8d0 HouseClass::DestroyAllNonBuildingsNaval -> NG (attempt 1)
+[ledger] 0x683560 ScenarioClass::ReadINIEntry -> NG (attempt 1)
+[ledger] 0x445e50 BuildingClass::GetFacingToTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664610 Process::WaitForExit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ea0d0 sub_5EA0D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4801f0 TacticalClass::RenderCellFogOfWar -> NG (attempt 1)
+[ledger] 0x6b6160 SmudgeTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71e360 TerrainTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x4e29a0 GaugeClass::SetRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56db70 ObjectClass::InvalidateTileRegionMap -> NG (attempt 1)
+[ledger] 0x7b78d0 String::TruncateTo -> NG (attempt 1)
+[ledger] 0x401b00 ObjectClass::sub_401B00 -> NG (attempt 1)
+[ledger] 0x70f120 RevealTechnoClassRadarEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60af50 UI_Get -> NG (attempt 1)
+[ledger] 0x724ad0 ToolTipClass::initString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7209d0 Movie::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2810 FoggedObjectClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x408f80 sub_408F80 -> NG (attempt 1)
+[ledger] 0x55f980 sub_55F980 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 5,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p41\batch_report.json

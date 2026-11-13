@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReadINIEntry@ScenarioClass@@QAEPAV1@H@Z",
+ "sym_key": "ScenarioClass::ReadINIEntry",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "568bf1576a008d861802000050e80000000083c408e8000000008dbed43400006a006a008bcf898620060000c7862806000000000000e800000000c707000000008dbef03400006a006a008bcfe800000000c707000000008dbe0c3500006a006a008bcfe8000000008a86f81100008d8ef811000084c0c70700000000742233d268580100008a15000000005233d2e8000000008986f41100008bc65f5ec20400c786f4110000000000008bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?SeedInitRNG@@YAPAIPAXH@Z",
+   "sym_key": "SeedInitRNG"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Construct@TechnoTypeVector@@QAEPAV1@HH@Z",
+   "sym_key": "TechnoTypeVector::Construct"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_TechnoTypeClass@@3PAXA",
+   "sym_key": "vt_TypeList_TechnoTypeClass"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Scenario_CPP@@3EA",
+   "sym_key": "g_Str_File_Scenario_CPP"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  }
+ ]
+}

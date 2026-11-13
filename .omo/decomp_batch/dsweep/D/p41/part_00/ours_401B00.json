@@ -1,0 +1,87 @@
+{
+ "symbol": "?sub_401B00@ObjectClass@@QAEXPAV1@@Z",
+ "sym_key": "ObjectClass::sub_401B00",
+ "size": 179,
+ "link_base": 0,
+ "bytes_hex": "55568b74240c578d6e0c8bcde8000000008bf885ff747553397f04740957e80000000083c4048d5f248bcbe8000000008bf085f6742a56e80000000083c4048bcee8000000008b473c8bd68b4804e8000000008bcbe8000000008bf085f675d68b4c241451e8000000008b473c83c4048bd78b4808e8000000008bcde8000000008bf885ff75918b7424145b8b4e0485c97405e8000000008b4e0885c97405e80000000056e80000000083c4045f5e5dc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?LinkedList__Init@@YAHPAX@Z",
+   "sym_key": "LinkedList__Init"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?LinkedList__Init@@YAHPAX@Z",
+   "sym_key": "LinkedList__Init"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Release@AudioNode@@QAEXXZ",
+   "sym_key": "AudioNode::Release"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?PushFrontLinkedListAlt@@YIHPAHH@Z",
+   "sym_key": "PushFrontLinkedListAlt"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?nullsub_2@@YAXPAX@Z",
+   "sym_key": "nullsub_2"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?PushFrontLinkedListAlt@@YIHPAHH@Z",
+   "sym_key": "PushFrontLinkedListAlt"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Push_407510@VtableStub@@QAEXXZ",
+   "sym_key": "VtableStub::Push_407510"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Push_407510@VtableStub@@QAEXXZ",
+   "sym_key": "VtableStub::Push_407510"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

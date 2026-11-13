@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D2810",
+ "name": "FoggedObjectClass::PowerDrainUpdate",
+ "size": 173,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D2810",
+ "bytes_hex": "56578b7c240c8bf157e8f2dbf3ff8b46248bcf50e827f5fcff8b4e2c518bcfe81cf5fcff8b56308bcf52e811f5fcff8b46348bcf50e806f5fcff8b4e38518bcfe8fbf4fcff8b563c8bcf52e8f0f4fcff8b46408bcf50e8e5f4fcff8b4e44518bcfe8daf4fcff8b56488bcf52e8cff4fcff8b464c8bcf50e8c4f4fcff8b4e50518bcfe8b9f4fcff8b56548bcf52e8aef4fcff8b46588bcf50e8a3f4fcff8b4e6c518bcfe898f4fcff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

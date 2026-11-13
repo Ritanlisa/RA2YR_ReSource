@@ -1,0 +1,11 @@
+{
+ "addr": "0x56DB70",
+ "name": "InvalidateTileRegionMap",
+ "size": 172,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56DB70",
+ "bytes_hex": "538b5c240855566a006a038bf153e88dfeffff8be883fdff75228bcee84ffbffff6a006a03538bcee873feffff8be883fdff75085e5d32c05bc2040083fdffc644241000745c578b46548bfdc1e7048a4c38088d44380884c97533c600018b4e5403cf518bcee8d57501008b56546a006a006a008d043a6a008d480451508bcee80bf5ffff84c07505c644241401458bce556a0353e806feffff8be883fdff75a65f8a4424105e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
