@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p171\part_00
+=== convert (20 addrs) ===
+[conv] 0x7393c0 TechnoClass::Deploy -> TechnoClass
+[conv] 0x6b6300 AudioSettings::DlgProc -> AudioSettings
+[conv] 0x490490 COMClass::RegisterAll -> COMClass
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x7dd505 ObjectClass::_output -> ObjectClass
+[conv] 0x5164d0 MovementAI::StepFootClass -> MovementAI
+[conv] 0x78e230 CreateAccountDlgProcWOL -> _addr_78
+[conv] 0x7ce2a5 __output -> _addr_7C
+[conv] 0x737430 UnitClass::MissionDispatch -> UnitClass
+[conv] 0x4361d0 BuildingLightClass::SD_vt23 -> BuildingLightClass
+[conv] 0x5e6920 SkirmishSetup::DlgProc -> SkirmishSetup
+[conv] 0x6f2b40 TechnoClass::TechnoClass -> TechnoClass
+[conv] 0x7d21be __woutput -> _addr_7D
+[conv] 0x5ff850 BuildingLight::CalculateShading -> BuildingLight
+[conv] 0x6ffec0 TechnoClass::GetActionOnObject -> TechnoClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x708080 TechnoClass::EvaluateMission -> TechnoClass
+[conv] 0x6015e0 CtlDialogColorHandler -> _addr_60
+[conv] 0x5d7590 LoadMultiplayerModesList -> _addr_5D
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] AudioSettings            rc=2
+[era] COMClass                 rc=0
+[era] SessionClass             rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] MovementAI               rc=2
+[era] _addr_78                 rc=0
+[era] _addr_7C                 rc=2
+[era] UnitClass                rc=2
+[era] BuildingLightClass       rc=2
+[era] SkirmishSetup            rc=0
+[era] _addr_7D                 rc=2
+[era] BuildingLight            rc=0
+[era] _addr_60                 rc=2
+[era] _addr_5D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ffec0   MISMATCH         TechnoClass::GetActionOnObject
+[diff] 0x490490   MISMATCH         COMClass::RegisterAll
+[diff] 0x78e230   MISMATCH         CreateAccountDlgProcWOL
+[diff] 0x5e6920   MISMATCH         SkirmishSetup::DlgProc
+[diff] 0x5ff850   MISMATCH         BuildingLight::CalculateShading
+[ledger] 0x7393c0 TechnoClass::Deploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b6300 AudioSettings::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x490490 COMClass::RegisterAll -> NG (attempt 1)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dd505 ObjectClass::_output -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5164d0 MovementAI::StepFootClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78e230 CreateAccountDlgProcWOL -> NG (attempt 1)
+[ledger] 0x7ce2a5 __output -> COMPILE_FAIL (attempt 1)
+[ledger] 0x737430 UnitClass::MissionDispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4361d0 BuildingLightClass::SD_vt23 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e6920 SkirmishSetup::DlgProc -> NG (attempt 1)
+[ledger] 0x6f2b40 TechnoClass::TechnoClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d21be __woutput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ff850 BuildingLight::CalculateShading -> NG (attempt 1)
+[ledger] 0x6ffec0 TechnoClass::GetActionOnObject -> NG (attempt 1)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708080 TechnoClass::EvaluateMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6015e0 CtlDialogColorHandler -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d7590 LoadMultiplayerModesList -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "branch_order": 1,
+  "codegen_shape": 2,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p171\batch_report.json
