@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x6f0ab0 AISelectTeamHouseClass -> _addr_6F
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f24b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> TechnoClass
+[conv] 0x706ed0 RenderTechnoClassVoxel -> _addr_70
+[conv] 0x707480 Surface::BlitTechnoTo -> Surface
+[conv] 0x70a990 TechnoClass::DrawVeterancy -> TechnoClass
+[conv] 0x70c620 TechnoClass::CheckCliffTransition -> TechnoClass
+[conv] 0x70d7e0 FootClass::ProcessEnterTransport -> FootClass
+[conv] 0x70d990 TechnoClass::OnEnterCell -> TechnoClass
+[conv] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> ObjectClass
+[conv] 0x70ece0 TechnoClass::Fire -> TechnoClass
+[conv] 0x70fd70 TechnoClass::LinkToBridge -> TechnoClass
+[conv] 0x70fee0 TechnoClass::EjectPassengers -> TechnoClass
+[conv] 0x710000 FootClass::FootClass_ImbueLocomotor -> FootClass
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x710af0 TechnoTypeClass::ReadINI -> TechnoTypeClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] _addr_6F                 rc=2
+[era] TeamTypeClass            rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] Surface                  rc=2
+[era] FootClass                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f24b0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f0ab0 AISelectTeamHouseClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f24b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x706ed0 RenderTechnoClassVoxel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x707480 Surface::BlitTechnoTo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70a990 TechnoClass::DrawVeterancy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70c620 TechnoClass::CheckCliffTransition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70d7e0 FootClass::ProcessEnterTransport -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70d990 TechnoClass::OnEnterCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70ece0 TechnoClass::Fire -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70fd70 TechnoClass::LinkToBridge -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70fee0 TechnoClass::EjectPassengers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x710000 FootClass::FootClass_ImbueLocomotor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x710af0 TechnoTypeClass::ReadINI -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p23\batch_report.json

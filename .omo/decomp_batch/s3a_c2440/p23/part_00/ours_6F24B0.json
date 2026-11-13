@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetCapacity@_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass@@QAEDHPAH@Z",
+ "sym_key": "_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity",
+ "size": 301,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84fe0000008b6c2418c7460c0000000085ed74208d43ff895d0085c08d7d047c488d45088bcbc7000000000083c0084975f4eb358d0cdd0400000051e80000000083c40485c0741f8d53ff891885d28d78047c1583c0088bcbc7000000000083c0084975f4eb0233ff85ffc7460c0100000075095f5e5d32c05bc208008b460485c074618b56083bda7d028bd333c085d27e1c8b4e04403bc28b6cc1f8896cc7f88b4cc1fc894cc7fc7ce88b6c24188b460cf6c4ff742e8b4e0485c974208b51fc8d69fc6800000000526a08e80000000055e8000000008b6c241c83c404c74604000000008b560c33c085ed0f94c033c980e6008ae8897e040bca895e08894e0ceb078b068bceff500c8b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?nullsub_240@@YAHPBX0@Z",
+   "sym_key": "nullsub_240"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
