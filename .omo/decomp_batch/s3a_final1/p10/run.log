@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fce80 BuildingClass::Capture -> BuildingClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> TechnoClass
+[conv] 0x4fe3e0 HouseClass::AutoBuild -> HouseClass
+[conv] 0x4ff550 HouseClass::DecrementUnitCount -> HouseClass
+[conv] 0x500200 BuildingPlacement::FindPosition -> BuildingPlacement
+[conv] 0x501400 HouseClass::SetCapacity_5 -> HouseClass
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x505fd0 globalHelper_005FD0 -> _addr_50
+[conv] 0x5082c0 HouseClass::FindAutoBuildLocation -> HouseClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x50c920 TechnoClass::FindDeployDestination -> TechnoClass
+[conv] 0x50d290 TActionClass::executeAttackAction -> TActionClass
+[conv] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> HoverLocomotionClass
+[conv] 0x517a50 InfantryClass::Construct -> InfantryClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] BuildingPlacement        rc=2
+[era] _addr_50                 rc=2
+[era] TActionClass             rc=2
+[era] HoverLocomotionClass     rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4fce80 BuildingClass::Capture -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fe3e0 HouseClass::AutoBuild -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ff550 HouseClass::DecrementUnitCount -> COMPILE_FAIL (attempt 5)
+[ledger] 0x500200 BuildingPlacement::FindPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501400 HouseClass::SetCapacity_5 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 8)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x505fd0 globalHelper_005FD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5082c0 HouseClass::FindAutoBuildLocation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 7)
+[ledger] 0x50c920 TechnoClass::FindDeployDestination -> COMPILE_FAIL (attempt 5)
+[ledger] 0x50d290 TActionClass::executeAttackAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x517a50 InfantryClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p10\batch_report.json
