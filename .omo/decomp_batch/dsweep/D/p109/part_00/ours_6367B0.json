@@ -1,0 +1,45 @@
+{
+ "symbol": "?UpdateBuildQueue@TeamClass@@QAEHPAHHH@Z",
+ "sym_key": "TeamClass::UpdateBuildQueue",
+ "size": 495,
+ "link_base": 0,
+ "bytes_hex": "81ec880000008b84248c000000568bf15089742418e80000000083c40485c00f84c00100008b8424940000008b8c249800000003c8894424083bc1894c24100f8da0010000535557eb048b7424208b56088b4424148b3e8b2c8233c08b551085d27e1e8b75048bce8b19393b74174083c1043bc27d0b8b19393b75f283f8ff750433c0eb038b04868b4004b91b0000008bf08d7c242c8a506e83c06cf3a5668b088b84249c00000066894c2418508d4c242888542417e8000000008b088a50046a10894c24378854243be80000000083c40433db85c07411891889580488580cc74008ffffffff8bd88b84249c0000006a6f8903e80000000083c40485c07405c60000eb0233c08a542413b91b0000008d74242c8bf8f3a5668b4c241888506e6689486c8943048b45088b4d103bc872228a4d0d84c9750485c075268b4d1485c97e1f8b550003c86a005155ff520884c0740f8b45108b55048d4801894d10891c828b84249c00000050e8000000008bf083c4048b560c8b46143bc272258a461184c0750485d275298b4e1885c97e228b7e048d460403ca6a005150ff570884c0740f8b46148b56088d4801894e14892c8283be8c000000ff750a8b46144889868c000000538bcde8000000008b4424148b4c241c403bc1894424140f8c68feffff5f5d5b5e81c488000000c20c00",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 363,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?PlaceObject@ScriptAction@@QAEHPAX@Z",
+   "sym_key": "ScriptAction::PlaceObject"
+  }
+ ]
+}

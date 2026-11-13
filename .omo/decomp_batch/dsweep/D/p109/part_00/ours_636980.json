@@ -1,0 +1,45 @@
+{
+ "symbol": "?ProcessScriptActions@TeamClass@@QAEHPAHH@Z",
+ "sym_key": "TeamClass::ProcessScriptActions",
+ "size": 493,
+ "link_base": 0,
+ "bytes_hex": "81ec880000008b84248c000000538b9c2494000000568bf15750897424208b7e142bfbe80000000083c40485c00f84ae01000003fb895c24103bdf897c24180f8d9c01000055eb048b7424208b4e088b54241433c08b2c918b551085d27e208b7d048b368bcf8b19393374174083c1043bc27d0b8b19393375f283f8ff750433c0eb038b04878b4004b91b0000008bf08d7c242c8a506e83c06cf3a5668b088b84249c00000066894c2418508d4c242888542417e8000000008b088a50046a10894c24378854243be80000000083c40433db85c07411891889580488580cc74008ffffffff8bd88b84249c0000006a6f8903e80000000083c40485c07405c60000eb0233c08a542413b91b0000008d74242c8bf8f3a5668b4c241888506e6689486c8943048b45088b4d103bc872228a4d0d84c9750485c075268b4d1485c97e1f8b550003c86a005155ff520884c0740f8b45108b55048d4801894d10891c828b84249c00000050e8000000008bf083c4048b560c8b46143bc272258a461184c0750485d275298b4e1885c97e228b7e048d460403ca6a005150ff570884c0740f8b46148b56088d4801894e14892c8283be8c000000ff750a8b46144889868c000000538bcde8000000008b4424148b4c241c403bc1894424140f8c68feffff5d5f5e5b81c488000000c20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 455,
+   "type": "REL32",
+   "sym": "?PlaceObject@ScriptAction@@QAEHPAX@Z",
+   "sym_key": "ScriptAction::PlaceObject"
+  }
+ ]
+}

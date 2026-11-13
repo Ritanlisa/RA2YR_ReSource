@@ -1,0 +1,147 @@
+{
+ "symbol": "?SetupSkirmishSpawnLocationEntry@@YIHPAXH@Z",
+ "sym_key": "Unnamed::SetupSkirmishSpawnLocationEntry",
+ "size": 416,
+ "link_base": 0,
+ "bytes_hex": "83ec10538d82f5faffff555683f81157895424188bf1773633c98a8800000000ff248d0000000033c0eb35b801000000eb2eb802000000eb27b803000000eb20b804000000eb19b805000000eb1233c081fa1d0500000f95c0f7d824f983c0068d780157e800000000578be8e8000000008bd857895c2420e8000000005789442420e80000000083c4108944241c85f67457a10000000085c0744e85ffb801000000bb080000007e093bfb7d058bc78d5f013bc38bf87d2d57e8000000008bd0a10000000083c40485c0740b8a483c84c974046a03eb026afe8bcee800000000473bfb7cd38b5c24148b7c24186a006a0068470100005756e8000000006a005068500100005756e80000000083f8027707c644241401eb286afe8bd58bcec644241800e8000000008bd38bce6afee8000000008bce8b5424106afee8000000005556e8000000008bf85356e8000000008bd88b5424105256e8000000008be88b44241c5056e8000000008b7424148944241c81e6ff0000005657e8000000005653e8000000005655e8000000008b4c241c5651e8000000005f5e5d5b83c410c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "$L1940",
+   "sym_key": "$L1940"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "$L1941",
+   "sym_key": "$L1941"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?GetResourceIDCSF@@YAHPAX@Z",
+   "sym_key": "GetResourceIDCSF"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?GetResourceID2CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID2CSF"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?GetResourceID3CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID3CSF"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?GetResourceID4CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID4CSF"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?GetResourceID4CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID4CSF"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?SetupLobbyPlayerSlots@@YI_NPAXHH@Z",
+   "sym_key": "SetupLobbyPlayerSlots"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?SetupSkirmishSpawnLocations@@YIHPAXHH@Z",
+   "sym_key": "SetupSkirmishSpawnLocations"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?SetupLobbyCountryCombo@@YIPAPAXPAXHH@Z",
+   "sym_key": "SetupLobbyCountryCombo"
+  },
+  {
+   "off": 316,
+   "type": "REL32",
+   "sym": "?SetupLobbyFactionSlots@@YIHPAXHH@Z",
+   "sym_key": "SetupLobbyFactionSlots"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 358,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 379,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  }
+ ]
+}

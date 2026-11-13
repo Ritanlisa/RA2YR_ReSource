@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p109\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e45a0 FillComboBoxFactions -> _addr_4E
+[conv] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> TechnoClass
+[conv] 0x74e6b0 RulesClass::Reset -> RulesClass
+[conv] 0x5c2ef0 MPCooperative::GetPlayerCount -> MPCooperative
+[conv] 0x567da0 MapClass::RevealArea2 -> MapClass
+[conv] 0x636980 TeamClass::ProcessScriptActions -> TeamClass
+[conv] 0x721880 TiberiumClass::CleanupMembers -> TiberiumClass
+[conv] 0x4f45b0 GScreenClass::RenderFrame -> GScreenClass
+[conv] 0x7da0f1 ___crtGetStringTypeW -> _addr_7D
+[conv] 0x709290 FootClass::CanEnterCell -> FootClass
+[conv] 0x6adc20 SetupSkirmishSpawnLocationEntry -> _addr_6A
+[conv] 0x6ac210 SidebarClass::GetTooltipText -> SidebarClass
+[conv] 0x6367b0 TeamClass::UpdateBuildQueue -> TeamClass
+[conv] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> INIClass
+[conv] 0x633130 PKStrawClass::ReadEncryptedStream -> PKStrawClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x7a19e0 MatchGameWOL_Delete -> MatchGameWOL
+[conv] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> JumpjetLocomotionClass
+[conv] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=2
+[era] TechnoClass              rc=2
+[era] RulesClass               rc=2
+[era] MPCooperative            rc=2
+[era] MapClass                 rc=0
+[era] TeamClass                rc=2
+[era] TiberiumClass            rc=0
+[era] GScreenClass             rc=2
+[era] _addr_7D                 rc=2
+[era] FootClass                rc=0
+[era] _addr_6A                 rc=0
+[era] SidebarClass             rc=0
+[era] INIClass                 rc=2
+[era] PKStrawClass             rc=2
+[era] ObjectClass              rc=2
+[era] MatchGameWOL             rc=2
+[era] JumpjetLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x567da0   MISMATCH         MapClass::RevealArea2
+[diff] 0x636980   MISMATCH         TeamClass::ProcessScriptActions
+[diff] 0x6367b0   MISMATCH         TeamClass::UpdateBuildQueue
+[diff] 0x721880   MISMATCH         TiberiumClass::CleanupMembers
+[diff] 0x709290   MISMATCH         FootClass::CanEnterCell
+[diff] 0x6adc20   MISMATCH         SetupSkirmishSpawnLocationEntry
+[diff] 0x6ac210   MISMATCH         SidebarClass::GetTooltipText
+[ledger] 0x4e45a0 FillComboBoxFactions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74e6b0 RulesClass::Reset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c2ef0 MPCooperative::GetPlayerCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x567da0 MapClass::RevealArea2 -> NG (attempt 1)
+[ledger] 0x636980 TeamClass::ProcessScriptActions -> NG (attempt 1)
+[ledger] 0x721880 TiberiumClass::CleanupMembers -> NG (attempt 1)
+[ledger] 0x4f45b0 GScreenClass::RenderFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7da0f1 ___crtGetStringTypeW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x709290 FootClass::CanEnterCell -> NG (attempt 1)
+[ledger] 0x6adc20 SetupSkirmishSpawnLocationEntry -> NG (attempt 1)
+[ledger] 0x6ac210 SidebarClass::GetTooltipText -> NG (attempt 1)
+[ledger] 0x6367b0 TeamClass::UpdateBuildQueue -> NG (attempt 1)
+[ledger] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633130 PKStrawClass::ReadEncryptedStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a19e0 MatchGameWOL_Delete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p109\batch_report.json
