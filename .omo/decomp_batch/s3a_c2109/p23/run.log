@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x7b6290 FromStringInt -> _addr_7B
+[conv] 0x7b6320 FormatStringInt -> _addr_7B
+[conv] 0x7b6ae0 WideString::Append2 -> WideString
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+[conv] 0x7cb49d _srand -> _addr_7C
+[conv] 0x7cbcaf __itow -> _addr_7C
+[conv] 0x7cbce1 __ltow -> _addr_7C
+[conv] 0x7cbd13 __ultow -> _addr_7C
+[conv] 0x7cbd45 __i64tow -> _addr_7C
+[conv] 0x7cbd7a __ui64tow -> _addr_7C
+[conv] 0x7cd80f ObjectClass::start -> ObjectClass
+[conv] 0x7cdb14 _setlocale -> _addr_7C
+[conv] 0x7ced49 __cftof -> _addr_7C
+[conv] 0x7cee45 __cftog -> _addr_7C
+[conv] 0x7d0dba __write_lk -> _addr_7D
+[conv] 0x7d170d __input -> _addr_7D
+[conv] 0x7d21be __woutput -> _addr_7D
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=2
+[era] _addr_7B                 rc=2
+[era] WideString               rc=2
+[era] WDTGame                  rc=2
+[era] WinMain_Helper           rc=2
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6290 FromStringInt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6320 FormatStringInt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6ae0 WideString::Append2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cb49d _srand -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbcaf __itow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbce1 __ltow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbd13 __ultow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbd45 __i64tow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbd7a __ui64tow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cd80f ObjectClass::start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cdb14 _setlocale -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ced49 __cftof -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cee45 __cftog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d0dba __write_lk -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d170d __input -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d21be __woutput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p23\batch_report.json
