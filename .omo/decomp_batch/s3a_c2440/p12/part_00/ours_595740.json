@@ -1,0 +1,171 @@
+{
+ "symbol": "?Constructor@MapResourceClass@@QAEHXZ",
+ "sym_key": "MapResourceClass::Constructor",
+ "size": 423,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1e80000000033db8dbe8401000053538bcf899e74010000899e78010000899e7c010000899e80010000e800000000c707000000008dbea001000053538bcfe800000000c707000000008dbebc01000053538bcfe800000000c707000000008dbed801000053538bcfe800000000c707000000008dbef401000053538bcfe800000000c707000000008dbe1002000053538bcfc786080200000a000000899e04020000e800000000c707000000008dbe2c02000053538bcfe800000000c707000000008dbe4802000053538bcfe800000000c707000000008dbe6402000053538bcfe800000000c707000000008dbe8002000053538bcfc786780200000a000000899e74020000e80000000053538d4e70c70700000000e800000000c7869c02000000000000c786b8020000c4090000c786bc0200007c1500008dbec002000053538bcfe80000000053538d8eb5000000c70700000000e800000000c786f00200000a000000899eec020000c786dc02000000000000c786f8020000f4010000c686fc02000001899e00030000c7860803000004000000889e0c0300008bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Constructor@MapSeedClass@@QAEPAV1@XZ",
+   "sym_key": "MapSeedClass::Constructor"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?Construct@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::Construct"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_int@@3PAXA",
+   "sym_key": "vt_TypeList_int"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?BuildingTypeConstructor@DynamicVectorClass@@QAEPAIHH@Z",
+   "sym_key": "DynamicVectorClass::BuildingTypeConstructor"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_BuildingTypeClass_const@@3PAXA",
+   "sym_key": "vt_TypeList_BuildingTypeClass_const"
+  },
+  {
+   "off": 348,
+   "type": "REL32",
+   "sym": "?BuildingTypeConstructor@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::BuildingTypeConstructor"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?vt_TypeList_BuildingTypeClass_const@@3PAXA",
+   "sym_key": "vt_TypeList_BuildingTypeClass_const"
+  }
+ ]
+}

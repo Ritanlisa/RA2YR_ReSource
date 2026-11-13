@@ -92266,15 +92266,15 @@
   "this_as_id": false
  },
  "0x589ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::InitCellVe_vt02",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass::InitCellVe_vt02",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x589d90": {
@@ -92412,15 +92412,15 @@
   "status": "NG"
  },
  "0x58a150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_U_HashObject_II::SetCapacity_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_W4PassabilityType::SetCapacity_0",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a230": {
@@ -92527,27 +92527,27 @@
   "this_as_id": false
  },
  "0x58a630": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "_DynamicVectorClass_U_HashObject_II::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass_W4PassabilityType::Constructor",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_U_HashObject_II::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UHashObject_uint_uint::Release",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x58a7b0": {
@@ -93463,14 +93463,14 @@
   "this_as_id": false
  },
  "0x58bf70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::TerrainTileDataConstructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::TerrainTileDataConstructor",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93546,7 +93546,7 @@
   "this_as_id": false
  },
  "0x58c4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93658,7 +93658,7 @@
   "this_as_id": false
  },
  "0x58d1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93670,7 +93670,7 @@
   "this_as_id": false
  },
  "0x58d410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93694,7 +93694,7 @@
   "this_as_id": false
  },
  "0x58e5d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93706,7 +93706,7 @@
   "this_as_id": false
  },
  "0x58e740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93718,7 +93718,7 @@
   "this_as_id": false
  },
  "0x58e9b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93754,7 +93754,7 @@
   "this_as_id": false
  },
  "0x58f0c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93836,7 +93836,7 @@
   "this_as_id": false
  },
  "0x5910f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93860,7 +93860,7 @@
   "this_as_id": false
  },
  "0x591d80": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93872,7 +93872,7 @@
   "this_as_id": false
  },
  "0x592440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94002,7 +94002,7 @@
   "this_as_id": false
  },
  "0x594870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94074,26 +94074,26 @@
   "this_as_id": false
  },
  "0x595740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 lea edi, [esi + 0x188]",
   "name": "MapResourceClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "MapResourceClass::Constructor",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 11,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5958e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::CleanupRandomMapData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::CleanupRandomMapData",
-  "rule_violations": 2,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94645,7 +94645,7 @@
   "this_as_id": false
  },
  "0x5a0410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94657,7 +94657,7 @@
   "this_as_id": false
  },
  "0x5a0700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
