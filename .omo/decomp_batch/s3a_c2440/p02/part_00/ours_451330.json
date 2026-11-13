@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetCrewCount@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetCrewCount",
+ "size": 152,
+ "link_base": 0,
+ "bytes_hex": "8b81e00600005685c0740433c05ec38b91200500008a82cd0c000084c0750433c05ec38b891c0200008b81e801000085c0742a83f801750ea1000000000fbeb0fc140000eb2383f802740433c05ec3a1000000000fbeb000150000eb0ca1000000000fbeb0f814000085f6750433c05ec38b026a005152ff90b800000099f7fe83f8017d07b8010000005ec383f8057e05b8050000005ec3",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

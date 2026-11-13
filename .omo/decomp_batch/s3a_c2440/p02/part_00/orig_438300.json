@@ -1,0 +1,11 @@
+{
+ "addr": "0x438300",
+ "name": "GameClass::updateUI",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438300",
+ "bytes_hex": "568bf18b460c85c0751c6a04e8060b390083c40485c074098bc8e831fcffffeb0233c089460c8b4e0c5e85c9740f8b4424088b5424045052e893fcffffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

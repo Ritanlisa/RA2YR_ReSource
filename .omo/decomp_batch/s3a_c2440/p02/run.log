@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4381d0 GameClass::processFrame -> GameClass
+[conv] 0x438300 GameClass::updateUI -> GameClass
+[conv] 0x438e70 AbstractClass::Initialize -> AbstractClass
+[conv] 0x43a7e0 AbstractClass::Construct -> AbstractClass
+[conv] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> TechnoClass
+[conv] 0x43f180 BuildingClass::ProductionDisplayUpdate -> BuildingClass
+[conv] 0x442230 BuildingClass::ProcessAttack -> BuildingClass
+[conv] 0x445e50 BuildingClass::GetFacingToTarget -> BuildingClass
+[conv] 0x445f80 BuildingClass::CreateUnits -> BuildingClass
+[conv] 0x447ac0 BuildingClass::GetExitCoords -> BuildingClass
+[conv] 0x448260 BuildingClass::drawFrame -> BuildingClass
+[conv] 0x449c30 BuildingClass::finalizeAnimation -> BuildingClass
+[conv] 0x44b780 BuildingClass::ProcessRepair -> BuildingClass
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x451330 BuildingClass::GetCrewCount -> BuildingClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameClass                rc=0
+[era] AbstractClass            rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] _addr_45                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4381d0   MISMATCH         GameClass::processFrame
+[diff] 0x438300   MISMATCH         GameClass::updateUI
+[diff] 0x451330   MISMATCH         BuildingClass::GetCrewCount
+[ledger] 0x4381d0 GameClass::processFrame -> NG (attempt 2)
+[ledger] 0x438300 GameClass::updateUI -> NG (attempt 2)
+[ledger] 0x438e70 AbstractClass::Initialize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43a7e0 AbstractClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43f180 BuildingClass::ProductionDisplayUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x442230 BuildingClass::ProcessAttack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x445e50 BuildingClass::GetFacingToTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x445f80 BuildingClass::CreateUnits -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447ac0 BuildingClass::GetExitCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x448260 BuildingClass::drawFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x449c30 BuildingClass::finalizeAnimation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44b780 BuildingClass::ProcessRepair -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x451330 BuildingClass::GetCrewCount -> NG (attempt 13)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p02\batch_report.json

@@ -18063,15 +18063,15 @@
   "this_as_id": false
  },
  "0x4381d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 jne 0x4381f6",
   "name": "GameClass::processFrame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "GameClass::processFrame",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x438210": {
@@ -18087,15 +18087,15 @@
   "this_as_id": false
  },
  "0x438300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 jne 0x438326",
   "name": "GameClass::updateUI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "GameClass::updateUI",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x438340": {
@@ -18426,7 +18426,7 @@
   "this_as_id": false
  },
  "0x438e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19044,7 +19044,7 @@
   "this_as_id": false
  },
  "0x43a7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19389,7 +19389,7 @@
   "this_as_id": false
  },
  "0x43b150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -19617,14 +19617,14 @@
   "this_as_id": false
  },
  "0x43f180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProductionDisplayUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::ProductionDisplayUpdate",
-  "rule_violations": 21,
+  "rule_violations": 19,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19672,14 +19672,14 @@
   "this_as_id": false
  },
  "0x442230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessAttack",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::ProcessAttack",
-  "rule_violations": 9,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19792,7 +19792,7 @@
   "this_as_id": false
  },
  "0x445e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19816,14 +19816,14 @@
   "this_as_id": false
  },
  "0x445f80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingClass::CreateUnits",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SuperWeapon::CreateUnits",
-  "rule_violations": 46,
+  "rule_violations": 40,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -19888,7 +19888,7 @@
   "this_as_id": false
  },
  "0x447ac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -19967,14 +19967,14 @@
   "this_as_id": false
  },
  "0x448260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::drawFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AnimClass::drawFrame",
-  "rule_violations": 173,
+  "rule_violations": 159,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -20063,14 +20063,14 @@
   "this_as_id": false
  },
  "0x449c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::finalizeAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AnimClass::finalizeAnimation",
-  "rule_violations": 42,
+  "rule_violations": 38,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -20118,7 +20118,7 @@
   "this_as_id": false
  },
  "0x44b780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20384,14 +20384,14 @@
   "this_as_id": false
  },
  "0x4500f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::ProcessAutoProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ProcessAutoProduction",
-  "rule_violations": 12,
+  "rule_violations": 15,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -20439,15 +20439,15 @@
   "this_as_id": false
  },
  "0x451330": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "BuildingClass::GetCrewCount",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingClass::GetCrewCount",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4513d0": {
@@ -20908,7 +20908,7 @@
   "this_as_id": false
  },
  "0x453e20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20968,7 +20968,7 @@
   "this_as_id": false
  },
  "0x4545d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21183,7 +21183,7 @@
   "this_as_id": false
  },
  "0x4561f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21296,7 +21296,7 @@
   "this_as_id": false
  },
  "0x456fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_056FB0",
@@ -21614,7 +21614,7 @@
   "this_as_id": false
  },
  "0x4593a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

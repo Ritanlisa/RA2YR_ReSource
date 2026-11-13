@@ -1,0 +1,27 @@
+{
+ "symbol": "?processFrame@GameClass@@QAEPAIHH@Z",
+ "sym_key": "GameClass::processFrame",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460c85c0751e6a04e80000000083c40485c0740b50e80000000083c404eb0233c089460c8b4e0c5e85c9740f8b4424088b5424045052e800000000c20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?sub_437F50@@YAPAIPAX@Z",
+   "sym_key": "sub_437F50"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?initGameMode@GameClass@@QAEHHH@Z",
+   "sym_key": "GameClass::initGameMode"
+  }
+ ]
+}
