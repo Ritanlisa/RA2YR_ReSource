@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p105\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c4110 MPCooperative::ProcessChat -> MPCooperative
+[conv] 0x5bc530 CreateDebugOutput -> _addr_5B
+[conv] 0x46d4a0 Game::SendCampaignOptions -> Game
+[conv] 0x7d4fcc __isindst_0 -> _addr_7D
+[conv] 0x71c730 TerrainClass::Update -> TerrainClass
+[conv] 0x5200b0 InfantryClass::ProcessIdleDeploy -> InfantryClass
+[conv] 0x5b3760 MissionClass::LoadFromINI -> MissionClass
+[conv] 0x672440 RulesClass::ReadDataList -> RulesClass
+[conv] 0x428c30 AnimTypeClass::GetDamage -> AnimTypeClass
+[conv] 0x793280 sub_793280 -> _addr_79
+[conv] 0x7d3482 __setmbcp -> _addr_7D
+[conv] 0x729e50 TunnelLocomotionClass::ComputeBounceHeight -> TunnelLocomotionClass
+[conv] 0x5ca800 MultiplayerSiege::ProcessTurn -> MultiplayerSiege
+[conv] 0x71c1b0 TerrainClass::Draw -> TerrainClass
+[conv] 0x709820 TechnoClass::BeginFiringSequence -> TechnoClass
+[conv] 0x5e6520 ReadPlayerCountMap -> _addr_5E
+[conv] 0x5652c0 MapClass::Destruct -> MapClass
+[conv] 0x4a6840 ObjectClass::sub_4A6840 -> ObjectClass
+[conv] 0x724580 CommandClass::AddAction -> CommandClass
+[conv] 0x6565a0 CellClass::RevealFogRect -> CellClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=2
+[era] _addr_5B                 rc=2
+[era] Game                     rc=2
+[era] _addr_7D                 rc=2
+[era] TerrainClass             rc=2
+[era] InfantryClass            rc=2
+[era] MissionClass             rc=2
+[era] RulesClass               rc=2
+[era] AnimTypeClass            rc=2
+[era] _addr_79                 rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] MultiplayerSiege         rc=2
+[era] TechnoClass              rc=0
+[era] _addr_5E                 rc=2
+[era] MapClass                 rc=0
+[era] ObjectClass              rc=0
+[era] CommandClass             rc=2
+[era] CellClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x71c1b0   MISMATCH         TerrainClass::Draw
+[diff] 0x793280   MISMATCH         sub_793280
+[diff] 0x729e50   MISMATCH         TunnelLocomotionClass::ComputeBounceHeight
+[diff] 0x709820   MISMATCH         TechnoClass::BeginFiringSequence
+[diff] 0x5652c0   MISMATCH         MapClass::Destruct
+[diff] 0x4a6840   MISMATCH         ObjectClass::sub_4A6840
+[diff] 0x6565a0   MISMATCH         CellClass::RevealFogRect
+[ledger] 0x5c4110 MPCooperative::ProcessChat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bc530 CreateDebugOutput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46d4a0 Game::SendCampaignOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d4fcc __isindst_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c730 TerrainClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5200b0 InfantryClass::ProcessIdleDeploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3760 MissionClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672440 RulesClass::ReadDataList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x428c30 AnimTypeClass::GetDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x793280 sub_793280 -> NG (attempt 1)
+[ledger] 0x7d3482 __setmbcp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x729e50 TunnelLocomotionClass::ComputeBounceHeight -> NG (attempt 1)
+[ledger] 0x5ca800 MultiplayerSiege::ProcessTurn -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c1b0 TerrainClass::Draw -> NG (attempt 1)
+[ledger] 0x709820 TechnoClass::BeginFiringSequence -> NG (attempt 1)
+[ledger] 0x5e6520 ReadPlayerCountMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5652c0 MapClass::Destruct -> NG (attempt 1)
+[ledger] 0x4a6840 ObjectClass::sub_4A6840 -> NG (attempt 1)
+[ledger] 0x724580 CommandClass::AddAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6565a0 CellClass::RevealFogRect -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 3,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p105\batch_report.json

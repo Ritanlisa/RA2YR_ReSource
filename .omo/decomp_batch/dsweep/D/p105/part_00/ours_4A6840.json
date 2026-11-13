@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_4A6840@ObjectClass@@QAEPADPAXHHH@Z",
+ "sym_key": "ObjectClass::sub_4A6840",
+ "size": 486,
+ "link_base": 0,
+ "bytes_hex": "53558b6c2410568bf15733db682c0400008b3e895e0481e700ffffff3beb893e8b7c24200f95c03bfb895e080f95c1895e0c884610884e14885e18885e1c895e20e80000000083c4043bc38946040f847f010000c700280000008b5604f7df896a048b46048978088b4e048b7c242066c7410c01008b560466c7420e08008b46048958108b4e048959148b5604895a188b460489581c8b4e04b8000100008941208b560489422433c08bc881e1ff00008079084981c900ffffff418b6e048d144f03ca403d000100008a5102885485248b6e048a5101885485258b56048a09884c82268b5604885c82277cbd8b6c241455e8000000008bf8538d460c53508b4604535057e8000000005755894608e800000000395e080f84b70000008b7e04395f040f95c08846108b4f0825ff000000518be8e80000000083c4048d4d0385c00f95c083e1fc8846140f95c288561c8b57083bd37f0b395e0c0f95c0884618eb1625ff0000008b560c480fafc503c20f95c2885618f7d93bcb510f95c088461ce8000000006a208be8e8000000008bf883c4083bfb74338b4e0c33c08a4614896f048947080fafc550518d4f14895f0cc70700000000c7471001000000e800000000c70700000000eb0233ff3bfb897e20750a8b0e80e10183c901890e8bc65f5e5d5bc21000",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?GetDC@@YGPAXPAX@Z",
+   "sym_key": "GetDC"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?CreateDIBSection@@YGPAXHPAXH0HH@Z",
+   "sym_key": "CreateDIBSection"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?ReleaseDC@@YGHPAXH@Z",
+   "sym_key": "ReleaseDC"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 394,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 446,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  }
+ ]
+}

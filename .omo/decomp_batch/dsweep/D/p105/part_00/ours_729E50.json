@@ -1,0 +1,111 @@
+{
+ "symbol": "?ComputeBounceHeight@TunnelLocomotionClass@@QAGHH@Z",
+ "sym_key": "TunnelLocomotionClass::ComputeBounceHeight",
+ "size": 482,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec2c53568b7508578b4608059c0000008b08894c24308b50048d4424288d4c243050518b0d000000008954243ce8000000008d54243052e8000000008d44242c8d4c243050518b0d00000000e8000000008b7c242c8b54242c8b4e302bfa85c9894c2418894c2424897c241474518b46248b562c83f8ff8954240c742e8b15540a00008bda2bd83b5c240c7c1633d22bca894c240cdb44240cda742418dd5c2418eb2c2bc28b54240c03d02bca894c240cdb44240cda742418dd5c2418eb10c744241800000000c744241c0000f03f8b4e088d5424245281c188030000e8000000008b088b4614c1e9074183c0fed1e981e1ff00000083f8040f87cd000000ff248500000000dd442418dc1d00000000dfe0f6c441750b8a463484c07504c646340183f9467e1881f98c0000007d10a10000000003c75f5e5b8be55dc208008b0d00000000c744241000000000894c240cdf6c240cdc4c2418eb468b15000000008d043a5f5e5b8be55dc208008b0d000000008d04395f5e5b8be55dc20800dd05000000008b1500000000dc64241889542418c744241c00000000df6c2418dec9da44241483ec08dd1c24e8000000008bc88b44242c33c883c40881e1ff00000033c15f5e5b8be55dc2080056e8000000005f5e5b8be55dc20800",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "$L1974",
+   "sym_key": "$L1974"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?dbl_7E3550@@3NA",
+   "sym_key": "dbl_7E3550"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844A9C@@3IA",
+   "sym_key": "DataGlobal_844A9C"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844A9C@@3IA",
+   "sym_key": "DataGlobal_844A9C"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844A9C@@3IA",
+   "sym_key": "DataGlobal_844A9C"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844A98@@3IA",
+   "sym_key": "DataGlobal_844A98"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844A98@@3IA",
+   "sym_key": "DataGlobal_844A98"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 469,
+   "type": "REL32",
+   "sym": "?JumpjetLocomotionClass__StubReturnFalse@@YGHPAX@Z",
+   "sym_key": "JumpjetLocomotionClass__StubReturnFalse"
+  }
+ ]
+}

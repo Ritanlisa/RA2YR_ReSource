@@ -1,0 +1,129 @@
+{
+ "symbol": "?Destruct@MapClass@@QAEXXZ",
+ "sym_key": "MapClass::Destruct",
+ "size": 434,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1c70600000000e800000000e8000000008bcee8000000008bcee8000000008b466833db3bc3740f8b461a50e80000000083c404895e6855578b7e143bfb74198b073bc374078b086a0350ff1157e80000000083c404895e14395e70740f8b561a52e80000000083c404895e708dae80000000c7442410030000008b7d003bfb74198b073bc374078b086a0350ff1157e80000000083c404895d008b44241083c504488944241075d28b8660110000c7865c110000000000003bc37417389e69110000740f50e80000000083c404899e601100008b863c010000889e691100003bc3899e64110000c78638010000000000007417389e45010000740f50e80000000083c404899e3c0100008b86d80000008dbed40000003bc3889e45010000899e40010000c707000000007417389ee1000000740f50e80000000083c404899ed8000000889ee1000000899edc000000bd030000008b4fec83ef183bcbc70700000000740f385f0d740a6a03e800000000895f044d885f0d895f0875d88b46545f3bc3c74650000000005d7411385e5d740c50e80000000083c404895e54885e5d895e58c706000000005e5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?vt_MapClass@@3PAXA",
+   "sym_key": "vt_MapClass"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?CleanupVeinholeSystem@@YAXXZ",
+   "sym_key": "CleanupVeinholeSystem"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Map_Destroy@@YAXXZ",
+   "sym_key": "Map_Destroy"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?FreeUpgradeQueue@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FreeUpgradeQueue"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?FreeUpgradeQueue2@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FreeUpgradeQueue2"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_VectorClass_CellClass"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 299,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 355,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_SubzoneTrackingStruct@@3PAXA",
+   "sym_key": "vt_VectorClass_SubzoneTrackingStruct"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "?Destruct@SubzoneConnectionVector@@QAEPADD@Z",
+   "sym_key": "SubzoneConnectionVector::Destruct"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_ZoneConnectionClass@@3PAXA",
+   "sym_key": "vt_VectorClass_ZoneConnectionClass"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?vt_GScreenClass@@3PAXA",
+   "sym_key": "vt_GScreenClass"
+  }
+ ]
+}

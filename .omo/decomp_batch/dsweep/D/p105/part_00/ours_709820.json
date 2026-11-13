@@ -1,0 +1,75 @@
+{
+ "symbol": "?BeginFiringSequence@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::BeginFiringSequence",
+ "size": 409,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec08568bf1576a028986fc0400008a86ac0000003c0b6a0075228b0d0000000081c168050300e8000000008b15000000000fbe8a040e000003c1eb208b15000000008d8a18020000e8000000008b0d000000000fbe91080e000003c28b0d000000008b54240c8986880100008b86b402000085c0898e8001000089968401000074528a8e0c05000084c974488b0e5056ff91e40200008b166a01508b86b40200005056ff92c003000083f80675118b8ed002000085c97411e800000000eb1583f805740583f808750b8b0e6a0056ff91c80300008a4c240b8b44240c8b166a0083e103505156ff92c40300008b16568bf8ff92840000008a88b006000084c974218b44240c5650e8000000008b8eb402000083c40833c085c95f5e0f95c083c408c385ff740a8b0e5756ff91c80300008b86b40200008b165056ff92e402000085ff740c8a4f1480e101f6d91bc923f98b165056ff92f80300008b0085ff742085c0741c8b88a00000008a91a202000084d2750c50578bcee8000000002947708b8eb402000033c085c95f5e0f95c083c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?ProcessIdleOrders@UnitClass@@QAEXXZ",
+   "sym_key": "UnitClass::ProcessIdleOrders"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?SelectTargetByWeight@@YAXPAXH@Z",
+   "sym_key": "SelectTargetByWeight"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?ComputeAudioFalloffDamage@TechnoClass@@QAEHHH@Z",
+   "sym_key": "TechnoClass::ComputeAudioFalloffDamage"
+  }
+ ]
+}

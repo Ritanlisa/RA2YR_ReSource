@@ -1,0 +1,45 @@
+{
+ "symbol": "?RevealFogRect@CellClass@@QAEXPAF@Z",
+ "sym_key": "CellClass::RevealFogRect",
+ "size": 353,
+ "link_base": 0,
+ "bytes_hex": "83ec205355568bf1578b861c12000085c00f84400100008b4c24348b86901400000fbf51020fbf092bc203c183f8ff750233c06a008d5424386a00528d54241c8d4c242c8944241cc744244000000000e8000000008b08894c24108b8e1c1200008b50048b78088b680c8b015189542418ff507c8bd88b861c120000508b08ff918000000085ff894424340f8ec600000085ed0f8ebe000000db868814000083ec08da4c2418dd1c24e8000000004833d285c00f9cc24a23d08b44241803c78954242489442420db442420da8e88140000dd1c24e8000000008bf883c408473bfb7c028bfbdb868814000083ec08da4c241cdd1c24e8000000008b4c241c4833db85c00f9cc303e94b896c242023d8db442420da8e88140000dd1c24e8000000008b4c243c83c408403bc17c028bc13bd87d242bc38be88b5c241c3bdf7d158d5424348bce52895c2438e800000000433bdf7ceb4d75e05f5e5d5b83c420c20400",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?RevealCell@FogOfWar@@QAEXPAX@Z",
+   "sym_key": "FogOfWar::RevealCell"
+  }
+ ]
+}

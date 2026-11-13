@@ -13569,6 +13569,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x428c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AnimTypeClass::GetDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AnimTypeClass::GetDamage",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x428de0": {
   "attempts": 1,
   "clean": false,
@@ -22958,6 +22970,18 @@
   "orig_name": "sub_46D490",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x46d4a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Game::SendCampaignOptions",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::SendCampaignOptions",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x46d810": {
@@ -38786,6 +38810,18 @@
   "orig_name": "sub_4A6820",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a6840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "resolve:proto_this",
+  "first_diff": "+7 push edi",
+  "name": "ObjectClass::sub_4A6840",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_4A6840",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a6a60": {
@@ -66046,6 +66082,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5200b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "InfantryClass::ProcessIdleDeploy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::ProcessIdleDeploy",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x520260": {
   "attempts": 1,
   "clean": false,
@@ -82856,6 +82904,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5652c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+21 call 0x722390",
+  "name": "MapClass::Destruct",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MapClass::Destruct",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5654a0": {
   "attempts": 1,
   "clean": false,
@@ -89788,6 +89848,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5b3760": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MissionClass::LoadFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MissionClass::LoadFromINI",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5b3910": {
   "attempts": 1,
   "clean": false,
@@ -91024,6 +91096,17 @@
   "orig_name": "sub_5BC4D0",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5bc530": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CreateDebugOutput",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateDebugOutput",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5bcb90": {
@@ -93464,6 +93547,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5c4110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MPCooperative::ProcessChat",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MPCooperative::ProcessChat",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5c42c0": {
   "attempts": 1,
   "clean": true,
@@ -95498,6 +95593,18 @@
   "orig_name": "ScenarioClass::ClearFlag_0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5ca800": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MultiplayerSiege::ProcessTurn",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MultiplayerSiege::ProcessTurn",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5ca9b0": {
@@ -101774,6 +101881,17 @@
   "orig_name": "SessionClass::initPlayers",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5e6520": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ReadPlayerCountMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ReadPlayerCountMap",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5e66d0": {
@@ -117905,6 +118023,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6565a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x34",
+  "name": "CellClass::RevealFogRect",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "CellClass::RevealFogRect",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x656750": {
   "attempts": 1,
   "clean": false,
@@ -122716,6 +122846,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::readRadiation",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x672440": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RulesClass::ReadDataList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RulesClass::ReadDataList",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -150545,6 +150687,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x709820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+5 sub esp, 0xc",
+  "name": "TechnoClass::BeginFiringSequence",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TechnoClass::BeginFiringSequence",
+  "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7099d0": {
   "attempts": 8,
   "clean": true,
@@ -153895,6 +154049,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x71c1b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x14",
+  "name": "TerrainClass::Draw",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TerrainClass::Draw",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x71c360": {
   "attempts": 1,
   "clean": false,
@@ -153935,6 +154101,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainClass::ProcessTick",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x71c730": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TerrainClass::Update",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TerrainClass::Update",
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -156441,6 +156619,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x724580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CommandClass::AddAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CommandClass::AddAction",
+  "rule_violations": 19,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x724730": {
   "attempts": 1,
   "clean": false,
@@ -158642,6 +158832,18 @@
   "orig_name": "FootClass::Process",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x729e50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x28",
+  "name": "TunnelLocomotionClass::ComputeBounceHeight",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "JumpjetLocomotionClass::ComputeBounceHeight",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x72a020": {
@@ -179487,6 +179689,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x793280": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+4 push ebx",
+  "name": "sub_793280",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_793280",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x793710": {
   "attempts": 1,
   "clean": false,
@@ -193150,6 +193363,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7d3482": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__setmbcp",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__setmbcp",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7d362f": {
   "attempts": 1,
   "clean": false,
@@ -193506,6 +193730,17 @@
   "orig_name": "__isindst",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d4fcc": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__isindst_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__isindst_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7d5178": {
