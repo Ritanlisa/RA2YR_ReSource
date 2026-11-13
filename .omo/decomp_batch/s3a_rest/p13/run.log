@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x483710 ObjectClass::sub_483710 -> ObjectClass
+[conv] 0x484680 TacticalMap::ComputeScreenTint -> TacticalMap
+[conv] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> JumpjetLocomotionClass
+[conv] 0x486c50 CellClass::ClearCellContents -> CellClass
+[conv] 0x488380 CheckListClass::GetSelected -> CheckListClass
+[conv] 0x4883f0 CheckListClass::SetItemData -> CheckListClass
+[conv] 0x488ee0 ColorListClass::GetColor -> ColorListClass
+[conv] 0x489180 ComputeTechnoClassDamageFalloff -> _addr_48
+[conv] 0x48b0e0 CommBufferClass::sub_48B0E0 -> CommBufferClass
+[conv] 0x48c040 ModemConnectionClass::receivePacket -> ModemConnectionClass
+[conv] 0x48c320 ModemConnectionClass::processTileUpdate -> ModemConnectionClass
+[conv] 0x48c3b0 ConnectionClass::IsValid -> ConnectionClass
+[conv] 0x48c5a0 ModemConnectionClass::connect -> ModemConnectionClass
+[conv] 0x48d1e0 Network::Dispatch -> Network
+[conv] 0x48e0b0 ObjectClass::DumpNetworkStats -> ObjectClass
+[conv] 0x48ebf0 ConvertClass::InitTables -> ConvertClass
+[conv] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> _BlitTransLucent25Alpha_G
+[conv] 0x499cc0 Blitter::getTileIndex -> Blitter
+[conv] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> __BlitTransZRemapXlat_E
+[conv] 0x499da0 RLEBlitter::clearOverlayFlags -> RLEBlitter
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TacticalMap              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] CellClass                rc=2
+[era] CheckListClass           rc=2
+[era] ColorListClass           rc=2
+[era] _addr_48                 rc=2
+[era] CommBufferClass          rc=2
+[era] ModemConnectionClass     rc=2
+[era] ConnectionClass          rc=2
+[era] Network                  rc=2
+[era] ConvertClass             rc=2
+[era] _BlitTransLucent25Alpha_G rc=2
+[era] Blitter                  rc=2
+[era] __BlitTransZRemapXlat_E  rc=2
+[era] RLEBlitter               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x483710 ObjectClass::sub_483710 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x484680 TacticalMap::ComputeScreenTint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> COMPILE_FAIL (attempt 2)
+[ledger] 0x486c50 CellClass::ClearCellContents -> COMPILE_FAIL (attempt 2)
+[ledger] 0x488380 CheckListClass::GetSelected -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4883f0 CheckListClass::SetItemData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x488ee0 ColorListClass::GetColor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x489180 ComputeTechnoClassDamageFalloff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48b0e0 CommBufferClass::sub_48B0E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c040 ModemConnectionClass::receivePacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c320 ModemConnectionClass::processTileUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c3b0 ConnectionClass::IsValid -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48c5a0 ModemConnectionClass::connect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48d1e0 Network::Dispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48e0b0 ObjectClass::DumpNetworkStats -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48ebf0 ConvertClass::InitTables -> COMPILE_FAIL (attempt 2)
+[ledger] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x499cc0 Blitter::getTileIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x499da0 RLEBlitter::clearOverlayFlags -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p13\batch_report.json
