@@ -1,0 +1,11 @@
+{
+ "addr": "0x4033C0",
+ "name": "AudioStream::DestroyAll",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4033C0",
+ "bytes_hex": "a1985e8100568bf18b4818418948188bcee87a4000008b0d985e81008b41184885c08941187d0d8b15985e8100c742180000000053578d8ef8000000e8bf3f00008bf885ff8bdf74168bcfe8d03f00008bcb8bf8e837f1ffff85ff8bdf75ea8b46188bce8b500cff52208b461c8b4e18c744811c000000008b46188b4810495f89481085c95b7d0a8b5618c742100000000056e8e5563c0083c4045ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

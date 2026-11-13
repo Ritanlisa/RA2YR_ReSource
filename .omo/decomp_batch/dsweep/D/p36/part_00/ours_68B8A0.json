@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_68B8A0@ObjectClass@@QAE_JH@Z",
+ "sym_key": "ObjectClass::sub_68B8A0",
+ "size": 248,
+ "link_base": 0,
+ "bytes_hex": "83ec205633f6894c2414894c240856568d54240f8d4c241889742414e800000000837c2410057e25db44241483ec08dc0d00000000dd1c24e800000000668944241c83c4088b442414894424088d4c241c51e8000000008b4c242083c4043bc675043bce7450894c241489742418df6c2414894424148974241883ec0889442424dc0d00000000df6c241c89742428dec1dc0d00000000dd1c24e8000000008bc88b44241c33c883c40881e1ff00000033c8894c240cdb44240883ec08dc0d00000000da742414dd1c24e8000000008b4c24248bd0c1fa1025ff00000066895424288b74242880e1009983c4080bc10bd65e83c420c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetVersionString@@YIPADPAX0HH@Z",
+   "sym_key": "GetVersionString"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?dbl_7F0E50@@3NA",
+   "sym_key": "dbl_7F0E50"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?sub_5CAF70@@YAKPAX@Z",
+   "sym_key": "sub_5CAF70"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?dbl_7E51F8@@3NA",
+   "sym_key": "dbl_7E51F8"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?dbl_7EF918@@3NA",
+   "sym_key": "dbl_7EF918"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?dbl_7F0E58@@3NA",
+   "sym_key": "dbl_7F0E58"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

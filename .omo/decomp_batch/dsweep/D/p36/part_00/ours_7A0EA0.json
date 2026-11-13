@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetGameOptionsPing@@YIXPAXPBDH@Z",
+ "sym_key": "Unnamed::SetGameOptionsPing",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "5153555657895424108bd9e8000000008b6c241833ff8b8f0000000085c974778b742410e8000000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c075418bcb89af00000000e8000000008bc885c9742e85ed7c2281fd2c0100007c1681fdf40100007c07ba02000000eb0eba01000000eb0733d2eb0383caffe80000000083c70483ff200f8c73ffffff5f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76440@@3PAIA",
+   "sym_key": "DataGlobal_B76440"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?UpdateLobbyGraphicsWOL@@YIPAPAXHH@Z",
+   "sym_key": "UpdateLobbyGraphicsWOL"
+  }
+ ]
+}

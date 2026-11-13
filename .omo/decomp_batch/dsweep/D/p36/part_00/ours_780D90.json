@@ -1,0 +1,99 @@
+{
+ "symbol": "?Render_Format@@YIPAPAGPAPAHPAPAD@Z",
+ "sym_key": "Unnamed::Render_Format",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "53558bda8be956578bcbe800000000680000000050e80000000083c40885c07457a10000000033ff85c0762aa1000000008bcb8b34b8e8000000008d4e585150e80000000083c40885c0741da100000000473bf872d668000000008bcde8000000008bc55f5e5d5bc3568bcde8000000008bc55f5e5d5bc333d2689a0b00008a1500000000b9000000005233d2e8000000008bcd50e8000000008bc55f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?aRandmapSed@@3PADA",
+   "sym_key": "aRandmapSed"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?aTxtRandomMapDe@@3PADA",
+   "sym_key": "aTxtRandomMapDe"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  }
+ ]
+}

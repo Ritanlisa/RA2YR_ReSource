@@ -1,0 +1,51 @@
+{
+ "symbol": "?Destroy2@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Destroy2",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b8ea800000085c9740fe800000000c786a8000000000000008b06535756ff503c8bf88a44240c32db84c0752b85f67414f6461401740e8b0e56ff912803000084c00f95c385ff740f8bcfe80000000084c0750d84db75098b1656ff9250010000b9f8010000e8000000005f3bc65b750c6a00b9f8010000e8000000008b5424048b44240480e20025ff0000000bd08bcee8000000008b4424045e59c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?GetField@TacticalClass@@QAEHXZ",
+   "sym_key": "TacticalClass::GetField"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?GetScrollMode@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::GetScrollMode"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?SetScrollMode@MapClass@@QAE_NH@Z",
+   "sym_key": "MapClass::SetScrollMode"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  }
+ ]
+}

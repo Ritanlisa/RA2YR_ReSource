@@ -1,0 +1,81 @@
+{
+ "symbol": "?ResetReadyStates@Game@@QAEHXZ",
+ "sym_key": "Game::ResetReadyStates",
+ "size": 154,
+ "link_base": 0,
+ "bytes_hex": "e8000000003dbc0000007447b9c2000000e80000000085c07526b9c9000000e80000000085c07518b9bc000000e80000000085c0750ab9bd000000e800000000689f05000050e8000000006a0150e800000000538b1d000000005633f685db7e36a10000000068000000008b0cb051e80000000083c40885c074178b15000000008b04b28b487785c97407c7407700000000463bf37cca5e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?GetCurrentType@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::GetCurrentType"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_CurrentPlayerName@@3GA",
+   "sym_key": "g_CurrentPlayerName"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "_wcscmp",
+   "sym_key": "wcscmp"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  }
+ ]
+}

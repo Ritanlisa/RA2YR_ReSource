@@ -1,0 +1,51 @@
+{
+ "symbol": "?RemoveChar@WideString@@QAEDG@Z",
+ "sym_key": "WideString::RemoveChar",
+ "size": 193,
+ "link_base": 0,
+ "bytes_hex": "5153558be932db8b450085c075085d32c05b59c204005650e8000000008b4d008bf08b4424185051e80000000083c40c85c00f848000000057c6442413018d1c368b75008bd02bd68bcbd1ea2bca8d700283e9028bf88bc18b542418c1e902f3a58bc883eb0283e10352f3a48b4d0066c7041900008b450050e80000000083c40885c075bc8b4d0051e8000000008d54000252e8000000008bf08b45005056e8000000008b4d0051e8000000008a5c242783c4148975005f5e8ac35d5b59c20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

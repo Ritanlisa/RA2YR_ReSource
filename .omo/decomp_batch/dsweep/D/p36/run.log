@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x46d810 ObjectClass::sub_46D810 -> ObjectClass
+[conv] 0x53e550 ObjectClass::WinMain_Write -> ObjectClass
+[conv] 0x5dbe20 SetGameSetupPlayerState -> _addr_5D
+[conv] 0x5f5280 ObjectClass::Destroy2 -> ObjectClass
+[conv] 0x402220 ObjectClass::Cleanup -> ObjectClass
+[conv] 0x5e9850 Game::ResetReadyStates -> Game
+[conv] 0x68b8a0 ObjectClass::sub_68B8A0 -> ObjectClass
+[conv] 0x491210 VectorClass_ptr_ConvertClass::Constructor_ConvertClass -> VectorClass_ptr_ConvertClass
+[conv] 0x4c5ac0 EMPulseClass::CopyTo -> EMPulseClass
+[conv] 0x4a0010 EnumConnectionsClass::Release -> EnumConnectionsClass
+[conv] 0x4a09b0 EnumConnectionPointsClass::Release -> EnumConnectionPointsClass
+[conv] 0x4348f0 FontRenderer::InitContext -> FontRenderer
+[conv] 0x4033c0 AudioStream::DestroyAll -> AudioStream
+[conv] 0x71a660 TemporalClass::LoadTemporal -> TemporalClass
+[conv] 0x780d90 Render_Format -> Render
+[conv] 0x7b6e20 WideString::RemoveChar -> WideString
+[conv] 0x5f3650 NullModemClass::QueryInterface -> NullModemClass
+[conv] 0x41a940 AircraftClass::EvaluateTargetingState -> AircraftClass
+[conv] 0x7a0ea0 SetGameOptionsPing -> _addr_7A
+[conv] 0x452940 CellClass::Get -> CellClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_5D                 rc=2
+[era] Game                     rc=0
+[era] VectorClass_ptr_ConvertClass rc=2
+[era] EMPulseClass             rc=0
+[era] EnumConnectionsClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] FontRenderer             rc=2
+[era] AudioStream              rc=0
+[era] TemporalClass            rc=0
+[era] Render                   rc=0
+[era] WideString               rc=0
+[era] NullModemClass           rc=0
+[era] AircraftClass            rc=2
+[era] _addr_7A                 rc=0
+[era] CellClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f5280   MISMATCH         ObjectClass::Destroy2
+[diff] 0x402220   MISMATCH         ObjectClass::Cleanup
+[diff] 0x68b8a0   MISMATCH         ObjectClass::sub_68B8A0
+[diff] 0x5e9850   MISMATCH         Game::ResetReadyStates
+[diff] 0x4c5ac0   MISMATCH         EMPulseClass::CopyTo
+[diff] 0x4033c0   MISMATCH         AudioStream::DestroyAll
+[diff] 0x71a660   MISMATCH         TemporalClass::LoadTemporal
+[diff] 0x780d90   MISMATCH         Render_Format
+[diff] 0x7b6e20   MISMATCH         WideString::RemoveChar
+[diff] 0x5f3650   MISMATCH         NullModemClass::QueryInterface
+[diff] 0x7a0ea0   MISMATCH         SetGameOptionsPing
+[diff] 0x452940   MISMATCH         CellClass::Get
+[ledger] 0x46d810 ObjectClass::sub_46D810 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e550 ObjectClass::WinMain_Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dbe20 SetGameSetupPlayerState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5280 ObjectClass::Destroy2 -> NG (attempt 1)
+[ledger] 0x402220 ObjectClass::Cleanup -> NG (attempt 1)
+[ledger] 0x5e9850 Game::ResetReadyStates -> NG (attempt 1)
+[ledger] 0x68b8a0 ObjectClass::sub_68B8A0 -> NG (attempt 1)
+[ledger] 0x491210 VectorClass_ptr_ConvertClass::Constructor_ConvertClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5ac0 EMPulseClass::CopyTo -> NG (attempt 1)
+[ledger] 0x4a0010 EnumConnectionsClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a09b0 EnumConnectionPointsClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4348f0 FontRenderer::InitContext -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4033c0 AudioStream::DestroyAll -> NG (attempt 1)
+[ledger] 0x71a660 TemporalClass::LoadTemporal -> NG (attempt 1)
+[ledger] 0x780d90 Render_Format -> NG (attempt 1)
+[ledger] 0x7b6e20 WideString::RemoveChar -> NG (attempt 1)
+[ledger] 0x5f3650 NullModemClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x41a940 AircraftClass::EvaluateTargetingState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a0ea0 SetGameOptionsPing -> NG (attempt 1)
+[ledger] 0x452940 CellClass::Get -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "frame_sched": 2,
+  "regalloc": 3,
+  "branch_order": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p36\batch_report.json

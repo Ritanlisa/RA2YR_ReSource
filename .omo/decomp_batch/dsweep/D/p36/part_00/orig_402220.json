@@ -1,0 +1,11 @@
+{
+ "addr": "0x402220",
+ "name": "ObjectClass::Cleanup",
+ "size": 155,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x402220",
+ "bytes_hex": "5355568bf1578baeac0000008dbed80000008bcfe8c7edffff8d5e108bcf8bd3e87beeffff8bcbe824efffff8b969000000085d274128bcfe863eeffff8b8e90000000e808efffff8b969400000085d274078bcfe847eeffff8b969800000085d274078bcfe836eeffff8b969c00000085d274078bcfe825eeffff8d55688bcfe81beeffff8b95e800000085d274078bcfe80aeeffff5f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

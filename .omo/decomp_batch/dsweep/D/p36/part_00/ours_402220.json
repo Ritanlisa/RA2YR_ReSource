@@ -1,0 +1,69 @@
+{
+ "symbol": "?Cleanup@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Cleanup",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1578baea80000008d4e218dbed4000000e8000000008d5e108bcf8bd3e8000000008bcbe8000000008b968c00000085d274128bcfe8000000008b8e8c000000e80000000033d28a969000000085d274078bcfe8000000008b969400000085d274078bcfe8000000008b969800000085d274078bcfe8000000008d55688bcfe8000000008b95e800000085d274078bcfe8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Init@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Init"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?ClearFlags2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ClearFlags2"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?ClearFlags2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ClearFlags2"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?EndFrameAudioMixer@@YIHPAX0@Z",
+   "sym_key": "EndFrameAudioMixer"
+  }
+ ]
+}

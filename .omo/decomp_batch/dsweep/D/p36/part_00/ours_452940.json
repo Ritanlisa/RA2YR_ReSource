@@ -1,0 +1,27 @@
+{
+ "symbol": "?Get@CellClass@@QAE_NPAH@Z",
+ "sym_key": "CellClass::Get",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "83ec105355568bf18d4c240c578b065156ff50488b4c24248b388b58048b68088d54241052e8000000008b088b50042bf98b48082be92bda896c2424895c2414db442424db442414897c241883ec08db442420897c2418d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4424248b4c24205051ddd8e8000000008b96200500008bc88b44243483c41033c881e1ff0000005f33c18b8a0c170000c1e1083bc85e1bc05d405b83c410c20400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?GetCoords@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetCoords"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

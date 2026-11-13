@@ -1,0 +1,87 @@
+{
+ "symbol": "?QueryInterface@NullModemClass@@QAEPAID@Z",
+ "sym_key": "NullModemClass::QueryInterface",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7e34c7060000000085ff74108bcfe80000000057e80000000083c4048bcee8000000008b464083cfff3bc774338b0d0000000085c97443e800000000a10000000085c074078b086a0150ff11c70500000000000000008bce897e40e800000000a10000000085c074118b106a0150ff12c70500000000000000008a44240cc70600000000a801740956e80000000083c4048b065f5ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?vt_NullModemClass@@3PAXA",
+   "sym_key": "vt_NullModemClass"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Close@FileFind@@QAEHXZ",
+   "sym_key": "FileFind::Close"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?FreeResources@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeResources"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Close@SerialPort@@QAEHXZ",
+   "sym_key": "SerialPort::Close"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?FreeResources@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::FreeResources"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?vt_ConnManClass@@3PAXA",
+   "sym_key": "vt_ConnManClass"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E9850",
+ "name": "Game::ResetReadyStates",
+ "size": 156,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E9850",
+ "bytes_hex": "e8cbc218003dbc0000007449b9c2000000e8dac0180085c07526b9c9000000e8ccc0180085c07518b9bc000000e8bec0180085c0750ab9bd000000e8b0c018006a01689f05000050ff15a8147e0050ff15a0147e0056578b3d84daa80033f685ff7e36a178daa8006810d6a8008b0cb051e80d0d1e0083c40885c074178b1578daa8008b04b28b487785c97407c7407700000000463bf77cca5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

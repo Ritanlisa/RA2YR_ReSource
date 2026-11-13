@@ -1,0 +1,11 @@
+{
+ "addr": "0x452940",
+ "name": "CellClass::Get",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x452940",
+ "bytes_hex": "83ec0c5355568bf18d4c240c578b06518bceff50488b388b4c24208d5424108b5804528b6808e8c5e002008bd083ec088b022bf88b4a042bd98b5208895c241cdb44241c2bea897c2418896c2420db442420db442418d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e88c82070083c408e8443537008b8e200500005f5e5d8b910c17000033c9c1e2083bc25b0f9ec18ac183c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

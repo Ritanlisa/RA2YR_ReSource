@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A0EA0",
+ "name": "SetGameOptionsPing",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A0EA0",
+ "bytes_hex": "5355568bea578bd9555368f8d18400e82c5ac6ff83c40c33ff8b0cbd90daa80085c9746f8bf3e8f541f9ff8a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c0753b892cbd4064b700e8bc17e4ff8bc885c9742985ed7d046affeb1a81fd2c0100007d046a00eb0e81fdf40100007d046a01eb026a028bd7e86d25d4ff4783ff087c805f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

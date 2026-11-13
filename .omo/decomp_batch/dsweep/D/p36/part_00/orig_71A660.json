@@ -1,0 +1,11 @@
+{
+ "addr": "0x71A660",
+ "name": "TemporalClass::LoadTemporal",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71A660",
+ "bytes_hex": "8b442408568b742408575056e80f5dcfff8bf885ff7c7f85f674278d4c2410518bcee8395bcfffc70680517f00c7460464517f00c746085c517f00c7460c54517f008d5624526810c1b000e8904bfbff8d4628506810c1b000e8824bfbff8d4e40516810c1b000e8744bfbff8d5644526810c1b000e8664bfbff8d4638506810c1b000e8584bfbff83c63c566810c1b000e84a4bfbff8bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
