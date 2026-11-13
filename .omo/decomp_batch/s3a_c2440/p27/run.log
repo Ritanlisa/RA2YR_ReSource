@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x7754d0 WinModemClass::LogCommErrors -> WinModemClass
+[conv] 0x7767b0 sub_7767B0 -> _addr_77
+[conv] 0x778180 Network_Append -> Network
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x778a20 LoadPlayerProfile -> _addr_77
+[conv] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> ReferenceCounted
+[conv] 0x77b030 PlayerProfile::QueryInterface -> PlayerProfile
+[conv] 0x77e900 AssignWOLPlayerSide -> _addr_77
+[conv] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> ObjectClass
+[conv] 0x77f900 CreateGameDialogControl::ProcessIdle -> CreateGameDialogControl
+[conv] 0x785370 ObjectClass::InitializeWestwoodOnline -> ObjectClass
+[conv] 0x793cd0 ObjectClass::sub_793CD0 -> ObjectClass
+[conv] 0x796960 ObjectClass::Event_Play -> ObjectClass
+[conv] 0x796fc0 ObjectClass::Network_Init_796FC0 -> ObjectClass
+[conv] 0x79cba0 RemoveWOLPlayerLogin -> _addr_79
+[conv] 0x7a2600 sub_7A2600 -> _addr_7A
+[conv] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> CNetUtilEventSink
+[conv] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> CChatEventSink
+[conv] 0x7a9110 CChatEventSink::DispatchStub_41 -> CChatEventSink
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScoreScreen              rc=2
+[era] WinModemClass            rc=2
+[era] _addr_77                 rc=2
+[era] Network                  rc=2
+[era] ObjectClass              rc=2
+[era] ReferenceCounted         rc=2
+[era] PlayerProfile            rc=2
+[era] CreateGameDialogControl  rc=2
+[era] _addr_79                 rc=2
+[era] _addr_7A                 rc=2
+[era] CNetUtilEventSink        rc=2
+[era] CChatEventSink           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7754d0 WinModemClass::LogCommErrors -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7767b0 sub_7767B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x778180 Network_Append -> COMPILE_FAIL (attempt 2)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x778a20 LoadPlayerProfile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77b030 PlayerProfile::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77e900 AssignWOLPlayerSide -> COMPILE_FAIL (attempt 6)
+[ledger] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77f900 CreateGameDialogControl::ProcessIdle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x785370 ObjectClass::InitializeWestwoodOnline -> COMPILE_FAIL (attempt 2)
+[ledger] 0x793cd0 ObjectClass::sub_793CD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x796960 ObjectClass::Event_Play -> COMPILE_FAIL (attempt 2)
+[ledger] 0x796fc0 ObjectClass::Network_Init_796FC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79cba0 RemoveWOLPlayerLogin -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a2600 sub_7A2600 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a9110 CChatEventSink::DispatchStub_41 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p27\batch_report.json
