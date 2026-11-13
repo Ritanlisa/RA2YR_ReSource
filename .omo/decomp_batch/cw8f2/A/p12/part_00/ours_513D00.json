@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_513D00@HoverLocomotionClass@@QAEXXZ",
+ "sym_key": "HoverLocomotionClass::sub_513D00",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "c70100000000c7410400000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_HoverLocomotionClass@@3PAXA",
+   "sym_key": "vt_HoverLocomotionClass"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?vt_HoverLocomotionClass@@3PAXA",
+   "sym_key": "vt_HoverLocomotionClass"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Construct@LocomotionClass@@QAEXXZ",
+   "sym_key": "LocomotionClass::Construct"
+  }
+ ]
+}
