@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ce4a0 MSAnim::UI_Load -> MSAnim
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5cee60 MSEngine::Destructor -> MSEngine
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x5cf6b0 StringTable::Find -> StringTable
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x5d0850 _VectorClass_VPoint2D::Release -> _VectorClass_VPoint2D
+[conv] 0x5d2e90 FontClass::LoadFontResources -> FontClass
+[conv] 0x5d3330 MSFont::ddtor -> MSFont
+[conv] 0x5d3a40 ObjectManager::InitMessageList -> ObjectManager
+[conv] 0x5d5820 Audio::SetSoundFileName -> Audio
+[conv] 0x5d5b60 MultiplayerGameMode::Construct -> MultiplayerGameMode
+[conv] 0x5d5d20 MultiplayerGameMode::Dtor -> MultiplayerGameMode
+[conv] 0x5d6370 MultiplayerGameMode::FindOpenSlot -> MultiplayerGameMode
+[conv] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> TechnoClass
+[conv] 0x5d7f20 MultiplayerGameMode::QueryInterface -> MultiplayerGameMode
+[conv] 0x5d9db0 DetectPortAllocationPattern -> _addr_5D
+[conv] 0x5da0b0 Network::ResolveNetworkAddress -> Network
+[conv] 0x5da750 HandleNetworkPlayerDisconnect -> _addr_5D
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSAnim                   rc=2
+[era] MSPCXAnim                rc=2
+[era] MSEngine                 rc=0
+[era] SessionClass             rc=2
+[era] StringTable              rc=0
+[era] CampaignClass            rc=2
+[era] ObjectClass              rc=2
+[era] _VectorClass_VPoint2D    rc=0
+[era] FontClass                rc=2
+[era] MSFont                   rc=2
+[era] ObjectManager            rc=2
+[era] Audio                    rc=0
+[era] MultiplayerGameMode      rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5D                 rc=2
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x5cee60   MISMATCH         MSEngine::Destructor
+[diff] 0x5cf6b0   MISMATCH         StringTable::Find
+[diff] 0x5d0850   MISMATCH         _VectorClass_VPoint2D::Release
+[diff] 0x5d5820   MATCH            Audio::SetSoundFileName
+[diff] 0x5d5d20   MISMATCH         MultiplayerGameMode::Dtor
+[diff] 0x5d7f20   MISMATCH         MultiplayerGameMode::QueryInterface
+[ledger] 0x5ce4a0 MSAnim::UI_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5cee60 MSEngine::Destructor -> NG (attempt 2)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cf6b0 StringTable::Find -> NG (attempt 2)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d0850 _VectorClass_VPoint2D::Release -> NG (attempt 2)
+[ledger] 0x5d2e90 FontClass::LoadFontResources -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d3330 MSFont::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d3a40 ObjectManager::InitMessageList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d5820 Audio::SetSoundFileName -> OK (attempt 2)
+[ledger] 0x5d5b60 MultiplayerGameMode::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d5d20 MultiplayerGameMode::Dtor -> NG (attempt 2)
+[ledger] 0x5d6370 MultiplayerGameMode::FindOpenSlot -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7f20 MultiplayerGameMode::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d9db0 DetectPortAllocationPattern -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5da0b0 Network::ResolveNetworkAddress -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5da750 HandleNetworkPlayerDisconnect -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p15\batch_report.json

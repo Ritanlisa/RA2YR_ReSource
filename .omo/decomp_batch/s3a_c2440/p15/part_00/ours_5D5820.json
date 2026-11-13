@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetSoundFileName@Audio@@QAEPAPADPADH@Z",
+ "sym_key": "Audio::SetSoundFileName",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf133c08906894604884608e80000000085c0740f8b44240850e80000000083c40489068bc65ec20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?IsSoundEnabled@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundEnabled"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?_strdup@@YAHPAXZZ",
+   "sym_key": "_strdup"
+  }
+ ]
+}

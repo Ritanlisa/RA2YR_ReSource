@@ -1,0 +1,45 @@
+{
+ "symbol": "?Dtor@MultiplayerGameMode@@QAEXXZ",
+ "sym_key": "MultiplayerGameMode::Dtor",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "5355568bf15733db8b461833ff3bc3c706000000007e1c8d6e0c8b45003bc374078b086a0150ff118b46184783c5043bf87ce78d6e0855ff56148b46303bc374078b106a0150ff128d462a50e8000000008d4e2951e8000000008d7e0c83c4088bcfe8000000008d4e20e8000000003bfb895d007410385e15740b57e80000000083c404891f885e15895e105f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?vt_MultiplayerGameMode@@3PAXA",
+   "sym_key": "vt_MultiplayerGameMode"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

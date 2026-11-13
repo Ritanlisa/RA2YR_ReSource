@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5D20",
+ "name": "MultiplayerGameMode::Dtor",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5D20",
+ "bytes_hex": "53568bf15733db33ffc70660ed7e008b46183bc37e188b460c8b0cb83bcb74068b116a01ff128b4618473bf87ce88b46088d7e088bcfff500c8b4e383bcb74068b116a01ff128d4e30e882e91d008d4e2ce87ae91d008d4e24e8e2091e008d4e20e8da091e008b4704c70754ee7e003bc37411385f0d740c50e89f2d1f0083c404895f04885f0d895f085f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

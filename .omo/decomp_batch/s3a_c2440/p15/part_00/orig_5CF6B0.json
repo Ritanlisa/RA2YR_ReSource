@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CF6B0",
+ "name": "StringTable::Find",
+ "size": 162,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CF6B0",
+ "bytes_hex": "51538b5c240c56578bf96a008bcbe82d511e0084c074618b471033f685c07e58538d4c2410e8b64f1e008d4c240ce84d641e008b47048b0cb0518d4c2418e89d4f1e008d4c2414e834641e008d5424148d4c240c52e876501e0084c075238d4c2414e8d94f1e008d4c240ce8d04f1e008b4710463bf07ca85f5e33c05b59c204008b47048d4c24148b34b0e8b04f1e008d4c240ce8a74f1e008bc65f5e5b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5820",
+ "name": "Audio::SetSoundFileName",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5820",
+ "bytes_hex": "568bf133c08906894604884608e8ce17e3ff85c0740f8b44240850e8c8fb1f0083c40489068bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

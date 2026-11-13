@@ -105615,26 +105615,26 @@
   "this_as_id": false
  },
  "0x5ce4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "MSAnim::UI_Load",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UI_Load",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5ce640": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSPCXAnim::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSPCXAnim::Construct",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -105886,19 +105886,19 @@
   "this_as_id": false
  },
  "0x5cee60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov esi, ecx",
   "name": "MSEngine::Destructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MSEngine::Destructor",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ceef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -105922,19 +105922,19 @@
   "this_as_id": false
  },
  "0x5cf6b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov ebx, dword ptr [esp + 0xc]",
   "name": "StringTable::Find",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "StringTable::Find",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cf760": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -105970,7 +105970,7 @@
   "this_as_id": false
  },
  "0x5cf840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -106308,15 +106308,15 @@
   "this_as_id": false
  },
  "0x5d0850": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_VPoint2D::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_Point2D::Release",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d0920": {
@@ -107435,7 +107435,7 @@
   "this_as_id": false
  },
  "0x5d2e90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -107495,7 +107495,7 @@
   "this_as_id": false
  },
  "0x5d3330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -107723,7 +107723,7 @@
   "this_as_id": false
  },
  "0x5d3a40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -108254,15 +108254,15 @@
   "this_as_id": false
  },
  "0x5d5820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Audio::SetSoundFileName",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "Audio::SetSoundFileName",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "OK",
   "this_as_id": false
  },
  "0x5d5850": {
@@ -108508,27 +108508,27 @@
   "this_as_id": false
  },
  "0x5d5b60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MultiplayerGameMode::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MultiplayerGameMode::Construct",
-  "rule_violations": 0,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5d5d20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push esi",
   "name": "MultiplayerGameMode::Dtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MultiplayerGameMode::Dtor",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d5db0": {
@@ -108722,7 +108722,7 @@
   "this_as_id": false
  },
  "0x5d6370": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -108897,7 +108897,7 @@
   "this_as_id": false
  },
  "0x5d6d80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -109027,15 +109027,15 @@
   "this_as_id": false
  },
  "0x5d7f20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "MultiplayerGameMode::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MultiplayerGameMode::QueryInterface",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5d7fd0": {
@@ -110015,7 +110015,7 @@
   "this_as_id": false
  },
  "0x5d9db0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DetectPortAllocationPattern",
@@ -110045,7 +110045,7 @@
   "this_as_id": false
  },
  "0x5da0b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -110234,7 +110234,7 @@
   "this_as_id": false
  },
  "0x5da750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "HandleNetworkPlayerDisconnect",

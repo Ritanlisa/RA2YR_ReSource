@@ -1,0 +1,69 @@
+{
+ "symbol": "?Find@StringTable@@QAEHPAPBD@Z",
+ "sym_key": "StringTable::Find",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "515356578bf98b4c24146a008bd9e80000000084c075095f5e33c05b59c204008b471033f685c07f095f5e33c05b59c20400538d4c2410e8000000008d4c240ce8000000008b47048b0cb0518d4c2418e8000000008d4c2414e8000000008d5424148d4c240c52e80000000084c075288d44241450e8000000008d4c241051e8000000008b471083c408463bf07ca35f5e33c05b59c204008b57048d442414508b34b2e8000000008d4c241051e80000000083c4088bc65f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?ToLower@String@@QAEXXZ",
+   "sym_key": "String::ToLower"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::AssignFromPtr"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?ToLower@String@@QAEXXZ",
+   "sym_key": "String::ToLower"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CEE60",
+ "name": "MSEngine::Destructor",
+ "size": 132,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CEE60",
+ "bytes_hex": "53568bf1e8870700008b464833db3bc3c74644f4ea7e007411385e51740c50e8b99c1f0083c404895e48885e51895e4c8b4630c7462cd4ea7e003bc37411385e39740c50e8949c1f0083c404895e308d4e28885e39895e34e833581e008b4604c706b4ea7e003bc37411385e0d740c50e8689c1f0083c404895e04885e0d895e085e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
