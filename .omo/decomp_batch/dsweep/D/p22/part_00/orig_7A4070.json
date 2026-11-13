@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A4070",
+ "name": "ComStreamClass::Seek",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A4070",
+ "bytes_hex": "68ccaa8400e86628c6ff8b44240c83c40485c0a3f47db70075138b44240c8b4c2410a3607eb700890d647eb700b9c4000000e89918fdff85c0741d8b0dc87db70081e1fffeffff890dc87db700750933d28bc8e81817fdffe8431afdff684005000050ff15a8147e0085c0740750ff15cc137e0033c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

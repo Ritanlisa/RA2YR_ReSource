@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetItem@EditClass@@QAEHH@Z",
+ "sym_key": "EditClass::GetItem",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e80000000085c075045ec204008b5618a1a8000000528b56148b08528b5610528b560c5250ff51200fbe864002000056ff100fbe8e4d0200008b56345256ff11a1a8000000508b08ff5124b8010000005ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?DispatchClick@Control@@QAEHH@Z",
+   "sym_key": "Control::DispatchClick"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?DispatchSell@FootClass@@QAEHD@Z",
+ "sym_key": "FootClass::DispatchSell",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "8a4424045684c08bf174338b8ed405000085c97413a10000000085c0750a6a006aff56e8000000008b066a0356ff90740200008bcee8000000005ec204006a0056e80000000083c40885c0741b8b8e1c02000050e80000000084c0750b8b0e6a0356ff91740200008bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?LiberateMember_Start@TeamClass@@QAEDHID@Z",
+   "sym_key": "TeamClass::LiberateMember_Start"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Destroy2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Destroy2"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAXH@Z",
+   "sym_key": "Team__GetMember"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?Destroy2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Destroy2"
+  }
+ ]
+}

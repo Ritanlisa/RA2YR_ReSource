@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcTargetFacing@ObjectClass@@QAEPAHPAHH@Z",
+ "sym_key": "ObjectClass::CalcTargetFacing",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "83ec188b442420568bf18d5424048b08575250ff51488d4c24148bf88b065156ff50488b3783ec088974243083ec08db442438da20dd5c2408db4004da6704dd1c24e800000000ddd8dd442418dc250000000083c408dc0d00000000dd1c24e8000000008bc88b44242c33ce83c40881e1ff00000033ce5f89085e83c418c20800",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2820@@3NA",
+   "sym_key": "DataGlobal_7E2820"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "__real@8@c00ca2f83d7b47678000",
+   "sym_key": "_real@8@c00ca2f83d7b47678000"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

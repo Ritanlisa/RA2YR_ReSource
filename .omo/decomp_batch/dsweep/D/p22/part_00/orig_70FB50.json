@@ -1,0 +1,11 @@
+{
+ "addr": "0x70FB50",
+ "name": "TechnoClass::CanSelfRepair",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70FB50",
+ "bytes_hex": "568bf18b06ff90840000008a882e0d000084c9750432c05ec38b168bceff92840000008a88a10c000084c9750432c05ec38b068bceff90f403000085c07405833800750432c05ec38b168bceff928400000083b87c06000003750432c05ec385f67414f6461404740e8b869406000085c0740432c05ec3b0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

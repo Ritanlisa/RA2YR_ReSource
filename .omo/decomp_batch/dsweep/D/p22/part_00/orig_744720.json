@@ -1,0 +1,11 @@
+{
+ "addr": "0x744720",
+ "name": "TechnoClass::NotifyTeamOnDestruction",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x744720",
+ "bytes_hex": "568bf1578b7c240c8b4e3485c9745e83be38030000ff7409e88310faff84c0754c85ff7415a1b8cfb1008b4e346a006a0050566a07e8460cfaff8b4e3485c974138b15b8cfb1006a006a0052566a30e82c0cfaff8b4e3485c97412a1b8cfb1006a006a0050566a1de8130cfaff578bcee8abe5fbff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

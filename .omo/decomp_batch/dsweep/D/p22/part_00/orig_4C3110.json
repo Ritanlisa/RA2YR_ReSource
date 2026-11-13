@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C3110",
+ "name": "DropListClass::GetItem",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C3110",
+ "bytes_hex": "8b442404535556578bf150e800b5fcff85c0745c8b0d407688008b460c8b561083ec108b298b7e148bcc8b5e18890189510489790889590c8b0d40768800ff55208b168bceff92900000008b4e348b06518bceff90940000008b0d407688008b11ff5224b8010000005f5e5d5bc204005f5e5d33c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

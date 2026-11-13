@@ -1,0 +1,45 @@
+{
+ "symbol": "?SaveLoad@SwizzleManager@@QAGHPAH0@Z",
+ "sym_key": "SwizzleManager::SaveLoad",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "578b7c241085ff7509b8034000805fc20c008b076a008d4c24146a045157ff500c85c07c508b5424105355568b74241856526800000000e8000000008b068b5e148b2f6a0056ff5024505657ff550c8d4e0c8bf8516800000000895e14e80000000083c608566800000000e8000000005e5d8bc75b5fc20c00",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?SwizzleManagerClass__Here_I_Am@@YGHPAXPAH1@Z",
+   "sym_key": "SwizzleManagerClass__Here_I_Am"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

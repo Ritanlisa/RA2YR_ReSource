@@ -1,0 +1,57 @@
+{
+ "symbol": "?NotifyTeamOnDestruction@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::NotifyTeamOnDestruction",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4e3485c9746283be38030000ff7409e80000000084c075508b44240885c07415a1000000008b4e346a006a0050566a07e8000000008b4e3485c974138b15000000006a006a0052566a30e8000000008b4e3485c97412a1000000006a006a0050566a1de8000000008bcee8000000005ec20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?HasAnyMission@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::HasAnyMission"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_UnitSelectionState@@3HA",
+   "sym_key": "g_UnitSelectionState"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Update_0@TeamClass@@QAEDHHHDH@Z",
+   "sym_key": "TeamClass::Update_0"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_UnitSelectionState@@3HA",
+   "sym_key": "g_UnitSelectionState"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Update_0@TeamClass@@QAEDHHHDH@Z",
+   "sym_key": "TeamClass::Update_0"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_UnitSelectionState@@3HA",
+   "sym_key": "g_UnitSelectionState"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?Update_0@TeamClass@@QAEDHHHDH@Z",
+   "sym_key": "TeamClass::Update_0"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?RegisterKill@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::RegisterKill"
+  }
+ ]
+}

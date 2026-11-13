@@ -1,0 +1,11 @@
+{
+ "addr": "0x58CF90",
+ "name": "RandomMap::GenerateTerrainForAllCells",
+ "size": 121,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58CF90",
+ "bytes_hex": "51a1dcc289000fafc085c07e6a53568bd8a110edab005733f68b04068d4c240c51b9e8f7870089442410e8e187fdff8bf8a110edab00837c0638ff753166833c0600750866837c06020074228bcfe8ed95efff84c0750b8bcfe8c297efff84c074078bcfe807f8ffffa110edab0083c6504b75a55f5e5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

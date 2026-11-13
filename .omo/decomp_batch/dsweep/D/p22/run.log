@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d9720 FootClass::DispatchSell -> FootClass
+[conv] 0x767460 rc_ptr::ConstructorWDTFlagOption -> rc_ptr
+[conv] 0x58cf90 RandomMap::GenerateTerrainForAllCells -> RandomMap
+[conv] 0x5fa510 Audio::SetSoundVolume -> Audio
+[conv] 0x6c3410 _TClassFactory_VUnitClass::ddtor -> _TClassFactory_VUnitClass
+[conv] 0x6c3590 _TClassFactory_VBuildingClass::ddtor -> _TClassFactory_VBuildingClass
+[conv] 0x6c3710 _TClassFactory_VAircraftClass::ddtor -> _TClassFactory_VAircraftClass
+[conv] 0x4c3110 EditClass::GetItem -> EditClass
+[conv] 0x7a4070 CNetUtilEventSink::Seek -> CNetUtilEventSink
+[conv] 0x4255b0 AnimClass::ProcessCraterFormation -> AnimClass
+[conv] 0x77d840 ShowWOLLobbyDialog -> _addr_77
+[conv] 0x5f3db0 ObjectClass::CalcTargetFacing -> ObjectClass
+[conv] 0x406de0 sub_406DE0 -> _addr_40
+[conv] 0x744720 TechnoClass::NotifyTeamOnDestruction -> TechnoClass
+[conv] 0x55aac0 SwizzleManager::SaveLoad -> SwizzleManager
+[conv] 0x6c2390 _TClassFactory_VTeamClass::ddtor -> _TClassFactory_VTeamClass
+[conv] 0x70fb50 TechnoClass::CanSelfRepair -> TechnoClass
+[conv] 0x408270 AudioQueue::ReleaseBuffers -> AudioQueue
+[conv] 0x7b6970 WString::Append -> WString
+[conv] 0x765600 Campaign_WorldDominationTour::QueryInterface -> Campaign_WorldDominationTour
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=0
+[era] rc_ptr                   rc=2
+[era] RandomMap                rc=0
+[era] Audio                    rc=2
+[era] _TClassFactory_VUnitClass rc=2
+[era] _TClassFactory_VBuildingClass rc=2
+[era] _TClassFactory_VAircraftClass rc=2
+[era] EditClass                rc=0
+[era] CNetUtilEventSink        rc=0
+[era] AnimClass                rc=2
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=0
+[era] _addr_40                 rc=0
+[era] TechnoClass              rc=0
+[era] SwizzleManager           rc=0
+[era] _TClassFactory_VTeamClass rc=2
+[era] AudioQueue               rc=0
+[era] WString                  rc=2
+[era] Campaign_WorldDominationTour rc=2
+=== diffasm byte-compare ===
+[diff] 0x4d9720   MISMATCH         FootClass::DispatchSell
+[diff] 0x58cf90   MISMATCH         RandomMap::GenerateTerrainForAllCells
+[diff] 0x4c3110   MISMATCH         EditClass::GetItem
+[diff] 0x7a4070   MISMATCH         CNetUtilEventSink::Seek
+[diff] 0x5f3db0   MISMATCH         ObjectClass::CalcTargetFacing
+[diff] 0x406de0   MISMATCH         sub_406DE0
+[diff] 0x744720   MISMATCH         TechnoClass::NotifyTeamOnDestruction
+[diff] 0x70fb50   MISMATCH         TechnoClass::CanSelfRepair
+[diff] 0x55aac0   MISMATCH         SwizzleManager::SaveLoad
+[diff] 0x408270   MISMATCH         AudioQueue::ReleaseBuffers
+[ledger] 0x4d9720 FootClass::DispatchSell -> NG (attempt 1)
+[ledger] 0x767460 rc_ptr::ConstructorWDTFlagOption -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58cf90 RandomMap::GenerateTerrainForAllCells -> NG (attempt 1)
+[ledger] 0x5fa510 Audio::SetSoundVolume -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3410 _TClassFactory_VUnitClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3590 _TClassFactory_VBuildingClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3710 _TClassFactory_VAircraftClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3110 EditClass::GetItem -> NG (attempt 1)
+[ledger] 0x7a4070 CNetUtilEventSink::Seek -> NG (attempt 1)
+[ledger] 0x4255b0 AnimClass::ProcessCraterFormation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d840 ShowWOLLobbyDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3db0 ObjectClass::CalcTargetFacing -> NG (attempt 1)
+[ledger] 0x406de0 sub_406DE0 -> NG (attempt 1)
+[ledger] 0x744720 TechnoClass::NotifyTeamOnDestruction -> NG (attempt 1)
+[ledger] 0x55aac0 SwizzleManager::SaveLoad -> NG (attempt 1)
+[ledger] 0x6c2390 _TClassFactory_VTeamClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70fb50 TechnoClass::CanSelfRepair -> NG (attempt 1)
+[ledger] 0x408270 AudioQueue::ReleaseBuffers -> NG (attempt 1)
+[ledger] 0x7b6970 WString::Append -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765600 Campaign_WorldDominationTour::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 2,
+  "frame_sched": 1,
+  "const_fold": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p22\batch_report.json

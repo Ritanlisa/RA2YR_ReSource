@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D9720",
+ "name": "FootClass::DispatchSell",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D9720",
+ "bytes_hex": "538b5c2408568bf184db74368b8ed405000085c97413a1ace7a80085c0750a6a006aff56e8271121008b166a038bceff9274020000538bcee823bb11005e5bc204006a008bcee8c515180085c074e68b8e1c02000050e81503020084c075d68b066a038bceff9074020000538bcee8edba11005e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

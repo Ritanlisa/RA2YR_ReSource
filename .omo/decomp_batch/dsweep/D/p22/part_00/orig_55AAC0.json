@@ -1,0 +1,11 @@
+{
+ "addr": "0x55AAC0",
+ "name": "SwizzleManager::SaveLoad",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55AAC0",
+ "bytes_hex": "578b7c240c85ff7509b8034000805fc208008b076a008d4c24106a045157ff500c85c07c518b54240c5355568b74241456526810c1b000e8c44717008b068b5e148b2f6a008bceff5024505657ff550c8d4e0c8bf8516810c1b000895e14e81d47170083c608566810c1b000e80f4717005e5d8bc75b5fc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

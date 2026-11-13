@@ -1,0 +1,11 @@
+{
+ "addr": "0x408270",
+ "name": "AudioQueue::ReleaseBuffers",
+ "size": 123,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408270",
+ "bytes_hex": "a11ce887005685c0746fb910e88700e83cf1ffff8bf085f6745f538b1dec117e00578b3de8117e008b868000000085c0752b8b461485c0742468f8e78700ffd78b4e14e848a3ffff8b460ca801740724fe0c0289460c68f8e78700ffd38b8680000000408986800000008bcee8fff0ffff8bf085f675b15f5b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

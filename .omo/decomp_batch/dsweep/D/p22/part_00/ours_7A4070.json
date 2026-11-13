@@ -1,0 +1,75 @@
+{
+ "symbol": "?Seek@CNetUtilEventSink@@QAGHHHH@Z",
+ "sym_key": "CNetUtilEventSink::Seek",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "568b7424088bcee8000000008b44241085c0a30000000075138b4424148b4c2408a300000000890d00000000b9c4000000e80000000085c0741d8b0d0000000081e1fffeffff890d00000000750933d28bc8e8000000008bcee800000000684005000050e80000000085c05e740650e80000000033c0c21000",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77DF4@@3IA",
+   "sym_key": "DataGlobal_B77DF4"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E60@@3IA",
+   "sym_key": "DataGlobal_B77E60"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77E64@@3IA",
+   "sym_key": "DataGlobal_B77E64"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChannelList@@3IA",
+   "sym_key": "g_WOL_ChannelList"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChannelList@@3IA",
+   "sym_key": "g_WOL_ChannelList"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?CloseDialog@@YIDHH@Z",
+   "sym_key": "CloseDialog"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  }
+ ]
+}
