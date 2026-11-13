@@ -1,0 +1,49 @@
+======================================================================
+PART 1/1  (13 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p25\part_00
+=== convert (13 addrs) ===
+[conv] 0x7cd460 _tmpnam -> _addr_7C
+[conv] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> _addr_7D
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x7d219a __whiteout -> _addr_7D
+[conv] 0x7d2da6 ObjectClass::__getstream -> ObjectClass
+[conv] 0x7d57fe _asctime -> _addr_7D
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7d6494 __free_lc_time -> _addr_7D
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+[conv] 0x7dabac ObjectClass::_copy_environ -> ObjectClass
+[conv] 0x7dae9f ___crtMessageBoxA -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cd460 _tmpnam -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d219a __whiteout -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d2da6 ObjectClass::__getstream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d57fe _asctime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7d6494 __free_lc_time -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dabac ObjectClass::_copy_environ -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dae9f ___crtMessageBoxA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 13,
+ "verdicts": {
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p25\batch_report.json
