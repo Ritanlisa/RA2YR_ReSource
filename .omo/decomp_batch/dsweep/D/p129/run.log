@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p129\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ec030 MultiplayerLobby::FillSlots -> MultiplayerLobby
+[conv] 0x6d4b50 PrintTimerOnTactical::Start -> PrintTimerOnTactical
+[conv] 0x6eb870 HouseClass::EvaluateTarget -> HouseClass
+[conv] 0x631760 NetworkSettingsDlgProc -> _addr_63
+[conv] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> ObjectClass
+[conv] 0x5749c0 CellClass::ApplyTerrainModTile -> CellClass
+[conv] 0x57f440 CellClass::ApplyTileMod58 -> CellClass
+[conv] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> INIClass
+[conv] 0x720bb0 ThemeClass::Play -> ThemeClass
+[conv] 0x5f16e0 NullModemClass::Init -> NullModemClass
+[conv] 0x53de00 InitializeAudioStreaming -> _addr_53
+[conv] 0x4cd2a0 FootClass::ProcessDeployMission -> FootClass
+[conv] 0x527920 INIClass::ReadGUID_Overwrite -> INIClass
+[conv] 0x60a330 Dialog::HandleTabKey -> Dialog
+[conv] 0x71af20 OreManagerClass::AssignMinerToRefinery -> OreManagerClass
+[conv] 0x7ab670 CChatEventSink::DispatchStub_24 -> CChatEventSink
+[conv] 0x4d94b0 FootClass::AssignDestination -> FootClass
+[conv] 0x793490 ObjectClass::HandleWOLForwardingError -> ObjectClass
+[conv] 0x757980 ObjectClass::ProcessVoxelColorScanline -> ObjectClass
+[conv] 0x6fcfa0 TechnoClass::CalculateROF -> TechnoClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerLobby         rc=2
+[era] PrintTimerOnTactical     rc=2
+[era] HouseClass               rc=2
+[era] _addr_63                 rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=0
+[era] INIClass                 rc=2
+[era] ThemeClass               rc=2
+[era] NullModemClass           rc=2
+[era] _addr_53                 rc=2
+[era] FootClass                rc=2
+[era] Dialog                   rc=2
+[era] OreManagerClass          rc=2
+[era] CChatEventSink           rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x631760   MISMATCH         NetworkSettingsDlgProc
+[diff] 0x757980   MISMATCH         ObjectClass::ProcessVoxelColorScanline
+[diff] 0x5749c0   MISMATCH         CellClass::ApplyTerrainModTile
+[diff] 0x57f440   MISMATCH         CellClass::ApplyTileMod58
+[ledger] 0x5ec030 MultiplayerLobby::FillSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d4b50 PrintTimerOnTactical::Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eb870 HouseClass::EvaluateTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631760 NetworkSettingsDlgProc -> NG (attempt 1)
+[ledger] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5749c0 CellClass::ApplyTerrainModTile -> NG (attempt 1)
+[ledger] 0x57f440 CellClass::ApplyTileMod58 -> NG (attempt 1)
+[ledger] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720bb0 ThemeClass::Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f16e0 NullModemClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53de00 InitializeAudioStreaming -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cd2a0 FootClass::ProcessDeployMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x527920 INIClass::ReadGUID_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60a330 Dialog::HandleTabKey -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71af20 OreManagerClass::AssignMinerToRefinery -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ab670 CChatEventSink::DispatchStub_24 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d94b0 FootClass::AssignDestination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x793490 ObjectClass::HandleWOLForwardingError -> COMPILE_FAIL (attempt 1)
+[ledger] 0x757980 ObjectClass::ProcessVoxelColorScanline -> NG (attempt 1)
+[ledger] 0x6fcfa0 TechnoClass::CalculateROF -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p129\batch_report.json

@@ -1,0 +1,75 @@
+{
+ "symbol": "?NetworkSettingsDlgProc@@YGHPAXII0@Z",
+ "sym_key": "Unnamed::NetworkSettingsDlgProc",
+ "size": 362,
+ "link_base": 0,
+ "bytes_hex": "81ec84000000538b9c248c000000558bac2494000000568bb4249c000000578bbc24a400000057568bd58bcbe80000000085c00f85240100006a0853e80000000081fd11010000894424100f850a0100006681fee50576496681fe63060f85f8000000f7c60000ffff0f84ec0000006a006a0168f100000057e8000000006a006a0068f1000000686406000053e8000000005f5e5d33c05b81c484000000c2100081e6ffff00004e0f849d0000004e0f848000000081eee3050000743c8d442414506a4068b504000057e8000000008d4c2414e8000000008d4c2414516a0068b404000057e8000000005f5e5d33c05b81c484000000c210008d542414526a4068b304000057e8000000008d4c2414e8000000008d442414506a0068b204000057e8000000005f5e5d33c05b81c484000000c210005f5ec74004020000005d33c05b81c484000000c21000e8000000008b4c2410c741040100000033c05f5e5d5b81c484000000c21000",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?Trim@String@@QAEPADXZ",
+   "sym_key": "String::Trim"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?Trim@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::Trim"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?Network_Set@@YAXXZ",
+   "sym_key": "Network_Set"
+  }
+ ]
+}

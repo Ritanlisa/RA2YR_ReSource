@@ -1,0 +1,69 @@
+{
+ "symbol": "?ApplyTerrainModTile@CellClass@@QAEFH@Z",
+ "sym_key": "CellClass::ApplyTerrainModTile",
+ "size": 330,
+ "link_base": 0,
+ "bytes_hex": "5556578bf98b4c24108be90fbf41020fbf118d7102c1e00903c23d00000400730e0fbe15340300008b048285c0750c8b01a37c160000b8581600008b40443dcd0000007c073dd50000007e193ddf0000007c073de20000007e0b3de70000000f85df0000008a01668b1625ff00000080e1000bc14a33d08d4c241081e2ff0000005133c2b9f801000089442414e8000000008b40443dcd0000000f8c810000003de80000007f7a8a168b44241080ea02240081e2ff0000008d4c24100bd051b9f801000089542414e8000000008b40443dcd0000007c3c3de80000007f358a45008b542410668b3625ff00000080e2008bcf0bc24e33f081e6ff00000033c6894424108d44241050e8000000005f5e5dc20400558bcfe8000000005f5e5dc204008a0e8b542410fec180e20081e1ff0000008d4424100bca50894c24148bcfe8000000005f5e5dc20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?ApplyTerrainMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyTerrainMod2"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?ApplyTerrainMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyTerrainMod2"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?ApplyTerrainMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyTerrainMod2"
+  }
+ ]
+}
