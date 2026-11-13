@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemData@ListClass@@QAEHXZ",
+ "sym_key": "ListClass::GetItemData",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "568bf18a465884c0750433c05ec38b86300100008b4e1803c8c6465800894e188d8e1c01000051ff96400100008d565c52ff96800000008d86bc00000050ff96e00000008b168bceff12b8010000005ec3",
+ "relocs": []
+}

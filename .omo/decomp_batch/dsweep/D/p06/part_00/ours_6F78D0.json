@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckAndFireAtTarget@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CheckAndFireAtTarget",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "51568bf157568b06ff90e80300008b0e8bf85756ff91f803000085c074238b0085c0741d8a883601000084c974138b4424088b16575056ff92a80300005f5e59c38b5424088b0e5256ff91ac0300005f5e59c3",
+ "relocs": []
+}

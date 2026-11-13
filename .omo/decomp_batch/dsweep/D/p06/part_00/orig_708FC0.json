@@ -1,0 +1,11 @@
+{
+ "addr": "0x708FC0",
+ "name": "TechnoClass::ResponseMove_Pickup",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708FC0",
+ "bytes_hex": "568bf18b06ff90840000008b8878040000056804000085c9743a5357b9886b8800e89a37f5ff8b168bce8bf8ff92840000008bc88bc781c16804000033d28b1ef771108b41048b0c90518bceff93540300005f5b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

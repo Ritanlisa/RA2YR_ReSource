@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D1386",
+ "name": "__mtinit",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D1386",
+ "bytes_hex": "56e8d4c5ffffff1530137e0083f8ffa3a8c78700743a6a746a01e8cf1f00008bf05985f659742956ff35a8c78700ff15ac127e0085c0741856e83400000059ff15d0117e00834e04ff6a018906585ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

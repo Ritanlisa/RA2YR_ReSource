@@ -1,0 +1,57 @@
+{
+ "symbol": "?__mtinit@@YAHXZ",
+ "sym_key": "Unnamed::__mtinit",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "56e800000000e80000000083f8ffa30000000074406a746a01e8000000008bf083c40885f6742ea1000000005650e80000000085c0741e56e80000000083c404e800000000c74604ffffffff8906b8010000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?_mtinitlocks@@YAHXZ",
+   "sym_key": "_mtinitlocks"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?TlsAlloc@@YGKXZ",
+   "sym_key": "TlsAlloc"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?dwTlsIndex@@3KA",
+   "sym_key": "dwTlsIndex"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "_calloc",
+   "sym_key": "calloc"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?dwTlsIndex@@3KA",
+   "sym_key": "dwTlsIndex"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?TlsSetValue@@YGHHPAX@Z",
+   "sym_key": "TlsSetValue"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?_initptd@@YAHPAXZZ",
+   "sym_key": "_initptd"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?GetCurrentThreadId@@YGKXZ",
+   "sym_key": "GetCurrentThreadId"
+  }
+ ]
+}

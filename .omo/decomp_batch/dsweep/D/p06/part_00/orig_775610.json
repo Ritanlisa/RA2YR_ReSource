@@ -1,0 +1,11 @@
+{
+ "addr": "0x775610",
+ "name": "WinModemClass::QueryInterface",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x775610",
+ "bytes_hex": "568bf18b465cc70688747f0083f8ff741e68a4978400e8b512c9ff8b465c83c40450ff15e0117e00c7465cffffffff8b462485c0740950e8f134050083c404f644240801740956e8e134050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

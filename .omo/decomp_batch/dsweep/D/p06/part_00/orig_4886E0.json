@@ -1,0 +1,11 @@
+{
+ "addr": "0x4886E0",
+ "name": "CheckListClass::QueryInterface",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4886E0",
+ "bytes_hex": "568bf1c706844f7e008b464485c07426576a008bcee8c6f30c006a008bce8bf8e82bf00c0057e8320434008b464483c40485c075dc5f8bcee8e3ee0c00f644240801740956e81304340083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

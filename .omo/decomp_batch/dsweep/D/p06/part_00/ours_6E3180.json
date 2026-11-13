@@ -1,0 +1,39 @@
+{
+ "symbol": "?executePlaceBeaconAction@TActionClass@@QAEDHHPAHH@Z",
+ "sym_key": "TActionClass::executePlaceBeaconAction",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "568bb1900000008b4c241085c9750632c05ec2100081fe252300007507e800000000eb2483feff750632c05ec210008bcee80000000084c08bce7407e800000000eb05e80000000085c0750632c05ec210008bc8e800000000b0015ec21000",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetField11@Property@@QAEHXZ",
+   "sym_key": "Property::GetField11"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?ClearLowPowerTargets@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::ClearLowPowerTargets"
+  }
+ ]
+}

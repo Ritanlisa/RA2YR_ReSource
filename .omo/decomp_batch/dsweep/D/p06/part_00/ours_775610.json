@@ -1,0 +1,39 @@
+{
+ "symbol": "?QueryInterface@WinModemClass@@QAEPAXD@Z",
+ "sym_key": "WinModemClass::QueryInterface",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568bf18b465cc7060000000083f8ff7415e8000000008b465c50e800000000c7465cffffffff8b462485c0740950e80000000083c404f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_WinModemClass@@3PAXA",
+   "sym_key": "vt_WinModemClass"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

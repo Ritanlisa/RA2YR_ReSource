@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x796b30 sub_796B30 -> _addr_79
+[conv] 0x6c9ae0 BinkMovie::FreeSurfaceTracker -> BinkMovie
+[conv] 0x4886e0 CheckListClass::QueryInterface -> CheckListClass
+[conv] 0x6e30c0 ObjectClass::CreateHouseClass -> ObjectClass
+[conv] 0x6e3180 TActionClass::executePlaceBeaconAction -> TActionClass
+[conv] 0x6e31e0 TActionClass::executeJumpjetAction -> TActionClass
+[conv] 0x6e3240 TActionClass::executeOpenGateAction -> TActionClass
+[conv] 0x6e32a0 TActionClass::executeCloseGateAction -> TActionClass
+[conv] 0x5e2340 UI_Setup_5E2340 -> UI_Setup
+[conv] 0x603f00 UI_Assign -> UI
+[conv] 0x774c70 WinModemClass::WriteSerial -> WinModemClass
+[conv] 0x5bff00 MovieContext::Cleanup -> MovieContext
+[conv] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> PlayerClass
+[conv] 0x7d1386 __mtinit -> _addr_7D
+[conv] 0x763690 String::To_Waypoint -> String
+[conv] 0x775610 WinModemClass::QueryInterface -> WinModemClass
+[conv] 0x557cb0 ListClass::GetItemData -> ListClass
+[conv] 0x529c40 INIClass::ReadCoord2 -> INIClass
+[conv] 0x708fc0 TechnoClass::ResponseMove_Pickup -> TechnoClass
+[conv] 0x6f78d0 TechnoClass::CheckAndFireAtTarget -> TechnoClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_79                 rc=2
+[era] BinkMovie                rc=0
+[era] CheckListClass           rc=0
+[era] ObjectClass              rc=0
+[era] TActionClass             rc=0
+[era] UI_Setup                 rc=0
+[era] UI                       rc=0
+[era] WinModemClass            rc=2
+[era] MovieContext             rc=2
+[era] PlayerClass              rc=2
+[era] _addr_7D                 rc=0
+[era] String                   rc=2
+[era] ListClass                rc=0
+[era] INIClass                 rc=2
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c9ae0   MISMATCH         BinkMovie::FreeSurfaceTracker
+[diff] 0x4886e0   MISMATCH         CheckListClass::QueryInterface
+[diff] 0x6e30c0   MISMATCH         ObjectClass::CreateHouseClass
+[diff] 0x6e3180   MISMATCH         TActionClass::executePlaceBeaconAction
+[diff] 0x6e31e0   MISMATCH         TActionClass::executeJumpjetAction
+[diff] 0x6e3240   MISMATCH         TActionClass::executeOpenGateAction
+[diff] 0x6e32a0   MISMATCH         TActionClass::executeCloseGateAction
+[diff] 0x5e2340   MISMATCH         UI_Setup_5E2340
+[diff] 0x603f00   MISMATCH         UI_Assign
+[diff] 0x775610   MISMATCH         WinModemClass::QueryInterface
+[diff] 0x7d1386   MISMATCH         __mtinit
+[diff] 0x557cb0   MISMATCH         ListClass::GetItemData
+[diff] 0x708fc0   MISMATCH         TechnoClass::ResponseMove_Pickup
+[diff] 0x6f78d0   MISMATCH         TechnoClass::CheckAndFireAtTarget
+[ledger] 0x796b30 sub_796B30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9ae0 BinkMovie::FreeSurfaceTracker -> NG (attempt 1)
+[ledger] 0x4886e0 CheckListClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x6e30c0 ObjectClass::CreateHouseClass -> NG (attempt 1)
+[ledger] 0x6e3180 TActionClass::executePlaceBeaconAction -> NG (attempt 1)
+[ledger] 0x6e31e0 TActionClass::executeJumpjetAction -> NG (attempt 1)
+[ledger] 0x6e3240 TActionClass::executeOpenGateAction -> NG (attempt 1)
+[ledger] 0x6e32a0 TActionClass::executeCloseGateAction -> NG (attempt 1)
+[ledger] 0x5e2340 UI_Setup_5E2340 -> NG (attempt 1)
+[ledger] 0x603f00 UI_Assign -> NG (attempt 1)
+[ledger] 0x774c70 WinModemClass::WriteSerial -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bff00 MovieContext::Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d1386 __mtinit -> NG (attempt 1)
+[ledger] 0x763690 String::To_Waypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x775610 WinModemClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x557cb0 ListClass::GetItemData -> NG (attempt 1)
+[ledger] 0x529c40 INIClass::ReadCoord2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708fc0 TechnoClass::ResponseMove_Pickup -> NG (attempt 1)
+[ledger] 0x6f78d0 TechnoClass::CheckAndFireAtTarget -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "regalloc": 4,
+  "codegen_shape": 3,
+  "branch_order": 4,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p06\batch_report.json

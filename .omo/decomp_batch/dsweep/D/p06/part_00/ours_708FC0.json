@@ -1,0 +1,21 @@
+{
+ "symbol": "?ResponseMove_Pickup@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ResponseMove_Pickup",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90840000008b887804000085c9743a5357b900000000e8000000008b0e568bf8ff91840000008bc88bc733d28b1ef7b1780400008b816c0400008b0c905156ff93540300005f5b5ec305680400005ec3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E2340",
+ "name": "UI_Setup_5E2340",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E2340",
+ "bytes_hex": "56e8ca371900689f05000050ff15a8147e0033c98bf0e8659bffff83f80174316a016a0068dc04000056ff15a4147e0033d2b98c16830068b41400006888128300e8da2a1500506affe87203000083c4085ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
