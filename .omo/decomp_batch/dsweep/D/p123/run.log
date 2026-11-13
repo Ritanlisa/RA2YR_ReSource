@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p123\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x484680 TacticalMap::ComputeScreenTint -> TacticalMap
+[conv] 0x4f93e0 HouseClass::NotifyUnderAttack -> HouseClass
+[conv] 0x5520a0 LCWPipe::Compress -> LCWPipe
+[conv] 0x7ba090 WWMouseClass::UpdateCursorMovement -> WWMouseClass
+[conv] 0x7ab440 CChatEventSink::DispatchStub_30 -> CChatEventSink
+[conv] 0x687ce0 SaveScenarioToINI -> _addr_68
+[conv] 0x5d2e90 FontClass::LoadFontResources -> FontClass
+[conv] 0x42a6d0 Tactical::ConstructTacticalSurface -> Tactical
+[conv] 0x5f0180 HandlePlayerDisconnection -> _addr_5F
+[conv] 0x5f9720 ObjectTypeClass::LoadCleanup -> ObjectTypeClass
+[conv] 0x531a00 CreditsScreen::DlgProc -> CreditsScreen
+[conv] 0x695fd0 NetworkDialog::InitModemSettings -> NetworkDialog
+[conv] 0x46b310 SuperWeapon::CreateNukePayload -> SuperWeapon
+[conv] 0x5b9a60 SkirmishDialog::HandleGameStart -> SkirmishDialog
+[conv] 0x77a4d0 WOLPersona::FormatDateTime -> WOLPersona
+[conv] 0x536350 TauntCommandClass::Do -> TauntCommandClass
+[conv] 0x758430 ObjectClass::ProcessVoxelScanSamples -> ObjectClass
+[conv] 0x42ee30 BaseClass::LoadBaseNodeClass -> BaseClass
+[conv] 0x531680 InitBulkData -> _addr_53
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperWeaponClass         rc=2
+[era] TacticalMap              rc=2
+[era] HouseClass               rc=2
+[era] LCWPipe                  rc=2
+[era] WWMouseClass             rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_68                 rc=2
+[era] FontClass                rc=2
+[era] Tactical                 rc=2
+[era] _addr_5F                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] CreditsScreen            rc=2
+[era] NetworkDialog            rc=2
+[era] SuperWeapon              rc=2
+[era] SkirmishDialog           rc=2
+[era] WOLPersona               rc=2
+[era] TauntCommandClass        rc=2
+[era] ObjectClass              rc=0
+[era] BaseClass                rc=2
+[era] _addr_53                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x758430   MISMATCH         ObjectClass::ProcessVoxelScanSamples
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484680 TacticalMap::ComputeScreenTint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f93e0 HouseClass::NotifyUnderAttack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5520a0 LCWPipe::Compress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ba090 WWMouseClass::UpdateCursorMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ab440 CChatEventSink::DispatchStub_30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x687ce0 SaveScenarioToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2e90 FontClass::LoadFontResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42a6d0 Tactical::ConstructTacticalSurface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f0180 HandlePlayerDisconnection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9720 ObjectTypeClass::LoadCleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x531a00 CreditsScreen::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x695fd0 NetworkDialog::InitModemSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b310 SuperWeapon::CreateNukePayload -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b9a60 SkirmishDialog::HandleGameStart -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77a4d0 WOLPersona::FormatDateTime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536350 TauntCommandClass::Do -> COMPILE_FAIL (attempt 1)
+[ledger] 0x758430 ObjectClass::ProcessVoxelScanSamples -> NG (attempt 1)
+[ledger] 0x42ee30 BaseClass::LoadBaseNodeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x531680 InitBulkData -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p123\batch_report.json
