@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p91\part_00
+=== convert (20 addrs) ===
+[conv] 0x4dd890 BuildingClass::Validate -> BuildingClass
+[conv] 0x75a120 sub_75A120 -> _addr_75
+[conv] 0x51f3e0 InfantryClass::EnterBuilding -> InfantryClass
+[conv] 0x5b49b0 ModemGuest::Dialog -> ModemGuest
+[conv] 0x7cd2cb _localtime -> _addr_7C
+[conv] 0x4e5ed0 SetupLobbyPlayerSlots -> _addr_4E
+[conv] 0x7c1a70 UnitClass::Audio_Render_7C1A70 -> UnitClass
+[conv] 0x732600 PlayerClass::UpdateAIUnits -> PlayerClass
+[conv] 0x428800 AnimTypeClass::SaveLoad_Prefix -> AnimTypeClass
+[conv] 0x4e2830 GaugeClass::DrawDispatch -> GaugeClass
+[conv] 0x7b54d0 ObjectClass::sub_7B54D0 -> ObjectClass
+[conv] 0x661020 Color::Lerp2 -> Color
+[conv] 0x4a1aa0 CellClass::DestroyOverlay -> CellClass
+[conv] 0x4547c0 BuildingClass::UpdateAnimationSlots -> BuildingClass
+[conv] 0x68ffe0 ObjectClass::Render_Render_68FFE0 -> ObjectClass
+[conv] 0x5221d0 InfantryClass::CanDeployAtCell -> InfantryClass
+[conv] 0x449a50 BuildingClass::setLoopCount -> BuildingClass
+[conv] 0x6349b0 ScriptAction::FindSquadMember -> ScriptAction
+[conv] 0x652230 ObjectClass::Render_Show -> ObjectClass
+[conv] 0x5ec880 Map_Handle_5EC880 -> Map_Handle
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] _addr_75                 rc=0
+[era] InfantryClass            rc=0
+[era] ModemGuest               rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_4E                 rc=2
+[era] UnitClass                rc=0
+[era] PlayerClass              rc=0
+[era] AnimTypeClass            rc=2
+[era] GaugeClass               rc=2
+[era] ObjectClass              rc=0
+[era] Color                    rc=0
+[era] CellClass                rc=2
+[era] ScriptAction             rc=0
+[era] Map_Handle               rc=0
+=== diffasm byte-compare ===
+[diff] 0x4dd890   MISMATCH         BuildingClass::Validate
+[diff] 0x75a120   MISMATCH         sub_75A120
+[diff] 0x51f3e0   MISMATCH         InfantryClass::EnterBuilding
+[diff] 0x5221d0   MISMATCH         InfantryClass::CanDeployAtCell
+[diff] 0x7c1a70   MISMATCH         UnitClass::Audio_Render_7C1A70
+[diff] 0x732600   MISMATCH         PlayerClass::UpdateAIUnits
+[diff] 0x7b54d0   MISMATCH         ObjectClass::sub_7B54D0
+[diff] 0x68ffe0   MISMATCH         ObjectClass::Render_Render_68FFE0
+[diff] 0x652230   MISMATCH         ObjectClass::Render_Show
+[diff] 0x661020   MISMATCH         Color::Lerp2
+[diff] 0x6349b0   MISMATCH         ScriptAction::FindSquadMember
+[diff] 0x5ec880   MISMATCH         Map_Handle_5EC880
+[ledger] 0x4dd890 BuildingClass::Validate -> NG (attempt 1)
+[ledger] 0x75a120 sub_75A120 -> NG (attempt 1)
+[ledger] 0x51f3e0 InfantryClass::EnterBuilding -> NG (attempt 1)
+[ledger] 0x5b49b0 ModemGuest::Dialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cd2cb _localtime -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e5ed0 SetupLobbyPlayerSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1a70 UnitClass::Audio_Render_7C1A70 -> NG (attempt 1)
+[ledger] 0x732600 PlayerClass::UpdateAIUnits -> NG (attempt 1)
+[ledger] 0x428800 AnimTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e2830 GaugeClass::DrawDispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b54d0 ObjectClass::sub_7B54D0 -> NG (attempt 1)
+[ledger] 0x661020 Color::Lerp2 -> NG (attempt 1)
+[ledger] 0x4a1aa0 CellClass::DestroyOverlay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4547c0 BuildingClass::UpdateAnimationSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68ffe0 ObjectClass::Render_Render_68FFE0 -> NG (attempt 1)
+[ledger] 0x5221d0 InfantryClass::CanDeployAtCell -> NG (attempt 1)
+[ledger] 0x449a50 BuildingClass::setLoopCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6349b0 ScriptAction::FindSquadMember -> NG (attempt 1)
+[ledger] 0x652230 ObjectClass::Render_Show -> NG (attempt 1)
+[ledger] 0x5ec880 Map_Handle_5EC880 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 6,
+  "regalloc": 3,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p91\batch_report.json

@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_7B54D0@ObjectClass@@QAEDPBDH@Z",
+ "sym_key": "ObjectClass::sub_7B54D0",
+ "size": 393,
+ "link_base": 0,
+ "bytes_hex": "83ec08538bd956578b1385d275588b742418891385f6740d8bfe83c9ff33c0f2aef7d1eb05b90100000051e80000000083c404890385f6c60000741f8bfe83c9ff33c0f2aef7d12bf98bc18bf78b3bc1e902f3a58bc883e103f3a45f5eb0015b83c408c208008bfa83c9ff33c0f2ae8b44241cf7d1493bc176108bfa83c9ff33c0f2aef7d149894c241c8bfa83c9ff33c08b742418f2aef7d1498bfe8bd183c9fff2aef7d149558d440a0150e8000000008b3b8be883c9ff33c0f2aef7d1498bfe8bd183c9fff2aef7d1498bfd8d4c0a018bd1c1e902f3ab8bca8b54242483e103f3aa8b3b83c9ff33c0f2aef7d12bf98bc18bf78bfdc1e902f3a58bc833c083e103f3a48b3b83c9fff2aef7d1498b7c24208bc1b9010000002bca8d342a03c183c9ff8944241433c0f2aef7d1498bc28b5424148bf903fd8bca03f88bc1c1e90289742418f3a58bc833c083e103f3a48b74242083c9ff8bfef2ae8b7c2418f7d1498bd1c1e902f3a58bca83e103f3a48b0350e80000000083c408892bb0015d5f5e5b83c408c20800",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 372,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

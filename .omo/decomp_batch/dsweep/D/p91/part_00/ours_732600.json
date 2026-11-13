@@ -1,0 +1,87 @@
+{
+ "symbol": "?UpdateAIUnits@PlayerClass@@QAEDXZ",
+ "sym_key": "PlayerClass::UpdateAIUnits",
+ "size": 461,
+ "link_base": 0,
+ "bytes_hex": "83ec10a00000000053555657894c241484c06a180f84d9000000e8000000008bf083c40433ed8bfe85f6742755558bcee80000000025ff00000081e600ffffff0bf08b4710c60700c747200a0000008928eb0233ffa16406000085c0894424180f8e2a0100008b0d340600008b5424148b1ca98bcbe80000000033c625ff00000033f0897424108a44241084c074528b57108b4f08390a72328b470cc1f80884c088442410750485c975328b772085f6897424107e2b33c003ce8a076a005157ff500884c08844241074128b47108b4f048b308d56018910891cb1eb048b7424108b442418453be80f8c78ffffffe99d000000e8000000008bf883c40485ff74206a006a008bcfe8000000008b4710c60700c747200a000000c70000000000eb0233ff8b0d0000000051e8000000008bf083c40433db8bee85f67e5453e8000000008bf085f67443f6461401743d8b5424148bce8974241ce80000000033c625ff00000033f0897424108a44241084c074198d54241c8bcf52e80000000025ff00000081e600ffffff0bf0433bdd7cac8b471033ed8b1885db7e1d8b4f048b04a9508b10ff925001000033c625ff00000033f0453beb7ce385ff740933c06a018a0757ff105f5e5d5b83c410c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FE64@@3EA",
+   "sym_key": "DataGlobal_B0FE64"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?resetEvent@EventClass@@QAEPAIHH@Z",
+   "sym_key": "EventClass::resetEvent"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?StepTechnoClassCleanupIfHuman@@YIHHPAX@Z",
+   "sym_key": "StepTechnoClassCleanupIfHuman"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?resetEvent@EventClass@@QAEPAIHH@Z",
+   "sym_key": "EventClass::resetEvent"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?GetHeightMap@@YAHPAX@Z",
+   "sym_key": "GetHeightMap"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?GetCoordDataMap@@YGHH@Z",
+   "sym_key": "GetCoordDataMap"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?StepTechnoClassCleanupIfHuman@@YIHHPAX@Z",
+   "sym_key": "StepTechnoClassCleanupIfHuman"
+  },
+  {
+   "off": 378,
+   "type": "REL32",
+   "sym": "?AddItem@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::AddItem"
+  }
+ ]
+}

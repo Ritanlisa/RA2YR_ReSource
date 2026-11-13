@@ -1,0 +1,51 @@
+{
+ "symbol": "?Validate@BuildingClass@@QAEPAHPAHH@Z",
+ "sym_key": "BuildingClass::Validate",
+ "size": 318,
+ "link_base": 0,
+ "bytes_hex": "83ec18a100000000578bf98d54241052578b0f89442414ff51488b086a00c1e90866894c24088b5004c1ea088d4c240c668954240a8b4424086a00518bcf89442414e80000000084c074118b4424208b5424085f891083c418c208008b44242453bb010000003bc30f8ebe000000555683cdff3beb8bf50f8f910000008b442414558d4c241456518bcf8944241ce80000000084c074088b542410895424188b442414538d4c241456518bcf8944241ce80000000084c074088b542410895424188b442414568d4c241455518bcf8944241ce80000000084c074088b542410895424188b442414568d4c241453518bcf8944241ce80000000084c074088b54241089542418463bf30f8e6fffffff8b4424188b0d000000003bc1750e8b442430434d3bd80f8c49ffffff5e5d8b4424248b4c24105b5f890883c418c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?ValidateCell@BuildingClass@@QAE_NPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateCell"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?ValidateCell@BuildingClass@@QAE_NPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateCell"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?ValidateCell@BuildingClass@@QAE_NPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateCell"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?ValidateCell@BuildingClass@@QAE_NPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateCell"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?ValidateCell@BuildingClass@@QAE_NPAXHH@Z",
+   "sym_key": "BuildingClass::ValidateCell"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  }
+ ]
+}

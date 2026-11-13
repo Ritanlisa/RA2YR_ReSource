@@ -1,0 +1,147 @@
+{
+ "symbol": "?Render_Render_68FFE0@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::Render_Render_68FFE0",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "a00000000083ec10a8015356578bf9752c8ad080ca01881500000000e8000000006800000000a300000000c7050000000000000000e80000000083c4048b742420a1000000003bf0742a6a018d5424106a00528b150000000089442418a100000000528d54241c8b085250ff5108893500000000a10000000085c074358b4c24248d460a89442414897424108d410e33c98a4f1c89442418518d4c24188bd8a100000000518d4c24188b105150ff5230eb25a1000000006a018d4c24106a00518b4f0c518d4c241c8974241c8b105150ff52088b5c2420a1000000008b350000000083f8ff7411e8000000002b05000000003bc67d062bf085f6752183350000000001e800000000a300000000891d00000000c70500000000050000005f5e5b83c410c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?byte_B054F0@@3EA",
+   "sym_key": "byte_B054F0"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?byte_B054F0@@3EA",
+   "sym_key": "byte_B054F0"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?nullsub_227@@YAHPBX0@Z",
+   "sym_key": "nullsub_227"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?dword_B05528@@3IA",
+   "sym_key": "dword_B05528"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?dword_B05530@@3IA",
+   "sym_key": "dword_B05530"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?dword_B05588@@3IA",
+   "sym_key": "dword_B05588"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?dword_B05588@@3IA",
+   "sym_key": "dword_B05588"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?dword_B05560@@3IA",
+   "sym_key": "dword_B05560"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?dword_B05528@@3IA",
+   "sym_key": "dword_B05528"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?dword_B05530@@3IA",
+   "sym_key": "dword_B05530"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?dword_B05528@@3IA",
+   "sym_key": "dword_B05528"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?dword_B05560@@3IA",
+   "sym_key": "dword_B05560"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?dword_B05528@@3IA",
+   "sym_key": "dword_B05528"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?dword_B0552C@@3IA",
+   "sym_key": "dword_B0552C"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?dword_B05530@@3IA",
+   "sym_key": "dword_B05530"
+  }
+ ]
+}
