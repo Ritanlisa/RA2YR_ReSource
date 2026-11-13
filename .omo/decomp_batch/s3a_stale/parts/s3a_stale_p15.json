@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x623120",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x624130",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x625560",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x62b5e0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x62dc50",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x62e380",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x630ea0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x633a50",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x634290",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x634e10",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x636ce0",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x63a0d0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x63a440",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x63d0f0",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x63d2d0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x640710",
+  "family": "stale_stale_cw5|CW5-10 uintN_t typedef"
+ },
+ {
+  "addr": "0x641b00",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x645660",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x648710",
+  "family": "stale_C14"
+ },
+ {
+  "addr": "0x64a630",
+  "family": "stale_B1"
+ }
+]

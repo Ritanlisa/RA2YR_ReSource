@@ -119064,7 +119064,7 @@
   "this_as_id": false
  },
  "0x623120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -119372,11 +119372,16 @@
   "this_as_id": false
  },
  "0x624130": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7ef720",
   "name": "OwnerDrawControl::InitVtable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "OwnerDrawControl::InitVtable",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x624140": {
   "attempts": 1,
@@ -119701,7 +119706,7 @@
   "this_as_id": false
  },
  "0x625560": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121465,14 +121470,14 @@
   "this_as_id": false
  },
  "0x62b5e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ParticleClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleClass::Construct",
-  "rule_violations": 74,
+  "rule_violations": 20,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -121879,7 +121884,7 @@
   "this_as_id": false
  },
  "0x62dc50": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121927,7 +121932,7 @@
   "this_as_id": false
  },
  "0x62e380": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -122406,7 +122411,7 @@
   "this_as_id": false
  },
  "0x630ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -123326,7 +123331,7 @@
   "this_as_id": false
  },
  "0x633a50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_633A50",
@@ -123611,7 +123616,7 @@
   "this_as_id": false
  },
  "0x634290": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -123936,7 +123941,7 @@
   "this_as_id": false
  },
  "0x634e10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -124297,7 +124302,7 @@
   "this_as_id": false
  },
  "0x636ce0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -124943,7 +124948,7 @@
   "this_as_id": false
  },
  "0x63a0d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "System_Get",
@@ -124988,7 +124993,7 @@
   "this_as_id": false
  },
  "0x63a440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_63A440",
@@ -125310,7 +125315,7 @@
   "this_as_id": false
  },
  "0x63d0f0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -125333,7 +125338,7 @@
   "this_as_id": false
  },
  "0x63d2d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -126850,7 +126855,7 @@
   "this_as_id": false
  },
  "0x640710": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -126898,7 +126903,7 @@
   "this_as_id": false
  },
  "0x641b00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -127985,7 +127990,7 @@
   "this_as_id": false
  },
  "0x645660": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128636,13 +128641,13 @@
   "this_as_id": false
  },
  "0x648710": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "QueueNetworkProcessor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "QueueNetworkProcessor",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -128680,7 +128685,7 @@
   "this_as_id": false
  },
  "0x64a630": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ProcessNetworkMessage",
