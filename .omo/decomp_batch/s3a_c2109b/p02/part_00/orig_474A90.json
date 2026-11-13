@@ -1,0 +1,11 @@
+{
+ "addr": "0x474A90",
+ "name": "BuildingTypeClass::FindAnimByName",
+ "size": 138,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474A90",
+ "bytes_hex": "8b15d454b00083ec208d442400538b5c2430566a20508b049a8b90040300008b442438528b5424385052e8513f0b00a1e054b00033f685c07e3ca1d454b0008b14b08d4c2408518b820403000050e83d42350083c40885c0a1d454b000750c8b0cb083b9100300000175158b0de054b000463bf17cc98bc35e5b83c420c20c008bc65e5b83c420c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

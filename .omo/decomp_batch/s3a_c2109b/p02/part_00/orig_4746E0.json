@@ -1,0 +1,11 @@
+{
+ "addr": "0x4746E0",
+ "name": "ObjectTypeClass::ReadPrerequisite",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4746E0",
+ "bytes_hex": "8b54240883ec208d4424006a20508b44242c68649f88005250e812430b0085c0742d8d4c240051e8f15435008bc8b8b7600bb6c1e108f7e98bc283c40403c1c1f8088bd0c1ea1f03c283c420c20c008b44242c83c420c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

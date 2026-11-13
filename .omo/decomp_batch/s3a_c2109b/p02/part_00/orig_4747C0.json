@@ -1,0 +1,11 @@
+{
+ "addr": "0x4747C0",
+ "name": "ObjectTypeClass::ReadBool2",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4747C0",
+ "bytes_hex": "8b44240c83ec400fbf10568bf10fbf480251528d44240c6800c0810050e8124735008b54245c8b44245883c4108d4c24045152508bcee8653e0b005e83c440c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadBool@ObjectTypeClass@@QAEDPAEPADH@Z",
+ "sym_key": "ObjectTypeClass::ReadBool",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec208d0480568bf18d04c0c1e0039981e2ff00000003c2c1f808508d442408680000000050e8000000008b5424388b44243483c40c8d4c24045152508bcee8000000005e83c420c20c00",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

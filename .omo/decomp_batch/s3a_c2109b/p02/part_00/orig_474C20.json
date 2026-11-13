@@ -1,0 +1,11 @@
+{
+ "addr": "0x474C20",
+ "name": "INIEntry::Write3Bytes",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474C20",
+ "bytes_hex": "8b44240c83ec4033d2568bf18a500133c98a48025133c98a0852518d54241068b089810052e8aa4235008b4c24608b54245c83c4148d4424045051528bcee8fd390b005e83c440c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

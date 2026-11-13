@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x474690 ObjectTypeClass::ReadBool -> ObjectTypeClass
+[conv] 0x4746e0 ObjectTypeClass::ReadPrerequisite -> ObjectTypeClass
+[conv] 0x474740 ObjectTypeClass::ReadSoundList -> ObjectTypeClass
+[conv] 0x4747c0 ObjectTypeClass::ReadBool2 -> ObjectTypeClass
+[conv] 0x4748a0 INIClass::GetPipIdx -> INIClass
+[conv] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> ObjectTypeClass
+[conv] 0x4749e0 ObjectTypeClass::loadTypeMember_54749E0 -> ObjectTypeClass
+[conv] 0x474a90 BuildingTypeClass::FindAnimByName -> BuildingTypeClass
+[conv] 0x474c20 INIEntry::Write3Bytes -> INIEntry
+[conv] 0x474d50 ObjectTypeClass::ReadString -> ObjectTypeClass
+[conv] 0x474da0 INIClass::LookupEnum -> INIClass
+[conv] 0x474e40 ObjectTypeClass::loadTypeMember_5474E40 -> ObjectTypeClass
+[conv] 0x474ee0 SuperWeaponTypeClass::loadSWProperties -> SuperWeaponTypeClass
+[conv] 0x474f50 ObjectTypeClass::ReadInt -> ObjectTypeClass
+[conv] 0x474fa0 ObjectTypeClass::ReadDouble -> ObjectTypeClass
+[conv] 0x475060 ObjectTypeClass::ReadBool3 -> ObjectTypeClass
+[conv] 0x4750d0 INIClass::ParseFlagList -> INIClass
+[conv] 0x4752e0 HouseClass::WriteHouseListToINI -> HouseClass
+[conv] 0x4754b0 OverlayTypeClass::ReadINIString -> OverlayTypeClass
+[conv] 0x475540 SuperWeaponTypeClass::FindOrCreate -> SuperWeaponTypeClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=2
+[era] INIClass                 rc=2
+[era] BuildingTypeClass        rc=0
+[era] INIEntry                 rc=0
+[era] SuperWeaponTypeClass     rc=2
+[era] HouseClass               rc=0
+[era] OverlayTypeClass         rc=0
+=== diffasm byte-compare ===
+[diff] 0x474690   MISMATCH         ObjectTypeClass::ReadBool
+[diff] 0x4746e0   MATCH            ObjectTypeClass::ReadPrerequisite
+[diff] 0x4747c0   MISMATCH         ObjectTypeClass::ReadBool2
+[diff] 0x474940   MISMATCH         ObjectTypeClass::loadTypeMember_5474940
+[diff] 0x4749e0   MISMATCH         ObjectTypeClass::loadTypeMember_54749E0
+[diff] 0x474d50   MISMATCH         ObjectTypeClass::ReadString
+[diff] 0x474e40   MISMATCH         ObjectTypeClass::loadTypeMember_5474E40
+[diff] 0x474f50   MISMATCH         ObjectTypeClass::ReadInt
+[diff] 0x474fa0   MATCH            ObjectTypeClass::ReadDouble
+[diff] 0x475060   MISMATCH         ObjectTypeClass::ReadBool3
+[diff] 0x4750d0   MISMATCH         INIClass::ParseFlagList
+[diff] 0x474a90   MISMATCH         BuildingTypeClass::FindAnimByName
+[diff] 0x474c20   MISMATCH         INIEntry::Write3Bytes
+[diff] 0x474ee0   MISMATCH         SuperWeaponTypeClass::loadSWProperties
+[diff] 0x4752e0   MISMATCH         HouseClass::WriteHouseListToINI
+[diff] 0x4754b0   MISMATCH         OverlayTypeClass::ReadINIString
+[ledger] 0x474690 ObjectTypeClass::ReadBool -> NG (attempt 3)
+[ledger] 0x4746e0 ObjectTypeClass::ReadPrerequisite -> OK (attempt 3)
+[ledger] 0x474740 ObjectTypeClass::ReadSoundList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4747c0 ObjectTypeClass::ReadBool2 -> NG (attempt 3)
+[ledger] 0x4748a0 INIClass::GetPipIdx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474940 ObjectTypeClass::loadTypeMember_5474940 -> NG (attempt 6)
+[ledger] 0x4749e0 ObjectTypeClass::loadTypeMember_54749E0 -> NG (attempt 3)
+[ledger] 0x474a90 BuildingTypeClass::FindAnimByName -> NG (attempt 3)
+[ledger] 0x474c20 INIEntry::Write3Bytes -> NG (attempt 3)
+[ledger] 0x474d50 ObjectTypeClass::ReadString -> NG (attempt 3)
+[ledger] 0x474da0 INIClass::LookupEnum -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474e40 ObjectTypeClass::loadTypeMember_5474E40 -> NG (attempt 3)
+[ledger] 0x474ee0 SuperWeaponTypeClass::loadSWProperties -> NG (attempt 3)
+[ledger] 0x474f50 ObjectTypeClass::ReadInt -> NG (attempt 3)
+[ledger] 0x474fa0 ObjectTypeClass::ReadDouble -> OK (attempt 3)
+[ledger] 0x475060 ObjectTypeClass::ReadBool3 -> NG (attempt 3)
+[ledger] 0x4750d0 INIClass::ParseFlagList -> NG (attempt 3)
+[ledger] 0x4752e0 HouseClass::WriteHouseListToINI -> NG (attempt 3)
+[ledger] 0x4754b0 OverlayTypeClass::ReadINIString -> NG (attempt 3)
+[ledger] 0x475540 SuperWeaponTypeClass::FindOrCreate -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "MATCH": 2,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "const_fold": 4,
+  "signedness": 1,
+  "codegen_shape": 3,
+  "width_mismatch": 1,
+  "regalloc": 3,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 12.5,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p02\batch_report.json

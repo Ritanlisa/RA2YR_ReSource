@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadInt@ObjectTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "ObjectTypeClass::ReadInt",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec2083f8ff750bc644242c008d44242ceb0c8b15000000008b048283c0248d5424006a20528b54242c508b4424345052e8000000008d44240050e80000000083c424c20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponPool@@3PAXA",
+   "sym_key": "g_SuperWeaponPool"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass_Read@@YAHPAX@Z",
+   "sym_key": "ObjectTypeClass_Read"
+  }
+ ]
+}

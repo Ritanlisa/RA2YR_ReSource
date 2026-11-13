@@ -1,0 +1,11 @@
+{
+ "addr": "0x4754B0",
+ "name": "OverlayTypeClass::ReadINIString",
+ "size": 95,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4754B0",
+ "bytes_hex": "81ec800000008d44240056578bbc24940000008bf16880000000508bcfe8fe8a01008b8c24980000008b9424940000005051528bcee826350b0085c074148d4c2408e8898a01005f5e81c480000000c20c008bc75f5e81c480000000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

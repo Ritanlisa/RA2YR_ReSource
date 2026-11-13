@@ -1,0 +1,51 @@
+{
+ "symbol": "?loadSWProperties@SuperWeaponTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "SuperWeaponTypeClass::loadSWProperties",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "8b54240c83ec208d44240056576a20508b0495000000008b542438508b4424385250e8000000008b0d000000008d542408515233ffbe00000000e80000000083c40885c0742083c6044781fe000000007d1e8b068d4c24085051e80000000083c40885c075e08bc75f5e83c420c20c005f33c05e83c420c20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E4C50@@3PAXA",
+   "sym_key": "DataGlobal_7E4C50"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E4C50@@3PAXA",
+   "sym_key": "DataGlobal_7E4C50"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E4C50@@3PAXA",
+   "sym_key": "DataGlobal_7E4C50"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E4D74@@3PAXA",
+   "sym_key": "DataGlobal_7E4D74"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

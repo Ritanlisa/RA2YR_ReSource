@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadDouble@ObjectTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "ObjectTypeClass::ReadDouble",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "8b54240883ec648d442400576a64508b44247468000000005250e8000000008d7c240483c9ff33c0f2aef7d1495f740f8d4c2400e80000000083c464c20c008b44247083c464c20c00",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?FindByName@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::FindByName"
+  }
+ ]
+}

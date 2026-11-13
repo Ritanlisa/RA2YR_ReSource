@@ -1,0 +1,11 @@
+{
+ "addr": "0x474FA0",
+ "name": "ObjectTypeClass::ReadDouble",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474FA0",
+ "bytes_hex": "8b54240883ec648d442400576a64508b44247468649f88005250e8513a0b008d7c240483c9ff33c0f2aef7d1495f740f8d4c2400e877e22d0083c464c20c008b44247083c464c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

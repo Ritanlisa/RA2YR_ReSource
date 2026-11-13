@@ -1,0 +1,51 @@
+{
+ "symbol": "?FindAnimByName@BuildingTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "BuildingTypeClass::FindAnimByName",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "0fbe150400000083ec208d442400538b5c2430566a20508b049a8b90040300008b442438528b5424385052e800000000a11000000033f68338007f0a8bc35e5b83c420c20c000fbe05040000008b14b08d4c2408518b820403000050e80000000083c40885c00fbe05040000000f94c184c9740c8b0cb083b9100300000175158b1510000000463b327cc28bc35e5b83c420c20c008bc65e5b83c420c20c00",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  }
+ ]
+}

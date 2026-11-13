@@ -1,0 +1,27 @@
+{
+ "symbol": "?loadTypeMember_54749E0@ObjectTypeClass@@QAEHPAE0I@Z",
+ "sym_key": "ObjectTypeClass::loadTypeMember_54749E0",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "83ec20568bf18b4c2430e8000000008b54242c8d4c24046a2051508b44243452508bcee8000000008d4c2404e8000000005e83c420c20c00",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?sub_473960@@YIPADH@Z",
+   "sym_key": "sub_473960"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?loadTypeMember_473980@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::loadTypeMember_473980"
+  }
+ ]
+}

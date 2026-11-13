@@ -1,0 +1,11 @@
+{
+ "addr": "0x474EE0",
+ "name": "SuperWeaponTypeClass::loadSWProperties",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474EE0",
+ "bytes_hex": "8b54240c83ec208d44240056576a20508b0495504c7e008b542438508b4424385250e8093b0b0033ffbe504c7e008b0e8d5424085152e8053e350083c40885c0741683c6044781fe744d7e007ce05f33c05e83c420c20c008bc75f5e83c420c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
