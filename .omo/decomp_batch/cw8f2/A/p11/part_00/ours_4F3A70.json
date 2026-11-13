@@ -1,0 +1,27 @@
+{
+ "symbol": "?Dtor@GraphicMenuItem@@QAEXXZ",
+ "sym_key": "GraphicMenuItem::Dtor",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "568b710c85f6c70100000000740f56e80000000056e80000000083c4085ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_GraphicMenuItem@@3PAXA",
+   "sym_key": "vt_GraphicMenuItem"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?j_DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "j_DeleteAndZero"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

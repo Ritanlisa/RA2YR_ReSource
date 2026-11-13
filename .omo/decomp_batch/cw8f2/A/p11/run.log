@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f0b60 _DynamicVectorClass_PAVVoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___ -> _DynamicVectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4f0bb0 _VectorClass_PAVIsometricTileTypeClass::QueryInterface -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4f0c00 _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4f0c50 _VectorClass_PAVParticleTypeClass::QueryInterface -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4f0ca0 _DynamicVectorClass_PAVParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___ -> _DynamicVectorClass_PAVParticleTypeClass
+[conv] 0x4f0cf0 _VectorClass_PAVParticleSystemTypeClass::QueryInterface -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4f0d40 _DynamicVectorClass_PAVParticleSystemTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___ -> _DynamicVectorClass_PAVParticleSystemTypeClass
+[conv] 0x4f0d90 _VectorClass_PAVSuperWeaponTypeClass::QueryInterface -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4f0de0 _DynamicVectorClass_PAVSuperWeaponTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___ -> _DynamicVectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4f0e30 _VectorClass_PAVAbstractTypeClass::QueryInterface -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4f0e80 _DynamicVectorClass_PAVAbstractTypeClass::Constructor_VectorClass_AbstractTypeClass___ -> _DynamicVectorClass_PAVAbstractTypeClass
+[conv] 0x4f28c0 VectorCursor::vt_placeholder_07 -> VectorCursor
+[conv] 0x4f2b60 _VectorClass_PAVGraphicMenuItem::QueryInterface -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x4f3a70 GraphicMenuItem::Dtor -> GraphicMenuItem
+[conv] 0x4f3b20 GraphicMenuItem::QueryInterface -> GraphicMenuItem
+[conv] 0x50e7e0 _TypeList_PBVTeamTypeClass::Constructor -> _TypeList_PBVTeamTypeClass
+[conv] 0x50e8c0 _DynamicVectorClass_PBVTeamTypeClass::Constructor -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x50fff0 _VectorClass_PBVBuildingTypeClass::Get -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x510040 _DynamicVectorClass_PBVBuildingTypeClass::QueryInterface -> _DynamicVectorClass_PBVBuildingTypeClass
+[conv] 0x510090 _VectorClass_PAUStartingTechnoStruct_HouseClass::QueryInterface -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAVIsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleTypeClass rc=0
+[era] _VectorClass_PAVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] _DynamicVectorClass_PAVAbstractTypeClass rc=0
+[era] VectorCursor             rc=2
+[era] _VectorClass_PAVGraphicMenuItem rc=0
+[era] GraphicMenuItem          rc=0
+[era] _TypeList_PBVTeamTypeClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=0
+[era] _VectorClass_PBVBuildingTypeClass rc=0
+[era] _DynamicVectorClass_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4f0b60   MISMATCH         _DynamicVectorClass_PAVVoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___
+[diff] 0x4f0bb0   MISMATCH         _VectorClass_PAVIsometricTileTypeClass::QueryInterface
+[diff] 0x4f0c00   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___
+[diff] 0x4f0c50   MISMATCH         _VectorClass_PAVParticleTypeClass::QueryInterface
+[diff] 0x4f0ca0   MISMATCH         _DynamicVectorClass_PAVParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___
+[diff] 0x4f0cf0   MISMATCH         _VectorClass_PAVParticleSystemTypeClass::QueryInterface
+[diff] 0x4f0d40   MISMATCH         _DynamicVectorClass_PAVParticleSystemTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___
+[diff] 0x4f0d90   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::QueryInterface
+[diff] 0x4f0de0   MISMATCH         _DynamicVectorClass_PAVSuperWeaponTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___
+[diff] 0x4f0e30   MISMATCH         _VectorClass_PAVAbstractTypeClass::QueryInterface
+[diff] 0x4f0e80   MISMATCH         _DynamicVectorClass_PAVAbstractTypeClass::Constructor_VectorClass_AbstractTypeClass___
+[diff] 0x4f2b60   MISMATCH         _VectorClass_PAVGraphicMenuItem::QueryInterface
+[diff] 0x4f3a70   MISMATCH         GraphicMenuItem::Dtor
+[diff] 0x4f3b20   MISMATCH         GraphicMenuItem::QueryInterface
+[diff] 0x50e7e0   MATCH            _TypeList_PBVTeamTypeClass::Constructor
+[diff] 0x50e8c0   MISMATCH         _DynamicVectorClass_PBVTeamTypeClass::Constructor
+[diff] 0x50fff0   MISMATCH         _VectorClass_PBVBuildingTypeClass::Get
+[diff] 0x510040   MISMATCH         _DynamicVectorClass_PBVBuildingTypeClass::QueryInterface
+[diff] 0x510090   MISMATCH         _VectorClass_PAUStartingTechnoStruct_HouseClass::QueryInterface
+[ledger] 0x4f0b60 _DynamicVectorClass_PAVVoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f0bb0 _VectorClass_PAVIsometricTileTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0c00 _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> NG (attempt 4)
+[ledger] 0x4f0c50 _VectorClass_PAVParticleTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0ca0 _DynamicVectorClass_PAVParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f0cf0 _VectorClass_PAVParticleSystemTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0d40 _DynamicVectorClass_PAVParticleSystemTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f0d90 _VectorClass_PAVSuperWeaponTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0de0 _DynamicVectorClass_PAVSuperWeaponTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f0e30 _VectorClass_PAVAbstractTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0e80 _DynamicVectorClass_PAVAbstractTypeClass::Constructor_VectorClass_AbstractTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f28c0 VectorCursor::vt_placeholder_07 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2b60 _VectorClass_PAVGraphicMenuItem::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f3a70 GraphicMenuItem::Dtor -> NG (attempt 2)
+[ledger] 0x4f3b20 GraphicMenuItem::QueryInterface -> NG (attempt 2)
+[ledger] 0x50e7e0 _TypeList_PBVTeamTypeClass::Constructor -> OK (attempt 4)
+[ledger] 0x50e8c0 _DynamicVectorClass_PBVTeamTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x50fff0 _VectorClass_PBVBuildingTypeClass::Get -> NG (attempt 2)
+[ledger] 0x510040 _DynamicVectorClass_PBVBuildingTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x510090 _VectorClass_PAUStartingTechnoStruct_HouseClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "COMPILE_FAIL": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 18
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p11\batch_report.json
