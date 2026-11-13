@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x5295f0 INIClass::ReadBool_Overwrite -> INIClass
+[conv] 0x52a4d0 ObjectClass::sub_52A4D0 -> ObjectClass
+[conv] 0x52a760 INIClass::ReadTimeString -> INIClass
+[conv] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> INIEntry_INIClass
+[conv] 0x52ad50 WarheadTypeClass::parseModifiers -> WarheadTypeClass
+[conv] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> WarheadTypeClass
+[conv] 0x52b430 SortedArray::FindValue -> SortedArray
+[conv] 0x52b4f0 HashTable::BinarySearchAlt -> HashTable
+[conv] 0x52b620 SortedArray::BinarySearch -> SortedArray
+[conv] 0x52ba60 ObjectClass::InitGame -> ObjectClass
+[conv] 0x52cb90 Credits::Screen -> Credits
+[conv] 0x52cd70 ObjectClass::InitRules -> ObjectClass
+[conv] 0x52d9a0 ObjectClass::MenuSelect -> ObjectClass
+[conv] 0x52ec00 CampaignSelect::DlgProc -> CampaignSelect
+[conv] 0x52f3f0 Network::Init -> Network
+[conv] 0x52f620 ParseCommandLine -> _addr_52
+[conv] 0x5312a0 ObjectClass::ShowLoadingScreen -> ObjectClass
+[conv] 0x531cc0 MainMenu::Screen -> MainMenu
+[conv] 0x532150 ObjectClass::InitCommands -> ObjectClass
+[conv] 0x533d20 KeyboardConfig::LoadINI -> KeyboardConfig
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] INIEntry_INIClass        rc=2
+[era] WarheadTypeClass         rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+[era] Credits                  rc=2
+[era] CampaignSelect           rc=2
+[era] Network                  rc=2
+[era] _addr_52                 rc=2
+[era] MainMenu                 rc=2
+[era] KeyboardConfig           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5295f0 INIClass::ReadBool_Overwrite -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a4d0 ObjectClass::sub_52A4D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52a760 INIClass::ReadTimeString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52ad50 WarheadTypeClass::parseModifiers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b430 SortedArray::FindValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b4f0 HashTable::BinarySearchAlt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b620 SortedArray::BinarySearch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52ba60 ObjectClass::InitGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52cb90 Credits::Screen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52cd70 ObjectClass::InitRules -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52d9a0 ObjectClass::MenuSelect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52ec00 CampaignSelect::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52f3f0 Network::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52f620 ParseCommandLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5312a0 ObjectClass::ShowLoadingScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x531cc0 MainMenu::Screen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x532150 ObjectClass::InitCommands -> COMPILE_FAIL (attempt 2)
+[ledger] 0x533d20 KeyboardConfig::LoadINI -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p29\batch_report.json

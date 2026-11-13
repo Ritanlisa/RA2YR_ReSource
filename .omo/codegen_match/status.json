@@ -73094,7 +73094,7 @@
   "this_as_id": false
  },
  "0x5295f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73250,7 +73250,7 @@
   "this_as_id": false
  },
  "0x52a4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -73286,7 +73286,7 @@
   "this_as_id": false
  },
  "0x52a760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73321,7 +73321,7 @@
   "this_as_id": false
  },
  "0x52aaf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -73357,14 +73357,14 @@
   "this_as_id": false
  },
  "0x52ad50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "WarheadTypeClass::parseModifiers",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WarheadTypeClass::parseModifiers",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -73460,7 +73460,7 @@
   "this_as_id": false
  },
  "0x52afc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73544,7 +73544,7 @@
   "this_as_id": false
  },
  "0x52b430": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73568,7 +73568,7 @@
   "this_as_id": false
  },
  "0x52b4f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73604,7 +73604,7 @@
   "this_as_id": false
  },
  "0x52b620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73822,7 +73822,7 @@
   "this_as_id": false
  },
  "0x52ba60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73856,7 +73856,7 @@
   "this_as_id": false
  },
  "0x52cb90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73868,7 +73868,7 @@
   "this_as_id": false
  },
  "0x52cd70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73958,7 +73958,7 @@
   "this_as_id": false
  },
  "0x52d9a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73970,7 +73970,7 @@
   "this_as_id": false
  },
  "0x52ec00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -73982,7 +73982,7 @@
   "this_as_id": false
  },
  "0x52f3f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73994,7 +73994,7 @@
   "this_as_id": false
  },
  "0x52f620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ParseCommandLine",
@@ -74081,7 +74081,7 @@
   "this_as_id": false
  },
  "0x5312a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -74116,7 +74116,7 @@
   "this_as_id": false
  },
  "0x531cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -74170,7 +74170,7 @@
   "this_as_id": false
  },
  "0x532150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -74182,7 +74182,7 @@
   "this_as_id": false
  },
  "0x533d20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
