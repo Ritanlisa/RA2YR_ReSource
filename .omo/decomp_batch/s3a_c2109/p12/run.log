@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x5dac00 WideString::Hash -> WideString
+[conv] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> ObjectClass
+[conv] 0x5dafe0 GameSetup::DisplayPlayers -> GameSetup
+[conv] 0x5dbe20 SetGameSetupPlayerState -> _addr_5D
+[conv] 0x5dc170 NetworkLobby::ValidateSerialNumber -> NetworkLobby
+[conv] 0x5e2700 Dialog::ShowMessage -> Dialog
+[conv] 0x5e32d0 CheckGameSettingsChanged -> _addr_5E
+[conv] 0x5e35a0 ObjectClass::sub_5E35A0 -> ObjectClass
+[conv] 0x5e3630 ObjectClass::Network_Create -> ObjectClass
+[conv] 0x5e3720 Network::SendOptionsGame -> Network
+[conv] 0x5e6520 ReadPlayerCountMap -> _addr_5E
+[conv] 0x5e7eb0 MapPreview::Upload -> MapPreview
+[conv] 0x5e8bf0 Player::FindByName -> Player
+[conv] 0x5e8ea0 NetworkLobby::SetupPlayers -> NetworkLobby
+[conv] 0x5ea3e0 RefreshLobbyAll -> _addr_5E
+[conv] 0x5ea920 GetPlayerSide -> _addr_5E
+[conv] 0x5ea9b0 RefreshLobbyAll_Play -> RefreshLobbyAll
+[conv] 0x5eaa10 RefreshLobbyAll_Get -> RefreshLobbyAll
+[conv] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> RefreshLobbyAll_Get
+[conv] 0x5f0180 HandlePlayerDisconnection -> _addr_5F
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WideString               rc=2
+[era] ObjectClass              rc=2
+[era] GameSetup                rc=2
+[era] _addr_5D                 rc=2
+[era] NetworkLobby             rc=2
+[era] Dialog                   rc=2
+[era] _addr_5E                 rc=2
+[era] Network                  rc=2
+[era] MapPreview               rc=2
+[era] Player                   rc=2
+[era] RefreshLobbyAll          rc=2
+[era] RefreshLobbyAll_Get      rc=2
+[era] _addr_5F                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5dac00 WideString::Hash -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dafe0 GameSetup::DisplayPlayers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dbe20 SetGameSetupPlayerState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dc170 NetworkLobby::ValidateSerialNumber -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e2700 Dialog::ShowMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e32d0 CheckGameSettingsChanged -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e35a0 ObjectClass::sub_5E35A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e3630 ObjectClass::Network_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e3720 Network::SendOptionsGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e6520 ReadPlayerCountMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e7eb0 MapPreview::Upload -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8bf0 Player::FindByName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8ea0 NetworkLobby::SetupPlayers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ea3e0 RefreshLobbyAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ea920 GetPlayerSide -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ea9b0 RefreshLobbyAll_Play -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5eaa10 RefreshLobbyAll_Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f0180 HandlePlayerDisconnection -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p12\batch_report.json
