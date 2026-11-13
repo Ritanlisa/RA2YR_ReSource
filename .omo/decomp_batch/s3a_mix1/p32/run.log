@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> _DynamicVectorClass_V_TRect_H
+[conv] 0x5add10 ObjectClass::Map_Delete -> ObjectClass
+[conv] 0x5aec40 ObjectClass::sub_5AEC40 -> ObjectClass
+[conv] 0x5aed50 ObjectClass::sub_5AED50 -> ObjectClass
+[conv] 0x5aee50 ObjectClass::sub_5AEE50 -> ObjectClass
+[conv] 0x5aef60 Matrix3x3::RotateX -> Matrix3x3
+[conv] 0x5af080 Matrix3D::RotateZ -> Matrix3D
+[conv] 0x5af1a0 Matrix2D::Rotate -> Matrix2D
+[conv] 0x5af550 ObjectClass::sub_5AF550 -> ObjectClass
+[conv] 0x5b01c0 BuildingClass::ProcessMission -> BuildingClass
+[conv] 0x5b5960 ObjectClass::sub_5B5960 -> ObjectClass
+[conv] 0x5b7090 Game::StartModemMultiplayer -> Game
+[conv] 0x5b93f0 ObjectClass::sub_5B93F0 -> ObjectClass
+[conv] 0x5c0640 Render_Play -> Render
+[conv] 0x5c17b0 MPCooperative::unnamed -> MPCooperative
+[conv] 0x5c1a10 MPCooperative::CopyTo -> MPCooperative
+[conv] 0x5c34f0 MPCooperative::ReceiveMessage -> MPCooperative
+[conv] 0x5c35f0 MPCooperative::HandleEvent -> MPCooperative
+[conv] 0x5c5e90 sub_5C5E90 -> _addr_5C
+[conv] 0x5c7ba0 sub_5C7BA0 -> _addr_5C
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_V_TRect_H rc=0
+[era] ObjectClass              rc=2
+[era] Matrix3x3                rc=2
+[era] Matrix3D                 rc=2
+[era] Matrix2D                 rc=2
+[era] BuildingClass            rc=2
+[era] Game                     rc=2
+[era] Render                   rc=2
+[era] MPCooperative            rc=2
+[era] _addr_5C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5ad520   MISMATCH         _DynamicVectorClass_V_TRect_H::Constructor
+[ledger] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> NG (attempt 3)
+[ledger] 0x5add10 ObjectClass::Map_Delete -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aec40 ObjectClass::sub_5AEC40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aed50 ObjectClass::sub_5AED50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aee50 ObjectClass::sub_5AEE50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aef60 Matrix3x3::RotateX -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5af080 Matrix3D::RotateZ -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5af1a0 Matrix2D::Rotate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5af550 ObjectClass::sub_5AF550 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b01c0 BuildingClass::ProcessMission -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b5960 ObjectClass::sub_5B5960 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b7090 Game::StartModemMultiplayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b93f0 ObjectClass::sub_5B93F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c0640 Render_Play -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c17b0 MPCooperative::unnamed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1a10 MPCooperative::CopyTo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c34f0 MPCooperative::ReceiveMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c35f0 MPCooperative::HandleEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5e90 sub_5C5E90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c7ba0 sub_5C7BA0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p32\batch_report.json
