@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cab50 _VectorClass_PBVTechnoTypeClass::QueryInterface -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4cca70 FlyLocomotionClass::sub_4CCA70 -> FlyLocomotionClass
+[conv] 0x4d03a0 FlyLocomotionClass::ProcessMove -> FlyLocomotionClass
+[conv] 0x4d2d10 _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e02d0 _VectorClass_PAVAbstractClass::QueryInterface -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0a00 VectorClass::sub_4E0A00 -> VectorClass
+[conv] 0x4e0ce0 _VectorClass_PAVFootClass::QueryInterface -> _VectorClass_PAVFootClass
+[conv] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4ef580 _VectorClass_PAVBuildingClass::QueryInterface -> _VectorClass_PAVBuildingClass
+[conv] 0x4ef5d0 _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___ -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4ef620 _VectorClass_PAVSuperClass::QueryInterface -> _VectorClass_PAVSuperClass
+[conv] 0x4ef670 _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___ -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4ef6c0 _VectorClass_PAVAITriggerTypeClass::QueryInterface -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4ef710 _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4ef760 _VectorClass_PAVBuildingLightClass::QueryInterface -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4ef7b0 _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___ -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4ef800 _VectorClass_PAVParticleClass::vt_00 -> _VectorClass_PAVParticleClass
+[conv] 0x4ef850 _DynamicVectorClass_PAVParticleClass::QueryInterface -> _DynamicVectorClass_PAVParticleClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] FlyLocomotionClass       rc=0
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] VectorClass              rc=2
+[era] _VectorClass_PAVFootClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=2
+[era] _VectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] _VectorClass_PAVParticleClass rc=0
+[era] _DynamicVectorClass_PAVParticleClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4cab50   MISMATCH         _VectorClass_PBVTechnoTypeClass::QueryInterface
+[diff] 0x4cca70   MISMATCH         FlyLocomotionClass::sub_4CCA70
+[diff] 0x4d03a0   MISMATCH         FlyLocomotionClass::ProcessMove
+[diff] 0x4d2d10   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface
+[diff] 0x4d2d60   MISMATCH         _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface
+[diff] 0x4e02d0   MISMATCH         _VectorClass_PAVAbstractClass::QueryInterface
+[diff] 0x4e0ce0   MISMATCH         _VectorClass_PAVFootClass::QueryInterface
+[diff] 0x4ef580   MISMATCH         _VectorClass_PAVBuildingClass::QueryInterface
+[diff] 0x4ef5d0   MISMATCH         _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___
+[diff] 0x4ef620   MISMATCH         _VectorClass_PAVSuperClass::QueryInterface
+[diff] 0x4ef670   MISMATCH         _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___
+[diff] 0x4ef6c0   MISMATCH         _VectorClass_PAVAITriggerTypeClass::QueryInterface
+[diff] 0x4ef710   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___
+[diff] 0x4ef760   MISMATCH         _VectorClass_PAVBuildingLightClass::QueryInterface
+[diff] 0x4ef7b0   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___
+[diff] 0x4ef800   MISMATCH         _VectorClass_PAVParticleClass::vt_00
+[diff] 0x4ef850   MISMATCH         _DynamicVectorClass_PAVParticleClass::QueryInterface
+[ledger] 0x4cab50 _VectorClass_PBVTechnoTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4cca70 FlyLocomotionClass::sub_4CCA70 -> NG (attempt 2)
+[ledger] 0x4d03a0 FlyLocomotionClass::ProcessMove -> NG (attempt 2)
+[ledger] 0x4d2d10 _VectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x4e02d0 _VectorClass_PAVAbstractClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4e0a00 VectorClass::sub_4E0A00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0ce0 _VectorClass_PAVFootClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4e0d80 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0e20 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ef580 _VectorClass_PAVBuildingClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef5d0 _DynamicVectorClass_PAVBuildingClass::Constructor_VectorClass_BuildingClass___ -> NG (attempt 2)
+[ledger] 0x4ef620 _VectorClass_PAVSuperClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef670 _DynamicVectorClass_PAVSuperClass::Constructor_VectorClass_SuperClass___ -> NG (attempt 2)
+[ledger] 0x4ef6c0 _VectorClass_PAVAITriggerTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef710 _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> NG (attempt 4)
+[ledger] 0x4ef760 _VectorClass_PAVBuildingLightClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef7b0 _DynamicVectorClass_PAVBuildingLightClass::Constructor_VectorClass_BuildingLightClass___ -> NG (attempt 2)
+[ledger] 0x4ef800 _VectorClass_PAVParticleClass::vt_00 -> NG (attempt 2)
+[ledger] 0x4ef850 _DynamicVectorClass_PAVParticleClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "branch_polarity": 15,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p07\batch_report.json

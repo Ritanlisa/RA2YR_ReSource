@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4CCA70@FlyLocomotionClass@@QAEXXZ",
+ "sym_key": "FlyLocomotionClass::sub_4CCA70",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "c70100000000c7410400000000e900000000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?vt_FlyLocomotionClass@@3PAXA",
+   "sym_key": "vt_FlyLocomotionClass"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?vt_FlyLocomotionClass@@3PAXA",
+   "sym_key": "vt_FlyLocomotionClass"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Construct@LocomotionClass@@QAEXXZ",
+   "sym_key": "LocomotionClass::Construct"
+  }
+ ]
+}
