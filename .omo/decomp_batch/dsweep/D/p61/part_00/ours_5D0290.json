@@ -1,0 +1,123 @@
+{
+ "symbol": "?DeleteAndZero@MSChoiceClass@@QAEPADPAPBH@Z",
+ "sym_key": "MSChoiceClass::DeleteAndZero",
+ "size": 259,
+ "link_base": 0,
+ "bytes_hex": "515355568bf1576a008d7e04c706000000008bcfc7460c00000000c70700000000e8000000008d44241050e8000000008b15000000008b5c241c83c4048d4c241051526a008bcbe8000000008d4c24108be8e80000000085c0740b8d4c2410e80000000089068b0d000000008d4424105051558bcbe8000000008d4c24108be8e80000000085c0740b8d4c2410e8000000008907a1000000008d5424105250558bcbe8000000008d4c24108bf8e80000000085c0740c8d4c2410e80000000089460c8b15000000008d4c24105152578bcbe8000000008d4c2410e80000000085c0740d8d4424108d4e1050e8000000008d4c2410e8000000008bc65f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?asc_8304FC@@3PAGA",
+   "sym_key": "asc_8304FC"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Tokenize2@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize2"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?GetField@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::GetField"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?asc_8304FC@@3PAGA",
+   "sym_key": "asc_8304FC"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Tokenize2@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize2"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetField@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::GetField"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?asc_8304FC@@3PAGA",
+   "sym_key": "asc_8304FC"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?Tokenize2@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize2"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?GetField@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::GetField"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?asc_8304FC@@3PAGA",
+   "sym_key": "asc_8304FC"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Tokenize2@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize2"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?Reassign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Reassign_Alt"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

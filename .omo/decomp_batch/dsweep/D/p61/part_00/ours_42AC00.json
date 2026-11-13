@@ -1,0 +1,117 @@
+{
+ "symbol": "?setOverlayType@CellClass@@QAEHH@Z",
+ "sym_key": "CellClass::setOverlayType",
+ "size": 248,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933db8b47183bc3740c50e80000000083c404895f188b471c3bc3740c50e80000000083c404895f1c668b4724663bc374100fbfc050e80000000083c40466895f248a47203ac3741125ff00000050e80000000083c404885f208b4424108b480c8b50088d7411018935000000000faff6c1e60256e8000000005689471ce80000000056894718e8000000005666894724e800000000884720a1000000008bc883c410f7d9890d00000000b9010000002bc88d5001890d0000000083c9ff8915000000008d50ff2bc85f5ec7050000000001000000a300000000891500000000c70500000000ffffffff890d000000005bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A304@@3PAIA",
+   "sym_key": "DataGlobal_89A304"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?dword_89A308@@3IA",
+   "sym_key": "dword_89A308"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A310@@3IA",
+   "sym_key": "DataGlobal_89A310"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A30C@@3IA",
+   "sym_key": "DataGlobal_89A30C"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A314@@3IA",
+   "sym_key": "DataGlobal_89A314"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A318@@3IA",
+   "sym_key": "DataGlobal_89A318"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?dword_89A31C@@3IA",
+   "sym_key": "dword_89A31C"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?dword_89A320@@3IA",
+   "sym_key": "dword_89A320"
+  }
+ ]
+}

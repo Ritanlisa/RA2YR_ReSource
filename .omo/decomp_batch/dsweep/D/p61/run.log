@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p61\part_00
+=== convert (20 addrs) ===
+[conv] 0x766aa0 _ValueGameOption_E_WorldDominationTour::adviseConnection -> _ValueGameOption_E_WorldDominationTour
+[conv] 0x42ac00 CellClass::setOverlayType -> CellClass
+[conv] 0x4c2fc0 EditClass::sub_4C2FC0 -> EditClass
+[conv] 0x76e090 TechnoClass::sub_76E090 -> TechnoClass
+[conv] 0x752370 ThemeClass::ClearQueues -> ThemeClass
+[conv] 0x788710 sub_788710 -> _addr_78
+[conv] 0x5d0290 MSChoiceClass::DeleteAndZero -> MSChoiceClass
+[conv] 0x74ba30 VoxelAnimTypeClass::ddtor -> VoxelAnimTypeClass
+[conv] 0x7240b0 ToolTipClass::updateString -> ToolTipClass
+[conv] 0x65cce0 RawFileClass::Read -> RawFileClass
+[conv] 0x639bc0 BuildingClass::FlushScriptActions -> BuildingClass
+[conv] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> ObjectClass
+[conv] 0x6e9050 TeamClass::SelectMember -> TeamClass
+[conv] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> CChatEventSink
+[conv] 0x7a9110 CChatEventSink::DispatchStub_41 -> CChatEventSink
+[conv] 0x55a7d0 IUnknown::ComputeRotation -> IUnknown
+[conv] 0x557830 ListClass::DrawWithFlags -> ListClass
+[conv] 0x6ec450 TeamClass::SaveLoad_Prefix -> TeamClass
+[conv] 0x639fd0 NetworkClass::ExecutePlanningModeCmd -> NetworkClass
+[conv] 0x7da512 __getwc_lk -> _addr_7D
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _ValueGameOption_E_WorldDominationTour rc=2
+[era] CellClass                rc=0
+[era] EditClass                rc=2
+[era] TechnoClass              rc=2
+[era] ThemeClass               rc=2
+[era] _addr_78                 rc=0
+[era] MSChoiceClass            rc=0
+[era] VoxelAnimTypeClass       rc=2
+[era] ToolTipClass             rc=2
+[era] RawFileClass             rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] TeamClass                rc=2
+[era] CChatEventSink           rc=2
+[era] IUnknown                 rc=2
+[era] ListClass                rc=2
+[era] NetworkClass             rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x42ac00   MISMATCH         CellClass::setOverlayType
+[diff] 0x788710   MISMATCH         sub_788710
+[diff] 0x5d0290   MISMATCH         MSChoiceClass::DeleteAndZero
+[diff] 0x6e9050   MISMATCH         TeamClass::SelectMember
+[diff] 0x6ec450   MISMATCH         TeamClass::SaveLoad_Prefix
+[ledger] 0x766aa0 _ValueGameOption_E_WorldDominationTour::adviseConnection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42ac00 CellClass::setOverlayType -> NG (attempt 1)
+[ledger] 0x4c2fc0 EditClass::sub_4C2FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e090 TechnoClass::sub_76E090 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752370 ThemeClass::ClearQueues -> COMPILE_FAIL (attempt 1)
+[ledger] 0x788710 sub_788710 -> NG (attempt 1)
+[ledger] 0x5d0290 MSChoiceClass::DeleteAndZero -> NG (attempt 1)
+[ledger] 0x74ba30 VoxelAnimTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7240b0 ToolTipClass::updateString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cce0 RawFileClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639bc0 BuildingClass::FlushScriptActions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e9050 TeamClass::SelectMember -> NG (attempt 1)
+[ledger] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a9110 CChatEventSink::DispatchStub_41 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a7d0 IUnknown::ComputeRotation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557830 ListClass::DrawWithFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ec450 TeamClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x639fd0 NetworkClass::ExecutePlanningModeCmd -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7da512 __getwc_lk -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p61\batch_report.json
