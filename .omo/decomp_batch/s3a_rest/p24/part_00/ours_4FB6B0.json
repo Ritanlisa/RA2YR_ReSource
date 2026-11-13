@@ -1,0 +1,69 @@
+{
+ "symbol": "?ProcessPromotionSound@HouseClass@@QAEDPAH@Z",
+ "sym_key": "HouseClass::ProcessPromotionSound",
+ "size": 422,
+ "link_base": 0,
+ "bytes_hex": "83ec1053558b6c241c56578bf957c7442414ffffffffc68746020000018b4500ff90840000008b4d00558bf0ff512c8bd84b83fb0e0f870e01000033d28a9300000000ff2495000000008b0656ff504033db8987740200008a9e9f0c000084db751b8b0e56ff5140508d8fb4550000e80000000033c325ff00000033d88b15000000008b827801000089442410e9b70000008b0e56ff514033db8987780200008a9e9f0c000084db751b8b1656ff5240508d8fdc550000e80000000033c325ff00000033d8a1000000008b8880010000eb738b1656ff524033db89876c0200008a9e9f0c000084db755f8b0656ff5040508d8fa0550000e80000000033c325ff00000033d8eb428b0e56ff514033db8987700200008a9e9f0c000084db751b8b1656ff5240508d8fc8550000e80000000033c325ff00000033d8a1000000008b887c010000894c24108bb63405000083feff7404897424108b4c241083f9ff74328b959c0000008b85a0000000895424148b95a40000008954241c6a008d5424188944241ce80000000033c325ff00000033d8c687fc010000015f5e8ac35d5b83c410c20400",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "$L2075",
+   "sym_key": "$L2075"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "$L2076",
+   "sym_key": "$L2076"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Increment@RefCount@@QAEHH@Z",
+   "sym_key": "RefCount::Increment"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?Increment@RefCount@@QAEHH@Z",
+   "sym_key": "RefCount::Increment"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?Increment@RefCount@@QAEHH@Z",
+   "sym_key": "RefCount::Increment"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?Increment@RefCount@@QAEHH@Z",
+   "sym_key": "RefCount::Increment"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 390,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHHH@Z",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}

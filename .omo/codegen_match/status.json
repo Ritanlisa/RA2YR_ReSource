@@ -64855,7 +64855,7 @@
   "this_as_id": false
  },
  "0x4f9670": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -64891,7 +64891,7 @@
   "this_as_id": false
  },
  "0x4f9790": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64946,7 +64946,7 @@
   "this_as_id": false
  },
  "0x4f9a90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64958,7 +64958,7 @@
   "this_as_id": false
  },
  "0x4f9af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65078,7 +65078,7 @@
   "this_as_id": false
  },
  "0x4fad20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65126,15 +65126,15 @@
   "this_as_id": false
  },
  "0x4fb6b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "HouseClass::ProcessPromotionSound",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HouseClass::ProcessPromotionSound",
   "rule_violations": 9,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4fb840": {
@@ -65162,7 +65162,7 @@
   "this_as_id": false
  },
  "0x4fb9b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65174,7 +65174,7 @@
   "this_as_id": false
  },
  "0x4fbd00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65229,7 +65229,7 @@
   "this_as_id": false
  },
  "0x4fc0b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65391,19 +65391,19 @@
   "this_as_id": false
  },
  "0x4fd150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::CalcExitCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::CalcExitCoords",
-  "rule_violations": 10,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4fd500": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65415,19 +65415,19 @@
   "this_as_id": false
  },
  "0x4fd9a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::ValidateAIBuildAffordability",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ValidateAIBuildAffordability",
-  "rule_violations": 7,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4fdd10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65475,7 +65475,7 @@
   "this_as_id": false
  },
  "0x4ff210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65510,7 +65510,7 @@
   "this_as_id": false
  },
  "0x4ff700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65546,7 +65546,7 @@
   "this_as_id": false
  },
  "0x4ffb20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65679,7 +65679,7 @@
   "this_as_id": false
  },
  "0x500b40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65703,7 +65703,7 @@
   "this_as_id": false
  },
  "0x501210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -65727,7 +65727,7 @@
   "this_as_id": false
  },
  "0x501400": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65751,7 +65751,7 @@
   "this_as_id": false
  },
  "0x501640": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

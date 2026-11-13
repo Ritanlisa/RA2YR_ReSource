@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f9670 UnitClass::sub_4F9670 -> UnitClass
+[conv] 0x4f9790 HouseClass::ProcessPowerDrain -> HouseClass
+[conv] 0x4f9a90 Object::IsAlliedWithObjectHouse -> Object
+[conv] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> Object
+[conv] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> SuperWeapon
+[conv] 0x4fb6b0 HouseClass::ProcessPromotionSound -> HouseClass
+[conv] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> AbstractClass
+[conv] 0x4fbd00 ObjectClass::sub_4FBD00 -> ObjectClass
+[conv] 0x4fc0b0 HouseClass::DefeatPlayer -> HouseClass
+[conv] 0x4fd150 BuildingClass::CalcExitCoords -> BuildingClass
+[conv] 0x4fd500 House::UpdateHouseAI -> House
+[conv] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> TechnoClass
+[conv] 0x4fdd10 HouseClass::ManageProduction -> HouseClass
+[conv] 0x4ff210 HouseClass::AIAircraftProduction -> HouseClass
+[conv] 0x4ff700 BuildingClass::PowerUpdate -> BuildingClass
+[conv] 0x4ffb20 PathfindingClass::FindPath -> PathfindingClass
+[conv] 0x500b40 HouseClass::ReadFromINI -> HouseClass
+[conv] 0x501210 HouseClass::SaveToINI -> HouseClass
+[conv] 0x501400 HouseClass::SetCapacity_5 -> HouseClass
+[conv] 0x501640 HouseClass::CanDetect -> HouseClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] HouseClass               rc=2
+[era] Object                   rc=2
+[era] SuperWeapon              rc=2
+[era] AbstractClass            rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] House                    rc=2
+[era] TechnoClass              rc=2
+[era] PathfindingClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x4fb6b0   MISMATCH         HouseClass::ProcessPromotionSound
+[ledger] 0x4f9670 UnitClass::sub_4F9670 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f9790 HouseClass::ProcessPowerDrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f9a90 Object::IsAlliedWithObjectHouse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fb6b0 HouseClass::ProcessPromotionSound -> NG (attempt 2)
+[ledger] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fbd00 ObjectClass::sub_4FBD00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fc0b0 HouseClass::DefeatPlayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fd150 BuildingClass::CalcExitCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fd500 House::UpdateHouseAI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fd9a0 TechnoClass::ValidateAIBuildAffordability -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fdd10 HouseClass::ManageProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ff210 HouseClass::AIAircraftProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ff700 BuildingClass::PowerUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ffb20 PathfindingClass::FindPath -> COMPILE_FAIL (attempt 2)
+[ledger] 0x500b40 HouseClass::ReadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x501210 HouseClass::SaveToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x501400 HouseClass::SetCapacity_5 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x501640 HouseClass::CanDetect -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p24\batch_report.json
