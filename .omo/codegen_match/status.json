@@ -3276,7 +3276,7 @@
   "this_as_id": false
  },
  "0x40bbc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40bbe7",
@@ -3288,7 +3288,7 @@
   "this_as_id": false
  },
  "0x40bc10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40bc37",
@@ -3300,7 +3300,7 @@
   "this_as_id": false
  },
  "0x40bc60": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40bc87",
@@ -3312,7 +3312,7 @@
   "this_as_id": false
  },
  "0x40bcb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40bcd7",
@@ -3497,7 +3497,7 @@
   "status": "NG"
  },
  "0x40c110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40c137",
@@ -3509,12 +3509,12 @@
   "this_as_id": false
  },
  "0x40c160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e184c",
+  "first_diff": "+14 je 0x40c187",
   "name": "_DynamicVectorClass_PBVCommandClass::Constructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MoveFeedback::Constructor",
   "rule_violations": 0,
   "status": "NG",
@@ -3658,7 +3658,7 @@
   "this_as_id": false
  },
  "0x40c4f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+14 je 0x40c517",
@@ -3670,12 +3670,12 @@
   "this_as_id": false
  },
  "0x40c540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e188c",
+  "first_diff": "+14 je 0x40c567",
   "name": "_DynamicVectorClass_PAVLightConvertClass::Constructor_VectorClass_LightConvertClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_LightConvertClass::Constructor_VectorClass_LightConvertClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -3970,24 +3970,24 @@
   "this_as_id": false
  },
  "0x40cae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e18dc",
+  "first_diff": "+14 je 0x40cb07",
   "name": "_VectorClass_PAVIsometricTileClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_IsometricTileClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x40cb30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e18dc",
+  "first_diff": "+14 je 0x40cb57",
   "name": "_DynamicVectorClass_PAVIsometricTileClass::Constructor_VectorClass_IsometricTileClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_IsometricTileClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -4167,12 +4167,12 @@
   "this_as_id": false
  },
  "0x40cf30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e192c",
+  "first_diff": "+14 je 0x40cf57",
   "name": "_VectorClass_PAVObjectClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "ObjectVector::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -4675,24 +4675,24 @@
   "this_as_id": false
  },
  "0x40d800": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1a64",
+  "first_diff": "+14 je 0x40d827",
   "name": "_VectorClass_PAVMixFileClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_MixFileClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x40d850": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1a64",
+  "first_diff": "+14 je 0x40d877",
   "name": "_DynamicVectorClass_PAVMixFileClass::applyCursorSettings",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MouseClass::applyCursorSettings",
   "rule_violations": 0,
   "status": "NG",
@@ -5654,24 +5654,24 @@
   "this_as_id": false
  },
  "0x40eab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1b44",
+  "first_diff": "+14 je 0x40ead7",
   "name": "_VectorClass_PAVScriptClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_ScriptClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x40eb00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1b44",
+  "first_diff": "+14 je 0x40eb27",
   "name": "_DynamicVectorClass_PAVScriptClass::Constructor_VectorClass_ScriptClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -6047,24 +6047,24 @@
   "this_as_id": false
  },
  "0x40f180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1e4c",
+  "first_diff": "+14 je 0x40f1a7",
   "name": "_VectorClass_PAVVoxelAnimClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_VoxelAnimClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x40f1d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1e4c",
+  "first_diff": "+14 je 0x40f1f7",
   "name": "_DynamicVectorClass_PAVVoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -6422,24 +6422,24 @@
   "this_as_id": false
  },
  "0x40f8a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1ea4",
+  "first_diff": "+14 je 0x40f8c7",
   "name": "_VectorClass_PAVWarheadTypeClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_WarheadTypeClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x40f8f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1ea4",
+  "first_diff": "+14 je 0x40f917",
   "name": "_DynamicVectorClass_PAVWarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___",
   "rule_violations": 0,
   "status": "NG",
@@ -6731,12 +6731,12 @@
   "this_as_id": false
  },
  "0x40fe70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e1ef4",
+  "first_diff": "+14 je 0x40fe97",
   "name": "_VectorClass_PAVWeaponTypeClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_WeaponTypeClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",

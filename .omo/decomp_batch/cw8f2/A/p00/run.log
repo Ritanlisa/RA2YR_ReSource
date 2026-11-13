@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x40bbc0 _VectorClass_PAVBombClass::QueryInterface -> _VectorClass_PAVBombClass
+[conv] 0x40bc10 _DynamicVectorClass_PAVBombClass::executeAction -> _DynamicVectorClass_PAVBombClass
+[conv] 0x40bc60 _VectorClass_PAVTechnoClass::QueryInterface -> _VectorClass_PAVTechnoClass
+[conv] 0x40bcb0 _DynamicVectorClass_PAVTechnoClass::QueryInterface -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x40c110 _VectorClass_PBVCommandClass::queueEvent -> _VectorClass_PBVCommandClass
+[conv] 0x40c160 _DynamicVectorClass_PBVCommandClass::Constructor -> _DynamicVectorClass_PBVCommandClass
+[conv] 0x40c4f0 _VectorClass_PAVLightConvertClass::QueryInterface -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c540 _DynamicVectorClass_PAVLightConvertClass::Constructor_VectorClass_LightConvertClass___ -> _DynamicVectorClass_PAVLightConvertClass
+[conv] 0x40cae0 _VectorClass_PAVIsometricTileClass::QueryInterface -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40cb30 _DynamicVectorClass_PAVIsometricTileClass::Constructor_VectorClass_IsometricTileClass___ -> _DynamicVectorClass_PAVIsometricTileClass
+[conv] 0x40cf30 _VectorClass_PAVObjectClass::QueryInterface -> _VectorClass_PAVObjectClass
+[conv] 0x40d800 _VectorClass_PAVMixFileClass::QueryInterface -> _VectorClass_PAVMixFileClass
+[conv] 0x40d850 _DynamicVectorClass_PAVMixFileClass::applyCursorSettings -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x40eab0 _VectorClass_PAVScriptClass::QueryInterface -> _VectorClass_PAVScriptClass
+[conv] 0x40eb00 _DynamicVectorClass_PAVScriptClass::Constructor_VectorClass_ScriptClass___ -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40f180 _VectorClass_PAVVoxelAnimClass::QueryInterface -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f1d0 _DynamicVectorClass_PAVVoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___ -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f8a0 _VectorClass_PAVWarheadTypeClass::QueryInterface -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40f8f0 _DynamicVectorClass_PAVWarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___ -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40fe70 _VectorClass_PAVWeaponTypeClass::QueryInterface -> _VectorClass_PAVWeaponTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVBombClass rc=0
+[era] _DynamicVectorClass_PAVBombClass rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _DynamicVectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _DynamicVectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileClass rc=0
+[era] _VectorClass_PAVObjectClass rc=0
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _DynamicVectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x40bbc0   MISMATCH         _VectorClass_PAVBombClass::QueryInterface
+[diff] 0x40bc10   MISMATCH         _DynamicVectorClass_PAVBombClass::executeAction
+[diff] 0x40bc60   MISMATCH         _VectorClass_PAVTechnoClass::QueryInterface
+[diff] 0x40bcb0   MISMATCH         _DynamicVectorClass_PAVTechnoClass::QueryInterface
+[diff] 0x40c110   MISMATCH         _VectorClass_PBVCommandClass::queueEvent
+[diff] 0x40c160   MISMATCH         _DynamicVectorClass_PBVCommandClass::Constructor
+[diff] 0x40c4f0   MISMATCH         _VectorClass_PAVLightConvertClass::QueryInterface
+[diff] 0x40c540   MISMATCH         _DynamicVectorClass_PAVLightConvertClass::Constructor_VectorClass_LightConvertClass___
+[diff] 0x40cae0   MISMATCH         _VectorClass_PAVIsometricTileClass::QueryInterface
+[diff] 0x40cb30   MISMATCH         _DynamicVectorClass_PAVIsometricTileClass::Constructor_VectorClass_IsometricTileClass___
+[diff] 0x40cf30   MISMATCH         _VectorClass_PAVObjectClass::QueryInterface
+[diff] 0x40d800   MISMATCH         _VectorClass_PAVMixFileClass::QueryInterface
+[diff] 0x40d850   MISMATCH         _DynamicVectorClass_PAVMixFileClass::applyCursorSettings
+[diff] 0x40eab0   MISMATCH         _VectorClass_PAVScriptClass::QueryInterface
+[diff] 0x40eb00   MISMATCH         _DynamicVectorClass_PAVScriptClass::Constructor_VectorClass_ScriptClass___
+[diff] 0x40f180   MISMATCH         _VectorClass_PAVVoxelAnimClass::QueryInterface
+[diff] 0x40f1d0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___
+[diff] 0x40f8a0   MISMATCH         _VectorClass_PAVWarheadTypeClass::QueryInterface
+[diff] 0x40f8f0   MISMATCH         _DynamicVectorClass_PAVWarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___
+[diff] 0x40fe70   MISMATCH         _VectorClass_PAVWeaponTypeClass::QueryInterface
+[ledger] 0x40bbc0 _VectorClass_PAVBombClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x40bc10 _DynamicVectorClass_PAVBombClass::executeAction -> NG (attempt 3)
+[ledger] 0x40bc60 _VectorClass_PAVTechnoClass::QueryInterface -> NG (attempt 5)
+[ledger] 0x40bcb0 _DynamicVectorClass_PAVTechnoClass::QueryInterface -> NG (attempt 3)
+[ledger] 0x40c110 _VectorClass_PBVCommandClass::queueEvent -> NG (attempt 3)
+[ledger] 0x40c160 _DynamicVectorClass_PBVCommandClass::Constructor -> NG (attempt 2)
+[ledger] 0x40c4f0 _VectorClass_PAVLightConvertClass::QueryInterface -> NG (attempt 3)
+[ledger] 0x40c540 _DynamicVectorClass_PAVLightConvertClass::Constructor_VectorClass_LightConvertClass___ -> NG (attempt 2)
+[ledger] 0x40cae0 _VectorClass_PAVIsometricTileClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40cb30 _DynamicVectorClass_PAVIsometricTileClass::Constructor_VectorClass_IsometricTileClass___ -> NG (attempt 2)
+[ledger] 0x40cf30 _VectorClass_PAVObjectClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40d800 _VectorClass_PAVMixFileClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40d850 _DynamicVectorClass_PAVMixFileClass::applyCursorSettings -> NG (attempt 4)
+[ledger] 0x40eab0 _VectorClass_PAVScriptClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40eb00 _DynamicVectorClass_PAVScriptClass::Constructor_VectorClass_ScriptClass___ -> NG (attempt 2)
+[ledger] 0x40f180 _VectorClass_PAVVoxelAnimClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40f1d0 _DynamicVectorClass_PAVVoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___ -> NG (attempt 2)
+[ledger] 0x40f8a0 _VectorClass_PAVWarheadTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40f8f0 _DynamicVectorClass_PAVWarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___ -> NG (attempt 2)
+[ledger] 0x40fe70 _VectorClass_PAVWeaponTypeClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_polarity": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p00\batch_report.json
