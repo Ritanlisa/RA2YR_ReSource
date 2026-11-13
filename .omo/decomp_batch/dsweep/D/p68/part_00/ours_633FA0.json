@@ -1,0 +1,33 @@
+{
+ "symbol": "?CreatePlacementAction@ScriptAction@@QAEHPAHPBX@Z",
+ "sym_key": "ScriptAction::CreatePlacementAction",
+ "size": 266,
+ "link_base": 0,
+ "bytes_hex": "5355568be96a10e80000000083c40485c0741cc70000000000c7400400000000c74008ffffffffc6400c008bd8eb0233db8b4424106a6f8903e80000000083c40485c07405c60000eb0233c08b74241457b91b0000008bf8f3a566a5a48943048b45088b4d103bc87c2085c9750485c075278b4d1485c97e208b550003c86a00518bcdff520884c0740f8b45108b55048d4801894d10891c828b44241450e8000000008bf083c4048b560c8b46143bc272258a461184c0750485d275298b4e1885c97e228b7e048d460403ca6a005150ff570884c0740f8b46148b56088d4801894e14892c828b868c0000005f83f8ff750a8b46144889868c000000538bcde8000000005e5d5bc20800",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?PlaceObject@ScriptAction@@QAEHPAX@Z",
+   "sym_key": "ScriptAction::PlaceObject"
+  }
+ ]
+}

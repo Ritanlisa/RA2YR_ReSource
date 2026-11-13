@@ -1,0 +1,69 @@
+{
+ "symbol": "?ProcessMissionVoice@FootClass@@QAIHPAH@Z",
+ "sym_key": "FootClass::ProcessMissionVoice",
+ "size": 288,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf185f65774158b0656ff502c8bf883ef0ff7df1bfff7d723feeb0233ff33c08a86c802000085c074608b0850ff512c83f80675558b86a405000085c00f859100000085ff74438b97c00600008a82c20e000084c0751f6a0e57e80000000083c40884c075108b87c00600008a88c30e000084c974148b0e33d28a96c80200006a015256ff91800400008b86a405000085c075408b066a016a0056ff90840400008b0e8d54240c5256ff5148b9f801000050e8000000008bc8e80000000085c074128b066a006a01680000000056ff90740100008bcee800000000dd0500000000dc481083ec08dd1c24e8000000008b7424108b0d0000000083c40833c625ff00000081c1680503006a026a0033f0e80000000003c65f5e83c410c3",
+ "relocs": [
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3DA8@@3IA",
+   "sym_key": "DataGlobal_8B3DA8"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

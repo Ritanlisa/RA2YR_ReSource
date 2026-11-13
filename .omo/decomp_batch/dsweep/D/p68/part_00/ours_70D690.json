@@ -1,0 +1,45 @@
+{
+ "symbol": "?ComputeCombatDamage@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::ComputeCombatDamage",
+ "size": 292,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf157568b06ff90840000008b90180d00008b0e85d2567423ff91840000008b0e8bb8180d000056ff9184000000d9801c0d0000da8fa4000000eb52ff91f403000085c0742783380074228b1656ff92f40300008b388b0656ff9084000000d9801c0d0000da8fa4000000eb218b15400200008b06568bbadc0f0000ff9084000000db80a0000000dc0d0000000083ec08dd1c24e8000000008bc88b44242033c883c40881e1ff00000033c185ff750a5f33c05e83c40cc204008b5424188b8fac00000053558d2c1033c08a872f0100008bd6506a00518b8fa00000005556e8000000008bd885db742a578bcbe8000000008b1353ff92d40000008b068d4c24105156ff5048508bcbe8000000008b1353ff52088bc55d5b5f5e83c40cc20400",
+ "relocs": [
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?CreateUIObjectCOM@@YIPAXHHHHHHH@Z",
+   "sym_key": "CreateUIObjectCOM"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?Method_46B260@Function@@QAEHH@Z",
+   "sym_key": "Function::Method_46B260"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?ApplyDamage@Warhead@@QAEDPAX@Z",
+   "sym_key": "Warhead::ApplyDamage"
+  }
+ ]
+}

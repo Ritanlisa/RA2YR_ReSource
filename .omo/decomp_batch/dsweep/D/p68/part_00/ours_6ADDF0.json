@@ -1,0 +1,99 @@
+{
+ "symbol": "?Skirmish_Setup_6ADDF0@@YIXPAXHH@Z",
+ "sym_key": "Unnamed::Skirmish_Setup_6ADDF0",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bfa894c241083ffff750ac744241408000000eb0b8bcfe800000000894424148b6c241c8bcde8000000008b4c24148bd88bf32bf185ff7c6685ed7c62a1000000003bf873593be87355a1000000008b0cb8e8000000008b0d0000000085c08b0ca90f9544241ce8000000008a4c241c85c00f95c084c9742684c074228b7c2410ba010000008bcfe8000000008d53ff8bcf52ba01000000e800000000eb048b7c241085f67f0d7d178bd38bcfe800000000eb0c8b542414568bcfe80000000085ff743ca10000000085c07433be0100000056e8000000008bd0a10000000083c40485c0740b8a483c84c974046a03eb026afe8bcfe8000000004683fe087cd25f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?ReadPlayerCountMap@@YIHH@Z",
+   "sym_key": "ReadPlayerCountMap"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?ReadPlayerCountMap@@YIHH@Z",
+   "sym_key": "ReadPlayerCountMap"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Sed@IsRandMap@@QAEHXZ",
+   "sym_key": "IsRandMap::Sed"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Sed@IsRandMap@@QAEHXZ",
+   "sym_key": "IsRandMap::Sed"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?HideSkirmishSpawnLocations@@YIXPAXH@Z",
+   "sym_key": "HideSkirmishSpawnLocations"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Skirmish_Setup_6ADDF0_Setup@@YIHPAXHH@Z",
+   "sym_key": "Skirmish_Setup_6ADDF0_Setup"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?HideSkirmishSpawnLocations@@YIXPAXH@Z",
+   "sym_key": "HideSkirmishSpawnLocations"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?Skirmish_Setup_6ADDF0_Setup@@YIHPAXHH@Z",
+   "sym_key": "Skirmish_Setup_6ADDF0_Setup"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?GetResourceID4CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID4CSF"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?SetupLobbyPlayerSlots@@YI_NHHH@Z",
+   "sym_key": "SetupLobbyPlayerSlots"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?UpdateLatencyDisplay@Network@@QAEHHNN@Z",
+ "sym_key": "Network::UpdateLatencyDisplay",
+ "size": 386,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec1cdd05000000005356dd54240c8bf1578b4e6485c90f8ebc0000008d4608dc0083c0084975f8dd5c24108b4424148b4c24105051e8000000008b4c24188b550833c1c744242400000000dd44d60825ff00000083c40833c88b4648894424188bd9df6c2418c744241c00000000dc0d00000000dc4d0cdd54d6088b7e48897c2418df6c2418d9c9ded9dfe0f6c441750b897cd6088b4e4c894cd60cdc5cd6088b7c241080e10081e7ff0000000bf9dfe0f6c4400f85b60000008b4e64dd050000000085c9dd5424187e148d4608dc0083c0084975f8eb0bddd8e94cffffffddd8eb04dd5c24188b4c241c8b5424185152895c2428e8000000008bc88b44241833c883c40881e1ff00000033c18b4e0485c98944242474168a466084c0740f8b118d4424205068ae11000051ff128b466485c074156a006a006a0f50e8000000005f5e5b8be55dc21400dd4514e8000000008b5424108d4c24105051528bcee8000000000fbec05f5e5b8be55dc214008bc75f5e5b8be55dc21400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 324,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?Render@LoadScreen@@QAEDHHH@Z",
+   "sym_key": "LoadScreen::Render"
+  }
+ ]
+}

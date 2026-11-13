@@ -1,0 +1,69 @@
+{
+ "symbol": "?BuildTileConnectivityGraph@MapClass@@QAEHHHH@Z",
+ "sym_key": "MapClass::BuildTileConnectivityGraph",
+ "size": 265,
+ "link_base": 0,
+ "bytes_hex": "518b1500000000558b6c240c894c24048b45383bc20f82e900000083c20c3bc20f83de0000006a0255e8000000003dc7000000742d83f87c74283df1000000742183f81f741c3dc6000000741583f86c74103db1000000740983f81b0f85a20000008a4424145333db563ac357c74538ffff0000889d1a010000740f8d4d24e8000000008b4c241c894838538bcde8000000008bf88b4f248bd1894c2420c1fa100fbfc20fbfd18d34023b350c2700007e498bea2be83b2d0c2700007d392bc28b150c2700003bc27d2d3b35102700007f25894c24208d4c2420e8000000008b4c24108bf06a0257c74640ffffffffe8000000008946408b6c24184383fb087c8a5f5e5b5d59c20c00",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_CellPassabilityLUT@@3IA",
+   "sym_key": "g_CellPassabilityLUT"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetTerrainMask@Cell@@QAEHPAXH@Z",
+   "sym_key": "Cell::GetTerrainMask"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?GetCellData@Tactical@@QAEPADXZ",
+   "sym_key": "Tactical::GetCellData"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?GetCellData@Tactical@@QAEPADXZ",
+   "sym_key": "Tactical::GetCellData"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?GetTerrainMask@Cell@@QAEHPAXH@Z",
+   "sym_key": "Cell::GetTerrainMask"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x643c50 Network::UpdateLatencyDisplay -> Network
+[conv] 0x47ea90 CellClass::RemoveContent -> CellClass
+[conv] 0x633fa0 ScriptAction::CreatePlacementAction -> ScriptAction
+[conv] 0x4d3810 FootClass::CheckTileSeed -> FootClass
+[conv] 0x6e36e0 TActionClass::executeParadropAction -> TActionClass
+[conv] 0x475a60 BuildingClass::ReadBuildingSettings -> BuildingClass
+[conv] 0x6addf0 Skirmish_Setup_6ADDF0 -> Skirmish_Setup
+[conv] 0x70d7e0 FootClass::ProcessEnterTransport -> FootClass
+[conv] 0x57a320 MapClass::BuildTileConnectivityGraph -> MapClass
+[conv] 0x5b6da0 ObjectClass::sub_5B6DA0 -> ObjectClass
+[conv] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> NetworkGameSetup
+[conv] 0x612a60 sub_612A60 -> _addr_61
+[conv] 0x764a20 ObjectClass::sub_764A20 -> ObjectClass
+[conv] 0x7cd80f ObjectClass::start -> ObjectClass
+[conv] 0x4c6210 GameResult::CalcScore -> GameResult
+[conv] 0x4cfb00 FlyLocomotionClass::ComputeVoxelMatrix -> FlyLocomotionClass
+[conv] 0x4d4cb0 FootClass::ProcessMissionVoice -> FootClass
+[conv] 0x512170 HouseTypeClass::ProcessPower -> HouseTypeClass
+[conv] 0x70d690 TechnoClass::ComputeCombatDamage -> TechnoClass
+[conv] 0x7c9602 _fwrite -> _addr_7C
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Network                  rc=0
+[era] CellClass                rc=0
+[era] ScriptAction             rc=0
+[era] FootClass                rc=2
+[era] TActionClass             rc=0
+[era] BuildingClass            rc=2
+[era] Skirmish_Setup           rc=0
+[era] MapClass                 rc=0
+[era] ObjectClass              rc=2
+[era] NetworkGameSetup         rc=2
+[era] _addr_61                 rc=2
+[era] GameResult               rc=2
+[era] FlyLocomotionClass       rc=2
+[era] HouseTypeClass           rc=2
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x643c50   MISMATCH         Network::UpdateLatencyDisplay
+[diff] 0x47ea90   MISMATCH         CellClass::RemoveContent
+[diff] 0x633fa0   MISMATCH         ScriptAction::CreatePlacementAction
+[diff] 0x4d3810   MISMATCH         FootClass::CheckTileSeed
+[diff] 0x4d4cb0   MISMATCH         FootClass::ProcessMissionVoice
+[diff] 0x6e36e0   MISMATCH         TActionClass::executeParadropAction
+[diff] 0x6addf0   MISMATCH         Skirmish_Setup_6ADDF0
+[diff] 0x57a320   MISMATCH         MapClass::BuildTileConnectivityGraph
+[diff] 0x70d690   MISMATCH         TechnoClass::ComputeCombatDamage
+[ledger] 0x643c50 Network::UpdateLatencyDisplay -> NG (attempt 1)
+[ledger] 0x47ea90 CellClass::RemoveContent -> NG (attempt 1)
+[ledger] 0x633fa0 ScriptAction::CreatePlacementAction -> NG (attempt 1)
+[ledger] 0x4d3810 FootClass::CheckTileSeed -> NG (attempt 1)
+[ledger] 0x6e36e0 TActionClass::executeParadropAction -> NG (attempt 1)
+[ledger] 0x475a60 BuildingClass::ReadBuildingSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6addf0 Skirmish_Setup_6ADDF0 -> NG (attempt 1)
+[ledger] 0x70d7e0 FootClass::ProcessEnterTransport -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57a320 MapClass::BuildTileConnectivityGraph -> NG (attempt 1)
+[ledger] 0x5b6da0 ObjectClass::sub_5B6DA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> COMPILE_FAIL (attempt 1)
+[ledger] 0x612a60 sub_612A60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764a20 ObjectClass::sub_764A20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cd80f ObjectClass::start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6210 GameResult::CalcScore -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfb00 FlyLocomotionClass::ComputeVoxelMatrix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d4cb0 FootClass::ProcessMissionVoice -> NG (attempt 1)
+[ledger] 0x512170 HouseTypeClass::ProcessPower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70d690 TechnoClass::ComputeCombatDamage -> NG (attempt 1)
+[ledger] 0x7c9602 _fwrite -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "codegen_shape": 1,
+  "regalloc": 2,
+  "branch_order": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p68\batch_report.json
