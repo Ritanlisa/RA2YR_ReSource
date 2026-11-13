@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_5CD570@MSAnim@@QAEHHHHHHHHHH@Z",
+ "sym_key": "MSAnim::sub_5CD570",
+ "size": 302,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5355568bf1578b4c241833ed894608894e04c6460c01e8000000008b5424148d7e1c528bcf894610896e18c70600000000e8000000008b44242c8a4c24308b54242889462c8b442420884e308a4c24348d5e34896e20895624896e288903c6464800884e49896e4cc70600000000e8000000008b4c24248b5424288946108b4424285156895614894618e8000000008b44243c83c40885c00f84830000008b5638558bcf896c242c89542420e8000000006685c07454558bcfe800000000663d0a0074468b038b088bc5894c2434508bcf45e8000000008b54243425ffff00005053ff52048b4c24285503c8894c242c8bcfe8000000006685c0740e558bcfe800000000663d0a0075ba8b46408b6c241c8b5c24282bc52bc3992bc2d1f889464c8b065f5e5d5bc22400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?vt_MSAnim@@3PAXA",
+   "sym_key": "vt_MSAnim"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?vt_MSPrintAnim@@3PAXA",
+   "sym_key": "vt_MSPrintAnim"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?sub_5CD690@@YAPAIHH@Z",
+   "sym_key": "sub_5CD690"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 247,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  }
+ ]
+}

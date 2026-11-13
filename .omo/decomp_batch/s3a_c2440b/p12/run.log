@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x5c2500 Campaign::SetupMovie -> Campaign
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x5c3ec0 MovieClass::Create -> MovieClass
+[conv] 0x5c42d0 MPCooperative::UpdateMovieScore -> MPCooperative
+[conv] 0x5c7520 SubtractBigIntegerWithSign -> _addr_5C
+[conv] 0x5c7990 DivideBigInteger -> _addr_5C
+[conv] 0x5c80a0 ObjectClass::ComputeModularInverse -> ObjectClass
+[conv] 0x5c9b10 MPScore::DlgProc -> MPScore
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> MultiplayerSiegeAttackerTeam
+[conv] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cbd20 Trigger::initTrigger -> Trigger
+[conv] 0x5cd570 MSAnim::sub_5CD570 -> MSAnim
+[conv] 0x5cdee0 MSPrintAnim::Draw -> MSPrintAnim
+[conv] 0x5ce4a0 MSAnim::UI_Load -> MSAnim
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=2
+[era] Campaign                 rc=2
+[era] MovieClass               rc=2
+[era] _addr_5C                 rc=2
+[era] ObjectClass              rc=2
+[era] MPScore                  rc=2
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] MultiplayerSiegeAttackerTeam rc=2
+[era] Trigger                  rc=2
+[era] MSAnim                   rc=2
+[era] MSPrintAnim              rc=2
+[era] MSPCXAnim                rc=2
+[era] SessionClass             rc=2
+[era] CampaignClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5cd570   MISMATCH         MSAnim::sub_5CD570
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5c2500 Campaign::SetupMovie -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 16)
+[ledger] 0x5c3ec0 MovieClass::Create -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c42d0 MPCooperative::UpdateMovieScore -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c7520 SubtractBigIntegerWithSign -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c7990 DivideBigInteger -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c80a0 ObjectClass::ComputeModularInverse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c9b10 MPScore::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cbd20 Trigger::initTrigger -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cd570 MSAnim::sub_5CD570 -> NG (attempt 3)
+[ledger] 0x5cdee0 MSPrintAnim::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ce4a0 MSAnim::UI_Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p12\batch_report.json
