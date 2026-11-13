@@ -45904,14 +45904,14 @@
   "this_as_id": false
  },
  "0x4ba5a0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::Construct",
-  "rule_violations": 9,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -46026,7 +46026,7 @@
   "this_as_id": false
  },
  "0x4bb000": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48503,15 +48503,15 @@
   "this_as_id": false
  },
  "0x4c68e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 push 0x820c1c",
   "name": "ObjectClass::sub_4C68E0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_4C68E0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c6970": {
@@ -48834,7 +48834,7 @@
   "this_as_id": false
  },
  "0x4c91c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49165,11 +49165,16 @@
   "this_as_id": false
  },
  "0x4c9c70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FactoryClass::DemandProduction",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FactoryClass::DemandProduction",
+  "rule_violations": 11,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4c9e10": {
   "attempts": 1,
@@ -49239,7 +49244,7 @@
   "status": "OK"
  },
  "0x4ca130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -49688,7 +49693,7 @@
   "this_as_id": false
  },
  "0x4caf20": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -50030,7 +50035,7 @@
   "this_as_id": false
  },
  "0x4cbba0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -50460,7 +50465,7 @@
   "this_as_id": false
  },
  "0x4cca90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -50544,7 +50549,7 @@
   "this_as_id": false
  },
  "0x4cd510": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -50604,14 +50609,14 @@
   "this_as_id": false
  },
  "0x4ce840": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DropPod::ProcessLanding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DropPod::ProcessLanding",
-  "rule_violations": 18,
+  "rule_violations": 19,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -50807,14 +50812,14 @@
   "this_as_id": false
  },
  "0x4cfe80": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
-  "rule_violations": 8,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -51435,7 +51440,7 @@
   "this_as_id": false
  },
  "0x4d2cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51769,7 +51774,7 @@
   "this_as_id": false
  },
  "0x4d4200": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52125,11 +52130,16 @@
   "this_as_id": false
  },
  "0x4d9960": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::HandleTargetDestroyed",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FootClass::HandleTargetDestroyed",
+  "rule_violations": 16,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4d9c00": {
   "attempts": 1,
@@ -52163,7 +52173,7 @@
   "this_as_id": false
  },
  "0x4d9e70": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52330,7 +52340,7 @@
   "this_as_id": false
  },
  "0x4daf10": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52512,19 +52522,19 @@
   "this_as_id": false
  },
  "0x4dbad0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::BeginPowerUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::BeginPowerUpdate",
-  "rule_violations": 0,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4dbda0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52884,7 +52894,7 @@
   "this_as_id": false
  },
  "0x4de7b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
