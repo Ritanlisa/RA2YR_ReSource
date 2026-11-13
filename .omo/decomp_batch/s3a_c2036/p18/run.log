@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x67b050 _DynamicVectorClass_PBVSmudgeTypeClass::Release -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x67b230 _VectorClass_PBVTerrainTypeClass::SetCapacity -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x684240 Scenario::ClearScreen -> Scenario
+[conv] 0x685670 Scenario::EndGameFlow -> Scenario
+[conv] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> ObjectClass
+[conv] 0x68fbb0 ObjectClass::RenderScoreTypeText -> ObjectClass
+[conv] 0x692f30 TacticalClass::ProcessView -> TacticalClass
+[conv] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> ObjectClass
+[conv] 0x69c890 _TypeList_W4DiskID::Release -> _TypeList_W4DiskID
+[conv] 0x69cd80 _VectorClass_PAVMultiMission::Release -> _VectorClass_PAVMultiMission
+[conv] 0x69cec0 _DynamicVectorClass_PAVMultiMission::SetCapacity -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69cfe0 _VectorClass_PAUGlobalPacketType::Release -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d120 _DynamicVectorClass_PAUGlobalPacketType::SetCapacity_0 -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69d240 _VectorClass_PAVPhoneEntryClass::Release -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> SidebarClass
+[conv] 0x6a6c30 SidebarClass::Redraw -> SidebarClass
+[conv] 0x6a70e0 Sidebar::FlushSidebarTooltip -> Sidebar
+[conv] 0x6aa600 SidebarClass::UpdateProduction -> SidebarClass
+[conv] 0x6b15f0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Release -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b1710 _VectorClass_PAVSlaveManagerClass::Release -> _VectorClass_PAVSlaveManagerClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=0
+[era] _TypeList_W4DiskID       rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _DynamicVectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=0
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] SidebarClass             rc=2
+[era] Sidebar                  rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x67b050   MISMATCH         _DynamicVectorClass_PBVSmudgeTypeClass::Release
+[diff] 0x67b230   MISMATCH         _VectorClass_PBVTerrainTypeClass::SetCapacity
+[diff] 0x68fbb0   MISMATCH         ObjectClass::RenderScoreTypeText
+[diff] 0x692f30   MISMATCH         TacticalClass::ProcessView
+[diff] 0x69c890   MISMATCH         _TypeList_W4DiskID::Release
+[diff] 0x69cd80   MISMATCH         _VectorClass_PAVMultiMission::Release
+[diff] 0x69cec0   MISMATCH         _DynamicVectorClass_PAVMultiMission::SetCapacity
+[diff] 0x69cfe0   MISMATCH         _VectorClass_PAUGlobalPacketType::Release
+[diff] 0x69d120   MISMATCH         _DynamicVectorClass_PAUGlobalPacketType::SetCapacity_0
+[diff] 0x69d240   MISMATCH         _VectorClass_PAVPhoneEntryClass::Release
+[diff] 0x6a70e0   MISMATCH         Sidebar::FlushSidebarTooltip
+[diff] 0x6b15f0   MISMATCH         _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Release
+[diff] 0x6b1710   MISMATCH         _VectorClass_PAVSlaveManagerClass::Release
+[ledger] 0x67b050 _DynamicVectorClass_PBVSmudgeTypeClass::Release -> NG (attempt 2)
+[ledger] 0x67b230 _VectorClass_PBVTerrainTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x684240 Scenario::ClearScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x685670 Scenario::EndGameFlow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68fbb0 ObjectClass::RenderScoreTypeText -> NG (attempt 2)
+[ledger] 0x692f30 TacticalClass::ProcessView -> NG (attempt 2)
+[ledger] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69c890 _TypeList_W4DiskID::Release -> NG (attempt 2)
+[ledger] 0x69cd80 _VectorClass_PAVMultiMission::Release -> NG (attempt 2)
+[ledger] 0x69cec0 _DynamicVectorClass_PAVMultiMission::SetCapacity -> NG (attempt 2)
+[ledger] 0x69cfe0 _VectorClass_PAUGlobalPacketType::Release -> NG (attempt 2)
+[ledger] 0x69d120 _DynamicVectorClass_PAUGlobalPacketType::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x69d240 _VectorClass_PAVPhoneEntryClass::Release -> NG (attempt 2)
+[ledger] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6a6c30 SidebarClass::Redraw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6a70e0 Sidebar::FlushSidebarTooltip -> NG (attempt 2)
+[ledger] 0x6aa600 SidebarClass::UpdateProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b15f0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Release -> NG (attempt 2)
+[ledger] 0x6b1710 _VectorClass_PAVSlaveManagerClass::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 10,
+  "frame_sched": 2,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p18\batch_report.json

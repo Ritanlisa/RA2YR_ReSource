@@ -1,0 +1,345 @@
+{
+ "symbol": "?FlushSidebarTooltip@Sidebar@@QAEXD@Z",
+ "sym_key": "Sidebar::FlushSidebarTooltip",
+ "size": 734,
+ "link_base": 0,
+ "bytes_hex": "83ec2053568bf133db389ea55300000f84bb020000381d400000000f84af020000391db40900000f84a30200008b0d000000008d4424185051e8000000008b5424188b44241c895424108b15000000008d4c2410894424145152e800000000381d000000000f85bd000000385c242c0f85b3000000a1000000008b0d000000003bc1881d000000000f85a10000008b0d00000000a1000000003bc80f858e0000008b1500000000a1000000003bd0757fa1000000008b0d000000003bc17570389ea85300000f8405020000a1000000008b15000000006a01528b0850ff513ca1340200008b15000000008b4c24106a01f7d81bc05323c28d54241403c1528b150000000089442414a100000000528d542418895c241c8b085250ff5108889ea8530000e9a1010000c6050000000001a1000000008b15000000006a01528b0850ff513ca1000000008b0d000000003bc10f85310100008b0d00000000a1000000003bc80f851e0100008b1500000000a1000000003bd00f850b010000a1000000008b0d000000003bc10f85f8000000385c242c0f85ee000000389ea853000074448b0d34020000a1000000008b5424106a01f7d91bc95323c8a10000000003ca895c2410894c24148b108d4c2410518b0d00000000518d4c241c5150ff5208889ea85300008b3534020000a1000000008b542410895c2408f7de1bf623f0a10000000003f2508b10ff9280000000a1000000006a018d54240c53528b1500000000528d54241c8974241c8b085250ff5108381d00000000744ea1000000008d54240c52508b08ff5178a1340200008b15000000008b4c24106a01f7d81bc05323c28d54241003c1528b150000000089442418a100000000528d54241c895c24188b085250ff5108a1340200008b15000000008b0d000000008b742410f7d81bc06a0123c28b150000000003c15303c6680000000089442414a100000000528d5424188b085250ff5108c6050000000001881d000000005e5b83c420c20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F4@@3IA",
+   "sym_key": "DataGlobal_8809F4"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DC8@@3IA",
+   "sym_key": "DataGlobal_B07DC8"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F8@@3IA",
+   "sym_key": "DataGlobal_8809F8"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DCC@@3IA",
+   "sym_key": "DataGlobal_B07DCC"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809FC@@3IA",
+   "sym_key": "DataGlobal_8809FC"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DD0@@3IA",
+   "sym_key": "DataGlobal_B07DD0"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_880A00@@3IA",
+   "sym_key": "DataGlobal_880A00"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DD4@@3IA",
+   "sym_key": "DataGlobal_B07DD4"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F4@@3IA",
+   "sym_key": "DataGlobal_8809F4"
+  },
+  {
+   "off": 330,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DC8@@3IA",
+   "sym_key": "DataGlobal_B07DC8"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F8@@3IA",
+   "sym_key": "DataGlobal_8809F8"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DCC@@3IA",
+   "sym_key": "DataGlobal_B07DCC"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809FC@@3IA",
+   "sym_key": "DataGlobal_8809FC"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DD0@@3IA",
+   "sym_key": "DataGlobal_B07DD0"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?DataGlobal_880A00@@3IA",
+   "sym_key": "DataGlobal_880A00"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DD4@@3IA",
+   "sym_key": "DataGlobal_B07DD4"
+  },
+  {
+   "off": 419,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 424,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 465,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 487,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 492,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 511,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 527,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 541,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 563,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  },
+  {
+   "off": 570,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 586,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 592,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 618,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 627,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 654,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 660,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F4@@3IA",
+   "sym_key": "DataGlobal_8809F4"
+  },
+  {
+   "off": 678,
+   "type": "DIR32",
+   "sym": "?DSurface_Sidebar@@3PAXA",
+   "sym_key": "DSurface_Sidebar"
+  },
+  {
+   "off": 688,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8809F4@@3IA",
+   "sym_key": "DataGlobal_8809F4"
+  },
+  {
+   "off": 697,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 715,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B519@@3EA",
+   "sym_key": "DataGlobal_B0B519"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "?g_TooltipActive@@3EA",
+   "sym_key": "g_TooltipActive"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "symbol": "?ProcessView@TacticalClass@@QAEXXZ",
+ "sym_key": "TacticalClass::ProcessView",
+ "size": 290,
+ "link_base": 0,
+ "bytes_hex": "a1b40a000083ec2885c0538bd90f850a010000a100000000568b35000000008d54241c8b08578b3d040000005250ff51348b48048b002bcf2bc6515089442420894c2424e8000000005f5e84c00f85ca00000080bb5a5500000175446a01e80000000084c00f84b20000008d442410b90000000050e8000000006a02e80000000084c00f84940000008d4c2410516800000000e80000000083c4085b83c428c38d5424188d44240f528d4c2408508d542428518d442414528d4c24205051e80000000084c074378b5424046a01dd44241c8d44240c5250e80000000050e8000000008b4c24048b5424186a0050518d4424145250b900000000e8000000008a835955000084c07415a1f009000085c0750c8d4c2410518bcbe8000000005b83c428c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Map_Process_63AB60@@YGDHH@Z",
+   "sym_key": "Map_Process_63AB60"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?ProcessScroll@TacticalClass@@QAEDPAX@Z",
+   "sym_key": "TacticalClass::ProcessScroll"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?ScrollMapEdge@@YADPAX0@Z",
+   "sym_key": "ScrollMapEdge"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Tactical__MouseOver@@YGDPAX00000@Z",
+   "sym_key": "Tactical__MouseOver"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?Radar__ScanWaypoints@@YGHHPAX0H@Z",
+   "sym_key": "Radar__ScanWaypoints"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?HandlePlayerAction@TacticalClass@@QAEHPAXD0HH@Z",
+   "sym_key": "TacticalClass::HandlePlayerAction"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?ProcessScroll@Viewport@@QAEXPAX@Z",
+   "sym_key": "Viewport::ProcessScroll"
+  }
+ ]
+}
