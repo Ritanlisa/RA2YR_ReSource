@@ -22909,7 +22909,7 @@
   "this_as_id": false
  },
  "0x45c300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InitCellOffsetsMap",
@@ -23576,15 +23576,15 @@
   "this_as_id": false
  },
  "0x466080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e4638",
+  "first_diff": "+14 je 0x4660a7",
   "name": "_VectorClass_V_TPoint3D_H::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_TPoint3D_int::QueryInterface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4660d0": {
@@ -23842,14 +23842,14 @@
   "this_as_id": false
  },
  "0x468000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BulletClass::GetAnimFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::GetAnimFrame",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23926,15 +23926,15 @@
   "this_as_id": false
  },
  "0x468d80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x30",
   "name": "BulletClass::Fire",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "BulletClass::Fire",
-  "rule_violations": 13,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 12,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4690b0": {
@@ -23950,7 +23950,7 @@
   "this_as_id": false
  },
  "0x46a310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24005,7 +24005,7 @@
   "this_as_id": false
  },
  "0x46b050": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateUIObjectCOM",
@@ -24453,7 +24453,7 @@
   "this_as_id": false
  },
  "0x46bee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25121,7 +25121,7 @@
   "this_as_id": false
  },
  "0x46da70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -25716,7 +25716,7 @@
   "this_as_id": false
  },
  "0x4723b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27330,7 +27330,7 @@
   "this_as_id": false
  },
  "0x4758c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29549,7 +29549,7 @@
   "this_as_id": false
  },
  "0x4810a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29573,7 +29573,7 @@
   "this_as_id": false
  },
  "0x481180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31341,7 +31341,7 @@
   "this_as_id": false
  },
  "0x48ab90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31588,15 +31588,15 @@
   "this_as_id": false
  },
  "0x48b410": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "ModemConnectionClass::queueSendPacket",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ConnectionClass::queueSendPacket",
   "rule_violations": 14,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x48b570": {
@@ -32219,7 +32219,7 @@
   "this_as_id": false
  },
  "0x48ccc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -38276,7 +38276,7 @@
   "this_as_id": false
  },
  "0x49e7c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -38480,15 +38480,15 @@
   "this_as_id": false
  },
  "0x49ecd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+27 mov dword ptr [esi], 0x7e5c04",
   "name": "CampaignClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "CampaignClass::Constructor",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x49ed30": {
@@ -38578,27 +38578,27 @@
   "this_as_id": false
  },
  "0x49eff0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e5c04",
+  "first_diff": "+14 je 0x49f017",
   "name": "_VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_PAD_16::QueryInterface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49f040": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e5c04",
+  "first_diff": "+14 je 0x49f067",
   "name": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_PAD::Destructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49f090": {
@@ -42835,7 +42835,7 @@
   "this_as_id": false
  },
  "0x4ac380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

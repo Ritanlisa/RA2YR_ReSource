@@ -1,0 +1,93 @@
+{
+ "symbol": "?Fire@BulletClass@@QAEDDH@Z",
+ "sym_key": "BulletClass::Fire",
+ "size": 819,
+ "link_base": 0,
+ "bytes_hex": "83ec285355568bf133db578b869c0000008bbea00000008baea4000000894424108b860c01000085c074108b0850ff515484c074068b9e0c0100008b96ac0000008a82a202000084c00f85290200008b860c01000085c00f84bf0000008b088d54242c5250ff51488b48088b102be98b48042bf98b4c2410552bca57518d4c242ce8000000008b1083ec088954241c8b50088b480489542420db442420894c2424db442424db44241cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b44244450ddd8e8000000008bc88b44244833c883c40c81e1ff00000033c883f9207d318b86ac0000008a889402000084c975218a88a202000084c975178b860c0100008d4c242051508b10ff52488b10895424108b86280100008a885401000084c90f85480100008b86ac0000008a889402000084c90f85340100008b4c244085c975488a889b02000084c9753e8b88dc02000085c97f348b86d00000008b0d000000003bc175208b8ed40000008b15000000003bca75108b96d80000008b0d040000003bd174048944241085db74418b0353ff507883f80274368b8e0c010000518bcee8000000003d800000000f8dbc0000008b138d4424205053ff92a40000008b088a5c243c894c2410e9a30000008b860c01000085c00f8491000000508bcee80000000083f82a0f8d800000008a5c243c8b860c0100000fbed38b088954243cdb44243c83ec088d542428dd1c245250ff51588b0083c410894424108b860c010000508b08ff512c83f80675448b8e0c0100008b81200500008b90bc0e000085d275148b90c00e000085d2750a8b90c40e000085d2741a8b118d4424205051ff92a40000008b08894c2410eb048a5c243c8b86ac0000008a889402000084c974188d5424108bce52e8000000005f5e8ac35d5b83c428c208008b4c241033ff894c24148b88ac02000085c97e6f8d5424108bce52e8000000008b869000000085c074590fbeeba100000000680002000068000100008d8868050300e8000000006a0050558d5424208d4c242ce8000000008b088b96ac000000894c2410473bbaac02000073168d4424108bce50e8000000008b869000000085c075aa5f5e8ac35d5b83c428c20800",
+ "relocs": [
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JD@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 360,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DE30@@3IA",
+   "sym_key": "DataGlobal_89DE30"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DE34@@3_JA",
+   "sym_key": "DataGlobal_89DE34"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DE34@@3_JA",
+   "sym_key": "DataGlobal_89DE34"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 491,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 660,
+   "type": "REL32",
+   "sym": "?ApplyDamage@Warhead@@QAEDPAX@Z",
+   "sym_key": "Warhead::ApplyDamage"
+  },
+  {
+   "off": 704,
+   "type": "REL32",
+   "sym": "?ApplyDamage@Warhead@@QAEDPAX@Z",
+   "sym_key": "Warhead::ApplyDamage"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 743,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 760,
+   "type": "REL32",
+   "sym": "?RandomCoordScatter@@YIPAVAnimClass@@PAX0HHH@Z",
+   "sym_key": "RandomCoordScatter"
+  },
+  {
+   "off": 793,
+   "type": "REL32",
+   "sym": "?ApplyDamage@Warhead@@QAEDPAX@Z",
+   "sym_key": "Warhead::ApplyDamage"
+  }
+ ]
+}

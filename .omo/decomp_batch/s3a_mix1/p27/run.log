@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x45c300 InitCellOffsetsMap -> _addr_45
+[conv] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> _VectorClass_V_TPoint3D_H
+[conv] 0x468000 BulletClass::GetAnimFrame -> BulletClass
+[conv] 0x468d80 BulletClass::Fire -> BulletClass
+[conv] 0x46a310 Warhead::ApplyPostDamageEffects -> Warhead
+[conv] 0x46b050 CreateUIObjectCOM -> _addr_46
+[conv] 0x46bee0 BulletTypeClass::LoadFromINI -> BulletTypeClass
+[conv] 0x46da70 ObjectClass::sub_46DA70 -> ObjectClass
+[conv] 0x4723b0 CaptureManagerClass::DecideUnitFate -> CaptureManagerClass
+[conv] 0x4758c0 MapClass::loadTheaterINI -> MapClass
+[conv] 0x4810a0 Input::OffsetToDirection -> Input
+[conv] 0x481180 ObjectPlacement::CalcPosition -> ObjectPlacement
+[conv] 0x48ab90 TechnoClass::ComputeScanRange -> TechnoClass
+[conv] 0x48b410 ModemConnectionClass::queueSendPacket -> ModemConnectionClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x49e7c0 ObjectClass::sub_49E7C0 -> ObjectClass
+[conv] 0x49ecd0 CampaignClass::Constructor -> CampaignClass
+[conv] 0x49eff0 _VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49f040 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4ac380 DisplayClass::ProcessScroll -> DisplayClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_45                 rc=2
+[era] _VectorClass_V_TPoint3D_H rc=0
+[era] BulletClass              rc=2
+[era] Warhead                  rc=2
+[era] _addr_46                 rc=2
+[era] BulletTypeClass          rc=2
+[era] ObjectClass              rc=2
+[era] CaptureManagerClass      rc=2
+[era] MapClass                 rc=2
+[era] Input                    rc=2
+[era] ObjectPlacement          rc=2
+[era] TechnoClass              rc=2
+[era] ModemConnectionClass     rc=0
+[era] CampaignClass            rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] DisplayClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x466080   MISMATCH         _VectorClass_V_TPoint3D_H::QueryInterface
+[diff] 0x468d80   MISMATCH         BulletClass::Fire
+[diff] 0x48b410   MISMATCH         ModemConnectionClass::queueSendPacket
+[diff] 0x49ecd0   MATCH            CampaignClass::Constructor
+[diff] 0x49eff0   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface
+[diff] 0x49f040   MISMATCH         _DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor
+[ledger] 0x45c300 InitCellOffsetsMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> NG (attempt 3)
+[ledger] 0x468000 BulletClass::GetAnimFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x468d80 BulletClass::Fire -> NG (attempt 2)
+[ledger] 0x46a310 Warhead::ApplyPostDamageEffects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46b050 CreateUIObjectCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46bee0 BulletTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46da70 ObjectClass::sub_46DA70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4723b0 CaptureManagerClass::DecideUnitFate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4758c0 MapClass::loadTheaterINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4810a0 Input::OffsetToDirection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x481180 ObjectPlacement::CalcPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48ab90 TechnoClass::ComputeScanRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48b410 ModemConnectionClass::queueSendPacket -> NG (attempt 13)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x49e7c0 ObjectClass::sub_49E7C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49ecd0 CampaignClass::Constructor -> OK (attempt 3)
+[ledger] 0x49eff0 _VectorClass_PAV_DynamicVectorClass_PAD::QueryInterface -> NG (attempt 3)
+[ledger] 0x49f040 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::Destructor -> NG (attempt 3)
+[ledger] 0x4ac380 DisplayClass::ProcessScroll -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 3,
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 16.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p27\batch_report.json
