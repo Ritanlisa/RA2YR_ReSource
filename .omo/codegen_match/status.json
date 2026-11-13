@@ -13031,6 +13031,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x423ac0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AnimClass::CreateUnit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::CreateUnit",
+  "rule_violations": 50,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x424b50": {
   "attempts": 1,
   "clean": false,
@@ -19754,6 +19766,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x445f80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BuildingClass::CreateUnits",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SuperWeapon::CreateUnits",
+  "rule_violations": 46,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x446ff0": {
   "attempts": 1,
   "clean": false,
@@ -19893,6 +19917,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x448260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::drawFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AnimClass::drawFrame",
+  "rule_violations": 173,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x449410": {
   "attempts": 1,
   "clean": false,
@@ -19977,6 +20013,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x449c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::finalizeAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AnimClass::finalizeAnimation",
+  "rule_violations": 42,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x44abd0": {
   "attempts": 1,
   "clean": false,
@@ -20011,6 +20059,18 @@
   "orig_name": "AbstractClass::COMStub_137",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x44b780": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildingClass::ProcessRepair",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildingClass::ProcessRepair",
+  "rule_violations": 21,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x44c980": {
@@ -22748,6 +22808,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x45b1c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MapData::InitHeights",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MapData::InitHeights",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x45c2f0": {
   "attempts": 1,
   "clean": true,
@@ -25096,6 +25168,18 @@
   "orig_name": "Lobby::EnableStartButton",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x46fc00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "CampaignScore::ProcessScreen",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CampaignScore::ProcessScreen",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x470c00": {
@@ -64099,6 +64183,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4f54a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "HouseClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass::Construct",
+  "rule_violations": 15,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4f6540": {
   "attempts": 1,
   "clean": false,
@@ -65461,6 +65557,18 @@
   "orig_name": "HouseClass::UpdatePowerTimers",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x503040": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "HouseClass::SaveLoad_Prefix",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass::SaveLoad_Prefix",
+  "rule_violations": 23,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x504740": {
@@ -73324,6 +73432,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x52ba60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::InitGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitGame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x52cb50": {
   "attempts": 1,
   "clean": false,
@@ -73444,6 +73564,18 @@
   "name": "sub_52D870",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_52D870",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x52d9a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::MenuSelect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MenuSelect",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -93182,6 +93314,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x58d620": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TileSystem::BuildNodes",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TileSystem::BuildNodes",
+  "rule_violations": 63,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x58e5d0": {
   "attempts": 1,
   "clean": false,
@@ -93251,6 +93395,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::CollectBorderCells",
   "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x58f2c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RandomMap::PlaceBuildings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RandomMap::PlaceBuildings",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -93885,6 +94041,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x599650": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RandomMap::SetupTheater",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RandomMap::SetupTheater",
+  "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x59a6c0": {
   "attempts": 1,
   "clean": false,
@@ -94047,6 +94215,18 @@
   "orig_name": "sub_59D480",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x59d510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Tiberium::ProcessGrowth",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Tiberium::ProcessGrowth",
+  "rule_violations": 15,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5a0090": {
@@ -134264,6 +134444,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x678850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::InitInterfaceStubsCOM",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitInterfaceStubsCOM",
+  "rule_violations": 114,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x679a10": {
   "attempts": 1,
   "clean": false,
@@ -135688,6 +135880,18 @@
   "name": "Game::LoadSaved",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Game::LoadSaved",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x67e730": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "LoadGame::Start",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LoadGame::Start",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -137143,6 +137347,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScenarioClass::SetupAlliances",
   "rule_violations": 7,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x686b20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ScenarioClass::LoadMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScenarioClass::LoadMap",
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -163364,6 +163580,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6f9e50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::Begin",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MovementAI::Begin",
+  "rule_violations": 33,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6fb010": {
   "attempts": 1,
   "clean": false,
@@ -177331,6 +177559,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoClass::RenderTechnoSHP",
   "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x73b470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::DrawVoxel",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::DrawVoxel",
+  "rule_violations": 36,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

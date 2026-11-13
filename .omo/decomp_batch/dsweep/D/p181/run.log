@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p181\part_00
+=== convert (20 addrs) ===
+[conv] 0x449c30 BuildingClass::finalizeAnimation -> BuildingClass
+[conv] 0x58d620 TileSystem::BuildNodes -> TileSystem
+[conv] 0x46fc00 CampaignScore::ProcessScreen -> CampaignScore
+[conv] 0x58f2c0 RandomMap::PlaceBuildings -> RandomMap
+[conv] 0x599650 RandomMap::SetupTheater -> RandomMap
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x445f80 BuildingClass::CreateUnits -> BuildingClass
+[conv] 0x423ac0 AnimClass::CreateUnit -> AnimClass
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x67e730 LoadGame::Start -> LoadGame
+[conv] 0x52ba60 ObjectClass::InitGame -> ObjectClass
+[conv] 0x59d510 Tiberium::ProcessGrowth -> Tiberium
+[conv] 0x45b1c0 MapData::InitHeights -> MapData
+[conv] 0x73b470 TechnoClass::DrawVoxel -> TechnoClass
+[conv] 0x448260 BuildingClass::drawFrame -> BuildingClass
+[conv] 0x678850 TechnoClass::InitInterfaceStubsCOM -> TechnoClass
+[conv] 0x686b20 ScenarioClass::LoadMap -> ScenarioClass
+[conv] 0x6f9e50 TechnoClass::Begin -> TechnoClass
+[conv] 0x52d9a0 ObjectClass::MenuSelect -> ObjectClass
+[conv] 0x44b780 BuildingClass::ProcessRepair -> BuildingClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TileSystem               rc=2
+[era] CampaignScore            rc=2
+[era] RandomMap                rc=2
+[era] HouseClass               rc=2
+[era] AnimClass                rc=2
+[era] LoadGame                 rc=2
+[era] ObjectClass              rc=2
+[era] Tiberium                 rc=2
+[era] MapData                  rc=2
+[era] TechnoClass              rc=2
+[era] ScenarioClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x449c30 BuildingClass::finalizeAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58d620 TileSystem::BuildNodes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46fc00 CampaignScore::ProcessScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58f2c0 RandomMap::PlaceBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x599650 RandomMap::SetupTheater -> COMPILE_FAIL (attempt 1)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x445f80 BuildingClass::CreateUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x423ac0 AnimClass::CreateUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67e730 LoadGame::Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52ba60 ObjectClass::InitGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59d510 Tiberium::ProcessGrowth -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45b1c0 MapData::InitHeights -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73b470 TechnoClass::DrawVoxel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x448260 BuildingClass::drawFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x678850 TechnoClass::InitInterfaceStubsCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x686b20 ScenarioClass::LoadMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f9e50 TechnoClass::Begin -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52d9a0 ObjectClass::MenuSelect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44b780 BuildingClass::ProcessRepair -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p181\batch_report.json
