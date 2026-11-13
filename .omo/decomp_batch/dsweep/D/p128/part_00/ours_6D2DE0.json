@@ -1,0 +1,99 @@
+{
+ "symbol": "?RenderIsometricOverlay@TacticalClass@@QAEHPAH0D@Z",
+ "sym_key": "TacticalClass::RenderIsometricOverlay",
+ "size": 486,
+ "link_base": 0,
+ "bytes_hex": "83ec44538a5c2454565784db8bf1740c68000000006800000000eb2f8b4424548b480885c97e108b480c85c97e0950508bcee8000000008b4424588b480885c97e108b480c85c97e0950508bcee8000000008b86e000000085c00f861701000084db0f850f0100008bbee4000000c744245400000000bb3c0000008b0f6a008b4124c1e8100fbfc0c1e00805800000009981e2ff00000003c2c1f808c1e008500fbf4124c1e00805800000008d4c241c9981e2ff00000003c2c1f808c1e00850e8000000008b4c24148d54245c8d4424105250894c2464e8000000008b48048b108b86b00000006a002bd0a10400000083ea1e6a00895424388b96b40000002bc2ba0000000003c18d4c2438518d4c242cc74424481e00000089442440895c2444e8000000008b10895424408b4804894c24448b480885c97e218b480c85c97e1a8b178d4c2430518bce8b42248d5424105289442414e8000000008b4424548b8ee000000083c704403bc1894424540f8206ffffff32dba10000000085c0745d84db75598d7c80fb8bd8c1e702a1000000006a008d5424606a008b0c0752894c2468ba000000008d4c242ce8000000008bc88b018944245c8b410885c07e188b510c85d27e118d4c245c8d54245c51528bcee80000000083ef144b75b05f5e5b83c444c20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?RenderIsometric@TacticalClass@@QAEIPAXH@Z",
+   "sym_key": "TacticalClass::RenderIsometric"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?RenderIsometric@TacticalClass@@QAEIPAXH@Z",
+   "sym_key": "TacticalClass::RenderIsometric"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?Coord__To_ScreenRaw@@YGPAHPAX0@Z",
+   "sym_key": "Coord__To_ScreenRaw"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?ProcessCell@TacticalMapClass@@QAEHPAXH@Z",
+   "sym_key": "TacticalMapClass::ProcessCell"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 419,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 428,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 467,
+   "type": "REL32",
+   "sym": "?RenderIsometric@TacticalClass@@QAEIPAXH@Z",
+   "sym_key": "TacticalClass::RenderIsometric"
+  }
+ ]
+}

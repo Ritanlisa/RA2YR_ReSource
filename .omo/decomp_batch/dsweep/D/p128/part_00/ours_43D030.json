@@ -1,0 +1,81 @@
+{
+ "symbol": "?DisplayProductionFrame@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::DisplayProductionFrame",
+ "size": 506,
+ "link_base": 0,
+ "bytes_hex": "83ec1855568bf1578d4c24148b065156ff90b80100008b008b0e568944241cff516c85c08be8894424140f84c30100008b962005000033c924008a8a011700008bd10bc284c00f85a70100008b0656ff908401000083f81875188b8e50030000e80000000025ff00000084c00f84810100008b0e56ff918401000083f81075508b96200500008b82e414000085c074408b8e24050000e80000000085c074218b0850ff91840000008a88940d000084c9740e8b96200500008baafc140000eb0c8b86200500008ba8e4140000896c24140fbf7d048b4c24108bc7992bc28b542414538b5904d1f82bd88b420c3bc3897c24147e028bc385c07e648d44241cb90000000050e8000000000fbf900a0100008b0e6a006a006a006a006a006a00526a006a0256ff91d00100008bc8e800000000bffeffffff8bce2bf8e8000000005768000100008d4c241b6a008d5424305152505556ff15000000008b7c24148b4424188b6c2418897c24208b50048bca034d0c8d041a8bef03f83bf97e062bc88be9eb048b4c24203bc27d0603cb8bc38be985c95b7e5d8d4c241851b900000000e8000000000fbf800a0100008b166a006a006a006a006a006a00506a006a0056ff92d00100008bc8e8000000008bf88bcef7dfe8000000005768000100008d4c24176a008d54241c5152505556ff15000000005f5e5d83c418c3",
+ "relocs": [
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?CheckNone@Flag@@QAE_NXZ",
+   "sym_key": "Flag::CheckNone"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?GetProductionFrame@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::GetProductionFrame"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?loc_705E00@@3PADA",
+   "sym_key": "loc_705E00"
+  },
+  {
+   "off": 412,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 417,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 468,
+   "type": "REL32",
+   "sym": "?GetProductionFrame@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::GetProductionFrame"
+  },
+  {
+   "off": 495,
+   "type": "DIR32",
+   "sym": "?loc_705E00@@3PADA",
+   "sym_key": "loc_705E00"
+  }
+ ]
+}

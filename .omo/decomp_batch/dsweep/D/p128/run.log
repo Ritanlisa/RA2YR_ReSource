@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p128\part_00
+=== convert (20 addrs) ===
+[conv] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> IPXGlobalConnClass
+[conv] 0x65e850 PlaceAircraftOnMap -> _addr_65
+[conv] 0x43d030 BuildingClass::DisplayProductionFrame -> BuildingClass
+[conv] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> WWMouseClass
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x76e4f0 WDTGame::ReviewHistory -> WDTGame
+[conv] 0x4df7f0 FootClass::Destru_vt322 -> FootClass
+[conv] 0x63f080 ProcessVoxelVertexData -> _addr_63
+[conv] 0x70f8f0 TechnoClass::FindBridgeCell -> TechnoClass
+[conv] 0x774410 WinModemClass::AddRef -> WinModemClass
+[conv] 0x586bf0 MarkCliffEdgePassability -> _addr_58
+[conv] 0x6d2de0 TacticalClass::RenderIsometricOverlay -> TacticalClass
+[conv] 0x554af0 TacticalClass::ScrollView -> TacticalClass
+[conv] 0x59afa0 RandomMap::FillTerrainProgressively -> RandomMap
+[conv] 0x528f00 INIClass::ParseValue_Wide -> INIClass
+[conv] 0x40aa70 ObjectClass::ProcessAudioChannelMovement -> ObjectClass
+[conv] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> TechnoClass
+[conv] 0x429830 ObjectClass::ComputeMovementWeight -> ObjectClass
+[conv] 0x625090 HashTable::RemoveAndResize -> HashTable
+[conv] 0x527cc0 INIClass::ParseValue -> INIClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXGlobalConnClass       rc=2
+[era] _addr_65                 rc=2
+[era] BuildingClass            rc=0
+[era] WWMouseClass             rc=2
+[era] FootClass                rc=2
+[era] WDTGame                  rc=0
+[era] _addr_63                 rc=2
+[era] TechnoClass              rc=2
+[era] WinModemClass            rc=2
+[era] _addr_58                 rc=2
+[era] TacticalClass            rc=2
+[era] RandomMap                rc=2
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] HashTable                rc=0
+=== diffasm byte-compare ===
+[diff] 0x43d030   MISMATCH         BuildingClass::DisplayProductionFrame
+[diff] 0x76e4f0   MISMATCH         WDTGame::ReviewHistory
+[diff] 0x70f8f0   MISMATCH         TechnoClass::FindBridgeCell
+[diff] 0x6d2de0   MISMATCH         TacticalClass::RenderIsometricOverlay
+[diff] 0x429830   MISMATCH         ObjectClass::ComputeMovementWeight
+[diff] 0x625090   MISMATCH         HashTable::RemoveAndResize
+[ledger] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65e850 PlaceAircraftOnMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43d030 BuildingClass::DisplayProductionFrame -> NG (attempt 1)
+[ledger] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e4f0 WDTGame::ReviewHistory -> NG (attempt 1)
+[ledger] 0x4df7f0 FootClass::Destru_vt322 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63f080 ProcessVoxelVertexData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70f8f0 TechnoClass::FindBridgeCell -> NG (attempt 1)
+[ledger] 0x774410 WinModemClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x586bf0 MarkCliffEdgePassability -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d2de0 TacticalClass::RenderIsometricOverlay -> NG (attempt 1)
+[ledger] 0x554af0 TacticalClass::ScrollView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59afa0 RandomMap::FillTerrainProgressively -> COMPILE_FAIL (attempt 1)
+[ledger] 0x528f00 INIClass::ParseValue_Wide -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40aa70 ObjectClass::ProcessAudioChannelMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> COMPILE_FAIL (attempt 1)
+[ledger] 0x429830 ObjectClass::ComputeMovementWeight -> NG (attempt 1)
+[ledger] 0x625090 HashTable::RemoveAndResize -> NG (attempt 1)
+[ledger] 0x527cc0 INIClass::ParseValue -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 5,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p128\batch_report.json
