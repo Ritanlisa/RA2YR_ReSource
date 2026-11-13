@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x5172c0 HoverLocomotionClass::ProcessMove -> HoverLocomotionClass
+[conv] 0x525010 _VectorClass_PBVAnimTypeClass::Add -> _VectorClass_PBVAnimTypeClass
+[conv] 0x5252b0 _DynamicVectorClass_PBVAnimTypeClass::Add -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x5381e0 AllianceCommandClass::performAction_216 -> AllianceCommandClass
+[conv] 0x538200 CenterBaseCommandClass::performAction_217 -> CenterBaseCommandClass
+[conv] 0x538220 CenterViewCommandClass::performAction_218 -> CenterViewCommandClass
+[conv] 0x5382a0 AllToCheerCommandClass::performAction_222 -> AllToCheerCommandClass
+[conv] 0x5382e0 PrevObjectCommandClass::performAction_224 -> PrevObjectCommandClass
+[conv] 0x538300 NextObjectCommandClass::performAction_225 -> NextObjectCommandClass
+[conv] 0x538320 PlanningModeCommandClass::performAction_226 -> PlanningModeCommandClass
+[conv] 0x538340 CombatantSelectCommandClass::performAction_227 -> CombatantSelectCommandClass
+[conv] 0x538360 TypeSelectCommandClass::performAction_228 -> TypeSelectCommandClass
+[conv] 0x538380 HealthNavCommandClass::performAction_229 -> HealthNavCommandClass
+[conv] 0x5383a0 VeterancyNavCommandClass::performAction_230 -> VeterancyNavCommandClass
+[conv] 0x5383c0 SetStructureTabCommandClass::performAction_231 -> SetStructureTabCommandClass
+[conv] 0x5383e0 SetDefenseTabCommandClass::performAction_232 -> SetDefenseTabCommandClass
+[conv] 0x538400 SetUnitTabCommandClass::performAction_233 -> SetUnitTabCommandClass
+[conv] 0x538420 SetInfantryTabCommandClass::performAction_234 -> SetInfantryTabCommandClass
+[conv] 0x538a90 _VectorClass_PAVCCINIClass::Add -> _VectorClass_PAVCCINIClass
+[conv] 0x53c780 _VectorClass_PBVAnimClass::QueryInterface -> _VectorClass_PBVAnimClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HoverLocomotionClass     rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=0
+[era] AllianceCommandClass     rc=0
+[era] CenterBaseCommandClass   rc=0
+[era] CenterViewCommandClass   rc=0
+[era] AllToCheerCommandClass   rc=0
+[era] PrevObjectCommandClass   rc=0
+[era] NextObjectCommandClass   rc=0
+[era] PlanningModeCommandClass rc=0
+[era] CombatantSelectCommandClass rc=0
+[era] TypeSelectCommandClass   rc=0
+[era] HealthNavCommandClass    rc=0
+[era] VeterancyNavCommandClass rc=0
+[era] SetStructureTabCommandClass rc=0
+[era] SetDefenseTabCommandClass rc=0
+[era] SetUnitTabCommandClass   rc=0
+[era] SetInfantryTabCommandClass rc=0
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] _VectorClass_PBVAnimClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5172c0   MISMATCH         HoverLocomotionClass::ProcessMove
+[diff] 0x525010   MISMATCH         _VectorClass_PBVAnimTypeClass::Add
+[diff] 0x5252b0   MISMATCH         _DynamicVectorClass_PBVAnimTypeClass::Add
+[diff] 0x5381e0   MISMATCH         AllianceCommandClass::performAction_216
+[diff] 0x538200   MISMATCH         CenterBaseCommandClass::performAction_217
+[diff] 0x538220   MISMATCH         CenterViewCommandClass::performAction_218
+[diff] 0x5382a0   MISMATCH         AllToCheerCommandClass::performAction_222
+[diff] 0x5382e0   MISMATCH         PrevObjectCommandClass::performAction_224
+[diff] 0x538300   MISMATCH         NextObjectCommandClass::performAction_225
+[diff] 0x538320   MISMATCH         PlanningModeCommandClass::performAction_226
+[diff] 0x538340   MISMATCH         CombatantSelectCommandClass::performAction_227
+[diff] 0x538360   MISMATCH         TypeSelectCommandClass::performAction_228
+[diff] 0x538380   MISMATCH         HealthNavCommandClass::performAction_229
+[diff] 0x5383a0   MISMATCH         VeterancyNavCommandClass::performAction_230
+[diff] 0x5383c0   MISMATCH         SetStructureTabCommandClass::performAction_231
+[diff] 0x5383e0   MISMATCH         SetDefenseTabCommandClass::performAction_232
+[diff] 0x538400   MISMATCH         SetUnitTabCommandClass::performAction_233
+[diff] 0x538420   MISMATCH         SetInfantryTabCommandClass::performAction_234
+[diff] 0x538a90   MISMATCH         _VectorClass_PAVCCINIClass::Add
+[diff] 0x53c780   MISMATCH         _VectorClass_PBVAnimClass::QueryInterface
+[ledger] 0x5172c0 HoverLocomotionClass::ProcessMove -> NG (attempt 2)
+[ledger] 0x525010 _VectorClass_PBVAnimTypeClass::Add -> NG (attempt 2)
+[ledger] 0x5252b0 _DynamicVectorClass_PBVAnimTypeClass::Add -> NG (attempt 2)
+[ledger] 0x5381e0 AllianceCommandClass::performAction_216 -> NG (attempt 2)
+[ledger] 0x538200 CenterBaseCommandClass::performAction_217 -> NG (attempt 2)
+[ledger] 0x538220 CenterViewCommandClass::performAction_218 -> NG (attempt 2)
+[ledger] 0x5382a0 AllToCheerCommandClass::performAction_222 -> NG (attempt 2)
+[ledger] 0x5382e0 PrevObjectCommandClass::performAction_224 -> NG (attempt 2)
+[ledger] 0x538300 NextObjectCommandClass::performAction_225 -> NG (attempt 2)
+[ledger] 0x538320 PlanningModeCommandClass::performAction_226 -> NG (attempt 2)
+[ledger] 0x538340 CombatantSelectCommandClass::performAction_227 -> NG (attempt 2)
+[ledger] 0x538360 TypeSelectCommandClass::performAction_228 -> NG (attempt 2)
+[ledger] 0x538380 HealthNavCommandClass::performAction_229 -> NG (attempt 2)
+[ledger] 0x5383a0 VeterancyNavCommandClass::performAction_230 -> NG (attempt 2)
+[ledger] 0x5383c0 SetStructureTabCommandClass::performAction_231 -> NG (attempt 2)
+[ledger] 0x5383e0 SetDefenseTabCommandClass::performAction_232 -> NG (attempt 4)
+[ledger] 0x538400 SetUnitTabCommandClass::performAction_233 -> NG (attempt 2)
+[ledger] 0x538420 SetInfantryTabCommandClass::performAction_234 -> NG (attempt 2)
+[ledger] 0x538a90 _VectorClass_PAVCCINIClass::Add -> NG (attempt 2)
+[ledger] 0x53c780 _VectorClass_PBVAnimClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "const_fold": 16,
+  "branch_polarity": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p13\batch_report.json

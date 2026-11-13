@@ -59392,7 +59392,7 @@
   "status": "OK"
  },
  "0x5172c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+3 mov dword ptr [esi], 0x7eadc8",
@@ -60682,12 +60682,12 @@
   "this_as_id": false
  },
  "0x525010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7eb6f4",
+  "first_diff": "+14 je 0x525037",
   "name": "_VectorClass_PBVAnimTypeClass::Add",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_AnimType::Add",
   "rule_violations": 0,
   "status": "NG",
@@ -60773,12 +60773,12 @@
   "this_as_id": false
  },
  "0x5252b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7eb6f4",
+  "first_diff": "+14 je 0x5252d7",
   "name": "_DynamicVectorClass_PBVAnimTypeClass::Add",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_cptr_AnimTypeClass::Add",
   "rule_violations": 0,
   "status": "NG",
@@ -64921,7 +64921,7 @@
   "this_as_id": false
  },
  "0x5381e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -64933,7 +64933,7 @@
   "this_as_id": false
  },
  "0x538200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -64945,7 +64945,7 @@
   "this_as_id": false
  },
  "0x538220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -64993,7 +64993,7 @@
   "this_as_id": false
  },
  "0x5382a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65017,7 +65017,7 @@
   "this_as_id": false
  },
  "0x5382e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65029,7 +65029,7 @@
   "this_as_id": false
  },
  "0x538300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65041,7 +65041,7 @@
   "this_as_id": false
  },
  "0x538320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65053,7 +65053,7 @@
   "this_as_id": false
  },
  "0x538340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65065,7 +65065,7 @@
   "this_as_id": false
  },
  "0x538360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65077,7 +65077,7 @@
   "this_as_id": false
  },
  "0x538380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65089,7 +65089,7 @@
   "this_as_id": false
  },
  "0x5383a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65101,7 +65101,7 @@
   "this_as_id": false
  },
  "0x5383c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65113,7 +65113,7 @@
   "this_as_id": false
  },
  "0x5383e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65125,7 +65125,7 @@
   "this_as_id": false
  },
  "0x538400": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65137,7 +65137,7 @@
   "this_as_id": false
  },
  "0x538420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7ebe3c",
@@ -65360,12 +65360,12 @@
   "this_as_id": false
  },
  "0x538a90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7eb80c",
+  "first_diff": "+14 je 0x538ab7",
   "name": "_VectorClass_PAVCCINIClass::Add",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_CCINIClass::Add",
   "rule_violations": 0,
   "status": "NG",
@@ -66166,12 +66166,12 @@
   "this_as_id": false
  },
  "0x53c780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ebfec",
+  "first_diff": "+14 je 0x53c7a7",
   "name": "_VectorClass_PBVAnimClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DeleteCommandClass_28::QueryInterface",
   "rule_violations": 0,
   "status": "NG",

@@ -1,0 +1,142 @@
+[
+ {
+  "addr": "0x5172c0",
+  "family": "cw8f2",
+  "size": 43,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x525010",
+  "family": "cw8f2",
+  "size": 73,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5252b0",
+  "family": "cw8f2",
+  "size": 73,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5381e0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538200",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538220",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5382a0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5382e0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538300",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538320",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538340",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538360",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538380",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5383a0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5383c0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x5383e0",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538400",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538420",
+  "family": "cw8f2",
+  "size": 32,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x538a90",
+  "family": "cw8f2",
+  "size": 73,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ },
+ {
+  "addr": "0x53c780",
+  "family": "cw8f2",
+  "size": 73,
+  "cls": "D_IMM",
+  "isub": "null-store"
+ }
+]

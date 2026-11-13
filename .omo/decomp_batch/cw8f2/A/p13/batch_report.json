@@ -1,0 +1,458 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "const_fold": 16,
+   "branch_polarity": 4
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x5172c0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 43B ours 43B",
+   "first_diff": {
+    "orig": "+3 mov dword ptr [esi], 0x7eadc8",
+    "ours": "+3 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "HoverLocomotionClass::ProcessMove",
+   "emitted": "HoverLocomotionClass::ProcessMove",
+   "unit": "HoverLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "11/11",
+   "rule_violations": 0,
+   "orig_size": 43,
+   "ours_size": 43,
+   "clean": false
+  },
+  {
+   "addr": "0x525010",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x525037",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "DynamicVectorClass_AnimType::Add",
+   "emitted": "_VectorClass_PBVAnimTypeClass::Add",
+   "unit": "_VectorClass_PBVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5252b0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x5252d7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "DynamicVectorClass_cptr_AnimTypeClass::Add",
+   "emitted": "_DynamicVectorClass_PBVAnimTypeClass::Add",
+   "unit": "_DynamicVectorClass_PBVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5381e0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_216",
+   "emitted": "AllianceCommandClass::performAction_216",
+   "unit": "AllianceCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538200",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_217",
+   "emitted": "CenterBaseCommandClass::performAction_217",
+   "unit": "CenterBaseCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538220",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_218",
+   "emitted": "CenterViewCommandClass::performAction_218",
+   "unit": "CenterViewCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x5382a0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_222",
+   "emitted": "AllToCheerCommandClass::performAction_222",
+   "unit": "AllToCheerCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x5382e0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_224",
+   "emitted": "PrevObjectCommandClass::performAction_224",
+   "unit": "PrevObjectCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538300",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_225",
+   "emitted": "NextObjectCommandClass::performAction_225",
+   "unit": "NextObjectCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538320",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_226",
+   "emitted": "PlanningModeCommandClass::performAction_226",
+   "unit": "PlanningModeCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538340",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_227",
+   "emitted": "CombatantSelectCommandClass::performAction_227",
+   "unit": "CombatantSelectCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538360",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_228",
+   "emitted": "TypeSelectCommandClass::performAction_228",
+   "unit": "TypeSelectCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538380",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_229",
+   "emitted": "HealthNavCommandClass::performAction_229",
+   "unit": "HealthNavCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x5383a0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_230",
+   "emitted": "VeterancyNavCommandClass::performAction_230",
+   "unit": "VeterancyNavCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x5383c0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_231",
+   "emitted": "SetStructureTabCommandClass::performAction_231",
+   "unit": "SetStructureTabCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x5383e0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_232",
+   "emitted": "SetDefenseTabCommandClass::performAction_232",
+   "unit": "SetDefenseTabCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538400",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_233",
+   "emitted": "SetUnitTabCommandClass::performAction_233",
+   "unit": "SetUnitTabCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538420",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 32B",
+   "first_diff": {
+    "orig": "+9 mov dword ptr [esi], 0x7ebe3c",
+    "ours": "+9 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CreateTeamCommand::performAction_234",
+   "emitted": "SetInfantryTabCommandClass::performAction_234",
+   "unit": "SetInfantryTabCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32,
+   "clean": false
+  },
+  {
+   "addr": "0x538a90",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x538ab7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_CCINIClass::Add",
+   "emitted": "_VectorClass_PAVCCINIClass::Add",
+   "unit": "_VectorClass_PAVCCINIClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x53c780",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x53c7a7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "DeleteCommandClass_28::QueryInterface",
+   "emitted": "_VectorClass_PBVAnimClass::QueryInterface",
+   "unit": "_VectorClass_PBVAnimClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  }
+ ]
+}

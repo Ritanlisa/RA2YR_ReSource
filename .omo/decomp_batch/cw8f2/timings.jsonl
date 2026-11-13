@@ -11,3 +11,4 @@
 {"layer": "A", "part": 10, "n": 20, "seconds": 49.8, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "A", "part": 11, "n": 20, "seconds": 51.2, "ok": true, "verdicts": {"MISMATCH": 18, "COMPILE_FAIL": 1, "MATCH": 1}}
 {"layer": "A", "part": 12, "n": 20, "seconds": 49.7, "ok": true, "verdicts": {"MISMATCH": 15, "COMPILE_FAIL": 2, "MATCH": 3}}
+{"layer": "A", "part": 13, "n": 20, "seconds": 51.8, "ok": true, "verdicts": {"MISMATCH": 20}}
