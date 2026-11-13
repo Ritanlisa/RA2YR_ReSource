@@ -88721,7 +88721,7 @@
   "this_as_id": false
  },
  "0x55e420": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89030,14 +89030,14 @@
   "this_as_id": false
  },
  "0x561400": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+13 mov ebp, dword ptr [esp + 0x54]",
   "name": "VideoSettingsDialogProc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VideoSettingsDialogProc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5616f0": {
@@ -89399,7 +89399,7 @@
   "this_as_id": false
  },
  "0x565aa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89668,7 +89668,7 @@
   "this_as_id": false
  },
  "0x56b0f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89870,7 +89870,7 @@
   "this_as_id": false
  },
  "0x56c510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90763,7 +90763,7 @@
   "this_as_id": false
  },
  "0x579620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91242,7 +91242,7 @@
   "this_as_id": false
  },
  "0x581f90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91372,7 +91372,7 @@
   "this_as_id": false
  },
  "0x5840c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92700,7 +92700,7 @@
   "this_as_id": false
  },
  "0x58abd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93369,7 +93369,7 @@
   "this_as_id": false
  },
  "0x58b820": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94167,7 +94167,7 @@
   "this_as_id": false
  },
  "0x596e50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94781,7 +94781,7 @@
   "this_as_id": false
  },
  "0x5a28c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -94876,14 +94876,14 @@
   "this_as_id": false
  },
  "0x5a45e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+6 sub esp, 0x5c",
   "name": "ScatterTerrainTrees",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ScatterTerrainTrees",
   "rule_violations": 25,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5a4ae0": {
@@ -94920,7 +94920,7 @@
   "this_as_id": false
  },
  "0x5a5360": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -98348,7 +98348,7 @@
   "this_as_id": false
  },
  "0x5b3e90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -98402,15 +98402,15 @@
   "this_as_id": false
  },
  "0x5b4270": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+65 xor esi, esi",
   "name": "HashTree::MarkEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "HashTree::MarkEntry",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5b4310": {
@@ -98425,7 +98425,7 @@
   "this_as_id": false
  },
  "0x5b4350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -98467,7 +98467,7 @@
   "this_as_id": false
  },
  "0x5b4430": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LookupFileInfoCache",
@@ -98835,7 +98835,7 @@
   "this_as_id": false
  },
  "0x5b6020": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -98870,7 +98870,7 @@
   "this_as_id": false
  },
  "0x5b6da0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

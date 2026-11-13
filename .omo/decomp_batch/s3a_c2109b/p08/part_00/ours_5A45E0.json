@@ -1,0 +1,225 @@
+{
+ "symbol": "?ScatterTerrainTrees@@YGHHHN@Z",
+ "sym_key": "Unnamed::ScatterTerrainTrees",
+ "size": 1351,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec645356578b7d0c8d04bf8d048089442424894424188d04bf8d0480c1e00350e80000000033db83c4043bc374088bd889442420eb04895c24206a14e8000000008bf033d283c4043bf20f845a0100008b4c24188d04bf89560c89168d1480c74610ffffffff894e048d04950400000050e8000000008b4e0489460883c40433c085c97c138b4e0840c74481fc000000008b4e043bc17eed33d28b0e33c03bca7c0e8b4e0840895481fc8b0e3bc17ef28b4d088916c7442410010000008b412489530489038b5124c1ea100fbfc20faf05000000000fbf492403c18d1480a100000000c1e204c6440247018b0e8b53048b4604418954241c8bd1d1ea3bc8736983f90176478b7e088b1c97d94304d944241cded9dfe0f6c4017422891c8f8bcad1ea83f90176168b7e088b1c97d94304d944241cded9dfe0f6c40175de8b4424248b5c24208b7d0c894424188b5608891c8a8b0e8b460c413bd8890e7603895e0c3b5e107303895e108b0e33c03bc874408b46086a018b14888b78048950048b068b4e08c70481000000008b0e49890e8bcee8000000008b542424897c24148bc78b7d0c89542418eb0b33f6e9e9feffff8944241485ffc744241c000000000f8e5803000085c00f84500300008b4c24108b5424183bca0f8d4003000050b900000000e8000000008bd88bcbe80000000084c00f84ef0000008b83e400000033ff3bc70f85e1000000837b44ff0f85d700000083bbec000000030f84ca000000b900000000e80000000089442444897c2448df6c2444dc0d00000000dc5d10dfe0f6c4010f84a0000000b900000000e8000000008944244c897c2450df6c244c83ec08dc0d00000000dc0500000000dd1c24e8000000008bc883c40883f91977c999bf0a000000f7ffb86766666652f7e9c1fa028bc28d4c2460c1e81f03d052680000000051e80000000068e0000000e8000000008bf883c41485ff74268b53248d4c245c89542430e8000000008b15000000008d4c2430518bcf8b048250e800000000ff44241c33ff8b4c24208b54241032c0897c242c8d0cd1894c24188b7c241483e0078b1485000000008bcac1f91066034f02668b3f03fa33f80fbfc981e7ff0000008bd133c78b7c242833d781e2ff00000033fa8bdf33d80fbfd081e3ff00000033fb8d040a897c24288b3d000000003bc70f864f0100008bda2bd93bdf0f83430100008bd92bda3bdf0f83370100003b05000000000f872b0100008bf98b1d000000000faf3d0000000003fa8d3cbfc1e70403fb8a474784c00f85070100008a474584c00f85fc0000008b4424248b5c24103bd80f8dec0000008b5c24188b44242883ec0889038b45088b4024c1e8100fbfc02bc18b4d080fbf49242bca8bd10fafd18bc80fafc803d189542420db442420dd1c24e800000000dd5c244083c408b900000000e80000000089442454c744245800000000df6c24548b44241040dc0d00000000894424108d4304dc0d00000000dc442438d918c64747018b0e8b108b460441895424348bd18bfb83c308897c2438d1ea3bc8895c2418734883f90176268b5e088b3c93d94704d9442434ded9dfe0f6c401740c893c8b8bcad1ea83f90177de8b7c24388b4608893c888b0e8b460c413bf8890e7603897e0c3b7e107303897e108b44242c4083f8088944242c0f8c42feffff833e0074308b46088b0e6a018b14888b78048950048b068b4e08c70481000000008b0e49890e8bcee8000000008bc789442414eb0cc7442414000000008b4424148b54241c8b4d0c8b5c24203bd17d108b4c242485c0894c24180f85b0fcffff53e80000000083c40485f674096a018bcee8000000008b44241c5f5e5b8be55dc21000",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 410,
+   "type": "REL32",
+   "sym": "?SiftDown@Heap@@QAEXH@Z",
+   "sym_key": "Heap::SiftDown"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 491,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 500,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 557,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 575,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 594,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 599,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 620,
+   "type": "DIR32",
+   "sym": "?dbl_7EDAD8@@3NA",
+   "sym_key": "dbl_7EDAD8"
+  },
+  {
+   "off": 626,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 634,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 680,
+   "type": "DIR32",
+   "sym": "??_C@_08GLHB@TREE?$CFd?$CFd?$AA@",
+   "sym_key": "??_C@_08GLHB@TREE?$CFd?$CFd?$AA@"
+  },
+  {
+   "off": 686,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 696,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 721,
+   "type": "REL32",
+   "sym": "?LookupByName@Terrain@@QAEHXZ",
+   "sym_key": "Terrain::LookupByName"
+  },
+  {
+   "off": 727,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E31C@@3IA",
+   "sym_key": "DataGlobal_A8E31C"
+  },
+  {
+   "off": 743,
+   "type": "REL32",
+   "sym": "?Construct@TerrainClass@@QAEPAPAXPAX0@Z",
+   "sym_key": "TerrainClass::Construct"
+  },
+  {
+   "off": 784,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 855,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 893,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 907,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 914,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 1026,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 1038,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 1043,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 1070,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 1083,
+   "type": "DIR32",
+   "sym": "__real@8@4001a000000000000000",
+   "sym_key": "_real@8@4001a000000000000000"
+  },
+  {
+   "off": 1261,
+   "type": "REL32",
+   "sym": "?SiftDown@Heap@@QAEXH@Z",
+   "sym_key": "Heap::SiftDown"
+  },
+  {
+   "off": 1318,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 1334,
+   "type": "REL32",
+   "sym": "?Dtor@Scalar@@QAEPAPAXD@Z",
+   "sym_key": "Scalar::Dtor"
+  }
+ ]
+}

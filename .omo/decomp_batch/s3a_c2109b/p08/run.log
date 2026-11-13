@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x561400 VideoSettingsDialogProc -> _addr_56
+[conv] 0x565aa0 MapClass::InitCellVector -> MapClass
+[conv] 0x56b0f0 ObjectClass::sub_56B0F0 -> ObjectClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x579620 Terrain::SelectTileType -> Terrain
+[conv] 0x581f90 Subzone::BuildGraph -> Subzone
+[conv] 0x5840c0 ObjectClass::CheckMapReachability -> ObjectClass
+[conv] 0x58abd0 Radar::CopyDataArray -> Radar
+[conv] 0x58b820 ObjectClass::ComputeMapCameraBounds -> ObjectClass
+[conv] 0x596e50 RandomMap::SetupDialog -> RandomMap
+[conv] 0x5a28c0 Terrain::PlaceTiberiumTrees -> Terrain
+[conv] 0x5a45e0 ScatterTerrainTrees -> _addr_5A
+[conv] 0x5a5360 Pathfinding::ExpandNode -> Pathfinding
+[conv] 0x5b3e90 ObjectClass::sub_5B3E90 -> ObjectClass
+[conv] 0x5b4270 HashTree::MarkEntry -> HashTree
+[conv] 0x5b4350 ObjectClass::sub_5B4350 -> ObjectClass
+[conv] 0x5b4430 LookupFileInfoCache -> _addr_5B
+[conv] 0x5b6020 ModemGame::ProcessPacket -> ModemGame
+[conv] 0x5b6da0 ObjectClass::sub_5B6DA0 -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Chat                     rc=2
+[era] _addr_56                 rc=0
+[era] MapClass                 rc=2
+[era] ObjectClass              rc=2
+[era] Terrain                  rc=2
+[era] Subzone                  rc=2
+[era] Radar                    rc=2
+[era] RandomMap                rc=2
+[era] _addr_5A                 rc=0
+[era] Pathfinding              rc=2
+[era] HashTree                 rc=0
+[era] _addr_5B                 rc=2
+[era] ModemGame                rc=2
+=== diffasm byte-compare ===
+[diff] 0x561400   MISMATCH         VideoSettingsDialogProc
+[diff] 0x5a45e0   MISMATCH         ScatterTerrainTrees
+[diff] 0x5b4270   MISMATCH         HashTree::MarkEntry
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 3)
+[ledger] 0x561400 VideoSettingsDialogProc -> NG (attempt 3)
+[ledger] 0x565aa0 MapClass::InitCellVector -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56b0f0 ObjectClass::sub_56B0F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 3)
+[ledger] 0x579620 Terrain::SelectTileType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x581f90 Subzone::BuildGraph -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5840c0 ObjectClass::CheckMapReachability -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58abd0 Radar::CopyDataArray -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58b820 ObjectClass::ComputeMapCameraBounds -> COMPILE_FAIL (attempt 3)
+[ledger] 0x596e50 RandomMap::SetupDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a28c0 Terrain::PlaceTiberiumTrees -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a45e0 ScatterTerrainTrees -> NG (attempt 3)
+[ledger] 0x5a5360 Pathfinding::ExpandNode -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b3e90 ObjectClass::sub_5B3E90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b4270 HashTree::MarkEntry -> NG (attempt 15)
+[ledger] 0x5b4350 ObjectClass::sub_5B4350 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b4430 LookupFileInfoCache -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b6020 ModemGame::ProcessPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b6da0 ObjectClass::sub_5B6DA0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p08\batch_report.json
