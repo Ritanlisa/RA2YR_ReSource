@@ -1,0 +1,159 @@
+{
+ "symbol": "?RehashGenericHashMap@@YIXPAXH@Z",
+ "sym_key": "Unnamed::RehashGenericHashMap",
+ "size": 811,
+ "link_base": 0,
+ "bytes_hex": "81ec140c000053555633db57538bf953688b0100008bea57e8000000008bf08d442410508974241ce80000000083c4043bf30f84df0200006af057e800000000a808894424180f84cb0200008b4c241833f63bcb895c24140f86080100005356688701000057e80000000085c00f84de000000535668cf04000057e80000000085c074168d8c2424040000515668b604000057e800000000eb238d542424525668b704000057e8000000008d5424248d8c24240400006affe8000000008d8424240400008d4c241050e8000000006a0ce8000000008bf083c4043bf3740b56e80000000083c404eb0233f68d4c2410518bcee8000000008d542410c646040152895e08ff55188b4d0cba01000000d3e28b4d004a23c28d04818b0889303bcb7403894e088b4504895c2420408944241c894504df6c241cda7508dc5d28dfe0f6c401750955e80000000083c4048b7424148b442418463bf0897424140f82fcfeffff8b44241825004000006685c00f85a30100005353688801000057e8000000008bf03bf30f8c8c010000535668cf0400005766899c2434040000e80000000085c074168d942424040000525668b604000057e800000000eb238d442424505668b704000057e8000000008d5424248d8c24240400006affe8000000008d8c2424040000518d4c2414e8000000006a0ce8000000008bf083c4043bf3740b56e80000000083c404eb0233f68d5424108bce52e8000000008d442410c646040150895e08ff55188b4d0cba01000000d3e28b4d004a23c28d04818b0889303bcb7403894e088b45048b5d0840c7442420000000008944241c895c2418df6c241cda742418894504dc5d28dfe0f6c4010f85a3000000807d14010f84990000008b750c8b55008d0cdd000000008d041b46518954241c89450889750ce8000000008b4d088bf8c1e1028bd133c0c1e902897d0083c404f3ab8bca83e10385dbf3aa7e498b442418894424148b4c24148b3185f6742756ff55188b4d0cba01000000d3e28b4d004a23c28d04818b0889308b4608894e0885c08bf075d98b4c24144b83c10485db894c241475bf8b54241852e80000000083c4048d4c2410e8000000005f5e5d5b81c4140c0000c3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?BulkCharToWide@@YIEPAX0H@Z",
+   "sym_key": "BulkCharToWide"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?Reassign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Reassign_Alt"
+  },
+  {
+   "off": 326,
+   "type": "REL32",
+   "sym": "?Map_Helper_5EF010@@YAXPAX@Z",
+   "sym_key": "Map_Helper_5EF010"
+  },
+  {
+   "off": 381,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 412,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 436,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 455,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 473,
+   "type": "REL32",
+   "sym": "?BulkCharToWide@@YIEPAX0H@Z",
+   "sym_key": "BulkCharToWide"
+  },
+  {
+   "off": 490,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Assign_Alt"
+  },
+  {
+   "off": 497,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 512,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 531,
+   "type": "REL32",
+   "sym": "?Reassign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Reassign_Alt"
+  },
+  {
+   "off": 667,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 784,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 796,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

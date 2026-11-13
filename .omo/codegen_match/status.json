@@ -9510,6 +9510,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x41b110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::PlaceAircraftFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "PlaceAircraftFromINI",
+  "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x41b430": {
   "attempts": 1,
   "clean": false,
@@ -30807,6 +30819,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x48ccc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::MainGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MainGame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x48d080": {
   "attempts": 1,
   "clean": false,
@@ -44492,6 +44516,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4c16a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::InitializeRadialGradientTexture",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitializeRadialGradientTexture",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c19b0": {
   "attempts": 1,
   "clean": false,
@@ -48306,6 +48342,18 @@
   "orig_name": "TrajectoryHelper::FindFirstImpenetrableObstacle",
   "rule_violations": 2,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4cc360": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "TrajectoryHelper::GetObstacle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TrajectoryHelper::GetObstacle",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4cc680": {
@@ -69953,6 +70001,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5272b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::LookupCSFString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LookupCSFString",
+  "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5275c0": {
   "attempts": 1,
   "clean": false,
@@ -79679,6 +79739,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x54b1c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmoothObjectPlacement",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::SmoothObjectPlacement",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x54b4d0": {
   "attempts": 1,
   "clean": false,
@@ -82097,6 +82169,17 @@
   "name": "TacticalClass::ScrollView",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TacticalClass::ScrollView",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x554d50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "UpdateDeferredLightSurfaces",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateDeferredLightSurfaces",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -86759,6 +86842,17 @@
   "orig_name": "CellClass::ApplyTerrainModTile",
   "rule_violations": 8,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x575ee0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "UpdateTeamsInAreaMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateTeamsInAreaMap",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x576ba0": {
@@ -98956,6 +99050,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5c80a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::ComputeModularInverse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ComputeModularInverse",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5c8470": {
   "attempts": 3,
   "clean": false,
@@ -98995,6 +99101,17 @@
   "orig_name": "sub_5C8980",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c8ab0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ValidateRSAKey",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ValidateRSAKey",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5c8dd0": {
@@ -99469,6 +99586,18 @@
   "name": "sub_5C9AE0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x5ca110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Game::GetMultiplayerScoreScreenBar",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Game::GetMultiplayerScoreScreenBar",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": true
  },
  "0x5ca420": {
   "attempts": 2,
@@ -106246,6 +106375,17 @@
   "orig_name": "SendMultiplayerStartSignal",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5e5f10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0xc1c",
+  "name": "RehashGenericHashMap",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "RehashGenericHashMap",
+  "rule_violations": 18,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e6230": {
@@ -113755,6 +113895,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x624ca0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Dialog::BindGadgetData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Dialog::BindGadgetData",
+  "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x624fc0": {
   "attempts": 6,
   "first_diff": "+8 je 0x62505f",
@@ -115225,6 +115377,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParasiteClass::CanExistOnVictimCell",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x62ac30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Object::CalculateObjectPlacementPosition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Object::CalculateObjectPlacementPosition",
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -118611,6 +118775,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Object_Helper_637DD0",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x637e00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ScriptAction::DispatchBuilding",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ScriptAction::DispatchBuilding",
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -123220,6 +123396,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x655250": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+0 sub esp, 0x90",
+  "name": "XSurface::RenderRadar",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "Surface::RenderRadar",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x655560": {
   "attempts": 5,
   "clean": false,
@@ -126663,6 +126851,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "Render_Render_660000",
   "rule_violations": 3,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x660050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
+  "name": "ObjectClass::RenderGradientTrapezoid",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RenderGradientTrapezoid",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -137006,6 +137206,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HouseClass::UpdateAllProductionTabs",
   "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6a7d70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "SidebarClass::ToggleSidebarDisplay",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "ObjectClass::ToggleSidebarDisplay",
+  "rule_violations": 15,
   "status": "NG",
   "this_as_id": false
  },
@@ -155549,6 +155761,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6f1550": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TeamTypeClass::GetMaxCount",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TeamTypeClass::GetMaxCount",
+  "rule_violations": 13,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6f1870": {
   "attempts": 1,
   "first_diff": "+6 cmp eax, -2",
@@ -170021,6 +170245,18 @@
   "orig_name": "TechnoClass::ShouldSkipOccupierDraw",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x73b140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TechnoClass::RenderTechnoSHP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TechnoClass::RenderTechnoSHP",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x73cec0": {

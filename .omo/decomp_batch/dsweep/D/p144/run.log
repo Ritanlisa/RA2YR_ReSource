@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p144\part_00
+=== convert (20 addrs) ===
+[conv] 0x5272b0 ObjectClass::LookupCSFString -> ObjectClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x655250 XSurface::RenderRadar -> XSurface
+[conv] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> ObjectClass
+[conv] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> Game
+[conv] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> JumpjetLocomotionClass
+[conv] 0x6a7d70 SidebarClass::ToggleSidebarDisplay -> SidebarClass
+[conv] 0x5c80a0 ObjectClass::ComputeModularInverse -> ObjectClass
+[conv] 0x6f1550 TeamTypeClass::GetMaxCount -> TeamTypeClass
+[conv] 0x637e00 ScriptAction::DispatchBuilding -> ScriptAction
+[conv] 0x660050 ObjectClass::RenderGradientTrapezoid -> ObjectClass
+[conv] 0x4cc360 TrajectoryHelper::GetObstacle -> TrajectoryHelper
+[conv] 0x62ac30 Object::CalculateObjectPlacementPosition -> Object
+[conv] 0x73b140 TechnoClass::RenderTechnoSHP -> TechnoClass
+[conv] 0x575ee0 UpdateTeamsInAreaMap -> _addr_57
+[conv] 0x554d50 UpdateDeferredLightSurfaces -> _addr_55
+[conv] 0x5e5f10 RehashGenericHashMap -> _addr_5E
+[conv] 0x41b110 ObjectClass::PlaceAircraftFromINI -> ObjectClass
+[conv] 0x5c8ab0 ValidateRSAKey -> _addr_5C
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] XSurface                 rc=0
+[era] Game                     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] SidebarClass             rc=0
+[era] TeamTypeClass            rc=2
+[era] ScriptAction             rc=2
+[era] TrajectoryHelper         rc=2
+[era] Object                   rc=2
+[era] TechnoClass              rc=2
+[era] _addr_57                 rc=2
+[era] _addr_55                 rc=2
+[era] _addr_5E                 rc=0
+[era] _addr_5C                 rc=2
+[era] Dialog                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x660050   MISMATCH         ObjectClass::RenderGradientTrapezoid
+[diff] 0x655250   MISMATCH         XSurface::RenderRadar
+[diff] 0x6a7d70   MISMATCH         SidebarClass::ToggleSidebarDisplay
+[diff] 0x5e5f10   MISMATCH         RehashGenericHashMap
+[ledger] 0x5272b0 ObjectClass::LookupCSFString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x655250 XSurface::RenderRadar -> NG (attempt 1)
+[ledger] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a7d70 SidebarClass::ToggleSidebarDisplay -> NG (attempt 1)
+[ledger] 0x5c80a0 ObjectClass::ComputeModularInverse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1550 TeamTypeClass::GetMaxCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637e00 ScriptAction::DispatchBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660050 ObjectClass::RenderGradientTrapezoid -> NG (attempt 1)
+[ledger] 0x4cc360 TrajectoryHelper::GetObstacle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62ac30 Object::CalculateObjectPlacementPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73b140 TechnoClass::RenderTechnoSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x575ee0 UpdateTeamsInAreaMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x554d50 UpdateDeferredLightSurfaces -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e5f10 RehashGenericHashMap -> NG (attempt 1)
+[ledger] 0x41b110 ObjectClass::PlaceAircraftFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c8ab0 ValidateRSAKey -> COMPILE_FAIL (attempt 1)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p144\batch_report.json

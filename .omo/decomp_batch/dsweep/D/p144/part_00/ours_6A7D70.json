@@ -1,0 +1,327 @@
+{
+ "symbol": "?ToggleSidebarDisplay@SidebarClass@@QAEDPAHHHHH@Z",
+ "sym_key": "SidebarClass::ToggleSidebarDisplay",
+ "size": 806,
+ "link_base": 0,
+ "bytes_hex": "518a15000000005355568b74241457f6c2028a86a553000074138b150000000085d2740983fa050f85f102000083f9ff750d84c00f94c1888ea5530000eb0c83f9010f94c28896a55300008a8ea55300003ac8884c24100f95c33ac8750a5f5e8ac35d5b59c214008b4424108bce50e8000000008a86a553000084c00f85cc0000008b4c242051e8000000008b44241c8b4c24208b1683c404508b44241c5150680000000056ff52348b0e680000000056ff51348b16680000000056ff5234bf000000008b065756ff503483c76081ff000000007cee8b0e680000000056ff51348b16680000000056ff52348b869c53000033ff8bc8c1e1052bc88d14c88d04908dac86441500008b45386bc03c03c78d0cc5000000002bc88d14cd807eb000b9f801000052e8000000004783ff3c7cd78b06680000000056ff50348b0e6a0256ff51385f5e8ac35d5b59c214008b4424188b4c241c8b16508b442424515056ff9288000000b900000000c686a653000001e8000000008b0e680000000056ff5130b900000000e8000000008b16680000000056ff5230bf000000008bcfe800000000c6472c008b065756ff503083c76081ff000000007ce3b900000000e8000000006800000000b9f8010000e800000000b900000000e8000000006800000000b9f8010000e800000000b900000000e8000000008b0e680000000056ff5130b900000000e8000000008b16680000000056ff5230bf000000008d9e9815000033ed8b03896bf03bc57e078bcfe80000000083c76081c3940f000081ff000000007cdf8b8e9c530000c1e10581c100000000e8000000008b869c5300008bc8c1e1052bc88d14c88d04908d1c86b81a000000c68360150000018b0d0000000039a9c8b150007405b8120000008b15000000008b0d000000002bd133ff2bd0a1000000008d4c02f9b81f85eb51f7e18beac1ed04d1e585ed7e4b8b837c1500006bc03c03c78d14c5000000002bd08d0cd5807eb000e8000000008b837c1500006bc03c03c78d0cc5000000002bc88d14cd807eb000b9f801000052e800000000473bfd7cb58bcec6050000000001e8000000008b066a0256ff50388a4424245f5e5d5b59c21400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventPending@@3HA",
+   "sym_key": "g_NetworkEventPending"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?resetObjectState@ObjectClass@@QAEHD@Z",
+   "sym_key": "ObjectClass::resetObjectState"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?AsyncIO__Shutdown@@YADPAX@Z",
+   "sym_key": "AsyncIO__Shutdown"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DF8@@3IA",
+   "sym_key": "DataGlobal_B07DF8"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B3A0@@3IA",
+   "sym_key": "DataGlobal_B0B3A0"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07E58@@3IA",
+   "sym_key": "DataGlobal_B07E58"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DC8@@3IA",
+   "sym_key": "DataGlobal_B07DC8"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B328@@3IA",
+   "sym_key": "DataGlobal_B0B328"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?g_SidebarFlag@@3EA",
+   "sym_key": "g_SidebarFlag"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?SelectObject@Tactical@@QAEDH@Z",
+   "sym_key": "Tactical::SelectObject"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A10@@3IA",
+   "sym_key": "DataGlobal_B04A10"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DF8@@3IA",
+   "sym_key": "DataGlobal_B07DF8"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 378,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DF8@@3IA",
+   "sym_key": "DataGlobal_B07DF8"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B3A0@@3IA",
+   "sym_key": "DataGlobal_B0B3A0"
+  },
+  {
+   "off": 392,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 399,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B3A0@@3IA",
+   "sym_key": "DataGlobal_B0B3A0"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 435,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DC8@@3IA",
+   "sym_key": "DataGlobal_B07DC8"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B328@@3IA",
+   "sym_key": "DataGlobal_B0B328"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B328@@3IA",
+   "sym_key": "DataGlobal_B0B328"
+  },
+  {
+   "off": 457,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 462,
+   "type": "REL32",
+   "sym": "?InsertOrdered@Hash@@QAEDH@Z",
+   "sym_key": "Hash::InsertOrdered"
+  },
+  {
+   "off": 467,
+   "type": "DIR32",
+   "sym": "?g_SidebarFlag@@3EA",
+   "sym_key": "g_SidebarFlag"
+  },
+  {
+   "off": 472,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 477,
+   "type": "DIR32",
+   "sym": "?g_SidebarFlag@@3EA",
+   "sym_key": "g_SidebarFlag"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?InsertOrdered@Hash@@QAEDH@Z",
+   "sym_key": "Hash::InsertOrdered"
+  },
+  {
+   "off": 492,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07E58@@3IA",
+   "sym_key": "DataGlobal_B07E58"
+  },
+  {
+   "off": 497,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 504,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07E58@@3IA",
+   "sym_key": "DataGlobal_B07E58"
+  },
+  {
+   "off": 513,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A10@@3IA",
+   "sym_key": "DataGlobal_B04A10"
+  },
+  {
+   "off": 518,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 525,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A10@@3IA",
+   "sym_key": "DataGlobal_B04A10"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 558,
+   "type": "REL32",
+   "sym": "?Hide@DialogControl@@QAEHXZ",
+   "sym_key": "DialogControl::Hide"
+  },
+  {
+   "off": 573,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07DC8@@3IA",
+   "sym_key": "DataGlobal_B07DC8"
+  },
+  {
+   "off": 590,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 595,
+   "type": "REL32",
+   "sym": "?Show@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Show"
+  },
+  {
+   "off": 635,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 654,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 660,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 671,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 725,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 757,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 763,
+   "type": "REL32",
+   "sym": "?InsertOrdered@Hash@@QAEDH@Z",
+   "sym_key": "Hash::InsertOrdered"
+  },
+  {
+   "off": 776,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  },
+  {
+   "off": 782,
+   "type": "REL32",
+   "sym": "?UpdateUIVisibility@Tactical@@QAEHXZ",
+   "sym_key": "Tactical::UpdateUIVisibility"
+  }
+ ]
+}
