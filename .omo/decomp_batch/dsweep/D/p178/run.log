@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p178\part_00
+=== convert (20 addrs) ===
+[conv] 0x573540 Terrain::RecursiveModify -> Terrain
+[conv] 0x4bdf00 DSurface::DrawLineZBufColored -> DSurface
+[conv] 0x46a310 Warhead::ApplyPostDamageEffects -> Warhead
+[conv] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> TechnoTypeClass
+[conv] 0x7d3a6d __winput -> _addr_7D
+[conv] 0x799080 MainLobbyDlgProcWOL -> _addr_79
+[conv] 0x674730 RulesClass::SaveLoad_Prefix -> RulesClass
+[conv] 0x4f7870 HouseClass::CanBuild -> HouseClass
+[conv] 0x79e520 PlayerOptionsDlgProcWOL -> _addr_79
+[conv] 0x44d880 BuildingClass::ClearFactoryBib -> BuildingClass
+[conv] 0x59c920 TiberiumClass::Grow -> TiberiumClass
+[conv] 0x4c3e30 CreditsPower::Display -> CreditsPower
+[conv] 0x75d3a0 WarheadTypeClass::ReadINI -> WarheadTypeClass
+[conv] 0x79af10 ObjectClass::FillBuddyListWOL -> ObjectClass
+[conv] 0x7a8260 CChatEventSink::HandleLobbyPlayerUpdate -> CChatEventSink
+[conv] 0x55d360 ObjectClass::GameFrameLoop -> ObjectClass
+[conv] 0x7c7371 Render::DrawTileBitmap -> Render
+[conv] 0x4beac0 AudioStream::DrawWaveform -> AudioStream
+[conv] 0x43c2d0 BuildingClass::MissionController -> BuildingClass
+[conv] 0x56dc20 LayerClass::Pathfinding_Find -> LayerClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Terrain                  rc=2
+[era] DSurface                 rc=2
+[era] Warhead                  rc=2
+[era] TechnoTypeClass          rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_79                 rc=2
+[era] RulesClass               rc=2
+[era] HouseClass               rc=2
+[era] BuildingClass            rc=2
+[era] TiberiumClass            rc=2
+[era] CreditsPower             rc=2
+[era] WarheadTypeClass         rc=2
+[era] ObjectClass              rc=2
+[era] CChatEventSink           rc=2
+[era] Render                   rc=0
+[era] AudioStream              rc=2
+[era] LayerClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c7371   MISMATCH         Render::DrawTileBitmap
+[ledger] 0x573540 Terrain::RecursiveModify -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bdf00 DSurface::DrawLineZBufColored -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46a310 Warhead::ApplyPostDamageEffects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3a6d __winput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x799080 MainLobbyDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x674730 RulesClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f7870 HouseClass::CanBuild -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79e520 PlayerOptionsDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44d880 BuildingClass::ClearFactoryBib -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59c920 TiberiumClass::Grow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3e30 CreditsPower::Display -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75d3a0 WarheadTypeClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79af10 ObjectClass::FillBuddyListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a8260 CChatEventSink::HandleLobbyPlayerUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55d360 ObjectClass::GameFrameLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c7371 Render::DrawTileBitmap -> NG (attempt 1)
+[ledger] 0x4beac0 AudioStream::DrawWaveform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43c2d0 BuildingClass::MissionController -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56dc20 LayerClass::Pathfinding_Find -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p178\batch_report.json

@@ -1,0 +1,585 @@
+{
+ "symbol": "?DrawTileBitmap@Render@@QAEXHPAGFFIH@Z",
+ "sym_key": "Render::DrawTileBitmap",
+ "size": 3271,
+ "link_base": 0,
+ "bytes_hex": "83ec0c66837c241810535556570f85aa0c000066837c242c020f859e0c00008b4c24348b5424308b5c24248b6c24208b3933c0668b41048bf28bca83e6fed1e983fe20895c2410725a8bf583e60374534e743a4e741d4e754a83c1fc33f6894c2418c1e90441894c24148b4c242ce9f900000083c1f833f6894c2418c1e90441894c24148b4c242ce93c01000083c1f433f6894c2418c1e90441894c2414e996010000894c24188bcac1e90533f6894c24148b4c242cf7c2e0ffffff0f94c3885c242884db75558b4d008bd133d681e2ff00000033f233d28a96000000000bc28b14450000000003fa8a900000000081e2ff00000022c30bc281ffff7f00007e05bfff7f00008b5c241033d28a96000000000bc266893be9730100008a5c242884db0f84280300008b5c2418d1eb83e3074b83fb060f8715030000ff249d000000008a55008b5c2410c1e20433d683eb1c81e2ff00000033f233d28a96000000000bc2e9860200008b5c241033d281e600ffffff8a550083eb180bf233d283ed038a96000000000bc2e92c020000668b55008b5c2410c1e20433d183eb1481e2ff00000033ca8a5500c1e20433d681e2ff00000033f233d28a96000000000bc2e9b50100008b5c24108a550080e10081e2ff00000081e600ffffff0bca0bf233d283eb108a960000000083ed020bc2e95201000033d233c9668b55008a4d028bda81e1ffff0000c1e20433d6c1eb0481e2ff00000083e30fc1e10c33f20bcb8b5c241033d28a960000000083eb0c0bc2e9d10000008b5c24108a4d0081e600ffffff81e1ff00000033d20bf133c98a4d0283eb088a960000000081e1ffff0000c1e1084d0bc2eb6a8a55008b4d00c1e2048b5c241033d681e2ff00000083eb0433f233d2c1e1048a96000000000bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b040bc2c1e9108b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b080bc28bd133d681e2ff00000033f28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b0c0bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b100bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b140bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b180bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f00008b54241466897b1c83c50483c32083fa01895c24100f944424288bda4a83fb01895424147f0b8b542430b301e97efcffff8b54243032dbe973fcffff8b4c24348beac1ed03668941048b44242489398b7c24208d580233c0668b410a03ef8b79068bf28bca83e6fed1e983fe20895c2410725a8bf583e60374534e743a4e741d4e754a83c1fc33f6894c2418c1e90441894c24148b4c242ce9f900000083c1f833f6894c2418c1e90441894c24148b4c242ce93c01000083c1f433f6894c2418c1e90441894c2414e996010000894c24188bcac1e90533f6894c24148b4c242cf7c2e0ffffff0f94c3885c242884db75558b4d008bd133d681e2ff00000033f233d28a96000000000bc28b14450000000003fa8a900000000081e2ff00000022c30bc281ffff7f00007e05bfff7f00008b5c241033d28a96000000000bc266893be9730100008a5c242884db0f84280300008b5c2418d1eb83e3074b83fb060f8715030000ff249d000000008a55008b5c2410c1e20433d683eb1c81e2ff00000033f233d28a96000000000bc2e9860200008b5c241033d281e600ffffff8a550083eb180bf233d283ed038a96000000000bc2e92c020000668b55008b5c2410c1e20433d183eb1481e2ff00000033ca8a5500c1e20433d681e2ff00000033f233d28a96000000000bc2e9b50100008b5c24108a550080e10081e2ff00000081e600ffffff0bca0bf233d283eb108a960000000083ed020bc2e95201000033d233c9668b55008a4d028bda81e1ffff0000c1e20433d6c1eb0481e2ff00000083e30fc1e10c33f20bcb8b5c241033d28a960000000083eb0c0bc2e9d10000008b5c24108a4d0081e600ffffff81e1ff00000033d20bf133c98a4d0283eb088a960000000081e1ffff0000c1e1084d0bc2eb6a8a55008b4d00c1e2048b5c241033d681e2ff00000083eb0433f233d2c1e1048a96000000000bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b040bc2c1e9108b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b080bc28bd133d681e2ff00000033f28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b0c0bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b100bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b140bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b180bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f00008b54241466897b1c83c50483c32083fa01895c24100f944424288bda4a83fb01895424147f0b8b542430b301e97efcffff8b54243032dbe973fcffff8b4c243466837c242c018979066689410a0f85180400008b5c24248b6c24208b3933c0668b410483fa10895c24200f8cdc0000008bcd83e1030f84d1000000490f8485000000497440490f85c000000083c2fc33f68bca89542430c1e90441894c24288b4c242c33d281e600ffffff8a550083eb0c0bf233d283ed038a96000000000bc2e90603000083c2f833f68bca89542430c1e90441894c24288b4c242c8a550080e10081e2ff00000081e600ffffff0bca0bf233d283eb088a960000000083ed020bc2e95002000083c2f433f68bca89542430c1e90441894c24288a4d0081e600ffffff81e1ff00000033d20bf133c98a4d0283eb048a960000000081e1ffff0000c1e1084d0bc2e9970100008bca33f6c1e904f7c2f0ffffff89542430894c24280f94c28854242c8b4c242c84d275518b4d008bd133d681e2ff00000033f233d28a96000000000bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066893b0bc2e9df0000008a54242c84d20f84940200008b542430d1ea83e2074a83fa060f8781020000ff2495000000008a550083eb0ec1e20433d681e2ff00000033f233d28a96000000000bc2e9f6010000668b550083eb0ac1e20433d181e2ff00000033ca8a5500c1e20433d681e2ff00000033f233d28a96000000000bc2e94f01000033d233c9668b55008a4d028bda81e1ffff0000c1e20433d6c1eb0481e2ff00000083e30fc1e10c33f20bcb8b5c242033d28a960000000083eb060bc2e99a0000008a55008b4d00c1e20433d683eb0281e2ff00000033f233d2c1e1048a96000000000bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b020bc2c1e9108b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b040bc28bd133d681e2ff00000033f28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b060bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b080bc233d281e600ffffff8ad50bf28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b0a0bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f000033d28a960000000066897b0c0bc28b14450000000003fa8a900000000081e2ff00000024000bc281ffff7f00007e05bfff7f00008b54242866897b0e83c50483c31083fa01895c24200f9444242c8bda4a83fb01895424287f0b8b5c2420b201e916fdffff8b5c242032d2e90bfdffff8b4c24348939668941045f5e5d5b83c40cc21800",
+ "relocs": [
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 318,
+   "type": "DIR32",
+   "sym": "$L2236",
+   "sym_key": "$L2236"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 551,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 598,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 649,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 670,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 678,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 709,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 725,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 733,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 764,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 789,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 797,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 828,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 841,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 849,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 880,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 905,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 913,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 944,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 957,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 965,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 996,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1009,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1017,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1304,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1313,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1321,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1356,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1404,
+   "type": "DIR32",
+   "sym": "$L2237",
+   "sym_key": "$L2237"
+  },
+  {
+   "off": 1435,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1473,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1528,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1572,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1637,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1684,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1735,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1756,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1764,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1795,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1811,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1819,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1850,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1875,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1883,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1914,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 1927,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1935,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 1966,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 1991,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 1999,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2030,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2043,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2051,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2082,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2095,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2103,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2316,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2379,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2441,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2517,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2526,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2534,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2565,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2613,
+   "type": "DIR32",
+   "sym": "$L2238",
+   "sym_key": "$L2238"
+  },
+  {
+   "off": 2640,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2691,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2753,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2796,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2817,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2825,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2856,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2872,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2880,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2911,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 2936,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2944,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 2975,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 2988,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 2996,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 3027,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 3052,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 3060,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 3091,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderMask@@3PADA",
+   "sym_key": "g_ScreenRenderMask"
+  },
+  {
+   "off": 3104,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 3112,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  },
+  {
+   "off": 3143,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderFlag@@3PADA",
+   "sym_key": "g_ScreenRenderFlag"
+  },
+  {
+   "off": 3156,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT1@@3IB",
+   "sym_key": "g_ScreenRenderLUT1"
+  },
+  {
+   "off": 3164,
+   "type": "DIR32",
+   "sym": "?g_ScreenRenderLUT2@@3GA",
+   "sym_key": "g_ScreenRenderLUT2"
+  }
+ ]
+}
