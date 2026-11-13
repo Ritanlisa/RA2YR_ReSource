@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p159\part_00
+=== convert (20 addrs) ===
+[conv] 0x687f10 ObjectClass::AssignSessionHouses -> ObjectClass
+[conv] 0x556090 LightConvertClass::UpdateColors -> LightConvertClass
+[conv] 0x6851f0 ObjectClass::ResetScenario -> ObjectClass
+[conv] 0x4fea60 HouseClass::AIUnitProduction -> HouseClass
+[conv] 0x4190b0 AircraftClass::ProcessInputKey -> AircraftClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x456980 DrawTechnoDeployCircle -> _addr_45
+[conv] 0x4d0ef0 FoggedObjectClass::Constructor -> FoggedObjectClass
+[conv] 0x4533a0 BuildingClass::RepairPlacement -> BuildingClass
+[conv] 0x7c12b0 File::ParseAudioFileRIFF -> File
+[conv] 0x5f2ce0 ObjectClass::WaitModemConnection -> ObjectClass
+[conv] 0x60aab0 GadgetClass::FindByWindow -> GadgetClass
+[conv] 0x53e770 GameLoopMessagePump -> _addr_53
+[conv] 0x5b3060 MissionClass::ProcessCloaking -> MissionClass
+[conv] 0x5d4510 ProcessEditControlKey -> _addr_5D
+[conv] 0x5840c0 ObjectClass::CheckMapReachability -> ObjectClass
+[conv] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> ObjectClass
+[conv] 0x6994f0 ParseMapFileHeader -> _addr_69
+[conv] 0x7a29e0 BuddyDlgProcWOL -> _addr_7A
+[conv] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] LightConvertClass        rc=2
+[era] HouseClass               rc=0
+[era] AircraftClass            rc=2
+[era] TeamClass                rc=2
+[era] _addr_45                 rc=2
+[era] FoggedObjectClass        rc=2
+[era] BuildingClass            rc=0
+[era] File                     rc=0
+[era] GadgetClass              rc=2
+[era] _addr_53                 rc=2
+[era] MissionClass             rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_69                 rc=2
+[era] _addr_7A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4fea60   MISMATCH         HouseClass::AIUnitProduction
+[diff] 0x4533a0   MISMATCH         BuildingClass::RepairPlacement
+[diff] 0x7c12b0   MISMATCH         File::ParseAudioFileRIFF
+[diff] 0x5b3060   MISMATCH         MissionClass::ProcessCloaking
+[diff] 0x5d4510   MISMATCH         ProcessEditControlKey
+[ledger] 0x687f10 ObjectClass::AssignSessionHouses -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556090 LightConvertClass::UpdateColors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6851f0 ObjectClass::ResetScenario -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fea60 HouseClass::AIUnitProduction -> NG (attempt 1)
+[ledger] 0x4190b0 AircraftClass::ProcessInputKey -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456980 DrawTechnoDeployCircle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d0ef0 FoggedObjectClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4533a0 BuildingClass::RepairPlacement -> NG (attempt 1)
+[ledger] 0x7c12b0 File::ParseAudioFileRIFF -> NG (attempt 1)
+[ledger] 0x5f2ce0 ObjectClass::WaitModemConnection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60aab0 GadgetClass::FindByWindow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e770 GameLoopMessagePump -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3060 MissionClass::ProcessCloaking -> NG (attempt 1)
+[ledger] 0x5d4510 ProcessEditControlKey -> NG (attempt 1)
+[ledger] 0x5840c0 ObjectClass::CheckMapReachability -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6994f0 ParseMapFileHeader -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a29e0 BuddyDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "regalloc": 1,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p159\batch_report.json

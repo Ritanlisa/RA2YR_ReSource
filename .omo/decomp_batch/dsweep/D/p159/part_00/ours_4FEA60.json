@@ -1,0 +1,183 @@
+{
+ "symbol": "?AIUnitProduction@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::AIUnitProduction",
+ "size": 977,
+ "link_base": 0,
+ "bytes_hex": "81ecc804000053558be95657896c241883bd50560000ff0f85a4030000a1400200008b4d3481c1980000008db03c0b0000e800000000ba010000008bc8d3e28b4e1033c085c90f8e0a0300008b76048bfe8b1e8593cc06000075164083c7043bc10f8def0200008b1f8593cc06000074ea8b3c8685ff0f84da020000a1400200008b8d5c0200008b9dac0100008b905c13000005e4080000508b348a8bcd0fafb5bc010000e80000000085c0a140020000750f8b8d5c0200008b90401300008b348a8b8d4c0200008b90581400003bca72308a854202000084c075268b0d000000008a85ec01000085c90f852602000084c0750e8a85ed01000084c00f841c020000b96400000033c08d7c24286a64f3ab8d8424bc01000068ffffff7f5033db33f6e800000000a18002000083c40c3bc37e568b0d2c03000081e1ff0000008b0cb13bcb74398b51248a82ab00000084c074078a417984c0740e8a417784c0751e8a417884c0751739692c75128d44241c895c241c50e800000000895c241ca180020000463bf07caaa05203000033ff84c0764e8b0d4c0300008b34b93bf374358b96c40600008b82f80d0000395c84287e23558bcee80000000084c074178b8ec40600008b91f80d00008b4c9428498d449428890833c047a0520300003bf87cb283c8ff33f68944242089442414a100000000c7442410ffffff7f85c00f86a40000008b6cb42885ed0f8e860000008b0d000000008b7c24186a006a008b14b18bcf52e80000000085c07469a100000000578b04b0508b08ff91840000008b5424188bf80fbf4a248d422450ff51183bf87f428b44242083f8ff74043bc57d06896c242033db8b44241489b49c480300004383f8ff740f8b5424108b84b4b80100003bc2730f8b84b4b80100008974241489442410a100000000463bf00f8260ffffff8b6c24188b15400200008b8d5c02000068feffff7f6a008b82f4130000db04888b0d0000000081c168050300dc0d00000000dd5c2428e80000000089442410db442410dc0d00000000dc5c2420dfe0f6c4010f84a00000008b5424145f8995505600005e5db80f0000005b81c4c8040000c384c00f85e4fdffff3bf30f8edcfdffff8b97340600008b859c0300003bd00f87c8fdffff8b87f80d00005f8985505600005e5db80f0000005b81c4c8040000c38b0d4002000081c1e4080000518bcde80000000085c00f8490fdffff8b800804000085c00f8482fdffff8b90f80d00005f8995505600005e5db80f0000005b81c4c8040000c385db7421a1000000004b536a008d8818020000e8000000008b8c8448030000898d505600005f5e5db80f0000005b81c4c8040000c3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?FirstBuildableFromArray@HouseClass@@QAEPAVBuildingTypeClass@@H@Z",
+   "sym_key": "HouseClass::FirstBuildableFromArray"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 375,
+   "type": "REL32",
+   "sym": "?UpdateProductionQueue@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::UpdateProductionQueue"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 406,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 439,
+   "type": "REL32",
+   "sym": "?CanBeRecruited@FootClass@@QAEDH@Z",
+   "sym_key": "FootClass::CanBeRecruited"
+  },
+  {
+   "off": 474,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 496,
+   "type": "DIR32",
+   "sym": "?g_CrateCount@@3IA",
+   "sym_key": "g_CrateCount"
+  },
+  {
+   "off": 530,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 549,
+   "type": "REL32",
+   "sym": "?CanBuild@HouseClass@@QAEHHDD@Z",
+   "sym_key": "HouseClass::CanBuild"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 663,
+   "type": "DIR32",
+   "sym": "?g_CrateCount@@3IA",
+   "sym_key": "g_CrateCount"
+  },
+  {
+   "off": 682,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 710,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 722,
+   "type": "DIR32",
+   "sym": "__real@8@3ff8a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff8a3d70a3d70a3d800"
+  },
+  {
+   "off": 731,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 745,
+   "type": "DIR32",
+   "sym": "__real@8@3fe08000000200000000",
+   "sym_key": "_real@8@3fe08000000200000000"
+  },
+  {
+   "off": 856,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 870,
+   "type": "REL32",
+   "sym": "?FirstBuildableFromArray@HouseClass@@QAEPAVBuildingTypeClass@@H@Z",
+   "sym_key": "HouseClass::FirstBuildableFromArray"
+  },
+  {
+   "off": 929,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 944,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}
