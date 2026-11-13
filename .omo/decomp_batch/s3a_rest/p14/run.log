@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatWriteAlpha_G
+[conv] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x49a3c0 _BlitTranslucentWriteAlpha_G::Constructor_Blitter_0 -> _BlitTranslucentWriteAlpha_G
+[conv] 0x49a400 _BlitTranslucent50ZeroAlpha_G::Constructor_Blitter_2 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x49a760 _RLEBlitTransXlat_G::Constructor_RLEBlitter -> _RLEBlitTransXlat_G
+[conv] 0x49a780 _RLEBlitTransZRemapXlat_G::Constructor_RLEBlitter_0 -> _RLEBlitTransZRemapXlat_G
+[conv] 0x49a7a0 _RLEBlitTransDarken_G::Constructor_RLEBlitter_1 -> _RLEBlitTransDarken_G
+[conv] 0x49a9a0 _RLEBlitTransLucent75ZReadWrite_G::Constructor_RLEBlitter -> _RLEBlitTransLucent75ZReadWrite_G
+[conv] 0x49a9c0 _RLEBlitTransLucent50ZReadWrite_G::Constructor_RLEBlitter_0 -> _RLEBlitTransLucent50ZReadWrite_G
+[conv] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> _RLEBlitTransLucent25ZReadWrite_G
+[conv] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> ObjectClass
+[conv] 0x49f420 RandomCoordScatter -> _addr_49
+[conv] 0x49ff80 EnumConnectionsClass::QueryInterface -> EnumConnectionsClass
+[conv] 0x4a02b0 EnumConnectionsClass::sub_4A02B0 -> EnumConnectionsClass
+[conv] 0x4a0380 EnumConnectionsClass::sub_4A0380 -> EnumConnectionsClass
+[conv] 0x4a04b0 ConnectionPointClass::QueryInterface -> ConnectionPointClass
+[conv] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> EnumConnectionPointsClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransLucent75ZReadWrite_G rc=2
+[era] _BlitTransLucent50ZReadWrite_G rc=2
+[era] _BlitTransLucent25ZReadWrite_G rc=2
+[era] _BlitTransXlatWriteAlpha_G rc=2
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _BlitTranslucentWriteAlpha_G rc=2
+[era] _BlitTranslucent50ZeroAlpha_G rc=2
+[era] _RLEBlitTransXlat_G      rc=2
+[era] _RLEBlitTransZRemapXlat_G rc=2
+[era] _RLEBlitTransDarken_G    rc=2
+[era] _RLEBlitTransLucent75ZReadWrite_G rc=2
+[era] _RLEBlitTransLucent50ZReadWrite_G rc=2
+[era] _RLEBlitTransLucent25ZReadWrite_G rc=2
+[era] ObjectClass              rc=2
+[era] _addr_49                 rc=2
+[era] EnumConnectionsClass     rc=2
+[era] ConnectionPointClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a3c0 _BlitTranslucentWriteAlpha_G::Constructor_Blitter_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a400 _BlitTranslucent50ZeroAlpha_G::Constructor_Blitter_2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a760 _RLEBlitTransXlat_G::Constructor_RLEBlitter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a780 _RLEBlitTransZRemapXlat_G::Constructor_RLEBlitter_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a7a0 _RLEBlitTransDarken_G::Constructor_RLEBlitter_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a9a0 _RLEBlitTransLucent75ZReadWrite_G::Constructor_RLEBlitter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a9c0 _RLEBlitTransLucent50ZReadWrite_G::Constructor_RLEBlitter_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49f420 RandomCoordScatter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49ff80 EnumConnectionsClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a02b0 EnumConnectionsClass::sub_4A02B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a0380 EnumConnectionsClass::sub_4A0380 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a04b0 ConnectionPointClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p14\batch_report.json
