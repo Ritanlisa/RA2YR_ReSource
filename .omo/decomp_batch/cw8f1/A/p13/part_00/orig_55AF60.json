@@ -1,0 +1,11 @@
+{
+ "addr": "0x55AF60",
+ "name": "PingPongBuffer::GetWriteOffset",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55AF60",
+ "bytes_hex": "a050cdab0084c074218b0df49f8200a1f89f82008b1544cdab0003c13bd07228c60550cdab00008bc1c3a1f49f82008b0d44cdab003bc8730f8b0df89f8200c60550cdab000103c1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

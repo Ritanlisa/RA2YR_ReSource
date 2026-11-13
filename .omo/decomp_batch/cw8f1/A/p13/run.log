@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x55a6a0 sub_55A6A0 -> _addr_55
+[conv] 0x55ad50 sub_55AD50 -> _addr_55
+[conv] 0x55af20 sub_55AF20 -> _addr_55
+[conv] 0x55af60 PingPongBuffer::GetWriteOffset -> PingPongBuffer
+[conv] 0x55ca00 sub_55CA00 -> _addr_55
+[conv] 0x55cbd0 sub_55CBD0 -> _addr_55
+[conv] 0x55cc00 sub_55CC00 -> _addr_55
+[conv] 0x55cc10 sub_55CC10 -> _addr_55
+[conv] 0x55f780 sub_55F780 -> _addr_55
+[conv] 0x55f950 sub_55F950 -> _addr_55
+[conv] 0x561710 sub_561710 -> _addr_56
+[conv] 0x5618e0 sub_5618E0 -> _addr_56
+[conv] 0x58b130 sub_58B130 -> _addr_58
+[conv] 0x58b300 sub_58B300 -> _addr_58
+[conv] 0x58b340 sub_58B340 -> _addr_58
+[conv] 0x58b510 sub_58B510 -> _addr_58
+[conv] 0x58b530 sub_58B530 -> _addr_58
+[conv] 0x58b6e0 sub_58B6E0 -> _addr_58
+[conv] 0x58b700 sub_58B700 -> _addr_58
+[conv] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> SynchronizeMultiplayerGameStart
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=0
+[era] PingPongBuffer           rc=0
+[era] _addr_56                 rc=0
+[era] _addr_58                 rc=0
+[era] SynchronizeMultiplayerGameStart rc=0
+=== diffasm byte-compare ===
+[diff] 0x55a6a0   MATCH            sub_55A6A0
+[diff] 0x55ad50   MATCH            sub_55AD50
+[diff] 0x55af20   MATCH            sub_55AF20
+[diff] 0x55ca00   MATCH            sub_55CA00
+[diff] 0x55cbd0   MATCH            sub_55CBD0
+[diff] 0x55cc00   MATCH            sub_55CC00
+[diff] 0x55cc10   MATCH            sub_55CC10
+[diff] 0x55f780   MATCH            sub_55F780
+[diff] 0x55f950   MATCH            sub_55F950
+[diff] 0x55af60   MATCH            PingPongBuffer::GetWriteOffset
+[diff] 0x561710   MATCH            sub_561710
+[diff] 0x5618e0   MATCH            sub_5618E0
+[diff] 0x58b130   MATCH            sub_58B130
+[diff] 0x58b300   MATCH            sub_58B300
+[diff] 0x58b340   MATCH            sub_58B340
+[diff] 0x58b510   MATCH            sub_58B510
+[diff] 0x58b530   MATCH            sub_58B530
+[diff] 0x58b6e0   MATCH            sub_58B6E0
+[diff] 0x58b700   MATCH            sub_58B700
+[diff] 0x58bc20   MATCH            SynchronizeMultiplayerGameStart_Start
+[ledger] 0x55a6a0 sub_55A6A0 -> OK (attempt 3)
+[ledger] 0x55ad50 sub_55AD50 -> OK (attempt 2)
+[ledger] 0x55af20 sub_55AF20 -> OK (attempt 3)
+[ledger] 0x55af60 PingPongBuffer::GetWriteOffset -> OK (attempt 3)
+[ledger] 0x55ca00 sub_55CA00 -> OK (attempt 2)
+[ledger] 0x55cbd0 sub_55CBD0 -> OK (attempt 3)
+[ledger] 0x55cc00 sub_55CC00 -> OK (attempt 3)
+[ledger] 0x55cc10 sub_55CC10 -> OK (attempt 4)
+[ledger] 0x55f780 sub_55F780 -> OK (attempt 2)
+[ledger] 0x55f950 sub_55F950 -> OK (attempt 3)
+[ledger] 0x561710 sub_561710 -> OK (attempt 2)
+[ledger] 0x5618e0 sub_5618E0 -> OK (attempt 3)
+[ledger] 0x58b130 sub_58B130 -> OK (attempt 2)
+[ledger] 0x58b300 sub_58B300 -> OK (attempt 3)
+[ledger] 0x58b340 sub_58B340 -> OK (attempt 2)
+[ledger] 0x58b510 sub_58B510 -> OK (attempt 3)
+[ledger] 0x58b530 sub_58B530 -> OK (attempt 2)
+[ledger] 0x58b6e0 sub_58B6E0 -> OK (attempt 3)
+[ledger] 0x58b700 sub_58B700 -> OK (attempt 3)
+[ledger] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p13\batch_report.json
