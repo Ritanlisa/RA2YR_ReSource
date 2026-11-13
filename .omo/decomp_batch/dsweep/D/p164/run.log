@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p164\part_00
+=== convert (20 addrs) ===
+[conv] 0x6686c0 ObjectClass::ResetRules -> ObjectClass
+[conv] 0x6539d0 RTacticalClass@RadarClass::ProcessMouseClick -> RTacticalClass_RadarClass
+[conv] 0x458e50 BuildingClass::UpdateBunker -> BuildingClass
+[conv] 0x6a5310 SidebarClass::Init -> SidebarClass
+[conv] 0x621e90 Dialog::DrawBackground -> Dialog
+[conv] 0x6db620 ObjectClass::RenderLWCViewCells -> ObjectClass
+[conv] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> BuildingPlacement
+[conv] 0x7c0740 ProcessAudioStreamPlayback -> _addr_7C
+[conv] 0x5673a0 MapClass::RevealArea0 -> MapClass
+[conv] 0x76b180 ObjectClass::ParseWDTTerritories -> ObjectClass
+[conv] 0x718260 ObjectClass::FindPlacementPosition -> ObjectClass
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+[conv] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> ObjectClass
+[conv] 0x7b05c0 CompressScreenshot -> _addr_7B
+[conv] 0x579620 Terrain::SelectTileType -> Terrain
+[conv] 0x579b70 Cell::GetAdjacencyFlags -> Cell
+[conv] 0x6fb740 TechnoClass::UpdateLocomotion -> TechnoClass
+[conv] 0x57dd50 CreateCliffRampMap -> _addr_57
+[conv] 0x7610f0 Voxel::FaceBlit -> Voxel
+[conv] 0x692610 Radar::ScanWaypoints -> Radar
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] RTacticalClass_RadarClass rc=2
+[era] BuildingClass            rc=2
+[era] SidebarClass             rc=2
+[era] Dialog                   rc=2
+[era] BuildingPlacement        rc=2
+[era] _addr_7C                 rc=0
+[era] MapClass                 rc=2
+[era] ColorListClass           rc=2
+[era] _addr_7B                 rc=2
+[era] Terrain                  rc=2
+[era] Cell                     rc=2
+[era] TechnoClass              rc=2
+[era] _addr_57                 rc=2
+[era] Voxel                    rc=2
+[era] Radar                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x6db620   MISMATCH         ObjectClass::RenderLWCViewCells
+[diff] 0x76b180   MISMATCH         ObjectClass::ParseWDTTerritories
+[diff] 0x7c0740   MISMATCH         ProcessAudioStreamPlayback
+[ledger] 0x6686c0 ObjectClass::ResetRules -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6539d0 RTacticalClass@RadarClass::ProcessMouseClick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x458e50 BuildingClass::UpdateBunker -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a5310 SidebarClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x621e90 Dialog::DrawBackground -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6db620 ObjectClass::RenderLWCViewCells -> NG (attempt 1)
+[ledger] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c0740 ProcessAudioStreamPlayback -> NG (attempt 1)
+[ledger] 0x5673a0 MapClass::RevealArea0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76b180 ObjectClass::ParseWDTTerritories -> NG (attempt 1)
+[ledger] 0x718260 ObjectClass::FindPlacementPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b05c0 CompressScreenshot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x579620 Terrain::SelectTileType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x579b70 Cell::GetAdjacencyFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fb740 TechnoClass::UpdateLocomotion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57dd50 CreateCliffRampMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7610f0 Voxel::FaceBlit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692610 Radar::ScanWaypoints -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p164\batch_report.json
