@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d8c80 MultiplayerTeam::Destructor -> MultiplayerTeam
+[conv] 0x5d8d50 MultiplayerTeam::QueryInterface -> MultiplayerTeam
+[conv] 0x5eeec0 _VectorClass_PBVMultiMission::GetAt -> _VectorClass_PBVMultiMission
+[conv] 0x5eef10 _DynamicVectorClass_PBVMultiMission::Constructor -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5ef290 NullModemConnClass::j_vt00 -> NullModemConnClass
+[conv] 0x5f9de0 _VectorClass_PAVObjectTypeClass::QueryInterface -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5f9e30 _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___ -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x600280 _VectorClass_PAVSpotLightClass::QueryInterface -> _VectorClass_PAVSpotLightClass
+[conv] 0x6002d0 _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___ -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x624080 ObjectClass::sub_624080 -> ObjectClass
+[conv] 0x624090 DialogControl@OwnerDraw::sub_624090 -> DialogControl_OwnerDraw
+[conv] 0x6244a0 DialogControl_OwnerDraw::Destructor -> DialogControl_OwnerDraw
+[conv] 0x6244c0 SimpleDialogControl_OwnerDraw::Destructor_0 -> SimpleDialogControl_OwnerDraw
+[conv] 0x6285f0 _VectorClass_PAVColorScheme::QueryInterface -> _VectorClass_PAVColorScheme
+[conv] 0x628640 _DynamicVectorClass_PAVColorScheme::Destructor_1 -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x628760 _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_ -> _VectorClass_VHSVClass
+[conv] 0x6287b0 _DynamicVectorClass_VHSVClass::Destructor_2 -> _DynamicVectorClass_VHSVClass
+[conv] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x62b330 _VectorClass_PAVParasiteClass::QueryInterface -> _VectorClass_PAVParasiteClass
+[conv] 0x62b380 _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___ -> _DynamicVectorClass_PAVParasiteClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerTeam          rc=0
+[era] _VectorClass_PBVMultiMission rc=0
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+[era] NullModemConnClass       rc=0
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=0
+[era] ObjectClass              rc=0
+[era] DialogControl_OwnerDraw  rc=2
+[era] SimpleDialogControl_OwnerDraw rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] _VectorClass_VHSVClass   rc=0
+[era] _DynamicVectorClass_VHSVClass rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d8c80   MISMATCH         MultiplayerTeam::Destructor
+[diff] 0x5d8d50   MISMATCH         MultiplayerTeam::QueryInterface
+[diff] 0x5eeec0   MISMATCH         _VectorClass_PBVMultiMission::GetAt
+[diff] 0x5eef10   MISMATCH         _DynamicVectorClass_PBVMultiMission::Constructor
+[diff] 0x5ef290   MISMATCH         NullModemConnClass::j_vt00
+[diff] 0x5f9de0   MISMATCH         _VectorClass_PAVObjectTypeClass::QueryInterface
+[diff] 0x5f9e30   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___
+[diff] 0x600280   MISMATCH         _VectorClass_PAVSpotLightClass::QueryInterface
+[diff] 0x6002d0   MISMATCH         _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___
+[diff] 0x624080   MATCH            ObjectClass::sub_624080
+[diff] 0x624090   MATCH            DialogControl@OwnerDraw::sub_624090
+[diff] 0x6244a0   MATCH            DialogControl_OwnerDraw::Destructor
+[diff] 0x6244c0   MATCH            SimpleDialogControl_OwnerDraw::Destructor_0
+[diff] 0x6285f0   MISMATCH         _VectorClass_PAVColorScheme::QueryInterface
+[diff] 0x628640   MISMATCH         _DynamicVectorClass_PAVColorScheme::Destructor_1
+[diff] 0x628760   MISMATCH         _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_
+[diff] 0x6287b0   MISMATCH         _DynamicVectorClass_VHSVClass::Destructor_2
+[diff] 0x62b330   MISMATCH         _VectorClass_PAVParasiteClass::QueryInterface
+[diff] 0x62b380   MISMATCH         _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___
+[ledger] 0x5d8c80 MultiplayerTeam::Destructor -> NG (attempt 2)
+[ledger] 0x5d8d50 MultiplayerTeam::QueryInterface -> NG (attempt 2)
+[ledger] 0x5eeec0 _VectorClass_PBVMultiMission::GetAt -> NG (attempt 2)
+[ledger] 0x5eef10 _DynamicVectorClass_PBVMultiMission::Constructor -> NG (attempt 2)
+[ledger] 0x5ef290 NullModemConnClass::j_vt00 -> NG (attempt 2)
+[ledger] 0x5f9de0 _VectorClass_PAVObjectTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x5f9e30 _DynamicVectorClass_PAVObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___ -> NG (attempt 2)
+[ledger] 0x600280 _VectorClass_PAVSpotLightClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6002d0 _DynamicVectorClass_PAVSpotLightClass::Constructor_VectorClass_SpotLightClass___ -> NG (attempt 2)
+[ledger] 0x624080 ObjectClass::sub_624080 -> OK (attempt 3)
+[ledger] 0x624090 DialogControl@OwnerDraw::sub_624090 -> OK (attempt 2)
+[ledger] 0x6244a0 DialogControl_OwnerDraw::Destructor -> OK (attempt 2)
+[ledger] 0x6244c0 SimpleDialogControl_OwnerDraw::Destructor_0 -> OK (attempt 2)
+[ledger] 0x6285f0 _VectorClass_PAVColorScheme::QueryInterface -> NG (attempt 2)
+[ledger] 0x628640 _DynamicVectorClass_PAVColorScheme::Destructor_1 -> NG (attempt 2)
+[ledger] 0x628760 _VectorClass_VHSVClass::Constructor_VectorClass_HSVClass_ -> NG (attempt 2)
+[ledger] 0x6287b0 _DynamicVectorClass_VHSVClass::Destructor_2 -> NG (attempt 4)
+[ledger] 0x628e80 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62b330 _VectorClass_PAVParasiteClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x62b380 _DynamicVectorClass_PAVParasiteClass::Constructor_VectorClass_ParasiteClass___ -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "MATCH": 4,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "const_fold": 1,
+  "branch_polarity": 12,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 21.1,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p19\batch_report.json
