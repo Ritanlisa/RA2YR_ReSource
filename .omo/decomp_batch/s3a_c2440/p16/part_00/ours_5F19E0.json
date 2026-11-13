@@ -1,0 +1,123 @@
+{
+ "symbol": "?OpenPort@Modem@@QAEHPAH@Z",
+ "sym_key": "Modem::OpenPort",
+ "size": 399,
+ "link_base": 0,
+ "bytes_hex": "515355568bf18b0d000000005733ff3bcf897c24107407e800000000eb256888200000e80000000083c4043bc7740e8bc8e800000000a300000000eb06893d000000008b4c24188b4108894424188b013df80200007e2f0518fcffff3bc7741c83f810740d5f5e5db8010000005b59c20400bb00000000e9d5000000bb00000000e9cb0000000f84c0000000483bc70f85a90000008d6e348d59303bef74148b4d00e80000000055e80000000083c404897d006a1ce80000000083c40485c074108b4c2410518bc8e8000000008bf8eb0233ff897d008b3785f6742f8bc38a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c0742e85ff74108bcfe80000000057e80000000083c4048b442410c74500000000004083f80a894424107d1de97affffff8b5f04eb133de70200007528bb00000000eb05bb00000000a1000000008b5424186a016a088b086a00525350ff510483f8ff750d5f5e5db8010000005b59c204008b0d00000000e8000000005f5e5d33c05b59c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Close@SerialPort@@QAEHXZ",
+   "sym_key": "SerialPort::Close"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Construct@WinModemClass@@QAEPAV1@XZ",
+   "sym_key": "WinModemClass::Construct"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?aCom1_0@@3PADA",
+   "sym_key": "aCom1_0"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?aCom3_0@@3PADA",
+   "sym_key": "aCom3_0"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?Close@FileFind@@QAEHXZ",
+   "sym_key": "FileFind::Close"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?EnumerateDevices@Modem@@QAEHH@Z",
+   "sym_key": "Modem::EnumerateDevices"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?Close@FileFind@@QAEHXZ",
+   "sym_key": "FileFind::Close"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?aCom4_0@@3PADA",
+   "sym_key": "aCom4_0"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?aCom2_0@@3PADA",
+   "sym_key": "aCom2_0"
+  },
+  {
+   "off": 338,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 380,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?Close@SerialPort@@QAEHXZ",
+   "sym_key": "SerialPort::Close"
+  }
+ ]
+}

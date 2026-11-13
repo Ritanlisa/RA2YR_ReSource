@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindPlayerIndex@WOLobby@@QAEHXZ",
+ "sym_key": "WOLobby::FindPlayerIndex",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "53568b3500000000578bd933ff8b0685c0740e5053e80000000083c40885c0740e83c6044781fe000000007d08ebde8bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "__wcsicmp",
+   "sym_key": "_wcsicmp"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

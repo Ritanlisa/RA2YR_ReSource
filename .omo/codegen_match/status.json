@@ -111542,26 +111542,26 @@
   "this_as_id": false
  },
  "0x5e8d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 push edi",
   "name": "WOLobby::FindPlayerIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "WOLobby::FindPlayerIndex",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e8d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+5 test eax, eax",
   "name": "RefreshLobbyAll_Helper",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RefreshLobbyAll_Helper",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e8d90": {
@@ -112012,7 +112012,7 @@
   "this_as_id": false
  },
  "0x5eab30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -112024,7 +112024,7 @@
   "this_as_id": false
  },
  "0x5eac00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -112036,14 +112036,14 @@
   "this_as_id": false
  },
  "0x5eacd0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::RefreshLobbyAll_Get_5EACD0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RefreshLobbyAll_Get_5EACD0",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -112072,7 +112072,7 @@
   "this_as_id": false
  },
  "0x5eaee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -112187,7 +112187,7 @@
   "this_as_id": false
  },
  "0x5ec3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetupMultiplayerLobbyScreen",
@@ -112358,7 +112358,7 @@
   "this_as_id": false
  },
  "0x5ee3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113142,7 +113142,7 @@
   "this_as_id": false
  },
  "0x5f16e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113190,15 +113190,15 @@
   "this_as_id": false
  },
  "0x5f19e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 push edi",
   "name": "Modem::OpenPort",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Modem::OpenPort",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f1b70": {
@@ -113744,7 +113744,7 @@
   "this_as_id": false
  },
  "0x5f3b80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113792,7 +113792,7 @@
   "this_as_id": false
  },
  "0x5f3e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -114127,7 +114127,7 @@
   "this_as_id": false
  },
  "0x5f4520": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -114337,7 +114337,7 @@
   "this_as_id": false
  },
  "0x5f5c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -114349,7 +114349,7 @@
   "this_as_id": false
  },
  "0x5f5cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -114385,7 +114385,7 @@
   "this_as_id": false
  },
  "0x5f5dd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115017,14 +115017,14 @@
   "this_as_id": false
  },
  "0x5f7090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectTypeClass::ConstructFull",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectTypeClass::ConstructFull",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -115705,7 +115705,7 @@
   "this_as_id": false
  },
  "0x5fa4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115717,7 +115717,7 @@
   "this_as_id": false
  },
  "0x5fa510": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115729,7 +115729,7 @@
   "this_as_id": false
  },
  "0x5fa590": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

@@ -1,0 +1,39 @@
+{
+ "symbol": "?RefreshLobbyAll_Helper@@YAHXZ",
+ "sym_key": "Unnamed::RefreshLobbyAll_Helper",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "a10000000053565785c07436a10000000033ffbe000000008b188b0685c0740e5053e80000000083c40885c0740e83c6044781fe000000007d08ebde8bc75f5e5bc35f5e83c8ff5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "__wcsicmp",
+   "sym_key": "_wcsicmp"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}
