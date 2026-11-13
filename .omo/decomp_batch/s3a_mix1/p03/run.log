@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x47a560 sub_47A560 -> _addr_47
+[conv] 0x47a920 DriveControlCD -> _addr_47
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+[conv] 0x47bdb0 ObjectClass::GetBridgeCellColor -> ObjectClass
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47c620 CellClass::IsPassable -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x487190 Crate::FindPlacement -> Crate
+[conv] 0x488520 CheckListClass::OnClick -> CheckListClass
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ArmorType                rc=2
+[era] INIClass                 rc=2
+[era] CCToolTip                rc=2
+[era] _addr_47                 rc=2
+[era] CDFileClass              rc=2
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] Crate                    rc=2
+[era] CheckListClass           rc=2
+[era] ColorListClass           rc=2
+[era] ConnectionClass          rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47a920 DriveControlCD -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47bdb0 ObjectClass::GetBridgeCellColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47c620 CellClass::IsPassable -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 4)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 15)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 7)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x488520 CheckListClass::OnClick -> COMPILE_FAIL (attempt 4)
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 17)
+[ledger] 0x48c8b0 ObjectClass::MainGameFrame -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p03\batch_report.json
