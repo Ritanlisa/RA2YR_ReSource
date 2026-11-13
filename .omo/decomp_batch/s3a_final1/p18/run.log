@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d2650 ObjectClass::sub_5D2650 -> ObjectClass
+[conv] 0x5d2e90 FontClass::LoadFontResources -> FontClass
+[conv] 0x5d3330 MSFont::ddtor -> MSFont
+[conv] 0x5d3a40 ObjectManager::InitMessageList -> ObjectManager
+[conv] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> TechnoClass
+[conv] 0x5d9db0 DetectPortAllocationPattern -> _addr_5D
+[conv] 0x5da0b0 Network::ResolveNetworkAddress -> Network
+[conv] 0x5da750 HandleNetworkPlayerDisconnect -> _addr_5D
+[conv] 0x5df410 SendNetworkJoinRequest -> _addr_5D
+[conv] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> ObjectClass
+[conv] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> ObjectClass
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> ObjectClass
+[conv] 0x5ec3a0 SetupMultiplayerLobbyScreen -> _addr_5E
+[conv] 0x5ee3a0 NetworkLobby::FillOptionCombo -> NetworkLobby
+[conv] 0x5f0180 HandlePlayerDisconnection -> _addr_5F
+[conv] 0x5f16e0 NullModemClass::Init -> NullModemClass
+[conv] 0x5f1f20 ObjectClass::sub_5F1F20 -> ObjectClass
+[conv] 0x5f3b80 ObjectClass::Dtor -> ObjectClass
+[conv] 0x5f3e70 TechnoClass::DetectCloaked -> TechnoClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] FontClass                rc=2
+[era] MSFont                   rc=2
+[era] ObjectManager            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5D                 rc=2
+[era] Network                  rc=2
+[era] _addr_5E                 rc=2
+[era] NetworkLobby             rc=2
+[era] _addr_5F                 rc=2
+[era] NullModemClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5d2650 ObjectClass::sub_5D2650 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d2e90 FontClass::LoadFontResources -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d3330 MSFont::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d3a40 ObjectManager::InitMessageList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d9db0 DetectPortAllocationPattern -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5da0b0 Network::ResolveNetworkAddress -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5da750 HandleNetworkPlayerDisconnect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5df410 SendNetworkJoinRequest -> PENDING (attempt 2)
+[ledger] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ec3a0 SetupMultiplayerLobbyScreen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ee3a0 NetworkLobby::FillOptionCombo -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f0180 HandlePlayerDisconnection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f16e0 NullModemClass::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f1f20 ObjectClass::sub_5F1F20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f3b80 ObjectClass::Dtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f3e70 TechnoClass::DetectCloaked -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p18\batch_report.json
