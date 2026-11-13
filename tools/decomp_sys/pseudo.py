@@ -63,7 +63,7 @@ def fetch(addr):
     block = m.group(0)
     hdr = re.search(
         r"// ([^\n]+)\n// addr=(0x[0-9A-Fa-f]+) size=(0x[0-9A-Fa-f]+)\n"
-        r"// proto: ([^\n]*)\n", block)
+        r"(?:// proto: ([^\n]*)\n)?", block)
     dis = []
     body = []
     in_dis = False
@@ -122,7 +122,7 @@ def fetch(addr):
     if body and body[-1].strip() == "}":
         body = body[:-1]
     return ExportFn(hdr.group(1), hdr.group(2), hdr.group(3),
-                    hdr.group(4), dis, body)
+                    hdr.group(4) or "", dis, body)
 
 
 # ---------------------------------------------------------------- body parsing
