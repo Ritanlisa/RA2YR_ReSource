@@ -1,0 +1,15 @@
+{
+ "symbol": "?WinMain_Helper_6C01C0@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::WinMain_Helper_6C01C0",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8bc1c7400400000000c70000000000c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_TClassFactory_CampaignClass@@3PAXA",
+   "sym_key": "vt_TClassFactory_CampaignClass"
+  }
+ ]
+}

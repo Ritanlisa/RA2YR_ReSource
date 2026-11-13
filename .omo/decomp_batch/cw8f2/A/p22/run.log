@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x69d460 _VectorClass_W4DiskID::validateGame -> _VectorClass_W4DiskID
+[conv] 0x69d590 _VectorClass_PAVMultiMission::QueryInterface -> _VectorClass_PAVMultiMission
+[conv] 0x69d5e0 _DynamicVectorClass_PAVMultiMission::Constructor_VectorClass_MultiMission___ -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69d630 _VectorClass_PAUGlobalPacketType::QueryInterface -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d680 _DynamicVectorClass_PAUGlobalPacketType::Constructor_VectorClass_GlobalPacketType___ -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69d6d0 _VectorClass_PAVPhoneEntryClass::QueryInterface -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b1980 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::QueryInterface -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b19d0 _VectorClass_PAVSlaveManagerClass::QueryInterface -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b1a20 _DynamicVectorClass_PAVSlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___ -> _DynamicVectorClass_PAVSlaveManagerClass
+[conv] 0x6b47a0 _VectorClass_UUndoInfoStruct::QueryInterface -> _VectorClass_UUndoInfoStruct
+[conv] 0x6b47f0 _DynamicVectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStruct_ -> _DynamicVectorClass_UUndoInfoStruct
+[conv] 0x6b8790 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::QueryInterface -> _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b87e0 _VectorClass_PAVSpawnManagerClass::QueryInterface -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6b8830 _DynamicVectorClass_PAVSpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___ -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6bee40 ClassFactory_CStream::Construct -> ClassFactory_CStream
+[conv] 0x6befc0 ClassFactory_Wave::Construct -> ClassFactory_Wave
+[conv] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> ObjectClass
+[conv] 0x6bfec0 ObjectClass::WinMain_Helper_6BFEC0 -> ObjectClass
+[conv] 0x6c0040 ObjectClass::WinMain_Helper_6C0040 -> ObjectClass
+[conv] 0x6c01c0 ObjectClass::WinMain_Helper_6C01C0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_W4DiskID    rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _DynamicVectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=0
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+[era] _DynamicVectorClass_PAVSlaveManagerClass rc=0
+[era] _VectorClass_UUndoInfoStruct rc=0
+[era] _DynamicVectorClass_UUndoInfoStruct rc=0
+[era] _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=0
+[era] ClassFactory_CStream     rc=0
+[era] ClassFactory_Wave        rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x69d460   MISMATCH         _VectorClass_W4DiskID::validateGame
+[diff] 0x69d590   MISMATCH         _VectorClass_PAVMultiMission::QueryInterface
+[diff] 0x69d5e0   MISMATCH         _DynamicVectorClass_PAVMultiMission::Constructor_VectorClass_MultiMission___
+[diff] 0x69d630   MISMATCH         _VectorClass_PAUGlobalPacketType::QueryInterface
+[diff] 0x69d680   MISMATCH         _DynamicVectorClass_PAUGlobalPacketType::Constructor_VectorClass_GlobalPacketType___
+[diff] 0x69d6d0   MISMATCH         _VectorClass_PAVPhoneEntryClass::QueryInterface
+[diff] 0x6b1980   MISMATCH         _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::QueryInterface
+[diff] 0x6b19d0   MISMATCH         _VectorClass_PAVSlaveManagerClass::QueryInterface
+[diff] 0x6b1a20   MISMATCH         _DynamicVectorClass_PAVSlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___
+[diff] 0x6b47a0   MISMATCH         _VectorClass_UUndoInfoStruct::QueryInterface
+[diff] 0x6b47f0   MISMATCH         _DynamicVectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStruct_
+[diff] 0x6b8790   MISMATCH         _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::QueryInterface
+[diff] 0x6b87e0   MISMATCH         _VectorClass_PAVSpawnManagerClass::QueryInterface
+[diff] 0x6b8830   MISMATCH         _DynamicVectorClass_PAVSpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___
+[diff] 0x6bee40   MISMATCH         ClassFactory_CStream::Construct
+[diff] 0x6befc0   MISMATCH         ClassFactory_Wave::Construct
+[diff] 0x6bfd40   MATCH            ObjectClass::WinMain_Helper_6BFD40
+[diff] 0x6bfec0   MATCH            ObjectClass::WinMain_Helper_6BFEC0
+[diff] 0x6c0040   MATCH            ObjectClass::WinMain_Helper_6C0040
+[diff] 0x6c01c0   MATCH            ObjectClass::WinMain_Helper_6C01C0
+[ledger] 0x69d460 _VectorClass_W4DiskID::validateGame -> NG (attempt 2)
+[ledger] 0x69d590 _VectorClass_PAVMultiMission::QueryInterface -> NG (attempt 2)
+[ledger] 0x69d5e0 _DynamicVectorClass_PAVMultiMission::Constructor_VectorClass_MultiMission___ -> NG (attempt 2)
+[ledger] 0x69d630 _VectorClass_PAUGlobalPacketType::QueryInterface -> NG (attempt 2)
+[ledger] 0x69d680 _DynamicVectorClass_PAUGlobalPacketType::Constructor_VectorClass_GlobalPacketType___ -> NG (attempt 2)
+[ledger] 0x69d6d0 _VectorClass_PAVPhoneEntryClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b1980 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b19d0 _VectorClass_PAVSlaveManagerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b1a20 _DynamicVectorClass_PAVSlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___ -> NG (attempt 2)
+[ledger] 0x6b47a0 _VectorClass_UUndoInfoStruct::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b47f0 _DynamicVectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStruct_ -> NG (attempt 2)
+[ledger] 0x6b8790 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b87e0 _VectorClass_PAVSpawnManagerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6b8830 _DynamicVectorClass_PAVSpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___ -> NG (attempt 2)
+[ledger] 0x6bee40 ClassFactory_CStream::Construct -> NG (attempt 4)
+[ledger] 0x6befc0 ClassFactory_Wave::Construct -> NG (attempt 4)
+[ledger] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> OK (attempt 4)
+[ledger] 0x6bfec0 ObjectClass::WinMain_Helper_6BFEC0 -> OK (attempt 4)
+[ledger] 0x6c0040 ObjectClass::WinMain_Helper_6C0040 -> OK (attempt 4)
+[ledger] 0x6c01c0 ObjectClass::WinMain_Helper_6C01C0 -> OK (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "branch_polarity": 13
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p22\batch_report.json
