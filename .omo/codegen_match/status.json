@@ -197837,7 +197837,7 @@
   "this_as_id": false
  },
  "0x7a2730": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197962,7 +197962,7 @@
   "this_as_id": false
  },
  "0x7a2fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198050,7 +198050,7 @@
   "this_as_id": false
  },
  "0x7a41c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198170,7 +198170,7 @@
   "this_as_id": false
  },
  "0x7a7110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198518,15 +198518,15 @@
   "this_as_id": false
  },
  "0x7ac220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 push edi",
   "name": "CChatEventSink::DispatchStub_37",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_37",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ac4a0": {
@@ -199082,7 +199082,7 @@
   "this_as_id": false
  },
  "0x7ad480": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -200108,7 +200108,7 @@
   "this_as_id": false
  },
  "0x7b0490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -202574,7 +202574,7 @@
   "this_as_id": false
  },
  "0x7b7e40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WDTGame_Helper",
@@ -202685,7 +202685,7 @@
   "this_as_id": false
  },
  "0x7b84f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WinMain_Helper_7B84F0",
@@ -203639,7 +203639,7 @@
   "this_as_id": false
  },
  "0x7bc780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203663,7 +203663,7 @@
   "this_as_id": false
  },
  "0x7bc7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203687,7 +203687,7 @@
   "this_as_id": false
  },
  "0x7bc820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203711,7 +203711,7 @@
   "this_as_id": false
  },
  "0x7bc870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203818,14 +203818,14 @@
   "this_as_id": false
  },
  "0x7bcaf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
   "name": "sub_7BCAF0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_7BCAF0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7bcb50": {
@@ -204789,14 +204789,14 @@
   "this_as_id": false
  },
  "0x7c5ee0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp]",
   "name": "sub_7C5EE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7C5EE0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c5ee4": {
@@ -205561,7 +205561,7 @@
   "this_as_id": false
  },
  "0x7c84a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetSystemTime",
@@ -205572,7 +205572,7 @@
   "this_as_id": false
  },
  "0x7c84a6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GlobalMemoryStatus",
@@ -205821,7 +205821,7 @@
   "this_as_id": false
  },
  "0x7c8530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetStartupInfoA",
@@ -206037,7 +206037,7 @@
   "this_as_id": false
  },
  "0x7c85a8": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetVersionExA",
@@ -206836,7 +206836,7 @@
   "this_as_id": false
  },
  "0x7c8764": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CallWindowProcA",

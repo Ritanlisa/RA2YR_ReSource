@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x7a2730 ObjectClass::Network_Create_7A2730 -> ObjectClass
+[conv] 0x7a2fe0 CNetUtilEventSink::SetSize -> CNetUtilEventSink
+[conv] 0x7a41c0 CChatEventSink::HandleServerList -> CChatEventSink
+[conv] 0x7a7110 CChatEventSink::HandleChannelJoin -> CChatEventSink
+[conv] 0x7ac220 CChatEventSink::DispatchStub_37 -> CChatEventSink
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+[conv] 0x7bc780 _BlitPlain_E::sub_7BC780 -> _BlitPlain_E
+[conv] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> _BlitPlain_E
+[conv] 0x7bc820 _BlitPlain_G::sub_7BC820 -> _BlitPlain_G
+[conv] 0x7bc870 _BlitPlain_G::sub_7BC870 -> _BlitPlain_G
+[conv] 0x7bcaf0 sub_7BCAF0 -> _addr_7B
+[conv] 0x7c5ee0 sub_7C5EE0 -> _addr_7C
+[conv] 0x7c84a0 GetSystemTime -> _addr_7C
+[conv] 0x7c84a6 GlobalMemoryStatus -> _addr_7C
+[conv] 0x7c8530 GetStartupInfoA -> _addr_7C
+[conv] 0x7c85a8 GetVersionExA -> _addr_7C
+[conv] 0x7c8764 CallWindowProcA -> _addr_7C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CNetUtilEventSink        rc=2
+[era] CChatEventSink           rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] FactionSelectDialogControl_WorldDominationTour rc=2
+[era] WDTGame                  rc=2
+[era] WinMain_Helper           rc=2
+[era] _BlitPlain_E             rc=2
+[era] _BlitPlain_G             rc=2
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7ac220   MISMATCH         CChatEventSink::DispatchStub_37
+[diff] 0x7bcaf0   MISMATCH         sub_7BCAF0
+[diff] 0x7c5ee0   MISMATCH         sub_7C5EE0
+[ledger] 0x7a2730 ObjectClass::Network_Create_7A2730 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7a2fe0 CNetUtilEventSink::SetSize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a41c0 CChatEventSink::HandleServerList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a7110 CChatEventSink::HandleChannelJoin -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ac220 CChatEventSink::DispatchStub_37 -> NG (attempt 2)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc780 _BlitPlain_E::sub_7BC780 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc820 _BlitPlain_G::sub_7BC820 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc870 _BlitPlain_G::sub_7BC870 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bcaf0 sub_7BCAF0 -> NG (attempt 2)
+[ledger] 0x7c5ee0 sub_7C5EE0 -> NG (attempt 3)
+[ledger] 0x7c84a0 GetSystemTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c84a6 GlobalMemoryStatus -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8530 GetStartupInfoA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c85a8 GetVersionExA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8764 CallWindowProcA -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p41\batch_report.json
