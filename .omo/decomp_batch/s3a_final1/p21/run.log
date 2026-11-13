@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x638120 ExecuteActionPlanManager -> _addr_63
+[conv] 0x639040 ObjectClass::ReadBuildingINIEntry -> ObjectClass
+[conv] 0x639130 ObjectClass::ReadBuildingINI -> ObjectClass
+[conv] 0x639fd0 NetworkClass::ExecutePlanningModeCmd -> NetworkClass
+[conv] 0x63a0d0 System_Get -> System
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63a5a0 HandlePlanningModeClick -> _addr_63
+[conv] 0x63a8e0 ScriptAction::HitTest -> ScriptAction
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x63dfd0 FactoryClass::RemoveItemAt -> FactoryClass
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x63f7c0 PowerClass::checkBlackout -> PowerClass
+[conv] 0x641140 MiniMap::Render -> MiniMap
+[conv] 0x642130 Palette::Preview_Generate -> Palette
+[conv] 0x644f50 ParticleTypeClass::LoadFromINI -> ParticleTypeClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x649ca0 BuildNetworkEventPacket -> _addr_64
+[conv] 0x64b660 CompressNetworkMegaMission -> _addr_64
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=2
+[era] NetworkClass             rc=0
+[era] System                   rc=0
+[era] ScriptAction             rc=2
+[era] FactoryClass             rc=2
+[era] Audio                    rc=2
+[era] PowerClass               rc=2
+[era] MiniMap                  rc=2
+[era] Palette                  rc=2
+[era] ParticleTypeClass        rc=2
+[era] _addr_64                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x63a5a0   MISMATCH         HandlePlanningModeClick
+[diff] 0x639040   MISMATCH         ObjectClass::ReadBuildingINIEntry
+[diff] 0x639130   MISMATCH         ObjectClass::ReadBuildingINI
+[diff] 0x63a0d0   MISMATCH         System_Get
+[ledger] 0x638120 ExecuteActionPlanManager -> COMPILE_FAIL (attempt 5)
+[ledger] 0x639040 ObjectClass::ReadBuildingINIEntry -> NG (attempt 2)
+[ledger] 0x639130 ObjectClass::ReadBuildingINI -> NG (attempt 2)
+[ledger] 0x639fd0 NetworkClass::ExecutePlanningModeCmd -> PENDING (attempt 2)
+[ledger] 0x63a0d0 System_Get -> NG (attempt 8)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63a5a0 HandlePlanningModeClick -> NG (attempt 2)
+[ledger] 0x63a8e0 ScriptAction::HitTest -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63dfd0 FactoryClass::RemoveItemAt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63f7c0 PowerClass::checkBlackout -> COMPILE_FAIL (attempt 5)
+[ledger] 0x641140 MiniMap::Render -> COMPILE_FAIL (attempt 5)
+[ledger] 0x642130 Palette::Preview_Generate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x644f50 ParticleTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 6)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 8)
+[ledger] 0x64b660 CompressNetworkMegaMission -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 4,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p21\batch_report.json

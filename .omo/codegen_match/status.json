@@ -124639,7 +124639,7 @@
   "this_as_id": false
  },
  "0x638120": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ExecuteActionPlanManager",
@@ -124757,27 +124757,27 @@
   "this_as_id": false
  },
  "0x639040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "ObjectClass::ReadBuildingINIEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ReadBuildingINIEntry",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x639130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "ObjectClass::ReadBuildingINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ReadBuildingINI",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x639210": {
@@ -124936,26 +124936,26 @@
   "this_as_id": false
  },
  "0x639fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "NetworkClass::ExecutePlanningModeCmd",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "orig_name": "NetworkClass::ExecutePlanningModeCmd",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x63a0d0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+7 jne 0x63a11e",
   "name": "System_Get",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "System_Get",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x63a120": {
@@ -125004,7 +125004,7 @@
   "this_as_id": false
  },
  "0x63a4a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -125016,18 +125016,18 @@
   "this_as_id": false
  },
  "0x63a5a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+5 sub esp, 0x50",
   "name": "HandlePlanningModeClick",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "HandlePlanningModeClick",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x63a8e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -125095,7 +125095,7 @@
   "this_as_id": false
  },
  "0x63ad30": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -125142,7 +125142,7 @@
   "this_as_id": false
  },
  "0x63b080": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -125196,7 +125196,7 @@
   "this_as_id": false
  },
  "0x63b550": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -125727,7 +125727,7 @@
   "this_as_id": false
  },
  "0x63dfd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -126337,7 +126337,7 @@
   "this_as_id": false
  },
  "0x63f2e0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process",
@@ -126529,7 +126529,7 @@
   "status": "NG"
  },
  "0x63f7c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -126879,7 +126879,7 @@
   "this_as_id": false
  },
  "0x641140": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -126939,7 +126939,7 @@
   "this_as_id": false
  },
  "0x642130": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -127942,14 +127942,14 @@
   "this_as_id": false
  },
  "0x644f50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ParticleTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleTypeClass::LoadFromINI",
-  "rule_violations": 6,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -127990,7 +127990,7 @@
   "this_as_id": false
  },
  "0x645660": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -128652,7 +128652,7 @@
   "this_as_id": false
  },
  "0x649ca0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "BuildNetworkEventPacket",
@@ -128810,7 +128810,7 @@
   "this_as_id": false
  },
  "0x64b660": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "CompressNetworkMegaMission",

@@ -1,0 +1,11 @@
+{
+ "addr": "0x63A0D0",
+ "name": "System_Get",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63A0D0",
+ "bytes_hex": "a0084cac0084c0754568a10c000068d46b830033d2b9806c8300c605084cac0001e86aad0f00bae00100008bc8e88e690f00a1e0718800ba002000006a00680000803f8b8800070000e802681100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

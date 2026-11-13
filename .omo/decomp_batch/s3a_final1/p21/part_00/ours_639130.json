@@ -1,0 +1,93 @@
+{
+ "symbol": "?ReadBuildingINI@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::ReadBuildingINI",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "a0ac01000084c07503b001c3a173000000535533db8b40305683f8185773078b1c853c0000008b3d6407000033ed33f685ff7e2d8b0d340700008b04b185c0741bf6401401741550e80000000083c40485c074078b481485c9750145463bf77cd303eb5f5e81fd800000005d5b7f03b001c3a0c000000084c0754933d268a10c00008a1500000000b9000000005233d2c605c000000001e800000000bae00100008bc8e800000000a1000000006a00680000803fba002000008b8800070000e80000000032c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?DataGlobal_836C6C@@3PADA",
+   "sym_key": "DataGlobal_836C6C"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?AddMessageListPlayerMessage@@YIHPAXH@Z",
+   "sym_key": "AddMessageListPlayerMessage"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

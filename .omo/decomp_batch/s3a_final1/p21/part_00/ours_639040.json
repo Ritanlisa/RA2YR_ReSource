@@ -1,0 +1,99 @@
+{
+ "symbol": "?ReadBuildingINIEntry@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::ReadBuildingINIEntry",
+ "size": 234,
+ "link_base": 0,
+ "bytes_hex": "a0ac01000053555684c05775075f5e5db0015bc38b156407000085d28bea75075f5e5db0015bc333f685d20f8eb20000008b0d34070000b3018b0185c07405845814750e463bf20f8d9600000083c104ebe750e80000000083c4048bf833f6a1340700008b04b085c07427845814742250e80000000083c4048bd08bcfe80000000084c0740c463bf57cd45f5e8ac35d5bc3a0c000000084c0754833c968a10c00008a0d0000000033d251b900000000881dc0000000e800000000bae00100008bc8e800000000a1000000006a00680000803fba002000008b8800070000e8000000005f5e5d32c05bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?Object_Read@@YIDPAX0@Z",
+   "sym_key": "Object_Read"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_836C50@@3PADA",
+   "sym_key": "DataGlobal_836C50"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?AddMessageListPlayerMessage@@YIHPAXH@Z",
+   "sym_key": "AddMessageListPlayerMessage"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

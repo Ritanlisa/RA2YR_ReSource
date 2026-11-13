@@ -1,0 +1,237 @@
+{
+ "symbol": "?HandlePlanningModeClick@@YG_NHH@Z",
+ "sym_key": "Unnamed::HandlePlanningModeClick",
+ "size": 726,
+ "link_base": 0,
+ "bytes_hex": "a0ac01000083ec4084c053555657750c5f5e5d32c05b83c440c208008b44245433ff0fbe35f000000089442420a08401000084c08974241c897c24180f84950000008b15840100008d4c24305152e8000000008b0083c408ba040000008d4c241489442414e8000000008b4c24148d5424548d4424105250894c2418e80000000083c40885c0744f8a0d840100000fbec184c98944245474423bc6743ebb01000000b9000000005357e8000000003bf78b442454a2f000000075103bc7750c5f5e5d33c05b83c440c208005f5e8bc35d5b83c440c20800897c2454a1000000003bc7894424240f86a70000008b4c24208b15000000008b442418894c24288b4c24588b34828d542414894c242c528bcee8000000008b48048b105152ba080000008d4c2448e8000000008b08ba04000000894c24108b78048b58088b680c8d4c2410e8000000008b5424108d4424288d4c24305051897c243c89542438895c2440896c2444e80000000083c40885c075168b4424188b4c2424403bc1894424187d0de965ffffff85f60f85ad0000008b74241ce80000000083f8ff750785f6e9aa00000085c0bb010000000f84190100003bc3752ea0c000000084c00f85080100008b0d0000000033d28a150000000068a10c000052881dc000000033d2e9ba00000083f802a0c0000000752984c00f85d500000033c968a10c00008a0d00000000881dc0000000518b0d0000000033d2e98700000084c00f85ac0000008b0d0000000033d28a150000000068a10c000052881dc000000033d2eb618bcee80000000083f8ff752b8b44241c85c075148b44245485c0750c5f5e5d33c05b83c440c208005f5e5db8010000005b83c440c20800a0c0000000bb0100000084c0754933c968a10c00008a0d00000000881dc0000000518b0d0000000033d2e800000000bae00100008bc8e800000000a1000000006a00680000803fba002000008b8800070000e8000000005f5e8ac35d5b83c440c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Render_Render_6345A0@@YAPAIPAX0@Z",
+   "sym_key": "Render_Render_6345A0"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?ShrinkRect@@YIHPAXH@Z",
+   "sym_key": "ShrinkRect"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?HandlePlanningModeClick_Handle@@YAHPAX0@Z",
+   "sym_key": "HandlePlanningModeClick_Handle"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?SetAndCall@Mission@@QAEHHH@Z",
+   "sym_key": "Mission::SetAndCall"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B40@@3IA",
+   "sym_key": "DataGlobal_AC4B40"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B34@@3IA",
+   "sym_key": "DataGlobal_AC4B34"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?GetScreenPos@ScriptAction@@QAEPAIPAX@Z",
+   "sym_key": "ScriptAction::GetScreenPos"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?ComputeBounds@@YIPAIPAXHHH@Z",
+   "sym_key": "ComputeBounds"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?ShrinkRect@@YIHPAXH@Z",
+   "sym_key": "ShrinkRect"
+  },
+  {
+   "off": 358,
+   "type": "REL32",
+   "sym": "?HandlePlanningModeClick_Handle@@YAHPAX0@Z",
+   "sym_key": "HandlePlanningModeClick_Handle"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?UI_Process_639DA0@@YAHXZ",
+   "sym_key": "UI_Process_639DA0"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 452,
+   "type": "DIR32",
+   "sym": "?aMsgPlanningmod_5@@3HA",
+   "sym_key": "aMsgPlanningmod_5"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 472,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 487,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 510,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 516,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 523,
+   "type": "DIR32",
+   "sym": "?aMsgPlanningmod_6@@3HA",
+   "sym_key": "aMsgPlanningmod_6"
+  },
+  {
+   "off": 544,
+   "type": "DIR32",
+   "sym": "?aMsgPlanningmod_4@@3HA",
+   "sym_key": "aMsgPlanningmod_4"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 564,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 575,
+   "type": "REL32",
+   "sym": "?CheckBuildability@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::CheckBuildability"
+  },
+  {
+   "off": 628,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 650,
+   "type": "DIR32",
+   "sym": "?g_Str_File_PlanMgr_cpp@@3EA",
+   "sym_key": "g_Str_File_PlanMgr_cpp"
+  },
+  {
+   "off": 656,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B48@@3IA",
+   "sym_key": "DataGlobal_AC4B48"
+  },
+  {
+   "off": 663,
+   "type": "DIR32",
+   "sym": "?aMsgPlanningmod_3@@3HA",
+   "sym_key": "aMsgPlanningmod_3"
+  },
+  {
+   "off": 670,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 682,
+   "type": "REL32",
+   "sym": "?AddMessageListPlayerMessage@@YIHPAXH@Z",
+   "sym_key": "AddMessageListPlayerMessage"
+  },
+  {
+   "off": 687,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 710,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}
