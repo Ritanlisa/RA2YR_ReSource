@@ -196901,7 +196901,7 @@
   "this_as_id": false
  },
  "0x793490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196958,7 +196958,7 @@
   "this_as_id": false
  },
  "0x793a70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_793A70",
@@ -197004,7 +197004,7 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
@@ -197153,14 +197153,19 @@
   "this_as_id": false
  },
  "0x7970d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::InitNetworkGame",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitNetworkGame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x797640": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "LoginWOL",
@@ -197217,7 +197222,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -197239,7 +197244,7 @@
   "this_as_id": false
  },
  "0x798360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_798360",
@@ -197250,7 +197255,7 @@
   "this_as_id": false
  },
  "0x7983e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Setup2DlgProcMultiplayer",
@@ -197261,7 +197266,7 @@
   "this_as_id": false
  },
  "0x7988c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GameModeDlgProcMultiplayer",
@@ -197376,7 +197381,7 @@
   "this_as_id": false
  },
  "0x79ba60": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ValidateGameJoinWOL",
@@ -197517,7 +197522,7 @@
   "this_as_id": false
  },
  "0x79d4e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197689,7 +197694,7 @@
   "this_as_id": false
  },
  "0x7a0f40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Event_Handle_7A0F40",
@@ -197746,7 +197751,7 @@
   "this_as_id": false
  },
  "0x7a1bb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198064,7 +198069,7 @@
   "this_as_id": false
  },
  "0x7a5240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -198100,7 +198105,7 @@
   "this_as_id": false
  },
  "0x7a5690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198160,7 +198165,7 @@
   "this_as_id": false
  },
  "0x7a7ea0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198268,7 +198273,7 @@
   "this_as_id": false
  },
  "0x7a9970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -198292,7 +198297,7 @@
   "this_as_id": false
  },
  "0x7aa6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -199048,7 +199053,7 @@
   "this_as_id": false
  },
  "0x7ad480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -199060,7 +199065,7 @@
   "this_as_id": false
  },
  "0x7ad580": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

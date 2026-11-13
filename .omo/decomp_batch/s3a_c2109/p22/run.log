@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x793490 ObjectClass::HandleWOLForwardingError -> ObjectClass
+[conv] 0x793a70 sub_793A70 -> _addr_79
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x7970d0 ObjectClass::InitNetworkGame -> ObjectClass
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x798360 sub_798360 -> _addr_79
+[conv] 0x7983e0 Setup2DlgProcMultiplayer -> _addr_79
+[conv] 0x7988c0 GameModeDlgProcMultiplayer -> _addr_79
+[conv] 0x79ba60 ValidateGameJoinWOL -> _addr_79
+[conv] 0x79d4e0 ObjectClass::CleanupWOLSession -> ObjectClass
+[conv] 0x7a0f40 Event_Handle_7A0F40 -> Event_Handle
+[conv] 0x7a1bb0 ObjectClass::MatchGameWOL -> ObjectClass
+[conv] 0x7a5240 CChatEventSink::GetTypeInfoCount -> CChatEventSink
+[conv] 0x7a5690 CChatEventSink::FireEvent -> CChatEventSink
+[conv] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> CChatEventSink
+[conv] 0x7a9970 CChatEventSink::HandleUserSearch -> CChatEventSink
+[conv] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> CChatEventSink
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> _CComObject_VCDownloadEventSink_ATL
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=2
+[era] Event_Handle             rc=2
+[era] CChatEventSink           rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+=== diffasm byte-compare ===
+[ledger] 0x793490 ObjectClass::HandleWOLForwardingError -> COMPILE_FAIL (attempt 2)
+[ledger] 0x793a70 sub_793A70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7970d0 ObjectClass::InitNetworkGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x798360 sub_798360 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7983e0 Setup2DlgProcMultiplayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7988c0 GameModeDlgProcMultiplayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x79d4e0 ObjectClass::CleanupWOLSession -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a0f40 Event_Handle_7A0F40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a1bb0 ObjectClass::MatchGameWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a5240 CChatEventSink::GetTypeInfoCount -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a5690 CChatEventSink::FireEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a9970 CChatEventSink::HandleUserSearch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p22\batch_report.json
