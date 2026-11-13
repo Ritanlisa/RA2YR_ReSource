@@ -1,0 +1,51 @@
+{
+ "symbol": "?Map_Load_751C30@@YADXZ",
+ "sym_key": "Unnamed::Map_Load_751C30",
+ "size": 260,
+ "link_base": 0,
+ "bytes_hex": "81ecd00100008d8424cc00000057506804010000e80000000085c0750a32c05f81c4d0010000c38dbc24d000000083c9ff33c0f2aef7d1490f84be000000b9240000008d7c2440f3ab8d8c24d0000000c78424d00000002e5c000051e800000000894424408d5424048d442408528d4c2410508d542418518d8424dc0000005250e8000000008b4424108d9424880000000faf44240c8bc80faf4424040faf4c2408898424cc000000898c24c80000006a408d442418528d4c2420508d94249000000051528d4424586a408d8c24e80000005051e8000000006a018d542424680000000052e8000000008d4424508d4c242c5051e80000000083c4145f81c4d0010000c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetLogicalDriveStringsA@@YGKHPAX@Z",
+   "sym_key": "GetLogicalDriveStringsA"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?GetDriveTypeA@@YGIPAX@Z",
+   "sym_key": "GetDriveTypeA"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?GetDiskFreeSpaceA@@YGHPAX0000@Z",
+   "sym_key": "GetDiskFreeSpaceA"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?GetVolumeInformationA@@YGHPAX0H0000H@Z",
+   "sym_key": "GetVolumeInformationA"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "??_C@_04FIJC@RA?$CFd?$AA@",
+   "sym_key": "??_C@_04FIJC@RA?$CFd?$AA@"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

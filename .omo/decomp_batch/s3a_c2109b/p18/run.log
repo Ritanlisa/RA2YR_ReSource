@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x74fae0 ObjectClass::GetModuleInternalVersion -> ObjectClass
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x751c30 Map_Load_751C30 -> Map_Load
+[conv] 0x752b70 PlayTauntClass -> _addr_75
+[conv] 0x753000 ObjectClass::InitFromINIEVA -> ObjectClass
+[conv] 0x757120 ObjectClass::RenderVoxels -> ObjectClass
+[conv] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> ObjectClass
+[conv] 0x75fa90 Voxel::ShadowCalc -> Voxel
+[conv] 0x7602e0 Surface::RenderToSurfaceVoxel -> Surface
+[conv] 0x764a20 ObjectClass::sub_764A20 -> ObjectClass
+[conv] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> ObjectClass
+[conv] 0x76e750 ObjectClass::Team_Start_76E750 -> ObjectClass
+[conv] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> TechnoClass
+[conv] 0x771710 TechnoClass::sub_771710 -> TechnoClass
+[conv] 0x7738a0 ObjectClass::sub_7738A0 -> ObjectClass
+[conv] 0x773bc0 WebBrowser::Clone -> WebBrowser
+[conv] 0x775110 WinModemClass::Dial -> WinModemClass
+[conv] 0x775bc0 DialogClass::Reposition -> DialogClass
+[conv] 0x7768f0 LoadWOLSettings -> _addr_77
+[conv] 0x776b40 SaveWOLUISettings -> _addr_77
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Audio                    rc=2
+[era] Map_Load                 rc=0
+[era] _addr_75                 rc=0
+[era] Voxel                    rc=2
+[era] Surface                  rc=2
+[era] TechnoClass              rc=2
+[era] WebBrowser               rc=2
+[era] WinModemClass            rc=2
+[era] DialogClass              rc=0
+[era] _addr_77                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x753000   MISMATCH         ObjectClass::InitFromINIEVA
+[diff] 0x7738a0   MISMATCH         ObjectClass::sub_7738A0
+[diff] 0x751c30   MISMATCH         Map_Load_751C30
+[diff] 0x752b70   MISMATCH         PlayTauntClass
+[diff] 0x775bc0   MISMATCH         DialogClass::Reposition
+[diff] 0x7768f0   MISMATCH         LoadWOLSettings
+[diff] 0x776b40   MISMATCH         SaveWOLUISettings
+[ledger] 0x74fae0 ObjectClass::GetModuleInternalVersion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x751c30 Map_Load_751C30 -> NG (attempt 3)
+[ledger] 0x752b70 PlayTauntClass -> NG (attempt 3)
+[ledger] 0x753000 ObjectClass::InitFromINIEVA -> NG (attempt 3)
+[ledger] 0x757120 ObjectClass::RenderVoxels -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7581f0 ObjectClass::ProcessVoxelColorSamples -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75fa90 Voxel::ShadowCalc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7602e0 Surface::RenderToSurfaceVoxel -> COMPILE_FAIL (attempt 3)
+[ledger] 0x764a20 ObjectClass::sub_764A20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76e750 ObjectClass::Team_Start_76E750 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x771710 TechnoClass::sub_771710 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7738a0 ObjectClass::sub_7738A0 -> NG (attempt 3)
+[ledger] 0x773bc0 WebBrowser::Clone -> COMPILE_FAIL (attempt 3)
+[ledger] 0x775110 WinModemClass::Dial -> COMPILE_FAIL (attempt 3)
+[ledger] 0x775bc0 DialogClass::Reposition -> NG (attempt 3)
+[ledger] 0x7768f0 LoadWOLSettings -> NG (attempt 3)
+[ledger] 0x776b40 SaveWOLUISettings -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "extern_reloc": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p18\batch_report.json

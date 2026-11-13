@@ -1,0 +1,105 @@
+{
+ "symbol": "?PlayTauntClass@@YIEH@Z",
+ "sym_key": "Unnamed::PlayTauntClass",
+ "size": 243,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec1485c00f84dd000000a00000000084c00f85d00000008ac18bd1240f83e20f0f84c100000083fa080f87b8000000c1f90483e10f83f9090f87a9000000ff248d000000008b0d000000000fbec0eb730fbec0508d4c2404680000000051eb6a0fbed0526800000000eb5a0fbec0b900000000eb4e0fbec8518d542404680000000052eb450fbec0508d4c2404680000000051eb350fbec0b900000000eb240fbed0526800000000eb1b0fbec8518d542404680000000052eb108b0d000000000fbec050518d44240850e8000000008b0d0000000083c40c8d5424006a00e80000000083c414c332c083c414c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4D8@@3IA",
+   "sym_key": "DataGlobal_B1D4D8"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D480@@3EA",
+   "sym_key": "DataGlobal_B1D480"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "$L1954",
+   "sym_key": "$L1954"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?aTauntsTauam02i@@3HA",
+   "sym_key": "aTauntsTauam02i"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@BHKE@taunts?2tauko?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@BHKE@taunts?2tauko?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@CENG@taunts?2taufr?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@CENG@taunts?2taufr?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DataGlobal_846728@@3PADA",
+   "sym_key": "DataGlobal_846728"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@BLNP@taunts?2taubr?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@BLNP@taunts?2taubr?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@DFFL@taunts?2tauli?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@DFFL@taunts?2tauli?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8466E0@@3PADA",
+   "sym_key": "DataGlobal_8466E0"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@NLOF@taunts?2taucu?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@NLOF@taunts?2taucu?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "??_C@_0BF@KIAD@taunts?2tauru?$CF02i?4wav?$AA@",
+   "sym_key": "??_C@_0BF@KIAD@taunts?2tauru?$CF02i?4wav?$AA@"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?aTauntsTauyu02i@@3HA",
+   "sym_key": "aTauntsTauyu02i"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4D8@@3IA",
+   "sym_key": "DataGlobal_B1D4D8"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?ThreadAudioMixerMain@@YIHPAHPAXH@Z",
+   "sym_key": "ThreadAudioMixerMain"
+  }
+ ]
+}

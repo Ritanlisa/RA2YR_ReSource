@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_7738A0@ObjectClass@@QAEEPBDPAE0@Z",
+ "sym_key": "ObjectClass::sub_7738A0",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "83ec448d442400538bd95633c98a0d000000005068190002006a00516802000080e8000000008bf085f60f858f000000578b7c245483c9ff8d542410f2aef7d12bf98bc18bf78bfac1e902f3a58bc88b430883e10385c0f3a4752f8b3d0000000083c9ff33c08d542410f2aef7d12bf98bf78bd98bfa83c9fff2ae8bcb4fc1e902f3a58bcb83e103f3a48b44245c8b5424588d4c245489442454518d442460528b542414508d4c241c6a005152e8000000008bf08b44240c50e8000000005f33c085f65e5b0f94c083c444c20c00",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_Str_WOL_URL_RegKey@@3EA",
+   "sym_key": "g_Str_WOL_URL_RegKey"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAXPBDKK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?asc_84968C@@3PAGA",
+   "sym_key": "asc_84968C"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAX0PAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  }
+ ]
+}
