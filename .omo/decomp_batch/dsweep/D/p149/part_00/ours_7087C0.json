@@ -1,0 +1,123 @@
+{
+ "symbol": "?ValidateAttackTarget@ObjectClass@@QAE_NPAHH@Z",
+ "sym_key": "ObjectClass::ValidateAttackTarget",
+ "size": 870,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558b6c24145685ed578bf10f84450300000fbe861002000056ff108a889a0d000084c90f842d0300008b86dc02000085c00f851f0300008b86d802000085c00f85110300008b86cc01000085c074148b8e1c0200008a81ec01000084c00f84f30200008b8ebc02000085c9740de80000000084c00f85dc0200008b86d002000085c00f85ce0200008b8e1c020000e80000000084c0740e8b86b402000085c00f85b10200008bcee8000000008a480884c90f849f0200008b8e1c02000055e80000000084c00f858b0200008b861c0200008b55005055ff92c800000084c00f85720200006aff8bcee80000000085c00f8e610200000fbe8eb00a000056ff1184c00f844f0200000fbe961002000056ff128bf8550fbe868d0b000056ff100fbe8eea0e000050555689442428ff1183f8050f841f02000083f8060f84160200008b8e1c020000e80000000084c00f849d0000008b550055ff522c83f8060f858d0000000fbe86b000000056ff1083f80f750e8a87c20e000084c00f85d60100008d9e5001000053e80000000083c40484c0750d53e80000000083c40484c074500fbe8e1002000056ff11538bf8e80000000083c40484c0740e8a87aa02000084c00f858f01000053e80000000083c40484c0741c8a87aa02000084c00f85740100008a87bc02000084c00f85660100008b8e1c020000e80000000084c0742d0fbe96b000000056ff1283f801751e8b86c40600008b800404000085c0740e8a88ca16000084c90f852a0100008b8e1c020000e80000000084c074388b0d400200008a81ec17000084c075280fbe96b000000056ff1283f80674198b86ac00000083f80b740e83f805740983f8190f85e300000085f6b3047420845e14741b8b86d405000085c074118b40248a88af00000084c90f85bd0000008b8e1c020000e80000000084c075398b86b402000085c0742ff640140274296850020000508bcee800000000dd5c24106850020000558bcee800000000dc5c2410dfe0f6c401757585f6740d845e1474083bae9406000074640fbe8ed70f00008b54241c5256ff118b3085f674408b86ac00000085c074368b450055ff90840000008b889c0000008b96ac000000dd84caa0000000dc1d00000000dfe0f6c441740c5f5e5d33c05b83c408c208005f5e5db8010000005b83c408c208005f5e5d32c05b83c408c20800",
+ "relocs": [
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?CannotControlAnyMore@CaptureManagerClass@@QAE_NXZ",
+   "sym_key": "CaptureManagerClass::CannotControlAnyMore"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?GetMissionControl@MissionClass@@QAEPADXZ",
+   "sym_key": "MissionClass::GetMissionControl"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?GetValue@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::GetValue"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 396,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 409,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 434,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 461,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 507,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 567,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 577,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 676,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 701,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 709,
+   "type": "REL32",
+   "sym": "?ComputeDamage@TechnoClass@@QAENPAX0@Z",
+   "sym_key": "TechnoClass::ComputeDamage"
+  },
+  {
+   "off": 718,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 726,
+   "type": "REL32",
+   "sym": "?ComputeDamage@TechnoClass@@QAENPAX0@Z",
+   "sym_key": "TechnoClass::ComputeDamage"
+  },
+  {
+   "off": 820,
+   "type": "DIR32",
+   "sym": "__real@8@3ff8a3d70a0676e42000",
+   "sym_key": "_real@8@3ff8a3d70a0676e42000"
+  }
+ ]
+}

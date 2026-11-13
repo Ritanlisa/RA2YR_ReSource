@@ -1,0 +1,225 @@
+{
+ "symbol": "?Fire@PsyDom@@QAEXXZ",
+ "sym_key": "PsyDom::Fire",
+ "size": 892,
+ "link_base": 0,
+ "bytes_hex": "83ec40535556576a14e8000000008bf033db83c4043bf3742e6800000000b9f8010000e8000000008b088d54242c5250ff51488b48088b50048b005152508bcee800000000eb0233c0c74010010000008b0d4002000068000000008bb100030000b9f8010000e8000000008b108d4c242c5150ff52488b1068c80100008954243c8b4804894c24408b500889542444e80000000083c4043bc3741e535368000600006a018d4c24485351568bc8e800000000a300000000eb06891d00000000a1400200008b1500000000526a018b88f80200008b900c03000051538d4c2448e8000000008b15400200008b820803000083f80a7c05b80a0000008b34850000000053538d4c2420e8000000003bf3c744241800000000895c24140f8ef90100008b6c2420c7442410ca2700008974241c8b4424108b1504000000895c2424895c24288b008bc8c1e91003ca8b150000000033cd03c281e1ff00000033e9b9f801000033c525ff00000033e88d44242050896c2424e800000000538d4c242853518bc8e8000000008bf03bf30f846e0100008b1656ff522c83f8060f84440100008b0656ff90840000003898350d00000f852f0100008b0e56ff916001000084c00f851e0100008b1656ff928400000038986a0d00000f85090100008b0656ff505484c00f85fb000000399ec0020000741c8b4c24208b5424208b442420518b4c2414525051538bcee800000000a1000000008b166a015056ff92d40300008b0656c686c402000001ff90840000008b0e8bb80c0600008d5424445256ff51488b50088b48048b0003d768c801000089442430894c243489542438e80000000083c4043bc374258b1540020000535368000600006a018d4c243c53518b8a24030000518bc8e800000000eb0233c03bc38986c80200007408568bc8e8000000008b4424208b4c24143bc87c228b4c2420f6c5ff75043bc3752c83c00a53508b4424208d54242052ff500884c074178b4c24148d048d0000000041894c24148b4c241c8934088b76303bf374148a561480e201f6da1bd223d68bf20f8592feffff8b4c24108b44241c83c10448894c24108944241c0f8517feffff8b0d00000000e80000000084c0752a8b442414483bc37c218b6c241c8d78018d7485008b06536a0f508b08ff91e801000083ee044f75eceb048b6c241c3bebc74424180000000074128b442420f6c4ff740955e80000000083c4045f5e5d5b83c440c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?PushEntry@ActionQueue@@QAEPAV1@HHH@Z",
+   "sym_key": "ActionQueue::PushEntry"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?PsyDom_Anim@@3IA",
+   "sym_key": "PsyDom_Anim"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?PsyDom_Anim@@3IA",
+   "sym_key": "PsyDom_Anim"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Owner@@3PAXA",
+   "sym_key": "LightningStorm_Owner"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?PlaySoundEffectAt@@YIHPAXHPAHHDH@Z",
+   "sym_key": "PlaySoundEffectAt"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED3D0@@3PAIA",
+   "sym_key": "DataGlobal_7ED3D0"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?resetEvent@EventClass@@QAEPAIHH@Z",
+   "sym_key": "EventClass::resetEvent"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_TechnoClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_TechnoClass"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 350,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 521,
+   "type": "REL32",
+   "sym": "?FreeUnit@CaptureManagerClass@@QAEDHHPAXH0@Z",
+   "sym_key": "CaptureManagerClass::FreeUnit"
+  },
+  {
+   "off": 526,
+   "type": "DIR32",
+   "sym": "?PsyDom_Owner@@3PAXA",
+   "sym_key": "PsyDom_Owner"
+  },
+  {
+   "off": 603,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 616,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 645,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 667,
+   "type": "REL32",
+   "sym": "?AimTurret@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::AimTurret"
+  },
+  {
+   "off": 795,
+   "type": "DIR32",
+   "sym": "?PsyDom_Owner@@3PAXA",
+   "sym_key": "PsyDom_Owner"
+  },
+  {
+   "off": 800,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 860,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_TechnoClass@@3PAXA",
+   "sym_key": "vt_VectorClass_TechnoClass"
+  },
+  {
+   "off": 877,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

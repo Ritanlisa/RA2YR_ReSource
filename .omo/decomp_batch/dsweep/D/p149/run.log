@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p149\part_00
+=== convert (20 addrs) ===
+[conv] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> TechnoClass
+[conv] 0x6b2700 InitializeBuildabilityGrid -> _addr_6B
+[conv] 0x7087c0 ObjectClass::ValidateAttackTarget -> ObjectClass
+[conv] 0x5cbda0 MSFadeAnim::AdvanceSHPAnimationFrame -> MSFadeAnim
+[conv] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> TechnoClass
+[conv] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> VeinholeMonsterClass
+[conv] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> ObjectClass
+[conv] 0x68b940 Power::ComputeHousePowerChecksum -> Power
+[conv] 0x47c060 ObjectClass::GetCellRadarColors -> ObjectClass
+[conv] 0x729580 ObjectClass::FindUnitPlacementTarget -> ObjectClass
+[conv] 0x781fb0 InsertGameSettings -> _addr_78
+[conv] 0x53b080 PsyDom::Fire -> PsyDom
+[conv] 0x79d720 WOLLoginDialogProc -> _addr_79
+[conv] 0x659650 ObjectClass::RenderProjectileTrail -> ObjectClass
+[conv] 0x5f4ec0 ObjectClass::Deploy -> ObjectClass
+[conv] 0x7a1330 ObjectClass::UpdateWOLLobbyPings -> ObjectClass
+[conv] 0x585f40 InterpolateTerrainLighting -> _addr_58
+[conv] 0x647260 ObjectClass::ProcessNetworkEvents -> ObjectClass
+[conv] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> TechnoClass
+[conv] 0x728e30 TunnelLocomotionClass::IdleStateMachine -> TunnelLocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] _addr_6B                 rc=2
+[era] ObjectClass              rc=2
+[era] MSFadeAnim               rc=0
+[era] VeinholeMonsterClass     rc=2
+[era] Power                    rc=2
+[era] _addr_78                 rc=2
+[era] PsyDom                   rc=0
+[era] _addr_79                 rc=0
+[era] _addr_58                 rc=0
+[era] TunnelLocomotionClass    rc=2
+=== diffasm byte-compare ===
+[diff] 0x7087c0   MISMATCH         ObjectClass::ValidateAttackTarget
+[diff] 0x5cbda0   MISMATCH         MSFadeAnim::AdvanceSHPAnimationFrame
+[diff] 0x53b080   MISMATCH         PsyDom::Fire
+[diff] 0x79d720   MISMATCH         WOLLoginDialogProc
+[diff] 0x585f40   MISMATCH         InterpolateTerrainLighting
+[ledger] 0x43b150 TechnoClass::DetectNearbyAlliedThreat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2700 InitializeBuildabilityGrid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7087c0 ObjectClass::ValidateAttackTarget -> NG (attempt 1)
+[ledger] 0x5cbda0 MSFadeAnim::AdvanceSHPAnimationFrame -> NG (attempt 1)
+[ledger] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68b940 Power::ComputeHousePowerChecksum -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47c060 ObjectClass::GetCellRadarColors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x729580 ObjectClass::FindUnitPlacementTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781fb0 InsertGameSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53b080 PsyDom::Fire -> NG (attempt 1)
+[ledger] 0x79d720 WOLLoginDialogProc -> NG (attempt 1)
+[ledger] 0x659650 ObjectClass::RenderProjectileTrail -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4ec0 ObjectClass::Deploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a1330 ObjectClass::UpdateWOLLobbyPings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x585f40 InterpolateTerrainLighting -> NG (attempt 1)
+[ledger] 0x647260 ObjectClass::ProcessNetworkEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x728e30 TunnelLocomotionClass::IdleStateMachine -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "frame_sched": 3,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p149\batch_report.json
