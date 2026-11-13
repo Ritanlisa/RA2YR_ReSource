@@ -1,0 +1,33 @@
+{
+ "symbol": "?MapDialogResource@Dialog@@QAEXXZ",
+ "sym_key": "Dialog::MapDialogResource",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf1817e04efbe00007527e8000000008b460c6a006a006a006a00681f000f0050e8000000008bcea344020000e8000000005ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?MapViewOfFileEx@@YGPAXPAXHHHHH@Z",
+   "sym_key": "MapViewOfFileEx"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

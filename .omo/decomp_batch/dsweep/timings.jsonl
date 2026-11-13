@@ -5,3 +5,4 @@
 {"layer": "D", "part": 4, "n": 20, "seconds": 26.4, "ok": true, "verdicts": {"NO_PSEUDO": 1, "MATCH": 2, "MISMATCH": 13, "COMPILE_FAIL": 4}}
 {"layer": "D", "part": 5, "n": 20, "seconds": 31.1, "ok": true, "verdicts": {"MISMATCH": 12, "COMPILE_FAIL": 6, "NO_PSEUDO": 1, "MATCH": 1}}
 {"layer": "D", "part": 6, "n": 20, "seconds": 30.7, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 14}}
+{"layer": "D", "part": 7, "n": 20, "seconds": 30.5, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}

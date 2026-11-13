@@ -1,0 +1,11 @@
+{
+ "addr": "0x434B90",
+ "name": "FontRenderer::DrawText",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x434B90",
+ "bytes_hex": "568b742408578b7c241885f67443538b5c2414538bcee845fdffff578bcee85df5ffff8b4424288b4c24248b542420508b44241c515257508bcee831f9ffff538bce8bf8e8b7fdffff8bc75b5f5ec21c008bc75f5ec21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

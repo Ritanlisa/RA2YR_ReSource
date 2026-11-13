@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D777D",
+ "name": "_wctomb",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D777D",
+ "bytes_hex": "558bec5356bea48bb7005756ff15c8117e008b3dcc117e0033db391da08bb700740e56ffd76a13e84c62ffff596a015bff750cff7508e81e0000005989450c85db59740a6a13e88e62ffff59eb0356ffd78b450c5f5e5b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

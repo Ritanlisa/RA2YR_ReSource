@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_52A610@ObjectClass@@QAEDPAX@Z",
+ "sym_key": "ObjectClass::sub_52A610",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "81ec000200008d44240056578bbc240c020000508bf157e8000000008b150000000083c4088d4c24085051528bcee8000000008d4424085057e8000000008b150000000083c4088d4c24085051528bcee8000000005fb0015e81c400020000c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?sub_631FC0@@YAHPAX0@Z",
+   "sym_key": "sub_631FC0"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?aPublickey@@3HA",
+   "sym_key": "aPublickey"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?ReadBase64Data@INIClass@@QAEDPAXHH@Z",
+   "sym_key": "INIClass::ReadBase64Data"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?sub_631FE0@@YAHPAX0@Z",
+   "sym_key": "sub_631FE0"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?aPrivatekey@@3HA",
+   "sym_key": "aPrivatekey"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?ReadBase64Data@INIClass@@QAEDPAXHH@Z",
+   "sym_key": "INIClass::ReadBase64Data"
+  }
+ ]
+}

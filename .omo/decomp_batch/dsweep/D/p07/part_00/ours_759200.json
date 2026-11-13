@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_759200@@YADXZ",
+ "sym_key": "Unnamed::sub_759200",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "518b15000000006a00426a008915000000006a0033d28d4c240ce80000000085c07504b00159c36a006a0033d28d4c2408e80000000085c074188d44240050e8000000008d4c240051e800000000b00159c332c059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0430@@3IA",
+   "sym_key": "DataGlobal_AA0430"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0430@@3IA",
+   "sym_key": "DataGlobal_AA0430"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GameLoopMessagePump@@YIHPAXHHHH@Z",
+   "sym_key": "GameLoopMessagePump"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?IsMessageDialog@@YIHPAXHHH@Z",
+   "sym_key": "IsMessageDialog"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?TranslateMessage@@YGHPAX@Z",
+   "sym_key": "TranslateMessage"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?DispatchMessageA@@YGJPAX@Z",
+   "sym_key": "DispatchMessageA"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?vt_entry_4D0@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::vt_entry_4D0",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "568bf183bec40500001d75368a86d105000084c074308b0656c686d105000000ff908401000083f805741b8b0e56ff918401000083f805740d8b1656ff92a804000032c05ec38b0656ff90c80400005ec3",
+ "relocs": []
+}

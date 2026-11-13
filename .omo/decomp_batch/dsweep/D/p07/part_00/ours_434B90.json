@@ -1,0 +1,33 @@
+{
+ "symbol": "?DrawText@FontRenderer@@QAGHPAH0PAGHHHH@Z",
+ "sym_key": "FontRenderer::DrawText",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "568b74240c85f675088b4424185ec2200053578b7c24188bce57e8000000008bce8b5c242053e8000000008b44242c8b4c24288b542424508b442420515253508bcee800000000578bce8bd8e8000000008bc35f5b5ec22000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?InitContext@FontRenderer@@QAEHPAX@Z",
+   "sym_key": "FontRenderer::InitContext"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?RenderText@FontClass@@QAEHPAXHHHH@Z",
+   "sym_key": "FontClass::RenderText"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Cleanup@BufferIO@@QAEHH@Z",
+   "sym_key": "BufferIO::Cleanup"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x49F740",
+ "name": "Dialog::MapDialogResource",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49F740",
+ "bytes_hex": "568bf1817e04efbe0000754a681cf58100e88a71f6ff8b460c83c4046a006a006a006a00681f000f0050ff1544127e0085c0a35cf78900750f68fcf48100e85d71f6ff83c4045ec35068e4f48100e84d71f6ff83c4085ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

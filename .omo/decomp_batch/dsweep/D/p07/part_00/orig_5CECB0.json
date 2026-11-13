@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CECB0",
+ "name": "MSVQAnim::QueryInterface",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CECB0",
+ "bytes_hex": "568bf18b4e28c706b0e97e0085c974068b016a01ff108b4e1c5785c9741ce82d12ffff8b7e1c85ff74108bcfe80f15ffff57e8569e1f0083c4048a44240cc706e8e87e00a8015f740956e83e9e1f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

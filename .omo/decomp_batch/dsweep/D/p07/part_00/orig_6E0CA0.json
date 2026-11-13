@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E0CA0",
+ "name": "TActionClass::executeCaptureAction",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E0CA0",
+ "bytes_hex": "568bb1900000008b4c241085c9743181fe252300007507e8545c0400eb1e83feff741d8bcee89602e3ff84c08bce7407e8fb01e3ffeb05e85420e2ff85c0750632c05ec210008b4c240850e8a0c5e2ffb0015ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

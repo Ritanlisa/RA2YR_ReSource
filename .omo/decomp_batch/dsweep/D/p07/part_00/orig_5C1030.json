@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C1030",
+ "name": "ListBox::Constructor",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C1030",
+ "bytes_hex": "83ec0853565733db8bf96a0c895c2414e8d27d20008bf083c40485f674218bd78d4c240cbb01000000e8726d1f008bce5750e8e97b0100c70658e27e00eb0233f6f6c30174098d4c240ce8e1561f008bc65f5e5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

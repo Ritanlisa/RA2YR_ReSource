@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e0ca0 TActionClass::executeCaptureAction -> TActionClass
+[conv] 0x6e0d00 TActionClass::executeSabotageAction -> TActionClass
+[conv] 0x6e2660 SmallFunc_6E2660 -> SmallFunc
+[conv] 0x402440 ObjectClass::sub_402440 -> ObjectClass
+[conv] 0x4df4b0 TechnoClass::vt_entry_4D0 -> TechnoClass
+[conv] 0x6da770 SelectAllOfType_Play -> SelectAllOfType
+[conv] 0x434b90 FontRenderer::DrawText -> FontRenderer
+[conv] 0x5c1030 ListBox::Constructor -> ListBox
+[conv] 0x49f740 Dialog::MapDialogResource -> Dialog
+[conv] 0x5cecb0 MSVQAnim::QueryInterface -> MSVQAnim
+[conv] 0x6294d0 ParasiteClass::Attach -> ParasiteClass
+[conv] 0x557b10 CheckListClass::vt_19 -> CheckListClass
+[conv] 0x7baeb0 XSurface::SetPixel -> XSurface
+[conv] 0x4cb920 File::Dispatch -> File
+[conv] 0x4883f0 CheckListClass::SetItemData -> CheckListClass
+[conv] 0x47af10 CDFileClass::Reopen -> CDFileClass
+[conv] 0x7d777d _wctomb -> _addr_7D
+[conv] 0x527c60 INIClass::ReadFloat -> INIClass
+[conv] 0x52a610 ObjectClass::sub_52A610 -> ObjectClass
+[conv] 0x759200 sub_759200 -> _addr_75
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TActionClass             rc=0
+[era] SmallFunc                rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] SelectAllOfType          rc=2
+[era] FontRenderer             rc=0
+[era] ListBox                  rc=0
+[era] Dialog                   rc=0
+[era] MSVQAnim                 rc=0
+[era] ParasiteClass            rc=0
+[era] CheckListClass           rc=2
+[era] XSurface                 rc=2
+[era] File                     rc=2
+[era] CDFileClass              rc=2
+[era] _addr_7D                 rc=0
+[era] INIClass                 rc=2
+[era] _addr_75                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6e0ca0   MISMATCH         TActionClass::executeCaptureAction
+[diff] 0x6e0d00   MISMATCH         TActionClass::executeSabotageAction
+[diff] 0x6e2660   MISMATCH         SmallFunc_6E2660
+[diff] 0x402440   MISMATCH         ObjectClass::sub_402440
+[diff] 0x52a610   MISMATCH         ObjectClass::sub_52A610
+[diff] 0x4df4b0   MISMATCH         TechnoClass::vt_entry_4D0
+[diff] 0x434b90   MISMATCH         FontRenderer::DrawText
+[diff] 0x5c1030   MISMATCH         ListBox::Constructor
+[diff] 0x49f740   MISMATCH         Dialog::MapDialogResource
+[diff] 0x5cecb0   MISMATCH         MSVQAnim::QueryInterface
+[diff] 0x6294d0   MISMATCH         ParasiteClass::Attach
+[diff] 0x7d777d   MISMATCH         _wctomb
+[diff] 0x759200   MISMATCH         sub_759200
+[ledger] 0x6e0ca0 TActionClass::executeCaptureAction -> NG (attempt 1)
+[ledger] 0x6e0d00 TActionClass::executeSabotageAction -> NG (attempt 1)
+[ledger] 0x6e2660 SmallFunc_6E2660 -> NG (attempt 1)
+[ledger] 0x402440 ObjectClass::sub_402440 -> NG (attempt 1)
+[ledger] 0x4df4b0 TechnoClass::vt_entry_4D0 -> NG (attempt 1)
+[ledger] 0x6da770 SelectAllOfType_Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x434b90 FontRenderer::DrawText -> NG (attempt 1)
+[ledger] 0x5c1030 ListBox::Constructor -> NG (attempt 1)
+[ledger] 0x49f740 Dialog::MapDialogResource -> NG (attempt 1)
+[ledger] 0x5cecb0 MSVQAnim::QueryInterface -> NG (attempt 1)
+[ledger] 0x6294d0 ParasiteClass::Attach -> NG (attempt 1)
+[ledger] 0x557b10 CheckListClass::vt_19 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7baeb0 XSurface::SetPixel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cb920 File::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4883f0 CheckListClass::SetItemData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47af10 CDFileClass::Reopen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d777d _wctomb -> NG (attempt 1)
+[ledger] 0x527c60 INIClass::ReadFloat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52a610 ObjectClass::sub_52A610 -> NG (attempt 1)
+[ledger] 0x759200 sub_759200 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "regalloc": 4,
+  "codegen_shape": 5,
+  "const_fold": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p07\batch_report.json
