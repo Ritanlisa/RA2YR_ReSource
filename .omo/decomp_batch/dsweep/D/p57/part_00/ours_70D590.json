@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsCloseEnoughToBuilding@TechnoClass@@QAE_NH@Z",
+ "sym_key": "TechnoClass::IsCloseEnoughToBuilding",
+ "size": 260,
+ "link_base": 0,
+ "bytes_hex": "83ec1853568bf1578b4c24288b065156ff90f80300008b0085c0750b5f5eb0015b83c418c204008a982e01000084db0f85bf0000008b86b402000085c00f84b10000008b969c000000558baea40000008954242c8b088d54242c5250ff51488b78082bfd5d85ff0f8e870000008b86b40200008d54241852508b08ff51488b8e9c0000008b188b96a00000008b70042bcb2bd6894c240c89542410db44240cdb44241083ec08894c2430d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e8000000008b44241c8b4c24185051ddd8e8000000008bc88b44243833c883c41081e1ff00000033c833c03bcf5f5e5b0f9cc083c418c2040033c05f84db5e5b0f95c083c418c20400",
+ "relocs": [
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

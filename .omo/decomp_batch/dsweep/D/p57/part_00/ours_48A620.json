@@ -1,0 +1,69 @@
+{
+ "symbol": "?CreateSmokeEffectAt@@YIDPAXHHHHHDH@Z",
+ "sym_key": "Unnamed::CreateSmokeEffectAt",
+ "size": 271,
+ "link_base": 0,
+ "bytes_hex": "a100000000538b5c241c5685c08bf27413e8000000008b0d00000000894424203bc87309f6c30f0f84dd0000008a44241c8b4c240c84c0751685c90f84c90000008a815001000084c00f84bb000000d9813c010000d90500000000d9c1ded9dfe0f6c44174228bc6c1f8020fbef0ddd883fe3f7d0c83fe157f4bbe15000000eb44be3f000000eb3ddc1500000000dfe0f6c4417508ddd8d90500000000d90500000000d8c983ec08dd1c24ddd8e8000000008bf08b44242433f083c40881e6ff00000033f06a18e80000000083c40485c074288b4c24188b54241456518b4c241852518bc8e8000000008b48140bcb5e8944241c8948145bc21800a0140000000ad832c0881d140000005e5bc21800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_lParam@@3IA",
+   "sym_key": "g_lParam"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetWriteOffset@PingPongBuffer@@QAEHXZ",
+   "sym_key": "PingPongBuffer::GetWriteOffset"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCD44@@3IA",
+   "sym_key": "DataGlobal_ABCD44"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?flt_7E518C@@3MA",
+   "sym_key": "flt_7E518C"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?RegisterInArray@ObjectClass@@QAEPAV1@HHHH@Z",
+   "sym_key": "ObjectClass::RegisterInArray"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x750D40",
+ "name": "StartAudioController",
+ "size": 224,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750D40",
+ "bytes_hex": "83ec0833c0538bda558be985db0f84c700000056578bcbe8d453cbff8bcb8bf0e80b54cbff8bf885ff0f849d000000578d5424188bcde845fdffffd9542410d81d48177e00dfe0f6c441757385f6752c8bcfe8b958cbff85c0741da0ac64840084c074148bcfe8e543cbff8bf085f6745b8bcee82845cbff85f67450d9442410d80d8cf37e00e8355107003d004000007205b8004000008bd08bcee8f053cbff8b5424148bcee88554cbff8bd68bcb57e8fb52cbff8bc65f5e5d5b83c408c385f674098bcee8e644cbff33f6578bd68bcbe8da52cbff8bc65f5e5d5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

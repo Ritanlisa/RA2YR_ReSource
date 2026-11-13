@@ -1,0 +1,87 @@
+{
+ "symbol": "?UI_Setup_5EBDD0@@YIXPAXPAVLobby@@PAVObjectClass@@HH@Z",
+ "sym_key": "Unnamed::UI_Setup_5EBDD0",
+ "size": 251,
+ "link_base": 0,
+ "bytes_hex": "a10000000053565785c08bda8bf174538b0850ff514084c075498bcee80000000084c0753e833d000000000475248bcee80000000084c074128bcee80000000084c07507b802000000eb0cb806000000eb05b8080000008b7c24103bf87e088bf8eb048b7c24108b44241885c0740a8b1050ff524084c0740b8bcee80000000084c0743e833d000000000475248bcee80000000084c074128bcee80000000084c07507b802000000eb0cb806000000eb05b8080000008b5424143bd07e088bd0eb048b5424148bc22bc785c07f167d1e8bcbe8000000008bcbe8000000005f5e5bc20c00508bd78bcbe8000000008bcbe8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?DisableCampaignSlots@@YIXPAXH@Z",
+   "sym_key": "DisableCampaignSlots"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?SetupPlayerWidgets@Lobby@@QAEXXZ",
+   "sym_key": "Lobby::SetupPlayerWidgets"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?UpdateMultiplayerLobbySlots@@YIHPAX0H@Z",
+   "sym_key": "UpdateMultiplayerLobbySlots"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?SetupPlayerWidgets@Lobby@@QAEXXZ",
+   "sym_key": "Lobby::SetupPlayerWidgets"
+  }
+ ]
+}

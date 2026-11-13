@@ -1,0 +1,93 @@
+{
+ "symbol": "?LoadTypeData@IsometricTileTypeClass@@QAGHPAH@Z",
+ "sym_key": "IsometricTileTypeClass::LoadTypeData",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "a0b8000000535633db33f63ac37e2c0fbe05ac0000008b04b03bc374078b086a0150ff110fbe15ac00000046895cb2fc0fbe05b80000003bf07cd48b4c24108b74240c5156e8000000003bc37c7f3bf3743e8d54241057528bcee8000000008dbea402000053538bcfe800000000891fc786b80200000a000000899eb4020000c70600000000895e04895e08895e0c5f8d86bc020000506800000000e8000000008a0db800000033c03acb7e170fbe0dac00000040895c81fc0fbe15b80000003bc27ce98bcee80000000033c05e5bc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXPAH@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Construct@ObjectTypeClass@@QAEPAIH@Z",
+   "sym_key": "ObjectTypeClass::Construct"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Constructor_0@IsometricTileTypeClass@@QAEPAV1@HH@Z",
+   "sym_key": "IsometricTileTypeClass::Constructor_0"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?vt_IsometricTileTypeClass_4@@3PAXA",
+   "sym_key": "vt_IsometricTileTypeClass_4"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?InitTheatre@TerrainClass@@QAEHXZ",
+   "sym_key": "TerrainClass::InitTheatre"
+  }
+ ]
+}

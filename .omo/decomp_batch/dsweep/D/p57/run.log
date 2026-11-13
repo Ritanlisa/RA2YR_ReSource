@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> TeleportLocomotionClass
+[conv] 0x75c700 WalkLocomotionClass::LoadFromStream -> WalkLocomotionClass
+[conv] 0x70fc90 TechnoClass::Deactivate -> TechnoClass
+[conv] 0x48a620 CreateSmokeEffectAt -> _addr_48
+[conv] 0x70d590 TechnoClass::IsCloseEnoughToBuilding -> TechnoClass
+[conv] 0x523b40 InfantryTypeClass::CreateInfantry -> InfantryTypeClass
+[conv] 0x622720 Dialog::Destroy -> Dialog
+[conv] 0x431f70 CCFileClass::Open -> CCFileClass
+[conv] 0x750d40 StartAudioController -> _addr_75
+[conv] 0x5e2ac0 sub_5E2AC0 -> _addr_5E
+[conv] 0x5271c0 INIClass::ReadIntList2 -> INIClass
+[conv] 0x549c80 IsometricTileTypeClass::LoadTypeData -> IsometricTileTypeClass
+[conv] 0x75acb0 WalkLocomotionClass::ConvertCoordToCell_4 -> WalkLocomotionClass
+[conv] 0x512480 HouseTypeClass::SaveLoad_Prefix_0 -> HouseTypeClass
+[conv] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> WarheadTypeClass
+[conv] 0x631b20 ObjectClass::UI_Pop_631500_Pop_Pop -> ObjectClass
+[conv] 0x76eaf0 ScoreText::Show -> ScoreText
+[conv] 0x5ebdd0 UI_Setup_5EBDD0 -> UI_Setup
+[conv] 0x6578f0 TacticalClass::ProcessChronoEffect -> TacticalClass
+[conv] 0x76c970 ObjectClass::ConstructWDTSelection_Create_76C970 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeleportLocomotionClass  rc=2
+[era] WalkLocomotionClass      rc=2
+[era] TechnoClass              rc=0
+[era] _addr_48                 rc=0
+[era] InfantryTypeClass        rc=0
+[era] Dialog                   rc=2
+[era] CCFileClass              rc=2
+[era] _addr_75                 rc=0
+[era] _addr_5E                 rc=0
+[era] INIClass                 rc=2
+[era] IsometricTileTypeClass   rc=0
+[era] HouseTypeClass           rc=0
+[era] WarheadTypeClass         rc=2
+[era] ObjectClass              rc=0
+[era] ScoreText                rc=2
+[era] UI_Setup                 rc=0
+[era] TacticalClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x75acb0   MISMATCH         WalkLocomotionClass::ConvertCoordToCell_4
+[diff] 0x70fc90   MISMATCH         TechnoClass::Deactivate
+[diff] 0x70d590   MISMATCH         TechnoClass::IsCloseEnoughToBuilding
+[diff] 0x48a620   MISMATCH         CreateSmokeEffectAt
+[diff] 0x523b40   MISMATCH         InfantryTypeClass::CreateInfantry
+[diff] 0x750d40   MISMATCH         StartAudioController
+[diff] 0x5e2ac0   MISMATCH         sub_5E2AC0
+[diff] 0x549c80   MISMATCH         IsometricTileTypeClass::LoadTypeData
+[diff] 0x512480   MISMATCH         HouseTypeClass::SaveLoad_Prefix_0
+[diff] 0x631b20   MISMATCH         ObjectClass::UI_Pop_631500_Pop_Pop
+[diff] 0x76c970   MISMATCH         ObjectClass::ConstructWDTSelection_Create_76C970
+[diff] 0x5ebdd0   MISMATCH         UI_Setup_5EBDD0
+[ledger] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c700 WalkLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70fc90 TechnoClass::Deactivate -> NG (attempt 1)
+[ledger] 0x48a620 CreateSmokeEffectAt -> NG (attempt 1)
+[ledger] 0x70d590 TechnoClass::IsCloseEnoughToBuilding -> NG (attempt 1)
+[ledger] 0x523b40 InfantryTypeClass::CreateInfantry -> NG (attempt 1)
+[ledger] 0x622720 Dialog::Destroy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431f70 CCFileClass::Open -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750d40 StartAudioController -> NG (attempt 1)
+[ledger] 0x5e2ac0 sub_5E2AC0 -> NG (attempt 1)
+[ledger] 0x5271c0 INIClass::ReadIntList2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x549c80 IsometricTileTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x75acb0 WalkLocomotionClass::ConvertCoordToCell_4 -> NG (attempt 1)
+[ledger] 0x512480 HouseTypeClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631b20 ObjectClass::UI_Pop_631500_Pop_Pop -> NG (attempt 1)
+[ledger] 0x76eaf0 ScoreText::Show -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ebdd0 UI_Setup_5EBDD0 -> NG (attempt 1)
+[ledger] 0x6578f0 TacticalClass::ProcessChronoEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76c970 ObjectClass::ConstructWDTSelection_Create_76C970 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "const_fold": 1,
+  "regalloc": 4,
+  "branch_polarity": 1,
+  "ret_norm": 1,
+  "cc_mismatch": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p57\batch_report.json

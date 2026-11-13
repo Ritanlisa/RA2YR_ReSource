@@ -1,0 +1,39 @@
+{
+ "symbol": "?Deactivate@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::Deactivate",
+ "size": 264,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568bf1578a861804000084c074386a0056e80000000083c40885c074298b0656ff90bc0100008bc8e8000000006a00568bf8e8000000008bd883c4083bfb0f84b7000000eb048b5c240c8b0e56ff91d00300008b1656ff925001000085f67425f6461404741f8dbe7406000085ff750d6803400080e80000000083c4048b07578b08ff515c8b86d40100008bd333d081e2ff00000033da84db75568b0656ff90840000008bd883bbac050000ff74428b8e9c0000008b96a00000008b06894c24108b8ea40000005689542418894c241cff90840000008b88ac0500006a008d542414e80000000025ff00000080e3000bd8c786d4010000010000005f8ac35e5b83c410c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAXH@Z",
+   "sym_key": "Team__GetMember"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAXH@Z",
+   "sym_key": "Team__GetMember"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}

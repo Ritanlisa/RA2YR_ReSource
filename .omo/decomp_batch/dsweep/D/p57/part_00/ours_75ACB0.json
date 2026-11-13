@@ -1,0 +1,45 @@
+{
+ "symbol": "?ConvertCoordToCell_4@WalkLocomotionClass@@QAGDHHH@Z",
+ "sym_key": "WalkLocomotionClass::ConvertCoordToCell_4",
+ "size": 280,
+ "link_base": 0,
+ "bytes_hex": "5355568b742410578b4608508b08ff917c0300008b5c241833c325ff00000033d884db0f85e60000008b4608508b10ff92d401000033c325ff00000033d884db0f85c90000008b4608508b08ff91d801000033c325ff00000033d884db0f85ac0000008b4424188b4c241c8b542420894618894e1c8956208b3d000000008bd83bc775578b2d000000003bcd754d8b0d000000003bd17543397e247572396e28756d394e2c75688b5e30c646300033d881e3ff00000033d884db74538b7608568b16ff924c05000025ff00000080e3000bd85f5e8ac35d5bc210008d442418b9f801000050e8000000008bd88b8340010000f6c4017414b93c000000e8000000008bd88b462003c3894620c64630015f5e8ac35d5bc21000",
+ "relocs": [
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?ScaleToScreenY@Coord@@QAE_JXZ",
+   "sym_key": "Coord::ScaleToScreenY"
+  }
+ ]
+}

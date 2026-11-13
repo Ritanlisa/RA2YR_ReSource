@@ -1,0 +1,111 @@
+{
+ "symbol": "?ConstructWDTSelection_Create_76C970@ObjectClass@@QAEXPAHH@Z",
+ "sym_key": "ObjectClass::ConstructWDTSelection_Create_76C970",
+ "size": 238,
+ "link_base": 0,
+ "bytes_hex": "8b44240456578b7c24108bf157508d4e58e8000000008b0d00000000518d4c2414e8000000008b96340400008d442410525057e8000000008d4c241089863404000051e8000000008b150000000083c4048d4c241052e8000000008b863c0400008d4c2410505157e8000000008d54241089863c04000052e800000000a10000000083c4048d4c241050e8000000008b8e380400008d542410515257e8000000008986380400008d44241050e8000000008b0d0000000083c404518d4c2414e8000000008b96400400008d442410525057e8000000008d4c241089864004000051e80000000083c4045f5ec20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?LoadSidebarAnimations@Animation@@QAEXPAXH@Z",
+   "sym_key": "Animation::LoadSidebarAnimations"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?aWinningthresho@@3HA",
+   "sym_key": "aWinningthresho"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?INIClass__ReadInt@@YGHHPAX0@Z",
+   "sym_key": "INIClass__ReadInt"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?aMegawinningthr@@3HA",
+   "sym_key": "aMegawinningthr"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?INIClass__ReadInt@@YGHHPAX0@Z",
+   "sym_key": "INIClass__ReadInt"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?aLosingthreshol@@3HA",
+   "sym_key": "aLosingthreshol"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?INIClass__ReadInt@@YGHHPAX0@Z",
+   "sym_key": "INIClass__ReadInt"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?aMegalosingthre@@3HA",
+   "sym_key": "aMegalosingthre"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?INIClass__ReadInt@@YGHHPAX0@Z",
+   "sym_key": "INIClass__ReadInt"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}
