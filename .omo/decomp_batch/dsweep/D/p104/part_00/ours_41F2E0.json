@@ -1,0 +1,195 @@
+{
+ "symbol": "?ReadTypeList@CCINIClass@@QAIHPADH@Z",
+ "sym_key": "CCINIClass::ReadTypeList",
+ "size": 464,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005355568bda57508bcbe80000000033ed85c0894424100f8ee10000008b0d0000000055518bcbe80000000033d28bf08a15000000005652e80000000083c40885c00f849900000033c056a00000000050e80000000083c40885c00f8480000000a10000000033ff85c076478b0d00000000568b1183c22452e80000000083c40885c07423a100000000473bf87324a100000000568b0cb883c12451e80000000083c40885c075dd8b15000000008b34baeb1b6810010000e80000000083c40485c0741d568bc8e8000000008bf08b065356ff50648b4c2418898e9c000000eb0233f6837c2418017507c686a4000000018b442410453be80f8c1fffffff8b4c241885c90f85b90000008b15000000008bcb52e80000000033ed85c0894424180f8e9d000000a10000000055508bcbe8000000008bf8a10000000033f685c076758b0d00000000578b1183c22452e80000000083c40885c07423a100000000463bf07352a100000000578b0cb083c12451e80000000083c40885c075dd8b15000000008b34b285f6742ca1000000006a0057508bcbe80000000084c0750da10000000085c0750433c0eb05b8010000008886a40000008b442418453be80f8c63ffffff5f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aAitriggertypes@@3HA",
+   "sym_key": "aAitriggertypes"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?aAitriggertypes@@3HA",
+   "sym_key": "aAitriggertypes"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?Construct2@AnimTypeClass@@QAEPAIPAX@Z",
+   "sym_key": "AnimTypeClass::Construct2"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?aAitriggertypes_0@@3HA",
+   "sym_key": "aAitriggertypes_0"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?aAitriggertypes_0@@3HA",
+   "sym_key": "aAitriggertypes_0"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeInitQueue@@3IA",
+   "sym_key": "g_AnimTypeInitQueue"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 375,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 388,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B204@@3IA",
+   "sym_key": "DataGlobal_A8B204"
+  },
+  {
+   "off": 400,
+   "type": "DIR32",
+   "sym": "?aAitriggertypes_0@@3HA",
+   "sym_key": "aAitriggertypes_0"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?ReadBool_Overwrite@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::ReadBool_Overwrite"
+  },
+  {
+   "off": 420,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  }
+ ]
+}

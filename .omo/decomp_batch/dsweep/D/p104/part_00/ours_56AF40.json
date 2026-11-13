@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_56AF40@ObjectClass@@QAEPADH@Z",
+ "sym_key": "ObjectClass::sub_56AF40",
+ "size": 437,
+ "link_base": 0,
+ "bytes_hex": "83ec145556578be933f66800200000568d4c2414896c24208974241ce8000000008b4424248d4c240c50e8000000008a8dd801000033c084c9897424240f8614010000538b8dd401000085c08b1c810f84e800000085db0f84e00000008b43248b95f40000008bc8c1f9100fbfc90fbff08d3c0e3bfa897c24140f8ebd0000008bee2be93bea0f8dad0000002bce3bca0f8da30000008b6c241c8b8df80000008d144a3bfa0f8f920000008b0d8a270000894424143bc10f848000000081fb5816000074788b4b388d7b3881f9ffff0000750a8a8b1b01000084c97e60894424148d4424146a04508d4c2418e8000000008bf08b4424186a04578d4c241803f0e8000000008d8b1a0100006a018bf8518d4c241803fee80000000081c31b0100008bf06a01538d4c241803f7e80000000003c689442418eb048b6c241c8b5424288b8d400100008d42013bc1894424280f8ceefeffff5ba18a2700008d4c241c6a04518d4c241489442424e8000000008bf08b44241403f0bf640000008d54241c6a04528d4c2414e80000000003f04f75eb0fbe44240c8d54240c8b0852ff51048d4c240ce8000000008bc65f5e5d83c414c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Constructor@LCWPipe@@QAEPAV1@HH@Z",
+   "sym_key": "LCWPipe::Constructor"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?SetDelegate@Pipe@@QAEXH@Z",
+   "sym_key": "Pipe::SetDelegate"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 364,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 422,
+   "type": "REL32",
+   "sym": "?Dtor@LCWPipe@@QAEHXZ",
+   "sym_key": "LCWPipe::Dtor"
+  }
+ ]
+}

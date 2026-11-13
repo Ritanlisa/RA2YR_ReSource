@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p104\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f7400 ObjectTypeClass::Destruct -> ObjectTypeClass
+[conv] 0x50c920 TechnoClass::FindDeployDestination -> TechnoClass
+[conv] 0x529880 INIClass::ReadPoint2D_Overwrite -> INIClass
+[conv] 0x64aae0 KickNetworkPlayer -> _addr_64
+[conv] 0x72fa10 LoadingScreen::LoadSHPs -> LoadingScreen
+[conv] 0x7cb9cf _wcstoxl -> _addr_7C
+[conv] 0x703b10 TechnoClass::CheckTargetCell -> TechnoClass
+[conv] 0x703cc0 TechnoClass::ScanAdjacentCells -> TechnoClass
+[conv] 0x65bb50 RadSiteClass::Deactivate -> RadSiteClass
+[conv] 0x56af40 ObjectClass::sub_56AF40 -> ObjectClass
+[conv] 0x46de20 sub_46DE20 -> _addr_46
+[conv] 0x7bc040 CalcSurfaceBlitRects -> _addr_7B
+[conv] 0x41f2e0 CCINIClass::ReadTypeList -> CCINIClass
+[conv] 0x4c2830 ObjectClass::sub_4C2830 -> ObjectClass
+[conv] 0x5b17b0 BuildingClass::UpdateMovingPosition -> BuildingClass
+[conv] 0x4d7330 FootClass::ProcessDeploy -> FootClass
+[conv] 0x5db9b0 NetworkLobby::UpdatePlayerList -> NetworkLobby
+[conv] 0x7651d0 ObjectClass::sub_7651D0 -> ObjectClass
+[conv] 0x772ae0 WeaponTypeClass::ProcessPower -> WeaponTypeClass
+[conv] 0x528220 ObjectClass::sub_528220 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=0
+[era] TechnoClass              rc=2
+[era] INIClass                 rc=2
+[era] _addr_64                 rc=2
+[era] LoadingScreen            rc=2
+[era] _addr_7C                 rc=2
+[era] RadSiteClass             rc=2
+[era] ObjectClass              rc=2
+[era] _addr_46                 rc=0
+[era] _addr_7B                 rc=2
+[era] CCINIClass               rc=0
+[era] BuildingClass            rc=2
+[era] FootClass                rc=2
+[era] NetworkLobby             rc=0
+[era] WeaponTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f7400   MISMATCH         ObjectTypeClass::Destruct
+[diff] 0x703b10   MISMATCH         TechnoClass::CheckTargetCell
+[diff] 0x703cc0   MISMATCH         TechnoClass::ScanAdjacentCells
+[diff] 0x56af40   MISMATCH         ObjectClass::sub_56AF40
+[diff] 0x4c2830   MISMATCH         ObjectClass::sub_4C2830
+[diff] 0x46de20   MISMATCH         sub_46DE20
+[diff] 0x41f2e0   MISMATCH         CCINIClass::ReadTypeList
+[diff] 0x5db9b0   MISMATCH         NetworkLobby::UpdatePlayerList
+[diff] 0x772ae0   MISMATCH         WeaponTypeClass::ProcessPower
+[ledger] 0x5f7400 ObjectTypeClass::Destruct -> NG (attempt 1)
+[ledger] 0x50c920 TechnoClass::FindDeployDestination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x529880 INIClass::ReadPoint2D_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64aae0 KickNetworkPlayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72fa10 LoadingScreen::LoadSHPs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb9cf _wcstoxl -> COMPILE_FAIL (attempt 1)
+[ledger] 0x703b10 TechnoClass::CheckTargetCell -> NG (attempt 1)
+[ledger] 0x703cc0 TechnoClass::ScanAdjacentCells -> NG (attempt 1)
+[ledger] 0x65bb50 RadSiteClass::Deactivate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56af40 ObjectClass::sub_56AF40 -> NG (attempt 1)
+[ledger] 0x46de20 sub_46DE20 -> NG (attempt 1)
+[ledger] 0x7bc040 CalcSurfaceBlitRects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41f2e0 CCINIClass::ReadTypeList -> NG (attempt 1)
+[ledger] 0x4c2830 ObjectClass::sub_4C2830 -> NG (attempt 1)
+[ledger] 0x5b17b0 BuildingClass::UpdateMovingPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d7330 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5db9b0 NetworkLobby::UpdatePlayerList -> NG (attempt 1)
+[ledger] 0x7651d0 ObjectClass::sub_7651D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772ae0 WeaponTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x528220 ObjectClass::sub_528220 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 3,
+  "regalloc": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p104\batch_report.json
