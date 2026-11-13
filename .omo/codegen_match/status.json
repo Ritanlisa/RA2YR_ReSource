@@ -111540,7 +111540,7 @@
   "this_as_id": false
  },
  "0x5e8bf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111610,7 +111610,7 @@
   "this_as_id": false
  },
  "0x5e8ea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -111948,7 +111948,7 @@
   "this_as_id": false
  },
  "0x5ea3e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll",
@@ -111966,7 +111966,7 @@
   "status": "NG"
  },
  "0x5ea920": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetPlayerSide",
@@ -111977,7 +111977,7 @@
   "this_as_id": false
  },
  "0x5ea9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Play",
@@ -111988,7 +111988,7 @@
   "this_as_id": false
  },
  "0x5eaa10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Get",
@@ -111999,7 +111999,7 @@
   "this_as_id": false
  },
  "0x5eaa70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Get_5EAA70",
@@ -112920,7 +112920,7 @@
   "status": "PENDING"
  },
  "0x5f0180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "HandlePlayerDisconnection",
@@ -113344,19 +113344,19 @@
   "this_as_id": false
  },
  "0x5f2950": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xf8",
   "name": "Dialog::RunModemDialing",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Dialog::RunModemDialing",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f2ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113368,7 +113368,7 @@
   "this_as_id": false
  },
  "0x5f3170": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115027,7 +115027,7 @@
   "this_as_id": false
  },
  "0x5f7090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115194,27 +115194,27 @@
   "this_as_id": false
  },
  "0x5f7a90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x2e0",
   "name": "VoxelAnimType::LoadSection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelAnimType::LoadSection",
   "rule_violations": 17,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f7db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x2e0",
   "name": "VoxelAnimType::LoadBarrel",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VoxelAnimType::LoadBarrel",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f8080": {
@@ -115230,7 +115230,7 @@
   "this_as_id": false
  },
  "0x5f8110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115242,19 +115242,19 @@
   "this_as_id": false
  },
  "0x5f8ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x348",
   "name": "Turret::LoadVoxelTurretAndBarrel",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Turret::LoadVoxelTurretAndBarrel",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f9070": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115266,7 +115266,7 @@
   "this_as_id": false
  },
  "0x5f92d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115301,15 +115301,15 @@
   "this_as_id": false
  },
  "0x5f9720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+7 push ebp",
   "name": "ObjectTypeClass::LoadCleanup",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ObjectTypeClass::LoadCleanup",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5f9950": {
@@ -115517,7 +115517,7 @@
   "this_as_id": false
  },
  "0x5f9e80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

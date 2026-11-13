@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x5e8bf0 Player::FindByName -> Player
+[conv] 0x5e8ea0 NetworkLobby::SetupPlayers -> NetworkLobby
+[conv] 0x5ea3e0 RefreshLobbyAll -> _addr_5E
+[conv] 0x5ea920 GetPlayerSide -> _addr_5E
+[conv] 0x5ea9b0 RefreshLobbyAll_Play -> RefreshLobbyAll
+[conv] 0x5eaa10 RefreshLobbyAll_Get -> RefreshLobbyAll
+[conv] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> RefreshLobbyAll_Get
+[conv] 0x5f0180 HandlePlayerDisconnection -> _addr_5F
+[conv] 0x5f2950 Dialog::RunModemDialing -> Dialog
+[conv] 0x5f2ce0 ObjectClass::WaitModemConnection -> ObjectClass
+[conv] 0x5f3170 NullModemClass::Negotiate -> NullModemClass
+[conv] 0x5f7090 ObjectTypeClass::ConstructFull -> ObjectTypeClass
+[conv] 0x5f7a90 VoxelAnimType::LoadSection -> VoxelAnimType
+[conv] 0x5f7db0 VoxelAnimType::LoadBarrel -> VoxelAnimType
+[conv] 0x5f8110 VoxelAnimType::LoadAnim -> VoxelAnimType
+[conv] 0x5f8ce0 Turret::LoadVoxelTurretAndBarrel -> Turret
+[conv] 0x5f9070 ObjectTypeClass::Load2DArt -> ObjectTypeClass
+[conv] 0x5f92d0 ObjectTypeClass::LoadFromINI -> ObjectTypeClass
+[conv] 0x5f9720 ObjectTypeClass::LoadCleanup -> ObjectTypeClass
+[conv] 0x5f9e80 Checksummer::HashString -> Checksummer
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Player                   rc=2
+[era] NetworkLobby             rc=2
+[era] _addr_5E                 rc=2
+[era] RefreshLobbyAll          rc=2
+[era] RefreshLobbyAll_Get      rc=2
+[era] _addr_5F                 rc=2
+[era] Dialog                   rc=0
+[era] ObjectClass              rc=2
+[era] NullModemClass           rc=2
+[era] ObjectTypeClass          rc=2
+[era] VoxelAnimType            rc=2
+[era] Turret                   rc=0
+[era] Checksummer              rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f2950   MISMATCH         Dialog::RunModemDialing
+[diff] 0x5f9720   MISMATCH         ObjectTypeClass::LoadCleanup
+[diff] 0x5f7a90   MISMATCH         VoxelAnimType::LoadSection
+[diff] 0x5f7db0   MISMATCH         VoxelAnimType::LoadBarrel
+[diff] 0x5f8ce0   MISMATCH         Turret::LoadVoxelTurretAndBarrel
+[ledger] 0x5e8bf0 Player::FindByName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e8ea0 NetworkLobby::SetupPlayers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ea3e0 RefreshLobbyAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ea920 GetPlayerSide -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ea9b0 RefreshLobbyAll_Play -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5eaa10 RefreshLobbyAll_Get -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f0180 HandlePlayerDisconnection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f2950 Dialog::RunModemDialing -> NG (attempt 3)
+[ledger] 0x5f2ce0 ObjectClass::WaitModemConnection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f3170 NullModemClass::Negotiate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f7090 ObjectTypeClass::ConstructFull -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f7a90 VoxelAnimType::LoadSection -> NG (attempt 6)
+[ledger] 0x5f7db0 VoxelAnimType::LoadBarrel -> NG (attempt 3)
+[ledger] 0x5f8110 VoxelAnimType::LoadAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f8ce0 Turret::LoadVoxelTurretAndBarrel -> NG (attempt 3)
+[ledger] 0x5f9070 ObjectTypeClass::Load2DArt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f92d0 ObjectTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f9720 ObjectTypeClass::LoadCleanup -> NG (attempt 3)
+[ledger] 0x5f9e80 Checksummer::HashString -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p11\batch_report.json

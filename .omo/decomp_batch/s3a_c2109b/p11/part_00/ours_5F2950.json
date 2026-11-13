@@ -1,0 +1,339 @@
+{
+ "symbol": "?RunModemDialing@Dialog@@QAEHHHD@Z",
+ "sym_key": "Dialog::RunModemDialing",
+ "size": 772,
+ "link_base": 0,
+ "bytes_hex": "81ecfc0000005356578bf1c644240d01e80000000080bc24140100000175178b0d0000000033c0a00000000068810500005033d2eb1633c968830500008a0d0000000033d2518b0d00000000e80000000033d268870500008a150000000033c9668b0d0000000033db5233d28bf8881d00000000e80000000068000000008bd08bcfe8000000003bc38944241075115f5eb8030000005b81c4fc000000c20c00558bc8e8000000008bcee800000000a1000000008b94241401000052508b08ff51088bcee800000000a1000000006aff8d5424206a518b08526a3c50ff51148bcee800000000a1000000008b94241001000052508b08ff5118a1000000006800000000508b08ff5124881d000000008b6e248bcee8000000008bcee8000000003c010f843d010000381d000000000f85310100008b542414885c24188b4c241852e800000000b93c00000033c08d7c241c6a0ff3aba1000000008d5424206a51528b085550ff51148be881fd18fcffff0f84d70000008d44241c50e8000000008d7c242083c9ff33c083c404f2aef7d14974078bcee8000000008b0d000000008d54241c5152e80000000083c40885c0742f33d2b9140000008a150000000033c08bfa6a4ff3ab33c98d4424208a0d000000005051e80000000083c40c33ffeb4d6a048d542420680000000052e80000000083c40c85c075146a048d442420680000000050e80000000083c40cbf040000008d4c241c57680000000051e80000000083c40c85c07510bf030000008bcee800000000885c24113beb7e58807c2411010f8592000000e9ccfeffff8b0d00000000bf060000003bcb75188bcee800000000eb758b0d00000000bf060000003bcb7418668b15000000008d4424126a0250668954241ae8000000008bcee800000000eb458bcee8000000008d7c241c83c9ff33c0f2aef7d14974078bcee8000000008b0d000000003bcb7418668b15000000008d4424126a0250668954241ae800000000bf05000000a10000000053508b08ff51248b4c2414881d00000000e8000000008bc75d5f5e5b81c4fc000000c20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?aTxtModemConner@@3HA",
+   "sym_key": "aTxtModemConner"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullMgr_CPP@@3EA",
+   "sym_key": "g_Str_File_NullMgr_CPP"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullMgr_CPP@@3EA",
+   "sym_key": "g_Str_File_NullMgr_CPP"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?aTxtDialing@@3HA",
+   "sym_key": "aTxtDialing"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_Str_File_NullMgr_CPP@@3EA",
+   "sym_key": "g_Str_File_NullMgr_CPP"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_CANCEL@@3GA",
+   "sym_key": "g_Str_TXT_CANCEL"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?CreateMessageBox@@YIPAXHHH@Z",
+   "sym_key": "CreateMessageBox"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?PumpEventLoop@@YAHPBX0@Z",
+   "sym_key": "PumpEventLoop"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?PumpMessages@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::PumpMessages"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?Process@ScreenSaver@@QAEHH@Z",
+   "sym_key": "ScreenSaver::Process"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?_strupr@@YAHPAXZZ",
+   "sym_key": "_strupr"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 412,
+   "type": "DIR32",
+   "sym": "?off_8327D8@@3IA",
+   "sym_key": "off_8327D8"
+  },
+  {
+   "off": 423,
+   "type": "REL32",
+   "sym": "_strstr",
+   "sym_key": "strstr"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?byte_AC1288@@3EA",
+   "sym_key": "byte_AC1288"
+  },
+  {
+   "off": 463,
+   "type": "DIR32",
+   "sym": "?byte_AC1288@@3EA",
+   "sym_key": "byte_AC1288"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 488,
+   "type": "DIR32",
+   "sym": "?aBusy@@3PADA",
+   "sym_key": "aBusy"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 512,
+   "type": "DIR32",
+   "sym": "?aNoC@@3PADA",
+   "sym_key": "aNoC"
+  },
+  {
+   "off": 518,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?aErro@@3PADA",
+   "sym_key": "aErro"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "_strncmp",
+   "sym_key": "strncmp"
+  },
+  {
+   "off": 561,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 591,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 615,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 631,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8327A0@@3GA",
+   "sym_key": "DataGlobal_8327A0"
+  },
+  {
+   "off": 648,
+   "type": "REL32",
+   "sym": "?WriteSerial@WinModemClass@@QAEHPAXH@Z",
+   "sym_key": "WinModemClass::WriteSerial"
+  },
+  {
+   "off": 655,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 664,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 687,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 693,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 704,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8327A0@@3GA",
+   "sym_key": "DataGlobal_8327A0"
+  },
+  {
+   "off": 721,
+   "type": "REL32",
+   "sym": "?WriteSerial@WinModemClass@@QAEHPAXH@Z",
+   "sym_key": "WinModemClass::WriteSerial"
+  },
+  {
+   "off": 731,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 748,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 753,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  }
+ ]
+}
