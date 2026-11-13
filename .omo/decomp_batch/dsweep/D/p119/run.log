@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p119\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d899e unknown_libname_92 -> _addr_7D
+[conv] 0x5c7990 DivideBigInteger -> _addr_5C
+[conv] 0x5c42d0 MPCooperative::UpdateMovieScore -> MPCooperative
+[conv] 0x610360 Dialog::DestroyDialogSystem -> Dialog
+[conv] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> MSVQAnim
+[conv] 0x4d9c60 ObjectClass::CheckCellFlags -> ObjectClass
+[conv] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> RandomMap
+[conv] 0x635830 BuildingClass::GetDrawColor -> BuildingClass
+[conv] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> SuperWeapon
+[conv] 0x4adcd0 Radar::UpdateReveal -> Radar
+[conv] 0x7b73f0 WideString::Replace -> WideString
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+[conv] 0x7da2b6 ___crtLCMapStringW -> _addr_7D
+[conv] 0x6d1c20 Tactical::Construct -> Tactical
+[conv] 0x6d9ce0 ObjectClass::FindBuildingsInScreenRect -> ObjectClass
+[conv] 0x526fb0 INIClass::GetBase64Data -> INIClass
+[conv] 0x6f06e0 TeamTypeClass::LoadBase -> TeamTypeClass
+[conv] 0x51cba0 InfantryClass::ValidatePlacement -> InfantryClass
+[conv] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> ScreenCaptureCommandClass
+[conv] 0x5d3490 Dialog::ShowMessageBox -> Dialog
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] _addr_5C                 rc=2
+[era] MPCooperative            rc=2
+[era] Dialog                   rc=2
+[era] MSVQAnim                 rc=2
+[era] ObjectClass              rc=2
+[era] RandomMap                rc=2
+[era] BuildingClass            rc=2
+[era] SuperWeapon              rc=2
+[era] Radar                    rc=2
+[era] WideString               rc=2
+[era] TechnoClass              rc=2
+[era] Tactical                 rc=0
+[era] INIClass                 rc=2
+[era] TeamTypeClass            rc=2
+[era] InfantryClass            rc=2
+[era] ScreenCaptureCommandClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x610360   MISMATCH         Dialog::DestroyDialogSystem
+[diff] 0x6d1c20   MISMATCH         Tactical::Construct
+[ledger] 0x7d899e unknown_libname_92 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c7990 DivideBigInteger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c42d0 MPCooperative::UpdateMovieScore -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610360 Dialog::DestroyDialogSystem -> NG (attempt 1)
+[ledger] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d9c60 ObjectClass::CheckCellFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635830 BuildingClass::GetDrawColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4adcd0 Radar::UpdateReveal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b73f0 WideString::Replace -> COMPILE_FAIL (attempt 1)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7da2b6 ___crtLCMapStringW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d1c20 Tactical::Construct -> NG (attempt 1)
+[ledger] 0x6d9ce0 ObjectClass::FindBuildingsInScreenRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x526fb0 INIClass::GetBase64Data -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f06e0 TeamTypeClass::LoadBase -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51cba0 InfantryClass::ValidatePlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d3490 Dialog::ShowMessageBox -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p119\batch_report.json

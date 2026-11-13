@@ -1,0 +1,213 @@
+{
+ "symbol": "?DestroyDialogSystem@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::DestroyDialogSystem",
+ "size": 553,
+ "link_base": 0,
+ "bytes_hex": "81ec14020000535633db578bf153680000000056e8000000008d4424108d4c240c5051b98802000089742414e8000000008b1500000000b98000000033c08d7c2420f3ab6a04c784248c0000000b00000089942488000000e80000000083c4043bc3740b50e80000000083c404eb0233c08944245c8d4424208d4c240c5051b940020000895c2468899c2484000000c78424b8000000ffffffffe8000000008b4424483bc3740d50e80000000083c404895c24488b4424543bc374168d5424205052e8000000008b44245c83c4083bc375ea8b4c245c3bcb8bf1740ee80000000056e80000000083c404a1040000003bc30f84f400000048895c241489442410a108000000df6c241089442418895c241cdf6c24188b0d0c00000051def9d95c2414e800000000be010000008bc8d3e683c4048d54240c524eff151800000023f00fbe05000000008b088b0cb13bcb0f84960000008b54240c8b013bc275368b790851e8000000000fbe1500000000d944241483c4048b02893cb0a104000000dc1d2000000048a304000000dfe0f6c4417458eb498b41083bc374313910740d8bc88b40083bc37424391075f38b5008508951088b15040000004a891504000000e8000000008b54241083c404d9442410dc1d20000000dfe0f6c44174116800000000e80000000083c4048b54240c6aeb52e8000000003bc3740950e80000000083c4048b44240c536aeb50e8000000008b4c240ce8000000005f5eb8010000005b81c414020000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DestroyDialogChildWindow@@YAHPBX0@Z",
+   "sym_key": "DestroyDialogChildWindow"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?EnumChildWindows@@YGHPAXHH@Z",
+   "sym_key": "EnumChildWindows"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Resize@DynamicArray@@QAEDPAX0@Z",
+   "sym_key": "DynamicArray::Resize"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?BindGadgetData@Dialog@@QAEDPAX0@Z",
+   "sym_key": "Dialog::BindGadgetData"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?LinkedList__Remove@@YAHPAX0@Z",
+   "sym_key": "LinkedList__Remove"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHHZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 380,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 445,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 450,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 467,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 479,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 484,
+   "type": "REL32",
+   "sym": "?HashTable__Shrink2@@YAHPAX@Z",
+   "sym_key": "HashTable__Shrink2"
+  },
+  {
+   "off": 499,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJHH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 525,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJHHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 534,
+   "type": "REL32",
+   "sym": "?RemoveObjectArray@Object@@QAEPAPAXXZ",
+   "sym_key": "Object::RemoveObjectArray"
+  }
+ ]
+}
