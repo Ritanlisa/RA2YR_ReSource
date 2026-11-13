@@ -93971,7 +93971,7 @@
   "this_as_id": false
  },
  "0x591740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94007,14 +94007,14 @@
   "this_as_id": false
  },
  "0x592af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::PlaceMapSeedCityBlockVariant",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlaceMapSeedCityBlockVariant",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94055,7 +94055,7 @@
   "this_as_id": false
  },
  "0x594010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94137,7 +94137,7 @@
   "this_as_id": false
  },
  "0x594b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94149,26 +94149,26 @@
   "this_as_id": false
  },
  "0x594f40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingPlacement::SelectBuildingPlacementCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingPlacement::SelectBuildingPlacementCells",
-  "rule_violations": 20,
+  "rule_violations": 19,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x595400": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::PlaceNeutralBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlaceNeutralBuilding",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94185,7 +94185,7 @@
   "this_as_id": false
  },
  "0x595710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94245,7 +94245,7 @@
   "this_as_id": false
  },
  "0x595fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GenerateRandomMapAndMinimap",
@@ -94359,7 +94359,7 @@
   "this_as_id": false
  },
  "0x597a30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94390,7 +94390,7 @@
   "status": "NG"
  },
  "0x597d60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94496,7 +94496,7 @@
   "this_as_id": false
  },
  "0x5981f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94508,7 +94508,7 @@
   "this_as_id": false
  },
  "0x598960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94591,7 +94591,7 @@
   "this_as_id": false
  },
  "0x59b200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94626,7 +94626,7 @@
   "this_as_id": false
  },
  "0x59b940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Map_Helper_59B940",
@@ -94644,7 +94644,7 @@
   "status": "NG"
  },
  "0x59bbc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94674,7 +94674,7 @@
   "status": "NG"
  },
  "0x59c630": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindMapCell",
@@ -94804,7 +94804,7 @@
   "this_as_id": false
  },
  "0x5a1190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_5A1190",
@@ -94815,7 +94815,7 @@
   "this_as_id": false
  },
  "0x5a1350": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SelectTerrainTileVariant",
@@ -94875,7 +94875,7 @@
   "status": "NG"
  },
  "0x5a1fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94887,7 +94887,7 @@
   "this_as_id": false
  },
  "0x5a23a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
