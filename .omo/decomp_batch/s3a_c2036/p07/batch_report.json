@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x4eb3e0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass::ReallocateBuffer",
+   "emitted": "_DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer",
+   "unit": "_DynamicVectorClass_PAVSmudgeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb500",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass_32::Release",
+   "emitted": "_VectorClass_PAVTerrainClass::Release",
+   "unit": "_VectorClass_PAVTerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb640",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass_32::CopyParticles2",
+   "emitted": "_DynamicVectorClass_PAVTerrainClass::CopyParticles2",
+   "unit": "_DynamicVectorClass_PAVTerrainClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb760",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AircraftClass::Release",
+   "emitted": "_VectorClass_PAVAircraftClass::Release",
+   "unit": "_VectorClass_PAVAircraftClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb8a0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleSystemClass_32_::ResizeDataArray",
+   "emitted": "_DynamicVectorClass_PAVAircraftClass::ResizeDataArray",
+   "unit": "_DynamicVectorClass_PAVAircraftClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4eb9c0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_UnitClass::Release",
+   "emitted": "_VectorClass_PAVUnitClass::Release",
+   "unit": "_VectorClass_PAVUnitClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebb00",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_UnitClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVUnitClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVUnitClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebc20",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_HouseClass::Release",
+   "emitted": "_VectorClass_PAVHouseClass::Release",
+   "unit": "_VectorClass_PAVHouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebd60",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_UnitClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVHouseClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVHouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebe80",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_AnimClass::Release",
+   "emitted": "_VectorClass_PAVAnimClass::Release",
+   "unit": "_VectorClass_PAVAnimClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ebfc0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TeamClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVAnimClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVAnimClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec340",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_CampaignClass::Release",
+   "emitted": "_VectorClass_PAVCampaignClass::Release",
+   "unit": "_VectorClass_PAVCampaignClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec480",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_CampaignClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVCampaignClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVCampaignClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec5a0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_SideClass::Release",
+   "emitted": "_VectorClass_PAVSideClass::Release",
+   "unit": "_VectorClass_PAVSideClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec6e0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_CampaignClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVSideClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVSideClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec800",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_HouseTypeClass::Release",
+   "emitted": "_VectorClass_PAVHouseTypeClass::Release",
+   "unit": "_VectorClass_PAVHouseTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ec940",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_HouseTypeClass::SetCapacity",
+   "emitted": "_DynamicVectorClass_PAVHouseTypeClass::SetCapacity",
+   "unit": "_DynamicVectorClass_PAVHouseTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4eca60",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TaskForceClass::Release",
+   "emitted": "_VectorClass_PAVTaskForceClass::Release",
+   "unit": "_VectorClass_PAVTaskForceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  },
+  {
+   "addr": "0x4ecba0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 176B ours 199B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_HouseTypeClass::SetCapacity_0",
+   "emitted": "_DynamicVectorClass_PAVTaskForceClass::SetCapacity_0",
+   "unit": "_DynamicVectorClass_PAVTaskForceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 176,
+   "ours_size": 199,
+   "clean": false
+  },
+  {
+   "addr": "0x4eccc0",
+   "batch": "C2036",
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 193B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 mov ebx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_ptr_TeamTypeClass::Release",
+   "emitted": "_VectorClass_PAVTeamTypeClass::Release",
+   "unit": "_VectorClass_PAVTeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "12/14",
+   "rule_violations": 0,
+   "orig_size": 174,
+   "ours_size": 193,
+   "clean": false
+  }
+ ]
+}

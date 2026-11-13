@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eb3e0 _DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4eb500 _VectorClass_PAVTerrainClass::Release -> _VectorClass_PAVTerrainClass
+[conv] 0x4eb640 _DynamicVectorClass_PAVTerrainClass::CopyParticles2 -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4eb760 _VectorClass_PAVAircraftClass::Release -> _VectorClass_PAVAircraftClass
+[conv] 0x4eb8a0 _DynamicVectorClass_PAVAircraftClass::ResizeDataArray -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4eb9c0 _VectorClass_PAVUnitClass::Release -> _VectorClass_PAVUnitClass
+[conv] 0x4ebb00 _DynamicVectorClass_PAVUnitClass::SetCapacity -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4ebc20 _VectorClass_PAVHouseClass::Release -> _VectorClass_PAVHouseClass
+[conv] 0x4ebd60 _DynamicVectorClass_PAVHouseClass::SetCapacity_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4ebe80 _VectorClass_PAVAnimClass::Release -> _VectorClass_PAVAnimClass
+[conv] 0x4ebfc0 _DynamicVectorClass_PAVAnimClass::SetCapacity_0 -> _DynamicVectorClass_PAVAnimClass
+[conv] 0x4ec340 _VectorClass_PAVCampaignClass::Release -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec480 _DynamicVectorClass_PAVCampaignClass::SetCapacity -> _DynamicVectorClass_PAVCampaignClass
+[conv] 0x4ec5a0 _VectorClass_PAVSideClass::Release -> _VectorClass_PAVSideClass
+[conv] 0x4ec6e0 _DynamicVectorClass_PAVSideClass::SetCapacity_0 -> _DynamicVectorClass_PAVSideClass
+[conv] 0x4ec800 _VectorClass_PAVHouseTypeClass::Release -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4ec940 _DynamicVectorClass_PAVHouseTypeClass::SetCapacity -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4eca60 _VectorClass_PAVTaskForceClass::Release -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ecba0 _DynamicVectorClass_PAVTaskForceClass::SetCapacity_0 -> _DynamicVectorClass_PAVTaskForceClass
+[conv] 0x4eccc0 _VectorClass_PAVTeamTypeClass::Release -> _VectorClass_PAVTeamTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _DynamicVectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+[era] _DynamicVectorClass_PAVAircraftClass rc=0
+[era] _VectorClass_PAVUnitClass rc=0
+[era] _DynamicVectorClass_PAVUnitClass rc=0
+[era] _VectorClass_PAVHouseClass rc=0
+[era] _DynamicVectorClass_PAVHouseClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _DynamicVectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _DynamicVectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _DynamicVectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+[era] _DynamicVectorClass_PAVTaskForceClass rc=0
+[era] _VectorClass_PAVTeamTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4eb3e0   MISMATCH         _DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer
+[diff] 0x4eb500   MISMATCH         _VectorClass_PAVTerrainClass::Release
+[diff] 0x4eb640   MISMATCH         _DynamicVectorClass_PAVTerrainClass::CopyParticles2
+[diff] 0x4eb760   MISMATCH         _VectorClass_PAVAircraftClass::Release
+[diff] 0x4eb8a0   MISMATCH         _DynamicVectorClass_PAVAircraftClass::ResizeDataArray
+[diff] 0x4eb9c0   MISMATCH         _VectorClass_PAVUnitClass::Release
+[diff] 0x4ebb00   MISMATCH         _DynamicVectorClass_PAVUnitClass::SetCapacity
+[diff] 0x4ebc20   MISMATCH         _VectorClass_PAVHouseClass::Release
+[diff] 0x4ebd60   MISMATCH         _DynamicVectorClass_PAVHouseClass::SetCapacity_0
+[diff] 0x4ebe80   MISMATCH         _VectorClass_PAVAnimClass::Release
+[diff] 0x4ebfc0   MISMATCH         _DynamicVectorClass_PAVAnimClass::SetCapacity_0
+[diff] 0x4ec340   MISMATCH         _VectorClass_PAVCampaignClass::Release
+[diff] 0x4ec480   MISMATCH         _DynamicVectorClass_PAVCampaignClass::SetCapacity
+[diff] 0x4ec5a0   MISMATCH         _VectorClass_PAVSideClass::Release
+[diff] 0x4ec6e0   MISMATCH         _DynamicVectorClass_PAVSideClass::SetCapacity_0
+[diff] 0x4ec800   MISMATCH         _VectorClass_PAVHouseTypeClass::Release
+[diff] 0x4ec940   MISMATCH         _DynamicVectorClass_PAVHouseTypeClass::SetCapacity
+[diff] 0x4eca60   MISMATCH         _VectorClass_PAVTaskForceClass::Release
+[diff] 0x4ecba0   MISMATCH         _DynamicVectorClass_PAVTaskForceClass::SetCapacity_0
+[diff] 0x4eccc0   MISMATCH         _VectorClass_PAVTeamTypeClass::Release
+[ledger] 0x4eb3e0 _DynamicVectorClass_PAVSmudgeClass::ReallocateBuffer -> NG (attempt 2)
+[ledger] 0x4eb500 _VectorClass_PAVTerrainClass::Release -> NG (attempt 2)
+[ledger] 0x4eb640 _DynamicVectorClass_PAVTerrainClass::CopyParticles2 -> NG (attempt 2)
+[ledger] 0x4eb760 _VectorClass_PAVAircraftClass::Release -> NG (attempt 2)
+[ledger] 0x4eb8a0 _DynamicVectorClass_PAVAircraftClass::ResizeDataArray -> NG (attempt 2)
+[ledger] 0x4eb9c0 _VectorClass_PAVUnitClass::Release -> NG (attempt 2)
+[ledger] 0x4ebb00 _DynamicVectorClass_PAVUnitClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4ebc20 _VectorClass_PAVHouseClass::Release -> NG (attempt 2)
+[ledger] 0x4ebd60 _DynamicVectorClass_PAVHouseClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4ebe80 _VectorClass_PAVAnimClass::Release -> NG (attempt 2)
+[ledger] 0x4ebfc0 _DynamicVectorClass_PAVAnimClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4ec340 _VectorClass_PAVCampaignClass::Release -> NG (attempt 2)
+[ledger] 0x4ec480 _DynamicVectorClass_PAVCampaignClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4ec5a0 _VectorClass_PAVSideClass::Release -> NG (attempt 2)
+[ledger] 0x4ec6e0 _DynamicVectorClass_PAVSideClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4ec800 _VectorClass_PAVHouseTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4ec940 _DynamicVectorClass_PAVHouseTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4eca60 _VectorClass_PAVTaskForceClass::Release -> NG (attempt 2)
+[ledger] 0x4ecba0 _DynamicVectorClass_PAVTaskForceClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4eccc0 _VectorClass_PAVTeamTypeClass::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p07\batch_report.json
