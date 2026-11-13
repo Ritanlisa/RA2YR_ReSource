@@ -1,0 +1,11 @@
+{
+ "addr": "0x72DC20",
+ "name": "CleanupEVASystem_Cleanup",
+ "size": 195,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72DC20",
+ "bytes_hex": "a0c8fcb0005333db563ac374208b3548fbb0003bf374108bcee8c208f7ff56e8f9ae090083c404881dc8fcb000a0cafcb000891d48fbb0003ac374208b3510fbb0003bf374108bcee89308f7ff56e8caae090083c404881dcafcb000a0cbfcb000891d10fbb0003ac374208b35f8f9b0003bf374108bcee86408f7ff56e89bae090083c404881dcbfcb000a0ccfcb000891df8f9b0003ac374208b356cfab0003bf374108bcee83508f7ff56e86cae090083c404881dccfcb000891d6cfab0005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

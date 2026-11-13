@@ -1,0 +1,63 @@
+{
+ "symbol": "?validateConfig@ArtConfig@@QAEHPAHH0@Z",
+ "sym_key": "ArtConfig::validateConfig",
+ "size": 173,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec64538b500455568bf1578b088b5e188b7e1c8d6e2003d9558d4c242003fae8000000006a008d4c2420e80000000084c074496a4ce80000000083c40485c074218b4c24788b54247c6a006a0083c1186a01516a00525753558bc8e800000000eb0233c08946288b086a0050ff51048b56288b4c247852e8000000008d4c2410c744241c00000000e8000000008d4c241cc744241c00000000e8000000005f5e5d5b83c464c20c00",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Construct2@CCFileClass@@QAEPAV1@PAX@Z",
+   "sym_key": "CCFileClass::Construct2"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Init@MSOverlayAnim@@QAEPAXPAXHHHHHDHD@Z",
+   "sym_key": "MSOverlayAnim::Init"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Add@PriorityQueue@@QAEHPAX@Z",
+   "sym_key": "PriorityQueue::Add"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

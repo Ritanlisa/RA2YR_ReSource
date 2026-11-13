@@ -1,0 +1,11 @@
+{
+ "addr": "0x690AE0",
+ "name": "ScoreScreen::LoadCountryFlags",
+ "size": 194,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x690AE0",
+ "bytes_hex": "83ec6c53568bf133db895e04895e08895e0c895e14c706f00e7f00e840fbffff8b158c55b000b9dce683004289158c55b00032d2c706200f7f00885e10e88e35f2ff3bc389460c755a68dce683008d4c240ce8b92edeff8d4c2408e8502de1ff8d4c240889460cc6461001e89031deff68b8e68300e8865dd7ff83c4048d4c2460c7442408b0167e00895c246ce8dea2daff8d4c2408c744240868167e00e8fd0fdaff8b442478c7460414000000894614c74608230000008bc65e5b83c46cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

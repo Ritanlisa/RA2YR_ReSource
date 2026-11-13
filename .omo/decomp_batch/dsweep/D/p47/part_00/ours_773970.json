@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_773970@@YGEPAEH@Z",
+ "sym_key": "Unnamed::sub_773970",
+ "size": 191,
+ "link_base": 0,
+ "bytes_hex": "5153558d4424085733c9508a0d0000000068190002006a00516802000080e8000000008be885ed0f85840000008b5c24148d542418528b5424108d44241833c98a0d000000005350555152e8000000008be88b44240c50e80000000085ed75516a5c53e8000000008bd083c40885d274138bfb83c9ff33c02bd3f2aef7d149423bca762d8b3d0000000083c9ff33c056f2aef7d12bf98bf78bd18bfb83c9fff2ae8bca4fc1e902f3a58bca83e103f3a45e33c05f85ed5d5b0f94c059c20800",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_Str_Software_Westwood_Yuri_s_Reven@@3EA",
+   "sym_key": "g_Str_Software_Westwood_Yuri_s_Reven"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAXPBDKK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_HTMLPath@@3EA",
+   "sym_key": "g_INI_Key_HTMLPath"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAXPBDPAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "_strrchr",
+   "sym_key": "strrchr"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?asc_815E74@@3PAGA",
+   "sym_key": "asc_815E74"
+  }
+ ]
+}

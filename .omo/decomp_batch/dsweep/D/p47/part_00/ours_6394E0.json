@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_6394E0@@YIDPAIH@Z",
+ "sym_key": "Unnamed::sub_6394E0",
+ "size": 423,
+ "link_base": 0,
+ "bytes_hex": "81ecf00000008b4204538bd9568b08578d7c24208b4104b91b0000008bf083c06cf3a5668b10668994248c0000008a40028884248e0000008a44243784c0750c5f5e32c05b81c4f0000000c38d4c2433e80000000085c08944240c0f8438010000508d4c241ce8000000008b3833c98a48048b54240c8bf180e200538d4c24140bf2e8000000008a48048b10a1000000005657518b4830526a2a518d8c24a8000000e80000000081e600ffffff8b54240c8b8424f80000008b8c24f400000081e2ff0000000bf28b9424f000000056508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f4000000528b9424f4000000508b8424f4000000518b8c24f0000000525051e8000000005f5e5b81c4f0000000c38a44240c5f5e5b81c4f0000000c3",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?SetEvent@ScenarioClass@@QAEPADHDHDHD@Z",
+   "sym_key": "ScenarioClass::SetEvent"
+  },
+  {
+   "off": 395,
+   "type": "REL32",
+   "sym": "?Network__RecordEvent@@YGDHHHHHHHHHHHHHHHHHHHHHHHHHHH@Z",
+   "sym_key": "Network__RecordEvent"
+  }
+ ]
+}

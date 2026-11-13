@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dd334 __kbhit -> _addr_7D
+[conv] 0x76e430 TechnoClass::Team_Start_76E430 -> TechnoClass
+[conv] 0x5d6690 MultiplayerGameMode::AddEntries -> MultiplayerGameMode
+[conv] 0x5522d0 LCWPipe::AddRef -> LCWPipe
+[conv] 0x76fb90 ArtConfig::resetConfig -> ArtConfig
+[conv] 0x76fc50 ArtConfig::validateConfig -> ArtConfig
+[conv] 0x5cf5f0 SessionClass::Destruct -> SessionClass
+[conv] 0x4fa910 HouseClass::StartFactoryProduction -> HouseClass
+[conv] 0x4dded0 FootClass::GetActionOnObject -> FootClass
+[conv] 0x773970 sub_773970 -> _addr_77
+[conv] 0x6394e0 sub_6394E0 -> _addr_63
+[conv] 0x7ac500 HandleLogoutWOL_Handle -> HandleLogoutWOL
+[conv] 0x76d3a0 TechnoClass::sub_76D3A0 -> TechnoClass
+[conv] 0x4e6070 ObjectClass::sub_4E6070 -> ObjectClass
+[conv] 0x522100 TechnoClass::sub_522100 -> TechnoClass
+[conv] 0x75f8b0 WaveClass::DrawWave -> WaveClass
+[conv] 0x690ae0 ScoreScreen::LoadCountryFlags -> ScoreScreen
+[conv] 0x70ee30 TechnoClass::CheckFireCooldown -> TechnoClass
+[conv] 0x720ea0 Theme::Stop -> Theme
+[conv] 0x72dc20 CleanupEVASystem_Cleanup -> CleanupEVASystem
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] TechnoClass              rc=2
+[era] MultiplayerGameMode      rc=2
+[era] LCWPipe                  rc=2
+[era] ArtConfig                rc=0
+[era] SessionClass             rc=2
+[era] HouseClass               rc=0
+[era] FootClass                rc=2
+[era] _addr_77                 rc=0
+[era] _addr_63                 rc=0
+[era] HandleLogoutWOL          rc=0
+[era] ObjectClass              rc=0
+[era] WaveClass                rc=2
+[era] ScoreScreen              rc=0
+[era] Theme                    rc=2
+[era] CleanupEVASystem         rc=0
+=== diffasm byte-compare ===
+[diff] 0x76e430   MISMATCH         TechnoClass::Team_Start_76E430
+[diff] 0x522100   MISMATCH         TechnoClass::sub_522100
+[diff] 0x70ee30   MISMATCH         TechnoClass::CheckFireCooldown
+[diff] 0x76fb90   MISMATCH         ArtConfig::resetConfig
+[diff] 0x76fc50   MISMATCH         ArtConfig::validateConfig
+[diff] 0x4fa910   MISMATCH         HouseClass::StartFactoryProduction
+[diff] 0x773970   MISMATCH         sub_773970
+[diff] 0x6394e0   MISMATCH         sub_6394E0
+[diff] 0x7ac500   MISMATCH         HandleLogoutWOL_Handle
+[diff] 0x4e6070   MISMATCH         ObjectClass::sub_4E6070
+[diff] 0x690ae0   MISMATCH         ScoreScreen::LoadCountryFlags
+[diff] 0x72dc20   MISMATCH         CleanupEVASystem_Cleanup
+[ledger] 0x7dd334 __kbhit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e430 TechnoClass::Team_Start_76E430 -> NG (attempt 1)
+[ledger] 0x5d6690 MultiplayerGameMode::AddEntries -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5522d0 LCWPipe::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76fb90 ArtConfig::resetConfig -> NG (attempt 1)
+[ledger] 0x76fc50 ArtConfig::validateConfig -> NG (attempt 1)
+[ledger] 0x5cf5f0 SessionClass::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fa910 HouseClass::StartFactoryProduction -> NG (attempt 1)
+[ledger] 0x4dded0 FootClass::GetActionOnObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x773970 sub_773970 -> NG (attempt 1)
+[ledger] 0x6394e0 sub_6394E0 -> NG (attempt 1)
+[ledger] 0x7ac500 HandleLogoutWOL_Handle -> NG (attempt 1)
+[ledger] 0x76d3a0 TechnoClass::sub_76D3A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e6070 ObjectClass::sub_4E6070 -> NG (attempt 1)
+[ledger] 0x522100 TechnoClass::sub_522100 -> NG (attempt 1)
+[ledger] 0x75f8b0 WaveClass::DrawWave -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690ae0 ScoreScreen::LoadCountryFlags -> NG (attempt 1)
+[ledger] 0x70ee30 TechnoClass::CheckFireCooldown -> NG (attempt 1)
+[ledger] 0x720ea0 Theme::Stop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72dc20 CleanupEVASystem_Cleanup -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "codegen_shape": 3,
+  "regalloc": 3,
+  "branch_polarity": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p47\batch_report.json

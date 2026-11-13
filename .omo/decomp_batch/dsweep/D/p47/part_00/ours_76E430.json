@@ -1,0 +1,57 @@
+{
+ "symbol": "?Team_Start_76E430@TechnoClass@@QAEHHPA_N@Z",
+ "sym_key": "TechnoClass::Team_Start_76E430",
+ "size": 170,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508d4c240c51e8000000008b4c240c85c9746f8b564c8b424450e8000000003b8638040000772b8b8e400400008b54240c3bc1c7442408000000000f9ec1880a8d4c2408e800000000b8010000005ec208003b863404000072288b8e3c040000c7442408000000003bc18b4c240c0f9dc088018d4c2408e80000000033c05ec208008b54240c8d4c2408c744240800000000c60200e800000000b8020000005ec20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?ActivateScreenWDT@@YGHHH@Z",
+   "sym_key": "ActivateScreenWDT"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?CountCellType@WDTClass@@QAEHH@Z",
+   "sym_key": "WDTClass::CountCellType"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_State@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_State"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_State@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_State"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_State@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_State"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  }
+ ]
+}

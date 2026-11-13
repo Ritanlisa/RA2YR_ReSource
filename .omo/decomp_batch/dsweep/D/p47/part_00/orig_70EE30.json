@@ -1,0 +1,11 @@
+{
+ "addr": "0x70EE30",
+ "name": "TechnoClass::CheckFireCooldown",
+ "size": 195,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70EE30",
+ "bytes_hex": "568bf1578b96ec0100008b86f401000083faff740e8b0d84eda8002bca3bc87d192bc185c074138b8e1c020000e88ec8dfff84c00f84820000008b8e1c020000e87bc8dfff84c0743d8b068bceff90c400000084c0742fa184eda8008bbedc0100002bc783c04025ff0000807907480d00ffffff4083f8487c4283f8777f3d5f32c05ec204008b168bceff92bc0100008bf88b068bceff90c400000084c0741c85ff74188b4c240c8b51308bcf52e80d82d7ff84c075055f5ec204005fb0015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

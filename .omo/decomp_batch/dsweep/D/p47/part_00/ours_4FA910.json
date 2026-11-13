@@ -1,0 +1,57 @@
+{
+ "symbol": "?StartFactoryProduction@HouseClass@@QAEHPAXHD@Z",
+ "sym_key": "HouseClass::StartFactoryProduction",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "8b54240856578b7c240c85d28bf17c198bcfe80000000083ff06740583ff0775088b88080e0000eb0233c98d47ff83f827776e33d28a9000000000ff2495000000008a44241484c074258b8eb8530000eb218b8eac530000eb1983f90575108b8ecc530000eb0c8b8eb0530000eb048b4c241485c9742a6a01e80000000039350000000075146a008bcfe80000000050b900000000e8000000005f33c05ec20c005fb8030000005ec20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__GetByTypeAndIndex@@YIHHH@Z",
+   "sym_key": "TechnoTypeClass__GetByTypeAndIndex"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "$L1934",
+   "sym_key": "$L1934"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "$L1935",
+   "sym_key": "$L1935"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?StartProduction@FactoryClass@@QAEDD@Z",
+   "sym_key": "FactoryClass::StartProduction"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?GetStatus@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::GetStatus"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?ActivateTab@Sidebar@@QAEHH@Z",
+   "sym_key": "Sidebar::ActivateTab"
+  }
+ ]
+}

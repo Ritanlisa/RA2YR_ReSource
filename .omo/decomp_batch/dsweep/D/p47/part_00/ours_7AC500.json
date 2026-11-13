@@ -1,0 +1,45 @@
+{
+ "symbol": "?HandleLogoutWOL_Handle@@YGHH@Z",
+ "sym_key": "Unnamed::HandleLogoutWOL_Handle",
+ "size": 195,
+ "link_base": 0,
+ "bytes_hex": "578b7c240885ff7509b8570007805fc20400568b771085f67430833e00742b8b461085c074068b0850ff51086a00c7461000000000ff5620833f64750583c61ceb0383c624833e0075d58d571c52e8000000008d473450e8000000008d4f4c51e8000000008bb78000000085f6741a558b560452ff168b6e0856e80000000083c4048bf585ed75e85d8b471885c0742c8a476c84c074258b477885c0741533f68b4778468b44b0fc50e8000000003b777476ed8b4f1851e8000000005e33c05fc20400",
+ "relocs": [
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?DeleteCriticalSection@@YGXPAX@Z",
+   "sym_key": "DeleteCriticalSection"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?DeleteCriticalSection@@YGXPAX@Z",
+   "sym_key": "DeleteCriticalSection"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?DeleteCriticalSection@@YGXPAX@Z",
+   "sym_key": "DeleteCriticalSection"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?HeapDestroy@@YGHPAX@Z",
+   "sym_key": "HeapDestroy"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?HeapDestroy@@YGHPAX@Z",
+   "sym_key": "HeapDestroy"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_522100@TechnoClass@@QAE_NH@Z",
+ "sym_key": "TechnoClass::sub_522100",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "8b81c006000083ec188a90940d000084d2750832c083c418c204008b817406000053565785c0c744240c00000000744e8b088d54241052680000000050ff118bf885ff7c0f8b7424108d4c240ce800000000eb0b8d4c240ce80000000033f685ff8974240c7d1181ff02400080740957e80000000083c40485f67513eb048b7424106803400080e80000000083c4048b068d4c24145156ff500cb904000000bf000000008d74241433d28b44240cf3a70f94c385c074068b0850ff51085f8ac35e5b83c418c20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_818858@@3EA",
+   "sym_key": "DataGlobal_818858"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Release_Alt@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Release_Alt"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Release_Alt@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Release_Alt"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_CLSID_JumpjetLocomotion@@3U_GUID_era@@A",
+   "sym_key": "g_CLSID_JumpjetLocomotion"
+  }
+ ]
+}
