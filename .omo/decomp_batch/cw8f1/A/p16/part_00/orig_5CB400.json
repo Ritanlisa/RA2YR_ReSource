@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB400",
+ "name": "UnholyAlliance::Write",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB400",
+ "bytes_hex": "a058b2a80084c074168b44240450e8fdae000084c07408b801000000c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5850",
+ "name": "MSEngine::DestroyData",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5850",
+ "bytes_hex": "8b0185c0740750e88c3b1f0059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

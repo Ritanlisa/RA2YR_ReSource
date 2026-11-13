@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cac20 sub_5CAC20 -> _addr_5C
+[conv] 0x5cadf0 MPBattleClass::isHouseAllyChangeAllowed -> MPBattleClass
+[conv] 0x5cb190 MPBattleClass::onPlayerConnect -> MPBattleClass
+[conv] 0x5cb360 sub_5CB360 -> _addr_5C
+[conv] 0x5cb400 UnholyAlliance::Write -> UnholyAlliance
+[conv] 0x5d37e0 sub_5D37E0 -> _addr_5D
+[conv] 0x5d39b0 MPBattleClass::randomAICountryIndex -> MPBattleClass
+[conv] 0x5d5850 MSEngine::DestroyData -> MSEngine
+[conv] 0x5d58b0 MPBattleClass::startingPositionsToHouseBaseCells -> MPBattleClass
+[conv] 0x5d5a80 sub_5D5A80 -> _addr_5D
+[conv] 0x5d8a60 sub_5D8A60 -> _addr_5D
+[conv] 0x5d8c30 sub_5D8C30 -> _addr_5D
+[conv] 0x5d8d80 sub_5D8D80 -> _addr_5D
+[conv] 0x5d8f50 sub_5D8F50 -> _addr_5D
+[conv] 0x5da4d0 sub_5DA4D0 -> _addr_5D
+[conv] 0x5da6a0 sub_5DA6A0 -> _addr_5D
+[conv] 0x5dacf0 sub_5DACF0 -> _addr_5D
+[conv] 0x5daec0 sub_5DAEC0 -> _addr_5D
+[conv] 0x5e2600 sub_5E2600 -> _addr_5E
+[conv] 0x5ef2f0 sub_5EF2F0 -> _addr_5E
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] UnholyAlliance           rc=0
+[era] _addr_5D                 rc=0
+[era] MSEngine                 rc=0
+[era] _addr_5E                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cac20   MATCH            sub_5CAC20
+[diff] 0x5cb360   MATCH            sub_5CB360
+[diff] 0x5cadf0   MATCH            MPBattleClass::isHouseAllyChangeAllowed
+[diff] 0x5cb190   MATCH            MPBattleClass::onPlayerConnect
+[diff] 0x5d39b0   MATCH            MPBattleClass::randomAICountryIndex
+[diff] 0x5d58b0   MATCH            MPBattleClass::startingPositionsToHouseBaseCells
+[diff] 0x5cb400   MATCH            UnholyAlliance::Write
+[diff] 0x5d37e0   MATCH            sub_5D37E0
+[diff] 0x5d5a80   MATCH            sub_5D5A80
+[diff] 0x5d8a60   MATCH            sub_5D8A60
+[diff] 0x5d8c30   MATCH            sub_5D8C30
+[diff] 0x5d8d80   MATCH            sub_5D8D80
+[diff] 0x5d8f50   MATCH            sub_5D8F50
+[diff] 0x5da4d0   MATCH            sub_5DA4D0
+[diff] 0x5da6a0   MATCH            sub_5DA6A0
+[diff] 0x5dacf0   MATCH            sub_5DACF0
+[diff] 0x5daec0   MATCH            sub_5DAEC0
+[diff] 0x5d5850   MATCH            MSEngine::DestroyData
+[diff] 0x5e2600   MATCH            sub_5E2600
+[diff] 0x5ef2f0   MATCH            sub_5EF2F0
+[ledger] 0x5cac20 sub_5CAC20 -> OK (attempt 2)
+[ledger] 0x5cadf0 MPBattleClass::isHouseAllyChangeAllowed -> OK (attempt 3)
+[ledger] 0x5cb190 MPBattleClass::onPlayerConnect -> OK (attempt 2)
+[ledger] 0x5cb360 sub_5CB360 -> OK (attempt 3)
+[ledger] 0x5cb400 UnholyAlliance::Write -> OK (attempt 2)
+[ledger] 0x5d37e0 sub_5D37E0 -> OK (attempt 2)
+[ledger] 0x5d39b0 MPBattleClass::randomAICountryIndex -> OK (attempt 3)
+[ledger] 0x5d5850 MSEngine::DestroyData -> OK (attempt 2)
+[ledger] 0x5d58b0 MPBattleClass::startingPositionsToHouseBaseCells -> OK (attempt 2)
+[ledger] 0x5d5a80 sub_5D5A80 -> OK (attempt 3)
+[ledger] 0x5d8a60 sub_5D8A60 -> OK (attempt 2)
+[ledger] 0x5d8c30 sub_5D8C30 -> OK (attempt 3)
+[ledger] 0x5d8d80 sub_5D8D80 -> OK (attempt 2)
+[ledger] 0x5d8f50 sub_5D8F50 -> OK (attempt 3)
+[ledger] 0x5da4d0 sub_5DA4D0 -> OK (attempt 2)
+[ledger] 0x5da6a0 sub_5DA6A0 -> OK (attempt 3)
+[ledger] 0x5dacf0 sub_5DACF0 -> OK (attempt 2)
+[ledger] 0x5daec0 sub_5DAEC0 -> OK (attempt 3)
+[ledger] 0x5e2600 sub_5E2600 -> OK (attempt 3)
+[ledger] 0x5ef2f0 sub_5EF2F0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p16\batch_report.json
