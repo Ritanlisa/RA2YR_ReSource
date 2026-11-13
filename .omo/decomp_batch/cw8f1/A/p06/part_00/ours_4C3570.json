@@ -1,0 +1,21 @@
+{
+ "symbol": "?Close@EditClass@@QAEFXZ",
+ "sym_key": "EditClass::Close",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4634c7463c0000000085c0740c50e80000000083c40489463c8bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?ActivateGlobal@COMObject@@QAEFXZ",
+   "sym_key": "COMObject::ActivateGlobal"
+  }
+ ]
+}

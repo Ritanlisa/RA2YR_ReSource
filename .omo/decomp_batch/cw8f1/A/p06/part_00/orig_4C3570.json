@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C3570",
+ "name": "DropListClass::Close",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C3570",
+ "bytes_hex": "568bf18b4634c7463c0000000085c0740c50e87e6e300083c40489463c8bcee80ce401005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

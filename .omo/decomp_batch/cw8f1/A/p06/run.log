@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a4ea0 sub_4A4EA0 -> _addr_4A
+[conv] 0x4a5070 sub_4A5070 -> _addr_4A
+[conv] 0x4a6a60 sub_4A6A60 -> _addr_4A
+[conv] 0x4a6c30 sub_4A6C30 -> _addr_4A
+[conv] 0x4a8440 sub_4A8440 -> _addr_4A
+[conv] 0x4a8610 sub_4A8610 -> _addr_4A
+[conv] 0x4af330 sub_4AF330 -> _addr_4A
+[conv] 0x4af4e0 sub_4AF4E0 -> _addr_4A
+[conv] 0x4af500 sub_4AF500 -> _addr_4A
+[conv] 0x4b4cb0 DriveLocomotionClass::AddRef -> DriveLocomotionClass
+[conv] 0x4b4cc0 DriveLocomotionClass::Release -> DriveLocomotionClass
+[conv] 0x4b58a0 sub_4B58A0 -> _addr_4B
+[conv] 0x4b5a70 sub_4B5A70 -> _addr_4B
+[conv] 0x4b67a0 sub_4B67A0 -> _addr_4B
+[conv] 0x4b6970 sub_4B6970 -> _addr_4B
+[conv] 0x4b6bb0 HouseClass::RegisterForSwizzleTracking -> HouseClass
+[conv] 0x4ba580 sub_4BA580 -> _addr_4B
+[conv] 0x4c1b80 sub_4C1B80 -> _addr_4C
+[conv] 0x4c1d50 sub_4C1D50 -> _addr_4C
+[conv] 0x4c3570 EditClass::Close -> EditClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] DriveLocomotionClass     rc=0
+[era] _addr_4B                 rc=0
+[era] HouseClass               rc=0
+[era] _addr_4C                 rc=0
+[era] EditClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a4ea0   MATCH            sub_4A4EA0
+[diff] 0x4a5070   MATCH            sub_4A5070
+[diff] 0x4a6a60   MATCH            sub_4A6A60
+[diff] 0x4a6c30   MATCH            sub_4A6C30
+[diff] 0x4a8440   MATCH            sub_4A8440
+[diff] 0x4a8610   MATCH            sub_4A8610
+[diff] 0x4af330   MATCH            sub_4AF330
+[diff] 0x4af4e0   MATCH            sub_4AF4E0
+[diff] 0x4af500   MATCH            sub_4AF500
+[diff] 0x4b4cb0   MATCH            DriveLocomotionClass::AddRef
+[diff] 0x4b4cc0   MATCH            DriveLocomotionClass::Release
+[diff] 0x4b58a0   MATCH            sub_4B58A0
+[diff] 0x4b5a70   MATCH            sub_4B5A70
+[diff] 0x4b67a0   MATCH            sub_4B67A0
+[diff] 0x4b6970   MATCH            sub_4B6970
+[diff] 0x4ba580   MATCH            sub_4BA580
+[diff] 0x4b6bb0   MATCH            HouseClass::RegisterForSwizzleTracking
+[diff] 0x4c1b80   MATCH            sub_4C1B80
+[diff] 0x4c1d50   MATCH            sub_4C1D50
+[diff] 0x4c3570   MATCH            EditClass::Close
+[ledger] 0x4a4ea0 sub_4A4EA0 -> OK (attempt 2)
+[ledger] 0x4a5070 sub_4A5070 -> OK (attempt 3)
+[ledger] 0x4a6a60 sub_4A6A60 -> OK (attempt 2)
+[ledger] 0x4a6c30 sub_4A6C30 -> OK (attempt 3)
+[ledger] 0x4a8440 sub_4A8440 -> OK (attempt 2)
+[ledger] 0x4a8610 sub_4A8610 -> OK (attempt 3)
+[ledger] 0x4af330 sub_4AF330 -> OK (attempt 2)
+[ledger] 0x4af4e0 sub_4AF4E0 -> OK (attempt 3)
+[ledger] 0x4af500 sub_4AF500 -> OK (attempt 3)
+[ledger] 0x4b4cb0 DriveLocomotionClass::AddRef -> OK (attempt 2)
+[ledger] 0x4b4cc0 DriveLocomotionClass::Release -> OK (attempt 2)
+[ledger] 0x4b58a0 sub_4B58A0 -> OK (attempt 2)
+[ledger] 0x4b5a70 sub_4B5A70 -> OK (attempt 4)
+[ledger] 0x4b67a0 sub_4B67A0 -> OK (attempt 2)
+[ledger] 0x4b6970 sub_4B6970 -> OK (attempt 3)
+[ledger] 0x4b6bb0 HouseClass::RegisterForSwizzleTracking -> OK (attempt 2)
+[ledger] 0x4ba580 sub_4BA580 -> OK (attempt 3)
+[ledger] 0x4c1b80 sub_4C1B80 -> OK (attempt 2)
+[ledger] 0x4c1d50 sub_4C1D50 -> OK (attempt 3)
+[ledger] 0x4c3570 EditClass::Close -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p06\batch_report.json
