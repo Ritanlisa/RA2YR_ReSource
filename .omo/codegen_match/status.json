@@ -28917,6 +28917,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x47d2b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "House::AnnounceUpgrade",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "House::AnnounceUpgrade",
+  "rule_violations": 18,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x47dd70": {
   "attempts": 1,
   "clean": false,
@@ -45750,6 +45762,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4bbca0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DSurface::DrawLineModulated",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DSurface::DrawLineModulated",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4be9d0": {
   "attempts": 1,
   "first_diff": "+0 xor eax, eax",
@@ -45777,6 +45801,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::DrawGradientLine",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4bfd30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DSurface::DrawLineZBuf",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DSurface::DrawLineZBuf",
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -50645,6 +50681,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DestructFoggedObjectClass",
   "rule_violations": 18,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4d1890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TacticalClass::DrawBuildings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TacticalClass::DrawBuildings",
+  "rule_violations": 63,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -65368,6 +65416,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "globalHelper_005FD0",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5060b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "HouseClass::ScanBuildLocation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass::ScanBuildLocation",
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80157,6 +80217,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x541820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "IPXManagerClass::ReceiveLoop",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Network::ReceiveLoop",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x542280": {
   "attempts": 1,
   "clean": false,
@@ -89335,6 +89407,18 @@
   "name": "CellClass::UpdateTileVariant2",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x570050": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Terrain::ProcessCellModification",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Terrain::ProcessCellModification",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x570ae0": {
   "attempts": 1,
@@ -109654,6 +109738,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5de520": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": null,
+  "name": "NetworkLobby::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "NetworkLobby::DlgProc",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5df180": {
   "attempts": 1,
   "clean": false,
@@ -128498,6 +128594,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x656ec0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Radar::RenderMinimap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Radar::RenderMinimap",
+  "rule_violations": 22,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6578f0": {
   "attempts": 1,
   "clean": false,
@@ -138715,6 +138823,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x694760": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "SendNetworkFile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SendNetworkFile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6951f0": {
   "attempts": 5,
   "clean": false,
@@ -146746,6 +146865,17 @@
   "orig_name": "TopLevelExceptionFilter",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6be1c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "WinMainSetup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WinMainSetup",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6bec50": {
@@ -156582,6 +156712,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_6D8C60",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6d8db0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "TacticalMap::RenderAllObjects",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TacticalMap::RenderAllObjects",
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -184115,6 +184257,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x761640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Voxel::SectionProject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Voxel::SectionProject",
+  "rule_violations": 7,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x762060": {
   "attempts": 1,
   "clean": true,
@@ -184124,6 +184278,18 @@
   "orig_name": "nullsub_46",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x762070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Voxel::LightRender",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Voxel::LightRender",
+  "rule_violations": 11,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x762ae0": {
@@ -195158,6 +195324,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x794ba0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::StartGameWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "StartGameWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x795650": {
   "attempts": 1,
   "clean": false,
@@ -195168,6 +195346,17 @@
   "orig_name": "QueryNATPortWOL",
   "rule_violations": 9,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x795cd0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x218",
+  "name": "NegotiateScenarioWOL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "NegotiateScenarioWOL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x796710": {
@@ -196011,6 +196200,18 @@
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
  },
+ "0x7a3100": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CNetUtilEventSink::PopulateLobbyLists",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WOLGameList::PopulateLobbyLists",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7a3b30": {
   "attempts": 1,
   "clean": false,
@@ -196065,6 +196266,18 @@
   "orig_name": "System_Init_7A41A0",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7a41c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CChatEventSink::HandleServerList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CChatEventSink::HandleServerList",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7a4c10": {
@@ -196161,6 +196374,18 @@
   "orig_name": "CComObject_CChatEventSink___ATL::Disconnect",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7a7110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CChatEventSink::HandleChannelJoin",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CChatEventSink::HandleChannelJoin",
+  "rule_violations": 10,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7a7b60": {
@@ -209503,6 +209728,17 @@
   "orig_name": "__mbsdec",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7d170d": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__input",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__input",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7d2132": {

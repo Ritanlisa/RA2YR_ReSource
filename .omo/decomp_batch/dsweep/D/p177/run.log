@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p177\part_00
+=== convert (20 addrs) ===
+[conv] 0x761640 Voxel::SectionProject -> Voxel
+[conv] 0x4bfd30 DSurface::DrawLineZBuf -> DSurface
+[conv] 0x6d8db0 TacticalMap::RenderAllObjects -> TacticalMap
+[conv] 0x7d170d __input -> _addr_7D
+[conv] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> CNetUtilEventSink
+[conv] 0x656ec0 Radar::RenderMinimap -> Radar
+[conv] 0x795cd0 NegotiateScenarioWOL -> _addr_79
+[conv] 0x7a41c0 CChatEventSink::HandleServerList -> CChatEventSink
+[conv] 0x7a7110 CChatEventSink::HandleChannelJoin -> CChatEventSink
+[conv] 0x541820 IPXManagerClass::ReceiveLoop -> IPXManagerClass
+[conv] 0x762070 Voxel::LightRender -> Voxel
+[conv] 0x794ba0 ObjectClass::StartGameWOL -> ObjectClass
+[conv] 0x694760 SendNetworkFile -> _addr_69
+[conv] 0x570050 Terrain::ProcessCellModification -> Terrain
+[conv] 0x6be1c0 WinMainSetup -> _addr_6B
+[conv] 0x4d1890 TacticalClass::DrawBuildings -> TacticalClass
+[conv] 0x5de520 NetworkLobby::DlgProc -> NetworkLobby
+[conv] 0x4bbca0 DSurface::DrawLineModulated -> DSurface
+[conv] 0x47d2b0 House::AnnounceUpgrade -> House
+[conv] 0x5060b0 HouseClass::ScanBuildLocation -> HouseClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Voxel                    rc=2
+[era] DSurface                 rc=2
+[era] TacticalMap              rc=2
+[era] _addr_7D                 rc=2
+[era] CNetUtilEventSink        rc=2
+[era] Radar                    rc=2
+[era] _addr_79                 rc=0
+[era] CChatEventSink           rc=2
+[era] IPXManagerClass          rc=2
+[era] ObjectClass              rc=2
+[era] _addr_69                 rc=2
+[era] Terrain                  rc=2
+[era] _addr_6B                 rc=2
+[era] TacticalClass            rc=2
+[era] NetworkLobby             rc=2
+[era] House                    rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x795cd0   MISMATCH         NegotiateScenarioWOL
+[ledger] 0x761640 Voxel::SectionProject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bfd30 DSurface::DrawLineZBuf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d8db0 TacticalMap::RenderAllObjects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d170d __input -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> COMPILE_FAIL (attempt 1)
+[ledger] 0x656ec0 Radar::RenderMinimap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x795cd0 NegotiateScenarioWOL -> NG (attempt 1)
+[ledger] 0x7a41c0 CChatEventSink::HandleServerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a7110 CChatEventSink::HandleChannelJoin -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541820 IPXManagerClass::ReceiveLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x762070 Voxel::LightRender -> COMPILE_FAIL (attempt 1)
+[ledger] 0x794ba0 ObjectClass::StartGameWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x694760 SendNetworkFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x570050 Terrain::ProcessCellModification -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6be1c0 WinMainSetup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d1890 TacticalClass::DrawBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5de520 NetworkLobby::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bbca0 DSurface::DrawLineModulated -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47d2b0 House::AnnounceUpgrade -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5060b0 HouseClass::ScanBuildLocation -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p177\batch_report.json
