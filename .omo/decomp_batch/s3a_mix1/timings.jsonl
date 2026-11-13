@@ -17,3 +17,4 @@
 {"part": 16, "n": 20, "seconds": 26.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 17, "n": 20, "seconds": 25.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 18, "n": 20, "seconds": 22.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 19, "n": 20, "seconds": 25.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
