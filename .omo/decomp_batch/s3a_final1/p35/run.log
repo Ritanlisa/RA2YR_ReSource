@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> CChatEventSink
+[conv] 0x7ab260 CChatEventSink::DispatchStub_43 -> CChatEventSink
+[conv] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> CChatEventSink
+[conv] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> WonlineStringDialogControl
+[conv] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> ObjectClass
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x7b05c0 CompressScreenshot -> _addr_7B
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x7b8090 FormatWideStringPrefix -> _addr_7B
+[conv] 0x7b82e0 Game_Set -> Game
+[conv] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> WWMouseClass
+[conv] 0x7b92d0 WWMouseClass::updateCursor -> WWMouseClass
+[conv] 0x7ba450 FilePipe::Release -> FilePipe
+[conv] 0x7ba530 FileStraw::Release -> FileStraw
+[conv] 0x7bc040 CalcSurfaceBlitRects -> _addr_7B
+[conv] 0x7bd170 UnitClass::Audio_Render_7BD170 -> UnitClass
+[conv] 0x7be5d0 AllocCallback::Dispatch -> AllocCallback
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CChatEventSink           rc=2
+[era] WonlineStringDialogControl rc=2
+[era] ObjectClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_7B                 rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] UDPInterfaceClass        rc=2
+[era] Game                     rc=2
+[era] WWMouseClass             rc=2
+[era] FilePipe                 rc=2
+[era] FileStraw                rc=2
+[era] UnitClass                rc=2
+[era] AllocCallback            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ab260 CChatEventSink::DispatchStub_43 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b05c0 CompressScreenshot -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7b2ff0 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 16)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> COMPILE_FAIL (attempt 16)
+[ledger] 0x7b8090 FormatWideStringPrefix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b82e0 Game_Set -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b92d0 WWMouseClass::updateCursor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ba450 FilePipe::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ba530 FileStraw::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7bc040 CalcSurfaceBlitRects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bd170 UnitClass::Audio_Render_7BD170 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7be5d0 AllocCallback::Dispatch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p35\batch_report.json
