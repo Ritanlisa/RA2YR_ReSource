@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "branch_polarity": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4f0520",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0547",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
+   "unit": "_DynamicVectorClass_PAVScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0570",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0597",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_OverlayTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVOverlayTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f05c0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f05e7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_OverlayTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVOverlayTypeClass::Constructor_VectorClass_OverlayTypeClass___",
+   "unit": "_DynamicVectorClass_PAVOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0610",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0637",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_SmudgeTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVSmudgeTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0660",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0687",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVSmudgeTypeClass::Constructor_VectorClass_SmudgeTypeClass___",
+   "unit": "_DynamicVectorClass_PAVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f06b0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f06d7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_TerrainTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVTerrainTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0700",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0727",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_TerrainTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVTerrainTypeClass::Constructor_VectorClass_TerrainTypeClass___",
+   "unit": "_DynamicVectorClass_PAVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0750",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0777",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_BuildingTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVBuildingTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f07a0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f07c7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_BuildingTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVBuildingTypeClass::Constructor_VectorClass_BuildingTypeClass___",
+   "unit": "_DynamicVectorClass_PAVBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f07f0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0817",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AircraftTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVAircraftTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0840",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0867",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_AircraftTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVAircraftTypeClass::Constructor_VectorClass_AircraftTypeClass___",
+   "unit": "_DynamicVectorClass_PAVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0890",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f08b7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_UnitTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVUnitTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f08e0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0907",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVUnitTypeClass::Constructor_VectorClass_UnitTypeClass___",
+   "unit": "_DynamicVectorClass_PAVUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0930",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0957",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AnimTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVAnimTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0980",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f09a7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVAnimTypeClass::Constructor_VectorClass_AnimTypeClass___",
+   "unit": "_DynamicVectorClass_PAVAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f09d0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f09f7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_InfantryTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVInfantryTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0a20",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0a47",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVInfantryTypeClass::Constructor_VectorClass_InfantryTypeClass___",
+   "unit": "_DynamicVectorClass_PAVInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0a70",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0a97",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_BulletTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVBulletTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0ac0",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0ae7",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTypeClass___",
+   "emitted": "_DynamicVectorClass_PAVBulletTypeClass::Constructor_VectorClass_BulletTypeClass___",
+   "unit": "_DynamicVectorClass_PAVBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x4f0b10",
+   "batch": "cw8f2",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+14 je 0x4f0b37",
+    "ours": "+14 je 0x28"
+   },
+   "pathology": "branch_polarity",
+   "name": "VectorClass_ptr_VoxelAnimTypeClass::QueryInterface",
+   "emitted": "_VectorClass_PAVVoxelAnimTypeClass::QueryInterface",
+   "unit": "_VectorClass_PAVVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "9/11",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  }
+ ]
+}
