@@ -1,0 +1,21 @@
+{
+ "symbol": "?Unlock@DSurface@@QAEDXZ",
+ "sym_key": "DSurface::Unlock",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0578bf17509a1440a000085c074508b461c85c074498b0850ff51603dc2017688753c8b461c508b10ff526c85c0752f8b461c508b08ff516085c075228b7e0c85ff7e1b8b1650505689460cff525c8b560c8b06425689560cff5060897e0c8b460c85c07f055f24005ec34889460c75178b461c8b561452508b08ff9180000000c746140000000024015f0c015ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Initialized@@3IA",
+   "sym_key": "g_DDraw_Initialized"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

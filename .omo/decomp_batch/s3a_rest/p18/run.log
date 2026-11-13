@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x4baec0 DSurface::CanLock -> DSurface
+[conv] 0x4baf20 DSurface::CheckBltStatus -> DSurface
+[conv] 0x4baf40 DSurface::Unlock -> DSurface
+[conv] 0x4bb0d0 DSurface::Blit -> DSurface
+[conv] 0x4bb620 DSurface::FillRectEx -> DSurface
+[conv] 0x4beac0 AudioStream::DrawWaveform -> AudioStream
+[conv] 0x4bf750 DSurface::DrawGradientLine -> DSurface
+[conv] 0x4c0750 DSurface::DrawDashedLineStipple -> DSurface
+[conv] 0x4c1600 ObjectClass::sub_4C1600 -> ObjectClass
+[conv] 0x4c2790 ObjectClass::sub_4C2790 -> ObjectClass
+[conv] 0x4c4f90 TaskForceClass::Check -> TaskForceClass
+[conv] 0x4c6210 GameResult::CalcScore -> GameResult
+[conv] 0x4c6780 ScenarioClass::SetEvent -> ScenarioClass
+[conv] 0x4c6b60 SidebarClass::SetFlashEntry -> SidebarClass
+[conv] 0x4c85e0 ExceptionHandler::GenerateReport -> ExceptionHandler
+[conv] 0x4c98b0 TeamTypeClass::Construct -> TeamTypeClass
+[conv] 0x4c9ff0 BuildingClass::AbandonProduction -> BuildingClass
+[conv] 0x4ca430 FactoryClass::Stat -> FactoryClass
+[conv] 0x4ca670 FactoryClass::CountType -> FactoryClass
+[conv] 0x4caba0 DynamicVector::resetScriptState -> DynamicVector
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DSurface                 rc=2
+[era] AudioStream              rc=2
+[era] ObjectClass              rc=2
+[era] TaskForceClass           rc=2
+[era] GameResult               rc=2
+[era] ScenarioClass            rc=2
+[era] SidebarClass             rc=2
+[era] ExceptionHandler         rc=2
+[era] TeamTypeClass            rc=2
+[era] BuildingClass            rc=2
+[era] FactoryClass             rc=2
+[era] DynamicVector            rc=2
+=== diffasm byte-compare ===
+[diff] 0x4baf40   MISMATCH         DSurface::Unlock
+[diff] 0x4bb620   MISMATCH         DSurface::FillRectEx
+[diff] 0x4c0750   MISMATCH         DSurface::DrawDashedLineStipple
+[ledger] 0x4baec0 DSurface::CanLock -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4baf20 DSurface::CheckBltStatus -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4baf40 DSurface::Unlock -> NG (attempt 2)
+[ledger] 0x4bb0d0 DSurface::Blit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bb620 DSurface::FillRectEx -> NG (attempt 2)
+[ledger] 0x4beac0 AudioStream::DrawWaveform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bf750 DSurface::DrawGradientLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c0750 DSurface::DrawDashedLineStipple -> NG (attempt 2)
+[ledger] 0x4c1600 ObjectClass::sub_4C1600 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c2790 ObjectClass::sub_4C2790 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c4f90 TaskForceClass::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c6210 GameResult::CalcScore -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c6780 ScenarioClass::SetEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c6b60 SidebarClass::SetFlashEntry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c85e0 ExceptionHandler::GenerateReport -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c98b0 TeamTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c9ff0 BuildingClass::AbandonProduction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ca430 FactoryClass::Stat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ca670 FactoryClass::CountType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4caba0 DynamicVector::resetScriptState -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p18\batch_report.json

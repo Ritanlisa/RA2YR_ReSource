@@ -1,0 +1,45 @@
+{
+ "symbol": "?FillRectEx@DSurface@@QAEDHHH@Z",
+ "sym_key": "DSurface::FillRectEx",
+ "size": 483,
+ "link_base": 0,
+ "bytes_hex": "81eca800000053568bf1578b461c85c00f84bf0100008b9c24bc0000008b430885c00f8ead0100008b430c85c00f8ea2010000a00000000084c00f84710100008b0656ff506c84c00f85630100008b461c6a01508b08ff513485c00f8550010000a10000000085c0750da1440a000085c00f845e0100008b461c85c074538b1050ff52603dc201768875468b461c508b08ff516c85c00f85390100008b461c508b10ff526085c00f85280100008b7e0c85ff7e1d89460c8b066a006a0056ff505c8b4e0c5641894e0c8b0eff5160897e0c8b168d4424405056ff52788bbc24b80000006a006a00508bd78d4c243ce8000000008b086a00894c24248b5004895424288b4808894c242c8b500c8b078b3b8d4c24246a008954243403c7518d5424188d4c243c89442418e8000000008b08894c240c8b50088b78048b400c85d20f8e9000000085c00f8e8800000003c78b761c894c241003d18944241c897c2414b91900000033c08d7c2450895424188b9424c0000000f3ab8d4c2450899424a00000005168000400016a008d54241cc744245c640000008b066a005256ff5014f7d81bc05f5e405b81c4a8000000c20c008b8424c00000008b8c24b80000005053518bcee8000000005f5e5b81c4a8000000c20c005f5e32c05b81c4a8000000c20c00",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?byte_8205D4@@3EA",
+   "sym_key": "byte_8205D4"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Initialized@@3IA",
+   "sym_key": "g_DDraw_Initialized"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 453,
+   "type": "REL32",
+   "sym": "?FillRectEx@XSurface@@QAEDPAX0H@Z",
+   "sym_key": "XSurface::FillRectEx"
+  }
+ ]
+}

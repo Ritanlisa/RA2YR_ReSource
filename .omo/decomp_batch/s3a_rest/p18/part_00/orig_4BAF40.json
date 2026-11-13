@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BAF40",
+ "name": "DSurface::Unlock",
+ "size": 154,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BAF40",
+ "bytes_hex": "a078f989005684c0578bf17509a080eda80084c074548b461c85c0744d8b0850ff51603dc201768875408b461c508b10ff526c85c075338b461c508b08ff516085c075268b7e0c85ff7e1f8b1633c951508bce89460cff525c8b460c8bce4089460c8b06ff5060897e0c8b460c85c07e244885c089460c75178b461c8b561452508b08ff9180000000c74614000000005fb0015ec35f32c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
