@@ -1,0 +1,45 @@
+{
+ "symbol": "?ReadIntList2@INIClass@@QAEDPAEPAD@Z",
+ "sym_key": "INIClass::ReadIntList2",
+ "size": 236,
+ "link_base": 0,
+ "bytes_hex": "81eca40000008b8424a800000053555685c057894c2410750f5f5e5d32c05b81c4a4000000c208008b096a0050e8000000008bac24bc000000bb0100000085ed0f8497000000807d00000f848d0000006a4b8d4424385550e800000000538d4c2424680000000051c684249700000000e8000000008d7c244c83c9ff33c083c418f2aef7d18d41ff8d71ff85c07e4e83f84b7c1a8a44343484c074043c2076054e743aebef85f67434c6443434008d4c2434e8000000008b8c24b80000008d542434528b5424148d44241850518b0ae8000000004303ee0f8569ffffff5f5e5db0015b81c4a4000000c20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?Trim@String@@QAEPADXZ",
+   "sym_key": "String::Trim"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5297E0",
+ "name": "INIEntry::Write2Integers",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5297E0",
+ "bytes_hex": "8b44240c83ec388b10568bf18b48048d44240451526800c0810050e8f4f629008b5424548b44245083c4108d4c24045152508bcee847eeffff5e83c438c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

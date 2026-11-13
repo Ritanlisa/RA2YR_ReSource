@@ -1,0 +1,11 @@
+{
+ "addr": "0x527C10",
+ "name": "INIClass::SetRect",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x527C10",
+ "bytes_hex": "8b44240c83ec408b5008568bf18b480c518b4804528b1051528d44241468bc5b820050e8bc122a008b5424648b44246083c4188d4c24045152508bcee80f0a00005e83c440c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

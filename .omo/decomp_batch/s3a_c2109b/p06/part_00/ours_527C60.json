@@ -1,0 +1,39 @@
+{
+ "symbol": "?ReadFloat@INIClass@@QAEDPAPAD0PAH@Z",
+ "sym_key": "INIClass::ReadFloat",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "83ec4053568bf1578b4c2454e8000000008b4c24508bf8e8000000008bd88b4424588b480c8b5008518b4804528b1051528d44241c680000000050e80000000083c4188d4c240c518b0e5753e8000000005f5e5b83c440c20c00",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "??_C@_0M@IKDG@?$CFd?0?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_0M@IKDG@?$CFd?0?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

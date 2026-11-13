@@ -1,0 +1,11 @@
+{
+ "addr": "0x528170",
+ "name": "INIClass::ReadDouble3",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x528170",
+ "bytes_hex": "8b44240c81ec00020000568bf1508d4c240868d05b820051e8670d2a008b8424180200008b8c241402000083c40c8d5424045250518bcee8b40400005e81c400020000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

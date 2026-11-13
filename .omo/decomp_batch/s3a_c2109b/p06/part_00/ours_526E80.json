@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReadBase64Data@INIClass@@QAEDPAEHH@Z",
+ "sym_key": "INIClass::ReadBase64Data",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "81eca000000053558bac24ac00000033db56573beb8bf90f84eb000000399c24b80000000f84de0000008bb424bc00000083fe010f8cce0000005355e8000000008b8424b800000056508d4c2440895c241c895c2420e80000000033c98d542410894c242052894c2428895c2448894c242c895c2414894c24308d4c2420895c2420e8000000006a468d4c244cbe01000000e8000000003bc3885c0448743f568d842494000000680000000050e80000000083c40c8d4c24488d9424900000005152558bcfe8000000006a468d4c244c46e8000000003bc3885c044875c18d4c241ce8000000008d4c2438e8000000008d4c2410e8000000005f5e5db0015b81c4a0000000c20c005f5e5d32c05b81c4a0000000c20c00",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Set@Delegate@@QAEXH@Z",
+   "sym_key": "Delegate::Set"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?ProcessFrame@BitmapClass@@QAEIH@Z",
+   "sym_key": "BitmapClass::ProcessFrame"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?ProcessFrame@BitmapClass@@QAEIH@Z",
+   "sym_key": "BitmapClass::ProcessFrame"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadCoord3@INIClass@@QAEDPAEPADPAH@Z",
+ "sym_key": "INIClass::ReadCoord3",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec388b5004568bf18b48088b005152508d4c2410680000000051e8000000008b4424588b4c245483c4148d5424045250518b0ee8000000005e83c438c20c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x529BF0",
+ "name": "INIClass::ReadCoord3",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x529BF0",
+ "bytes_hex": "8b44240c83ec388b5004568bf18b48088b005152508d4c241068b089810051e8e0f229008b4424588b4c245483c4148d5424045250518bcee833eaffff5e83c438c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

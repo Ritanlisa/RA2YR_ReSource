@@ -1,0 +1,11 @@
+{
+ "addr": "0x527C60",
+ "name": "INIClass::ReadFloat",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x527C60",
+ "bytes_hex": "83ec4053568bf1578b4c2454e8cfd728008b4c24508bf8e8c4d728008bd88b4424588b480c8b5008518b4804528b1051528d44241c68bc5b820050e854122a0083c4188d4c240c5157538bcee8af0900005f5e5b83c440c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
