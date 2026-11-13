@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x48dfd0 sub_48DFD0 -> _addr_48
+[conv] 0x48e030 sub_48E030 -> _addr_48
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> ConnectionPointClass
+[conv] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> EnumConnectionPointsClass
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x4a3110 CStreamClass::ddtor -> CStreamClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4a57b0 Dial8Class::GetValue -> Dial8Class
+[conv] 0x4a88c0 DisplayClass::SetSize -> DisplayClass
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x4ada30 ScenarioClass::GetScenarioData -> ScenarioClass
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x4c65e0 EventClass::Add -> EventClass
+[conv] 0x4c66c0 EventClass::AddEvent -> EventClass
+[conv] 0x4c6720 EventClass::Add2 -> EventClass
+[conv] 0x4c6970 EventClass::AddEventEx -> EventClass
+[conv] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4d82b0 FootClass::ValidatePlacement -> FootClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_48                 rc=2
+[era] ConnectionPointClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] CStreamClass             rc=2
+[era] Surface                  rc=2
+[era] Dial8Class               rc=2
+[era] DisplayClass             rc=2
+[era] MapClass                 rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] EventClass               rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a3110   MISMATCH         CStreamClass::ddtor
+[ledger] 0x48dfd0 sub_48DFD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48e030 sub_48E030 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4a3110 CStreamClass::ddtor -> NG (attempt 3)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4a57b0 Dial8Class::GetValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a88c0 DisplayClass::SetSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4ada30 ScenarioClass::GetScenarioData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> COMPILE_FAIL (attempt 17)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4c65e0 EventClass::Add -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c66c0 EventClass::AddEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c6720 EventClass::Add2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c6970 EventClass::AddEventEx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4d82b0 FootClass::ValidatePlacement -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p45\batch_report.json

@@ -1,0 +1,63 @@
+{
+ "symbol": "?ddtor@CStreamClass@@QAEPAXPAXH@Z",
+ "sym_key": "CStreamClass::ddtor",
+ "size": 220,
+ "link_base": 0,
+ "bytes_hex": "51568b74240c57894c24088b46088d7e0885c0c70600000000c746040000000074638a461184c0742a8b461485c07e236a008bcfe80000000085c075168b461485c07e0f8b4c24108b5618515052e8000000008b0785c0742c8b086a0050ff512085c07c20833f00750d6803400080e80000000083c4048b07508b10ff5208c707000000008b462050e8000000008b4e18c746200000000051e8000000008b561cc746180000000052e8000000008b3f83c40c85ffc7461c0000000074068b0757ff5008f644240801740956e80000000083c4048bc65f5e59c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?vt_CStreamClass_2@@3PAXA",
+   "sym_key": "vt_CStreamClass_2"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?vt_CStreamClass_2@@3PAXA",
+   "sym_key": "vt_CStreamClass_2"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?IsEmpty@CStreamClass@@QAEHH@Z",
+   "sym_key": "CStreamClass::IsEmpty"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?IStream__Read@@YGJPAX00@Z",
+   "sym_key": "IStream__Read"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
