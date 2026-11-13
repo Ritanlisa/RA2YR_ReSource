@@ -1,0 +1,45 @@
+{
+ "symbol": "?Load@RadarClass@@QAEHH@Z",
+ "sym_key": "RadarClass::Load",
+ "size": 594,
+ "link_base": 0,
+ "bytes_hex": "83ec1453558b6c242056578bf955e80000000033db3bc30f8c2b0200008b4500538d4c242c6a045155ff500c3bc30f8c140200008d8fc0140000894c2418e80000000081ffa4edffff8db75c120000741b53538bcee800000000891ec787701200000a000000899f6c1200008b442428895c24103bc30f8e800000008b5500538d4424206a085055ff520c3bc30f8cb50100008b876c1200008d8f641200003bc17c24399f7812000075043bcb753c8b87701200003bc37e328b1603c1535056ff520884c074248b876c1200008b8f601200008d500189976c1200008b54241c8914c18b5424208954c1048b4424108b4c2428403bc1894424107c808b4500538d4c242c6a045155ff500c3bc30f8c3501000081ffdcedffff8db724120000741b53538bcee800000000891ec787381200000a000000899f341200008b442428895c24143bc37e658b5500538d4424146a045055ff520c3bc30f8ce90000008b4e088b46103bc17c208a460d84c075043bcb75288b46143bc37e218b1603c1535056ff520884c074138b46108b56048d4801894e108b4c2410890c828b4424148b4c2428403bc1894424147c9b8d878c120000b916000000b301ba0000000083f808741b33f68858048970fc8930c64005008950f8c7400c0a00000089700883c0184975da8b55006a008d87b01400006a045055ff520c85c07c4d8b4d006a008d97ac1400006a045255ff510c85c07c378b45006a008d8fb41400006a045155ff500c85c07c218b87b81400008b55006a006a045055ff520c85c07c0b8b4c2418e80000000033c05f5e5d5b83c414c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?DisplayClass__SetSurface@@YGHPAX@Z",
+   "sym_key": "DisplayClass__SetSurface"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?PointConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::PointConstructor"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::CellConstructor"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_Point2D@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_Point2D"
+  },
+  {
+   "off": 578,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  }
+ ]
+}

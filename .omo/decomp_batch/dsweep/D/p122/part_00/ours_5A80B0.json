@@ -1,0 +1,219 @@
+{
+ "symbol": "?PlaceMapSeedBuildings@RandomMap@@QAEHXZ",
+ "sym_key": "RandomMap::PlaceMapSeedBuildings",
+ "size": 620,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec488b150000000053555657894c2428b8682000008bf242893083c00c3d583300007cf18b1500000000b8583300008bf242893083c00c3dd83400007cf1db416083ec08dcc0dc0500000000dc0500000000dd1c24e8000000008b4c243083c40833c1bb0000000025ff000000895c242033c1895c2418894424240f8edc0100008b74242866895c241066895c2412895c24148b3d0000000033ed0fafff4f895c243c8d470189442438df6c2438dd5c2430b9c8340000e80000000089442440895c2444df6c244083ec08dc0d00000000dc4c2438dd1c24e80000000033c683c40825ff00000033f03bf777c553538d4c2434e8000000008b15182700008d0cb6c1e1045003cae80000000084c075a28b15182700008d0cb6c1e104458b041181fdc80000008944241c7f258d4c241c51b9f8010000e8000000008bc8e80000000084c0750f8b3d00000000e94affffff33edeb048b6c241c8b442414896c243040896c241083f814894424140f8d97000000dd4424308b3d00000000e80000000050e8000000000faf05000000000fbfd58b0d1827000003c283c4048d0480c1e004385c08450f85ecfeffffdd4424300fbfd583ea0489542448e80000000050e80000000083e80483c4048944244cb8080000005332d28d4c244c8944245489442458e80000000084c00f84a2feffff8d4424106a0150b9f8010000e80000000084c00f8489feffff837c241414742e8d4c241051e80000000084c074208b4424288d5424105250e80000000083c4088d4c241051e800000000ff4424188b4424204083f80a894424207d108b5424188b4424243bd00f8c28feffff5f5e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC1D4@@3IA",
+   "sym_key": "DataGlobal_ABC1D4"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBEC0@@3IA",
+   "sym_key": "DataGlobal_ABBEC0"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?dbl_7EDB10@@3NA",
+   "sym_key": "dbl_7EDB10"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "__real@8@3ffdfae147ae147ae000",
+   "sym_key": "_real@8@3ffdfae147ae147ae000"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?Equals@CellStruct@@QAEHPAX@Z",
+   "sym_key": "CellStruct::Equals"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 313,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 325,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 389,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 395,
+   "type": "REL32",
+   "sym": "?SWORD1@@YAHHZZ",
+   "sym_key": "SWORD1"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 451,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 457,
+   "type": "REL32",
+   "sym": "?SWORD1@@YAHHZZ",
+   "sym_key": "SWORD1"
+  },
+  {
+   "off": 492,
+   "type": "REL32",
+   "sym": "?IsAreaClearMap@@YIDPAXDD@Z",
+   "sym_key": "IsAreaClearMap"
+  },
+  {
+   "off": 512,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 517,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?ScheduleMapSeedBuildings@@YG_NPAX@Z",
+   "sym_key": "ScheduleMapSeedBuildings"
+  },
+  {
+   "off": 561,
+   "type": "REL32",
+   "sym": "?ScatterMapSeedBuildings@@YAXPAX0@Z",
+   "sym_key": "ScatterMapSeedBuildings"
+  },
+  {
+   "off": 574,
+   "type": "REL32",
+   "sym": "?PlaceNeutralCreeps@@YGHPAX@Z",
+   "sym_key": "PlaceNeutralCreeps"
+  }
+ ]
+}

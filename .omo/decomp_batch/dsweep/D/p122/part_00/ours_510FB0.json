@@ -1,0 +1,57 @@
+{
+ "symbol": "?NameToDialogID@PlayerSlot@@QAEHXZ",
+ "sym_key": "PlayerSlot::NameToDialogID",
+ "size": 570,
+ "link_base": 0,
+ "bytes_hex": "5333c0a00000000056578bf98bf08bc78a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb87b1100005bc333d28bc78a15000000008bf28a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb87c1100005bc333d28bc78a15000000008bf28a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb87d1100005bc333d28bc78a15000000008bf28a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb87e1100005bc3be000000008bc78a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb87f1100005bc3be000000008bc78a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb8801100005bc3be000000008bc78a088a1e8ad13acb751e84d274168a48018a5e018ad13acb750e83c00283c60284d275dc33c0eb051bc083d8ff85c075095f5eb8811100005bc333d28bc78a15000000008bf28a108a1e8aca3ad3752e84c974168a50018a5e018aca3ad3751e83c00283c60284c975dc33c05ff7d81bc05e257deeffff5b0582110000c31bc05f83d8ff5ef7d81bc05b257deeffff0582110000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_Str__Player___A_@@3EA",
+   "sym_key": "g_Str__Player___A_"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_Str__Player___B_@@3EA",
+   "sym_key": "g_Str__Player___B_"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?g_Str__Player___C_@@3EA",
+   "sym_key": "g_Str__Player___C_"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?g_Str__Player___D_@@3EA",
+   "sym_key": "g_Str__Player___D_"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?aPlayerE@@3PADA",
+   "sym_key": "aPlayerE"
+  },
+  {
+   "off": 350,
+   "type": "DIR32",
+   "sym": "?aPlayerF@@3PADA",
+   "sym_key": "aPlayerF"
+  },
+  {
+   "off": 415,
+   "type": "DIR32",
+   "sym": "?aPlayerG@@3PADA",
+   "sym_key": "aPlayerG"
+  },
+  {
+   "off": 485,
+   "type": "DIR32",
+   "sym": "?g_Str__Player___H_@@3EA",
+   "sym_key": "g_Str__Player___H_"
+  }
+ ]
+}

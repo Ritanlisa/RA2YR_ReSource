@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p122\part_00
+=== convert (20 addrs) ===
+[conv] 0x6568a0 RadarClass::Load -> RadarClass
+[conv] 0x756bb0 AudioOcclusion::ComputeBoundingVertices -> AudioOcclusion
+[conv] 0x46bbc0 BulletTypeClass::Construct -> BulletTypeClass
+[conv] 0x424ce0 TechnoClass::ProductionCompletionCallback -> TechnoClass
+[conv] 0x7dbed6 ObjectClass::___ld12mul -> ObjectClass
+[conv] 0x668fb0 RulesClass::LoadSpecialWeapons -> RulesClass
+[conv] 0x71dea0 TerrainTypeClass::LoadFromINI -> TerrainTypeClass
+[conv] 0x59a6c0 RandomMap::FinalizeMapData -> RandomMap
+[conv] 0x510fb0 PlayerSlot::NameToDialogID -> PlayerSlot
+[conv] 0x412000 SubmitDirectSoundBufferData -> _addr_41
+[conv] 0x487720 TechnoClass::ApplySplashDamageToNeighbors -> TechnoClass
+[conv] 0x5a80b0 RandomMap::PlaceMapSeedBuildings -> RandomMap
+[conv] 0x624530 SymbolTable::Insert -> SymbolTable
+[conv] 0x4ffb20 PathfindingClass::FindPath -> PathfindingClass
+[conv] 0x7af6c0 WorldDominationFactionDlgProc -> _addr_7A
+[conv] 0x7d10c2 ___crtLCMapStringA -> _addr_7D
+[conv] 0x610570 DestroyDialogChildWindow -> _addr_61
+[conv] 0x57b210 Cell::GetTerrainMask -> Cell
+[conv] 0x533d20 KeyboardConfig::LoadINI -> KeyboardConfig
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RadarClass               rc=0
+[era] AudioOcclusion           rc=0
+[era] BulletTypeClass          rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] RulesClass               rc=2
+[era] TerrainTypeClass         rc=2
+[era] RandomMap                rc=0
+[era] PlayerSlot               rc=0
+[era] _addr_41                 rc=0
+[era] SymbolTable              rc=2
+[era] PathfindingClass         rc=2
+[era] _addr_7A                 rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_61                 rc=2
+[era] Cell                     rc=0
+[era] KeyboardConfig           rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6568a0   MISMATCH         RadarClass::Load
+[diff] 0x756bb0   MISMATCH         AudioOcclusion::ComputeBoundingVertices
+[diff] 0x487720   MISMATCH         TechnoClass::ApplySplashDamageToNeighbors
+[diff] 0x59a6c0   MISMATCH         RandomMap::FinalizeMapData
+[diff] 0x5a80b0   MISMATCH         RandomMap::PlaceMapSeedBuildings
+[diff] 0x510fb0   MISMATCH         PlayerSlot::NameToDialogID
+[diff] 0x412000   MISMATCH         SubmitDirectSoundBufferData
+[diff] 0x57b210   MISMATCH         Cell::GetTerrainMask
+[ledger] 0x6568a0 RadarClass::Load -> NG (attempt 1)
+[ledger] 0x756bb0 AudioOcclusion::ComputeBoundingVertices -> NG (attempt 1)
+[ledger] 0x46bbc0 BulletTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x424ce0 TechnoClass::ProductionCompletionCallback -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dbed6 ObjectClass::___ld12mul -> COMPILE_FAIL (attempt 1)
+[ledger] 0x668fb0 RulesClass::LoadSpecialWeapons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71dea0 TerrainTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59a6c0 RandomMap::FinalizeMapData -> NG (attempt 1)
+[ledger] 0x510fb0 PlayerSlot::NameToDialogID -> NG (attempt 1)
+[ledger] 0x412000 SubmitDirectSoundBufferData -> NG (attempt 1)
+[ledger] 0x487720 TechnoClass::ApplySplashDamageToNeighbors -> NG (attempt 1)
+[ledger] 0x5a80b0 RandomMap::PlaceMapSeedBuildings -> NG (attempt 1)
+[ledger] 0x624530 SymbolTable::Insert -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ffb20 PathfindingClass::FindPath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af6c0 WorldDominationFactionDlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d10c2 ___crtLCMapStringA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610570 DestroyDialogChildWindow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57b210 Cell::GetTerrainMask -> NG (attempt 1)
+[ledger] 0x533d20 KeyboardConfig::LoadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p122\batch_report.json

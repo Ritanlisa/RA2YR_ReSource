@@ -1,0 +1,93 @@
+{
+ "symbol": "?GetTerrainMask@Cell@@QAEHPAHH@Z",
+ "sym_key": "Cell::GetTerrainMask",
+ "size": 523,
+ "link_base": 0,
+ "bytes_hex": "83ec08a10000000053558b6c2414894c240c8bd85683c00e578b7d248bcd89442410e8000000008844241c8bc78b0d0c270000c1f8100fbff00fbfff8d04373bc10f8eb80100008bd72bd63bd10f8dac0100008bd62bd73bd10f8da00100003b05102700000f8f940100008b44242085c0742583f80175118b45383bc37c0a3b4424100f8c760100008bcde80000000084c00f84670100008b45248d4c242089442420e8000000008a484a84c90f844c0100008b404085c00f8d430100008b4c2414c1e6098ba93c01000003f78b8cb5fcf7ffff85c97405e8000000008a5c241c8b8cb500f8ffff8ad38db4b500f8fffff6da1bd283e24085c98bfa7409e80000000084c07509833e00750a84db740681cf800000008b4e0485c97409e80000000084c0750b8b460485c0750784db740383cf018b8efc07000085c97409e80000000084c0750e8b86fc07000085c0750784db740383cf208b8e0408000085c97409e80000000084c0750e8b860408000085c0750784db740383cf028b8efc0f000085c97409e80000000084c0750e8b86fc0f000085c0750784db740383cf108b8e0010000085c97409e80000000084c0750e8b860010000085c0750784db740383cf088b8e0410000085c97409e80000000084c0750e8b860410000085c0751284db740e8bc75f5e5d0c045b83c408c208008bc75f5e5d5b83c408c2080033c05f5e5d5b83c408c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_CellPassabilityLUT@@3IA",
+   "sym_key": "g_CellPassabilityLUT"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?GetCellData@Tactical@@QAEPADXZ",
+   "sym_key": "Tactical::GetCellData"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 319,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 427,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 463,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  }
+ ]
+}

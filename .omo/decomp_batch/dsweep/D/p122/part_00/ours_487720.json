@@ -1,0 +1,57 @@
+{
+ "symbol": "?ApplySplashDamageToNeighbors@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::ApplySplashDamageToNeighbors",
+ "size": 478,
+ "link_base": 0,
+ "bytes_hex": "83ec20578bf9897c24148a871801000084c00f84c10100008b4f38530fbf4738c1e9100fbfd9c1e008558d542410560580000000c1e308528944241881c380000000c7442414feffffffe8000000008b0d000000008b6c242c03c18944241cb9feffffff894c24248b47388bd0c1ea1003d18b4c241033d503c181e2ff000000b9f801000033ea8d54242833c55225ff00000033e8896c242ce8000000003bc7894424180f84080100008bb0ec00000085f6747c8b7e3085f67467f646140474618b867406000085c0750d6803400080e80000000083c4048b54241c8b8674060000528b5424188b08535250ff91a000000084c0742c8b4e6c8b15400200008b066a00894c24308b8aa80f00006a016a016a00518d5424406a005256ff906c01000085ff8bf7758c8b4424188b7c24208bb0e800000085f674788b7e3085f67467f646140474618b867406000085c0750d6803400080e80000000083c4048b54241c8b8674060000528b5424188b08535250ff91a000000084c0742c8b4e6c8b15400200008b066a00894c241c8b8aa80f00006a016a016a00518d54242c6a005256ff906c01000085ff8bf7758c8b7c24208b4c24244183f903894c24240f8ca4feffff8b4424104083f803894424100f8c89feffff5e5d5b5f83c420c3",
+ "relocs": [
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7B4@@3IA",
+   "sym_key": "DataGlobal_89E7B4"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 343,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 385,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
