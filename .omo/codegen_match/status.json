@@ -74000,7 +74000,7 @@
   "this_as_id": false
  },
  "0x531680": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitBulkData",
@@ -74386,7 +74386,7 @@
   "this_as_id": false
  },
  "0x535d00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77451,7 +77451,7 @@
   "this_as_id": false
  },
  "0x5381a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77463,7 +77463,7 @@
   "this_as_id": false
  },
  "0x5381c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77511,7 +77511,7 @@
   "this_as_id": false
  },
  "0x538240": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77523,7 +77523,7 @@
   "this_as_id": false
  },
  "0x538260": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77535,7 +77535,7 @@
   "this_as_id": false
  },
  "0x538280": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77559,7 +77559,7 @@
   "this_as_id": false
  },
  "0x5382c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78477,7 +78477,7 @@
   "this_as_id": false
  },
  "0x539eb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78560,7 +78560,7 @@
   "this_as_id": false
  },
  "0x53a140": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78636,7 +78636,7 @@
   "status": "NG"
  },
  "0x53ae00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Weapon_Get",
@@ -78659,7 +78659,7 @@
   "this_as_id": false
  },
  "0x53af40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -78706,7 +78706,7 @@
   "this_as_id": false
  },
  "0x53b410": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Weapon_Get_53B410",
@@ -79452,7 +79452,7 @@
   "this_as_id": false
  },
  "0x53e3c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79533,7 +79533,7 @@
   "this_as_id": false
  },
  "0x53e770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameLoopMessagePump",
@@ -81045,7 +81045,7 @@
   "this_as_id": false
  },
  "0x542620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81846,7 +81846,7 @@
   "this_as_id": false
  },
  "0x547020": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81934,14 +81934,14 @@
   "this_as_id": false
  },
  "0x547cf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TerrainClass::GenerateTexture",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainClass::GenerateTexture",
-  "rule_violations": 38,
+  "rule_violations": 36,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -82765,7 +82765,7 @@
   "this_as_id": false
  },
  "0x54b750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82820,14 +82820,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x54bd30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::UpdateFootMoveToState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UpdateFootMoveToState",
-  "rule_violations": 6,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
