@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a3ae0 RandomMap::PlaceResources -> RandomMap
+[conv] 0x5a4b60 FloodFillPathfinding -> _addr_5A
+[conv] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> MapSeedClass
+[conv] 0x5a8f00 PlaceRandomTerrainFeatures -> _addr_5A
+[conv] 0x5a9c40 ObjectClass::InitializePathData -> ObjectClass
+[conv] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> DynamicVectorClass
+[conv] 0x5ad660 TypeList::BuildingTypeCopy -> TypeList
+[conv] 0x5ade20 Map_Delete_5ADE20 -> Map_Delete
+[conv] 0x5adf20 SessionClass::LoadGameSession -> SessionClass
+[conv] 0x5ae220 CampaignClass::LoadMovieDisplay -> CampaignClass
+[conv] 0x5ae750 Math::BuildRotationMatrix -> Math
+[conv] 0x5aff80 JumpjetLocomotionClass::GetMovementCoordinate_1 -> JumpjetLocomotionClass
+[conv] 0x5b17b0 BuildingClass::UpdateMovingPosition -> BuildingClass
+[conv] 0x5b2a30 Movement::UpdateLocomotion -> Movement
+[conv] 0x5b3760 MissionClass::LoadFromINI -> MissionClass
+[conv] 0x5b3c20 MixFileClass::FromFile -> MixFileClass
+[conv] 0x5b3f50 MixFileClass::sub_5B3F50 -> MixFileClass
+[conv] 0x5b4080 Tree::Destructor -> Tree
+[conv] 0x5b4610 MixFileClass::UnlinkFromPool -> MixFileClass
+[conv] 0x5b49b0 ModemGuest::Dialog -> ModemGuest
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RandomMap                rc=2
+[era] _addr_5A                 rc=2
+[era] MapSeedClass             rc=2
+[era] ObjectClass              rc=2
+[era] DynamicVectorClass       rc=2
+[era] TypeList                 rc=2
+[era] Map_Delete               rc=2
+[era] SessionClass             rc=2
+[era] CampaignClass            rc=2
+[era] Math                     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] BuildingClass            rc=2
+[era] Movement                 rc=2
+[era] MissionClass             rc=2
+[era] MixFileClass             rc=2
+[era] Tree                     rc=2
+[era] ModemGuest               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5a3ae0 RandomMap::PlaceResources -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a4b60 FloodFillPathfinding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a8f00 PlaceRandomTerrainFeatures -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a9c40 ObjectClass::InitializePathData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ad660 TypeList::BuildingTypeCopy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ade20 Map_Delete_5ADE20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5adf20 SessionClass::LoadGameSession -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ae220 CampaignClass::LoadMovieDisplay -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ae750 Math::BuildRotationMatrix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aff80 JumpjetLocomotionClass::GetMovementCoordinate_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b17b0 BuildingClass::UpdateMovingPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b2a30 Movement::UpdateLocomotion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b3760 MissionClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b3c20 MixFileClass::FromFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b3f50 MixFileClass::sub_5B3F50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4080 Tree::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4610 MixFileClass::UnlinkFromPool -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b49b0 ModemGuest::Dialog -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p39\batch_report.json
