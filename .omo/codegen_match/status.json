@@ -23086,15 +23086,15 @@
   "this_as_id": false
  },
  "0x45e970": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+9 push edi",
   "name": "BuildingTypeClass::LoadRepairAnimations",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingTypeClass::LoadRepairAnimations",
   "rule_violations": 35,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x45ebd0": {
@@ -24051,7 +24051,7 @@
   "this_as_id": false
  },
  "0x46b0c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24300,7 +24300,7 @@
   "status": "PENDING"
  },
  "0x46b960": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24810,7 +24810,7 @@
   "this_as_id": false
  },
  "0x46ce10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25249,7 +25249,7 @@
   "this_as_id": false
  },
  "0x46f6d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25638,7 +25638,7 @@
   "this_as_id": false
  },
  "0x471c90": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25650,7 +25650,7 @@
   "this_as_id": false
  },
  "0x471d40": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26518,7 +26518,7 @@
   "this_as_id": false
  },
  "0x473750": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26636,7 +26636,7 @@
   "this_as_id": false
  },
  "0x473ae0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26684,7 +26684,7 @@
   "this_as_id": false
  },
  "0x473c50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26732,7 +26732,7 @@
   "this_as_id": false
  },
  "0x473e50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26744,7 +26744,7 @@
   "this_as_id": false
  },
  "0x473f00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26970,7 +26970,7 @@
   "this_as_id": false
  },
  "0x474620": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -27463,7 +27463,7 @@
   "status": "NG"
  },
  "0x475d70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27482,7 +27482,7 @@
   "status": "NG"
  },
  "0x476020": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27544,7 +27544,7 @@
   "status": "NG"
  },
  "0x4767c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28147,7 +28147,7 @@
   "this_as_id": false
  },
  "0x478220": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28502,7 +28502,7 @@
   "this_as_id": false
  },
  "0x478e10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28763,7 +28763,7 @@
   "this_as_id": false
  },
  "0x47a560": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_47A560",
@@ -28797,7 +28797,7 @@
   "this_as_id": false
  },
  "0x47a920": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DriveControlCD",
