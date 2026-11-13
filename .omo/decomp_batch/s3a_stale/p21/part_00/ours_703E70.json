@@ -1,0 +1,93 @@
+{
+ "symbol": "?ScanNeighborCells@TechnoClass@@SIHH@Z",
+ "sym_key": "TechnoClass::ScanNeighborCells",
+ "size": 390,
+ "link_base": 0,
+ "bytes_hex": "83ec1453568bf1578d4c24108b065156ff90b80100008b108d44241850b9f80100008954241c33dbe80000000085c00f84480100008bcee80000000084c0750f8bcee80000000084c00f842e010000a07e0000008b742418660fbec8c0f81003ce660fbed066894c240c8b4c241a03d18d4c2414668954240e8b44240c51b9f801000089442418e8000000008bf0a07c0000008ad08b7c2418c0fa10660fbeca034c241a660fbed066894c240e03d78d4c2410668954240c8b44240c51b9f801000089442414e8000000008bf8a07d0000008ad0c0fa10660fbeca034c241a660fbed08b44241866894c240e03d08d44240c50b9f80100006689542410e80000000085f6747785ff747385c0746f8b4e388b150000000081f9ffff0000741a81f9ff00000074122bca4183f9077c0a83f9107f05bb010000008b4f3881f9ffff0000741a81f9ff00000074122bca4183f9077c0a83f9107f05bb010000008b40383dffff000074153dff000000740e2bc24083f8077c0683f8107f01435f8bc35e5b83c414c3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?CheckTargetCell@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::CheckTargetCell"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?ScanAdjacentCells@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::ScanAdjacentCells"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  }
+ ]
+}

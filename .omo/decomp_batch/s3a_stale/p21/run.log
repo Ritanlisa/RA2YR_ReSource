@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x6e7a80 BuildingLoadQueue::FindBuilding -> BuildingLoadQueue
+[conv] 0x6e9140 TeamClass::Update -> TeamClass
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x6eae60 TeamClass::ExecuteAction -> TeamClass
+[conv] 0x6ee310 TeamClass::SelectAreaAttackTarget -> TeamClass
+[conv] 0x6ee3f0 TeamClass::ProcessTeamMovement -> TeamClass
+[conv] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> ObjectClass
+[conv] 0x6ef9e0 TechnoClass::IsDeployed -> TechnoClass
+[conv] 0x6f19b0 SmallFunc_6F19B0 -> SmallFunc
+[conv] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> TechnoClass
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x6fdd50 TechnoClass::FireWeapon -> TechnoClass
+[conv] 0x703590 MapClass::FindPlacementCellsAlt -> MapClass
+[conv] 0x703860 TechnoClass::UpdatePowerDrain -> TechnoClass
+[conv] 0x703e70 TechnoClass::ScanNeighborCells -> TechnoClass
+[conv] 0x706640 TechnoClass::UpdateState -> TechnoClass
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x70b280 TechnoClass::ComputeAimVector -> TechnoClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] BuildingLoadQueue        rc=2
+[era] TeamClass                rc=2
+[era] TechnoClass              rc=2
+[era] SmallFunc                rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x703e70   MISMATCH         TechnoClass::ScanNeighborCells
+[ledger] 0x6e7330 ObjectClass::System_Read_6E7330 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e7a80 BuildingLoadQueue::FindBuilding -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6e9140 TeamClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6eae60 TeamClass::ExecuteAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ee310 TeamClass::SelectAreaAttackTarget -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ee3f0 TeamClass::ProcessTeamMovement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ef9e0 TechnoClass::IsDeployed -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6fdd50 TechnoClass::FireWeapon -> COMPILE_FAIL (attempt 6)
+[ledger] 0x703590 MapClass::FindPlacementCellsAlt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x703860 TechnoClass::UpdatePowerDrain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x703e70 TechnoClass::ScanNeighborCells -> NG (attempt 6)
+[ledger] 0x706640 TechnoClass::UpdateState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70b280 TechnoClass::ComputeAimVector -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p21\batch_report.json
