@@ -120691,7 +120691,7 @@
   "this_as_id": false
  },
  "0x6c0340": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f38b8",
@@ -120751,7 +120751,7 @@
   "this_as_id": false
  },
  "0x6c04c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f38d0",
@@ -120811,7 +120811,7 @@
   "this_as_id": false
  },
  "0x6c0640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f38e8",
@@ -120871,7 +120871,7 @@
   "this_as_id": false
  },
  "0x6c07c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3900",
@@ -120931,15 +120931,15 @@
   "this_as_id": false
  },
  "0x6c0940": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3918",
   "name": "ObjectClass::WinMain_Helper_6C0940",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C0940",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c0950": {
@@ -121063,15 +121063,15 @@
   "this_as_id": false
  },
  "0x6c0c40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3948",
   "name": "ObjectClass::WinMain_Helper_6C0C40",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C0C40",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c0c50": {
@@ -121118,15 +121118,15 @@
   "status": "NG"
  },
  "0x6c0dc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3960",
   "name": "ObjectClass::WinMain_Helper_6C0DC0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C0DC0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c0dd0": {
@@ -121178,15 +121178,15 @@
   "this_as_id": false
  },
  "0x6c0f40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3978",
   "name": "ObjectClass::WinMain_Helper_6C0F40",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C0F40",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c0f50": {
@@ -121238,15 +121238,15 @@
   "this_as_id": false
  },
  "0x6c10c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3990",
   "name": "ObjectClass::WinMain_Helper_6C10C0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C10C0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c10d0": {
@@ -121298,15 +121298,15 @@
   "this_as_id": false
  },
  "0x6c1240": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f39a8",
   "name": "ObjectClass::WinMain_Helper_6C1240",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1240",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1250": {
@@ -121358,15 +121358,15 @@
   "this_as_id": false
  },
  "0x6c13c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f39c0",
   "name": "ObjectClass::WinMain_Helper_6C13C0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C13C0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c13d0": {
@@ -121418,15 +121418,15 @@
   "this_as_id": false
  },
  "0x6c1540": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f39d8",
   "name": "ObjectClass::WinMain_Helper_6C1540",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1540",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1550": {
@@ -121478,15 +121478,15 @@
   "this_as_id": false
  },
  "0x6c16c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f39f0",
   "name": "ObjectClass::WinMain_Helper_6C16C0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C16C0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c16d0": {
@@ -121538,15 +121538,15 @@
   "this_as_id": false
  },
  "0x6c1840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a08",
   "name": "ObjectClass::WinMain_Helper_6C1840",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1840",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1850": {
@@ -121598,15 +121598,15 @@
   "this_as_id": false
  },
  "0x6c19c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a20",
   "name": "ObjectClass::WinMain_Helper_6C19C0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C19C0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c19d0": {
@@ -121658,15 +121658,15 @@
   "this_as_id": false
  },
  "0x6c1b40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a38",
   "name": "ObjectClass::WinMain_Helper_6C1B40",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1B40",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1b50": {
@@ -121713,15 +121713,15 @@
   "status": "NG"
  },
  "0x6c1cc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a50",
   "name": "ObjectClass::WinMain_Helper_6C1CC0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1CC0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1cd0": {
@@ -121773,15 +121773,15 @@
   "this_as_id": false
  },
  "0x6c1e40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a68",
   "name": "ObjectClass::WinMain_Helper_6C1E40",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1E40",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1e50": {
@@ -121845,15 +121845,15 @@
   "this_as_id": false
  },
  "0x6c1fc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a80",
   "name": "ObjectClass::WinMain_Helper_6C1FC0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C1FC0",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c1fd0": {
@@ -121905,15 +121905,15 @@
   "this_as_id": false
  },
  "0x6c2140": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [eax], 0x7f3a98",
   "name": "ObjectClass::WinMain_Helper_6C2140",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "WinMain_Helper_6C2140",
   "rule_violations": 1,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x6c2150": {
