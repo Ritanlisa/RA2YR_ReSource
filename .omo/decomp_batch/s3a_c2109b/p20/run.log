@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x7983e0 Setup2DlgProcMultiplayer -> _addr_79
+[conv] 0x7988c0 GameModeDlgProcMultiplayer -> _addr_79
+[conv] 0x79ba60 ValidateGameJoinWOL -> _addr_79
+[conv] 0x79d4e0 ObjectClass::CleanupWOLSession -> ObjectClass
+[conv] 0x7a0f40 Event_Handle_7A0F40 -> Event_Handle
+[conv] 0x7a1bb0 ObjectClass::MatchGameWOL -> ObjectClass
+[conv] 0x7a5240 CChatEventSink::GetTypeInfoCount -> CChatEventSink
+[conv] 0x7a5690 CChatEventSink::FireEvent -> CChatEventSink
+[conv] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> CChatEventSink
+[conv] 0x7a9970 CChatEventSink::HandleUserSearch -> CChatEventSink
+[conv] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> CChatEventSink
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x7b6290 FromStringInt -> _addr_7B
+[conv] 0x7b6320 FormatStringInt -> _addr_7B
+[conv] 0x7b6ae0 WideString::Append2 -> WideString
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+[conv] 0x7cb49d _srand -> _addr_7C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_79                 rc=0
+[era] ObjectClass              rc=2
+[era] Event_Handle             rc=2
+[era] CChatEventSink           rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] DynamicVector            rc=2
+[era] _addr_7B                 rc=0
+[era] WideString               rc=2
+[era] WDTGame                  rc=2
+[era] WinMain_Helper           rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7983e0   MISMATCH         Setup2DlgProcMultiplayer
+[diff] 0x7988c0   MISMATCH         GameModeDlgProcMultiplayer
+[diff] 0x79ba60   MISMATCH         ValidateGameJoinWOL
+[diff] 0x7a5240   MISMATCH         CChatEventSink::GetTypeInfoCount
+[diff] 0x7ad580   MISMATCH         _CComObject_VCDownloadEventSink_ATL::Draw
+[diff] 0x7b6290   MISMATCH         FromStringInt
+[diff] 0x7b6320   MISMATCH         FormatStringInt
+[ledger] 0x7983e0 Setup2DlgProcMultiplayer -> NG (attempt 3)
+[ledger] 0x7988c0 GameModeDlgProcMultiplayer -> NG (attempt 3)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> NG (attempt 8)
+[ledger] 0x79d4e0 ObjectClass::CleanupWOLSession -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a0f40 Event_Handle_7A0F40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a1bb0 ObjectClass::MatchGameWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a5240 CChatEventSink::GetTypeInfoCount -> NG (attempt 3)
+[ledger] 0x7a5690 CChatEventSink::FireEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a9970 CChatEventSink::HandleUserSearch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> NG (attempt 3)
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b6290 FromStringInt -> NG (attempt 3)
+[ledger] 0x7b6320 FormatStringInt -> NG (attempt 3)
+[ledger] 0x7b6ae0 WideString::Append2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cb49d _srand -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 3,
+  "ret_norm": 1,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p20\batch_report.json

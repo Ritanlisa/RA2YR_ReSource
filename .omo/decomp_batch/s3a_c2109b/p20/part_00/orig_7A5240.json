@@ -1,0 +1,11 @@
+{
+ "addr": "0x7A5240",
+ "name": "CComObject_CChatEventSink___ATL::GetTypeInfoCount",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7A5240",
+ "bytes_hex": "a0c17db70081ec0004000084c0753568171600006830a4840033d2b900ac8400e8fbfbf8ff508d44240468b440820050e8ef5202008d4c240c516affe87fd4e3ff83c41433c081c400040000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

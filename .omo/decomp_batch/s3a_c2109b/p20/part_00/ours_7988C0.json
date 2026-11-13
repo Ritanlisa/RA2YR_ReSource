@@ -1,0 +1,129 @@
+{
+ "symbol": "?GameModeDlgProcMultiplayer@@YGHPAXIHI@Z",
+ "sym_key": "Unnamed::GameModeDlgProcMultiplayer",
+ "size": 640,
+ "link_base": 0,
+ "bytes_hex": "81ec0c02000053558bac2424020000568bb4241c020000578bbc242402000081ff10010000751085ed740c8b4504506a0856e8000000008b9c242802000055538bd78bcee80000000085c00f85220200006a0856e80000000083ff2b0f86bf01000081ff110100000f85c20100006681fbe1060f869800000081e3ffff000081ebe2060000745b83eb02743181eb8d0000000f8598010000c70500000000020000008b0868710700005650ff51045f5e5d33c05b81c40c020000c21000c70500000000060000008b1068e40600005650ff52045f5e5d33c05b81c40c020000c21000c7050000000005000000c70500000000000000008b0868e20600005650ff51045f5e5d33c05b81c40c020000c2100081e3ffff000081fbe00600000f8fd50000000f84aa00000081fb5f050000742d81fb860600000f85f3000000c70500000000000000008b10535650ff52045f5e5d33c05b81c40c020000c210008d44241033c98a0d000000005068190002006a00516802000080e8000000008d5424148d44241c528d4c241c33d2508a15000000008b442418516a005250c744242c00020000e8000000008bf08b4c241051e80000000085f6757733d28d4c241ce8000000005f5e5d33c05b81c40c020000c21000c70500000000010000008b1068e00600005650ff52045f5e5d33c05b81c40c020000c2100081fbe10600007530c70500000000040000008b08535650ff51045f5e5d33c05b81c40c020000c2100083ff0f743283ff14744383ff2b740f5f5e5d33c05b81c40c020000c210008bcde8000000005f5e5db8010000005b81c40c020000c210008bcee8000000008bcee8000000006a0056e800000000b8010000005f5e5d5b81c40c020000c21000",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJPAXHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B248@@3IA",
+   "sym_key": "DataGlobal_A8B248"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?g_Str_WOL_URL_RegKey@@3EA",
+   "sym_key": "g_Str_WOL_URL_RegKey"
+  },
+  {
+   "off": 377,
+   "type": "REL32",
+   "sym": "?RegOpenKeyExA@@YGJPAXPBDKK0@Z",
+   "sym_key": "RegOpenKeyExA"
+  },
+  {
+   "off": 399,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Community@@3EA",
+   "sym_key": "g_INI_Key_Community"
+  },
+  {
+   "off": 421,
+   "type": "REL32",
+   "sym": "?RegQueryValueExA@@YGJPAXPBDPAI000@Z",
+   "sym_key": "RegQueryValueExA"
+  },
+  {
+   "off": 433,
+   "type": "REL32",
+   "sym": "?RegCloseKey@@YGJH@Z",
+   "sym_key": "RegCloseKey"
+  },
+  {
+   "off": 448,
+   "type": "REL32",
+   "sym": "?OpenURLWOL@@YIDPBXH@Z",
+   "sym_key": "OpenURLWOL"
+  },
+  {
+   "off": 469,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 514,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 578,
+   "type": "REL32",
+   "sym": "?Resize@Dialog@@QAEJXZ",
+   "sym_key": "Dialog::Resize"
+  },
+  {
+   "off": 603,
+   "type": "REL32",
+   "sym": "?DrawBackground@Dialog@@QAEXXZ",
+   "sym_key": "Dialog::DrawBackground"
+  },
+  {
+   "off": 610,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  },
+  {
+   "off": 618,
+   "type": "REL32",
+   "sym": "?ValidateRect@@YGHPAXH@Z",
+   "sym_key": "ValidateRect"
+  }
+ ]
+}

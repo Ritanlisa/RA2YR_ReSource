@@ -1,0 +1,33 @@
+{
+ "symbol": "?FormatStringInt@@YIPAPADPAPADHH@Z",
+ "sym_key": "Unnamed::FormatStringInt",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec1053568bd957508d4c241068000000008bf251e8000000008d542418568d44241c5250e8000000008d4c242483c41885c9c70300000000740f8d7c240c83c9ff33c0f2aef7d1eb05b90100000051e8000000008d54241083c4048903c6000085d274218d7c240c83c9ff33c0f2aef7d12bf98bc18bf78b3bc1e902f3a58bc883e103f3a45f8bc35e5b83c410c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "??_C@_06IMOF@?$CF?$CF0?$CFdd?$AA@",
+   "sym_key": "??_C@_06IMOF@?$CF?$CF0?$CFdd?$AA@"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

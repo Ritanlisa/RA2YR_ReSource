@@ -1,0 +1,51 @@
+{
+ "symbol": "?Draw@_CComObject_VCDownloadEventSink_ATL@@QAGHH@Z",
+ "sym_key": "_CComObject_VCDownloadEventSink_ATL::Draw",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "81ec940100008b442400c64424040083f802752d8b0d0000000033c0a00000000068471400005033d2e8000000008d5424048b4c2404515052e80000000083c40c8b8c2498010000e80000000068c805000050e8000000008d4c2404516a0068b204000050e80000000033c081c494010000c20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?aTxtConnecting@@3HA",
+   "sym_key": "aTxtConnecting"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}
