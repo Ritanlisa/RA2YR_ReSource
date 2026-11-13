@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_40A850@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_40A850",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "5156e8000000008b0d100100008bf084c90fbec1744185f6743d8b0950ff5148668b5650a110010000668954240666c744240401008b088d5424040fbec05250ff5138a1100100006a010fbed08b086a006a0052ff51305e59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?GetEnabled@Audio@@QAEPAXXZ",
+   "sym_key": "Audio::GetEnabled"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  }
+ ]
+}

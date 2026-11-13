@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+ "sym_key": "AbstractClass::InitVtables",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8bc1b900000000890889480489480889480cc20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?vt_AbstractClass_4@@3PAXA",
+   "sym_key": "vt_AbstractClass_4"
+  }
+ ]
+}

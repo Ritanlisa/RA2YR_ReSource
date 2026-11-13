@@ -1,0 +1,11 @@
+{
+ "addr": "0x4101C0",
+ "name": "AbstractClass::InitVtables",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4101C0",
+ "bytes_hex": "8bc1c74008bc1f7e00c7400cb41f7e00c700501f7e00c74004341f7e00c740082c1f7e00c7400c241f7e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

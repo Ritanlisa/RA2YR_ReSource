@@ -54,7 +54,7 @@
   "status": "OK"
  },
  "0x401190": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_401190",
@@ -222,11 +222,16 @@
   "this_as_id": false
  },
  "0x401f80": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "name": "ObjectClass::EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "?EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x401f90": {
   "attempts": 1,
@@ -272,7 +277,7 @@
   "this_as_id": false
  },
  "0x402040": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -351,7 +356,7 @@
   "this_as_id": false
  },
  "0x4024a0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -641,11 +646,16 @@
   "this_as_id": false
  },
  "0x403490": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "name": "ObjectClass::GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4034a0": {
   "attempts": 1,
@@ -1386,25 +1396,25 @@
   "this_as_id": false
  },
  "0x4060f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetAudioSource",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SetAudioSource",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x406130": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AudioSource::Get",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AudioSource::Get",
-  "rule_violations": 3,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -1701,11 +1711,16 @@
   "this_as_id": false
  },
  "0x4068e0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "unknown::Log",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 ret ",
+  "name": "Debug::Log",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Debug::Log",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4068f0": {
   "attempts": 1,
@@ -1932,14 +1947,14 @@
   "this_as_id": false
  },
  "0x406ee0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [0x87e728]",
   "name": "sub_406EE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_406EE0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x406f00": {
@@ -2161,7 +2176,7 @@
   "this_as_id": false
  },
  "0x4073b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -2197,7 +2212,7 @@
   "this_as_id": false
  },
  "0x407420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InsertAfterDListNode",
@@ -2923,7 +2938,7 @@
   "this_as_id": false
  },
  "0x408eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_408EB0",
@@ -3048,7 +3063,7 @@
   "this_as_id": false
  },
  "0x4093b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -3152,7 +3167,7 @@
   "this_as_id": false
  },
  "0x40a090": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -3211,11 +3226,16 @@
   "this_as_id": false
  },
  "0x40a7a0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Audio::GetDirectSound",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Audio::GetDirectSound",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x40a7b0": {
   "attempts": 1,
@@ -3236,15 +3256,15 @@
   "status": "NG"
  },
  "0x40a850": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "ObjectClass::sub_40A850",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_40A850",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x40a900": {
@@ -3552,15 +3572,15 @@
   "this_as_id": false
  },
  "0x40b180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "VectorClass::Release",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x40b270": {
@@ -7673,11 +7693,16 @@
   "this_as_id": false
  },
  "0x4101c0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 mov dword ptr [eax + 8], 0x7e1fbc",
   "name": "AbstractClass::InitVtables",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "AbstractClass::InitVtables",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4101f0": {
   "attempts": 2,
@@ -7989,7 +8014,7 @@
   "this_as_id": false
  },
  "0x4105e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -8158,14 +8183,14 @@
   "this_as_id": false
  },
  "0x410800": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AbstractTypeClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AbstractTypeClass::Constructor",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

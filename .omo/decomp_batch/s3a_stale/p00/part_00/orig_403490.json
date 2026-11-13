@@ -1,0 +1,11 @@
+{
+ "addr": "0x403490",
+ "name": "?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x403490",
+ "bytes_hex": "8b81f4000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

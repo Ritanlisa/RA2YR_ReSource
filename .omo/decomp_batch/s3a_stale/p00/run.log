@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x401190 sub_401190 -> _addr_40
+[conv] 0x401f80 ObjectClass::EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ -> ObjectClass
+[conv] 0x402040 AudioController::Constructor -> AudioController
+[conv] 0x4024a0 AudioSample::ResetState -> AudioSample
+[conv] 0x403490 ObjectClass::GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ -> ObjectClass
+[conv] 0x4060f0 SetAudioSource -> _addr_40
+[conv] 0x406130 AudioSource::Get -> AudioSource
+[conv] 0x4068e0 Debug::Log -> Debug
+[conv] 0x406ee0 sub_406EE0 -> _addr_40
+[conv] 0x4073b0 SaveGame::CountLinkedList -> SaveGame
+[conv] 0x407420 InsertAfterDListNode -> _addr_40
+[conv] 0x408eb0 sub_408EB0 -> _addr_40
+[conv] 0x4093b0 Audio::Callback -> Audio
+[conv] 0x40a090 TechnoClass::sub_40A090 -> TechnoClass
+[conv] 0x40a7a0 Audio::GetDirectSound -> Audio
+[conv] 0x40a850 ObjectClass::sub_40A850 -> ObjectClass
+[conv] 0x40b180 VectorClass::Release -> VectorClass
+[conv] 0x4101c0 AbstractClass::InitVtables -> AbstractClass
+[conv] 0x4105e0 AbstractClass::QueryInterface -> AbstractClass
+[conv] 0x410800 AbstractTypeClass::Constructor -> AbstractTypeClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] ObjectClass              rc=0
+[era] AudioController          rc=2
+[era] AudioSample              rc=2
+[era] AudioSource              rc=2
+[era] Debug                    rc=0
+[era] SaveGame                 rc=2
+[era] Audio                    rc=2
+[era] TechnoClass              rc=2
+[era] VectorClass              rc=0
+[era] AbstractClass            rc=2
+[era] AbstractTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x406ee0   MISMATCH         sub_406EE0
+[diff] 0x401f80   MATCH            ObjectClass::EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ
+[diff] 0x403490   MATCH            ObjectClass::GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ
+[diff] 0x40a850   MISMATCH         ObjectClass::sub_40A850
+[diff] 0x4068e0   MISMATCH         Debug::Log
+[diff] 0x40b180   MISMATCH         VectorClass::Release
+[diff] 0x4101c0   MISMATCH         AbstractClass::InitVtables
+[ledger] 0x401190 sub_401190 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x401f80 ObjectClass::EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ -> OK (attempt 2)
+[ledger] 0x402040 AudioController::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4024a0 AudioSample::ResetState -> COMPILE_FAIL (attempt 12)
+[ledger] 0x403490 ObjectClass::GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ -> OK (attempt 6)
+[ledger] 0x4060f0 SetAudioSource -> COMPILE_FAIL (attempt 2)
+[ledger] 0x406130 AudioSource::Get -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4068e0 Debug::Log -> NG (attempt 2)
+[ledger] 0x406ee0 sub_406EE0 -> NG (attempt 7)
+[ledger] 0x4073b0 SaveGame::CountLinkedList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x407420 InsertAfterDListNode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x408eb0 sub_408EB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4093b0 Audio::Callback -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40a090 TechnoClass::sub_40A090 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x40a7a0 Audio::GetDirectSound -> COMPILE_FAIL (attempt 6)
+[ledger] 0x40a850 ObjectClass::sub_40A850 -> NG (attempt 4)
+[ledger] 0x40b180 VectorClass::Release -> NG (attempt 2)
+[ledger] 0x4101c0 AbstractClass::InitVtables -> NG (attempt 2)
+[ledger] 0x4105e0 AbstractClass::QueryInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x410800 AbstractTypeClass::Constructor -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MATCH": 2,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p00\batch_report.json
