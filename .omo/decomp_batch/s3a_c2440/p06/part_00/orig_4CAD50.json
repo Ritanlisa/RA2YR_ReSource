@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CAD50",
+ "name": "Math::Sin",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CAD50",
+ "bytes_hex": "dd442404dc0d70897e00e8a1b12f0025ff0f0080790e480d00f0ffff4079050500100000d90485a4d08500c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

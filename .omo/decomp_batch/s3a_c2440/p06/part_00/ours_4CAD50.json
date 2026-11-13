@@ -1,0 +1,21 @@
+{
+ "symbol": "?Sin@@YANN@Z",
+ "sym_key": "Math::Sin",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "dd0500000000dc4c240483ec08dd1c24e8000000008b4c240c25ff00000081e1000f008083c40833c1894424047d1d25ffff0000c744240800000000480d00f0ffff4089442404df6c2404c3db442404c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?dbl_7E8970@@3NA",
+   "sym_key": "dbl_7E8970"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

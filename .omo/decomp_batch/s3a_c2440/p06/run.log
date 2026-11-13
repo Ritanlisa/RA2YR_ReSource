@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b5030 DropListClass::OnKeyUp -> DropListClass
+[conv] 0x4b6240 DropPodLocomotionClass::BeginMove -> DropPodLocomotionClass
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4c2fc0 EditClass::sub_4C2FC0 -> EditClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+[conv] 0x4c93d0 ProgressTimer::GetValue -> ProgressTimer
+[conv] 0x4cad50 Math::Sin -> Math
+[conv] 0x4cb890 ResultNode::Init -> ResultNode
+[conv] 0x4cbc40 ObjectClass::WalkPathfindingLine -> ObjectClass
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4d3590 FootClass::Destruct -> FootClass
+[conv] 0x4d5350 FootClass::ProcessDeploy -> FootClass
+[conv] 0x4d8560 FootClass::GetCoords -> FootClass
+[conv] 0x4d85d0 FootClass::UpdateAI -> FootClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DropListClass            rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] LocomotionClass          rc=2
+[era] EditClass                rc=2
+[era] ObjectClass              rc=2
+[era] EventClass               rc=2
+[era] ProgressTimer            rc=0
+[era] Math                     rc=0
+[era] ResultNode               rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] FootClass                rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c93d0   MISMATCH         ProgressTimer::GetValue
+[diff] 0x4cad50   MISMATCH         Math::Sin
+[diff] 0x4cb890   MISMATCH         ResultNode::Init
+[ledger] 0x4b5030 DropListClass::OnKeyUp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6240 DropPodLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c2fc0 EditClass::sub_4C2FC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c93d0 ProgressTimer::GetValue -> NG (attempt 10)
+[ledger] 0x4cad50 Math::Sin -> NG (attempt 2)
+[ledger] 0x4cb890 ResultNode::Init -> NG (attempt 2)
+[ledger] 0x4cbc40 ObjectClass::WalkPathfindingLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d3590 FootClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d5350 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d8560 FootClass::GetCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d85d0 FootClass::UpdateAI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p06\batch_report.json

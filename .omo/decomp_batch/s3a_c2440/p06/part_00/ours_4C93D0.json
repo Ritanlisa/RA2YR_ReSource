@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetValue@ProgressTimer@@QAEPAIPAH@Z",
+ "sym_key": "ProgressTimer::GetValue",
+ "size": 251,
+ "link_base": 0,
+ "bytes_hex": "83ec10668b4114566685c057894424100f8ed20000008b79088b41108b15540a000083ffff8944241474128bf22bf73bf00f8db10000008bf72bf203c685c00f84a3000000668b3153668bc655662b410433c90fbfd88bc3998bea33e80fbf442418896c24108be933ea896c24148b6c24102bea896c24108b6c2414991be98b4c241052505551e80000000081e6ffff00006685c0897424107e398b4c241c83ffff74208b15540a00008bf22bf73bf17c0433c9eb0e2bfa03f933f981e7ff00000033cf0fbff08bc399f7fe0fafc166294424108b4424248b5424105d5b5f89105e83c410c204008b44241c33d2668b115f89105e83c410c20400",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "__alldiv",
+   "sym_key": "_alldiv"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

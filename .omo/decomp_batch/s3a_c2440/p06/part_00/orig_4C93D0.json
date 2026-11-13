@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C93D0",
+ "name": "ProgressTimer::GetValue",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C93D0",
+ "bytes_hex": "5153668b591456576685db7e7d8b71088b41108b3d84eda80083feff740a8bd72bd63bd07d642bc285c0745e668b01662b41040fbfdb0fbff08bc69933c22bc299f7fb8b118954240c6685c07e278b51108b490883f9ff740a2bf98bcf3bca7d252bd18bca0fbff88bc699f7ff0fafc1662944240c8b4424148b4c240c5f5e89085b59c2040033c9ebdb8b4424148b115f5e89105b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
