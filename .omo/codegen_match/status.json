@@ -155834,15 +155834,15 @@
   "this_as_id": false
  },
  "0x6ce0b0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 push esi",
   "name": "SuperClass::Reset",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SuperClass::Reset",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ce1a0": {
@@ -156821,15 +156821,15 @@
   "this_as_id": false
  },
  "0x6cfcc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "SidebarClass::findEntryIndexByName",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SidebarClass::findEntryIndexByName",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6cfd20": {
@@ -156900,14 +156900,14 @@
   "this_as_id": false
  },
  "0x6cfe20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TabClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TabClass::Constructor",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -157008,7 +157008,7 @@
   "this_as_id": false
  },
  "0x6d0a20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157148,7 +157148,7 @@
   "this_as_id": false
  },
  "0x6d1660": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158332,7 +158332,7 @@
   "this_as_id": false
  },
  "0x6da740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159285,7 +159285,7 @@
   "this_as_id": false
  },
  "0x6e1440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159297,7 +159297,7 @@
   "this_as_id": false
  },
  "0x6e14a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159463,7 +159463,7 @@
   "this_as_id": false
  },
  "0x6e21e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159755,7 +159755,7 @@
   "this_as_id": false
  },
  "0x6e37f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -159767,7 +159767,7 @@
   "this_as_id": false
  },
  "0x6e38f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162210,7 +162210,7 @@
   "this_as_id": false
  },
  "0x6eb380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162222,7 +162222,7 @@
   "this_as_id": false
  },
  "0x6eb490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162246,7 +162246,7 @@
   "this_as_id": false
  },
  "0x6ebad0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162317,7 +162317,7 @@
   "this_as_id": false
  },
  "0x6ec3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162389,7 +162389,7 @@
   "this_as_id": false
  },
  "0x6ec7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162449,7 +162449,7 @@
   "this_as_id": false
  },
  "0x6ecfb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162521,7 +162521,7 @@
   "this_as_id": false
  },
  "0x6edb50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162660,7 +162660,7 @@
   "this_as_id": false
  },
  "0x6ee5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162672,7 +162672,7 @@
   "this_as_id": false
  },
  "0x6ee800": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

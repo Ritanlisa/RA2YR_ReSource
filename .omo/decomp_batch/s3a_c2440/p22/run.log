@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ce0b0 SuperClass::Reset -> SuperClass
+[conv] 0x6cfcc0 SidebarClass::findEntryIndexByName -> SidebarClass
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x6e1440 ObjectClass::Render -> ObjectClass
+[conv] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> ObjectClass
+[conv] 0x6e21e0 TActionClass::executeFollowAction -> TActionClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x6ee5c0 TeamClass::SelectBestMember -> TeamClass
+[conv] 0x6ee800 ObjectClass::SelectTeamMembers -> ObjectClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperClass               rc=0
+[era] SidebarClass             rc=0
+[era] TabClass                 rc=2
+[era] ObjectClass              rc=2
+[era] SuperWeaponClass         rc=2
+[era] TActionClass             rc=2
+[era] FootClass                rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ce0b0   MISMATCH         SuperClass::Reset
+[diff] 0x6cfcc0   MISMATCH         SidebarClass::findEntryIndexByName
+[ledger] 0x6ce0b0 SuperClass::Reset -> NG (attempt 14)
+[ledger] 0x6cfcc0 SidebarClass::findEntryIndexByName -> NG (attempt 3)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e1440 ObjectClass::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e21e0 TActionClass::executeFollowAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ee5c0 TeamClass::SelectBestMember -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ee800 ObjectClass::SelectTeamMembers -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p22\batch_report.json

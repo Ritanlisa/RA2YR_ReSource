@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CFCC0",
+ "name": "SidebarClass::findEntryIndexByName",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CFCC0",
+ "bytes_hex": "5355565733edbfd02784008b178bf18a028ad83a06751c84db74148a42018ad83a4601750e83c20283c60284db75e033d2eb051bd283daff85d2741683c7044581fffc2784007cc3a1cc2784005f5e5d5bc35f8bc55e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

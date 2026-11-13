@@ -1,0 +1,27 @@
+{
+ "symbol": "?findEntryIndexByName@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::findEntryIndexByName",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "51535556578b3d00000000c7442410000000008bf18b178a028ad83a06751c84db74148a42018ad83a4601750e83c20283c60284db75e033d2eb051bd283daff85d2744b33d28a15000000008bea8b54241083c704423bfd895424107d3b8b178bf18a028ad83a06751c84db74148a42018ad83a4601750e83c20283c60284db75e033d2eb051bd283daff85d275bf8b4424105f5e5d5b59c3a1000000005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8427D0@@3PAXA",
+   "sym_key": "DataGlobal_8427D0"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Beacon@@3EA",
+   "sym_key": "g_INI_Key_Beacon"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8427CC@@3IA",
+   "sym_key": "DataGlobal_8427CC"
+  }
+ ]
+}

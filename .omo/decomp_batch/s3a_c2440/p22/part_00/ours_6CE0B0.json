@@ -1,0 +1,69 @@
+{
+ "symbol": "?Reset@SuperClass@@QAEPAHXZ",
+ "sym_key": "SuperClass::Reset",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568bf133db8b46683bc374308898950100008d442408895e688b0d0000000050680000000089742410ff511083f8ff740b50b900000000e800000000385e6c7429a1000000008d54240852680000000089742410ff501083f8ff740b50b900000000e800000000885e6c8b56308b4e248d463083faff0f95c283f9ff885e6dc74678ffffffff75098b4e288b89b0000000578b3d540a000089388b7c2414897e343ad3894e385f75308b3083feff74298b15540a00008b48082bd63bd17c0f8958085ec700ffffffff5b83c410c32bcac700ffffffff8948085e5b83c410c3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?RemoveItem@DynamicVector@@QAEDH@Z",
+   "sym_key": "DynamicVector::RemoveItem"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_BuildingInstanceCount@@3IA",
+   "sym_key": "g_BuildingInstanceCount"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?RemoveItem@DynamicVector@@QAEDH@Z",
+   "sym_key": "DynamicVector::RemoveItem"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}
