@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x652960 RadarClass::Construct -> RadarClass
+[conv] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> TechnoClass
+[conv] 0x657da0 Diplomacy::DlgProc -> Diplomacy
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+[conv] 0x65c610 FileClass::processAITrigger -> FileClass
+[conv] 0x65ca00 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x65cca0 RawFileClass::CloseHandle -> RawFileClass
+[conv] 0x65d6a0 ReferenceCounted::initInterface -> ReferenceCounted
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x663030 TechnoClass::CalculateDamage -> TechnoClass
+[conv] 0x6639d0 Network::SendMasterPlayerList -> Network
+[conv] 0x664d20 HouseClass::InitTypeVectors -> HouseClass
+[conv] 0x674730 RulesClass::SaveLoad_Prefix -> RulesClass
+[conv] 0x684240 Scenario::ClearScreen -> Scenario
+[conv] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> ObjectClass
+[conv] 0x685670 Scenario::EndGameFlow -> Scenario
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RadarClass               rc=2
+[era] TechnoClass              rc=2
+[era] Diplomacy                rc=2
+[era] ObjectClass              rc=2
+[era] RadioClass               rc=2
+[era] Array                    rc=2
+[era] RadSiteClass             rc=2
+[era] FileClass                rc=2
+[era] BufferIOFileClass        rc=2
+[era] RawFileClass             rc=2
+[era] ReferenceCounted         rc=2
+[era] _addr_65                 rc=2
+[era] Network                  rc=2
+[era] HouseClass               rc=2
+[era] RulesClass               rc=2
+[era] Scenario                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x652960 RadarClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x653fa0 TechnoClass::RenderScoreboardSidebar -> COMPILE_FAIL (attempt 4)
+[ledger] 0x657da0 Diplomacy::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65c610 FileClass::processAITrigger -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65ca00 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 7)
+[ledger] 0x65cca0 RawFileClass::CloseHandle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d6a0 ReferenceCounted::initInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 8)
+[ledger] 0x663030 TechnoClass::CalculateDamage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6639d0 Network::SendMasterPlayerList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x664d20 HouseClass::InitTypeVectors -> COMPILE_FAIL (attempt 4)
+[ledger] 0x674730 RulesClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x684240 Scenario::ClearScreen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> COMPILE_FAIL (attempt 4)
+[ledger] 0x685670 Scenario::EndGameFlow -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p16\batch_report.json
