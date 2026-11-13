@@ -1,0 +1,69 @@
+{
+ "symbol": "?UpdateProduction@HouseClass@@QAEHHHH@Z",
+ "sym_key": "HouseClass::UpdateProduction",
+ "size": 333,
+ "link_base": 0,
+ "bytes_hex": "8b4424045383c0fd5583f825568be90f87320100008b5c241433c98a8800000000ff248d000000008bb5ac530000eb27837c241805751c8bb5cc530000eb188bb5b0530000eb1084db74088bb5b8530000eb048b742410578b7e504f78408b5644556a016a008b04ba6a01508b08ff919400000085c075238b4e503bf97d1c498bc73bf9894e5073128b4e44408b1481895481fc8b4e503bc172ee4f79c08b46585f85c00f84870000008b0850ff91840000008b10556a016a006a0150ff929400000085c0745a8b4658508b08ff91840000008b10556a016a016a0150ff929400000085c074178a467084c074438a467184c0753c33c9e800000000eb3333c9e800000000392d0000000075248bcbe80000000050b900000000e800000000eb1056e80000000083c4048bcee8000000008b465885c0750f8b465085c075088b066a0156ff50205e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "$L2019",
+   "sym_key": "$L2019"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "$L2020",
+   "sym_key": "$L2020"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?StartTimer@ProductionClass@@QAEDXZ",
+   "sym_key": "ProductionClass::StartTimer"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?StartProduction@FactoryClass@@QAEDXZ",
+   "sym_key": "FactoryClass::StartProduction"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?globalHelper_0ABCD0@@YIHH@Z",
+   "sym_key": "globalHelper_0ABCD0"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 283,
+   "type": "REL32",
+   "sym": "?ActivateTab@Sidebar@@QAEHH@Z",
+   "sym_key": "Sidebar::ActivateTab"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?BuildingClass__AbandonProduction@@YAHH@Z",
+   "sym_key": "BuildingClass__AbandonProduction"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?StartProduction_2@FactoryClass@@QAEDXZ",
+   "sym_key": "FactoryClass::StartProduction_2"
+  }
+ ]
+}

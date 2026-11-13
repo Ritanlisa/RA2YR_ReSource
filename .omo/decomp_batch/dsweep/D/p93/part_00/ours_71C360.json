@@ -1,0 +1,69 @@
+{
+ "symbol": "?ProcessDestructionAnim@TerrainClass@@QAEXPAH0@Z",
+ "sym_key": "TerrainClass::ProcessDestructionAnim",
+ "size": 351,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf18d4c240c578b065156ff90b80100008b108d44241850b9f80100008954241ce8000000008b0e568bd8ff516c8be885ed0f84170100008a86f4000000c74424100000000084c08844241474168b5424148b86ac00000081e2ff00000003c2894424108b4c24208b06568b1189542418ff90d00100008bc8e8000000008bf88b4334f7df85c0751f68e803000068e803000068e80300006a0068000001006a008bcbe8000000008b86c80000008a88b102000084c974100fbe15cc0000000fbf830a010000eb0a8b53340fbf830c0100006a008b7424286a006a006a006a00508d4ffc6a02518b4c24306a0068000e00008d44243c5650518b0d0000000055e800000000a00000000084c074416a006a000fbf45066a006a006a0068e803000083c7fe6a00576a0068010600008d54243c5652998b0d000000002bc28b542440d1f803c28b53345055e8000000005f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?SetView@TacticalClass@@QAEFHHFFFF@Z",
+   "sym_key": "TacticalClass::SetView"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822CF1@@3EA",
+   "sym_key": "DataGlobal_822CF1"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "symbol": "?HandleRallyPointCommand@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::HandleRallyPointCommand",
+ "size": 340,
+ "link_base": 0,
+ "bytes_hex": "8b44248483ec7c83f80556578bf975298b4424088b3750b900000000e8000000006a006a00506a0157ff967803000024015f0c015e83c47cc383f80653740983f8010f85010100008b8f2005000032db8a81b916000084c0742f8b8f1c020000e80000000084c0741ca10000000085c07413a00000000084c0740a8a87c002000084c07404b301eb2b8b97200500008b820804000085c0750d8b0757ff908402000084c0740e8b4c240c6a01518bcfe8000000008b97200500008b820804000085c00f848100000084db757d578d4c2414e8000000008b308a40048b0f5788442410ff51388b54240c8d4c241852566a1650e800000000813d000000008000000073468b0d000000008bf08d14c98d0c918dbc4900000000b91b000000f3a566a5a4e8000000008b0d0000000089048d00000000a100000000404183e17fa300000000890d0000000024015b5f0c015e83c47cc3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?MCVRedeploy@@3IA",
+   "sym_key": "MCVRedeploy"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?SetRallyPoint@BuildingClass@@QAEXPAXD@Z",
+   "sym_key": "BuildingClass::SetRallyPoint"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?Add@EventClass@@QAEPADHEHD@Z",
+   "sym_key": "EventClass::Add"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3PAEA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?g_CrateSystemState@@3PAIA",
+   "sym_key": "g_CrateSystemState"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  }
+ ]
+}

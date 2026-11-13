@@ -1,0 +1,33 @@
+{
+ "symbol": "?DeserializePointerArrays@LoadGame@@QAEHH@Z",
+ "sym_key": "LoadGame::DeserializePointerArrays",
+ "size": 361,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec0c8d5424105356578bf18b086a006a0452508bd8ff510c85c00f8c3b0100008b44241c33ff85c07e5f8b036a008d4c24146a045153ff500c85c00f8c1a0100008b4e088b46103bc17c228a460d84c0750485c9752a8b461485c07e238b1603c16a00508bceff520884c074138b46108b56048d4801894e108b4c2410890c828b44241c473bf87ca133ff85c07e188b56048d04ba47506800000000e8000000003b7c241c7ce88b03556a008d4c24246a045153ff500c8be885ed0f8c970000008b442420c74424100000000085c07e698b136a008d44241c6a045053ff520c8be885ed7c728b56208b46283bc27c268b4624f6c4ff750485d2752d8b4e2c85c97e268b7e188d461803ca6a005150ff570884c074138b46288b561c8d4801894e288b4c2418890c828b4c24108b442420413bc8894c24107c9733ff85c07e188b561c8d04ba47506800000000e8000000003b7c24207ce88bc55d5f5e5b83c40cc20400",
+ "relocs": [
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

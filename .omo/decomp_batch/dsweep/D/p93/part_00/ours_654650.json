@@ -1,0 +1,51 @@
+{
+ "symbol": "?RecreateSurface@RadarClass@@QAEHH@Z",
+ "sym_key": "RadarClass::RecreateSurface",
+ "size": 406,
+ "link_base": 0,
+ "bytes_hex": "83ec1455568b74242033ed578b86a41400008dbe9c1400003bc58944240c0f8e6901000039aea81400000f8e5d0100008b862012000089aea01400003bc5892f740d8b086a0150ff1189ae201200008b863c1200003bc5740f50e80000000083c40489ae3c1200008b86741200003bc5740f50e80000000083c40489ae74120000536a01578d54241c575256e8000000008b86201200008b54243c83c4148b085250ff517c8b8e201200008986a4140000518b01ff90800000008b96a41400008b9ef01100008bc881fa8c000000898ea8140000891f7d10b88c0000002bc2992bc2d1f803c389078bbef411000083f96c89bea01400007d14b86c0000002bc1992bc2d1f803c78986a01400008b861c1200003bc5740d8b086a0150ff1189ae1c1200006a24e8000000008be883c40485ed7431d98620120000e800000000894424148b10508bf8ff92800000008bd88b0757ff507c6a006a0153508bcde800000000eb0233c089861c1200008b086a0050ff51188bcee8000000008ad08b44241081e2ff00000024000bc25b5f5e5d83c414c20400",
+ "relocs": [
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?GenerateImageThumbnail@@YAPAVRadarClass@@PAX000H@Z",
+   "sym_key": "GenerateImageThumbnail"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "?Construct@DSurface@@QAEPADHHDD@Z",
+   "sym_key": "DSurface::Construct"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?UpdateFoundationShapesCustom@RadarClass@@QAEDXZ",
+   "sym_key": "RadarClass::UpdateFoundationShapesCustom"
+  }
+ ]
+}

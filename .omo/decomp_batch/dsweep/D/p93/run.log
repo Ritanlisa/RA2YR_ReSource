@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p93\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> SetupMultiplayerLobbyScreen
+[conv] 0x4436f0 TechnoClass::HandleRallyPointCommand -> TechnoClass
+[conv] 0x509140 HouseClass::UpdateProduction -> HouseClass
+[conv] 0x5ee3a0 NetworkLobby::FillOptionCombo -> NetworkLobby
+[conv] 0x452a40 BuildingClass::DemolishBridgeCheck -> BuildingClass
+[conv] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> BuildingClass
+[conv] 0x439260 LoadGame::DeserializePointerArrays -> LoadGame
+[conv] 0x6639d0 Network::SendMasterPlayerList -> Network
+[conv] 0x654650 RadarClass::RecreateSurface -> RadarClass
+[conv] 0x776320 ObjectClass::sub_776320 -> ObjectClass
+[conv] 0x5d7ce0 ObjectClass::CompleteGameInit -> ObjectClass
+[conv] 0x75d230 AbstractClass::ProcessInit -> AbstractClass
+[conv] 0x46ce10 CampaignClass::LoadFromINIList -> CampaignClass
+[conv] 0x551630 WebBrowser::OpenURL -> WebBrowser
+[conv] 0x7d7aaf ObjectClass::__ld12cvt -> ObjectClass
+[conv] 0x5e2cd0 ShowDialogConfirm -> _addr_5E
+[conv] 0x5bddc0 MouseClass::Reset -> MouseClass
+[conv] 0x622470 AddDynamicVector -> _addr_62
+[conv] 0x71c360 TerrainClass::ProcessDestructionAnim -> TerrainClass
+[conv] 0x732ff0 sub_732FF0 -> _addr_73
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetupMultiplayerLobbyScreen rc=2
+[era] TechnoClass              rc=0
+[era] HouseClass               rc=0
+[era] NetworkLobby             rc=2
+[era] BuildingClass            rc=2
+[era] LoadGame                 rc=0
+[era] Network                  rc=2
+[era] RadarClass               rc=0
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] CampaignClass            rc=2
+[era] WebBrowser               rc=2
+[era] _addr_5E                 rc=2
+[era] MouseClass               rc=0
+[era] _addr_62                 rc=0
+[era] TerrainClass             rc=0
+[era] _addr_73                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4436f0   MISMATCH         TechnoClass::HandleRallyPointCommand
+[diff] 0x509140   MISMATCH         HouseClass::UpdateProduction
+[diff] 0x452a40   MISMATCH         BuildingClass::DemolishBridgeCheck
+[diff] 0x439260   MISMATCH         LoadGame::DeserializePointerArrays
+[diff] 0x654650   MISMATCH         RadarClass::RecreateSurface
+[diff] 0x75d230   MISMATCH         AbstractClass::ProcessInit
+[diff] 0x5bddc0   MISMATCH         MouseClass::Reset
+[diff] 0x622470   MISMATCH         AddDynamicVector
+[diff] 0x71c360   MISMATCH         TerrainClass::ProcessDestructionAnim
+[ledger] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4436f0 TechnoClass::HandleRallyPointCommand -> NG (attempt 1)
+[ledger] 0x509140 HouseClass::UpdateProduction -> NG (attempt 1)
+[ledger] 0x5ee3a0 NetworkLobby::FillOptionCombo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452a40 BuildingClass::DemolishBridgeCheck -> NG (attempt 1)
+[ledger] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x439260 LoadGame::DeserializePointerArrays -> NG (attempt 1)
+[ledger] 0x6639d0 Network::SendMasterPlayerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x654650 RadarClass::RecreateSurface -> NG (attempt 1)
+[ledger] 0x776320 ObjectClass::sub_776320 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d7ce0 ObjectClass::CompleteGameInit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75d230 AbstractClass::ProcessInit -> NG (attempt 1)
+[ledger] 0x46ce10 CampaignClass::LoadFromINIList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x551630 WebBrowser::OpenURL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d7aaf ObjectClass::__ld12cvt -> PENDING (attempt 1)
+[ledger] 0x5e2cd0 ShowDialogConfirm -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bddc0 MouseClass::Reset -> NG (attempt 1)
+[ledger] 0x622470 AddDynamicVector -> NG (attempt 1)
+[ledger] 0x71c360 TerrainClass::ProcessDestructionAnim -> NG (attempt 1)
+[ledger] 0x732ff0 sub_732FF0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 9,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "branch_order": 2,
+  "codegen_shape": 2,
+  "frame_sched": 2,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p93\batch_report.json
