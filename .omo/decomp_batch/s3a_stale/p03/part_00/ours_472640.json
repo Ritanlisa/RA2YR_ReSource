@@ -1,0 +1,15 @@
+{
+ "symbol": "?NeedsToDrawLinks@CaptureManagerClass@@QAEDXZ",
+ "sym_key": "CaptureManagerClass::NeedsToDrawLinks",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "8b41485356578a908300000084d274065f5eb0015bc38b801c01000085c074108a908300000084d274065f5eb0015bc38b79344f78518b41288d14b88b04b88b088a998300000084db75368b35540a00008b48088b401083f9ff740c8bde2bd93bd873082bce03c185c07f154f78188b42fc83ea048b088a998300000084db74d05f5eb0015bc35f5e32c05bc3",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

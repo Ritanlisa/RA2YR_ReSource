@@ -1,0 +1,11 @@
+{
+ "addr": "0x472640",
+ "name": "CaptureManagerClass::NeedsToDrawLinks",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x472640",
+ "bytes_hex": "8b41485356578a908300000084d274065f5eb0015bc38b801c01000085c074108a908300000084d274065f5eb0015bc38b71344e783b8b41288b1d84eda8008d3cb08b078b088a918300000084d275da8b50088b481083faff740a8bc32bc23bc17d062bc885c97fc14e83ef0485f67dd15f5e32c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

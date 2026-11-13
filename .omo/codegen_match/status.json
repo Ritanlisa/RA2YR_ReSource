@@ -23901,7 +23901,7 @@
   "this_as_id": false
  },
  "0x468430": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -25638,7 +25638,7 @@
   "this_as_id": false
  },
  "0x471c90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25727,7 +25727,7 @@
   "status": "OK"
  },
  "0x4722f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -25763,15 +25763,15 @@
   "this_as_id": false
  },
  "0x472640": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+48 mov esi, dword ptr [ecx + 0x34]",
   "name": "CaptureManagerClass::NeedsToDrawLinks",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "CaptureManagerClass::NeedsToDrawLinks",
-  "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4726c0": {
@@ -26946,15 +26946,15 @@
   "this_as_id": false
  },
  "0x474430": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x94",
   "name": "CCINIClass::WriteDigest",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "INIClass::WriteDigest",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x474540": {
@@ -27701,11 +27701,16 @@
   "status": "NG"
  },
  "0x477740": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "VtableStub::Method_477740",
+  "name": "Pipe::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VtableStub::Method_477740",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x477750": {
   "attempts": 1,
@@ -27876,7 +27881,7 @@
   "this_as_id": false
  },
  "0x4779e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28008,15 +28013,15 @@
   "this_as_id": false
  },
  "0x477db0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+19 mov byte ptr [esi + 0xc], 1",
   "name": "DynamicVectorClass::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "DynamicVectorClass::Construct",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x477e10": {
@@ -28591,7 +28596,7 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29680,14 +29685,14 @@
   "this_as_id": false
  },
  "0x481a00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CrateClass::ProcessPickup",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CrateClass::ProcessPickup",
-  "rule_violations": 0,
+  "rule_violations": 77,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -29872,7 +29877,7 @@
   "this_as_id": false
  },
  "0x484180": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30112,7 +30117,7 @@
   "this_as_id": false
  },
  "0x485460": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -30124,7 +30129,7 @@
   "this_as_id": false
  },
  "0x485590": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30186,7 +30191,7 @@
   "this_as_id": false
  },
  "0x4865d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30258,7 +30263,7 @@
   "this_as_id": false
  },
  "0x486750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30270,7 +30275,7 @@
   "this_as_id": false
  },
  "0x486770": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31325,11 +31330,15 @@
   "this_as_id": false
  },
  "0x489280": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "PlaySoundEffectAt",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "PlaySoundEffectAt",
+  "rule_violations": 30,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x48a4f0": {
   "attempts": 2,
@@ -34842,7 +34851,7 @@
   "this_as_id": false
  },
  "0x494590": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35067,7 +35076,7 @@
   "this_as_id": false
  },
  "0x494d90": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -35115,7 +35124,7 @@
   "this_as_id": false
  },
  "0x494f20": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

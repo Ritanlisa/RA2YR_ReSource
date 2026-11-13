@@ -1,0 +1,93 @@
+{
+ "symbol": "?WriteDigest@CCINIClass@@QAEHHD@Z",
+ "sym_key": "CCINIClass::WriteDigest",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "83ec100fbe442400c64424040056c700000000008a44241c84c0578bf10f848e00000033c96a008a0d00000000510fbe0ee8000000000fbe44241033d28d4c241089542414518954241c8bce88542420c70000000000e8000000008b56408d4c241052e8000000008d4c2410c7464001000000e8000000008b464033c98a0d000000006a1450510fbe0ee8000000008d5424088bce52e8000000000fbe0e8bf833c0a0000000006a0050e800000000eb0e8d4c2408518bcee8000000008bf88d4c2408e8000000008bc75f5e83c410c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?vt_FilePipe@@3PAXA",
+   "sym_key": "vt_FilePipe"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Digest@@3EA",
+   "sym_key": "g_INI_Key_Digest"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?vt_SHAPipe@@3PAXA",
+   "sym_key": "vt_SHAPipe"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?WriteToString@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::WriteToString"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?ComputeThunk@SHA1@@QAEHPAX@Z",
+   "sym_key": "SHA1::ComputeThunk"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Digest@@3EA",
+   "sym_key": "g_INI_Key_Digest"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?ReadBase64Data@INIClass@@QAEDPAXHH@Z",
+   "sym_key": "INIClass::ReadBase64Data"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?WriteToString@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::WriteToString"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Digest@@3EA",
+   "sym_key": "g_INI_Key_Digest"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?WriteToString@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::WriteToString"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Destructor@FilePipe@@QAEHXZ",
+   "sym_key": "FilePipe::Destructor"
+  }
+ ]
+}

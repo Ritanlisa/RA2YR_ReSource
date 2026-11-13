@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x468430 BulletClass::LoseTarget -> BulletClass
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> CaptureManagerClass
+[conv] 0x472640 CaptureManagerClass::NeedsToDrawLinks -> CaptureManagerClass
+[conv] 0x474430 CCINIClass::WriteDigest -> CCINIClass
+[conv] 0x477740 Pipe::Method_477740 -> Pipe
+[conv] 0x4779e0 DynamicVectorClass::Copy -> DynamicVectorClass
+[conv] 0x477db0 DynamicVectorClass::Construct -> DynamicVectorClass
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+[conv] 0x481a00 CrateClass::ProcessPickup -> CrateClass
+[conv] 0x484180 Tactical::CalculateTacticalLighting -> Tactical
+[conv] 0x485460 BuildingClass::CheckAdjacentCells -> BuildingClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x4865d0 Cell::IsGroundTypeRange -> Cell
+[conv] 0x486750 Cell::IsInRange -> Cell
+[conv] 0x486770 Cell::IsInRange2 -> Cell
+[conv] 0x489280 PlaySoundEffectAt -> _addr_48
+[conv] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494d90 _BlitTransZRemapXlatAlphaZRead_G::AddRef -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> _BlitTransLucent75AlphaZRead_G
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=2
+[era] CaptureManagerClass      rc=2
+[era] CCINIClass               rc=0
+[era] Pipe                     rc=2
+[era] DynamicVectorClass       rc=2
+[era] CD                       rc=2
+[era] CrateClass               rc=2
+[era] Tactical                 rc=2
+[era] BuildingClass            rc=2
+[era] CellClass                rc=2
+[era] Cell                     rc=2
+[era] _addr_48                 rc=2
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _BlitTransZRemapXlatAlphaZRead_G rc=2
+[era] _BlitTransLucent75AlphaZRead_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x472640   MISMATCH         CaptureManagerClass::NeedsToDrawLinks
+[diff] 0x474430   MISMATCH         CCINIClass::WriteDigest
+[diff] 0x477db0   MISMATCH         DynamicVectorClass::Construct
+[ledger] 0x468430 BulletClass::LoseTarget -> COMPILE_FAIL (attempt 12)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> COMPILE_FAIL (attempt 3)
+[ledger] 0x472640 CaptureManagerClass::NeedsToDrawLinks -> NG (attempt 2)
+[ledger] 0x474430 CCINIClass::WriteDigest -> NG (attempt 6)
+[ledger] 0x477740 Pipe::Method_477740 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4779e0 DynamicVectorClass::Copy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x477db0 DynamicVectorClass::Construct -> NG (attempt 6)
+[ledger] 0x4791f0 CD::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 6)
+[ledger] 0x481a00 CrateClass::ProcessPickup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x484180 Tactical::CalculateTacticalLighting -> COMPILE_FAIL (attempt 6)
+[ledger] 0x485460 BuildingClass::CheckAdjacentCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4865d0 Cell::IsGroundTypeRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x486750 Cell::IsInRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x486770 Cell::IsInRange2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x489280 PlaySoundEffectAt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 4)
+[ledger] 0x494d90 _BlitTransZRemapXlatAlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 12)
+[ledger] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 15)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "frame_sched": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p03\batch_report.json
