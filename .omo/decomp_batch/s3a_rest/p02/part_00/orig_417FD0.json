@@ -1,0 +1,11 @@
+{
+ "addr": "0x417FD0",
+ "name": "AbstractClass::GetField9",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x417FD0",
+ "bytes_hex": "a1e07188008b4044c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

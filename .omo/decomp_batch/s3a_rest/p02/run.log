@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x413f80 AircraftClass::Update -> AircraftClass
+[conv] 0x414080 AircraftClass::Destruct -> AircraftClass
+[conv] 0x414310 AircraftClass::MoveTo -> AircraftClass
+[conv] 0x4144b0 AircraftClass::Draw -> AircraftClass
+[conv] 0x414bb0 TechnoClass::SmokeUpdate -> TechnoClass
+[conv] 0x415a50 AircraftClass::ProcessReturnToBase -> AircraftClass
+[conv] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> ObjectClass
+[conv] 0x4165c0 AircraftClass::DeployWithAnim -> AircraftClass
+[conv] 0x417cc0 AircraftClass::GetActionOnObject -> AircraftClass
+[conv] 0x417fd0 AbstractClass::GetField9 -> AbstractClass
+[conv] 0x417fe0 AircraftClass::Mission_Attack -> AircraftClass
+[conv] 0x418e20 InfantryClass::FindNearbyCell -> InfantryClass
+[conv] 0x4190b0 AircraftClass::ProcessInputKey -> AircraftClass
+[conv] 0x4196b0 AircraftClass::ValidateLandingCell -> AircraftClass
+[conv] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> TechnoClass
+[conv] 0x41a940 AircraftClass::EvaluateTargetingState -> AircraftClass
+[conv] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> AircraftClass
+[conv] 0x41adc0 AircraftClass::ProcessDockCheck -> AircraftClass
+[conv] 0x41b110 ObjectClass::PlaceAircraftFromINI -> ObjectClass
+[conv] 0x41b5c0 AircraftClass::CheckPassengerCount -> AircraftClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x417fd0   MATCH            AbstractClass::GetField9
+[ledger] 0x413f80 AircraftClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x414080 AircraftClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x414310 AircraftClass::MoveTo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4144b0 AircraftClass::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x414bb0 TechnoClass::SmokeUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x415a50 AircraftClass::ProcessReturnToBase -> COMPILE_FAIL (attempt 2)
+[ledger] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4165c0 AircraftClass::DeployWithAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x417cc0 AircraftClass::GetActionOnObject -> COMPILE_FAIL (attempt 2)
+[ledger] 0x417fd0 AbstractClass::GetField9 -> OK (attempt 4)
+[ledger] 0x417fe0 AircraftClass::Mission_Attack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x418e20 InfantryClass::FindNearbyCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4190b0 AircraftClass::ProcessInputKey -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4196b0 AircraftClass::ValidateLandingCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41a940 AircraftClass::EvaluateTargetingState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41adc0 AircraftClass::ProcessDockCheck -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b110 ObjectClass::PlaceAircraftFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b5c0 AircraftClass::CheckPassengerCount -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MATCH": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p02\batch_report.json

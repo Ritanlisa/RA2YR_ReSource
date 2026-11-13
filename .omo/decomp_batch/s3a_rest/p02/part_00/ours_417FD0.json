@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetField9@AbstractClass@@QAEHXZ",
+ "sym_key": "AbstractClass::GetField9",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b4044c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

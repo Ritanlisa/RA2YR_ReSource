@@ -9211,7 +9211,7 @@
   "this_as_id": false
  },
  "0x413f80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9223,7 +9223,7 @@
   "this_as_id": false
  },
  "0x414080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9271,7 +9271,7 @@
   "this_as_id": false
  },
  "0x414310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9283,7 +9283,7 @@
   "this_as_id": false
  },
  "0x4144b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9314,7 +9314,7 @@
   "this_as_id": false
  },
  "0x414bb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9386,7 +9386,7 @@
   "this_as_id": false
  },
  "0x415a50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9410,7 +9410,7 @@
   "this_as_id": false
  },
  "0x415c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9434,7 +9434,7 @@
   "this_as_id": false
  },
  "0x4165c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9518,7 +9518,7 @@
   "this_as_id": false
  },
  "0x417cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -9542,19 +9542,19 @@
   "this_as_id": false
  },
  "0x417fd0": {
-  "attempts": 3,
-  "clean": false,
+  "attempts": 4,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "AbstractClass::GetField9",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "AbstractClass::GetField9",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x417fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9566,7 +9566,7 @@
   "this_as_id": false
  },
  "0x418e20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9578,7 +9578,7 @@
   "this_as_id": false
  },
  "0x4190b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9602,7 +9602,7 @@
   "this_as_id": false
  },
  "0x4196b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9614,7 +9614,7 @@
   "this_as_id": false
  },
  "0x4197c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -9698,7 +9698,7 @@
   "this_as_id": false
  },
  "0x41a940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9717,19 +9717,19 @@
   "status": "NG"
  },
  "0x41aa80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "AircraftClass::AssignDestination_SyncLog",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AircraftClass::AssignDestination_SyncLog",
-  "rule_violations": 18,
+  "rule_violations": 20,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x41adc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9765,7 +9765,7 @@
   "this_as_id": false
  },
  "0x41b110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9789,7 +9789,7 @@
   "this_as_id": false
  },
  "0x41b5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
