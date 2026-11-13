@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p113\part_00
+=== convert (20 addrs) ===
+[conv] 0x514d90 HoverLocomotionClass::SetMovementTarget -> HoverLocomotionClass
+[conv] 0x5c7ec0 ModBigIntExp_Helper -> ModBigIntExp
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+[conv] 0x453060 BuildingClass::DemolishBridgeAnim -> BuildingClass
+[conv] 0x408610 ParseWaveFileHeader -> _addr_40
+[conv] 0x6340b0 TeamClass::DestroyAllMembers -> TeamClass
+[conv] 0x6f4eb0 TechnoClass::PushNearbyUnits -> TechnoClass
+[conv] 0x5ee9d0 HouseClass::FindStartPositions -> HouseClass
+[conv] 0x509700 HouseClass::UpdateBuildState -> HouseClass
+[conv] 0x5833f0 Pathfinding::SelectRegionPath -> Pathfinding
+[conv] 0x4a3660 ObjectClass::RenderTactical3DScene -> ObjectClass
+[conv] 0x67f7e0 SaveGame::LoadMainGameState -> SaveGame
+[conv] 0x772cd0 WeaponTypeClass::SaveLoad_Prefix -> WeaponTypeClass
+[conv] 0x55faa0 Options::Screen_Save -> Options
+[conv] 0x73d450 UnitClass::ProcessResourceHarvesting -> UnitClass
+[conv] 0x585d00 MapClass::LoadTerrainData -> MapClass
+[conv] 0x72ef60 LoadingScreen::DestroyFileTrees -> LoadingScreen
+[conv] 0x588570 globalHelper_088570 -> _addr_58
+[conv] 0x6f8c10 TechnoClass::EvaluateBuildingTarget -> TechnoClass
+[conv] 0x539eb0 LightningStorm::Start -> LightningStorm
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HoverLocomotionClass     rc=2
+[era] ModBigIntExp             rc=0
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=0
+[era] _addr_40                 rc=0
+[era] TeamClass                rc=2
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=2
+[era] Pathfinding              rc=0
+[era] SaveGame                 rc=2
+[era] WeaponTypeClass          rc=2
+[era] Options                  rc=2
+[era] UnitClass                rc=2
+[era] MapClass                 rc=0
+[era] LoadingScreen            rc=0
+[era] _addr_58                 rc=0
+[era] LightningStorm           rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c7ec0   MISMATCH         ModBigIntExp_Helper
+[diff] 0x453060   MISMATCH         BuildingClass::DemolishBridgeAnim
+[diff] 0x408610   MISMATCH         ParseWaveFileHeader
+[diff] 0x5833f0   MISMATCH         Pathfinding::SelectRegionPath
+[diff] 0x585d00   MISMATCH         MapClass::LoadTerrainData
+[diff] 0x72ef60   MISMATCH         LoadingScreen::DestroyFileTrees
+[diff] 0x588570   MISMATCH         globalHelper_088570
+[ledger] 0x514d90 HoverLocomotionClass::SetMovementTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c7ec0 ModBigIntExp_Helper -> NG (attempt 1)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x453060 BuildingClass::DemolishBridgeAnim -> NG (attempt 1)
+[ledger] 0x408610 ParseWaveFileHeader -> NG (attempt 1)
+[ledger] 0x6340b0 TeamClass::DestroyAllMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f4eb0 TechnoClass::PushNearbyUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee9d0 HouseClass::FindStartPositions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x509700 HouseClass::UpdateBuildState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5833f0 Pathfinding::SelectRegionPath -> NG (attempt 1)
+[ledger] 0x4a3660 ObjectClass::RenderTactical3DScene -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67f7e0 SaveGame::LoadMainGameState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772cd0 WeaponTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55faa0 Options::Screen_Save -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73d450 UnitClass::ProcessResourceHarvesting -> COMPILE_FAIL (attempt 1)
+[ledger] 0x585d00 MapClass::LoadTerrainData -> NG (attempt 1)
+[ledger] 0x72ef60 LoadingScreen::DestroyFileTrees -> NG (attempt 1)
+[ledger] 0x588570 globalHelper_088570 -> NG (attempt 1)
+[ledger] 0x6f8c10 TechnoClass::EvaluateBuildingTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x539eb0 LightningStorm::Start -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 2,
+  "regalloc": 2,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p113\batch_report.json

@@ -1,0 +1,57 @@
+{
+ "symbol": "?DemolishBridgeAnim@BuildingClass@@QAEDHD@Z",
+ "sym_key": "BuildingClass::DemolishBridgeAnim",
+ "size": 540,
+ "link_base": 0,
+ "bytes_hex": "83ec348b81200500005355568a90be1600005784d2894c24180f84f30100008bb8b8050000c1ff0883ff01897c24107f09bf01000000897c24108b4424488d5424388ad883e00389442414894424248b015251ff50488b088b7424308b40048b6c2434c1e90881e1ff00000033d281e600ffffff0bd5c1e8088b6c244c0bce25ffff0000894c24308954243483e307894424328b4424308d0c9d88f6890089442448894c2428668b11668b490203d033d581e2ff000000c1f81033ea03c833cd8d54244881e1ff0000005233e9b9f8010000896c244ce8000000008bc8e80000000085c08bf00f84ef0000008b882005000033d224008a91bf1600008bca0bc884c90f84fa0000008b0656ff50388bf88b442418508b08ff51383bc70f85f00000008d54242c8d8e8803000052e8000000008b088b542414c1e90c41d1e983e1033bca0f85c90000008a44244c84c0747d8b15400200008b0e8b5e6c6a008b82a80f00008d54243c8d7e6c6a00525689442424ff51488b4c241c8b542420518b4808528b50048b0051528b542424508bcbe8000000008b15400200008b0e6a016a008b82a80f0000c744242400000000506a005756c644243801ff916c0100008b4c24248b7c2410894c2414eb0d8b1656ff92f80000008b7c24108b5c24348b4424304350895c2438e80000000083c4043bc77d198b4c24288b442448e9a4feffff5f5e5d32c05b83c434c208008a4424345f5e5d5b83c434c20800",
+ "relocs": [
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 339,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?CreateSmokeEffectAt@@YIDHHHHHDH@Z",
+   "sym_key": "CreateSmokeEffectAt"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 490,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  }
+ ]
+}

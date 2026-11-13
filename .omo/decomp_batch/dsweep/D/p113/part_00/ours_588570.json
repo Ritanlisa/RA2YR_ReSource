@@ -1,0 +1,57 @@
+{
+ "symbol": "?globalHelper_088570@@YGDHHH@Z",
+ "sym_key": "Unnamed::globalHelper_088570",
+ "size": 550,
+ "link_base": 0,
+ "bytes_hex": "83ec285332c0558b6c243433c95657894c241c8b542444c7442410000000008b9ab80500008b54243cc1fb088b3a895c242085db0f8ecc01000083e007668b0c858af689008d048588f68900894c242881e1ffff0000668b00894c24148944241825ffff0000894424248bd703c7c1fa1003d133d581e2ff00000033ea33c525ff00000033e88bc58bfdc1f8100fbff00fbfcdc1e60903f181fe00000400730d8b15000000008b0cb285c9750c8b0d00000000892d00000000e8000000008bd885db742c8b83200500008a88c016000084c9741c8b5424408b831c0200008bcb33ca81e1ff00000033d93bc2747ceb048b54244081fe000004007310a1000000008b34b085f674048bceeb0c8b0d00000000892d000000008b44244452508b907c06000052e80000000025ff00000080e3000bd884db0f84c60000008b4424108bcb4033c88944241081e1ff00000033d98b4c24203bc10f8da50000008b4c24148b442424e900ffffff8b44241085c0894424100f8e880000008b44243c8bc8668b38668b710266037c24186603742428eb048b5424408b44244452508b08ff918c0000000fbff68bd66a000fbfcfc1e20881c280000000c1e1088954243481c1800000008d542430894c24308b085250c744244000000000ff91d80000008b4424148b4c241803f08b44241033f303f981e6ff00000033de48894424108bf375918b4c241c8ac183c102040283f908894c241c0f8cf9fdffff5f5e8ac35d5b83c428c20c00",
+ "relocs": [
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?IsPassable@CellClass@@QAEDHHH@Z",
+   "sym_key": "CellClass::IsPassable"
+  }
+ ]
+}

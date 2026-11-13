@@ -1,0 +1,369 @@
+{
+ "symbol": "?DestroyFileTrees@LoadingScreen@@QAEXXZ",
+ "sym_key": "LoadingScreen::DestroyFileTrees",
+ "size": 477,
+ "link_base": 0,
+ "bytes_hex": "a0000000005333db563ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000a000000000891d000000003ac374208b0d000000003bcb8bf1740ee80000000056e80000000083c404881d00000000891d000000005e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC95@@3EA",
+   "sym_key": "DataGlobal_B0FC95"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC4@@3IA",
+   "sym_key": "DataGlobal_B0FAC4"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC95@@3EA",
+   "sym_key": "DataGlobal_B0FC95"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC96@@3EA",
+   "sym_key": "DataGlobal_B0FC96"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC4@@3IA",
+   "sym_key": "DataGlobal_B0FAC4"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F9DC@@3IA",
+   "sym_key": "DataGlobal_B0F9DC"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC96@@3EA",
+   "sym_key": "DataGlobal_B0FC96"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC97@@3EA",
+   "sym_key": "DataGlobal_B0FC97"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F9DC@@3IA",
+   "sym_key": "DataGlobal_B0F9DC"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC0@@3IA",
+   "sym_key": "DataGlobal_B0FAC0"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC97@@3EA",
+   "sym_key": "DataGlobal_B0FC97"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC98@@3EA",
+   "sym_key": "DataGlobal_B0FC98"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC0@@3IA",
+   "sym_key": "DataGlobal_B0FAC0"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_DialogControlPool@@3PAXA",
+   "sym_key": "g_DialogControlPool"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC98@@3EA",
+   "sym_key": "DataGlobal_B0FC98"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC99@@3EA",
+   "sym_key": "DataGlobal_B0FC99"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_DialogControlPool@@3PAXA",
+   "sym_key": "g_DialogControlPool"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA04@@3IA",
+   "sym_key": "DataGlobal_B0FA04"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC99@@3EA",
+   "sym_key": "DataGlobal_B0FC99"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9A@@3EA",
+   "sym_key": "DataGlobal_B0FC9A"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA04@@3IA",
+   "sym_key": "DataGlobal_B0FA04"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAF8@@3IA",
+   "sym_key": "DataGlobal_B0FAF8"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9A@@3EA",
+   "sym_key": "DataGlobal_B0FC9A"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9B@@3EA",
+   "sym_key": "DataGlobal_B0FC9B"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAF8@@3IA",
+   "sym_key": "DataGlobal_B0FAF8"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA74@@3IA",
+   "sym_key": "DataGlobal_B0FA74"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9B@@3EA",
+   "sym_key": "DataGlobal_B0FC9B"
+  },
+  {
+   "off": 328,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9C@@3EA",
+   "sym_key": "DataGlobal_B0FC9C"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA74@@3IA",
+   "sym_key": "DataGlobal_B0FA74"
+  },
+  {
+   "off": 344,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA38@@3IA",
+   "sym_key": "DataGlobal_B0FA38"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 370,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9C@@3EA",
+   "sym_key": "DataGlobal_B0FC9C"
+  },
+  {
+   "off": 375,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9D@@3EA",
+   "sym_key": "DataGlobal_B0FC9D"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA38@@3IA",
+   "sym_key": "DataGlobal_B0FA38"
+  },
+  {
+   "off": 391,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAE8@@3IA",
+   "sym_key": "DataGlobal_B0FAE8"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 417,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9D@@3EA",
+   "sym_key": "DataGlobal_B0FC9D"
+  },
+  {
+   "off": 422,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9E@@3EA",
+   "sym_key": "DataGlobal_B0FC9E"
+  },
+  {
+   "off": 428,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAE8@@3IA",
+   "sym_key": "DataGlobal_B0FAE8"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA54@@3IA",
+   "sym_key": "DataGlobal_B0FA54"
+  },
+  {
+   "off": 449,
+   "type": "REL32",
+   "sym": "?Destroy@FileTreeNode@@QAEXXZ",
+   "sym_key": "FileTreeNode::Destroy"
+  },
+  {
+   "off": 455,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 464,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9E@@3EA",
+   "sym_key": "DataGlobal_B0FC9E"
+  },
+  {
+   "off": 470,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA54@@3IA",
+   "sym_key": "DataGlobal_B0FA54"
+  }
+ ]
+}
