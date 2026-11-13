@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d7491 _crtGetLocaleInfoA_16 -> _addr_7D
+[conv] 0x7d77d6 __wctomb_lk -> _addr_7D
+[conv] 0x7d7ff7 unknown_libname_77 -> _addr_7D
+[conv] 0x7d84a9 unknown_libname_79 -> _addr_7D
+[conv] 0x7d86bc unknown_libname_88 -> _addr_7D
+[conv] 0x7d86d1 unknown_libname_89 -> _addr_7D
+[conv] 0x7d9601 __open_osfhandle -> _addr_7D
+[conv] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> _addr_7D
+[conv] 0x7da9a2 _strncnt_0 -> _addr_7D
+[conv] 0x7dae6e CRTisctype -> _addr_7D
+[conv] 0x7dce6e GetTimeZoneInformation -> _addr_7D
+[conv] 0x7dce74 GetLocalTime -> _addr_7D
+[conv] 0x7dce7a RtlUnwind -> _addr_7D
+[conv] 0x7dcf16 SetConsoleCtrlHandler -> _addr_7D
+[conv] 0x7dcf2e FreeEnvironmentStringsA -> _addr_7D
+[conv] 0x7dcf34 FreeEnvironmentStringsW -> _addr_7D
+[conv] 0x7dcf58 EnumSystemLocalesA -> _addr_7D
+[conv] 0x7dd334 __kbhit -> _addr_7D
+[conv] 0x7dd505 ObjectClass::_output -> ObjectClass
+[conv] 0x4039c0 sub_4039C0 -> _addr_40
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d84a9   MISMATCH         unknown_libname_79
+[diff] 0x7d86bc   MISMATCH         unknown_libname_88
+[diff] 0x7d86d1   MISMATCH         unknown_libname_89
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d77d6 __wctomb_lk -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d7ff7 unknown_libname_77 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d84a9 unknown_libname_79 -> NG (attempt 2)
+[ledger] 0x7d86bc unknown_libname_88 -> NG (attempt 2)
+[ledger] 0x7d86d1 unknown_libname_89 -> NG (attempt 2)
+[ledger] 0x7d9601 __open_osfhandle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7da9a2 _strncnt_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dae6e CRTisctype -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dce6e GetTimeZoneInformation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dce74 GetLocalTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dce7a RtlUnwind -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf16 SetConsoleCtrlHandler -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf2e FreeEnvironmentStringsA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf34 FreeEnvironmentStringsW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf58 EnumSystemLocalesA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dd334 __kbhit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dd505 ObjectClass::_output -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4039c0 sub_4039C0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p43\batch_report.json

@@ -827,7 +827,7 @@
   "status": "NG"
  },
  "0x4039c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_4039C0",
@@ -212872,7 +212872,7 @@
   "this_as_id": false
  },
  "0x7d7491": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "_crtGetLocaleInfoA_16",
@@ -212972,7 +212972,7 @@
   "this_as_id": false
  },
  "0x7d77d6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__wctomb_lk",
@@ -213203,7 +213203,7 @@
   "this_as_id": false
  },
  "0x7d7ff7": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_77",
@@ -213225,36 +213225,36 @@
   "this_as_id": false
  },
  "0x7d84a9": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x2c",
   "name": "unknown_libname_79",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "unknown_libname_79",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d86bc": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push eax",
   "name": "unknown_libname_88",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "unknown_libname_88",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d86d1": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push eax",
   "name": "unknown_libname_89",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "unknown_libname_89",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d86e6": {
@@ -213502,7 +213502,7 @@
   "this_as_id": false
  },
  "0x7d9601": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__open_osfhandle",
@@ -213626,7 +213626,7 @@
   "this_as_id": false
  },
  "0x7d9f66": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z",
@@ -213747,7 +213747,7 @@
   "this_as_id": false
  },
  "0x7da9a2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_strncnt_0",
@@ -213913,7 +213913,7 @@
   "this_as_id": false
  },
  "0x7dae6e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CRTisctype",
@@ -214455,7 +214455,7 @@
   "this_as_id": false
  },
  "0x7dce6e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetTimeZoneInformation",
@@ -214466,7 +214466,7 @@
   "this_as_id": false
  },
  "0x7dce74": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetLocalTime",
@@ -214477,7 +214477,7 @@
   "this_as_id": false
  },
  "0x7dce7a": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RtlUnwind",
@@ -214760,7 +214760,7 @@
   "this_as_id": false
  },
  "0x7dcf16": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetConsoleCtrlHandler",
@@ -214805,7 +214805,7 @@
   "this_as_id": false
  },
  "0x7dcf2e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsA",
@@ -214816,7 +214816,7 @@
   "this_as_id": false
  },
  "0x7dcf34": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsW",
@@ -214882,7 +214882,7 @@
   "this_as_id": false
  },
  "0x7dcf58": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "EnumSystemLocalesA",
@@ -215131,7 +215131,7 @@
   "this_as_id": false
  },
  "0x7dd334": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__kbhit",
@@ -215176,7 +215176,7 @@
   "this_as_id": false
  },
  "0x7dd505": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
