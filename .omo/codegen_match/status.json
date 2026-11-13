@@ -92049,7 +92049,7 @@
   "this_as_id": false
  },
  "0x589190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -92140,7 +92140,7 @@
   "this_as_id": false
  },
  "0x589550": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93790,7 +93790,7 @@
   "this_as_id": false
  },
  "0x58f2c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94433,7 +94433,7 @@
   "this_as_id": false
  },
  "0x599650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94621,7 +94621,7 @@
   "this_as_id": false
  },
  "0x59e740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94878,7 +94878,7 @@
   "this_as_id": false
  },
  "0x5a4280": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -95194,7 +95194,7 @@
   "this_as_id": false
  },
  "0x5a95b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -95853,7 +95853,7 @@
   "this_as_id": false
  },
  "0x5ad010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -98251,7 +98251,7 @@
   "this_as_id": false
  },
  "0x5b3950": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "FromNameIndex",
@@ -100229,7 +100229,7 @@
   "this_as_id": false
  },
  "0x5be6d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -101110,14 +101110,14 @@
   "this_as_id": false
  },
  "0x5c07d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xe8",
   "name": "CreateMovie",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CreateMovie",
-  "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c0980": {
@@ -102137,7 +102137,7 @@
   "this_as_id": false
  },
  "0x5c2ef0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -108897,7 +108897,7 @@
   "this_as_id": false
  },
  "0x5d6be0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -108909,7 +108909,7 @@
   "this_as_id": false
  },
  "0x5d6c70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -109341,7 +109341,7 @@
   "status": "NG"
  },
  "0x5d8470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -109437,7 +109437,7 @@
   "this_as_id": false
  },
  "0x5d8730": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -112428,7 +112428,7 @@
   "this_as_id": false
  },
  "0x5ee9d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116574,7 +116574,7 @@
   "this_as_id": false
  },
  "0x5feaf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -117026,7 +117026,7 @@
   "this_as_id": false
  },
  "0x6001a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -120479,7 +120479,7 @@
   "this_as_id": false
  },
  "0x6288f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

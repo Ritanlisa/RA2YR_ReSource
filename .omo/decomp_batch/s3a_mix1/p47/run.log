@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x58f2c0 RandomMap::PlaceBuildings -> RandomMap
+[conv] 0x599650 RandomMap::SetupTheater -> RandomMap
+[conv] 0x59e740 Tiberium::CalculateSpread -> Tiberium
+[conv] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> RandomMap
+[conv] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> ObjectClass
+[conv] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> _DynamicVectorClass_PAVCellClass
+[conv] 0x5b3950 FromNameIndex -> _addr_5B
+[conv] 0x5be6d0 MouseClass::DrawCursor -> MouseClass
+[conv] 0x5c07d0 CreateMovie -> _addr_5C
+[conv] 0x5c2ef0 MPCooperative::GetPlayerCount -> MPCooperative
+[conv] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> MultiplayerGameMode
+[conv] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> MultiplayerGameMode
+[conv] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerTeam
+[conv] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x5ee9d0 HouseClass::FindStartPositions -> HouseClass
+[conv] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> OverlayTypeClass
+[conv] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_UZoneConnectionClass rc=2
+[era] RandomMap                rc=2
+[era] Tiberium                 rc=2
+[era] ObjectClass              rc=2
+[era] _DynamicVectorClass_PAVCellClass rc=2
+[era] _addr_5B                 rc=2
+[era] MouseClass               rc=2
+[era] _addr_5C                 rc=0
+[era] MPCooperative            rc=2
+[era] MultiplayerGameMode      rc=2
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=2
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=2
+[era] HouseClass               rc=2
+[era] OverlayTypeClass         rc=2
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c07d0   MISMATCH         CreateMovie
+[ledger] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58f2c0 RandomMap::PlaceBuildings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x599650 RandomMap::SetupTheater -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59e740 Tiberium::CalculateSpread -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b3950 FromNameIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5be6d0 MouseClass::DrawCursor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c07d0 CreateMovie -> NG (attempt 3)
+[ledger] 0x5c2ef0 MPCooperative::GetPlayerCount -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ee9d0 HouseClass::FindStartPositions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p47\batch_report.json

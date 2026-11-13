@@ -1,0 +1,93 @@
+{
+ "symbol": "?CreateMovie@@YIPAIPAXPBDPAH2@Z",
+ "sym_key": "Unnamed::CreateMovie",
+ "size": 365,
+ "link_base": 0,
+ "bytes_hex": "81ece00000005355568bb424f000000085f6578bc2894c24140f843f0100006a018d54242c8bc8e80000000084c00f842a0100008b8424f800000085c0740a8b388b68088b5804eb138b068d4c24185156ff50788b388b58048b68088b500c8d4424286a2e5089542418e80000000083c40885c0747d680000000050e80000000083c40885c0756b8b4c2414e8000000006a34e80000000083c40485c074118d4c242856518bc8e8000000008bf0eb0233f66a14e80000000083c40485c00f849a00000085f6c700000000008970100f848b0000008b56045f8b0a8948088b56045e5d8b4a045b89480c81c4e0000000c208008b5424106a0068ff000000525553576a006a006a006a008bd68d4c2450e8000000008bf885ff74436a18e8000000008bf083c40485f67433c6461400c70600000000897e108b0fe8000000008946088b46108b08e80000000089460c8bc65f5e5d5b81c4e0000000c2080033c05f5e5d5b81c4e0000000c20800",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Render_Play@@YIDPAX0H@Z",
+   "sym_key": "Render_Play"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "_strrchr",
+   "sym_key": "strrchr"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?aBik@@3PADA",
+   "sym_key": "aBik"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?Open@BinkMovie@@QAEPAIPAXH@Z",
+   "sym_key": "BinkMovie::Open"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?vt_BinkMovieHandle@@3PAXA",
+   "sym_key": "vt_BinkMovieHandle"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?LoadVQMovie@@YIPAIPAX0HHHHHHHHHD@Z",
+   "sym_key": "LoadVQMovie"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?vt_VQMovieHandle@@3PAXA",
+   "sym_key": "vt_VQMovieHandle"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?GetWidth@MovieClass@@QAEHXZ",
+   "sym_key": "MovieClass::GetWidth"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?GetHeight@MovieClass@@QAEHXZ",
+   "sym_key": "MovieClass::GetHeight"
+  }
+ ]
+}
