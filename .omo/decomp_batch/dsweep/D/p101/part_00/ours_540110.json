@@ -1,0 +1,93 @@
+{
+ "symbol": "?ReceivePacket@IPXGlobalConnClass@@QAEXH@Z",
+ "sym_key": "IPXGlobalConnClass::ReceivePacket",
+ "size": 256,
+ "link_base": 0,
+ "bytes_hex": "5155568bf1e80000000033c933ed8a4e04896c24088b413885c00f8ed3000000535755e8000000008bce8bd8e80000000085db0f84a50000008bcee800000000a00c0000000fbe3d140000003cff0fbec87410e8000000000fbe0d0c0000002bc103f88b43048b54241803c23bc7721383f9ff7405e8000000008bcee800000000eb5b83f9ff7405e8000000008bcee8000000008b96d400000033c985d27e2a8baed00000008b7b0c8bc58b7f043938740c4183c0043bca7d0c393875f4c7448d00ffffffff8b6c24108b4e048bc56a006a00506a006a004de80000000033c9458a4e04896c24103b69380f8c31ffffff5f5b8bcee8000000005e5d59c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetTileType@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileType"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?ReleaseEntry@PacketQueue@@QAEHPAX0H00@Z",
+   "sym_key": "PacketQueue::ReleaseEntry"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

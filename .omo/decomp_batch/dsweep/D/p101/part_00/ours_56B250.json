@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_56B250@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_56B250",
+ "size": 419,
+ "link_base": 0,
+ "bytes_hex": "83ec145556578be933f66800200000568d4c2414896c241ce8000000008b4424248d4c240c50e8000000008a8dd801000033c084c989742424897424180f8618010000538b8dd401000085c08b1c810f84ec00000085db0f84e40000008b43248b95f40000008bc8c1f9100fbfc90fbff08d3c0e3bfa897c24140f8ec10000008bee2be93bea0f8db10000002bce3bca0f8da70000008b6c24188b8df80000008d144a3bfa0f8f960000008b0d8a270000894424143bc10f848400000081fb58160000747c8b4b388d7b3881f9ffff0000750a8a8b1b01000084c97e640fbe4c2410894424148d4424146a0450e8000000000fbe4c24108bf08b4424286a045703f0e8000000008d8b1a0100006a01518bf80fbe4c241803fee8000000000fbe4c241081c31b0100008bf06a015303f7e80000000003c689442428eb048b6c24188b54241c8b8d400100008d42013bc18944241c0f8ceafeffff5ba18a2700008d4c241c6a04510fbe4c241489442424e8000000000fbe54240c8b7c24248bf08b028d4c240c5103f7ff50048d4c240c8bf8e8000000008d04375f5e5d83c414c20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Constructor@LZOPipe@@QAEPAV1@HH@Z",
+   "sym_key": "LZOPipe::Constructor"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?SetDelegate@Pipe@@QAEXH@Z",
+   "sym_key": "Pipe::SetDelegate"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Read@Compression@@QAEHHH@Z",
+   "sym_key": "Compression::Read"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?Read@Compression@@QAEHHH@Z",
+   "sym_key": "Compression::Read"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?Read@Compression@@QAEHHH@Z",
+   "sym_key": "Compression::Read"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "?Read@Compression@@QAEHHH@Z",
+   "sym_key": "Compression::Read"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "?Read@Compression@@QAEHHH@Z",
+   "sym_key": "Compression::Read"
+  },
+  {
+   "off": 403,
+   "type": "REL32",
+   "sym": "?Destructor@LZOPipe@@QAEHXZ",
+   "sym_key": "LZOPipe::Destructor"
+  }
+ ]
+}

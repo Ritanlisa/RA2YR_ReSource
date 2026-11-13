@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p101\part_00
+=== convert (20 addrs) ===
+[conv] 0x635c10 TeamClass::GetMember -> TeamClass
+[conv] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> ParticleClass
+[conv] 0x56b250 ObjectClass::sub_56B250 -> ObjectClass
+[conv] 0x403fa0 sub_403FA0 -> _addr_40
+[conv] 0x6e0fe0 TActionClass::RevealWaypointArea -> TActionClass
+[conv] 0x4dd9f0 BuildingClass::ValidateCell -> BuildingClass
+[conv] 0x521960 InfantryClass::LoadFromStream -> InfantryClass
+[conv] 0x68ed80 Render_Get -> Render
+[conv] 0x725fa0 TriggerClass::Construct -> TriggerClass
+[conv] 0x47fde0 BuildingClass::GetPlacementRect -> BuildingClass
+[conv] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> ObjectClass
+[conv] 0x577d90 LayerClass::Reveal -> LayerClass
+[conv] 0x540110 IPXGlobalConnClass::ReceivePacket -> IPXGlobalConnClass
+[conv] 0x595740 MapResourceClass::Constructor -> MapResourceClass
+[conv] 0x5ce4a0 MSAnim::UI_Load -> MSAnim
+[conv] 0x62c540 ParticleClass::UpdateAnimationDrift -> ParticleClass
+[conv] 0x70bcb0 TechnoClass::GetTargetCoords -> TechnoClass
+[conv] 0x6b0ae0 TechnoClass::MutateAll -> TechnoClass
+[conv] 0x4267f0 UnitClass::sub_4267F0 -> UnitClass
+[conv] 0x5b9250 ObjectClass::sub_5B9250 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=0
+[era] ParticleClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=2
+[era] TActionClass             rc=0
+[era] BuildingClass            rc=0
+[era] InfantryClass            rc=0
+[era] Render                   rc=2
+[era] TriggerClass             rc=2
+[era] LayerClass               rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] MapResourceClass         rc=2
+[era] MSAnim                   rc=2
+[era] TechnoClass              rc=2
+[era] UnitClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x635c10   MISMATCH         TeamClass::GetMember
+[diff] 0x56b250   MISMATCH         ObjectClass::sub_56B250
+[diff] 0x6e0fe0   MISMATCH         TActionClass::RevealWaypointArea
+[diff] 0x4dd9f0   MISMATCH         BuildingClass::ValidateCell
+[diff] 0x47fde0   MISMATCH         BuildingClass::GetPlacementRect
+[diff] 0x521960   MISMATCH         InfantryClass::LoadFromStream
+[diff] 0x540110   MISMATCH         IPXGlobalConnClass::ReceivePacket
+[ledger] 0x635c10 TeamClass::GetMember -> NG (attempt 1)
+[ledger] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b250 ObjectClass::sub_56B250 -> NG (attempt 1)
+[ledger] 0x403fa0 sub_403FA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e0fe0 TActionClass::RevealWaypointArea -> NG (attempt 1)
+[ledger] 0x4dd9f0 BuildingClass::ValidateCell -> NG (attempt 1)
+[ledger] 0x521960 InfantryClass::LoadFromStream -> NG (attempt 1)
+[ledger] 0x68ed80 Render_Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x725fa0 TriggerClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47fde0 BuildingClass::GetPlacementRect -> NG (attempt 1)
+[ledger] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x577d90 LayerClass::Reveal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540110 IPXGlobalConnClass::ReceivePacket -> NG (attempt 1)
+[ledger] 0x595740 MapResourceClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce4a0 MSAnim::UI_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62c540 ParticleClass::UpdateAnimationDrift -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70bcb0 TechnoClass::GetTargetCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b0ae0 TechnoClass::MutateAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4267f0 UnitClass::sub_4267F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b9250 ObjectClass::sub_5B9250 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 3,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p101\batch_report.json

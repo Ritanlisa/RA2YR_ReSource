@@ -1,0 +1,111 @@
+{
+ "symbol": "?RevealWaypointArea@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::RevealWaypointArea",
+ "size": 289,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0c8a904002000084d27408b00183c40cc210008b8990000000568d542404518b0d0000000052e8000000008b008d4c240851b9f80100008944240ce8000000008b8840010000f6c501751e8d542408b9f801000052e8000000008b8840010000f6c504750433f6eb05be040000008d442408b9f801000050e8000000000fbe801b01000003c68b4c2408992bc26a008bf0a100000000d1fe2bce6a010fbfd18b0d400200006a00c1e20881c2800000006a00895424148b912c0600006a00508d44241c5250b9f8010000e8000000008b4c2408a1000000002bce6a010fbfd18b0d400200006a01c1e20881c2800000006a006a00895424148b912c0600006a00508d44241c5250b9f8010000e800000000b0015e83c40cc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetPlacementRect@BuildingClass@@QAEPAHPAH@Z",
+ "sym_key": "BuildingClass::GetPlacementRect",
+ "size": 397,
+ "link_base": 0,
+ "bytes_hex": "83ec2053558be9568b454883f8ff0f845f0100000fbe0d340000008b118b3482568b06ff909c0000008bd833c93bd90f84400100008b9500010000c1ea10885424108a86aa02000084c07404884c24100fbf4306992bc2578bf88b442414518b4d38d1ff25ff000000c1e91003f80fbfc1c1e00805800000008d4c24189981e2ff00000003c2c1f808c1e008500fbf4538c1e00805800000009981e2ff00000003c2c1f808c1e00850e8000000008b5424148b4424188b4c241c89542420894424248d5424108d442420894c24288b0d000000005250e8000000008d4c2414518bcde8000000008b7424108b088b54243403f1897424108b48048a854801000003ca83c6e284c0897424107d1b8b8500010000c1e8103c09720e3c11770a83ee0f83c107897424100fbf4302992bc257d1f82bf00fbf4304992bc28d542424d1f82bc8528bd9e8000000008b48048b50088b780c03cb8b188b44243403de89780c5f5e89185d8948048950085b83c420c2040033c98b4424305e5d5b890889480489480889480c83c420c20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Subtract@Coord@@QAEPAV1@HHH@Z",
+   "sym_key": "Coord::Subtract"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?CalcDrawPos@BuildingClass@@QAEPAIPAX@Z",
+   "sym_key": "BuildingClass::CalcDrawPos"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}
