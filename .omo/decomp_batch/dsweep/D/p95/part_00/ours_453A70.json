@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetTurretScreenPos@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetTurretScreenPos",
+ "size": 346,
+ "link_base": 0,
+ "bytes_hex": "83ec1453568bf1578b86200500008a887b15000084c9742b8b0e56ff910804000085c07e1e8b54240c8b869c0600008b8e20050000528d94c18815000052e9dc0000008b8e200500008b91440e00008d81440e000081faffff00000f85b800000081b9480e0000ffff00000f85a80000008a81c616000084c074308b44240c6a008d4c241850518bcee8000000008b4c240c8b105f5e89118b50048951048b40088941088bc15b83c414c38b4c240c558d54241851528bcee8000000008bb6200500008b388b58048b68088a86c516000084c074308b86e01100008b8ee4110000894424108b5424108d442410894c241452508d4c2420e8000000008b108b480403fa03d98b44241089680889385d5f8958045e5b83c414c38b4c240c51508d4c2414e8000000008b388b58048b068d5424145256ff90ac0000008b48048b50088b308b44240c03f703cb89305f5e8948048950085b83c414c3",
+ "relocs": [
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?CalcBarrelFlashPosition@BuildingClass@@QAEPAIPAXHD@Z",
+   "sym_key": "BuildingClass::CalcBarrelFlashPosition"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?GetTurretOffset@TechnoClass@@QAEPAIPAXH@Z",
+   "sym_key": "TechnoClass::GetTurretOffset"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?ToScreen@World@@QAEPAIPAX0@Z",
+   "sym_key": "World::ToScreen"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?ToScreen@World@@QAEPAIPAX0@Z",
+   "sym_key": "World::ToScreen"
+  }
+ ]
+}

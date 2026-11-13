@@ -1,0 +1,93 @@
+{
+ "symbol": "?MoveToCellAndAttack@TeamClass@@QAEXHD@Z",
+ "sym_key": "TeamClass::MoveToCellAndAttack",
+ "size": 398,
+ "link_base": 0,
+ "bytes_hex": "83ec108b442414558be9568b4804518b0d00000000e8000000008bf08a44242084c08974241c7408568bcde8000000008b454085c075268b4d288d54240852e8000000008b08894c240c8b480481f9be0200007308568bcde8000000008b150000000057dd0500000000dc8a5011000083ec08dd1c24e8000000008b4c242c83c40833c125ff00000033c8a1540a000099f7f985d20f85c70000008b7554c7442424ffffffff85f68bfe0f84b2000000538b0656ff90840000008b98fc0500008a869000000084c0743b8b466c85c07434a10000000085c0750a8a868100000084c075218a868906000084c0750b8b0e56ff512c83f802750c3b5c24287e068bfe895c24288bb6d805000085f675a285ff5b744e8b979c00000056895424148b8fa00000008b07894c24188b97a40000008d4c2414516a015789542428ff90c403000085c0741b508bcde8000000008b5424208b45403bc27408568bcde8000000008b45405f85c07415f6401402740f8bcde8000000005e5d83c410c208008bcde8000000005e5d83c410c20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?GetCellFromArray@ScenarioClass@@QAEPAXH@Z",
+   "sym_key": "ScenarioClass::GetCellFromArray"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?GetEntry@SessionClass@@QAEPAIPAX@Z",
+   "sym_key": "SessionClass::GetEntry"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 350,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "?AttackCoordinator@TeamClass@@QAEDXZ",
+   "sym_key": "TeamClass::AttackCoordinator"
+  },
+  {
+   "off": 386,
+   "type": "REL32",
+   "sym": "?UpdateMembers@TeamClass@@QAEXXZ",
+   "sym_key": "TeamClass::UpdateMembers"
+  }
+ ]
+}

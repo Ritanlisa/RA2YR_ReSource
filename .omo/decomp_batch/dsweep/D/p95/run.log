@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p95\part_00
+=== convert (20 addrs) ===
+[conv] 0x600af0 sub_600AF0 -> _addr_60
+[conv] 0x7768f0 LoadWOLSettings -> _addr_77
+[conv] 0x6f6f60 TechnoClass::ComputeSlopeDifference -> TechnoClass
+[conv] 0x5fb160 AudioOptionsClass::ApplySettings -> AudioOptionsClass
+[conv] 0x6e2050 globalHelper_0E2050 -> _addr_6E
+[conv] 0x5d4210 NetworkLobby::MessageList_Append -> NetworkLobby
+[conv] 0x656150 FogOfWar::RenderCell -> FogOfWar
+[conv] 0x653850 RadarClass::MouseInput -> RadarClass
+[conv] 0x7327d0 MoveFeedback::ProcessCommand -> MoveFeedback
+[conv] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> BuildingPrerequisiteClass
+[conv] 0x594010 BuildingTypeClass::CheckPlacementArea -> BuildingTypeClass
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x6ecce0 TeamClass::MoveToCellAndAttack -> TeamClass
+[conv] 0x6adf00 Skirmish_Setup_6ADDF0_Setup -> Skirmish_Setup_6ADDF0
+[conv] 0x7c2410 Audio_Render_7C2410 -> Audio_Render
+[conv] 0x6149b0 Memory_Helper_6149B0 -> Memory_Helper
+[conv] 0x7b7c00 ObjectClass::sub_7B7C00 -> ObjectClass
+[conv] 0x726c80 TriggerTypeClass::Construct -> TriggerTypeClass
+[conv] 0x453a70 TechnoClass::GetTurretScreenPos -> TechnoClass
+[conv] 0x419b00 Cell::IsOccupied -> Cell
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] _addr_77                 rc=2
+[era] TechnoClass              rc=0
+[era] AudioOptionsClass        rc=2
+[era] _addr_6E                 rc=0
+[era] NetworkLobby             rc=2
+[era] FogOfWar                 rc=0
+[era] RadarClass               rc=2
+[era] MoveFeedback             rc=2
+[era] BuildingPrerequisiteClass rc=2
+[era] BuildingTypeClass        rc=2
+[era] WaveClass                rc=2
+[era] TeamClass                rc=0
+[era] Skirmish_Setup_6ADDF0    rc=2
+[era] Audio_Render             rc=2
+[era] Memory_Helper            rc=2
+[era] ObjectClass              rc=0
+[era] TriggerTypeClass         rc=0
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f6f60   MISMATCH         TechnoClass::ComputeSlopeDifference
+[diff] 0x453a70   MISMATCH         TechnoClass::GetTurretScreenPos
+[diff] 0x6e2050   MISMATCH         globalHelper_0E2050
+[diff] 0x656150   MISMATCH         FogOfWar::RenderCell
+[diff] 0x6ecce0   MISMATCH         TeamClass::MoveToCellAndAttack
+[diff] 0x7b7c00   MISMATCH         ObjectClass::sub_7B7C00
+[diff] 0x726c80   MISMATCH         TriggerTypeClass::Construct
+[ledger] 0x600af0 sub_600AF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7768f0 LoadWOLSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f6f60 TechnoClass::ComputeSlopeDifference -> NG (attempt 1)
+[ledger] 0x5fb160 AudioOptionsClass::ApplySettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2050 globalHelper_0E2050 -> NG (attempt 1)
+[ledger] 0x5d4210 NetworkLobby::MessageList_Append -> COMPILE_FAIL (attempt 1)
+[ledger] 0x656150 FogOfWar::RenderCell -> NG (attempt 1)
+[ledger] 0x653850 RadarClass::MouseInput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7327d0 MoveFeedback::ProcessCommand -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> COMPILE_FAIL (attempt 1)
+[ledger] 0x594010 BuildingTypeClass::CheckPlacementArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ecce0 TeamClass::MoveToCellAndAttack -> NG (attempt 1)
+[ledger] 0x6adf00 Skirmish_Setup_6ADDF0_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c2410 Audio_Render_7C2410 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6149b0 Memory_Helper_6149B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7c00 ObjectClass::sub_7B7C00 -> NG (attempt 1)
+[ledger] 0x726c80 TriggerTypeClass::Construct -> NG (attempt 1)
+[ledger] 0x453a70 TechnoClass::GetTurretScreenPos -> NG (attempt 1)
+[ledger] 0x419b00 Cell::IsOccupied -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "codegen_shape": 1,
+  "branch_order": 1,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p95\batch_report.json

@@ -1,0 +1,39 @@
+{
+ "symbol": "?RenderCell@FogOfWar@@QAEHXZ",
+ "sym_key": "FogOfWar::RenderCell",
+ "size": 444,
+ "link_base": 0,
+ "bytes_hex": "83ec0c535556578bf9897c24108b871c1200008d9f1c12000053ff90800000008b0b538bf0ff517c0fafc6998bbf741200008bf29983e60733ed03f0b90300000013ea8bc68bd5897c2418e8000000008bca8bd04233c08bf2c1ee02c1e6028bce8be9c1e902f3ab8bcd33ed83e103f3aa8bc28bca8b54241883e103c1f81f8d3c168bd133c0896c2418c1e902f3ab8bca83e103f3aa8b4424108b88581200008b018b4c281003c585c98b40040f8eee0000008d7804894c24148b138b77fc538b02ff507c0faf47048b2fba0100000003c58bc883e107d3e28b4c2410c1f8038ba9741200008a0c2803c584ca0f85980000000aca5688088b961c0200000fbe0d040000008b82546001008b168b2c81ff92c400000084c074408b066a0056ff90d000000085c0741d8b0e6a0056ff91d00000008b90546001000fbe05040000008b2c90eb1433c9ba010000008a0d00000000e8000000008be88b8d300300008bad0c0300008b45048bb57401000083f801750733c08a040eeb0633c0668b044e8b0b5057538b11ff52248b44241483c71048894424140f851dffffff8b6c241883c51881fd00180000896c24180f8ce2feffff5f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "__allshr",
+   "sym_key": "_allshr"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_LightGrey@@3EA",
+   "sym_key": "g_INI_Key_LightGrey"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  }
+ ]
+}

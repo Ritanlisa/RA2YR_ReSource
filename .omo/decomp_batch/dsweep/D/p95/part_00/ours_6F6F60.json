@@ -1,0 +1,81 @@
+{
+ "symbol": "?ComputeSlopeDifference@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::ComputeSlopeDifference",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "83ec18568bf157568b06ff505084c00f84180100008b7c2424578b0fff515084c00f84060100008b168d442414535056ff52488b50048b088b07c1ea08c1e908668954242a66894c24288b4c24288d5424185257894c2414ff50488b088b5004c1e908c1ea0866894c2428668954242a8b4424288d4c240c51b9f801000089442414e8000000008d542410b9f8010000528bf0e8000000008bf88bcfe8000000008bce8bd8e8000000002bc378148bcfe8000000008bce8bf8e8000000002bc7eb0233c08b7c24148b5c24108b354c00000057530faff0e8000000008bc88b44243033c881e1ff00000033c1c1e0088bd00fafd08bc60fafc603d089542430db442430dd1c24e8000000005753ddd8e8000000008b4c243883c41033c125ff0000005b5f33c15e83c418c204005f33c05e83c418c20400",
+ "relocs": [
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
