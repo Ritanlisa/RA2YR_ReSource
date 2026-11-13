@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x411330 TacticalClass::FillScanlinesTransparent -> TacticalClass
+[conv] 0x4114b0 StreamClass::ReadAndSeek -> StreamClass
+[conv] 0x411df0 InitializeSoundBufferPlayback -> _addr_41
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x417fd0 AbstractClass::GetField9 -> AbstractClass
+[conv] 0x41a5c0 AircraftClass::GetMissionTimer -> AircraftClass
+[conv] 0x41c3f0 BulletClass::NormalizeZeroVector -> BulletClass
+[conv] 0x41d380 AirstrikeClass::AirstrikeClass -> AirstrikeClass
+[conv] 0x41dd10 ObjectClass::sub_41DD10 -> ObjectClass
+[conv] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> AITriggerTypeClass
+[conv] 0x420f40 UpdateSpotlightsFoo -> _addr_42
+[conv] 0x426990 ObjectClass::sub_426990 -> ObjectClass
+[conv] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> ObjectClass
+[conv] 0x426e80 UnitClass::sub_426E80 -> UnitClass
+[conv] 0x427940 LoadBuildingTypeClassTheatreSHP -> _addr_42
+[conv] 0x42f7c0 _VectorClass_VCell::Cleanup -> _VectorClass_VCell
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x433560 sub_433560 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x433ca0 TextGroup::SetRect -> TextGroup
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TacticalClass            rc=2
+[era] StreamClass              rc=2
+[era] _addr_41                 rc=2
+[era] Carryall                 rc=2
+[era] AbstractClass            rc=2
+[era] AircraftClass            rc=2
+[era] BulletClass              rc=2
+[era] AirstrikeClass           rc=2
+[era] ObjectClass              rc=2
+[era] AITriggerTypeClass       rc=0
+[era] _addr_42                 rc=2
+[era] UnitClass                rc=2
+[era] _VectorClass_VCell       rc=0
+[era] BinkMovieHandle          rc=2
+[era] _addr_43                 rc=2
+[era] TextGroup                rc=2
+=== diffasm byte-compare ===
+[diff] 0x41dd10   MISMATCH         ObjectClass::sub_41DD10
+[diff] 0x426990   MISMATCH         ObjectClass::sub_426990
+[diff] 0x41f0d0   MISMATCH         AITriggerTypeClass::IronCurtainCharged
+[diff] 0x427940   MISMATCH         LoadBuildingTypeClassTheatreSHP
+[diff] 0x42f7c0   MISMATCH         _VectorClass_VCell::Cleanup
+[ledger] 0x411330 TacticalClass::FillScanlinesTransparent -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4114b0 StreamClass::ReadAndSeek -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411df0 InitializeSoundBufferPlayback -> COMPILE_FAIL (attempt 4)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x417fd0 AbstractClass::GetField9 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41a5c0 AircraftClass::GetMissionTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41c3f0 BulletClass::NormalizeZeroVector -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41d380 AirstrikeClass::AirstrikeClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41dd10 ObjectClass::sub_41DD10 -> NG (attempt 2)
+[ledger] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> NG (attempt 6)
+[ledger] 0x420f40 UpdateSpotlightsFoo -> COMPILE_FAIL (attempt 6)
+[ledger] 0x426990 ObjectClass::sub_426990 -> NG (attempt 2)
+[ledger] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> COMPILE_FAIL (attempt 2)
+[ledger] 0x426e80 UnitClass::sub_426E80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x427940 LoadBuildingTypeClassTheatreSHP -> NG (attempt 5)
+[ledger] 0x42f7c0 _VectorClass_VCell::Cleanup -> NG (attempt 2)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x433ca0 TextGroup::SetRect -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "codegen_shape": 1,
+  "branch_polarity": 1,
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p01\batch_report.json

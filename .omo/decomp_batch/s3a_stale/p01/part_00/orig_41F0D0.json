@@ -1,0 +1,11 @@
+{
+ "addr": "0x41F0D0",
+ "name": "AITriggerTypeClass::IronCurtainCharged",
+ "size": 171,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41F0D0",
+ "bytes_hex": "518b4c2408565785c9742a8b916402000033c085d27e1e8bb1580200008bce8b398b7f2883bfb40000000174104083c1043bc27cea5f5e32c059c208008b048685c074f18a486d84c974ea8b70308b483883feff740e8b1584eda8002bd63bd17d3f2bca894c24108bc8e821d12a0089442408a1e0718800db442408db442410d8f1d905c82a7e00d8a0700d0000ded9dfe0f6c401ddd8759c5f5eb00159c20800c744241000000000ebbd",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

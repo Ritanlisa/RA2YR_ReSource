@@ -1,0 +1,69 @@
+{
+ "symbol": "?LoadBuildingTypeClassTheatreSHP@@YIHH@Z",
+ "sym_key": "Unnamed::LoadBuildingTypeClassTheatreSHP",
+ "size": 304,
+ "link_base": 0,
+ "bytes_hex": "81ec0802000033c053558be9578b0d0000000033ff33db3bcf0f86070100005633c9c744241404000000eb0233ffa1000000008b34018a865e0300008a8e2c02000084c0884c24130f84ad00000084c9750e8a863702000084c00f849b0000008b86a40000003bc7741e8a96a800000084d2741450e8000000008a4c241783c404c686a80000000084c989bea400000074698d0ced0000000089bea40000002bcd8d7e24c1e10481c1000000008d54241851576a006a0052e80000000083c414b2018d4c2418e80000000085c08986a4000000752668000000005750508d44242850e80000000083c414b2018d4c2418e8000000008986a40000008b0e5556ff91a00000008d43018b5424148bd88bca83c204895424148b15000000003bda0f8207ffffff5e5f5d5b81c408020000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4160@@3IA",
+   "sym_key": "DataGlobal_8B4160"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_AnimTypeCount@@3IA",
+   "sym_key": "g_AnimTypeCount"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4160@@3IA",
+   "sym_key": "DataGlobal_8B4160"
+  }
+ ]
+}

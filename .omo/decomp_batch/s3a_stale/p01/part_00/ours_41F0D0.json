@@ -1,0 +1,57 @@
+{
+ "symbol": "?IronCurtainCharged@AITriggerTypeClass@@QAG_NHH@Z",
+ "sym_key": "AITriggerTypeClass::IronCurtainCharged",
+ "size": 315,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec1085c05356570f841e0100008bb06402000033c985f60f8e0e0100008b90580200008bc28b388b5f28bf0100000039bbb4000000741a413bce0f8deb0000008b580483c0048b5b2839bbb400000075e68b0c8a85c90f84cf0000008a416d84c00f84c40000008b41308b513883f8ff8954242474168b35540a00008bde2bd83bda7d552bc603d089542424a1000000000fbe90700d00008954240cdb44240cdc2d00000000dd5c2414db442424dd5c240ce80000000089442424db442424dc7c240cdc5c2414dfe0f6c44174528bc75f5e5b83c410c20c00a1000000000fbe90700d000089542424db442424dc2d00000000dd5c2414e80000000089442424db442424dc3d00000000dc5c2414dfe0f6c441740b8bc75f5e5b83c410c20c005f5e33c05b83c410c20c005f5e32c05b83c410c20c00",
+ "relocs": [
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?GetDefaultTimer@Super@@QAEHXZ",
+   "sym_key": "Super::GetDefaultTimer"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?GetDefaultTimer@Super@@QAEHXZ",
+   "sym_key": "Super::GetDefaultTimer"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}
