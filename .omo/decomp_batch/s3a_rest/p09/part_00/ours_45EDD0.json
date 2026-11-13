@@ -1,0 +1,21 @@
+{
+ "symbol": "?addPointer@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::addPointer",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c24148bd957e8000000008b0d000000008be88b815c0b00008b308b96ec0300003b1a75308a91e817000084d275268b400457508b08ff91840000008b1657568944241cff928400000003442414992bc2d1f803e88b83a00e000085c075095f8bc55e5d5bc204008b085750ff918400000003c533d285c00f9ec25f4a5e5d23c25bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ComputeValueSimple@TechnoTypeClass@@QAEHH@Z",
+   "sym_key": "TechnoTypeClass::ComputeValueSimple"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

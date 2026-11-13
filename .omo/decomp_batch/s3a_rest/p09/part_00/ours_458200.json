@@ -1,0 +1,105 @@
+{
+ "symbol": "?ProcessStructureAbandoned@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::ProcessStructureAbandoned",
+ "size": 325,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53568bf18b862005000083b834060000ff0f85250100008bcee80000000084c0740b6a006a008bcee80000000055578b3d00000000b90000000033dbe80000000033c985ff7e368b15000000008b2a8badd00000003985bc00000074184183c2043bcf7d188b2a8badd00000003985bc00000075e8a1000000008b1c888b0e56ff91080400008b8e1c0200005f3bcb5d7474e80000000084c07456a1000000006a00680000803fba002000008b88c0010000e8000000008b0e8d5424085256ff91b80100008b08895424105150e80000000083c4048bd0b90f000000e80000000084c0740c6affb900000000e80000000056e8000000008b1683c4046a005356ff92d40300008b0656ff900804000085c07e29399e1c020000752156e8000000008b967c0600008b0e83c4048b821c0200006a005056ff91d40300005e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?IsHealthLow@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::IsHealthLow"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?UnloadUnits@BuildingClass@@QAEHDD@Z",
+   "sym_key": "BuildingClass::UnloadUnits"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?HouseClass_Count@@3IA",
+   "sym_key": "HouseClass_Count"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Civilian@@3EA",
+   "sym_key": "g_INI_Key_Civilian"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?CreateTriggerClassIfFarEnough@@YIDHHH@Z",
+   "sym_key": "CreateTriggerClassIfFarEnough"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?aEvaStructureab@@3IA",
+   "sym_key": "aEvaStructureab"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?PlayHealthDependentBuildingAnim@@YAPAEPAX@Z",
+   "sym_key": "PlayHealthDependentBuildingAnim"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?PlayHealthDependentBuildingAnim@@YAPAEPAX@Z",
+   "sym_key": "PlayHealthDependentBuildingAnim"
+  }
+ ]
+}

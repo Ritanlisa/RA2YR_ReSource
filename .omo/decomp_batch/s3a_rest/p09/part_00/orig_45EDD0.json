@@ -1,0 +1,11 @@
+{
+ "addr": "0x45EDD0",
+ "name": "AbstractClass::addPointer",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45EDD0",
+ "bytes_hex": "53558b6c240c56578bd955e820312b008b0de07188008bf08b815c0b00008b388b97ec0300003b1a75368a91e817000084d2752c8b4004558bc88b10ff92840000008bd08b07558bcf89542418ff90840000008b4c241403c1992bc2d1f803f08b9ba00e000085db741e8b13558bcbff928400000003f033c085f60f9ec0485f23c65e5d5bc204008bc65f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

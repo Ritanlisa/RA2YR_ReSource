@@ -1,0 +1,21 @@
+{
+ "symbol": "?removePointer@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::removePointer",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "535556578bf9e8000000008b0d000000008bd88b815c0b00008b308b96ec0300003b3a752c8a91e817000084d275228b4004508b08ff91ac0000008b16568be8ff92ac00000003c5992bc2d1f8f7d803d88bbfa00e000085ff75075f5e8bc35d5bc38b0757ff90ac0000008bcb5f2bc833c085c90f9ec0485e5d23c15bc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetMember388@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::GetMember388"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

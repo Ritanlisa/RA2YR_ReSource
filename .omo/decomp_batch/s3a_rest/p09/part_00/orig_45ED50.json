@@ -1,0 +1,11 @@
+{
+ "addr": "0x45ED50",
+ "name": "AbstractClass::removePointer",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x45ED50",
+ "bytes_hex": "535556578bd9e855312b008b0de07188008bf08b815c0b00008b388b97ec0300003b1a752e8a91e817000084d275248b40048bc88b10ff92ac0000008be88b078bcfff90ac00000003c5992bc2d1f8f7d803f08b9ba00e000085db741b8b138bcbff92ac0000002bf033c085f60f9ec0485f23c65e5d5bc38bc65f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

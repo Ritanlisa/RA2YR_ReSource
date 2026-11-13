@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x457630 BuildingClass::SWAvailable -> BuildingClass
+[conv] 0x457690 BuildingClass::SW2Available -> BuildingClass
+[conv] 0x457ce0 BuildingClass::CanRepair -> BuildingClass
+[conv] 0x457de0 BuildingClass::UnloadUnits -> BuildingClass
+[conv] 0x458200 BuildingClass::ProcessStructureAbandoned -> BuildingClass
+[conv] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> TechnoClass
+[conv] 0x458a00 UnitClass::IsCellBlockedByBridge -> UnitClass
+[conv] 0x458a80 TechnoClass::EvacuateFootprintCells -> TechnoClass
+[conv] 0x458e50 BuildingClass::UpdateBunker -> BuildingClass
+[conv] 0x4595c0 BuildingClass::EmptyBunker -> BuildingClass
+[conv] 0x45a050 Stream::GetChecked -> Stream
+[conv] 0x45aa60 VectorClass::QueryInterface -> VectorClass
+[conv] 0x45aea0 StreamClass::Set2 -> StreamClass
+[conv] 0x45af20 StreamClass::Set -> StreamClass
+[conv] 0x45dd50 ObjectClass::sub_45DD50 -> ObjectClass
+[conv] 0x45dd90 BuildingTypeClass::ConstructFull -> BuildingTypeClass
+[conv] 0x45ece0 BuildingTypeClass::GetMaxPips -> BuildingTypeClass
+[conv] 0x45ed50 HouseClass::removePointer -> HouseClass
+[conv] 0x45edd0 HouseClass::addPointer -> HouseClass
+[conv] 0x45ee70 BuildingClass::ApplyFoundationDamage -> BuildingClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] UnitClass                rc=2
+[era] Stream                   rc=2
+[era] VectorClass              rc=2
+[era] StreamClass              rc=2
+[era] ObjectClass              rc=2
+[era] BuildingTypeClass        rc=2
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x458200   MISMATCH         BuildingClass::ProcessStructureAbandoned
+[diff] 0x45ed50   MISMATCH         HouseClass::removePointer
+[diff] 0x45edd0   MISMATCH         HouseClass::addPointer
+[ledger] 0x457630 BuildingClass::SWAvailable -> COMPILE_FAIL (attempt 2)
+[ledger] 0x457690 BuildingClass::SW2Available -> COMPILE_FAIL (attempt 2)
+[ledger] 0x457ce0 BuildingClass::CanRepair -> COMPILE_FAIL (attempt 2)
+[ledger] 0x457de0 BuildingClass::UnloadUnits -> COMPILE_FAIL (attempt 2)
+[ledger] 0x458200 BuildingClass::ProcessStructureAbandoned -> NG (attempt 2)
+[ledger] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x458a00 UnitClass::IsCellBlockedByBridge -> COMPILE_FAIL (attempt 2)
+[ledger] 0x458a80 TechnoClass::EvacuateFootprintCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x458e50 BuildingClass::UpdateBunker -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4595c0 BuildingClass::EmptyBunker -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45a050 Stream::GetChecked -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45aa60 VectorClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45aea0 StreamClass::Set2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45af20 StreamClass::Set -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45dd50 ObjectClass::sub_45DD50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45dd90 BuildingTypeClass::ConstructFull -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45ece0 BuildingTypeClass::GetMaxPips -> COMPILE_FAIL (attempt 2)
+[ledger] 0x45ed50 HouseClass::removePointer -> NG (attempt 2)
+[ledger] 0x45edd0 HouseClass::addPointer -> NG (attempt 2)
+[ledger] 0x45ee70 BuildingClass::ApplyFoundationDamage -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p09\batch_report.json
