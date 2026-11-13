@@ -1,0 +1,27 @@
+{
+ "symbol": "?ComputeBuildTime@TechnoTypeClass@@QAENXZ",
+ "sym_key": "TechnoTypeClass::ComputeBuildTime",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "83ec08db8110060000a100000000dc8848170000dc0d00000000dd5c24008b4c24048b5424005152e800000000dd44240883c410c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?dbl_7F4E80@@3NA",
+   "sym_key": "dbl_7F4E80"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

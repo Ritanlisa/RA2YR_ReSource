@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x711ee0 TechnoTypeClass::ComputeBuildTime -> TechnoTypeClass
+[conv] 0x711f60 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> TechnoTypeClass
+[conv] 0x717800 TechnoTypeClass::GetSightRange -> TechnoTypeClass
+[conv] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> TechnoClass
+[conv] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> TeleportLocomotionClass
+[conv] 0x71cc50 TerrainClass::CheckSpawnConditions -> TerrainClass
+[conv] 0x71d000 TerrainClass::ProcessSpawnAnim -> TerrainClass
+[conv] 0x71de40 TerrainTypeClass::SingletonGetter -> TerrainTypeClass
+[conv] 0x71f4e0 TriggerTypeClass::ParseActionData -> TriggerTypeClass
+[conv] 0x720bb0 ThemeClass::Play -> ThemeClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x7241a0 Tooltip::Enable -> Tooltip
+[conv] 0x724ad0 ToolTipClass::initString -> ToolTipClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] TechnoTypeClass          rc=2
+[era] TechnoClass              rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] TerrainClass             rc=2
+[era] TerrainTypeClass         rc=2
+[era] TriggerTypeClass         rc=2
+[era] ThemeClass               rc=2
+[era] BuildingClass            rc=2
+[era] Tooltip                  rc=2
+[era] ToolTipClass             rc=2
+[era] TextLabelClass           rc=2
+[era] LoadingScreen            rc=2
+[era] CampaignScore            rc=2
+[era] _addr_72                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x711ee0   MISMATCH         TechnoTypeClass::ComputeBuildTime
+[diff] 0x717800   MATCH            TechnoTypeClass::GetSightRange
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 5)
+[ledger] 0x711ee0 TechnoTypeClass::ComputeBuildTime -> NG (attempt 2)
+[ledger] 0x711f60 TechnoTypeClass::ComputeValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x717800 TechnoTypeClass::GetSightRange -> OK (attempt 3)
+[ledger] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71cc50 TerrainClass::CheckSpawnConditions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71d000 TerrainClass::ProcessSpawnAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71de40 TerrainTypeClass::SingletonGetter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71f4e0 TriggerTypeClass::ParseActionData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x720bb0 ThemeClass::Play -> COMPILE_FAIL (attempt 4)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7241a0 Tooltip::Enable -> COMPILE_FAIL (attempt 5)
+[ledger] 0x724ad0 ToolTipClass::initString -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 7)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 7)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p30\batch_report.json

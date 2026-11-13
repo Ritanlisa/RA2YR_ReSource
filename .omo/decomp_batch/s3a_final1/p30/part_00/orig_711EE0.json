@@ -1,0 +1,11 @@
+{
+ "addr": "0x711EE0",
+ "name": "TechnoTypeClass::ComputeBuildTime",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x711EE0",
+ "bytes_hex": "db8110060000a1e0718800dc8848170000dc0d804e7f00e904400b00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

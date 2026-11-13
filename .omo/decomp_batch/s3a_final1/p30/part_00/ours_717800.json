@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetSightRange@TechnoTypeClass@@QAEHXZ",
+ "sym_key": "TechnoTypeClass::GetSightRange",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b811806000083f8ff750ba1000000008b80b4070000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

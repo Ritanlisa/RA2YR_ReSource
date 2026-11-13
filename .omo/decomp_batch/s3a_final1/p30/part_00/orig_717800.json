@@ -1,0 +1,11 @@
+{
+ "addr": "0x717800",
+ "name": "TechnoClass::GetSightRange",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x717800",
+ "bytes_hex": "8b811806000083f8ff750ba1e07188008b80b4070000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
