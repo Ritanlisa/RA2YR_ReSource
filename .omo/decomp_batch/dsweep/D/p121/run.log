@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p121\part_00
+=== convert (20 addrs) ===
+[conv] 0x5403f0 IPXGlobalConnClass::SetAddress -> IPXGlobalConnClass
+[conv] 0x721e80 TiberiumClass::SaveLoad_Prefix -> TiberiumClass
+[conv] 0x5276d0 INIClass::ReadInt_Overwrite -> INIClass
+[conv] 0x7b8c60 BSurface::CreateTripleBuffer -> BSurface
+[conv] 0x76d180 WDTGame::ProcessTerritorySelection -> WDTGame
+[conv] 0x5d3fc0 ScrollingText::AddLine -> ScrollingText
+[conv] 0x7db93e ObjectClass::__handle_exc -> ObjectClass
+[conv] 0x61ef70 FormatHotkeyDisplayString -> _addr_61
+[conv] 0x597d60 MapSeedClass::LoadInfo -> MapSeedClass
+[conv] 0x44e8f0 BuildingClass::OnObjectExpired -> BuildingClass
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x456750 BuildingClass::DrawDeployCircle -> BuildingClass
+[conv] 0x6ffbe0 TechnoClass::ExecuteMissionCmd -> TechnoClass
+[conv] 0x5c7520 SubtractBigIntegerWithSign -> _addr_5C
+[conv] 0x478e30 CCToolTip::Draw2 -> CCToolTip
+[conv] 0x636590 FactoryClass::CompleteCurrentItem -> FactoryClass
+[conv] 0x52f3f0 Network::Init -> Network
+[conv] 0x5dbf50 UpdateMultiplayerPlayerOptions -> _addr_5D
+[conv] 0x476020 INIClass::ReadExitCellList -> INIClass
+[conv] 0x53d330 ObjectClass::GenerateLightningStormGlow -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXGlobalConnClass       rc=2
+[era] TiberiumClass            rc=2
+[era] INIClass                 rc=2
+[era] BSurface                 rc=0
+[era] WDTGame                  rc=0
+[era] ScrollingText            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_61                 rc=2
+[era] MapSeedClass             rc=2
+[era] BuildingClass            rc=2
+[era] CellClass                rc=2
+[era] TechnoClass              rc=0
+[era] _addr_5C                 rc=2
+[era] CCToolTip                rc=2
+[era] FactoryClass             rc=0
+[era] Network                  rc=2
+[era] _addr_5D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b8c60   MISMATCH         BSurface::CreateTripleBuffer
+[diff] 0x76d180   MISMATCH         WDTGame::ProcessTerritorySelection
+[diff] 0x456750   MISMATCH         BuildingClass::DrawDeployCircle
+[diff] 0x6ffbe0   MISMATCH         TechnoClass::ExecuteMissionCmd
+[diff] 0x636590   MISMATCH         FactoryClass::CompleteCurrentItem
+[ledger] 0x5403f0 IPXGlobalConnClass::SetAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721e80 TiberiumClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5276d0 INIClass::ReadInt_Overwrite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b8c60 BSurface::CreateTripleBuffer -> NG (attempt 1)
+[ledger] 0x76d180 WDTGame::ProcessTerritorySelection -> NG (attempt 1)
+[ledger] 0x5d3fc0 ScrollingText::AddLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db93e ObjectClass::__handle_exc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x61ef70 FormatHotkeyDisplayString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x597d60 MapSeedClass::LoadInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44e8f0 BuildingClass::OnObjectExpired -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x456750 BuildingClass::DrawDeployCircle -> NG (attempt 1)
+[ledger] 0x6ffbe0 TechnoClass::ExecuteMissionCmd -> NG (attempt 1)
+[ledger] 0x5c7520 SubtractBigIntegerWithSign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478e30 CCToolTip::Draw2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x636590 FactoryClass::CompleteCurrentItem -> NG (attempt 1)
+[ledger] 0x52f3f0 Network::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dbf50 UpdateMultiplayerPlayerOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x476020 INIClass::ReadExitCellList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53d330 ObjectClass::GenerateLightningStormGlow -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p121\batch_report.json

@@ -1,0 +1,123 @@
+{
+ "symbol": "?DrawDeployCircle@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::DrawDeployCircle",
+ "size": 571,
+ "link_base": 0,
+ "bytes_hex": "83ec18535556578bf1e80000000085c0894424140f8e1902000033c924008a8e600600000bc884c90f84f90100008b8e1c020000e8000000008bd884db0f84da0100008b86200500008a880817000084c90f846d010000a000000000bbff000000a801752a8ad0680000000080ca01881d00000000881500000000881d00000000881d00000000e80000000083c4048b861c02000083c011668b0866894c24108a500288542412e8000000008bc8d1e98be981e5ff030000f6c404755cf6c4027511f6d16800000000518d4c2418e8000000008b4424148b4c2414240023cb0bc133d28a54241224008d4c241c0bd08b0651568bfaff5048db4424148b50086a016a00518b4804d91c2457528b10515232d232c9e80000000068000000406a00e800000000ddd8db44241cdc0500000000dc74241cdc0d00000000dd1c24e8000000008bf88b44241c33f883c40823fb33f80faffdc1ef0a83ff200f86d00000008b861c02000033c98b168a88f956000005f956000024000bc88d44241c50568be9ff5248897c2414c744241800000000df6c24148b50046a016a01518b48088b00d91c245551525032d232c9e80000000023c381e700ffffff0bc75f5e5d5b83c418c38b861c02000033c98b168a88f956000005f956000024000bc88d44241c50568bf9ff5248db4424148b50046a016a00518b48088b00d91c2457518a4c24245250b201e80000000025ff00000080e3005f5e0bc35d5b83c418c35f5e8bc35d5b83c418c35f5e5d8bc15b83c418c38bc75f5e5d5b83c418c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetPowerFrame@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::GetPowerFrame"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?byte_89C838@@3EA",
+   "sym_key": "byte_89C838"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?nullsub_103@@YAHPBX0@Z",
+   "sym_key": "nullsub_103"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?byte_89C800@@3EA",
+   "sym_key": "byte_89C800"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?byte_89C838@@3EA",
+   "sym_key": "byte_89C838"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?byte_89C801@@3EA",
+   "sym_key": "byte_89C801"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?byte_89C802@@3EA",
+   "sym_key": "byte_89C802"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?byte_89C800@@3EA",
+   "sym_key": "byte_89C800"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?DrawTechnoDeployCircle@@YIDDDHHHHMDD@Z",
+   "sym_key": "DrawTechnoDeployCircle"
+  },
+  {
+   "off": 289,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1728@@3NA",
+   "sym_key": "DataGlobal_7E1728"
+  },
+  {
+   "off": 319,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?DrawTechnoDeployCircle@@YIDDDHHHHMDD@Z",
+   "sym_key": "DrawTechnoDeployCircle"
+  },
+  {
+   "off": 519,
+   "type": "REL32",
+   "sym": "?DrawTechnoDeployCircle@@YIDDDHHHHMDD@Z",
+   "sym_key": "DrawTechnoDeployCircle"
+  }
+ ]
+}

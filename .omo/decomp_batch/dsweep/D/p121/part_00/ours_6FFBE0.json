@@ -1,0 +1,117 @@
+{
+ "symbol": "?ExecuteMissionCmd@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::ExecuteMissionCmd",
+ "size": 740,
+ "link_base": 0,
+ "bytes_hex": "81ecf0000000535556578bf1e80000000084c074118b0656ff90c004000084c07404b001eb0232c08b5c241083fb02740583fb01750984c07405bb1d0000008bcee80000000084c00f84970100008b4c2410518d8c2400010000e8000000008b5424108d8c24f400000052e8000000008b4424108d8c24ec00000050e800000000568d4c241ce8000000008b6c24108b8c24fc0000008b9424f800000055518b8c24fc000000528b9424fc000000518b8c24fc000000528a50048b00518b0d000000005352508b51308d4c244452e8000000008b4424108b942484000000b91b0000008d7424208dbc249400000081e500ffffff25ff000000f3a58b8c24880000000be88b84248000000055518b8c2484000000528b942484000000508b842484000000518b8c2484000000528b942484000000508b842484000000518b8c2484000000528b942484000000508b842484000000518b8c2484000000528b942484000000508b842484000000518b8c2484000000528b942484000000508b84248400000051528b8c24880000008b942484000000508b842484000000518b8c2484000000528b942484000000508b842484000000518b8c2484000000528b942484000000508b842484000000515250e8000000008b4424105f5e5d24005b81c4f0000000c3a10000000085c00f849f0000008d43ff83f81c775633c98a8800000000ff248d000000008b1656ff925c030000eb7d8b4c24108b065156ff9070030000eb6d8b1656ff9268030000eb628b0656ff9058030000eb578b0e56ff9164030000eb4c8b1656ff926c030000eb418b0656ff9084000000b900000000e8000000008b0e568bf8ff91840000008b2e8bc88bc733d2896c2410f7b1b00400008b81a40400008b0c905156ff95540300008b5424108d4c241052e8000000008b4424108d4c241850e800000000568d8c2490000000e8000000008a50048b008d4c24105152508d5424248acbe8000000008b4424105f24015e5d0c015b81c4f0000000c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Render_Draw_731BF0@@YADXZ",
+   "sym_key": "Render_Draw_731BF0"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?GetFlag@FactoryClass@@QAEDXZ",
+   "sym_key": "FactoryClass::GetFlag"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?InitActionFields@ScriptAction@@QAEPADHHDDHDHDHD@Z",
+   "sym_key": "ScriptAction::InitActionFields"
+  },
+  {
+   "off": 464,
+   "type": "REL32",
+   "sym": "?Object_Helper_637DD0@@YGDHHHHHHHHHHHHHHHHHHHHHHHHHHHH@Z",
+   "sym_key": "Object_Helper_637DD0"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 510,
+   "type": "DIR32",
+   "sym": "$L2137",
+   "sym_key": "$L2137"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "$L2138",
+   "sym_key": "$L2138"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 667,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 681,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 694,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 717,
+   "type": "REL32",
+   "sym": "?Object_Init@@YIDDHHDH@Z",
+   "sym_key": "Object_Init"
+  }
+ ]
+}

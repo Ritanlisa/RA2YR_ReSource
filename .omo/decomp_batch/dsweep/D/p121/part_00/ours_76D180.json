@@ -1,0 +1,177 @@
+{
+ "symbol": "?ProcessTerritorySelection@WDTGame@@QAEXPAHPA_N@Z",
+ "sym_key": "WDTGame::ProcessTerritorySelection",
+ "size": 386,
+ "link_base": 0,
+ "bytes_hex": "83ec20558b6c2428568bf18b8e5c040000578dbe5c04000055c744242c00000000e80000000084c00f848f0000008b066a01508bcfe8000000008a476884c00f85340100008b0e6a01518bcfe8000000008b15000000008d4c243452e8000000008b0e8d44243450e8000000008d4c243451e8000000008b0d0000000083c40433d28a1500000000687e0300005233d2e800000000508d4c2438e8000000008d4424348bce50e8000000008d4c2434e8000000005f5e5d83c420c208008b0e536a00518bcfe8000000008d9e580400008bcbe800000000558bc8e8000000008bf88b86600400003bf8742b8bcb89be60040000e8000000008d5424185752e8000000005056e80000000083c4088d4c2418e8000000008b86600400008d4c24205051e800000000508d4c2414e8000000008d4c2420e8000000008d5424105256e80000000083c4088d4c24108ad8e8000000008b44243884db88185b741b8b0d00000000518d4c2434e8000000006a008d4c2434e8000000005f5e5d83c420c20800",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?PointInRect@WDTSurface@@QAEHPAX@Z",
+   "sym_key": "WDTSurface::PointInRect"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?ToggleState@WDTSurface@@QAEDPAXD@Z",
+   "sym_key": "WDTSurface::ToggleState"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?ToggleTeamMode@WDTGame@@QAEDPAXD@Z",
+   "sym_key": "WDTGame::ToggleTeamMode"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?aMousecancel@@3HA",
+   "sym_key": "aMousecancel"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?FindByName@MSSfxClass@@QAEDPAX@Z",
+   "sym_key": "MSSfxClass::FindByName"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?aWolWdtterritor@@3HA",
+   "sym_key": "aWolWdtterritor"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_Str_File_WDTSel_cpp@@3EA",
+   "sym_key": "g_Str_File_WDTSel_cpp"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?Show@ScoreText@@QAEXPAX@Z",
+   "sym_key": "ScoreText::Show"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?ToggleState@WDTSurface@@QAEDPAXD@Z",
+   "sym_key": "WDTSurface::ToggleState"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?Get@Count_Helper@@QAEHXZ",
+   "sym_key": "Count_Helper::Get"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?PixelToIndex@Surface@@QAEHPAX@Z",
+   "sym_key": "Surface::PixelToIndex"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?Get@Count_Helper@@QAEHXZ",
+   "sym_key": "Count_Helper::Get"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?ComPtr__DestroyWrapper@@YGHHPAX@Z",
+   "sym_key": "ComPtr__DestroyWrapper"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?TerritorySelectWDT@@YA_NPAXH@Z",
+   "sym_key": "TerritorySelectWDT"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?Territory_Dtor@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Territory_Dtor"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?ComPtr__DestroyWrapper@@YGHHPAX@Z",
+   "sym_key": "ComPtr__DestroyWrapper"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?Constructor@WDTGame@@QAEPAV1@H@Z",
+   "sym_key": "WDTGame::Constructor"
+  },
+  {
+   "off": 310,
+   "type": "REL32",
+   "sym": "?Territory_Dtor@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Territory_Dtor"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?TerritorySelectWDT@@YA_NPAXH@Z",
+   "sym_key": "TerritorySelectWDT"
+  },
+  {
+   "off": 335,
+   "type": "REL32",
+   "sym": "?Territory_Dtor@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Territory_Dtor"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?aConflictselect@@3HA",
+   "sym_key": "aConflictselect"
+  },
+  {
+   "off": 362,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  }
+ ]
+}

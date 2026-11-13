@@ -1,0 +1,81 @@
+{
+ "symbol": "?CreateTripleBuffer@BSurface@@QAE_NXZ",
+ "sym_key": "BSurface::CreateTripleBuffer",
+ "size": 558,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db395e040f840e0200008b46443bc374398b0850ff517c8b56040fbf4a023bc87f178b4644508b10ff92800000008b4e040fbf51043bd07e118b46443bc374078b086a0150ff11895e448b46583bc374398b1050ff527c8b4e040fbf51023bd07f178b4658508b08ff91800000008b56040fbf4a043bc87e118b46583bc374078b106a0150ff12895e588b466c3bc374398b0850ff517c8b56040fbf4a023bc87f178b466c508b10ff92800000008b4e040fbf51043bd07e118b466c3bc374078b086a0150ff11895e6c8b4624553bc3570f841b010000395e4475586a20e8000000008bf883c4043bfb74438b46040fbf58040fbf68028b4624508b10ff52708947100fafc50fafc3506a008d4f14896f04895f08c7470c00000000c70700000000e800000000c70700000000eb0233ff897e448b465885c075586a20e8000000008bf883c40485ff74438b46040fbf58040fbf68028b4624508b08ff51708947100fafc50fafc3506a008d4f14896f04895f08c7470c00000000c70700000000e800000000c70700000000eb0233ff897e588b466c85c075586a20e8000000008bf883c40485ff74438b46040fbf58040fbf68028b4624508b10ff52708947100fafc50fafc3506a008d4f14896f04895f08c7470c00000000c70700000000e800000000c70700000000eb0233ff897e6c8b46445f85c05d74178b465885c074108b466c85c074095eb8010000005b59c35e33c05b59c38b4424085e24005bf7d81bc0f7d859c3",
+ "relocs": [
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 292,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 324,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 392,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 419,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  }
+ ]
+}
