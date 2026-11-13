@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetCellFlagsAlongPath@MapClass@@QAEDPAG0@Z",
+ "sym_key": "MapClass::SetCellFlagsAlongPath",
+ "size": 191,
+ "link_base": 0,
+ "bytes_hex": "8b542408558b6c2408578bf980e200668b4d008bc125ff0000000bc2663b0d680000007511668b4d02663b0d6a0000000f8484000000538a5c2414568bb77c11000066813eff7f750866817e02ff7f7467668b55008bc683c604660310668b40026603450266895424188d542414668944241a528b4c241c894c24188bcfe80000000025ff00000084c074b68d4424148bcf50e8000000008b882c01000084db740b83c90289882c010000eb9583e1fd89882c010000eb8a5e5b5f5dc20800",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?stru_8A0390@@3PADA",
+   "sym_key": "stru_8A0390"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

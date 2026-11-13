@@ -39435,7 +39435,7 @@
   "this_as_id": false
  },
  "0x4a0b20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -39675,15 +39675,15 @@
   "this_as_id": false
  },
  "0x4a1280": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAUIConnectionPoint::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ConnectionPointClass_9::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1330": {
@@ -39723,15 +39723,15 @@
   "this_as_id": false
  },
  "0x4a13c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAUIConnectionPoint::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EnumConnectionPointsClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1470": {
@@ -40403,7 +40403,7 @@
   "this_as_id": false
  },
  "0x4a2cd0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -40535,7 +40535,7 @@
   "this_as_id": false
  },
  "0x4a3110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -40932,7 +40932,7 @@
   "this_as_id": false
  },
  "0x4a4780": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -41039,15 +41039,15 @@
   "status": "NG"
  },
  "0x4a4b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAU_DDSURFACEDESC::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CStreamClass_16::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a4c20": {
@@ -41087,15 +41087,15 @@
   "this_as_id": false
  },
  "0x4a4cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CStreamClass::CopyItems",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a4d60": {
@@ -41509,7 +41509,7 @@
   "this_as_id": false
  },
  "0x4a57b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42064,15 +42064,15 @@
   "this_as_id": false
  },
  "0x4a7dc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVDiskLaserClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Dial8Class_48::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7e70": {
@@ -42112,15 +42112,15 @@
   "this_as_id": false
  },
  "0x4a7f00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVDiskLaserClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Dial8Class_48::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7fb0": {
@@ -42437,7 +42437,7 @@
   "this_as_id": false
  },
  "0x4a88c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42555,15 +42555,15 @@
   "status": "NG"
  },
  "0x4a95a0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "MapClass::SetCellFlagsAlongPath",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapClass::SetCellFlagsAlongPath",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a9650": {
@@ -42967,7 +42967,7 @@
   "this_as_id": false
  },
  "0x4ad7e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42979,7 +42979,7 @@
   "this_as_id": false
  },
  "0x4ada30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42991,7 +42991,7 @@
   "this_as_id": false
  },
  "0x4adba0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43027,14 +43027,14 @@
   "this_as_id": false
  },
  "0x4adff0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "HouseClass::RevealShroudForAllies",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::RevealShroudForAllies",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -45493,15 +45493,15 @@
   "this_as_id": false
  },
  "0x4b9e20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAUButtonFadeEffect::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FilePipe_30::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b9ed0": {
@@ -45529,15 +45529,15 @@
   "this_as_id": false
  },
  "0x4b9f40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAUCrossDissolveEffect::Remove",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_CrossDissolveEffect::Remove",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4b9ff0": {
@@ -45572,15 +45572,15 @@
   "this_as_id": false
  },
  "0x4ba080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FilePipe_30::SetCapacity_0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ba130": {

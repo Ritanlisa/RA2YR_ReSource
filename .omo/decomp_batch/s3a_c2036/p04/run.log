@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> EnumConnectionPointsClass
+[conv] 0x4a1280 _VectorClass_PAUIConnectionPoint::Release -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a13c0 _DynamicVectorClass_PAUIConnectionPoint::SetCapacity -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x4a3110 CStreamClass::ddtor -> CStreamClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4a4b70 _VectorClass_PAU_DDSURFACEDESC::Release -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a4cb0 _DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a57b0 Dial8Class::GetValue -> Dial8Class
+[conv] 0x4a7dc0 _VectorClass_PAVDiskLaserClass::Release -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4a7f00 _DynamicVectorClass_PAVDiskLaserClass::SetCapacity -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4a88c0 DisplayClass::SetSize -> DisplayClass
+[conv] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> MapClass
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x4ada30 ScenarioClass::GetScenarioData -> ScenarioClass
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x4b9e20 _DynamicVectorClass_PAUButtonFadeEffect::SetCapacity -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4b9f40 _VectorClass_PAUCrossDissolveEffect::Remove -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4ba080 _DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EnumConnectionPointsClass rc=2
+[era] _VectorClass_PAUIConnectionPoint rc=0
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=0
+[era] CStreamClass             rc=2
+[era] Surface                  rc=2
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=0
+[era] Dial8Class               rc=2
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=0
+[era] DisplayClass             rc=2
+[era] MapClass                 rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a1280   MISMATCH         _VectorClass_PAUIConnectionPoint::Release
+[diff] 0x4a13c0   MISMATCH         _DynamicVectorClass_PAUIConnectionPoint::SetCapacity
+[diff] 0x4a4b70   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::Release
+[diff] 0x4a4cb0   MISMATCH         _DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems
+[diff] 0x4a7dc0   MISMATCH         _VectorClass_PAVDiskLaserClass::Release
+[diff] 0x4a7f00   MISMATCH         _DynamicVectorClass_PAVDiskLaserClass::SetCapacity
+[diff] 0x4a95a0   MISMATCH         MapClass::SetCellFlagsAlongPath
+[diff] 0x4b9e20   MISMATCH         _DynamicVectorClass_PAUButtonFadeEffect::SetCapacity
+[diff] 0x4b9f40   MISMATCH         _VectorClass_PAUCrossDissolveEffect::Remove
+[diff] 0x4ba080   MISMATCH         _DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0
+[ledger] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1280 _VectorClass_PAUIConnectionPoint::Release -> NG (attempt 2)
+[ledger] 0x4a13c0 _DynamicVectorClass_PAUIConnectionPoint::SetCapacity -> NG (attempt 2)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a3110 CStreamClass::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a4b70 _VectorClass_PAU_DDSURFACEDESC::Release -> NG (attempt 2)
+[ledger] 0x4a4cb0 _DynamicVectorClass_PAU_DDSURFACEDESC::CopyItems -> NG (attempt 2)
+[ledger] 0x4a57b0 Dial8Class::GetValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a7dc0 _VectorClass_PAVDiskLaserClass::Release -> NG (attempt 2)
+[ledger] 0x4a7f00 _DynamicVectorClass_PAVDiskLaserClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4a88c0 DisplayClass::SetSize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> NG (attempt 14)
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ada30 ScenarioClass::GetScenarioData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b9e20 _DynamicVectorClass_PAUButtonFadeEffect::SetCapacity -> NG (attempt 2)
+[ledger] 0x4b9f40 _VectorClass_PAUCrossDissolveEffect::Remove -> NG (attempt 2)
+[ledger] 0x4ba080 _DynamicVectorClass_PAUCrossDissolveEffect::SetCapacity_0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "codegen_shape": 10
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p04\batch_report.json
