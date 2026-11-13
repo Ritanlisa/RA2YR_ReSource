@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CED49",
+ "name": "__cftof",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CED49",
+ "bytes_hex": "558bec83ec288d45d856508d45f0508b45085151dd00dd1c24e8599000008b75108d45f0508b45f403c65033c0837df02d0f94c003450c50e8c38f00008d45f06a005056ff750ce8090000008b450c83c42c5ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

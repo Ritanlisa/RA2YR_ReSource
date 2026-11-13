@@ -1,0 +1,21 @@
+{
+ "symbol": "?__ultow@@YAPAGIPAHH@Z",
+ "sym_key": "Unnamed::__ultow",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b54240483ec288d4c240056505152e8000000008b74244083c40c8d4424046a28566aff506a016a00e8000000008bc65e83c428c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?_ultoa@@YAHHPAXHZZ",
+   "sym_key": "_ultoa"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAXH0H@Z",
+   "sym_key": "MultiByteToWideChar"
+  }
+ ]
+}

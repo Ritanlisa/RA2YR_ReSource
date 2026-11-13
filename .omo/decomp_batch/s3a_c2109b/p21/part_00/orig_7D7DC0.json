@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7DC0",
+ "name": "__fltout2",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7DC0",
+ "bytes_hex": "558bec83ec28568d450857508d45f450e847000000598d45d8598d75f4506a006a1183ec0c8bfca5a566a5e8173400008b75108b7d148946080fbe45da89060fbf45d88946048d45dc5057e8e0cdffff83c420897e0c8bc65f5ec9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

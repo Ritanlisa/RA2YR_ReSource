@@ -1,0 +1,21 @@
+{
+ "symbol": "?__ui64tow@@YAPAG_KPAHH@Z",
+ "sym_key": "Unnamed::__ui64tow",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b54240483ec508d4c240056505152e8000000008b74246c83c40c8d4424046a50566aff506a016a00e8000000008bc65e83c450c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?_ui64toa@@YAHHPAXHZZ",
+   "sym_key": "_ui64toa"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAXH0H@Z",
+   "sym_key": "MultiByteToWideChar"
+  }
+ ]
+}

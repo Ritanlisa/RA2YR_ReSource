@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBCE1",
+ "name": "__ltow",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBCE1",
+ "bytes_hex": "558bec83ec28ff75108d45d850ff7508e81f8a000083c40c8d45d86a28ff750c6aff506a016a00ff15c4117e008b450cc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

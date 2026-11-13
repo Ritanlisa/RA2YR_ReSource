@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CEE45",
+ "name": "__cftog",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CEE45",
+ "bytes_hex": "558bec83ec2853568d45d857508d45f0508b45085151dd00dd1c24e85b8f00008b45f48b5d108d70ff33c0837df02d0f94c003450c8bf88d45f0505357e8c28e00008b45f483c41c483bf00f9cc183f8fc7c263bc37d2284c9740a8a074784c075f92047fe8d45f06a015053ff750ce8e5feffff83c410eb158d45f06a0150ff751453ff750ce8b7fdffff83c4145f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

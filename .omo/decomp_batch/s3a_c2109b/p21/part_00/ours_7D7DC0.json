@@ -1,0 +1,21 @@
+{
+ "symbol": "?__fltout2@@YAHDHPAIPAD@Z",
+ "sym_key": "Unnamed::__fltout2",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "83ec248d4424288d4c24045356575051e8000000000fbf44243c8b4c241c8d542416528b54241c6a006a11505152e8000000008b54245c8d7c24380fbf4c242e894208894a040fbe442454890283c9ff33c083c420f2ae8b442440f7d12bf98bd98bf78bf8c1e902f3a58bcb83e103f3a45f89420c5e8bc25b83c424c3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__dtold@@YAHPAX0ZZ",
+   "sym_key": "__dtold"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?_I10_OUTPUT@@YAHHHHHHPAXZZ",
+   "sym_key": "_I10_OUTPUT"
+  }
+ ]
+}

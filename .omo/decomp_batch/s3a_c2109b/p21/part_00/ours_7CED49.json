@@ -1,0 +1,45 @@
+{
+ "symbol": "?__cftof@@YAHPANPADI@Z",
+ "sym_key": "Unnamed::__cftof",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec28dd005657e8000000008d4c24188d5424088bf0515256e80000000083c4045056e80000000083c40450e8000000008b7c244c8b4c241c8d4424188b74244803cf50518b4c242033d283f92d0f94c203d652e8000000008d4424246a00505756e80000000083c42c8bc65f5e83c428c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHHZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?_fltout2@@YAHHHPAX0ZZ",
+   "sym_key": "_fltout2"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?_fptostr@@YAHPAX0HZZ",
+   "sym_key": "_fptostr"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?_cftof2@@YAHPAXHHHZZ",
+   "sym_key": "_cftof2"
+  }
+ ]
+}

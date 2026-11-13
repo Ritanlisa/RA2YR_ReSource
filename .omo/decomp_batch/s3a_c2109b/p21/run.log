@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (19 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p21\part_00
+=== convert (19 addrs) ===
+[conv] 0x7cbcaf __itow -> _addr_7C
+[conv] 0x7cbce1 __ltow -> _addr_7C
+[conv] 0x7cbd13 __ultow -> _addr_7C
+[conv] 0x7cbd45 __i64tow -> _addr_7C
+[conv] 0x7cbd7a __ui64tow -> _addr_7C
+[conv] 0x7cd80f ObjectClass::start -> ObjectClass
+[conv] 0x7cdb14 _setlocale -> _addr_7C
+[conv] 0x7ced49 __cftof -> _addr_7C
+[conv] 0x7cee45 __cftog -> _addr_7C
+[conv] 0x7d0dba __write_lk -> _addr_7D
+[conv] 0x7d170d __input -> _addr_7D
+[conv] 0x7d21be __woutput -> _addr_7D
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+[conv] 0x7d71e0 _LanguageEnumProc_4 -> _addr_7D
+[conv] 0x7d7dc0 __fltout2 -> _addr_7D
+[conv] 0x7da512 __getwc_lk -> _addr_7D
+[conv] 0x7dac6c __chsize_lk -> _addr_7D
+[conv] 0x7dc1c2 terminate_YAXXZ -> _addr_7D
+[conv] 0x7dc223 unexpected_YAXXZ -> _addr_7D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7cbcaf   MISMATCH         __itow
+[diff] 0x7cbce1   MISMATCH         __ltow
+[diff] 0x7cbd13   MISMATCH         __ultow
+[diff] 0x7cbd45   MISMATCH         __i64tow
+[diff] 0x7cbd7a   MISMATCH         __ui64tow
+[diff] 0x7ced49   MISMATCH         __cftof
+[diff] 0x7cee45   MISMATCH         __cftog
+[diff] 0x7d7dc0   MISMATCH         __fltout2
+[ledger] 0x7cbcaf __itow -> NG (attempt 3)
+[ledger] 0x7cbce1 __ltow -> NG (attempt 3)
+[ledger] 0x7cbd13 __ultow -> NG (attempt 3)
+[ledger] 0x7cbd45 __i64tow -> NG (attempt 3)
+[ledger] 0x7cbd7a __ui64tow -> NG (attempt 3)
+[ledger] 0x7cd80f ObjectClass::start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cdb14 _setlocale -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ced49 __cftof -> NG (attempt 3)
+[ledger] 0x7cee45 __cftog -> NG (attempt 3)
+[ledger] 0x7d0dba __write_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d170d __input -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d21be __woutput -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d71e0 _LanguageEnumProc_4 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d7dc0 __fltout2 -> NG (attempt 3)
+[ledger] 0x7da512 __getwc_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dac6c __chsize_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc1c2 terminate_YAXXZ -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc223 unexpected_YAXXZ -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 19,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "codegen_shape": 8
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p21\batch_report.json
