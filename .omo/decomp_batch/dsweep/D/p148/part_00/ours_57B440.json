@@ -1,0 +1,123 @@
+{
+ "symbol": "?GenerateTerrainMap@@YGDHHDHPAED@Z",
+ "sym_key": "Unnamed::GenerateTerrainMap",
+ "size": 692,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec1c8b085355565750ff512c83f812740c5f5e5d32c05b83c41cc218008a44244484c07408c744243c00000000a1000000008bf0508b108974241889442414ff929c00000085c089442428750c5f5e5d32c05b83c41cc218008b86e802000033db85c0895c24200f8e350200008b2d000000008b8ee402000033c03bc8894424180f8ebd0100008b0d000000008b7c24248d140803c133d781e2ff00000033fa0fbfd08bc1c1e8108d0c1803c333cf81e1ff00000033f90fbfc00fbfca03c8897c24243bcd897c241c0f8e5e0100008bf22bf03bf50f8d4e0100008bf02bf23bf50f8d420100008b35000000008d7475003bce0f8f30010000c1e00903c23d00000400730d8b0d000000008b348185f6750b893d00000000be000000008b5424148b4c24188b4424280faf9ae402000003d98b7c981085ff897c24140f84d70000008d4c241c51e8000000008a4c244484c9754b85c07e478b4c243c3bc1743f83f9ff743a8b5424108b7e38a1000000008bce8baa940200002bf82be8e80000000084c00f84ce0000008b44243c8d4c241c5051e8000000008b7c2414eb4d8b4c24108b46388b15000000008b89940200002bc22bca85c07c3285c97c2e83f8297f2983f9297f248b0485000000008b148d000000002bc233c933c12bc183f8037c0983f8050f8ea30000008bcee8000000008b5424108b8294020000889e1a0100008946388a4f28024c2438888e1b0100008b2d000000008b5424108b5c2420895424148bf2eb048b7424148b4424188b8ee4020000403bc1894424180f8c43feffff8b86e8020000433bd8895c2420734fe91bfeffff85ff7c2085ed7c1c83ff297f1783fd297f128b04bd000000008b0cad000000003bc174268b4c24405f5e5dc6010032c05b83c41cc218008b5424405f5e5dc6020032c05b83c41cc218005f5e5db0015b83c41cc21800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_RadarBlipManager@@3IA",
+   "sym_key": "g_RadarBlipManager"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_RadarBlipManager@@3IA",
+   "sym_key": "g_RadarBlipManager"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_Cell_PositionLUT@@3IA",
+   "sym_key": "g_Cell_PositionLUT"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88095C@@3IA",
+   "sym_key": "DataGlobal_88095C"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_CellPositionOffset@@3HA",
+   "sym_key": "g_CellPositionOffset"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?MapClass__GetTileDataField14@@YGHPAX@Z",
+   "sym_key": "MapClass__GetTileDataField14"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD28@@3HA",
+   "sym_key": "DataGlobal_ABAD28"
+  },
+  {
+   "off": 388,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?MapClass__SetObstruction@@YGHPAXH@Z",
+   "sym_key": "MapClass__SetObstruction"
+  },
+  {
+   "off": 430,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD28@@3HA",
+   "sym_key": "DataGlobal_ABAD28"
+  },
+  {
+   "off": 465,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82A89C@@3PAIA",
+   "sym_key": "DataGlobal_82A89C"
+  },
+  {
+   "off": 472,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82A89C@@3PAIA",
+   "sym_key": "DataGlobal_82A89C"
+  },
+  {
+   "off": 501,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 539,
+   "type": "DIR32",
+   "sym": "?g_Cell_PositionLUT@@3IA",
+   "sym_key": "g_Cell_PositionLUT"
+  },
+  {
+   "off": 627,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82A7F4@@3PAIA",
+   "sym_key": "DataGlobal_82A7F4"
+  },
+  {
+   "off": 634,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82A7F4@@3PAIA",
+   "sym_key": "DataGlobal_82A7F4"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "symbol": "?RenderAlphaShapes@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::RenderAlphaShapes",
+ "size": 803,
+ "link_base": 0,
+ "bytes_hex": "83ec5ca100000000565733ff8bf13bc789742440897c242c0f86ff0200005355a1000000008b15b40000008b2db00000006a008b04b86a0083c0288b08894c24208b40042bc28b15000000002bd503ca8b16894c24208b0d040000008954242c8b560c8d1c018b46048b4e08894424348d44242c894c244489542438508d5424248d4c2458e8000000008b088b6804894c24388b480885c90f8e6b0200008b480c85c90f8e60020000a1000000008b542418895424148d34b88b04b88b483885c9894c242875278b4024508b08ff91880000008b168b80ac0000008942388b0d000000008b14b98b4238894424288d4c245c6a0051e8000000008b48048b70088b108b400c8974241c8d34193bee896c24107f06897424108bee8b7c242c8bf52bf103c18b4c243003c303cf2bf33bc8894c24207c04894424208b4c24148b5c24388d040a3bd87f028bd88b4424248bfb2bfa2bf98b4c243c03c88b44241c03c28b54241403c23bc87c08894424148bc8eb04894c24148b54241c8bc32bc16a0003c2894424340fbe05140100008b40282bc18b4c242c03c389442430e8000000008b15040000008944243ca1000000008bcb2bea2bc855518b0d14010000e8000000000faf74241c8b54243c8b4c24200fbe2d1401000003f28b5424102bca8b55280fafd1894c24288bcbf7d903f78b7c2414c1e11f2bcb03fa03cf8d5448048b4d1c3bd10f83f50000008b4c24208b5424103bd10f8de50000008b542428895424208b5424143bda7d3a8bfa2bfb8a16668b088854244081e1ffff00008b5424404681e2ff00000083c002c1e2084f660fb68c0a0000000085ff668948fe75ce8b5424148b7c24308b4c242003f78b7c242c83f9018d04788b7c24200f94c14f84c9897c2420749a8b4c2428894c24288b4c242c03c9894c243c3bda7d408bfa2bfb8a0e83c002884c244433ed8b4c2444668b68fe81e1ff00000046c1e108660fb68c2900000000668948fe0fbe2d140100003b451c72032b45204f75c48b4c243c8b7c243003c18b4d1c03f73bc172032b45208b4c242849894c2428759b8b7c24348b742448a100000000473bf8897c24340f8205fdffff5d5b5f5e83c45cc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3PAIA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3PAIA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?GetSubFile@MixFileClass@@QAEHI@Z",
+   "sym_key": "MixFileClass::GetSubFile"
+  },
+  {
+   "off": 420,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 429,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 448,
+   "type": "REL32",
+   "sym": "?ReadAndSeek@StreamClass@@QAEIHPAX@Z",
+   "sym_key": "StreamClass::ReadAndSeek"
+  },
+  {
+   "off": 468,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 598,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A118@@3PAEA",
+   "sym_key": "DataGlobal_88A118"
+  },
+  {
+   "off": 710,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A118@@3PAEA",
+   "sym_key": "DataGlobal_88A118"
+  },
+  {
+   "off": 721,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 778,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  }
+ ]
+}
