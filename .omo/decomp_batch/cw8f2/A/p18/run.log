@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d2ca0 _VectorClass_PAVMSAnim::QueryInterface -> _VectorClass_PAVMSAnim
+[conv] 0x5d2cf0 _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___ -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d2d40 _VectorClass_PAVMSSfx::QueryInterface -> _VectorClass_PAVMSSfx
+[conv] 0x5d2d90 _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___ -> _DynamicVectorClass_PAVMSSfx
+[conv] 0x5d56e0 _VectorClass_PAUHWND::QueryInterface -> _VectorClass_PAUHWND
+[conv] 0x5d5730 _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____ -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d5780 _VectorClass_UAcceleratorTracker::QueryInterface -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d57d0 _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_ -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x5d7580 ObjectClass::sub_5D7580 -> ObjectClass
+[conv] 0x5d7cd0 InitializerBase@MultiplayerGameMode::sub_5D7CD0 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d7fd0 AbstractClass::checkVisibility -> AbstractClass
+[conv] 0x5d8030 AbstractClass::updateVisibilityState -> AbstractClass
+[conv] 0x5d8050 AbstractClass::processFogReveal -> AbstractClass
+[conv] 0x5d8070 AbstractClass::checkShroudState -> AbstractClass
+[conv] 0x5d8090 AbstractClass::updateShroudMap -> AbstractClass
+[conv] 0x5d86d0 GameInit::InitMultiplayerModes -> GameInit
+[conv] 0x5d8810 _VectorClass_PAVMultiplayerTeam::QueryInterface -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8860 _DynamicVectorClass_PAVMultiplayerTeam::Destruct -> _DynamicVectorClass_PAVMultiplayerTeam
+[conv] 0x5d88b0 _VectorClass_PAVMultiplayerGameMode::Destruct -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5d8900 _DynamicVectorClass_PAVMultiplayerGameMode::Destruct -> _DynamicVectorClass_PAVMultiplayerGameMode
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _DynamicVectorClass_PAVMSAnim rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+[era] _DynamicVectorClass_PAVMSSfx rc=0
+[era] _VectorClass_PAUHWND     rc=0
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+[era] ObjectClass              rc=0
+[era] InitializerBase_MultiplayerGameMode rc=0
+[era] AbstractClass            rc=0
+[era] GameInit                 rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVMultiplayerGameMode rc=0
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d2ca0   MISMATCH         _VectorClass_PAVMSAnim::QueryInterface
+[diff] 0x5d2cf0   MISMATCH         _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___
+[diff] 0x5d2d40   MISMATCH         _VectorClass_PAVMSSfx::QueryInterface
+[diff] 0x5d2d90   MISMATCH         _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___
+[diff] 0x5d56e0   MISMATCH         _VectorClass_PAUHWND::QueryInterface
+[diff] 0x5d5730   MISMATCH         _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____
+[diff] 0x5d5780   MISMATCH         _VectorClass_UAcceleratorTracker::QueryInterface
+[diff] 0x5d57d0   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_
+[diff] 0x5d7580   MATCH            ObjectClass::sub_5D7580
+[diff] 0x5d7cd0   MATCH            InitializerBase@MultiplayerGameMode::sub_5D7CD0
+[diff] 0x5d7fd0   MATCH            AbstractClass::checkVisibility
+[diff] 0x5d8030   MATCH            AbstractClass::updateVisibilityState
+[diff] 0x5d8050   MATCH            AbstractClass::processFogReveal
+[diff] 0x5d8070   MATCH            AbstractClass::checkShroudState
+[diff] 0x5d8090   MATCH            AbstractClass::updateShroudMap
+[diff] 0x5d86d0   MISMATCH         GameInit::InitMultiplayerModes
+[diff] 0x5d8810   MISMATCH         _VectorClass_PAVMultiplayerTeam::QueryInterface
+[diff] 0x5d8860   MISMATCH         _DynamicVectorClass_PAVMultiplayerTeam::Destruct
+[diff] 0x5d88b0   MISMATCH         _VectorClass_PAVMultiplayerGameMode::Destruct
+[diff] 0x5d8900   MISMATCH         _DynamicVectorClass_PAVMultiplayerGameMode::Destruct
+[ledger] 0x5d2ca0 _VectorClass_PAVMSAnim::QueryInterface -> NG (attempt 4)
+[ledger] 0x5d2cf0 _DynamicVectorClass_PAVMSAnim::Constructor_VectorClass_MSAnim___ -> NG (attempt 2)
+[ledger] 0x5d2d40 _VectorClass_PAVMSSfx::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d2d90 _DynamicVectorClass_PAVMSSfx::Constructor_VectorClass_MSSfx___ -> NG (attempt 2)
+[ledger] 0x5d56e0 _VectorClass_PAUHWND::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d5730 _DynamicVectorClass_PAUHWND::Constructor_VectorClass_HWND_____ -> NG (attempt 2)
+[ledger] 0x5d5780 _VectorClass_UAcceleratorTracker::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d57d0 _DynamicVectorClass_UAcceleratorTracker::Constructor_VectorClass_AcceleratorTracker_ -> NG (attempt 2)
+[ledger] 0x5d7580 ObjectClass::sub_5D7580 -> OK (attempt 3)
+[ledger] 0x5d7cd0 InitializerBase@MultiplayerGameMode::sub_5D7CD0 -> OK (attempt 2)
+[ledger] 0x5d7fd0 AbstractClass::checkVisibility -> OK (attempt 4)
+[ledger] 0x5d8030 AbstractClass::updateVisibilityState -> OK (attempt 2)
+[ledger] 0x5d8050 AbstractClass::processFogReveal -> OK (attempt 2)
+[ledger] 0x5d8070 AbstractClass::checkShroudState -> OK (attempt 2)
+[ledger] 0x5d8090 AbstractClass::updateShroudMap -> OK (attempt 2)
+[ledger] 0x5d86d0 GameInit::InitMultiplayerModes -> NG (attempt 2)
+[ledger] 0x5d8810 _VectorClass_PAVMultiplayerTeam::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d8860 _DynamicVectorClass_PAVMultiplayerTeam::Destruct -> NG (attempt 2)
+[ledger] 0x5d88b0 _VectorClass_PAVMultiplayerGameMode::Destruct -> NG (attempt 2)
+[ledger] 0x5d8900 _DynamicVectorClass_PAVMultiplayerGameMode::Destruct -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 7
+ },
+ "pathologies": {
+  "branch_polarity": 12,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 35.0,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p18\batch_report.json

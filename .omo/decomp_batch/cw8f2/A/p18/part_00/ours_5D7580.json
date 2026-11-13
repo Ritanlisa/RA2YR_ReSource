@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5D7580@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::sub_5D7580",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "8bc1c70000000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?vt_MultiplayerGameMode_InitializerBase@@3PAXA",
+   "sym_key": "vt_MultiplayerGameMode_InitializerBase"
+  }
+ ]
+}
