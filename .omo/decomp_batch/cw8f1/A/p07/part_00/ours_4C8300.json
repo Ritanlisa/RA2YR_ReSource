@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4C8300@@YAXXZ",
+ "sym_key": "Unnamed::sub_4C8300",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "db057000010083ec08dc0d00000000dd1c24e800000000dd1d2800010083c408c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1740@@3NA",
+   "sym_key": "DataGlobal_7E1740"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  }
+ ]
+}

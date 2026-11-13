@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4C8390@@YAHXZ",
+ "sym_key": "Unnamed::sub_4C8390",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a31000010066a312000100c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  }
+ ]
+}

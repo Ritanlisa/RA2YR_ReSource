@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4C8220@@YAXXZ",
+ "sym_key": "Unnamed::sub_4C8220",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "dd0518000100dc3500000000dd1d68000100c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?dbl_7E8828@@3NA",
+   "sym_key": "dbl_7E8828"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?Buffer@@3PAEA",
+   "sym_key": "Buffer"
+  }
+ ]
+}
