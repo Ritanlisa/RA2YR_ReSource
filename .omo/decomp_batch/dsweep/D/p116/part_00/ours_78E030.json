@@ -1,0 +1,129 @@
+{
+ "symbol": "?ParseChatMessage@WOLGameClass@@QAGHPAXIH0@Z",
+ "sym_key": "WOLGameClass::ParseChatMessage",
+ "size": 341,
+ "link_base": 0,
+ "bytes_hex": "53558b6c241c568b742414578b7c241c81ff10010000751085ed740c8b4504506a0856e8000000008b4c242055518bd78bcee80000000085c00f850f0100006a0856e80000000081ff110100008bd8767181ff970400000f85ef000000682c07000056e8000000006a006a0168d104000050e800000000682c07000056e80000000068000000006a0068b404000050e8000000006a006a0868c5000000682c07000056e800000000682c07000056e80000000050e8000000005f5e5d33c05bc2140083ff0f746f83ff2b745781ff1101000075788d54242052e80000000083c404682c07000056e8000000008d5424208bc8e8000000008d4424208d4b0c50e8000000008b0b6a015653ff51048d54242052e80000000083c40433c05f5e5d5bc214008bcde8000000005f5e5db8010000005bc214008bcee8000000008bcee8000000006a0056e80000000033c05f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?SetWindowLongA@@YGJPAXHH@Z",
+   "sym_key": "SetWindowLongA"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?GetDialogText@@YIJHPAX@Z",
+   "sym_key": "GetDialogText"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?Resize@Dialog@@QAEJXZ",
+   "sym_key": "Dialog::Resize"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?DrawBackground@Dialog@@QAEXXZ",
+   "sym_key": "Dialog::DrawBackground"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?StopBink@Dialog@@QAEDXZ",
+   "sym_key": "Dialog::StopBink"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?ValidateRect@@YGHPAXH@Z",
+   "sym_key": "ValidateRect"
+  }
+ ]
+}

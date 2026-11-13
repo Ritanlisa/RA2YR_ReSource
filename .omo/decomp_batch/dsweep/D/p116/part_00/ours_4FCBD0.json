@@ -1,0 +1,183 @@
+{
+ "symbol": "?CheckDefeat@HouseClass@@QAEDD@Z",
+ "sym_key": "HouseClass::CheckDefeat",
+ "size": 482,
+ "link_base": 0,
+ "bytes_hex": "568bf18a8efc010000c786fc010000000000008a86fc01000084c90f85bd01000084c00f85af0100008a442408c786fc0100000100000084c00f85ec000000a10000000053dd0500000000dc88c814000055578b3d540a000083ec08dd1c24e8000000008b6c241c8bc88b44241c8d9ea002000033c889aea402000081e1ff000000893b33c183c4088986a80200008b0d0000000085c90f848400000083f905747f8bcf8b3d540a000083f9ff74128bd72bd13bd07c0433c0eb062bcf03c88bc13b05000000007f0a897c24148d442414eb028bc38b088b400883f9ff74108bd72bd13bd07c0433c0eb042bcf03c18d4407096a009968676666665250e800000000c1ea028bc2893bc1e81f03c289aea40200008d0480d1e02bc78986a80200008bcee8000000005f5d5ba10000000085c075498b86ec01000085c00f84960000008b4c2408e8000000008b0d0000000033c0a000000000683e1600005033d2e8000000008b0d000000006a0150e8000000008b0d000000006affeb473b3573000000755333c968411600008a0d0000000033d2518b0d00000000e8000000008b0d000000006a0350e8000000008b1573000000a1000000003bd0740c6affb900000000e8000000006a006800000000e80000000083c4088a86fc0100005ec20400",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E27F8@@3NA",
+   "sym_key": "DataGlobal_7E27F8"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?ClearScreen@Scenario@@QAEPAXXZ",
+   "sym_key": "Scenario::ClearScreen"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?aTxtScenarioLos@@3HA",
+   "sym_key": "aTxtScenarioLos"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?g_Str_File_House_CPP@@3EA",
+   "sym_key": "g_Str_File_House_CPP"
+  },
+  {
+   "off": 353,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?SetOwnerName@HouseClass@@QAEPAGPAXH@Z",
+   "sym_key": "HouseClass::SetOwnerName"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?aEvaMissionfail@@3HA",
+   "sym_key": "aEvaMissionfail"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?g_Str_File_House_CPP@@3EA",
+   "sym_key": "g_Str_File_House_CPP"
+  },
+  {
+   "off": 407,
+   "type": "DIR32",
+   "sym": "?aTxtLost@@3HA",
+   "sym_key": "aTxtLost"
+  },
+  {
+   "off": 412,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 418,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 426,
+   "type": "REL32",
+   "sym": "?SetOwnerName@HouseClass@@QAEPAGPAXH@Z",
+   "sym_key": "HouseClass::SetOwnerName"
+  },
+  {
+   "off": 432,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 437,
+   "type": "DIR32",
+   "sym": "?HouseClass_Observer@@3IA",
+   "sym_key": "HouseClass_Observer"
+  },
+  {
+   "off": 448,
+   "type": "DIR32",
+   "sym": "?aEvaYouhavelost@@3IA",
+   "sym_key": "aEvaYouhavelost"
+  },
+  {
+   "off": 453,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 465,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

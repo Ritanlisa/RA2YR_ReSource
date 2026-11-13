@@ -1,0 +1,57 @@
+{
+ "symbol": "?SimpleDeployerUndeploy@UnitClass@@QAEDXZ",
+ "sym_key": "UnitClass::SimpleDeployerUndeploy",
+ "size": 494,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b44240453568bf18b8ee00600008bd133d081e2ff00000033c284c00f84c301000085c90f84510100008b863001000085c00f84430100008b80c80000008b88c00200008b90b40200008d4411fe8b8eb00100003bc872438b0656c786e006000000000000ff90840000008a88ad06000084c97426578b3e8d4c241456518bcee80000000050b900000000e8000000006a015056ff97800400005f8b96c40600008b82bc06000085c00f84cc0000008b863001000085c0757268c8010000e80000000083c40485c0743c8b8e9c0000008b96a00000006a016a00894c2410895424148b96c406000068000600006a018d4c24186a00518b8abc060000518bc8e800000000eb0233c0568bc8898630010000e8000000008b1656ff92e40100008b8e300100008981d40000008b86300100008b90c80000008b8ab4020000898eb00100008b90c80000008b0d540a00008b82b0020000898eb80100008b4c240c8986c4010000898ebc0100008986c0010000c786e0060000010000008b1656c786e006000000000000ff92c400000084c074098b0656ff90700400008b0e56ff91840000008bd883bb70050000ff74348b969c0000008b06568954240cff90840000008b88700500006a008d54240ce80000000025ff00000080e3000bc35e5b83c40cc38ac35e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?FindPlacementCellsAlt@MapClass@@QAEPAIPAXH@Z",
+   "sym_key": "MapClass::FindPlacementCellsAlt"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?AimTurret@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::AimTurret"
+  },
+  {
+   "off": 334,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 466,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}

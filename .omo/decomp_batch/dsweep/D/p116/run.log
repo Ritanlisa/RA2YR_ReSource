@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p116\part_00
+=== convert (20 addrs) ===
+[conv] 0x739cd0 UnitClass::SimpleDeployerUndeploy -> UnitClass
+[conv] 0x4fcbd0 HouseClass::CheckDefeat -> HouseClass
+[conv] 0x608070 Dialog::IdleProcess -> Dialog
+[conv] 0x786080 ObjectClass::HandleLogoutWOL -> ObjectClass
+[conv] 0x4e3f70 SetupLobbyCountryCombo -> _addr_4E
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+[conv] 0x6f4300 TechnoClass::Constructor -> TechnoClass
+[conv] 0x4d4dc0 FootClass::ScanTarget -> FootClass
+[conv] 0x5c98a0 ObjectClass::Map_Get_5C98A0 -> ObjectClass
+[conv] 0x77f120 RequestChannelListWOL -> _addr_77
+[conv] 0x494690 _BlitTranslucentWriteAlpha_G::BlitAlpha -> _BlitTranslucentWriteAlpha_G
+[conv] 0x4a33a0 AudioStream::ReadSamples -> AudioStream
+[conv] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> ObjectClass
+[conv] 0x7a5690 CChatEventSink::FireEvent -> CChatEventSink
+[conv] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> WarheadTypeClass
+[conv] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> ObjectClass
+[conv] 0x5eba00 Lobby::SetupPlayerWidgets -> Lobby
+[conv] 0x603040 LoadCampaignMissionData -> _addr_60
+[conv] 0x7540f0 TransformVoxelVertex -> _addr_75
+[conv] 0x78e030 WOLGameClass::ParseChatMessage -> WOLGameClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=0
+[era] HouseClass               rc=0
+[era] Dialog                   rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4E                 rc=0
+[era] _addr_72                 rc=2
+[era] TechnoClass              rc=2
+[era] FootClass                rc=2
+[era] _addr_77                 rc=2
+[era] _BlitTranslucentWriteAlpha_G rc=0
+[era] AudioStream              rc=2
+[era] CChatEventSink           rc=2
+[era] WarheadTypeClass         rc=2
+[era] Lobby                    rc=2
+[era] _addr_60                 rc=2
+[era] _addr_75                 rc=0
+[era] WOLGameClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x739cd0   MISMATCH         UnitClass::SimpleDeployerUndeploy
+[diff] 0x4fcbd0   MISMATCH         HouseClass::CheckDefeat
+[diff] 0x4e3f70   MISMATCH         SetupLobbyCountryCombo
+[diff] 0x494690   MISMATCH         _BlitTranslucentWriteAlpha_G::BlitAlpha
+[diff] 0x7540f0   MISMATCH         TransformVoxelVertex
+[diff] 0x78e030   MISMATCH         WOLGameClass::ParseChatMessage
+[ledger] 0x739cd0 UnitClass::SimpleDeployerUndeploy -> NG (attempt 1)
+[ledger] 0x4fcbd0 HouseClass::CheckDefeat -> NG (attempt 1)
+[ledger] 0x608070 Dialog::IdleProcess -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786080 ObjectClass::HandleLogoutWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e3f70 SetupLobbyCountryCombo -> NG (attempt 1)
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f4300 TechnoClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d4dc0 FootClass::ScanTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c98a0 ObjectClass::Map_Get_5C98A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77f120 RequestChannelListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x494690 _BlitTranslucentWriteAlpha_G::BlitAlpha -> NG (attempt 1)
+[ledger] 0x4a33a0 AudioStream::ReadSamples -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a5690 CChatEventSink::FireEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eba00 Lobby::SetupPlayerWidgets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x603040 LoadCampaignMissionData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7540f0 TransformVoxelVertex -> NG (attempt 1)
+[ledger] 0x78e030 WOLGameClass::ParseChatMessage -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p116\batch_report.json

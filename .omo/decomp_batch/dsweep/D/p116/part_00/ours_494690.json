@@ -1,0 +1,105 @@
+{
+ "symbol": "?BlitAlpha@_BlitTranslucentWriteAlpha_G@@QAEHPAGPAEHHH0HH@Z",
+ "sym_key": "_BlitTranslucentWriteAlpha_G::BlitAlpha",
+ "size": 467,
+ "link_base": 0,
+ "bytes_hex": "83ec108b44241c894c240c85c00f8eba0100008b4c24145355560fbe3514010000578b7c24388b6c24288a5d0084db0f94c245885c241884d2896c24280f856101000033ed668b2fbfff0000002bfd81fdff000000897c24147505bd000100008b54241c8b4424188b350000000025ff0000008b5204668b1442668b01668bce8944241066d3e88b0d000000008bdad2e0668bce8b350000000066d3eb8b0d0000000025ff0000000fafc7d2e3668bce81e3ff0000000fafdd03c38bdac1f8088bf88b44241066d3e88b0d00000000d2e0668bce66d3eb8b0d0000000025ff0000000faf442414d2e381e3ff0000000fafdd03c38b1d00000000c1f8088bf08b442410668bcb66d3e88b0d00000000d2e0668bcb66d3ea8b0d0000000025ff0000000faf442414d2e281e2ff0000000fafd503c2c1f80881ffff0000008bc87e05bfff000000b8ff0000003bc87f028bc181feff0000007e05beff0000008b0d00000000d3fe8b0d00000000d3e68b0d00000000d3ff8b0d00000000d3e78b0d00000000d3f88bcb0bf78b7c2438d3e08b4c24240bf08b44242c6689310fbe35140100008d57028b7e1c83c1023bd7894c242472032b56208bfa48897c24388944242c0f855dfeffff5f5e5d5b83c410c22000",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 360,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 368,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 384,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 416,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E790@@3IA",
+   "sym_key": "DataGlobal_87E790"
+  }
+ ]
+}
