@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_6A74A0@Tactical@@QAEHH@Z",
+ "sym_key": "Tactical::sub_6A74A0",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "538bd98b4c240855898b9c53000056c1e1055781c100000000e8000000008b839c5300008bc8c1e1052bc88d14c88d04908d2c83b81a000000c68560150000018b0d000000008b91c8b1500085d27405b8120000008b15000000008b0d000000002bd133f62bd0a1000000008d4c02f9b81f85eb51f7e18bfac1ef04d1e785ff7e4b8b857c1500006bc03c03c68d14c5000000002bd08d0cd5807eb000e8000000008b857c1500006bc03c03c68d0cc5000000002bc88d14cd807eb000b9f801000052e800000000463bf77cb58bcbc6050000000001e8000000005f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07C48@@3IA",
+   "sym_key": "DataGlobal_B07C48"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Show@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Show"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_DSurface_SidebarBounds@@3IA",
+   "sym_key": "g_DSurface_SidebarBounds"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_SidebarBounds@@3IA",
+   "sym_key": "g_SidebarBounds"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?g_DSurface_ViewBounds@@3IA",
+   "sym_key": "g_DSurface_ViewBounds"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?InsertOrdered@Hash@@QAEDH@Z",
+   "sym_key": "Hash::InsertOrdered"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?UpdateUIVisibility@Tactical@@QAEHXZ",
+   "sym_key": "Tactical::UpdateUIVisibility"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x771620 AudioQueue::Update -> AudioQueue
+[conv] 0x7533f0 LoadGame::LoadMagicAndAudio -> LoadGame
+[conv] 0x6fb080 TechnoClass::CalcAnimDelay -> TechnoClass
+[conv] 0x41f490 CCINIClass::ReadInfantryTypeList -> CCINIClass
+[conv] 0x5b5ad0 ModemGame::UpdatePlayerNameAndColor -> ModemGame
+[conv] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> JumpjetLocomotionClass
+[conv] 0x78f5c0 WOLobby::FormatLatencyText -> WOLobby
+[conv] 0x682a90 PropertyReadBoolCOM -> _addr_68
+[conv] 0x682e10 WriteIntCOM -> _addr_68
+[conv] 0x58c3b0 ObjectClass::sub_58C3B0 -> ObjectClass
+[conv] 0x6a74a0 Tactical::sub_6A74A0 -> Tactical
+[conv] 0x54f200 EventClass::Enqueue -> EventClass
+[conv] 0x7d8f51 __logb -> _addr_7D
+[conv] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> SpawnManagerClass
+[conv] 0x41fee0 globalHelper_01FEE0 -> _addr_41
+[conv] 0x547020 MapClass::LoadFileData -> MapClass
+[conv] 0x5e39c0 ValidateNetworkLobbyHostMap -> _addr_5E
+[conv] 0x7af2a0 StaticString::Factory -> StaticString
+[conv] 0x776230 sub_776230 -> _addr_77
+[conv] 0x439a10 JumpjetLocomotionClass::ComputeVectorLengthMetric -> JumpjetLocomotionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioQueue               rc=0
+[era] LoadGame                 rc=2
+[era] TechnoClass              rc=0
+[era] CCINIClass               rc=2
+[era] ModemGame                rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] WOLobby                  rc=0
+[era] _addr_68                 rc=2
+[era] ObjectClass              rc=2
+[era] Tactical                 rc=0
+[era] EventClass               rc=2
+[era] _addr_7D                 rc=2
+[era] SpawnManagerClass        rc=2
+[era] _addr_41                 rc=0
+[era] MapClass                 rc=2
+[era] _addr_5E                 rc=2
+[era] StaticString             rc=2
+[era] _addr_77                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x771620   MISMATCH         AudioQueue::Update
+[diff] 0x6fb080   MISMATCH         TechnoClass::CalcAnimDelay
+[diff] 0x78f5c0   MISMATCH         WOLobby::FormatLatencyText
+[diff] 0x6a74a0   MISMATCH         Tactical::sub_6A74A0
+[diff] 0x41fee0   MISMATCH         globalHelper_01FEE0
+[ledger] 0x771620 AudioQueue::Update -> NG (attempt 1)
+[ledger] 0x7533f0 LoadGame::LoadMagicAndAudio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fb080 TechnoClass::CalcAnimDelay -> NG (attempt 1)
+[ledger] 0x41f490 CCINIClass::ReadInfantryTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b5ad0 ModemGame::UpdatePlayerNameAndColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78f5c0 WOLobby::FormatLatencyText -> NG (attempt 1)
+[ledger] 0x682a90 PropertyReadBoolCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682e10 WriteIntCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58c3b0 ObjectClass::sub_58C3B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a74a0 Tactical::sub_6A74A0 -> NG (attempt 1)
+[ledger] 0x54f200 EventClass::Enqueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d8f51 __logb -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b7010 SpawnManagerClass::Constructor_SpawnManagerClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41fee0 globalHelper_01FEE0 -> NG (attempt 1)
+[ledger] 0x547020 MapClass::LoadFileData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e39c0 ValidateNetworkLobbyHostMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af2a0 StaticString::Factory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776230 sub_776230 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x439a10 JumpjetLocomotionClass::ComputeVectorLengthMetric -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "frame_sched": 1,
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p59\batch_report.json

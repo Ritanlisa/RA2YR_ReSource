@@ -1,0 +1,93 @@
+{
+ "symbol": "?globalHelper_01FEE0@@YG_NHPAH0@Z",
+ "sym_key": "Unnamed::globalHelper_01FEE0",
+ "size": 242,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8a87f000000084c00f84d70000008b74241485f60f84cb0000008b4c24108d44241050e8000000008b088d542410894c2414528bcee8000000008b008bb7ec0000008944240c8a87f100000084c06a005675318d4c241451b900000000e8000000006a008d5424185652b9000000008bf8e80000000033c93bc70f94c15f8ac15ec20c008d542414b90000000052e8000000008bf86a008d4424185650b900000000e8000000003bc775075f32c05ec20c006a008d4c24106a0551b900000000e8000000006a008d5424186a0552b9000000008bf0e8000000003bc674075f32c05ec20c005fb0015ec20c00",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetCurrentOption@HouseClass@@QAEPAIPAX@Z",
+   "sym_key": "HouseClass::GetCurrentOption"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?GetCurrentOption@HouseClass@@QAEPAIPAX@Z",
+   "sym_key": "HouseClass::GetCurrentOption"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  }
+ ]
+}

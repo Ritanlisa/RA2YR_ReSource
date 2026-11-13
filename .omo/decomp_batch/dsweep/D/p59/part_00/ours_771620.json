@@ -1,0 +1,45 @@
+{
+ "symbol": "?Update@AudioQueue@@QAEXXZ",
+ "sym_key": "AudioQueue::Update",
+ "size": 213,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b86ac0300008bbeb403000083f8ff7411e8000000002b86ac0300003bc77d0a2bf885ff0f85a40000008b86d003000085c076078bcee8000000008a86b803000084c075468b86d003000085c07e2b33ff4885c08986d0030000761e8b86c40300008d4cb804518d0cb8e8000000008b86d0030000473bf872e28b86bc03000085c07e07488986bc0300008b86d003000085c07714c786bc03000000000000c686b8030000015f5ec38b8ec4030000e8000000008bc8e8000000006aff83caff8bc8e800000000c686b8030000005f5ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?IsPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsPlaying"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?FindByName@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::FindByName"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?UpdateThemeManager@@YIXHHH@Z",
+   "sym_key": "UpdateThemeManager"
+  }
+ ]
+}

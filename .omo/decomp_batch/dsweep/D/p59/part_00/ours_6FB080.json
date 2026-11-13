@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcAnimDelay@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CalcAnimDelay",
+ "size": 256,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf157568b06ff9084000000d986fc0200008bb884060000e8000000003bc70f8dcf00000085c0753f8b0e56ff918400000083b89c060000ff742d8b1656ff92840000008bb6fc0100008b809c0600008b0d540a00008b542408890e8956048946085f5e83c408c38b065356ff90840000008b88e403000085c9742e8b0e56ff91840000008b90e4030000c7442410000000008954240cdf6c240cd8befc020000e8000000008bd8eb05bb010000008b0656ff90840000008bb8a00600008b0e0faffb560faffbff91840000008b80980600008bb6fc0100008b15540a00008b4c240c03c75b8916894e048946085f5e83c408c38bc75f5e83c408c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}
