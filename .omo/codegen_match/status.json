@@ -70741,7 +70741,7 @@
   "this_as_id": false
  },
  "0x518f90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70765,7 +70765,7 @@
   "this_as_id": false
  },
  "0x51aa10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70789,7 +70789,7 @@
   "this_as_id": false
  },
  "0x51b1f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70801,7 +70801,7 @@
   "this_as_id": false
  },
  "0x51b350": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70825,7 +70825,7 @@
   "this_as_id": false
  },
  "0x51bf90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70861,7 +70861,7 @@
   "this_as_id": false
  },
  "0x51cdb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70873,7 +70873,7 @@
   "this_as_id": false
  },
  "0x51d0d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70885,14 +70885,14 @@
   "this_as_id": false
  },
  "0x51d6f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "InfantryClass::ProcessDeployAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::ProcessDeployAction",
-  "rule_violations": 10,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -70909,7 +70909,7 @@
   "this_as_id": false
  },
  "0x51dbd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70921,7 +70921,7 @@
   "this_as_id": false
  },
  "0x51df10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70945,7 +70945,7 @@
   "this_as_id": false
  },
  "0x51dff0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71005,7 +71005,7 @@
   "this_as_id": false
  },
  "0x51f2c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71089,7 +71089,7 @@
   "this_as_id": false
  },
  "0x51f6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71144,7 +71144,7 @@
   "this_as_id": false
  },
  "0x5200b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71192,7 +71192,7 @@
   "this_as_id": false
  },
  "0x520ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71204,7 +71204,7 @@
   "this_as_id": false
  },
  "0x520f40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71216,14 +71216,14 @@
   "this_as_id": false
  },
  "0x521320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "InfantryClass::GetIdleTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InfantryClass::GetIdleTimer",
-  "rule_violations": 14,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -71235,7 +71235,7 @@
   "status": "OK"
  },
  "0x5216d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -71307,7 +71307,7 @@
   "this_as_id": false
  },
  "0x521b00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71343,7 +71343,7 @@
   "this_as_id": false
  },
  "0x521b60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

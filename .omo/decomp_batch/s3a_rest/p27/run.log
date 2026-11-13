@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x518f90 InfantryClass::Draw -> InfantryClass
+[conv] 0x51aa10 InfantryClass::HandleTargetDestroyed -> InfantryClass
+[conv] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> InfantryClass
+[conv] 0x51b350 InfantryClass::CalcMoveTarget -> InfantryClass
+[conv] 0x51bf90 InfantryClass::EvaluateTarget -> InfantryClass
+[conv] 0x51cdb0 InfantryClass::ProcessIdleAction -> InfantryClass
+[conv] 0x51d0d0 InfantryClass::FindMoveTarget -> InfantryClass
+[conv] 0x51d6f0 InfantryClass::ProcessDeployAction -> InfantryClass
+[conv] 0x51dbd0 InfantryClass::CalcFacingToTarget -> InfantryClass
+[conv] 0x51df10 InfantryClass::CancelMovement -> InfantryClass
+[conv] 0x51dff0 InfantryClass::MoveToCell -> InfantryClass
+[conv] 0x51f2c0 InfantryClass::GetTooltipName -> InfantryClass
+[conv] 0x51f6e0 InfantryClass::ProcessIvanBomb -> InfantryClass
+[conv] 0x5200b0 InfantryClass::ProcessIdleDeploy -> InfantryClass
+[conv] 0x520ae0 Mission::ExecuteTechnoMissionAction -> Mission
+[conv] 0x520f40 Mission::ProcessUnitMissionAI -> Mission
+[conv] 0x521320 InfantryClass::GetIdleTimer -> InfantryClass
+[conv] 0x5216d0 InfantryClass::CanMoveFreely -> InfantryClass
+[conv] 0x521b00 InfantryClass::SaveLoad_Prefix -> InfantryClass
+[conv] 0x521b60 InfantryClass::CanInitiateDeploy -> InfantryClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] Mission                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x518f90 InfantryClass::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51aa10 InfantryClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51b350 InfantryClass::CalcMoveTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51bf90 InfantryClass::EvaluateTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51cdb0 InfantryClass::ProcessIdleAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51d0d0 InfantryClass::FindMoveTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51d6f0 InfantryClass::ProcessDeployAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51dbd0 InfantryClass::CalcFacingToTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51df10 InfantryClass::CancelMovement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51dff0 InfantryClass::MoveToCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51f2c0 InfantryClass::GetTooltipName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51f6e0 InfantryClass::ProcessIvanBomb -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5200b0 InfantryClass::ProcessIdleDeploy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x520ae0 Mission::ExecuteTechnoMissionAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x520f40 Mission::ProcessUnitMissionAI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x521320 InfantryClass::GetIdleTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5216d0 InfantryClass::CanMoveFreely -> COMPILE_FAIL (attempt 2)
+[ledger] 0x521b00 InfantryClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x521b60 InfantryClass::CanInitiateDeploy -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p27\batch_report.json
