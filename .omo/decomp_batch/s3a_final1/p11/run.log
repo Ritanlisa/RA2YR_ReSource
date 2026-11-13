@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x51cba0 InfantryClass::ValidatePlacement -> InfantryClass
+[conv] 0x51f330 InfantryClass::FindPathToBuilding -> InfantryClass
+[conv] 0x51f660 InfantryClass::ProcessIvanBombResult -> InfantryClass
+[conv] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> TechnoClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x525430 GetINIClassIntList -> _addr_52
+[conv] 0x5272b0 ObjectClass::LookupCSFString -> ObjectClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x52ad50 WarheadTypeClass::parseModifiers -> WarheadTypeClass
+[conv] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> WarheadTypeClass
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_52                 rc=2
+[era] ObjectClass              rc=2
+[era] WarheadTypeClass         rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 7)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51cba0 InfantryClass::ValidatePlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51f330 InfantryClass::FindPathToBuilding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51f660 InfantryClass::ProcessIvanBombResult -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 5)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x525430 GetINIClassIntList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5272b0 ObjectClass::LookupCSFString -> COMPILE_FAIL (attempt 5)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52ad50 WarheadTypeClass::parseModifiers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 12)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p11\batch_report.json
