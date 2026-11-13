@@ -1,0 +1,15 @@
+{
+ "symbol": "?RoundToInt@Math@@QAE_JN@Z",
+ "sym_key": "Math::RoundToInt",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "dd44240456e800000000894424088bca8b44240833f6240081e1ff000000990bf20bc88bd68bc15ec20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

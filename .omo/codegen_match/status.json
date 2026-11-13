@@ -203979,7 +203979,7 @@
   "this_as_id": false
  },
  "0x7be670": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -204757,11 +204757,16 @@
   "this_as_id": false
  },
  "0x7c5f00": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "unknown::RoundToInt",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "Math::RoundToInt",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "Math::RoundToInt",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c5f3d": {
   "attempts": 1,
@@ -204798,7 +204803,7 @@
   "this_as_id": false
  },
  "0x7c61cf": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0C61CF",
@@ -208629,7 +208634,7 @@
   "this_as_id": false
  },
  "0x7c970c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__onexit",
@@ -208651,7 +208656,7 @@
   "this_as_id": false
  },
  "0x7c979c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "___onexitinit",
@@ -209514,7 +209519,7 @@
   "this_as_id": false
  },
  "0x7cb33d": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -209537,7 +209542,7 @@
   "this_as_id": false
  },
  "0x7cb3f9": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__lock_file",
@@ -209559,7 +209564,7 @@
   "this_as_id": false
  },
  "0x7cb44b": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__unlock_file",
@@ -209856,7 +209861,7 @@
   "this_as_id": false
  },
  "0x7cbc32": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_getenv",
@@ -210176,7 +210181,7 @@
   "this_as_id": false
  },
  "0x7cc1d4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__except_handler3",
@@ -210265,7 +210270,7 @@
   "this_as_id": false
  },
  "0x7cc682": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_wcsstr",
@@ -210276,18 +210281,18 @@
   "this_as_id": false
  },
  "0x7cc6c3": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "__Getdays",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "__Getdays",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7cc752": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__Getmonths",
@@ -210298,7 +210303,7 @@
   "this_as_id": false
  },
  "0x7cc7e7": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__Gettnames",
@@ -210419,7 +210424,7 @@
   "this_as_id": false
  },
  "0x7cd460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_tmpnam",
@@ -211264,7 +211269,7 @@
   "this_as_id": false
  },
  "0x7d06be": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_set_new_handler_YAP6AHI_ZP6AHI_Z_Z",
@@ -211440,7 +211445,7 @@
   "this_as_id": false
  },
  "0x7d140b": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__getptd",
@@ -211580,7 +211585,7 @@
   "status": "NG"
  },
  "0x7d219a": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__whiteout",
@@ -211731,7 +211736,7 @@
   "this_as_id": false
  },
  "0x7d2da6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -212414,7 +212419,7 @@
   "this_as_id": false
  },
  "0x7d57fe": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_asctime",

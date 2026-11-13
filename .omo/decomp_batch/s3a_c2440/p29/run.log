@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+[conv] 0x7c5f00 Math::RoundToInt -> Math
+[conv] 0x7c61cf globalHelper_0C61CF -> _addr_7C
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x7c979c ___onexitinit -> _addr_7C
+[conv] 0x7cb33d ObjectClass::___initstdio -> ObjectClass
+[conv] 0x7cb3f9 __lock_file -> _addr_7C
+[conv] 0x7cb44b __unlock_file -> _addr_7C
+[conv] 0x7cbc32 _getenv -> _addr_7C
+[conv] 0x7cc1d4 __except_handler3 -> _addr_7C
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+[conv] 0x7cc6c3 __Getdays -> _addr_7C
+[conv] 0x7cc752 __Getmonths -> _addr_7C
+[conv] 0x7cc7e7 __Gettnames -> _addr_7C
+[conv] 0x7cd460 _tmpnam -> _addr_7C
+[conv] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> _addr_7D
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x7d219a __whiteout -> _addr_7D
+[conv] 0x7d2da6 ObjectClass::__getstream -> ObjectClass
+[conv] 0x7d57fe _asctime -> _addr_7D
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] Math                     rc=0
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c5f00   MISMATCH         Math::RoundToInt
+[diff] 0x7cc6c3   MISMATCH         __Getdays
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c5f00 Math::RoundToInt -> NG (attempt 2)
+[ledger] 0x7c61cf globalHelper_0C61CF -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c979c ___onexitinit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cb33d ObjectClass::___initstdio -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cb3f9 __lock_file -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cb44b __unlock_file -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbc32 _getenv -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc1d4 __except_handler3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc6c3 __Getdays -> NG (attempt 2)
+[ledger] 0x7cc752 __Getmonths -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc7e7 __Gettnames -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cd460 _tmpnam -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d219a __whiteout -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d2da6 ObjectClass::__getstream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d57fe _asctime -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p29\batch_report.json

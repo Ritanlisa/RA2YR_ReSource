@@ -1,0 +1,21 @@
+{
+ "symbol": "?__Getdays@@YAPADXZ",
+ "sym_key": "Unnamed::__Getdays",
+ "size": 262,
+ "link_base": 0,
+ "bytes_hex": "83ec088b1500000000535556578954241033f6bd070000008b7a1c83c9ff33c083c204f2ae8b7afcf7d1498bd983c9fff2aef7d1498bc503ce4d83f80175048ac0eb0232c084c08d74190274cb8d4c190351e80000000083c4048bc885c0894c24140f84940000008b5c2410c744241007000000c6003a8b3b8d680183c9ff33c083c304f2aef7d12bf98bf78bd18bfd8bc7c1e902f3a58bca83e103f3a48bf883c9ff33c0f2aef7d1498bd183c9ff03d5c6023a8b7b1842f2aef7d12bf98bf78be98bfa8bc7c1e902f3a58bcd83e103f3a48bf883c9ff33c0f2aef7d14903ca8bc18b4c241049894c241075875f5ec600008b44240c5d5b83c408c35f5e5d8bc15b83c408c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C1E0@@3PAXA",
+   "sym_key": "DataGlobal_87C1E0"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  }
+ ]
+}

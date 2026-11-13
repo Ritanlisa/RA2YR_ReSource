@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CC6C3",
+ "name": "__Getdays",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CC6C3",
+ "bytes_hex": "558bec515153568b35e0c18700578975f833dbc745fc07000000ff761ce8bb4e0000ff368bf8e8b24e000003c35983c604ff4dfc598d5c380275df4353e82bcdffff8bf05985f68975fc743b8b7df86a075bc6063aff374656e8cf84000050e8794e000003f0c6063aff771c4656e8ba84000050e8644e000083c41803f083c7044b75ce8026008b45fc5f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
