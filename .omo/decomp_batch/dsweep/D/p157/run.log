@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p157\part_00
+=== convert (20 addrs) ===
+[conv] 0x543330 AbstractClass::ModifyCellTiles -> AbstractClass
+[conv] 0x59a8f0 ArrangeBuildingPlacementGrid -> _addr_59
+[conv] 0x520ae0 Mission::ExecuteTechnoMissionAction -> Mission
+[conv] 0x779230 ConvertDateMonthNames -> _addr_77
+[conv] 0x7c53a0 DrawTileBlock2 -> _addr_7C
+[conv] 0x47e040 UpdateCellClassNeighborTerrain -> _addr_47
+[conv] 0x704e40 DrawTacticalLaserLine -> _addr_70
+[conv] 0x68fbb0 ObjectClass::RenderScoreTypeText -> ObjectClass
+[conv] 0x5a1350 SelectTerrainTileVariant -> _addr_5A
+[conv] 0x5da750 HandleNetworkPlayerDisconnect -> _addr_5D
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x576770 Terrain::CreateCrater -> Terrain
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x534fa0 MixFile::LoadSide -> MixFile
+[conv] 0x5e74e0 Session::PrepareGame -> Session
+[conv] 0x5206b0 TechnoClass::FireTechnoAtTarget -> TechnoClass
+[conv] 0x62c6e0 TechnoClass::UpdateParticleSystem -> TechnoClass
+[conv] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> ObjectClass
+[conv] 0x5a4b60 FloodFillPathfinding -> _addr_5A
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] _addr_59                 rc=0
+[era] Mission                  rc=2
+[era] _addr_77                 rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_47                 rc=0
+[era] _addr_70                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5A                 rc=2
+[era] _addr_5D                 rc=2
+[era] TabClass                 rc=2
+[era] Terrain                  rc=0
+[era] MapClass                 rc=2
+[era] MixFile                  rc=2
+[era] Session                  rc=0
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x543330   MISMATCH         AbstractClass::ModifyCellTiles
+[diff] 0x59a8f0   MISMATCH         ArrangeBuildingPlacementGrid
+[diff] 0x779230   MISMATCH         ConvertDateMonthNames
+[diff] 0x7c53a0   MISMATCH         DrawTileBlock2
+[diff] 0x47e040   MISMATCH         UpdateCellClassNeighborTerrain
+[diff] 0x576770   MISMATCH         Terrain::CreateCrater
+[diff] 0x5e74e0   MISMATCH         Session::PrepareGame
+[ledger] 0x543330 AbstractClass::ModifyCellTiles -> NG (attempt 1)
+[ledger] 0x59a8f0 ArrangeBuildingPlacementGrid -> NG (attempt 1)
+[ledger] 0x520ae0 Mission::ExecuteTechnoMissionAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779230 ConvertDateMonthNames -> NG (attempt 1)
+[ledger] 0x7c53a0 DrawTileBlock2 -> NG (attempt 1)
+[ledger] 0x47e040 UpdateCellClassNeighborTerrain -> NG (attempt 1)
+[ledger] 0x704e40 DrawTacticalLaserLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68fbb0 ObjectClass::RenderScoreTypeText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a1350 SelectTerrainTileVariant -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5da750 HandleNetworkPlayerDisconnect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x576770 Terrain::CreateCrater -> NG (attempt 1)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x534fa0 MixFile::LoadSide -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e74e0 Session::PrepareGame -> NG (attempt 1)
+[ledger] 0x5206b0 TechnoClass::FireTechnoAtTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62c6e0 TechnoClass::UpdateParticleSystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a4b60 FloodFillPathfinding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "frame_sched": 5,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p157\batch_report.json

@@ -1,0 +1,207 @@
+{
+ "symbol": "?ModifyCellTiles@AbstractClass@@QAEDH@Z",
+ "sym_key": "AbstractClass::ModifyCellTiles",
+ "size": 1065,
+ "link_base": 0,
+ "bytes_hex": "83ec38558be9568bf58b450055896c24148974241cff506c85c089442414750a5e32c05d83c438c204008bcde80000000084c075085e5d83c438c204008b85ac000000c7442408000000008b88e802000085c90f8ea503000053578b88e402000033ff3bcf897c24280f8e700300008b4d008d5424385255ff91e0060000668b108b4c242c668b40028b74241003d703c633d181e2ff00000033ca33c125ff00000033c8894c242c894c24248d4c242451b900000000e80000000084c00f84010300008d542424b90000000052e8000000008bf08b85ac0000008b4c241c8b98e40200000faf5c241003df8b54991085d20f84cd0200008b4c244c85c9754d8b56388b88940200003bd10f85ab02000033c08a861a0100003bc30f859b0200008b4c241cc74638ffff0000c6861a010000008b5499108a8e1b0100008a42282ac8888e1b010000e96f02000083f901740983f9030f85610200008b80940200008b0d000000003bc1750cc74638ffff0000e9db000000894638889e1a0100008b8dac00000053e80000000088861c0100008b0d000000008b463883c1053bc1752c33c08a861a01000083f809771f33d28a9000000000ff249500000000a100000000c6861a0100000040894638a1000000008b4e3883c0053bc8752c33c08a861a01000083f809771f33c98a8800000000ff248d00000000a100000000c6861a01000000408946388b15000000008b463883c2083bc2751880be1a01000003770fa100000000c6861a01000000894638a1000000008b4e3883c0083bc8751980be1a0100000377108b0d00000000894e38c6861a010000008b4644c74648ffffffff83f81bc6861f010000000f8cd700000083f8260f8dce0000008b8e400100008b068d54243c81e1fffffdff5256898e40010000ff50488b108b78048b40088b0d000000008944243481c28001000081c78001000033c085c90f86890000008b4e448b2d000000008b4c8d008b89700a0000894c24308b0d00000000894c24148b4c24148b6c24308b0939a9c8000000752639919c000000751439b9a0000000750c8b6c243439a9a400000074268b6c2418896c2420eb048b6c24188b4c24144083c104894c24148b0d000000003bc17316ebac85c974088b116a0151ff52208b6c2418896c24208b44241cc74644ffffffffc6861e010000008b4c98108a9e1b0100008a51288bce02da889e1b010000e8000000006a008bcee8000000008bc8e8000000006a028bcee8000000008bc8e8000000006a048bcee8000000008bc8e8000000006a068bcee8000000008bc8e8000000008b7c24286aff8bcee8000000008b85ac00000047897c24283bb8e40200000f8294fcffff8b7424208b85ac0000008b4c2410418b90e8020000894c24103bca0f825ffcffff5f5b8b44244483f801740583f803751385f6c6467400740b8b0e6a0156ff91800000005eb0015d83c438c20400",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?UpdateProductionDisplay@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::UpdateProductionDisplay"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 354,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10B0@@3IA",
+   "sym_key": "DataGlobal_AA10B0"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?GetCameoTypeIndex@HouseClass@@QAEHH@Z",
+   "sym_key": "HouseClass::GetCameoTypeIndex"
+  },
+  {
+   "off": 403,
+   "type": "DIR32",
+   "sym": "?g_TerrainTypeTable2@@3IA",
+   "sym_key": "g_TerrainTypeTable2"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "$L2135",
+   "sym_key": "$L2135"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "$L2136",
+   "sym_key": "$L2136"
+  },
+  {
+   "off": 446,
+   "type": "DIR32",
+   "sym": "?g_CellTileLookup@@3IA",
+   "sym_key": "g_CellTileLookup"
+  },
+  {
+   "off": 462,
+   "type": "DIR32",
+   "sym": "?dword_AA1098@@3IA",
+   "sym_key": "dword_AA1098"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "$L2137",
+   "sym_key": "$L2137"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "$L2138",
+   "sym_key": "$L2138"
+  },
+  {
+   "off": 505,
+   "type": "DIR32",
+   "sym": "?dword_AA109C@@3IA",
+   "sym_key": "dword_AA109C"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?g_TerrainTypeTable2@@3IA",
+   "sym_key": "g_TerrainTypeTable2"
+  },
+  {
+   "off": 546,
+   "type": "DIR32",
+   "sym": "?g_CellTileLookup@@3IA",
+   "sym_key": "g_CellTileLookup"
+  },
+  {
+   "off": 561,
+   "type": "DIR32",
+   "sym": "?dword_AA1098@@3IA",
+   "sym_key": "dword_AA1098"
+  },
+  {
+   "off": 586,
+   "type": "DIR32",
+   "sym": "?dword_AA109C@@3IA",
+   "sym_key": "dword_AA109C"
+  },
+  {
+   "off": 674,
+   "type": "DIR32",
+   "sym": "?g_AnimClassCount@@3IA",
+   "sym_key": "g_AnimClassCount"
+  },
+  {
+   "off": 709,
+   "type": "DIR32",
+   "sym": "?g_BuildingTypeClass_Array@@3PAXA",
+   "sym_key": "g_BuildingTypeClass_Array"
+  },
+  {
+   "off": 729,
+   "type": "DIR32",
+   "sym": "?g_AnimClassPool@@3PAXA",
+   "sym_key": "g_AnimClassPool"
+  },
+  {
+   "off": 811,
+   "type": "DIR32",
+   "sym": "?g_AnimClassCount@@3IA",
+   "sym_key": "g_AnimClassCount"
+  },
+  {
+   "off": 883,
+   "type": "REL32",
+   "sym": "?DetermineTileType@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::DetermineTileType"
+  },
+  {
+   "off": 892,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 899,
+   "type": "REL32",
+   "sym": "?DetermineTileType@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::DetermineTileType"
+  },
+  {
+   "off": 908,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 915,
+   "type": "REL32",
+   "sym": "?DetermineTileType@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::DetermineTileType"
+  },
+  {
+   "off": 924,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 931,
+   "type": "REL32",
+   "sym": "?DetermineTileType@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::DetermineTileType"
+  },
+  {
+   "off": 940,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 947,
+   "type": "REL32",
+   "sym": "?DetermineTileType@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::DetermineTileType"
+  },
+  {
+   "off": 960,
+   "type": "REL32",
+   "sym": "?AnnounceUpgrade@House@@QAEXH@Z",
+   "sym_key": "House::AnnounceUpgrade"
+  }
+ ]
+}

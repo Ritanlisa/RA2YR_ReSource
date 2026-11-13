@@ -1,0 +1,117 @@
+{
+ "symbol": "?ArrangeBuildingPlacementGrid@@YGXHHPAH@Z",
+ "sym_key": "Unnamed::ArrangeBuildingPlacementGrid",
+ "size": 1046,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec5cdb450c53565783ec08dd1c24e800000000dd5c24588b44245c8b4c24585051e8000000008bd08b4d0c0fafd083c4103bd18944244c750c8bd889442438895c2430eb0b8d5801895c2438895c24308bd30fafd03bd17d08895c241c8bf3eb068bf08944241c8b7d10b9000000008b470899f7fb894424208b470c99f7fb8944245033c0894424548944243c8944244089442434e80000000033c989442444894c2448df6c2444dc0d00000000dc1d00000000dfe0f6c40175188b442420894424548b470c99f7fe8944245089442440eb168b5424508b47088954243499f7fe894424208944243c0faff38b450c8b172bf08b470451894c2430518d4c24308974244c8944241c89542420e80000000033f6bf0000000056568d4c242c897c2430e8000000008b44241c897c242433c933ff85c00f8e8e0000008b44244c3bf07c228a4c241384c9750485c075258b4c242883c00a6a00508d44243050ff510884c0740f8b5424288d04b50000000046891c108b44244c3bf87c238b4c244cf6c5ff750485c075298b4c242483c00a6a00508d44242c50ff510884c074138b5424408b4c242c8d04bd0000000047890c108b44242c8b4c241c403bc18944242c0f8c74ffffff8bcf8b44244485c00f8e980000008944242c894c2444c744244800000000df6c24448d71ffdd5c2460b900000000e80000000089442458c744245c00000000df6c245883ec08dc4c2468dc0d00000000dd1c24e80000000083c4083bc677ca8b5424408b5c24288b74244c3bc78b0c828d148289348b8bcf7d198d4fff3bc18bf97d108bf12bf08b420483c2044e8942fc75f48b44242c488944242c0f8570ffffff8b5c24308b44241c33ff3bc7897c24300f8e470100008b75088b4c24288b04b93bc38944244c7d398b54245052e80000000083c40485c07f158b4424508b4c2414992bc2d1f803c8894c2414eb138b4424208b4c2418992bc2d1f803c8894c24188b44244c85c00f8e9d0000008b4424288b3cb88b4e088b46103bc172218a460d84c0750485c9754e8b461485c07e478b1603c16a005056ff520884c074388b46108b54241883c2028d4801894e108b4e04c1e00403c18b4c241483c10289108b5424208948048b4c245083c2fc83c1fc89500889480c8b5424548b4c24188b5c241403ca894c24188b4c243483ff010f94c003d94f84c0895c24140f8472ffffff8b5c24388b7c24308b54243c8b4424188b4c241403c2894424188b44244003c8894c24148b4c245051e80000000083c40485c07f0c8b55108b420489442414eb098b4d108b11895424188b44241c473bf8897c24300f8cbcfeffff8b442440be0000000085c08974242474128b4c244cf6c5ff740950e80000000083c404897424288b44242885c074118a4c241384c9740950e80000000083c4045f5e5b8be55dc20c00",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_int@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_int"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?Construct@VectorClass@@QAEPAIHH@Z",
+   "sym_key": "VectorClass::Construct"
+  },
+  {
+   "off": 504,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 538,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 546,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 670,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 924,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 978,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_int@@3PAXA",
+   "sym_key": "vt_VectorClass_int"
+  },
+  {
+   "off": 1001,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 1030,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
