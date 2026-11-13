@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x74ffc0",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x750440",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x751ea0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x755db0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x757e70",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x75ab30",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x75c680",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x75cbe0",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x75e690",
+  "family": "stale_stale_cw5|CW5-8/9/12 shell supply"
+ },
+ {
+  "addr": "0x75e6a0",
+  "family": "stale_stale_cw5|CW5-8/9/12 shell supply"
+ },
+ {
+  "addr": "0x75f610",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x7609e0",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x762af0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x765000",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x766880",
+  "family": "stale_B5"
+ },
+ {
+  "addr": "0x769330",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x76dad0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x772080",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x773e90",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7740a0",
+  "family": "stale_cw3_D"
+ }
+]

@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x74ffc0 Crate::IsRookie -> Crate
+[conv] 0x750440 ObjectClass::LoadVocFromINI -> ObjectClass
+[conv] 0x751ea0 sub_751EA0 -> _addr_75
+[conv] 0x755db0 Voxel::SortDepth -> Voxel
+[conv] 0x757e70 VoxelRenderer::ProcessVoxelData -> VoxelRenderer
+[conv] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> JumpjetLocomotionClass
+[conv] 0x75c680 WalkLocomotionClass::BeginMove -> WalkLocomotionClass
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x75e690 WarheadTypeClass::checkImmunity -> WarheadTypeClass
+[conv] 0x75e6a0 WarheadTypeClass::calculateDamage -> WarheadTypeClass
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+[conv] 0x7609e0 Voxel::FaceDraw -> Voxel
+[conv] 0x762af0 Voxel::TransformMatrix -> Voxel
+[conv] 0x765000 sub_765000 -> _addr_76
+[conv] 0x766880 rc_ptr::System_Init_766880 -> rc_ptr
+[conv] 0x769330 Surface::PixelToIndex -> Surface
+[conv] 0x76dad0 TechnoClass::TerritorySelectWDT -> TechnoClass
+[conv] 0x772080 WeaponTypeClass::ReadINI -> WeaponTypeClass
+[conv] 0x773e90 WebBrowser::ShowDialog -> WebBrowser
+[conv] 0x7740a0 WebBrowser::GoForward -> WebBrowser
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Crate                    rc=2
+[era] ObjectClass              rc=2
+[era] _addr_75                 rc=2
+[era] Voxel                    rc=2
+[era] VoxelRenderer            rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] WalkLocomotionClass      rc=2
+[era] WarheadTypeClass         rc=2
+[era] WaveClass                rc=2
+[era] _addr_76                 rc=2
+[era] rc_ptr                   rc=2
+[era] Surface                  rc=2
+[era] TechnoClass              rc=0
+[era] WeaponTypeClass          rc=2
+[era] WebBrowser               rc=2
+=== diffasm byte-compare ===
+[diff] 0x76dad0   MISMATCH         TechnoClass::TerritorySelectWDT
+[ledger] 0x74ffc0 Crate::IsRookie -> COMPILE_FAIL (attempt 2)
+[ledger] 0x750440 ObjectClass::LoadVocFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x751ea0 sub_751EA0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x755db0 Voxel::SortDepth -> COMPILE_FAIL (attempt 6)
+[ledger] 0x757e70 VoxelRenderer::ProcessVoxelData -> COMPILE_FAIL (attempt 13)
+[ledger] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75c680 WalkLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 6)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 6)
+[ledger] 0x75e690 WarheadTypeClass::checkImmunity -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75e6a0 WarheadTypeClass::calculateDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7609e0 Voxel::FaceDraw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x762af0 Voxel::TransformMatrix -> COMPILE_FAIL (attempt 6)
+[ledger] 0x765000 sub_765000 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x766880 rc_ptr::System_Init_766880 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x769330 Surface::PixelToIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76dad0 TechnoClass::TerritorySelectWDT -> NG (attempt 5)
+[ledger] 0x772080 WeaponTypeClass::ReadINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x773e90 WebBrowser::ShowDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7740a0 WebBrowser::GoForward -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p24\batch_report.json

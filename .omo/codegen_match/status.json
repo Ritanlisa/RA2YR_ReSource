@@ -181547,7 +181547,7 @@
   "status": "NG"
  },
  "0x74ffc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -181841,7 +181841,7 @@
   "this_as_id": false
  },
  "0x750440": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -182237,7 +182237,7 @@
   "this_as_id": false
  },
  "0x751ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_751EA0",
@@ -183611,7 +183611,7 @@
   "this_as_id": false
  },
  "0x755db0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183803,7 +183803,7 @@
   "this_as_id": false
  },
  "0x757e70": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -184870,7 +184870,7 @@
   "this_as_id": false
  },
  "0x75ab30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185014,14 +185014,14 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "WalkLocomotionClass::BeginMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WalkLocomotionClass::BeginMove",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -185208,7 +185208,7 @@
   "status": "OK"
  },
  "0x75cbe0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185576,7 +185576,7 @@
   "this_as_id": false
  },
  "0x75e690": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185588,7 +185588,7 @@
   "this_as_id": false
  },
  "0x75e6a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185903,7 +185903,7 @@
   "this_as_id": false
  },
  "0x75f610": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -186044,14 +186044,14 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FaceDraw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::FaceDraw",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186133,7 +186133,7 @@
   "this_as_id": false
  },
  "0x762af0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187091,7 +187091,7 @@
   "this_as_id": false
  },
  "0x765000": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_765000",
@@ -187726,14 +187726,14 @@
   "this_as_id": false
  },
  "0x766880": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "rc_ptr::System_Init_766880",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "System_Init_766880",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -188880,14 +188880,14 @@
   "this_as_id": false
  },
  "0x769330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Surface::PixelToIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Surface::PixelToIndex",
-  "rule_violations": 3,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -190439,15 +190439,15 @@
   "this_as_id": false
  },
  "0x76dad0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "TechnoClass::TerritorySelectWDT",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TerritorySelectWDT",
-  "rule_violations": 7,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 6,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76ded0": {
@@ -192173,14 +192173,14 @@
   "this_as_id": false
  },
  "0x772080": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WeaponTypeClass::ReadINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WeaponTypeClass::ReadINI",
-  "rule_violations": 0,
+  "rule_violations": 186,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -192730,14 +192730,14 @@
   "this_as_id": false
  },
  "0x773e90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WebBrowser::ShowDialog",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WebBrowser::ShowDialog",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -192753,7 +192753,7 @@
   "this_as_id": false
  },
  "0x7740a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
