@@ -1,0 +1,351 @@
+{
+ "symbol": "?LoadCursors@MouseClass@@QAEDXZ",
+ "sym_key": "MouseClass::LoadCursors",
+ "size": 318,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c00f8530010000e8000000008b0d00000000ba00000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d00000000ba00000000a300000000e8000000008b0d000000006800000000ba00000000a300000000e8000000008b0d000000006800000000ba00000000e8000000008b0d000000006800000000ba00000000e8000000008b0d0000000033d28a15a8008a00e800000000c6050000000001c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBE0@@3EA",
+   "sym_key": "DataGlobal_B0FBE0"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?ReleaseAndReload@AssetClass@@QAEDXZ",
+   "sym_key": "AssetClass::ReleaseAndReload"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CD4@@3PAXA",
+   "sym_key": "DataGlobal_844CD4"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC95@@3EA",
+   "sym_key": "DataGlobal_B0FC95"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CD8@@3PAXA",
+   "sym_key": "DataGlobal_844CD8"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC96@@3EA",
+   "sym_key": "DataGlobal_B0FC96"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC4@@3IA",
+   "sym_key": "DataGlobal_B0FAC4"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CDC@@3PAXA",
+   "sym_key": "DataGlobal_844CDC"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC97@@3EA",
+   "sym_key": "DataGlobal_B0FC97"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F9DC@@3IA",
+   "sym_key": "DataGlobal_B0F9DC"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CE0@@3PAXA",
+   "sym_key": "DataGlobal_844CE0"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC98@@3EA",
+   "sym_key": "DataGlobal_B0FC98"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC0@@3IA",
+   "sym_key": "DataGlobal_B0FAC0"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CE4@@3PAXA",
+   "sym_key": "DataGlobal_844CE4"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC99@@3EA",
+   "sym_key": "DataGlobal_B0FC99"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_DialogControlPool@@3PAXA",
+   "sym_key": "g_DialogControlPool"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CE8@@3PAXA",
+   "sym_key": "DataGlobal_844CE8"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9A@@3EA",
+   "sym_key": "DataGlobal_B0FC9A"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA04@@3IA",
+   "sym_key": "DataGlobal_B0FA04"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CEC@@3PAXA",
+   "sym_key": "DataGlobal_844CEC"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9B@@3EA",
+   "sym_key": "DataGlobal_B0FC9B"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAF8@@3IA",
+   "sym_key": "DataGlobal_B0FAF8"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CF0@@3PAXA",
+   "sym_key": "DataGlobal_844CF0"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9C@@3EA",
+   "sym_key": "DataGlobal_B0FC9C"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA74@@3IA",
+   "sym_key": "DataGlobal_B0FA74"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CF4@@3PAXA",
+   "sym_key": "DataGlobal_844CF4"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9D@@3EA",
+   "sym_key": "DataGlobal_B0FC9D"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA38@@3IA",
+   "sym_key": "DataGlobal_B0FA38"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844CF8@@3PAXA",
+   "sym_key": "DataGlobal_844CF8"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC9E@@3EA",
+   "sym_key": "DataGlobal_B0FC9E"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAE8@@3IA",
+   "sym_key": "DataGlobal_B0FAE8"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?LoadFileSHP@@YIPAXPAX0@Z",
+   "sym_key": "LoadFileSHP"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844BE4@@3PAXA",
+   "sym_key": "DataGlobal_844BE4"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBCC@@3IA",
+   "sym_key": "DataGlobal_B0FBCC"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBC8@@3IA",
+   "sym_key": "DataGlobal_B0FBC8"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA54@@3IA",
+   "sym_key": "DataGlobal_B0FA54"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?LoadPaletteSimple@@YIHPAX00@Z",
+   "sym_key": "LoadPaletteSimple"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844BE8@@3PAXA",
+   "sym_key": "DataGlobal_844BE8"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBD4@@3IA",
+   "sym_key": "DataGlobal_B0FBD4"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBD0@@3IA",
+   "sym_key": "DataGlobal_B0FBD0"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?LoadPaletteSimple@@YIHPAX00@Z",
+   "sym_key": "LoadPaletteSimple"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?DataGlobal_844BEC@@3PAXA",
+   "sym_key": "DataGlobal_844BEC"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBDC@@3IA",
+   "sym_key": "DataGlobal_B0FBDC"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBD8@@3IA",
+   "sym_key": "DataGlobal_B0FBD8"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?LoadPaletteSimple@@YIHPAX00@Z",
+   "sym_key": "LoadPaletteSimple"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 306,
+   "type": "REL32",
+   "sym": "?SetupMouseClassResources@@YIPAHHH@Z",
+   "sym_key": "SetupMouseClassResources"
+  },
+  {
+   "off": 312,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FBE0@@3EA",
+   "sym_key": "DataGlobal_B0FBE0"
+  }
+ ]
+}

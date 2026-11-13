@@ -1,0 +1,11 @@
+{
+ "addr": "0x72DDB0",
+ "name": "MouseClass::LoadCursors",
+ "size": 316,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72DDB0",
+ "bytes_hex": "a0e0fbb00084c00f852e010000e88e70e0ff8b0dd44c8400ba95fcb000e8fe5ad7ff8b0dd84c8400ba96fcb000a3c4fab000e8e95ad7ff8b0ddc4c8400ba97fcb000a3dcf9b000e8d45ad7ff8b0de04c8400ba98fcb000a3c0fab000e8bf5ad7ff8b0de44c8400ba99fcb000a350fbb000e8aa5ad7ff8b0de84c8400ba9afcb000a304fab000e8955ad7ff8b0dec4c8400ba9bfcb000a3f8fab000e8805ad7ff8b0df04c8400ba9cfcb000a374fab000e86b5ad7ff8b0df44c8400ba9dfcb000a338fab000e8565ad7ff8b0df84c8400ba9efcb000a3e8fab000e8415ad7ff8b0de44b8400bac8fbb00068ccfbb000a354fab000e837cfffff8b0de84b8400bad0fbb00068d4fbb000e822cfffff8b0dec4b8400bad8fbb00068dcfbb000e80dcfffff8b15a8008a008b0da4008a00e88c0d0000c605e0fbb00001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

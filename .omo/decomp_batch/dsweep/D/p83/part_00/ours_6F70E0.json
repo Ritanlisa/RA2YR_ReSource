@@ -1,0 +1,69 @@
+{
+ "symbol": "?ComputeSlopePenalty@TechnoClass@@QAEIPAH@Z",
+ "sym_key": "TechnoClass::ComputeSlopePenalty",
+ "size": 322,
+ "link_base": 0,
+ "bytes_hex": "83ec1c568bf157568b06ff505084c00f84230100008b7c2428578b0fff515084c00f84110100008b168d442418535056ff52488b50048b088b07c1ea08c1e908668954242e66894c242c8b4c242c8d54241c5257894c2414ff50488b088b5004c1e908c1ea0866894c242c668954242e8b44242c8d4c240c51b9f801000089442414e8000000008d542410b9f8010000528bf0e8000000008bf88bcfe8000000008bce8bd8e8000000002bc35b78148bcfe8000000008bce8bf8e8000000002bc7eb0233c08b0d4002000033d2c744241400000000f7b13818000089442410df6c2410dc8940180000dd542410dc9948180000dfe0f6c40175148b81481800008b894c18000089442410894c24148b5424148b4424105250e8000000008b4c243083c40833c125ff0000005f33c15ec1e00883c41cc204005f33c05e83c41cc20400",
+ "relocs": [
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?GetSlopeIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::GetSlopeIndex"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

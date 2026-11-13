@@ -1,0 +1,147 @@
+{
+ "symbol": "?Dispatch@NetworkLobby@@QAEPAPAXXZ",
+ "sym_key": "NetworkLobby::Dispatch",
+ "size": 299,
+ "link_base": 0,
+ "bytes_hex": "535556578be933f685f6744e8d46ff83f8057731ff248500000000b8d3060000eb3db8d4060000eb36b8d5060000eb2fb8d6060000eb28b8d7060000eb21b8d8060000eb1a8bc683e807f7d81bc02526f9ffff05d9060000eb05b8d20600005055e8000000008bd88b04b50000000033ff85c0745d3b050000000074553b0500000000744d3b050000000074453b0500000000743d3b050000000074353b0500000000742d3b05000000007425681000000050e80000000083c40885c0751350a100000000506800000000e800000000eb3c8b04b50000000085c074183b050000000074163b0500000000740e3b050000000074068378770175188b0d000000006a00516800000000e80000000083c40c8bf88bd78bcbe8000000004683fe080f8ce2feffff5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "$L1932",
+   "sym_key": "$L1932"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "_wcscmp",
+   "sym_key": "wcscmp"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8316CC@@3PAXA",
+   "sym_key": "DataGlobal_8316CC"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXPBXH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8316D0@@3PAXA",
+   "sym_key": "DataGlobal_8316D0"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAX0H@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXHH@Z",
+   "sym_key": "CacheDialogInvalidate"
+  }
+ ]
+}

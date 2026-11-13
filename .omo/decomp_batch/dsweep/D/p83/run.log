@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p83\part_00
+=== convert (20 addrs) ===
+[conv] 0x455dd0 globalHelper_055DD0 -> _addr_45
+[conv] 0x5ea2a0 NetworkLobby::Dispatch -> NetworkLobby
+[conv] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> HouseClass
+[conv] 0x74d490 TacticalClass::Render -> TacticalClass
+[conv] 0x69cbc0 _DynamicVectorClass_VWstring::Release -> _DynamicVectorClass_VWstring
+[conv] 0x629e90 FootClass::CreateWakes -> FootClass
+[conv] 0x74b690 VoxelAnimTypeClass::PowerDrainUpdate -> VoxelAnimTypeClass
+[conv] 0x6e5b60 TagTypeClass::Construct -> TagTypeClass
+[conv] 0x427b50 AnimTypeClass::GetWarhead -> AnimTypeClass
+[conv] 0x631500 ObjectClass::UI_Pop_631500 -> ObjectClass
+[conv] 0x567230 MapClass::UpdateVisibility -> MapClass
+[conv] 0x486c50 CellClass::ClearCellContents -> CellClass
+[conv] 0x689b20 ScenarioClass::ReadLocalVariables -> ScenarioClass
+[conv] 0x4bad80 DSurface::Lock -> DSurface
+[conv] 0x424b50 BuildingClass::AimTurret -> BuildingClass
+[conv] 0x72ddb0 MouseClass::LoadCursors -> MouseClass
+[conv] 0x6f70e0 TechnoClass::ComputeSlopePenalty -> TechnoClass
+[conv] 0x5c2500 Campaign::SetupMovie -> Campaign
+[conv] 0x7ddcd6 __wcsupr -> _addr_7D
+[conv] 0x46f6d0 Count::SetupAllCountriesLobby -> Count
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_45                 rc=0
+[era] NetworkLobby             rc=0
+[era] HouseClass               rc=2
+[era] TacticalClass            rc=2
+[era] _DynamicVectorClass_VWstring rc=0
+[era] FootClass                rc=2
+[era] VoxelAnimTypeClass       rc=0
+[era] TagTypeClass             rc=2
+[era] AnimTypeClass            rc=2
+[era] ObjectClass              rc=0
+[era] MapClass                 rc=2
+[era] CellClass                rc=2
+[era] ScenarioClass            rc=2
+[era] DSurface                 rc=2
+[era] BuildingClass            rc=2
+[era] MouseClass               rc=0
+[era] TechnoClass              rc=0
+[era] Campaign                 rc=2
+[era] _addr_7D                 rc=2
+[era] Count                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x455dd0   MISMATCH         globalHelper_055DD0
+[diff] 0x5ea2a0   MISMATCH         NetworkLobby::Dispatch
+[diff] 0x69cbc0   MISMATCH         _DynamicVectorClass_VWstring::Release
+[diff] 0x74b690   MISMATCH         VoxelAnimTypeClass::PowerDrainUpdate
+[diff] 0x631500   MISMATCH         ObjectClass::UI_Pop_631500
+[diff] 0x72ddb0   MISMATCH         MouseClass::LoadCursors
+[diff] 0x6f70e0   MISMATCH         TechnoClass::ComputeSlopePenalty
+[ledger] 0x455dd0 globalHelper_055DD0 -> NG (attempt 1)
+[ledger] 0x5ea2a0 NetworkLobby::Dispatch -> NG (attempt 1)
+[ledger] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74d490 TacticalClass::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cbc0 _DynamicVectorClass_VWstring::Release -> NG (attempt 1)
+[ledger] 0x629e90 FootClass::CreateWakes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74b690 VoxelAnimTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x6e5b60 TagTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x427b50 AnimTypeClass::GetWarhead -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631500 ObjectClass::UI_Pop_631500 -> NG (attempt 1)
+[ledger] 0x567230 MapClass::UpdateVisibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486c50 CellClass::ClearCellContents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689b20 ScenarioClass::ReadLocalVariables -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bad80 DSurface::Lock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x424b50 BuildingClass::AimTurret -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72ddb0 MouseClass::LoadCursors -> NG (attempt 1)
+[ledger] 0x6f70e0 TechnoClass::ComputeSlopePenalty -> NG (attempt 1)
+[ledger] 0x5c2500 Campaign::SetupMovie -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ddcd6 __wcsupr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46f6d0 Count::SetupAllCountriesLobby -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "regalloc": 2,
+  "codegen_shape": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p83\batch_report.json

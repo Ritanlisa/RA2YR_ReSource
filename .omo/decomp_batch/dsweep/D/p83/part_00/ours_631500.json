@@ -1,0 +1,129 @@
+{
+ "symbol": "?UI_Pop_631500@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::UI_Pop_631500",
+ "size": 329,
+ "link_base": 0,
+ "bytes_hex": "81ec84000000538bd968e00500008b0350e80000000085c08944240874146a006a00688801000050e800000000a300000000833d00000000ff0f8e0201000068b0000000e80000000083c4048944240485c00f84e90000008b0d000000008b150000000055568b2c8a57b92c0000008bf58bf86a00f3a58b0350e8000000008b0d0000000051e8000000008b7424108d5424185652e80000000083c40884c00f84820000008b4308b92c00000024018bfd0c01894308f3a58bcbe8000000008b150000000033c085d27e188b0d00000000392974114083c1043bc27d06392975f4eb0383c8ff83f8ffa3000000007e378b4c24146a0050688601000051e8000000008b1368e505000052e80000000085c0741481c59a000000556a0068b404000050e8000000008b036a0550e8000000008b4c241051e80000000083c4045f5e5d5b81c484000000c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?UpdateWindow@@YGHPAX@Z",
+   "sym_key": "UpdateWindow"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?UI_Pop_631500_Pop@@YA_NHH@Z",
+   "sym_key": "UI_Pop_631500_Pop"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?PopulateList@PhoneEditor@@QAEXXZ",
+   "sym_key": "PhoneEditor::PopulateList"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
