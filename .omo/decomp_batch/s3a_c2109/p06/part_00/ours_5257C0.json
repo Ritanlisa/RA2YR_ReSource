@@ -1,0 +1,99 @@
+{
+ "symbol": "?ClearSection@INIClass@@QAEDHPAE@Z",
+ "sym_key": "INIClass::ClearSection",
+ "size": 526,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec085355568bf133db573bd3895e04895e08756b8b46143bc37413395804740e39580874098b086a0150ff11ebe68b562852e8000000008b463c83c4043bc3895e28895e2c895e30885e34895e380f84a90100008b463c50e8000000008b463c508b7804e80000000083c4083bfb897e3c75e15f5e5db0015b83c408c208008bfa83c9ff33c0895c2410f2aef7d14951528d4c2418e8000000008d4c241c8d6e288bf8518bcd897c2420e80000000084c00f84460100008d5424148bcd52897c2418e80000000084c074088b763883c604eb05be000000008b363bf30f841b0100008b5424203bd375418b560c83c9ff8bfa33c0895c2410f2aef7d14951528d4c2418e8000000008944241c8d44241c508bcde8000000008b0e6a0156ff115f5e5db0015b83c408c208008bfa83c9ff33c0895c241083c62cf2aef7d14951528d4c2418e8000000008d54241c8bce5289442420e80000000084c00f849c0000008d44241c8bce50e80000000084c074088b461083c004eb05b8000000008b283beb74798b550c83c9ff8bfa33c0895c2410f2aef7d14951528d4c2418e8000000008d4c242089442420518bcee8000000003bc3743f2b06c1f80383f8ff74358d48018b46043bc87d188b168d04ca418b108950f88b50048950fc8b46043bc87ce88b46048b0e48894604891cc1895cc104895e108b45006a0155ff105f5e5db0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?deleteSection@INIClass@@QAEDPAX@Z",
+   "sym_key": "INIClass::deleteSection"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?Find@SortedArray@@QAEDPAX@Z",
+   "sym_key": "SortedArray::Find"
+  },
+  {
+   "off": 366,
+   "type": "REL32",
+   "sym": "?Find@SortedArray@@QAEDPAX@Z",
+   "sym_key": "SortedArray::Find"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78830@@3EA",
+   "sym_key": "DataGlobal_B78830"
+  },
+  {
+   "off": 419,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  }
+ ]
+}

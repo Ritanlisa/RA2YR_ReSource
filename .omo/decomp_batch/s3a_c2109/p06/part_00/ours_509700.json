@@ -1,0 +1,81 @@
+{
+ "symbol": "?UpdateBuildState@HouseClass@@QAEDH@Z",
+ "sym_key": "HouseClass::UpdateBuildState",
+ "size": 533,
+ "link_base": 0,
+ "bytes_hex": "51538b150000000055568bf133c08b4c241433ed8a86ec01000080e1000bc13bd557752184c0750e8a8eed01000084c9750433c9eb05b90100000033c881e1ff00000033c184c00f85c00100003bd50f84b80100008b86e401000083f8030f87a9010000ff2485000000000fbf56248d462450ff52188b0d000000003b81001300000f83850100008b54241833c083fa065f0f94c0408986e40100005e5d5b59c204000fbf56248d462450ff52188bd8a1000000003b98001300000f8344010000837c2418060f853f010000c786e4010000020000005f5e8ac35d5b59c204000fbf4e248d462450ff51188b3d000000008bd88bc73b9f001300000f83040100008b8f10090000c64424130085c97e3c8a4c241384c975248b90040900008b04aa8b88f80d0000518d8e50550000e80000000085c0a1000000007e05c6442413018b8810090000453be972c48b884809000080e30033ff85c97e7484db75288b903c0900008b04ba8b88f80d0000518d8e50550000e80000000085c0a1000000007f0422dbeb0680e30183cb018b8848090000473bf972c384db74338a44241384c0742b8b9ea45300008b86a85300003bc37f1b8b15000000006a016a008d8a86000000e8000000008bd885db753c837c2418067435c786e4010000010000005f5e8ac35d5b59c204000fbf4e248d462450ff51188b15000000008bd83b9a00130000760689aee40100008ac35f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "$L2111",
+   "sym_key": "$L2111"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 453,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 503,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

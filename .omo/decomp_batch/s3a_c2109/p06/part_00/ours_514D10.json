@@ -1,0 +1,39 @@
+{
+ "symbol": "?HasScoreDisplayChanged_514D10@JumpjetLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "JumpjetLocomotionClass::HasScoreDisplayChanged_514D10",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "a1ea0d000053568b74240c8b5e203bd87546db05fa0d0000d85e24dfe0f6c4407436db050a0e0000d85e28dfe0f6c44074268b46088b88a00000008b90a40000008bb09c0000008b44241089305e8948048950085bc20800d9462457e800000000d946288bf8e8000000008bc88b4424148978045f89185e8948085bc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

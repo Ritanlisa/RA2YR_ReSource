@@ -1,0 +1,11 @@
+{
+ "addr": "0x514D10",
+ "name": "JumpjetLocomotionClass::HasScoreDisplayChanged_514D10",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x514D10",
+ "bytes_hex": "8b4424048b1580f1a80056578b48203bca751a8b50248b0d84f1a8003bd1750d8b48288b1588f1a8003bca741e8b7424108b48208b50248b40288bfe890f8957048947088bc65f5ec208008b500881c29c0000008bc28b088b50048b70088b4424108bf8890f8957048977085f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

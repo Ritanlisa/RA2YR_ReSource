@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x4f9f90 HouseClass::SetAlliance -> HouseClass
+[conv] 0x5009b0 HouseClass::LoadTypeList -> HouseClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x508c30 HouseClass::UpdatePower -> HouseClass
+[conv] 0x509700 HouseClass::UpdateBuildState -> HouseClass
+[conv] 0x50b760 BuildingTypeClass::ProcessData -> BuildingTypeClass
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x514d10 JumpjetLocomotionClass::HasScoreDisplayChanged_514D10 -> JumpjetLocomotionClass
+[conv] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> ObjectClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+[conv] 0x51fb00 ObjectClass::PlaceScenarioInfantry -> ObjectClass
+[conv] 0x51fef0 ObjectClass::SaveInfantryToINI -> ObjectClass
+[conv] 0x523d00 AnimSequence::Parse -> AnimSequence
+[conv] 0x525430 GetINIClassIntList -> _addr_52
+[conv] 0x5257c0 INIClass::ClearSection -> INIClass
+[conv] 0x526e80 INIClass::ReadBase64Data -> INIClass
+[conv] 0x526fb0 INIClass::GetBase64Data -> INIClass
+[conv] 0x5271c0 INIClass::ReadIntList2 -> INIClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Frame                    rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=2
+[era] HouseClass               rc=2
+[era] CCINIClass               rc=2
+[era] BuildingTypeClass        rc=0
+[era] House                    rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] ObjectClass              rc=2
+[era] AnimSequence             rc=2
+[era] _addr_52                 rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x509700   MISMATCH         HouseClass::UpdateBuildState
+[diff] 0x50b760   MISMATCH         BuildingTypeClass::ProcessData
+[diff] 0x514d10   MISMATCH         JumpjetLocomotionClass::HasScoreDisplayChanged_514D10
+[diff] 0x5257c0   MISMATCH         INIClass::ClearSection
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f6950 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f9f90 HouseClass::SetAlliance -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5009b0 HouseClass::LoadTypeList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 15)
+[ledger] 0x508c30 HouseClass::UpdatePower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x509700 HouseClass::UpdateBuildState -> NG (attempt 3)
+[ledger] 0x50b760 BuildingTypeClass::ProcessData -> NG (attempt 14)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514d10 JumpjetLocomotionClass::HasScoreDisplayChanged_514D10 -> NG (attempt 2)
+[ledger] 0x5175f0 ObjectClass::ReadRegistryOptionsWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51fb00 ObjectClass::PlaceScenarioInfantry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x51fef0 ObjectClass::SaveInfantryToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x523d00 AnimSequence::Parse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x525430 GetINIClassIntList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5257c0 INIClass::ClearSection -> NG (attempt 2)
+[ledger] 0x526e80 INIClass::ReadBase64Data -> COMPILE_FAIL (attempt 2)
+[ledger] 0x526fb0 INIClass::GetBase64Data -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5271c0 INIClass::ReadIntList2 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "eval_order": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p06\batch_report.json
