@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> JumpjetLocomotionClass
+[conv] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> JumpjetLocomotionClass
+[conv] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> JumpjetLocomotionClass
+[conv] 0x54e4d0 ScenarioClass::UpdateScriptActions -> ScenarioClass
+[conv] 0x5509f0 PrepareTacticalClassCellTransform -> _addr_55
+[conv] 0x551630 WebBrowser::OpenURL -> WebBrowser
+[conv] 0x5520a0 LCWPipe::Compress -> LCWPipe
+[conv] 0x5522d0 LCWPipe::AddRef -> LCWPipe
+[conv] 0x552490 LCWStraw::DecompressReader -> LCWStraw
+[conv] 0x552be0 Scenario::ComputeDialogPos -> Scenario
+[conv] 0x554d50 UpdateDeferredLightSurfaces -> _addr_55
+[conv] 0x5558e0 Map_Calc -> Map
+[conv] 0x555da0 LightConvertClass::Constructor -> LightConvertClass
+[conv] 0x556090 LightConvertClass::UpdateColors -> LightConvertClass
+[conv] 0x557830 ListClass::DrawWithFlags -> ListClass
+[conv] 0x557920 ListClass::DrawBuildingPlacement -> ListClass
+[conv] 0x557a20 ListClass::SetItemState -> ListClass
+[conv] 0x557a70 ListClass::OnKeyUp -> ListClass
+[conv] 0x557b10 CheckListClass::vt_19 -> CheckListClass
+[conv] 0x557f40 ListClass::Clear -> ListClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_55                 rc=2
+[era] WebBrowser               rc=2
+[era] LCWPipe                  rc=2
+[era] LCWStraw                 rc=2
+[era] Scenario                 rc=2
+[era] Map                      rc=2
+[era] LightConvertClass        rc=2
+[era] ListClass                rc=2
+[era] CheckListClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54e4d0 ScenarioClass::UpdateScriptActions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5509f0 PrepareTacticalClassCellTransform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x551630 WebBrowser::OpenURL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5520a0 LCWPipe::Compress -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5522d0 LCWPipe::AddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x552490 LCWStraw::DecompressReader -> COMPILE_FAIL (attempt 2)
+[ledger] 0x552be0 Scenario::ComputeDialogPos -> COMPILE_FAIL (attempt 2)
+[ledger] 0x554d50 UpdateDeferredLightSurfaces -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5558e0 Map_Calc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x555da0 LightConvertClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556090 LightConvertClass::UpdateColors -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557830 ListClass::DrawWithFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557920 ListClass::DrawBuildingPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557a20 ListClass::SetItemState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557a70 ListClass::OnKeyUp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557b10 CheckListClass::vt_19 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x557f40 ListClass::Clear -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p33\batch_report.json
