@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateWavePosition@WaveClass@@QAEDXZ",
+ "sym_key": "WaveClass::UpdateWavePosition",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c08bf1744c8b466085c075458b066a0156ff90dc0000008b0e6a0056ff912401000056e80000000056b900000000e8000000008b1656ff921c010000c7466001000000c7868400000000000000b0015ec332c05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?RemoveTarget@@YGXH@Z",
+   "sym_key": "RemoveTarget"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_GameConfigManager@@3IA",
+   "sym_key": "g_GameConfigManager"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?RemoveItem@VectorClass@@QAEHH@Z",
+   "sym_key": "VectorClass::RemoveItem"
+  }
+ ]
+}

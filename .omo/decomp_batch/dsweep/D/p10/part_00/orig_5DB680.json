@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DB680",
+ "name": "InitNetworkGameState",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DB680",
+ "bytes_hex": "83ec0cb9c0e9a800e8f353f6ff85c0750632c083c40cc3833d38b2a80004742ca1fcd5a80085c074238d4424048d4c24005051b900d6a800e8e336f6ff8d542400b9c0e9a80052e8f478f6ffe8cfd00000e86ad40000e885d40000b00183c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

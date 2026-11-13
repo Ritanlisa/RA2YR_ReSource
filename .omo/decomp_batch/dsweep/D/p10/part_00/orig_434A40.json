@@ -1,0 +1,11 @@
+{
+ "addr": "0x434A40",
+ "name": "BitFont::ScalarDtor",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x434A40",
+ "bytes_hex": "578bf98b4708c707783a7e0085c0740950e89249390083c404568b770485f674298b461885c0740950e8cf40390083c4048b461c85c0740950e8bf40390083c40456e8b640390083c4048a44240c5ea801740957e8a440390083c4048bc75fc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

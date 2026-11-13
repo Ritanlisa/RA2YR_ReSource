@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AE450",
+ "name": "TacticalClass::Initialize",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AE450",
+ "bytes_hex": "568bf1e8a86b0900b9e8f78700e8ee9e0c00b9e8f78700e8249e0c0085c0c70584dcab0000000000742d68e803000068e803000068e80300006a0068000001006a008bc8e89759fdffb9e8f78700e8ed9d0c0085c075d38b066a018bceff50385ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

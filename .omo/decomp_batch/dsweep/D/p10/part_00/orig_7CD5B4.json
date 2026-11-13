@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD5B4",
+ "name": "_init_namebuf",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD5B4",
+ "bytes_hex": "837c24040056be0882b7007405be1882b70068745e810056e81f760000598d4601598a48ff80f95c740980f92f7404c6005c40837c2408007405c60074eb03c60073406a2050e81a81000050e83a710000689865820056e8f075000083c4145ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

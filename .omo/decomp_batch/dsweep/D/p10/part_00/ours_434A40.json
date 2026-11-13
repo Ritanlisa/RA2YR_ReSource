@@ -1,0 +1,45 @@
+{
+ "symbol": "?ScalarDtor@BufferIOFileClass@@QAEPAPAPAXD@Z",
+ "sym_key": "BufferIOFileClass::ScalarDtor",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "578bf98b4708c7070000000085c0740950e80000000083c404568b770485f674298b461885c0740950e80000000083c4048b461c85c0740950e80000000083c40456e80000000083c4048a44240c5ea801740957e80000000083c4048bc75fc20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_BitFont@@3PAXA",
+   "sym_key": "vt_BitFont"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

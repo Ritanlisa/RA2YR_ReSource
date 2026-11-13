@@ -1,0 +1,11 @@
+{
+ "addr": "0x40D290",
+ "name": "MouseClass::InitMouse",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40D290",
+ "bytes_hex": "538bd95657c70364197e00c783185500005c197e008db39c530000bf0400000081ee940f00006860d240006a4b6a348d465050e808ddffff8bcee8310000004f75de8bcbe827592400f644241001740953e857b83b0083c4045f8bc35e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

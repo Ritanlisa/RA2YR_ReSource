@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5730",
+ "name": "TagClass::LoadTag",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5730",
+ "bytes_hex": "8b442408568b7424085056e840acd2ff85c07c4985f674278d4c240c518bcee86caad2ffc706e0447f00c74604c4447f00c74608bc447f00c7460cb4447f008d5624526810c1b000e8c39afeff83c628566810c1b000e8b59afeff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

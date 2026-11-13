@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BA6B0",
+ "name": "DSurface::Destroy",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BA6B0",
+ "bytes_hex": "53568bf133db8a4618c706d4857e003ac374278b461c3bc37420391dcc0d8a0074188b085350ff5170a1cc0d8a00508b10ff5208891dcc0d8a008b462050e84ae430008b461c83c4043bc3895e2074068b0850ff5108895e1cc70698217e005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

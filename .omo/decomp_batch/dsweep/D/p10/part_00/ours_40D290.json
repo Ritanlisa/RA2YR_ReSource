@@ -1,0 +1,51 @@
+{
+ "symbol": "?InitMouse@MouseClass@@QAEPADD@Z",
+ "sym_key": "MouseClass::InitMouse",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408558be95657c7450000000000c78518550000000000008db5ec530000bf0400000081ee940f000068000000006a4b6a348bcee80000000053e80000000083c4044f75de8bcde800000000f644241401740955e80000000083c4045f8bc55e5d5bc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?vt_MouseClass_2@@3PAXA",
+   "sym_key": "vt_MouseClass_2"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?vt_MouseClass_2@@3PAXA",
+   "sym_key": "vt_MouseClass_2"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?nullsub_56@@YAHPBX0@Z",
+   "sym_key": "nullsub_56"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?ForEachReverse@Array@@QAEHHHPAX@Z",
+   "sym_key": "Array::ForEachReverse"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?nullsub_57@@YAHPAX@Z",
+   "sym_key": "nullsub_57"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Destruct@RadarClass@@QAEHXZ",
+   "sym_key": "RadarClass::Destruct"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

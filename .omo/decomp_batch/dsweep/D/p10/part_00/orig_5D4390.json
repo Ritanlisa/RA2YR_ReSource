@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D4390",
+ "name": "Chat::RefreshMessagePositions",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D4390",
+ "bytes_hex": "568bf1e8083e1a008a461984c074518b4e24c646190085c974068b016a01ff10e8bb3d1a008a461a84c074348a46195784c0740a8b7e148b460803f8eb038b7e088b0685c074118b108bc8897810ff5204037e1485c075ef8b460c5f4089460c5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

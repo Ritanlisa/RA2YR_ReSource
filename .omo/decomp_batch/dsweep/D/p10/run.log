@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x40d290 MouseClass::InitMouse -> MouseClass
+[conv] 0x41c490 AbstractClass::processCleanup -> AbstractClass
+[conv] 0x6e1bd0 ScenarioClass::UpdateCounters -> ScenarioClass
+[conv] 0x6e5730 TagClass::LoadTag -> TagClass
+[conv] 0x7cd5b4 _init_namebuf -> _addr_7C
+[conv] 0x5e9e00 NetworkLobby::InitLobbyDropdowns -> NetworkLobby
+[conv] 0x7dc1c2 terminate_YAXXZ -> _addr_7D
+[conv] 0x4b5030 DropListClass::OnKeyUp -> DropListClass
+[conv] 0x5db680 InitNetworkGameState -> _addr_5D
+[conv] 0x7cd9f5 __lock -> _addr_7C
+[conv] 0x6ec300 TechnoClass::IsWaypointHidden -> TechnoClass
+[conv] 0x776cd0 sub_776CD0 -> _addr_77
+[conv] 0x5d4390 Chat::RefreshMessagePositions -> Chat
+[conv] 0x4ba6b0 DSurface::Destroy -> DSurface
+[conv] 0x434a40 BufferIOFileClass::ScalarDtor -> BufferIOFileClass
+[conv] 0x7d49ae _ctrlevent_capture_4 -> _addr_7D
+[conv] 0x75f980 WaveClass::UpdateWavePosition -> WaveClass
+[conv] 0x4ae450 TacticalClass::Initialize -> TacticalClass
+[conv] 0x5d2650 ObjectClass::sub_5D2650 -> ObjectClass
+[conv] 0x69e090 House::Constructor -> House
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MouseClass               rc=0
+[era] AbstractClass            rc=2
+[era] ScenarioClass            rc=0
+[era] TagClass                 rc=0
+[era] _addr_7C                 rc=0
+[era] NetworkLobby             rc=2
+[era] _addr_7D                 rc=2
+[era] DropListClass            rc=2
+[era] _addr_5D                 rc=0
+[era] TechnoClass              rc=2
+[era] _addr_77                 rc=2
+[era] Chat                     rc=0
+[era] DSurface                 rc=0
+[era] BufferIOFileClass        rc=0
+[era] WaveClass                rc=0
+[era] TacticalClass            rc=0
+[era] ObjectClass              rc=2
+[era] House                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x40d290   MISMATCH         MouseClass::InitMouse
+[diff] 0x6e1bd0   MISMATCH         ScenarioClass::UpdateCounters
+[diff] 0x6e5730   MISMATCH         TagClass::LoadTag
+[diff] 0x7cd5b4   MISMATCH         _init_namebuf
+[diff] 0x7cd9f5   MISMATCH         __lock
+[diff] 0x7d49ae   MISMATCH         _ctrlevent_capture_4
+[diff] 0x5db680   MISMATCH         InitNetworkGameState
+[diff] 0x5d4390   MISMATCH         Chat::RefreshMessagePositions
+[diff] 0x4ba6b0   MISMATCH         DSurface::Destroy
+[diff] 0x434a40   MATCH            BufferIOFileClass::ScalarDtor
+[diff] 0x75f980   MISMATCH         WaveClass::UpdateWavePosition
+[diff] 0x4ae450   MISMATCH         TacticalClass::Initialize
+[ledger] 0x40d290 MouseClass::InitMouse -> NG (attempt 1)
+[ledger] 0x41c490 AbstractClass::processCleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e1bd0 ScenarioClass::UpdateCounters -> NG (attempt 1)
+[ledger] 0x6e5730 TagClass::LoadTag -> NG (attempt 1)
+[ledger] 0x7cd5b4 _init_namebuf -> NG (attempt 1)
+[ledger] 0x5e9e00 NetworkLobby::InitLobbyDropdowns -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dc1c2 terminate_YAXXZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b5030 DropListClass::OnKeyUp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5db680 InitNetworkGameState -> NG (attempt 1)
+[ledger] 0x7cd9f5 __lock -> NG (attempt 1)
+[ledger] 0x6ec300 TechnoClass::IsWaypointHidden -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776cd0 sub_776CD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4390 Chat::RefreshMessagePositions -> NG (attempt 1)
+[ledger] 0x4ba6b0 DSurface::Destroy -> NG (attempt 1)
+[ledger] 0x434a40 BufferIOFileClass::ScalarDtor -> OK (attempt 1)
+[ledger] 0x7d49ae _ctrlevent_capture_4 -> NG (attempt 1)
+[ledger] 0x75f980 WaveClass::UpdateWavePosition -> NG (attempt 1)
+[ledger] 0x4ae450 TacticalClass::Initialize -> NG (attempt 1)
+[ledger] 0x5d2650 ObjectClass::sub_5D2650 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e090 House::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "branch_polarity": 1,
+  "branch_order": 1,
+  "frame_sched": 1,
+  "extern_reloc": 1,
+  "regalloc": 4,
+  "ret_norm": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p10\batch_report.json

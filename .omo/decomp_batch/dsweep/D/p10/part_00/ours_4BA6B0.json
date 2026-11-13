@@ -1,0 +1,45 @@
+{
+ "symbol": "?Destroy@DSurface@@QAEHXZ",
+ "sym_key": "DSurface::Destroy",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "568bf18a4618c7060000000084c0742e8b461c85c074278b0d0000000085c9741d8b086a0050ff5170a100000000508b10ff5208c70500000000000000008b462050e8000000008b461c83c40485c0c746200000000074068b0850ff5108c7461c00000000c706000000005ec3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DSurface_Vtable@@3PAXA",
+   "sym_key": "DSurface_Vtable"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Clipper@@3IA",
+   "sym_key": "g_DDraw_Clipper"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Clipper@@3IA",
+   "sym_key": "g_DDraw_Clipper"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_DDraw_Clipper@@3IA",
+   "sym_key": "g_DDraw_Clipper"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?Surface_Vtable@@3PAXA",
+   "sym_key": "Surface_Vtable"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD9F5",
+ "name": "__lock",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD9F5",
+ "bytes_hex": "558bec8b450856833c85a8c28700008d3485a8c28700753e576a18e81bbaffff8bf85985ff75086a11e8f4feffff596a11e8caffffff833e005957750aff15f4117e00893eeb06e8a7b9ffff596a11e80d000000595fff36ff15e8117e005e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

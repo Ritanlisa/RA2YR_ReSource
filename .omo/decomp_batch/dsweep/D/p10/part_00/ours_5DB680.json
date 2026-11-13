@@ -1,0 +1,69 @@
+{
+ "symbol": "?InitNetworkGameState@@YIDPAX@Z",
+ "sym_key": "Unnamed::InitNetworkGameState",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0c568bf150e80000000083c40485c0750732c05e83c40cc3833d0000000004742aa10000000085c074218d4c24088d5424045152b900000000e8000000008d44240450e80000000083c404e8000000008bcee8000000008bcee800000000b0015e83c40cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Network_Init@@YAHH@Z",
+   "sym_key": "Network_Init"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D5FC@@3IA",
+   "sym_key": "DataGlobal_A8D5FC"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D600@@3IA",
+   "sym_key": "DataGlobal_A8D600"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Network_Init_542FC0@@YAHPAX@Z",
+   "sym_key": "Network_Init_542FC0"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?LoadNetworkShareStrings@@YAPAGXZ",
+   "sym_key": "LoadNetworkShareStrings"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?ResetFlags@Game@@QAEDXZ",
+   "sym_key": "Game::ResetFlags"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?InitPlayerSlots@Network@@QAEHXZ",
+   "sym_key": "Network::InitPlayerSlots"
+  }
+ ]
+}

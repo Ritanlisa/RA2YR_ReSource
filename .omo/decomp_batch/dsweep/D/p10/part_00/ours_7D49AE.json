@@ -1,0 +1,57 @@
+{
+ "symbol": "?_ctrlevent_capture_4@@YGHK@Z",
+ "sym_key": "Unnamed::_ctrlevent_capture_4",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "56576a01e8000000008b44241083c40485c074128b3500000000b800000000bf15000000eb108b3500000000b800000000bf0200000085f675116a01e80000000083c40433c05f5ec2040083fe01751056e80000000083c4048bc65f5ec204006a01c70000000000e80000000057ffd683c408b8010000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E0@@3IA",
+   "sym_key": "CRTGlobal_B782E0"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E0@@3IA",
+   "sym_key": "CRTGlobal_B782E0"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782DC@@3IA",
+   "sym_key": "CRTGlobal_B782DC"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782DC@@3IA",
+   "sym_key": "CRTGlobal_B782DC"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

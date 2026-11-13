@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D49AE",
+ "name": "_ctrlevent_capture_4",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D49AE",
+ "bytes_hex": "5356576a015b53e83b90ffff837c24140059750f8b35dc82b700b8dc82b7006a02eb0d8b35e082b700b8e082b7006a1585f65f750b53e86d90ffff5933c0eb1c3bf3740f83200053e85b90ffff57ffd659eb0653e84f90ffff598bc35f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

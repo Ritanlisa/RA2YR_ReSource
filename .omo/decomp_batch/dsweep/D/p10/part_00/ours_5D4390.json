@@ -1,0 +1,21 @@
+{
+ "symbol": "?RefreshMessagePositions@Chat@@QAEDXZ",
+ "sym_key": "Chat::RefreshMessagePositions",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1e8000000008b5c240833c08a461980e3000bd884db745c8b4624c646190085c074078b086a0150ff11e80000000033c080e3008a461a0bc384c074398a46195784c0740a8b7e148b460803f8eb038b7e088b0685c074108b0850897810ff5104037e1485c075f08b460c5f4089460c5e5b59c38ac35e5b59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?DisableIME@@YAPAXXZ",
+   "sym_key": "DisableIME"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?nullsub_48@@YAHXZ",
+   "sym_key": "nullsub_48"
+  }
+ ]
+}
