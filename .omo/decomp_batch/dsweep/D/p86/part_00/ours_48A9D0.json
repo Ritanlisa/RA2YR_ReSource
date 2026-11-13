@@ -1,0 +1,69 @@
+{
+ "symbol": "?SolveMathTrajectory@@YIDDHHHNH@Z",
+ "sym_key": "Unnamed::SolveMathTrajectory",
+ "size": 340,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec208b450c8954240085c00f8f24010000db4508dc1d00000000dfe0f6c4407407c7450800000000db450cdb442400dd542418d9c0d8c9dd4510d9c3d8c9d8eadd5c2410db4508d9c0d8c9dd5c2408ddd8d9c1d8cbd8cbd9cad8ccd8c9dcc0deeadd442408d8c9d8c9deead9c9dd5c2400ddd8ddd8d9c0dec9dc742408dcc0dc0500000000dc0500000000dd542408dd442400dc1d00000000dfe0f6c4010f8587000000dc1d00000000dfe0f6c440757c84c974188b4424048b4c24005051e800000000dc6c241883c408eb168b5424048b4424005250e800000000dc44241883c408dc742408dd542410dc1d00000000dfe0f6c401740832c08be55dc214008b4c24148b5424105152e800000000dc742420dd1c24e8000000008b451883c408dd18b0018be55dc21400ddd832c08be55dc214008b4518c700127cd3f4c74004d921e93fb0018be55dc21400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?Math__ArcTan2_Table@@YANN@Z",
+   "sym_key": "Math__ArcTan2_Table"
+  }
+ ]
+}

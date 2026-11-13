@@ -1,0 +1,93 @@
+{
+ "symbol": "?sub_5BF950@ObjectClass@@QAEDHH@Z",
+ "sym_key": "ObjectClass::sub_5BF950",
+ "size": 302,
+ "link_base": 0,
+ "bytes_hex": "83ec3cb90f000000e80000000084c00f85130100008b0dfc2d00005356578b7c24508b1500000000578b7c24508b32578d41248b49086a016a0050515052ff56088b15fc2d00008b424885c07472833800746d8b70108d4c240c51568b06ff50788b10895424108b4804894c24148b78088b580ca100000000508b10ff527c2bc7992bc2d1f889442418a100000000508b08ff91800000002bc36a018d4c241489442420a1000000006a01518d4c2424897c242c895c24308b10565150ff5208a1000000008d5424385250e8000000008b15000000008d4c24385152e800000000a1fc2d00008b5c243c8b48408b503c8b70348b403803c3895424308b15000000008944242c8b4424385203c68d54242c8944242ca100000000894c2438528b0850ff51085f5e5b83c43cc20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?TestBitArray@@YI_NH@Z",
+   "sym_key": "TestBitArray"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  }
+ ]
+}

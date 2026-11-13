@@ -1,0 +1,153 @@
+{
+ "symbol": "?ProcessEvents@TriggerTypeClass@@QAEHXZ",
+ "sym_key": "TriggerTypeClass::ProcessEvents",
+ "size": 385,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1b800000000ba01000000890689460489460889460ce8000000008b0d7c0300008d44240450687c0300008974240cff511083f8ff74340fbf0dc80300008b113bc27d274a89110fbf15c80300003b027d198b0dbc030000408b1481895481fc0fbf0dc80300003b017ce78b86b00000005785c074158b782885c074088b106a0150ff522085ff8bc775eb8b86ac00000085c074158b782885c074088b086a0150ff512085ff8bc775eba1300e00008d5424085268300e000089742410ff501083f8ff5f742d8b0d400e00003bc17d23493bc1890d400e00007d188b0d340e0000408b1481895481fc8b0d400e00003bc17ce88d4424048974240450a1180e000050ff50108bc883f9ff894c24087460db442408dc15280e0000dfe0f6c401744ddd05280e0000dc2500000000dd1d280e0000dc1d280e0000dfe0f6c4017430a11c0e000041894c2408db4424088b1488895488fcdc1d280e0000dfe0f6c40175de8bcee8000000005e83c408c3ddd88bcee8000000005e83c408c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?vt_TriggerTypeClass_4@@3PAXA",
+   "sym_key": "vt_TriggerTypeClass_4"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 362,
+   "type": "REL32",
+   "sym": "?Dtor@AbstractTypeClass@@QAEHXZ",
+   "sym_key": "AbstractTypeClass::Dtor"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?Dtor@AbstractTypeClass@@QAEHXZ",
+   "sym_key": "AbstractTypeClass::Dtor"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "symbol": "?SetCapacity_3@HouseClass@@QAGPAIPAI@Z",
+ "sym_key": "HouseClass::SetCapacity_3",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "83ec18668b15520600008b0d4a060000568b74242057668bfa8b867054000066894c2408663bc166897c240c7512538bd8c1fb10663bda5b75068b866c5400003bc1894424247507a1ca070000eb348d442424b90000000050e8000000008b088d5424145250ff5148668b3d52060000668b0d4a0600008b0066897c240c66894c2408998b8e7054000081e2ff00000003c28bd1c1f80866894424248b44240825ffff000081e2ffff00003bd075128bd1c1fa10663bd775088bb66c540000eb028bf1508b44241025ffff00008974241450e80000000083c4083bf05f5e7507a1da070000eb1d8d4c240851b900000000e8000000008b108d4c240c5150ff52488b40049981e2ff00000003c2c1f808668944241e8b4424208b54241c891083c418c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p86\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cb673 __splitpath -> _addr_7C
+[conv] 0x442c40 BuildingClass::Update -> BuildingClass
+[conv] 0x4a5660 Dial8Class::SetValue -> Dial8Class
+[conv] 0x71d000 TerrainClass::ProcessSpawnAnim -> TerrainClass
+[conv] 0x457770 BuildingClass::UpdateCloak -> BuildingClass
+[conv] 0x4578c0 BuildingClass::IsFootprintBlocked -> BuildingClass
+[conv] 0x4ca270 FactoryClass::LoadFromStream -> FactoryClass
+[conv] 0x7741c0 FindRegistrySubKey -> _addr_77
+[conv] 0x5ee200 ObjectClass::UpdateObserveButtonWOL -> ObjectClass
+[conv] 0x4f3d40 ObjectClass::sub_4F3D40 -> ObjectClass
+[conv] 0x6d8c60 sub_6D8C60 -> _addr_6D
+[conv] 0x71cc50 TerrainClass::CheckSpawnConditions -> TerrainClass
+[conv] 0x726e00 TriggerTypeClass::ProcessEvents -> TriggerTypeClass
+[conv] 0x7d9729 ___crtGetStringTypeA -> _addr_7D
+[conv] 0x4dfcb0 FootClass::FindClosestForRepair -> FootClass
+[conv] 0x5bf950 ObjectClass::sub_5BF950 -> ObjectClass
+[conv] 0x722240 BuildingClass::ClearFactoryData -> BuildingClass
+[conv] 0x409c40 AudioBuffer::InitializePlayback -> AudioBuffer
+[conv] 0x48a9d0 SolveMathTrajectory -> _addr_48
+[conv] 0x4f6bc0 HouseClass::SetCapacity_3 -> HouseClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] BuildingClass            rc=2
+[era] Dial8Class               rc=2
+[era] TerrainClass             rc=2
+[era] FactoryClass             rc=0
+[era] _addr_77                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_6D                 rc=2
+[era] TriggerTypeClass         rc=0
+[era] _addr_7D                 rc=2
+[era] FootClass                rc=2
+[era] AudioBuffer              rc=2
+[era] _addr_48                 rc=0
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cb673   MISMATCH         __splitpath
+[diff] 0x457770   MISMATCH         BuildingClass::UpdateCloak
+[diff] 0x4578c0   MISMATCH         BuildingClass::IsFootprintBlocked
+[diff] 0x4ca270   MISMATCH         FactoryClass::LoadFromStream
+[diff] 0x7741c0   MISMATCH         FindRegistrySubKey
+[diff] 0x5ee200   MISMATCH         ObjectClass::UpdateObserveButtonWOL
+[diff] 0x5bf950   MISMATCH         ObjectClass::sub_5BF950
+[diff] 0x726e00   MISMATCH         TriggerTypeClass::ProcessEvents
+[diff] 0x48a9d0   MISMATCH         SolveMathTrajectory
+[diff] 0x4f6bc0   MISMATCH         HouseClass::SetCapacity_3
+[ledger] 0x7cb673 __splitpath -> NG (attempt 1)
+[ledger] 0x442c40 BuildingClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5660 Dial8Class::SetValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71d000 TerrainClass::ProcessSpawnAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x457770 BuildingClass::UpdateCloak -> NG (attempt 1)
+[ledger] 0x4578c0 BuildingClass::IsFootprintBlocked -> NG (attempt 1)
+[ledger] 0x4ca270 FactoryClass::LoadFromStream -> NG (attempt 1)
+[ledger] 0x7741c0 FindRegistrySubKey -> NG (attempt 1)
+[ledger] 0x5ee200 ObjectClass::UpdateObserveButtonWOL -> NG (attempt 1)
+[ledger] 0x4f3d40 ObjectClass::sub_4F3D40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d8c60 sub_6D8C60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71cc50 TerrainClass::CheckSpawnConditions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x726e00 TriggerTypeClass::ProcessEvents -> NG (attempt 1)
+[ledger] 0x7d9729 ___crtGetStringTypeA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dfcb0 FootClass::FindClosestForRepair -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf950 ObjectClass::sub_5BF950 -> NG (attempt 1)
+[ledger] 0x722240 BuildingClass::ClearFactoryData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x409c40 AudioBuffer::InitializePlayback -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48a9d0 SolveMathTrajectory -> NG (attempt 1)
+[ledger] 0x4f6bc0 HouseClass::SetCapacity_3 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "frame_sched": 3,
+  "codegen_shape": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p86\batch_report.json

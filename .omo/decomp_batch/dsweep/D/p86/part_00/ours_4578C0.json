@@ -1,0 +1,63 @@
+{
+ "symbol": "?IsFootprintBlocked@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::IsFootprintBlocked",
+ "size": 348,
+ "link_base": 0,
+ "bytes_hex": "83ec28535556578be9e80000000084c00f853c0100008b45008d4c24145155ff90b80100008b108b8d2005000089542420e8000000008b8d200500008bf06a008974242089742418e80000000083caff8944242c3bf2895424180f8ce80000008b7c242c8b5c242c83c9ff83f8ffc7442410ffffffff0f8cbb0000008b742420c1fe108974241ceb048b74241c33c003f1894424308944243481e6ff00000081e700ffffff8d4424240bfe50b9f8010000897c2428e8000000006a008d4c24346a00518bc8e8000000003bc5752180e3008d5424280bde52b9f8010000895c242ce8000000006a008bc8e80000000085c074238b881c0200008b951c0200003bca74138b1050ff92840000008a889d0c000084c9753c8b4c24108b44242c413bc8894c24100f8e5effffff8b4c24148b542418894c241c8b4c241c423bd1895424180f8e20ffffff5f5e5d32c05b83c428c35f5e5db0015b83c428c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ShouldNotBeCloaked@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::ShouldNotBeCloaked"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?FindObjectByType@WTFMode@@QAEPAVBuildingClass@@D@Z",
+   "sym_key": "WTFMode::FindObjectByType"
+  }
+ ]
+}
