@@ -1,0 +1,111 @@
+{
+ "symbol": "?RevealFogCell@DisplayClass@@QAE_NPAFH@Z",
+ "sym_key": "DisplayClass::RevealFogCell",
+ "size": 573,
+ "link_base": 0,
+ "bytes_hex": "83ec2053558b6c242c568bd955e8000000008bf06a0055897424288b862c0100008ac80c08c1e903f6d180e10189862c0100008b442420884c24148b4c2414240081e1ff0000000bc189442420e80000000033d28a96200100000fbec83bca740bc644240c0188862001000080be20010000ff750e8b862c0100000c1089862c0100008a44240c84c0740c8b0d0000000056e8000000008b74243057c7442414000000008b4424148a4d028b54242083e00780e2008a807a000000c0f81002c18bcb25ff0000000bc289442420894424288d44242850e800000000668b4c24288bf8663b4d00750f668b54242a663b55020f840c010000f6872c010000100f85ff0000008d4424286a0050e80000000083f8ff0f85a60000008b872c010000a8080f84a60000000c105789872c0100008b0d00000000e80000000033ed8a5424288bc583e0078b7c242a81e600ffffff8a807a0000008ac802ca0fbed081e1ff0000008d442418c1fa100bf103d733d65081e2ff0000008bcb33f28974241ce8000000008d4c24186a00518bf8e80000000033d28a97200100000fbec83bca74128887200100008b0d0000000057e8000000004583fd087c848b6c2434eb4483f8fe741ef6872c0100000875158b4424388b138d4c2428505153ff929c000000eb2185c07c1d0fbe97200100003bc274128887200100008b0d0000000057e8000000008b4424144083f808894424140f8c8ffeffff8a5c24105f84db74148b4424188b4c24348b542420505152e8000000005e8ac35d5b83c420c20800",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 338,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 398,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 425,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 431,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 505,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 511,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 558,
+   "type": "REL32",
+   "sym": "?CellClass__SpiralFindClosest@@YGHHHD@Z",
+   "sym_key": "CellClass__SpiralFindClosest"
+  }
+ ]
+}

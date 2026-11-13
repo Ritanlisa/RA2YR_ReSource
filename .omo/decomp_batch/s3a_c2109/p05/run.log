@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> ObjectClass
+[conv] 0x4a40c0 ObjectClass::sub_4A40C0 -> ObjectClass
+[conv] 0x4a42f0 InitializeDDraw -> _addr_4A
+[conv] 0x4a4620 DDraw::CheckCapabilities -> DDraw
+[conv] 0x4a4700 ObjectClass::sub_4A4700 -> ObjectClass
+[conv] 0x4a83d0 sub_4A83D0 -> _addr_4A
+[conv] 0x4aa050 DisplayClass::RevealFogCell -> DisplayClass
+[conv] 0x4ab9b0 DisplayClass::ExecuteCommand -> DisplayClass
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x4b9890 DisplayBuildingInfoPanel -> _addr_4B
+[conv] 0x4c3e30 CreditsPower::Display -> CreditsPower
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+[conv] 0x4ca5a0 FactoryClass::StartProduction_2 -> FactoryClass
+[conv] 0x4d2510 FoggedObjectClass::LoadTypeData -> FoggedObjectClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4dfcb0 FootClass::FindClosestForRepair -> FootClass
+[conv] 0x4e2af0 TriColorGaugeClass::Check -> TriColorGaugeClass
+[conv] 0x4e2b20 TriColorGaugeClass::SetField -> TriColorGaugeClass
+[conv] 0x4e6190 DetectProcessorType -> _addr_4E
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DDraw                    rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4A                 rc=2
+[era] DisplayClass             rc=2
+[era] HouseClass               rc=2
+[era] _addr_4B                 rc=2
+[era] CreditsPower             rc=2
+[era] FactoryClass             rc=2
+[era] FoggedObjectClass        rc=2
+[era] InfantryClass            rc=2
+[era] FootClass                rc=2
+[era] TriColorGaugeClass       rc=2
+[era] _addr_4E                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4aa050   MISMATCH         DisplayClass::RevealFogCell
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a40c0 ObjectClass::sub_4A40C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a42f0 InitializeDDraw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a4620 DDraw::CheckCapabilities -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a4700 ObjectClass::sub_4A4700 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a83d0 sub_4A83D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aa050 DisplayClass::RevealFogCell -> NG (attempt 2)
+[ledger] 0x4ab9b0 DisplayClass::ExecuteCommand -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b9890 DisplayBuildingInfoPanel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c3e30 CreditsPower::Display -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4ca5a0 FactoryClass::StartProduction_2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d2510 FoggedObjectClass::LoadTypeData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4dfcb0 FootClass::FindClosestForRepair -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e2af0 TriColorGaugeClass::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e2b20 TriColorGaugeClass::SetField -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e6190 DetectProcessorType -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p05\batch_report.json
