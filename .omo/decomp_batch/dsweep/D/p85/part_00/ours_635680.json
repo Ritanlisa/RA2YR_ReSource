@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_635680@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_635680",
+ "size": 263,
+ "link_base": 0,
+ "bytes_hex": "83ec485355568bf1578d4c2414e8000000008b08894c24388b50048954243c8b4808894c24408b500c8d44242c8bce5089542448e8000000008b08894c24208b5004895424248b40088d5424208d4c241c89442428e8000000008b48048b105152ba080000008d4c2450e8000000008b08ba04000000894c24148b70048b78088b580c8d4c2414e8000000008b4424148d6efc8944244883c0fc8d77088d7b088b5c245c89442410c744241803000000a100000000530fbe108b0a8d542414528d5424405250ff515483fefe7e1a83fffe7e158b4c2410b80200000041452bf0894c24102bf8eb0a33ff33ed897c241033f68b4c241849894c241875b35f5e5d5b83c448c20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?GetCoords@ScriptAction@@QAEPAIPAX@Z",
+   "sym_key": "ScriptAction::GetCoords"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?ToCoordPixel@@YIPAIPAX0@Z",
+   "sym_key": "ToCoordPixel"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?ComputeBounds@@YIPAIPAXHHH@Z",
+   "sym_key": "ComputeBounds"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?ShrinkRect@@YIHPAXH@Z",
+   "sym_key": "ShrinkRect"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p85\part_00
+=== convert (20 addrs) ===
+[conv] 0x6278c0 ObjectClass::sub_6278C0 -> ObjectClass
+[conv] 0x6620f0 BulletClass::ComputeImpactTrajectory -> BulletClass
+[conv] 0x691c00 TeamTypeClass::CreateScriptType -> TeamTypeClass
+[conv] 0x7730f0 WeaponTypeClass::ddtor -> WeaponTypeClass
+[conv] 0x4e3b90 SkirmishDialog::FillComboBoxes -> SkirmishDialog
+[conv] 0x7a8fc0 CChatEventSink::DispatchStub_17 -> CChatEventSink
+[conv] 0x6b4c80 UnitClass::ReadINI -> UnitClass
+[conv] 0x405190 AudioPool::ProcessQueue -> AudioPool
+[conv] 0x48d080 Event::Dispatch -> Event
+[conv] 0x4c3420 EditClass::SetItemText -> EditClass
+[conv] 0x774670 NullModemClass::sendData -> NullModemClass
+[conv] 0x4ca430 FactoryClass::Stat -> FactoryClass
+[conv] 0x51dff0 InfantryClass::MoveToCell -> InfantryClass
+[conv] 0x635680 ObjectClass::sub_635680 -> ObjectClass
+[conv] 0x41ee90 AITriggerTypeClass::OwnerHouseOwns -> AITriggerTypeClass
+[conv] 0x4556d0 BuildingClass::ScanCircleForUnits -> BuildingClass
+[conv] 0x7b4170 UDPInterfaceClass::Destructor -> UDPInterfaceClass
+[conv] 0x43e7b0 BuildingClass::DrawVisible -> BuildingClass
+[conv] 0x522e70 InfantryClass::ProcessTiberiumHarvest -> InfantryClass
+[conv] 0x7b4ed0 String::Concat -> String
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] BulletClass              rc=2
+[era] TeamTypeClass            rc=2
+[era] WeaponTypeClass          rc=2
+[era] SkirmishDialog           rc=0
+[era] CChatEventSink           rc=0
+[era] UnitClass                rc=2
+[era] AudioPool                rc=2
+[era] Event                    rc=2
+[era] EditClass                rc=2
+[era] NullModemClass           rc=2
+[era] FactoryClass             rc=2
+[era] InfantryClass            rc=2
+[era] AITriggerTypeClass       rc=0
+[era] BuildingClass            rc=2
+[era] UDPInterfaceClass        rc=2
+[era] String                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x635680   MISMATCH         ObjectClass::sub_635680
+[diff] 0x4e3b90   MISMATCH         SkirmishDialog::FillComboBoxes
+[diff] 0x7a8fc0   MISMATCH         CChatEventSink::DispatchStub_17
+[diff] 0x41ee90   MISMATCH         AITriggerTypeClass::OwnerHouseOwns
+[diff] 0x7b4ed0   MISMATCH         String::Concat
+[ledger] 0x6278c0 ObjectClass::sub_6278C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6620f0 BulletClass::ComputeImpactTrajectory -> COMPILE_FAIL (attempt 1)
+[ledger] 0x691c00 TeamTypeClass::CreateScriptType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7730f0 WeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e3b90 SkirmishDialog::FillComboBoxes -> NG (attempt 1)
+[ledger] 0x7a8fc0 CChatEventSink::DispatchStub_17 -> NG (attempt 1)
+[ledger] 0x6b4c80 UnitClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x405190 AudioPool::ProcessQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48d080 Event::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3420 EditClass::SetItemText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774670 NullModemClass::sendData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca430 FactoryClass::Stat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51dff0 InfantryClass::MoveToCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635680 ObjectClass::sub_635680 -> NG (attempt 1)
+[ledger] 0x41ee90 AITriggerTypeClass::OwnerHouseOwns -> NG (attempt 1)
+[ledger] 0x4556d0 BuildingClass::ScanCircleForUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4170 UDPInterfaceClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43e7b0 BuildingClass::DrawVisible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522e70 InfantryClass::ProcessTiberiumHarvest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4ed0 String::Concat -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "ret_norm": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p85\batch_report.json
