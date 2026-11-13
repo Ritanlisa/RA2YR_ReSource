@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p71\part_00
+=== convert (20 addrs) ===
+[conv] 0x75f020 Voxel::InitDistanceTable -> Voxel
+[conv] 0x608260 SkirmishSetup::PlayButtonClickAnim -> SkirmishSetup
+[conv] 0x47a1b0 ObjectClass::sub_47A1B0 -> ObjectClass
+[conv] 0x47a2d0 ObjectClass::sub_47A2D0 -> ObjectClass
+[conv] 0x4ac700 TacticalClass::SetDisplayMode -> TacticalClass
+[conv] 0x7318f0 ObjectClass::UI_Create_7318F0 -> ObjectClass
+[conv] 0x5bff60 RenderMovieFrame -> _addr_5B
+[conv] 0x4d97a0 TechnoClass::ComputeThreatLevel -> TechnoClass
+[conv] 0x433060 BinkMovieHandle::CopyFrameToSurface -> BinkMovieHandle
+[conv] 0x7dc4c9 ___crtGetLocaleInfoW -> _addr_7D
+[conv] 0x7498d0 ObjectClass::Initialize -> ObjectClass
+[conv] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> TechnoClass
+[conv] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> OverlayTypeClass
+[conv] 0x656ac0 RadarClass::Save -> RadarClass
+[conv] 0x4019e0 sub_4019E0 -> _addr_40
+[conv] 0x7acf70 HashTable::Rebuild -> HashTable
+[conv] 0x6385c0 BuildingClass::GetObjectData -> BuildingClass
+[conv] 0x43b4c0 Cell::CanPlaceBuilding -> Cell
+[conv] 0x763c70 WaypointPathClass::LoadState -> WaypointPathClass
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Voxel                    rc=2
+[era] SkirmishSetup            rc=2
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=2
+[era] _addr_5B                 rc=0
+[era] TechnoClass              rc=2
+[era] BinkMovieHandle          rc=0
+[era] _addr_7D                 rc=2
+[era] OverlayTypeClass         rc=2
+[era] RadarClass               rc=0
+[era] _addr_40                 rc=0
+[era] HashTable                rc=0
+[era] BuildingClass            rc=0
+[era] Cell                     rc=0
+[era] WaypointPathClass        rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x47a1b0   MISMATCH         ObjectClass::sub_47A1B0
+[diff] 0x47a2d0   MISMATCH         ObjectClass::sub_47A2D0
+[diff] 0x7498d0   MISMATCH         ObjectClass::Initialize
+[diff] 0x5bff60   MISMATCH         RenderMovieFrame
+[diff] 0x4d97a0   MISMATCH         TechnoClass::ComputeThreatLevel
+[diff] 0x433060   MISMATCH         BinkMovieHandle::CopyFrameToSurface
+[diff] 0x656ac0   MISMATCH         RadarClass::Save
+[diff] 0x4019e0   MISMATCH         sub_4019E0
+[diff] 0x7acf70   MISMATCH         HashTable::Rebuild
+[diff] 0x6385c0   MISMATCH         BuildingClass::GetObjectData
+[diff] 0x43b4c0   MISMATCH         Cell::CanPlaceBuilding
+[ledger] 0x75f020 Voxel::InitDistanceTable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x608260 SkirmishSetup::PlayButtonClickAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47a1b0 ObjectClass::sub_47A1B0 -> NG (attempt 1)
+[ledger] 0x47a2d0 ObjectClass::sub_47A2D0 -> NG (attempt 1)
+[ledger] 0x4ac700 TacticalClass::SetDisplayMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7318f0 ObjectClass::UI_Create_7318F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bff60 RenderMovieFrame -> NG (attempt 1)
+[ledger] 0x4d97a0 TechnoClass::ComputeThreatLevel -> NG (attempt 1)
+[ledger] 0x433060 BinkMovieHandle::CopyFrameToSurface -> NG (attempt 1)
+[ledger] 0x7dc4c9 ___crtGetLocaleInfoW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7498d0 ObjectClass::Initialize -> NG (attempt 1)
+[ledger] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x656ac0 RadarClass::Save -> NG (attempt 1)
+[ledger] 0x4019e0 sub_4019E0 -> NG (attempt 1)
+[ledger] 0x7acf70 HashTable::Rebuild -> NG (attempt 1)
+[ledger] 0x6385c0 BuildingClass::GetObjectData -> NG (attempt 1)
+[ledger] 0x43b4c0 Cell::CanPlaceBuilding -> NG (attempt 1)
+[ledger] 0x763c70 WaypointPathClass::LoadState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "branch_polarity": 1,
+  "codegen_shape": 3,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p71\batch_report.json

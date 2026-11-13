@@ -1,0 +1,81 @@
+{
+ "symbol": "?RenderMovieFrame@@YIDHDHD@Z",
+ "sym_key": "Unnamed::RenderMovieFrame",
+ "size": 271,
+ "link_base": 0,
+ "bytes_hex": "83ec08a1000000005685c0885424078bf10f85f1000000535557c6464501b9020000008935000000008944241483cbff33ffe80000000084c0743f8b4610894424148b461485c07c028bd88b460c8b7e1c83f80175248b46185785c074108b4c24185351e80000000083c40ceb0c8b562052e80000000083c4088a44241384c0740ba100000000508b08ff510c8b4c241c83f9ff7405e800000000837e0c0274088b44241485c074098b4c2414e8000000000fbe442420508bcbe8000000008be88b460c83f801750233ff8b0ee80000000083fd01741185ff0f94c085ff7e044f0f94c084c074b38a4424135f5d5b84c0740ba100000000508b10ff5210c70500000000000000005e83c408c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?TestBitArray@@YI_NH@Z",
+   "sym_key": "TestBitArray"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?Render_Render_759880@@YA_NHHH@Z",
+   "sym_key": "Render_Render_759880"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Render_Render_759850@@YA_NHH@Z",
+   "sym_key": "Render_Render_759850"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?QueueSong@Theme@@QAEDXZ",
+   "sym_key": "Theme::QueueSong"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?updateBuildingState@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::updateBuildingState"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?RenderLoop@MovieClass@@QAEHH@Z",
+   "sym_key": "MovieClass::RenderLoop"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?finalizeConstruction@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::finalizeConstruction"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_BigIntPool@@3IA",
+   "sym_key": "g_BigIntPool"
+  }
+ ]
+}

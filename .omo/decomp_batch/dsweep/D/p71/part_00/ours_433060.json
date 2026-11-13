@@ -1,0 +1,63 @@
+{
+ "symbol": "?CopyFrameToSurface@BinkMovieHandle@@QAEPAIXZ",
+ "sym_key": "BinkMovieHandle::CopyFrameToSurface",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "83ec18a100000000535556578bf98b770c3bf00f85840000008b0d000000008d4424185051e800000000a1000000008d5424185250e8000000008b6f148b4c241c8b770c8b5f108b54241803e9568bcf03dae8000000008b0e6a006a0056ff515c85c0894424140f84900000008b1656ff5274894424108b0656ff90800000008b4f088b54241081c900000080518b4f045553508b442424525051eb528b57148b4710568bcf8954241889442414e8000000008b0e6a006a0056ff515c8bd885db743a8b1656ff52748be88b0656ff90800000008b4f088b54241481c900000080518b4c2414528b57045150555352e8000000008b0683c41c56ff5060568bcfe8000000005f5e5d5b83c418c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+   "sym_key": "BinkMovie::AdjustSurfaceFormat"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+   "sym_key": "BinkMovie::AdjustSurfaceFormat"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?BinkCopyToBuffer@@YAHPAXHHHHHHZZ",
+   "sym_key": "BinkCopyToBuffer"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?BlitToTarget@BinkMovie@@QAEPAIH@Z",
+   "sym_key": "BinkMovie::BlitToTarget"
+  }
+ ]
+}

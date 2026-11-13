@@ -1,0 +1,99 @@
+{
+ "symbol": "?sub_47A1B0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_47A1B0",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "5556578bf1e8000000008bcee8000000008b7c24106a0068000000046a008d470133c98a0d0000000033c76a006a0025ff0000006a005133f8e8000000008bce8be8e8000000006a006a00575556e80000000084c0750f8bcee8000000005f5e32c05dc20400538bcee8000000008bcee8000000005755e80000000084c08bce7409e800000000b301eb07e80000000032db575556e80000000055e8000000008bcee8000000008ac35b5f5e5dc20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_Str_____vwin32@@3EA",
+   "sym_key": "g_Str_____vwin32"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXHHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?CDROM__LockVolume@@YGDHHHHH@Z",
+   "sym_key": "CDROM__LockVolume"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?sub_47A560@@YG_NHH@Z",
+   "sym_key": "sub_47A560"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?DriveControlCD@@YGDHHH@Z",
+   "sym_key": "DriveControlCD"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

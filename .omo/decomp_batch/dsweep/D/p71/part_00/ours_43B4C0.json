@@ -1,0 +1,51 @@
+{
+ "symbol": "?CanPlaceBuilding@Cell@@QAIDPAH@Z",
+ "sym_key": "Cell::CanPlaceBuilding",
+ "size": 296,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec3053555657518b0d0000000089542418e80000000084c0740a32c05f5e5d5b8be55dc3a10000000033ff897c24108b98380100003bdf895c24247f0a32c05f5e5d5b8be55dc38b0d000000008b912c0100008b34ba568b06ff905003000084c00f84990000008b0e8d5424285256ff51488b388b58048b68088b4c24148d44243450e8000000008b48088b102be92bfa896c24188b6804db4424182bdd83ec08895c2420db442420897c2420db442420d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e800000000dd5c24208b4c24248b5424205152e8000000008b8e2005000083c4108b910c170000c1e2083bc2761f8b7c24108b5c2424473bfb897c24100f8c3affffff32c05f5e5d5b8be55dc35fb0015e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?GetCoords@CellClass@@QAEPAHPAX@Z",
+   "sym_key": "CellClass::GetCoords"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

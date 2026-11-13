@@ -1,0 +1,105 @@
+{
+ "symbol": "?Initialize@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Initialize",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e80000000033db680000803f5353538d4e70899eac000000899eb4000000899ebc000000899eb0000000899eb8000000899ec0000000e800000000680000803f5353538d4e75e8000000008d4604b90000000050c786fc000000ffffffff899e00010000899e04010000899e08010000889e0c010000889e32010000899e38010000890e8908894e08894e0ce8000000008d8e10010000e8000000008d8e21010000e800000000a0640000008a0d6c0000003ac87c33381d6900000075043ac375428a0d700000003acb7e380fbe155c0000000fbec90fbec003c85351685c000000ff520884c0741b8a0d6c0000000fbec1fec1880d6c0000000fbe0d600000008934818bc65e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ctor@ObjectClass@@QAEPAIXZ",
+   "sym_key": "ObjectClass::ctor"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Set@Int4@@QAEPAV1@HHHH@Z",
+   "sym_key": "Int4::Set"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?Set@Int4@@QAEPAV1@HHHH@Z",
+   "sym_key": "Int4::Set"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?vt_VoxelAnimClass_4@@3PAXA",
+   "sym_key": "vt_VoxelAnimClass_4"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHPAX@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  }
+ ]
+}

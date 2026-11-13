@@ -1,0 +1,81 @@
+{
+ "symbol": "?GetObjectData@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::GetObjectData",
+ "size": 316,
+ "link_base": 0,
+ "bytes_hex": "81ece000000055568bf156e8000000008be883c40485ed750b5e32c05d81c4e0000000c38b451485c07f0b5e32c05d81c4e0000000c38b858c00000083f8ff740f85c07f0b5e32c05d81c4e0000000c38a451c84c0740b5e32c05d81c4e0000000c38b0653576a016a1c56ff90e80100008d8c2480000000518bcde800000000b91b0000008bf08d7c24106a6ff3a566a5a4e80000000083c40485c07407c600008bd8eb0233db8a44247e668b54247cb91b0000008d7424108bfb88436ef3a58a036689536c3c047504c6431d02a0200000008a0d280000003ac87c338a0d2500000084c9750484c075408b0d2c00000085c97e360fbe15180000000fbec003c16a00506818000000ff520884c0741b8a0d280000000fbec1fec1880d280000000fbe0d1c000000891c815f5bc6451c015eb0015d81c4e0000000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?CompleteCurrentItem@FactoryClass@@QAEHH@Z",
+   "sym_key": "FactoryClass::CompleteCurrentItem"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 292,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  }
+ ]
+}
