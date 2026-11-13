@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p174\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b7970 NetworkGameSetup::DlgProc -> NetworkGameSetup
+[conv] 0x614b30 EditControl::WndProc -> EditControl
+[conv] 0x699980 SessionClass::LoadMissionList -> SessionClass
+[conv] 0x421ea0 AnimClass::ctor -> AnimClass
+[conv] 0x5ec9f0 PlayerSkirmishSlotHandler -> _addr_5E
+[conv] 0x4d4280 FootClass::ApproachEvaluate -> FootClass
+[conv] 0x782320 InsertBuddyList -> _addr_78
+[conv] 0x5824a0 Radar::ProcessSubzone -> Radar
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x542620 ScoreBoard::Render -> ScoreBoard
+[conv] 0x49db00 CampaignClass::LoadFromINI -> CampaignClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x5509f0 PrepareTacticalClassCellTransform -> _addr_55
+[conv] 0x7864c0 ObjectClass::ConnectAndLoginWOL -> ObjectClass
+[conv] 0x73c5f0 VoxelClass::RenderObject -> VoxelClass
+[conv] 0x4d3920 FootClass::MovementStep -> FootClass
+[conv] 0x71e940 TEventClass::Execute -> TEventClass
+[conv] 0x7bd690 BSurface::CommitSurfaceBuffersAudio -> BSurface
+[conv] 0x584550 Radar::Update -> Radar
+[conv] 0x51bf90 InfantryClass::EvaluateTarget -> InfantryClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NetworkGameSetup         rc=2
+[era] EditControl              rc=2
+[era] SessionClass             rc=2
+[era] AnimClass                rc=2
+[era] _addr_5E                 rc=2
+[era] FootClass                rc=2
+[era] _addr_78                 rc=2
+[era] Radar                    rc=2
+[era] UnitTypeClass            rc=2
+[era] ScoreBoard               rc=2
+[era] CampaignClass            rc=2
+[era] ScriptAction             rc=2
+[era] _addr_55                 rc=2
+[era] ObjectClass              rc=2
+[era] VoxelClass               rc=2
+[era] TEventClass              rc=2
+[era] BSurface                 rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5b7970 NetworkGameSetup::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x614b30 EditControl::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x699980 SessionClass::LoadMissionList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x421ea0 AnimClass::ctor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ec9f0 PlayerSkirmishSlotHandler -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d4280 FootClass::ApproachEvaluate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x782320 InsertBuddyList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5824a0 Radar::ProcessSubzone -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x542620 ScoreBoard::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49db00 CampaignClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5509f0 PrepareTacticalClassCellTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7864c0 ObjectClass::ConnectAndLoginWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73c5f0 VoxelClass::RenderObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d3920 FootClass::MovementStep -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71e940 TEventClass::Execute -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd690 BSurface::CommitSurfaceBuffersAudio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x584550 Radar::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51bf90 InfantryClass::EvaluateTarget -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p174\batch_report.json
