@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4c2fc0 EditClass::sub_4C2FC0 -> EditClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+[conv] 0x4cbc40 ObjectClass::WalkPathfindingLine -> ObjectClass
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4d3590 FootClass::Destruct -> FootClass
+[conv] 0x4d5350 FootClass::ProcessDeploy -> FootClass
+[conv] 0x4d8560 FootClass::GetCoords -> FootClass
+[conv] 0x4d85d0 FootClass::UpdateAI -> FootClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+[conv] 0x4df7f0 FootClass::Destru_vt322 -> FootClass
+[conv] 0x4dfe00 FootClass::FindClosestForRepair2 -> FootClass
+[conv] 0x4e1130 BulletClass::InitDetonationTimer -> BulletClass
+[conv] 0x4e11f0 BulletClass::CheckProximityDetonation -> BulletClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LocomotionClass          rc=2
+[era] EditClass                rc=2
+[era] ObjectClass              rc=2
+[era] EventClass               rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] FootClass                rc=2
+[era] InfantryClass            rc=2
+[era] BulletClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c2fc0 EditClass::sub_4C2FC0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4cbc40 ObjectClass::WalkPathfindingLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d3590 FootClass::Destruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d5350 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d8560 FootClass::GetCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d85d0 FootClass::UpdateAI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 19)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4df7f0 FootClass::Destru_vt322 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dfe00 FootClass::FindClosestForRepair2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1130 BulletClass::InitDetonationTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e11f0 BulletClass::CheckProximityDetonation -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p05\batch_report.json
