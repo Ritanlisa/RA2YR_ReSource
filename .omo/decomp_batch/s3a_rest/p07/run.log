@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x43da80 BuildingClass::DrawPlacementPreview -> BuildingClass
+[conv] 0x43e7b0 BuildingClass::DrawVisible -> BuildingClass
+[conv] 0x43eeb0 BuildingClass::Cleanup -> BuildingClass
+[conv] 0x441f60 BuildingClass::AfterDestruction -> BuildingClass
+[conv] 0x443860 BuildingClass::SetRallyPoint -> BuildingClass
+[conv] 0x443b90 BuildingClass::AssignTarget_SyncLog -> BuildingClass
+[conv] 0x443c60 BuildingClass::UpdateConstruction -> BuildingClass
+[conv] 0x445880 BuildingClass::Sell -> BuildingClass
+[conv] 0x446ff0 BuildingClass::ToggleRepairMode -> BuildingClass
+[conv] 0x447210 BuildingClass::GetActionOnObject -> BuildingClass
+[conv] 0x447540 BuildingClass::HandleRepairCursor -> BuildingClass
+[conv] 0x447b20 BuildingClass::CalculateTurretAngle -> BuildingClass
+[conv] 0x447f10 BuildingClass::GetFireError -> BuildingClass
+[conv] 0x4496b0 BuildingClass::CheckState1 -> BuildingClass
+[conv] 0x449a50 BuildingClass::setLoopCount -> BuildingClass
+[conv] 0x44abd0 BuildingClass::FireLaser -> BuildingClass
+[conv] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> BuildingClass
+[conv] 0x44d5d0 BuildingClass::CaptureBuilding -> BuildingClass
+[conv] 0x44d760 BuildingClass::PushScriptAction -> BuildingClass
+[conv] 0x44d880 BuildingClass::ClearFactoryBib -> BuildingClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x43da80 BuildingClass::DrawPlacementPreview -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43e7b0 BuildingClass::DrawVisible -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43eeb0 BuildingClass::Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x441f60 BuildingClass::AfterDestruction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x443860 BuildingClass::SetRallyPoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x443b90 BuildingClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x443c60 BuildingClass::UpdateConstruction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x445880 BuildingClass::Sell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x446ff0 BuildingClass::ToggleRepairMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447210 BuildingClass::GetActionOnObject -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447540 BuildingClass::HandleRepairCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447b20 BuildingClass::CalculateTurretAngle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x447f10 BuildingClass::GetFireError -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4496b0 BuildingClass::CheckState1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x449a50 BuildingClass::setLoopCount -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44abd0 BuildingClass::FireLaser -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44d5d0 BuildingClass::CaptureBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44d760 BuildingClass::PushScriptAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x44d880 BuildingClass::ClearFactoryBib -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p07\batch_report.json
