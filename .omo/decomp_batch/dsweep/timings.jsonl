@@ -178,3 +178,4 @@
 {"layer": "D", "part": 177, "n": 20, "seconds": 46.9, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"layer": "D", "part": 178, "n": 20, "seconds": 51.3, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"layer": "D", "part": 179, "n": 20, "seconds": 64.0, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"layer": "D", "part": 180, "n": 20, "seconds": 72.6, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "NO_PSEUDO": 1, "MISMATCH": 1}}

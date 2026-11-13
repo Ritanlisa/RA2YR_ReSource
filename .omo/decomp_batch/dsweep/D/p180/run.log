@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p180\part_00
+=== convert (20 addrs) ===
+[conv] 0x6622c0 RocketLocomotionClass::UpdateBullets -> RocketLocomotionClass
+[conv] 0x571490 CellClass::PropagateTerrainVariant2 -> CellClass
+[conv] 0x6f5190 TechnoClass::DrawHealthBar -> TechnoClass
+[conv] 0x7681e0 ArtConfig::ReadLayout -> ArtConfig
+[conv] 0x417fe0 AircraftClass::Mission_Attack -> AircraftClass
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x517fa0 InfantryClass::ProcessDeployment -> InfantryClass
+[conv] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> InfantryClass
+[conv] 0x6071e0 RenderGadgetClassAnimation -> _addr_60
+[conv] 0x581140 LayerClass::DestroyCliff -> LayerClass
+[conv] 0x61f210 InitDialogCountryIcons -> _addr_61
+[conv] 0x514f70 MovementAI::MainFootClass -> MovementAI
+[conv] 0x4cd600 DamageArea::ApplyScatter -> DamageArea
+[conv] 0x689e90 ScenarioClass::ReadMapINI -> ScenarioClass
+[conv] 0x709a90 TechnoClass::DrawPips -> TechnoClass
+[conv] 0x4f8440 HouseClass::Update_TogglePower -> HouseClass
+[conv] 0x791b10 WOLobby::ChatDlgProc -> WOLobby
+[conv] 0x61c690 Scrollbar::DlgProc -> Scrollbar
+[conv] 0x73d630 UnitClass::Mission_Harvest -> UnitClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RocketLocomotionClass    rc=2
+[era] CellClass                rc=2
+[era] TechnoClass              rc=2
+[era] ArtConfig                rc=2
+[era] AircraftClass            rc=2
+[era] Chat                     rc=2
+[era] InfantryClass            rc=2
+[era] _addr_60                 rc=2
+[era] LayerClass               rc=2
+[era] _addr_61                 rc=0
+[era] MovementAI               rc=2
+[era] DamageArea               rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] WOLobby                  rc=2
+[era] Scrollbar                rc=2
+[era] UnitClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x61f210   MISMATCH         InitDialogCountryIcons
+[ledger] 0x6622c0 RocketLocomotionClass::UpdateBullets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x571490 CellClass::PropagateTerrainVariant2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f5190 TechnoClass::DrawHealthBar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7681e0 ArtConfig::ReadLayout -> COMPILE_FAIL (attempt 1)
+[ledger] 0x417fe0 AircraftClass::Mission_Attack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517fa0 InfantryClass::ProcessDeployment -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6071e0 RenderGadgetClassAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x581140 LayerClass::DestroyCliff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d3d10 0x6d3d10 -> PENDING (attempt 1)
+[ledger] 0x61f210 InitDialogCountryIcons -> NG (attempt 1)
+[ledger] 0x514f70 MovementAI::MainFootClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cd600 DamageArea::ApplyScatter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689e90 ScenarioClass::ReadMapINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x709a90 TechnoClass::DrawPips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f8440 HouseClass::Update_TogglePower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x791b10 WOLobby::ChatDlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x61c690 Scrollbar::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73d630 UnitClass::Mission_Harvest -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "NO_PSEUDO": 1,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p180\batch_report.json
