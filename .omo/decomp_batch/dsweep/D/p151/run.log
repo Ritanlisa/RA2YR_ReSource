@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p151\part_00
+=== convert (20 addrs) ===
+[conv] 0x7483b0 CopySHPFrameToSurface -> _addr_74
+[conv] 0x42be20 WalkLineOfSight -> _addr_42
+[conv] 0x56ef50 CellClass::UpdateVariant3 -> CellClass
+[conv] 0x56f2f0 CellClass::UpdateVariant4 -> CellClass
+[conv] 0x572440 CellClass::UpdateVariant7 -> CellClass
+[conv] 0x5727e0 CellClass::UpdateVariant8 -> CellClass
+[conv] 0x64ae50 NetworkScore::DlgProc -> NetworkScore
+[conv] 0x648350 ObjectClass::RunNetworkGameLoop -> ObjectClass
+[conv] 0x523d00 AnimSequence::Parse -> AnimSequence
+[conv] 0x6eaa90 TeamClass::RecruitMember -> TeamClass
+[conv] 0x5905d0 RandomMap::AllocateArea -> RandomMap
+[conv] 0x5e8ea0 NetworkLobby::SetupPlayers -> NetworkLobby
+[conv] 0x7bea80 AudioStream::ProcessStream -> AudioStream
+[conv] 0x748750 IsoTile::Decode16Bit -> IsoTile
+[conv] 0x748c30 IsoTile::Decode8BitV2 -> IsoTile
+[conv] 0x468090 BulletClass::SetupVoxelTransform -> BulletClass
+[conv] 0x53a300 LightningStorm::Strike2 -> LightningStorm
+[conv] 0x521320 InfantryClass::GetIdleTimer -> InfantryClass
+[conv] 0x7c3eb0 IsoTile::Decode8Bit -> IsoTile
+[conv] 0x4de1d0 ObjectClass::FindPlacementCell -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_74                 rc=0
+[era] _addr_42                 rc=2
+[era] CellClass                rc=2
+[era] NetworkScore             rc=0
+[era] ObjectClass              rc=2
+[era] AnimSequence             rc=2
+[era] TeamClass                rc=2
+[era] RandomMap                rc=2
+[era] NetworkLobby             rc=2
+[era] AudioStream              rc=2
+[era] IsoTile                  rc=0
+[era] BulletClass              rc=2
+[era] LightningStorm           rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x7483b0   MISMATCH         CopySHPFrameToSurface
+[diff] 0x64ae50   MISMATCH         NetworkScore::DlgProc
+[diff] 0x748750   MISMATCH         IsoTile::Decode16Bit
+[diff] 0x748c30   MISMATCH         IsoTile::Decode8BitV2
+[diff] 0x7c3eb0   MISMATCH         IsoTile::Decode8Bit
+[ledger] 0x7483b0 CopySHPFrameToSurface -> NG (attempt 1)
+[ledger] 0x42be20 WalkLineOfSight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56ef50 CellClass::UpdateVariant3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56f2f0 CellClass::UpdateVariant4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x572440 CellClass::UpdateVariant7 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5727e0 CellClass::UpdateVariant8 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64ae50 NetworkScore::DlgProc -> NG (attempt 1)
+[ledger] 0x648350 ObjectClass::RunNetworkGameLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x523d00 AnimSequence::Parse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eaa90 TeamClass::RecruitMember -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5905d0 RandomMap::AllocateArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e8ea0 NetworkLobby::SetupPlayers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bea80 AudioStream::ProcessStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x748750 IsoTile::Decode16Bit -> NG (attempt 1)
+[ledger] 0x748c30 IsoTile::Decode8BitV2 -> NG (attempt 1)
+[ledger] 0x468090 BulletClass::SetupVoxelTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53a300 LightningStorm::Strike2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x521320 InfantryClass::GetIdleTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3eb0 IsoTile::Decode8Bit -> NG (attempt 1)
+[ledger] 0x4de1d0 ObjectClass::FindPlacementCell -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p151\batch_report.json
