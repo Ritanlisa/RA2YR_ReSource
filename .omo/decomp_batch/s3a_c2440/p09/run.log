@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x5239d0 InfantryClass::DTOR -> InfantryClass
+[conv] 0x5251c0 _VectorClass_PBVAnimTypeClass::Destroy_Alt -> _VectorClass_PBVAnimTypeClass
+[conv] 0x5272b0 ObjectClass::LookupCSFString -> ObjectClass
+[conv] 0x52ab80 WarheadTypeClass::parseVerses -> WarheadTypeClass
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+[conv] 0x531680 InitBulkData -> _addr_53
+[conv] 0x535d00 CommandClass::performAction_1 -> CommandClass
+[conv] 0x5381a0 ToggleSellCommandClass::performAction_214 -> ToggleSellCommandClass
+[conv] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> ToggleRepairCommandClass
+[conv] 0x538240 ScatterCommandClass::performAction_219 -> ScatterCommandClass
+[conv] 0x538260 GuardCommandClass::performAction_220 -> GuardCommandClass
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+[conv] 0x5382c0 DeployCommandClass::performAction_223 -> DeployCommandClass
+[conv] 0x539eb0 LightningStorm::Start -> LightningStorm
+[conv] 0x53a140 LightningStorm::Strike -> LightningStorm
+[conv] 0x53ae00 Weapon_Get -> Weapon
+[conv] 0x53af40 ObjectClass::UpdatePsyDom -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] ObjectClass              rc=2
+[era] WarheadTypeClass         rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+[era] _addr_53                 rc=2
+[era] CommandClass             rc=2
+[era] ToggleSellCommandClass   rc=2
+[era] ToggleRepairCommandClass rc=2
+[era] ScatterCommandClass      rc=2
+[era] GuardCommandClass        rc=2
+[era] StopCommandClass         rc=2
+[era] DeployCommandClass       rc=2
+[era] LightningStorm           rc=2
+[era] Weapon                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x5239d0   MISMATCH         InfantryClass::DTOR
+[diff] 0x5251c0   MISMATCH         _VectorClass_PBVAnimTypeClass::Destroy_Alt
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5239d0 InfantryClass::DTOR -> NG (attempt 5)
+[ledger] 0x5251c0 _VectorClass_PBVAnimTypeClass::Destroy_Alt -> NG (attempt 2)
+[ledger] 0x5272b0 ObjectClass::LookupCSFString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52ab80 WarheadTypeClass::parseVerses -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 9)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 9)
+[ledger] 0x531680 InitBulkData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x535d00 CommandClass::performAction_1 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5381a0 ToggleSellCommandClass::performAction_214 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538240 ScatterCommandClass::performAction_219 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538260 GuardCommandClass::performAction_220 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538280 StopCommandClass::performAction_221 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5382c0 DeployCommandClass::performAction_223 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x539eb0 LightningStorm::Start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53a140 LightningStorm::Strike -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53ae00 Weapon_Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53af40 ObjectClass::UpdatePsyDom -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p09\batch_report.json

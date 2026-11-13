@@ -71662,7 +71662,7 @@
   "this_as_id": false
  },
  "0x522d50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71779,7 +71779,7 @@
   "this_as_id": false
  },
  "0x5233d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71976,15 +71976,15 @@
   "this_as_id": false
  },
  "0x5239d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+5 mov dl, 1",
   "name": "InfantryClass::DTOR",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "InfantryTypeClass::DTOR",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x523b10": {
@@ -72356,15 +72356,15 @@
   "this_as_id": false
  },
  "0x5251c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "_VectorClass_PBVAnimTypeClass::Destroy_Alt",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "_VectorClass_PBVAnimTypeClass::Destroy_Alt",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5251f0": {
@@ -72672,14 +72672,14 @@
   "this_as_id": false
  },
  "0x5272b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::LookupCSFString",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LookupCSFString",
-  "rule_violations": 12,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -73230,7 +73230,7 @@
   "this_as_id": false
  },
  "0x52ab80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73393,7 +73393,7 @@
   "this_as_id": false
  },
  "0x52b170": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73429,7 +73429,7 @@
   "this_as_id": false
  },
  "0x52b390": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73990,7 +73990,7 @@
   "this_as_id": false
  },
  "0x531680": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InitBulkData",
@@ -74376,7 +74376,7 @@
   "this_as_id": false
  },
  "0x535d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77441,7 +77441,7 @@
   "this_as_id": false
  },
  "0x5381a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77453,7 +77453,7 @@
   "this_as_id": false
  },
  "0x5381c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77501,7 +77501,7 @@
   "this_as_id": false
  },
  "0x538240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77513,7 +77513,7 @@
   "this_as_id": false
  },
  "0x538260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77525,7 +77525,7 @@
   "this_as_id": false
  },
  "0x538280": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77549,7 +77549,7 @@
   "this_as_id": false
  },
  "0x5382c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78467,7 +78467,7 @@
   "this_as_id": false
  },
  "0x539eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -78550,14 +78550,14 @@
   "this_as_id": false
  },
  "0x53a140": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "LightningStorm::Strike",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LightningStorm::Strike",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -78626,7 +78626,7 @@
   "status": "NG"
  },
  "0x53ae00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Weapon_Get",
@@ -78649,7 +78649,7 @@
   "this_as_id": false
  },
  "0x53af40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
