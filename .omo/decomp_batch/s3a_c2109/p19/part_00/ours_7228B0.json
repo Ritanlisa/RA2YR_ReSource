@@ -1,0 +1,69 @@
+{
+ "symbol": "?ProcessEvent@AudioClass@@QAEHXZ",
+ "sym_key": "AudioClass::ProcessEvent",
+ "size": 383,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53568bf133db33c9578b86f4000000899ef000000039187c0e8b500841895c8afc8b103bca7ef28bce8918e80000000048780e8b8ef800000048c64408010079f2b9f8010000e800000000b9f8010000e8000000008bf83bfb0f8414010000558bcfe8000000003b86980000000f85e40000008bcfe80000000084c00f84d50000008b96f00000008b86fc0000008d4f38894c24108b39893cd08b96f00000008b86fc000000895cd0048b96f00000008b86fc0000008baef40000008d04d0428996f00000008b55008b780442897c24148bfad1ef3b550489442418736a83fa0176468b4d088b1cb9d94304d9442414ded9dfe0f6c4017422891c918bd7d1ef83fa0176168b4d088b1cb9d94304d9442414ded9dfe0f6c40175de8b4c24108b442418894c241033db8b7d088904978b7d008b550c473bc2897d00760389450c3b45107303894510e8000000008b96f8000000c6041001b9f8010000e8000000008bf83bfb0f85f5feffff5d5f5e5b83c40cc38bc75f5e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?FindByCellHash@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FindByCellHash"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?IsTiberiumSiloEligible@BuildingClass@@QAE_NXZ",
+   "sym_key": "BuildingClass::IsTiberiumSiloEligible"
+  },
+  {
+   "off": 332,
+   "type": "REL32",
+   "sym": "?PosToIndex@Cell@@QAEHXZ",
+   "sym_key": "Cell::PosToIndex"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

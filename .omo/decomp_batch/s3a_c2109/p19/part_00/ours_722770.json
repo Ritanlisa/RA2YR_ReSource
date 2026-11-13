@@ -1,0 +1,87 @@
+{
+ "symbol": "?RebuildOccupancyTracking@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::RebuildOccupancyTracking",
+ "size": 310,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933db8b87ec0000003bc3743b33c9bafcffffff8b700883c20441891c168b303bce76f089188bb7ec0000003bf374128b460850e80000000056e80000000083c408899fec0000008b87fc0000003bc3740f50e80000000083c404899ffc0000008b87f80000003bc3740f50e80000000083c404899ff80000008bcf899fe8000000e8000000008d0cc50000000051e80000000083c4043bc3750233c08bcf8987fc000000e80000000050e8000000006a148987f8000000e8000000008bf083c4083bf374598bcfe8000000008d148504000000895e0c52c74610ffffffff891e894604e8000000008b4e0489460883c40433c03bcb7c29b9fcffffff8b560883c10440891c0a8b56043bc276ef8bcf89b7ec000000e8000000005f5e5bc333f68bcf89b7ec000000e8000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?ComputeAllocationSize@Object@@QAEHXZ",
+   "sym_key": "Object::ComputeAllocationSize"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 283,
+   "type": "REL32",
+   "sym": "?ProcessEvent@AudioClass@@QAEHXZ",
+   "sym_key": "AudioClass::ProcessEvent"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?ProcessEvent@AudioClass@@QAEHXZ",
+   "sym_key": "AudioClass::ProcessEvent"
+  }
+ ]
+}
