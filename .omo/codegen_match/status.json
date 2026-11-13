@@ -52830,7 +52830,7 @@
   "status": "NG"
  },
  "0x4deae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53048,7 +53048,7 @@
   "this_as_id": false
  },
  "0x4df7f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53108,7 +53108,7 @@
   "this_as_id": false
  },
  "0x4dfe00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53573,15 +53573,15 @@
   "this_as_id": false
  },
  "0x4e0b10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 je 0x4e0c07",
   "name": "_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e0c30": {
@@ -53826,7 +53826,7 @@
   "this_as_id": false
  },
  "0x4e1130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -53838,7 +53838,7 @@
   "this_as_id": false
  },
  "0x4e11f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -53988,7 +53988,7 @@
   "this_as_id": false
  },
  "0x4e14c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54384,7 +54384,7 @@
   "this_as_id": false
  },
  "0x4e1fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GameOptionsDlgProc",
@@ -63041,7 +63041,7 @@
   "this_as_id": false
  },
  "0x4f1aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63423,7 +63423,7 @@
   "this_as_id": false
  },
  "0x4f2f10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63481,7 +63481,7 @@
   "this_as_id": false
  },
  "0x4f3460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63705,7 +63705,7 @@
   "this_as_id": false
  },
  "0x4f3c40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64018,7 +64018,7 @@
   "this_as_id": false
  },
  "0x4f42f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -64444,14 +64444,14 @@
   "this_as_id": false
  },
  "0x4f54a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::Construct",
-  "rule_violations": 15,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -64671,7 +64671,7 @@
   "this_as_id": false
  },
  "0x4f7140": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -64695,7 +64695,7 @@
   "this_as_id": false
  },
  "0x4f7870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65040,7 +65040,7 @@
   "this_as_id": false
  },
  "0x4fb840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65107,14 +65107,14 @@
   "this_as_id": false
  },
  "0x4fbf60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "HouseClass::DroppedFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::DroppedFlag",
-  "rule_violations": 2,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -65258,7 +65258,7 @@
   "status": "NG"
  },
  "0x4fce80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -65270,7 +65270,7 @@
   "this_as_id": false
  },
  "0x4fd060": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

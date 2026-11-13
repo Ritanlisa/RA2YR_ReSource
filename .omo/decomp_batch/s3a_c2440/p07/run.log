@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+[conv] 0x4df7f0 FootClass::Destru_vt322 -> FootClass
+[conv] 0x4dfe00 FootClass::FindClosestForRepair2 -> FootClass
+[conv] 0x4e0b10 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e1130 BulletClass::InitDetonationTimer -> BulletClass
+[conv] 0x4e11f0 BulletClass::CheckProximityDetonation -> BulletClass
+[conv] 0x4e14c0 GadgetClass::DestroyChain -> GadgetClass
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x4f42f0 GScreenClass::MarkForRedraw -> GScreenClass
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x4f7870 HouseClass::CanBuild -> HouseClass
+[conv] 0x4fb840 BuildingPlacement::Activate -> BuildingPlacement
+[conv] 0x4fbf60 HouseClass::DroppedFlag -> HouseClass
+[conv] 0x4fce80 BuildingClass::Capture -> BuildingClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] BulletClass              rc=2
+[era] GadgetClass              rc=2
+[era] _addr_4E                 rc=2
+[era] OptionQueue              rc=2
+[era] GraphicMenuAnimItem      rc=2
+[era] GraphicMenuImageItem     rc=2
+[era] ObjectClass              rc=2
+[era] GScreenClass             rc=2
+[era] HouseClass               rc=2
+[era] BuildingPlacement        rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e0b10   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4df7f0 FootClass::Destru_vt322 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4dfe00 FootClass::FindClosestForRepair2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e0b10 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4e1130 BulletClass::InitDetonationTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e11f0 BulletClass::CheckProximityDetonation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e14c0 GadgetClass::DestroyChain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f42f0 GScreenClass::MarkForRedraw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f7870 HouseClass::CanBuild -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4fbf60 HouseClass::DroppedFlag -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fce80 BuildingClass::Capture -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p07\batch_report.json
