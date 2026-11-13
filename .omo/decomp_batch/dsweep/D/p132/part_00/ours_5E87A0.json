@@ -1,0 +1,435 @@
+{
+ "symbol": "?LoadNetworkShareStrings@@YAPAGXZ",
+ "sym_key": "Unnamed::LoadNetworkShareStrings",
+ "size": 686,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c00f85ee00000033c033c9a000000000668b0d0000000068ee0f00005033d2e80000000033c968ef0f00008a0d0000000033d25133c9668b0d00000000a300000000e80000000033d268f00f00008a150000000033c9668b0d000000005233d2a300000000e800000000a30000000033c0a00000000033c9668b0d0000000068f10f00005033d2e80000000033c968f20f00008a0d0000000033d25133c9668b0d00000000a300000000e80000000033d268f30f00008a1500000000b9000000005233d2a300000000e800000000a30000000033c0a00000000033c9668b0d0000000068f40f00005033d2e800000000a300000000a1000000005685c075356885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f68b0d000000008935000000005156e80000000083c408a10000000085c075356885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f68b15000000008935000000005256e80000000083c408a10000000085c075346885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f6a1000000008935000000005056e80000000083c408a10000000085c075356885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f68b0d000000008935000000005156e80000000083c408a10000000085c075356885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f68b15000000008935000000005256e80000000083c408a10000000085c075346885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f6a1000000008935000000005056e80000000083c408a10000000085c075356885000000e8000000008bf083c40485f6740a8d4e50e800000000eb0233f68b0d000000008935000000005156e80000000083c4085ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC117C@@3IA",
+   "sym_key": "DataGlobal_AC117C"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_Open@@3GA",
+   "sym_key": "g_Str_GUI_Open"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_Closed@@3GA",
+   "sym_key": "g_Str_GUI_Closed"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC117C@@3IA",
+   "sym_key": "DataGlobal_AC117C"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_AIEasy@@3GA",
+   "sym_key": "g_Str_GUI_AIEasy"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1180@@3IA",
+   "sym_key": "DataGlobal_AC1180"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1184@@3IA",
+   "sym_key": "DataGlobal_AC1184"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_AINormal@@3GA",
+   "sym_key": "g_Str_GUI_AINormal"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_AIHard@@3GA",
+   "sym_key": "g_Str_GUI_AIHard"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1188@@3IA",
+   "sym_key": "DataGlobal_AC1188"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831C40@@3PADA",
+   "sym_key": "DataGlobal_831C40"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC118C@@3IA",
+   "sym_key": "DataGlobal_AC118C"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1190@@3IA",
+   "sym_key": "DataGlobal_AC1190"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?g_Str_File_netshare_cpp@@3EA",
+   "sym_key": "g_Str_File_netshare_cpp"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_Str_GUI_OpenObserver@@3GA",
+   "sym_key": "g_Str_GUI_OpenObserver"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1194@@3IA",
+   "sym_key": "DataGlobal_AC1194"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC117C@@3IA",
+   "sym_key": "DataGlobal_AC117C"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 356,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1180@@3IA",
+   "sym_key": "DataGlobal_AC1180"
+  },
+  {
+   "off": 362,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 377,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 417,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1184@@3IA",
+   "sym_key": "DataGlobal_AC1184"
+  },
+  {
+   "off": 423,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 452,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 469,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 479,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1188@@3IA",
+   "sym_key": "DataGlobal_AC1188"
+  },
+  {
+   "off": 485,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 492,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 514,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 531,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 541,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC118C@@3IA",
+   "sym_key": "DataGlobal_AC118C"
+  },
+  {
+   "off": 547,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 554,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 562,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 576,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 593,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1190@@3IA",
+   "sym_key": "DataGlobal_AC1190"
+  },
+  {
+   "off": 608,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 615,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 623,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 637,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 654,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 664,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1194@@3IA",
+   "sym_key": "DataGlobal_AC1194"
+  },
+  {
+   "off": 670,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 677,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

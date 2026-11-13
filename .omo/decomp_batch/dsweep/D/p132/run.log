@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p132\part_00
+=== convert (20 addrs) ===
+[conv] 0x65b580 Warhead::ProcessDamageArea -> Warhead
+[conv] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> SyncDelayClass
+[conv] 0x5e87a0 LoadNetworkShareStrings -> _addr_5E
+[conv] 0x546da0 LoadMapClassIsometricTiles -> _addr_54
+[conv] 0x7da725 ___crtCompareStringA -> _addr_7D
+[conv] 0x7ac220 CChatEventSink::DispatchStub_37 -> CChatEventSink
+[conv] 0x61d6d0 NetworkLobbyPaintProc -> _addr_61
+[conv] 0x6ff960 TechnoClass::DrawTargetLine -> TechnoClass
+[conv] 0x759940 MovieClass::RenderLoop -> MovieClass
+[conv] 0x70af50 TechnoClass::ScanForEnemies -> TechnoClass
+[conv] 0x5a6920 PlaceRandomNeutralUnits -> _addr_5A
+[conv] 0x771c70 WeaponTypeClass::Constructor -> WeaponTypeClass
+[conv] 0x4e3ce0 SetupSkirmishDialogPlayerSlot -> _addr_4E
+[conv] 0x549e90 TerrainClass::InitTheatre -> TerrainClass
+[conv] 0x4a2370 ObjectClass::DrawSidebarCreditsTimer -> ObjectClass
+[conv] 0x451400 UpdateBuildingActiveAnim -> _addr_45
+[conv] 0x59ad10 RandomMap::ArrangeBuildingGrid -> RandomMap
+[conv] 0x75e950 WaveClass::Constructor -> WaveClass
+[conv] 0x438720 TechnoClass::ApplyDamageEffects -> TechnoClass
+[conv] 0x629fd0 ParasiteClass::TickDamage -> ParasiteClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Warhead                  rc=2
+[era] SyncDelayClass           rc=2
+[era] _addr_5E                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_7D                 rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_61                 rc=2
+[era] TechnoClass              rc=2
+[era] MovieClass               rc=2
+[era] _addr_5A                 rc=0
+[era] WeaponTypeClass          rc=2
+[era] _addr_4E                 rc=0
+[era] TerrainClass             rc=0
+[era] ObjectClass              rc=0
+[era] _addr_45                 rc=2
+[era] RandomMap                rc=2
+[era] WaveClass                rc=2
+[era] ParasiteClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5e87a0   MISMATCH         LoadNetworkShareStrings
+[diff] 0x546da0   MISMATCH         LoadMapClassIsometricTiles
+[diff] 0x70af50   MISMATCH         TechnoClass::ScanForEnemies
+[diff] 0x5a6920   MISMATCH         PlaceRandomNeutralUnits
+[diff] 0x4e3ce0   MISMATCH         SetupSkirmishDialogPlayerSlot
+[diff] 0x549e90   MISMATCH         TerrainClass::InitTheatre
+[diff] 0x4a2370   MISMATCH         ObjectClass::DrawSidebarCreditsTimer
+[ledger] 0x65b580 Warhead::ProcessDamageArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e87a0 LoadNetworkShareStrings -> NG (attempt 1)
+[ledger] 0x546da0 LoadMapClassIsometricTiles -> NG (attempt 1)
+[ledger] 0x7da725 ___crtCompareStringA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ac220 CChatEventSink::DispatchStub_37 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x61d6d0 NetworkLobbyPaintProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ff960 TechnoClass::DrawTargetLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x759940 MovieClass::RenderLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70af50 TechnoClass::ScanForEnemies -> NG (attempt 1)
+[ledger] 0x5a6920 PlaceRandomNeutralUnits -> NG (attempt 1)
+[ledger] 0x771c70 WeaponTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e3ce0 SetupSkirmishDialogPlayerSlot -> NG (attempt 1)
+[ledger] 0x549e90 TerrainClass::InitTheatre -> NG (attempt 1)
+[ledger] 0x4a2370 ObjectClass::DrawSidebarCreditsTimer -> NG (attempt 1)
+[ledger] 0x451400 UpdateBuildingActiveAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59ad10 RandomMap::ArrangeBuildingGrid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75e950 WaveClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438720 TechnoClass::ApplyDamageEffects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x629fd0 ParasiteClass::TickDamage -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "frame_sched": 4,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p132\batch_report.json

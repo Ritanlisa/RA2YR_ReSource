@@ -1,0 +1,99 @@
+{
+ "symbol": "?ScanForEnemies@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ScanForEnemies",
+ "size": 638,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b44240853568bf1578b8e9c03000033c881e1ff00000033c184c00f84530200008b8e1c02000033c08b513480e1008a82a60100000bc184c00f85350200008b0656ff90840000008b88e80500008b5c241485c9750a85db8bc30f84140200008b8e9c0000008b86a4000000894c240c8b0d4002000033d2f7b1bc1600008b8ee80300008d0480d1e03bc17e05c6442414008b1655568986e8030000ff9284000000db86e803000083ec08dc0d00000000dc0500000000da88e8050000dd1c24e8000000008b7c241c33c725ff00000033f88b865401000050897c2420e80000000083c40c84c075178b8e5401000051e80000000083c40484c00f84900000008b1656ff92840000008be88b865401000050e80000000083c40484c0740a8a85a102000084c075278b8e5401000051e80000000083c40484c074558a85a102000084c0750a8a85b302000084c074418b0d40020000dd8180060000dc1d00000000dfe0f6c4407528db44241483ec08dc8980060000dd1c24e8000000008bf88b44242033f883c40881e7ff00000033f885db5d74028bfb8a865002000084c00f85810000008b869c0000008b96a40000008986540200008b86a000000085ffc686500200000189be6002000089865802000089965c0200000f84960000008a44241484c074088b44241485c0755b8b869c0000008b4c24148b5424146a006a01894424148b861c0200006a005152508d4c24245751b9f8010000e8000000005f5e5b83c40cc38b4c241480e3008bd181e2ff0000000bda84c98bc3743785ff74338b44241485c0742b8b8e9c0000008b5424146a00894c24108b4c24186a016a005251508d5424245752b9f8010000e8000000005f5e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHH@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHH@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHH@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHH@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 537,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  },
+  {
+   "off": 622,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 627,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  }
+ ]
+}

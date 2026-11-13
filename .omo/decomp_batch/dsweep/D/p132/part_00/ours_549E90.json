@@ -1,0 +1,153 @@
+{
+ "symbol": "?InitTheatre@TerrainClass@@QAEHXZ",
+ "sym_key": "TerrainClass::InitTheatre",
+ "size": 755,
+ "link_base": 0,
+ "bytes_hex": "83ec3c5355568bf15733db8b86b40200008bbea400000085c0897c24347e218b86a80200008b049885c0740950e80000000083c4048b86b4020000433bd87cdf8daea402000055896c243cff96b00200008b4704c7442420000000000faf0785c00f8e840200008b5c24388d77108974242889742424833e000f840f0200006a34e8000000008b4d108b3e894424208b450883c4043bc872228a4d0d84c9750485c0752a8b4d1485c97e238b550003c86a005155ff520884c074138b45108b55048d4801894d108b4c241c890c828a472d8a4f2b8a572c884c241488542415884424168a472f8a4f2e8a5730884424198d442414884c2418683333b33f508d4c243488542422e8000000008b0d000000008d54241851528d4c2438e8000000008b74241cc7442428000000008b6c2428c744241000000000d9442410e80000000050e8000000008944242083c404db44241c8d4c242c8d542414dc0d00000000d95c24108b4424105051528d4c2448e800000000668b1033c98a48028944241c8bc18a0d00000000d3e8668b0d0000000080e300d94424100bd833c08ac68bfb66d3f86633c98ac866894c241c8b0d000000008b44241cd3e08a0d00000000d2ea33c98aca8aec8bd18b0d00000000d3e28b0d00000000d3e7518d4c241cd91c240bd70bd08d44243450518d4c244c668916e800000000668b0d000000008bf833c083c604668b17458ac666d3f88b0d00000000660fb6c0d3e08a0d000000008944241c8a4702d2e88b0d000000008b7c241c660fb6c0d3e00bf88a0d00000000896c2444d2ea8b0d00000000c744244800000000df6c2444660fb6d2d9542410d3e20bfa66897efee80000000050e80000000083c40483f80c0f8eb8feffff8b7c24348b7424248b6c2438eb3f8b4d088b45103bc172228a450d84c0750485c9752a8b451485c07e238b550003c16a005055ff520884c074138b45108b55048d4801894d10c70482000000008b4f048b4424200faf0f4083c6043bc189442420897424240f828bfdffff5f5e5d5b83c43cc3",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?ScaleRGB@Color@@QAEPAV1@PAXM@Z",
+   "sym_key": "Color::ScaleRGB"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?flt_7ECBD4@@3MA",
+   "sym_key": "flt_7ECBD4"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?ScaleRGB@Color@@QAEPAV1@PAXM@Z",
+   "sym_key": "Color::ScaleRGB"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "__real@8@3ffbaaaaaaaaaaaaa800",
+   "sym_key": "_real@8@3ffbaaaaaaaaaaaaa800"
+  },
+  {
+   "off": 368,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 388,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 431,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 459,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 467,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 499,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 506,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 528,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 540,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 555,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 573,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 585,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 618,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 624,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "symbol": "?SetupSkirmishDialogPlayerSlot@@YIPAPAXPAXH@Z",
+ "sym_key": "Unnamed::SetupSkirmishDialogPlayerSlot",
+ "size": 594,
+ "link_base": 0,
+ "bytes_hex": "83ec0ca100000000538bd9894424088b0d00000000b8feffffff563bc85775048944241085d274508d42ff83f8057731ff248500000000be10050000eb3fbe13050000eb38be1e050000eb31be14050000eb2abe1f050000eb23be20050000eb1c83ea07f7da1bd281e2defaffff81c2210500008bf2eb05bea1060000555653e8000000006a005089442420e80000000085c06a006a00684601000056530f94442427e8000000008be833ff85ed7e3d575768500100005653e8000000003b442414741a473bfd7d246a005768500100005653e8000000003b44241475e66a0057684e0100005653e8000000008a4424135d84c0750c8b4c24146a0551e80000000081fe1f0500007f58744a81c6f0faffff83fe0e775e33d28a9600000000ff249500000000be01000000b8db060000eb6abe02000000b8dc060000eb5ebe03000000b8dd060000eb52be04000000b8de060000eb46be05000000b8df060000eb3a81ee2005000074284e741981ee80010000740883ceff83c8ffeb1f33f6b8da060000eb16be07000000b8e1060000eb0abe06000000b8e00600005053e80000000085f68bf8744e8d46ff83f8057731ff248500000000be10050000eb3dbe13050000eb36be1e050000eb2fbe14050000eb28be1f050000eb21be20050000eb1a83ee07f7de1bf681e6defaffff81c621050000eb05bea10600006a006a0068470100005653e8000000006a005068500100005653e80000000083f8fd7c0583f8097e16a10000000085c074088b0850ff5128eb05b8feffffff8bc8e8000000008bd08bcfe8000000005f5e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B3BC@@3IA",
+   "sym_key": "DataGlobal_A8B3BC"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B3C0@@3IA",
+   "sym_key": "DataGlobal_A8B3C0"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "$L1951",
+   "sym_key": "$L1951"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "$L1952",
+   "sym_key": "$L1952"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "$L1953",
+   "sym_key": "$L1953"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 436,
+   "type": "DIR32",
+   "sym": "$L1954",
+   "sym_key": "$L1954"
+  },
+  {
+   "off": 520,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 535,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 550,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 574,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  },
+  {
+   "off": 583,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXHH@Z",
+   "sym_key": "CacheDialogInvalidate"
+  }
+ ]
+}
