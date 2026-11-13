@@ -1,0 +1,183 @@
+{
+ "symbol": "?FindFirstFirestorm@MapClass@@QAGPAHPAH00H@Z",
+ "sym_key": "MapClass::FindFirstFirestorm",
+ "size": 1401,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec3c53568b7510578b7d148b068b1f894424203bc3895c241875188b4e048b57043bca750e8b56088b4f083bd10f84190500009981e2ff00000003c28bc88bc39981e2ff00000003c28bd8c1f908c1fb08663bcb895c24100f852c0100008b460480e1009981e2ff00000003c2c1f80825ff000000998bf08bfa0bf10bfbb9100000008bc68bd789742428e800000000894424108b4514568b40049981e2ff00000003c28bd8c1fb0881e3ffff0000e80000000083c40433c93bc30f9cc14983e1fe41894c24188bc68bcf25ffff000081e1ffff0000998954243433d23bc1751339542434750d0fbf5424103bd30f84580400000fbf4424100fbf4c2428c1e00903c13d00000400730d8b15000000008b048285c0750ba1000000008935000000008bc8e80000000085c074258b88200500008a91c016000084d274158b801c0200008a88fa01000084c974053b4518752e8b4424108b4c241803c181e600ffffff8944241025ff0000000fbfc0990bc60bd78bf08bfa89742428e947ffffff0fbf4c2428e9390100008b7f048b76048bc79981e2ff00000003c2c1f808894424148bd88bc69981e2ff00000003c2c1f808663bc30f85370100008b7c241025ff000000998bf080e1000bf10bd7b9100000008bc6897424288954242ce8000000005689442414e8000000000fbfd633c93bd00f9cc1498bd683e1fe81e2ffff0000415352894c24248bfee8000000008b4c243683c40c3bc10f842d030000eb048b74242856e8000000000fbfcfc1e00903c183c4043d00000400730d8b15000000008b048285c0750ba1000000008935000000008bc8e80000000085c074258b88200500008a91c016000084d274158b801c0200008a88fa01000084c974053b4518753b8b5424148b74241833d303fe81e2ff0000008bc733da25ffff0000535066897c2430e8000000008b4c243283c4083bc10f8566ffffffe98c0200000fbfcf8b450cc1e10881c180000000c740080000000089080fbf4c2410c1e10881c1800000008948045f5e5b8be55dc214008b5424208b4c241833c03bd10f9cc04833db2500feffff05000100003bf70f9cc34b8944242881e300feffff81c30001000085c0895c24248bc27c1a25ff0000807907480d00ffffff408bca2bc881c100010000eb1225ff0000807907480d00ffffff408bca2bc885db8bde7c1b81e3ff00008079084b81cb00ffffff438bc62bc30500010000eb1481e3ff00008079084b81cb00ffffff438bc62bc38b5c2418894c24102bda2bca895c24202bfedb442420894c2420894424142bc68b5c2428dd542440db442420897c2420def1dd542430db44242089442420db442420d8f1dd5c2418dd0500000000d8f1dd5c2438ddd8dc1500000000dfe0f6c4417515dd442418dc1d00000000dfe0f6c4410f8443010000dc1d00000000dfe0f6c4010f8534010000dd442418dc1d00000000dfe0f6c4010f851f0100008b4424148bf89981e2ff00000003c28bf08b44241099c1fe0881e2ff0000008bce03c2c1f808c1e10903c878153b0d00000000730d8b15000000008b0c8a85c9751f33c38b0d0000000025ff00000033d833f381e6ff00000033de891d00000000e80000000085c074258b88200500008a91c016000084d274158b801c0200008a88fa01000084c974053b4518756edd442430dc542418dfe0f6c401752d8b55108b4424248b4c24148b720403c82bfe894c241403f8897c2420db442420dc4c2438dd5c2418e9edfeffff8b4424108b7424288b4d1003c6894424102b01ddd889442420db442420dd0500000000dc742440dec9dd542430e9bbfeffff8b450c8b5424108b4c24148910894804c74008000000005f5e5b8be55dc21400ddd88b450c8b15000000005f5e89108b0d000000008948048b15000000008950085b8be55dc21400",
+ "relocs": [
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "__allshr",
+   "sym_key": "_allshr"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?SWORD1@@YAHHZZ",
+   "sym_key": "SWORD1"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "__allshr",
+   "sym_key": "_allshr"
+  },
+  {
+   "off": 495,
+   "type": "REL32",
+   "sym": "?SWORD2@@YAHHZZ",
+   "sym_key": "SWORD2"
+  },
+  {
+   "off": 531,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 558,
+   "type": "REL32",
+   "sym": "?SWORD1@@YAHHZZ",
+   "sym_key": "SWORD1"
+  },
+  {
+   "off": 582,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 594,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 600,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 607,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 687,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 992,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 1006,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 1023,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 1040,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 1061,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 1123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F928@@3IA",
+   "sym_key": "DataGlobal_87F928"
+  },
+  {
+   "off": 1131,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 1146,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 1169,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 1174,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 1310,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 1368,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC10@@3IA",
+   "sym_key": "DataGlobal_ABDC10"
+  },
+  {
+   "off": 1378,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC14@@3IA",
+   "sym_key": "DataGlobal_ABDC14"
+  },
+  {
+   "off": 1387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC18@@3IA",
+   "sym_key": "DataGlobal_ABDC18"
+  }
+ ]
+}

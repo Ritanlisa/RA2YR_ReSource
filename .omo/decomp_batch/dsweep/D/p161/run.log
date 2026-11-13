@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p161\part_00
+=== convert (20 addrs) ===
+[conv] 0x5678e0 MapClass::RevealArea1 -> MapClass
+[conv] 0x6f1090 TeamTypeClass::LoadFromINI -> TeamTypeClass
+[conv] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> BuildingPlacement
+[conv] 0x642130 Palette::Preview_Generate -> Palette
+[conv] 0x6b2a70 ObjectClass::InitSlaveManagerGrid -> ObjectClass
+[conv] 0x5f5390 TechnoClass::CreateDestructionEffect -> TechnoClass
+[conv] 0x702d40 TechnoClass::RegisterKill -> TechnoClass
+[conv] 0x419c80 AircraftClass::Mission_Transport -> AircraftClass
+[conv] 0x5880a0 MapClass::FindFirstFirestorm -> MapClass
+[conv] 0x57a430 RecursiveCellClassNeighbourUpdate -> _addr_57
+[conv] 0x580bc0 ObjectClass::FindMapSpawnCell -> ObjectClass
+[conv] 0x72f540 RenderCreditsScreen -> _addr_72
+[conv] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> DropPodLocomotionClass
+[conv] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> ObjectClass
+[conv] 0x59b200 RandomMap::PlaceTerrainFeatures -> RandomMap
+[conv] 0x6d6d10 TacticalClass::DrawBuildingsInView -> TacticalClass
+[conv] 0x6abd30 SidebarClass::LoadResources -> SidebarClass
+[conv] 0x644f50 ParticleTypeClass::LoadFromINI -> ParticleTypeClass
+[conv] 0x7983e0 Setup2DlgProcMultiplayer -> _addr_79
+[conv] 0x5b67f0 ApplyGameOptions -> _addr_5B
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=2
+[era] TeamTypeClass            rc=2
+[era] BuildingPlacement        rc=2
+[era] Palette                  rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] AircraftClass            rc=2
+[era] _addr_57                 rc=2
+[era] _addr_72                 rc=0
+[era] DropPodLocomotionClass   rc=2
+[era] RandomMap                rc=2
+[era] TacticalClass            rc=2
+[era] SidebarClass             rc=2
+[era] ParticleTypeClass        rc=2
+[era] _addr_79                 rc=2
+[era] _addr_5B                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5880a0   MISMATCH         MapClass::FindFirstFirestorm
+[diff] 0x6b2a70   MISMATCH         ObjectClass::InitSlaveManagerGrid
+[diff] 0x580bc0   MISMATCH         ObjectClass::FindMapSpawnCell
+[diff] 0x72f540   MISMATCH         RenderCreditsScreen
+[ledger] 0x5678e0 MapClass::RevealArea1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1090 TeamTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x642130 Palette::Preview_Generate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b2a70 ObjectClass::InitSlaveManagerGrid -> NG (attempt 1)
+[ledger] 0x5f5390 TechnoClass::CreateDestructionEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x702d40 TechnoClass::RegisterKill -> COMPILE_FAIL (attempt 1)
+[ledger] 0x419c80 AircraftClass::Mission_Transport -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5880a0 MapClass::FindFirstFirestorm -> NG (attempt 1)
+[ledger] 0x57a430 RecursiveCellClassNeighbourUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x580bc0 ObjectClass::FindMapSpawnCell -> NG (attempt 1)
+[ledger] 0x72f540 RenderCreditsScreen -> NG (attempt 1)
+[ledger] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59b200 RandomMap::PlaceTerrainFeatures -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d6d10 TacticalClass::DrawBuildingsInView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6abd30 SidebarClass::LoadResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x644f50 ParticleTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7983e0 Setup2DlgProcMultiplayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b67f0 ApplyGameOptions -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p161\batch_report.json

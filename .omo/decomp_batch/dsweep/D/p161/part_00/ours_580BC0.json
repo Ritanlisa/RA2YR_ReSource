@@ -1,0 +1,195 @@
+{
+ "symbol": "?FindMapSpawnCell@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::FindMapSpawnCell",
+ "size": 1283,
+ "link_base": 0,
+ "bytes_hex": "81ecd40000008b8424d80000005355568be98d5424448b08575250896c242cff51488bf08b4c2444c7442430200000008b069981e2ff00000003c2c1f80833c125ff00000033c88b46049981e2ff00000003c233d2c1f80833c18954241425ff0000000fbff933c8897c24208bc1c1f8100fbff08b85f80000008bde0385f400000089742428895c243883f8207f04894424308b6c243033c085ed894424180f8e2a04000033c933ff894c2434894c242c3bf80f8f8e0100008b4c24202bd88b4424508dac948400000033d881e3ff00000033c38d1c0feb048b4424508b5424208bcb33c86a018d341781e1ff0000008d54241433c18b4c2428528944245889442418e80000000084c074620fbf442412c1e00805800000008d4c243c8944247c510fbf442414c1e0080580000000b9f8010000894424408944247ce8000000008d5424788bc852e8000000008d44243c50e80000000084c074138b4c24108b442414894d0083c5044089442414837c2414180f84f20200008b5424588b4c242881e6ff00000080e2000bf26a018bc68b74241c8d140e8b4c242833d081e2ff00000033c28944245c894424148d44241450e80000000084c074630fbf4c24120fbf442410c1e108c1e00881c1800000008d54244c0580000000894c246452b9f80100008944245089442464e8000000008d4c2460518bc8e8000000008d54244c52e80000000084c074138b4c24148b44241041894500894c241483c5048b44241483f8180f844002000047433bfe0f8ea4feffff8b7c24348b4c242c8b7424288bd08b4424188d5f018d68ff3bdd896c24440f8fe20100008b4424208b7c245c03c88d94948400000033cf8954241c81e1ff0000008d2c3333f9eb048b7424288bcd8d54241033cf6a0181e1ff0000005233f98b4c242c03f3897c2464897c2418e80000000084c074690fbf442410c1e00805800000008d4c244089442440894424680fbf442412c1e008058000000051b9f801000089442470e8000000008d5424688bc852e8000000008d44244050e80000000084c0741a8b44241c8b4c24108b54241489084283c004895424148944241c837c2414180f844c0100008b5424548b4424188b4c242081e6ff00000080e20003c18b4c24240bf233c68d54241025ff0000006a0133f0528974245c89742418e80000000084c00f84b10000000fbf4424120fbf4c2410c1e0080580000000894424749981e2ff000000c1e10803c281c1800000008bf08bc199c1fe0881e2ff000000894c2448894c247003c28bcec1f808c1e10903c878190fbe15380300003bca7d0e0fbe15340300008b0c8a85c9751a56508d8c2488000000e8000000008b00b958160000a37c1600008d54247052e8000000008d44244850e80000000084c0741a8b44241c8b4c2410890883c0048944241c8b4424144089442414837c24141874528b44244443453bd80f8e56feffff8b5424148b4424188b4c242c8b7c24348b7424288b5c243040494f3bc389442418894c242c897c24347d1e8b5c24388bee33eb81e5ff00000033dd895c2438e946fcffffba180000004a528b15000000006a008d8a68050300e8000000000fbf9484840000008d8c84840000000fbf848486000000c1e00903c23d00000400730e0fbe15340300008b048285c075408b015f5ea37c1600005db8581600005b81c4d4000000c20400c1e30903df8bc33d00000400730e0fbe15340300008b048285c0750b890d7c160000b8581600005f5e5d5b81c4d4000000c20400",
+ "relocs": [
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 480,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 493,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 505,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 515,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 675,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 723,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 732,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 744,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 754,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 853,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 944,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 955,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 976,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 983,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 988,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 998,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 1008,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 1140,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 1153,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 1195,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 1211,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 1217,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 1248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 1261,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 1266,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}
