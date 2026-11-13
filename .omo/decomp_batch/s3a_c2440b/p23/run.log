@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> ObjectClass
+[conv] 0x77f900 CreateGameDialogControl::ProcessIdle -> CreateGameDialogControl
+[conv] 0x785370 ObjectClass::InitializeWestwoodOnline -> ObjectClass
+[conv] 0x793cd0 ObjectClass::sub_793CD0 -> ObjectClass
+[conv] 0x796960 ObjectClass::Event_Play -> ObjectClass
+[conv] 0x796fc0 ObjectClass::Network_Init_796FC0 -> ObjectClass
+[conv] 0x79cba0 RemoveWOLPlayerLogin -> _addr_79
+[conv] 0x7a2600 sub_7A2600 -> _addr_7A
+[conv] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> CNetUtilEventSink
+[conv] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> CChatEventSink
+[conv] 0x7a9110 CChatEventSink::DispatchStub_41 -> CChatEventSink
+[conv] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> CChatEventSink
+[conv] 0x7ab260 CChatEventSink::DispatchStub_43 -> CChatEventSink
+[conv] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> CChatEventSink
+[conv] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> WonlineStringDialogControl
+[conv] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> ObjectClass
+[conv] 0x7b05c0 CompressScreenshot -> _addr_7B
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CreateGameDialogControl  rc=2
+[era] _addr_79                 rc=2
+[era] _addr_7A                 rc=2
+[era] CNetUtilEventSink        rc=2
+[era] CChatEventSink           rc=2
+[era] WonlineStringDialogControl rc=2
+[era] _addr_7B                 rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] UDPInterfaceClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77f900 CreateGameDialogControl::ProcessIdle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x785370 ObjectClass::InitializeWestwoodOnline -> COMPILE_FAIL (attempt 3)
+[ledger] 0x793cd0 ObjectClass::sub_793CD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x796960 ObjectClass::Event_Play -> COMPILE_FAIL (attempt 3)
+[ledger] 0x796fc0 ObjectClass::Network_Init_796FC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x79cba0 RemoveWOLPlayerLogin -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a2600 sub_7A2600 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a9110 CChatEventSink::DispatchStub_41 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab260 CChatEventSink::DispatchStub_43 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b05c0 CompressScreenshot -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b2ff0 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 14)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> COMPILE_FAIL (attempt 14)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p23\batch_report.json
