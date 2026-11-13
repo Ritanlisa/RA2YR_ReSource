@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B4630",
+ "name": "String::Assign",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B4630",
+ "bytes_hex": "53568b74240c8bd985f657c70300000000740d8bfe83c9ff33c0f2aef7d1eb05b90100000051e8bc47010083c404890385f6c60000741f8bfe83c9ff33c0f2aef7d12bf98bc18bf78b3bc1e902f3a58bc883e103f3a45f8bc35e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

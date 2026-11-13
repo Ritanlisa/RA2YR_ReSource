@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x77b090 sub_77B090 -> _addr_77
+[conv] 0x77b260 sub_77B260 -> _addr_77
+[conv] 0x77b860 sub_77B860 -> _addr_77
+[conv] 0x7af0b0 sub_7AF0B0 -> _addr_7A
+[conv] 0x7af280 sub_7AF280 -> _addr_7A
+[conv] 0x7b0ba0 sub_7B0BA0 -> _addr_7B
+[conv] 0x7b0d70 sub_7B0D70 -> _addr_7B
+[conv] 0x7b17d0 sub_7B17D0 -> _addr_7B
+[conv] 0x7b19a0 sub_7B19A0 -> _addr_7B
+[conv] 0x7b2ba0 sub_7B2BA0 -> _addr_7B
+[conv] 0x7b2d70 sub_7B2D70 -> _addr_7B
+[conv] 0x7b4630 String::Assign -> String
+[conv] 0x7b4690 String::AssignFromPtr -> String
+[conv] 0x7b66d0 WideString::Assign -> WideString
+[conv] 0x7b7660 ObjectClass::String_Helper_7B7660 -> ObjectClass
+[conv] 0x7b7d80 Pipe::GetField -> Pipe
+[conv] 0x7b8250 ObjectClass::sub_7B8250 -> ObjectClass
+[conv] 0x7c8f46 System_Helper -> System
+[conv] 0x7cbdfe __cexit -> _addr_7C
+[conv] 0x7cbe0d __c_exit -> _addr_7C
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] String                   rc=2
+[era] WideString               rc=0
+[era] ObjectClass              rc=0
+[era] Pipe                     rc=0
+[era] System                   rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x77b090   MATCH            sub_77B090
+[diff] 0x77b260   MATCH            sub_77B260
+[diff] 0x77b860   MATCH            sub_77B860
+[diff] 0x7af0b0   MATCH            sub_7AF0B0
+[diff] 0x7af280   MATCH            sub_7AF280
+[diff] 0x7b0ba0   MATCH            sub_7B0BA0
+[diff] 0x7b0d70   MATCH            sub_7B0D70
+[diff] 0x7b17d0   MATCH            sub_7B17D0
+[diff] 0x7b19a0   MATCH            sub_7B19A0
+[diff] 0x7b2ba0   MATCH            sub_7B2BA0
+[diff] 0x7b2d70   MATCH            sub_7B2D70
+[diff] 0x7b4630   MATCH            String::Assign
+[diff] 0x7b4690   MATCH            String::AssignFromPtr
+[diff] 0x7b66d0   MATCH            WideString::Assign
+[diff] 0x7b7660   MATCH            ObjectClass::String_Helper_7B7660
+[diff] 0x7b8250   MATCH            ObjectClass::sub_7B8250
+[diff] 0x7b7d80   MATCH            Pipe::GetField
+[diff] 0x7c8f46   MATCH            System_Helper
+[diff] 0x7cbdfe   MATCH            __cexit
+[diff] 0x7cbe0d   MATCH            __c_exit
+[ledger] 0x77b090 sub_77B090 -> OK (attempt 2)
+[ledger] 0x77b260 sub_77B260 -> OK (attempt 3)
+[ledger] 0x77b860 sub_77B860 -> OK (attempt 3)
+[ledger] 0x7af0b0 sub_7AF0B0 -> OK (attempt 2)
+[ledger] 0x7af280 sub_7AF280 -> OK (attempt 4)
+[ledger] 0x7b0ba0 sub_7B0BA0 -> OK (attempt 2)
+[ledger] 0x7b0d70 sub_7B0D70 -> OK (attempt 3)
+[ledger] 0x7b17d0 sub_7B17D0 -> OK (attempt 2)
+[ledger] 0x7b19a0 sub_7B19A0 -> OK (attempt 3)
+[ledger] 0x7b2ba0 sub_7B2BA0 -> OK (attempt 2)
+[ledger] 0x7b2d70 sub_7B2D70 -> OK (attempt 3)
+[ledger] 0x7b4630 String::Assign -> OK (attempt 2)
+[ledger] 0x7b4690 String::AssignFromPtr -> OK (attempt 2)
+[ledger] 0x7b66d0 WideString::Assign -> OK (attempt 2)
+[ledger] 0x7b7660 ObjectClass::String_Helper_7B7660 -> OK (attempt 2)
+[ledger] 0x7b7d80 Pipe::GetField -> OK (attempt 2)
+[ledger] 0x7b8250 ObjectClass::sub_7B8250 -> OK (attempt 2)
+[ledger] 0x7c8f46 System_Helper -> OK (attempt 2)
+[ledger] 0x7cbdfe __cexit -> OK (attempt 2)
+[ledger] 0x7cbe0d __c_exit -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p31\batch_report.json

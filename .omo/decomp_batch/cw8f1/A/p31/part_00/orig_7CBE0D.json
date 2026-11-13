@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBE0D",
+ "name": "__c_exit",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBE0D",
+ "bytes_hex": "6a016a016a00e80400000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

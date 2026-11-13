@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8F46",
+ "name": "System_Helper",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8F46",
+ "bytes_hex": "e813000000e8af5b0000a3a081b700e8555b0000dbe2c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B7660",
+ "name": "String_Helper_7B7660",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B7660",
+ "bytes_hex": "568bf18b0650e89a2d01008b4c241083c4043bc8720632c05ec208008b16668b4424085e6689044ab001c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

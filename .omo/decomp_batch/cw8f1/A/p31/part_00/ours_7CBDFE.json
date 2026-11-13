@@ -1,0 +1,15 @@
+{
+ "symbol": "?__cexit@@YAXXZ",
+ "sym_key": "Unnamed::__cexit",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "6a016a006a00e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?doexit@@YAHHHHZZ",
+   "sym_key": "doexit"
+  }
+ ]
+}

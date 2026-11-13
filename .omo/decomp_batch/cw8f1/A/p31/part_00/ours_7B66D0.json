@@ -1,0 +1,27 @@
+{
+ "symbol": "?Assign@WideString@@QAEPAPAGPAH@Z",
+ "sym_key": "WideString::Assign",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ffc70600000000740c57e80000000083c40440eb05b80100000003c050e80000000083c404890685ff66c7000000740c8b0e5751e80000000083c4088bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

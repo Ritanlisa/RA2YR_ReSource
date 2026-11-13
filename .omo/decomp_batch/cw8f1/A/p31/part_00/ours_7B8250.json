@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_7B8250@ObjectClass@@QAE_NPAG@Z",
+ "sym_key": "ObjectClass::sub_7B8250",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf185db74278b0685c074215750e8000000008bf88b065350e80000000083c40c3bc71bc05f5ef7d85bc204005e32c05bc20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?wcscspn@@YAHPAX0ZZ",
+   "sym_key": "wcscspn"
+  }
+ ]
+}
