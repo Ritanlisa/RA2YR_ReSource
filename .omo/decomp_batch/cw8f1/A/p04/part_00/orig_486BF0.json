@@ -1,0 +1,11 @@
+{
+ "addr": "0x486BF0",
+ "name": "CellClass::UpdateZone",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x486BF0",
+ "bytes_hex": "518b41245689442404be010000008d4c240451b9e8f78700e893eb0d000fbe881b0100008d56fe3bca7c1d3bce7f198b884001000081e1ffffbfff8988400100008bc8e81800000066ff44240466ff44240683c60283fe0f7cb45e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x46bba0 sub_46BBA0 -> _addr_46
+[conv] 0x46c970 sub_46C970 -> _addr_46
+[conv] 0x46cb40 sub_46CB40 -> _addr_46
+[conv] 0x46d2f0 sub_46D2F0 -> _addr_46
+[conv] 0x46d490 ObjectClass::sub_46D490 -> ObjectClass
+[conv] 0x471540 sub_471540 -> _addr_47
+[conv] 0x471710 sub_471710 -> _addr_47
+[conv] 0x473190 sub_473190 -> _addr_47
+[conv] 0x473360 sub_473360 -> _addr_47
+[conv] 0x473540 sub_473540 -> _addr_47
+[conv] 0x473710 sub_473710 -> _addr_47
+[conv] 0x473fe0 sub_473FE0 -> _addr_47
+[conv] 0x4741b0 sub_4741B0 -> _addr_47
+[conv] 0x4789b0 sub_4789B0 -> _addr_47
+[conv] 0x478b80 sub_478B80 -> _addr_47
+[conv] 0x4790e0 CD::AlwaysAvailable -> CD
+[conv] 0x47b150 sub_47B150 -> _addr_47
+[conv] 0x47b320 sub_47B320 -> _addr_47
+[conv] 0x486bf0 CellClass::UpdateZone -> CellClass
+[conv] 0x488690 GadgetClass::DetachPrimary -> GadgetClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_46                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_47                 rc=0
+[era] CD                       rc=0
+[era] CellClass                rc=0
+[era] GadgetClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x46bba0   MATCH            sub_46BBA0
+[diff] 0x46c970   MATCH            sub_46C970
+[diff] 0x46cb40   MATCH            sub_46CB40
+[diff] 0x46d2f0   MATCH            sub_46D2F0
+[diff] 0x46d490   MATCH            ObjectClass::sub_46D490
+[diff] 0x471540   MATCH            sub_471540
+[diff] 0x471710   MATCH            sub_471710
+[diff] 0x473190   MATCH            sub_473190
+[diff] 0x473360   MATCH            sub_473360
+[diff] 0x473540   MATCH            sub_473540
+[diff] 0x473710   MATCH            sub_473710
+[diff] 0x473fe0   MATCH            sub_473FE0
+[diff] 0x4741b0   MATCH            sub_4741B0
+[diff] 0x4789b0   MATCH            sub_4789B0
+[diff] 0x478b80   MATCH            sub_478B80
+[diff] 0x47b150   MATCH            sub_47B150
+[diff] 0x47b320   MATCH            sub_47B320
+[diff] 0x4790e0   MATCH            CD::AlwaysAvailable
+[diff] 0x486bf0   MATCH            CellClass::UpdateZone
+[diff] 0x488690   MATCH            GadgetClass::DetachPrimary
+[ledger] 0x46bba0 sub_46BBA0 -> OK (attempt 3)
+[ledger] 0x46c970 sub_46C970 -> OK (attempt 2)
+[ledger] 0x46cb40 sub_46CB40 -> OK (attempt 3)
+[ledger] 0x46d2f0 sub_46D2F0 -> OK (attempt 3)
+[ledger] 0x46d490 ObjectClass::sub_46D490 -> OK (attempt 3)
+[ledger] 0x471540 sub_471540 -> OK (attempt 2)
+[ledger] 0x471710 sub_471710 -> OK (attempt 4)
+[ledger] 0x473190 sub_473190 -> OK (attempt 2)
+[ledger] 0x473360 sub_473360 -> OK (attempt 3)
+[ledger] 0x473540 sub_473540 -> OK (attempt 2)
+[ledger] 0x473710 sub_473710 -> OK (attempt 3)
+[ledger] 0x473fe0 sub_473FE0 -> OK (attempt 2)
+[ledger] 0x4741b0 sub_4741B0 -> OK (attempt 3)
+[ledger] 0x4789b0 sub_4789B0 -> OK (attempt 2)
+[ledger] 0x478b80 sub_478B80 -> OK (attempt 3)
+[ledger] 0x4790e0 CD::AlwaysAvailable -> OK (attempt 2)
+[ledger] 0x47b150 sub_47B150 -> OK (attempt 2)
+[ledger] 0x47b320 sub_47B320 -> OK (attempt 3)
+[ledger] 0x486bf0 CellClass::UpdateZone -> OK (attempt 2)
+[ledger] 0x488690 GadgetClass::DetachPrimary -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p04\batch_report.json

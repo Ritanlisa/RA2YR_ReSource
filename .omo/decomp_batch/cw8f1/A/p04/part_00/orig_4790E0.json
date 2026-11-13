@@ -1,0 +1,11 @@
+{
+ "addr": "0x4790E0",
+ "name": "CD::AlwaysAvailable",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4790E0",
+ "bytes_hex": "8b44240483f8fe7505b001c20400803da0e38900017505b001c2040050c74104ffffffffe867f10200c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

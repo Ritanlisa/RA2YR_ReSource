@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_46D490@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::sub_46D490",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8a8100000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptionState@@3IA",
+   "sym_key": "g_GameModeOptionState"
+  }
+ ]
+}
