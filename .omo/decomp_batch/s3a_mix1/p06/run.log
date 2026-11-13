@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e14c0 GadgetClass::DestroyChain -> GadgetClass
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x4f42f0 GScreenClass::MarkForRedraw -> GScreenClass
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x4f7870 HouseClass::CanBuild -> HouseClass
+[conv] 0x4fb840 BuildingPlacement::Activate -> BuildingPlacement
+[conv] 0x4fbf60 HouseClass::DroppedFlag -> HouseClass
+[conv] 0x4fce80 BuildingClass::Capture -> BuildingClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x4fe3e0 HouseClass::AutoBuild -> HouseClass
+[conv] 0x4ff550 HouseClass::DecrementUnitCount -> HouseClass
+[conv] 0x500200 BuildingPlacement::FindPosition -> BuildingPlacement
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x5082c0 HouseClass::FindAutoBuildLocation -> HouseClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GadgetClass              rc=2
+[era] _addr_4E                 rc=2
+[era] OptionQueue              rc=2
+[era] GraphicMenuAnimItem      rc=2
+[era] GraphicMenuImageItem     rc=2
+[era] ObjectClass              rc=2
+[era] GScreenClass             rc=2
+[era] HouseClass               rc=2
+[era] BuildingPlacement        rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4e14c0 GadgetClass::DestroyChain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f42f0 GScreenClass::MarkForRedraw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f7870 HouseClass::CanBuild -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4fbf60 HouseClass::DroppedFlag -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4fce80 BuildingClass::Capture -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4fe3e0 HouseClass::AutoBuild -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ff550 HouseClass::DecrementUnitCount -> COMPILE_FAIL (attempt 4)
+[ledger] 0x500200 BuildingPlacement::FindPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5082c0 HouseClass::FindAutoBuildLocation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p06\batch_report.json
