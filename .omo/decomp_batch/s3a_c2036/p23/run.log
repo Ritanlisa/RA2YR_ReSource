@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (12 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p23\part_00
+=== convert (12 addrs) ===
+[conv] 0x777420 ObjectClass::MainWindowProc_Read -> ObjectClass
+[conv] 0x7ad0d0 _VectorClass_PAUtConnInfoStruct::Release -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x7ad210 _DynamicVectorClass_PAUtConnInfoStruct::SetCapacity -> _DynamicVectorClass_PAUtConnInfoStruct
+[conv] 0x7b28e0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release -> _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b2a20 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketState -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x7b4360 _VectorClass_PAE::Release -> _VectorClass_PAE
+[conv] 0x7b44a0 _DynamicVectorClass_PAE::flush -> _DynamicVectorClass_PAE
+[conv] 0x7c8d20 __strcmpi -> _addr_7C
+[conv] 0x7ce06e ___lc_strtolc -> _addr_7C
+[conv] 0x7cef29 __shift -> _addr_7C
+[conv] 0x7d3320 __ioterm_0 -> _addr_7D
+[conv] 0x7d7d49 __fptostr -> _addr_7D
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_PAUtConnInfoStruct rc=0
+[era] _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _VectorClass_PAE         rc=0
+[era] _DynamicVectorClass_PAE  rc=0
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x777420   MISMATCH         ObjectClass::MainWindowProc_Read
+[diff] 0x7ad0d0   MISMATCH         _VectorClass_PAUtConnInfoStruct::Release
+[diff] 0x7ad210   MISMATCH         _DynamicVectorClass_PAUtConnInfoStruct::SetCapacity
+[diff] 0x7b28e0   MISMATCH         _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release
+[diff] 0x7b2a20   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketState
+[diff] 0x7b4360   MISMATCH         _VectorClass_PAE::Release
+[diff] 0x7b44a0   MISMATCH         _DynamicVectorClass_PAE::flush
+[ledger] 0x777420 ObjectClass::MainWindowProc_Read -> NG (attempt 2)
+[ledger] 0x7ad0d0 _VectorClass_PAUtConnInfoStruct::Release -> NG (attempt 2)
+[ledger] 0x7ad210 _DynamicVectorClass_PAUtConnInfoStruct::SetCapacity -> NG (attempt 2)
+[ledger] 0x7b28e0 _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release -> NG (attempt 2)
+[ledger] 0x7b2a20 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketState -> NG (attempt 2)
+[ledger] 0x7b4360 _VectorClass_PAE::Release -> NG (attempt 2)
+[ledger] 0x7b44a0 _DynamicVectorClass_PAE::flush -> NG (attempt 2)
+[ledger] 0x7c8d20 __strcmpi -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ce06e ___lc_strtolc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cef29 __shift -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d3320 __ioterm_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d7d49 __fptostr -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 12,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p23\batch_report.json

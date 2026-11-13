@@ -193409,15 +193409,15 @@
   "this_as_id": false
  },
  "0x777420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push 0x849ecc",
   "name": "ObjectClass::MainWindowProc_Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MainWindowProc_Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7775c0": {
@@ -198838,15 +198838,15 @@
   "this_as_id": false
  },
  "0x7ad0d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAUtConnInfoStruct::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WonlineStringDialogControl_12::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ad180": {
@@ -198881,15 +198881,15 @@
   "this_as_id": false
  },
  "0x7ad210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAUtConnInfoStruct::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WonlineStringDialogControl_12::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ad2c0": {
@@ -200862,15 +200862,15 @@
   "this_as_id": false
  },
  "0x7b28e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b2990": {
@@ -200910,15 +200910,15 @@
   "this_as_id": false
  },
  "0x7b2a20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "IPXInterfaceClass::getSocketState",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b2ad0": {
@@ -201438,15 +201438,15 @@
   "this_as_id": false
  },
  "0x7b4360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAE::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_PAE::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b4410": {
@@ -201486,15 +201486,15 @@
   "this_as_id": false
  },
  "0x7b44a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAE::flush",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "UDPInterfaceClass::flush",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7b4550": {
@@ -208341,7 +208341,7 @@
   "this_as_id": false
  },
  "0x7c8d20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__strcmpi",
@@ -210671,7 +210671,7 @@
   "this_as_id": false
  },
  "0x7ce06e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "___lc_strtolc",
@@ -210900,7 +210900,7 @@
   "this_as_id": false
  },
  "0x7cef29": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__shift",
@@ -211863,7 +211863,7 @@
   "this_as_id": false
  },
  "0x7d3320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__ioterm_0",
@@ -213068,7 +213068,7 @@
   "this_as_id": false
  },
  "0x7d7d49": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__fptostr",
