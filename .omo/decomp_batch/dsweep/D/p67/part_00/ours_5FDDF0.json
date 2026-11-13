@@ -1,0 +1,63 @@
+{
+ "symbol": "?ResetBuildingState@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::ResetBuildingState",
+ "size": 160,
+ "link_base": 0,
+ "bytes_hex": "515657b9f8010000e800000000b9f8010000e8000000008bf033ff85f6c7442408000000007452837e447e753c80be1e01000030722585ff7c178b4c24086a008d44240c68e803000050ff510884c0740a8d04bd00000000478930c74644ffffffffc6861e01000000b9f8010000e8000000008bf085f675ae8d77ff85f67c1c8b3cb5000000008bcfe80000000084c074078bcfe8000000004e79e45f5e59c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_CellClass"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?CheckAdjacentCells@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CheckAdjacentCells"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?VisualizePlacement@BuildingClass@@QAEXXZ",
+   "sym_key": "BuildingClass::VisualizePlacement"
+  }
+ ]
+}

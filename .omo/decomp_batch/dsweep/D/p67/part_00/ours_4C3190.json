@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetCount@EditClass@@QAEHIPAHH@Z",
+ "sym_key": "EditClass::GetCount",
+ "size": 321,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1578b464485c074095f5e5d33c05bc20c008b5c2414f6c30174170fbe863d0100005683e3feff100fbe8e2001000056ff11f6c7010f84ec0000000fbe965701000056ff1284c00f84da0000008b7c2418833f1b751d0fbe864a01000056ff106a00576a008bcee8000000005f5e5d5bc20c00668b0f518b0d80010000e80000000025ff0000008bc88b07f6c410894c2418747583f9307c7083f9397f6b24ef0cef8be8f6c344892f754c0fbe96540200005156ff1284c0743d8b07f6c4107507837c2418207d0a83fd0d740583fd0875378b068b0d80010000558944241ce8000000008b5424180fbec85156ff929800000084c075126a0057538bcee8000000005f5e5d5bc20c0083e3fe6a0080cbfe57538bcec70700000000e8000000005f5e5d5bc20c008b4424186a0050538bcee8000000005f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Draw@CellClass@@QAEHHPAXH@Z",
+   "sym_key": "CellClass::Draw"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?MapKey@Keyboard@@QAEDG@Z",
+   "sym_key": "Keyboard::MapKey"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?MapKey@Keyboard@@QAEDG@Z",
+   "sym_key": "Keyboard::MapKey"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?Draw@CellClass@@QAEHHPAXH@Z",
+   "sym_key": "CellClass::Draw"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?Draw@CellClass@@QAEHHPAXH@Z",
+   "sym_key": "CellClass::Draw"
+  },
+  {
+   "off": 310,
+   "type": "REL32",
+   "sym": "?Draw@CellClass@@QAEHHPAXH@Z",
+   "sym_key": "CellClass::Draw"
+  }
+ ]
+}

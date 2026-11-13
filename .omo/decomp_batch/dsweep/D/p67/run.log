@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p67\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b8f30 WWMouseClass::updateCursorRect -> WWMouseClass
+[conv] 0x704240 TechnoClass::CheckAdjacencyFlags -> TechnoClass
+[conv] 0x69e210 MixFileClass::CleanupCache -> MixFileClass
+[conv] 0x559c20 LoadOptions::Check -> LoadOptions
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+[conv] 0x69a1f0 WinMain::Constructor_VectorClass_Wstring_ -> WinMain
+[conv] 0x6e5ed0 CCINIClass::ProcessSection -> CCINIClass
+[conv] 0x4195a0 TechnoClass::FindNearbyBuildCell -> TechnoClass
+[conv] 0x43ed40 BuildingClass::GetTurretAngle -> BuildingClass
+[conv] 0x752480 UpdateThemeManager -> _addr_75
+[conv] 0x5caac0 MultiplayerSiege::GetResult -> MultiplayerSiege
+[conv] 0x79ae00 sub_79AE00 -> _addr_79
+[conv] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x690c00 ScoreTimeClass::AdvanceFrame -> ScoreTimeClass
+[conv] 0x5fddf0 ObjectClass::ResetBuildingState -> ObjectClass
+[conv] 0x4196b0 AircraftClass::ValidateLandingCell -> AircraftClass
+[conv] 0x76e180 TechnoClass::ShowWDTTerritorySelection_Show -> TechnoClass
+[conv] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> FlyLocomotionClass
+[conv] 0x4c3190 EditClass::GetCount -> EditClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WWMouseClass             rc=2
+[era] TechnoClass              rc=2
+[era] MixFileClass             rc=0
+[era] LoadOptions              rc=2
+[era] FootClass                rc=2
+[era] WinMain                  rc=0
+[era] CCINIClass               rc=2
+[era] BuildingClass            rc=0
+[era] _addr_75                 rc=2
+[era] MultiplayerSiege         rc=2
+[era] _addr_79                 rc=0
+[era] FactionSelectDialogControl_WorldDominationTour rc=2
+[era] RadioClass               rc=2
+[era] ScoreTimeClass           rc=0
+[era] ObjectClass              rc=0
+[era] AircraftClass            rc=2
+[era] FlyLocomotionClass       rc=2
+[era] EditClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x704240   MISMATCH         TechnoClass::CheckAdjacencyFlags
+[diff] 0x4195a0   MISMATCH         TechnoClass::FindNearbyBuildCell
+[diff] 0x76e180   MISMATCH         TechnoClass::ShowWDTTerritorySelection_Show
+[diff] 0x69e210   MISMATCH         MixFileClass::CleanupCache
+[diff] 0x69a1f0   MISMATCH         WinMain::Constructor_VectorClass_Wstring_
+[diff] 0x43ed40   MISMATCH         BuildingClass::GetTurretAngle
+[diff] 0x79ae00   MISMATCH         sub_79AE00
+[diff] 0x690c00   MISMATCH         ScoreTimeClass::AdvanceFrame
+[diff] 0x5fddf0   MISMATCH         ObjectClass::ResetBuildingState
+[diff] 0x4c3190   MISMATCH         EditClass::GetCount
+[ledger] 0x7b8f30 WWMouseClass::updateCursorRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x704240 TechnoClass::CheckAdjacencyFlags -> NG (attempt 1)
+[ledger] 0x69e210 MixFileClass::CleanupCache -> NG (attempt 1)
+[ledger] 0x559c20 LoadOptions::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69a1f0 WinMain::Constructor_VectorClass_Wstring_ -> NG (attempt 1)
+[ledger] 0x6e5ed0 CCINIClass::ProcessSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4195a0 TechnoClass::FindNearbyBuildCell -> NG (attempt 1)
+[ledger] 0x43ed40 BuildingClass::GetTurretAngle -> NG (attempt 1)
+[ledger] 0x752480 UpdateThemeManager -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5caac0 MultiplayerSiege::GetResult -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79ae00 sub_79AE00 -> NG (attempt 1)
+[ledger] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690c00 ScoreTimeClass::AdvanceFrame -> NG (attempt 1)
+[ledger] 0x5fddf0 ObjectClass::ResetBuildingState -> NG (attempt 1)
+[ledger] 0x4196b0 AircraftClass::ValidateLandingCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e180 TechnoClass::ShowWDTTerritorySelection_Show -> NG (attempt 1)
+[ledger] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c3190 EditClass::GetCount -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_polarity": 1,
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p67\batch_report.json

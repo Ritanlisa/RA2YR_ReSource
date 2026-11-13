@@ -1,0 +1,45 @@
+{
+ "symbol": "?Constructor_VectorClass_Wstring_@WinMain@@QAEHXZ",
+ "sym_key": "WinMain::Constructor_VectorClass_Wstring_",
+ "size": 258,
+ "link_base": 0,
+ "bytes_hex": "535556578bf933db33ed399fa00600007e658b87940600008b34a83bf3744d8d8ea4010000c70100000000e8000000008b868c010000899e880100003bc37417389e95010000740f50e80000000083c404899e8c01000056889e95010000899e90010000e80000000083c4048b87a0060000453be87c9b8b8f900600008d97401a000052ff510c8b872429000033f63bc37e1d8b87182900008b0cb051e8000000008b872429000083c404463bf07ce38b97142900008d8750a4000050ff520c8b870c29000033f63bc37e218b8f002900008b04b13bc3740950e80000000083c4048b870c290000463bf07cdf8b97fc28000081c7f0a3000057ff520c5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Wstring@@3PAXA",
+   "sym_key": "vt_VectorClass_Wstring"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?ddtor@VectorClass_Wstring@@QAEXXZ",
+   "sym_key": "VectorClass_Wstring::ddtor"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

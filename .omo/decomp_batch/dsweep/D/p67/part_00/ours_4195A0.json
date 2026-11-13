@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindNearbyBuildCell@TechnoClass@@QAEXHPAF@Z",
+ "sym_key": "TechnoClass::FindNearbyBuildCell",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0c5355568b7424205789068b118d4424105051ff52488b388b58048b2d00000000c1ef08c1eb088b45005683e0078b148500000000668b0c8500000000c1fa106603cf03d366894c2428668954242a8b442428b9000000008906e80000000084c074c45f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AircraftStatusFlag@@3IA",
+   "sym_key": "g_AircraftStatusFlag"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817A78@@3IA",
+   "sym_key": "DataGlobal_817A78"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  }
+ ]
+}

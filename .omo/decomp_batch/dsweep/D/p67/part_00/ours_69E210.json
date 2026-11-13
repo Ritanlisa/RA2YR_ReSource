@@ -1,0 +1,87 @@
+{
+ "symbol": "?CleanupCache@MixFileClass@@QAEXXZ",
+ "sym_key": "MixFileClass::CleanupCache",
+ "size": 262,
+ "link_base": 0,
+ "bytes_hex": "5356578b3d0000000033db3bfb746e66813fffff7560385f10745b8b770c3bf3744e66813effff753e8bcee8000000008b46183bc374068b4e1c89481c8b461c3bc374088b5618895018eb088b4618a3000000008b46083bc3740c50e80000000083c404895e0856e80000000083c404895f0c885f108b7f183bfb75928b35000000003bf3747b66813effff75598a4610558d6e103ac374168b4e0c8d7e0c3bcb74076a01e800000000891f885d008b46185d3bc374068b4e1c89481c8b461c3bc374088b5618895018eb088b4618a3000000008b46083bc3740c50e80000000083c404895e0856e80000000083c404891d00000000891d00000000891d000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?DeleteSubtree@BTree@@QAEXXZ",
+   "sym_key": "BTree::DeleteSubtree"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B4@@3IA",
+   "sym_key": "DataGlobal_B077B4"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?CacheNode_Dtor@MixFileClass@@QAEPAXD@Z",
+   "sym_key": "MixFileClass::CacheNode_Dtor"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B0@@3IA",
+   "sym_key": "DataGlobal_B077B0"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B4@@3IA",
+   "sym_key": "DataGlobal_B077B4"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077B8@@3IA",
+   "sym_key": "DataGlobal_B077B8"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B077BC@@3IA",
+   "sym_key": "DataGlobal_B077BC"
+  }
+ ]
+}
