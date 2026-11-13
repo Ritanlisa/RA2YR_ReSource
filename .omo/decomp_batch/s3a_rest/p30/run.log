@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x534450 Game::DestroyAllObjects -> Game
+[conv] 0x5355d0 Performance::Profile -> Performance
+[conv] 0x535cd0 CreateTeamCommand::performAction_0 -> CreateTeamCommand
+[conv] 0x536090 SelectTeamCommand::performAction_22 -> SelectTeamCommand
+[conv] 0x536180 AddTeamCommand::performAction_23 -> AddTeamCommand
+[conv] 0x536270 CenterTeamCommand::performAction_24 -> CenterTeamCommand
+[conv] 0x536350 TauntCommandClass::Do -> TauntCommandClass
+[conv] 0x536580 TauntCommandClass::performAction_25 -> TauntCommandClass
+[conv] 0x537440 View2CommandClass::performAction_153 -> View2CommandClass
+[conv] 0x537620 View4CommandClass::InitView -> View4CommandClass
+[conv] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> MultiplayerDebugCommandClass
+[conv] 0x537fe0 FollowCommandClass::performAction_200 -> FollowCommandClass
+[conv] 0x538000 View1CommandClass::performAction_201 -> View1CommandClass
+[conv] 0x538020 View2CommandClass::performAction_202 -> View2CommandClass
+[conv] 0x538040 View3CommandClass::performAction_203 -> View3CommandClass
+[conv] 0x538060 View4CommandClass::performAction_204 -> View4CommandClass
+[conv] 0x538080 SetView1CommandClass::performAction_205 -> SetView1CommandClass
+[conv] 0x5380a0 SetView2CommandClass::performAction_206 -> SetView2CommandClass
+[conv] 0x5380c0 SetView3CommandClass::performAction_207 -> SetView3CommandClass
+[conv] 0x5380e0 SetView4CommandClass::performAction_208 -> SetView4CommandClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=2
+[era] Performance              rc=2
+[era] CreateTeamCommand        rc=2
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+[era] View2CommandClass        rc=2
+[era] View4CommandClass        rc=2
+[era] MultiplayerDebugCommandClass rc=2
+[era] FollowCommandClass       rc=2
+[era] View1CommandClass        rc=2
+[era] View3CommandClass        rc=2
+[era] SetView1CommandClass     rc=2
+[era] SetView2CommandClass     rc=2
+[era] SetView3CommandClass     rc=2
+[era] SetView4CommandClass     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x534450 Game::DestroyAllObjects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5355d0 Performance::Profile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x535cd0 CreateTeamCommand::performAction_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536090 SelectTeamCommand::performAction_22 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536180 AddTeamCommand::performAction_23 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536270 CenterTeamCommand::performAction_24 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536350 TauntCommandClass::Do -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536580 TauntCommandClass::performAction_25 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537440 View2CommandClass::performAction_153 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537620 View4CommandClass::InitView -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537fe0 FollowCommandClass::performAction_200 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538000 View1CommandClass::performAction_201 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538020 View2CommandClass::performAction_202 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538040 View3CommandClass::performAction_203 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538060 View4CommandClass::performAction_204 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x538080 SetView1CommandClass::performAction_205 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5380a0 SetView2CommandClass::performAction_206 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5380c0 SetView3CommandClass::performAction_207 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5380e0 SetView4CommandClass::performAction_208 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p30\batch_report.json
