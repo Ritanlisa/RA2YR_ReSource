@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d52d0 _DynamicVectorClass_PAUHWND::SetCapacity -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d5410 _VectorClass_UAcceleratorTracker::Release -> _VectorClass_UAcceleratorTracker
+[conv] 0x5d55a0 _DynamicVectorClass_UAcceleratorTracker::SetCapacity8 -> _DynamicVectorClass_UAcceleratorTracker
+[conv] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> MultiplayerGameMode
+[conv] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> MultiplayerGameMode
+[conv] 0x5d8330 _VectorClass_PAVMultiplayerTeam::Release -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerTeam
+[conv] 0x5d8590 _VectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x5ee9d0 HouseClass::FindStartPositions -> HouseClass
+[conv] 0x5eec50 _VectorClass_PBVMultiMission::SetAt -> _VectorClass_PBVMultiMission
+[conv] 0x5eed90 _DynamicVectorClass_PBVMultiMission::SetCapacity -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5f3b80 ObjectClass::Dtor -> ObjectClass
+[conv] 0x5f9bc0 _VectorClass_PAVObjectTypeClass::Release -> _VectorClass_PAVObjectTypeClass
+[conv] 0x5f9d00 _DynamicVectorClass_PAVObjectTypeClass::SetCapacity -> _DynamicVectorClass_PAVObjectTypeClass
+[conv] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> OverlayTypeClass
+[conv] 0x600060 _VectorClass_PAVSpotLightClass::Release -> _VectorClass_PAVSpotLightClass
+[conv] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x627e50 _VectorClass_PAVColorScheme::Release -> _VectorClass_PAVColorScheme
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUHWND rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+[era] MultiplayerGameMode      rc=2
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=2
+[era] _VectorClass_PAVMultiplayerGameMode rc=0
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=2
+[era] HouseClass               rc=2
+[era] _VectorClass_PBVMultiMission rc=0
+[era] _DynamicVectorClass_PBVMultiMission rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=0
+[era] OverlayTypeClass         rc=2
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _VectorClass_PAVColorScheme rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d52d0   MISMATCH         _DynamicVectorClass_PAUHWND::SetCapacity
+[diff] 0x5d5410   MISMATCH         _VectorClass_UAcceleratorTracker::Release
+[diff] 0x5d55a0   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::SetCapacity8
+[diff] 0x5d8330   MISMATCH         _VectorClass_PAVMultiplayerTeam::Release
+[diff] 0x5d8590   MISMATCH         _VectorClass_PAVMultiplayerGameMode::ResizeAndCopy
+[diff] 0x5eec50   MISMATCH         _VectorClass_PBVMultiMission::SetAt
+[diff] 0x5eed90   MISMATCH         _DynamicVectorClass_PBVMultiMission::SetCapacity
+[diff] 0x5f9bc0   MISMATCH         _VectorClass_PAVObjectTypeClass::Release
+[diff] 0x5f9d00   MISMATCH         _DynamicVectorClass_PAVObjectTypeClass::SetCapacity
+[diff] 0x600060   MISMATCH         _VectorClass_PAVSpotLightClass::Release
+[diff] 0x627e50   MISMATCH         _VectorClass_PAVColorScheme::Release
+[ledger] 0x5d52d0 _DynamicVectorClass_PAUHWND::SetCapacity -> NG (attempt 2)
+[ledger] 0x5d5410 _VectorClass_UAcceleratorTracker::Release -> NG (attempt 2)
+[ledger] 0x5d55a0 _DynamicVectorClass_UAcceleratorTracker::SetCapacity8 -> NG (attempt 2)
+[ledger] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d8330 _VectorClass_PAVMultiplayerTeam::Release -> NG (attempt 2)
+[ledger] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d8590 _VectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> NG (attempt 2)
+[ledger] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ee9d0 HouseClass::FindStartPositions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5eec50 _VectorClass_PBVMultiMission::SetAt -> NG (attempt 2)
+[ledger] 0x5eed90 _DynamicVectorClass_PBVMultiMission::SetCapacity -> NG (attempt 2)
+[ledger] 0x5f3b80 ObjectClass::Dtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f9bc0 _VectorClass_PAVObjectTypeClass::Release -> NG (attempt 2)
+[ledger] 0x5f9d00 _DynamicVectorClass_PAVObjectTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x600060 _VectorClass_PAVSpotLightClass::Release -> NG (attempt 2)
+[ledger] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 5)
+[ledger] 0x627e50 _VectorClass_PAVColorScheme::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p15\batch_report.json
