@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x5fa590 Audio::SetVoiceVolume -> Audio
+[conv] 0x5fa620 GameSettings::Read -> GameSettings
+[conv] 0x5fb160 AudioOptionsClass::ApplySettings -> AudioOptionsClass
+[conv] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> GameOptionsClass
+[conv] 0x5fc000 GameOptionsClass::PopulateMovieList -> GameOptionsClass
+[conv] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> ObjectClass
+[conv] 0x600880 sub_600880 -> _addr_60
+[conv] 0x610570 DestroyDialogChildWindow -> _addr_61
+[conv] 0x623610 DialogClass::CopyTemplateStruct -> DialogClass
+[conv] 0x623730 ObjectClass::sub_623730 -> ObjectClass
+[conv] 0x6267a0 FileSystem::InitExtensionState -> FileSystem
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x626c60 ObjectClass::Surface_Update -> ObjectClass
+[conv] 0x626da0 FileSystem::ProcessNextFileExtension -> FileSystem
+[conv] 0x627020 sub_627020 -> _addr_62
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x62a980 ParasiteClass::TryInfect -> ParasiteClass
+[conv] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> ObjectClass
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=2
+[era] GameSettings             rc=2
+[era] AudioOptionsClass        rc=2
+[era] GameOptionsClass         rc=2
+[era] ObjectClass              rc=2
+[era] _addr_60                 rc=2
+[era] _addr_61                 rc=2
+[era] DialogClass              rc=2
+[era] FileSystem               rc=2
+[era] _addr_62                 rc=2
+[era] ParasiteClass            rc=2
+[era] ScriptAction             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5fa590 Audio::SetVoiceVolume -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fa620 GameSettings::Read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fb160 AudioOptionsClass::ApplySettings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fc000 GameOptionsClass::PopulateMovieList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> COMPILE_FAIL (attempt 4)
+[ledger] 0x600880 sub_600880 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x610570 DestroyDialogChildWindow -> COMPILE_FAIL (attempt 4)
+[ledger] 0x623610 DialogClass::CopyTemplateStruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x623730 ObjectClass::sub_623730 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6267a0 FileSystem::InitExtensionState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 8)
+[ledger] 0x626c60 ObjectClass::Surface_Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x626da0 FileSystem::ProcessNextFileExtension -> COMPILE_FAIL (attempt 4)
+[ledger] 0x627020 sub_627020 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 7)
+[ledger] 0x62a980 ParasiteClass::TryInfect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p14\batch_report.json
