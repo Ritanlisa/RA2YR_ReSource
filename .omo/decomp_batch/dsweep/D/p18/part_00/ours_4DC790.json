@@ -1,0 +1,27 @@
+{
+ "symbol": "?Destru_vt311@FootClass@@QAE_NXZ",
+ "sym_key": "FootClass::Destru_vt311",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53568bf18a86d503000084c075085e32c05b83c40cc38b8ed405000085c9740be8000000008ad884db74448b0656b301ff90840000008a88940c000084c9742f8bb6a405000085f674258b0e8d5424085256ff51485068f8010000e80000000083c40884c074085e32c05b83c40cc38ac35e5b83c40cc3",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?IsWaypointHidden@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::IsWaypointHidden"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?IsCoordVisibleMap@@YA_NPAX0@Z",
+   "sym_key": "IsCoordVisibleMap"
+  }
+ ]
+}

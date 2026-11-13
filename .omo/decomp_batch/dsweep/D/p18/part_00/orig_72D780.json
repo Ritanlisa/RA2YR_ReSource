@@ -1,0 +1,11 @@
+{
+ "addr": "0x72D780",
+ "name": "Map_Init_72D780",
+ "size": 115,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72D780",
+ "bytes_hex": "a0b8fbb0005333db3ac37465a07dfcb000881db8fbb0003ac37422568b351cfbb0003bf374108bcee8530df7ff56e88ab3090083c404881d7dfcb0005ea1b0fbb000891d1cfbb0003bc3740f50e86bb3090083c404891db0fbb0008b0db4fbb0003bcb740c8b016a01ff10891db4fbb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> ObjectClass
+[conv] 0x6233a0 Dialog::CleanupTree -> Dialog
+[conv] 0x72d780 ObjectClass::Map_Init_72D780 -> ObjectClass
+[conv] 0x473c50 CCFileClass::Open -> CCFileClass
+[conv] 0x4a4700 ObjectClass::sub_4A4700 -> ObjectClass
+[conv] 0x4f2280 ObjectClass::sub_4F2280 -> ObjectClass
+[conv] 0x734fe0 WideMessageBox -> _addr_73
+[conv] 0x7d161b __dosmaperr -> _addr_7D
+[conv] 0x7d769d __lseek_lk -> _addr_7D
+[conv] 0x76ded0 TechnoClass::sub_76DED0 -> TechnoClass
+[conv] 0x76df50 TechnoClass::sub_76DF50 -> TechnoClass
+[conv] 0x5fbef0 ShowHotkeyOptionsDialog -> _addr_5F
+[conv] 0x798360 sub_798360 -> _addr_79
+[conv] 0x4aecd0 ObjectClass::sub_4AECD0 -> ObjectClass
+[conv] 0x4dc790 FootClass::Destru_vt311 -> FootClass
+[conv] 0x6c1a90 _TClassFactory_VTriggerClass::ddtor -> _TClassFactory_VTriggerClass
+[conv] 0x6c1d90 _TClassFactory_VScriptClass::ddtor -> _TClassFactory_VScriptClass
+[conv] 0x6c2090 _TClassFactory_VTagClass::ddtor -> _TClassFactory_VTagClass
+[conv] 0x5dac00 WideString::Hash -> WideString
+[conv] 0x7b6ae0 WideString::Append2 -> WideString
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Dialog                   rc=2
+[era] CCFileClass              rc=2
+[era] _addr_73                 rc=2
+[era] _addr_7D                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5F                 rc=2
+[era] _addr_79                 rc=2
+[era] FootClass                rc=0
+[era] _TClassFactory_VTriggerClass rc=2
+[era] _TClassFactory_VScriptClass rc=0
+[era] _TClassFactory_VTagClass rc=2
+[era] WideString               rc=2
+=== diffasm byte-compare ===
+[diff] 0x72d780   MISMATCH         ObjectClass::Map_Init_72D780
+[diff] 0x4aecd0   MISMATCH         ObjectClass::sub_4AECD0
+[diff] 0x4dc790   MISMATCH         FootClass::Destru_vt311
+[diff] 0x6c1d90   MISMATCH         _TClassFactory_VScriptClass::ddtor
+[ledger] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6233a0 Dialog::CleanupTree -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72d780 ObjectClass::Map_Init_72D780 -> NG (attempt 1)
+[ledger] 0x473c50 CCFileClass::Open -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a4700 ObjectClass::sub_4A4700 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2280 ObjectClass::sub_4F2280 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x734fe0 WideMessageBox -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d161b __dosmaperr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d769d __lseek_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76ded0 TechnoClass::sub_76DED0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76df50 TechnoClass::sub_76DF50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fbef0 ShowHotkeyOptionsDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x798360 sub_798360 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aecd0 ObjectClass::sub_4AECD0 -> NG (attempt 1)
+[ledger] 0x4dc790 FootClass::Destru_vt311 -> NG (attempt 1)
+[ledger] 0x6c1a90 _TClassFactory_VTriggerClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1d90 _TClassFactory_VScriptClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c2090 _TClassFactory_VTagClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dac00 WideString::Hash -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b6ae0 WideString::Append2 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1,
+  "regalloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p18\batch_report.json

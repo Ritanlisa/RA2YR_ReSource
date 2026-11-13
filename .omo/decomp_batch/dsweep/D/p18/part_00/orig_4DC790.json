@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DC790",
+ "name": "FootClass::Destru_vt311",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DC790",
+ "bytes_hex": "83ec0c568bf18a86d503000084c0750732c05e83c40cc38b8ed405000085c9740ee84afb200084c075055e83c40cc38b068bceff90840000008a88940c000084c9742a8b8ea405000085c974208b118d44240450ff524850b9e8f78700e8febd090084c0740732c05e83c40cc3b0015e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

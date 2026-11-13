@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4AECD0@ObjectClass@@QAEHPBD@Z",
+ "sym_key": "ObjectClass::sub_4AECD0",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b4424045650e8000000008bf085f674268b0d000000005156e80000000085c0740f8d542408c74424081400000052ffd056e80000000033c05ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?LoadLibraryA@@YGPAXPAX@Z",
+   "sym_key": "LoadLibraryA"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?aDllgetversion@@3HA",
+   "sym_key": "aDllgetversion"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?GetProcAddress@@YGHHH@Z",
+   "sym_key": "GetProcAddress"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?FreeLibrary@@YGHH@Z",
+   "sym_key": "FreeLibrary"
+  }
+ ]
+}

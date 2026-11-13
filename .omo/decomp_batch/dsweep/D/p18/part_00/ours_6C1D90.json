@@ -1,0 +1,21 @@
+{
+ "symbol": "?ddtor@_TClassFactory_VScriptClass@@QAGHHHPAI@Z",
+ "sym_key": "_TClassFactory_VScriptClass::ddtor",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "56578b7c241485ff750a5fb8570007805ec210008b442414c7070000000085c0740a5fb8100104805ec210006a30e80000000083c40485c0750a5fb80e0007805ec210006a008bc8e8000000008bf085f6750a5fb80e0007805ec210008b4c24188b06575156ff108bf885ff7d0b8b166a0156ff92800000008bc75f5ec21000",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Construct@ScriptClass@@QAEPAVAbstractClass@@H@Z",
+   "sym_key": "ScriptClass::Construct"
+  }
+ ]
+}
