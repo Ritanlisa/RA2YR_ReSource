@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x6af4a0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6b0300",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x6b0db0",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6b1930",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x6b1f50",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6b3850",
+  "family": "stale_snapshotfix2_probe"
+ },
+ {
+  "addr": "0x6b4240",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x6b5f80",
+  "family": "stale_B8"
+ },
+ {
+  "addr": "0x6b6230",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6b7c60",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x6b8ca0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x6bf510",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6bf690",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6c0a10",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6c2c90",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6c3890",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6c4010",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x6c4c10",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6c5090",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x6c6740",
+  "family": "stale_cw3_D"
+ }
+]

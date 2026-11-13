@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> SlaveManagerClass
+[conv] 0x6b0300 BuildingClass::FindPlacementCells2 -> BuildingClass
+[conv] 0x6b0db0 BuildingClass::ProcessEnterUnit -> BuildingClass
+[conv] 0x6b1930 VectorClass::checkAIResources -> VectorClass
+[conv] 0x6b1f50 SliderClass::SetValue -> SliderClass
+[conv] 0x6b3850 ObjectClass::ProcessSlaveManagerTerrain -> ObjectClass
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x6b5f80 Cell::IsWalkable -> Cell
+[conv] 0x6b6230 ShowAudioSettingsDialog -> _addr_6B
+[conv] 0x6b7c60 UnitClass::ClearTargetRef -> UnitClass
+[conv] 0x6b8ca0 GameMode::ReadFlagsFromINI -> GameMode
+[conv] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> _TClassFactory_VSuperClass
+[conv] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> _TClassFactory_VInfantryClass
+[conv] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> _TClassFactory_VBulletClass
+[conv] 0x6c6740 StaticButtonClass::HitTest -> StaticButtonClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SlaveManagerClass        rc=0
+[era] BuildingClass            rc=2
+[era] VectorClass              rc=2
+[era] SliderClass              rc=2
+[era] ObjectClass              rc=2
+[era] Map_Helper               rc=2
+[era] Cell                     rc=0
+[era] _addr_6B                 rc=2
+[era] UnitClass                rc=2
+[era] GameMode                 rc=2
+[era] _TClassFactory_VSuperWeaponTypeClass rc=2
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VInfantryTypeClass rc=2
+[era] _TClassFactory_VInfantryClass rc=2
+[era] _TClassFactory_VDriveLocomotionClass rc=2
+[era] _TClassFactory_VTeleportLocomotionClass rc=2
+[era] _TClassFactory_VBulletClass rc=2
+[era] StaticButtonClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x6af4a0   MISMATCH         SlaveManagerClass::Constructor_SlaveManagerClass
+[diff] 0x6b5f80   MISMATCH         Cell::IsWalkable
+[ledger] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> NG (attempt 4)
+[ledger] 0x6b0300 BuildingClass::FindPlacementCells2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6b0db0 BuildingClass::ProcessEnterUnit -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6b1930 VectorClass::checkAIResources -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b1f50 SliderClass::SetValue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b3850 ObjectClass::ProcessSlaveManagerTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6b5f80 Cell::IsWalkable -> NG (attempt 17)
+[ledger] 0x6b6230 ShowAudioSettingsDialog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b7c60 UnitClass::ClearTargetRef -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6b8ca0 GameMode::ReadFlagsFromINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c6740 StaticButtonClass::HitTest -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p19\batch_report.json
