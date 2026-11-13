@@ -51218,7 +51218,7 @@
   "this_as_id": false
  },
  "0x4d1890": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51690,14 +51690,14 @@
   "this_as_id": false
  },
  "0x4d31e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::Construct",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -51762,7 +51762,7 @@
   "this_as_id": false
  },
  "0x4d3920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51786,14 +51786,14 @@
   "this_as_id": false
  },
  "0x4d4280": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::ApproachEvaluate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::ApproachEvaluate",
-  "rule_violations": 15,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -51822,7 +51822,7 @@
   "this_as_id": false
  },
  "0x4d4dc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51846,7 +51846,7 @@
   "this_as_id": false
  },
  "0x4d5070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51870,7 +51870,7 @@
   "this_as_id": false
  },
  "0x4d55c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51882,7 +51882,7 @@
   "this_as_id": false
  },
  "0x4d55f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51906,7 +51906,7 @@
   "this_as_id": false
  },
  "0x4d5690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51918,7 +51918,7 @@
   "this_as_id": false
  },
  "0x4d6aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51938,7 +51938,7 @@
   "status": "PENDING"
  },
  "0x4d7330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51950,7 +51950,7 @@
   "this_as_id": false
  },
  "0x4d74e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -51962,14 +51962,14 @@
   "this_as_id": false
  },
  "0x4d7d50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::SpawnInfantry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectClass::SpawnInfantry",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -52046,14 +52046,14 @@
   "this_as_id": false
  },
  "0x4d9290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::ProcessTeamAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::ProcessTeamAction",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -52070,7 +52070,7 @@
   "this_as_id": false
  },
  "0x4d94b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52149,7 +52149,7 @@
   "status": "OK"
  },
  "0x4d9c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52161,7 +52161,7 @@
   "this_as_id": false
  },
  "0x4d9c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52268,7 +52268,7 @@
   "this_as_id": false
  },
  "0x4da230": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52316,7 +52316,7 @@
   "this_as_id": false
  },
  "0x4da4e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52328,14 +52328,14 @@
   "this_as_id": false
  },
  "0x4da530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FootClass::MovementAI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FootClass::MovementAI",
-  "rule_violations": 20,
+  "rule_violations": 17,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

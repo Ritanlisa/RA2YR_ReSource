@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d1890 TacticalClass::DrawBuildings -> TacticalClass
+[conv] 0x4d31e0 FootClass::Construct -> FootClass
+[conv] 0x4d3920 FootClass::MovementStep -> FootClass
+[conv] 0x4d4280 FootClass::ApproachEvaluate -> FootClass
+[conv] 0x4d4dc0 FootClass::ScanTarget -> FootClass
+[conv] 0x4d5070 FootClass::FindMovePosition -> FootClass
+[conv] 0x4d55c0 FootClass::PlayCOM_audio -> FootClass
+[conv] 0x4d55f0 FootClass::Destru_vt319 -> FootClass
+[conv] 0x4d5690 FootClass::CalculateApproachPath -> FootClass
+[conv] 0x4d6aa0 FootClass::FindAITarget -> FootClass
+[conv] 0x4d7330 FootClass::ProcessDeploy -> FootClass
+[conv] 0x4d74e0 FootClass::ValidateMove -> FootClass
+[conv] 0x4d7d50 TechnoClass::SpawnInfantry -> TechnoClass
+[conv] 0x4d9290 FootClass::ProcessTeamAction -> FootClass
+[conv] 0x4d94b0 FootClass::AssignDestination -> FootClass
+[conv] 0x4d9c10 FootClass::Destru_vt107 -> FootClass
+[conv] 0x4d9c60 ObjectClass::CheckCellFlags -> ObjectClass
+[conv] 0x4da230 FootClass::CanBeRecruited -> FootClass
+[conv] 0x4da4e0 FootClass::CheckTargetValidity -> FootClass
+[conv] 0x4da530 FootClass::MovementAI -> FootClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TacticalClass            rc=2
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4d1890 TacticalClass::DrawBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d31e0 FootClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d3920 FootClass::MovementStep -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d4280 FootClass::ApproachEvaluate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d4dc0 FootClass::ScanTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d5070 FootClass::FindMovePosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d55c0 FootClass::PlayCOM_audio -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d55f0 FootClass::Destru_vt319 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d5690 FootClass::CalculateApproachPath -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d6aa0 FootClass::FindAITarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d7330 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d74e0 FootClass::ValidateMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d7d50 TechnoClass::SpawnInfantry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d9290 FootClass::ProcessTeamAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d94b0 FootClass::AssignDestination -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d9c10 FootClass::Destru_vt107 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d9c60 ObjectClass::CheckCellFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da230 FootClass::CanBeRecruited -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da4e0 FootClass::CheckTargetValidity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da530 FootClass::MovementAI -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p20\batch_report.json
