@@ -1,0 +1,81 @@
+{
+ "symbol": "?PrepareTextDisplay@ScenarioClass@@QAEDHHHH@Z",
+ "sym_key": "ScenarioClass::PrepareTextDisplay",
+ "size": 184,
+ "link_base": 0,
+ "bytes_hex": "8b81900000008b150000000083ec248d04408d8a20100000568b35540a000089b2e81100008b5424048d0480895104894108a1000000005783b8e8110000ff75118b0d540a00008988e8110000a100000000ba00000000c780f41100000000000085d274176a1f8d4424105250e80000000083c40cc644242b00eb09b900000000884c240c8b15000000008d44240c8dbaf81100003bc7740bb9080000008d74240cf3a5b900000000e8000000005fb0015e83c424c21000",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?PreDraw@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::PreDraw"
+  }
+ ]
+}

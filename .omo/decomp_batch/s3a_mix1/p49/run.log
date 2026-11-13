@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b5c90 TimedCreateUnitAtCoords -> _addr_6B
+[conv] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> ObjectClass
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x6dad60 ObjectClass::RenderRallyPointLines -> ObjectClass
+[conv] 0x6e0290 ObjectClass::sub_6E0290 -> ObjectClass
+[conv] 0x6e0aa0 TActionClass::executeEnterAction -> TActionClass
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x6eaa90 TeamClass::RecruitMember -> TeamClass
+[conv] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> ObjectClass
+[conv] 0x7120d0 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x716290 TechnoTypeClass::GetModeSpecificValue -> TechnoTypeClass
+[conv] 0x71c070 TerrainClass::ClearCellFlags -> TerrainClass
+[conv] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> TerrainClass
+[conv] 0x71c730 TerrainClass::Update -> TerrainClass
+[conv] 0x7235a0 CellClass::RegisterForRedraw -> CellClass
+[conv] 0x725fa0 TriggerClass::Construct -> TriggerClass
+[conv] 0x7271d0 sub_7271D0 -> _addr_72
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x72d9a0 InitializeGameLoading -> _addr_72
+[conv] 0x72f350 House_Load -> House
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=2
+[era] ObjectClass              rc=2
+[era] TActionClass             rc=2
+[era] ScenarioClass            rc=0
+[era] TeamClass                rc=2
+[era] TechnoTypeClass          rc=2
+[era] TerrainClass             rc=2
+[era] CellClass                rc=2
+[era] TriggerClass             rc=2
+[era] _addr_72                 rc=2
+[era] Game                     rc=2
+[era] House                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e1530   MISMATCH         ScenarioClass::PrepareTextDisplay
+[ledger] 0x6b5c90 TimedCreateUnitAtCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6dad60 ObjectClass::RenderRallyPointLines -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e0290 ObjectClass::sub_6E0290 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e0aa0 TActionClass::executeEnterAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> NG (attempt 17)
+[ledger] 0x6eaa90 TeamClass::RecruitMember -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7120d0 TechnoTypeClass::ComputeValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x716290 TechnoTypeClass::GetModeSpecificValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71c070 TerrainClass::ClearCellFlags -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71c730 TerrainClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7235a0 CellClass::RegisterForRedraw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x725fa0 TriggerClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7271d0 sub_7271D0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 7)
+[ledger] 0x72d9a0 InitializeGameLoading -> COMPILE_FAIL (attempt 3)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p49\batch_report.json

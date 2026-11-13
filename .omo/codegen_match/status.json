@@ -146799,7 +146799,7 @@
   "this_as_id": false
  },
  "0x6b5c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "TimedCreateUnitAtCoords",
@@ -148221,7 +148221,7 @@
   "this_as_id": false
  },
  "0x6bb8e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -156989,7 +156989,7 @@
   "this_as_id": false
  },
  "0x6d04d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -158419,7 +158419,7 @@
   "this_as_id": false
  },
  "0x6dad60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159163,7 +159163,7 @@
   "this_as_id": false
  },
  "0x6e0290": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -159223,7 +159223,7 @@
   "this_as_id": false
  },
  "0x6e0aa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159343,7 +159343,7 @@
   "this_as_id": false
  },
  "0x6e1530": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov ecx, dword ptr [0xa8b230]",
@@ -162208,7 +162208,7 @@
   "this_as_id": false
  },
  "0x6eaa90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162507,7 +162507,7 @@
   "this_as_id": false
  },
  "0x6ed200": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167342,7 +167342,7 @@
   "this_as_id": false
  },
  "0x7120d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167392,7 +167392,7 @@
   "status": "NG"
  },
  "0x716290": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169101,7 +169101,7 @@
   "this_as_id": false
  },
  "0x71c070": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169113,7 +169113,7 @@
   "this_as_id": false
  },
  "0x71c110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169180,14 +169180,14 @@
   "this_as_id": false
  },
  "0x71c730": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TerrainClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainClass::Update",
-  "rule_violations": 4,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -171255,14 +171255,14 @@
   "this_as_id": false
  },
  "0x7235a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CellClass::RegisterForRedraw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::RegisterForRedraw",
-  "rule_violations": 8,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -172750,7 +172750,7 @@
   "this_as_id": false
  },
  "0x725fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -173299,7 +173299,7 @@
   "this_as_id": false
  },
  "0x7271d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_7271D0",
@@ -175887,7 +175887,7 @@
   "this_as_id": false
  },
  "0x72d730": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -175956,7 +175956,7 @@
   "this_as_id": false
  },
  "0x72d9a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitializeGameLoading",
@@ -176322,7 +176322,7 @@
   "this_as_id": false
  },
  "0x72f350": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "House_Load",
