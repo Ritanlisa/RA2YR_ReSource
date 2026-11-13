@@ -80815,7 +80815,7 @@
   "this_as_id": false
  },
  "0x541070": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81993,7 +81993,7 @@
   "this_as_id": false
  },
  "0x547230": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82572,7 +82572,7 @@
   "this_as_id": false
  },
  "0x54a990": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82584,7 +82584,7 @@
   "this_as_id": false
  },
  "0x54a9e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82882,7 +82882,7 @@
   "this_as_id": false
  },
  "0x54b8d0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82906,11 +82906,16 @@
   "this_as_id": false
  },
  "0x54ba30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::UpdateFootMovement",
-  "note": "backfill: results.jsonl COMPILE_FAIL/snapshotfix2_probe",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateFootMovement",
+  "rule_violations": 7,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x54bd30": {
   "attempts": 4,
@@ -82979,7 +82984,7 @@
   "status": "NG"
  },
  "0x54d0f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83027,7 +83032,7 @@
   "this_as_id": false
  },
  "0x54d9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -84622,7 +84627,7 @@
   "this_as_id": false
  },
  "0x551e50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DecompressCoreLCW",
@@ -84926,7 +84931,7 @@
   "this_as_id": false
  },
  "0x552b10": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84982,7 +84987,7 @@
   "this_as_id": false
  },
  "0x554100": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84994,7 +84999,7 @@
   "this_as_id": false
  },
  "0x554150": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85959,18 +85964,28 @@
   "this_as_id": false
  },
  "0x556620": {
-  "attempts": 10,
+  "attempts": 11,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "ObjectClass::GetWidth",
+  "name": "LinkClass::GetWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::GetWidth",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x556630": {
-  "attempts": 10,
+  "attempts": 11,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "ObjectClass::GetHeight",
+  "name": "LinkClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::GetHeight",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x556640": {
   "attempts": 5,
@@ -86257,7 +86272,7 @@
   "this_as_id": false
  },
  "0x556b70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -87697,7 +87712,7 @@
   "this_as_id": false
  },
  "0x55a6c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87709,7 +87724,7 @@
   "this_as_id": false
  },
  "0x55a6f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -87829,7 +87844,7 @@
   "this_as_id": false
  },
  "0x55a970": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -87841,7 +87856,7 @@
   "this_as_id": false
  },
  "0x55a9b0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -88418,14 +88433,14 @@
   "this_as_id": false
  },
  "0x55bc00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x1c",
   "name": "CompressLCWBuffer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CompressLCWBuffer",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x55c0e0": {
