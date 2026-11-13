@@ -130414,7 +130414,7 @@
   "this_as_id": false
  },
  "0x6599c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130438,7 +130438,7 @@
   "this_as_id": false
  },
  "0x659ac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -130462,7 +130462,7 @@
   "this_as_id": false
  },
  "0x659e30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -132891,7 +132891,7 @@
   "this_as_id": false
  },
  "0x65fa70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateTriggerClassIfFarEnough",
@@ -133738,14 +133738,14 @@
   "this_as_id": false
  },
  "0x6620f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BulletClass::ComputeImpactTrajectory",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::ComputeImpactTrajectory",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -133762,7 +133762,7 @@
   "this_as_id": false
  },
  "0x6622c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134639,14 +134639,14 @@
   "this_as_id": false
  },
  "0x6691e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Rules::ReadMiscINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Rules::ReadMiscINI",
-  "rule_violations": 0,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -134675,7 +134675,7 @@
   "this_as_id": false
  },
  "0x66cf70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134699,7 +134699,7 @@
   "this_as_id": false
  },
  "0x66d1f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134711,7 +134711,7 @@
   "this_as_id": false
  },
  "0x66d270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134747,14 +134747,14 @@
   "this_as_id": false
  },
  "0x66d530": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::LoadFromINI",
-  "rule_violations": 0,
+  "rule_violations": 20,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -134965,14 +134965,14 @@
   "this_as_id": false
  },
  "0x672ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RulesClass::ReadMultiplayerDefaults",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::ReadMultiplayerDefaults",
-  "rule_violations": 4,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135013,7 +135013,7 @@
   "this_as_id": false
  },
  "0x6743d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -136501,7 +136501,7 @@
   "this_as_id": false
  },
  "0x67d300": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137340,7 +137340,7 @@
   "this_as_id": false
  },
  "0x6822f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Map_Read_6822F0",
@@ -137754,7 +137754,7 @@
   "this_as_id": false
  },
  "0x683ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -138786,7 +138786,7 @@
   "this_as_id": false
  },
  "0x68f060": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138810,7 +138810,7 @@
   "this_as_id": false
  },
  "0x68f9b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140123,7 +140123,7 @@
   "this_as_id": false
  },
  "0x6941a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ReceiveNetworkFile",
@@ -140369,7 +140369,7 @@
   "this_as_id": false
  },
  "0x6964c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
