@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetFactoryData@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::GetFactoryData",
+ "size": 313,
+ "link_base": 0,
+ "bytes_hex": "5153555657e80000000084c0740be8000000005f5e5d5b59c3a16407000085c00f8e0d01000033edb301894424108b0d340700008b34a985f60f84c1000000f64614010f84b70000008b1656ff92a000000084c00f84a20000008b0656ff909c00000084c00f84910000008b0e56ff512c83f8060f84820000008b3e6a006a0056ff97c4010000506a0b56ff97780300008ad884db74738b1656ff522c83f801755a8b0656ff502c83f8018d86d80200007405b8d802000083380075228b0e56ff512c83f8018d86c40600007405b8c40600008b108a820e0e000084c0741d8b3e6a006a0056ff97c4010000506a0b56ff97780300008ad884db740e8b442410453be87d0de924ffffff5f5e5d32c05b59c384db741da1000000006a00680000803fba002000000fbe8824070000e8000000005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?GetFlag@FactoryClass@@QAEDXZ",
+   "sym_key": "FactoryClass::GetFlag"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?System_Get@@YADXZ",
+   "sym_key": "System_Get"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

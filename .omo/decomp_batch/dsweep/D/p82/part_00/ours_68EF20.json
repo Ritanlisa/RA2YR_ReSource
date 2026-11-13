@@ -1,0 +1,99 @@
+{
+ "symbol": "?AccumulateScoreStats@ScoreScreen@@QAEHXZ",
+ "sym_key": "ScoreScreen::AccumulateScoreStats",
+ "size": 278,
+ "link_base": 0,
+ "bytes_hex": "83ec0c535556578bf933c08b0d1800000033ed33f633db3bc88974241889442414894424100f8695000000a10c0000008b4c24108b34888bcfe8000000008b0d0000000056e80000000084c074128b15000000008bce52e80000000084c0750839350000000075228b86345400008b4c241803c88b442414894c24188b8e8854000003c189442414eb108b8e345400008b868854000003d903e88bcfe8000000008b4424108b0d18000000403bc1894424100f8273ffffff8b4424148b7424188b150000000068e30000008b4a348b91bc00000085d2741f50558bcfe800000000681b01000056538bcfe8000000005f5e5d5b83c40cc355508bcfe800000000681b01000053568bcfe8000000005f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?TransitionRender@Screen@@QAEHPAX0H@Z",
+   "sym_key": "Screen::TransitionRender"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?TransitionRender@Screen@@QAEHPAX0H@Z",
+   "sym_key": "Screen::TransitionRender"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?TransitionRender@Screen@@QAEHPAX0H@Z",
+   "sym_key": "Screen::TransitionRender"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?TransitionRender@Screen@@QAEHPAX0H@Z",
+   "sym_key": "Screen::TransitionRender"
+  }
+ ]
+}

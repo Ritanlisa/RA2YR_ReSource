@@ -1,0 +1,51 @@
+{
+ "symbol": "?ProcessDataBuildingTypeClass@@YG_NPAHHHPAF@Z",
+ "sym_key": "Unnamed::ProcessDataBuildingTypeClass",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000008b44240883ec088b51305355563bc2570f85ed000000a00000000084c00f85e00000008b44242485c00f84d40000008b742428a1000000008b163bd00f84c10000008b6c241c85ed0f84b50000008b450055ff502c83f8070f85a50000006a008bcde8000000008bcd8bf8e8000000000fbf0e0fbf560203c1895424243bc8894c2420894424287d7a8d1c3a895c241c3bd38bf27d470fbf4c2420c1e1088db9800000000fbfd6c1e2088d44241081c2800000005089542418897c2414e8000000008d4c241051e80000000084c0751c463bf37ccf8b5424248b4424288b4c2420413bc8894c24207d19eba48b8d580e000033c05f5e85c95d5b0f95c083c408c210005f5e5db0015b83c408c21000",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03F8@@3IA",
+   "sym_key": "DataGlobal_8A03F8"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  }
+ ]
+}

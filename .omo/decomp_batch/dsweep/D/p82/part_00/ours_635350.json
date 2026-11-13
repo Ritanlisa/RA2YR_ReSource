@@ -1,0 +1,87 @@
+{
+ "symbol": "?RenderAction@ScenarioClass@@QAEHH@Z",
+ "sym_key": "ScenarioClass::RenderAction",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "83ec2c5355568bf1578d4c242ce8000000008b08894c24148b4e048b78048b68088b500c8b01895424188d4c242c8b5004e8000000008b08894c24208b5004895424248b40088d5424208d4c241c89442428e8000000008b108b4804a10000000083ea04895424108d59fc0fbe088b118b4c2440518d4c2414518d4c241c5150ff52548b4424108b4c24148d50083bca7d798d53083bfa7d7203e93be87e6c8b4424188d0c383bcb7e618a0df00000008a15f80000003ad10fbec17c318a15f500000084d2750484c975408a0dfc00000084c97e360fbed103d0a1e80000006a005268e8000000ff500884c0741d8a0df80000000fbec1fec1880df80000000fbe0dec0000008b118934825f5e5d5b83c42cc20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetViewport@Display@@QAEPAHXZ",
+   "sym_key": "Display::GetViewport"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAXPAE@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?ToCoordPixel@@YIPAIPAX0@Z",
+   "sym_key": "ToCoordPixel"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DSurface_Composite@@3HA",
+   "sym_key": "DSurface_Composite"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  }
+ ]
+}

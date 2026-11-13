@@ -1,0 +1,75 @@
+{
+ "symbol": "?IsBuildable@CellClass@@QAEDXZ",
+ "sym_key": "CellClass::IsBuildable",
+ "size": 297,
+ "link_base": 0,
+ "bytes_hex": "5156578bf98bb7e400000085f6742b8a869000000084c0741a8b0656ff502c83f80f740f8b0e56ff512c83f8010f85f00000008b763085f675d58b87e800000085c00f85db0000008b8740010000f6c4050f85cc000000a1000000008d7724668bd0660316660fb60e66895424088d542408c1f81003c152b900000000668944240ee8000000008b8040010000f6c4057409f6c4080f8588000000660fb60e8b150400000066a10000000066030603ca8d54240866894c240a52b900000000668944240ce8000000008b8040010000f6c4057405f6c408744a837f38ff754456b900000000e80000000084c074358b4f38a1240900003bc87d2181f9ffff00007419a1f40800005f5e8b0c8833c08a81e002000080e1000bc159c324015f0c015e59c35f32c05e59c3",
+ "relocs": [
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

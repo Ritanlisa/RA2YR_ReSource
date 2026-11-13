@@ -1,0 +1,99 @@
+{
+ "symbol": "?GetItemText@EditClass@@QAEPAIPAH@Z",
+ "sym_key": "EditClass::GetItemText",
+ "size": 320,
+ "link_base": 0,
+ "bytes_hex": "83ec205355568bf157560fbe8660010000ff108b4e0c8b56108b5e2c4142894c24100fbe0d04000000f6d81bc08954241c25002000008b7e14894424140bd88b464083ef028b2c81a100000000500fbe108b0aff5178578b7c2438536a008d54241c558d4c2434528b15000000005150528bd78d4c243ce8000000008bcee8000000000fbe866001000056ff1084c00f84a100000057e8000000008b4e3883c4043bc10f838d0000006a0057e8000000008b0d000000006a00518bd8e8000000008bc88b461403cb83e8023bc87d676a0057e8000000008b560c8b7e2c8b4e408d4410010fbe1504000000894424148b461040894424108b4424348b348a0bf8a1000000000fbe088b118d4c24185150ff52786a006aff576a008d54242456528b150000000050a100000000508d4c243ce8000000005f5e5d5b83c420c20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?FillRectangle@@YIPAVIUnknown@@PAXHHHHHHHHH@Z",
+   "sym_key": "FillRectangle"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?asc_82076C@@3PAGA",
+   "sym_key": "asc_82076C"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "?asc_82076C@@3PAGA",
+   "sym_key": "asc_82076C"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 306,
+   "type": "REL32",
+   "sym": "?FillRectangle@@YIPAVIUnknown@@PAXHHHHHHHHH@Z",
+   "sym_key": "FillRectangle"
+  }
+ ]
+}

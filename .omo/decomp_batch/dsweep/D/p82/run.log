@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p82\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dcfc4 __strupr -> _addr_7D
+[conv] 0x722770 BuildingClass::RebuildOccupancyTracking -> BuildingClass
+[conv] 0x723260 BuildingClass::RebuildOccupancyTracking2 -> BuildingClass
+[conv] 0x635350 ScenarioClass::RenderAction -> ScenarioClass
+[conv] 0x6b25c0 CellClass::IsBuildable -> CellClass
+[conv] 0x4c32e0 EditClass::GetItemText -> EditClass
+[conv] 0x730d60 ObjectClass::GetFactoryData -> ObjectClass
+[conv] 0x409470 ObjectClass::sub_409470 -> ObjectClass
+[conv] 0x6454e0 ParticleTypeClass::ProcessPower -> ParticleTypeClass
+[conv] 0x77ccd0 sub_77CCD0 -> _addr_77
+[conv] 0x512760 HouseTypeClass::Destructor -> HouseTypeClass
+[conv] 0x626c60 ObjectClass::Surface_Update -> ObjectClass
+[conv] 0x68ef20 ScoreScreen::AccumulateScoreStats -> ScoreScreen
+[conv] 0x4dff40 TechnoClass::FindClosestBuilding -> TechnoClass
+[conv] 0x682640 WriteStringCOM -> _addr_68
+[conv] 0x4a9070 ProcessDataBuildingTypeClass -> _addr_4A
+[conv] 0x7cadb9 FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x4dfb70 TechnoClass::FindClosestUnit -> TechnoClass
+[conv] 0x7b9c30 WWMouseClass::releaseMouse -> WWMouseClass
+[conv] 0x7d0f45 _realloc -> _addr_7D
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=0
+[era] BuildingClass            rc=2
+[era] ScenarioClass            rc=0
+[era] CellClass                rc=0
+[era] EditClass                rc=0
+[era] ObjectClass              rc=2
+[era] ParticleTypeClass        rc=0
+[era] _addr_77                 rc=2
+[era] HouseTypeClass           rc=0
+[era] ScoreScreen              rc=0
+[era] TechnoClass              rc=2
+[era] _addr_68                 rc=2
+[era] _addr_4A                 rc=0
+[era] _addr_7C                 rc=2
+[era] WWMouseClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7dcfc4   MISMATCH         __strupr
+[diff] 0x7d0f45   MISMATCH         _realloc
+[diff] 0x635350   MISMATCH         ScenarioClass::RenderAction
+[diff] 0x6b25c0   MISMATCH         CellClass::IsBuildable
+[diff] 0x4c32e0   MISMATCH         EditClass::GetItemText
+[diff] 0x730d60   MISMATCH         ObjectClass::GetFactoryData
+[diff] 0x6454e0   MISMATCH         ParticleTypeClass::ProcessPower
+[diff] 0x512760   MISMATCH         HouseTypeClass::Destructor
+[diff] 0x68ef20   MISMATCH         ScoreScreen::AccumulateScoreStats
+[diff] 0x4dff40   MISMATCH         TechnoClass::FindClosestBuilding
+[diff] 0x4a9070   MISMATCH         ProcessDataBuildingTypeClass
+[ledger] 0x7dcfc4 __strupr -> NG (attempt 1)
+[ledger] 0x722770 BuildingClass::RebuildOccupancyTracking -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723260 BuildingClass::RebuildOccupancyTracking2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635350 ScenarioClass::RenderAction -> NG (attempt 1)
+[ledger] 0x6b25c0 CellClass::IsBuildable -> NG (attempt 1)
+[ledger] 0x4c32e0 EditClass::GetItemText -> NG (attempt 1)
+[ledger] 0x730d60 ObjectClass::GetFactoryData -> NG (attempt 1)
+[ledger] 0x409470 ObjectClass::sub_409470 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6454e0 ParticleTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x77ccd0 sub_77CCD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512760 HouseTypeClass::Destructor -> NG (attempt 1)
+[ledger] 0x626c60 ObjectClass::Surface_Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68ef20 ScoreScreen::AccumulateScoreStats -> NG (attempt 1)
+[ledger] 0x4dff40 TechnoClass::FindClosestBuilding -> NG (attempt 1)
+[ledger] 0x682640 WriteStringCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a9070 ProcessDataBuildingTypeClass -> NG (attempt 1)
+[ledger] 0x7cadb9 FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dfb70 TechnoClass::FindClosestUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b9c30 WWMouseClass::releaseMouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d0f45 _realloc -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "frame_sched": 4,
+  "branch_polarity": 1,
+  "const_fold": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p82\batch_report.json

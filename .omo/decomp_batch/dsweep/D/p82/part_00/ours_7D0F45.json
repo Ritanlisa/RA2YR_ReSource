@@ -1,0 +1,111 @@
+{
+ "symbol": "?_realloc@@YAPAXPAXI@Z",
+ "sym_key": "Unnamed::_realloc",
+ "size": 300,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db5775128b44241850e80000000083c4045f5e5d5bc38b74241885f60f84f200000033ff83fee00f87c50000006a09e80000000053e8000000008be883c40885ed752d6a09e80000000083c40485f67505be010000008b0d0000000083c60f83e6f056536a0051e8000000008bf8eb7e3b3500000000772c565355e80000000083c40c85c074048bfbeb5956e8000000008bf883c40485ff740a8b43fc483bc67230eb2c85f67505be010000008b150000000083c60f83e6f0566a0052e8000000008bf885ff741c8b43fc483bc672028bc6505357e8000000005355e80000000083c4146a09e80000000083c40485ff751ba10000000085c0741256e80000000083c40485c07415e915ffffff8bc75f5e5d5bc353e80000000083c4045f5e5d33c05bc3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__sbh_find_block@@YAHPAXZZ",
+   "sym_key": "__sbh_find_block"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?HeapReAlloc@@YGPAXPAXH0H@Z",
+   "sym_key": "HeapReAlloc"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C584@@3IA",
+   "sym_key": "DataGlobal_87C584"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?__sbh_resize_block@@YAHHPAXHZZ",
+   "sym_key": "__sbh_resize_block"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?__sbh_alloc_block@@YAHHZZ",
+   "sym_key": "__sbh_alloc_block"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?HeapAlloc@@YGPAXPAXHH@Z",
+   "sym_key": "HeapAlloc"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?memcpy_0@@YAHPAX0HZZ",
+   "sym_key": "memcpy_0"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?__sbh_free_block@@YAHHPAXZZ",
+   "sym_key": "__sbh_free_block"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782C4@@3IA",
+   "sym_key": "CRTGlobal_B782C4"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?_callnewh@@YAHHZZ",
+   "sym_key": "_callnewh"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  }
+ ]
+}

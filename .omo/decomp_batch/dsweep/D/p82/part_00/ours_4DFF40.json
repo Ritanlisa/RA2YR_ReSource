@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindClosestBuilding@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::FindClosestBuilding",
+ "size": 354,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec38535556578bf9e80000000084c00f843c0100008b871c020000c744241c00000000c7442418ffffff7f8b80d800000048894424140f88150100008b5c2424eb048b4424148b8f1c0200008b91cc0000008d4c2430518b2c82558b4500ff50488b178bf08d44243c5057ff52488b48048b56042bca8b50088b00894c24248b4e08c744242c000000002bd18b0e2bc1895424208944242883ec08df6c2430db442428db44242cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4c24348b5424305152ddd8e80000000033c383c41025ff00000033d88b4424183bd87d216a0055e80000000083c40885c075128b85e402000085c07508895c2418896c241c8b44241448894424140f8928ffffff8b74241c85f6742f8b076a015657ff90800400008b0f566a0257ff91780200008b176a016a0757ff92e8010000b0015f5e5d5b8be55dc35f32c05e5d5b8be55dc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?CanSelfRepair@TechnoClass@@QAE_NXZ",
+   "sym_key": "TechnoClass::CanSelfRepair"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAXH@Z",
+   "sym_key": "Team__GetMember"
+  }
+ ]
+}

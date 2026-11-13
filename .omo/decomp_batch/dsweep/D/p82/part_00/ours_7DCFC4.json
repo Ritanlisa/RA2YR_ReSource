@@ -1,0 +1,129 @@
+{
+ "symbol": "?__strupr@@YAPADPAD@Z",
+ "sym_key": "Unnamed::__strupr",
+ "size": 372,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005533ed85c00f843c0100006800000000e800000000a10000000085c0741e6800000000e8000000006a13e80000000083c404c744240401000000eb08c744240400000000a10000000085c00f84b1000000538b5c2410566a016a006a006a006aff53680002000050e8000000008bf083c42085f6745056e8000000008be883c40485ed7441a1000000006a016a0056556aff53680002000050e80000000083c42085c07421578bfd83c9ff33c0f2aef7d12bf98bd18bf78bfbc1e902f3a58bca83e103f3a45f8b44240c85c0741a6a13e80000000083c40455e80000000083c4048bc35e5b5d59c36800000000e80000000055e80000000083c4048bc35e5b5d59c38b44240485c0740c6a13e80000000083c404eb0a6800000000e8000000008b44240c8bd080380074408a0a80f9617c0a80f97a7f0580e920880a8a4a014284c975e75d59c38b44240c8bd080380074198a0a80f9617c0a80f97a7f0580e920880a8a4a014284c975e75d59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?InterlockedIncrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedIncrement"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA0@@3IA",
+   "sym_key": "CRTGlobal_B78BA0"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?__crtLCMapStringA@@YAHHHPAXH0HHHZZ",
+   "sym_key": "__crtLCMapStringA"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?__crtLCMapStringA@@YAHHHPAXH0HHHZZ",
+   "sym_key": "__crtLCMapStringA"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  }
+ ]
+}
