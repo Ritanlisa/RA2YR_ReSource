@@ -1,0 +1,11 @@
+{
+ "addr": "0x554370",
+ "name": "LoadProgressMgr::ReleaseBuffer",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x554370",
+ "bytes_hex": "53568bf133db385e5074108b46443bc3740950e8b547270083c4048a4651895e443ac374108b46483bc3740950e89b47270083c4048a4652895e483ac374108b464c3bc3740950e88147270083c404895e4ce899701d00e8a4741d008b4e043bcb74098b016a01ff10895e048b4e083bcb74098b116a01ff12895e088b4e603bcb74068b016a01ff10895e605e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,45 @@
+{
+ "symbol": "?QueryInterface@IPXGlobalConnClass@@QAEPAID@Z",
+ "sym_key": "IPXGlobalConnClass::QueryInterface",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86d0000000c7060000000085c0741350e80000000083c404c786d000000000000000578dbecc00000085ff74118b0750e80000000083c404c707000000008bcec70600000000e8000000008a44240c5fa801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_IPXGlobalConnClass@@3PAXA",
+   "sym_key": "vt_IPXGlobalConnClass"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?vt_IPXConnClass@@3PAXA",
+   "sym_key": "vt_IPXConnClass"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?dtor@ConnectionClass@@QAEXXZ",
+   "sym_key": "ConnectionClass::dtor"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

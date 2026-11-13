@@ -1,0 +1,39 @@
+{
+ "symbol": "?ReleaseBuffer@LoadProgressMgr@@QAEXXZ",
+ "sym_key": "LoadProgressMgr::ReleaseBuffer",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db385e5074128d46443bc3740b8b0050e80000000083c4048a4651895e443ac374128d46483bc3740b8b0851e80000000083c4048a4652895e483ac374128d464c3bc3740b8b1052e80000000083c4048b442408895e4c50e8000000008b4c240c51e8000000008b460483c4083bc3740a8b106a0150ff12895e048b46083bc3740a8b086a0150ff11895e088b46603bc374078b106a0150ff12895e605e5b59c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?LoadProgressMgr_Release@@YAXPAX@Z",
+   "sym_key": "LoadProgressMgr_Release"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?LoadProgressMgr_Release_72B870@@YAXPAX@Z",
+   "sym_key": "LoadProgressMgr_Release_72B870"
+  }
+ ]
+}

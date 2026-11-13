@@ -1,0 +1,11 @@
+{
+ "addr": "0x53F430",
+ "name": "IPXConnClass::constructor",
+ "size": 163,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53F430",
+ "bytes_hex": "8b44242083ec088b54241456578bf1508b4c24248b44241c6a3c6aff6a02518b4c24285250518bcee803caf4ff8d7e4c8bcfe849f8ffff8b442424c706ccc07e0085c074128b088bd7890a8b4804894a048b40088942088b54242c8b4c24288d46685250894e64e8edaf280083c4088d4c24088d54243051528bcfe8f0f8ffff8b4c2408668b54240c8d4658c74660000000005f8908668950048bc65e83c408c22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

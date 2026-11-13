@@ -1,0 +1,39 @@
+{
+ "symbol": "?constructor@IPXConnClass@@QAEPAXHHHFPAHH0H@Z",
+ "sym_key": "IPXConnClass::constructor",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "8b4424208b54240c56578bf1508b4c241c8b4424146a3c6aff6a02518b4c24205250518bcee8000000008d7e4c8bcfe8000000008b44241cc7060000000085c074108b1089178b4804894e508b50088956548b4c24248b4424208d96d00000005152894664e80000000083c4088d4424188d4c242850518bcfe800000000668b4424288b5424186689465cc74660000000008956588bc65f5ec22000",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?initConnection@IPXConnClass@@QAEPAXHHHFHHHH@Z",
+   "sym_key": "IPXConnClass::initConnection"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?vt_IPXConnClass@@3PAXA",
+   "sym_key": "vt_IPXConnClass"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  }
+ ]
+}

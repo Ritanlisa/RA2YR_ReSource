@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x53b410 Weapon_Get_53B410 -> Weapon_Get
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x53e770 GameLoopMessagePump -> _addr_53
+[conv] 0x53f430 IPXConnClass::constructor -> IPXConnClass
+[conv] 0x540670 IPXGlobalConnClass::QueryInterface -> IPXGlobalConnClass
+[conv] 0x542620 ScoreBoard::Render -> ScoreBoard
+[conv] 0x547020 MapClass::LoadFileData -> MapClass
+[conv] 0x547cf0 TerrainClass::GenerateTexture -> TerrainClass
+[conv] 0x54b750 JumpjetLocomotionClass::InitClass -> JumpjetLocomotionClass
+[conv] 0x54bd30 TechnoClass::UpdateFootMoveToState -> TechnoClass
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x552d60 LoadingScreen::Render -> LoadingScreen
+[conv] 0x554370 LoadProgressMgr::ReleaseBuffer -> LoadProgressMgr
+[conv] 0x5565a0 LinkClass::Destruct -> LinkClass
+[conv] 0x556640 LinkClass::FindPrev -> LinkClass
+[conv] 0x556670 LinkClass::FindNext -> LinkClass
+[conv] 0x5566a0 LinkClass::InsertAfter -> LinkClass
+[conv] 0x556730 LinkClass::RemoveNode -> LinkClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Weapon_Get               rc=2
+[era] TimerPool                rc=2
+[era] _addr_53                 rc=2
+[era] IPXConnClass             rc=0
+[era] IPXGlobalConnClass       rc=0
+[era] ScoreBoard               rc=2
+[era] MapClass                 rc=2
+[era] TerrainClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] LoadingScreen            rc=2
+[era] LoadProgressMgr          rc=0
+[era] LinkClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x53f430   MISMATCH         IPXConnClass::constructor
+[diff] 0x540670   MISMATCH         IPXGlobalConnClass::QueryInterface
+[diff] 0x554370   MISMATCH         LoadProgressMgr::ReleaseBuffer
+[ledger] 0x53b410 Weapon_Get_53B410 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53e770 GameLoopMessagePump -> COMPILE_FAIL (attempt 2)
+[ledger] 0x53f430 IPXConnClass::constructor -> NG (attempt 2)
+[ledger] 0x540670 IPXGlobalConnClass::QueryInterface -> NG (attempt 5)
+[ledger] 0x542620 ScoreBoard::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x547020 MapClass::LoadFileData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x547cf0 TerrainClass::GenerateTexture -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54b750 JumpjetLocomotionClass::InitClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54bd30 TechnoClass::UpdateFootMoveToState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x552d60 LoadingScreen::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x554370 LoadProgressMgr::ReleaseBuffer -> NG (attempt 5)
+[ledger] 0x5565a0 LinkClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556640 LinkClass::FindPrev -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556670 LinkClass::FindNext -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5566a0 LinkClass::InsertAfter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x556730 LinkClass::RemoveNode -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p10\batch_report.json

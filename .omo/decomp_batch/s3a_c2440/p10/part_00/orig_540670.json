@@ -1,0 +1,11 @@
+{
+ "addr": "0x540670",
+ "name": "IPXGlobalConnClass::QueryInterface",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x540670",
+ "bytes_hex": "568bf18b86d0000000c7060cc17e0085c0741350e8b484280083c404c786d0000000000000008b86cc00000085c0741350e89784280083c404c786cc000000000000008bcec706ccc07e00e820b8f4fff644240801740956e87084280083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
