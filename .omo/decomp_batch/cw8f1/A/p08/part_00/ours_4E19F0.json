@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsPrimaryInstance@GadgetClass@@QAEEXZ",
+ "sym_key": "GadgetClass::IsPrimaryInstance",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b15d000000033c03bca0f94c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

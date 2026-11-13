@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c96a0 sub_4C96A0 -> _addr_4C
+[conv] 0x4c9870 sub_4C9870 -> _addr_4C
+[conv] 0x4cb9b0 sub_4CB9B0 -> _addr_4C
+[conv] 0x4cbb80 sub_4CBB80 -> _addr_4C
+[conv] 0x4cbf10 sub_4CBF10 -> _addr_4C
+[conv] 0x4cc0e0 sub_4CC0E0 -> _addr_4C
+[conv] 0x4cc960 sub_4CC960 -> _addr_4C
+[conv] 0x4d0560 sub_4D0560 -> _addr_4D
+[conv] 0x4d0730 sub_4D0730 -> _addr_4D
+[conv] 0x4d2f50 sub_4D2F50 -> _addr_4D
+[conv] 0x4d3120 sub_4D3120 -> _addr_4D
+[conv] 0x4e0f10 sub_4E0F10 -> _addr_4E
+[conv] 0x4e10e0 sub_4E10E0 -> _addr_4E
+[conv] 0x4e19f0 GadgetClass::IsPrimaryInstance -> GadgetClass
+[conv] 0x4e1b10 sub_4E1B10 -> _addr_4E
+[conv] 0x4e1ce0 sub_4E1CE0 -> _addr_4E
+[conv] 0x4e3130 sub_4E3130 -> _addr_4E
+[conv] 0x4e3300 sub_4E3300 -> _addr_4E
+[conv] 0x4e62d0 sub_4E62D0 -> _addr_4E
+[conv] 0x4e64a0 sub_4E64A0 -> _addr_4E
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=0
+[era] _addr_4D                 rc=0
+[era] _addr_4E                 rc=0
+[era] GadgetClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c96a0   MATCH            sub_4C96A0
+[diff] 0x4c9870   MATCH            sub_4C9870
+[diff] 0x4cb9b0   MATCH            sub_4CB9B0
+[diff] 0x4cbb80   MATCH            sub_4CBB80
+[diff] 0x4cbf10   MATCH            sub_4CBF10
+[diff] 0x4cc0e0   MATCH            sub_4CC0E0
+[diff] 0x4cc960   MATCH            sub_4CC960
+[diff] 0x4d0560   MATCH            sub_4D0560
+[diff] 0x4d0730   MATCH            sub_4D0730
+[diff] 0x4d2f50   MATCH            sub_4D2F50
+[diff] 0x4d3120   MATCH            sub_4D3120
+[diff] 0x4e0f10   MATCH            sub_4E0F10
+[diff] 0x4e10e0   MATCH            sub_4E10E0
+[diff] 0x4e1b10   MATCH            sub_4E1B10
+[diff] 0x4e1ce0   MATCH            sub_4E1CE0
+[diff] 0x4e3130   MATCH            sub_4E3130
+[diff] 0x4e3300   MATCH            sub_4E3300
+[diff] 0x4e62d0   MATCH            sub_4E62D0
+[diff] 0x4e64a0   MATCH            sub_4E64A0
+[diff] 0x4e19f0   MATCH            GadgetClass::IsPrimaryInstance
+[ledger] 0x4c96a0 sub_4C96A0 -> OK (attempt 2)
+[ledger] 0x4c9870 sub_4C9870 -> OK (attempt 4)
+[ledger] 0x4cb9b0 sub_4CB9B0 -> OK (attempt 2)
+[ledger] 0x4cbb80 sub_4CBB80 -> OK (attempt 3)
+[ledger] 0x4cbf10 sub_4CBF10 -> OK (attempt 2)
+[ledger] 0x4cc0e0 sub_4CC0E0 -> OK (attempt 3)
+[ledger] 0x4cc960 sub_4CC960 -> OK (attempt 3)
+[ledger] 0x4d0560 sub_4D0560 -> OK (attempt 2)
+[ledger] 0x4d0730 sub_4D0730 -> OK (attempt 3)
+[ledger] 0x4d2f50 sub_4D2F50 -> OK (attempt 2)
+[ledger] 0x4d3120 sub_4D3120 -> OK (attempt 3)
+[ledger] 0x4e0f10 sub_4E0F10 -> OK (attempt 2)
+[ledger] 0x4e10e0 sub_4E10E0 -> OK (attempt 3)
+[ledger] 0x4e19f0 GadgetClass::IsPrimaryInstance -> OK (attempt 3)
+[ledger] 0x4e1b10 sub_4E1B10 -> OK (attempt 2)
+[ledger] 0x4e1ce0 sub_4E1CE0 -> OK (attempt 3)
+[ledger] 0x4e3130 sub_4E3130 -> OK (attempt 2)
+[ledger] 0x4e3300 sub_4E3300 -> OK (attempt 3)
+[ledger] 0x4e62d0 sub_4E62D0 -> OK (attempt 2)
+[ledger] 0x4e64a0 sub_4E64A0 -> OK (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p08\batch_report.json
