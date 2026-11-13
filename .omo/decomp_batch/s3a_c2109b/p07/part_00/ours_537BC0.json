@@ -1,0 +1,195 @@
+{
+ "symbol": "?MakeScreenshot@ScreenCaptureCommandClass@@QAGHH@Z",
+ "sym_key": "ScreenCaptureCommandClass::MakeScreenshot",
+ "size": 502,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000081ec780100008d4424085051e80000000085c00f84ce0100008b5424088b44240c895424008b15000000008d4c2400894424045152e80000000085c00f84a50100008b4424108b4c241489442420a1000000008d542420894c24245250e80000000085c00f847d0100008b4424148b4c24008b5424045356578d7801a100000000894c24248b4c241c895424288b10508d7101ff527c3bf07c0ba100000000508b08ff517ca100000000508b10ff92800000003bf87c0ea100000000508b08ff9180000000a1a8000000508b10ff520ca100000000508b08ff517c8bf0a100000000508b10ff92800000006a018d5424286a00528b15000000008944244ca100000000528d542444c744244400000000c7442448000000008974244c8b085250ff5108a1a8000000508b08ff511083ceff468d94240401000056680000000052e80000000083c40c8d8424040100008d8c24b000000050e8000000008b086a0050ff51148d4c24508ad88b9424b0000000c70200000000e8000000008b8424b00000008d8c24b0000000c70000000000e80000000084db75988d8c2404010000518d4c2460e8000000008b150000000068000000008b4c2460e8000000008d4c24448b54245cc70200000000e8000000008b44245c8d4c245cc70000000000e8000000005f5e5b81c478010000c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "??_C@_0N@EBC@SCRN?$CF04d?4pcx?$AA@",
+   "sym_key": "??_C@_0N@EBC@SCRN?$CF04d?4pcx?$AA@"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 350,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 377,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 382,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 407,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 428,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 439,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 448,
+   "type": "REL32",
+   "sym": "?CompressScreenshot@@YIDPAX00@Z",
+   "sym_key": "CompressScreenshot"
+  },
+  {
+   "off": 462,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 467,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 481,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 486,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x529c40 INIClass::ReadCoord2 -> INIClass
+[conv] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> INIClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x52a040 INIClass::ReadBool2 -> INIClass
+[conv] 0x52a0a0 INIClass::ReadBool -> INIClass
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x52a940 INIClass::SaveTimeField -> INIClass
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x531a00 CreditsScreen::DlgProc -> CreditsScreen
+[conv] 0x5349c0 LoadTheaterClassMIX -> _addr_53
+[conv] 0x534fa0 MixFile::LoadSide -> MixFile
+[conv] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> ScreenCaptureCommandClass
+[conv] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> ObjectClass
+[conv] 0x53de00 InitializeAudioStreaming -> _addr_53
+[conv] 0x542f30 ObjectClass::sub_542F30 -> ObjectClass
+[conv] 0x547020 MapClass::LoadFileData -> MapClass
+[conv] 0x54f200 EventClass::Enqueue -> EventClass
+[conv] 0x550080 ObjectClass::sub_550080 -> ObjectClass
+[conv] 0x55cc20 ScreenCapture::Frame -> ScreenCapture
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] MixFileClass             rc=2
+[era] CreditsScreen            rc=0
+[era] _addr_53                 rc=2
+[era] MixFile                  rc=2
+[era] ScreenCaptureCommandClass rc=0
+[era] MapClass                 rc=2
+[era] EventClass               rc=2
+[era] ScreenCapture            rc=2
+=== diffasm byte-compare ===
+[diff] 0x529c40   MISMATCH         INIClass::ReadCoord2
+[diff] 0x52a040   MISMATCH         INIClass::ReadBool2
+[diff] 0x52a0a0   MISMATCH         INIClass::ReadBool
+[diff] 0x52a940   MISMATCH         INIClass::SaveTimeField
+[diff] 0x531a00   MISMATCH         CreditsScreen::DlgProc
+[diff] 0x53de00   MISMATCH         InitializeAudioStreaming
+[diff] 0x537bc0   MISMATCH         ScreenCaptureCommandClass::MakeScreenshot
+[ledger] 0x529c40 INIClass::ReadCoord2 -> NG (attempt 3)
+[ledger] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52a040 INIClass::ReadBool2 -> NG (attempt 3)
+[ledger] 0x52a0a0 INIClass::ReadBool -> NG (attempt 3)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52a940 INIClass::SaveTimeField -> NG (attempt 3)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x531a00 CreditsScreen::DlgProc -> NG (attempt 3)
+[ledger] 0x5349c0 LoadTheaterClassMIX -> COMPILE_FAIL (attempt 3)
+[ledger] 0x534fa0 MixFile::LoadSide -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537bc0 ScreenCaptureCommandClass::MakeScreenshot -> NG (attempt 3)
+[ledger] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> COMPILE_FAIL (attempt 3)
+[ledger] 0x53de00 InitializeAudioStreaming -> NG (attempt 3)
+[ledger] 0x542f30 ObjectClass::sub_542F30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x547020 MapClass::LoadFileData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54f200 EventClass::Enqueue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x550080 ObjectClass::sub_550080 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55cc20 ScreenCapture::Frame -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "regalloc": 1,
+  "cc_mismatch": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p07\batch_report.json

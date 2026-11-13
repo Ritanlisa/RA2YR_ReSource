@@ -73073,19 +73073,19 @@
   "this_as_id": false
  },
  "0x529c40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+49 push 0x8189b0",
   "name": "INIClass::ReadCoord2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "INIClass::ReadCoord2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x529ca0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -73097,7 +73097,7 @@
   "this_as_id": false
  },
  "0x529e70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -73109,31 +73109,31 @@
   "this_as_id": false
  },
  "0x52a040": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+40 push 0x825bfc",
   "name": "INIClass::ReadBool2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "INIClass::ReadBool2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x52a0a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+64 push 0x825bfc",
   "name": "INIClass::ReadBool",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "INIClass::ReadBool",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x52a110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -73145,7 +73145,7 @@
   "this_as_id": false
  },
  "0x52a2f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -73205,15 +73205,15 @@
   "this_as_id": false
  },
  "0x52a940": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+35 mov esi, edx",
   "name": "INIClass::SaveTimeField",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "INIClass::SaveTimeField",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x52a9e0": {
@@ -73964,7 +73964,7 @@
   "this_as_id": false
  },
  "0x5301a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -74011,15 +74011,15 @@
   "this_as_id": false
  },
  "0x531a00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x10]",
   "name": "CreditsScreen::DlgProc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "CreditsScreen::DlgProc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x531cc0": {
@@ -74136,7 +74136,7 @@
   "this_as_id": false
  },
  "0x5349c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LoadTheaterClassMIX",
@@ -74171,7 +74171,7 @@
   "this_as_id": false
  },
  "0x534fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77045,15 +77045,15 @@
   "this_as_id": false
  },
  "0x537bc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 sub esp, 0x198",
   "name": "ScreenCaptureCommandClass::MakeScreenshot",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Game::MakeScreenshot",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x537dd0": {
@@ -78584,7 +78584,7 @@
   "this_as_id": false
  },
  "0x53a6c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79419,14 +79419,14 @@
   "this_as_id": false
  },
  "0x53de00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x404",
   "name": "InitializeAudioStreaming",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "InitializeAudioStreaming",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x53e070": {
@@ -81069,7 +81069,7 @@
   "this_as_id": false
  },
  "0x542f30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -81846,7 +81846,7 @@
   "this_as_id": false
  },
  "0x547020": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83763,7 +83763,7 @@
   "this_as_id": false
  },
  "0x54f200": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84081,7 +84081,7 @@
   "this_as_id": false
  },
  "0x550080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -88638,7 +88638,7 @@
   "this_as_id": false
  },
  "0x55cc20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

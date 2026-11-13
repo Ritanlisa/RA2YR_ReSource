@@ -1,0 +1,27 @@
+{
+ "symbol": "?SaveTimeField@INIClass@@QAEDPAEPADH@Z",
+ "sym_key": "INIClass::SaveTimeField",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "83ec20b88988888856578bf98b4c2434f7e903d1c1fa058bc2c1e81f03d0b8898888888bcaf7e903d1c1fa058bc2c1e81f03d08bc18bf2b93c00000099f7f98bc65299f7f9b8898888888d4c240c52f7ee03d6c1fa058bc2c1e81f03d052680000000051e8000000008b4424448b4c244083c4148d5424085250518bcfe8000000005f5e83c420c20c00",
+ "relocs": [
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "??_C@_0P@INAO@?$CF02d?3?$CF02d?3?$CF02d?$AA@",
+   "sym_key": "??_C@_0P@INAO@?$CF02d?3?$CF02d?3?$CF02d?$AA@"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

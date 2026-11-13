@@ -1,0 +1,11 @@
+{
+ "addr": "0x52A040",
+ "name": "INIClass::ReadBool2",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52A040",
+ "bytes_hex": "8b44240c83ec38d94008568bf183ec08dd1c24d9400483ec08dd1c24d90083ec088d44241cdd1c2468fc5b820050e881ee29008b5424648b44246083c4208d4c24045152508bcee8d4e5ffff5e83c438c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

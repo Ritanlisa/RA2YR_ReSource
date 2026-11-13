@@ -1,0 +1,11 @@
+{
+ "addr": "0x52A940",
+ "name": "INIClass::SaveTimeField",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52A940",
+ "bytes_hex": "83ec20b88988888856578bf98b4c2434f7e903d1c1fa058bc2c1e81f03d0b8898888888bf2f7ee03d6b889888888c1fa058bcac1e91f03d18bcaf7e903d1c1fa058bc2c1e81f03d08d04498d0480c1e0022bf08d0452568d0480c1e0022bc851528d4c241468a8f0810051e844e529008b4424448b4c244083c4148d5424085250518bcfe897dcffff5f5e83c420c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
