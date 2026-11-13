@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p182\part_00
+=== convert (20 addrs) ===
+[conv] 0x4690b0 Warhead::ApplyDamage -> Warhead
+[conv] 0x75aec0 VoxelAnim::Draw -> VoxelAnim
+[conv] 0x552d60 LoadingScreen::Render -> LoadingScreen
+[conv] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> RulesClass
+[conv] 0x66bbb0 Rules::ReadCombatINI -> Rules
+[conv] 0x4d5690 FootClass::CalculateApproachPath -> FootClass
+[conv] 0x701900 TechnoClass::ReceiveDamage_Shield -> TechnoClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x46dfd0 CampaignScore::DialogProc -> CampaignScore
+[conv] 0x5dc350 NetworkLobby::CreateGame -> NetworkLobby
+[conv] 0x5b01c0 BuildingClass::ProcessMission -> BuildingClass
+[conv] 0x6a05f0 WalkLocomotion::ProcessCollision -> WalkLocomotion
+[conv] 0x783c80 ObjectClass::DisplayRankingsWOL -> ObjectClass
+[conv] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> JumpjetLocomotion
+[conv] 0x4bc750 DSurface::DrawLineFaded -> DSurface
+[conv] 0x48ebf0 ConvertClass::InitTables -> ConvertClass
+[conv] 0x7447b0 BuildingClass::FindPlacementCells -> BuildingClass
+[conv] 0x7a5890 CChatEventSink::HandleChatEvent -> CChatEventSink
+[conv] 0x6c6f50 ProcessGameResults -> _addr_6C
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Warhead                  rc=2
+[era] VoxelAnim                rc=2
+[era] LoadingScreen            rc=2
+[era] RulesClass               rc=2
+[era] Rules                    rc=2
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] EventClass               rc=2
+[era] MapClass                 rc=2
+[era] CampaignScore            rc=2
+[era] NetworkLobby             rc=2
+[era] BuildingClass            rc=2
+[era] WalkLocomotion           rc=2
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotion        rc=2
+[era] DSurface                 rc=2
+[era] ConvertClass             rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_6C                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4690b0 Warhead::ApplyDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75aec0 VoxelAnim::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x552d60 LoadingScreen::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66bbb0 Rules::ReadCombatINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d5690 FootClass::CalculateApproachPath -> COMPILE_FAIL (attempt 1)
+[ledger] 0x701900 TechnoClass::ReceiveDamage_Shield -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46dfd0 CampaignScore::DialogProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dc350 NetworkLobby::CreateGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b01c0 BuildingClass::ProcessMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a05f0 WalkLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x783c80 ObjectClass::DisplayRankingsWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bc750 DSurface::DrawLineFaded -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48ebf0 ConvertClass::InitTables -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7447b0 BuildingClass::FindPlacementCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a5890 CChatEventSink::HandleChatEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6f50 ProcessGameResults -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p182\batch_report.json
