@@ -1,0 +1,15 @@
+{
+ "symbol": "?Init@Buffer@@QAEPAIHH@Z",
+ "sym_key": "Buffer::Init",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4c240c85c08906894e04c6460800751385c97e0f51e80000000083c4048906c64608018bc65ec20800",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

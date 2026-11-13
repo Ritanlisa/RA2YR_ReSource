@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x435610 sub_435610 -> _addr_43
+[conv] 0x4357e0 sub_4357E0 -> _addr_43
+[conv] 0x4369c0 BuildingLightClass::SD_vt06 -> BuildingLightClass
+[conv] 0x438340 sub_438340 -> _addr_43
+[conv] 0x438510 sub_438510 -> _addr_43
+[conv] 0x438bd0 BombClass::Seek -> BombClass
+[conv] 0x4394a0 sub_4394A0 -> _addr_43
+[conv] 0x439670 sub_439670 -> _addr_43
+[conv] 0x43a160 sub_43A160 -> _addr_43
+[conv] 0x43a330 sub_43A330 -> _addr_43
+[conv] 0x43ad00 Buffer::Init -> Buffer
+[conv] 0x43af40 sub_43AF40 -> _addr_43
+[conv] 0x43b110 sub_43B110 -> _addr_43
+[conv] 0x45afa0 sub_45AFA0 -> _addr_45
+[conv] 0x45b170 sub_45B170 -> _addr_45
+[conv] 0x45e880 AbstractClass::addRefCount -> AbstractClass
+[conv] 0x4660d0 sub_4660D0 -> _addr_46
+[conv] 0x466280 sub_466280 -> _addr_46
+[conv] 0x4662a0 sub_4662A0 -> _addr_46
+[conv] 0x46b9d0 sub_46B9D0 -> _addr_46
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_43                 rc=0
+[era] BuildingLightClass       rc=0
+[era] BombClass                rc=0
+[era] Buffer                   rc=0
+[era] _addr_45                 rc=0
+[era] AbstractClass            rc=0
+[era] _addr_46                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x435610   MATCH            sub_435610
+[diff] 0x4357e0   MATCH            sub_4357E0
+[diff] 0x438340   MATCH            sub_438340
+[diff] 0x438510   MATCH            sub_438510
+[diff] 0x4394a0   MATCH            sub_4394A0
+[diff] 0x439670   MATCH            sub_439670
+[diff] 0x43a160   MATCH            sub_43A160
+[diff] 0x43a330   MATCH            sub_43A330
+[diff] 0x43af40   MATCH            sub_43AF40
+[diff] 0x43b110   MATCH            sub_43B110
+[diff] 0x4369c0   MATCH            BuildingLightClass::SD_vt06
+[diff] 0x438bd0   MATCH            BombClass::Seek
+[diff] 0x43ad00   MATCH            Buffer::Init
+[diff] 0x45afa0   MATCH            sub_45AFA0
+[diff] 0x45b170   MATCH            sub_45B170
+[diff] 0x45e880   MATCH            AbstractClass::addRefCount
+[diff] 0x4660d0   MATCH            sub_4660D0
+[diff] 0x466280   MATCH            sub_466280
+[diff] 0x4662a0   MATCH            sub_4662A0
+[diff] 0x46b9d0   MATCH            sub_46B9D0
+[ledger] 0x435610 sub_435610 -> OK (attempt 2)
+[ledger] 0x4357e0 sub_4357E0 -> OK (attempt 3)
+[ledger] 0x4369c0 BuildingLightClass::SD_vt06 -> OK (attempt 2)
+[ledger] 0x438340 sub_438340 -> OK (attempt 2)
+[ledger] 0x438510 sub_438510 -> OK (attempt 4)
+[ledger] 0x438bd0 BombClass::Seek -> OK (attempt 2)
+[ledger] 0x4394a0 sub_4394A0 -> OK (attempt 2)
+[ledger] 0x439670 sub_439670 -> OK (attempt 3)
+[ledger] 0x43a160 sub_43A160 -> OK (attempt 2)
+[ledger] 0x43a330 sub_43A330 -> OK (attempt 3)
+[ledger] 0x43ad00 Buffer::Init -> OK (attempt 2)
+[ledger] 0x43af40 sub_43AF40 -> OK (attempt 2)
+[ledger] 0x43b110 sub_43B110 -> OK (attempt 3)
+[ledger] 0x45afa0 sub_45AFA0 -> OK (attempt 2)
+[ledger] 0x45b170 sub_45B170 -> OK (attempt 3)
+[ledger] 0x45e880 AbstractClass::addRefCount -> OK (attempt 2)
+[ledger] 0x4660d0 sub_4660D0 -> OK (attempt 2)
+[ledger] 0x466280 sub_466280 -> OK (attempt 4)
+[ledger] 0x4662a0 sub_4662A0 -> OK (attempt 3)
+[ledger] 0x46b9d0 sub_46B9D0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p03\batch_report.json
