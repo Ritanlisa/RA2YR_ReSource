@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f28a0 sub_6F28A0 -> _addr_6F
+[conv] 0x6f2a70 sub_6F2A70 -> _addr_6F
+[conv] 0x70c250 TechnoClass::GetSizeMax -> TechnoClass
+[conv] 0x70ccf0 TechnoClass::RevealOwnCell -> TechnoClass
+[conv] 0x7108e0 sub_7108E0 -> _addr_71
+[conv] 0x710ab0 sub_710AB0 -> _addr_71
+[conv] 0x712120 TechnoTypeClass::GetGameplayValue -> TechnoTypeClass
+[conv] 0x717df0 sub_717DF0 -> _addr_71
+[conv] 0x717fc0 sub_717FC0 -> _addr_71
+[conv] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> TeleportLocomotionClass
+[conv] 0x71a390 sub_71A390 -> _addr_71
+[conv] 0x71a700 TemporalClass::SaveTemporal -> TemporalClass
+[conv] 0x71b5a0 sub_71B5A0 -> _addr_71
+[conv] 0x71b770 sub_71B770 -> _addr_71
+[conv] 0x71cf30 TerrainClass::CheckFrameUpdate -> TerrainClass
+[conv] 0x71d390 sub_71D390 -> _addr_71
+[conv] 0x71d560 sub_71D560 -> _addr_71
+[conv] 0x71e410 sub_71E410 -> _addr_71
+[conv] 0x71e5e0 sub_71E5E0 -> _addr_71
+[conv] 0x720230 sub_720230 -> _addr_72
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6F                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_71                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] TeleportLocomotionClass  rc=2
+[era] TemporalClass            rc=0
+[era] TerrainClass             rc=0
+[era] _addr_72                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f28a0   MATCH            sub_6F28A0
+[diff] 0x6f2a70   MATCH            sub_6F2A70
+[diff] 0x70c250   MATCH            TechnoClass::GetSizeMax
+[diff] 0x70ccf0   MATCH            TechnoClass::RevealOwnCell
+[diff] 0x7108e0   MATCH            sub_7108E0
+[diff] 0x710ab0   MATCH            sub_710AB0
+[diff] 0x717df0   MATCH            sub_717DF0
+[diff] 0x717fc0   MATCH            sub_717FC0
+[diff] 0x71a390   MATCH            sub_71A390
+[diff] 0x71b5a0   MATCH            sub_71B5A0
+[diff] 0x71b770   MATCH            sub_71B770
+[diff] 0x71d390   MATCH            sub_71D390
+[diff] 0x71d560   MATCH            sub_71D560
+[diff] 0x71e410   MATCH            sub_71E410
+[diff] 0x71e5e0   MATCH            sub_71E5E0
+[diff] 0x712120   MATCH            TechnoTypeClass::GetGameplayValue
+[diff] 0x71a700   MATCH            TemporalClass::SaveTemporal
+[diff] 0x71cf30   MATCH            TerrainClass::CheckFrameUpdate
+[diff] 0x720230   MATCH            sub_720230
+[ledger] 0x6f28a0 sub_6F28A0 -> OK (attempt 2)
+[ledger] 0x6f2a70 sub_6F2A70 -> OK (attempt 4)
+[ledger] 0x70c250 TechnoClass::GetSizeMax -> OK (attempt 2)
+[ledger] 0x70ccf0 TechnoClass::RevealOwnCell -> OK (attempt 2)
+[ledger] 0x7108e0 sub_7108E0 -> OK (attempt 2)
+[ledger] 0x710ab0 sub_710AB0 -> OK (attempt 3)
+[ledger] 0x712120 TechnoTypeClass::GetGameplayValue -> OK (attempt 3)
+[ledger] 0x717df0 sub_717DF0 -> OK (attempt 2)
+[ledger] 0x717fc0 sub_717FC0 -> OK (attempt 3)
+[ledger] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71a390 sub_71A390 -> OK (attempt 3)
+[ledger] 0x71a700 TemporalClass::SaveTemporal -> OK (attempt 2)
+[ledger] 0x71b5a0 sub_71B5A0 -> OK (attempt 2)
+[ledger] 0x71b770 sub_71B770 -> OK (attempt 3)
+[ledger] 0x71cf30 TerrainClass::CheckFrameUpdate -> OK (attempt 2)
+[ledger] 0x71d390 sub_71D390 -> OK (attempt 2)
+[ledger] 0x71d560 sub_71D560 -> OK (attempt 3)
+[ledger] 0x71e410 sub_71E410 -> OK (attempt 2)
+[ledger] 0x71e5e0 sub_71E5E0 -> OK (attempt 4)
+[ledger] 0x720230 sub_720230 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p24\batch_report.json

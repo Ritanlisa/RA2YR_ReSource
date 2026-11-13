@@ -1,0 +1,21 @@
+{
+ "symbol": "?RevealOwnCell@TechnoClass@@QAEXXZ",
+ "sym_key": "TechnoClass::RevealOwnCell",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "81c10802000051b9f8010000e800000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?RevealCell@FogOfWar@@QAEXPAX@Z",
+   "sym_key": "FogOfWar::RevealCell"
+  }
+ ]
+}
