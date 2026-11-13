@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p179\part_00
+=== convert (20 addrs) ===
+[conv] 0x598960 RandomMap::Generate -> RandomMap
+[conv] 0x5f8110 VoxelAnimType::LoadAnim -> VoxelAnimType
+[conv] 0x6980c0 ScenarioClass::LoadNetworkConfig -> ScenarioClass
+[conv] 0x64cda0 ProcessNetworkMapEvent -> _addr_64
+[conv] 0x422ca0 AnimClass::Render -> AnimClass
+[conv] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> BuildingClass
+[conv] 0x650a90 AllocateTriggerLog -> _addr_65
+[conv] 0x667a30 RulesClass::DTOR -> RulesClass
+[conv] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> SelectClass_StripClass_SidebarClass
+[conv] 0x6fc0b0 TechnoClass::ReadINI -> TechnoClass
+[conv] 0x506ef0 HouseClass::AutoBuildScanAndSort -> HouseClass
+[conv] 0x73f0a0 UnitClass::EvaluateTarget -> UnitClass
+[conv] 0x5fc570 TechnoClass::FinalizeCellPlacement -> TechnoClass
+[conv] 0x754cb0 Voxel::Projection_Setup -> Voxel
+[conv] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> DialogSkirmishFunc
+[conv] 0x43da80 BuildingClass::DrawPlacementPreview -> BuildingClass
+[conv] 0x6475f0 Network::QueueProcessingLoop -> Network
+[conv] 0x7a9970 CChatEventSink::HandleUserSearch -> CChatEventSink
+[conv] 0x7bf740 DSP_AudioMixBuffers -> DSP
+[conv] 0x710af0 TechnoTypeClass::ReadINI -> TechnoTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RandomMap                rc=2
+[era] VoxelAnimType            rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_64                 rc=2
+[era] AnimClass                rc=2
+[era] BuildingClass            rc=2
+[era] _addr_65                 rc=2
+[era] RulesClass               rc=2
+[era] SelectClass_StripClass_SidebarClass rc=2
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=2
+[era] UnitClass                rc=2
+[era] Voxel                    rc=2
+[era] DialogSkirmishFunc       rc=2
+[era] Network                  rc=2
+[era] CChatEventSink           rc=2
+[era] DSP                      rc=0
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x7bf740   MISMATCH         DSP_AudioMixBuffers
+[ledger] 0x598960 RandomMap::Generate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f8110 VoxelAnimType::LoadAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6980c0 ScenarioClass::LoadNetworkConfig -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64cda0 ProcessNetworkMapEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x422ca0 AnimClass::Render -> COMPILE_FAIL (attempt 1)
+[ledger] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x650a90 AllocateTriggerLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x667a30 RulesClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fc0b0 TechnoClass::ReadINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x506ef0 HouseClass::AutoBuildScanAndSort -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73f0a0 UnitClass::EvaluateTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fc570 TechnoClass::FinalizeCellPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x754cb0 Voxel::Projection_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43da80 BuildingClass::DrawPlacementPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6475f0 Network::QueueProcessingLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a9970 CChatEventSink::HandleUserSearch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bf740 DSP_AudioMixBuffers -> NG (attempt 1)
+[ledger] 0x710af0 TechnoTypeClass::ReadINI -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p179\batch_report.json
