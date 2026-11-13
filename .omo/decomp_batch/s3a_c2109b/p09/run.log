@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b6eb0 ObjectClass::UI_Setup -> ObjectClass
+[conv] 0x5b8ce0 GameOptions::ReadSettings -> GameOptions
+[conv] 0x5b9250 ObjectClass::sub_5B9250 -> ObjectClass
+[conv] 0x5b9a60 SkirmishDialog::HandleGameStart -> SkirmishDialog
+[conv] 0x5ba060 ModemGuest::ProcessPacket -> ModemGuest
+[conv] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> NetworkGameSetup
+[conv] 0x5baa80 ObjectClass::sub_5BAA80 -> ObjectClass
+[conv] 0x5bd1f0 Debug::Printf -> Debug
+[conv] 0x5bd240 sub_5BD240 -> _addr_5B
+[conv] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> ObjectClass
+[conv] 0x5c0640 Render_Play -> Render
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x5c2710 MPCooperative::SyncState -> MPCooperative
+[conv] 0x5c3f30 MPCooperative::Cleanup -> MPCooperative
+[conv] 0x5c3f80 MPCooperative::SetGameMode -> MPCooperative
+[conv] 0x5c4110 MPCooperative::ProcessChat -> MPCooperative
+[conv] 0x5c5d90 FreeForAll::Write -> FreeForAll
+[conv] 0x5c9850 sub_5C9850 -> _addr_5C
+[conv] 0x5ca800 MultiplayerSiege::ProcessTurn -> MultiplayerSiege
+[conv] 0x5caac0 MultiplayerSiege::GetResult -> MultiplayerSiege
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] GameOptions              rc=0
+[era] SkirmishDialog           rc=2
+[era] ModemGuest               rc=2
+[era] NetworkGameSetup         rc=2
+[era] Debug                    rc=0
+[era] _addr_5B                 rc=2
+[era] Render                   rc=2
+[era] MPCooperative            rc=2
+[era] FreeForAll               rc=2
+[era] _addr_5C                 rc=0
+[era] MultiplayerSiege         rc=2
+=== diffasm byte-compare ===
+[diff] 0x5bd2e0   MISMATCH         ObjectClass::sub_5BD2E0
+[diff] 0x5c1300   MISMATCH         ObjectClass::ReadMPMapsINI
+[diff] 0x5b8ce0   MISMATCH         GameOptions::ReadSettings
+[diff] 0x5bd1f0   MISMATCH         Debug::Printf
+[diff] 0x5c3f80   MISMATCH         MPCooperative::SetGameMode
+[diff] 0x5c9850   MISMATCH         sub_5C9850
+[ledger] 0x5b6eb0 ObjectClass::UI_Setup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b8ce0 GameOptions::ReadSettings -> NG (attempt 3)
+[ledger] 0x5b9250 ObjectClass::sub_5B9250 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b9a60 SkirmishDialog::HandleGameStart -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ba060 ModemGuest::ProcessPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5baa80 ObjectClass::sub_5BAA80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5bd1f0 Debug::Printf -> NG (attempt 3)
+[ledger] 0x5bd240 sub_5BD240 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5bd2e0 ObjectClass::sub_5BD2E0 -> NG (attempt 3)
+[ledger] 0x5c0640 Render_Play -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c1300 ObjectClass::ReadMPMapsINI -> NG (attempt 12)
+[ledger] 0x5c2710 MPCooperative::SyncState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c3f30 MPCooperative::Cleanup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c3f80 MPCooperative::SetGameMode -> NG (attempt 3)
+[ledger] 0x5c4110 MPCooperative::ProcessChat -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c5d90 FreeForAll::Write -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c9850 sub_5C9850 -> NG (attempt 3)
+[ledger] 0x5ca800 MultiplayerSiege::ProcessTurn -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5caac0 MultiplayerSiege::GetResult -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "branch_polarity": 1,
+  "codegen_shape": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p09\batch_report.json

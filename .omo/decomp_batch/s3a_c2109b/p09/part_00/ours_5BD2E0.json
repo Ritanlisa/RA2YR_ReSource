@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_5BD2E0@ObjectClass@@QAEDPBGHHH@Z",
+ "sym_key": "ObjectClass::sub_5BD2E0",
+ "size": 127,
+ "link_base": 0,
+ "bytes_hex": "81ec00040000568bf18b0d402c00008bc1c1f810f7c10000ff0074598b84240c0400008b8c241004000089861c270000898e20270000f705402c00000000ff00740d8b9424140400008996102700008b8424080400008d4c240450682016000051e80000000083c40c8d5424048bce52e8000000005e81c400040000c21000",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?ScrollText@Debug@@QAEDPAX@Z",
+   "sym_key": "Debug::ScrollText"
+  }
+ ]
+}

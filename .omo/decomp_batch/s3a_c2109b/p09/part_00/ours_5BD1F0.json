@@ -1,0 +1,27 @@
+{
+ "symbol": "?Printf@Debug@@QAEDHPAD@Z",
+ "sym_key": "Debug::Printf",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "a00000000081ec0001000084c0742e8b8c24080100008d84240c010000508d5424045152e80000000083c40c8d4c2400c68424ff00000000e80000000081c400010000c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MiscFlag@@3EA",
+   "sym_key": "g_MiscFlag"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "_vsprintf",
+   "sym_key": "vsprintf"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?ScrollText@Debug@@QAEDXZ",
+   "sym_key": "Debug::ScrollText"
+  }
+ ]
+}

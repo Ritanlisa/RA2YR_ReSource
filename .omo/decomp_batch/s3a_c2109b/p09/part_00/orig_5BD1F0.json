@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BD1F0",
+ "name": "Debug::Printf",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BD1F0",
+ "bytes_hex": "a03af2ab0081ec0001000084c074368b8c24080100008d84240c010000508d5424045152e8a1e520008b8c241001000083c40c8d442400c68424ff0000000050e89bfeffff81c400010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

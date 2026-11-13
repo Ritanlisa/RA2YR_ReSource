@@ -1,0 +1,165 @@
+{
+ "symbol": "?SetGameMode@MPCooperative@@QAEXXZ",
+ "sym_key": "MPCooperative::SetGameMode",
+ "size": 384,
+ "link_base": 0,
+ "bytes_hex": "81ec080100005356578bf1e80000000083f86b0f84d10000008b4e4085c90f84970000008a464884c00f848c0000008b464c85c074046a00eb026a01e8000000008b464c8b4e4050e8000000008d4c240c6aff518b4e40e8000000008b54240c8b3d00000000528d442414680000000050e80000000083c40c33db85ff7e238b15000000008d4c2410518b049a83c05850e80000000083c40885c07405433bdf7cdd8b0d00000000881d040000008999649c01008bcbe8000000008bcee8000000008bf885ff74178bd68bcfe8000000008bcfe8000000008bcfe800000000b2018acae800000000eb6b8a464984c074648bcee800000000685305000050e8000000006a008bf86a00688b01000057e8000000008bd883fbff74436a006a00688801000057e8000000008d53ff3bc275118d43fe6a0050688601000057e8000000004b6a0053688201000057e800000000c64649008b764085f6741aeb078b764085f67411680000000068000000008bcee8000000005f5e5b81c408010000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?GetCurrentType@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::GetCurrentType"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?SetupScreen@Movie@@QAEDH@Z",
+   "sym_key": "Movie::SetupScreen"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SetupScreen@Movie@@QAEDH@Z",
+   "sym_key": "Movie::SetupScreen"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?GetElementAt@Array@@QAEDPAXH@Z",
+   "sym_key": "Array::GetElementAt"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "??_C@_06HIDC@?$CFs?4MAP?$AA@",
+   "sym_key": "??_C@_06HIDC@?$CFs?4MAP?$AA@"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?LoadScenarioClassByIndex@@YIDH@Z",
+   "sym_key": "LoadScenarioClassByIndex"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?FindGameUI@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindGameUI"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?SetDialogPlayerName@@YIXHH@Z",
+   "sym_key": "SetDialogPlayerName"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?ShowPlayerName@Dialog@@QAEJXZ",
+   "sym_key": "Dialog::ShowPlayerName"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?PrepareGame@Session@@QAEHXZ",
+   "sym_key": "Session::PrepareGame"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?CheckGameSettingsChanged@@YIDDD@Z",
+   "sym_key": "CheckGameSettingsChanged"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?GetCurrent@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::GetCurrent"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?AssignWideToChar@String@@QAEXPAX0@Z",
+   "sym_key": "String::AssignWideToChar"
+  }
+ ]
+}
