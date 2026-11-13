@@ -1,0 +1,11 @@
+{
+ "addr": "0x552450",
+ "name": "LCWStraw::Dtor",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x552450",
+ "bytes_hex": "568bf18b4614c70644cf7e0050e8db6627008b4e18c746140000000051e8cb66270083c4088bcec7461800000000e8cd7317005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

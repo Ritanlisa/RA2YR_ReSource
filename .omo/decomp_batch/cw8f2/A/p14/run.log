@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x53c7d0 _DynamicVectorClass_PBVAnimClass::Constructor -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x53dd00 _VectorClass_PAVIonBlastClass::QueryInterface -> _VectorClass_PAVIonBlastClass
+[conv] 0x53dd50 _DynamicVectorClass_PAVIonBlastClass::Constructor_VectorClass_IonBlastClass___ -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x53f850 IPXConnClass::QueryInterface -> IPXConnClass
+[conv] 0x543100 ConnManClass::getPlayerName -> ConnManClass
+[conv] 0x54a710 _VectorClass_PAG::QueryInterface -> _VectorClass_PAG
+[conv] 0x54a760 _DynamicVectorClass_PAG::Constructor -> _DynamicVectorClass_PAG
+[conv] 0x54a7b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::QueryInterface -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54a800 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54eb50 _VectorClass_PAUKamikazeControl::QueryInterface -> _VectorClass_PAUKamikazeControl
+[conv] 0x54eba0 _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___ -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x551590 _VectorClass_PAVLaserDrawClass::QueryInterface -> _VectorClass_PAVLaserDrawClass
+[conv] 0x5515e0 _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___ -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x552060 LCWPipe::Dtor -> LCWPipe
+[conv] 0x552450 LCWStraw::Dtor -> LCWStraw
+[conv] 0x555780 _VectorClass_PAVLightSourceClass::QueryInterface -> _VectorClass_PAVLightSourceClass
+[conv] 0x5557d0 _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___ -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555820 _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x555870 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x557170 _VectorClass_PAVLineTrail::QueryInterface -> _VectorClass_PAVLineTrail
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PBVAnimClass rc=0
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] _DynamicVectorClass_PAVIonBlastClass rc=0
+[era] IPXConnClass             rc=0
+[era] ConnManClass             rc=0
+[era] _VectorClass_PAG         rc=0
+[era] _DynamicVectorClass_PAG  rc=0
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAUKamikazeControl rc=0
+[era] _DynamicVectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=0
+[era] LCWPipe                  rc=0
+[era] LCWStraw                 rc=0
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+=== diffasm byte-compare ===
+[diff] 0x53c7d0   MISMATCH         _DynamicVectorClass_PBVAnimClass::Constructor
+[diff] 0x53dd00   MISMATCH         _VectorClass_PAVIonBlastClass::QueryInterface
+[diff] 0x53dd50   MISMATCH         _DynamicVectorClass_PAVIonBlastClass::Constructor_VectorClass_IonBlastClass___
+[diff] 0x53f850   MISMATCH         IPXConnClass::QueryInterface
+[diff] 0x543100   MISMATCH         ConnManClass::getPlayerName
+[diff] 0x54a710   MISMATCH         _VectorClass_PAG::QueryInterface
+[diff] 0x54a760   MISMATCH         _DynamicVectorClass_PAG::Constructor
+[diff] 0x54a7b0   MISMATCH         _VectorClass_PAUTileInsertType_IsometricTileTypeClass::QueryInterface
+[diff] 0x54a800   MISMATCH         _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor
+[diff] 0x54eb50   MISMATCH         _VectorClass_PAUKamikazeControl::QueryInterface
+[diff] 0x54eba0   MISMATCH         _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___
+[diff] 0x551590   MISMATCH         _VectorClass_PAVLaserDrawClass::QueryInterface
+[diff] 0x5515e0   MISMATCH         _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___
+[diff] 0x552060   MATCH            LCWPipe::Dtor
+[diff] 0x552450   MATCH            LCWStraw::Dtor
+[diff] 0x555780   MISMATCH         _VectorClass_PAVLightSourceClass::QueryInterface
+[diff] 0x5557d0   MISMATCH         _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___
+[diff] 0x555820   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface
+[diff] 0x555870   MISMATCH         _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor
+[diff] 0x557170   MISMATCH         _VectorClass_PAVLineTrail::QueryInterface
+[ledger] 0x53c7d0 _DynamicVectorClass_PBVAnimClass::Constructor -> NG (attempt 2)
+[ledger] 0x53dd00 _VectorClass_PAVIonBlastClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x53dd50 _DynamicVectorClass_PAVIonBlastClass::Constructor_VectorClass_IonBlastClass___ -> NG (attempt 2)
+[ledger] 0x53f850 IPXConnClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x543100 ConnManClass::getPlayerName -> NG (attempt 2)
+[ledger] 0x54a710 _VectorClass_PAG::QueryInterface -> NG (attempt 2)
+[ledger] 0x54a760 _DynamicVectorClass_PAG::Constructor -> NG (attempt 4)
+[ledger] 0x54a7b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x54a800 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x54eb50 _VectorClass_PAUKamikazeControl::QueryInterface -> NG (attempt 2)
+[ledger] 0x54eba0 _DynamicVectorClass_PAUKamikazeControl::Constructor_VectorClass_KamikazeControl___ -> NG (attempt 2)
+[ledger] 0x551590 _VectorClass_PAVLaserDrawClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x5515e0 _DynamicVectorClass_PAVLaserDrawClass::Constructor_VectorClass_LaserDrawClass___ -> NG (attempt 2)
+[ledger] 0x552060 LCWPipe::Dtor -> OK (attempt 2)
+[ledger] 0x552450 LCWStraw::Dtor -> OK (attempt 2)
+[ledger] 0x555780 _VectorClass_PAVLightSourceClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x5557d0 _DynamicVectorClass_PAVLightSourceClass::Constructor_VectorClass_LightSourceClass___ -> NG (attempt 2)
+[ledger] 0x555820 _VectorClass_PAVPendingCellClass_LightSourceClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x555870 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::Constructor -> NG (attempt 2)
+[ledger] 0x557170 _VectorClass_PAVLineTrail::QueryInterface -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 14,
+  "regalloc": 1,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p14\batch_report.json
