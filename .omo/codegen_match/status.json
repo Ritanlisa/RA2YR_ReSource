@@ -204789,7 +204789,7 @@
   "this_as_id": false
  },
  "0x7c3860": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Render_7C3860",
@@ -204811,7 +204811,7 @@
   "this_as_id": false
  },
  "0x7c3950": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C3950",
@@ -204987,7 +204987,7 @@
   "this_as_id": false
  },
  "0x7c5f3d": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Event_Process_7C5F3D",
@@ -204998,7 +204998,7 @@
   "this_as_id": false
  },
  "0x7c5fff": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Event_Process_7C5FFF",
@@ -208617,14 +208617,14 @@
   "this_as_id": false
  },
  "0x7c8e25": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "_bsearch",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_bsearch",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c8ec0": {
@@ -208672,7 +208672,7 @@
   "this_as_id": false
  },
  "0x7c8f5e": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__cfltcvt_init_13",
@@ -208712,7 +208712,7 @@
   "this_as_id": false
  },
  "0x7c8fd2": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -208724,7 +208724,7 @@
   "this_as_id": false
  },
  "0x7c91a5": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CIpow_Helper_Helper",
@@ -208735,7 +208735,7 @@
   "this_as_id": false
  },
  "0x7c91d0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "_strncpy",
@@ -208746,7 +208746,7 @@
   "this_as_id": false
  },
  "0x7c92d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__alldiv",
@@ -209183,7 +209183,7 @@
   "this_as_id": false
  },
  "0x7ca090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_memcpy",
@@ -209300,15 +209300,15 @@
   "this_as_id": false
  },
  "0x7ca650": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "ObjectClass::__alloca_probe",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "__alloca_probe",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ca67f": {
@@ -209609,7 +209609,7 @@
   "this_as_id": false
  },
  "0x7caef1": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "PMDtoOffset_YAHPAXABUPMD___Z",
@@ -210046,7 +210046,7 @@
   "this_as_id": false
  },
  "0x7cbb8d": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__mbsnccnt",
@@ -210145,7 +210145,7 @@
   "this_as_id": false
  },
  "0x7cbdaf": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__cinit",
@@ -210366,7 +210366,7 @@
   "this_as_id": false
  },
  "0x7cc186": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__abnormal_termination",
@@ -210433,7 +210433,7 @@
   "this_as_id": false
  },
  "0x7cc309": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__mbstowcs_lk",
@@ -210555,14 +210555,19 @@
   "this_as_id": false
  },
  "0x7ccb2e": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::__expandtime",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__expandtime",
+  "rule_violations": 11,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7ccf1d": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -210837,7 +210842,7 @@
   "this_as_id": false
  },
  "0x7cda90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_strcmp",

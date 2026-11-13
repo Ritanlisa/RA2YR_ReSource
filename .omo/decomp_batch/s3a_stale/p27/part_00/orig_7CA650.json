@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CA650",
+ "name": "__alloca_probe",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CA650",
+ "bytes_hex": "513d001000008d4c2408721481e9001000002d0010000085013d0010000073ec2bc88bc485018be18b088b400450c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

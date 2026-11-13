@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8E25",
+ "name": "_bsearch",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8E25",
+ "bytes_hex": "558bec8b45105356578d78ff8b4d0c0faf7d1403f9894d0c3bcf774b8bd8d1eb74508945108bc38365100175038d43ff0faf451403450c8bf056ff7508ff55185985c05974287d102b7514837d10008bfe750d8d43ffeb0a8b451403f089750c8bc3397d0c76b533c05f5e5b5dc38bc6ebf785c074f1ff750cff7508ff5518f7d81bc059f7d023450c59ebdd",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c3860 Audio_Render_7C3860 -> Audio_Render
+[conv] 0x7c3950 Audio_Process_7C3950 -> Audio_Process
+[conv] 0x7c5f3d Event_Process_7C5F3D -> Event_Process
+[conv] 0x7c5fff Event_Process_7C5FFF -> Event_Process
+[conv] 0x7c8e25 _bsearch -> _addr_7C
+[conv] 0x7c8f5e __cfltcvt_init_13 -> _addr_7C
+[conv] 0x7c8fd2 ObjectClass::CIpow_Helper -> ObjectClass
+[conv] 0x7c91a5 CIpow_Helper_Helper -> CIpow_Helper
+[conv] 0x7c91d0 _strncpy -> _addr_7C
+[conv] 0x7c92d0 __alldiv -> _addr_7C
+[conv] 0x7ca090 _memcpy -> _addr_7C
+[conv] 0x7ca650 ObjectClass::__alloca_probe -> ObjectClass
+[conv] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> _addr_7C
+[conv] 0x7cbb8d __mbsnccnt -> _addr_7C
+[conv] 0x7cbdaf __cinit -> _addr_7C
+[conv] 0x7cc186 __abnormal_termination -> _addr_7C
+[conv] 0x7cc309 __mbstowcs_lk -> _addr_7C
+[conv] 0x7ccb2e ObjectClass::__expandtime -> ObjectClass
+[conv] 0x7ccf1d ObjectClass::__store_str -> ObjectClass
+[conv] 0x7cda90 _strcmp -> _addr_7C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio_Render             rc=2
+[era] Audio_Process            rc=2
+[era] Event_Process            rc=2
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] CIpow_Helper             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8e25   MISMATCH         _bsearch
+[diff] 0x7ca650   MISMATCH         ObjectClass::__alloca_probe
+[ledger] 0x7c3860 Audio_Render_7C3860 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c3950 Audio_Process_7C3950 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c5f3d Event_Process_7C5F3D -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c5fff Event_Process_7C5FFF -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8e25 _bsearch -> NG (attempt 4)
+[ledger] 0x7c8f5e __cfltcvt_init_13 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8fd2 ObjectClass::CIpow_Helper -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c91a5 CIpow_Helper_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c91d0 _strncpy -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7c92d0 __alldiv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca090 _memcpy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ca650 ObjectClass::__alloca_probe -> NG (attempt 2)
+[ledger] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cbb8d __mbsnccnt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cbdaf __cinit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc186 __abnormal_termination -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc309 __mbstowcs_lk -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ccb2e ObjectClass::__expandtime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ccf1d ObjectClass::__store_str -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cda90 _strcmp -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p27\batch_report.json

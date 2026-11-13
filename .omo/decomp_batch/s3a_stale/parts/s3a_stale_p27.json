@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x7c3860",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c3950",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c5f3d",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x7c5fff",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x7c8e25",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7c8f5e",
+  "family": "stale_stale_cw3|CW3-3 global-array upgrade"
+ },
+ {
+  "addr": "0x7c8fd2",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7c91a5",
+  "family": "stale_stale_cw5|CW5-10 __usercall strip"
+ },
+ {
+  "addr": "0x7c91d0",
+  "family": "stale_cw3_B"
+ },
+ {
+  "addr": "0x7c92d0",
+  "family": "stale_stale_cw3|CW3-4 __int64 literal"
+ },
+ {
+  "addr": "0x7ca090",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7ca650",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x7caef1",
+  "family": "stale_stale_cw5|CW5-6/7 member chain"
+ },
+ {
+  "addr": "0x7cbb8d",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7cbdaf",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7cc186",
+  "family": "stale_stale_cw5|CW5-6/7 member chain"
+ },
+ {
+  "addr": "0x7cc309",
+  "family": "stale_A4"
+ },
+ {
+  "addr": "0x7ccb2e",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x7ccf1d",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x7cda90",
+  "family": "stale_censusA"
+ }
+]
