@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p108\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cb120 SuperClass::CleanupMembers -> SuperClass
+[conv] 0x4fce80 BuildingClass::Capture -> BuildingClass
+[conv] 0x7d3164 ObjectClass::__ioinit -> ObjectClass
+[conv] 0x51fef0 ObjectClass::SaveInfantryToINI -> ObjectClass
+[conv] 0x508c30 HouseClass::UpdatePower -> HouseClass
+[conv] 0x62a980 ParasiteClass::TryInfect -> ParasiteClass
+[conv] 0x5af550 ObjectClass::sub_5AF550 -> ObjectClass
+[conv] 0x7216c0 TiberiumClass::TiberiumClass -> TiberiumClass
+[conv] 0x6370b0 PlanningNodeClass::CleanupAll -> PlanningNodeClass
+[conv] 0x46d650 sub_46D650 -> _addr_46
+[conv] 0x479ba0 sub_479BA0 -> _addr_47
+[conv] 0x43a7e0 AbstractClass::Construct -> AbstractClass
+[conv] 0x659ff0 ObjectClass::Weapon_Update_Update_659FF0 -> ObjectClass
+[conv] 0x411b20 sub_411B20 -> _addr_41
+[conv] 0x5de360 SendNetworkLobbyChatMessage -> _addr_5D
+[conv] 0x48e0b0 ObjectClass::DumpNetworkStats -> ObjectClass
+[conv] 0x5d5b60 MultiplayerGameMode::Construct -> MultiplayerGameMode
+[conv] 0x4b5210 TechnoClass::CopyStateFrom -> TechnoClass
+[conv] 0x5cafc0 Performance::MeasureTicks -> Performance
+[conv] 0x7331b0 ObjectClass::sub_7331B0 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperClass               rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=2
+[era] ParasiteClass            rc=2
+[era] TiberiumClass            rc=2
+[era] PlanningNodeClass        rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=2
+[era] AbstractClass            rc=2
+[era] _addr_41                 rc=2
+[era] _addr_5D                 rc=2
+[era] MultiplayerGameMode      rc=2
+[era] TechnoClass              rc=0
+[era] Performance              rc=2
+=== diffasm byte-compare ===
+[diff] 0x659ff0   MISMATCH         ObjectClass::Weapon_Update_Update_659FF0
+[diff] 0x6370b0   MISMATCH         PlanningNodeClass::CleanupAll
+[diff] 0x46d650   MISMATCH         sub_46D650
+[diff] 0x4b5210   MISMATCH         TechnoClass::CopyStateFrom
+[ledger] 0x6cb120 SuperClass::CleanupMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fce80 BuildingClass::Capture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d3164 ObjectClass::__ioinit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51fef0 ObjectClass::SaveInfantryToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x508c30 HouseClass::UpdatePower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62a980 ParasiteClass::TryInfect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5af550 ObjectClass::sub_5AF550 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7216c0 TiberiumClass::TiberiumClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6370b0 PlanningNodeClass::CleanupAll -> NG (attempt 1)
+[ledger] 0x46d650 sub_46D650 -> NG (attempt 1)
+[ledger] 0x479ba0 sub_479BA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43a7e0 AbstractClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x659ff0 ObjectClass::Weapon_Update_Update_659FF0 -> NG (attempt 1)
+[ledger] 0x411b20 sub_411B20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5de360 SendNetworkLobbyChatMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e0b0 ObjectClass::DumpNetworkStats -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5b60 MultiplayerGameMode::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b5210 TechnoClass::CopyStateFrom -> NG (attempt 1)
+[ledger] 0x5cafc0 Performance::MeasureTicks -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7331b0 ObjectClass::sub_7331B0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p108\batch_report.json

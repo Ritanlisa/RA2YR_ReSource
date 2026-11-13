@@ -1,0 +1,159 @@
+{
+ "symbol": "?sub_46D650@@YI_NPAX@Z",
+ "sym_key": "Unnamed::sub_46D650",
+ "size": 425,
+ "link_base": 0,
+ "bytes_hex": "a1000000005583f8328be9740432c05dc35356578bcde8000000000fbe05000000008b1500000000b9c60b00003bd0a3000000000f95c3e80000000085c07423683207000050e80000000085c074148b0d00000000516a01680504000050e800000000be0000000081ee080400008b8e0804000085c974693b0d0000000074613b0d0000000074598b7ee0e8000000003bc77402b3018b8e0804000057e8000000008b8e080400008b3ee8000000003bc77402b3018b8e0804000057e8000000008b8e080400008b7e20e8000000003bc77402b3018b8e0804000057e8000000008b8e08040000e8000000008b8e08040000e8000000008b8e08040000e8000000008b8e08040000e8000000008bcde8000000008b46408b8e14dcffff3bc87402b3018b8e34dcffff898614dcffff8b46603bc87402b3018b8ef4dbffff898634dcffff8b86800000003bc87402b3018b8e54dcffff8986f4dbffff8b86a00000003bc87402b3018b8e74dcffff898654dcffff8b86c00000003bc87402b3018bcd898674dcffffe80000000083c6048d960804000081fa000000000f8cccfeffff5f8ac35e5b5dc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?Network_EventType@@3IA",
+   "sym_key": "Network_EventType"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8D667@@3IA",
+   "sym_key": "DataGlobal_A8D667"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB68@@3IA",
+   "sym_key": "DataGlobal_A8EB68"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB68@@3IA",
+   "sym_key": "DataGlobal_A8EB68"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB68@@3IA",
+   "sym_key": "DataGlobal_A8EB68"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHHHHH@Z",
+   "sym_key": "PostMessageA"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?GetOption@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetOption"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?SetOption@SessionClass@@QAEHH@Z",
+   "sym_key": "SessionClass::SetOption"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?GetPlayerSide@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerSide"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?SetPlayerOption@SessionClass@@QAEHH@Z",
+   "sym_key": "SessionClass::SetPlayerOption"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?GetPlayerColor@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerColor"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?SetPlayerColor@SessionClass@@QAEHH@Z",
+   "sym_key": "SessionClass::SetPlayerColor"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?GetPlayerColor@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerColor"
+  },
+  {
+   "off": 254,
+   "type": "REL32",
+   "sym": "?GetPlayerSide@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerSide"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?GetOption@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetOption"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}
