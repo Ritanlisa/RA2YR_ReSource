@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x717be0 TechnoTypeClass::Constructor_1 -> TechnoTypeClass
+[conv] 0x717bf0 ObjectTypeClass::CheckFlag -> ObjectTypeClass
+[conv] 0x71b500 _VectorClass_PAVTemporalClass::QueryInterface -> _VectorClass_PAVTemporalClass
+[conv] 0x71b550 _DynamicVectorClass_PAVTemporalClass::Constructor_VectorClass_TemporalClass___ -> _DynamicVectorClass_PAVTemporalClass
+[conv] 0x71fe60 _VectorClass_PAVTEventClass::QueryInterface -> _VectorClass_PAVTEventClass
+[conv] 0x71feb0 _DynamicVectorClass_PAVTEventClass::Constructor_VectorClass_TEventClass___ -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x7213e0 _DynamicVectorClass_PAUThemeControl::Constructor_VectorClass_ThemeControl___ -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x7239f0 _VectorClass_PAVTiberiumClass::QueryInterface -> _VectorClass_PAVTiberiumClass
+[conv] 0x723a40 _DynamicVectorClass_PAVTiberiumClass::Constructor_VectorClass_TiberiumClass___ -> _DynamicVectorClass_PAVTiberiumClass
+[conv] 0x724ef0 _VectorClass_PBVToolTip::compareString -> _VectorClass_PBVToolTip
+[conv] 0x724f40 _DynamicVectorClass_PBVToolTip::QueryInterface -> _DynamicVectorClass_PBVToolTip
+[conv] 0x734330 VectorClass::SelectFactionThemeMusic_Helper_734330 -> VectorClass
+[conv] 0x74bfa0 _VectorClass_E::QueryInterface -> _VectorClass_E
+[conv] 0x751b90 _VectorClass_PAVVocClass::QueryInterface -> _VectorClass_PAVVocClass
+[conv] 0x751be0 _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___ -> _DynamicVectorClass_PAVVocClass
+[conv] 0x753910 _VectorClass_PAVVoxClass::QueryInterface -> _VectorClass_PAVVoxClass
+[conv] 0x753960 _DynamicVectorClass_PAVVoxClass::findItem -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x75a6f0 _VectorClass_PAVMovieHandle::QueryInterface -> _VectorClass_PAVMovieHandle
+[conv] 0x75a740 _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___ -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x7646c0 _VectorClass_PAVWaypointPathClass::QueryInterface -> _VectorClass_PAVWaypointPathClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoTypeClass          rc=0
+[era] ObjectTypeClass          rc=0
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] _DynamicVectorClass_PAVTemporalClass rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAUThemeControl rc=0
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] _DynamicVectorClass_PAVTiberiumClass rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] _DynamicVectorClass_PBVToolTip rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_E           rc=0
+[era] _VectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] _VectorClass_PAVWaypointPathClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x717be0   MISMATCH         TechnoTypeClass::Constructor_1
+[diff] 0x717bf0   MATCH            ObjectTypeClass::CheckFlag
+[diff] 0x71b500   MISMATCH         _VectorClass_PAVTemporalClass::QueryInterface
+[diff] 0x71b550   MISMATCH         _DynamicVectorClass_PAVTemporalClass::Constructor_VectorClass_TemporalClass___
+[diff] 0x71fe60   MISMATCH         _VectorClass_PAVTEventClass::QueryInterface
+[diff] 0x71feb0   MISMATCH         _DynamicVectorClass_PAVTEventClass::Constructor_VectorClass_TEventClass___
+[diff] 0x7213e0   MISMATCH         _DynamicVectorClass_PAUThemeControl::Constructor_VectorClass_ThemeControl___
+[diff] 0x7239f0   MISMATCH         _VectorClass_PAVTiberiumClass::QueryInterface
+[diff] 0x723a40   MISMATCH         _DynamicVectorClass_PAVTiberiumClass::Constructor_VectorClass_TiberiumClass___
+[diff] 0x724ef0   MISMATCH         _VectorClass_PBVToolTip::compareString
+[diff] 0x724f40   MISMATCH         _DynamicVectorClass_PBVToolTip::QueryInterface
+[diff] 0x734330   MISMATCH         VectorClass::SelectFactionThemeMusic_Helper_734330
+[diff] 0x74bfa0   MISMATCH         _VectorClass_E::QueryInterface
+[diff] 0x751b90   MISMATCH         _VectorClass_PAVVocClass::QueryInterface
+[diff] 0x751be0   MISMATCH         _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___
+[diff] 0x753910   MISMATCH         _VectorClass_PAVVoxClass::QueryInterface
+[diff] 0x753960   MISMATCH         _DynamicVectorClass_PAVVoxClass::findItem
+[diff] 0x75a6f0   MISMATCH         _VectorClass_PAVMovieHandle::QueryInterface
+[diff] 0x75a740   MISMATCH         _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___
+[diff] 0x7646c0   MISMATCH         _VectorClass_PAVWaypointPathClass::QueryInterface
+[ledger] 0x717be0 TechnoTypeClass::Constructor_1 -> NG (attempt 3)
+[ledger] 0x717bf0 ObjectTypeClass::CheckFlag -> OK (attempt 3)
+[ledger] 0x71b500 _VectorClass_PAVTemporalClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x71b550 _DynamicVectorClass_PAVTemporalClass::Constructor_VectorClass_TemporalClass___ -> NG (attempt 2)
+[ledger] 0x71fe60 _VectorClass_PAVTEventClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x71feb0 _DynamicVectorClass_PAVTEventClass::Constructor_VectorClass_TEventClass___ -> NG (attempt 2)
+[ledger] 0x7213e0 _DynamicVectorClass_PAUThemeControl::Constructor_VectorClass_ThemeControl___ -> NG (attempt 2)
+[ledger] 0x7239f0 _VectorClass_PAVTiberiumClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x723a40 _DynamicVectorClass_PAVTiberiumClass::Constructor_VectorClass_TiberiumClass___ -> NG (attempt 2)
+[ledger] 0x724ef0 _VectorClass_PBVToolTip::compareString -> NG (attempt 2)
+[ledger] 0x724f40 _DynamicVectorClass_PBVToolTip::QueryInterface -> NG (attempt 2)
+[ledger] 0x734330 VectorClass::SelectFactionThemeMusic_Helper_734330 -> NG (attempt 2)
+[ledger] 0x74bfa0 _VectorClass_E::QueryInterface -> NG (attempt 4)
+[ledger] 0x751b90 _VectorClass_PAVVocClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x751be0 _DynamicVectorClass_PAVVocClass::Constructor_VectorClass_VocClass___ -> NG (attempt 2)
+[ledger] 0x753910 _VectorClass_PAVVoxClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x753960 _DynamicVectorClass_PAVVoxClass::findItem -> NG (attempt 2)
+[ledger] 0x75a6f0 _VectorClass_PAVMovieHandle::QueryInterface -> NG (attempt 2)
+[ledger] 0x75a740 _DynamicVectorClass_PAVMovieHandle::Constructor_VectorClass_MovieHandle___ -> NG (attempt 2)
+[ledger] 0x7646c0 _VectorClass_PAVWaypointPathClass::QueryInterface -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "branch_polarity": 16,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p27\batch_report.json

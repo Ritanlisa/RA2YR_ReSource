@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckFlag@ObjectTypeClass@@QAEPAIH@Z",
+ "sym_key": "ObjectTypeClass::CheckFlag",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8bc1c70000000000c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_AnimTypeClass_const@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_AnimTypeClass_const"
+  }
+ ]
+}

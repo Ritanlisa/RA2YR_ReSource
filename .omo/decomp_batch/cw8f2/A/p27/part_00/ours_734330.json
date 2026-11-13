@@ -1,0 +1,27 @@
+{
+ "symbol": "?SelectFactionThemeMusic_Helper_734330@VectorClass@@QAEPAV1@HH@Z",
+ "sym_key": "VectorClass::SelectFactionThemeMusic_Helper_734330",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf185c0c7460400000000894608c6460c01c6460d00c7060000000074208b4c240c85c97405894e04eb13c1e00250e80000000083c404894604c6460d01c70600000000c746140a000000c6460d008bc65ec20800",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_char_const@@3PAXA",
+   "sym_key": "vt_VectorClass_char_const"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_char_const@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_char_const"
+  }
+ ]
+}
