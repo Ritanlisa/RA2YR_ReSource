@@ -1,0 +1,69 @@
+{
+ "symbol": "?GetBuildingPlacement@@YGDPAHHHPAF@Z",
+ "sym_key": "Unnamed::GetBuildingPlacement",
+ "size": 446,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b4c240883ec1c8b5030563bca570f859b010000a00000000084c00f858e0100008b44243085c00f84820100008b7c2434a1000000008b173bd00f846f0100008b74242885f60f84630100008b0656ff502c83f8070f855401000053556a008bcee8000000008bd88bce895c2418e8000000000fbf2f8bd08b86b40e00000fbf7f024089542410897c24142bf88d0c28897c242803ca8bd52bd0c6442438008bf23bd18974243c894c24200f8df00000008d044703c38bd08954241c3bf80f8dd00000000fbfde89542424eb048b74243c8bc366897424303bc566897c24327c208b4c24108d14293bda7d158b4c24140fbfc73bc17c0a8b54241803ca3bc17c768d442430b90000000050e8000000008bc8e8000000008bf085f6745a8b8e1c0200008b44243439413075148b962005000080ba4f150000007405c6442438018a1564b2a80084d2742d8b1500000000c1e0048b128b041050e80000000084c074158b8e200500008a815015000084c07405c6442438018b54241c473bfa0f8c49ffffff8b4c24208b4424248b74243c8b7c2428463bf18974243c0f8c1bffffff8a4424385d5b5f5e83c41cc210005fb0015e83c41cc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03F8@@3IA",
+   "sym_key": "DataGlobal_8A03F8"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 337,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 351,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}

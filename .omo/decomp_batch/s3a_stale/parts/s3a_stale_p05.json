@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x4a0630",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x4a0a50",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x4a18f0",
+  "family": "stale_B5"
+ },
+ {
+  "addr": "0x4a2ab0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x4a3a10",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x4a3c30",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a3e40",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a61c0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a6360",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a7340",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a7a30",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x4a8eb0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x4a91b0",
+  "family": "stale_snapshotfix2_probe"
+ },
+ {
+  "addr": "0x4af540",
+  "family": "stale_B9"
+ },
+ {
+  "addr": "0x4af720",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x4afb80",
+  "family": "stale_stale_cw5|CW5-1/2/3/4 call-site args"
+ },
+ {
+  "addr": "0x4b0c40",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x4b2630",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x4b4b00",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x4b62c0",
+  "family": "stale_cw3_D"
+ }
+]

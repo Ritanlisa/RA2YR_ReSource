@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a0630 ConnectionPointClass::Unadvise -> ConnectionPointClass
+[conv] 0x4a0a50 EnumConnectionPointsClass::ddtor -> EnumConnectionPointsClass
+[conv] 0x4a18f0 BuildingClass::CreateCraterAtCell -> BuildingClass
+[conv] 0x4a2ab0 CStreamClass::StreamRead -> CStreamClass
+[conv] 0x4a3a10 sub_4A3A10 -> _addr_4A
+[conv] 0x4a3c30 FadePalette -> _addr_4A
+[conv] 0x4a3e40 DDraw::CapabilityCheck -> DDraw
+[conv] 0x4a61c0 TextRenderer::DrawText -> TextRenderer
+[conv] 0x4a6360 RenderTextLabelWordWrap -> _addr_4A
+[conv] 0x4a7340 DiskLaserClass::Update -> DiskLaserClass
+[conv] 0x4a7a30 DiskLaserClass::DiskLaserClass -> DiskLaserClass
+[conv] 0x4a8eb0 GetBuildingPlacement -> _addr_4A
+[conv] 0x4a91b0 Tactical::MouseMove -> Tactical
+[conv] 0x4af540 LocomotionClass::Initialize -> LocomotionClass
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> JumpjetLocomotionClass
+[conv] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> DriveLocomotionClass
+[conv] 0x4b2630 JumpjetLocomotion::Update -> JumpjetLocomotion
+[conv] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> DriveLocomotionClass
+[conv] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> DropPodLocomotionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ConnectionPointClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] BuildingClass            rc=2
+[era] CStreamClass             rc=2
+[era] _addr_4A                 rc=2
+[era] DDraw                    rc=2
+[era] TextRenderer             rc=2
+[era] DiskLaserClass           rc=2
+[era] Tactical                 rc=2
+[era] LocomotionClass          rc=0
+[era] DriveLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] JumpjetLocomotion        rc=2
+[era] DropPodLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a6360   MISMATCH         RenderTextLabelWordWrap
+[diff] 0x4a8eb0   MISMATCH         GetBuildingPlacement
+[diff] 0x4af540   MISMATCH         LocomotionClass::Initialize
+[ledger] 0x4a0630 ConnectionPointClass::Unadvise -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4a0a50 EnumConnectionPointsClass::ddtor -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a18f0 BuildingClass::CreateCraterAtCell -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a2ab0 CStreamClass::StreamRead -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a3a10 sub_4A3A10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3c30 FadePalette -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a3e40 DDraw::CapabilityCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a61c0 TextRenderer::DrawText -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a6360 RenderTextLabelWordWrap -> NG (attempt 4)
+[ledger] 0x4a7340 DiskLaserClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a7a30 DiskLaserClass::DiskLaserClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a8eb0 GetBuildingPlacement -> NG (attempt 4)
+[ledger] 0x4a91b0 Tactical::MouseMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4af540 LocomotionClass::Initialize -> NG (attempt 9)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4b2630 JumpjetLocomotion::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p05\batch_report.json
