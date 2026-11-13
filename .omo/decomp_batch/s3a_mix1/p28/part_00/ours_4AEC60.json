@@ -1,0 +1,21 @@
+{
+ "symbol": "?Construct@Surface@@QAEPAIHH@Z",
+ "sym_key": "Surface::Construct",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b542408894104895108c70100000000b800000000c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?Surface_Vtable@@3PAXA",
+   "sym_key": "Surface_Vtable"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?Surface_Vtable@@3PAXA",
+   "sym_key": "Surface_Vtable"
+  }
+ ]
+}

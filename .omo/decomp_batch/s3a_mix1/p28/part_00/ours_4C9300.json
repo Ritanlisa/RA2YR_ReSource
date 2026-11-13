@@ -1,0 +1,27 @@
+{
+ "symbol": "?Set_SyncLog@FacingClass@@QAEDPAH@Z",
+ "sym_key": "FacingClass::Set_SyncLog",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568bf166837e14007e0c8d460850e80000000083c4048b0d000000008b442408894e088b4c240889460c8b1189168b09894e048b150000000089560889460cc7461000000000b0015ec20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Locomotor__GetSpeed@@YAHPAX@Z",
+   "sym_key": "Locomotor__GetSpeed"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

@@ -42847,7 +42847,7 @@
   "this_as_id": false
  },
  "0x4ac4f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -43290,15 +43290,15 @@
   "this_as_id": false
  },
  "0x4aec60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [esp + 8]",
   "name": "Surface::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "Surface::Construct",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4aec80": {
@@ -43537,7 +43537,7 @@
   "this_as_id": false
  },
  "0x4af610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43839,14 +43839,14 @@
   "this_as_id": false
  },
  "0x4b0f20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "JumpjetLocomotion::ProcessCollision",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotion::ProcessCollision",
-  "rule_violations": 127,
+  "rule_violations": 97,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -44873,14 +44873,14 @@
   "this_as_id": false
  },
  "0x4b64e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "JumpjetLocomotionClass::LoadLocomotionFromStream_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::LoadLocomotionFromStream_0",
-  "rule_violations": 2,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -45360,7 +45360,7 @@
   "this_as_id": false
  },
  "0x4b96a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46134,7 +46134,7 @@
   "this_as_id": false
  },
  "0x4bbca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46146,19 +46146,19 @@
   "this_as_id": false
  },
  "0x4bc750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::DrawLineFaded",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DSurface::DrawLineFaded",
-  "rule_violations": 18,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4bdf00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46212,7 +46212,7 @@
   "this_as_id": false
  },
  "0x4bfd30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46279,7 +46279,7 @@
   "this_as_id": false
  },
  "0x4c16a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46534,14 +46534,14 @@
   "this_as_id": false
  },
  "0x4c1f20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Lightning::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Lightning::Draw",
-  "rule_violations": 2,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -46876,7 +46876,7 @@
   "this_as_id": false
  },
  "0x4c3420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48816,11 +48816,16 @@
   "status": "NG"
  },
  "0x4c9300": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x10",
   "name": "FacingClass::Set_SyncLog",
-  "note": "backfill: results.jsonl COMPILE_FAIL/adhoc",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FacingClass::Set_SyncLog",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4c93d0": {
   "attempts": 10,
@@ -48890,7 +48895,7 @@
   "status": "NG"
  },
  "0x4c95d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -50174,7 +50179,7 @@
   "this_as_id": false
  },
  "0x4cc360": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -50514,7 +50519,7 @@
   "this_as_id": false
  },
  "0x4ce4b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -50585,7 +50590,7 @@
   "this_as_id": false
  },
  "0x4cf830": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -51147,7 +51152,7 @@
   "this_as_id": false
  },
  "0x4d1650": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -52542,7 +52547,7 @@
   "this_as_id": false
  },
  "0x4dc340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,

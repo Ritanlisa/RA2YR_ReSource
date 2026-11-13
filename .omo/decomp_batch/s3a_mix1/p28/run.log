@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ac4f0 TechnoClass::GetHouseData -> TechnoClass
+[conv] 0x4aec60 Surface::Construct -> Surface
+[conv] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> JumpjetLocomotionClass
+[conv] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> JumpjetLocomotion
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x4b96a0 TextRenderer::RenderCentered -> TextRenderer
+[conv] 0x4bbca0 DSurface::DrawLineModulated -> DSurface
+[conv] 0x4bc750 DSurface::DrawLineFaded -> DSurface
+[conv] 0x4bdf00 DSurface::DrawLineZBufColored -> DSurface
+[conv] 0x4bfd30 DSurface::DrawLineZBuf -> DSurface
+[conv] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> ObjectClass
+[conv] 0x4c1f20 Lightning::Draw -> Lightning
+[conv] 0x4c3420 EditClass::SetItemText -> EditClass
+[conv] 0x4c9300 FacingClass::Set_SyncLog -> FacingClass
+[conv] 0x4c95d0 ObjectClass::sub_4C95D0 -> ObjectClass
+[conv] 0x4cc360 TrajectoryHelper::GetObstacle -> TrajectoryHelper
+[conv] 0x4ce4b0 ObjectClass::ProcessDataHelper -> ObjectClass
+[conv] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> FlyLocomotionClass
+[conv] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> FoggedObjectClass
+[conv] 0x4dc340 TechnoClass::DrawFootTargetLine -> TechnoClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Surface                  rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] JumpjetLocomotion        rc=2
+[era] TextRenderer             rc=2
+[era] DSurface                 rc=2
+[era] ObjectClass              rc=2
+[era] Lightning                rc=2
+[era] EditClass                rc=2
+[era] FacingClass              rc=0
+[era] TrajectoryHelper         rc=2
+[era] FlyLocomotionClass       rc=2
+[era] FoggedObjectClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x4aec60   MISMATCH         Surface::Construct
+[diff] 0x4c9300   MISMATCH         FacingClass::Set_SyncLog
+[ledger] 0x4ac4f0 TechnoClass::GetHouseData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aec60 Surface::Construct -> NG (attempt 2)
+[ledger] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b96a0 TextRenderer::RenderCentered -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bbca0 DSurface::DrawLineModulated -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bc750 DSurface::DrawLineFaded -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bdf00 DSurface::DrawLineZBufColored -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4bfd30 DSurface::DrawLineZBuf -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c1f20 Lightning::Draw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c3420 EditClass::SetItemText -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c9300 FacingClass::Set_SyncLog -> NG (attempt 2)
+[ledger] 0x4c95d0 ObjectClass::sub_4C95D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4cc360 TrajectoryHelper::GetObstacle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ce4b0 ObjectClass::ProcessDataHelper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4dc340 TechnoClass::DrawFootTargetLine -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p28\batch_report.json
