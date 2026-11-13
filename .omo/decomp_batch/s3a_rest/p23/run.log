@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ef4e0 VectorClass::vt_00 -> VectorClass
+[conv] 0x4ef530 DynamicVector::COMStub_0 -> DynamicVector
+[conv] 0x4f10e0 OpenGameUI -> _addr_4F
+[conv] 0x4f11b0 Options::DlgProc -> Options
+[conv] 0x4f1720 Options::InitDialogControls -> Options
+[conv] 0x4f26e0 ObjectClass::sub_4F26E0 -> ObjectClass
+[conv] 0x4f2770 ObjectClass::sub_4F2770 -> ObjectClass
+[conv] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> DynamicVector
+[conv] 0x4f2c70 ParseINIAnimGadgetDefinition -> _addr_4F
+[conv] 0x4f3140 ParseINIGadgetDefinition -> _addr_4F
+[conv] 0x4f3d40 ObjectClass::sub_4F3D40 -> ObjectClass
+[conv] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4240 GScreenClass::QueryInterface -> GScreenClass
+[conv] 0x4f4480 GScreenClass::Redraw -> GScreenClass
+[conv] 0x4f45b0 GScreenClass::RenderFrame -> GScreenClass
+[conv] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> SuperWeaponTypeClass
+[conv] 0x4f6830 HouseClass::QueryInterface -> HouseClass
+[conv] 0x4f8440 HouseClass::Update_TogglePower -> HouseClass
+[conv] 0x4f93e0 HouseClass::NotifyUnderAttack -> HouseClass
+[conv] 0x4f9610 HouseClass::GiveTiberium_Storage -> HouseClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_4F                 rc=2
+[era] Options                  rc=2
+[era] ObjectClass              rc=2
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=2
+[era] GScreenClass             rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ef4e0 VectorClass::vt_00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ef530 DynamicVector::COMStub_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f10e0 OpenGameUI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f11b0 Options::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f1720 Options::InitDialogControls -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f26e0 ObjectClass::sub_4F26E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2770 ObjectClass::sub_4F2770 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2c70 ParseINIAnimGadgetDefinition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3140 ParseINIGadgetDefinition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3d40 ObjectClass::sub_4F3D40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f4240 GScreenClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f4480 GScreenClass::Redraw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f45b0 GScreenClass::RenderFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f6830 HouseClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f8440 HouseClass::Update_TogglePower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f93e0 HouseClass::NotifyUnderAttack -> PENDING (attempt 2)
+[ledger] 0x4f9610 HouseClass::GiveTiberium_Storage -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p23\batch_report.json

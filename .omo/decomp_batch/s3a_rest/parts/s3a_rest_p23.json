@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x4ef4e0",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4ef530",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4f10e0",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f11b0",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f1720",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f26e0",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f2770",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f2bb0",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4f2c70",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f3140",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f3d40",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f3fd0",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4f4240",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4f4480",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f45b0",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f6540",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f6830",
+  "family": "censusC"
+ },
+ {
+  "addr": "0x4f8440",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f93e0",
+  "family": "censusD"
+ },
+ {
+  "addr": "0x4f9610",
+  "family": "censusC"
+ }
+]
