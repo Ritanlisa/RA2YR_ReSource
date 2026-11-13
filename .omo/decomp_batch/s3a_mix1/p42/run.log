@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c88de OleSaveToStream -> _addr_7C
+[conv] 0x7c89da DirectSoundCreate -> _addr_7C
+[conv] 0x7c8aee _9type_info_QBEHABV0__Z -> _addr_7C
+[conv] 0x7c978a _atexit -> _addr_7C
+[conv] 0x7caa05 ___RTtypeid -> _addr_7C
+[conv] 0x7caae4 ___RTDynamicCast -> _addr_7C
+[conv] 0x7cc0dc __global_unwind2 -> _addr_7C
+[conv] 0x7cc11e __local_unwind2 -> _addr_7C
+[conv] 0x7cc1b2 __NLG_Notify -> _addr_7C
+[conv] 0x7ce2a5 __output -> _addr_7C
+[conv] 0x7cf51c __powhlp -> _addr_7C
+[conv] 0x7cf64c __d_inttype -> _addr_7C
+[conv] 0x7d0a20 _memcpy_0 -> _addr_7D
+[conv] 0x7d12e6 _strncnt -> _addr_7D
+[conv] 0x7d170d __input -> _addr_7D
+[conv] 0x7d21be __woutput -> _addr_7D
+[conv] 0x7d3374 _calloc -> _addr_7D
+[conv] 0x7d6eff _GetLcidFromLangCountry -> _addr_7D
+[conv] 0x7d718a _GetLcidFromLanguage -> _addr_7D
+[conv] 0x7d729d _GetLcidFromCountry -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c88de OleSaveToStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c89da DirectSoundCreate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8aee _9type_info_QBEHABV0__Z -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c978a _atexit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7caa05 ___RTtypeid -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7caae4 ___RTDynamicCast -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc0dc __global_unwind2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc11e __local_unwind2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cc1b2 __NLG_Notify -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ce2a5 __output -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf51c __powhlp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf64c __d_inttype -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d0a20 _memcpy_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d12e6 _strncnt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d170d __input -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d21be __woutput -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d3374 _calloc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d6eff _GetLcidFromLangCountry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d718a _GetLcidFromLanguage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d729d _GetLcidFromCountry -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p42\batch_report.json
