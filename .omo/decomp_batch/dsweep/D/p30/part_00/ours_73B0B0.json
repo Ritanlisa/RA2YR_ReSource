@@ -1,0 +1,45 @@
+{
+ "symbol": "?ShouldSkipOccupierDraw@TechnoClass@@QAEDHHH@Z",
+ "sym_key": "TechnoClass::ShouldSkipOccupierDraw",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "56578bf98a871804000084c074646a00e8000000008bf0568b06ff502c83f80675508b0e56ff918401000083f810740983beb400000010753981c6500300008bcee80000000084c075218bcee80000000084c075168bcee80000000084c0750b8bcee80000000084c074075f32c05ec20c008bcfe8000000005f5ec20c00",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Get@Array@@QAEHH@Z",
+   "sym_key": "Array::Get"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?IsVisible@Window@@QAE_NXZ",
+   "sym_key": "Window::IsVisible"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?CheckFlag24@BuildingClass@@QAE_NXZ",
+   "sym_key": "BuildingClass::CheckFlag24"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?CheckPowerFlags@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CheckPowerFlags"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?CheckNone@Flag@@QAE_NXZ",
+   "sym_key": "Flag::CheckNone"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?CalcDrawRect@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::CalcDrawRect"
+  }
+ ]
+}

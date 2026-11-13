@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B8960",
+ "name": "MouseClass::CalcConfiningRect",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B8960",
+ "bytes_hex": "83ec20568bf18d442414578b4e285051ff15c4147e008b5424188b44241c8b3db8147e00895424088b56288d4c2408515289442414ffd78b4424208b4c2424894424108b46288d542410894c24145250ffd78b5424088b7c240c8b4c24148b44241083c62c2bcf2bc2518916505752897e04686ce68400894608894e0ce8fedec4ff83c4145f5e83c420c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

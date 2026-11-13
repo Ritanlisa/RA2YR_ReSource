@@ -1,0 +1,39 @@
+{
+ "symbol": "?UpdateReveal@FootClass@@QAEDH@Z",
+ "sym_key": "FootClass::UpdateReveal",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "518b442408565783f8028bf18bf8746550e80000000084c075065f5e59c204008b0656ff507883f802754a8b0e8d5424085256ff91b80100008b0085ff89442410742283ff01740583ff0375288d4c24105651b9f8010000e8000000005fb0015e59c204008d5424105652b9f8010000e8000000005fb0015e59c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?UpdateProdWithSound@TechnoClass@@QAEDH@Z",
+   "sym_key": "TechnoClass::UpdateProdWithSound"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?FillRevealBuffer@MapClass@@QAEXPAX0@Z",
+   "sym_key": "MapClass::FillRevealBuffer"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?ApplyOverlayReveal@MapClass@@QAEXPAX0@Z",
+   "sym_key": "MapClass::ApplyOverlayReveal"
+  }
+ ]
+}

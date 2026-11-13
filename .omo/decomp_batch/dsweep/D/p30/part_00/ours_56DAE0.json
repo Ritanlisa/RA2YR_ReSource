@@ -1,0 +1,39 @@
+{
+ "symbol": "?ClearRegions@MapClass@@QAEDPAF@Z",
+ "sym_key": "MapClass::ClearRegions",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856576a008bf16a035356e8000000008bf883c41083ffff75248bcee8000000006a006a035356e8000000008bf883c41083ffff75085f5e32c05bc2040055c6442414008b46548befc1e50403c58a480884c974175056e8000000008b4e5483c408c644241401c64429080047576a035356e8000000008bf883c41083ffff75c38a4424145d5f5e5bc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?ProcessRegion@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::ProcessRegion"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?UpdateCellConnectivityGraph@@YAHPAX0@Z",
+   "sym_key": "UpdateCellConnectivityGraph"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?GetRegionMap@@YAHPAX0HH@Z",
+   "sym_key": "GetRegionMap"
+  }
+ ]
+}

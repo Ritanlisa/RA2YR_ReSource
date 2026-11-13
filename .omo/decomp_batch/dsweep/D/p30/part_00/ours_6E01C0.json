@@ -1,0 +1,33 @@
+{
+ "symbol": "?globalHelper_0E01C0@@YGDHHHH@Z",
+ "sym_key": "Unnamed::globalHelper_0E01C0",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "a1000000005733ff85c07706b0015fc21000538b5c241456a1000000008b34b8568b0eff512c83f806744e8a869000000084c074448a467484c0743d8b463485c074365350e80000000083c40884c074288b1656ff928401000085c0740e8b0656ff908401000083f817750d8b0e6a006a0556ff91e8010000a100000000473bf872955e5bb0015fc21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?LinkedList__Contains@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Contains"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  }
+ ]
+}

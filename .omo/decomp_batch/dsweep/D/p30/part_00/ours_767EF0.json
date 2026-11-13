@@ -1,0 +1,27 @@
+{
+ "symbol": "?Draw@MSFrameAnim@@QAGXPAH@Z",
+ "sym_key": "MSFrameAnim::Draw",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c0744b568b7424088bce8b06ff507c8b168bceff92800000008b44240c85c074178b008b0e6a018d54240c8944240ce8000000005ec208008b0e6a018d54240cc744240c00000000e8000000005ec20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8487BD@@3EA",
+   "sym_key": "DataGlobal_8487BD"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?RenderScoreScreen@@YIXPAX0D@Z",
+   "sym_key": "RenderScoreScreen"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?RenderScoreScreen@@YIXPAX0D@Z",
+   "sym_key": "RenderScoreScreen"
+  }
+ ]
+}

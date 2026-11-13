@@ -1,0 +1,11 @@
+{
+ "addr": "0x689880",
+ "name": "ScenarioClass::ReadGlobalVariables",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x689880",
+ "bytes_hex": "51538b5c240c55894c2408566824d883008bcbe8c8d0e9ff83f8327d106824d883008bcbe8b7d0e9ff8be8eb05bd3200000033f685ed7e4a57566824d883008bcbe8fad3e9ff8bf857e82f0314008b5424148d0c8003d083c4048d84ca881c00006a28506a00576824d883008bcbe81df1e9ff463bf57cc15f5e5db0015b59c204005e5db0015b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

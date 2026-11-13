@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x767ef0 MSFrameAnim::Draw -> MSFrameAnim
+[conv] 0x705d70 TechnoClass::GetBuildAnim -> TechnoClass
+[conv] 0x4d3780 FootClass::UpdateReveal -> FootClass
+[conv] 0x75f9f0 WaveClass::ProcessWaveCollision -> WaveClass
+[conv] 0x7ddf78 __filelength -> _addr_7D
+[conv] 0x637a10 ObjectClass::House_Play -> ObjectClass
+[conv] 0x75a350 sub_75A350 -> _addr_75
+[conv] 0x7b8960 MouseClass::CalcConfiningRect -> MouseClass
+[conv] 0x56dae0 MapClass::ClearRegions -> MapClass
+[conv] 0x689880 ScenarioClass::ReadGlobalVariables -> ScenarioClass
+[conv] 0x76f470 ActivateScreenWDT_Create -> ActivateScreenWDT
+[conv] 0x6e01c0 globalHelper_0E01C0 -> _addr_6E
+[conv] 0x4f26e0 ObjectClass::sub_4F26E0 -> ObjectClass
+[conv] 0x4f2770 ObjectClass::sub_4F2770 -> ObjectClass
+[conv] 0x689c60 ScenarioClass::ReadWaypoint -> ScenarioClass
+[conv] 0x5bbee0 FileFind::ReleaseAllHandles -> FileFind
+[conv] 0x73b0b0 TechnoClass::ShouldSkipOccupierDraw -> TechnoClass
+[conv] 0x6ce020 SuperClass::PowerDrainUpdate -> SuperClass
+[conv] 0x658640 ObjectClass::DrawPowerBarForPlayers -> ObjectClass
+[conv] 0x6e3380 sub_6E3380 -> _addr_6E
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSFrameAnim              rc=0
+[era] TechnoClass              rc=2
+[era] FootClass                rc=0
+[era] WaveClass                rc=2
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_75                 rc=0
+[era] MouseClass               rc=0
+[era] MapClass                 rc=0
+[era] ScenarioClass            rc=2
+[era] ActivateScreenWDT        rc=2
+[era] _addr_6E                 rc=2
+[era] FileFind                 rc=2
+[era] SuperClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x767ef0   MISMATCH         MSFrameAnim::Draw
+[diff] 0x73b0b0   MISMATCH         TechnoClass::ShouldSkipOccupierDraw
+[diff] 0x4d3780   MISMATCH         FootClass::UpdateReveal
+[diff] 0x75a350   MISMATCH         sub_75A350
+[diff] 0x7b8960   MISMATCH         MouseClass::CalcConfiningRect
+[diff] 0x56dae0   MISMATCH         MapClass::ClearRegions
+[diff] 0x689880   MISMATCH         ScenarioClass::ReadGlobalVariables
+[diff] 0x6e01c0   MISMATCH         globalHelper_0E01C0
+[diff] 0x6ce020   MISMATCH         SuperClass::PowerDrainUpdate
+[ledger] 0x767ef0 MSFrameAnim::Draw -> NG (attempt 1)
+[ledger] 0x705d70 TechnoClass::GetBuildAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d3780 FootClass::UpdateReveal -> NG (attempt 1)
+[ledger] 0x75f9f0 WaveClass::ProcessWaveCollision -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ddf78 __filelength -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637a10 ObjectClass::House_Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75a350 sub_75A350 -> NG (attempt 1)
+[ledger] 0x7b8960 MouseClass::CalcConfiningRect -> NG (attempt 1)
+[ledger] 0x56dae0 MapClass::ClearRegions -> NG (attempt 1)
+[ledger] 0x689880 ScenarioClass::ReadGlobalVariables -> NG (attempt 1)
+[ledger] 0x76f470 ActivateScreenWDT_Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e01c0 globalHelper_0E01C0 -> NG (attempt 1)
+[ledger] 0x4f26e0 ObjectClass::sub_4F26E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2770 ObjectClass::sub_4F2770 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x689c60 ScenarioClass::ReadWaypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bbee0 FileFind::ReleaseAllHandles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73b0b0 TechnoClass::ShouldSkipOccupierDraw -> NG (attempt 1)
+[ledger] 0x6ce020 SuperClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x658640 ObjectClass::DrawPowerBarForPlayers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e3380 sub_6E3380 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "signedness": 1,
+  "branch_polarity": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p30\batch_report.json

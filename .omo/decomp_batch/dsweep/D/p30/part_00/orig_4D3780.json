@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D3780",
+ "name": "FootClass::UpdateReveal",
+ "size": 138,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D3780",
+ "bytes_hex": "5156578b7c24108bf183ff0275085fb0015e59c20400578bcee8d212220084c074608b068bceff507883f802754c8b168d442408508bceff92b80100008b088bc783e800894c2410742048740583e80275288d5424105652b9e8f78700e8de4b09005fb0015e59c204008d4424105650b9e8f78700e8f64f09005fb0015e59c204005f32c05e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

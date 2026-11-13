@@ -1,0 +1,11 @@
+{
+ "addr": "0x56DAE0",
+ "name": "MapClass::ClearRegions",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56DAE0",
+ "bytes_hex": "538b5c240856576a006a038bf153e81dffffff8bf883ffff75228bcee8dffbffff6a006a03538bcee803ffffff8bf883ffff75085f5e32c05bc2040083ffffc644241000743b558b46548befc1e50403c58a480884c97415508bcee8107301008b4e54c644241401c644290800478bce576a0353e8b7feffff8bf883ffff75c75d8a4424105f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

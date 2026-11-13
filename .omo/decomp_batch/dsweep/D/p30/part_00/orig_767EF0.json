@@ -1,0 +1,11 @@
+{
+ "addr": "0x767EF0",
+ "name": "MSFrameAnim::Draw",
+ "size": 138,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767EF0",
+ "bytes_hex": "a0bd87840083ec1084c0565774748b74241c8bce8b06ff507c8b168bce8bf8ff92800000008b4c242085c974308b018b5104894424088b41088b490c8954240c894c24146a018d54240c8bce89442414e80b65fcff5f5e83c410c208006a018d54240c8bcec744240c00000000c744241000000000897c241489442418e8de64fcff5f5e83c410c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

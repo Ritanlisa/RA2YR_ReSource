@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CE020",
+ "name": "SuperClass::PowerDrainUpdate",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CE020",
+ "bytes_hex": "56578b7c240c8bf157e8e223d4ff8a466d8bcf50e8673cddff8a4e6e518bcfe85c3cddff8a566f8bcf52e8513cddff8b46788bcf50e8f63cddff8b4e7c518bcfe8eb3cddff8a56608bcf52e8303cddff8a466c8bcf50e8253cddff8b466885c0742533c98a8895010000518bcfe8be3cddff8b76688b56048d460450ff5210508bcfe8a93cddff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

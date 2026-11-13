@@ -1,0 +1,11 @@
+{
+ "addr": "0x73B0B0",
+ "name": "TechnoClass::ShouldSkipOccupierDraw",
+ "size": 140,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x73B0B0",
+ "bytes_hex": "56578bf98a871804000084c074666a00e87bfcf1ff8bf08bce8b06ff502c83f80675518b168bceff928401000083f810740983beb400000010753981c6500300008bcee818a0d6ff84c075218bcee82da0d6ff84c075168bcee8a2a0d6ff84c0750b8bcee8b7a0d6ff84c074075f32c05ec20c008b4424108b4c240c6a0050518bcfe8d999ebff5f5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

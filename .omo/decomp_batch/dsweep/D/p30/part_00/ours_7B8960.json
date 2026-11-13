@@ -1,0 +1,33 @@
+{
+ "symbol": "?CalcConfiningRect@MouseClass@@QAEXXZ",
+ "sym_key": "MouseClass::CalcConfiningRect",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "83ec20568bf18d4424148b4e285051e8000000008b5424148b442418895424048b56288d4c2404894424085152e8000000008b44241c8b4c24208944240c8b46288d54240c894c24105250e8000000008b4424048b54240c8b4c240889462c2bd08b442410894e302bc18bce895634894638e8000000005e83c420c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHHPAX@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHHPAX@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
