@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p98\part_00
+=== convert (20 addrs) ===
+[conv] 0x70de70 TechnoClass::GattlingRateUp_GattlingRateDownReset -> TechnoClass
+[conv] 0x4ff550 HouseClass::DecrementUnitCount -> HouseClass
+[conv] 0x6ec5a0 TeamClass::PowerDrainUpdate -> TeamClass
+[conv] 0x690d60 ScorePrintClass::AnimateText -> ScorePrintClass
+[conv] 0x659ca0 ObjectClass::Weapon_Update -> ObjectClass
+[conv] 0x5f19e0 Modem::OpenPort -> Modem
+[conv] 0x6255f0 Options::RebuildDropdownList -> Options
+[conv] 0x6395b0 BuildingClass::SetProduction -> BuildingClass
+[conv] 0x4d4b20 FootClass::CheckVoiceResponse -> FootClass
+[conv] 0x7d36d5 ObjectClass::_setSBUpLow -> ObjectClass
+[conv] 0x6caf90 SuperClass::Construct -> SuperClass
+[conv] 0x74c420 VeinholeMonsterClass::Construct -> VeinholeMonsterClass
+[conv] 0x7aca00 DynamicClass::Insert -> DynamicClass
+[conv] 0x65bd00 RadSiteClass::DecreaseRadiation -> RadSiteClass
+[conv] 0x6ca310 Render_Parse_6CA310 -> Render_Parse
+[conv] 0x6863e0 GameFrameCheck_Check -> GameFrameCheck
+[conv] 0x744470 UnitClass::LoadFromStream -> UnitClass
+[conv] 0x5c44e0 MPCooperative::ShowScoreScreen -> MPCooperative
+[conv] 0x7da9cd ___crtsetenv -> _addr_7D
+[conv] 0x47f510 TacticalClass::DrawBuildingPlacement -> TacticalClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=2
+[era] TeamClass                rc=0
+[era] ScorePrintClass          rc=2
+[era] ObjectClass              rc=2
+[era] Modem                    rc=2
+[era] Options                  rc=2
+[era] BuildingClass            rc=0
+[era] FootClass                rc=0
+[era] SuperClass               rc=0
+[era] VeinholeMonsterClass     rc=2
+[era] DynamicClass             rc=2
+[era] RadSiteClass             rc=0
+[era] Render_Parse             rc=2
+[era] GameFrameCheck           rc=2
+[era] UnitClass                rc=0
+[era] MPCooperative            rc=0
+[era] _addr_7D                 rc=2
+[era] TacticalClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6ec5a0   MISMATCH         TeamClass::PowerDrainUpdate
+[diff] 0x659ca0   MISMATCH         ObjectClass::Weapon_Update
+[diff] 0x6395b0   MISMATCH         BuildingClass::SetProduction
+[diff] 0x4d4b20   MISMATCH         FootClass::CheckVoiceResponse
+[diff] 0x6caf90   MISMATCH         SuperClass::Construct
+[diff] 0x65bd00   MISMATCH         RadSiteClass::DecreaseRadiation
+[diff] 0x744470   MISMATCH         UnitClass::LoadFromStream
+[diff] 0x5c44e0   MISMATCH         MPCooperative::ShowScoreScreen
+[diff] 0x47f510   MISMATCH         TacticalClass::DrawBuildingPlacement
+[ledger] 0x70de70 TechnoClass::GattlingRateUp_GattlingRateDownReset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ff550 HouseClass::DecrementUnitCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ec5a0 TeamClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x690d60 ScorePrintClass::AnimateText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x659ca0 ObjectClass::Weapon_Update -> NG (attempt 1)
+[ledger] 0x5f19e0 Modem::OpenPort -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6255f0 Options::RebuildDropdownList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6395b0 BuildingClass::SetProduction -> NG (attempt 1)
+[ledger] 0x4d4b20 FootClass::CheckVoiceResponse -> NG (attempt 1)
+[ledger] 0x7d36d5 ObjectClass::_setSBUpLow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6caf90 SuperClass::Construct -> NG (attempt 1)
+[ledger] 0x74c420 VeinholeMonsterClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7aca00 DynamicClass::Insert -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65bd00 RadSiteClass::DecreaseRadiation -> NG (attempt 1)
+[ledger] 0x6ca310 Render_Parse_6CA310 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6863e0 GameFrameCheck_Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x744470 UnitClass::LoadFromStream -> NG (attempt 1)
+[ledger] 0x5c44e0 MPCooperative::ShowScoreScreen -> NG (attempt 1)
+[ledger] 0x7da9cd ___crtsetenv -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47f510 TacticalClass::DrawBuildingPlacement -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "frame_sched": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p98\batch_report.json

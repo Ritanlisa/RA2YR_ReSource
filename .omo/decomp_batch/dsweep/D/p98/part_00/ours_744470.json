@@ -1,0 +1,201 @@
+{
+ "symbol": "?LoadFromStream@UnitClass@@QAGHPAUIStream@@@Z",
+ "sym_key": "UnitClass::LoadFromStream",
+ "size": 399,
+ "link_base": 0,
+ "bytes_hex": "5355568b74241089742410578b46048d6e0455ff50108d4c241451b90000000089442418e80000000033db3bc3745c2b0500000000c1f80383f8ff744e8d4801a1040000003bc87d1e8b15000000008d04ca418b108950f88b50048950fca1040000003bc87ce28b0d0000000048a304000000891cc18b1500000000a104000000895cc204891d100000008b4c24185156e8000000003bc30f8cea0000008bbe740600003bf374278d5424148bce52e800000000c70600000000c7450000000000c7460800000000c7460c000000008b9e740600003bdf741a85ff89be7406000074068b0757ff500485db74068b0b53ff51088b1757ff52088b450055ff50108b0d040000008bf8a108000000413bc87e1885c07505b80a00000050b900000000e80000000084c074308b1500000000a104000000893cc28b0d040000008b15000000008974ca04a10400000040c6050c00000000a3040000008d86c4060000506800000000e8000000008d8ec8060000516800000000e800000000c786dc0600000000000033c05f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Dequeue@BuildingTypeClass@@QAEIPAX@Z",
+   "sym_key": "BuildingTypeClass::Dequeue"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?ObjectClass__LoadFromStream_Common@@YGHHPAUIStream@@@Z",
+   "sym_key": "ObjectClass__LoadFromStream_Common"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?PostLoadInit@FootClass@@QAEPAV1@H@Z",
+   "sym_key": "FootClass::PostLoadInit"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?vt_UnitClass@@3PAXA",
+   "sym_key": "vt_UnitClass"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?vt_UnitClass@@3PAXA",
+   "sym_key": "vt_UnitClass"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?vt_UnitClass@@3PAXA",
+   "sym_key": "vt_UnitClass"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?vt_UnitClass_2@@3PAXA",
+   "sym_key": "vt_UnitClass_2"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?Enqueue@BuildingTypeClass@@QAEDH@Z",
+   "sym_key": "BuildingTypeClass::Enqueue"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 320,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 329,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 336,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 354,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

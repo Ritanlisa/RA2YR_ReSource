@@ -1,0 +1,45 @@
+{
+ "symbol": "?DrawBuildingPlacement@TacticalClass@@QAEXPAH0@Z",
+ "sym_key": "TacticalClass::DrawBuildingPlacement",
+ "size": 355,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf18b0d0000000033c08a4644578b3c818b861c010000578b178d04408d2c80ff929c0000008bd88d442418508bcee8000000008b5424208b4c24248b00894c241403028b112bc2894424108a86e4000000a88074138a861c0100003c0972093c117705836c24100f8b463485c0751f68e803000068e803000068e80300006a0068000001006a008bcee8000000008a87aa0200008a8e1c01000084c0884c24207407c644242000eb0a8a87b402000084c075436a008b4424186a006a006a00bafeffffff6a0068e80300002bd56a00526a006801460000500fbf4306992bc28b54244cd1f881e2ff0000008d4c243c03c2515053eb4e8b4e4085c974558d4424208d5424245052e80000000084c074426a008b4c24186a006a006a00b8feffffff6a0068e80300002bc56a00508b4424406a0068014600008d542438518b4c24505250518b56348b0d00000000e8000000005f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_BuildingTypeClass_Array@@3PAXA",
+   "sym_key": "g_BuildingTypeClass_Array"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?CalcDrawPos@BuildingClass@@QAEPAIPAX@Z",
+   "sym_key": "BuildingClass::CalcDrawPos"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?SetView@TacticalClass@@QAEFHHFFFF@Z",
+   "sym_key": "TacticalClass::SetView"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?initTacticalMap@TacticalClass@@QAEDPAX0@Z",
+   "sym_key": "TacticalClass::initTacticalMap"
+  },
+  {
+   "off": 336,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAXHI00HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

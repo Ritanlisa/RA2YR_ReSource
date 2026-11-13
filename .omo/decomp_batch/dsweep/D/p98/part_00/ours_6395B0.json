@@ -1,0 +1,99 @@
+{
+ "symbol": "?SetProduction@BuildingClass@@QAIDHPAVScriptAction@@@Z",
+ "sym_key": "BuildingClass::SetProduction",
+ "size": 401,
+ "link_base": 0,
+ "bytes_hex": "83ec085355568bea5755e80000000083c40485c00f8593000000689c000000e8000000008bf083c40485f674578d7e046a006a0057e80000000083c40c83c8ffc70700000000c746180a000000c7461400000000c6461c00c6461d0089868c000000898690000000898694000000c6869800000000c6869900000000892e89742410eb08c7442410000000008d442410b94801000050e8000000008b4c24105155e8000000008b44241883c4088b48048b5c241c83c0048d5424145250895c241cff511083f8ff75138bd38bcde8000000005f5e5d5b83c408c2040055e8000000008b480483c40483c0048d5424145250895c241cff51108bf855e8000000008bf083c4048b461489be940000002bc7c6869800000001898690000000a09801000084c0755a8b8d1c020000e80000000084c07444c60598010000018b46144878088b4e088b3c81eb0233ff8b5f1033f685db7e208b57048b04b28b008a888300000084c974098b0850ff9150010000463bf37ce08b5c241c8bcde8000000008bcbe8000000005f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Object_Set@@YAPAVVectorClass@@PAXHH@Z",
+   "sym_key": "Object_Set"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_PlanningNodeClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_PlanningNodeClass"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?PushBack@ScriptActionVector@@QAEDPAX@Z",
+   "sym_key": "ScriptActionVector::PushBack"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?BuildingClass__SetType@@YAHPAXH@Z",
+   "sym_key": "BuildingClass__SetType"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?CompleteBuildingProduction@@YIDPAXH@Z",
+   "sym_key": "CompleteBuildingProduction"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 380,
+   "type": "REL32",
+   "sym": "?CheckExitPath@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::CheckExitPath"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?FindSquadMember@ScriptAction@@QAEHXZ",
+   "sym_key": "ScriptAction::FindSquadMember"
+  }
+ ]
+}

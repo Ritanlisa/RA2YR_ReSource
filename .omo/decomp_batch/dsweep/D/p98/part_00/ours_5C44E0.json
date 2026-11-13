@@ -1,0 +1,93 @@
+{
+ "symbol": "?ShowScoreScreen@MPCooperative@@QAEXH@Z",
+ "sym_key": "MPCooperative::ShowScoreScreen",
+ "size": 344,
+ "link_base": 0,
+ "bytes_hex": "83ec3456578bf98b4f4085c90f843e0100008d44241450e8000000008d4c2410518b4f40e8000000008a44244084c00f841b0100008b5424108b4424143bd00f8c0b0100006a04e80000000083c40485c00f84f90000008bc8e8000000008bf085f60f84e80000006a006a008d4c2410e8000000008d4424188d4c240850518b4f40c744241000000000e8000000008b4f408d54244052c744241000000000e80000000084c074168b4c24408d44240c5051b900000000e800000000eb08c7442440ffffffff8b4424408b54240c8b0d680000008b3e538b5a048b54241c558d68018d442410894c2424508d4c24308954242ce8000000008b4c24248b5424288b4424405355518b4c2448528b542448508b442448518b4c2448528b54244850515256ff57048b066a0156ff108b4424485d85c0c744240c000000005b74118a4c244084c9740950e80000000083c4045f5e83c434c20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetMovieScore@MPCooperative@@QAEDPAX@Z",
+   "sym_key": "MPCooperative::GetMovieScore"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetState@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetState"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?startGame@MPCooperative@@QAEPAIXZ",
+   "sym_key": "MPCooperative::startGame"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?applyVoteResult@MPCooperative@@QAEPAIHH@Z",
+   "sym_key": "MPCooperative::applyVoteResult"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_MPlayerScoreType@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_MPlayerScoreType"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?BuildScoreEntries@MPCooperative@@QAEDHPAX@Z",
+   "sym_key": "MPCooperative::BuildScoreEntries"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?GetSectionID@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetSectionID"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?GetSection@Movie@@QAEDHPAX@Z",
+   "sym_key": "Movie::GetSection"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?processTurnEnd@MPCooperative@@QAEPAV1@PAX@Z",
+   "sym_key": "MPCooperative::processTurnEnd"
+  },
+  {
+   "off": 312,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_MPlayerScoreType@@3PAXA",
+   "sym_key": "vt_VectorClass_MPlayerScoreType"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "symbol": "?Weapon_Update@ObjectClass@@QAE_NH@Z",
+ "sym_key": "ObjectClass::Weapon_Update",
+ "size": 446,
+ "link_base": 0,
+ "bytes_hex": "83ec28568b7424308a460884c0750d56c6460801e80000000083c4048a460984c00f847d01000056e8000000008b868c00000083c40485c0c78688000000000000000f8e5c010000538b5c2434555756e8000000008a0d000000008bf88a86c10000008bead2e88b0d0000000081e700ffffff80e30083c40425ff000000990bc70bd5d3e033c9895424248a8ec20000008bd18a0d00000000d3ea8b0d000000000bd3d3e233c98a8ec00000008bf98a0d00000000d3ef8bc880e1000bf98b0d00000000d3e78b0d000000000bd70bd08d869c0000008bda8d5424185250e8000000008b0d000000008d442410508d86a800000050e8000000000fbe05080000008b0d040000008b1500000000894c242c895424288b088b150c0000008d442428894c243089542434508d5424148d4c241ce80000000084c0744b8b8ea4000000e8000000008b7e0c8b8eb00000002bf883ef02e8000000008b0d00000000bdfeffffff2be86a000fbe110fbfc3558b1257508d442420508d44242c50680000000051ff52348b86880000008b8e8c000000403bc18986880000000f8caefeffff5f5d5b8b467c8b563c4033c93bc289467c0f9dc18ac15e83c428c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Weapon_Update_Update@@YAHPAX@Z",
+   "sym_key": "Weapon_Update_Update"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Weapon_Update_Update_659EE0@@YAHPAX@Z",
+   "sym_key": "Weapon_Update_Update_659EE0"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Weapon_Update_Update_659FF0@@YA_JH@Z",
+   "sym_key": "Weapon_Update_Update_659FF0"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 322,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 382,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
