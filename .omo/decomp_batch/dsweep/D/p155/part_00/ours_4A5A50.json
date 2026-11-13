@@ -1,0 +1,75 @@
+{
+ "symbol": "?DrawBuildingTilesSHP@@YIFPAXPAHHD@Z",
+ "sym_key": "Unnamed::DrawBuildingTilesSHP",
+ "size": 805,
+ "link_base": 0,
+ "bytes_hex": "83ec60535556578bf2e8000000008b0d000000008b6c24748b3c818bcdc1e1048b87200300008b9728030000894424188a44247884c08954241c8d5c0c1874318b870c0300008b0b8b500483fa018b9074010000750733c08a040aeb0633c0668b044a8b0d000000005056518b11ff52148d45fc85c00f846902000083f80175658bbf0c0300008b5b08837f0401750f8b877401000033c98a0c188bc1eb0c8b977401000033c0668b045a8b0e8b56044142894c24608b4e08895424648b560c494a894c24688b0d00000000508d442464895424708b115051ff52585f5e5d5b83c460c208008b870c0300008b53048b48048ba87401000083f901750733c98a0c2aeb0733c9668b4c55008b068b6e088bd05103d58b6e04895424148b560c8d4c241489442424a10000000003d5518d4c24288954242c8b105150ff52308b870c0300008b4b048b50048ba87401000083fa01750733d28a1429eb0733d2668b544d008b068b4e088b6e0c03c18b4e04528d54242c894c24388944242c89442434a10000000003cd528d542438894c24348b085250ff51308b870c0300008b53088b48048ba87401000083f901750733c98a0c2aeb0733c9668b4c55008b068b56088944243803c2894424148b4604518d4c241889442440a100000000518d4c24408b105150ff52308b870c0300008b4b088b50048ba87401000083fa01750733d28a1429eb0733d2668b544d008b46048b6e0c8b0e8944244c03c5528d54244489442448a100000000528d542450894c2448894c24508b085250ff51308b870c0300008b4b0cbd01000000396804750f8b807401000033d28a14088bc2eb0c8b907401000033c0668b044a8b0e8b5604894c24508b4e0c03d18b0d00000000508d442454895424588b115051ff52248bbf0c0300008b5b0c396f04750d8b8f7401000033c08a0419eb0c8b977401000033c0668b045a8b0e8b5e088b560403cb894c24588b0d00000000508d44245c895424608b115051ff52245f5e5d5b83c460c208008bbf0c0300008b5b08837f0401750d8b8f7401000033c08a0419eb0c8b977401000033c0668b045a8b0d000000005056518b11ff52585f5e5d5b83c460c20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetType@BuildingAnim@@QAEHXZ",
+   "sym_key": "BuildingAnim::GetType"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 473,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 550,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 636,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 711,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 783,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  }
+ ]
+}

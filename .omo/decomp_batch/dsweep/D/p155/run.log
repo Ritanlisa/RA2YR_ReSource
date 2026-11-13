@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p155\part_00
+=== convert (20 addrs) ===
+[conv] 0x63c690 ObjectClass::RenderScenarioActionLines -> ObjectClass
+[conv] 0x7947b0 WaitNetworkLobbyPlayers -> _addr_79
+[conv] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> ObjectClass
+[conv] 0x7c57d0 DrawTileBlock2Sub -> _addr_7C
+[conv] 0x5bc6e0 DlgProcAudioDebug -> _addr_5B
+[conv] 0x7dc7cb HandleErrorCOM -> _addr_7D
+[conv] 0x5df9e0 SendNetworkHeartbeat -> _addr_5D
+[conv] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> ObjectClass
+[conv] 0x480cb0 BuildingClass::SellEffects -> BuildingClass
+[conv] 0x410ed0 Buffer::FillCircularBufferScroll -> Buffer
+[conv] 0x7bcb50 Buffer::FillCircularBufferScroll2 -> Buffer
+[conv] 0x4a5a50 DrawBuildingTilesSHP -> _addr_4A
+[conv] 0x683ab0 ScenarioClass::LoadScenarioAndStart -> ScenarioClass
+[conv] 0x43e940 TechnoClass::ComputeTargetAngle -> TechnoClass
+[conv] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> ObjectClass
+[conv] 0x51d6f0 InfantryClass::ProcessDeployAction -> InfantryClass
+[conv] 0x5da0b0 Network::ResolveNetworkAddress -> Network
+[conv] 0x7014a0 TechnoClass::ProcessCapture -> TechnoClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x4151e0 AircraftClass::ProcessLanding -> AircraftClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_5D                 rc=0
+[era] BuildingClass            rc=2
+[era] Buffer                   rc=2
+[era] _addr_4A                 rc=0
+[era] ScenarioClass            rc=2
+[era] TechnoClass              rc=2
+[era] InfantryClass            rc=2
+[era] Network                  rc=2
+[era] AircraftClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x7947b0   MISMATCH         WaitNetworkLobbyPlayers
+[diff] 0x7c57d0   MISMATCH         DrawTileBlock2Sub
+[diff] 0x5bc6e0   MISMATCH         DlgProcAudioDebug
+[diff] 0x5df9e0   MISMATCH         SendNetworkHeartbeat
+[diff] 0x4a5a50   MISMATCH         DrawBuildingTilesSHP
+[ledger] 0x63c690 ObjectClass::RenderScenarioActionLines -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7947b0 WaitNetworkLobbyPlayers -> NG (attempt 1)
+[ledger] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c57d0 DrawTileBlock2Sub -> NG (attempt 1)
+[ledger] 0x5bc6e0 DlgProcAudioDebug -> NG (attempt 1)
+[ledger] 0x7dc7cb HandleErrorCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5df9e0 SendNetworkHeartbeat -> NG (attempt 1)
+[ledger] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480cb0 BuildingClass::SellEffects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410ed0 Buffer::FillCircularBufferScroll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bcb50 Buffer::FillCircularBufferScroll2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5a50 DrawBuildingTilesSHP -> NG (attempt 1)
+[ledger] 0x683ab0 ScenarioClass::LoadScenarioAndStart -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43e940 TechnoClass::ComputeTargetAngle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51d6f0 InfantryClass::ProcessDeployAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5da0b0 Network::ResolveNetworkAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7014a0 TechnoClass::ProcessCapture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4151e0 AircraftClass::ProcessLanding -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p155\batch_report.json

@@ -1,0 +1,495 @@
+{
+ "symbol": "?DlgProcAudioDebug@@YIHPAX0IIJ@Z",
+ "sym_key": "Unnamed::DlgProcAudioDebug",
+ "size": 1025,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec4083f80f535556578bf1755ea10000000033db6a015350e8000000008b15000000008d4c24105152e8000000008b0d000000003bcb7413381d00000000740b6a196a505353e8000000008b0d000000008d4424105051e800000000b8010000005f5e5d5b83c440c20c003d020100000f8546030000a10000000033db3bc3751333c98a0d00000000890d00000000e8000000008b4c24588d41d483f84b0f871f03000033d28a9000000000ff249500000000a1000000008b881827000083f9078d4101750233c08b0c850000000033ff890d000000008da9d00700008d140f8bc5be50000000c60220891883c06483c2194e75f24783c50483ff197cdfeb4a8b0d000000008b8118270000487905b8070000008b0c850000000033ff890d000000008da9d00700008d140f8bc5be50000000c60220891883c06483c2194e75f24783c50483ff197cdf6a196a505353c6813427000001e800000000e9850000005f83c1cf5e5d890d0000000033c05b83c440c20c008b0d00000000eb5da10000000083f8108bc877083b0500000000720833c9891d000000008b150000000052ba02000000e9230100008b0d00000000eb288b0d00000000e8000000008b0d00000000e80000000033c05f5e5d5b83c440c20c008b0d00000000890d00000000e8000000008b0d000000006a196a505353e80000000033c05f5e5d5b83c440c20c008b0d0000000033c03bcb5f0f94c05ea3000000005d33c05b83c440c20c008b0d0000000083f91077083b0d00000000720833c9891d000000006aff83caffe988000000a10000000083f8108bc877083b0500000000720833c9891d000000008b150000000052ba01000000eb5ee8000000005f5e5d33c05b83c440c20c008b0d00000000e800000000ba002000008bc853680000803fe80000000033c05f5e5d5b83c440c20c00a10000000083f8108bc877083b0500000000720833c9891d00000000a10000000033d250e800000000a100000000405f5ea3000000005d33c05b83c440c20c00833d0000000005720c5f5e5d33c05b83c440c20c008bcee8000000008bc8536888130000e8000000008b0d000000003bc389048d00000000750c5f5e5d33c05b83c440c20c008b15000000006a018bc8e80000000085c07417a1000000005f405ea3000000005d33c05b83c440c20c008b15000000008b0c9500000000e80000000033c05f5e5d5b83c440c20c00a1000000003bc3770c5f5e5d33c05b83c440c20c008b0c850000000048a300000000e800000000a1000000008b0c8500000000e80000000033c05f5e5d5b83c440c20c003d11010000740c5f5e5d33c05b83c440c20c00a10000000033db3bc3881d00000000740d5350881d00000000e8000000005f5e5db8010000005b83c440c20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?InvalidateRect@@YGHHHH@Z",
+   "sym_key": "InvalidateRect"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?BeginPaint@@YGPAXHPAX@Z",
+   "sym_key": "BeginPaint"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_MiscFlag@@3EA",
+   "sym_key": "g_MiscFlag"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?EndPaint@@YGHHPAX@Z",
+   "sym_key": "EndPaint"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF224@@3IA",
+   "sym_key": "DataGlobal_ABF224"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF198@@3EA",
+   "sym_key": "DataGlobal_ABF198"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF224@@3IA",
+   "sym_key": "DataGlobal_ABF224"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "$L2401",
+   "sym_key": "$L2401"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "$L2402",
+   "sym_key": "$L2402"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3PAIA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3PAIA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 292,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 349,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF22C@@3IA",
+   "sym_key": "DataGlobal_ABF22C"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF17C@@3IA",
+   "sym_key": "DataGlobal_ABF17C"
+  },
+  {
+   "off": 388,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 401,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 417,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF22C@@3IA",
+   "sym_key": "DataGlobal_ABF22C"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF184@@3IA",
+   "sym_key": "DataGlobal_ABF184"
+  },
+  {
+   "off": 442,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF224@@3IA",
+   "sym_key": "DataGlobal_ABF224"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?Get@AudioSource@@QAEPAHXZ",
+   "sym_key": "AudioSource::Get"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF224@@3IA",
+   "sym_key": "DataGlobal_ABF224"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?Stop@AudioFile@@QAEHXZ",
+   "sym_key": "AudioFile::Stop"
+  },
+  {
+   "off": 476,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF180@@3IA",
+   "sym_key": "DataGlobal_ABF180"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 487,
+   "type": "REL32",
+   "sym": "?Init@TextBuffer@@QAEDXZ",
+   "sym_key": "TextBuffer::Init"
+  },
+  {
+   "off": 493,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF23C@@3IA",
+   "sym_key": "DataGlobal_ABF23C"
+  },
+  {
+   "off": 504,
+   "type": "REL32",
+   "sym": "?DrawRepeated@Text@@QAEDHHHH@Z",
+   "sym_key": "Text::DrawRepeated"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF21C@@3IA",
+   "sym_key": "DataGlobal_ABF21C"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF21C@@3IA",
+   "sym_key": "DataGlobal_ABF21C"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 563,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 573,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 588,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 601,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 611,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 617,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF22C@@3IA",
+   "sym_key": "DataGlobal_ABF22C"
+  },
+  {
+   "off": 630,
+   "type": "REL32",
+   "sym": "?sub_406EE0@@YAHXZ",
+   "sym_key": "sub_406EE0"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?aTesteffect@@3HA",
+   "sym_key": "aTesteffect"
+  },
+  {
+   "off": 653,
+   "type": "REL32",
+   "sym": "?FindIndex@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::FindIndex"
+  },
+  {
+   "off": 671,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 688,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 701,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 711,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 716,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF22C@@3IA",
+   "sym_key": "DataGlobal_ABF22C"
+  },
+  {
+   "off": 724,
+   "type": "REL32",
+   "sym": "?UpdateThemeManager@@YIXHHH@Z",
+   "sym_key": "UpdateThemeManager"
+  },
+  {
+   "off": 729,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 737,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF220@@3IA",
+   "sym_key": "DataGlobal_ABF220"
+  },
+  {
+   "off": 753,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 775,
+   "type": "REL32",
+   "sym": "?GetEnabled@Audio@@QAEPAXXZ",
+   "sym_key": "Audio::GetEnabled"
+  },
+  {
+   "off": 788,
+   "type": "REL32",
+   "sym": "?Constructor@AudioStream@@QAEPAD_K@Z",
+   "sym_key": "AudioStream::Constructor"
+  },
+  {
+   "off": 794,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 803,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF114@@3IA",
+   "sym_key": "DataGlobal_ABF114"
+  },
+  {
+   "off": 823,
+   "type": "DIR32",
+   "sym": "?aIntroWav@@3HA",
+   "sym_key": "aIntroWav"
+  },
+  {
+   "off": 832,
+   "type": "REL32",
+   "sym": "?ThreadAudioMixerMain@@YIHPAXPADH@Z",
+   "sym_key": "ThreadAudioMixerMain"
+  },
+  {
+   "off": 841,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 849,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 865,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 872,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF114@@3IA",
+   "sym_key": "DataGlobal_ABF114"
+  },
+  {
+   "off": 877,
+   "type": "REL32",
+   "sym": "?Destructor@AudioSample@@QAEXXZ",
+   "sym_key": "AudioSample::Destructor"
+  },
+  {
+   "off": 894,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 917,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF110@@3IA",
+   "sym_key": "DataGlobal_ABF110"
+  },
+  {
+   "off": 923,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 928,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 933,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF228@@3IA",
+   "sym_key": "DataGlobal_ABF228"
+  },
+  {
+   "off": 940,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF114@@3IA",
+   "sym_key": "DataGlobal_ABF114"
+  },
+  {
+   "off": 945,
+   "type": "REL32",
+   "sym": "?Destructor@AudioSample@@QAEXXZ",
+   "sym_key": "AudioSample::Destructor"
+  },
+  {
+   "off": 981,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 991,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF239@@3EA",
+   "sym_key": "DataGlobal_ABF239"
+  },
+  {
+   "off": 1001,
+   "type": "DIR32",
+   "sym": "?g_MiscFlag@@3EA",
+   "sym_key": "g_MiscFlag"
+  },
+  {
+   "off": 1006,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}
