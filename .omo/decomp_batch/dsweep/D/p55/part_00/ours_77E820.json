@@ -1,0 +1,117 @@
+{
+ "symbol": "?ParseStringCommaInts@@YIPAPAXPADPAH1111PAPAX@Z",
+ "sym_key": "Unnamed::ParseStringCommaInts",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "5668000000008bf251e80000000083c40885c0740b50e80000000083c404eb0233c068000000006a008906e80000000083c40885c05e740b50e80000000083c404eb0233c08b4c240468000000006a008901e80000000083c40885c0740b50e80000000083c404eb0233c08b54240868000000006a008902e80000000083c40885c0740b50e80000000083c404eb0233c08b4c240c68000000006a008901e80000000083c40885c0740b50e80000000083c404eb0233c08b54241068000000006a008902e800000000508b44242050e80000000083c410c21400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "_atol",
+   "sym_key": "atol"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?p0__Assign_Alt@@YAHPAPAXPAX@Z",
+   "sym_key": "p0__Assign_Alt"
+  }
+ ]
+}

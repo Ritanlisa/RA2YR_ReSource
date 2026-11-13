@@ -1,0 +1,63 @@
+{
+ "symbol": "?SetDialogParent@@YIHPAX0@Z",
+ "sym_key": "Unnamed::SetDialogParent",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "83ec208d44240056578bfa508bf157e8000000003b3d0000000075168b0d0000000033d2894c24108a15a8008a00895424148d4424085057e8000000008d4c24105157e8000000008b7c24148d4c24188b5424088b4424102bc251894424148b4424102bf856897c241ce8000000008d5424185256e8000000008d4424205056e8000000008b7c24108b4c24188b5424208bc12bc22bd1895424208b54241c8d4438018b7c24242bfa992bc2897c24248bc88b4424142bc7d1f940992bc2d1f885c97d0233c985c07d0233c06a056aff6aff50516a0056e8000000005f5e83c420c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?SetWindowPos@@YGHPAXHHHHHH@Z",
+   "sym_key": "SetWindowPos"
+  }
+ ]
+}

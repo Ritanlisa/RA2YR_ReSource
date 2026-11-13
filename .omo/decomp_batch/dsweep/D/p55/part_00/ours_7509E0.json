@@ -1,0 +1,99 @@
+{
+ "symbol": "?StartAudioControllerAt@@YIHHPAIPAPAH@Z",
+ "sym_key": "Unnamed::StartAudioControllerAt",
+ "size": 254,
+ "link_base": 0,
+ "bytes_hex": "a0000000005384c08bda750633c05bc2040055565733f633ff85c97c123b0d00000000730aa1000000008b0c888b398b4c241485c98be97421e8000000008bf085f6741656e80000000083c4043bc774098bcee80000000033f685ff0f8485000000578d5424188bcbe800000000d90500000000d9c1ded9dfe0f6c441741185f6ddd874628bcee80000000033f6eb57dc0d0000000083ec08dd1c24e8000000008bc88b44241c33c883c40881e1ff00000033c13d004000008bd87205bb0040000085f6750d8bcfe8000000008bf085f674148bd38bcee8000000008b5424148bcee80000000085ed740a578bd68bcde8000000008bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?VocClass_VoicesEnabled@@3EA",
+   "sym_key": "VocClass_VoicesEnabled"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_VocPlayState@@3IA",
+   "sym_key": "g_VocPlayState"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_VocAudioConfig@@3PAXA",
+   "sym_key": "g_VocAudioConfig"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Get@AudioSource@@QAEPAHXZ",
+   "sym_key": "AudioSource::Get"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?sub_406310@@YAHPAX@Z",
+   "sym_key": "sub_406310"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Release@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::Release"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?ComputeAudioPosition@@YINPAX0M@Z",
+   "sym_key": "ComputeAudioPosition"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Release@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::Release"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "__real@8@400d8000000000000000",
+   "sym_key": "_real@8@400d8000000000000000"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?ProcessQueue@AudioPool@@QAEPAHXZ",
+   "sym_key": "AudioPool::ProcessQueue"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?AudioMixer__PlayBuffer@@YIHPAXH@Z",
+   "sym_key": "AudioMixer__PlayBuffer"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?AudioMixer__RequestOrEndBuffer@@YIHHH@Z",
+   "sym_key": "AudioMixer__RequestOrEndBuffer"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?SetAudioSource@@YIXHPAXH@Z",
+   "sym_key": "SetAudioSource"
+  }
+ ]
+}

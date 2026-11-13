@@ -1,0 +1,111 @@
+{
+ "symbol": "?ReadChatMessage@@YIPAPAGPAPAGPAX@Z",
+ "sym_key": "Unnamed::ReadChatMessage",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "83ec088d4424005356578bfa8bd950e80000000083c4048d54240c8bcfe8000000008d4c240cbe78000000e80000000084c075488d4c240c33f6e80000000085c0742e568d4c2410e800000000663d0001771e8d4c240c46e8000000003bf07310568d4c2410e800000000663d000176e24e83fe287705be280000008d4c240ce8000000003bc67621568d4c2410e8000000008d4c240ce800000000506a0068b204000057e8000000008b0d00000000518d4c2414e8000000008d5424108d4c240c52e8000000008d4c2410e8000000008d44240c8bcb50e8000000008d4c240ce8000000008bc35f5e5b83c408c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?unknown_libname_74@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_74"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetEditControlText@@YIJPAX0@Z",
+   "sym_key": "GetEditControlText"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?IsASCII@WideString@@QAEDXZ",
+   "sym_key": "WideString::IsASCII"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?GetChar@WideString@@QAEGH@Z",
+   "sym_key": "WideString::GetChar"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?TruncateTo@String@@QAEDH@Z",
+   "sym_key": "String::TruncateTo"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty_Alt"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?asc_831D9C@@3PAGA",
+   "sym_key": "asc_831D9C"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?TrimRight@WString@@QAEXPAX@Z",
+   "sym_key": "WString::TrimRight"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}

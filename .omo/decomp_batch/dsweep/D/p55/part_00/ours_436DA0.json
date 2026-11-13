@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_436DA0@ObjectClass@@QAENH@Z",
+ "sym_key": "ObjectClass::sub_436DA0",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "83ec28568bf18b8ee4000000578d86e40000008b118d4c24185150ff52488b168bf88d4424245056ff52488b48048b57048b77082bca8b50088b00894c240c8b0f2bc12bd689442410c744241400000000df6c24108954240883ec08db442410db442414d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b74241c8b7c24185657ddd8e8000000005657e800000000dd44242883c4185f5e83c428c20400",
+ "relocs": [
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

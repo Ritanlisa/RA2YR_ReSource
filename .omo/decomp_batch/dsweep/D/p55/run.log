@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x711f60 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x77e820 ParseStringCommaInts -> _addr_77
+[conv] 0x4a4620 DDraw::CheckCapabilities -> DDraw
+[conv] 0x4136c0 LoadGame::LoadIteratedData -> LoadGame
+[conv] 0x777080 SetDialogParent -> _addr_77
+[conv] 0x407780 sub_407780 -> _addr_40
+[conv] 0x7747c0 NullModemClass::receiveData -> NullModemClass
+[conv] 0x5edd00 ReadChatMessage -> _addr_5E
+[conv] 0x53fa90 IPXGlobalConnClass::Network_Init_53FA90 -> IPXGlobalConnClass
+[conv] 0x793930 UI_Setup_793930 -> UI_Setup
+[conv] 0x6cdef0 SuperClass::LoadFromStream -> SuperClass
+[conv] 0x4e1d00 Main::CreateDialog -> Main
+[conv] 0x4c19b0 DDraw::CleanupSurfaces -> DDraw
+[conv] 0x7b8170 ConcatWString -> _addr_7B
+[conv] 0x7ca67f _time -> _addr_7C
+[conv] 0x71dca0 LoadObjectTypeClassTheaterSHP -> _addr_71
+[conv] 0x5d4430 ObjectClass::SyncFrameCounter -> ObjectClass
+[conv] 0x7513f0 Audio::LoadSoundINI -> Audio
+[conv] 0x7509e0 StartAudioControllerAt -> _addr_75
+[conv] 0x436da0 ObjectClass::sub_436DA0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoTypeClass          rc=2
+[era] _addr_77                 rc=0
+[era] DDraw                    rc=2
+[era] LoadGame                 rc=0
+[era] _addr_40                 rc=0
+[era] NullModemClass           rc=2
+[era] _addr_5E                 rc=0
+[era] IPXGlobalConnClass       rc=0
+[era] UI_Setup                 rc=2
+[era] SuperClass               rc=0
+[era] Main                     rc=2
+[era] _addr_7B                 rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_71                 rc=2
+[era] ObjectClass              rc=2
+[era] Audio                    rc=2
+[era] _addr_75                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x77e820   MISMATCH         ParseStringCommaInts
+[diff] 0x777080   MISMATCH         SetDialogParent
+[diff] 0x4c19b0   MISMATCH         DDraw::CleanupSurfaces
+[diff] 0x4136c0   MISMATCH         LoadGame::LoadIteratedData
+[diff] 0x407780   MISMATCH         sub_407780
+[diff] 0x5edd00   MISMATCH         ReadChatMessage
+[diff] 0x6cdef0   MISMATCH         SuperClass::LoadFromStream
+[diff] 0x436da0   MISMATCH         ObjectClass::sub_436DA0
+[diff] 0x7509e0   MISMATCH         StartAudioControllerAt
+[ledger] 0x711f60 TechnoTypeClass::ComputeValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e820 ParseStringCommaInts -> NG (attempt 1)
+[ledger] 0x4a4620 DDraw::CheckCapabilities -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4136c0 LoadGame::LoadIteratedData -> NG (attempt 1)
+[ledger] 0x777080 SetDialogParent -> NG (attempt 1)
+[ledger] 0x407780 sub_407780 -> NG (attempt 1)
+[ledger] 0x7747c0 NullModemClass::receiveData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5edd00 ReadChatMessage -> NG (attempt 1)
+[ledger] 0x53fa90 IPXGlobalConnClass::Network_Init_53FA90 -> PENDING (attempt 1)
+[ledger] 0x793930 UI_Setup_793930 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cdef0 SuperClass::LoadFromStream -> NG (attempt 1)
+[ledger] 0x4e1d00 Main::CreateDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c19b0 DDraw::CleanupSurfaces -> NG (attempt 1)
+[ledger] 0x7b8170 ConcatWString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca67f _time -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71dca0 LoadObjectTypeClassTheaterSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4430 ObjectClass::SyncFrameCounter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7513f0 Audio::LoadSoundINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7509e0 StartAudioControllerAt -> NG (attempt 1)
+[ledger] 0x436da0 ObjectClass::sub_436DA0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 9,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 2,
+  "regalloc": 2,
+  "ret_norm": 1,
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p55\batch_report.json
