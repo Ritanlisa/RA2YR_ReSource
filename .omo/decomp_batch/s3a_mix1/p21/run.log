@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x750ac0 ComputeAudioPosition -> _addr_75
+[conv] 0x7513f0 Audio::LoadSoundINI -> Audio
+[conv] 0x751520 ObjectClass::System_Get_751520 -> ObjectClass
+[conv] 0x752290 Audio_Init_752290 -> Audio_Init
+[conv] 0x752370 ThemeClass::ClearQueues -> ThemeClass
+[conv] 0x752480 UpdateThemeManager -> _addr_75
+[conv] 0x752700 VoxClass::FindAndPlay -> VoxClass
+[conv] 0x752a40 ClearThemeQueuePlaylist -> _addr_75
+[conv] 0x752ad0 Audio_Init_752AD0 -> Audio_Init
+[conv] 0x754cb0 Voxel::Projection_Setup -> Voxel
+[conv] 0x758b70 ObjectClass::GenerateLightRemapTable -> ObjectClass
+[conv] 0x759260 Stream::InitializeBinkAudio -> Stream
+[conv] 0x75a2f0 sub_75A2F0 -> _addr_75
+[conv] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> WalkLocomotionClass
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x7651d0 ObjectClass::sub_7651D0 -> ObjectClass
+[conv] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> MapSizeGameOption_WorldDominationTour
+[conv] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> ReferenceCounted
+[conv] 0x7681e0 ArtConfig::ReadLayout -> ArtConfig
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=2
+[era] Audio                    rc=2
+[era] ObjectClass              rc=2
+[era] Audio_Init               rc=2
+[era] ThemeClass               rc=2
+[era] VoxClass                 rc=2
+[era] Voxel                    rc=2
+[era] Stream                   rc=2
+[era] WalkLocomotionClass      rc=2
+[era] ReferenceCounted         rc=2
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] MapSizeGameOption_WorldDominationTour rc=2
+[era] ArtConfig                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x750ac0 ComputeAudioPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7513f0 Audio::LoadSoundINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x751520 ObjectClass::System_Get_751520 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752290 Audio_Init_752290 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752370 ThemeClass::ClearQueues -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752480 UpdateThemeManager -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752700 VoxClass::FindAndPlay -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752a40 ClearThemeQueuePlaylist -> COMPILE_FAIL (attempt 4)
+[ledger] 0x752ad0 Audio_Init_752AD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x754cb0 Voxel::Projection_Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x758b70 ObjectClass::GenerateLightRemapTable -> COMPILE_FAIL (attempt 4)
+[ledger] 0x759260 Stream::InitializeBinkAudio -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75a2f0 sub_75A2F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7651d0 ObjectClass::sub_7651D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> COMPILE_FAIL (attempt 4)
+[ledger] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7681e0 ArtConfig::ReadLayout -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p21\batch_report.json
