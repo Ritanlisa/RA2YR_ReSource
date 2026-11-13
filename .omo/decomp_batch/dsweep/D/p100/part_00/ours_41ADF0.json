@@ -1,0 +1,81 @@
+{
+ "symbol": "?RevealSight@AircraftClass@@QAEEHH@Z",
+ "sym_key": "AircraftClass::RevealSight",
+ "size": 317,
+ "link_base": 0,
+ "bytes_hex": "51568bf157568b86c40600008b168b088bb9a0170000ff92c801000085c07507bf01000000eb0485ff74648b8e20020000538b5c24188b869c000000558b6c24186a006a016a005355518d5424285752b9f801000089442430e8000000008b869c0000008bb6200200006a016a016a005355568d4c24285751b9f801000089442430e8000000005d5b5f5e59c208008b15000000008b02f6c4100f8497000000a1400200008b8e9c000000568bb8f40000008b06894c240cff90c80100008b15400200006a008b8ab4070000d1e93bc18b86200200000f92c2526a016a006a00508d4c24205751b9f8010000e8000000008b969c0000008b06568954240cff90c80100008b0d400200006a018b91b40700008b8e20020000d1ea3bc28d54240c0f92c0506a016a006a00515752b9f8010000e8000000005f5e59c20800",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?RevealArea1@MapClass@@QAEHPAXH0DHDDD@Z",
+   "sym_key": "MapClass::RevealArea1"
+  }
+ ]
+}

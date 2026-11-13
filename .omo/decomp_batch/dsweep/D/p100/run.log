@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p100\part_00
+=== convert (20 addrs) ===
+[conv] 0x5009b0 HouseClass::LoadTypeList -> HouseClass
+[conv] 0x5d6130 SkirmishSetup_Setup -> SkirmishSetup
+[conv] 0x6d04f0 TabClass::BuildCommandBar -> TabClass
+[conv] 0x6a6610 Tactical::UpdateUIVisibility -> Tactical
+[conv] 0x5c3f80 MPCooperative::SetGameMode -> MPCooperative
+[conv] 0x674240 RulesClass::ReadIQSection -> RulesClass
+[conv] 0x751710 LoadGame::RestoreAudioState -> LoadGame
+[conv] 0x41adf0 AircraftClass::RevealSight -> AircraftClass
+[conv] 0x71cda0 TerrainClass::LoadFromStream -> TerrainClass
+[conv] 0x776b40 SaveWOLUISettings -> _addr_77
+[conv] 0x792f10 Network::SyncPlayerList -> Network
+[conv] 0x5ee510 RefreshLobbyPlayerSlots -> _addr_5E
+[conv] 0x5b77e0 ModemHost::Dialog -> ModemHost
+[conv] 0x420960 AlphaShapeClass::CTOR -> AlphaShapeClass
+[conv] 0x77ef90 RequestChannelList2WOL -> _addr_77
+[conv] 0x75f330 WaveClass::DamageArea -> WaveClass
+[conv] 0x4a80d6 sub_4A80D6 -> _addr_4A
+[conv] 0x76ca60 TechnoClass::ConstructWDTSelection_Create_76CA60 -> TechnoClass
+[conv] 0x7d6494 __free_lc_time -> _addr_7D
+[conv] 0x5a38c0 CellClass::Reset -> CellClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] SkirmishSetup            rc=2
+[era] TabClass                 rc=2
+[era] Tactical                 rc=0
+[era] MPCooperative            rc=2
+[era] RulesClass               rc=0
+[era] LoadGame                 rc=0
+[era] AircraftClass            rc=0
+[era] TerrainClass             rc=2
+[era] _addr_77                 rc=2
+[era] Network                  rc=2
+[era] _addr_5E                 rc=2
+[era] ModemHost                rc=2
+[era] AlphaShapeClass          rc=0
+[era] WaveClass                rc=2
+[era] _addr_4A                 rc=0
+[era] TechnoClass              rc=2
+[era] _addr_7D                 rc=2
+[era] CellClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x6a6610   MISMATCH         Tactical::UpdateUIVisibility
+[diff] 0x674240   MISMATCH         RulesClass::ReadIQSection
+[diff] 0x751710   MISMATCH         LoadGame::RestoreAudioState
+[diff] 0x41adf0   MISMATCH         AircraftClass::RevealSight
+[diff] 0x420960   MISMATCH         AlphaShapeClass::CTOR
+[diff] 0x4a80d6   MISMATCH         sub_4A80D6
+[diff] 0x5a38c0   MISMATCH         CellClass::Reset
+[ledger] 0x5009b0 HouseClass::LoadTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6130 SkirmishSetup_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d04f0 TabClass::BuildCommandBar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a6610 Tactical::UpdateUIVisibility -> NG (attempt 1)
+[ledger] 0x5c3f80 MPCooperative::SetGameMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x674240 RulesClass::ReadIQSection -> NG (attempt 1)
+[ledger] 0x751710 LoadGame::RestoreAudioState -> NG (attempt 1)
+[ledger] 0x41adf0 AircraftClass::RevealSight -> NG (attempt 1)
+[ledger] 0x71cda0 TerrainClass::LoadFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776b40 SaveWOLUISettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x792f10 Network::SyncPlayerList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee510 RefreshLobbyPlayerSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b77e0 ModemHost::Dialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420960 AlphaShapeClass::CTOR -> NG (attempt 1)
+[ledger] 0x77ef90 RequestChannelList2WOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75f330 WaveClass::DamageArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a80d6 sub_4A80D6 -> NG (attempt 1)
+[ledger] 0x76ca60 TechnoClass::ConstructWDTSelection_Create_76CA60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d6494 __free_lc_time -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a38c0 CellClass::Reset -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p100\batch_report.json
