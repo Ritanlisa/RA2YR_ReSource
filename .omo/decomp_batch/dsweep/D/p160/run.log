@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p160\part_00
+=== convert (20 addrs) ===
+[conv] 0x7660f0 InitWDTGameOptions -> _addr_76
+[conv] 0x6eaee0 TeamClass::FindClosestEnemy -> TeamClass
+[conv] 0x683610 ScenarioClass::InitTimer -> ScenarioClass
+[conv] 0x72fc60 SetupScreenBuffers -> _addr_72
+[conv] 0x487190 Crate::FindPlacement -> Crate
+[conv] 0x638120 ExecuteActionPlanManager -> _addr_63
+[conv] 0x7d7ff7 unknown_libname_77 -> _addr_7D
+[conv] 0x60a5b0 Dialog::DispatchEvent -> Dialog
+[conv] 0x7d9872 ObjectClass::___strgtold12 -> ObjectClass
+[conv] 0x48e740 ConvertClass::Construct -> ConvertClass
+[conv] 0x6a6c30 SidebarClass::Redraw -> SidebarClass
+[conv] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> JumpjetLocomotionClass
+[conv] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> JumpjetLocomotionClass
+[conv] 0x4a6cf0 InitDirectionOffsets -> _addr_4A
+[conv] 0x5df410 SendNetworkJoinRequest -> _addr_5D
+[conv] 0x7c0c80 DSP_AudioProcess -> DSP
+[conv] 0x42b7f0 ObjectClass::SimplifyPathFilter -> ObjectClass
+[conv] 0x6dad60 ObjectClass::RenderRallyPointLines -> ObjectClass
+[conv] 0x56a4c0 ObjectClass::FlattenCliffMap -> ObjectClass
+[conv] 0x56a980 ObjectClass::RepairMapCliff -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=2
+[era] TeamClass                rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_72                 rc=0
+[era] Crate                    rc=2
+[era] _addr_63                 rc=2
+[era] _addr_7D                 rc=2
+[era] Dialog                   rc=2
+[era] ObjectClass              rc=2
+[era] ConvertClass             rc=2
+[era] SidebarClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_4A                 rc=0
+[era] _addr_5D                 rc=2
+[era] DSP                      rc=0
+=== diffasm byte-compare ===
+[diff] 0x72fc60   MISMATCH         SetupScreenBuffers
+[diff] 0x7d9872   MISMATCH         ObjectClass::___strgtold12
+[diff] 0x4a6cf0   MISMATCH         InitDirectionOffsets
+[diff] 0x7c0c80   MISMATCH         DSP_AudioProcess
+[ledger] 0x7660f0 InitWDTGameOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6eaee0 TeamClass::FindClosestEnemy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x683610 ScenarioClass::InitTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72fc60 SetupScreenBuffers -> NG (attempt 1)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x638120 ExecuteActionPlanManager -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d7ff7 unknown_libname_77 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60a5b0 Dialog::DispatchEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9872 ObjectClass::___strgtold12 -> NG (attempt 1)
+[ledger] 0x48e740 ConvertClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a6c30 SidebarClass::Redraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a6cf0 InitDirectionOffsets -> NG (attempt 1)
+[ledger] 0x5df410 SendNetworkJoinRequest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c0c80 DSP_AudioProcess -> NG (attempt 1)
+[ledger] 0x42b7f0 ObjectClass::SimplifyPathFilter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dad60 ObjectClass::RenderRallyPointLines -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56a4c0 ObjectClass::FlattenCliffMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56a980 ObjectClass::RepairMapCliff -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "extern_reloc": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p160\batch_report.json

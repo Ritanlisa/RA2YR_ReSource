@@ -1,0 +1,21 @@
+{
+ "symbol": "?___strgtold12@ObjectClass@@QAEHHPAPADPADHHHH@Z",
+ "sym_key": "ObjectClass::___strgtold12",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "83ec5453558b6c2468565733c08d7c244c33f6897c241089442430c74424380100000089742414894424208944242c894424288944243c89442440894424348944241c894424248a4d0080f920740f80f909740a80f90a740580f90d750345ebe68a0d000000008a5d004583f80b885c241877f3ff248500000000",
+ "relocs": [
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?SrcCh@@3DA",
+   "sym_key": "SrcCh"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "$L2156",
+   "sym_key": "$L2156"
+  }
+ ]
+}
