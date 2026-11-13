@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@VectorClass@@QAEDHPAH@Z",
+ "sym_key": "VectorClass::Release",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "558b6c2408565785ed8bf10f848c0000008b7c2414c6460c0085ff75128d04ad0000000050e80000000083c4048bf885ffc6460c01745e538d5e0485db743c8b56083bea7d028bd585d27e178bc68d4ffc8b680483c00483c1044a892975f28b6c24148a460d84c074118b0b51e80000000083c404c703000000008b442418893b85c00f94c25b896e0888560d5f5eb0015dc208005f5e32c05dc208000fbe463056ff105f5eb0015dc20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

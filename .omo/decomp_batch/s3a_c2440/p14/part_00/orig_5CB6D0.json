@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB6D0",
+ "name": "MSShapeAnim::Constructor",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB6D0",
+ "bytes_hex": "8b442408568bf18b4c2410894e088d4e14894604c6460c01e853d50f008b5424148a4c241c8946108b442418c74618000000008956208b542420884e348b4c24088956388d563c894624c7462800000000c70610e97e00c60200e84182edff89461cc7462c000000000fbf4006488946308bc65ec21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

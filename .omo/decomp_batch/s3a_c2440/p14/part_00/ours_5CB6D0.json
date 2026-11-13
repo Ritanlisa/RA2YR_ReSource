@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor@MSShapeAnim@@QAEPAXPAPADHHHHDH@Z",
+ "sym_key": "MSShapeAnim::Constructor",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "8b44240c568bf18b4c240c894608894e04c6460c01e8000000008b5424148b4c24208956208b5424188956248946108a44241c8d563c894e388b4c2408c7461800000000884634c7462800000000c70600000000c70200000000e80000000089461cc7462c000000000fbf4006488946308bc65ec21c00",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?vt_MSShapeAnim@@3PAXA",
+   "sym_key": "vt_MSShapeAnim"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?LoadFileClassToBuffer@@YIHPAX0@Z",
+   "sym_key": "LoadFileClassToBuffer"
+  }
+ ]
+}

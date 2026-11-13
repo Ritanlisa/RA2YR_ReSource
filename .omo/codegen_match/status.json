@@ -101831,7 +101831,7 @@
   "this_as_id": false
  },
  "0x5c1640": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -101927,7 +101927,7 @@
   "this_as_id": false
  },
  "0x5c1dc0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -102006,7 +102006,7 @@
   "this_as_id": false
  },
  "0x5c2500": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -102101,7 +102101,7 @@
   "this_as_id": false
  },
  "0x5c2de0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -102209,14 +102209,14 @@
   "this_as_id": false
  },
  "0x5c3ec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MovieClass::Create",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MovieClass::Create",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -102269,7 +102269,7 @@
   "this_as_id": false
  },
  "0x5c42d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -102523,15 +102523,15 @@
   "this_as_id": false
  },
  "0x5c5170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MPCooperative::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5220": {
@@ -102607,15 +102607,15 @@
   "this_as_id": false
  },
  "0x5c53d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::processTeamChat",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "MPCooperative::processTeamChat",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c5480": {
@@ -103595,7 +103595,7 @@
   "this_as_id": false
  },
  "0x5c7520": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SubtractBigIntegerWithSign",
@@ -103617,7 +103617,7 @@
   "this_as_id": false
  },
  "0x5c7990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DivideBigInteger",
@@ -103672,7 +103672,7 @@
   "this_as_id": false
  },
  "0x5c80a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104209,7 +104209,7 @@
   "status": "NG"
  },
  "0x5c9b10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -104695,7 +104695,7 @@
   "this_as_id": false
  },
  "0x5cae70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104719,7 +104719,7 @@
   "this_as_id": false
  },
  "0x5caf00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -104743,7 +104743,7 @@
   "this_as_id": false
  },
  "0x5caf40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -105057,15 +105057,15 @@
   "this_as_id": false
  },
  "0x5cb6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "MSShapeAnim::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "MSShapeAnim::Constructor",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cb790": {
@@ -105136,14 +105136,14 @@
   "this_as_id": false
  },
  "0x5cbd20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Trigger::initTrigger",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Trigger::initTrigger",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -105172,15 +105172,15 @@
   "this_as_id": false
  },
  "0x5cc250": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "MSOverlayAnim::Init",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "MSOverlayAnim::Init",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cc330": {
@@ -105486,14 +105486,14 @@
   "this_as_id": false
  },
  "0x5cd570": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "MSAnim::sub_5CD570",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_5CD570",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -105543,7 +105543,7 @@
   "this_as_id": false
  },
  "0x5cdee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

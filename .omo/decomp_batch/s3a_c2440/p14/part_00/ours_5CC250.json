@@ -1,0 +1,33 @@
+{
+ "symbol": "?Init@MSOverlayAnim@@QAEPAXPAPADHHHHHDHD@Z",
+ "sym_key": "MSOverlayAnim::Init",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53568bf18b4c2410894608894e04c6460c01e8000000008b5424188b4c240c8956208946108b44241c8d563c33db894624895e18895e28885e34895e38891ac70600000000e80000000089461c895e2c0fbf40068a4c24248b54242048884e488946308b4424288946288a44242c3ac3895e40895644c706000000007507c74640040000008bc65e5bc22400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?vt_MSShapeAnim@@3PAXA",
+   "sym_key": "vt_MSShapeAnim"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?LoadFileClassToBuffer@@YIHPAX0@Z",
+   "sym_key": "LoadFileClassToBuffer"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?vt_MSOverlayAnim@@3PAXA",
+   "sym_key": "vt_MSOverlayAnim"
+  }
+ ]
+}
