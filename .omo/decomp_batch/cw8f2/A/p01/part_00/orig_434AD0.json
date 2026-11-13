@@ -1,0 +1,11 @@
+{
+ "addr": "0x434AD0",
+ "name": "BitTextClass::LoadFont",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x434AD0",
+ "bytes_hex": "568bf16a44c706803a7e00e83743390083c40485c0741568988b81008bc8e88dedffffa3d0c489008bc65ec38bc6c705d0c48900000000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

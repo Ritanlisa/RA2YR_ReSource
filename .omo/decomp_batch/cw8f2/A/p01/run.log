@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40fec0 _DynamicVectorClass_PAVWeaponTypeClass::Constructor_VectorClass_WeaponTypeClass___ -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x41e0a0 _VectorClass_PAVAirstrikeClass::QueryInterface -> _VectorClass_PAVAirstrikeClass
+[conv] 0x41e0f0 _DynamicVectorClass_PAVAirstrikeClass::Constructor_VectorClass_AirstrikeClass___ -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x420630 _VectorClass_PAVAlphaLightingRemapClass::QueryInterface -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x420680 _DynamicVectorClass_PAVAlphaLightingRemapClass::Constructor_VectorClass_AlphaLightingRemapClass___ -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+[conv] 0x421ac0 _VectorClass_PAVAlphaShapeClass::QueryInterface -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x42db10 _VectorClass_I::Destructor -> _VectorClass_I
+[conv] 0x42db60 _DynamicVectorClass_I::Add -> _DynamicVectorClass_I
+[conv] 0x42dbb0 _VectorClass_G::Add -> _VectorClass_G
+[conv] 0x42dc00 _DynamicVectorClass_G::Constructor -> _DynamicVectorClass_G
+[conv] 0x42f970 _DynamicVectorClass_VBaseNodeClass::QueryInterface -> _DynamicVectorClass_VBaseNodeClass
+[conv] 0x42fb50 _VectorClass_VBaseNodeClass::QueryInterface -> _VectorClass_VBaseNodeClass
+[conv] 0x42fba0 _VectorClass_VCell::QueryInterface -> _VectorClass_VCell
+[conv] 0x42fbf0 _DynamicVectorClass_VCell::QueryInterface -> _DynamicVectorClass_VCell
+[conv] 0x434ad0 BitTextClass::LoadFont -> BitTextClass
+[conv] 0x43acb0 _VectorClass_PAVNeuronClass::QueryInterface -> _VectorClass_PAVNeuronClass
+[conv] 0x45a9c0 _VectorClass_PBVParticleSystemTypeClass::Add -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45aa10 _DynamicVectorClass_PBVParticleSystemTypeClass::Constructor -> _DynamicVectorClass_PBVParticleSystemTypeClass
+[conv] 0x45aab0 _DynamicVectorClass_PAVInfantryClass::Destruct -> _DynamicVectorClass_PAVInfantryClass
+[conv] 0x45ab00 _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___ -> _DynamicVectorClass_PAVFoggedObjectClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=0
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] _VectorClass_I           rc=0
+[era] _DynamicVectorClass_I    rc=0
+[era] _VectorClass_G           rc=0
+[era] _DynamicVectorClass_G    rc=0
+[era] _DynamicVectorClass_VBaseNodeClass rc=0
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] _VectorClass_VCell       rc=0
+[era] _DynamicVectorClass_VCell rc=0
+[era] BitTextClass             rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] _VectorClass_PBVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PBVParticleSystemTypeClass rc=0
+[era] _DynamicVectorClass_PAVInfantryClass rc=0
+[era] _DynamicVectorClass_PAVFoggedObjectClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x40fec0   MISMATCH         _DynamicVectorClass_PAVWeaponTypeClass::Constructor_VectorClass_WeaponTypeClass___
+[diff] 0x41e0a0   MISMATCH         _VectorClass_PAVAirstrikeClass::QueryInterface
+[diff] 0x41e0f0   MISMATCH         _DynamicVectorClass_PAVAirstrikeClass::Constructor_VectorClass_AirstrikeClass___
+[diff] 0x420630   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::QueryInterface
+[diff] 0x420680   MISMATCH         _DynamicVectorClass_PAVAlphaLightingRemapClass::Constructor_VectorClass_AlphaLightingRemapClass___
+[diff] 0x421ac0   MISMATCH         _VectorClass_PAVAlphaShapeClass::QueryInterface
+[diff] 0x42db10   MISMATCH         _VectorClass_I::Destructor
+[diff] 0x42db60   MISMATCH         _DynamicVectorClass_I::Add
+[diff] 0x42dbb0   MISMATCH         _VectorClass_G::Add
+[diff] 0x42dc00   MISMATCH         _DynamicVectorClass_G::Constructor
+[diff] 0x42f970   MISMATCH         _DynamicVectorClass_VBaseNodeClass::QueryInterface
+[diff] 0x42fb50   MISMATCH         _VectorClass_VBaseNodeClass::QueryInterface
+[diff] 0x42fba0   MISMATCH         _VectorClass_VCell::QueryInterface
+[diff] 0x42fbf0   MISMATCH         _DynamicVectorClass_VCell::QueryInterface
+[diff] 0x434ad0   MISMATCH         BitTextClass::LoadFont
+[diff] 0x43acb0   MISMATCH         _VectorClass_PAVNeuronClass::QueryInterface
+[diff] 0x45a9c0   MISMATCH         _VectorClass_PBVParticleSystemTypeClass::Add
+[diff] 0x45aa10   MISMATCH         _DynamicVectorClass_PBVParticleSystemTypeClass::Constructor
+[diff] 0x45aab0   MATCH            _DynamicVectorClass_PAVInfantryClass::Destruct
+[diff] 0x45ab00   MISMATCH         _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___
+[ledger] 0x40fec0 _DynamicVectorClass_PAVWeaponTypeClass::Constructor_VectorClass_WeaponTypeClass___ -> NG (attempt 2)
+[ledger] 0x41e0a0 _VectorClass_PAVAirstrikeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x41e0f0 _DynamicVectorClass_PAVAirstrikeClass::Constructor_VectorClass_AirstrikeClass___ -> NG (attempt 2)
+[ledger] 0x420630 _VectorClass_PAVAlphaLightingRemapClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x420680 _DynamicVectorClass_PAVAlphaLightingRemapClass::Constructor_VectorClass_AlphaLightingRemapClass___ -> NG (attempt 2)
+[ledger] 0x421ac0 _VectorClass_PAVAlphaShapeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x42db10 _VectorClass_I::Destructor -> NG (attempt 2)
+[ledger] 0x42db60 _DynamicVectorClass_I::Add -> NG (attempt 2)
+[ledger] 0x42dbb0 _VectorClass_G::Add -> NG (attempt 2)
+[ledger] 0x42dc00 _DynamicVectorClass_G::Constructor -> NG (attempt 2)
+[ledger] 0x42f970 _DynamicVectorClass_VBaseNodeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x42fb50 _VectorClass_VBaseNodeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x42fba0 _VectorClass_VCell::QueryInterface -> NG (attempt 2)
+[ledger] 0x42fbf0 _DynamicVectorClass_VCell::QueryInterface -> NG (attempt 2)
+[ledger] 0x434ad0 BitTextClass::LoadFont -> NG (attempt 2)
+[ledger] 0x43acb0 _VectorClass_PAVNeuronClass::QueryInterface -> NG (attempt 4)
+[ledger] 0x45a9c0 _VectorClass_PBVParticleSystemTypeClass::Add -> NG (attempt 2)
+[ledger] 0x45aa10 _DynamicVectorClass_PBVParticleSystemTypeClass::Constructor -> NG (attempt 2)
+[ledger] 0x45aab0 _DynamicVectorClass_PAVInfantryClass::Destruct -> OK (attempt 2)
+[ledger] 0x45ab00 _DynamicVectorClass_PAVFoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___ -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 15,
+  "const_fold": 4
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p01\batch_report.json
