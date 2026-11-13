@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x5980c0 Random::Gaussian -> Random
+[conv] 0x5a08d0 RandomMap::SpreadArea -> RandomMap
+[conv] 0x5a2f50 ObjectClass::SmoothTerrainMap -> ObjectClass
+[conv] 0x5a99f0 ObjectClass::sub_5A99F0 -> ObjectClass
+[conv] 0x5ac230 MapSeed::IsCellInBounds -> MapSeed
+[conv] 0x5ac400 TypeList::BuildingTypeConstructor -> TypeList
+[conv] 0x5b20f0 Movement::CalcVelocity -> Movement
+[conv] 0x5b43e0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_7 -> ObjectClass
+[conv] 0x5b4590 MixFileClass::LinkIntoPool -> MixFileClass
+[conv] 0x5b4630 MixFileClass::Constructor_MixFileClass -> MixFileClass
+[conv] 0x5b4ee0 ModemGuest::InitDialog -> ModemGuest
+[conv] 0x5b57d0 ObjectClass::sub_5B57D0 -> ObjectClass
+[conv] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> ModemGuest
+[conv] 0x5bb6e0 Modem::EnumerateDevices -> Modem
+[conv] 0x5c21d0 CampaignCoop::Setup -> CampaignCoop
+[conv] 0x5c6dd0 MultiplyAddBigInteger -> _addr_5C
+[conv] 0x5c8470 ObjectClass::sub_5C8470 -> ObjectClass
+[conv] 0x5caf70 ObjectClass::sub_5CAF70 -> ObjectClass
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Random                   rc=2
+[era] RandomMap                rc=2
+[era] ObjectClass              rc=2
+[era] MapSeed                  rc=2
+[era] TypeList                 rc=2
+[era] Movement                 rc=2
+[era] MixFileClass             rc=2
+[era] ModemGuest               rc=2
+[era] Modem                    rc=2
+[era] CampaignCoop             rc=2
+[era] _addr_5C                 rc=2
+[era] MSVQAnim                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5a99f0   MISMATCH         ObjectClass::sub_5A99F0
+[diff] 0x5b43e0   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_7
+[diff] 0x5caf70   MISMATCH         ObjectClass::sub_5CAF70
+[ledger] 0x5980c0 Random::Gaussian -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a08d0 RandomMap::SpreadArea -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a2f50 ObjectClass::SmoothTerrainMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a99f0 ObjectClass::sub_5A99F0 -> NG (attempt 2)
+[ledger] 0x5ac230 MapSeed::IsCellInBounds -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ac400 TypeList::BuildingTypeConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b20f0 Movement::CalcVelocity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b43e0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_7 -> OK (attempt 2)
+[ledger] 0x5b4590 MixFileClass::LinkIntoPool -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4630 MixFileClass::Constructor_MixFileClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b4ee0 ModemGuest::InitDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b57d0 ObjectClass::sub_5B57D0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5bb6e0 Modem::EnumerateDevices -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c21d0 CampaignCoop::Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c6dd0 MultiplyAddBigInteger -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c8470 ObjectClass::sub_5C8470 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5caf70 ObjectClass::sub_5CAF70 -> NG (attempt 2)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 14)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p12\batch_report.json

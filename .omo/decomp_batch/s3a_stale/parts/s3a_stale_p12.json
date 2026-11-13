@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x5980c0",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x5a08d0",
+  "family": "stale_snapshotfix2_probe"
+ },
+ {
+  "addr": "0x5a2f50",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5a99f0",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x5ac230",
+  "family": "stale_stale_cw3|CW3-3 idx consumption"
+ },
+ {
+  "addr": "0x5ac400",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x5b20f0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5b43e0",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x5b4590",
+  "family": "stale_censusA"
+ },
+ {
+  "addr": "0x5b4630",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5b4ee0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5b57d0",
+  "family": "stale_C4"
+ },
+ {
+  "addr": "0x5b9550",
+  "family": "stale_C4"
+ },
+ {
+  "addr": "0x5bb6e0",
+  "family": "stale_A2"
+ },
+ {
+  "addr": "0x5c21d0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5c6dd0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x5c8470",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x5caf70",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x5cca20",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x5cd0e0",
+  "family": "stale_A3"
+ }
+]

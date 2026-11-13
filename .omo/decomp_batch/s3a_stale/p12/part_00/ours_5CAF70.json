@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5CAF70@ObjectClass@@QAEKH@Z",
+ "sym_key": "ObjectClass::sub_5CAF70",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "83ec088d442400568bf150e80000000085c074118b4c24088b442404890e5e83c408c20400c7060000000033c05e83c408c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?QueryPerformanceFrequency@@YGHPAX@Z",
+   "sym_key": "QueryPerformanceFrequency"
+  }
+ ]
+}
