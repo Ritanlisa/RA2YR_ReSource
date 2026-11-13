@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x480cb0 BuildingClass::SellEffects -> BuildingClass
+[conv] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> ObjectClass
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x483c80 BuildingClass::DetermineVisualState -> BuildingClass
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x48a4f0 GetWarheadVersusMultiplier -> _addr_48
+[conv] 0x48adb0 _VectorClass_PAUDamageGroup::Remove -> _VectorClass_PAUDamageGroup
+[conv] 0x48d080 Event::Dispatch -> Event
+[conv] 0x48dfd0 sub_48DFD0 -> _addr_48
+[conv] 0x48e030 sub_48E030 -> _addr_48
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x49b000 _DynamicVectorClass_PAVConvertClass::SetCapacity -> _DynamicVectorClass_PAVConvertClass
+[conv] 0x49caf0 Movie::SetupScreen -> Movie
+[conv] 0x49ea70 _DynamicVectorClass_PAD::Remove -> _DynamicVectorClass_PAD
+[conv] 0x49eb90 _VectorClass_PAV_DynamicVectorClass_PAD::Release -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ed30 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ee60 _VectorClass_PAD::Release -> _VectorClass_PAD
+[conv] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> ConnectionPointClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_48                 rc=2
+[era] _VectorClass_PAUDamageGroup rc=0
+[era] Event                    rc=2
+[era] _DynamicVectorClass_PAVConvertClass rc=0
+[era] Movie                    rc=0
+[era] _DynamicVectorClass_PAD  rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _VectorClass_PAD         rc=0
+[era] ConnectionPointClass     rc=2
+=== diffasm byte-compare ===
+[diff] 0x480cb0   MISMATCH         BuildingClass::SellEffects
+[diff] 0x48a4f0   MISMATCH         GetWarheadVersusMultiplier
+[diff] 0x48adb0   MISMATCH         _VectorClass_PAUDamageGroup::Remove
+[diff] 0x49b000   MISMATCH         _DynamicVectorClass_PAVConvertClass::SetCapacity
+[diff] 0x49caf0   MISMATCH         Movie::SetupScreen
+[diff] 0x49ea70   MISMATCH         _DynamicVectorClass_PAD::Remove
+[diff] 0x49eb90   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::Release
+[diff] 0x49ed30   MISMATCH         _DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity
+[diff] 0x49ee60   MISMATCH         _VectorClass_PAD::Release
+[ledger] 0x47ca80 CellClass::DetermineTileType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x480cb0 BuildingClass::SellEffects -> NG (attempt 2)
+[ledger] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x483c80 BuildingClass::DetermineVisualState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48a4f0 GetWarheadVersusMultiplier -> NG (attempt 2)
+[ledger] 0x48adb0 _VectorClass_PAUDamageGroup::Remove -> NG (attempt 2)
+[ledger] 0x48d080 Event::Dispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48dfd0 sub_48DFD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48e030 sub_48E030 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49b000 _DynamicVectorClass_PAVConvertClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x49caf0 Movie::SetupScreen -> NG (attempt 2)
+[ledger] 0x49ea70 _DynamicVectorClass_PAD::Remove -> NG (attempt 2)
+[ledger] 0x49eb90 _VectorClass_PAV_DynamicVectorClass_PAD::Release -> NG (attempt 2)
+[ledger] 0x49ed30 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::SetCapacity -> NG (attempt 2)
+[ledger] 0x49ee60 _VectorClass_PAD::Release -> NG (attempt 2)
+[ledger] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "branch_polarity": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p03\batch_report.json

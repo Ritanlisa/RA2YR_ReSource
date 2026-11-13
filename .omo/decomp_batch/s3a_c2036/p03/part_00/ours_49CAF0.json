@@ -1,0 +1,81 @@
+{
+ "symbol": "?SetupScreen@Movie@@QAEDH@Z",
+ "sym_key": "Movie::SetupScreen",
+ "size": 349,
+ "link_base": 0,
+ "bytes_hex": "51a00000000053568bf184c0750ab900000000e8000000008b44241033db3bc30f8c2f0100003b05000000000f83230100008d0cc0558b2d00000000c6466c018d14488b4e443bc8c74638ffffffff8d6c9500895e48895e4c895e50895e54885e60895e64895e58895e5c895e680f84d50000008b463c573bc374308b464033ff3bc3761b8b463c8b04b83bc3740950e80000000083c4048b4640473bf872e58b463c50e80000000083c404895e3c895e400fbe4d08c1e10251e80000000089463c8a450883c40433ff84c07e6c895c2410eb0233db8b15000000006a02538d8a86000000e80000000068040100008bd8e8000000008b4e3c68030100008904b98b563c8b4424188b0cba03c38bd047c1e20603d08b450c8d14905251e8000000000fbe45088b54242083c41083c2033bf8895424107c9c33db0fbe4d088b442418894e40895e385f8946445d5eb0015b59c204005e32c05b59c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F578@@3EA",
+   "sym_key": "DataGlobal_89F578"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?LoadFromINI@CampaignClass@@QAEHXZ",
+   "sym_key": "CampaignClass::LoadFromINI"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F574@@3IA",
+   "sym_key": "DataGlobal_89F574"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F570@@3IA",
+   "sym_key": "DataGlobal_89F570"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  }
+ ]
+}
