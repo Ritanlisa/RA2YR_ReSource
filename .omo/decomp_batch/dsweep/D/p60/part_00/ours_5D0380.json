@@ -1,0 +1,123 @@
+{
+ "symbol": "?SplitComma@String@@QAEPAV1@PAPBD@Z",
+ "sym_key": "String::SplitComma",
+ "size": 267,
+ "link_base": 0,
+ "bytes_hex": "5153565733ff8bf157e8000000008d44240c66897e0450897e08897e0ce80000000083c4048d4c240c516800000000578b7c24208bcfe8000000008d4c240c8bd8e80000000085c0740c8d54240c8bce52e8000000008d44240c8bcf50680000000053e8000000008d4c240c8bd8e80000000085c074168d4c240c51e800000000668b54241883c404668956048d44240c8bcf50680000000053e8000000008d4c240c8bd8e80000000085c074148d4c240c51e8000000008b54241883c4048956088d44240c8bcf50680000000053e8000000008d4c240ce80000000085c074148d4c240c51e8000000008b54241883c40489560c8d44240c50e80000000083c4048bc65f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 251,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

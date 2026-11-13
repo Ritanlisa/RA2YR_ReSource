@@ -1,0 +1,27 @@
+{
+ "symbol": "?PropertyBagReadCOM@@YGHPAHHH@Z",
+ "sym_key": "Unnamed::PropertyBagReadCOM",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "83ec14568b74241c8d4c2404c7442404000000008b06516a12680000000056ff501085c07d358b44240485c074068b1050ff52088b068d4c24045168121000006a006a00680000000056c744241c00000000ff500c8bf085f67c738b4424048b54242085c08954240cc74424080100000066c7442410030075116803400080e8000000008b44240883c4048b088d5424106a02528d542410526a0150ff51108bf08b44240485f67c1b85c074218b0850ff51088b44240485c0750d8bc65e83c414c20c0085c074068b1050ff52088bc65e83c414c20c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7D10@@3EA",
+   "sym_key": "DataGlobal_7F7D10"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7D10@@3EA",
+   "sym_key": "DataGlobal_7F7D10"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

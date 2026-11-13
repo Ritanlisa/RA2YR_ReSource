@@ -1,0 +1,105 @@
+{
+ "symbol": "?UI_Create_734120@@YAGXZ",
+ "sym_key": "Unnamed::UI_Create_734120",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "83ec08e8000000002b05000000003d40060000720c8d44240450e800000000eb0a8d4c240451e80000000083c404568b30578974240ce800000000a3000000008b44240cc1f8108bd68bf881e2ffff000025ffff00005250e80000000033c983c408668b0d000000003bc1746c0fbfd6c1e2088d44240881c28000000050b9000000008954240ce8000000000fbe801b0100008b7424088d4c2408c1e008992bc2518b0d00000000d1f82bf08974240ce8000000008b3d0000000085ff741a8d54240c680000000052b900000000e8000000005f5e83c408c3668bc75f5e83c408c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_845558@@3IA",
+   "sym_key": "DataGlobal_845558"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?UI_Create_734120_Create@@YAPAHPAX@Z",
+   "sym_key": "UI_Create_734120_Create"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?UI_Create_734120_Create_660BE0@@YAPAHPAX@Z",
+   "sym_key": "UI_Create_734120_Create_660BE0"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_845558@@3IA",
+   "sym_key": "DataGlobal_845558"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FDF0@@3GA",
+   "sym_key": "DataGlobal_B0FDF0"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?SetTacticalPosition@Tactical@@QAEIPAX@Z",
+   "sym_key": "Tactical::SetTacticalPosition"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_RadarBlipManager@@3IA",
+   "sym_key": "g_RadarBlipManager"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FDF0@@3GA",
+   "sym_key": "DataGlobal_B0FDF0"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?MouseMove@Tactical@@QAEPAIPAX0@Z",
+   "sym_key": "Tactical::MouseMove"
+  }
+ ]
+}

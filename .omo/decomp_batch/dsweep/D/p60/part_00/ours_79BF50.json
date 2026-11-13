@@ -1,0 +1,135 @@
+{
+ "symbol": "?sub_79BF50@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_79BF50",
+ "size": 246,
+ "link_base": 0,
+ "bytes_hex": "5156578bf9b900000000e8000000008bf06803070000f7de1bf657f7dee8000000005650e800000000e80000000025ff000000682d060000578bf0e8000000005650e800000000b900000000e80000000085c0747aa19400000085c07471a19c00000050e800000000be010000008bc8d3e683c40468000000004eff15a80000008b0d9000000023f081e1ff0000008b34b185f6743968000000008bcee80000000084c075178b760885f6742268000000008bcee80000000084c074e983fefc740d8b4604c64424080183f8027705c64424080068c205000057e8000000008b54240881e2ff0000005250e8000000005f5e59c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?FindBuddyWOL@@YA_NXZ",
+   "sym_key": "FindBuddyWOL"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76900@@3IA",
+   "sym_key": "DataGlobal_B76900"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76900@@3IA",
+   "sym_key": "DataGlobal_B76900"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?SLOBYTE@@YAHHZZ",
+   "sym_key": "SLOBYTE"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76900@@3IA",
+   "sym_key": "DataGlobal_B76900"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76900@@3IA",
+   "sym_key": "DataGlobal_B76900"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 174,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  }
+ ]
+}

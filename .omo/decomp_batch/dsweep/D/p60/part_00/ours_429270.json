@@ -1,0 +1,87 @@
+{
+ "symbol": "?QueryInterface_Dispatch@TiberianSunClassFactory@@QAGHHPBU_GUID_era@@PBH@Z",
+ "sym_key": "TiberianSunClassFactory::QueryInterface_Dispatch",
+ "size": 236,
+ "link_base": 0,
+ "bytes_hex": "8b44240c53555685c057750c5f5e5db8570007805bc210008b4c241cc7000000000085c9740c5f5e5db8100104805bc210008b6c2420b904000000bf000000008bf533d2bb02400080f3a77412b904000000bf000000008bf533d2f3a7753bb90000000085c9750c5f5e5db80e0007805bc210008b150000000050556800000000ff128bd885db7d0d6800000000e80000000083c4048b44241cb904000000bf000000008bf533d2f3a77537b90000000085c9750c5f5e5db80e0007805bc210008b150000000050556800000000ff128bd885db7d0d6800000000e80000000083c4045f5e8bc35d5bc21000",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E36C0@@3EA",
+   "sym_key": "DataGlobal_7E36C0"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?IID_IUnknown@@3U_GUID_era@@A",
+   "sym_key": "IID_IUnknown"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?punk@@3PAXA",
+   "sym_key": "punk"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7EA6E8@@3EA",
+   "sym_key": "DataGlobal_7EA6E8"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 195,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

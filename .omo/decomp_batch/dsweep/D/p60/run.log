@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p60\part_00
+=== convert (20 addrs) ===
+[conv] 0x79bf50 ObjectClass::sub_79BF50 -> ObjectClass
+[conv] 0x773d40 WebBrowser::GoBack -> WebBrowser
+[conv] 0x7a2fe0 CNetUtilEventSink::SetSize -> CNetUtilEventSink
+[conv] 0x777ea0 ProcessCompositionIME -> _addr_77
+[conv] 0x5d0380 String::SplitComma -> String
+[conv] 0x751620 SaveGame::SaveAudioQueueItems -> SaveGame
+[conv] 0x55c5e0 LZOPipe::AddRef -> LZOPipe
+[conv] 0x62ab40 ParasiteClass::CanExistOnVictimCell -> ParasiteClass
+[conv] 0x7aafb0 CChatEventSink::Unadvise -> CChatEventSink
+[conv] 0x7ab170 CChatEventSink::EnumDependents -> CChatEventSink
+[conv] 0x408b40 sub_408B40 -> _addr_40
+[conv] 0x734120 UI_Create_734120 -> UI_Create
+[conv] 0x620720 DrawScrollArrowUI -> _addr_62
+[conv] 0x6829a0 GameOptions_Load_6829A0 -> GameOptions_Load
+[conv] 0x682b80 PropertyBagReadCOM -> _addr_68
+[conv] 0x4309d0 CCFileClass::Create -> CCFileClass
+[conv] 0x429270 TiberianSunClassFactory::QueryInterface_Dispatch -> TiberianSunClassFactory
+[conv] 0x4ddde0 FootClass::HandleCursorWithCheck -> FootClass
+[conv] 0x6c99d0 BinkMovie::CreateSurfaceTracker -> BinkMovie
+[conv] 0x4ce4b0 ObjectClass::ProcessDataHelper -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] WebBrowser               rc=2
+[era] CNetUtilEventSink        rc=2
+[era] _addr_77                 rc=0
+[era] String                   rc=0
+[era] SaveGame                 rc=2
+[era] LZOPipe                  rc=2
+[era] ParasiteClass            rc=2
+[era] CChatEventSink           rc=0
+[era] _addr_40                 rc=0
+[era] UI_Create                rc=0
+[era] _addr_62                 rc=2
+[era] GameOptions_Load         rc=0
+[era] _addr_68                 rc=0
+[era] CCFileClass              rc=0
+[era] TiberianSunClassFactory  rc=0
+[era] FootClass                rc=2
+[era] BinkMovie                rc=2
+=== diffasm byte-compare ===
+[diff] 0x79bf50   MISMATCH         ObjectClass::sub_79BF50
+[diff] 0x777ea0   MISMATCH         ProcessCompositionIME
+[diff] 0x5d0380   MISMATCH         String::SplitComma
+[diff] 0x7aafb0   MISMATCH         CChatEventSink::Unadvise
+[diff] 0x7ab170   MISMATCH         CChatEventSink::EnumDependents
+[diff] 0x408b40   MISMATCH         sub_408B40
+[diff] 0x734120   MISMATCH         UI_Create_734120
+[diff] 0x6829a0   MISMATCH         GameOptions_Load_6829A0
+[diff] 0x682b80   MISMATCH         PropertyBagReadCOM
+[diff] 0x4309d0   MISMATCH         CCFileClass::Create
+[diff] 0x429270   MISMATCH         TiberianSunClassFactory::QueryInterface_Dispatch
+[ledger] 0x79bf50 ObjectClass::sub_79BF50 -> NG (attempt 1)
+[ledger] 0x773d40 WebBrowser::GoBack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2fe0 CNetUtilEventSink::SetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x777ea0 ProcessCompositionIME -> NG (attempt 1)
+[ledger] 0x5d0380 String::SplitComma -> NG (attempt 1)
+[ledger] 0x751620 SaveGame::SaveAudioQueueItems -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55c5e0 LZOPipe::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62ab40 ParasiteClass::CanExistOnVictimCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7aafb0 CChatEventSink::Unadvise -> NG (attempt 1)
+[ledger] 0x7ab170 CChatEventSink::EnumDependents -> NG (attempt 1)
+[ledger] 0x408b40 sub_408B40 -> NG (attempt 1)
+[ledger] 0x734120 UI_Create_734120 -> NG (attempt 1)
+[ledger] 0x620720 DrawScrollArrowUI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6829a0 GameOptions_Load_6829A0 -> NG (attempt 1)
+[ledger] 0x682b80 PropertyBagReadCOM -> NG (attempt 1)
+[ledger] 0x4309d0 CCFileClass::Create -> NG (attempt 1)
+[ledger] 0x429270 TiberianSunClassFactory::QueryInterface_Dispatch -> NG (attempt 1)
+[ledger] 0x4ddde0 FootClass::HandleCursorWithCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c99d0 BinkMovie::CreateSurfaceTracker -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ce4b0 ObjectClass::ProcessDataHelper -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "branch_polarity": 1,
+  "ret_norm": 2,
+  "codegen_shape": 1,
+  "frame_sched": 4,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p60\batch_report.json

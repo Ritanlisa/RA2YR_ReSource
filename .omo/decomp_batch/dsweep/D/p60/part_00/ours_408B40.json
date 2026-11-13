@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_408B40@@YIHPAIHHI@Z",
+ "sym_key": "Unnamed::sub_408B40",
+ "size": 262,
+ "link_base": 0,
+ "bytes_hex": "83ec0c53558d42ff5685d2578bd9c744241000000000894424140f84da0000008b6c2424b8010000008bcdd3e08b4c24208944241803c1894424246a3ce8000000008bf0b90f00000033c08bfef3ab83c4048bcee8000000008b54242452e80000000083c40489461085c074728b5424188b4c2420894e1c8bcd8d4410ff83caffd3e2896e1423c285f689461874428bd68d4b04e8000000008b138b4b144289138b461c03c8894b148b4c2414895e308b7b108b74241083e7fd8bc14649897b1085c089742410894c24140f856affffff8b4424105f5e5d5b83c40cc2080085f6740956e80000000083c4048b4424105f5e5d5b83c40cc208005f5e5d33c05b83c40cc20800",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?InsertBeforeLinkedList@@YIHPAX0@Z",
+   "sym_key": "InsertBeforeLinkedList"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
