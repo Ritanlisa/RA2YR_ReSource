@@ -1,0 +1,105 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cb540 UnholyAlliance::QueryInterface -> UnholyAlliance
+[conv] 0x5ceb60 MSAnim::checkWinningConditions -> MSAnim
+[conv] 0x5ceb80 MSShapeAnim::QueryInterface -> MSShapeAnim
+[conv] 0x5cebd0 MSFadeAnim::Destruct -> MSFadeAnim
+[conv] 0x5cec20 MSOverlayAnim::processCrates -> MSOverlayAnim
+[conv] 0x5cec70 MSBinkAnim::QueryInterface -> MSBinkAnim
+[conv] 0x5ced10 MSBitPrintAnim::QueryInterface -> MSBitPrintAnim
+[conv] 0x5ced40 MSPrintAnim::QueryInterface -> MSPrintAnim
+[conv] 0x5d16c0 _VectorClass_VPoint2D::QueryInterface -> _VectorClass_VPoint2D
+[conv] 0x5d1710 _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_ -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d1760 _VectorClass_PAVMSTextEntry::QueryInterface -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d17b0 _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___ -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d1800 _VectorClass_PAVMapSelection::QueryInterface -> _VectorClass_PAVMapSelection
+[conv] 0x5d1850 _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___ -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d18a0 _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___ -> _VectorClass_PAVMapStage
+[conv] 0x5d18f0 _DynamicVectorClass_PAVMapStage::QueryInterface -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1940 _VectorClass_PAVMSAnimEntry::QueryInterface -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d1990 _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___ -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d19e0 _VectorClass_PAVMSSfxEntry::QueryInterface -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d1a30 _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___ -> _DynamicVectorClass_PAVMSSfxEntry
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnholyAlliance           rc=0
+[era] MSAnim                   rc=0
+[era] MSShapeAnim              rc=0
+[era] MSFadeAnim               rc=0
+[era] MSOverlayAnim            rc=0
+[era] MSBinkAnim               rc=0
+[era] MSBitPrintAnim           rc=0
+[era] MSPrintAnim              rc=0
+[era] _VectorClass_VPoint2D    rc=0
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _DynamicVectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _DynamicVectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _DynamicVectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cb540   MATCH            UnholyAlliance::QueryInterface
+[diff] 0x5ceb60   MISMATCH         MSAnim::checkWinningConditions
+[diff] 0x5ceb80   MISMATCH         MSShapeAnim::QueryInterface
+[diff] 0x5cebd0   MISMATCH         MSFadeAnim::Destruct
+[diff] 0x5cec20   MISMATCH         MSOverlayAnim::processCrates
+[diff] 0x5cec70   MISMATCH         MSBinkAnim::QueryInterface
+[diff] 0x5ced10   MISMATCH         MSBitPrintAnim::QueryInterface
+[diff] 0x5ced40   MISMATCH         MSPrintAnim::QueryInterface
+[diff] 0x5d16c0   MISMATCH         _VectorClass_VPoint2D::QueryInterface
+[diff] 0x5d1710   MISMATCH         _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_
+[diff] 0x5d1760   MISMATCH         _VectorClass_PAVMSTextEntry::QueryInterface
+[diff] 0x5d17b0   MISMATCH         _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___
+[diff] 0x5d1800   MISMATCH         _VectorClass_PAVMapSelection::QueryInterface
+[diff] 0x5d1850   MISMATCH         _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___
+[diff] 0x5d18a0   MISMATCH         _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___
+[diff] 0x5d18f0   MISMATCH         _DynamicVectorClass_PAVMapStage::QueryInterface
+[diff] 0x5d1940   MISMATCH         _VectorClass_PAVMSAnimEntry::QueryInterface
+[diff] 0x5d1990   MISMATCH         _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___
+[diff] 0x5d19e0   MISMATCH         _VectorClass_PAVMSSfxEntry::QueryInterface
+[diff] 0x5d1a30   MISMATCH         _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___
+[ledger] 0x5cb540 UnholyAlliance::QueryInterface -> OK (attempt 2)
+[ledger] 0x5ceb60 MSAnim::checkWinningConditions -> NG (attempt 2)
+[ledger] 0x5ceb80 MSShapeAnim::QueryInterface -> NG (attempt 4)
+[ledger] 0x5cebd0 MSFadeAnim::Destruct -> NG (attempt 2)
+[ledger] 0x5cec20 MSOverlayAnim::processCrates -> NG (attempt 2)
+[ledger] 0x5cec70 MSBinkAnim::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ced10 MSBitPrintAnim::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ced40 MSPrintAnim::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d16c0 _VectorClass_VPoint2D::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d1710 _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_ -> NG (attempt 4)
+[ledger] 0x5d1760 _VectorClass_PAVMSTextEntry::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d17b0 _DynamicVectorClass_PAVMSTextEntry::Constructor_VectorClass_MSTextEntry___ -> NG (attempt 2)
+[ledger] 0x5d1800 _VectorClass_PAVMapSelection::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d1850 _DynamicVectorClass_PAVMapSelection::Constructor_VectorClass_MapSelection___ -> NG (attempt 2)
+[ledger] 0x5d18a0 _VectorClass_PAVMapStage::Constructor_VectorClass_MapStage___ -> NG (attempt 2)
+[ledger] 0x5d18f0 _DynamicVectorClass_PAVMapStage::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d1940 _VectorClass_PAVMSAnimEntry::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d1990 _DynamicVectorClass_PAVMSAnimEntry::Constructor_VectorClass_MSAnimEntry___ -> NG (attempt 2)
+[ledger] 0x5d19e0 _VectorClass_PAVMSSfxEntry::QueryInterface -> NG (attempt 2)
+[ledger] 0x5d1a30 _DynamicVectorClass_PAVMSSfxEntry::Constructor_VectorClass_MSSfxEntry___ -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "const_fold": 2,
+  "branch_polarity": 12
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p17\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CED10",
+ "name": "MSBitPrintAnim::QueryInterface",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CED10",
+ "bytes_hex": "568bf18d4e1cc706d8e97e00e83f7a1e008a442408c706e8e87e00a801740956e8089e1f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
