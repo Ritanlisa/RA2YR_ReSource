@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x55a0d0 LoadOptions::QueryInterface -> LoadOptions
+[conv] 0x6c0110 _TClassFactory_VTubeClass::CreateInstanceCOM -> _TClassFactory_VTubeClass
+[conv] 0x5c09b0 VQMovieHandle::processCombatState -> VQMovieHandle
+[conv] 0x65d3a0 BufferIOFileClass::QueryInterface -> BufferIOFileClass
+[conv] 0x753c80 globalHelper_053C80 -> _addr_75
+[conv] 0x7cbc32 _getenv -> _addr_7C
+[conv] 0x4158e0 TechnoClass::ReturnToBaseAndReload -> TechnoClass
+[conv] 0x6e3db0 TActionClass::SaveLoad_Prefix -> TActionClass
+[conv] 0x5e9aa0 sub_5E9AA0 -> _addr_5E
+[conv] 0x4331f0 BinkMovie::RenderSingleFrame -> BinkMovie
+[conv] 0x5f5e80 ObjectClass::SaveLoad_Register -> ObjectClass
+[conv] 0x630b90 Network::resetConnectionState -> Network
+[conv] 0x765580 sub_765580 -> _addr_76
+[conv] 0x6842f0 ToggleDisplayMode -> _addr_68
+[conv] 0x65c3a0 RAMFileClass::nullsub_0_3 -> RAMFileClass
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x527b90 INIClass::ReadDouble -> INIClass
+[conv] 0x752680 AudioQueue::FindByData -> AudioQueue
+[conv] 0x7cd460 _tmpnam -> _addr_7C
+[conv] 0x727b30 TriggerTypeClass::PowerDrainUpdate -> TriggerTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadOptions              rc=0
+[era] _TClassFactory_VTubeClass rc=0
+[era] VQMovieHandle            rc=2
+[era] BufferIOFileClass        rc=0
+[era] _addr_75                 rc=0
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=0
+[era] TActionClass             rc=0
+[era] _addr_5E                 rc=0
+[era] BinkMovie                rc=0
+[era] ObjectClass              rc=0
+[era] Network                  rc=2
+[era] _addr_76                 rc=0
+[era] _addr_68                 rc=2
+[era] RAMFileClass             rc=2
+[era] INIClass                 rc=2
+[era] AudioQueue               rc=0
+[era] TriggerTypeClass         rc=0
+=== diffasm byte-compare ===
+[diff] 0x55a0d0   MISMATCH         LoadOptions::QueryInterface
+[diff] 0x6c0110   MISMATCH         _TClassFactory_VTubeClass::CreateInstanceCOM
+[diff] 0x65d3a0   MISMATCH         BufferIOFileClass::QueryInterface
+[diff] 0x753c80   MISMATCH         globalHelper_053C80
+[diff] 0x4158e0   MISMATCH         TechnoClass::ReturnToBaseAndReload
+[diff] 0x6e3db0   MISMATCH         TActionClass::SaveLoad_Prefix
+[diff] 0x5e9aa0   MISMATCH         sub_5E9AA0
+[diff] 0x4331f0   MISMATCH         BinkMovie::RenderSingleFrame
+[diff] 0x5f5e80   MISMATCH         ObjectClass::SaveLoad_Register
+[diff] 0x765580   MISMATCH         sub_765580
+[diff] 0x752680   MISMATCH         AudioQueue::FindByData
+[diff] 0x727b30   MISMATCH         TriggerTypeClass::PowerDrainUpdate
+[ledger] 0x55a0d0 LoadOptions::QueryInterface -> NG (attempt 1)
+[ledger] 0x6c0110 _TClassFactory_VTubeClass::CreateInstanceCOM -> NG (attempt 1)
+[ledger] 0x5c09b0 VQMovieHandle::processCombatState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d3a0 BufferIOFileClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x753c80 globalHelper_053C80 -> NG (attempt 1)
+[ledger] 0x7cbc32 _getenv -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4158e0 TechnoClass::ReturnToBaseAndReload -> NG (attempt 1)
+[ledger] 0x6e3db0 TActionClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x5e9aa0 sub_5E9AA0 -> NG (attempt 1)
+[ledger] 0x4331f0 BinkMovie::RenderSingleFrame -> NG (attempt 1)
+[ledger] 0x5f5e80 ObjectClass::SaveLoad_Register -> NG (attempt 1)
+[ledger] 0x630b90 Network::resetConnectionState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765580 sub_765580 -> NG (attempt 1)
+[ledger] 0x6842f0 ToggleDisplayMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c3a0 RAMFileClass::nullsub_0_3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x527b90 INIClass::ReadDouble -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752680 AudioQueue::FindByData -> NG (attempt 1)
+[ledger] 0x7cd460 _tmpnam -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727b30 TriggerTypeClass::PowerDrainUpdate -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "const_fold": 1,
+  "regalloc": 2,
+  "frame_sched": 1,
+  "branch_order": 2,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p23\batch_report.json

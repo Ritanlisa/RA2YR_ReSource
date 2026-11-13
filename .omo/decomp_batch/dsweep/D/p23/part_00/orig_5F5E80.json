@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5E80",
+ "name": "BuildingClass::SaveLoad_Register",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5E80",
+ "bytes_hex": "8b442408568b7424085056e8f0a4e1ff85c07c658d4e30516810c1b000e89e930d008d5634526810c1b000e890930d008d4638506810c1b000e882930d008d4e18516810c1b000e874930d008d9688000000526810c1b000e863930d008d4e3ce8fbfce0ff8d4e50e8f3fce0ffc786a80000000000000033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x727B30",
+ "name": "TriggerTypeClass::PowerDrainUpdate",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x727B30",
+ "bytes_hex": "56578b7c240c8bf157e8a290ceff8b86a400000083c004508b08ff5110508bcfe8fba1d7ff8b86a800000085c074128b500483c00450ff5210508bcfe8dfa1d7ff8b86ac00000085c074128b480483c00450ff5110508bcfe8c3a1d7ff8bb6b000000085f674128b56048d460450ff5210508bcfe8a7a1d7ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

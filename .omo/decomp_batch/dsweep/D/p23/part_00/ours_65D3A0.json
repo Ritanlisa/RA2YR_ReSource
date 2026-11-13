@@ -1,0 +1,51 @@
+{
+ "symbol": "?QueryInterface@BufferIOFileClass@@QAEPAID@Z",
+ "sym_key": "BufferIOFileClass::QueryInterface",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "568bf1c70600000000e80000000085c0742a8b461450e80000000085c07516538b5e18578b3ee800000000536a005056ff57405f5bc74614ffffffff8b462085c0741e8b461885c0741750e80000000083c404c7461800000000c74620000000008a442408c70600000000a801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_RawFileClass@@3PAXA",
+   "sym_key": "vt_RawFileClass"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Write@RawFileClass@@QAEHXZ",
+   "sym_key": "RawFileClass::Write"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?vt_FileClass@@3PAXA",
+   "sym_key": "vt_FileClass"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

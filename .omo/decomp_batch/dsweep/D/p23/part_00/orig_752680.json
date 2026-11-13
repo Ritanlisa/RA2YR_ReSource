@@ -1,0 +1,11 @@
+{
+ "addr": "0x752680",
+ "name": "AudioQueue::FindByData",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x752680",
+ "bytes_hex": "56578bf9b9f0d3b100e8324dcbff85c0741039780c74648bc8e8424dcbff85c075f0a1b8d4b10085c0740539780c744bbe74d4b1008bcee8044dcbff85c0741039780c74368bc8e8144dcbff85c075f083ee0c81fe50d4b1007ddab9c8d3b100e8db4ccbff85c0741039780c740d8bc8e8eb4ccbff85c075f033c05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

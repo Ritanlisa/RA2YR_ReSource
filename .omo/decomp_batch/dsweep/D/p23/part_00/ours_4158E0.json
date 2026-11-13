@@ -1,0 +1,21 @@
+{
+ "symbol": "?ReturnToBaseAndReload@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ReturnToBaseAndReload",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86b402000085c074588b8ea405000085c9743b508bcee8000000008b0d000000000fbe914c0500003bc27f4f8b066a006a1b56ff90e80100008a86d3060000fec88886d3060000b8030000005ec38b0e6a015056ff9180040000b8030000005ec38b166a016a0056ff92800400008b066a006a0456ff90e8010000b8030000005ec3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ComputeDistance@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::ComputeDistance"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

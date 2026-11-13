@@ -1,0 +1,33 @@
+{
+ "symbol": "?globalHelper_053C80@@YIDPAHHHPAM1@Z",
+ "sym_key": "Unnamed::globalHelper_053C80",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "83ec4856578bf28bf98b5424588d4c2420e8000000008b4424588b4c245c50518d4c241ce8000000008b10895424088b4804894c240c8b50088b4424548bcf505689542418e80000000033d28d4c24088a90a3000000e8000000005f5e83c448c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?InvertMatrix3x3Signs@@YIPAMPAX0@Z",
+   "sym_key": "InvertMatrix3x3Signs"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?TransformPoint@Matrix3x3@@QAEPAMPAX0@Z",
+   "sym_key": "Matrix3x3::TransformPoint"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?GetInfo@VoxelSection@@QAEHHH@Z",
+   "sym_key": "VoxelSection::GetInfo"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?GlobalHelper_053C80_Helper@@YIDPAXH@Z",
+   "sym_key": "GlobalHelper_053C80_Helper"
+  }
+ ]
+}

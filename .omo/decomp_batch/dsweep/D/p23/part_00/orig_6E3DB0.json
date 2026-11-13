@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E3DB0",
+ "name": "TActionClass::SaveLoad_Prefix",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E3DB0",
+ "bytes_hex": "8b442408568b7424085056e8c0c5d2ff85c07c6585f674278d4c240c518bcee8ecc3d2ffc7063c447f00c7460420447f00c7460818447f00c7460c10447f008d5628526810c1b000e843b4feff8d4630506810c1b000e835b4feff8d4e4c516810c1b000e827b4feff83c650566810c1b000e819b4feff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

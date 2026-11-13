@@ -1,0 +1,11 @@
+{
+ "addr": "0x65D3A0",
+ "name": "RawFileClass::QueryInterface",
+ "size": 124,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65D3A0",
+ "bytes_hex": "568bf1c70604097f00ff151c097f0084c0742a8b461450ff15e0117e0085c075158b4e18578b3e5150ff1500127e00508bceff57405fc74614ffffffff8a462084c0741b8b461885c0741450e8f7bf160083c404c7461800000000c64620008a442408c706bc087f00a801740956e82ab7160083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

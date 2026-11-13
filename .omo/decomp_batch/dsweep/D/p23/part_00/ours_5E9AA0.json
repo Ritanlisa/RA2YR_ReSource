@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_5E9AA0@@YIHPAXHH@Z",
+ "sym_key": "Unnamed::sub_5E9AA0",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578bf28bf95657e8000000008be86a0055896c2418e80000000033db535368460100005657e80000000085c0894424147e45535368500100005657e8000000008b6c241c3bc5741c8b442414433bd87d386a005368500100005657e8000000003bc575e46a0053684e0100005657e8000000008b6c24106a0555e8000000005f5e5d5b83c408c204008b4424106a0550e8000000005f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}

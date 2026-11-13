@@ -1,0 +1,27 @@
+{
+ "symbol": "?RenderSingleFrame@BinkMovie@@QAEHHHHD@Z",
+ "sym_key": "BinkMovie::RenderSingleFrame",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "538a5c2414568b74240c578bf984db740656e8000000008b066a006a0056ff505c85c08944241c74448b0e5556ff51748b16568be8ff92800000008b4f0884db740681c9000000808b542418518b4c2420518b4f0452508b442430555051e8000000008b1683c41c56ff52605d568bcfe8000000005f5e5bc21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+   "sym_key": "BinkMovie::AdjustSurfaceFormat"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?BinkCopyToBuffer@@YAHHHHHHHHZZ",
+   "sym_key": "BinkCopyToBuffer"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?BlitToTarget@BinkMovie@@QAEPAIH@Z",
+   "sym_key": "BinkMovie::BlitToTarget"
+  }
+ ]
+}

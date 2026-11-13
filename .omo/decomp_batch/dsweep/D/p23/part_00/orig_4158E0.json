@@ -1,0 +1,11 @@
+{
+ "addr": "0x4158E0",
+ "name": "TechnoClass::ReturnToBaseAndReload",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4158E0",
+ "bytes_hex": "568bf18b86b402000085c075218b066a016a00ff90800400008b166a006a048bceff92e8010000b8030000005ec38b8ea405000085c975148b166a01508bceff9280040000b8030000005ec3508bcee80c0b1e008b0de07188003b814c0500007f148b166a006a1b8bceff92e8010000fe8ed3060000b8030000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

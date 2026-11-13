@@ -1,0 +1,33 @@
+{
+ "symbol": "?QueryInterface@LoadOptions@@QAEPADD@Z",
+ "sym_key": "LoadOptions::QueryInterface",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b4630893e85c076178b46248b0cb851e8000000008b463083c404473bf872e98b56208d460850ff520c8b4624c746200000000085c074178a4e2d84c9741050e80000000083c404c74624000000008a44240cc6462d00a801c7462800000000740956e80000000083c4048bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_FileEntryClass@@3PAXA",
+   "sym_key": "vt_VectorClass_FileEntryClass"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

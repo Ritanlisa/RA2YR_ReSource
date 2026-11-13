@@ -1,0 +1,27 @@
+{
+ "symbol": "?CreateInstanceCOM@_TClassFactory_VTubeClass@@QAGHHHPAI@Z",
+ "sym_key": "_TClassFactory_VTubeClass::CreateInstanceCOM",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "56578b7c241485ff750a5fb8570007805ec210008b442414c7070000000085c0740a5fb8100104805ec2100068c4010000e80000000083c40485c0750a5fb80e0007805ec210006a0068000000008bc8e8000000008bf085f6750a5fb80e0007805ec210008b4c24188b06575156ff108bf885ff7d0b8b166a0156ff92800000008bc75f5ec21000",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0BC68@@3GA",
+   "sym_key": "DataGlobal_B0BC68"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Construct@TubeClass@@QAEPAVAbstractClass@@PAXH@Z",
+   "sym_key": "TubeClass::Construct"
+  }
+ ]
+}

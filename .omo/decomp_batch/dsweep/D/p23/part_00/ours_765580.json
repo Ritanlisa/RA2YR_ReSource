@@ -1,0 +1,81 @@
+{
+ "symbol": "?sub_765580@@YGHPAI@Z",
+ "sym_key": "Unnamed::sub_765580",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "83ec588d4c2400e80000000033c06a01a0000000008d4c240450e8000000006a008d4c2404e80000000084c0752a8d4c2400e8000000008d4c240051e80000000083c40433d28a15000000008d4c24006a0152e8000000008b4c245c8d4424006a0050e8000000008d4c240051e80000000083c4048d4c2400c744240000000000e80000000083c458c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Init@BufferIOFile@@QAEPAV1@XZ",
+   "sym_key": "BufferIOFile::Init"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_Str_File_WDTHist_ini@@3EA",
+   "sym_key": "g_Str_File_WDTHist_ini"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Reopen@CCFileClass@@QAEHPAXH@Z",
+   "sym_key": "CCFileClass::Reopen"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?IsReady@File@@QAEDH@Z",
+   "sym_key": "File::IsReady"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Close@FileClass@@QAEHXZ",
+   "sym_key": "FileClass::Close"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?CCFileClass__Close@@YAHPAX@Z",
+   "sym_key": "CCFileClass__Close"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_Str_File_WDTHist_ini@@3EA",
+   "sym_key": "g_Str_File_WDTHist_ini"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Reopen@CCFileClass@@QAEHPAXH@Z",
+   "sym_key": "CCFileClass::Reopen"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Open@FileStraw@@QAEHHD@Z",
+   "sym_key": "FileStraw::Open"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?CCFileClass__Close@@YAHPAX@Z",
+   "sym_key": "CCFileClass__Close"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

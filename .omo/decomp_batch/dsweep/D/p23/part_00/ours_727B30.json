@@ -1,0 +1,39 @@
+{
+ "symbol": "?PowerDrainUpdate@TriggerTypeClass@@QAEHPAH@Z",
+ "sym_key": "TriggerTypeClass::PowerDrainUpdate",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e8000000008b86a400000083c004508b08ff511050e8000000008b86a800000085c074108b500483c00450ff521050e8000000008b86ac00000085c074108b480483c00450ff511050e8000000008bb6b000000085f674108b56048d460450ff521050e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::ProcessPower"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

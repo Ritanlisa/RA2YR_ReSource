@@ -1,0 +1,11 @@
+{
+ "addr": "0x4331F0",
+ "name": "BinkMovie::RenderSingleFrame",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4331F0",
+ "bytes_hex": "8a44241053568b74240c578bf984c0740656e8290100008b1633c933c051508bceff525c8bd885db74458b06558bceff50748b168bce8be8ff92800000008a5424208b4f0884d2740681c9000000808b542418518b4c24205152508b4704555350ff15b8157e008b168bceff52605d568bcfe8090000005f5e5bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
