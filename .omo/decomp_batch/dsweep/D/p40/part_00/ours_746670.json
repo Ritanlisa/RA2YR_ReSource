@@ -1,0 +1,27 @@
+{
+ "symbol": "?ApplyObjectEffect@TechnoClass@@QAEXPAH@Z",
+ "sym_key": "TechnoClass::ApplyObjectEffect",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf985f60f848e0000008b0656ff502c480f848100000083c0f685c0741083f81975758b0e56ff9188000000eb1d8b175657ff929803000084c074260fbe0d340000008b46448b118b04828bcf898718050000c7871c05000000000000e8000000008b0656ff90c400000084c074298b0e6a0156ff91cc0000008987180500008b166a0156ff92d00000008bcf89871c050000e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?ActivateEffect@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::ActivateEffect"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?ActivateEffect@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::ActivateEffect"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5659F0",
+ "name": "MapClass::Destru_vt07",
+ "size": 170,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5659F0",
+ "bytes_hex": "5356578bf968c4ac8200e8e10eeaff83c404e87976f2ff8b0d4476880068ffff0000e8397525008b0da4e887006a7fe8acb8eaffe85776f2ff8bcfe8a0e8f8ffe84b76f2ff8d9758010000bb000100008b32a180d4ab0083feff89420c74238b420883feff74128b0d84eda8002bce3bc87d042bc1eb0233c0894208c702ffffffff83c2104b75c868a8ac8200c787480100000d000000c6875811000000e84d0eeaff83c4045f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

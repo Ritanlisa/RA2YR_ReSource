@@ -1,0 +1,11 @@
+{
+ "addr": "0x746670",
+ "name": "TechnoClass::ApplyObjectEffect",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746670",
+ "bytes_hex": "568b742408578bf985f60f84920000008b068bceff502c48744e83e80a742c83e819757e8b168bceff9288000000568bcf898718050000c7871c05000000000000e8ca7bfcff5f5ec204008b07568bcfff909803000084c074488b4e448b15843da8008b048aebc68b168bceff92c400000084c0742c8b066a018bceff90cc0000008987180500008b166a018bceff92d0000000568bcf89871c050000e86e7bfcff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,129 @@
+{
+ "symbol": "?Shutdown@AsyncIO@@QAEDXZ",
+ "sym_key": "AsyncIO::Shutdown",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "a10000000053565733db8bf98b0d0000000033f63bc3761e8b04b13bc3740d8b086a0150ff118b0d00000000a100000000463bf072e23bcb891d000000007417381d00000000740f51e80000000083c404891d00000000a0642d0000881d000000003ac3891d0000000074408bcfe800000000e8000000008bcfe8000000008b0d00000000ba00400000e8000000008b0d00000000ba00400000e8000000008bcfe800000000881d642d00005f5e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?AsyncIO_Instance@@3PAXA",
+   "sym_key": "AsyncIO_Instance"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?AsyncIO_Instance@@3PAXA",
+   "sym_key": "AsyncIO_Instance"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B65@@3EA",
+   "sym_key": "DataGlobal_B45B65"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?AsyncIO_Instance@@3PAXA",
+   "sym_key": "AsyncIO_Instance"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B65@@3EA",
+   "sym_key": "DataGlobal_B45B65"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45B60@@3IA",
+   "sym_key": "DataGlobal_B45B60"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?DecrementAll@AudioTimer@@QAEPAHXZ",
+   "sym_key": "AudioTimer::DecrementAll"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?ProcessAudioTimer@@YAHXZ",
+   "sym_key": "ProcessAudioTimer"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?RequestAllBuffers@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::RequestAllBuffers"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_MixerState@@3IA",
+   "sym_key": "g_MixerState"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Ambient@@3IA",
+   "sym_key": "g_MixerChannel_Ambient"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?Pump@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Pump"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

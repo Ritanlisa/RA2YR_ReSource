@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BF450",
+ "name": "AsyncIO::Shutdown",
+ "size": 168,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BF450",
+ "bytes_hex": "a1685bb400535633db33f63bc3a15c5bb4007e218b0cb03bcb740f3bcb740b8b016a01ff10a15c5bb4008b0d685bb400463bf17cdf3bc3891d685bb4007417381d655bb400740f50e8a096200083c404891d5c5bb400a05cf3ab00881d655bb4003ac3891d605bb400743ae8708de4ffe82b8ee4ffe8068fe4ff8b0d58e78700ba00400000e8967ce4ff8b0d50e78700ba00400000e8867ce4ffe831411900881d5cf3ab005e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

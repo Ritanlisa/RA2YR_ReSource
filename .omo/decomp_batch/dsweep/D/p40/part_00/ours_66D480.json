@@ -1,0 +1,57 @@
+{
+ "symbol": "?ReadColorAdd@RulesClass@@QAEEXZ",
+ "sym_key": "RulesClass::ReadColorAdd",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "83ec08558be98b4c24045768000000008bf9e80000000085c074728b0f53566800000000e8000000008bd833f685db7e4c81c5741800008b0f566800000000e8000000008d4c24108d54241451506800000000528bcf66c74424200000c644242200e8000000008a5002668b008bcd4683c5033bf36689018851027cba80e3015e83cb018bc35b5f5d83c408c35f33c05d83c408c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?BinarySearchSection@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::BinarySearchSection"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_839E50@@3PADA",
+   "sym_key": "DataGlobal_839E50"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?GetCoord@INIClass@@QAEHHPAX00@Z",
+   "sym_key": "INIClass::GetCoord"
+  }
+ ]
+}

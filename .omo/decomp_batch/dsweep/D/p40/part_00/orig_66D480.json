@@ -1,0 +1,11 @@
+{
+ "addr": "0x66D480",
+ "name": "RulesClass::ReadColorAdd",
+ "size": 170,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x66D480",
+ "bytes_hex": "a1980c7f0083ec085355578b7c24188be9508bcfe87793ebff85c00f95c033db3ac3747b8b0d980c7f0056518bcfe8ad94ebff33f63bc3894424147e5681c5741800008b15980c7f0056528bcfe8ee97ebff8b15980c7f008d4c241c51508d44241852508bcf885c242c885c242d885c242ee85976e0ff8bc88bd54683c503668b018a49026689028b4424143bf0884a027cb05e5f5db0015b83c408c204005f5d32c05b83c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?PickAlternateTarget@TechnoClass@@QAIXPAE@Z",
+ "sym_key": "TechnoClass::PickAlternateTarget",
+ "size": 168,
+ "link_base": 0,
+ "bytes_hex": "568bf1578a86f804000084c00f858c00000085f60f84840000008b0656ff502c83f80f75798b0e56ff512c33c983f80f0f95c14923cee80000000084c0745f8b1656ff92840000008b889405000083cfff3bcf74218b3e56ff97840000008b80940500005056ff9754030000c686f8040000005f5ec38b0e56ff918400000039b89005000074178b3e56ff97840000008b90900500005256ff9754030000c686f8040000005f5ec3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?IsMission27to30@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::IsMission27to30"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_773450@@YIPAIPAXHH@Z",
+ "sym_key": "Unnamed::sub_773450",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "5355568bda8be96814040000e8000000008bf083c40485f60f8485000000578d7e088bcdc7460401000000c70700000000c6860c04000000c7861004000000000000c70600000000e8000000008bcd899e10040000e8000000005768000000006a016a006800000000e80000000085c07c288bcde8000000008b0756508b08ff51148b078b4c24148b10515350ff520c8b3f6a01578b17ff523c8bc65f5e5d5bc204005e5d33c05bc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?vt_WebBrowser@@3PAXA",
+   "sym_key": "vt_WebBrowser"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?stru_7F7C30@@3EA",
+   "sym_key": "stru_7F7C30"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?stru_7F7C60@@3EA",
+   "sym_key": "stru_7F7C60"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?CoCreateInstance@@YGJPAXHH00@Z",
+   "sym_key": "CoCreateInstance"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

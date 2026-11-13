@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d9601 __open_osfhandle -> _addr_7D
+[conv] 0x746670 TechnoClass::ApplyObjectEffect -> TechnoClass
+[conv] 0x60a180 EnumFunc -> _addr_60
+[conv] 0x60a250 sub_60A250 -> _addr_60
+[conv] 0x51f330 InfantryClass::FindPathToBuilding -> InfantryClass
+[conv] 0x5bf450 AsyncIO::Shutdown -> AsyncIO
+[conv] 0x773450 sub_773450 -> _addr_77
+[conv] 0x4e4770 FillListBox -> _addr_4E
+[conv] 0x4e5260 SetupComboBoxRandomAlliance -> _addr_4E
+[conv] 0x4e5cb0 InitComboBoxNone -> _addr_4E
+[conv] 0x66d480 RulesClass::ReadColorAdd -> RulesClass
+[conv] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> ObjectTypeClass
+[conv] 0x721d10 ObjectClass::SmallFunc_721D10 -> ObjectClass
+[conv] 0x48b1f0 CommBufferClass::sub_48B1F0 -> CommBufferClass
+[conv] 0x5659f0 MapClass::Destru_vt07 -> MapClass
+[conv] 0x5d7f20 MultiplayerGameMode::QueryInterface -> MultiplayerGameMode
+[conv] 0x708e00 TechnoClass::PickAlternateTarget -> TechnoClass
+[conv] 0x407a90 AudioSample::Destructor -> AudioSample
+[conv] 0x4c1e70 sub_4C1E70 -> _addr_4C
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] TechnoClass              rc=0
+[era] _addr_60                 rc=2
+[era] InfantryClass            rc=2
+[era] AsyncIO                  rc=0
+[era] _addr_77                 rc=0
+[era] _addr_4E                 rc=0
+[era] RulesClass               rc=0
+[era] ObjectTypeClass          rc=2
+[era] ObjectClass              rc=2
+[era] CommBufferClass          rc=2
+[era] MapClass                 rc=0
+[era] MultiplayerGameMode      rc=2
+[era] AudioSample              rc=2
+[era] _addr_4C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x746670   MISMATCH         TechnoClass::ApplyObjectEffect
+[diff] 0x708e00   MISMATCH         TechnoClass::PickAlternateTarget
+[diff] 0x5bf450   MISMATCH         AsyncIO::Shutdown
+[diff] 0x773450   MISMATCH         sub_773450
+[diff] 0x4e4770   MISMATCH         FillListBox
+[diff] 0x4e5260   MISMATCH         SetupComboBoxRandomAlliance
+[diff] 0x4e5cb0   MISMATCH         InitComboBoxNone
+[diff] 0x66d480   MISMATCH         RulesClass::ReadColorAdd
+[diff] 0x5659f0   MISMATCH         MapClass::Destru_vt07
+[ledger] 0x7d9601 __open_osfhandle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746670 TechnoClass::ApplyObjectEffect -> NG (attempt 1)
+[ledger] 0x7a40f0 0x7a40f0 -> PENDING (attempt 1)
+[ledger] 0x60a180 EnumFunc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60a250 sub_60A250 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f330 InfantryClass::FindPathToBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf450 AsyncIO::Shutdown -> NG (attempt 1)
+[ledger] 0x773450 sub_773450 -> NG (attempt 1)
+[ledger] 0x4e4770 FillListBox -> NG (attempt 1)
+[ledger] 0x4e5260 SetupComboBoxRandomAlliance -> NG (attempt 1)
+[ledger] 0x4e5cb0 InitComboBoxNone -> NG (attempt 1)
+[ledger] 0x66d480 RulesClass::ReadColorAdd -> NG (attempt 1)
+[ledger] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721d10 ObjectClass::SmallFunc_721D10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48b1f0 CommBufferClass::sub_48B1F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5659f0 MapClass::Destru_vt07 -> NG (attempt 1)
+[ledger] 0x5d7f20 MultiplayerGameMode::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708e00 TechnoClass::PickAlternateTarget -> NG (attempt 1)
+[ledger] 0x407a90 AudioSample::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c1e70 sub_4C1E70 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 9,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 3,
+  "regalloc": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p40\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x708E00",
+ "name": "TechnoClass::PickAlternateTarget",
+ "size": 170,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708E00",
+ "bytes_hex": "53568bf133db57389ef80400000f858d0000003bf3745d8b06ff502c83f80f75538b168bceff522c83e80ff7d81bc0f7d023c68bc8e8d696e1ff84c074368b068bceff908400000083b894050000ff744f8b3e8bceff97840000008b8894050000518bceff9754030000889ef80400005f5e5bc38b168bceff928400000083b890050000ff74198b3e8bceff97840000008b80900500008bce50ff9754030000889ef80400005f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

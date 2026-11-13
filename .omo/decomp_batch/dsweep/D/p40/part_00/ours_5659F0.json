@@ -1,0 +1,81 @@
+{
+ "symbol": "?Destru_vt07@MapClass@@QAEXXZ",
+ "sym_key": "MapClass::Destru_vt07",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "535556578bf9e800000000e8000000008b0d0000000068ffff0000e8000000008b0d000000006a7fe800000000e8000000008bcfe800000000e8000000008d8f94010000bb000100008b018b150000000083f8ff89510c74278b510883f8ff74168b35000000008bee2be83bea7c0433d2eb042bc603d0895108c701ffffffff83c1104b75c38bcfc787480100000d000000c787a801000000000000e8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?isCellShrouded@MapClass@@QAEHG@Z",
+   "sym_key": "MapClass::isCellShrouded"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?isLocationShrouded@MapClass@@QAEHG@Z",
+   "sym_key": "MapClass::isLocationShrouded"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Remove@VectorCursor_uint_DynamicVectorClass_uint____13@@QAEXXZ",
+   "sym_key": "VectorCursor_uint_DynamicVectorClass_uint____13::Remove"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MapSeedState@@3IA",
+   "sym_key": "g_MapSeedState"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
