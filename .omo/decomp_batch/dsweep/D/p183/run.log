@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p183\part_00
+=== convert (20 addrs) ===
+[conv] 0x59e740 Tiberium::CalculateSpread -> Tiberium
+[conv] 0x4666e0 BulletClass::ProcessNukeExplosion -> BulletClass
+[conv] 0x617250 ComboBoxDropDown::WndProc -> ComboBoxDropDown
+[conv] 0x45c300 InitCellOffsetsMap -> _addr_45
+[conv] 0x443c60 BuildingClass::UpdateConstruction -> BuildingClass
+[conv] 0x6cc390 SuperClass::Launch -> SuperClass
+[conv] 0x547cf0 TerrainClass::GenerateTexture -> TerrainClass
+[conv] 0x532150 ObjectClass::InitCommands -> ObjectClass
+[conv] 0x5e00b0 NetworkLobby::MessageHandler -> NetworkLobby
+[conv] 0x545150 LoadTerrainTypeClassTheatre -> _addr_54
+[conv] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> ComboBoxOwnerDraw
+[conv] 0x60d540 GameScreen::DlgProc -> GameScreen
+[conv] 0x561910 CoordinateTables::Init -> CoordinateTables
+[conv] 0x78f7f0 WOLobby::SetupDlgProc -> WOLobby
+[conv] 0x6a1c80 WalkLocomotion::Update -> WalkLocomotion
+[conv] 0x5e3d10 SetupNetworkLobbyDialog -> _addr_5E
+[conv] 0x78ac10 WOLobby::DlgProc -> WOLobby
+[conv] 0x665650 RulesClass::RulesClass -> RulesClass
+[conv] 0x5a9c40 ObjectClass::InitializePathData -> ObjectClass
+[conv] 0x6040b0 DlgSkirmishMenuProc -> _addr_60
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Tiberium                 rc=2
+[era] BulletClass              rc=2
+[era] ComboBoxDropDown         rc=2
+[era] _addr_45                 rc=2
+[era] BuildingClass            rc=2
+[era] SuperClass               rc=2
+[era] TerrainClass             rc=2
+[era] ObjectClass              rc=2
+[era] NetworkLobby             rc=2
+[era] _addr_54                 rc=2
+[era] ComboBoxOwnerDraw        rc=2
+[era] GameScreen               rc=2
+[era] CoordinateTables         rc=0
+[era] WOLobby                  rc=2
+[era] WalkLocomotion           rc=2
+[era] _addr_5E                 rc=2
+[era] RulesClass               rc=2
+[era] _addr_60                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x561910   MISMATCH         CoordinateTables::Init
+[ledger] 0x59e740 Tiberium::CalculateSpread -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4666e0 BulletClass::ProcessNukeExplosion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x617250 ComboBoxDropDown::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45c300 InitCellOffsetsMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x443c60 BuildingClass::UpdateConstruction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cc390 SuperClass::Launch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x547cf0 TerrainClass::GenerateTexture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x532150 ObjectClass::InitCommands -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e00b0 NetworkLobby::MessageHandler -> COMPILE_FAIL (attempt 1)
+[ledger] 0x545150 LoadTerrainTypeClassTheatre -> COMPILE_FAIL (attempt 1)
+[ledger] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60d540 GameScreen::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x561910 CoordinateTables::Init -> NG (attempt 1)
+[ledger] 0x78f7f0 WOLobby::SetupDlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a1c80 WalkLocomotion::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e3d10 SetupNetworkLobbyDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78ac10 WOLobby::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x665650 RulesClass::RulesClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a9c40 ObjectClass::InitializePathData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6040b0 DlgSkirmishMenuProc -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p183\batch_report.json
