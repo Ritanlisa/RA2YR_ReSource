@@ -1,0 +1,63 @@
+{
+ "symbol": "?__XcptFilter@@YAHHPAX@Z",
+ "sym_key": "Unnamed::__XcptFilter",
+ "size": 465,
+ "link_base": 0,
+ "bytes_hex": "51535657e8000000008b4c24148bf08b46505051e80000000033ff83c4083bc7750f8b54241852e8000000005f5e5b59c38b58083bdf895c2414750f8b44241850e8000000005f5e5b59c383fb050f847001000083fb010f845f0100008b4e548b542418894c240c8956548b480483f9080f85350100008b15000000008b0d0000000003ca3bd173298d0c5255c1e1028b5e5083c10c42897c19fc8b1d000000008b2d0000000003eb3bd572e38b5c24185d8b008b7e580573ffff3f83f8060f87ce000000ff2485000000006a08c7465883000000ffd38b54241083c404897e588956545f5e83c8ff5b59c36a08c7465881000000ffd38b54241083c404897e588956545f5e83c8ff5b59c36a08c7465884000000ffd38b54241083c404897e588956545f5e83c8ff5b59c36a08c7465885000000ffd38b54241083c404897e588956545f5e83c8ff5b59c36a08c7465882000000ffd38b54241083c404897e588956545f5e83c8ff5b59c36a08c7465886000000ffd38b54241083c404897e588956545f5e83c8ff5b59c3c746588a0000006a08ffd38b54241083c404897e588956545f5e83c8ff5b59c351897808ffd38b54241083c4048956545f5e83c8ff5b59c38978085f5eb8010000005b59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?_getptd@@YAHXZ",
+   "sym_key": "_getptd"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?xcptlookup@@YAHHHZZ",
+   "sym_key": "xcptlookup"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?UnhandledExceptionFilter@@YGJPAX@Z",
+   "sym_key": "UnhandledExceptionFilter"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?UnhandledExceptionFilter@@YGJPAX@Z",
+   "sym_key": "UnhandledExceptionFilter"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB98@@3IA",
+   "sym_key": "DataGlobal_87CB98"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB9C@@3IA",
+   "sym_key": "DataGlobal_87CB9C"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB98@@3IA",
+   "sym_key": "DataGlobal_87CB98"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB9C@@3IA",
+   "sym_key": "DataGlobal_87CB9C"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "$L1890",
+   "sym_key": "$L1890"
+  }
+ ]
+}

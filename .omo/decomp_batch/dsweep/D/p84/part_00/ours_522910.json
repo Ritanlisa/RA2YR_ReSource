@@ -1,0 +1,51 @@
+{
+ "symbol": "?GarrisonBuilding@TechnoClass@@QAEXPAH@Z",
+ "sym_key": "TechnoClass::GarrisonBuilding",
+ "size": 316,
+ "link_base": 0,
+ "bytes_hex": "83ec105356578bf933db8b87c00600008944240c3898b40e00000f84130100008b0757ff90d40000008b7424208b968c0600008b86940600003bc27c2c389e9106000075043bd375388b8e980600003bcb7e2e8d86840600005503ca538b285150ff550884c05d74188b86940600008b96880600008d4801898e94060000893c828b0656ff90bc010000508bcee80000000083be940600000175458b0e6a0256ff91240100008b8f1c020000e80000000084c0742b6affb900000000e8000000008b178d4424105057ff52488b0d40020000538bd08b89bc010000e8000000008b971c020000389aec010000740c889f91060000889f900600008b44240c3898b50e0000742d578bcee8000000008b0f6a015357ff91800400008b168b1f6a018d4424146a015056ff52485057ff93740100005f5e5b83c410c20400",
+ "relocs": [
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?UpdateThreatBounds@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::UpdateThreatBounds"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?aEvaStructurega@@3IA",
+   "sym_key": "aEvaStructurega"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?AnimateUnloadUnits@BuildingClass@@QAEHH@Z",
+   "sym_key": "BuildingClass::AnimateUnloadUnits"
+  }
+ ]
+}

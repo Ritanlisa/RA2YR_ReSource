@@ -1,0 +1,51 @@
+{
+ "symbol": "?DrawCursor@MouseClass@@QAEXPAHHH@Z",
+ "sym_key": "MouseClass::DrawCursor",
+ "size": 229,
+ "link_base": 0,
+ "bytes_hex": "83ec348bc153894424048b480485c90f84c90000008b5c243c85db0f84bd0000008a15d800000084d20f84af0000008b542440558b6850568b7054578b78488b40085003fae800000000897424380faff556508d4c241c896c243cc744244400000000c744244801000000e8000000008b442410c7442430000000008b4824c7442448000000003bd9750983c02c897c2410eb0f8b038d4c24205153897c2418ff50786a006a0068e80300006a006a006a006a00508d5424308d442468528d4c24540fbe15d800000050518bcbe8000000008d4c2414e8000000005f5e5d5b83c434c20c00",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?GetSubFile@MixFileClass@@QAEHI@Z",
+   "sym_key": "MixFileClass::GetSubFile"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?BlitterDrawSHP@@YIDPAXH0000HPAHHHHHH@Z",
+   "sym_key": "BlitterDrawSHP"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  }
+ ]
+}

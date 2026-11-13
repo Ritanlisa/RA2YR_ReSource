@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindOverlay@TacticalClass@@QAGHHPAH0@Z",
+ "sym_key": "TacticalClass::FindOverlay",
+ "size": 355,
+ "link_base": 0,
+ "bytes_hex": "83ec308b4424408b54243c536a006a00508d4c2420e8000000008b50048b08895424048b1500000000894c24408b48088b400c8d5aff85db894c240c894424100f8c14010000558d0c9dfcffffff56578d049d00000000894c24148b15000000008b3410568b06ff502c83f8240f85c50000008b0e56ff514484c00f85b70000008b96c80000008a82b302000084c00f85a30000008a86cd00000084c00f85950000008b0e8b3d0000000033c08d542430a00000000052568be8ff912c0100008b50048b0803d58b6c244c03cf8b7c241803fd3bcf7d618b7c241c8b6c241003fd3bd77d538b780803f98b4c244c3bf97e468b400c8bcd03c23bc17e3b8b4424506a008b088b5004894c24248b4808895424288b500c8b44244c894c242c8b0e895424308d542424505256ff9104010000c68680000000008b4c24144b8bc183e90485db894c24140f8d0dffffff5f5e8bc35d5b83c430c210008bc35b83c430c21000",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A03A0@@3IA",
+   "sym_key": "DataGlobal_8A03A0"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0394@@3IA",
+   "sym_key": "DataGlobal_8A0394"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  }
+ ]
+}

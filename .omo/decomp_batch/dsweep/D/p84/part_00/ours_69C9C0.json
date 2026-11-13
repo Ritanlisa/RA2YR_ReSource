@@ -1,0 +1,45 @@
+{
+ "symbol": "?Release@_VectorClass_VWstring@@QAEDHPAH@Z",
+ "sym_key": "_VectorClass_VWstring::Release",
+ "size": 384,
+ "link_base": 0,
+ "bytes_hex": "83ec08538b5c24105556578bf985db895c24100f84540100008b6c2420c7470c0000000085ed742e895d008d43ff83c50485c08bf57c62895c24148bc683c60450e8000000008b44241883c404488944241475e7eb438d0c9d0400000051e80000000083c40485c0742d8d53ff8d680485d289188bf57c21895c24148bc683c60450e8000000008b44241883c404488944241475e7eb0233ed85edc7470c010000000f84b90000008b470485c00f84820000008b47083bd87c04894424108b44241033f685c07e208b57048d04b5000000008bc803ca518d0c28e8000000008b442410463bf07ce08b470cf6c4ff74458b4f0485c974378b41fc8d71fc8d1c814885c07c1c408944241483eb0453e8000000008b44241883c404488944241475e956e8000000008b5c242083c404c74704000000008b4f0c895f088b5c242033d285db0f94c233c080e5008ae2896f040bc189470c5f5e5db0015b83c408c208005f5e5d32c05b83c408c208008b178bcfff520c5f5e5db0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

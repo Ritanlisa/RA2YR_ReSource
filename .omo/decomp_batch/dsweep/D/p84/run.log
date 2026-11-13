@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p84\part_00
+=== convert (20 addrs) ===
+[conv] 0x7754d0 WinModemClass::LogCommErrors -> WinModemClass
+[conv] 0x42a900 ObjectClass::sub_42A900 -> ObjectClass
+[conv] 0x779c90 ObjectClass::ReadSettingsWOL -> ObjectClass
+[conv] 0x7b93f0 MouseClass::DrawCursor -> MouseClass
+[conv] 0x7d58f0 __XcptFilter -> _addr_7D
+[conv] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> HouseClass
+[conv] 0x522910 TechnoClass::GarrisonBuilding -> TechnoClass
+[conv] 0x473d10 CCFileClass::Load -> CCFileClass
+[conv] 0x779b50 ObjectClass::ReadAutoLoginWOL -> ObjectClass
+[conv] 0x466380 BulletClass::BulletClass -> BulletClass
+[conv] 0x6d97d0 TacticalClass::FindOverlay -> TacticalClass
+[conv] 0x4dfe00 FootClass::FindClosestForRepair2 -> FootClass
+[conv] 0x501400 HouseClass::SetCapacity_5 -> HouseClass
+[conv] 0x5f76b0 FileSystem::InitPipShapes -> FileSystem
+[conv] 0x5edfc0 NetworkLobby::DeleteAndZero -> NetworkLobby
+[conv] 0x69c9c0 _VectorClass_VWstring::Release -> _VectorClass_VWstring
+[conv] 0x728280 InfantryClass::SetMission -> InfantryClass
+[conv] 0x6ac480 UI_Update_6AC480 -> UI_Update
+[conv] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> ObjectClass
+[conv] 0x4acc50 CellClass::ProcessVisibility -> CellClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinModemClass            rc=2
+[era] ObjectClass              rc=2
+[era] MouseClass               rc=0
+[era] _addr_7D                 rc=0
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=0
+[era] CCFileClass              rc=2
+[era] BulletClass              rc=2
+[era] TacticalClass            rc=0
+[era] FootClass                rc=2
+[era] FileSystem               rc=0
+[era] NetworkLobby             rc=2
+[era] _VectorClass_VWstring    rc=0
+[era] InfantryClass            rc=2
+[era] UI_Update                rc=0
+[era] CellClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x42a900   MISMATCH         ObjectClass::sub_42A900
+[diff] 0x7b93f0   MISMATCH         MouseClass::DrawCursor
+[diff] 0x7d58f0   MISMATCH         __XcptFilter
+[diff] 0x522910   MISMATCH         TechnoClass::GarrisonBuilding
+[diff] 0x6d97d0   MISMATCH         TacticalClass::FindOverlay
+[diff] 0x5f76b0   MATCH            FileSystem::InitPipShapes
+[diff] 0x69c9c0   MISMATCH         _VectorClass_VWstring::Release
+[diff] 0x6ac480   MISMATCH         UI_Update_6AC480
+[ledger] 0x7754d0 WinModemClass::LogCommErrors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42a900 ObjectClass::sub_42A900 -> NG (attempt 1)
+[ledger] 0x779c90 ObjectClass::ReadSettingsWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b93f0 MouseClass::DrawCursor -> NG (attempt 1)
+[ledger] 0x7d58f0 __XcptFilter -> NG (attempt 1)
+[ledger] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522910 TechnoClass::GarrisonBuilding -> NG (attempt 1)
+[ledger] 0x473d10 CCFileClass::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779b50 ObjectClass::ReadAutoLoginWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x466380 BulletClass::BulletClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d97d0 TacticalClass::FindOverlay -> NG (attempt 1)
+[ledger] 0x4dfe00 FootClass::FindClosestForRepair2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x501400 HouseClass::SetCapacity_5 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f76b0 FileSystem::InitPipShapes -> OK (attempt 1)
+[ledger] 0x5edfc0 NetworkLobby::DeleteAndZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c9c0 _VectorClass_VWstring::Release -> NG (attempt 1)
+[ledger] 0x728280 InfantryClass::SetMission -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ac480 UI_Update_6AC480 -> NG (attempt 1)
+[ledger] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4acc50 CellClass::ProcessVisibility -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 2,
+  "const_fold": 1,
+  "codegen_shape": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 12.5,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p84\batch_report.json
