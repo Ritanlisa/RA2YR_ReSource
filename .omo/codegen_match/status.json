@@ -105920,7 +105920,7 @@
   "this_as_id": false
  },
  "0x5cf5f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -106004,7 +106004,7 @@
   "this_as_id": false
  },
  "0x5d0070": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -106967,7 +106967,7 @@
   "status": "NG"
  },
  "0x5d1c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -107022,7 +107022,7 @@
   "this_as_id": false
  },
  "0x5d1fd0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -107088,7 +107088,7 @@
   "this_as_id": false
  },
  "0x5d2650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -107757,7 +107757,7 @@
   "this_as_id": false
  },
  "0x5d3ba0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -108648,7 +108648,7 @@
   "this_as_id": false
  },
  "0x5d62c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -110255,27 +110255,27 @@
   "this_as_id": false
  },
  "0x5dab80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+77 je 0x5dabf0",
   "name": "ObjectClass::sub_5DAB80",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "sub_5DAB80",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5dac00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+49 jbe 0x5dac68",
   "name": "WideString::Hash",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "WideString::Hash",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5dacd0": {
@@ -110451,7 +110451,7 @@
   "this_as_id": false
  },
  "0x5daf30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -110474,7 +110474,7 @@
   "this_as_id": false
  },
  "0x5dafe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -110568,7 +110568,7 @@
   "this_as_id": false
  },
  "0x5dbe20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SetGameSetupPlayerState",
@@ -110602,7 +110602,7 @@
   "this_as_id": false
  },
  "0x5dc170": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111009,7 +111009,7 @@
   "this_as_id": false
  },
  "0x5e2700": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -111169,18 +111169,18 @@
   "this_as_id": false
  },
  "0x5e32d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+33 sub eax, ecx",
   "name": "CheckGameSettingsChanged",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "CheckGameSettingsChanged",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e35a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111192,7 +111192,7 @@
   "this_as_id": false
  },
  "0x5e3630": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111215,15 +111215,15 @@
   "this_as_id": false
  },
  "0x5e3720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xac116c]",
   "name": "Network::SendOptionsGame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Network::SendOptionsGame",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e3850": {
@@ -111305,7 +111305,7 @@
   "this_as_id": false
  },
  "0x5e6520": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReadPlayerCountMap",
@@ -111428,7 +111428,7 @@
   "this_as_id": false
  },
  "0x5e7eb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DAC00",
+ "name": "WideString::Hash",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DAC00",
+ "bytes_hex": "81eca4000000568d44240833f651508974240ce871f81e008d4c241051e8b43020008d54241452e8d9f71e0083c41085c07635578d7c240c33d28d4c2408668b17e83a3207008d44240c465083c702e8b1f71e0083c4043bf072dd8b4424085f5e81c4a4000000c38b4424045e81c4a4000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

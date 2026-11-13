@@ -1,0 +1,39 @@
+{
+ "symbol": "?Hash@WideString@@QAEHXZ",
+ "sym_key": "WideString::Hash",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "81eca4000000568d44240833f651508974240ce8000000008d4c241051e8000000008d54241452e80000000083c41085c0750c8b4424045e81c4a4000000c3578d7c240c33d28d4c2408668b17e8000000008d44240c465083c702e80000000083c4043bf072dd8b4424085f5e81c4a4000000c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "__wcsupr",
+   "sym_key": "_wcsupr"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?ComputeHash@@YIHPAXH@Z",
+   "sym_key": "ComputeHash"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}
