@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+[conv] 0x634550 ScriptAction::GetActionCoordinates -> ScriptAction
+[conv] 0x636120 TeamClass::RemoveAllMembers -> TeamClass
+[conv] 0x636b50 TeamClass::Cleanup -> TeamClass
+[conv] 0x636f00 ObjectClass::sub_636F00 -> ObjectClass
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+[conv] 0x638120 ExecuteActionPlanManager -> _addr_63
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63a8e0 ScriptAction::HitTest -> ScriptAction
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x63dfd0 FactoryClass::RemoveItemAt -> FactoryClass
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x63f7c0 PowerClass::checkBlackout -> PowerClass
+[conv] 0x63f810 ObjectClass::sub_63F810 -> ObjectClass
+[conv] 0x641140 MiniMap::Render -> MiniMap
+[conv] 0x642130 Palette::Preview_Generate -> Palette
+[conv] 0x644f50 ParticleTypeClass::LoadFromINI -> ParticleTypeClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] TabClass                 rc=2
+[era] _addr_63                 rc=2
+[era] FactoryClass             rc=2
+[era] Audio                    rc=2
+[era] PowerClass               rc=2
+[era] MiniMap                  rc=2
+[era] Palette                  rc=2
+[era] ParticleTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x63f810   MISMATCH         ObjectClass::sub_63F810
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 2)
+[ledger] 0x634550 ScriptAction::GetActionCoordinates -> COMPILE_FAIL (attempt 2)
+[ledger] 0x636120 TeamClass::RemoveAllMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x636b50 TeamClass::Cleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x636f00 ObjectClass::sub_636F00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x637060 TabClass::processTabInput -> COMPILE_FAIL (attempt 7)
+[ledger] 0x638120 ExecuteActionPlanManager -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63a8e0 ScriptAction::HitTest -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63dfd0 FactoryClass::RemoveItemAt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63f7c0 PowerClass::checkBlackout -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63f810 ObjectClass::sub_63F810 -> NG (attempt 2)
+[ledger] 0x641140 MiniMap::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x642130 Palette::Preview_Generate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x644f50 ParticleTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p18\batch_report.json

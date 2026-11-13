@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_63F810@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_63F810",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "51568bf1c7861c1500000a000000e8000000008986101500008b442404898614150000c78618150000030000005e59c20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}
