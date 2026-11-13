@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4294B0@ApplicationClass@@QAGHPAPAG@Z",
+ "sym_key": "ApplicationClass::sub_4294B0",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "83ec44568b74240485f6750cb8034000805e83c444c208008b0d000000008d4424086a205081c15c1200006aff516a016a00e8000000008d54240852e800000000890633c05e83c444c20800",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVAbstractClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAXH0H@Z",
+   "sym_key": "MultiByteToWideChar"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?SysAllocString@@YGPAGPAX@Z",
+   "sym_key": "SysAllocString"
+  }
+ ]
+}

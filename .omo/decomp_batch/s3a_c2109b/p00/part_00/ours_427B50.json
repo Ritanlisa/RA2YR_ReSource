@@ -1,0 +1,57 @@
+{
+ "symbol": "?GetWarhead@AnimTypeClass@@QAEDH@Z",
+ "sym_key": "AnimTypeClass::GetWarhead",
+ "size": 317,
+ "link_base": 0,
+ "bytes_hex": "81ec04020000568bf18a866203000084c00f85b70000008b860002000085c0740ae800000000e9a30000008b86a800000085c0741a8a8eac00000084c9741050e80000000083c404c686ac000000008a8efc0100008d86fc01000084c9c786a80000000000000075038b46286800000000506a008d4424146a0050e8000000008b94242002000083c4148d4c2408e800000000b2018d4c2408e80000000085c0894424048986a8000000751e8d4c2408e800000000b2018d4c2408e800000000894424048986a80000008a4424048b8ea800000085c9745b8b4630c686a80200000185c0751e8b5104c1fa100fbfc28a967603000089463084d27408992bc2d1f88946308b462c85c075068b463089462c8b4904c1f9100fbfc1992bc2d1f889869c02000083c8ff8946148986a40200000cff5e81c404020000c20400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Load2DArt@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Load2DArt"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?TheaterObjectTypeClassSpecificID@@YIXPAXH@Z",
+   "sym_key": "TheaterObjectTypeClassSpecificID"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?SetRTTI71@ObjectTypeClass@@QAEXXZ",
+   "sym_key": "ObjectTypeClass::SetRTTI71"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  }
+ ]
+}

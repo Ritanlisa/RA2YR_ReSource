@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x402990 ObjectClass::sub_402990 -> ObjectClass
+[conv] 0x403210 ObjectClass::sub_403210 -> ObjectClass
+[conv] 0x406760 ObjectClass::sub_406760 -> ObjectClass
+[conv] 0x408970 ObjectClass::sub_408970 -> ObjectClass
+[conv] 0x4091c0 ReadAudioStream -> _addr_40
+[conv] 0x409470 ObjectClass::sub_409470 -> ObjectClass
+[conv] 0x40aa70 ObjectClass::ProcessAudioChannelMovement -> ObjectClass
+[conv] 0x410a60 AbstractTypeClass::LoadFromINI -> AbstractTypeClass
+[conv] 0x41fb10 AITriggerTypeClass::SaveToINI -> AITriggerTypeClass
+[conv] 0x425510 AnimClass::CheckEndOfSequence -> AnimClass
+[conv] 0x4255b0 AnimClass::ProcessCraterFormation -> AnimClass
+[conv] 0x426ed0 UnitClass::sub_426ED0 -> UnitClass
+[conv] 0x426fd0 UnitClass::sub_426FD0 -> UnitClass
+[conv] 0x427a80 AnimTypeClass::GetLoopCount -> AnimTypeClass
+[conv] 0x427b50 AnimTypeClass::GetWarhead -> AnimTypeClass
+[conv] 0x428c30 AnimTypeClass::GetDamage -> AnimTypeClass
+[conv] 0x4294b0 ApplicationClass::sub_4294B0 -> ApplicationClass
+[conv] 0x42cf80 ObjectClass::sub_42CF80 -> ObjectClass
+[conv] 0x42ed60 HouseClass::SaveTriggerNodeData -> HouseClass
+[conv] 0x431450 Network::SendBeacon -> Network
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=2
+[era] AbstractTypeClass        rc=2
+[era] AITriggerTypeClass       rc=0
+[era] AnimClass                rc=2
+[era] UnitClass                rc=2
+[era] AnimTypeClass            rc=2
+[era] ApplicationClass         rc=0
+[era] HouseClass               rc=0
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x406760   MISMATCH         ObjectClass::sub_406760
+[diff] 0x41fb10   MISMATCH         AITriggerTypeClass::SaveToINI
+[diff] 0x427a80   MISMATCH         AnimTypeClass::GetLoopCount
+[diff] 0x427b50   MISMATCH         AnimTypeClass::GetWarhead
+[diff] 0x4294b0   MISMATCH         ApplicationClass::sub_4294B0
+[diff] 0x42ed60   MISMATCH         HouseClass::SaveTriggerNodeData
+[ledger] 0x402990 ObjectClass::sub_402990 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x403210 ObjectClass::sub_403210 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406760 ObjectClass::sub_406760 -> NG (attempt 3)
+[ledger] 0x408970 ObjectClass::sub_408970 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4091c0 ReadAudioStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x409470 ObjectClass::sub_409470 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x40aa70 ObjectClass::ProcessAudioChannelMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x410a60 AbstractTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41fb10 AITriggerTypeClass::SaveToINI -> NG (attempt 3)
+[ledger] 0x425510 AnimClass::CheckEndOfSequence -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4255b0 AnimClass::ProcessCraterFormation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426ed0 UnitClass::sub_426ED0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426fd0 UnitClass::sub_426FD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x427a80 AnimTypeClass::GetLoopCount -> NG (attempt 3)
+[ledger] 0x427b50 AnimTypeClass::GetWarhead -> NG (attempt 3)
+[ledger] 0x428c30 AnimTypeClass::GetDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4294b0 ApplicationClass::sub_4294B0 -> NG (attempt 3)
+[ledger] 0x42cf80 ObjectClass::sub_42CF80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42ed60 HouseClass::SaveTriggerNodeData -> NG (attempt 3)
+[ledger] 0x431450 Network::SendBeacon -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 1,
+  "ret_norm": 1,
+  "frame_sched": 2,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p00\batch_report.json

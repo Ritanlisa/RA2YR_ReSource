@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetLoopCount@AnimTypeClass@@QAEDH@Z",
+ "sym_key": "AnimTypeClass::GetLoopCount",
+ "size": 213,
+ "link_base": 0,
+ "bytes_hex": "a1f009000081ec0402000085c056578bbc24100200008bf1750c3b3d000000000f84a40000008b86fc01000085c00f84820000008b866003000085c075788b86a400000085c0741d8b8ea800000085c9741350e80000000083c404c786a8000000000000008b4e248d04fd000000002bc78d54240cc1e0040500000000c786a40000000000000050516a006a0052e80000000083c414b2018d4c240ce8000000008986a40000005f894424045e81c404020000c204008a860802000084c0740a8b065756ff90a00000005f5e81c404020000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822CF8@@3IA",
+   "sym_key": "DataGlobal_822CF8"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  }
+ ]
+}

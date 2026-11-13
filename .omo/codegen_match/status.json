@@ -525,7 +525,7 @@
   "this_as_id": false
  },
  "0x402990": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -584,7 +584,7 @@
   "this_as_id": false
  },
  "0x403210": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -1655,15 +1655,15 @@
   "this_as_id": false
  },
  "0x406760": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+16 je 0x4067bc",
   "name": "ObjectClass::sub_406760",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "sub_406760",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4067d0": {
@@ -2812,7 +2812,7 @@
   "this_as_id": false
  },
  "0x408970": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -3000,7 +3000,7 @@
   "this_as_id": false
  },
  "0x4091c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReadAudioStream",
@@ -3083,7 +3083,7 @@
   "this_as_id": false
  },
  "0x409470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -3271,7 +3271,7 @@
   "this_as_id": false
  },
  "0x40aa70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -8206,7 +8206,7 @@
   "this_as_id": false
  },
  "0x410a60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -11958,15 +11958,15 @@
   "this_as_id": false
  },
  "0x41fb10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+65 mov eax, dword ptr [esi + 0xa0]",
   "name": "AITriggerTypeClass::SaveToINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TriggerTypeClass::SaveToINI",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x41fd30": {
@@ -13218,7 +13218,7 @@
   "this_as_id": false
  },
  "0x425510": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13254,7 +13254,7 @@
   "this_as_id": false
  },
  "0x4255b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13848,7 +13848,7 @@
   "this_as_id": false
  },
  "0x426ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -13860,7 +13860,7 @@
   "this_as_id": false
  },
  "0x426fd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -14096,27 +14096,27 @@
   "this_as_id": false
  },
  "0x427a80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8ed6b]",
   "name": "AnimTypeClass::GetLoopCount",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "AnimTypeClass::GetLoopCount",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x427b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x200",
   "name": "AnimTypeClass::GetWarhead",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "AnimTypeClass::GetWarhead",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x427cb0": {
@@ -14216,7 +14216,7 @@
   "this_as_id": false
  },
  "0x428c30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -14600,15 +14600,15 @@
   "this_as_id": false
  },
  "0x4294b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x40",
   "name": "ApplicationClass::sub_4294B0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_4294B0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x429500": {
@@ -15049,7 +15049,7 @@
   "this_as_id": false
  },
  "0x42cf80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -15800,15 +15800,15 @@
   "this_as_id": false
  },
  "0x42ed60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+17 push edi",
   "name": "HouseClass::SaveTriggerNodeData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "HouseClass::SaveTriggerNodeData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x42ee30": {
@@ -16590,7 +16590,7 @@
   "this_as_id": false
  },
  "0x431450": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
