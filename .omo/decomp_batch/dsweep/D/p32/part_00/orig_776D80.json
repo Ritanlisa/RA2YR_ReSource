@@ -1,0 +1,11 @@
+{
+ "addr": "0x776D80",
+ "name": "Window::ClampToScreen",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x776D80",
+ "bytes_hex": "53568b74240c32db578b0685c07d108b4e08c706000000002bc8b301894e088b460485c07d118b4e0cc74604000000002bc8b301894e0c8b3dec137e006a10ffd73946087e186a10ffd78b56088b0e2bc26a1003c8890effd7894608b3016a11ffd739460c7e206a11ffd78b560c8b4e042bc26a1103c8894e04ffd789460cb0015f5e5bc204005f8ac35e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

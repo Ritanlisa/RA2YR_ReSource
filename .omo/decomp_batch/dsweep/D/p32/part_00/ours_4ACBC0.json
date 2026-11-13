@@ -1,0 +1,57 @@
+{
+ "symbol": "?ProcessFogTransition@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::ProcessFogTransition",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "51568bf1e8000000008bcee80000000085c074248b8840010000f6c101750ef6c102740983c9408988400100008bcee80000000085c075dc6a016a00e8000000008bcee8000000008bcee80000000085c07436f680400100004074228b884001000083e1bf8988400100008b40248d4c240489442404518bcee8000000008bcee80000000085c075ca5e59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?HouseClass__RevealShroudForAllies@@YGHDH@Z",
+   "sym_key": "HouseClass__RevealShroudForAllies"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?ProcessVisibility@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::ProcessVisibility"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

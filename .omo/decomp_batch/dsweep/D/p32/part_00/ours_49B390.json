@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_49B390@@YAHXZ",
+ "sym_key": "Unnamed::sub_49B390",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "5333c98a0d0000000033db891d00000000891d00000000e8000000008b0d00000000e800000000a10000000033c98a0d000000005051891d00000000e800000000891d00000000881d40f58900881d44f58900881d48f58900881d4cf58900881d50f58900881d54f58900881d58f589006800000000c7050000000000000000881d00000000e80000000083c40c5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F528@@3EA",
+   "sym_key": "DataGlobal_89F528"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F51C@@3IA",
+   "sym_key": "DataGlobal_89F51C"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F520@@3IA",
+   "sym_key": "DataGlobal_89F520"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F534@@3IA",
+   "sym_key": "DataGlobal_89F534"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F534@@3IA",
+   "sym_key": "DataGlobal_89F534"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F528@@3EA",
+   "sym_key": "DataGlobal_89F528"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F524@@3IA",
+   "sym_key": "DataGlobal_89F524"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHHH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F524@@3IA",
+   "sym_key": "DataGlobal_89F524"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?unknown_libname_12@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_12"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F578@@3EA",
+   "sym_key": "DataGlobal_89F578"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

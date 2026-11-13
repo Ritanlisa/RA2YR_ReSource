@@ -1,0 +1,45 @@
+{
+ "symbol": "?DestroyAllBuildings@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::DestroyAllBuildings",
+ "size": 170,
+ "link_base": 0,
+ "bytes_hex": "a16406000083ec0853555733db33ff8be985c00f8e8a00000056a1340600008b34988bcee8000000003bc58944241075608b0e56ff91b000000083f80689442410754e8a868100000084c075483bf774448b566c895424148b8e7802000085c97405e8000000008b0d000000008b066a006a010fbe91a80f00006a016a00528d4c24286a005156ff90b00500008bfeeb058a442410433b1d640600000f8c78ffffff5e5f5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetPriorityTarget@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetPriorityTarget"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?UnlinkTags@TriggerClass@@QAEHXZ",
+   "sym_key": "TriggerClass::UnlinkTags"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

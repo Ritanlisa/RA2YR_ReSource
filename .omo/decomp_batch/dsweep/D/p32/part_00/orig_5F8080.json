@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F8080",
+ "name": "ObjectTypeClass::CleanupWeapons",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F8080",
+ "bytes_hex": "535556578db1cc000000bd1200000033db8b7efc3bfb74138bcfe871dc150057e8980a1d0083c404895efc8b3e3bfb74128bcfe8e854fcff57e87f0a1d0083c404891e8bbe8c0000003bfb74168bcfe83cdc150057e8630a1d0083c404899e8c0000008bbe900000003bfb74168bcfe8ac54fcff57e8430a1d0083c404899e9000000083c6084d75885f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

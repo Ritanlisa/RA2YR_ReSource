@@ -10299,6 +10299,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x41d6f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+21 jl 0x41d778",
+  "name": "AirstrikeClass::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "AirstrikeClass::Write",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x41d780": {
   "attempts": 2,
   "clean": true,
@@ -32701,6 +32713,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x49b390": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+1 xor ebx, ebx",
+  "name": "sub_49B390",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_49B390",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x49b420": {
   "attempts": 1,
   "clean": true,
@@ -37074,6 +37097,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapClass::ProcessVisibilityFlags",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4acbc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+60 mov ecx, esi",
+  "name": "MapClass::ProcessFogTransition",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MapClass::ProcessFogTransition",
+  "rule_violations": 5,
   "status": "NG",
   "this_as_id": false
  },
@@ -47150,6 +47185,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e3b00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+1 push ebp",
+  "name": "SetupComboBoxObserver",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SetupComboBoxObserver",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4e4170": {
   "attempts": 1,
   "clean": false,
@@ -56780,6 +56826,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4fc790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ecx",
+  "name": "HouseClass::DestroyAllBuildings",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "HouseClass::DestroyAllBuildings",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4fc980": {
   "attempts": 1,
   "clean": false,
@@ -58032,6 +58090,17 @@
   "name": "AbstractClass::getMovementSpeed",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "AbstractClass::getMovementSpeed",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50e3a0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x18",
+  "name": "sub_50E3A0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_50E3A0",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -61539,6 +61608,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5217c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 push esi",
+  "name": "InfantryClass::MarkCellPassability",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InfantryClass::MarkCellPassability",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x521850": {
   "attempts": 1,
   "clean": false,
@@ -62703,6 +62784,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x527640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "INIClass::SetIntFormat",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "INIClass::SetIntFormat",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5278f0": {
   "attempts": 1,
   "clean": false,
@@ -62947,6 +63040,18 @@
   "orig_name": "System_Load",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x52aaf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "INIEntry@INIClass::sub_52AAF0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_52AAF0",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x52ace0": {
@@ -92290,6 +92395,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5d5d20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::Dtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MultiplayerGameMode::Dtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5d5db0": {
   "attempts": 8,
   "clean": true,
@@ -97510,6 +97627,18 @@
   "orig_name": "VoxelAnimType::LoadSection",
   "rule_violations": 17,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5f8080": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectTypeClass::CleanupWeapons",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ObjectTypeClass::CleanupWeapons",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x5f96b0": {
@@ -107257,6 +107386,18 @@
   "orig_name": "sub_644BC0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x645430": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push esi",
+  "name": "BuildingTypeClass::FindOrCreateEx",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingTypeClass::FindOrCreateEx",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x645620": {
@@ -117989,6 +118130,14 @@
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
+ },
+ "0x69bab0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "0x69bab0",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
  },
  "0x69bb40": {
   "attempts": 1,
@@ -138205,6 +138354,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x701410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 mov eax, dword ptr [esi]",
+  "name": "TechnoClass::HandleSellOrRepair",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingClass::HandleSellOrRepair",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x703590": {
   "attempts": 3,
   "clean": false,
@@ -146662,6 +146823,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x72b460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+27 mov ecx, dword ptr [0xb0fb80]",
+  "name": "ObjectClass::LoadProgressMgr_Release",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "LoadProgressMgr_Release",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x72b4f0": {
   "attempts": 1,
   "clean": true,
@@ -147815,6 +147988,18 @@
   "name": "Map_Load_72EAD0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Map_Load_72EAD0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x72f140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+27 mov ecx, dword ptr [0xb0fbcc]",
+  "name": "LoadingScreen::CleanupObjects",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "LoadingScreen::CleanupObjects",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -161592,6 +161777,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x776d80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 push ebx",
+  "name": "Window::ClampToScreen",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "Window::ClampToScreen",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x776e10": {
   "attempts": 1,
   "clean": false,
@@ -165271,6 +165468,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7ad580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_CComObject_VCDownloadEventSink_ATL::Draw",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WonlineStringDialogControl_28::Draw",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7ad610": {
   "attempts": 8,
   "clean": true,
@@ -168001,6 +168210,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "WideString::Append",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7b6d90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 push edi",
+  "name": "WideString::Erase",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "WideString::Erase",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -175059,6 +175280,17 @@
   "name": "_wcsstr",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "_wcsstr",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7cc6c3": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__Getdays",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__Getdays",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false

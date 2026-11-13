@@ -1,0 +1,39 @@
+{
+ "symbol": "?HandleSellOrRepair@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::HandleSellOrRepair",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf16a02568b06ff90240100008b0e56ff91840000008b80a00000008b165689466c894670ff522c83f80675608b066a0056ff909c0100008bcee8000000008b0d40020000ddd8dd442404dc9900170000dfe0f6c4417407b801000000eb0233c08b542404508bcee8000000008b168d4424045056ff52488b0d400200006a008bd08b89c4010000e8000000005e83c40cc3",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?GetHealthRatio@BuildingClass@@QAENXZ",
+   "sym_key": "BuildingClass::GetHealthRatio"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?globalHelper_051EE0@@YIXHHH@Z",
+   "sym_key": "globalHelper_051EE0"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}

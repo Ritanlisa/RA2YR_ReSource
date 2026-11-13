@@ -1,0 +1,11 @@
+{
+ "addr": "0x4ACBC0",
+ "name": "MapClass::ProcessFogTransition",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4ACBC0",
+ "bytes_hex": "51568bf1e887b70c008bcee8c0b60c0085c074248b8840010000f6c101750ef6c102740983c9408988400100008bcee89cb60c0085c075dc6a016a008bcee8ed1300008bcee846b70c008bcee87fb60c0085c07436f680400100004074228b884001000083e1bf8988400100008b40248d4c240489442404518bcee8100000008bcee849b60c0085c075ca5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

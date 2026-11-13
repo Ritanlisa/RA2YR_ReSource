@@ -1,0 +1,57 @@
+{
+ "symbol": "?CleanupWeapons@ObjectTypeClass@@QAEXXZ",
+ "sym_key": "ObjectTypeClass::CleanupWeapons",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "535556578db1cc000000bd1200000033db8b7efc3bfb74138bcfe80000000057e80000000083c404895efc8b3e3bfb74128bcfe80000000057e80000000083c404891e8bbe8c0000003bfb74168bcfe80000000057e80000000083c404899e8c0000008bbe900000003bfb74168bcfe80000000057e80000000083c404899e9000000083c6084d75885f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Destroy@WaveClass@@QAEXXZ",
+   "sym_key": "WaveClass::Destroy"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Release@String@@QAEXXZ",
+   "sym_key": "String::Release"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?Destroy@WaveClass@@QAEXXZ",
+   "sym_key": "WaveClass::Destroy"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Release@String@@QAEXXZ",
+   "sym_key": "String::Release"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

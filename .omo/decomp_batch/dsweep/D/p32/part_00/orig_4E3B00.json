@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E3B00",
+ "name": "SetupComboBoxObserver",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E3B00",
+ "bytes_hex": "535556575251ff15a8147e008b2d98147e008bf06a0056ffd58b3da4147e006a006a0085c0684b010000560f94c3ffd76a076a0068de04000056ffd733d2b9ec298200683501000068c0298200e80e132500506a0068c204000056ffd76afd50685101000056ffd76a006a00684e01000056ffd76a016a0068f104000056ffd784db75056a0556ffd55f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

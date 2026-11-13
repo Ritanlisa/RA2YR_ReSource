@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x4acbc0 MapClass::ProcessFogTransition -> MapClass
+[conv] 0x5f8080 ObjectTypeClass::CleanupWeapons -> ObjectTypeClass
+[conv] 0x5d5d20 MultiplayerGameMode::Dtor -> MultiplayerGameMode
+[conv] 0x701410 TechnoClass::HandleSellOrRepair -> TechnoClass
+[conv] 0x4e3b00 SetupComboBoxObserver -> _addr_4E
+[conv] 0x49b390 sub_49B390 -> _addr_49
+[conv] 0x645430 BuildingTypeClass::FindOrCreateEx -> BuildingTypeClass
+[conv] 0x50e3a0 sub_50E3A0 -> _addr_50
+[conv] 0x4fc790 HouseClass::DestroyAllBuildings -> HouseClass
+[conv] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> INIEntry_INIClass
+[conv] 0x7b6d90 WideString::Erase -> WideString
+[conv] 0x5217c0 InfantryClass::MarkCellPassability -> InfantryClass
+[conv] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x72b460 ObjectClass::LoadProgressMgr_Release -> ObjectClass
+[conv] 0x72f140 LoadingScreen::CleanupObjects -> LoadingScreen
+[conv] 0x776d80 Window::ClampToScreen -> Window
+[conv] 0x41d6f0 AirstrikeClass::Write -> AirstrikeClass
+[conv] 0x7cc6c3 __Getdays -> _addr_7C
+[conv] 0x527640 INIClass::SetIntFormat -> INIClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=0
+[era] ObjectTypeClass          rc=0
+[era] MultiplayerGameMode      rc=2
+[era] TechnoClass              rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_49                 rc=0
+[era] BuildingTypeClass        rc=0
+[era] _addr_50                 rc=0
+[era] HouseClass               rc=0
+[era] INIEntry_INIClass        rc=2
+[era] WideString               rc=0
+[era] InfantryClass            rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] ObjectClass              rc=0
+[era] LoadingScreen            rc=0
+[era] Window                   rc=0
+[era] AirstrikeClass           rc=0
+[era] _addr_7C                 rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4acbc0   MISMATCH         MapClass::ProcessFogTransition
+[diff] 0x5f8080   MATCH            ObjectTypeClass::CleanupWeapons
+[diff] 0x701410   MISMATCH         TechnoClass::HandleSellOrRepair
+[diff] 0x4e3b00   MISMATCH         SetupComboBoxObserver
+[diff] 0x49b390   MISMATCH         sub_49B390
+[diff] 0x645430   MISMATCH         BuildingTypeClass::FindOrCreateEx
+[diff] 0x50e3a0   MISMATCH         sub_50E3A0
+[diff] 0x4fc790   MISMATCH         HouseClass::DestroyAllBuildings
+[diff] 0x7b6d90   MISMATCH         WideString::Erase
+[diff] 0x5217c0   MISMATCH         InfantryClass::MarkCellPassability
+[diff] 0x72b460   MISMATCH         ObjectClass::LoadProgressMgr_Release
+[diff] 0x72f140   MISMATCH         LoadingScreen::CleanupObjects
+[diff] 0x776d80   MISMATCH         Window::ClampToScreen
+[diff] 0x41d6f0   MISMATCH         AirstrikeClass::Write
+[ledger] 0x4acbc0 MapClass::ProcessFogTransition -> NG (attempt 1)
+[ledger] 0x5f8080 ObjectTypeClass::CleanupWeapons -> OK (attempt 1)
+[ledger] 0x5d5d20 MultiplayerGameMode::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x701410 TechnoClass::HandleSellOrRepair -> NG (attempt 1)
+[ledger] 0x4e3b00 SetupComboBoxObserver -> NG (attempt 1)
+[ledger] 0x49b390 sub_49B390 -> NG (attempt 1)
+[ledger] 0x645430 BuildingTypeClass::FindOrCreateEx -> NG (attempt 1)
+[ledger] 0x50e3a0 sub_50E3A0 -> NG (attempt 1)
+[ledger] 0x4fc790 HouseClass::DestroyAllBuildings -> NG (attempt 1)
+[ledger] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b6d90 WideString::Erase -> NG (attempt 1)
+[ledger] 0x5217c0 InfantryClass::MarkCellPassability -> NG (attempt 1)
+[ledger] 0x7ad580 _CComObject_VCDownloadEventSink_ATL::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72b460 ObjectClass::LoadProgressMgr_Release -> NG (attempt 1)
+[ledger] 0x72f140 LoadingScreen::CleanupObjects -> NG (attempt 1)
+[ledger] 0x776d80 Window::ClampToScreen -> NG (attempt 1)
+[ledger] 0x41d6f0 AirstrikeClass::Write -> NG (attempt 1)
+[ledger] 0x7cc6c3 __Getdays -> COMPILE_FAIL (attempt 1)
+[ledger] 0x527640 INIClass::SetIntFormat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69bab0 0x69bab0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 1,
+  "COMPILE_FAIL": 5,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 5,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 7.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p32\batch_report.json

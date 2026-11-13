@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FC790",
+ "name": "HouseClass::DestroyAllBuildings",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FC790",
+ "bytes_hex": "51a188eca80053555733db33ff85c08be97e7756a17ceca8008b34988bcee86d3021003bc575598b168bceff522c83f806754d8a868100000084c075433bf7743f8b466c894424108b8e7802000085c97405e859e52100a1e07188008b166a006a018b88a80f00006a016a00518d4424246a00508bceff926c0100008bfeeb01433b1d88eca8007c8b5e5f5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

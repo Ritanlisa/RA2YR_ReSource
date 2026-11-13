@@ -1,0 +1,45 @@
+{
+ "symbol": "?ClampToScreen@Window@@QAGDPAH@Z",
+ "sym_key": "Window::ClampToScreen",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "51568b74241033c98b06884c24043bc17d0f8b5608890e2bd0c6442404018956088b46043bc17d10894e048b4e0c2bc8c644240401894e0c6a10e8000000003946087e216a10e8000000008b56088b0e2bc26a1003c8890ee800000000894608c6442404016a11e80000000039460c7f138b4c2404240081e1ff0000005e0bc159c208006a11e8000000008b560c8b4e042bc26a1103c8894e04e80000000089460c24010c015e59c20800",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?GetSystemMetrics@@YGHH@Z",
+   "sym_key": "GetSystemMetrics"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x701410",
+ "name": "BuildingClass::HandleSellOrRepair",
+ "size": 142,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x701410",
+ "bytes_hex": "83ec0c568bf16a028b06ff90240100008b168bceff92840000008b80a00000008bce89466c8946708b06ff502c83f80675578b166a008bceff929c0100008bcee80b48efffa1e0718800dc9800170000dfe0f6c4417407b801000000eb0233c0508bcee8680ad5ff8b168d4424046a00508bceff52488b0de07188008bd08b89c4010000e847f504005e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

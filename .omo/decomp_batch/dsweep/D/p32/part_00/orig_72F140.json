@@ -1,0 +1,11 @@
+{
+ "addr": "0x72F140",
+ "name": "LoadingScreen::CleanupObjects",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72F140",
+ "bytes_hex": "a1c8fbb0005633f63bc6740f50e8eb99090083c4048935c8fbb0008b0dccfbb0003bce740c8b016a01ff108935ccfbb000a1d0fbb0003bc6740f50e8bd99090083c4048935d0fbb0008b0dd4fbb0003bce740c8b116a01ff128935d4fbb000a1d8fbb0003bc6740f50e88f99090083c4048935d8fbb0008b0ddcfbb0003bce740c8b016a01ff108935dcfbb0005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

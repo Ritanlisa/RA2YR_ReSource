@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E3A0",
+ "name": "sub_50E3A0",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E3A0",
+ "bytes_hex": "83ec188b44241c535556578bf90fbf0881e9ff3f00008bf2894c242cdb44242c8b5e08dc0d10287e00dd5c2410db4424308b6c24148b5424105552dd5c2420db4604dd5c2428e8c5c8fbffdc4c2420dc6c2428e8087b2b00894424348b4424185550e8f9c8fbffdc4c242883c410da06e8eb7a2b008b54242c8bcf89018bc75f5e8951045d8959085b83c418c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

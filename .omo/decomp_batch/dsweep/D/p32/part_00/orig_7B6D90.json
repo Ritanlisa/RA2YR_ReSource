@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B6D90",
+ "name": "WideString::Erase",
+ "size": 143,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B6D90",
+ "bytes_hex": "5356578bf98b0750e8683601008b7424148b5c241883c4048d0c1e3bc87e048bf02bf385f67d0403de33f685db7f095f5e6633c05bc208008bd355f7dac1e21f2bd303d08d44120250e8392001008b0f8be866c7047100008b1703f3d1e666c74416fe00008b075055e88b36010003375655e8583601008b0f51e82e1d010083c418892f66b801005d5f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

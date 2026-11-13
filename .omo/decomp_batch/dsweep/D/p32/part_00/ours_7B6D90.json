@@ -1,0 +1,39 @@
+{
+ "symbol": "?Erase@WideString@@QAEFHH@Z",
+ "sym_key": "WideString::Erase",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b0650e8000000008b7c24148b5c241883c4048d0c1f3bc87e048bf82bfb85ff7d0403df33ff85db7f095f5e6633c05bc208008bd355f7dac1e21f2bd303d08d44120250e8000000008b0e8be866c7047900008b1603fbd1e766c7443afe00008b065055e8000000008b0e03cf5155e8000000008b1652e80000000083c418892e66b801005d5f5e5bc20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "_wcscat",
+   "sym_key": "wcscat"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
