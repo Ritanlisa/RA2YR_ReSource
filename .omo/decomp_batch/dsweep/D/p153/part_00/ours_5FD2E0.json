@@ -1,0 +1,279 @@
+{
+ "symbol": "?ReadOverlayINI@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ReadOverlayINI",
+ "size": 959,
+ "link_base": 0,
+ "bytes_hex": "83ec4c894c2410e800000000833d340a0000010f8e9803000053555657689001000068800200008d4c2444e8000000006800d007006a008d4c2458c744245402000000e8000000006a008d4c2440c744244000000000e8000000008b5424488b4c243c8b7c24408b6c24448b74244c8b5c24508d44243c42508954244cff51708b44243c8d54243c52ff50740faff50faff78b6c242033c98a0d000000005653518bcde8000000008bf085f60f8eb60100008b5424488b44243c8b7c245042895424488d54243c52ff50708b54243c8d4c243c51ff527456578d4c2434c644243000e8000000000fbe4424246800200000c744243c000000006a018d4c241cc70000000000e8000000008d4c2424518d4c2418e800000000c74424200002000083cfff33f68d5424186a01528d4c241c89742418897c2420e8000000008b4424183bc70f84df0000008b0dab00000025ff0000008944241825ff0000008b0481508b10ff929c0000008b0dab00000085c08b44241875118b14818b9a9c02000085db0f84a00000008b150000000085d274118b04818a88aa02000084c90f85850000008d4c241051b900000000e80000000084c074728d542410b90000000052e8000000008a981e01000068b0000000e80000000083c40485c0741b8b5424188d4c241057518b0dab0000008b14918bc852e8000000008b44241883f818741383f819740e3ded00000074073dee00000075158d442410b90000000050e80000000088981e0100004681fe000200000f8cf0feffff8b44242048894424200f85dffeffff8b4424488d4c24144889442448e8000000008d4c242ce8000000008d4c2424e8000000008b54243c8b7c24408b7424448b5c24508d4c243c51ff52708b4c243c8d44243c50ff51740faff733d2568a150000000053528bcde8000000008bf085f60f8ef00000008b5424488b4c243c8b7c24508d44243c42508954244cff51708b44243c8d54243c52ff50740fbe4c2424c64424280056c70100000000578d4c2434e8000000000fbe5424246800200000c744243c000000006a018d4c241cc70200000000e8000000008d4424248d4c241450e800000000bf0002000033f68d4c241f6a01518d4c241c89742418c644242500e8000000008d542410b90000000052e80000000084c0741c8d442410b90000000050e8000000008b4c241cc1e90888881e0100004681fe000200007caf4f75aa8b4424488d4c24144889442448e8000000008d4c242ce8000000008d4c2424e8000000008b4424488d4c24504889442448e8000000005f5e5d5b8b54240c52e80000000083c450c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?ResetSection@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ResetSection"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?updateOverlayState@OverlayClass@@QAEPAV1@HH@Z",
+   "sym_key": "OverlayClass::updateOverlayState"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Fill@XSurface@@QAEHH@Z",
+   "sym_key": "XSurface::Fill"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayPack"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?GetBase64Data@INIClass@@QAEHHHH@Z",
+   "sym_key": "INIClass::GetBase64Data"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?vt_BufferStraw@@3PAXA",
+   "sym_key": "vt_BufferStraw"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?Constructor@LCWStraw@@QAEPAV1@HH@Z",
+   "sym_key": "LCWStraw::Constructor"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?Set@Delegate@@QAEXH@Z",
+   "sym_key": "Delegate::Set"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "?DecompressReader@LCW@@QAEHPAXH@Z",
+   "sym_key": "LCW::DecompressReader"
+  },
+  {
+   "off": 331,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 425,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 443,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 449,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 465,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 488,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 499,
+   "type": "REL32",
+   "sym": "?SpawnAtCell@Object@@QAEPAV1@HPAXH@Z",
+   "sym_key": "Object::SpawnAtCell"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 594,
+   "type": "REL32",
+   "sym": "?Dtor@LCWStraw@@QAEHXZ",
+   "sym_key": "LCWStraw::Dtor"
+  },
+  {
+   "off": 603,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 612,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 660,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_OverlayDataPack@@3EA",
+   "sym_key": "g_INI_Key_OverlayDataPack"
+  },
+  {
+   "off": 669,
+   "type": "REL32",
+   "sym": "?GetBase64Data@INIClass@@QAEHHHH@Z",
+   "sym_key": "INIClass::GetBase64Data"
+  },
+  {
+   "off": 733,
+   "type": "DIR32",
+   "sym": "?vt_Straw@@3PAXA",
+   "sym_key": "vt_Straw"
+  },
+  {
+   "off": 743,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 773,
+   "type": "DIR32",
+   "sym": "?vt_BufferStraw@@3PAXA",
+   "sym_key": "vt_BufferStraw"
+  },
+  {
+   "off": 778,
+   "type": "REL32",
+   "sym": "?Constructor@LCWStraw@@QAEPAV1@HH@Z",
+   "sym_key": "LCWStraw::Constructor"
+  },
+  {
+   "off": 792,
+   "type": "REL32",
+   "sym": "?Set@Delegate@@QAEXH@Z",
+   "sym_key": "Delegate::Set"
+  },
+  {
+   "off": 824,
+   "type": "REL32",
+   "sym": "?DecompressReader@LCW@@QAEHPAXH@Z",
+   "sym_key": "LCW::DecompressReader"
+  },
+  {
+   "off": 833,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 839,
+   "type": "REL32",
+   "sym": "?CoordinatesLegal@LayerClass@@QAE_NPAX@Z",
+   "sym_key": "LayerClass::CoordinatesLegal"
+  },
+  {
+   "off": 852,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 858,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 901,
+   "type": "REL32",
+   "sym": "?Dtor@LCWStraw@@QAEHXZ",
+   "sym_key": "LCWStraw::Dtor"
+  },
+  {
+   "off": 910,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 919,
+   "type": "REL32",
+   "sym": "?Dtor@Straw@@QAEHXZ",
+   "sym_key": "Straw::Dtor"
+  },
+  {
+   "off": 937,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 951,
+   "type": "REL32",
+   "sym": "?ProcessExpiredPointers@@YAHPAX@Z",
+   "sym_key": "ProcessExpiredPointers"
+  }
+ ]
+}

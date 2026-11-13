@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p153\part_00
+=== convert (20 addrs) ===
+[conv] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> TechnoClass
+[conv] 0x5fd2e0 ObjectClass::ReadOverlayINI -> ObjectClass
+[conv] 0x539ae0 SuperWeapon::SerializeSuperWeaponState -> SuperWeapon
+[conv] 0x45fa90 BuildingTypeClass::LoadVoxel -> BuildingTypeClass
+[conv] 0x738970 FootClass::RespondToDestruction -> FootClass
+[conv] 0x70cd10 TechnoClass::ComputeDamage -> TechnoClass
+[conv] 0x7353c0 UnitClass::Construct -> UnitClass
+[conv] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> CChatEventSink
+[conv] 0x6bb390 ObjectClass::RegisterClassesCOM -> ObjectClass
+[conv] 0x7c2d00 ProcessAudioStreamPipeline -> _addr_7C
+[conv] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> TechnoClass
+[conv] 0x56f8b0 CellClass::UpdateTerrain -> CellClass
+[conv] 0x572da0 CellClass::UpdateVariant5 -> CellClass
+[conv] 0x573170 CellClass::UpdateVariant6 -> CellClass
+[conv] 0x6ee800 ObjectClass::SelectTeamMembers -> ObjectClass
+[conv] 0x4571e0 BuildingClass::Infiltrate -> BuildingClass
+[conv] 0x69b170 ObjectClass::ParseAndApplyAlliances -> ObjectClass
+[conv] 0x585930 ObjectClass::FloodFillConnectedCells -> ObjectClass
+[conv] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> TechnoClass
+[conv] 0x583c60 ObjectClass::CollectMatchingTileCells -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] SuperWeapon              rc=0
+[era] BuildingTypeClass        rc=2
+[era] FootClass                rc=2
+[era] UnitClass                rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_7C                 rc=0
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x70cd10   MISMATCH         TechnoClass::ComputeDamage
+[diff] 0x5fd2e0   MISMATCH         ObjectClass::ReadOverlayINI
+[diff] 0x539ae0   MISMATCH         SuperWeapon::SerializeSuperWeaponState
+[diff] 0x7c2d00   MISMATCH         ProcessAudioStreamPipeline
+[ledger] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fd2e0 ObjectClass::ReadOverlayINI -> NG (attempt 1)
+[ledger] 0x539ae0 SuperWeapon::SerializeSuperWeaponState -> NG (attempt 1)
+[ledger] 0x45fa90 BuildingTypeClass::LoadVoxel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x738970 FootClass::RespondToDestruction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70cd10 TechnoClass::ComputeDamage -> NG (attempt 1)
+[ledger] 0x7353c0 UnitClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bb390 ObjectClass::RegisterClassesCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c2d00 ProcessAudioStreamPipeline -> NG (attempt 1)
+[ledger] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56f8b0 CellClass::UpdateTerrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x572da0 CellClass::UpdateVariant5 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x573170 CellClass::UpdateVariant6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ee800 ObjectClass::SelectTeamMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4571e0 BuildingClass::Infiltrate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69b170 ObjectClass::ParseAndApplyAlliances -> COMPILE_FAIL (attempt 1)
+[ledger] 0x585930 ObjectClass::FloodFillConnectedCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> COMPILE_FAIL (attempt 1)
+[ledger] 0x583c60 ObjectClass::CollectMatchingTileCells -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p153\batch_report.json

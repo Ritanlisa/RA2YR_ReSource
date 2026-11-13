@@ -1,0 +1,369 @@
+{
+ "symbol": "?SerializeSuperWeaponState@SuperWeapon@@QAEHXZ",
+ "sym_key": "SuperWeapon::SerializeSuperWeaponState",
+ "size": 978,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1576a000fbe46306a01680000000056ff1085c00f8cad0300000fbe4e306a006a04680000000056ff1185c00f8c950300000fbe56306a006a04680000000056ff1285c00f8c7d0300000fbe46306a006a04680000000056ff1085c00f8c650300000fbe4e306a006a01680000000056ff1185c00f8c4d0300000fbe56306a006a04680000000056ff1285c00f8c350300000fbe46306a006a04680000000056ff1085c00f8c1d0300000fbe4e306a006a04680000000056ff1185c00f8c050300000fbe56306a006a04680000000056ff1285c00f8ced0200000fbe46306a006a04680000000056ff1085c00f8cd502000068000000006800000000e8000000000fbe4e306a006a04680000000056ff1185c00f8cae0200000fbe56306a006a04680000000056ff1285c00f8c960200000fbe46306a006a04680000000056ff1085c00f8c7e02000068000000006800000000e8000000000fbe4e306a006a04680000000056ff1185c00f8c5702000068000000006800000000e8000000000fbe56306a008d44240c6a045056ff1285c00f8c300200008b44240833ff85c07e7a0fbe4e306a008d5424106a045256ff1185c00f8c0e020000a1000000008b0d000000003bc8722e8a0d0000000084c9750485c0753c8b0d0000000085c9763203c8a1000000006a00516800000000ff500884c0741c8b0d000000008b15000000008bc141890d000000008b4c240c890c828b442408473bf87c8633ff85c07e1aa1000000008d04b847506800000000e8000000003b7c24087ce60fbe4e306a008d54240c6a045256ff1185c00f8c740100008b44240833ff85c07e7b0fbe46306a008d4c24106a045156ff1085c00f8c52010000a1000000008b0d000000003bc8722f8a0d0000000084c9750485c0753d8b0d0000000085c976338b150000000003c86a00516800000000ff520884c0741c8b0d000000008b15000000008bc141890d000000008b4c240c890c828b442408473bf87c8533ff85c07e1aa1000000008d04b847506800000000e8000000003b7c24087ce60fbe4e30536a008d5424106a045256ff118bf885ff0f8cb10000008b44240c33db85c07e7d0fbe46306a008d4c24146a045156ff108bf885ff0f8c8d000000a1000000008b0d000000003bc8722f8a0d0000000084c9750485c0753d8b0d0000000085c976338b150000000003c86a00516800000000ff520884c0741c8b0d000000008b15000000008bc141890d000000008b4c2410890c828b44240c433bd87c8333f685c07e1aa1000000008d04b046506800000000e8000000003b74240c7ce6c70500000000000000008bc75b5f5e83c408c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Active@@3EA",
+   "sym_key": "LightningStorm_Active"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?LightningStorm_StartTime@@3IA",
+   "sym_key": "LightningStorm_StartTime"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Duration@@3IA",
+   "sym_key": "LightningStorm_Duration"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Deferment@@3IA",
+   "sym_key": "LightningStorm_Deferment"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?LightningStorm_TimeToEnd@@3EA",
+   "sym_key": "LightningStorm_TimeToEnd"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?NukeFlash_StartTime@@3IA",
+   "sym_key": "NukeFlash_StartTime"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Duration@@3IA",
+   "sym_key": "NukeFlash_Duration"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?NukeFlash_Status@@3IA",
+   "sym_key": "NukeFlash_Status"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?PsyDom_Status@@3IA",
+   "sym_key": "PsyDom_Status"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?PsyDom_Anim@@3IA",
+   "sym_key": "PsyDom_Anim"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?PsyDom_Anim@@3IA",
+   "sym_key": "PsyDom_Anim"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Coords@@3IA",
+   "sym_key": "LightningStorm_Coords"
+  },
+  {
+   "off": 295,
+   "type": "DIR32",
+   "sym": "?PsyDom_Coords@@3IA",
+   "sym_key": "PsyDom_Coords"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Owner@@3PAXA",
+   "sym_key": "LightningStorm_Owner"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Owner@@3PAXA",
+   "sym_key": "LightningStorm_Owner"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 358,
+   "type": "DIR32",
+   "sym": "?PsyDom_Owner@@3PAXA",
+   "sym_key": "PsyDom_Owner"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?PsyDom_Owner@@3PAXA",
+   "sym_key": "PsyDom_Owner"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 384,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 447,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA68@@3IA",
+   "sym_key": "DataGlobal_A9FA68"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA70@@3IA",
+   "sym_key": "DataGlobal_A9FA70"
+  },
+  {
+   "off": 463,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA6D@@3EA",
+   "sym_key": "DataGlobal_A9FA6D"
+  },
+  {
+   "off": 477,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA74@@3IA",
+   "sym_key": "DataGlobal_A9FA74"
+  },
+  {
+   "off": 488,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudsManifesting@@3IA",
+   "sym_key": "LightningStorm_CloudsManifesting"
+  },
+  {
+   "off": 496,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudsManifesting@@3IA",
+   "sym_key": "LightningStorm_CloudsManifesting"
+  },
+  {
+   "off": 509,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA70@@3IA",
+   "sym_key": "DataGlobal_A9FA70"
+  },
+  {
+   "off": 515,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA64@@3IA",
+   "sym_key": "DataGlobal_A9FA64"
+  },
+  {
+   "off": 524,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA70@@3IA",
+   "sym_key": "DataGlobal_A9FA70"
+  },
+  {
+   "off": 551,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA64@@3IA",
+   "sym_key": "DataGlobal_A9FA64"
+  },
+  {
+   "off": 561,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 566,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 635,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D8@@3IA",
+   "sym_key": "DataGlobal_A9F9D8"
+  },
+  {
+   "off": 641,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9E0@@3IA",
+   "sym_key": "DataGlobal_A9F9E0"
+  },
+  {
+   "off": 651,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9DD@@3EA",
+   "sym_key": "DataGlobal_A9F9DD"
+  },
+  {
+   "off": 665,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9E4@@3IA",
+   "sym_key": "DataGlobal_A9F9E4"
+  },
+  {
+   "off": 675,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudsPresent@@3IA",
+   "sym_key": "LightningStorm_CloudsPresent"
+  },
+  {
+   "off": 685,
+   "type": "DIR32",
+   "sym": "?LightningStorm_CloudsPresent@@3IA",
+   "sym_key": "LightningStorm_CloudsPresent"
+  },
+  {
+   "off": 698,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9E0@@3IA",
+   "sym_key": "DataGlobal_A9F9E0"
+  },
+  {
+   "off": 704,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D4@@3IA",
+   "sym_key": "DataGlobal_A9F9D4"
+  },
+  {
+   "off": 713,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9E0@@3IA",
+   "sym_key": "DataGlobal_A9F9E0"
+  },
+  {
+   "off": 740,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9F9D4@@3IA",
+   "sym_key": "DataGlobal_A9F9D4"
+  },
+  {
+   "off": 750,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 755,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 829,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA20@@3IA",
+   "sym_key": "DataGlobal_A9FA20"
+  },
+  {
+   "off": 835,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA28@@3IA",
+   "sym_key": "DataGlobal_A9FA28"
+  },
+  {
+   "off": 845,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA25@@3EA",
+   "sym_key": "DataGlobal_A9FA25"
+  },
+  {
+   "off": 859,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA2C@@3IA",
+   "sym_key": "DataGlobal_A9FA2C"
+  },
+  {
+   "off": 869,
+   "type": "DIR32",
+   "sym": "?LightningStorm_BoltsPresent@@3IA",
+   "sym_key": "LightningStorm_BoltsPresent"
+  },
+  {
+   "off": 879,
+   "type": "DIR32",
+   "sym": "?LightningStorm_BoltsPresent@@3IA",
+   "sym_key": "LightningStorm_BoltsPresent"
+  },
+  {
+   "off": 892,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA28@@3IA",
+   "sym_key": "DataGlobal_A9FA28"
+  },
+  {
+   "off": 898,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA1C@@3IA",
+   "sym_key": "DataGlobal_A9FA1C"
+  },
+  {
+   "off": 907,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA28@@3IA",
+   "sym_key": "DataGlobal_A9FA28"
+  },
+  {
+   "off": 934,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A9FA1C@@3IA",
+   "sym_key": "DataGlobal_A9FA1C"
+  },
+  {
+   "off": 944,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 949,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 961,
+   "type": "DIR32",
+   "sym": "?g_ChronoEffectState@@3IA",
+   "sym_key": "g_ChronoEffectState"
+  }
+ ]
+}

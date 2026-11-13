@@ -1,0 +1,105 @@
+{
+ "symbol": "?ProcessAudioStreamPipeline@@YIHHHD@Z",
+ "sym_key": "Unnamed::ProcessAudioStreamPipeline",
+ "size": 850,
+ "link_base": 0,
+ "bytes_hex": "568bf1578bfaf6865001000008757756e80000000083c40483f8ff0f852c030000f6865001000010750956e80000000083c404f686840000000174128b869407000080380074078bcee8000000008b8ea001000033d28b411c8bce8d04408d0480c1e002f776748bd0e8000000008bcee8000000008946208b86500100000c088986500100008b465485c0740856ffd083c404eb0383c8ff8b4e2889462883f9ff7509c7462c00000000eb0c2bc18b4e2c3bc1760389462c8b86500100005383ff02550f84d8010000a840742324bf8986500100008a8684000000a80174078bcee8000000008b56248bcee8000000008b86500100008ad080e20680fa060f8425020000bb04000000bf00020000bdf9ffffff84c30f859a00000033d28bcee80000000083f8ff75158b56148b8e50010000420bcb895614898e5001000085be84000000746f83f8f77440849e5001000075388b86bc070000f6c4047457a840740956e80000000083c4048b86500100000bc78986500100008b86bc07000024fb0cfb8986bc070000eb2a8b865001000085c77420f6c408751b24040bc38986500100008a8684000000a80174078bcee800000000f6868000000002742f8b86500100008b8ea00100000c02898650010000c74114000000008b96a00100008b420c8986a0010000e99b00000085be8400000074228b865001000085c77418f6c404741323c50cf9f6c4088986500100000f84120100008a442414a801740a8b86a40100000c02eb0ca802740e8b86a40100000bc38986a401000056ff967c07000083f8ff7524f686a4010000087503ff461856e80000000083c40483f8ff74218b86500100000c06eb1183f8f775128b865001000084c374080c0289865001000021aea40100008b86500100008ac880e10680f9060f848d000000e972feffffa84075250c408bce898650010000e8000000008946248a86bc070000a840740956e80000000083c404f64424140274588bbea40100005683cf1489bea4010000ff967c07000083f8ff741383f8f7752a8b8650010000a80474200c02eb1656e80000000083c40483f8ff740e8b86500100000c068986500100008b86a401000024e98986a40100008bcee8000000008946248a86bc0700005d5ba840740956e80000000083c404b8feffffff5f5ec20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Audio_Process_7BE660@@YAHPAX@Z",
+   "sym_key": "Audio_Process_7BE660"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Audio_Process_7BE4A0@@YAHPAX@Z",
+   "sym_key": "Audio_Process_7BE4A0"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?SetFlag4C@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SetFlag4C"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?CalcAudioStreamOffset@@YIHHH@Z",
+   "sym_key": "CalcAudioStreamOffset"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?GetPosition@AudioStream@@QAEIXZ",
+   "sym_key": "AudioStream::GetPosition"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?SetFlag4C@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SetFlag4C"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?CalcAudioStreamOffset@@YIHHH@Z",
+   "sym_key": "CalcAudioStreamOffset"
+  },
+  {
+   "off": 288,
+   "type": "REL32",
+   "sym": "?FillAudioStreamBuffer@@YIHHH@Z",
+   "sym_key": "FillAudioStreamBuffer"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?Audio_Process_7BD290@@YADPAX@Z",
+   "sym_key": "Audio_Process_7BD290"
+  },
+  {
+   "off": 433,
+   "type": "REL32",
+   "sym": "?SetFlag4C@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SetFlag4C"
+  },
+  {
+   "off": 597,
+   "type": "REL32",
+   "sym": "?Audio_Process_7C3750@@YAHPAX@Z",
+   "sym_key": "Audio_Process_7C3750"
+  },
+  {
+   "off": 688,
+   "type": "REL32",
+   "sym": "?GetPosition@AudioStream@@QAEIXZ",
+   "sym_key": "AudioStream::GetPosition"
+  },
+  {
+   "off": 707,
+   "type": "REL32",
+   "sym": "?Audio_Process_7BD290@@YADPAX@Z",
+   "sym_key": "Audio_Process_7BD290"
+  },
+  {
+   "off": 769,
+   "type": "REL32",
+   "sym": "?Audio_Process_7C3750@@YAHPAX@Z",
+   "sym_key": "Audio_Process_7C3750"
+  },
+  {
+   "off": 812,
+   "type": "REL32",
+   "sym": "?GetPosition@AudioStream@@QAEIXZ",
+   "sym_key": "AudioStream::GetPosition"
+  },
+  {
+   "off": 833,
+   "type": "REL32",
+   "sym": "?Audio_Process_7BD2B0@@YADPAX@Z",
+   "sym_key": "Audio_Process_7BD2B0"
+  }
+ ]
+}

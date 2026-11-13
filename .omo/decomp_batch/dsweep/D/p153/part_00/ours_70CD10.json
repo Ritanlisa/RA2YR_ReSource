@@ -1,0 +1,141 @@
+{
+ "symbol": "?ComputeDamage@TechnoClass@@QAENPAH0@Z",
+ "sym_key": "TechnoClass::ComputeDamage",
+ "size": 1209,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec54538bd956578b0353ff90840000008b75088bf8568b0eff918800000085c0750fdd05000000005f5e5b8be55dc208008b931c0200008a82fb01000084c00f849a0000008b87c80200008b8fcc0200008b97d0020000894424508b87d4020000894c2454c1e0200bc250e8000000008b8fdc0200008b97e0020000894424148b87d8020000db442414894424348b87e4020000c1e020dd5c243c894c24388b8fe80200000bc2894c242050e8000000008b97ec0200008b4c242489442418db442418c1e2200bd1dd5c243052e8000000008944242883c40cdb44241ceb77a1400200008b90681000008b886c100000895424508b9070100000894c24548b8874100000895424388b9078100000894c243c8b887c10000089542430894c24348b90801000008b888c100000895424288b90881000008b8084100000c1e1200bca8944242c51e8000000008944242083c404db44241c8b0b56dd5c244c53ff91e40200008b135053ff92f80300008b008b0e5689442420c744242400000000c744242800000000ff512c83f806741383f80f740e83f801740983f8020f85b000000085f60f84a80000008b165356ff92e40200008b0e83c4085056ff91f80300008b0085c074408b80ac00000085c07436399eb402000075158b979c000000dd442438dc8cd0a0000000d9e0eb118b8f9c000000dd442438dc8cc8a0000000dd542438dd5c24208b1656ff9284000000dd442430dc88c00200008b831c020000dc4424208b800056000083f8ffdd542420741d8b8e1c0200003b413075128b1540020000dc8290100000dd5c2420eb02ddd88b7c241c85ff74328b87ac00000085c074288b0656ff90880000008b889c0000008b97ac000000dd442450dc8ccaa0000000dc442420dd5c24208bcee800000000ddd8dd442438dc4c242885ffdc442420dd5c243874088b87b4000000eb0f8b0353ff90840000008b80b80500008b7d0c998b0f81e2ff00000003c2c1f80889442420a1500200003bc80f85ee0000008b5704a1540200003bd00f85de0000008b47088b0d580200003bc10f85cd0000008b0e8d5424505256ff51488d4c24308bf08b035153ff50488b388b1e8b48048b40088b56042bfb897c24288b7e082bc7894424108bc12bc28944242c8944241cdd442428e800000000db44241c8bf056dd5c2444db442414dd5c242ce8000000008944242056db442424dd5c2418e80000000089442424db442424dc4c2418dd442430dc4c2430dec1dd442448dc4c2448dec1dd1c24e8000000008b4c24448b5424405152ddd8e8000000008b4c243083c41033c125ff00000033c19981e2ff00000003c2c1f808e9b20000008b068d4c24505156ff50488b378b188b57048b48042bf3897424288b77088b78088bc22bc12bf78944242c89742410dd4424288944241ce800000000db44241c8bf056dd5c242cdb442414dd5c2444e8000000008944242056db442424dd5c2418e80000000089442424db442424dc4c2418dd442448dc4c2448dec1dd442430dc4c2430dec1dd1c24e8000000008b5424448b4424405250ddd8e8000000008bc88b44243033c883c41081e1ff00000033c18b7c2420ba000000002bc75f0f98c24a5e23d05b89542414db442414dc4c243cdc44242cdc05000000008be55dc20800",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2800@@3NA",
+   "sym_key": "DataGlobal_7E2800"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?COERCE_DOUBLE@@YAHHZZ",
+   "sym_key": "COERCE_DOUBLE"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?COERCE_DOUBLE@@YAHHZZ",
+   "sym_key": "COERCE_DOUBLE"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "?COERCE_DOUBLE@@YAHHZZ",
+   "sym_key": "COERCE_DOUBLE"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?COERCE_DOUBLE@@YAHHZZ",
+   "sym_key": "COERCE_DOUBLE"
+  },
+  {
+   "off": 583,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 662,
+   "type": "REL32",
+   "sym": "?GetHealthRatio@BuildingClass@@QAENXZ",
+   "sym_key": "BuildingClass::GetHealthRatio"
+  },
+  {
+   "off": 733,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 749,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 766,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 847,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 871,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 889,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 929,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 946,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1039,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1063,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 1081,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 1121,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 1138,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1199,
+   "type": "DIR32",
+   "sym": "__real@8@400fc350000000000000",
+   "sym_key": "_real@8@400fc350000000000000"
+  }
+ ]
+}
