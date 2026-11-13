@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x44fec0 BuildingClass::ReadConstructionData -> BuildingClass
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x4509d0 BuildingClass::UpdateAnimFrames -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+[conv] 0x4547c0 BuildingClass::UpdateAnimationSlots -> BuildingClass
+[conv] 0x454930 BuildingClass::ProcessDamageAnim -> BuildingClass
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x457630 BuildingClass::SWAvailable -> BuildingClass
+[conv] 0x457690 BuildingClass::SW2Available -> BuildingClass
+[conv] 0x457ce0 BuildingClass::CanRepair -> BuildingClass
+[conv] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> TechnoClass
+[conv] 0x458a80 TechnoClass::EvacuateFootprintCells -> TechnoClass
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_45                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x44fec0 BuildingClass::ReadConstructionData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4509d0 BuildingClass::UpdateAnimFrames -> COMPILE_FAIL (attempt 3)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 5)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4547c0 BuildingClass::UpdateAnimationSlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x454930 BuildingClass::ProcessDamageAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x457630 BuildingClass::SWAvailable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x457690 BuildingClass::SW2Available -> COMPILE_FAIL (attempt 3)
+[ledger] 0x457ce0 BuildingClass::CanRepair -> COMPILE_FAIL (attempt 3)
+[ledger] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x458a80 TechnoClass::EvacuateFootprintCells -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 5)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p03\batch_report.json

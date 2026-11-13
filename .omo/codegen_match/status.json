@@ -20409,7 +20409,7 @@
   "this_as_id": false
  },
  "0x44fec0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20433,7 +20433,7 @@
   "this_as_id": false
  },
  "0x4500f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -20476,14 +20476,14 @@
   "this_as_id": false
  },
  "0x4509d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::UpdateAnimFrames",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::UpdateAnimFrames",
-  "rule_violations": 24,
+  "rule_violations": 23,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -20535,7 +20535,7 @@
   "this_as_id": false
  },
  "0x451750": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20698,7 +20698,7 @@
   "this_as_id": false
  },
  "0x452480": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20897,7 +20897,7 @@
   "this_as_id": false
  },
  "0x453840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20957,7 +20957,7 @@
   "this_as_id": false
  },
  "0x453e20": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21017,7 +21017,7 @@
   "this_as_id": false
  },
  "0x4545d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21029,7 +21029,7 @@
   "this_as_id": false
  },
  "0x454730": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21041,7 +21041,7 @@
   "this_as_id": false
  },
  "0x4547c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21053,7 +21053,7 @@
   "this_as_id": false
  },
  "0x454930": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21232,7 +21232,7 @@
   "this_as_id": false
  },
  "0x4561f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21345,7 +21345,7 @@
   "this_as_id": false
  },
  "0x456fb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_056FB0",
@@ -21404,7 +21404,7 @@
   "this_as_id": false
  },
  "0x457630": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21416,7 +21416,7 @@
   "this_as_id": false
  },
  "0x457690": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21500,7 +21500,7 @@
   "this_as_id": false
  },
  "0x457ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21543,7 +21543,7 @@
   "this_as_id": false
  },
  "0x458330": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21603,7 +21603,7 @@
   "this_as_id": false
  },
  "0x458a80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21663,7 +21663,7 @@
   "this_as_id": false
  },
  "0x4593a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21675,7 +21675,7 @@
   "this_as_id": false
  },
  "0x459470": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
