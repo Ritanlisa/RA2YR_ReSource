@@ -1,0 +1,81 @@
+{
+ "symbol": "?PowerDrainUpdate@SpawnManagerClass@@QAEHH@Z",
+ "sym_key": "SpawnManagerClass::PowerDrainUpdate",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008b46708b7c240c5057e8000000008b466c85c074118b480483c00450ff51105057e8000000008b466885c074118b500483c00450ff52105057e8000000008b465c8b4e6483f8ff5374168b15540a00008bda2bd83bd97c0433c9eb042bc203c85157e8000000008b46508b4e5883f8ff74168b15540a00008bda2bd83bd97c0433c9eb042bc203c85157e8000000008b46485057e8000000008b4e2c5157e8000000008b46285b85c074118b500483c00450ff52105057e8000000008b762485f674118b4e048d460450ff51105057e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::ProcessPower"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHPAXH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

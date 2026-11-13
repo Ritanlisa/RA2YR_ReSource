@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B7DE0",
+ "name": "SpawnManagerClass::PowerDrainUpdate",
+ "size": 226,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B7DE0",
+ "bytes_hex": "56578b7c240c8bf157e82286d5ff8b46708bcf50e8579fdeff8b466c85c074128b480483c00450ff5110508bcfe83e9fdeff8b466885c074128b500483c00450ff5210508bcfe8259fdeff8b565c8b466483faff74128b0d84eda8002bca3bc87d042bc1eb0233c0508bcfe8009fdeff8b56508b465883faff74128b0d84eda8002bca3bc87d042bc1eb0233c0508bcfe8db9edeff8b46488bcf50e8d09edeff8b4e2c518bcfe8c59edeff8b462885c074128b500483c00450ff5210508bcfe8ac9edeff8b762485f674128b4e048d460450ff5110508bcfe8939edeff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

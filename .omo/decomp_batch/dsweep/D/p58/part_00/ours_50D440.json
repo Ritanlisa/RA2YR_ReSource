@@ -1,0 +1,33 @@
+{
+ "symbol": "?RespawnStartingForces@HouseClass@@QAEHPAPAXPAPAPAXPAH@Z",
+ "sym_key": "HouseClass::RespawnStartingForces",
+ "size": 260,
+ "link_base": 0,
+ "bytes_hex": "83ec148b4424208b807c01000048894424000f88e600000053558b6c24205657c1e0028b4c24305533ff8b91700100008b4c2434518b1c028b542434528b33568b06ff502c83c0fd83f825772333c98a8800000000ff248d000000008b4424308b165056ff928c00000085c0757933ff83c304b9f801000053e8000000008b10508d6c242cff52488b0857894c24188b50048954241c8b5008895424208b078d4c2418c744243400000000894c2430ff909004000084c075098b0f57ff91f80000008b4424104889442410782dc1e002e94effffff8b5424308b0e5256ff918c00000085c074878a481480e101f6d91bc923c88bf9e976ffffff5f5e5d5b83c414c20c00",
+ "relocs": [
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "$L1937",
+   "sym_key": "$L1937"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "$L1938",
+   "sym_key": "$L1938"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

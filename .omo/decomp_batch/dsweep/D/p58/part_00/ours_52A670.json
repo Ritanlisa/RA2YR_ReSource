@@ -1,0 +1,69 @@
+{
+ "symbol": "?WinMain_Init@ObjectClass@@QAEPAXPAXD@Z",
+ "sym_key": "ObjectClass::WinMain_Init",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "81ec04050000568bf1576a4033d28d4c240ce8000000006a4033d28d8c2409010000e8000000008a842414050000c78424080200000000000084c0742a6a40ba010001008d8c2410040000e8000000006a408d9424100200008d8c2410040000e800000000eb1b8b0d000000008d84240c020000680002000050518bcee8000000008d94240c0200008d4424085250e8000000008b150000000083c4088d8c240c020000680002000051528bcee8000000008d84240c0200008d4c24085051e8000000008b842418050000b9810000008d7424108bf883c408f3a55f5e81c404050000c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?EncodeVarInt@@YIHHPAXH@Z",
+   "sym_key": "EncodeVarInt"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?aPrivatekey@@3HA",
+   "sym_key": "aPrivatekey"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?GetBase64Data@INIClass@@QAEHHHH@Z",
+   "sym_key": "INIClass::GetBase64Data"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?System_Init_632030@@YADPAX0@Z",
+   "sym_key": "System_Init_632030"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?aPublickey@@3HA",
+   "sym_key": "aPublickey"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?GetBase64Data@INIClass@@QAEHHHH@Z",
+   "sym_key": "INIClass::GetBase64Data"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?System_Init_632000@@YAHPAX0@Z",
+   "sym_key": "System_Init_632000"
+  }
+ ]
+}

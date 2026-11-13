@@ -1,0 +1,75 @@
+{
+ "symbol": "?Audio_Load@@YIXHHH@Z",
+ "sym_key": "Unnamed::Audio_Load",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "5356578bda8bf96a20e8000000008bf083c4048bcee8000000008b442410897e0c894614895e18a10000000033d2b964000000f7f189561c8b0d000000004183fb03890d00000000c7475001000000750c8bd6b900000000e8000000008bd6b900000000e800000000893500000000c747500200000056e80000000083c4045f5e5bc20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C0@@3IA",
+   "sym_key": "DataGlobal_B1D4C0"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C0@@3IA",
+   "sym_key": "DataGlobal_B1D4C0"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C0@@3IA",
+   "sym_key": "DataGlobal_B1D4C0"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3C8@@3IA",
+   "sym_key": "DataGlobal_B1D3C8"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3F0@@3IA",
+   "sym_key": "DataGlobal_B1D3F0"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4B8@@3IA",
+   "sym_key": "DataGlobal_B1D4B8"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

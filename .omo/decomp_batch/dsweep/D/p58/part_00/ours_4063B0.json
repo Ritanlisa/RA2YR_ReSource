@@ -1,0 +1,99 @@
+{
+ "symbol": "?ProcessMixerOutput@Audio@@QAEPAHXZ",
+ "sym_key": "Audio::ProcessMixerOutput",
+ "size": 254,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c0750433c05ec38b0d00000000e8000000008bf085f6744633c98d466c8a0d000000005051e80000000083c40885c074258bcee8000000008bf085f6742033c08d566ca0000000005250e80000000083c40885c075db85f674048bc65ec3576848010000e8000000008bf0b95200000033c08bfef3abb9520000008bfef3ab83c4048bcee800000000ba004000008d4e18c7460c01000000c7461000000000c7461420000000c7464803000000c7464002000000c746500a000000c74654cdcc4c3ee80000000033c96a1f8a0d000000008d566c5152e800000000c6868b000000008b0d0000000083c40c8bd6e8000000008bc65f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E250@@3IA",
+   "sym_key": "DataGlobal_87E250"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?SetupSampleAudioMixer@@YIHPAXH@Z",
+   "sym_key": "SetupSampleAudioMixer"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E250@@3IA",
+   "sym_key": "DataGlobal_87E250"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  }
+ ]
+}

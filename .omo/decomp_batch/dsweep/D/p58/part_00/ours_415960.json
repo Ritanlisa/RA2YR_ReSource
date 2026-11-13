@@ -1,0 +1,39 @@
+{
+ "symbol": "?ScatterFromThreat@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ScatterFromThreat",
+ "size": 231,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18b86b4020000c686d20600000185c00f84960000008b8ef800000085c90f8488000000508bcee8000000008b0d000000000fbe914c0500003bc27e288a86d3060000c686d20600000084c07e658b066a006a1a56ff90e8010000b8050000005e83c40cc38b8e9c0000008b96a00000008b86a4000000894c24048d4c24048954240851680000000089442414e80000000083c40884c0743f56e80000000083c404b8050000005e83c40cc3c686d2060000008b166a0056ff92c80300008b066a016a0056ff90800400008b0e6a006a0456ff91e8010000b8050000005e83c40cc3",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?ComputeDistance@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::ComputeDistance"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?IsCoordVisibleMap@@YA_NPAX0@Z",
+   "sym_key": "IsCoordVisibleMap"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?ProcessTechnoMovementAction@@YAHPAX@Z",
+   "sym_key": "ProcessTechnoMovementAction"
+  }
+ ]
+}

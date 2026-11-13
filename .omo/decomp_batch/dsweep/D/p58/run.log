@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x6293e0 AbstractClass::ProcessData -> AbstractClass
+[conv] 0x526d90 INIClass::GetStringByIndexEx -> INIClass
+[conv] 0x4063b0 Audio::ProcessMixerOutput -> Audio
+[conv] 0x52a670 ObjectClass::WinMain_Init -> ObjectClass
+[conv] 0x6b7de0 SpawnManagerClass::PowerDrainUpdate -> SpawnManagerClass
+[conv] 0x53ae50 SuperClass::LaunchPsychicDominator -> SuperClass
+[conv] 0x796ed0 Game::CreateAIPlayer_Potato -> Game
+[conv] 0x6e8420 TaskForceClass::GetUnitCount -> TaskForceClass
+[conv] 0x752590 Audio_Load -> Audio
+[conv] 0x653010 RadarClass::CreateScrollButtons -> RadarClass
+[conv] 0x6587a0 RadarClass::Destru_vt04 -> RadarClass
+[conv] 0x415960 TechnoClass::ScatterFromThreat -> TechnoClass
+[conv] 0x408840 AudioSample::InitLinkedList -> AudioSample
+[conv] 0x6ec130 ObjectClass::Get -> ObjectClass
+[conv] 0x431a30 ObjectClass::Set -> ObjectClass
+[conv] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> ObjectClass
+[conv] 0x50d440 HouseClass::RespawnStartingForces -> HouseClass
+[conv] 0x62fd60 ParticleSystemClass::Update -> ParticleSystemClass
+[conv] 0x65fa70 CreateTriggerClassIfFarEnough -> _addr_65
+[conv] 0x639040 ObjectClass::ReadBuildingINIEntry -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] INIClass                 rc=0
+[era] Audio                    rc=0
+[era] ObjectClass              rc=2
+[era] SpawnManagerClass        rc=0
+[era] SuperClass               rc=2
+[era] Game                     rc=0
+[era] TaskForceClass           rc=2
+[era] RadarClass               rc=2
+[era] TechnoClass              rc=0
+[era] AudioSample              rc=0
+[era] HouseClass               rc=0
+[era] ParticleSystemClass      rc=2
+[era] _addr_65                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6293e0   MISMATCH         AbstractClass::ProcessData
+[diff] 0x4063b0   MISMATCH         Audio::ProcessMixerOutput
+[diff] 0x752590   MISMATCH         Audio_Load
+[diff] 0x52a670   MISMATCH         ObjectClass::WinMain_Init
+[diff] 0x6ec130   MISMATCH         ObjectClass::Get
+[diff] 0x431a30   MISMATCH         ObjectClass::Set
+[diff] 0x6b7de0   MISMATCH         SpawnManagerClass::PowerDrainUpdate
+[diff] 0x796ed0   MISMATCH         Game::CreateAIPlayer_Potato
+[diff] 0x653010   MISMATCH         RadarClass::CreateScrollButtons
+[diff] 0x415960   MISMATCH         TechnoClass::ScatterFromThreat
+[diff] 0x408840   MISMATCH         AudioSample::InitLinkedList
+[diff] 0x50d440   MISMATCH         HouseClass::RespawnStartingForces
+[ledger] 0x6293e0 AbstractClass::ProcessData -> NG (attempt 1)
+[ledger] 0x526d90 INIClass::GetStringByIndexEx -> PENDING (attempt 1)
+[ledger] 0x4063b0 Audio::ProcessMixerOutput -> NG (attempt 1)
+[ledger] 0x52a670 ObjectClass::WinMain_Init -> NG (attempt 1)
+[ledger] 0x6b7de0 SpawnManagerClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x53ae50 SuperClass::LaunchPsychicDominator -> COMPILE_FAIL (attempt 1)
+[ledger] 0x796ed0 Game::CreateAIPlayer_Potato -> NG (attempt 1)
+[ledger] 0x6e8420 TaskForceClass::GetUnitCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x752590 Audio_Load -> NG (attempt 1)
+[ledger] 0x653010 RadarClass::CreateScrollButtons -> NG (attempt 1)
+[ledger] 0x6587a0 RadarClass::Destru_vt04 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x415960 TechnoClass::ScatterFromThreat -> NG (attempt 1)
+[ledger] 0x408840 AudioSample::InitLinkedList -> NG (attempt 1)
+[ledger] 0x6ec130 ObjectClass::Get -> NG (attempt 1)
+[ledger] 0x431a30 ObjectClass::Set -> NG (attempt 1)
+[ledger] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50d440 HouseClass::RespawnStartingForces -> NG (attempt 1)
+[ledger] 0x62fd60 ParticleSystemClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65fa70 CreateTriggerClassIfFarEnough -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639040 ObjectClass::ReadBuildingINIEntry -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "OBJ_EXTRACT_FAIL": 1,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "regalloc": 5,
+  "const_fold": 1,
+  "eval_order": 1,
+  "frame_sched": 2,
+  "branch_polarity": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p58\batch_report.json

@@ -1,0 +1,213 @@
+{
+ "symbol": "?CreateScrollButtons@RadarClass@@QAEXXZ",
+ "sym_key": "RadarClass::CreateScrollButtons",
+ "size": 233,
+ "link_base": 0,
+ "bytes_hex": "518b4c240053e800000000a1f009000033db3bc30f85cc0000008b0d000000008b1500000000a1000000005152b900000000c70500000000f2000000c6050000000001a300000000881d00000000891d00000000c7050000000005000000e800000000a100000000535350b900000000e800000000b900000000e8000000008b0d000000008b1500000000a100000000890d000000005250b900000000c70500000000f3000000c6050000000001881d00000000891d00000000c7050000000005000000e8000000008b0d00000000535351b900000000e800000000b900000000e8000000005b59c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?ddtor@DisplayClass@@QAEDXZ",
+   "sym_key": "DisplayClass::ddtor"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A04@@3IA",
+   "sym_key": "DataGlobal_B04A04"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A00@@3IA",
+   "sym_key": "DataGlobal_B04A00"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04978@@3IA",
+   "sym_key": "DataGlobal_B04978"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0499C@@3IA",
+   "sym_key": "DataGlobal_B0499C"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B049C4@@3EA",
+   "sym_key": "DataGlobal_B049C4"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B049C8@@3IA",
+   "sym_key": "DataGlobal_B049C8"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B049A5@@3EA",
+   "sym_key": "DataGlobal_B049A5"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B049A8@@3IA",
+   "sym_key": "DataGlobal_B049A8"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04998@@3IA",
+   "sym_key": "DataGlobal_B04998"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048E0@@3IA",
+   "sym_key": "DataGlobal_B048E0"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04978@@3IA",
+   "sym_key": "DataGlobal_B04978"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04978@@3IA",
+   "sym_key": "DataGlobal_B04978"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?MarkDirty@VectorClass_ptr_ConvertClass@@QAEXXZ",
+   "sym_key": "VectorClass_ptr_ConvertClass::MarkDirty"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048CC@@3IA",
+   "sym_key": "DataGlobal_B048CC"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048C8@@3IA",
+   "sym_key": "DataGlobal_B048C8"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04960@@3IA",
+   "sym_key": "DataGlobal_B04960"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04910@@3IA",
+   "sym_key": "DataGlobal_B04910"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04934@@3IA",
+   "sym_key": "DataGlobal_B04934"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0495C@@3EA",
+   "sym_key": "DataGlobal_B0495C"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0493D@@3EA",
+   "sym_key": "DataGlobal_B0493D"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04940@@3IA",
+   "sym_key": "DataGlobal_B04940"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04930@@3IA",
+   "sym_key": "DataGlobal_B04930"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048AC@@3IA",
+   "sym_key": "DataGlobal_B048AC"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04910@@3IA",
+   "sym_key": "DataGlobal_B04910"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04910@@3IA",
+   "sym_key": "DataGlobal_B04910"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?MarkDirty@VectorClass_ptr_ConvertClass@@QAEXXZ",
+   "sym_key": "VectorClass_ptr_ConvertClass::MarkDirty"
+  }
+ ]
+}

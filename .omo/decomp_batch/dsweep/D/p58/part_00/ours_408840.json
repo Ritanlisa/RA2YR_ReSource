@@ -1,0 +1,39 @@
+{
+ "symbol": "?InitLinkedList@AudioSample@@QAEXXZ",
+ "sym_key": "AudioSample::InitLinkedList",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "5153558be95657896c24108b75048d7d043bf77451bbfdffffff56e8000000008b4630c746300000000083c4048b088b50144989088b4e1c2bd18b481023cb8950148948108b461085c0740b8bd052e80000000083c40456e8000000008b3783c4043bf775b48b1f3bdf750233db8d755cbf02000000bd17fcffff8d4ec8895ef0896efc892ec746f800000000e80000000083c6404f75e38b442410508b48148b505803d1895058e80000000083c4045f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?LinkedList__Init@@YAHPAX@Z",
+   "sym_key": "LinkedList__Init"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?SetField@AudioSample@@QAEHXZ",
+   "sym_key": "AudioSample::SetField"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

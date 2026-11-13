@@ -1,0 +1,39 @@
+{
+ "symbol": "?Get@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::Get",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c8bd985f6747d8a869000000084c074738b466c85c0746ca10000000085c0750a8a868100000084c075598a868906000084c0754f8d44240c33c98a4b285750e8000000008b0083f836741383f835740e8b0d400200008bb91c170000eb0c8b15400200008bba2017000033c08bce8a433450e8000000003bc75f7f0ec68689060000015e32c05bc204008b86a405000085c075298b0e6a006a0256ff91e80100008b166a0056ff92c80300008b0633c98a4b346a015156ff90800400005eb0015bc20400",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?GetEntry@SessionClass@@QAEPAIPAX@Z",
+   "sym_key": "SessionClass::GetEntry"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  }
+ ]
+}

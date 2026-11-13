@@ -1,0 +1,27 @@
+{
+ "symbol": "?Set@ObjectClass@@QAEHPAD@Z",
+ "sym_key": "ObjectClass::Set",
+ "size": 219,
+ "link_base": 0,
+ "bytes_hex": "53568bf1b80100000033db8b560489460888461088461480e20083c8ff895e38895604895e0c885e18885e1c885e20885e28885e29885e2c885e30885e34885e38895e40894644894648895e4c895e50895e54891ee80000000085c07464385e29745f8b06555756ff50048b7c24148be88a0f8a55008ac13aca751e3ac374168a57018a4d018ac23ad1750e83c70283c5023ac375db33c0eb051bc083d8ff5f3bc35d750d8b0656ff50048bc65e5bc204008bcee8000000008b463880e4008946388b4c240c518bcee8000000008b1656ff52048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?GetMember06@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetMember06"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?Flush@BufferIO@@QAEDXZ",
+   "sym_key": "BufferIO::Flush"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?SetName@FileClass@@QAEPADPAX@Z",
+   "sym_key": "FileClass::SetName"
+  }
+ ]
+}

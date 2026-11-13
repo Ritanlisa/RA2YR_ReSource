@@ -1,0 +1,87 @@
+{
+ "symbol": "?ProcessData@AbstractClass@@QAEXXZ",
+ "sym_key": "AbstractClass::ProcessData",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133dbb9000000008b4644890e3bc3894e04894e08894e0c895e4c895e50895e48740c8b0850ff91f8000000895e44385e547447a17c0d00008d542408525089742410ff501083f8ff742d8b0d8c0d00003bc17323493bc1890d8c0d000073188b0d800d0000408b1481895481fc8b0d8c0d00003bc172e8885e548b0d000000008d44240850680000000089742410ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88bcee8000000005e5b59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_ParasiteClass_4@@3PAXA",
+   "sym_key": "vt_ParasiteClass_4"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4910@@3IA",
+   "sym_key": "DataGlobal_AC4910"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4910@@3IA",
+   "sym_key": "DataGlobal_AC4910"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4914@@3IA",
+   "sym_key": "DataGlobal_AC4914"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  }
+ ]
+}
