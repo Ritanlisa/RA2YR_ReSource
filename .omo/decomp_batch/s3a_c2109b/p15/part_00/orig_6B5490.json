@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B5490",
+ "name": "LoadFactoryClassTheaterSHP",
+ "size": 179,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B5490",
+ "bytes_hex": "a128eca80081ec6c0200005533ed578bf985c00f8e9100000056a11ceca8008b34a88a862c02000084c0746f8d0cfd000000008d56242bcf8d442478c1e10481c1c61b7e0051526a006a0050e80f4b110083c4148d4c2478518d4c2410e8fee4dbff8d4c240ce895e3deff8d4c24648986a4000000c744240cb0167e00c744247000000000e83659d8ff8d4c240cc744240c68167e00e855c6d7ffa128eca800453be80f8c71ffffff5e5f5d81c46c020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

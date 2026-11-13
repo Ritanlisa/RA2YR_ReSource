@@ -1,0 +1,81 @@
+{
+ "symbol": "?SaveLoad_Prefix@SuperWeaponTypeClass@@QAGHH@Z",
+ "sym_key": "SuperWeaponTypeClass::SaveLoad_Prefix",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "8b44240881ec04020000568bb4240c0200005056e80000000085c00f8c8600000085f674238d4c2407518bcee800000000b800000000c7463000000000890689460489460889460c8d96a000000057526800000000e8000000008d7e30576800000000e8000000008b86d00000006800000000506a008d4c24186a0051e80000000083c41432d28d4c240ce80000000085c08907750e32d2b9dc010000e800000000890733c05f5e81c404020000c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix_0@@YGHPAXH@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix_0"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Init@AbstractTypeClass@@QAEHH@Z",
+   "sym_key": "AbstractTypeClass::Init"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?vt_SuperWeaponTypeClass_4@@3PAXA",
+   "sym_key": "vt_SuperWeaponTypeClass_4"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?DataGlobal_820320@@3IA",
+   "sym_key": "DataGlobal_820320"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  }
+ ]
+}

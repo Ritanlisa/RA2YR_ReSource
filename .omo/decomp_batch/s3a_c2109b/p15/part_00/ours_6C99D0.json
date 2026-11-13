@@ -1,0 +1,57 @@
+{
+ "symbol": "?CreateSurfaceTracker@BinkMovie@@QAEPAIPAD@Z",
+ "sym_key": "BinkMovie::CreateSurfaceTracker",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "81ec0001000053558bac240c01000033db563beb570f84b80000008bfd83c9ff33c0f2aef7d1490f84a60000006a34e8000000008bf083c4043bf30f84920000008d4424105350535355891e895e04895e08895e0c895e10895e14895e18895e1c895e20e80000000083c4148d4c2410e8000000003c01754b6a20e8000000008bf883c4043bfb743b6800fb040033c9c7470480020000c74708ff000000895f0cc70700000000c7471002000000e8000000005357c70700000000ff1518000000897e108bc65f5e5d5b81c400010000c204005f5e5d33c05b81c400010000c20400",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?_splitpath@@YAHPAXHH0HZZ",
+   "sym_key": "_splitpath"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?InitKeyframeTracking@BinkMovie@@QAEDXZ",
+   "sym_key": "BinkMovie::InitKeyframeTracking"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  }
+ ]
+}

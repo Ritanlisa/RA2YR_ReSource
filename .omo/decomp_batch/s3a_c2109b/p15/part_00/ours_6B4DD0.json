@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReadINIEntry@UnitTypeClass@@QAEDXZ",
+ "sym_key": "UnitTypeClass::ReadINIEntry",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "81ec9c0000005355565733c033ffa0000000005750894c2424897c241ce800000000897c241033ed8d4c241866896c241851b90000000066897c241ee8000000008bf08b5e4883fbff747f8a861f01000084c075758b4424108b1500000000508d4c24248b3c9a680000000051e8000000008b44242033d28a961f01000083c724525055578d4c2448680000000051e80000000083c4248d54242c33c98d4424208a0d000000005250518b4c2428e8000000008b7c241425ff00000080e3000bd88b44241040894424104581fd000200000f8c51ffffff4781ff00020000897c24140f8c3effffff5f5e8ac35d5b81c49c000000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81732C@@3EA",
+   "sym_key": "DataGlobal_81732C"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Array@@3PAXA",
+   "sym_key": "FactoryClass_Array"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "??_C@_0M@NJFN@?$CFs?0?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_0M@NJFN@?$CFs?0?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_81732C@@3EA",
+   "sym_key": "DataGlobal_81732C"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

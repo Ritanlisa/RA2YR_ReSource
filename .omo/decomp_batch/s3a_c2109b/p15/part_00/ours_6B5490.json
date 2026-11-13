@@ -1,0 +1,75 @@
+{
+ "symbol": "?LoadFactoryClassTheaterSHP@@YIHH@Z",
+ "sym_key": "Unnamed::LoadFactoryClassTheaterSHP",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ec640200005333db578bf985c00f868a000000568b0d000000008b34998a8e2c02000084c9746c8d14fd000000008d46242bd78d4c2470c1e20481c20000000052506a006a0051e80000000083c4148d5424708d4c241852e8000000008d4c2418e8000000008986a40000008d4c240cc744241800000000e8000000008d4c2418c744241800000000e800000000a100000000433bd80f8278ffffff5e5f5b81c464020000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Array@@3PAXA",
+   "sym_key": "FactoryClass_Array"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?ReadEntireFile@CCFileClass@@QAEPAXXZ",
+   "sym_key": "CCFileClass::ReadEntireFile"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  }
+ ]
+}
