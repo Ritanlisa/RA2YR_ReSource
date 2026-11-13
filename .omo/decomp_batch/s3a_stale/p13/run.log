@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x5ce8c0 MSPCXAnim::Draw -> MSPCXAnim
+[conv] 0x5cf8e0 MSChoiceClass::LoadFromINI -> MSChoiceClass
+[conv] 0x5d39d0 SessionClass::saveSettings -> SessionClass
+[conv] 0x5d5ac0 System_Init -> System
+[conv] 0x5d5f30 MultiplayerGameMode::Find -> MultiplayerGameMode
+[conv] 0x5d6440 MultiplayerGameMode::MissionStubReturnZero3 -> MultiplayerGameMode
+[conv] 0x5d7550 sub_5D7550 -> _addr_5D
+[conv] 0x5e2790 Dialog::ShowStatusText -> Dialog
+[conv] 0x5e3ab0 SendMultiplayerStartSignal -> _addr_5E
+[conv] 0x5e68a0 SkirmishDialog::Show -> SkirmishDialog
+[conv] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> ObjectClass
+[conv] 0x5e9240 NetworkLobby::AssignPlayerSlot -> NetworkLobby
+[conv] 0x5e9290 NetworkLobby::CheckLobbyConditions -> NetworkLobby
+[conv] 0x5e9340 ObjectClass::Audio_Helper -> ObjectClass
+[conv] 0x5e9510 NetworkLobby::CheckMinPlayers -> NetworkLobby
+[conv] 0x5e9b60 SelectLobbyCountry -> _addr_5E
+[conv] 0x5e9c00 AssignPlayerColor -> _addr_5E
+[conv] 0x5e9e70 SetupSkirmishPlayerSlots -> _addr_5E
+[conv] 0x5edde0 EnablePlayerSlotControls -> _addr_5E
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] MSPCXAnim                rc=2
+[era] MSChoiceClass            rc=2
+[era] SessionClass             rc=2
+[era] System                   rc=2
+[era] MultiplayerGameMode      rc=2
+[era] _addr_5D                 rc=2
+[era] Dialog                   rc=2
+[era] _addr_5E                 rc=2
+[era] SkirmishDialog           rc=2
+[era] NetworkLobby             rc=2
+=== diffasm byte-compare ===
+[diff] 0x5e9340   MISMATCH         ObjectClass::Audio_Helper
+[ledger] 0x5ce330 ObjectClass::sub_5CE330 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ce8c0 MSPCXAnim::Draw -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5cf8e0 MSChoiceClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d39d0 SessionClass::saveSettings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d5ac0 System_Init -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5d5f30 MultiplayerGameMode::Find -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d6440 MultiplayerGameMode::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5d7550 sub_5D7550 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e2790 Dialog::ShowStatusText -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e3ab0 SendMultiplayerStartSignal -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e68a0 SkirmishDialog::Show -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5e9240 NetworkLobby::AssignPlayerSlot -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9290 NetworkLobby::CheckLobbyConditions -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5e9340 ObjectClass::Audio_Helper -> NG (attempt 4)
+[ledger] 0x5e9510 NetworkLobby::CheckMinPlayers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5e9e70 SetupSkirmishPlayerSlots -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p13\batch_report.json

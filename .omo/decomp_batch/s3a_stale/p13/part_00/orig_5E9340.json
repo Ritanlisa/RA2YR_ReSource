@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E9340",
+ "name": "Audio_Helper",
+ "size": 174,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E9340",
+ "bytes_hex": "a138b2a80053555683f804578be97520e8eb45190084c07410e81246190084c07507bb02000000eb0cbb06000000eb05bb08000000a1a416830085c0750683fb077d014333ffbe90daa8008b0e85c97413e82abd14005055e883f91d0083c40885c0741183c6044781feb0daa8007cdb5f5e5d5bc38b04bd90daa80083786bff75128b0db411ac00890cbd90daa8005f5e5d5bc3a19c11ac003bfb7c05a1a011ac008904bd90daa8005f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

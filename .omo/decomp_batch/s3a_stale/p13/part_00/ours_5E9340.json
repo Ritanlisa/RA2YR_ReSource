@@ -1,0 +1,93 @@
+{
+ "symbol": "?Audio_Helper@ObjectClass@@QAEJXZ",
+ "sym_key": "ObjectClass::Audio_Helper",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "a10000000053555683f804578bd97522e80000000084c074128bcbe80000000084c07507bd02000000eb0cbd06000000eb05bd08000000a10000000085c0750683fd077d01458b350000000033ff8b0e85c97413e8000000005053e80000000083c40885c0741183c6044781fe000000007cdb5f5e5d5bc38b04bd0000000083786bff75128b0d00000000890cbd000000005f5e5d5bc3a1000000003bfd7c05a1000000008904bd000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_MPCooperativeState@@3IA",
+   "sym_key": "g_MPCooperativeState"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAD@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  }
+ ]
+}
