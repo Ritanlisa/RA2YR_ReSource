@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p140\part_00
+=== convert (20 addrs) ===
+[conv] 0x594420 FloodFillRandomMapTerrain -> _addr_59
+[conv] 0x4df510 FootClass::ScanAdjacentCells -> FootClass
+[conv] 0x58b820 ObjectClass::ComputeMapCameraBounds -> ObjectClass
+[conv] 0x58ebc0 ObjectClass::BuildRandomMapTiles -> ObjectClass
+[conv] 0x698cb0 Game::DumpMultiplayerGameInfo -> Game
+[conv] 0x5236a0 InfantryTypeClass::Constructor -> InfantryTypeClass
+[conv] 0x447b20 BuildingClass::CalculateTurretAngle -> BuildingClass
+[conv] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> TechnoTypeClass
+[conv] 0x4d1370 FoggedObjectClass::InitDrawRecord -> FoggedObjectClass
+[conv] 0x443410 BuildingClass::HandleFactoryCommand -> BuildingClass
+[conv] 0x455f10 TechnoClass::MarkBuildingFoundationCells -> TechnoClass
+[conv] 0x72e450 RenderScoreScreen -> _addr_72
+[conv] 0x4e1640 ShpButtonClass::ProcessEvents -> ShpButtonClass
+[conv] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> JumpjetLocomotionClass
+[conv] 0x7a3d90 CNetUtilEventSink::Write -> CNetUtilEventSink
+[conv] 0x5a8f00 PlaceRandomTerrainFeatures -> _addr_5A
+[conv] 0x65dd30 ObjectClass::ConstructTeamMembers -> ObjectClass
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x502d60 HouseClass::UpdatePowerTimers -> HouseClass
+[conv] 0x6a5bf0 SidebarClass::CleanupSidebarResources -> SidebarClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_59                 rc=0
+[era] FootClass                rc=2
+[era] ObjectClass              rc=2
+[era] Game                     rc=2
+[era] InfantryTypeClass        rc=2
+[era] BuildingClass            rc=2
+[era] TechnoTypeClass          rc=2
+[era] FoggedObjectClass        rc=2
+[era] TechnoClass              rc=2
+[era] _addr_72                 rc=2
+[era] ShpButtonClass           rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] CNetUtilEventSink        rc=2
+[era] _addr_5A                 rc=2
+[era] HouseClass               rc=0
+[era] SidebarClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x594420   MISMATCH         FloodFillRandomMapTerrain
+[diff] 0x443410   MISMATCH         BuildingClass::HandleFactoryCommand
+[diff] 0x502d60   MISMATCH         HouseClass::UpdatePowerTimers
+[diff] 0x6a5bf0   MISMATCH         SidebarClass::CleanupSidebarResources
+[ledger] 0x594420 FloodFillRandomMapTerrain -> NG (attempt 1)
+[ledger] 0x4df510 FootClass::ScanAdjacentCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58b820 ObjectClass::ComputeMapCameraBounds -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58ebc0 ObjectClass::BuildRandomMapTiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x698cb0 Game::DumpMultiplayerGameInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5236a0 InfantryTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x447b20 BuildingClass::CalculateTurretAngle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d1370 FoggedObjectClass::InitDrawRecord -> COMPILE_FAIL (attempt 1)
+[ledger] 0x443410 BuildingClass::HandleFactoryCommand -> NG (attempt 1)
+[ledger] 0x455f10 TechnoClass::MarkBuildingFoundationCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72e450 RenderScoreScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e1640 ShpButtonClass::ProcessEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a3d90 CNetUtilEventSink::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a8f00 PlaceRandomTerrainFeatures -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65dd30 ObjectClass::ConstructTeamMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x502d60 HouseClass::UpdatePowerTimers -> NG (attempt 1)
+[ledger] 0x6a5bf0 SidebarClass::CleanupSidebarResources -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p140\batch_report.json

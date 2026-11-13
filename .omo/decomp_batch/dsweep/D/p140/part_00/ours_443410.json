@@ -1,0 +1,177 @@
+{
+ "symbol": "?HandleFactoryCommand@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::HandleFactoryCommand",
+ "size": 660,
+ "link_base": 0,
+ "bytes_hex": "8b842478ffffff81ec9000000048535683f836578bd90f876c02000033c98a8800000000ff248d000000008b44240c85c00f84510200008b136a006a00506a0153ff92780300005f5eb0015b81c490000000c3538d4c241ce8000000008b308a40048b0b5388442414ff51388b5424108d4c242c52566a1150e800000000813d000000008000000073468b0d000000008bf08d14c98d0c918dbc4900000000b91b000000f3a566a5a4e8000000008b0d0000000089048d00000000a1000000004183e17f40890d00000000a3000000008b83200500008b74240c8a88d10c000084c974108b0b6a006a00566a1053ff91780300008b83200500008a88ae16000084c9750a8a88af16000084c974108b136a006a00566a1053ff92780300008b0353ff900804000085c00f8e590100008b0b6a006a00566a1053ff91780300005f5eb0015b81c490000000c3538d4c241ce8000000008a50048b4b388b00528b5128506a0a8d4c24388b423050e800000000eb6f8b8b200500008b81b80e000083f8100f84be00000083f8280f84b500000083f8030f84ac0000008b54240c8d4c241852e8000000008b308a4004538d4c241088442414e8000000008a48048b138b3853884c2418ff52388b4c24108b542414515652576a1e508d4c2444e800000000813d00000000800000000f83960000008b0d000000008bf08d14c98d0c918dbc4900000000b91b000000f3a566a5a4e8000000008b0d000000008b3500000000465f89048d000000004189350000000083e17f5e890d00000000b0015b81c490000000c38b44240c8d54242052508b08ff51488bf08b44240c33c924008a4e016a010bc833c0894c24108a460580e1000bc18d4c241c518bcb8944241489442420e8000000005f5eb0015b81c490000000c3",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "$L2028",
+   "sym_key": "$L2028"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "$L2029",
+   "sym_key": "$L2029"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?Add@EventClass@@QAEPADHEHD@Z",
+   "sym_key": "EventClass::Add"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3PAEA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_CrateSystemState@@3PAIA",
+   "sym_key": "g_CrateSystemState"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?Add@EventClass@@QAEPADHEHD@Z",
+   "sym_key": "EventClass::Add"
+  },
+  {
+   "off": 420,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 439,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 478,
+   "type": "REL32",
+   "sym": "?SetEvent@ScenarioClass@@QAEPADHDHDHD@Z",
+   "sym_key": "ScenarioClass::SetEvent"
+  },
+  {
+   "off": 484,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 515,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3PAEA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 530,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 542,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 551,
+   "type": "DIR32",
+   "sym": "?g_CrateSystemState@@3PAIA",
+   "sym_key": "g_CrateSystemState"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 568,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 644,
+   "type": "REL32",
+   "sym": "?SetRallyPoint@BuildingClass@@QAEXPAXD@Z",
+   "sym_key": "BuildingClass::SetRallyPoint"
+  }
+ ]
+}
