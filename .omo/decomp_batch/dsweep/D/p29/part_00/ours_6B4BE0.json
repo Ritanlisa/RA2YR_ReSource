@@ -1,0 +1,39 @@
+{
+ "symbol": "?UnloadPassengers@SmudgeClass@@QAEDH@Z",
+ "sym_key": "SmudgeClass::UnloadPassengers",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "5156578b7c24108bf1e80000000084c0746e83ff01740583ff0375648b068d4c24085156ff90b80100008b10a10000000085c0895424107f1fa1f009000085c075168b8eac0000008d4424106a0150e80000000084c074108d4c2410518b8eac000000e8000000008b1656c7467400000000ff92f80000005fb0015e59c204005f32c05e59c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?UpdateProductionDisplay@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::UpdateProductionDisplay"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?IsWalkable@Cell@@QAEDPAXD@Z",
+   "sym_key": "Cell::IsWalkable"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?CreateUnloadPlacementCraters@UnitClass@@QAEHPAX@Z",
+   "sym_key": "UnitClass::CreateUnloadPlacementCraters"
+  }
+ ]
+}

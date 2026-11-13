@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B4BE0",
+ "name": "UnitClass::UnloadPassengers",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B4BE0",
+ "bytes_hex": "5156578b7c24108bf157e8610cf4ff84c0746d83ff01740583ff0375638b068d4c2408518bceff90b80100008b0089442410a1ace7a80085c07f1fa06beda80084c075168b8eac0000008d5424106a0152e84a13000084c074108b8eac0000008d44241050e8361400008b168bcec6467400ff92f80000005fb0015e59c204005f32c05e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

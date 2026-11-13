@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_65F710@@YGHPAXHH0@Z",
+ "sym_key": "Unnamed::sub_65F710",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "538b5c240c558b6c240c568b74241c578b7c241c56578bd38bcde80000000085c0753081fb11010000752656e8000000003d230400007519c1ff10f7c7ffff0000750e6a0855e800000000c7002304000033c05f5e5d5bc21000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?GetDlgCtrlID@@YGHPAX@Z",
+   "sym_key": "GetDlgCtrlID"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  }
+ ]
+}

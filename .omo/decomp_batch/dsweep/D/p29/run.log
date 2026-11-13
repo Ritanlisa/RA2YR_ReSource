@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x5ee100 ObjectClass::Network_Send -> ObjectClass
+[conv] 0x5e2700 Dialog::ShowMessage -> Dialog
+[conv] 0x43aa90 BrainClass::sub_43AA90 -> BrainClass
+[conv] 0x53d850 ObjectClass::Render_Render_53D850 -> ObjectClass
+[conv] 0x54b750 JumpjetLocomotionClass::InitClass -> JumpjetLocomotionClass
+[conv] 0x7a2f30 System_Init_7A2F30 -> System_Init
+[conv] 0x65f710 sub_65F710 -> _addr_65
+[conv] 0x6b4be0 SmudgeClass::UnloadPassengers -> SmudgeClass
+[conv] 0x4f3690 GraphicMenuImageItem::Load -> GraphicMenuImageItem
+[conv] 0x41c250 ObjectClass::CreateInstanceCOM -> ObjectClass
+[conv] 0x6bedb0 COMClassFactory::Register -> COMClassFactory
+[conv] 0x6956d0 Network::sendGameEvent -> Network
+[conv] 0x5ed370 Session::StartGame -> Session
+[conv] 0x490400 ConvertClass::sub_490400 -> ConvertClass
+[conv] 0x6f1bb0 TeamTypeClass::LoadTypeData -> TeamTypeClass
+[conv] 0x727bf0 TriggerTypeClass::LoadTypeData -> TriggerTypeClass
+[conv] 0x417bd0 AircraftClass::ValidateMovement -> AircraftClass
+[conv] 0x7dae9f ___crtMessageBoxA -> _addr_7D
+[conv] 0x447e00 BuildingClass::initAnimation -> BuildingClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WDTGame                  rc=2
+[era] ObjectClass              rc=2
+[era] Dialog                   rc=2
+[era] BrainClass               rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] System_Init              rc=0
+[era] _addr_65                 rc=0
+[era] SmudgeClass              rc=0
+[era] GraphicMenuImageItem     rc=0
+[era] COMClassFactory          rc=2
+[era] Network                  rc=2
+[era] Session                  rc=0
+[era] ConvertClass             rc=0
+[era] TeamTypeClass            rc=0
+[era] TriggerTypeClass         rc=0
+[era] AircraftClass            rc=0
+[era] _addr_7D                 rc=2
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ee100   MATCH            ObjectClass::Network_Send
+[diff] 0x53d850   MISMATCH         ObjectClass::Render_Render_53D850
+[diff] 0x43aa90   MISMATCH         BrainClass::sub_43AA90
+[diff] 0x7a2f30   MISMATCH         System_Init_7A2F30
+[diff] 0x65f710   MISMATCH         sub_65F710
+[diff] 0x6b4be0   MISMATCH         SmudgeClass::UnloadPassengers
+[diff] 0x4f3690   MISMATCH         GraphicMenuImageItem::Load
+[diff] 0x5ed370   MISMATCH         Session::StartGame
+[diff] 0x490400   MISMATCH         ConvertClass::sub_490400
+[diff] 0x6f1bb0   MISMATCH         TeamTypeClass::LoadTypeData
+[diff] 0x727bf0   MISMATCH         TriggerTypeClass::LoadTypeData
+[diff] 0x417bd0   MISMATCH         AircraftClass::ValidateMovement
+[diff] 0x447e00   MISMATCH         BuildingClass::initAnimation
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee100 ObjectClass::Network_Send -> OK (attempt 1)
+[ledger] 0x5e2700 Dialog::ShowMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43aa90 BrainClass::sub_43AA90 -> NG (attempt 1)
+[ledger] 0x53d850 ObjectClass::Render_Render_53D850 -> NG (attempt 1)
+[ledger] 0x54b750 JumpjetLocomotionClass::InitClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2f30 System_Init_7A2F30 -> NG (attempt 1)
+[ledger] 0x65f710 sub_65F710 -> NG (attempt 1)
+[ledger] 0x6b4be0 SmudgeClass::UnloadPassengers -> NG (attempt 1)
+[ledger] 0x4f3690 GraphicMenuImageItem::Load -> NG (attempt 1)
+[ledger] 0x41c250 ObjectClass::CreateInstanceCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bedb0 COMClassFactory::Register -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6956d0 Network::sendGameEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ed370 Session::StartGame -> NG (attempt 1)
+[ledger] 0x490400 ConvertClass::sub_490400 -> NG (attempt 1)
+[ledger] 0x6f1bb0 TeamTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x727bf0 TriggerTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x417bd0 AircraftClass::ValidateMovement -> NG (attempt 1)
+[ledger] 0x7dae9f ___crtMessageBoxA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x447e00 BuildingClass::initAnimation -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MATCH": 1,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 5,
+  "const_fold": 2,
+  "width_mismatch": 1,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p29\batch_report.json

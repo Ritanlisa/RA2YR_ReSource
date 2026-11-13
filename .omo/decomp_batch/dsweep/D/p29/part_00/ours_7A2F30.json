@@ -1,0 +1,27 @@
+{
+ "symbol": "?System_Init_7A2F30@@YGHHHH@Z",
+ "sym_key": "Unnamed::System_Init_7A2F30",
+ "size": 139,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c33db3bf3750a5eb8570007805bc20c008b4424108d4e1c8946108b442414575189460889460c894604895e14895e18e8000000008d563452e8000000008d464c50e8000000008b7e10895e683bfbc6466c01895e74895e7c895e78899e80000000741a391f74166a01ff5720833e64750583c71ceb0383c724391f75ea5f5e33c05bc20c00",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  }
+ ]
+}

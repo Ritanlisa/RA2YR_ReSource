@@ -1,0 +1,27 @@
+{
+ "symbol": "?ValidateMovement@AircraftClass@@QAEDHPAHH@Z",
+ "sym_key": "AircraftClass::ValidateMovement",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "558b6c241056578b7c24148bf155578b0656ff50748d48fe83f90f775a33d28a9100000000ff2495000000005f5e32c05dc20c008b066a00576a006a0756ff90780300005f5e5dc20c008b0e6a006a006a006a1056ff91780300005f5e5dc20c008b166a00576a006a0256ff92780300005f5e5dc20c005557508bcee8000000005f5e5dc20c00",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "$L1903",
+   "sym_key": "$L1903"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "$L1904",
+   "sym_key": "$L1904"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?ValidateMove@FootClass@@QAEDHPAXD@Z",
+   "sym_key": "FootClass::ValidateMove"
+  }
+ ]
+}

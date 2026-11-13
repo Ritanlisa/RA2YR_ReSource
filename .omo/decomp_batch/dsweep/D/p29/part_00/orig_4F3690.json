@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3690",
+ "name": "GraphicMenuImageItem::Load",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3690",
+ "bytes_hex": "538a5c2408568bf18b4e2485c9741a8a460984c0740b84db7507b801000000eb0233c08b1150ff52048b4e2885c9741a8a460984c0740b84db7407b801000000eb0233c08b1150ff52048b4e2c85c9740e8a56098b0184d20f94c252ff50048b4e108d461450e8c5ef0d008b4e10e84de70d0084db740c8b4e3085c97405e87dce0d005e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

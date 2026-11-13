@@ -1,0 +1,21 @@
+{
+ "symbol": "?initAnimation@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::initAnimation",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "83ec24538b5c240456578b038bf98d4c24185153ff50488b178bf08d442424535057ff92a80000008b48088b56088b1e2bca8b50048b00894c240c8b4e042bd133c989542410894c2414df6c24102bc3894c24148944241083ec08df6c2418db442414d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b4c241c8b5424185152ddd8e8000000008b4c241c83c41033c125ff0000005f5e33c15b83c424c3",
+ "relocs": [
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EE100",
+ "name": "Network_Send",
+ "size": 135,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EE100",
+ "bytes_hex": "a104178300568bf150e802661c0084c0756e8b0d08178300518bcee8f0651c0084c0755c8b150c1783008bce52e8de651c0084c0754aa1101783008bce50e8cd651c0084c075398b0d14178300518bcee8bb651c0084c075278b15181783008bce52e8a9651c0084c07515a11c1783008bce50e898651c0084c0750433c05ec3b8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

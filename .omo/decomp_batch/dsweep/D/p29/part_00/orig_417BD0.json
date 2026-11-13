@@ -1,0 +1,11 @@
+{
+ "addr": "0x417BD0",
+ "name": "AircraftClass::ValidateMovement",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x417BD0",
+ "bytes_hex": "558b6c2410568bf1578b7c24148b065557ff50748d48fe83f90f775d33d28a91707c4100ff24955c7c41008b066a00576a006a028bceff90780300005f5e5dc20c005f5e32c05dc20c008b166a00576a006a078bceff92780300005f5e5dc20c008b066a006a006a006a108bceff90780300005f5e5dc20c005557508bcee88df80b005f5e5dc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

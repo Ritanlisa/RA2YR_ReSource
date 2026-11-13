@@ -1,0 +1,93 @@
+{
+ "symbol": "?Network_Send@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Network_Send",
+ "size": 135,
+ "link_base": 0,
+ "bytes_hex": "a100000000568bf150e80000000084c0756e8b0d00000000518bcee80000000084c0755c8b15000000008bce52e80000000084c0754aa1000000008bce50e80000000084c075398b0d00000000518bcee80000000084c075278b15000000008bce52e80000000084c07515a1000000008bce50e80000000084c0750433c05ec3b8010000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831704@@3PAXA",
+   "sym_key": "DataGlobal_831704"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831708@@3PAXA",
+   "sym_key": "DataGlobal_831708"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83170C@@3PAXA",
+   "sym_key": "DataGlobal_83170C"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831710@@3PAXA",
+   "sym_key": "DataGlobal_831710"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831714@@3PAXA",
+   "sym_key": "DataGlobal_831714"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?DataGlobal_831718@@3PAXA",
+   "sym_key": "DataGlobal_831718"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83171C@@3PAXA",
+   "sym_key": "DataGlobal_83171C"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  }
+ ]
+}

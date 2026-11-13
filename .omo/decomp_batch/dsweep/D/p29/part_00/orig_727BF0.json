@@ -1,0 +1,11 @@
+{
+ "addr": "0x727BF0",
+ "name": "TriggerTypeClass::LoadTypeData",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x727BF0",
+ "bytes_hex": "8b442408568b7424085056e88087ceff85c07c7185f674278d4c240c518bcee84c8dceffc70604597f00c74604e8587f00c74608e0587f00c7460cd8587f008d96a8000000526810c1b000e80076faff8d86ac000000506810c1b000e8ef75faff8d8eb0000000516810c1b000e8de75faff81c6a4000000566810c1b000e8cd75faff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

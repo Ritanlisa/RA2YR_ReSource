@@ -1,0 +1,11 @@
+{
+ "addr": "0x5ED370",
+ "name": "Session::StartGame",
+ "size": 136,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5ED370",
+ "bytes_hex": "a1ccb8a800578bf98b0d54b2a8008b0c88e86ada0a0084c07465568b355411ac0085f674108bcee85433050056e89bb71d0083c4046a04e86bba1d0083c40485c05e74098bc8e825330500eb0233c068bc9a82008bc8a35411ac00e8e04905008b155411ac00833a0075078bcfe8fea0ffff6a006a0057ff159c147e005fc38bcfe8eaa0ffff5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

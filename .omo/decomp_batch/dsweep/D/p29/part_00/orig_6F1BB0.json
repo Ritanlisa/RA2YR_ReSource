@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F1BB0",
+ "name": "TeamTypeClass::LoadTypeData",
+ "size": 137,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F1BB0",
+ "bytes_hex": "8b442408568b7424085056e8c0e7d1ff85c07c7185f674278d4c240c518bcee88cedd1ffc706d0477f00c74604b4477f00c74608ac477f00c7460ca4477f008d96c4000000526810c1b000e840d6fdff8d86d0000000506810c1b000e82fd6fdff8d8ee0000000516810c1b000e81ed6fdff81c6e4000000566810c1b000e80dd6fdff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

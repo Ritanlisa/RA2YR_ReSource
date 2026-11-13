@@ -1,0 +1,99 @@
+{
+ "symbol": "?StartGame@Session@@QAEHXZ",
+ "sym_key": "Session::StartGame",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "0fbe0504000000578bf98b0d000000008b0c81e80000000084c075098bcfe8000000005fc38b0d000000005685c98bf1740ee80000000056e80000000083c4046a04e80000000083c40485c05e740b50e80000000083c404eb0233c033d28bc88a1500000000a30000000052e800000000a10000000083380075078bcfe8000000006a006a0057e8000000005fc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Sed@IsRandMap@@QAEHXZ",
+   "sym_key": "IsRandMap::Sed"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?PrepareGame@Session@@QAEHXZ",
+   "sym_key": "Session::PrepareGame"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Dtor@ComPtr@@QAEHXZ",
+   "sym_key": "ComPtr::Dtor"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?unknown_libname_27@@YAHPAX@Z",
+   "sym_key": "unknown_libname_27"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?ExistingFileName@@3EA",
+   "sym_key": "ExistingFileName"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?LoadToSurfaceSHP@Surface@@QAEDPAX@Z",
+   "sym_key": "Surface::LoadToSurfaceSHP"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_UIControlState@@3PAXA",
+   "sym_key": "g_UIControlState"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?PrepareGame@Session@@QAEHXZ",
+   "sym_key": "Session::PrepareGame"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?InvalidateRect@@YGHPAXHH@Z",
+   "sym_key": "InvalidateRect"
+  }
+ ]
+}

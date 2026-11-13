@@ -1,0 +1,11 @@
+{
+ "addr": "0x447E00",
+ "name": "AnimClass::initAnimation",
+ "size": 138,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x447E00",
+ "bytes_hex": "83ec24538b5c242c56578b038bf98d4c2418518bcbff50488b178bf08d44242453508bcfff92a80000008b50048b7e048b088b40088b1e2bd7895424108b5608db4424102bc22bcb89442414894c240cdb442414db44240c83ec08d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8c72d080083c408e87fe037005f5e5b83c424c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

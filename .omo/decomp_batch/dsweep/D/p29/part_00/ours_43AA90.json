@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_43AA90@BrainClass@@QAEPAID@Z",
+ "sym_key": "BrainClass::sub_43AA90",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "5355568bf15733db8b6e1433ff3beb891e7e1e8b46088b04b83bc374088b086a0150ff51208b5608473bfd895cbafc7ce28b46048d7e0457ff500c8b4608c707000000003bc37411385e11740c50e80000000083c404895e088a442414885e11a801895e0c740956e80000000083c4048bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_NeuronClass@@3PAXA",
+   "sym_key": "vt_VectorClass_NeuronClass"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
