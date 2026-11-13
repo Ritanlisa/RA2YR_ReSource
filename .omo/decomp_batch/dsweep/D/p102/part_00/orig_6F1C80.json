@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F1C80",
+ "name": "TeamTypeClass::PowerDrainUpdate",
+ "size": 406,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F1C80",
+ "bytes_hex": "56578b7c240c8bf157e852efd1ff8b869c0000008bcf50e8b400dbff8a8ea8000000518bcfe8f6ffdaff8a96a90000008bcf52e8e8ffdaff8a86aa0000008bcf50e8daffdaff8a8eab000000518bcfe8ccffdaff8a96ac0000008bcf52e8beffdaff8a86ad0000008bcf50e8b0ffdaff8a8eae000000518bcfe8a2ffdaff8a96af0000008bcf52e894ffdaff8a86b00000008bcf50e886ffdaff8a8eb1000000518bcfe878ffdaff8b96b40000008bcf52e81a00dbff8b86b80000008bcf50e80c00dbff8b8ebc000000518bcfe8feffdaff8b8ec400000085c9740d8b11ff522c508bcfe8e7ffdaff8b86c400000085c074128b480483c00450ff5110508bcfe8cbffdaff8b96cc0000008bcf52e8bdffdaff8b86d000000085c074128b480483c00450ff5110508bcfe8a1ffdaff8b96d40000008bcf52e893ffdaff8b86d80000008bcf50e885ffdaff8b8edc000000518bcfe877ffdaff8b86e000000085c074128b500483c00450ff5210508bcfe85bffdaff8bb6e400000085f674128b4e048d460450ff5110508bcfe83fffdaff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?InsertElement@Array@@QAEDPBXH@Z",
+ "sym_key": "Array::InsertElement",
+ "size": 432,
+ "link_base": 0,
+ "bytes_hex": "518b44240c538bd956578b0b3bc17e06894c24188bc18b5304553bc20f8c8c0000003bca0f8c840000008d2c0983fd0a7d05bd0a0000008bc5c1e00503c58d744500c1e60256e8000000008bce8bd0c1e902c1e1028bf133c08bfa83c404c1e902f3ab8bce8954241083e103f3aa8b730885f6741f8b038bfa8bc8c1e10503c88d0c48c1e1028bd1c1e902f3a58bca83e103f3a48b430850e8000000008b4c24148b44242083c404894b08896b048b0b8b53043bca0f82840000008d2c0983fd0a7d05bd0a0000008bd5c1e20503d58d745500c1e60256e8000000008bce8bd0c1e902c1e1028bf133c08bfa83c404c1e902f3ab8bce8954241083e103f3aa8b730885f6741f8b038bfa8bc8c1e10503c88d0c48c1e1028bd1c1e902f3a58bca83e103f3a48b430850e8000000008b4c24148b44242083c404894b08896b048b0b3bc1733d2bc88b7b088bd1c1e20503d18d0c518bd0c1e20503d0c1e1028d14508d34978d50018beac1e50503ea8d146a8d3c978bd1c1e902f3a58bca83e103f3a48bc85dc1e10503c88d14488b43088d3c9085ff740b8b742414b943000000f3a58b035f405e8903b0015b59c20800",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "symbol": "?SaveMultiplayerLobbySettings@@YIDPAXH@Z",
+ "sym_key": "Unnamed::SaveMultiplayerLobbySettings",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "33c053a000000000558bd98bea8b0833d2894d008a1554b2a8005657895504be0100000085f674508d46ff83f8057731ff248500000000bf12040000eb3fbf13040000eb38bf14040000eb31bf15040000eb2abf16040000eb23bf17040000eb1c8bfe83ef07f7df1bff81e7e7fbffff81c718040000eb05bf110400006a006a0068470100005753e8000000006a005068500100005753e8000000008bc88b15000000004156f7d91bc923c88d04762bd1f7da1bd28d7c850083e2fb83c20789571ce80000000083c4048bd08bcb6affe80000000089472056e80000000083c4048bd08bcb6affe8000000008d4c76094683fe0889448d000f8c26ffffff33d233c08a1568b2a80033c9895508a05cb2a80089450c8a0d70b2a800894d108a1562b2a800885514a063b2a8008845158a0d64b2a800884d168a1500000000885517a061b2a8008ac85f884d185e5d5bc3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "$L1920",
+   "sym_key": "$L1920"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?GetResourceID2CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID2CSF"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?GetComboBoxSelected@@YIJPAXHH@Z",
+   "sym_key": "GetComboBoxSelected"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?GetResourceIDCSF@@YAHPAX@Z",
+   "sym_key": "GetResourceIDCSF"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?GetComboBoxSelectedRaw@@YIJPAXHH@Z",
+   "sym_key": "GetComboBoxSelectedRaw"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?MCVRedeploy@@3IA",
+   "sym_key": "MCVRedeploy"
+  }
+ ]
+}

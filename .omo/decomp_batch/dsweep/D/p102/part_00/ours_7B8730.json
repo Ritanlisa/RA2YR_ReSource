@@ -1,0 +1,189 @@
+{
+ "symbol": "?Construct@MouseClass@@QAEPAIHH@Z",
+ "sym_key": "MouseClass::Construct",
+ "size": 349,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568bf18b4c241033db578b7e2c894624c70600000000895e04895e08c7460cffffffff885e10895e14895e18895e1c895e20894e288b15000000008917a1000000008947048b0d00000000894f08a100000000895e40895e4489470c895e488b1500000000681027000089564ca1000000008946508b0d00000000894e54a100000000895e5c8946588b1500000000895660a1000000008946648b0d00000000894e68a100000000895e7089466c8b1500000000895674a1000000008946788b0d00000000894e788b1500000000895678a1000000008946788b0d00000000894e788b150000000089968c000000a100000000894678c70600000000a10000000050e8000000003d0201000075078bcee8000000008bcee8000000008b4e388b178b463cd1e903ca992bc28b562cd1f803c2894e408946448b150000000052893500000000e80000000053e8000000008bc65f5e5bc20800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?vt_Mouse@@3PAXA",
+   "sym_key": "vt_Mouse"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78128@@3IA",
+   "sym_key": "DataGlobal_B78128"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7812C@@3IA",
+   "sym_key": "DataGlobal_B7812C"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78130@@3IA",
+   "sym_key": "DataGlobal_B78130"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78134@@3IA",
+   "sym_key": "DataGlobal_B78134"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78128@@3IA",
+   "sym_key": "DataGlobal_B78128"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7812C@@3IA",
+   "sym_key": "DataGlobal_B7812C"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78130@@3IA",
+   "sym_key": "DataGlobal_B78130"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78134@@3IA",
+   "sym_key": "DataGlobal_B78134"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78128@@3IA",
+   "sym_key": "DataGlobal_B78128"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7812C@@3IA",
+   "sym_key": "DataGlobal_B7812C"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78130@@3IA",
+   "sym_key": "DataGlobal_B78130"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78134@@3IA",
+   "sym_key": "DataGlobal_B78134"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78128@@3IA",
+   "sym_key": "DataGlobal_B78128"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7812C@@3IA",
+   "sym_key": "DataGlobal_B7812C"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78130@@3IA",
+   "sym_key": "DataGlobal_B78130"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78134@@3IA",
+   "sym_key": "DataGlobal_B78134"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78128@@3IA",
+   "sym_key": "DataGlobal_B78128"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7812C@@3IA",
+   "sym_key": "DataGlobal_B7812C"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78130@@3IA",
+   "sym_key": "DataGlobal_B78130"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78134@@3IA",
+   "sym_key": "DataGlobal_B78134"
+  },
+  {
+   "off": 253,
+   "type": "DIR32",
+   "sym": "?vt_WWMouseClass@@3PAXA",
+   "sym_key": "vt_WWMouseClass"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?CalcConfiningRect@MouseClass@@QAEXXZ",
+   "sym_key": "MouseClass::CalcConfiningRect"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78164@@3IA",
+   "sym_key": "DataGlobal_B78164"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?ShowCursor@@YGHH@Z",
+   "sym_key": "ShowCursor"
+  }
+ ]
+}

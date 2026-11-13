@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p102\part_00
+=== convert (20 addrs) ===
+[conv] 0x414310 AircraftClass::MoveTo -> AircraftClass
+[conv] 0x6f1c80 TeamTypeClass::PowerDrainUpdate -> TeamTypeClass
+[conv] 0x7ad790 Array::InsertElement -> Array
+[conv] 0x751c30 Map_Load_751C30 -> Map_Load
+[conv] 0x634b20 ObjectClass::Team_Get -> ObjectClass
+[conv] 0x7b8730 MouseClass::Construct -> MouseClass
+[conv] 0x6ba3e0 Surface::TileBlit -> Surface
+[conv] 0x5ed400 SaveMultiplayerLobbySettings -> _addr_5E
+[conv] 0x646590 Math::QuaternionSlerp -> Math
+[conv] 0x541680 Network_Recv -> Network
+[conv] 0x46b0c0 BulletClass::RenderVoxelBullet -> BulletClass
+[conv] 0x74fae0 ObjectClass::GetModuleInternalVersion -> ObjectClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+[conv] 0x777420 ObjectClass::MainWindowProc_Read -> ObjectClass
+[conv] 0x481670 Cell::ApplyDamage -> Cell
+[conv] 0x4a57b0 Dial8Class::GetValue -> Dial8Class
+[conv] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> CChatEventSink
+[conv] 0x6b7f10 SpawnManagerClass::LoadFromStream -> SpawnManagerClass
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=2
+[era] TeamTypeClass            rc=0
+[era] Array                    rc=0
+[era] Map_Load                 rc=2
+[era] ObjectClass              rc=2
+[era] MouseClass               rc=0
+[era] Surface                  rc=2
+[era] _addr_5E                 rc=0
+[era] Math                     rc=2
+[era] Network                  rc=0
+[era] BulletClass              rc=2
+[era] TechnoClass              rc=2
+[era] Cell                     rc=0
+[era] Dial8Class               rc=2
+[era] CChatEventSink           rc=2
+[era] SpawnManagerClass        rc=0
+[era] GraphicMenuImageItem     rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f1c80   MISMATCH         TeamTypeClass::PowerDrainUpdate
+[diff] 0x7ad790   MISMATCH         Array::InsertElement
+[diff] 0x634b20   MISMATCH         ObjectClass::Team_Get
+[diff] 0x7b8730   MISMATCH         MouseClass::Construct
+[diff] 0x5ed400   MISMATCH         SaveMultiplayerLobbySettings
+[diff] 0x541680   MISMATCH         Network_Recv
+[diff] 0x481670   MISMATCH         Cell::ApplyDamage
+[diff] 0x6b7f10   MISMATCH         SpawnManagerClass::LoadFromStream
+[ledger] 0x414310 AircraftClass::MoveTo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1c80 TeamTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x7ad790 Array::InsertElement -> NG (attempt 1)
+[ledger] 0x751c30 Map_Load_751C30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x634b20 ObjectClass::Team_Get -> NG (attempt 1)
+[ledger] 0x7b8730 MouseClass::Construct -> NG (attempt 1)
+[ledger] 0x6ba3e0 Surface::TileBlit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ed400 SaveMultiplayerLobbySettings -> NG (attempt 1)
+[ledger] 0x646590 Math::QuaternionSlerp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x541680 Network_Recv -> NG (attempt 1)
+[ledger] 0x46b0c0 BulletClass::RenderVoxelBullet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74fae0 ObjectClass::GetModuleInternalVersion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x777420 ObjectClass::MainWindowProc_Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f38b0 0x4f38b0 -> PENDING (attempt 1)
+[ledger] 0x481670 Cell::ApplyDamage -> NG (attempt 1)
+[ledger] 0x4a57b0 Dial8Class::GetValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b7f10 SpawnManagerClass::LoadFromStream -> NG (attempt 1)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 8,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 2,
+  "cc_mismatch": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p102\batch_report.json

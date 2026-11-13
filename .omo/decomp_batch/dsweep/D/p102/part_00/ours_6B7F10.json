@@ -1,0 +1,117 @@
+{
+ "symbol": "?LoadFromStream@SpawnManagerClass@@QAGHH@Z",
+ "sym_key": "SpawnManagerClass::LoadFromStream",
+ "size": 421,
+ "link_base": 0,
+ "bytes_hex": "515355568b742414578b7c241c575689742420e80000000033db3bc30f8c7b0100003bf374368d4424188bce50e80000000053538d4e3ce8000000008b0d540a000053894e6c8d4e60895e5ce800000000891e895e04895e0c895e108b17538d4424146a045057ff520c8be83beb0f8c2701000083fec88d7e3c74216a006a008bcfe800000000c707000000008b4e4cc7465c0a000000c701000000008b4c2410c74424180000000085c90f8e930000006a18e80000000083c40485c074128b0d540a0000c74010000000008948088bd88b44241c6a006a18538b1050ff520c8be885ed0f8cb10000008b464c8b4e44390872268b4648f6c4ff750485c9752a8b465c85c07e238b7e3c8d563c03c16a005052ff570884c074108b464c8b56408b088d79018938891c8a8b4424188b4c241083c0043bc1894424187d0733dbe96dffffff33ff85c97e198b4e40478b44b9fc506800000000e8000000003b7c24107ce78d5628526800000000e8000000008d462c506800000000e8000000008d4e6c516800000000e80000000083c670566800000000e8000000008bc55f5e5d5b59c20800",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix_0@@YGHPAX0@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix_0"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Constructor_6B83A0@SpawnManagerClass@@QAEPAIHH@Z",
+   "sym_key": "SpawnManagerClass::Constructor_6B83A0"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Start@Timer@@QAEPAV1@H@Z",
+   "sym_key": "Timer::Start"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Constructor@SpawnControlVector@@QAEPAV1@HH@Z",
+   "sym_key": "SpawnControlVector::Constructor"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 360,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 379,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 388,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 407,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

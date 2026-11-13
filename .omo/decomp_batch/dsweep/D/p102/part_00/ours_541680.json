@@ -1,0 +1,147 @@
+{
+ "symbol": "?Network_Recv@@YIDPAXHHHHF@Z",
+ "sym_key": "Unnamed::Network_Recv",
+ "size": 394,
+ "link_base": 0,
+ "bytes_hex": "a00000000083ec14a80155568bf28be9751a8ac8680100007f80c901880d00000000e800000000a300000000833d00000000040f85c8000000a10000000085c00f84bb000000a00000000084c00f84ae000000668b460c8b15000000008bc881e1ffff00003bca7560668b54242c8b4c24286689560c6a008b4104894608e8000000008bcde8000000008b35000000008b4c242c33f1a10000000081e6ff00000033f18b4c24248b10566a016a006a0c6800000000518b4c24385150ff520cb0015e5d83c414c210006685c07433a1000000008d542408528b0883c128e8000000008b46088b4c24083bc8751e668b1500000000663b560c75118bcde8000000005e32c05d83c414c210008b460885c074ef57668b7e0c8d4c2414e8000000008b46088d4c2410518d4c241889442414e8000000008d4c241457e80000000066c7460c00008d4c24146a00c7460800000000e8000000008bcde800000000a1000000008d4c2414576a018b106a006a0c518b4c243c518b4c243c5150ff520cb0015f5e5d83c414c21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0674@@3EA",
+   "sym_key": "DataGlobal_AA0674"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0674@@3EA",
+   "sym_key": "DataGlobal_AA0674"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?htonl@@YGKH@Z",
+   "sym_key": "htonl"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA06B0@@3IA",
+   "sym_key": "DataGlobal_AA06B0"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_Network_IsHosting@@3IA",
+   "sym_key": "g_Network_IsHosting"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052EC@@3EA",
+   "sym_key": "DataGlobal_B052EC"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_841F3C@@3IA",
+   "sym_key": "DataGlobal_841F3C"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?FormatAddress@Network@@QAEPADPAX@Z",
+   "sym_key": "Network::FormatAddress"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DataGlobal_841F3C@@3IA",
+   "sym_key": "DataGlobal_841F3C"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA06AC@@3EA",
+   "sym_key": "DataGlobal_AA06AC"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?CopyAddress_Small@Network@@QAEHH@Z",
+   "sym_key": "Network::CopyAddress_Small"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?Network_PlayerPorts@@3IA",
+   "sym_key": "Network_PlayerPorts"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "?Copy6Bytes@Struct@@QAEFH@Z",
+   "sym_key": "Struct::Copy6Bytes"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?SetPort@Network@@QAEFF@Z",
+   "sym_key": "Network::SetPort"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?FormatAddress@Network@@QAEPADPAX@Z",
+   "sym_key": "Network::FormatAddress"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 351,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  }
+ ]
+}

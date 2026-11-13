@@ -1,0 +1,45 @@
+{
+ "symbol": "?Team_Get@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Team_Get",
+ "size": 329,
+ "link_base": 0,
+ "bytes_hex": "81ec8c000000538bd933c0558a43305685c057c744241000000000894424140f8ea90000008b4c241033c08a43368d7c242c8b0488b91b0000008bf083c06cf3a5668b108d4c242066899424980000008a40028d54242c8884249a000000e8000000008bcbe80000000033c933c08a4b1033ff85c98be97e408b53048b14828b72083b742410752a8b32568b06ff90880000008b0e8d5424185256ff91b80100008b008bcb8944241ce8000000008bc78bcd403bc18bf87cc08b4424108b4c2414403bc1894424100f8c57ffffff8b83a800000085c07e668d7338b91b0000008d7c242c8d54242cf3a566a58d4c2420a4e8000000008bcbe80000000033c033ff8a431085c08be87e348b4b048b0cb98a510c84d274228b31568b16ff92880000008b068d4c24185156ff90b80100008bcbe8000000008bc5473bf87ccc5f5e5d5b81c48c000000c3",
+ "relocs": [
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}
