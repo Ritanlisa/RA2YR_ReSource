@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x45ac90 _VectorClass_PAVFoggedObjectClass::QueryInterface -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45ace0 _VectorClass_PAVReestablish::Add -> _VectorClass_PAVReestablish
+[conv] 0x45ad30 _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___ -> _DynamicVectorClass_PAVReestablish
+[conv] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> _VectorClass_V_TPoint3D_H
+[conv] 0x46b8c0 _VectorClass_PAVBulletClass::QueryInterface -> _VectorClass_PAVBulletClass
+[conv] 0x46d350 CampaignScore::sub_46D350 -> CampaignScore
+[conv] 0x470c30 CampaignEndScoreClass::sub_470C30 -> CampaignEndScoreClass
+[conv] 0x473000 _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___ -> _VectorClass_PAUControlNode
+[conv] 0x473050 _DynamicVectorClass_PAUControlNode::QueryInterface -> _DynamicVectorClass_PAUControlNode
+[conv] 0x4730a0 _VectorClass_PAVCaptureManagerClass::QueryInterface -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x4730f0 _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___ -> _DynamicVectorClass_PAVCaptureManagerClass
+[conv] 0x477990 _TypeList_H::QueryInterface -> _TypeList_H
+[conv] 0x477a70 _TypeList_PAVTechnoTypeClass::QueryInterface -> _TypeList_PAVTechnoTypeClass
+[conv] 0x477ac0 _TypeList_VRGBClass::QueryInterface -> _TypeList_VRGBClass
+[conv] 0x477b10 _DynamicVectorClass_H::QueryInterface -> _DynamicVectorClass_H
+[conv] 0x478680 _VectorClass_PAVTechnoTypeClass::Add -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x4786d0 _VectorClass_VRGBClass::QueryInterface -> _VectorClass_VRGBClass
+[conv] 0x488030 _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___ -> _DynamicVectorClass_PAVObjectClass
+[conv] 0x48afd0 _VectorClass_PAUDamageGroup::Add -> _VectorClass_PAUDamageGroup
+[conv] 0x48b020 _DynamicVectorClass_PAUDamageGroup::Constructor_VectorClass_DamageGroup___ -> _DynamicVectorClass_PAUDamageGroup
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVFoggedObjectClass rc=0
+[era] _VectorClass_PAVReestablish rc=0
+[era] _DynamicVectorClass_PAVReestablish rc=0
+[era] _VectorClass_V_TPoint3D_H rc=2
+[era] _VectorClass_PAVBulletClass rc=0
+[era] CampaignScore            rc=0
+[era] CampaignEndScoreClass    rc=0
+[era] _VectorClass_PAUControlNode rc=0
+[era] _DynamicVectorClass_PAUControlNode rc=0
+[era] _VectorClass_PAVCaptureManagerClass rc=0
+[era] _DynamicVectorClass_PAVCaptureManagerClass rc=0
+[era] _TypeList_H              rc=0
+[era] _TypeList_PAVTechnoTypeClass rc=0
+[era] _TypeList_VRGBClass      rc=0
+[era] _DynamicVectorClass_H    rc=0
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] _VectorClass_VRGBClass   rc=0
+[era] _DynamicVectorClass_PAVObjectClass rc=0
+[era] _VectorClass_PAUDamageGroup rc=0
+[era] _DynamicVectorClass_PAUDamageGroup rc=0
+=== diffasm byte-compare ===
+[diff] 0x45ac90   MISMATCH         _VectorClass_PAVFoggedObjectClass::QueryInterface
+[diff] 0x45ace0   MISMATCH         _VectorClass_PAVReestablish::Add
+[diff] 0x45ad30   MISMATCH         _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___
+[diff] 0x46b8c0   MISMATCH         _VectorClass_PAVBulletClass::QueryInterface
+[diff] 0x46d350   MISMATCH         CampaignScore::sub_46D350
+[diff] 0x470c30   MISMATCH         CampaignEndScoreClass::sub_470C30
+[diff] 0x473000   MISMATCH         _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___
+[diff] 0x473050   MISMATCH         _DynamicVectorClass_PAUControlNode::QueryInterface
+[diff] 0x4730a0   MISMATCH         _VectorClass_PAVCaptureManagerClass::QueryInterface
+[diff] 0x4730f0   MISMATCH         _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___
+[diff] 0x477990   MATCH            _TypeList_H::QueryInterface
+[diff] 0x477a70   MATCH            _TypeList_PAVTechnoTypeClass::QueryInterface
+[diff] 0x477ac0   MATCH            _TypeList_VRGBClass::QueryInterface
+[diff] 0x477b10   MISMATCH         _DynamicVectorClass_H::QueryInterface
+[diff] 0x478680   MISMATCH         _VectorClass_PAVTechnoTypeClass::Add
+[diff] 0x4786d0   MISMATCH         _VectorClass_VRGBClass::QueryInterface
+[diff] 0x488030   MATCH            _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___
+[diff] 0x48afd0   MISMATCH         _VectorClass_PAUDamageGroup::Add
+[diff] 0x48b020   MISMATCH         _DynamicVectorClass_PAUDamageGroup::Constructor_VectorClass_DamageGroup___
+[ledger] 0x45ac90 _VectorClass_PAVFoggedObjectClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x45ace0 _VectorClass_PAVReestablish::Add -> NG (attempt 2)
+[ledger] 0x45ad30 _DynamicVectorClass_PAVReestablish::Constructor_VectorClass_Reestablish___ -> NG (attempt 2)
+[ledger] 0x466080 _VectorClass_V_TPoint3D_H::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46b8c0 _VectorClass_PAVBulletClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x46d350 CampaignScore::sub_46D350 -> NG (attempt 2)
+[ledger] 0x470c30 CampaignEndScoreClass::sub_470C30 -> NG (attempt 2)
+[ledger] 0x473000 _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___ -> NG (attempt 4)
+[ledger] 0x473050 _DynamicVectorClass_PAUControlNode::QueryInterface -> NG (attempt 2)
+[ledger] 0x4730a0 _VectorClass_PAVCaptureManagerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4730f0 _DynamicVectorClass_PAVCaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___ -> NG (attempt 2)
+[ledger] 0x477990 _TypeList_H::QueryInterface -> OK (attempt 2)
+[ledger] 0x477a70 _TypeList_PAVTechnoTypeClass::QueryInterface -> OK (attempt 2)
+[ledger] 0x477ac0 _TypeList_VRGBClass::QueryInterface -> OK (attempt 2)
+[ledger] 0x477b10 _DynamicVectorClass_H::QueryInterface -> NG (attempt 2)
+[ledger] 0x478680 _VectorClass_PAVTechnoTypeClass::Add -> NG (attempt 4)
+[ledger] 0x4786d0 _VectorClass_VRGBClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x488030 _DynamicVectorClass_PAVObjectClass::Constructor_VectorClass_ObjectClass___ -> OK (attempt 2)
+[ledger] 0x48afd0 _VectorClass_PAUDamageGroup::Add -> NG (attempt 2)
+[ledger] 0x48b020 _DynamicVectorClass_PAUDamageGroup::Constructor_VectorClass_DamageGroup___ -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 1,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "branch_polarity": 13,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 21.1,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p02\batch_report.json

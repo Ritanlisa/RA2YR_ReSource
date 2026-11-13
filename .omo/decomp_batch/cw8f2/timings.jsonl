@@ -1,2 +1,3 @@
 {"layer": "A", "part": 0, "n": 20, "seconds": 48.0, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "A", "part": 1, "n": 20, "seconds": 61.3, "ok": true, "verdicts": {"MISMATCH": 19, "MATCH": 1}}
+{"layer": "A", "part": 2, "n": 20, "seconds": 53.0, "ok": true, "verdicts": {"MISMATCH": 15, "COMPILE_FAIL": 1, "MATCH": 4}}
