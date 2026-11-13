@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p163\part_00
+=== convert (20 addrs) ===
+[conv] 0x437a10 BlitterRLEBlitSHP -> _addr_43
+[conv] 0x797c20 ObjectClass::InitVersionStringsWOL -> ObjectClass
+[conv] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> TechnoClass
+[conv] 0x5800d0 CellClass::ApplyTileModification5 -> CellClass
+[conv] 0x71d580 InitializeCellSpreadTables -> _addr_71
+[conv] 0x5ea3e0 RefreshLobbyAll -> _addr_5E
+[conv] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> RandomMap
+[conv] 0x57ed00 CreateCliffStraightBridgeMap -> _addr_57
+[conv] 0x6f0ab0 AISelectTeamHouseClass -> _addr_6F
+[conv] 0x581f90 Subzone::BuildGraph -> Subzone
+[conv] 0x778a20 LoadPlayerProfile -> _addr_77
+[conv] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> ObjectClass
+[conv] 0x4bb0d0 DSurface::Blit -> DSurface
+[conv] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> ObjectClass
+[conv] 0x468670 BulletClass::ProcessObstacle -> BulletClass
+[conv] 0x7988c0 GameModeDlgProcMultiplayer -> _addr_79
+[conv] 0x7bdf80 DSurface::CommitBuffers -> DSurface
+[conv] 0x7493b0 VoxelAnimClass::Constructor -> VoxelAnimClass
+[conv] 0x4041d0 ObjectClass::ProcessAudioFrame -> ObjectClass
+[conv] 0x4aed70 DrawToSurfaceSHP -> _addr_4A
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_43                 rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] CellClass                rc=2
+[era] _addr_71                 rc=2
+[era] _addr_5E                 rc=2
+[era] RandomMap                rc=2
+[era] _addr_57                 rc=2
+[era] _addr_6F                 rc=2
+[era] Subzone                  rc=2
+[era] _addr_77                 rc=2
+[era] DSurface                 rc=2
+[era] BulletClass              rc=2
+[era] _addr_79                 rc=2
+[era] VoxelAnimClass           rc=2
+[era] _addr_4A                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x437a10 BlitterRLEBlitSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x797c20 ObjectClass::InitVersionStringsWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5800d0 CellClass::ApplyTileModification5 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71d580 InitializeCellSpreadTables -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ea3e0 RefreshLobbyAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57ed00 CreateCliffStraightBridgeMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f0ab0 AISelectTeamHouseClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x581f90 Subzone::BuildGraph -> COMPILE_FAIL (attempt 1)
+[ledger] 0x778a20 LoadPlayerProfile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bb0d0 DSurface::Blit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x468670 BulletClass::ProcessObstacle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7988c0 GameModeDlgProcMultiplayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bdf80 DSurface::CommitBuffers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7493b0 VoxelAnimClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4041d0 ObjectClass::ProcessAudioFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aed70 DrawToSurfaceSHP -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p163\batch_report.json

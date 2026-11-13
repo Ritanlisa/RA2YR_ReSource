@@ -1026,6 +1026,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4041d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::ProcessAudioFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ProcessAudioFrame",
+  "rule_violations": 50,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x404700": {
   "attempts": 9,
   "first_diff": "+7 xor eax, eax",
@@ -17710,6 +17722,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x437a10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "BlitterRLEBlitSHP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BlitterRLEBlitSHP",
+  "rule_violations": 8,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x437f10": {
   "attempts": 1,
   "clean": false,
@@ -23284,6 +23307,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::ProcessImpact",
   "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x468670": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BulletClass::ProcessObstacle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BulletClass::ProcessObstacle",
+  "rule_violations": 36,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -42487,6 +42522,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4aed70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "DrawToSurfaceSHP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DrawToSurfaceSHP",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4af2a0": {
   "attempts": 1,
   "clean": false,
@@ -45090,6 +45136,18 @@
   "orig_name": "DSurface::BlitPart",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4bb0d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DSurface::Blit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DSurface::Blit",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4bb5f0": {
@@ -88932,6 +88990,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x57ed00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "CreateCliffStraightBridgeMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CreateCliffStraightBridgeMap",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x57f200": {
   "attempts": 1,
   "clean": false,
@@ -88976,6 +89045,18 @@
   "name": "CellClass::ApplyTileModification7",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::ApplyTileModification7",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5800d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "CellClass::ApplyTileModification5",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CellClass::ApplyTileModification5",
   "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -89050,6 +89131,18 @@
   "orig_name": "MapClass::BuildSubzones",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x581f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Subzone::BuildGraph",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Subzone::BuildGraph",
+  "rule_violations": 52,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x582d30": {
@@ -91596,6 +91689,30 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x593030": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::PlaceMapSeedCityBlockDiagonal",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "PlaceMapSeedCityBlockDiagonal",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x593af0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::PlaceMapSeedCityBlockVariant2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "PlaceMapSeedCityBlockVariant2",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x594010": {
   "attempts": 1,
   "clean": false,
@@ -92316,6 +92433,18 @@
   "name": "ObjectClass::SpreadMapSeedTerrainFromWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SpreadMapSeedTerrainFromWaypoints",
+  "rule_violations": 10,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x5a23a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RandomMap::PlaceRandomMapTiberium",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RandomMap::PlaceRandomMapTiberium",
   "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -109155,6 +109284,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x5ea3e0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "RefreshLobbyAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RefreshLobbyAll",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x5ea8e0": {
   "attempts": 2,
   "first_diff": "+0 mov ecx, dword ptr [ecx*4 + 0xa8da90]",
@@ -118617,6 +118757,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleSystemClass::UpdateAllParticles",
   "rule_violations": 13,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x62e840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::UpdateProductionParticleSystem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UpdateProductionParticleSystem",
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -158926,6 +159078,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6f0ab0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "AISelectTeamHouseClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AISelectTeamHouseClass",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6f0fc0": {
   "attempts": 1,
   "clean": false,
@@ -165074,6 +165237,17 @@
   "orig_name": "sub_71D560",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x71d580": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "InitializeCellSpreadTables",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitializeCellSpreadTables",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x71da80": {
@@ -175291,6 +175465,18 @@
   "orig_name": "sub_749390",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7493b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "VoxelAnimClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DamageAnimClass::Constructor",
+  "rule_violations": 23,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7498d0": {
@@ -189070,6 +189256,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x778a20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "LoadPlayerProfile",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LoadPlayerProfile",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x778f30": {
   "attempts": 5,
   "clean": false,
@@ -192147,6 +192344,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x797c20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::InitVersionStringsWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InitVersionStringsWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x798120": {
   "attempts": 1,
   "clean": false,
@@ -192209,6 +192418,17 @@
   "name": "Setup2DlgProcMultiplayer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Setup2DlgProcMultiplayer",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7988c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "GameModeDlgProcMultiplayer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GameModeDlgProcMultiplayer",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -198672,6 +198892,18 @@
   "orig_name": "sub_7BD5C0",
   "rule_violations": 3,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7bdf80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "DSurface::CommitBuffers",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DSurface::CommitBuffers",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7be4a0": {
