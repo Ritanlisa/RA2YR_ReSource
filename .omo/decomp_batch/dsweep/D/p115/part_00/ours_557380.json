@@ -1,0 +1,75 @@
+{
+ "symbol": "?sub_557380@@YIPAVListClass@@HH@Z",
+ "sym_key": "Unnamed::sub_557380",
+ "size": 695,
+ "link_base": 0,
+ "bytes_hex": "535556578bfa8bf157e8000000008b472c33db89462c8b4f30894e30895e388d5734895e3c8d6e34c646400152885e4155895d00e8000000008b474483c4088946448b4f48894e48895d008b574c8d5e5889564c8b47508946508a4f548d5758884e54528bcbe8000000008a87840000008daeb80000008886840000008a8f85000000888e850000008b9788000000899688000000c703000000008a878c00000088868c0000008b8f90000000898e900000008b97940000008996940000008a87980000008886980000008b8f9c000000898e9c0000008b97a00000008996a00000008a87a40000008886a40000008b8fa8000000898ea80000008a97ac0000008896ac0000008a87ad0000008886ad0000008b8fb0000000898eb00000008a97b40000008d87b80000008bcd508896b4000000c70300000000e8000000008a8fe4000000888ee40000008a97e50000008896e50000008b87e8000000c74500000000008986e80000008a8fec000000888eec0000008b97f00000008996f00000008b87f40000008986f40000008a8ff8000000888ef80000008b97fc0000008996fc0000008b87000100008986000100008a8f04010000888e040100008b97080100008996080100008a870c01000088860c0100008a8f0d010000888e0d0100008b97100100008996100100008a87140100008886140100008d8f180100008d86180100005150c7450000000000e8000000008b975401000083c4088996540100008b87580100008986580100008a8f5c010000888e5c0100008b97600100008996600100008b87640100008986640100008b8f68010000898e680100008b0bc78618010000000000008b976c01000089966c0100008b87700100005653898670010000c70600000000ff91840000008b55005655ff92840000008b8e180100008d86180100005650ff91840000008bc65f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?CtorFromData@ControlClass@@QAEPAV1@H@Z",
+   "sym_key": "ControlClass::CtorFromData"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?sub_4B5830@@YAPAIPAX0@Z",
+   "sym_key": "sub_4B5830"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?CtorFromData@ControlClass@@QAEPAV1@H@Z",
+   "sym_key": "ControlClass::CtorFromData"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?vt_ToggleClass@@3PAXA",
+   "sym_key": "vt_ToggleClass"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?vt_ShapeButtonClass@@3PAXA",
+   "sym_key": "vt_ShapeButtonClass"
+  },
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?CtorFromData@ControlClass@@QAEPAV1@H@Z",
+   "sym_key": "ControlClass::CtorFromData"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?vt_ToggleClass@@3PAXA",
+   "sym_key": "vt_ToggleClass"
+  },
+  {
+   "off": 523,
+   "type": "DIR32",
+   "sym": "?vt_ShapeButtonClass@@3PAXA",
+   "sym_key": "vt_ShapeButtonClass"
+  },
+  {
+   "off": 528,
+   "type": "REL32",
+   "sym": "?sub_5581A0@@YAPAVGaugeClass@@HH@Z",
+   "sym_key": "sub_5581A0"
+  },
+  {
+   "off": 615,
+   "type": "DIR32",
+   "sym": "?vt_SliderClass@@3PAXA",
+   "sym_key": "vt_SliderClass"
+  },
+  {
+   "off": 647,
+   "type": "DIR32",
+   "sym": "?vt_ListClass@@3PAXA",
+   "sym_key": "vt_ListClass"
+  }
+ ]
+}

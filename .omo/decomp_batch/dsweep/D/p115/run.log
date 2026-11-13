@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p115\part_00
+=== convert (20 addrs) ===
+[conv] 0x79bc80 FindBuddyWOL -> _addr_79
+[conv] 0x7dbcf0 _ldexp -> _addr_7D
+[conv] 0x4b96a0 TextRenderer::RenderCentered -> TextRenderer
+[conv] 0x65e660 SpawnSuperWeaponUnits -> _addr_65
+[conv] 0x7b1de0 WinsockInterface::Init -> WinsockInterface
+[conv] 0x538f20 sub_538F20 -> _addr_53
+[conv] 0x53e1d0 Audio_Init -> Audio
+[conv] 0x5c4ca0 MPCooperative::InitializePlayers -> MPCooperative
+[conv] 0x47e8a0 CellClass::AddContent -> CellClass
+[conv] 0x5902c0 Object_Helper -> Object
+[conv] 0x660540 ObjectClass::Map_Helper_660540 -> ObjectClass
+[conv] 0x4f18b0 sub_4F18B0 -> _addr_4F
+[conv] 0x509f60 HouseClass::Fire_GenMutator -> HouseClass
+[conv] 0x79d2f0 ObjectClass::RefreshGameListWOL -> ObjectClass
+[conv] 0x77f710 sub_77F710 -> _addr_77
+[conv] 0x636120 TeamClass::RemoveAllMembers -> TeamClass
+[conv] 0x528a10 INIClass::GetString -> INIClass
+[conv] 0x529160 INIClass::GetStringEx -> INIClass
+[conv] 0x557380 sub_557380 -> _addr_55
+[conv] 0x69b8c0 Player::RandomAssign -> Player
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_79                 rc=2
+[era] _addr_7D                 rc=2
+[era] TextRenderer             rc=2
+[era] _addr_65                 rc=2
+[era] WinsockInterface         rc=2
+[era] _addr_53                 rc=0
+[era] Audio                    rc=2
+[era] MPCooperative            rc=0
+[era] CellClass                rc=2
+[era] Object                   rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4F                 rc=0
+[era] HouseClass               rc=0
+[era] _addr_77                 rc=2
+[era] TeamClass                rc=2
+[era] INIClass                 rc=2
+[era] _addr_55                 rc=0
+[era] Player                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x538f20   MISMATCH         sub_538F20
+[diff] 0x5c4ca0   MISMATCH         MPCooperative::InitializePlayers
+[diff] 0x660540   MISMATCH         ObjectClass::Map_Helper_660540
+[diff] 0x4f18b0   MISMATCH         sub_4F18B0
+[diff] 0x509f60   MISMATCH         HouseClass::Fire_GenMutator
+[diff] 0x557380   MISMATCH         sub_557380
+[ledger] 0x79bc80 FindBuddyWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dbcf0 _ldexp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b96a0 TextRenderer::RenderCentered -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65e660 SpawnSuperWeaponUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b1de0 WinsockInterface::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538f20 sub_538F20 -> NG (attempt 1)
+[ledger] 0x53e1d0 Audio_Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c4ca0 MPCooperative::InitializePlayers -> NG (attempt 1)
+[ledger] 0x47e8a0 CellClass::AddContent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5902c0 Object_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660540 ObjectClass::Map_Helper_660540 -> NG (attempt 1)
+[ledger] 0x4f18b0 sub_4F18B0 -> NG (attempt 1)
+[ledger] 0x509f60 HouseClass::Fire_GenMutator -> NG (attempt 1)
+[ledger] 0x79d2f0 ObjectClass::RefreshGameListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77f710 sub_77F710 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x636120 TeamClass::RemoveAllMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x528a10 INIClass::GetString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x529160 INIClass::GetStringEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557380 sub_557380 -> NG (attempt 1)
+[ledger] 0x69b8c0 Player::RandomAssign -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_order": 1,
+  "const_fold": 1,
+  "eval_order": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p115\batch_report.json

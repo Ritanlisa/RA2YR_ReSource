@@ -1,0 +1,117 @@
+{
+ "symbol": "?Map_Helper_660540@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Map_Helper_660540",
+ "size": 391,
+ "link_base": 0,
+ "bytes_hex": "83ec448d442400535556578bf15056e8000000008b56048b760883c4088d442410b9040000008b388b680403fa03ee893889680483c0084975ec33c08d5c24108b0d141400008d70018bd668000000008b3981e20300008079054a83cafc428d44d4388d4c2420505351ff57780fbe15141400005052ff574483c30883fe048bc67cbd33f68d7c2410a1141400008d54241c52468b080fbec050ff51788bce5081e10300008079054983c9fc418d54cc388bcfe80000000083c70883fe047cc98a0da8160000b8010000003ac80f85ac0000003805a41600000f85a00000000fbe05101400000fbe0d0c1400008a1d041400008d5424388d74243889542418bf040000000fbe2d941600008b56fc03d585c97e1785c07e130fbec33bc27e028bc28b74241889442414eb04895424146a006a0068941600008d5424208d4c2434e8000000008a1883c608881d041400008a4804880d081400008b480883ff01880d0c1400008b400c8d6fff0f94c284d289742418a2101400008bfd74878bc55f5e5d5b83c444c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Render_Render_660730@@YAHPAX0@Z",
+   "sym_key": "Render_Render_660730"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?sub_65FB60@@YAHPBX0@Z",
+   "sym_key": "sub_65FB60"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 332,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 341,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 353,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}
