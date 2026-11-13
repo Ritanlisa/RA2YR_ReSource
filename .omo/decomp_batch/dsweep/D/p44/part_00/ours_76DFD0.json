@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_76DFD0@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::sub_76DFD0",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "51a1000000008d4c240050e8000000006a008d4c2404e80000000059c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aMapenter@@3HA",
+   "sym_key": "aMapenter"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?NotEquals@String@@QAE_NPAX@Z",
+   "sym_key": "String::NotEquals"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_7B50F0@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::sub_7B50F0",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "538bd955578b1385d20f849d0000008bfa83c9ff33c0f2ae8b442410f7d14950528be9e80000000083c40885c0747d568b0b8d70012bc88bf88d4c29ff4d8bd1c1e902f3a58bca83e103f3a48b038b4c241451c60428008b1352e80000000083c40885c075ca8b3b83c9fff2aef7d151e8000000008b3b8be883c9ff33c0f2aef7d12bf98bc18bf78bfdc1e902f3a58bc883e103f3a48b0b51e80000000083c408892bb0015e5f5d5bc204005f5d32c05bc20400",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

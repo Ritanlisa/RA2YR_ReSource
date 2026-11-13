@@ -1,0 +1,57 @@
+{
+ "symbol": "?Destru_vt00@WinsockInterfaceClass@@QAEPAID@Z",
+ "sym_key": "WinsockInterfaceClass::Destru_vt00",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8a8668f00300891e3ac37416e8000000008b0656ff5004e800000000889e68f003008b463cc74638000000003bc37411385e45740c50e80000000083c404895e3c8b4624885e453bc3895e40c74620000000007411385e2d740c50e80000000083c404895e248b460c885e2d3bc3895e28895e087411385e15740c50e80000000083c404895e0c8a44240c885e15a801895e10740956e80000000083c4048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?UnregisterAsync@NetworkClass@@QAEIXZ",
+   "sym_key": "NetworkClass::UnregisterAsync"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?WSACleanup@@YGHXZ",
+   "sym_key": "WSACleanup"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_WinsockInterfaceClass_WinsockBufferType@@3PAXA",
+   "sym_key": "vt_VectorClass_WinsockInterfaceClass_WinsockBufferType"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_WinsockInterfaceClass_WinsockBufferType@@3PAXA",
+   "sym_key": "vt_VectorClass_WinsockInterfaceClass_WinsockBufferType"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

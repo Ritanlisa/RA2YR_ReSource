@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b2780 WinsockInterfaceClass::Destru_vt00 -> WinsockInterfaceClass
+[conv] 0x7a28b0 ObjectClass::PlayerSkirmishSlotHandler_Handle_7A28B0 -> ObjectClass
+[conv] 0x5d7030 MultiplayerGameMode::CreateMCV -> MultiplayerGameMode
+[conv] 0x76dfd0 ObjectClass::sub_76DFD0 -> ObjectClass
+[conv] 0x4729c0 CaptureManagerClass::ddtor -> CaptureManagerClass
+[conv] 0x4dcfe0 FootClass::MoveToTiberium -> FootClass
+[conv] 0x60b550 ObjectClass::UI_Get_60B550 -> ObjectClass
+[conv] 0x5e8a20 WinMainSetup_Setup_5DB6F0_Setup -> WinMainSetup_Setup_5DB6F0
+[conv] 0x55cf10 ObjectClass::Map_Get_55CF10 -> ObjectClass
+[conv] 0x74b810 VoxelAnimTypeClass::SaveLoad_Prefix -> VoxelAnimTypeClass
+[conv] 0x473f00 CCFileClass::Destru_vt15 -> CCFileClass
+[conv] 0x7b7ed0 CharStringToWide -> _addr_7B
+[conv] 0x6241f0 RunDialog -> _addr_62
+[conv] 0x7b50f0 ObjectClass::sub_7B50F0 -> ObjectClass
+[conv] 0x6ffe00 TechnoClass::RecordEvent -> TechnoClass
+[conv] 0x72def0 LoadingScreen::FreeResources3 -> LoadingScreen
+[conv] 0x52d790 sub_52D790 -> _addr_52
+[conv] 0x4a3020 IStream::Read -> IStream
+[conv] 0x6435b0 sub_6435B0 -> _addr_64
+[conv] 0x4128f0 sub_4128F0 -> _addr_41
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinsockInterfaceClass    rc=0
+[era] ObjectClass              rc=0
+[era] MultiplayerGameMode      rc=2
+[era] CaptureManagerClass      rc=0
+[era] FootClass                rc=0
+[era] WinMainSetup_Setup_5DB6F0 rc=0
+[era] VoxelAnimTypeClass       rc=0
+[era] CCFileClass              rc=2
+[era] _addr_7B                 rc=0
+[era] _addr_62                 rc=2
+[era] TechnoClass              rc=2
+[era] LoadingScreen            rc=0
+[era] _addr_52                 rc=0
+[era] IStream                  rc=0
+[era] _addr_64                 rc=0
+[era] _addr_41                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b2780   MISMATCH         WinsockInterfaceClass::Destru_vt00
+[diff] 0x7a28b0   MISMATCH         ObjectClass::PlayerSkirmishSlotHandler_Handle_7A28B0
+[diff] 0x76dfd0   MISMATCH         ObjectClass::sub_76DFD0
+[diff] 0x60b550   MISMATCH         ObjectClass::UI_Get_60B550
+[diff] 0x55cf10   MISMATCH         ObjectClass::Map_Get_55CF10
+[diff] 0x7b50f0   MISMATCH         ObjectClass::sub_7B50F0
+[diff] 0x4729c0   MISMATCH         CaptureManagerClass::ddtor
+[diff] 0x4dcfe0   MISMATCH         FootClass::MoveToTiberium
+[diff] 0x5e8a20   MISMATCH         WinMainSetup_Setup_5DB6F0_Setup
+[diff] 0x74b810   MISMATCH         VoxelAnimTypeClass::SaveLoad_Prefix
+[diff] 0x7b7ed0   MISMATCH         CharStringToWide
+[diff] 0x72def0   MISMATCH         LoadingScreen::FreeResources3
+[diff] 0x52d790   MISMATCH         sub_52D790
+[diff] 0x4a3020   MISMATCH         IStream::Read
+[diff] 0x6435b0   MISMATCH         sub_6435B0
+[ledger] 0x7b2780 WinsockInterfaceClass::Destru_vt00 -> NG (attempt 1)
+[ledger] 0x7a28b0 ObjectClass::PlayerSkirmishSlotHandler_Handle_7A28B0 -> NG (attempt 1)
+[ledger] 0x5d7030 MultiplayerGameMode::CreateMCV -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76dfd0 ObjectClass::sub_76DFD0 -> NG (attempt 1)
+[ledger] 0x4729c0 CaptureManagerClass::ddtor -> NG (attempt 1)
+[ledger] 0x4dcfe0 FootClass::MoveToTiberium -> NG (attempt 1)
+[ledger] 0x60b550 ObjectClass::UI_Get_60B550 -> NG (attempt 1)
+[ledger] 0x5e8a20 WinMainSetup_Setup_5DB6F0_Setup -> NG (attempt 1)
+[ledger] 0x55cf10 ObjectClass::Map_Get_55CF10 -> NG (attempt 1)
+[ledger] 0x74b810 VoxelAnimTypeClass::SaveLoad_Prefix -> NG (attempt 1)
+[ledger] 0x473f00 CCFileClass::Destru_vt15 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7ed0 CharStringToWide -> NG (attempt 1)
+[ledger] 0x6241f0 RunDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b50f0 ObjectClass::sub_7B50F0 -> NG (attempt 1)
+[ledger] 0x6ffe00 TechnoClass::RecordEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72def0 LoadingScreen::FreeResources3 -> NG (attempt 1)
+[ledger] 0x52d790 sub_52D790 -> NG (attempt 1)
+[ledger] 0x4a3020 IStream::Read -> NG (attempt 1)
+[ledger] 0x6435b0 sub_6435B0 -> NG (attempt 1)
+[ledger] 0x4128f0 sub_4128F0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 15,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 6,
+  "branch_order": 3,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p44\batch_report.json

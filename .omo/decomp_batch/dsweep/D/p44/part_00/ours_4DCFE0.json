@@ -1,0 +1,33 @@
+{
+ "symbol": "?MoveToTiberium@FootClass@@QAEDHH@Z",
+ "sym_key": "FootClass::MoveToTiberium",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf18b86a405000085c075768b4c24188b5424148b06518d4c2418525156ff90380300008b008b0d000000003bc189442418744e8b168d4424045056ff52488b088b5004c1e908c1ea085152e8000000008b4c242083c4083bc87509b0015e83c40cc208008d442418578b3e50b9f8010000e8000000006a015056ff97800400005f32c05e83c40cc20800",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

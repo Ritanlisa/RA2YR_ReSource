@@ -1,0 +1,93 @@
+{
+ "symbol": "?Map_Get_55CF10@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Map_Get_55CF10",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "5156e800000000a10000000083f8040f8583000000a09000000084c0747aa10000000085c07471a10000000085c0744ab910000000e800000000e8000000008bf083feff741be8000000002bc63de00100007d2ab9e00100002bc8894c2404741de8000000006a006a0ab910000000e80000000084c074c9eb048b742404a10000000085c0740a8b1050ff520884c075078bcee8000000005e59c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_Network_IsHosting@@3IA",
+   "sym_key": "g_Network_IsHosting"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EA0C@@3IA",
+   "sym_key": "DataGlobal_A8EA0C"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?WaitForResponse@NetworkEventQueueClass@@QAEDXZ",
+   "sym_key": "NetworkEventQueueClass::WaitForResponse"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?WaitForExit@Process@@QAE_NHH@Z",
+   "sym_key": "Process::WaitForExit"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?SendUnreachable@Network@@QAEHXZ",
+   "sym_key": "Network::SendUnreachable"
+  }
+ ]
+}

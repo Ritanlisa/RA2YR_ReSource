@@ -1,0 +1,27 @@
+{
+ "symbol": "?Read@IStream@@QAGJPAU1@PAXK@Z",
+ "sym_key": "IStream::Read",
+ "size": 192,
+ "link_base": 0,
+ "bytes_hex": "51568b7424148b542414578b46208d4c2408508b461c518b4c241c5089542414e8000000008b46088d7e248b4c2408c746280000010085c0c744241800000000890f750d6803400080e80000000083c4048b46088d4c2418516a088b105750ff521085c07c54837c24180875488b460885c0750d6803400080e80000000083c4048b46088d4c2418518b4c240c8b10518b4e1c5150ff521085c07c1e8b4424088b7424182bc65ff7d81bc05e250540008059c21000b8054000805f5e59c21000",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?WriteCompressionBlock@@YIHPAXIPAE0H@Z",
+   "sym_key": "WriteCompressionBlock"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

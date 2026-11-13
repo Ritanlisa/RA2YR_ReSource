@@ -1,0 +1,75 @@
+{
+ "symbol": "?PlayerSkirmishSlotHandler_Handle_7A28B0@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::PlayerSkirmishSlotHandler_Handle_7A28B0",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "83ec74535533db33ed3bcb0f84970000005657518d4c2414e8000000008d5424108d4c2414e8000000008d4c2410e800000000a100000000895c24183bc37e5985ed7c173bd87d13a100000000b91b0000008d7c24188d3428f3a58d4c2414e8000000008d4c243c5150e80000000083c40885c0740fa1000000004383c56c3bd87d16ebbbba000000008d4c24185168000000008b02ff50548d54241452e80000000083c4045f5e5d5b83c474c3",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?ToWideStringCharAlt@@YIPAPADPAX0@Z",
+   "sym_key": "ToWideStringCharAlt"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?ppv@@YAHPBX0@Z",
+   "sym_key": "ppv"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

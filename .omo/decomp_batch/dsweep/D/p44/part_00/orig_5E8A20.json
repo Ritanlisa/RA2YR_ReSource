@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E8A20",
+ "name": "WinMainSetup_Setup_5DB6F0_Setup",
+ "size": 182,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E8A20",
+ "bytes_hex": "a19c11ac005633f63bc6740f50e80b011e0083c40489359c11ac00a1a011ac003bc6740f50e8f3001e0083c4048935a011ac00a1a411ac003bc6740f50e8db001e0083c4048935a411ac00a1a811ac003bc6740f50e8c3001e0083c4048935a811ac00a1ac11ac003bc6740f50e8ab001e0083c4048935ac11ac00a1b011ac003bc6740f50e893001e0083c4048935b011ac00a1b411ac003bc6740f50e87b001e0083c4048935b411ac00b974daa8005ee94ad6fdff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

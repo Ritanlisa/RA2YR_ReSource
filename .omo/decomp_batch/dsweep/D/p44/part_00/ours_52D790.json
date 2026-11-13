@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_52D790@@YGHPAXHHH@Z",
+ "sym_key": "Unnamed::sub_52D790",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "8b442410538b5c2410568b74240c578b7c241450538bd78bcee80000000085c00f85860000006a0856e80000000083ff0f7522681a07000056e8000000006a006a0068f004000050e8000000005f5e33c05bc2100081ff11010000754d0fbfcb81c17af9ffff83f909773f33d28a9100000000ff2495000000005fc700120000005e33c05bc210005fc7000d0000005e33c05bc210005fc7000e0000005e33c05bc21000c7000f00000033c05f5e5bc21000",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?BaseDialogProc@@YIHPAXHHH@Z",
+   "sym_key": "BaseDialogProc"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetWindowLongA@@YGJPAXH@Z",
+   "sym_key": "GetWindowLongA"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "$L1879",
+   "sym_key": "$L1879"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "$L1880",
+   "sym_key": "$L1880"
+  }
+ ]
+}

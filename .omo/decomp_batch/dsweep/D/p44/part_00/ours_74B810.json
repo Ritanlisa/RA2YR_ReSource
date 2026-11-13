@@ -1,0 +1,105 @@
+{
+ "symbol": "?SaveLoad_Prefix@VoxelAnimTypeClass@@QAGHPAH@Z",
+ "sym_key": "VoxelAnimTypeClass::SaveLoad_Prefix",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c00f8c8f00000085f6741c8d4c240c518bcee800000000b800000000890689460489460889460c8d96f8020000526800000000e8000000008d86e4020000506800000000e8000000008d8ee8020000516800000000e8000000008d96ec020000526800000000e8000000008d86d4020000506800000000e8000000008d8efc020000516800000000e8000000008bcee80000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXPAH@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Construct@ObjectTypeClass@@QAEPAIH@Z",
+   "sym_key": "ObjectTypeClass::Construct"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?vt_VoxelAnimTypeClass_4@@3PAXA",
+   "sym_key": "vt_VoxelAnimTypeClass_4"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?LoadAnim@VoxelAnimType@@QAEHXZ",
+   "sym_key": "VoxelAnimType::LoadAnim"
+  }
+ ]
+}

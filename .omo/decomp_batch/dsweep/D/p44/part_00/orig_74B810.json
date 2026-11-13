@@ -1,0 +1,11 @@
+{
+ "addr": "0x74B810",
+ "name": "VoxelAnimTypeClass::SaveLoad_Prefix",
+ "size": 182,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74B810",
+ "bytes_hex": "8b442408568b7424085056e800dfeaff85c00f8c9a00000085f674278d4c240c518bcee8e8baeaffc70648657f00c746042c657f00c7460824657f00c7460c1c657f008d96f8020000526810c1b000e8dc39f8ff8d86e4020000506810c1b000e8cb39f8ff8d8ee8020000516810c1b000e8ba39f8ff8d96ec020000526810c1b000e8a939f8ff8d86d4020000506810c1b000e89839f8ff8d8efc020000516810c1b000e88739f8ff8bcee850c8eaff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

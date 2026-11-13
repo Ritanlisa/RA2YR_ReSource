@@ -1,0 +1,11 @@
+{
+ "addr": "0x72DEF0",
+ "name": "LoadingScreen::FreeResources3",
+ "size": 183,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72DEF0",
+ "bytes_hex": "a0e0fbb0005333db3ac30f84a5000000881de0fbb000e855100000e830120000a110fcb00050e822ac09008b0d14fcb000891d10fcb00051e810ac09008b1518fcb000891d14fcb00052e8feab0900a11cfcb000891d18fcb00050e8edab09008b0d20fcb000891d1cfcb00051e8dbab09008b1524fcb000891d20fcb00052e8c9ab0900a128fcb000891d24fcb00050e8b8ab09008b0d2cfcb000891d28fcb00051e8a6ab090083c420891d2cfcb000e83b6ee0ff5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
