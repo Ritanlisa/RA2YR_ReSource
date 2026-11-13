@@ -1,0 +1,39 @@
+{
+ "symbol": "?DrainAmmo@TechnoClass@@QAEDH@Z",
+ "sym_key": "TechnoClass::DrainAmmo",
+ "size": 352,
+ "link_base": 0,
+ "bytes_hex": "515355568bf1578d8e29010000e8000000008b0633db56889eb2040000ff90840000008b80100d00008b8e440100000faf4424182bc8898e4401000078043bc37506899e440100008b86440100008bae400100003bc38944241075083beb0f84f00000000fbe86d70f00008d4c2d005156ff108b7c241833c725ff00000033f83beb897c24187e7f8d965001000052e80000000083c40485c074130fbe861002000056ff108bbca8f00c0000eb110fbe8e1002000056ff118bbca8d80c00008b442410897c24183bc77d3c8d45ff3bc37c068986400100000fbe96d70f000003c05056ff128d8eba040000e80000000025ff00000081e700ffffff0bf8889ecb040000897c2418389ecb04000075128a86b20400003ac388442418743b8b7c24188d8ea1040000e8000000008d8eba040000e80000000025ff00000081e700ffffff0bc7889ecb04000089442418889eb20400008a4424185f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?Stop@AudioController@@QAEPAIXZ",
+   "sym_key": "AudioController::Stop"
+  },
+  {
+   "off": 296,
+   "type": "REL32",
+   "sym": "?Stop@AudioController@@QAEPAIXZ",
+   "sym_key": "AudioController::Stop"
+  },
+  {
+   "off": 307,
+   "type": "REL32",
+   "sym": "?Stop@AudioController@@QAEPAIXZ",
+   "sym_key": "AudioController::Stop"
+  }
+ ]
+}

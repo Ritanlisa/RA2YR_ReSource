@@ -1,0 +1,117 @@
+{
+ "symbol": "?UI_Draw@@YIJPAXPAGIJ@Z",
+ "sym_key": "Unnamed::UI_Draw",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "83ec1033c0568bf157b900010000bf00000000f3ab8b44241c50526800000000e8000000006a0d6800000000e80000000083c41485c075136a0a6800000000e80000000083c40885c0740566c700000053556a016a00689d04000056e8000000006a006a00688e0100005689442434e8000000008bd86a006a00688b01000056e8000000008bf86a005368a101000056e8000000008d4c24108be85156e8000000008b44241c8b4c24142bc199f7fd8bd72bd33bd00f9ec381fff40100007e106a006a00688201000056e8000000004f68000000006a0068cd04000056e8000000008b4c242883f9ff740d5150689804000056e8000000005d84db5b740e6a0057689701000056e8000000008b44241c506a00689d04000056e8000000005f5e83c410c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?word_AC029C@@3GA",
+   "sym_key": "word_AC029C"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?word_AC029C@@3GA",
+   "sym_key": "word_AC029C"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?word_AC029C@@3GA",
+   "sym_key": "word_AC029C"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?word_AC029C@@3GA",
+   "sym_key": "word_AC029C"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "_wcschr",
+   "sym_key": "wcschr"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 145,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?word_AC029C@@3GA",
+   "sym_key": "word_AC029C"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

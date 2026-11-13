@@ -1,0 +1,93 @@
+{
+ "symbol": "?SetCustomEntry@ListBox@@QAEPAXHJPAX@Z",
+ "sym_key": "ListBox::SetCustomEntry",
+ "size": 310,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0981ec80000000535556575051e8000000008bf085f68bde0f84040100008b9424980000008bce5283caffe8000000008be88d442410505568bd04000056e8000000008d4c24106a2d51e8000000008bf083c40885f60f84c60000008bbc249c000000465657e8000000008bf083c40885f60f84aa00000033d268a30400008a150000000033c9668b0d000000005233d2e800000000508d442414680000000050e80000000083c9ff33c083c40c8d542410f2aef7d12bf9508bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca5583e1036844010000f3a453e8000000008d442410506a0068bc04000053e8000000008b8c24980000008bf05156685101000053e8000000006a0056684e01000053e8000000005f5e5d5b81c480000000c20c008bc65f5e5d5b81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?FindListBoxItem@@YIHPAXHH@Z",
+   "sym_key": "FindListBoxItem"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "_strchr",
+   "sym_key": "strchr"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_Str_File_SerialEd_cpp@@3EA",
+   "sym_key": "g_Str_File_SerialEd_cpp"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_CUSTOM@@3GA",
+   "sym_key": "g_Str_TXT_CUSTOM"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "??_C@_04HJIJ@?$CFls?5?$AA@",
+   "sym_key": "??_C@_04HJIJ@?$CFls?5?$AA@"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 278,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

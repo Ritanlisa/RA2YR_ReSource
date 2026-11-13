@@ -1,0 +1,111 @@
+{
+ "symbol": "?FillUnitTooltipUI@@YIPAGPAH0@Z",
+ "sym_key": "Unnamed::FillUnitTooltipUI",
+ "size": 288,
+ "link_base": 0,
+ "bytes_hex": "a10000000081eccc000000558be98b48105685c90f84d800000085d20f84d00000008d4c240c5251e8000000008d54241452e800000000a10000000083c40c8bf085c0897424087476535733ff33db85c07e36a1000000008b049885c07425f6401401741f8b088bb01c02000050ff91880000008b105650ff928400000003f88b742410433bde7cca8b0d0000000033c0a000000000681c0400005033d2e8000000008d4c24145751565055e80000000083c4145f5b5e5d81c4cc000000c38b0d0000000033d28a150000000068080400005233d2e8000000008d4c240c515055e80000000083c40c5e5d81c4cc000000c38b0d0000000033d28a150000000068fe0300005233d2e8000000005055e80000000083c4085e5d81c4cc000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_UnitTooltipState@@3IA",
+   "sym_key": "g_UnitTooltipState"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "__wcsupr",
+   "sym_key": "_wcsupr"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?aMsgUnitsworth@@3HA",
+   "sym_key": "aMsgUnitsworth"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?g_Str_File_UICmnds_cpp@@3EA",
+   "sym_key": "g_Str_File_UICmnds_cpp"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?aMsgNounitssel@@3HA",
+   "sym_key": "aMsgNounitssel"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_Str_File_UICmnds_cpp@@3EA",
+   "sym_key": "g_Str_File_UICmnds_cpp"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?aMsgNavempty@@3HA",
+   "sym_key": "aMsgNavempty"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?g_Str_File_UICmnds_cpp@@3EA",
+   "sym_key": "g_Str_File_UICmnds_cpp"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

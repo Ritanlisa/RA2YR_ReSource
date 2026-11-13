@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p73\part_00
+=== convert (20 addrs) ===
+[conv] 0x723ec0 ToggleClass::ProcessMouseOver -> ToggleClass
+[conv] 0x5e29a0 UI_Draw -> UI
+[conv] 0x793bb0 ObjectClass::Network_Connect_793BB0 -> ObjectClass
+[conv] 0x446ff0 BuildingClass::ToggleRepairMode -> BuildingClass
+[conv] 0x558cb0 sub_558CB0 -> _addr_55
+[conv] 0x558b90 sub_558B90 -> _addr_55
+[conv] 0x6969c0 ListBox::SetCustomEntry -> ListBox
+[conv] 0x77a8d0 MainLobbyDlgProcWOL_Get -> MainLobbyDlgProcWOL
+[conv] 0x7ce18d __flsbuf -> _addr_7C
+[conv] 0x645950 ParticleTypeClass::ddtor -> ParticleTypeClass
+[conv] 0x7b92d0 WWMouseClass::updateCursor -> WWMouseClass
+[conv] 0x7cdf2e __expandlocale -> _addr_7C
+[conv] 0x731d90 FillUnitTooltipUI -> _addr_73
+[conv] 0x6e8220 TaskForceClass::LoadFromINI -> TaskForceClass
+[conv] 0x50cad0 TechnoClass::ProcessTarget -> TechnoClass
+[conv] 0x556c00 ObjectClass::Render_Render_556C00 -> ObjectClass
+[conv] 0x635560 ObjectClass::sub_635560 -> ObjectClass
+[conv] 0x5d3330 MSFont::ddtor -> MSFont
+[conv] 0x5df8c0 BroadcastNetworkMessage -> _addr_5D
+[conv] 0x70e000 TechnoClass::DrainAmmo -> TechnoClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ToggleClass              rc=2
+[era] UI                       rc=0
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] _addr_55                 rc=0
+[era] ListBox                  rc=0
+[era] MainLobbyDlgProcWOL      rc=0
+[era] _addr_7C                 rc=2
+[era] ParticleTypeClass        rc=2
+[era] WWMouseClass             rc=2
+[era] _addr_73                 rc=0
+[era] TaskForceClass           rc=2
+[era] TechnoClass              rc=0
+[era] MSFont                   rc=2
+[era] _addr_5D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5e29a0   MISMATCH         UI_Draw
+[diff] 0x635560   MISMATCH         ObjectClass::sub_635560
+[diff] 0x558cb0   MISMATCH         sub_558CB0
+[diff] 0x558b90   MISMATCH         sub_558B90
+[diff] 0x6969c0   MISMATCH         ListBox::SetCustomEntry
+[diff] 0x77a8d0   MISMATCH         MainLobbyDlgProcWOL_Get
+[diff] 0x731d90   MISMATCH         FillUnitTooltipUI
+[diff] 0x50cad0   MISMATCH         TechnoClass::ProcessTarget
+[diff] 0x70e000   MISMATCH         TechnoClass::DrainAmmo
+[diff] 0x5df8c0   MISMATCH         BroadcastNetworkMessage
+[ledger] 0x723ec0 ToggleClass::ProcessMouseOver -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e29a0 UI_Draw -> NG (attempt 1)
+[ledger] 0x793bb0 ObjectClass::Network_Connect_793BB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x446ff0 BuildingClass::ToggleRepairMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558cb0 sub_558CB0 -> NG (attempt 1)
+[ledger] 0x558b90 sub_558B90 -> NG (attempt 1)
+[ledger] 0x6969c0 ListBox::SetCustomEntry -> NG (attempt 1)
+[ledger] 0x77a8d0 MainLobbyDlgProcWOL_Get -> NG (attempt 1)
+[ledger] 0x7ce18d __flsbuf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645950 ParticleTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b92d0 WWMouseClass::updateCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cdf2e __expandlocale -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731d90 FillUnitTooltipUI -> NG (attempt 1)
+[ledger] 0x6e8220 TaskForceClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50cad0 TechnoClass::ProcessTarget -> NG (attempt 1)
+[ledger] 0x556c00 ObjectClass::Render_Render_556C00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635560 ObjectClass::sub_635560 -> NG (attempt 1)
+[ledger] 0x5d3330 MSFont::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5df8c0 BroadcastNetworkMessage -> NG (attempt 1)
+[ledger] 0x70e000 TechnoClass::DrainAmmo -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "const_fold": 1,
+  "branch_polarity": 1,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p73\batch_report.json
