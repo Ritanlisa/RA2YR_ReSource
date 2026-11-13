@@ -1,0 +1,81 @@
+{
+ "symbol": "?NameReadiness@SuperClass@@QAEPAGXZ",
+ "sym_key": "SuperClass::NameReadiness",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "8a417084c0741768b603000068b800000033d2b900000000e800000000c38b41288a90e500000084d2744b8b497c85c9742d8d41ff85c0741f83f801740333c0c3689d03000068b800000033d2b9a4000000e800000000c3689a030000eb26689703000068b800000033d2b994000000e800000000c38a416d84c0750333c0c368b003000033c968b8000000668b0d0000000033d2e800000000c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83FB2C@@3PADA",
+   "sym_key": "DataGlobal_83FB2C"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBXH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBXH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBXH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?g_Str_EVA_ChronosphereReady@@3EA",
+   "sym_key": "g_Str_EVA_ChronosphereReady"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_READY@@3GA",
+   "sym_key": "g_Str_TXT_READY"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBXH@Z",
+   "sym_key": "GetStringCSF"
+  }
+ ]
+}

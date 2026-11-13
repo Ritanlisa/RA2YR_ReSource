@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4D4FC0@ObjectClass@@QAEPAIH@Z",
+ "sym_key": "ObjectClass::sub_4D4FC0",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568b742410578bd933ed8b038d4c24185153ff90b80100008bd583e2070fbe8a7a000000668b10668b400203d133d681e2ff000000c1f91033f203c133c68d4c241025ff0000005133f0b9f801000089742414e8000000008bc8e8000000008bf885ff74268b97200500008a827515000084c074168b0757ff503c8b0b5389442418ff513c3944241474164583fd080f8c75ffffff5f5e5d33c05b83c40cc204008bc75f5e5d5b83c40cc20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  }
+ ]
+}

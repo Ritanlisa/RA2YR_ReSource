@@ -1,0 +1,11 @@
+{
+ "addr": "0x7531A0",
+ "name": "LoadINIEVA",
+ "size": 162,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7531A0",
+ "bytes_hex": "51a1c4d4b10085c07411c7405002000000c705c4d4b100000000008b0dccd4b10085c97405e8764dcbffe8a1f1ffffa1b0d4b10085c07e6856a1a4d4b1008b3085f674528b15a0d4b1008d4c240451b9a0d4b10089742408ff521083f8ff742d8b0db0d4b1003bc17d23493bc1890db0d4b1007d188b0da4d4b100408b1481895481fc8b0db0d4b1003bc17ce856e80a59070083c404a1b0d4b10085c07f9a5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

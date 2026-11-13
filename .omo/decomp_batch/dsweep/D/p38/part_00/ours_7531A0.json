@@ -1,0 +1,99 @@
+{
+ "symbol": "?LoadINIEVA@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::LoadINIEVA",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "51a100000000894c240085c07411c7405002000000c70500000000000000008b0d0000000085c97405e800000000e800000000a10000000085c07668568b0d000000008b3185f67456a1000000008d5424045268000000008974240cff501083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e856e800000000a10000000083c40485c0779a5e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C4@@3IA",
+   "sym_key": "DataGlobal_B1D4C4"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_InfantryDrawState@@3PAXA",
+   "sym_key": "g_InfantryDrawState"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?ThemeClass__ClearQueues@@YAHXZ",
+   "sym_key": "ThemeClass__ClearQueues"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_InfantryRenderPool@@3PAXA",
+   "sym_key": "g_InfantryRenderPool"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4A0@@3IA",
+   "sym_key": "DataGlobal_B1D4A0"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4A0@@3IA",
+   "sym_key": "DataGlobal_B1D4A0"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_InfantryRenderPool@@3PAXA",
+   "sym_key": "g_InfantryRenderPool"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_InfantrySelectState@@3IA",
+   "sym_key": "g_InfantrySelectState"
+  }
+ ]
+}

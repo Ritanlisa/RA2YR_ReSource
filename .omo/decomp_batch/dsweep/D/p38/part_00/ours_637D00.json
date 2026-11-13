@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Delete_Delete@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UI_Delete_Delete",
+ "size": 377,
+ "link_base": 0,
+ "bytes_hex": "81ece80000008b410456578d7c24148b088b4104b91b0000008bf083c06cf3a5668b105f668954247c8a40028844247e8a44242784c05e750932c081c4e8000000c38d4c241fe80000000085c0894424000f8417010000508d4c2408e8000000008a48048b10a10000000051526a2c8b4830518d8c248c000000e8000000008b5424008b4424008b8c24e400000080e20025ff0000000bd08b8424dc000000528b9424e4000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424e0000000508b8424e0000000518b8c24e0000000528b9424dc000000505152e80000000081c4e8000000c38a44240081c4e8000000c3",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?GetWaypointCoords@ScriptAction@@QAEPAEPAX@Z",
+   "sym_key": "ScriptAction::GetWaypointCoords"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Add@EventClass@@QAEPADHEHD@Z",
+   "sym_key": "EventClass::Add"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?Network__RecordEvent@@YGDHHHHHHHHHHHHHHHHHHHHHHHHHHH@Z",
+   "sym_key": "Network__RecordEvent"
+  }
+ ]
+}

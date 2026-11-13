@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x52b9b0 BINK::Background_Setup -> BINK
+[conv] 0x6917f0 ScriptTypeClass::GetParameter -> ScriptTypeClass
+[conv] 0x479900 sub_479900 -> _addr_47
+[conv] 0x556d40 ObjectClass::Render_Render_556D40 -> ObjectClass
+[conv] 0x7531a0 ObjectClass::LoadINIEVA -> ObjectClass
+[conv] 0x683fb0 TechnoClass::PostFrameCleanup -> TechnoClass
+[conv] 0x5cf6b0 StringTable::Find -> StringTable
+[conv] 0x40b070 SubzoneConnectionVector::Destruct -> SubzoneConnectionVector
+[conv] 0x53f430 IPXConnClass::constructor -> IPXConnClass
+[conv] 0x58a840 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x628690 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Add -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x643670 UI_Render_643670 -> UI_Render
+[conv] 0x658c60 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x6cc2b0 SuperClass::NameReadiness -> SuperClass
+[conv] 0x52ad50 WarheadTypeClass::parseModifiers -> WarheadTypeClass
+[conv] 0x7cbe1c _doexit -> _addr_7C
+[conv] 0x637d00 ObjectClass::UI_Delete_Delete -> ObjectClass
+[conv] 0x435340 sub_435340 -> _addr_43
+[conv] 0x6ee100 TacticalClass::Get -> TacticalClass
+[conv] 0x4d4fc0 ObjectClass::sub_4D4FC0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BINK                     rc=2
+[era] ScriptTypeClass          rc=2
+[era] _addr_47                 rc=2
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=2
+[era] StringTable              rc=2
+[era] SubzoneConnectionVector  rc=2
+[era] IPXConnClass             rc=2
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] UI_Render                rc=2
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] SuperClass               rc=0
+[era] WarheadTypeClass         rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_43                 rc=2
+[era] TacticalClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x556d40   MISMATCH         ObjectClass::Render_Render_556D40
+[diff] 0x7531a0   MISMATCH         ObjectClass::LoadINIEVA
+[diff] 0x637d00   MISMATCH         ObjectClass::UI_Delete_Delete
+[diff] 0x4d4fc0   MISMATCH         ObjectClass::sub_4D4FC0
+[diff] 0x6cc2b0   MISMATCH         SuperClass::NameReadiness
+[ledger] 0x52b9b0 BINK::Background_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6917f0 ScriptTypeClass::GetParameter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x479900 sub_479900 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556d40 ObjectClass::Render_Render_556D40 -> NG (attempt 1)
+[ledger] 0x7531a0 ObjectClass::LoadINIEVA -> NG (attempt 1)
+[ledger] 0x683fb0 TechnoClass::PostFrameCleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cf6b0 StringTable::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40b070 SubzoneConnectionVector::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f430 IPXConnClass::constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a840 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::Constructor_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x628690 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x643670 UI_Render_643670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x658c60 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Destructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cc2b0 SuperClass::NameReadiness -> NG (attempt 1)
+[ledger] 0x52ad50 WarheadTypeClass::parseModifiers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbe1c _doexit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637d00 ObjectClass::UI_Delete_Delete -> NG (attempt 1)
+[ledger] 0x435340 sub_435340 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ee100 TacticalClass::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d4fc0 ObjectClass::sub_4D4FC0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p38\batch_report.json

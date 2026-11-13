@@ -1,0 +1,11 @@
+{
+ "addr": "0x556D40",
+ "name": "Render_Render_556D40",
+ "size": 162,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556D40",
+ "bytes_hex": "51a188cbab00578d78ff85ff0f8c8d000000568b0d7ccbab008b34b98bcee80dfeffff8b460485c075668b560cc1e2048b44321c85c0755885f6745b8b1578cbab008d44240850b978cbab008974240cff521083f8ff742d8b0d88cbab003bc17d23493bc1890d88cbab007d188b0d7ccbab00408b1481895481fc8b0d88cbab003bc17ce856e8721d270083c404eb078bcee829feffff4f0f8975ffffff5e5f59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
