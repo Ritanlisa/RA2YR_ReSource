@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> TunnelLocomotionClass
+[conv] 0x7291f0 InfantryClass::ProcessTunnelMovement -> InfantryClass
+[conv] 0x72e450 RenderScoreScreen -> _addr_72
+[conv] 0x72e730 UI_Draw_72E730 -> UI_Draw
+[conv] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> ObjectClass
+[conv] 0x7346a0 CSFClass::LoadFile -> CSFClass
+[conv] 0x734f50 ObjectClass::RestartNetworkSession -> ObjectClass
+[conv] 0x734f80 ObjectClass::ToggleNetworkSession -> ObjectClass
+[conv] 0x737c90 UnitClass::OnUnderAttack -> UnitClass
+[conv] 0x73b140 TechnoClass::RenderTechnoSHP -> TechnoClass
+[conv] 0x741970 UnitClass::AssignDestination_SyncLog -> UnitClass
+[conv] 0x7447b0 BuildingClass::FindPlacementCells -> BuildingClass
+[conv] 0x748190 UnitTypeClass::ddtor -> UnitTypeClass
+[conv] 0x74b050 VoxelAnimTypeClass::LoadFromINI -> VoxelAnimTypeClass
+[conv] 0x753b10 sub_753B10 -> _addr_75
+[conv] 0x753b40 sub_753B40 -> _addr_75
+[conv] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> JumpjetLocomotionClass
+[conv] 0x75d3a0 WarheadTypeClass::ReadINI -> WarheadTypeClass
+[conv] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> WarheadTypeClass
+[conv] 0x75f020 Voxel::InitDistanceTable -> Voxel
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TunnelLocomotionClass    rc=2
+[era] InfantryClass            rc=2
+[era] _addr_72                 rc=2
+[era] UI_Draw                  rc=2
+[era] ObjectClass              rc=2
+[era] CSFClass                 rc=2
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] UnitTypeClass            rc=2
+[era] VoxelAnimTypeClass       rc=2
+[era] _addr_75                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] WarheadTypeClass         rc=2
+[era] Voxel                    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7291f0 InfantryClass::ProcessTunnelMovement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72e450 RenderScoreScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72e730 UI_Draw_72E730 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7346a0 CSFClass::LoadFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x734f50 ObjectClass::RestartNetworkSession -> COMPILE_FAIL (attempt 2)
+[ledger] 0x734f80 ObjectClass::ToggleNetworkSession -> COMPILE_FAIL (attempt 2)
+[ledger] 0x737c90 UnitClass::OnUnderAttack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73b140 TechnoClass::RenderTechnoSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7447b0 BuildingClass::FindPlacementCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x748190 UnitTypeClass::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74b050 VoxelAnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x753b10 sub_753B10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x753b40 sub_753B40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75d3a0 WarheadTypeClass::ReadINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f020 Voxel::InitDistanceTable -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p38\batch_report.json
