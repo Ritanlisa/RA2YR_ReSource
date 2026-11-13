@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x401000 AudioMixer::Init -> AudioMixer
+[conv] 0x721dc0 TiberiumClass::Harvest -> TiberiumClass
+[conv] 0x71cf50 TerrainClass::PowerDrainUpdate -> TerrainClass
+[conv] 0x4884a0 CheckListClass::GetItem -> CheckListClass
+[conv] 0x7ab3c0 CChatEventSink::DispatchStub_31 -> CChatEventSink
+[conv] 0x65d0d0 RawFileClass::GetFileSize -> RawFileClass
+[conv] 0x750ec0 UpdateVocClass -> _addr_75
+[conv] 0x4e5ac0 GDlg::LoadLetterStrings -> GDlg
+[conv] 0x53ac80 sub_53AC80 -> _addr_53
+[conv] 0x6bf210 _TClassFactory_VTerrainTypeClass::ddtor -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6bfe10 _TClassFactory_VSideClass::ddtor -> _TClassFactory_VSideClass
+[conv] 0x6bff90 _TClassFactory_VTiberiumClass::ddtor -> _TClassFactory_VTiberiumClass
+[conv] 0x6c0290 _TClassFactory_VCampaignClass::ddtor -> _TClassFactory_VCampaignClass
+[conv] 0x6c0410 _TClassFactory_VBuildingLightClass::ddtor -> _TClassFactory_VBuildingLightClass
+[conv] 0x6c1610 _TClassFactory_VVoxelAnimTypeClass::GetClassIdentifier -> _TClassFactory_VVoxelAnimTypeClass
+[conv] 0x6c1c10 _TClassFactory_VTriggerTypeClass::GetClassIdentifier -> _TClassFactory_VTriggerTypeClass
+[conv] 0x6c2210 _TClassFactory_VTagTypeClass::GetClassIdentifier -> _TClassFactory_VTagTypeClass
+[conv] 0x6c2510 _TClassFactory_VTeamTypeClass::GetClassIdentifier -> _TClassFactory_VTeamTypeClass
+[conv] 0x6c2690 _TClassFactory_VTaskForceClass::ddtor -> _TClassFactory_VTaskForceClass
+[conv] 0x6c2810 _TClassFactory_VUnitTypeClass::GetClassIdentifier -> _TClassFactory_VUnitTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioMixer               rc=0
+[era] TiberiumClass            rc=2
+[era] TerrainClass             rc=2
+[era] CheckListClass           rc=0
+[era] CChatEventSink           rc=0
+[era] RawFileClass             rc=2
+[era] _addr_75                 rc=0
+[era] GDlg                     rc=2
+[era] _addr_53                 rc=0
+[era] _TClassFactory_VTerrainTypeClass rc=2
+[era] _TClassFactory_VSideClass rc=0
+[era] _TClassFactory_VTiberiumClass rc=2
+[era] _TClassFactory_VCampaignClass rc=2
+[era] _TClassFactory_VBuildingLightClass rc=0
+[era] _TClassFactory_VVoxelAnimTypeClass rc=0
+[era] _TClassFactory_VTriggerTypeClass rc=0
+[era] _TClassFactory_VTagTypeClass rc=0
+[era] _TClassFactory_VTeamTypeClass rc=0
+[era] _TClassFactory_VTaskForceClass rc=0
+[era] _TClassFactory_VUnitTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x401000   MISMATCH         AudioMixer::Init
+[diff] 0x4884a0   MISMATCH         CheckListClass::GetItem
+[diff] 0x7ab3c0   MISMATCH         CChatEventSink::DispatchStub_31
+[diff] 0x750ec0   MISMATCH         UpdateVocClass
+[diff] 0x53ac80   MISMATCH         sub_53AC80
+[diff] 0x6bfe10   MISMATCH         _TClassFactory_VSideClass::ddtor
+[diff] 0x6c0410   MISMATCH         _TClassFactory_VBuildingLightClass::ddtor
+[diff] 0x6c1610   MISMATCH         _TClassFactory_VVoxelAnimTypeClass::GetClassIdentifier
+[diff] 0x6c1c10   MISMATCH         _TClassFactory_VTriggerTypeClass::GetClassIdentifier
+[diff] 0x6c2210   MISMATCH         _TClassFactory_VTagTypeClass::GetClassIdentifier
+[diff] 0x6c2510   MISMATCH         _TClassFactory_VTeamTypeClass::GetClassIdentifier
+[diff] 0x6c2690   MISMATCH         _TClassFactory_VTaskForceClass::ddtor
+[ledger] 0x401000 AudioMixer::Init -> NG (attempt 1)
+[ledger] 0x721dc0 TiberiumClass::Harvest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71cf50 TerrainClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4884a0 CheckListClass::GetItem -> NG (attempt 1)
+[ledger] 0x7ab3c0 CChatEventSink::DispatchStub_31 -> NG (attempt 1)
+[ledger] 0x65d0d0 RawFileClass::GetFileSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750ec0 UpdateVocClass -> NG (attempt 1)
+[ledger] 0x4e5ac0 GDlg::LoadLetterStrings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53ac80 sub_53AC80 -> NG (attempt 1)
+[ledger] 0x6bf210 _TClassFactory_VTerrainTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bfe10 _TClassFactory_VSideClass::ddtor -> NG (attempt 1)
+[ledger] 0x6bff90 _TClassFactory_VTiberiumClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0290 _TClassFactory_VCampaignClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0410 _TClassFactory_VBuildingLightClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c1610 _TClassFactory_VVoxelAnimTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c1c10 _TClassFactory_VTriggerTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c2210 _TClassFactory_VTagTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c2510 _TClassFactory_VTeamTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6c2690 _TClassFactory_VTaskForceClass::ddtor -> NG (attempt 1)
+[ledger] 0x6c2810 _TClassFactory_VUnitTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "const_fold": 8,
+  "ret_norm": 1,
+  "branch_polarity": 1,
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p20\batch_report.json

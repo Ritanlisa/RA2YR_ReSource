@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_53AC80@@YIHHHHH@Z",
+ "sym_key": "Unnamed::sub_53AC80",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5556894c240833f6578bea8d4c24108974241089742414e8000000008bf83bfe744e53e8000000008bd833f685db7e278b47048b0cb08b810c0300008b4c2424518b4c24248b10518b4c2418555150ff5204463bf37cd98d4c2414e8000000008bf885ff75bd5b5f5e5d83c40cc208008bc75f5e5d83c40cc20800",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?GetNextActive@FlagSystem@@QAEHXZ",
+   "sym_key": "FlagSystem::GetNextActive"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Surface_Update@@YAHXZ",
+   "sym_key": "Surface_Update"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetNextActive@FlagSystem@@QAEHXZ",
+   "sym_key": "FlagSystem::GetNextActive"
+  }
+ ]
+}

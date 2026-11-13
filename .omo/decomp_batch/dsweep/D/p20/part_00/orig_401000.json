@@ -1,0 +1,11 @@
+{
+ "addr": "0x401000",
+ "name": "AudioMixer::Init",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401000",
+ "bytes_hex": "5356578bf1ba00400000e8f16000008d7e28ba640000008bcfe8e26000008d5e50ba002000008bcbe8d3600000ba0a0000008bcf6a0068e8030000e860610000ba004000008bce6a0068e8030000e84d610000ba004000008bcb6a0068e8030000e83a6100008bceba004000005f5e5be9db600000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

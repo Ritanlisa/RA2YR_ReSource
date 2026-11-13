@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetItem@CheckListClass@@QAEHHPAHH@Z",
+ "sym_key": "CheckListClass::GetItem",
+ "size": 124,
+ "link_base": 0,
+ "bytes_hex": "568bf18a867801000084c0740633c05ec20c008b44240c538b5c240c576a0050538bcee800000000f6c3018bf874458b8e70010000518bcee80000000085c074058a4004eb0232c08b96700100008bce84c0520f94c3e80000000085c0741533c98a48040fbed33bca74098858048b068bceff108bc75f5b5ec20c00",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?DrawWithFlags@CellClass@@QAEHHPAXH@Z",
+   "sym_key": "CellClass::DrawWithFlags"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?GetClamped@Array@@QAEHPAX@Z",
+   "sym_key": "Array::GetClamped"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?GetClamped@Array@@QAEHPAX@Z",
+   "sym_key": "Array::GetClamped"
+  }
+ ]
+}

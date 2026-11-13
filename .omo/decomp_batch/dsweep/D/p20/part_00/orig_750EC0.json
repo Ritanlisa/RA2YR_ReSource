@@ -1,0 +1,11 @@
+{
+ "addr": "0x750EC0",
+ "name": "UpdateVocClass",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750EC0",
+ "bytes_hex": "56b920d3b100e8f564cbff8bf085f6746353578bcee80665cbff8bd88b463085c0750b8d560c8d4e20e852feffff8d7e0c8bcfe83852cbff85c075308bcfe86d52cbff85c0740b8bc8e84257cbff85c0751a8bcee83765cbff8b0da4d3b1008bd6e80a66cbffff0da8d3b10085db8bf375a15f5b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

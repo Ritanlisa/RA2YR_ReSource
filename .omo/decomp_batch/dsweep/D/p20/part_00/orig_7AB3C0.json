@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AB3C0",
+ "name": "CComObject_CChatEventSink___ATL::DispatchStub_31",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AB3C0",
+ "bytes_hex": "a0c17db70084c075688b4424108b4c240c85c07430e8469df8ff5068762200006830a4840033d2b954b28400e86f9af8ff50a128ef7e0050e80373e3ff83c40c33c0c21000e8169df8ff5068792200006830a4840033d2b944b28400e83f9af8ff8b0d28ef7e005051e8d272e3ff83c40c33c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

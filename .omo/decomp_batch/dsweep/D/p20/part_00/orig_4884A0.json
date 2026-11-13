@@ -1,0 +1,11 @@
+{
+ "addr": "0x4884A0",
+ "name": "CheckListClass::GetItem",
+ "size": 118,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4884A0",
+ "bytes_hex": "568bf18a867401000084c0740633c05ec20c008b44240c538b5c240c576a0050538bcee868f30c00f6c3018bf8743f8b866c0100008bce50e8e3f50c0085c074058a4004eb0232c084c08b866c0100008bce500f94c3e8c5f50c0085c0740f385804740a8858048b168bceff52488bc75f5b5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

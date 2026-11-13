@@ -1,4 +1,16 @@
 {
+ "0x401000": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+30 lea ebx, [esi + 0x50]",
+  "name": "AudioMixer::Init",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AudioMixer::Init",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x401080": {
   "attempts": 1,
   "clean": false,
@@ -25574,6 +25586,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4884a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+3 mov al, byte ptr [esi + 0x174]",
+  "name": "CheckListClass::GetItem",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CheckListClass::GetItem",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x488690": {
   "attempts": 3,
   "clean": true,
@@ -46852,6 +46876,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4e5ac0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "GDlg::LoadLetterStrings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GDlg::LoadLetterStrings",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4e5d60": {
   "attempts": 13,
   "clean": false,
@@ -67206,6 +67242,17 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Entity_Process",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x53ac80": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x10",
+  "name": "sub_53AC80",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "sub_53AC80",
+  "rule_violations": 1,
   "status": "NG",
   "this_as_id": false
  },
@@ -109513,6 +109560,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x65d0d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "RawFileClass::GetFileSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CCFileClass::GetFileSize",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x65d150": {
   "attempts": 1,
   "clean": false,
@@ -122561,6 +122620,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bf210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_TClassFactory_VTerrainTypeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_K_20::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6bf290": {
   "attempts": 1,
   "clean": false,
@@ -123105,6 +123176,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6bfe10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VSideClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_SideClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6bfe90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -123158,6 +123241,18 @@
   "orig_name": "TClassFactory_TiberiumClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6bff90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_TClassFactory_VTiberiumClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_TiberiumClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c0010": {
@@ -123291,6 +123386,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c0290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_TClassFactory_VCampaignClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_CampaignClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c0310": {
   "attempts": 1,
   "clean": false,
@@ -123347,6 +123454,18 @@
   "name": "_TClassFactory_VBuildingLightClass::GetClassName",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TClassFactory_BuildingLightClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c0410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "_TClassFactory_VBuildingLightClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_BuildingLightClass::ddtor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -124198,6 +124317,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c1610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VVoxelAnimTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_VoxelAnimTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1690": {
   "attempts": 1,
   "clean": false,
@@ -124474,6 +124605,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c1c10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VTriggerTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_TriggerTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1c90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -124745,6 +124888,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c2210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VTagTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_TagTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c2290": {
   "attempts": 1,
   "clean": false,
@@ -124865,6 +125020,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c2510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VTeamTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_TeamTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c2590": {
   "attempts": 1,
   "clean": false,
@@ -124921,6 +125088,18 @@
   "name": "_TClassFactory_VTaskForceClass::GetClassName",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TClassFactory_TaskForceClass::GetClassName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c2690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VTaskForceClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_TaskForceClass::ddtor",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -124983,6 +125162,18 @@
   "orig_name": "TClassFactory_UnitTypeClass::GetClassName",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x6c2810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_TClassFactory_VUnitTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TClassFactory_UnitTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6c2890": {
@@ -139436,6 +139627,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x71cf50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TerrainClass::PowerDrainUpdate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TerrainClass::PowerDrainUpdate",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71cfd0": {
   "attempts": 1,
   "clean": false,
@@ -140921,6 +141124,18 @@
   "orig_name": "sub_721680",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x721dc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TiberiumClass::Harvest",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TiberiumClass::Harvest",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x721e40": {
@@ -149542,6 +149757,17 @@
   "orig_name": "LoadVocFromINI",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x750ec0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+15 je 0x750f34",
+  "name": "UpdateVocClass",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "UpdateVocClass",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x750f40": {
@@ -162145,6 +162371,18 @@
   "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_29",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7ab3c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov al, byte ptr [0xb77dc1]",
+  "name": "CChatEventSink::DispatchStub_31",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "CComObject_CChatEventSink___ATL::DispatchStub_31",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7abd40": {

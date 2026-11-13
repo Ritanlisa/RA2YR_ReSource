@@ -1,0 +1,51 @@
+{
+ "symbol": "?Init@AudioMixer@@QAEHXZ",
+ "sym_key": "AudioMixer::Init",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1ba00400000e8000000008d7e28ba640000008bcfe8000000008d5e4dba002000008bcbe8000000006a0068e8030000ba0a0000008bcfe8000000006a0068e8030000ba004000008bcee8000000006a0068e8030000ba004000008bcbe8000000008bce5f5eba004000005be900000000",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?SetupSampleAudioMixer@@YIHPAXH@Z",
+   "sym_key": "SetupSampleAudioMixer"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?SetupSampleAudioMixer@@YIHPAXH@Z",
+   "sym_key": "SetupSampleAudioMixer"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?SetupSampleAudioMixer@@YIHPAXH@Z",
+   "sym_key": "SetupSampleAudioMixer"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?SetRateMixerSample@@YIHPAXHIH@Z",
+   "sym_key": "SetRateMixerSample"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?EndBufferMixer@@YIHPAXH@Z",
+   "sym_key": "EndBufferMixer"
+  }
+ ]
+}

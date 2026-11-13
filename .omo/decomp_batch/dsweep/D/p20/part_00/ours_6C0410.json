@@ -1,0 +1,27 @@
+{
+ "symbol": "?ddtor@_TClassFactory_VBuildingLightClass@@QAGHHHHPAH@Z",
+ "sym_key": "_TClassFactory_VBuildingLightClass::ddtor",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "83ec0856578b7c242485ff750d5fb8570007805e83c408c214008b44241cc7070000000085c0740d5fb8100104805e83c408c2140068e8000000e80000000083c40485c0750d5fb80e0007805e83c408c214008b442424dd44240850e8000000005033c9e8000000008bf085f6750d5fb80e0007805e83c408c214008b5424208b0e575256ff118bf885ff7d088b066a0156ff50208bc75f5e83c408c21400",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?CTOR@BuildingLightClass@@QAEPAHHH@Z",
+   "sym_key": "BuildingLightClass::CTOR"
+  }
+ ]
+}
