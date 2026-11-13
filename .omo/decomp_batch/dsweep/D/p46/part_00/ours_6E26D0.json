@@ -1,0 +1,63 @@
+{
+ "symbol": "?Set@ScenarioClass@@QAEDHHHH@Z",
+ "sym_key": "ScenarioClass::Set",
+ "size": 148,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18d4c24088b464450518b0d00000000e8000000008b008d4c240c89442404510fbf54240a0fbfc0c1e208c1e00881c28000000005800000008954241489442410e8000000008d542404b9f801000052e8000000008b8840010000f6c501750f8d442404b9f801000050e8000000008b8e900000008d54240c518b0d0000000052e800000000b0015e83c410c21000",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?SetPosition@TacticalClass@@QAEHPAXH@Z",
+   "sym_key": "TacticalClass::SetPosition"
+  }
+ ]
+}

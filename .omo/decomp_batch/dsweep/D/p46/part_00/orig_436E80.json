@@ -1,0 +1,11 @@
+{
+ "addr": "0x436E80",
+ "name": "BuildingLightClass::CalculateDistanceIntensity",
+ "size": 189,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x436E80",
+ "bytes_hex": "83ec24568bf18d542410578b8ee4000000528b01ff50488d4c24208bf88b06518bceff50488b108b378b48042bd6895424088b57042bca8b50088b4708894c240cdb44240c2bd083ec0889542418db442418db442410d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e84c3d090083c408e804f038008bf8a1e07188008bb08c0700003bfe7d085f33c05e83c424c38b8888070000b8676666662bcef7e98bcac1f9028bc1c1e81f03c88bc72bc65f99f7f95e83c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?DrawFoundationChar2@ScoreFontClass@@QAEXHDHHHH@Z",
+ "sym_key": "ScoreFontClass::DrawFoundationChar2",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "83ec288d442430538bd96a018d4c24385051e8000000008a4c243480f920747a0fbec183e82180f921750233c0568d3440578d4424148d56025250e8000000008b4c24448b008b5424408b7c2438894c24108d4c24242bd08b07515789542414ff50786a006a006a006a006a0068e80300006a008b4b0c6a006a006800040000508b4424748d54243803f0528b531456518bcfe8000000005f5e5b83c428c21800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?CharToOemBuffA@@YGHPAX0H@Z",
+   "sym_key": "CharToOemBuffA"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAX0I00HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Size@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Size",
+ "size": 187,
+ "link_base": 0,
+ "bytes_hex": "518b4424005355568b74240c578b7c2410505657e8000000008be885ed0f8c900000008b068b8f800600006a008d5424146a045256894c2420ff501085c07c758b44241033db85c07e218b8f740600008b066a006a048d14995256ff501085c07c538b442410433bd87cdf8b068b8f940600006a008d5424146a045256894c2420ff501085c07c2d8b44241033db85c07e218b8f8c0600008b066a006a048d14995256ff501085c07c0b8b442410433bd87cdf8bc55f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?IPersistStream__GetSizeMax@@YGHPAXHH@Z",
+   "sym_key": "IPersistStream__GetSizeMax"
+  }
+ ]
+}

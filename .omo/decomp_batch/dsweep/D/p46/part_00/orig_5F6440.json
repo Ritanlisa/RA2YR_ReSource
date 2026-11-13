@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6440",
+ "name": "ObjectClass::ComputeDistance",
+ "size": 189,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6440",
+ "bytes_hex": "83ec2056578b7c242c8bf185ff750a5f33c05e83c420c204008b07538d4c241455518bcfff50488b188b68048b168d442424508bceff52488b088b40042bc52bcb89442414894c2410db442414db44241083ec08d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e89647edff83c408e84efa1c008b178bcf8bd8ff522c8bf083ee06f7de1bf6f7d623f774278b8e200500006a00e8c987e6ff8b8e200500008bf8e8ac87e6ff03f8f7dfc1e70603df790233db8bc35d5b5f5e83c420c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

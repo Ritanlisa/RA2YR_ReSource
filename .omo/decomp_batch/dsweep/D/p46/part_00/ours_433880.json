@@ -1,0 +1,39 @@
+{
+ "symbol": "?ParseFontData@BitTextClass@@QAEHPAD@Z",
+ "sym_key": "BitTextClass::ParseFontData",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "5355565733ff8bf157578d6e3057bb010000005755c70600000000897e0466c74624ff7f66c746265535c7462840000000885e40885e41895e18895e1c897e20897e0c897e08e8000000008b4c2414895e2ce8000000003bc7894604741e8b480456894e188b500c89561ce80000000083c4048bc65f5e5d5bc204005757575755897e0466c74624ff7f66c746265535c7462840000000885e40885e41895e18895e1c897e20897e0c897e08e800000000895e2c8bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?vt_BitFont@@3PAXA",
+   "sym_key": "vt_BitFont"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?SetRect@@YGHPAXHHHH@Z",
+   "sym_key": "SetRect"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?LoadFont@File@@QAEPAIXZ",
+   "sym_key": "File::LoadFont"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?sub_434700@@YAPAEPAX@Z",
+   "sym_key": "sub_434700"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?SetRect@@YGHPAXHHHH@Z",
+   "sym_key": "SetRect"
+  }
+ ]
+}

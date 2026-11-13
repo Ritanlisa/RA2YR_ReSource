@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x54e4d0 ScenarioClass::UpdateScriptActions -> ScenarioClass
+[conv] 0x64b410 Network_Process_64B410 -> Network_Process
+[conv] 0x690400 ObjectClass::sub_690400 -> ObjectClass
+[conv] 0x454190 BuildingClass::Size -> BuildingClass
+[conv] 0x659590 ObjectClass::sub_659590 -> ObjectClass
+[conv] 0x5b3e90 ObjectClass::sub_5B3E90 -> ObjectClass
+[conv] 0x690850 ScoreFontClass::DrawFoundationChar2 -> ScoreFontClass
+[conv] 0x4df0e0 FootClass::MissionSell_Dispatch -> FootClass
+[conv] 0x71bfb0 TerrainClass::CheckNearbyObjects -> TerrainClass
+[conv] 0x433880 BitTextClass::ParseFontData -> BitTextClass
+[conv] 0x436e80 BuildingLightClass::CalculateDistanceIntensity -> BuildingLightClass
+[conv] 0x7d71e0 _LanguageEnumProc_4 -> _addr_7D
+[conv] 0x65ab80 RadioClass::LoadState -> RadioClass
+[conv] 0x7cc1d4 __except_handler3 -> _addr_7C
+[conv] 0x5f6440 TechnoClass::ComputeDistance -> TechnoClass
+[conv] 0x72b230 ObjectClass::WinMainSetup_Setup_72AC40_Setup_72B230 -> ObjectClass
+[conv] 0x4cb4c0 sub_4CB4C0 -> _addr_4C
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x58c100 ObjectClass::sub_58C100 -> ObjectClass
+[conv] 0x6e26d0 ScenarioClass::Set -> ScenarioClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] Network_Process          rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] ScoreFontClass           rc=0
+[era] FootClass                rc=0
+[era] TerrainClass             rc=0
+[era] BitTextClass             rc=0
+[era] BuildingLightClass       rc=0
+[era] _addr_7D                 rc=2
+[era] RadioClass               rc=0
+[era] _addr_7C                 rc=2
+[era] TechnoClass              rc=0
+[era] _addr_4C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e26d0   MISMATCH         ScenarioClass::Set
+[diff] 0x690400   MISMATCH         ObjectClass::sub_690400
+[diff] 0x659590   MISMATCH         ObjectClass::sub_659590
+[diff] 0x72b230   MISMATCH         ObjectClass::WinMainSetup_Setup_72AC40_Setup_72B230
+[diff] 0x58c100   MISMATCH         ObjectClass::sub_58C100
+[diff] 0x454190   MISMATCH         BuildingClass::Size
+[diff] 0x690850   MISMATCH         ScoreFontClass::DrawFoundationChar2
+[diff] 0x4df0e0   MISMATCH         FootClass::MissionSell_Dispatch
+[diff] 0x71bfb0   MISMATCH         TerrainClass::CheckNearbyObjects
+[diff] 0x433880   MISMATCH         BitTextClass::ParseFontData
+[diff] 0x436e80   MISMATCH         BuildingLightClass::CalculateDistanceIntensity
+[diff] 0x65ab80   MISMATCH         RadioClass::LoadState
+[diff] 0x5f6440   MISMATCH         TechnoClass::ComputeDistance
+[ledger] 0x54e4d0 ScenarioClass::UpdateScriptActions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64b410 Network_Process_64B410 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690400 ObjectClass::sub_690400 -> NG (attempt 1)
+[ledger] 0x454190 BuildingClass::Size -> NG (attempt 1)
+[ledger] 0x659590 ObjectClass::sub_659590 -> NG (attempt 1)
+[ledger] 0x5b3e90 ObjectClass::sub_5B3E90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690850 ScoreFontClass::DrawFoundationChar2 -> NG (attempt 1)
+[ledger] 0x4df0e0 FootClass::MissionSell_Dispatch -> NG (attempt 1)
+[ledger] 0x71bfb0 TerrainClass::CheckNearbyObjects -> NG (attempt 1)
+[ledger] 0x433880 BitTextClass::ParseFontData -> NG (attempt 1)
+[ledger] 0x436e80 BuildingLightClass::CalculateDistanceIntensity -> NG (attempt 1)
+[ledger] 0x7d71e0 _LanguageEnumProc_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65ab80 RadioClass::LoadState -> NG (attempt 1)
+[ledger] 0x7cc1d4 __except_handler3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f6440 TechnoClass::ComputeDistance -> NG (attempt 1)
+[ledger] 0x72b230 ObjectClass::WinMainSetup_Setup_72AC40_Setup_72B230 -> NG (attempt 1)
+[ledger] 0x4cb4c0 sub_4CB4C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58c100 ObjectClass::sub_58C100 -> NG (attempt 1)
+[ledger] 0x6e26d0 ScenarioClass::Set -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "regalloc": 6,
+  "codegen_shape": 4,
+  "width_mismatch": 1,
+  "branch_order": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p46\batch_report.json

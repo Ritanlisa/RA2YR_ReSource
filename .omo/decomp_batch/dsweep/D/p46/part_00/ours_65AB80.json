@@ -1,0 +1,33 @@
+{
+ "symbol": "?LoadState@RadioClass@@QAEHHH@Z",
+ "sym_key": "RadioClass::LoadState",
+ "size": 204,
+ "link_base": 0,
+ "bytes_hex": "55568b742410578b7c2410e80000000085c00f8cae00000081ff20ffffff8dafe00000007429c787e400000000000000c787e800000000000000c687ec00000001c687ed00000000c74500000000008b066a008d4c24186a045156ff500c85c07c648b4424148b55006a005055ff52088b44241433ed85c07e298b0e6a008d5424146a045256ff510c85c07c398b87e40000008b4c2410890ca88b442414453be87cd733f685c07e1b8b97e40000008d04b246506800000000e8000000003b7424147ce533c05f5e5dc20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?SaveLoad_Register@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::SaveLoad_Register"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_TechnoClass@@3PAXA",
+   "sym_key": "vt_VectorClass_TechnoClass"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

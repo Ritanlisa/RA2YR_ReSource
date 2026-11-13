@@ -1,0 +1,15 @@
+{
+ "symbol": "?MissionSell_Dispatch@FootClass@@QAEHPAD@Z",
+ "sym_key": "FootClass::MissionSell_Dispatch",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "5356578b7c24108bf10fbe5f0c83fb1d757a8a4f178a471284c98b0e560f95c384c00f95c088442414ff91c004000084c0744284dbc686d105000000c786c40500001d00000074198d4f13e8000000008986c80500005f5eb8020000005bc204008b1656ff92a80400005f5eb81d0000005bc204008b4c2410b80200000081e1ff0000005f5e2bc15bc204008b1656ff92a80400005f8bc35e5bc20400",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?GetNext@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::GetNext"
+  }
+ ]
+}

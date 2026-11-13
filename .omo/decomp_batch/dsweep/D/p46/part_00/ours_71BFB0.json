@@ -1,0 +1,63 @@
+{
+ "symbol": "?CheckNearbyObjects@TerrainClass@@QAEDH@Z",
+ "sym_key": "TerrainClass::CheckNearbyObjects",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "83ec1056578b7c241c8bf1e80000000084c075085f5e83c410c204008b068d4c24085156ff90b80100008b1085ff8954241c746483ff01740583ff03756a8d44241c5650b9f8010000e8000000008b0e8d54240c5256ff91ac0000008b0d000000008dbed80000005750e8000000008b0db00000008b17a1b400000003d18b8edc000000891703c85f898edc000000b0015e83c410c204008d54241c5652b9f8010000e8000000005fb0015e83c410c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?UpdateProductionDisplay@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::UpdateProductionDisplay"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?FillRevealBuffer@MapClass@@QAEXPAX0@Z",
+   "sym_key": "MapClass::FillRevealBuffer"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?ApplyOverlayReveal@MapClass@@QAEXPAX0@Z",
+   "sym_key": "MapClass::ApplyOverlayReveal"
+  }
+ ]
+}
