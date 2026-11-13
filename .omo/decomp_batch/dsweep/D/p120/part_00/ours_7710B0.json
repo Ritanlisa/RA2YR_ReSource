@@ -1,0 +1,195 @@
+{
+ "symbol": "?ReadTokenizedPair@INIClass@@QAEXPAHPAPADPAXH1@Z",
+ "sym_key": "INIClass::ReadTokenizedPair",
+ "size": 568,
+ "link_base": 0,
+ "bytes_hex": "515355568b742424578bf98b4c2420e800000000578bd08d4c2424e8000000008d4c241056518bc8e8000000008d54242052e8000000008d44242c50e80000000083c4088d4c24206800000000e8000000008b6c24188d4c24288d542420518b4c24208d4424145250518bcde8000000008d54242052e8000000008b44242883c4048d3440c1e60603f78b46048d7e0457ff500c8d4c242051e80000000083c4048d5424208d4c24285268000000006a00e8000000008bd883fbff74668d44242050e8000000008b4e0c8b461483c4043bc172218a461184c0750485c975298b461885c07e228b1703c16a005057ff520884c074138b46148b56088d4801894e148b4c2420890c828d5424208d4c242852680000000053e8000000008bd883fbff759a8d44242050e8000000008b0d0000000083c404518d4c2414e80000000068000000008d4c2424e8000000008d5424288d442420528b5424208d4c24145051528bcde8000000008d44242050e8000000008b4e1c83c61c83c40456ff510c8d54241c52e80000000083c4048d44241c8d4c24285068000000006a00e8000000008bf883ffff74668b5c24208d4c241c51e8000000008b4e088b461083c4043bc172218a460d84c0750485c975258b461485c07e1e8b1603c16a005056ff520884c0740f8b46108b56048d4801894e10891c828d44241c8d4c242850680000000057e8000000008bf883ffff759e8d4c241c51e8000000008d54242c52e8000000008d44241850e80000000083c40c5f5e5d5b59c21400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Factory@StaticString@@QAEPAPADXZ",
+   "sym_key": "StaticString::Factory"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ConcatStringAlloc@@YIPAPADPAXPBX0@Z",
+   "sym_key": "ConcatStringAlloc"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?Concat@String@@QAEPAPADPAX0@Z",
+   "sym_key": "String::Concat"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?ReadString@INIClass@@QAEIPAX00H@Z",
+   "sym_key": "INIClass::ReadString"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?aEmphasis@@3HA",
+   "sym_key": "aEmphasis"
+  },
+  {
+   "off": 316,
+   "type": "REL32",
+   "sym": "?Append@String@@QAEPAPBDPAX@Z",
+   "sym_key": "String::Append"
+  },
+  {
+   "off": 321,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 330,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?ReadString@INIClass@@QAEIPAX00H@Z",
+   "sym_key": "INIClass::ReadString"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 390,
+   "type": "REL32",
+   "sym": "?unknown_libname_73@@YAPAVObjectClass@@PAX@Z",
+   "sym_key": "unknown_libname_73"
+  },
+  {
+   "off": 407,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 414,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?__1_Timevec_std__QAE_XZ@@YAXPAX@Z",
+   "sym_key": "__1_Timevec_std__QAE_XZ"
+  },
+  {
+   "off": 510,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 516,
+   "type": "REL32",
+   "sym": "?Tokenize@String@@QAEHHPAX0@Z",
+   "sym_key": "String::Tokenize"
+  },
+  {
+   "off": 533,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 543,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 553,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

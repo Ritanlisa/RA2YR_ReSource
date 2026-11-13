@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p120\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d9290 FootClass::ProcessTeamAction -> FootClass
+[conv] 0x7710b0 INIClass::ReadTokenizedPair -> INIClass
+[conv] 0x4322a0 CCFileClass::BufferedReader -> CCFileClass
+[conv] 0x478ba0 CCToolTip::CalculatePopupPosition -> CCToolTip
+[conv] 0x4cc100 TrajectoryHelper::FindFirstObstacle -> TrajectoryHelper
+[conv] 0x529350 INIClass::GetCSFString -> INIClass
+[conv] 0x4bb620 DSurface::FillRectEx -> DSurface
+[conv] 0x6b9530 HashTable::Clear -> HashTable
+[conv] 0x602dd0 IsDialogControlHidden -> _addr_60
+[conv] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> JumpjetLocomotionClass
+[conv] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> CChatEventSink
+[conv] 0x5c7310 SubtractBigInteger -> _addr_5C
+[conv] 0x6d3660 TacticalClass::CalcAllDrawPositions -> TacticalClass
+[conv] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> ParticleSystemClass
+[conv] 0x483e30 TacticalClass::SetView -> TacticalClass
+[conv] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> MSOverlayAnim
+[conv] 0x6035f0 DispatchDialogControlAction -> _addr_60
+[conv] 0x4cf610 JumpjetLocomotionClass::ComputeRotationMatrix -> JumpjetLocomotionClass
+[conv] 0x7542f0 InitializeAudioOcclusion -> _addr_75
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] INIClass                 rc=2
+[era] CCFileClass              rc=2
+[era] CCToolTip                rc=2
+[era] TrajectoryHelper         rc=0
+[era] DSurface                 rc=2
+[era] HashTable                rc=2
+[era] _addr_60                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] CChatEventSink           rc=2
+[era] _addr_5C                 rc=2
+[era] TacticalClass            rc=0
+[era] ParticleSystemClass      rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=2
+[era] MSOverlayAnim            rc=2
+[era] _addr_75                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7710b0   MISMATCH         INIClass::ReadTokenizedPair
+[diff] 0x4cc100   MISMATCH         TrajectoryHelper::FindFirstObstacle
+[diff] 0x6d3660   MISMATCH         TacticalClass::CalcAllDrawPositions
+[diff] 0x483e30   MISMATCH         TacticalClass::SetView
+[ledger] 0x4d9290 FootClass::ProcessTeamAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7710b0 INIClass::ReadTokenizedPair -> NG (attempt 1)
+[ledger] 0x4322a0 CCFileClass::BufferedReader -> COMPILE_FAIL (attempt 1)
+[ledger] 0x478ba0 CCToolTip::CalculatePopupPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cc100 TrajectoryHelper::FindFirstObstacle -> NG (attempt 1)
+[ledger] 0x529350 INIClass::GetCSFString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4bb620 DSurface::FillRectEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b9530 HashTable::Clear -> COMPILE_FAIL (attempt 1)
+[ledger] 0x602dd0 IsDialogControlHidden -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c7310 SubtractBigInteger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d3660 TacticalClass::CalcAllDrawPositions -> NG (attempt 1)
+[ledger] 0x62e070 ParticleSystemClass::DestructParticleSystemClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x483e30 TacticalClass::SetView -> NG (attempt 1)
+[ledger] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6035f0 DispatchDialogControlAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cf610 JumpjetLocomotionClass::ComputeRotationMatrix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7542f0 InitializeAudioOcclusion -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p120\batch_report.json

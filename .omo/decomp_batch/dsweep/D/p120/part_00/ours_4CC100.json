@@ -1,0 +1,63 @@
+{
+ "symbol": "?FindFirstObstacle@TrajectoryHelper@@QAIPAIPAH0H0@Z",
+ "sym_key": "TrajectoryHelper::FindFirstObstacle",
+ "size": 558,
+ "link_base": 0,
+ "bytes_hex": "8b44240883ec308a889602000053555684c9578bea750e8a889802000084c90f84fd0100008b4424448b7424448b7c24448b088b58048b4500894c24289981e2ff000000895c242403c2c1f80833c625ff00000033f08b45049981e2ff00000003c2c1f80833c625ff00000033f08bc19981e2ff0000008974242c03c2c1f80833c725ff00000033f88bc39981e2ff00000003c2c1f80833c725ff00000033f80fbfc70fbfce2bc8897c243051e800000000c1ff10c1fe108bd80fbfd70fbfc62bc2895c241c50e80000000083c4083bd87f06894424188bd833ff3bdf74338b4424288b75002bc68b4c244499f7fb8b55048944241c8b4424242bc299f7fb894424248b41082b450899f7fb89442428eb0c897c241c897c2424897c24288d54242cb90000000052e8000000008bf08d44243050b9000000008974243ce8000000003bdf894424348bc6897c24200f8ece000000897c2444897c24148b5c2444897c24108b7d048b4c24108b75008b54244403f98b4c244c03f28b542448518b4c2418528b550803ca8b54243c518b4c2444575650e80000000085c00f85820000008bc6b9000000009981e2ff00000003c2c1f80833c325ff00000033d88bc79981e2ff00000003c28d54243cc1f80833c35225ff00000033d8895c2440e8000000008b4c241c8b7424448b5424248b7c241003f18b4c2420897424448b74241403fa8b54242803f28b54241841897c24103bca894c2420897424140f8c42ffffff33c05f5e5d5b83c430c20c00",
+ "relocs": [
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?TrajectoryHelper__GetObstacle@@YIPAIPAX0HHHHHPAH@Z",
+   "sym_key": "TrajectoryHelper__GetObstacle"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 479,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}
