@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x75a2f0 sub_75A2F0 -> _addr_75
+[conv] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> WalkLocomotionClass
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x765f60 Team_Create_765F60 -> Team_Create
+[conv] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x767b00 Team_Create_767B00 -> Team_Create
+[conv] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> ReferenceCounted
+[conv] 0x7681e0 ArtConfig::ReadLayout -> ArtConfig
+[conv] 0x769330 Surface::PixelToIndex -> Surface
+[conv] 0x769550 LoadWDTMapAsset -> _addr_76
+[conv] 0x76afc0 WDTState::Constructor_WDTState -> WDTState
+[conv] 0x76d4d0 Trigger::ProcessMapEvents -> Trigger
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> TechnoClass
+[conv] 0x76ed10 Team_Start_76ED10 -> Team_Start
+[conv] 0x76f470 ActivateScreenWDT_Create -> ActivateScreenWDT
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x771710 TechnoClass::sub_771710 -> TechnoClass
+[conv] 0x7754d0 WinModemClass::LogCommErrors -> WinModemClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=2
+[era] WalkLocomotionClass      rc=2
+[era] WaveClass                rc=2
+[era] ReferenceCounted         rc=2
+[era] Team_Create              rc=2
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] ArtConfig                rc=2
+[era] Surface                  rc=2
+[era] _addr_76                 rc=2
+[era] WDTState                 rc=2
+[era] Trigger                  rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Team_Start               rc=2
+[era] ActivateScreenWDT        rc=2
+[era] ScoreScreen              rc=2
+[era] WinModemClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x75a2f0 sub_75A2F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 10)
+[ledger] 0x765f60 Team_Create_765F60 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x767b00 Team_Create_767B00 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7681e0 ArtConfig::ReadLayout -> COMPILE_FAIL (attempt 5)
+[ledger] 0x769330 Surface::PixelToIndex -> COMPILE_FAIL (attempt 5)
+[ledger] 0x769550 LoadWDTMapAsset -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76afc0 WDTState::Constructor_WDTState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76d4d0 Trigger::ProcessMapEvents -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76ed10 Team_Start_76ED10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f470 ActivateScreenWDT_Create -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 10)
+[ledger] 0x771710 TechnoClass::sub_771710 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7754d0 WinModemClass::LogCommErrors -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p33\batch_report.json
