@@ -1,0 +1,279 @@
+{
+ "symbol": "?EjectCrew@BuildingClass@@QAEDPAE@Z",
+ "sym_key": "BuildingClass::EjectCrew",
+ "size": 1564,
+ "link_base": 0,
+ "bytes_hex": "83ec70535556578bf98d4c24208b075157ff90b80100008b108b076a005789542430ff90080100008be88b874405000085c0c7442418020000007408c7442418010000008b87e406000085c0740583442418068b0757ff90d00200008b9f240500008944241c8a83ae16000084c0750e8a83af16000084c00f84b60100008b9f780200008db77802000085db0f8ea201000056e8000000008bd883c40485db0f848f0100008bc55383c504668b0866034c242c0fbfd1c1e20881c280000000895424148b03ff502c83f801751c8d4c241051b900000000e8000000008b108d4c24445150ff5248eb268d542410b90000000052e8000000006a006a008d4c24186a008d54244451528bc8e8000000008b15000000008b0042894424108915000000008a8f8c000000888b8c0000008b979c0000008b075789542428ff90bc0100008b088d5424505250ff51488a87e406000084c00f858c0000008b8f8c0300008d44242050e8000000008b108b0bc1ea07428d442424d1ea81e2ff000000525053ff91d800000084c0745b8a833804000084c0751a8b831c0200008b88f4020000418988f4020000c68338040000018b0b6a006a01680000000053c6833904000000ff91740100008b8f1c020000e80000000084c0753d8b136a006a0f53ff92e8010000eb2e8b84248400000085c0740e8a481480e101f6d91bc923c1eb0233c08b135053ff92e00000008b0353ff90f80000008b1d00000000564b891d00000000e8000000008bd883c40485db0f8571feffff8b44241c85c00f84d003000066817d00ff7f750c66817d02ff7f0f84bc0300008b4c24288bc5c1f9108a500283c50402ca8b54243081e1ff00000080e2000bca896c242c8bc1b90000000089442430894424148d44241450e8000000008b8f1c020000894424208a81f601000084c00f85d10100008b44241c85c00f8ec50100008b542418a100000000526a008d8868050300e80000000083f8010f85a50100008b0f5733f6ff910c0300008be885ed742768f0060000e80000000083c40485c074148b971c0200008bc8525557e8000000008bf0eb0233f68bcfe80000000085f60f845a0100008b87f006000085c074178b86c00600008a889e0c000084c97407c686d9060000010fbf4c24148b2d000000008d542410c1e10881c18000000045894c241052b900000000892d00000000e8000000006a006a008d4c24186a008d54246851528bc8e8000000008b088b15000000003bca894c241075198b48048b15000000003bca750c8b5008a1000000003bd074148b068d4c24106a005156ff90d800000084c0750d8b166a0156ff5220e9a40000008bcfe8000000008b4c241c8b86c0060000498b80a0000000894c241c8b0d00000000506a0581c118020000e8000000008b166a006a0168000000005689466cff92740100008bac248400000085ed74298b8f1c02000055e80000000084c075198b066a006a0156ff90e80100008b0e5556ff91c8030000eb2b8b8f1c020000e80000000084c0740f8b166a006a0256ff92e8010000eb0d8b066a006a0f56ff90e8010000ff0d000000008b6c242c8b4c24206a016aff6a006aff6a016a016a01e80000000025ff00000080e3000bd884db0f849dfdffff8b0d000000006a636a0081c118020000e80000000083f8320f8cb30000000fbf542416dd4424300fbf442414c1e208c1e00881c28000000005800000006a00895424408944243cc7442444000000006880000000e800000000508d5424448d4c2474e8000000008b088b70048bc16a009981e2ff0000006a6403c2c744245400000000c1f8080fbfc88bc69981e2ff00000003c2c1f8080fbfd0c1e108c1e20881c18000000081c280000000894c244c89542450ba640000008d4c244ce80000000025ff00000080e3000bd8e9ccfcffff0fbf442414dd442430c1e00805800000006a00894424286880000000e800000000508d5424308d8c2480000000e8000000008b088b70048bc16a009981e2ff0000006a6403c2c744246000000000c1f8080fbfc88bc69981e2ff00000003c2c1f8080fbfd0c1e108c1e20881c18000000081c280000000894c24588954245cba640000008d4c2458e80000000025ff00000080e3000bd8e930fcffff5f5e8ac35d5b83c470c20400",
+ "relocs": [
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?LinkedList__Pop@@YAHPAX@Z",
+   "sym_key": "LinkedList__Pop"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?CalcPosition@ObjectPlacement@@QAEPAHPAX0DDD@Z",
+   "sym_key": "ObjectPlacement::CalcPosition"
+  },
+  {
+   "off": 273,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 358,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 438,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 463,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 534,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 542,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 547,
+   "type": "REL32",
+   "sym": "?LinkedList__Pop@@YAHPAX@Z",
+   "sym_key": "LinkedList__Pop"
+  },
+  {
+   "off": 635,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 653,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 698,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 712,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 748,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 771,
+   "type": "REL32",
+   "sym": "?Construct@InfantryClass@@QAEPAV1@HHPAX@Z",
+   "sym_key": "InfantryClass::Construct"
+  },
+  {
+   "off": 784,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 836,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 860,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 866,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 871,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 894,
+   "type": "REL32",
+   "sym": "?CalcPosition@ObjectPlacement@@QAEPAHPAX0DDD@Z",
+   "sym_key": "ObjectPlacement::CalcPosition"
+  },
+  {
+   "off": 902,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 919,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 931,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C850@@3IA",
+   "sym_key": "DataGlobal_89C850"
+  },
+  {
+   "off": 975,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1002,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 1016,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 1027,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 1060,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectSimpleHouse@Object@@QAE_NPAX@Z",
+   "sym_key": "Object::IsAlliedWithObjectSimpleHouse"
+  },
+  {
+   "off": 1100,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 1138,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 1165,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  },
+  {
+   "off": 1189,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 1204,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 1272,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1286,
+   "type": "REL32",
+   "sym": "?RandomCoordScatter@@YIPAVAnimClass@@PAX0HHH@Z",
+   "sym_key": "RandomCoordScatter"
+  },
+  {
+   "off": 1377,
+   "type": "REL32",
+   "sym": "?TimedCreateUnitAtCoords@@YIDPAXHHD@Z",
+   "sym_key": "TimedCreateUnitAtCoords"
+  },
+  {
+   "off": 1425,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 1442,
+   "type": "REL32",
+   "sym": "?RandomCoordScatter@@YIPAVAnimClass@@PAX0HHH@Z",
+   "sym_key": "RandomCoordScatter"
+  },
+  {
+   "off": 1533,
+   "type": "REL32",
+   "sym": "?StandardCreateUnitAtCoords@@YIDPAXHHD@Z",
+   "sym_key": "StandardCreateUnitAtCoords"
+  }
+ ]
+}

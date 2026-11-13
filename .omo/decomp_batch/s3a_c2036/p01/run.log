@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x40fd90 _DynamicVectorClass_PAVWeaponTypeClass::SetCapacity -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x411820 ManageMultimediaTimer -> _addr_41
+[conv] 0x414bb0 TechnoClass::SmokeUpdate -> TechnoClass
+[conv] 0x419b00 Cell::IsOccupied -> Cell
+[conv] 0x419c80 AircraftClass::Mission_Transport -> AircraftClass
+[conv] 0x41b430 AircraftClass::LoadFromStream -> AircraftClass
+[conv] 0x41de80 _VectorClass_PAVAirstrikeClass::Release -> _VectorClass_PAVAirstrikeClass
+[conv] 0x41dfc0 _DynamicVectorClass_PAVAirstrikeClass::SetCapacity -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x420410 _VectorClass_PAVAlphaLightingRemapClass::Release -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x420550 _DynamicVectorClass_PAVAlphaLightingRemapClass::SetCapacity -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+[conv] 0x4218a0 _VectorClass_PAVAlphaShapeClass::Release -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x425d10 Building::ComputePosition -> Building
+[conv] 0x428800 AnimTypeClass::SaveLoad_Prefix -> AnimTypeClass
+[conv] 0x42d640 _VectorClass_I::SetCapacity -> _VectorClass_I
+[conv] 0x42d780 _DynamicVectorClass_I::Remove -> _DynamicVectorClass_I
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x42f6f0 _VectorClass_VCell::Release -> _VectorClass_VCell
+[conv] 0x442c40 BuildingClass::Update -> BuildingClass
+[conv] 0x442d90 BuildingClass::EjectCrew -> BuildingClass
+[conv] 0x44d700 BuildingClass::GetAmmoCountScaled -> BuildingClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=0
+[era] _addr_41                 rc=2
+[era] TechnoClass              rc=2
+[era] Cell                     rc=2
+[era] AircraftClass            rc=2
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] Building                 rc=2
+[era] AnimTypeClass            rc=2
+[era] _VectorClass_I           rc=0
+[era] _DynamicVectorClass_I    rc=0
+[era] Base64Straw              rc=2
+[era] _VectorClass_VCell       rc=0
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x40fd90   MISMATCH         _DynamicVectorClass_PAVWeaponTypeClass::SetCapacity
+[diff] 0x41de80   MISMATCH         _VectorClass_PAVAirstrikeClass::Release
+[diff] 0x41dfc0   MISMATCH         _DynamicVectorClass_PAVAirstrikeClass::SetCapacity
+[diff] 0x420410   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::Release
+[diff] 0x420550   MISMATCH         _DynamicVectorClass_PAVAlphaLightingRemapClass::SetCapacity
+[diff] 0x4218a0   MISMATCH         _VectorClass_PAVAlphaShapeClass::Release
+[diff] 0x42d640   MISMATCH         _VectorClass_I::SetCapacity
+[diff] 0x42d780   MISMATCH         _DynamicVectorClass_I::Remove
+[diff] 0x42f6f0   MISMATCH         _VectorClass_VCell::Release
+[diff] 0x442d90   MISMATCH         BuildingClass::EjectCrew
+[ledger] 0x40fd90 _DynamicVectorClass_PAVWeaponTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x411820 ManageMultimediaTimer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x414bb0 TechnoClass::SmokeUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x419b00 Cell::IsOccupied -> COMPILE_FAIL (attempt 2)
+[ledger] 0x419c80 AircraftClass::Mission_Transport -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b430 AircraftClass::LoadFromStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41de80 _VectorClass_PAVAirstrikeClass::Release -> NG (attempt 2)
+[ledger] 0x41dfc0 _DynamicVectorClass_PAVAirstrikeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x420410 _VectorClass_PAVAlphaLightingRemapClass::Release -> NG (attempt 2)
+[ledger] 0x420550 _DynamicVectorClass_PAVAlphaLightingRemapClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4218a0 _VectorClass_PAVAlphaShapeClass::Release -> NG (attempt 2)
+[ledger] 0x425d10 Building::ComputePosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x428800 AnimTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42d640 _VectorClass_I::SetCapacity -> NG (attempt 2)
+[ledger] 0x42d780 _DynamicVectorClass_I::Remove -> NG (attempt 2)
+[ledger] 0x42df90 Base64Straw::ProcessFrame -> COMPILE_FAIL (attempt 13)
+[ledger] 0x42f6f0 _VectorClass_VCell::Release -> NG (attempt 2)
+[ledger] 0x442c40 BuildingClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x442d90 BuildingClass::EjectCrew -> NG (attempt 2)
+[ledger] 0x44d700 BuildingClass::GetAmmoCountScaled -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "codegen_shape": 9,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p01\batch_report.json
