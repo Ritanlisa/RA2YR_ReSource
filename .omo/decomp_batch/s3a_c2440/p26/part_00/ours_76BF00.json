@@ -1,0 +1,87 @@
+{
+ "symbol": "?Audio_Create_76BF00@ReferenceCounted@@QAEPADH@Z",
+ "sym_key": "ReferenceCounted::Audio_Create_76BF00",
+ "size": 147,
+ "link_base": 0,
+ "bytes_hex": "5356578bf98d7704c707000000008bcec70600000000e8000000008b5c2410c706000000008bce8b430450e8000000008b430485c074058b4008eb05a1000000008b0d000000006a145133d28bc8e800000000508bcee8000000008b5b0485db74058b4b0ceb068b0d000000008b15000000006a155233d2e800000000508bcee800000000c707000000008bc75f5e5bc20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?vt_ReferenceCounted@@3PAXA",
+   "sym_key": "vt_ReferenceCounted"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTState@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTState"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?aWdtDefaultshor@@3HA",
+   "sym_key": "aWdtDefaultshor"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostWdtp@@3HA",
+   "sym_key": "aDRa2mdpostWdtp"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?aWdtDefaultlong@@3HA",
+   "sym_key": "aWdtDefaultlong"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostWdtp@@3HA",
+   "sym_key": "aDRa2mdpostWdtp"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?vt_WorldDominationTour_CampaignProperties@@3PAXA",
+   "sym_key": "vt_WorldDominationTour_CampaignProperties"
+  }
+ ]
+}

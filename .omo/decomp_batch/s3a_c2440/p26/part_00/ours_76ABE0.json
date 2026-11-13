@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_76ABE0@WDTState@@QAEPAIH@Z",
+ "sym_key": "WDTState::sub_76ABE0",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578d44240c33db8d7e2c5057895e04c746400a000000c6463801895e30895e34885e39c70700000000895e3cc70600000000885e14895e18895e20895e24c7462840420f00c744241400000000e80000000083c408895f10c747140a0000008b06895e445f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?vt_WDTState@@3PAXA",
+   "sym_key": "vt_WDTState"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?sub_76B7B0@@YAPAIPAX0@Z",
+   "sym_key": "sub_76B7B0"
+  }
+ ]
+}

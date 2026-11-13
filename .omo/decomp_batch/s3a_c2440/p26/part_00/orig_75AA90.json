@@ -1,0 +1,11 @@
+{
+ "addr": "0x75AA90",
+ "name": "VoxelAnimClass::Reset",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75AA90",
+ "bytes_hex": "568bf1e828fcdfff8b0de85bb4008d461c894e1c8b15ec5bb4008950048b0df05bb4008d5628894808a1e85bb40089028b0dec5bb400894a04a1f05bb40089420833c0884634884635884636894638c706c46a7f00c74604f8697f00c74618d4697f008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

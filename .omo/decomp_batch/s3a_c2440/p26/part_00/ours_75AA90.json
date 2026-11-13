@@ -1,0 +1,63 @@
+{
+ "symbol": "?Reset@VoxelAnimClass@@QAEHXZ",
+ "sym_key": "VoxelAnimClass::Reset",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000a1000000008946188b0d00000000894e208b1500000000895624a1000000008946288b0d00000000894e2c8b150000000033c0895620894670894674894678894638894604c70600000000c74618000000008bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Init@LocomotionClass@@QAEPAIXZ",
+   "sym_key": "LocomotionClass::Init"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?vt_WalkLocomotionClass_2@@3PAXA",
+   "sym_key": "vt_WalkLocomotionClass_2"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?vt_WalkLocomotionClass_2@@3PAXA",
+   "sym_key": "vt_WalkLocomotionClass_2"
+  }
+ ]
+}

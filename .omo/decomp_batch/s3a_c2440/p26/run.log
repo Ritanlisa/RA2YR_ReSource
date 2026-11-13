@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x75a2f0 sub_75A2F0 -> _addr_75
+[conv] 0x75aa90 VoxelAnimClass::Reset -> VoxelAnimClass
+[conv] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> WalkLocomotionClass
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x7651d0 ObjectClass::sub_7651D0 -> ObjectClass
+[conv] 0x767320 ObjectClass::sub_767320 -> ObjectClass
+[conv] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> MapSizeGameOption_WorldDominationTour
+[conv] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> ReferenceCounted
+[conv] 0x7681e0 ArtConfig::ReadLayout -> ArtConfig
+[conv] 0x769550 LoadWDTMapAsset -> _addr_76
+[conv] 0x76abe0 WDTState::sub_76ABE0 -> WDTState
+[conv] 0x76afc0 WDTState::Constructor_WDTState -> WDTState
+[conv] 0x76bf00 ReferenceCounted::Audio_Create_76BF00 -> ReferenceCounted
+[conv] 0x76c030 CampaignProperties_WorldDominationTour::QueryInterface -> CampaignProperties_WorldDominationTour
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x76ea20 ScoreText::ShowAlt -> ScoreText
+[conv] 0x76eaf0 ScoreText::Show -> ScoreText
+[conv] 0x76f1c0 Trigger::checkCondition -> Trigger
+[conv] 0x76f970 ReferenceCounted::Constructor -> ReferenceCounted
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=2
+[era] VoxelAnimClass           rc=0
+[era] WalkLocomotionClass      rc=2
+[era] ReferenceCounted         rc=2
+[era] ObjectClass              rc=2
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] MapSizeGameOption_WorldDominationTour rc=2
+[era] ArtConfig                rc=2
+[era] _addr_76                 rc=2
+[era] WDTState                 rc=2
+[era] CampaignProperties_WorldDominationTour rc=0
+[era] ScoreText                rc=0
+[era] Trigger                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x75aa90   MISMATCH         VoxelAnimClass::Reset
+[diff] 0x76bf00   MISMATCH         ReferenceCounted::Audio_Create_76BF00
+[diff] 0x76f970   MISMATCH         ReferenceCounted::Constructor
+[diff] 0x767320   MISMATCH         ObjectClass::sub_767320
+[diff] 0x76abe0   MISMATCH         WDTState::sub_76ABE0
+[diff] 0x76c030   MISMATCH         CampaignProperties_WorldDominationTour::QueryInterface
+[diff] 0x76ea20   MISMATCH         ScoreText::ShowAlt
+[diff] 0x76eaf0   MISMATCH         ScoreText::Show
+[diff] 0x76f1c0   MISMATCH         Trigger::checkCondition
+[ledger] 0x75a2f0 sub_75A2F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75aa90 VoxelAnimClass::Reset -> NG (attempt 2)
+[ledger] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7651d0 ObjectClass::sub_7651D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x767320 ObjectClass::sub_767320 -> NG (attempt 2)
+[ledger] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7681e0 ArtConfig::ReadLayout -> COMPILE_FAIL (attempt 2)
+[ledger] 0x769550 LoadWDTMapAsset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76abe0 WDTState::sub_76ABE0 -> NG (attempt 2)
+[ledger] 0x76afc0 WDTState::Constructor_WDTState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76bf00 ReferenceCounted::Audio_Create_76BF00 -> NG (attempt 2)
+[ledger] 0x76c030 CampaignProperties_WorldDominationTour::QueryInterface -> NG (attempt 2)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x76ea20 ScoreText::ShowAlt -> NG (attempt 2)
+[ledger] 0x76eaf0 ScoreText::Show -> NG (attempt 2)
+[ledger] 0x76f1c0 Trigger::checkCondition -> NG (attempt 2)
+[ledger] 0x76f970 ReferenceCounted::Constructor -> NG (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 4,
+  "const_fold": 1,
+  "regalloc": 2,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p26\batch_report.json

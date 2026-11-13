@@ -1,0 +1,45 @@
+{
+ "symbol": "?QueryInterface@CampaignProperties_WorldDominationTour@@QAEPAPAXD@Z",
+ "sym_key": "CampaignProperties_WorldDominationTour::QueryInterface",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "568bf18d4e11c70600000000e8000000008d4e10e8000000008d4e08c70100000000e8000000008bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTState@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTState"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

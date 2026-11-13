@@ -1,0 +1,117 @@
+{
+ "symbol": "?sub_767320@ObjectClass@@QAEPAPAGPAPAGHPAPBG@Z",
+ "sym_key": "ObjectClass::sub_767320",
+ "size": 224,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4c2410578b065156ff50148bd08d4c2408e800000000508d56108d4c2418e8000000008d54240852e8000000008b4c241c83c4048bf9e80000000085c0745e68000000008d4c241ce8000000008d4c2414e80000000033c96a168a0d0000000033d2518bc8e8000000008d5424188d4c2408528bd78bf0e800000000568b742414568bc8e8000000008d4c2408e8000000008d4c2418e800000000eb298d4c2414e80000000033c96a198a0d0000000033d2518bc8e8000000008b742410508bcee8000000008d54241452e80000000083c4048bc65f5e59c20c00",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?FromStringInt@@YIPAPADPAXH@Z",
+   "sym_key": "FromStringInt"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ConcatStringAlloc@@YIPAPADPAX0PAPAD@Z",
+   "sym_key": "ConcatStringAlloc"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "??_C@_15MHMA@?$AA?0?$AA?5?$AA?$AA@",
+   "sym_key": "??_C@_15MHMA@?$AA?0?$AA?5?$AA?$AA@"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_Str_File_WDTGameOptions_cpp@@3EA",
+   "sym_key": "g_Str_File_WDTGameOptions_cpp"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?ConcatWString@@YIPAPAGPAXPAPBHPBX@Z",
+   "sym_key": "ConcatWString"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?AssignConcat@WideString@@QAEPAPAGPAX0@Z",
+   "sym_key": "WideString::AssignConcat"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_Str_File_WDTGameOptions_cpp@@3EA",
+   "sym_key": "g_Str_File_WDTGameOptions_cpp"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}

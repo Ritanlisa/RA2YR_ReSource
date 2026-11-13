@@ -1,0 +1,11 @@
+{
+ "addr": "0x76BF00",
+ "name": "Audio_Create_76BF00",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76BF00",
+ "bytes_hex": "53568bf1578d7e08c74604000000008bcfc70654097f00e81415efff8b5c2410c707ec707f008bcf8b430450e84f15efff8b43046a1485c068808d840074078b480833d2eb0733d2b9608d8400e80e8ffcff508d4e10e875a704008b43046a1585c068808d840074078b480c33d2eb0733d2b9408d8400e8e48efcff508d4e14e84ba70400c70694727f008bc65f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -184268,7 +184268,7 @@
   "this_as_id": false
  },
  "0x75a2f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_75A2F0",
@@ -184650,15 +184650,15 @@
   "this_as_id": false
  },
  "0x75aa90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+8 mov ecx, dword ptr [0xb45be8]",
   "name": "VoxelAnimClass::Reset",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "VoxelAnimClass::Reset",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x75ab30": {
@@ -184674,7 +184674,7 @@
   "this_as_id": false
  },
  "0x75ab40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -186835,14 +186835,14 @@
   "this_as_id": false
  },
  "0x764b90": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ReferenceCounted::CampaignConstructorWDT",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignConstructorWDT",
-  "rule_violations": 6,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186894,7 +186894,7 @@
   "this_as_id": false
  },
  "0x7651d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -188043,15 +188043,15 @@
   "this_as_id": false
  },
  "0x767320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+8 mov eax, dword ptr [esi]",
   "name": "ObjectClass::sub_767320",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_767320",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x767460": {
@@ -188079,7 +188079,7 @@
   "this_as_id": false
  },
  "0x767500": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188114,7 +188114,7 @@
   "this_as_id": false
  },
  "0x767740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188600,14 +188600,14 @@
   "this_as_id": false
  },
  "0x768000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ConstructWDTSelection_Create_767FB0_Create",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -188624,7 +188624,7 @@
   "this_as_id": false
  },
  "0x7681e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188756,7 +188756,7 @@
   "this_as_id": false
  },
  "0x769550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadWDTMapAsset",
@@ -189469,15 +189469,15 @@
   "this_as_id": false
  },
  "0x76abe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "WDTState::sub_76ABE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_76ABE0",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76ac90": {
@@ -189493,7 +189493,7 @@
   "this_as_id": false
  },
  "0x76afc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -189896,15 +189896,15 @@
   "this_as_id": false
  },
  "0x76bf00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+2 mov esi, ecx",
   "name": "ReferenceCounted::Audio_Create_76BF00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Audio_Create_76BF00",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x76bfa0": {
@@ -189945,15 +189945,15 @@
   "status": "OK"
  },
  "0x76c030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 lea ecx, [esi + 0x14]",
   "name": "CampaignProperties_WorldDominationTour::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "CampaignProperties_WorldDominationTour::QueryInterface",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76c080": {
@@ -190303,7 +190303,7 @@
   "this_as_id": false
  },
  "0x76e2f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -190363,27 +190363,27 @@
   "this_as_id": false
  },
  "0x76ea20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "ScoreText::ShowAlt",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ScoreText::ShowAlt",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76eaf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+38 mov edx, dword ptr [eax + 0xc]",
   "name": "ScoreText::Show",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ScoreText::Show",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x76ebe0": {
@@ -190685,15 +190685,15 @@
   "this_as_id": false
  },
  "0x76f1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+17 mov byte ptr [esi + 0xc], 1",
   "name": "Trigger::checkCondition",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "Trigger::checkCondition",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x76f210": {
@@ -191088,15 +191088,15 @@
   "this_as_id": false
  },
  "0x76f970": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 xor ebx, ebx",
   "name": "ReferenceCounted::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WorldDominationTour::Territory::Constructor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x76fb90": {

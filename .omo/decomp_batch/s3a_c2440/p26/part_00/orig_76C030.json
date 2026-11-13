@@ -1,0 +1,11 @@
+{
+ "addr": "0x76C030",
+ "name": "CampaignProperties_WorldDominationTour::QueryInterface",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76C030",
+ "bytes_hex": "568bf18d4e14c70694727f00e81fa704008d4e10e817a704008d4e08c701ec707f00e80914efff8bcee80216effff644240801740956e8d2ca050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

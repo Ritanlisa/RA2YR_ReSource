@@ -1,0 +1,75 @@
+{
+ "symbol": "?ShowAlt@ScoreText@@QAEXPAPBHH@Z",
+ "sym_key": "ScoreText::ShowAlt",
+ "size": 181,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578dbe7c04000085ff74418b0750e8000000008b865c0400008b0d000000008b1d0000000083c07c8b116a016a0050535051ff52208b865c0400008bce83c07c50e800000000c707000000008b4c24108bd9e80000000085c07450538d4c2414e8000000006a34e80000000083c40485c0741a8b8e5c0400006a0183c17c8d54241451528bc8e800000000eb0233c06a018bc88907e800000000578bcee8000000008d4c2410e8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?RemoveTeam@Session@@QAEHPAX@Z",
+   "sym_key": "Session::RemoveTeam"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?CopyRect@Surface@@QAEPAIPAX@Z",
+   "sym_key": "Surface::CopyRect"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Length@WideString@@QAEPBGXZ",
+   "sym_key": "WideString::Length"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Construct@MSBitPrintAnim@@QAEPAXPAX0D@Z",
+   "sym_key": "MSBitPrintAnim::Construct"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?SetState@ScoreClass@@QAEDD@Z",
+   "sym_key": "ScoreClass::SetState"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?Add@PriorityQueue@@QAEHPAX@Z",
+   "sym_key": "PriorityQueue::Add"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  }
+ ]
+}
