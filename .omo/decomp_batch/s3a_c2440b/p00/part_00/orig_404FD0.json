@@ -1,0 +1,11 @@
+{
+ "addr": "0x404FD0",
+ "name": "AudioStream::UpdateTimers",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x404FD0",
+ "bytes_hex": "a1a0e287005685c0745a8b3580e1870081fe80e18700744c538b865801000085c075298b461c83f8027521e8b04300008b8e400100008b9e440100002bc81bda898e40010000899e440100008b9658010000428996580100008b3681fe80e1870075b65b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x401080 Audio::InitChannels -> Audio
+[conv] 0x4015c0 sub_4015C0 -> _addr_40
+[conv] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> TechnoClass
+[conv] 0x404fd0 AudioStream::UpdateTimers -> AudioStream
+[conv] 0x405040 AudioStream::UpdateCountdowners -> AudioStream
+[conv] 0x4054a0 Audio::UpdatePlaybackPosition -> Audio
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x4067d0 sub_4067D0 -> _addr_40
+[conv] 0x406820 sub_406820 -> _addr_40
+[conv] 0x406e80 AudioMixer::Shutdown -> AudioMixer
+[conv] 0x407680 StartAddress -> _addr_40
+[conv] 0x407b60 ThreadAudioMixerMain -> _addr_40
+[conv] 0x408200 AudioQueue::IncrementPriority -> AudioQueue
+[conv] 0x408230 AudioTimer::DecrementAll -> AudioTimer
+[conv] 0x408390 sub_408390 -> _addr_40
+[conv] 0x4083d0 Mixer::RequestAllBuffers -> Mixer
+[conv] 0x409c40 AudioBuffer::InitializePlayback -> AudioBuffer
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x4128f0 sub_4128F0 -> _addr_41
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=2
+[era] _addr_40                 rc=2
+[era] TechnoClass              rc=2
+[era] AudioStream              rc=0
+[era] VocClass                 rc=2
+[era] AudioMixer               rc=2
+[era] AudioQueue               rc=2
+[era] AudioTimer               rc=2
+[era] Mixer                    rc=2
+[era] AudioBuffer              rc=2
+[era] Math                     rc=2
+[era] _addr_41                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4067d0   MISMATCH         sub_4067D0
+[diff] 0x404fd0   MISMATCH         AudioStream::UpdateTimers
+[diff] 0x405040   MISMATCH         AudioStream::UpdateCountdowners
+[ledger] 0x401080 Audio::InitChannels -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4015c0 sub_4015C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> COMPILE_FAIL (attempt 3)
+[ledger] 0x404fd0 AudioStream::UpdateTimers -> NG (attempt 3)
+[ledger] 0x405040 AudioStream::UpdateCountdowners -> NG (attempt 3)
+[ledger] 0x4054a0 Audio::UpdatePlaybackPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4067d0 sub_4067D0 -> NG (attempt 3)
+[ledger] 0x406820 sub_406820 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406e80 AudioMixer::Shutdown -> COMPILE_FAIL (attempt 3)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 5)
+[ledger] 0x407b60 ThreadAudioMixerMain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x408200 AudioQueue::IncrementPriority -> COMPILE_FAIL (attempt 3)
+[ledger] 0x408230 AudioTimer::DecrementAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x408390 sub_408390 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4083d0 Mixer::RequestAllBuffers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x409c40 AudioBuffer::InitializePlayback -> COMPILE_FAIL (attempt 3)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4128f0 sub_4128F0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p00\batch_report.json

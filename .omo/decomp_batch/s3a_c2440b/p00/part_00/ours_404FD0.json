@@ -1,0 +1,39 @@
+{
+ "symbol": "?UpdateTimers@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::UpdateTimers",
+ "size": 118,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0885c056578bf974608b350000000081fe000000007452538b5c24108b865801000085c0752b8b461c83f80275238bcfe8000000008b96400100002bd08996400100008b8e440100001bcb898e440100008b9658010000428996580100008b3681fe0000000075b45b5f5e83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  }
+ ]
+}

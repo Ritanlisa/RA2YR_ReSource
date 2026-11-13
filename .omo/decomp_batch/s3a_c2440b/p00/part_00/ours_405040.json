@@ -1,0 +1,39 @@
+{
+ "symbol": "?UpdateCountdowners@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::UpdateCountdowners",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0885c056578bf974748b350000000081fe000000007466538b5c24108b865801000085c0744c4885c08986580100007d0ac78658010000000000008b865801000085c0752d8b461c83f80275258bcfe8000000008bc88b864001000003c18b8e4401000013cb898640010000898e440100008b3681fe0000000075a05b5f5e83c408c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Callback@Audio@@QAEHXZ",
+   "sym_key": "Audio::Callback"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_AudioStreamObject@@3PAXA",
+   "sym_key": "g_AudioStreamObject"
+  }
+ ]
+}
