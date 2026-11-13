@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x540e70 SessionClass::initInternet -> SessionClass
+[conv] 0x5410f0 Network::SendMessage -> Network
+[conv] 0x541170 ObjectClass::sub_541170 -> ObjectClass
+[conv] 0x541260 Network::SendToPlayer -> Network
+[conv] 0x541370 Network::Send -> Network
+[conv] 0x541480 Network::SendPacketThunk2 -> Network
+[conv] 0x541820 IPXManagerClass::ReceiveLoop -> IPXManagerClass
+[conv] 0x543780 IsometricTileClass::IsometricTileClass -> IsometricTileClass
+[conv] 0x5447c0 TerrainTypeClass::Construct -> TerrainTypeClass
+[conv] 0x545150 LoadTerrainTypeClassTheatre -> _addr_54
+[conv] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> IsometricTileTypeClass
+[conv] 0x549ae0 IsometricTileTypeClass::GetHeight -> IsometricTileTypeClass
+[conv] 0x54ac40 JumpjetLocomotionClass::Update -> JumpjetLocomotionClass
+[conv] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> JumpjetLocomotionClass
+[conv] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> JumpjetLocomotionClass
+[conv] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> JumpjetLocomotionClass
+[conv] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> JumpjetLocomotionClass
+[conv] 0x54b980 HouseClass::Set -> HouseClass
+[conv] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> BuildingPlacement
+[conv] 0x54ca90 JumpjetLocomotion::Land -> JumpjetLocomotion
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SessionClass             rc=2
+[era] Network                  rc=2
+[era] ObjectClass              rc=2
+[era] IPXManagerClass          rc=2
+[era] IsometricTileClass       rc=2
+[era] TerrainTypeClass         rc=2
+[era] _addr_54                 rc=2
+[era] IsometricTileTypeClass   rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] HouseClass               rc=2
+[era] BuildingPlacement        rc=2
+[era] JumpjetLocomotion        rc=2
+=== diffasm byte-compare ===
+[diff] 0x541370   MISMATCH         Network::Send
+[diff] 0x541480   MISMATCH         Network::SendPacketThunk2
+[ledger] 0x540e70 SessionClass::initInternet -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5410f0 Network::SendMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x541170 ObjectClass::sub_541170 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x541260 Network::SendToPlayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x541370 Network::Send -> NG (attempt 2)
+[ledger] 0x541480 Network::SendPacketThunk2 -> NG (attempt 2)
+[ledger] 0x541820 IPXManagerClass::ReceiveLoop -> COMPILE_FAIL (attempt 2)
+[ledger] 0x543780 IsometricTileClass::IsometricTileClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5447c0 TerrainTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x545150 LoadTerrainTypeClassTheatre -> COMPILE_FAIL (attempt 2)
+[ledger] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x549ae0 IsometricTileTypeClass::GetHeight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54ac40 JumpjetLocomotionClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54b980 HouseClass::Set -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54ca90 JumpjetLocomotion::Land -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "ret_norm": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p32\batch_report.json

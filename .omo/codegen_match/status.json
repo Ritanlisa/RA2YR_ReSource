@@ -80731,7 +80731,7 @@
   "this_as_id": false
  },
  "0x540e70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80827,7 +80827,7 @@
   "this_as_id": false
  },
  "0x5410f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80839,7 +80839,7 @@
   "this_as_id": false
  },
  "0x541170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -80851,7 +80851,7 @@
   "this_as_id": false
  },
  "0x541260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80863,15 +80863,15 @@
   "this_as_id": false
  },
  "0x541370": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [ecx + 4]",
   "name": "Network::Send",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "Network::Send",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5413b0": {
@@ -80911,15 +80911,15 @@
   "this_as_id": false
  },
  "0x541480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [ecx + 4]",
   "name": "Network::SendPacketThunk2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "Network::SendPacketThunk2",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5414c0": {
@@ -80958,7 +80958,7 @@
   "this_as_id": false
  },
  "0x541820": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81448,7 +81448,7 @@
   "this_as_id": false
  },
  "0x543780": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81769,7 +81769,7 @@
   "status": "NG"
  },
  "0x5447c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81917,7 +81917,7 @@
   "this_as_id": false
  },
  "0x545150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadTerrainTypeClassTheatre",
@@ -82062,7 +82062,7 @@
   "this_as_id": false
  },
  "0x549aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82074,7 +82074,7 @@
   "this_as_id": false
  },
  "0x549ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82750,7 +82750,7 @@
   "this_as_id": false
  },
  "0x54ac40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82762,7 +82762,7 @@
   "this_as_id": false
  },
  "0x54ad30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82798,7 +82798,7 @@
   "this_as_id": false
  },
  "0x54aec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82822,7 +82822,7 @@
   "this_as_id": false
  },
  "0x54b4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82870,7 +82870,7 @@
   "this_as_id": false
  },
  "0x54b7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82894,7 +82894,7 @@
   "this_as_id": false
  },
  "0x54b980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82942,19 +82942,19 @@
   "this_as_id": false
  },
  "0x54c550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingPlacement::ProcessBuildingPlacementAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingPlacement::ProcessBuildingPlacementAction",
-  "rule_violations": 14,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x54ca90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

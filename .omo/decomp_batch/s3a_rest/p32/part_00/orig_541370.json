@@ -1,0 +1,11 @@
+{
+ "addr": "0x541370",
+ "name": "Network::Send",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x541370",
+ "bytes_hex": "8a410484c074268a410584c0741f8b5424108b4948528b5424108b01528b542410528b54241052ff5034c2100033c0c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
