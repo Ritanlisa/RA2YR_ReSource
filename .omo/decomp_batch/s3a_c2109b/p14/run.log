@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x67b550 ReadINIClassBuildingTypeList -> _addr_67
+[conv] 0x67b720 BuildingClass::LoadBuildingTypes -> BuildingClass
+[conv] 0x67b8f0 HouseTypeClass::ReadCountryName -> HouseTypeClass
+[conv] 0x67bac0 GetINIClassInt -> _addr_67
+[conv] 0x67bce0 SmallFunc_67BCE0 -> SmallFunc
+[conv] 0x67bd30 GetINIClassKeyword -> _addr_67
+[conv] 0x67bd80 SmallFunc_67BD80 -> SmallFunc
+[conv] 0x67bdd0 RulesClass::LoadTypeList -> RulesClass
+[conv] 0x67e440 Game::LoadSaved -> Game
+[conv] 0x67fd20 LoadOptions_Load -> LoadOptions
+[conv] 0x683610 ScenarioClass::InitTimer -> ScenarioClass
+[conv] 0x6851f0 ObjectClass::ResetScenario -> ObjectClass
+[conv] 0x686b20 ScenarioClass::LoadMap -> ScenarioClass
+[conv] 0x687f10 ObjectClass::AssignSessionHouses -> ObjectClass
+[conv] 0x689b20 ScenarioClass::ReadLocalVariables -> ScenarioClass
+[conv] 0x689c60 ScenarioClass::ReadWaypoint -> ScenarioClass
+[conv] 0x68f060 Screen::TransitionRender -> Screen
+[conv] 0x68f9b0 ScoreScreen::DisplayTimeText -> ScoreScreen
+[conv] 0x68fb10 ObjectClass::sub_68FB10 -> ObjectClass
+[conv] 0x690530 ObjectClass::sub_690530 -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_67                 rc=2
+[era] BuildingClass            rc=2
+[era] HouseTypeClass           rc=2
+[era] SmallFunc                rc=0
+[era] RulesClass               rc=2
+[era] Game                     rc=2
+[era] LoadOptions              rc=2
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] Screen                   rc=2
+[era] ScoreScreen              rc=2
+=== diffasm byte-compare ===
+[diff] 0x67bac0   MATCH            GetINIClassInt
+[diff] 0x67bd30   MATCH            GetINIClassKeyword
+[diff] 0x67bce0   MATCH            SmallFunc_67BCE0
+[diff] 0x67bd80   MATCH            SmallFunc_67BD80
+[diff] 0x689b20   MISMATCH         ScenarioClass::ReadLocalVariables
+[diff] 0x68fb10   MISMATCH         ObjectClass::sub_68FB10
+[ledger] 0x67b550 ReadINIClassBuildingTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67b720 BuildingClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67b8f0 HouseTypeClass::ReadCountryName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67bac0 GetINIClassInt -> OK (attempt 3)
+[ledger] 0x67bce0 SmallFunc_67BCE0 -> OK (attempt 3)
+[ledger] 0x67bd30 GetINIClassKeyword -> OK (attempt 3)
+[ledger] 0x67bd80 SmallFunc_67BD80 -> OK (attempt 3)
+[ledger] 0x67bdd0 RulesClass::LoadTypeList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67e440 Game::LoadSaved -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67fd20 LoadOptions_Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x683610 ScenarioClass::InitTimer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6851f0 ObjectClass::ResetScenario -> COMPILE_FAIL (attempt 3)
+[ledger] 0x686b20 ScenarioClass::LoadMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x687f10 ObjectClass::AssignSessionHouses -> COMPILE_FAIL (attempt 3)
+[ledger] 0x689b20 ScenarioClass::ReadLocalVariables -> NG (attempt 3)
+[ledger] 0x689c60 ScenarioClass::ReadWaypoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68f060 Screen::TransitionRender -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68f9b0 ScoreScreen::DisplayTimeText -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68fb10 ObjectClass::sub_68FB10 -> NG (attempt 3)
+[ledger] 0x690530 ObjectClass::sub_690530 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MATCH": 4,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 66.7,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p14\batch_report.json

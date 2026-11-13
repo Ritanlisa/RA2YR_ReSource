@@ -1,0 +1,93 @@
+{
+ "symbol": "?ReadLocalVariables@ScenarioClass@@QAEDPAD@Z",
+ "sym_key": "ScenarioClass::ReadLocalVariables",
+ "size": 325,
+ "link_base": 0,
+ "bytes_hex": "81ec8c000000538bd955895c24108d838c240000b964000000c6000083c0294975f78bac249800000033c0a0000000008bcd50e80000000083f8647c0ac744240864000000eb1433c98a0d00000000518bcde800000000894424088b442408c744240c0000000085c07f0d5db0015b81c48c000000c204005657eb048b5c24188b54241433c0a00000000052508bcde8000000008bf857e80000000083c4048d4c241c33d28bf08a15000000006880000000516a0057528bcde8000000008d04b603de8d4c241c6800000000518d1cc3e8000000008bf883c9ff33c08d938a240000f2aef7d12bf968000000008bc18bf78bfa6a00c1e902f3a58bc883e103f3a4e80000000083c41085c0741450e80000000083c40485c00f95c1888bb22400008b4424148b4c2410403bc1894424140f8c46ffffff5f5e5db0015b81c48c000000c20400",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_VariableNames@@3EA",
+   "sym_key": "g_INI_Key_VariableNames"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_VariableNames@@3EA",
+   "sym_key": "g_INI_Key_VariableNames"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_VariableNames@@3EA",
+   "sym_key": "g_INI_Key_VariableNames"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_VariableNames@@3EA",
+   "sym_key": "g_INI_Key_VariableNames"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 200,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  }
+ ]
+}

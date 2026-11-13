@@ -136027,7 +136027,7 @@
   "this_as_id": false
  },
  "0x67b550": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassBuildingTypeList",
@@ -136038,7 +136038,7 @@
   "this_as_id": false
  },
  "0x67b720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136050,7 +136050,7 @@
   "this_as_id": false
  },
  "0x67b8f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136062,14 +136062,14 @@
   "this_as_id": false
  },
  "0x67bac0": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": null,
   "name": "GetINIClassInt",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "GetINIClassInt",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x67bb10": {
@@ -136084,40 +136084,40 @@
   "this_as_id": false
  },
  "0x67bce0": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": null,
   "name": "SmallFunc_67BCE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "SmallFunc_67BCE0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x67bd30": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": null,
   "name": "GetINIClassKeyword",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "GetINIClassKeyword",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x67bd80": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": null,
   "name": "SmallFunc_67BD80",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "SmallFunc_67BD80",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x67bdd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136494,7 +136494,7 @@
   "this_as_id": false
  },
  "0x67e440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -136542,7 +136542,7 @@
   "this_as_id": false
  },
  "0x67fd20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LoadOptions_Load",
@@ -137723,7 +137723,7 @@
   "this_as_id": false
  },
  "0x683610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -137877,7 +137877,7 @@
   "this_as_id": false
  },
  "0x6851f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137972,7 +137972,7 @@
   "this_as_id": false
  },
  "0x686b20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137995,7 +137995,7 @@
   "this_as_id": false
  },
  "0x687f10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138197,19 +138197,19 @@
   "this_as_id": false
  },
  "0x689b20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+14 lea eax, [ebx + 0x248a]",
   "name": "ScenarioClass::ReadLocalVariables",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "ScenarioClass::ReadLocalVariables",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x689c60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138767,7 +138767,7 @@
   "this_as_id": false
  },
  "0x68f060": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138791,7 +138791,7 @@
   "this_as_id": false
  },
  "0x68f9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138803,15 +138803,15 @@
   "this_as_id": false
  },
  "0x68fb10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+50 mov ecx, dword ptr [edi + 0xc]",
   "name": "ObjectClass::sub_68FB10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_68FB10",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x68fbb0": {
@@ -138886,7 +138886,7 @@
   "this_as_id": false
  },
  "0x690530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
