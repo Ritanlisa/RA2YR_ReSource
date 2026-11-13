@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetCell@MapSeedClass@@QAEPAGXZ",
+ "sym_key": "MapSeedClass::GetCell",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "68ca150000684800000033d2b94c020000e800000000c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?aCabhut@@3IA",
+   "sym_key": "aCabhut"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAH0H@Z",
+   "sym_key": "GetStringCSF"
+  }
+ ]
+}

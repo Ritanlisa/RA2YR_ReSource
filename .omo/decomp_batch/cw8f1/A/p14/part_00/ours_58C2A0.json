@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetCellData@Tactical@@QAEPADXZ",
+ "sym_key": "Tactical::GetCellData",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "0fbf41020faf05000000000fbf0903c18b0d182700008d0480c1e00403c1c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

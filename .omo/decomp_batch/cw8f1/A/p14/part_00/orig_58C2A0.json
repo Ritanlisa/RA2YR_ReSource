@@ -1,0 +1,11 @@
+{
+ "addr": "0x58C2A0",
+ "name": "Tactical::GetCellData",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58C2A0",
+ "bytes_hex": "0fbf41020faf05dcc289000fbf0903c18b0d10edab008d0480c1e00403c1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

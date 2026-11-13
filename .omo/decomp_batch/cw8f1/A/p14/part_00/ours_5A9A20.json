@@ -1,0 +1,15 @@
+{
+ "symbol": "?Alloc@ListNode@@QAEPAV1@PAH@Z",
+ "sym_key": "ListNode::Alloc",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bf16a08c7460800000000c70601000000e80000000083c40485c0741466c700000066c740020000c74004ffffffffeb0233c08b4c24088946048b1189108b49048948048bc65ec20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

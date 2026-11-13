@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x58c2a0 Tactical::GetCellData -> Tactical
+[conv] 0x597fa0 MapSeedClass::GetCell -> MapSeedClass
+[conv] 0x597fc0 MapSeedClass::SetCell -> MapSeedClass
+[conv] 0x597fe0 MapSeedClass::Validate -> MapSeedClass
+[conv] 0x5a9a20 ListNode::Alloc -> ListNode
+[conv] 0x5adb20 sub_5ADB20 -> _addr_5A
+[conv] 0x5adcf0 sub_5ADCF0 -> _addr_5A
+[conv] 0x5afce0 sub_5AFCE0 -> _addr_5A
+[conv] 0x5afeb0 sub_5AFEB0 -> _addr_5A
+[conv] 0x5b1ba0 sub_5B1BA0 -> _addr_5B
+[conv] 0x5b1d70 sub_5B1D70 -> _addr_5B
+[conv] 0x5b20d0 sub_5B20D0 -> _addr_5B
+[conv] 0x5b2b90 sub_5B2B90 -> _addr_5B
+[conv] 0x5b2d60 sub_5B2D60 -> _addr_5B
+[conv] 0x5b47c0 sub_5B47C0 -> _addr_5B
+[conv] 0x5b4990 sub_5B4990 -> _addr_5B
+[conv] 0x5b75f0 sub_5B75F0 -> _addr_5B
+[conv] 0x5b77c0 sub_5B77C0 -> _addr_5B
+[conv] 0x5bbf90 sub_5BBF90 -> _addr_5B
+[conv] 0x5bc160 sub_5BC160 -> _addr_5B
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Tactical                 rc=0
+[era] MapSeedClass             rc=0
+[era] ListNode                 rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x58c2a0   MATCH            Tactical::GetCellData
+[diff] 0x597fa0   MATCH            MapSeedClass::GetCell
+[diff] 0x597fc0   MATCH            MapSeedClass::SetCell
+[diff] 0x597fe0   MATCH            MapSeedClass::Validate
+[diff] 0x5a9a20   MATCH            ListNode::Alloc
+[diff] 0x5adb20   MATCH            sub_5ADB20
+[diff] 0x5adcf0   MATCH            sub_5ADCF0
+[diff] 0x5afce0   MATCH            sub_5AFCE0
+[diff] 0x5afeb0   MATCH            sub_5AFEB0
+[diff] 0x5b1ba0   MATCH            sub_5B1BA0
+[diff] 0x5b1d70   MATCH            sub_5B1D70
+[diff] 0x5b20d0   MATCH            sub_5B20D0
+[diff] 0x5b2b90   MATCH            sub_5B2B90
+[diff] 0x5b2d60   MATCH            sub_5B2D60
+[diff] 0x5b47c0   MATCH            sub_5B47C0
+[diff] 0x5b4990   MATCH            sub_5B4990
+[diff] 0x5b75f0   MATCH            sub_5B75F0
+[diff] 0x5b77c0   MATCH            sub_5B77C0
+[diff] 0x5bbf90   MATCH            sub_5BBF90
+[diff] 0x5bc160   MATCH            sub_5BC160
+[ledger] 0x58c2a0 Tactical::GetCellData -> OK (attempt 3)
+[ledger] 0x597fa0 MapSeedClass::GetCell -> OK (attempt 4)
+[ledger] 0x597fc0 MapSeedClass::SetCell -> OK (attempt 2)
+[ledger] 0x597fe0 MapSeedClass::Validate -> OK (attempt 2)
+[ledger] 0x5a9a20 ListNode::Alloc -> OK (attempt 2)
+[ledger] 0x5adb20 sub_5ADB20 -> OK (attempt 2)
+[ledger] 0x5adcf0 sub_5ADCF0 -> OK (attempt 3)
+[ledger] 0x5afce0 sub_5AFCE0 -> OK (attempt 2)
+[ledger] 0x5afeb0 sub_5AFEB0 -> OK (attempt 4)
+[ledger] 0x5b1ba0 sub_5B1BA0 -> OK (attempt 2)
+[ledger] 0x5b1d70 sub_5B1D70 -> OK (attempt 3)
+[ledger] 0x5b20d0 sub_5B20D0 -> OK (attempt 3)
+[ledger] 0x5b2b90 sub_5B2B90 -> OK (attempt 2)
+[ledger] 0x5b2d60 sub_5B2D60 -> OK (attempt 3)
+[ledger] 0x5b47c0 sub_5B47C0 -> OK (attempt 2)
+[ledger] 0x5b4990 sub_5B4990 -> OK (attempt 3)
+[ledger] 0x5b75f0 sub_5B75F0 -> OK (attempt 2)
+[ledger] 0x5b77c0 sub_5B77C0 -> OK (attempt 3)
+[ledger] 0x5bbf90 sub_5BBF90 -> OK (attempt 2)
+[ledger] 0x5bc160 sub_5BC160 -> OK (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p14\batch_report.json
