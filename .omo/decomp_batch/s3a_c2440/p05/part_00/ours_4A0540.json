@@ -1,0 +1,45 @@
+{
+ "symbol": "?Release@ConnectionPointClass@@QAGJXZ",
+ "sym_key": "ConnectionPointClass::Release",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "568b357a0a00004e89357a0a00008b7424088d461450e80000000085c0755685f674528b4618c7060000000057508b08ff51088d7e1c57ff56288b4620c7070000000085c05f74178a4e2984c9741050e80000000083c404c746200000000056c6462900c7462400000000e80000000083c40433c05ec20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?vt_ConnectionPointClass@@3PAXA",
+   "sym_key": "vt_ConnectionPointClass"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

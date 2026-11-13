@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0010",
+ "name": "EnumConnectionsClass::Release",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0010",
+ "bytes_hex": "8b153ccdab0055578b7c240c4a8d472089153ccdab0050ff15cc117e008be885ed757385ff746fc707a45c7e008b47145633f685c07e148b4f088b04f1508b10ff52088b4714463bf07cec8b47048d77048bceff500c8b4604c706845c7e0085c074178a4e0d84c9741050e8bd8a320083c404c746040000000057c6460d00c7460800000000e8a28a320083c4048bc55e5f5dc204008bc55f5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

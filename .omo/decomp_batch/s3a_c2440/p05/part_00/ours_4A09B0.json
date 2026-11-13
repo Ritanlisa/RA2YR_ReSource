@@ -1,0 +1,45 @@
+{
+ "symbol": "?Release@EnumConnectionPointsClass@@QAGJXZ",
+ "sym_key": "EnumConnectionPointsClass::Release",
+ "size": 147,
+ "link_base": 0,
+ "bytes_hex": "568b357a0a00004e89357a0a00008b7424088d460850e80000000085c0757085f6746c8b461c5733ffc7060000000085c07e148b4e108b04b9508b10ff52088b461c473bf87cec8d7e0c57ff56188b4610c7070000000085c05f74188b4e18f6c5ff741050e80000000083c404c74610000000008b56185680e600c7461400000000895618e80000000083c40433c05ec20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?vt_EnumConnectionPointsClass@@3PAXA",
+   "sym_key": "vt_EnumConnectionPointsClass"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

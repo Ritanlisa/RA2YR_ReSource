@@ -39152,15 +39152,15 @@
   "this_as_id": false
  },
  "0x4a0010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [0xabcd3c]",
   "name": "EnumConnectionsClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EnumConnectionsClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a00b0": {
@@ -39272,15 +39272,15 @@
   "this_as_id": false
  },
  "0x4a0540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [0xabcd3c]",
   "name": "ConnectionPointClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ConnectionPointClass::Release",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a05d0": {
@@ -39392,15 +39392,15 @@
   "this_as_id": false
  },
  "0x4a09b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [0xabcd3c]",
   "name": "EnumConnectionPointsClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EnumConnectionPointsClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a0a50": {
@@ -39452,14 +39452,14 @@
   "this_as_id": false
  },
  "0x4a0c20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor",
-  "rule_violations": 5,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -39596,15 +39596,15 @@
   "this_as_id": false
  },
  "0x4a0fe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_UtagCONNECTDATA::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UtagCONNECTDATA::Release",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a10a0": {
@@ -39644,15 +39644,15 @@
   "this_as_id": false
  },
  "0x4a1140": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_UtagCONNECTDATA::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_UtagCONNECTDATA::SetCapacity",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1200": {
@@ -39966,7 +39966,7 @@
   "this_as_id": false
  },
  "0x4a1aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -39978,26 +39978,26 @@
   "this_as_id": false
  },
  "0x4a1c10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Power::FinalizeDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Power::FinalizeDrain",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4a1ca0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Power::FlagProcess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Power::FlagProcess",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -40288,14 +40288,14 @@
   "this_as_id": false
  },
  "0x4a2600": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CountdownTimer::UpdateDisplay",
-  "rule_violations": 0,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -40866,7 +40866,7 @@
   "this_as_id": false
  },
  "0x4a4130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -40889,7 +40889,7 @@
   "this_as_id": false
  },
  "0x4a44f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -41909,7 +41909,7 @@
   "this_as_id": false
  },
  "0x4a71a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42466,7 +42466,7 @@
   "this_as_id": false
  },
  "0x4a8960": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42643,7 +42643,7 @@
   "this_as_id": false
  },
  "0x4a9ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -42732,7 +42732,7 @@
   "status": "NG"
  },
  "0x4aac10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -42792,7 +42792,7 @@
   "this_as_id": false
  },
  "0x4ac2b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43736,7 +43736,7 @@
   "this_as_id": false
  },
  "0x4b0410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43923,7 +43923,7 @@
   "this_as_id": false
  },
  "0x4b4920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44155,14 +44155,14 @@
   "this_as_id": false
  },
  "0x4b4d70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Timeout::GetRemaining",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Timeout::GetRemaining",
-  "rule_violations": 0,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

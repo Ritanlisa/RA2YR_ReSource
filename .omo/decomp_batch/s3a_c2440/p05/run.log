@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a0010 EnumConnectionsClass::Release -> EnumConnectionsClass
+[conv] 0x4a0540 ConnectionPointClass::Release -> ConnectionPointClass
+[conv] 0x4a09b0 EnumConnectionPointsClass::Release -> EnumConnectionPointsClass
+[conv] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x4a0fe0 _VectorClass_UtagCONNECTDATA::Release -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a1140 _DynamicVectorClass_UtagCONNECTDATA::SetCapacity -> _DynamicVectorClass_UtagCONNECTDATA
+[conv] 0x4a1aa0 CellClass::DestroyOverlay -> CellClass
+[conv] 0x4a1c10 Power::FinalizeDrain -> Power
+[conv] 0x4a1ca0 Power::FlagProcess -> Power
+[conv] 0x4a2600 CountdownTimer::UpdateDisplay -> CountdownTimer
+[conv] 0x4a4130 ObjectClass::sub_4A4130 -> ObjectClass
+[conv] 0x4a44f0 ObjectClass::sub_4A44F0 -> ObjectClass
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x4a9ca0 DisplayClass::vt_entry_94 -> DisplayClass
+[conv] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> TacticalClass_DisplayClass
+[conv] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> PlayerClass
+[conv] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> DriveLocomotionClass
+[conv] 0x4b4920 DriveLocomotionClass::IsAtDestination -> DriveLocomotionClass
+[conv] 0x4b4d70 Timeout::GetRemaining -> Timeout
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EnumConnectionsClass     rc=0
+[era] ConnectionPointClass     rc=0
+[era] EnumConnectionPointsClass rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=2
+[era] _VectorClass_UtagCONNECTDATA rc=0
+[era] _DynamicVectorClass_UtagCONNECTDATA rc=0
+[era] CellClass                rc=2
+[era] Power                    rc=2
+[era] CountdownTimer           rc=2
+[era] ObjectClass              rc=2
+[era] DiskLaserClass           rc=2
+[era] DisplayClass             rc=2
+[era] TacticalClass_DisplayClass rc=2
+[era] PlayerClass              rc=2
+[era] DriveLocomotionClass     rc=2
+[era] Timeout                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a0010   MISMATCH         EnumConnectionsClass::Release
+[diff] 0x4a0540   MISMATCH         ConnectionPointClass::Release
+[diff] 0x4a09b0   MISMATCH         EnumConnectionPointsClass::Release
+[diff] 0x4a0fe0   MISMATCH         _VectorClass_UtagCONNECTDATA::Release
+[diff] 0x4a1140   MISMATCH         _DynamicVectorClass_UtagCONNECTDATA::SetCapacity
+[ledger] 0x4a0010 EnumConnectionsClass::Release -> NG (attempt 2)
+[ledger] 0x4a0540 ConnectionPointClass::Release -> NG (attempt 2)
+[ledger] 0x4a09b0 EnumConnectionPointsClass::Release -> NG (attempt 2)
+[ledger] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a0fe0 _VectorClass_UtagCONNECTDATA::Release -> NG (attempt 2)
+[ledger] 0x4a1140 _DynamicVectorClass_UtagCONNECTDATA::SetCapacity -> NG (attempt 2)
+[ledger] 0x4a1aa0 CellClass::DestroyOverlay -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a1c10 Power::FinalizeDrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a1ca0 Power::FlagProcess -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2600 CountdownTimer::UpdateDisplay -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a4130 ObjectClass::sub_4A4130 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a44f0 ObjectClass::sub_4A44F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a8960 DisplayClass::SetViewDimensions -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a9ca0 DisplayClass::vt_entry_94 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b4920 DriveLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4b4d70 Timeout::GetRemaining -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "codegen_shape": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440\p05\batch_report.json

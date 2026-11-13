@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0540",
+ "name": "ConnectionPointClass::Release",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0540",
+ "bytes_hex": "8b153ccdab0055578b7c240c4a8d471489153ccdab0050ff15cc117e008be885ed755b85ff74578b4718c707e45c7e0056508b08ff51088b571c8d771c8bceff520c8b4604c706845c7e0085c074138a4e0d84c9740c50e8a185320083c404896e0457c6460d00c7460800000000e88a85320083c4048bc55e5f5dc204008bc55f5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
