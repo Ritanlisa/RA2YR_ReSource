@@ -77484,7 +77484,7 @@
   "this_as_id": false
  },
  "0x538100": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77508,7 +77508,7 @@
   "this_as_id": false
  },
  "0x538140": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77520,7 +77520,7 @@
   "this_as_id": false
  },
  "0x538160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77532,7 +77532,7 @@
   "this_as_id": false
  },
  "0x538180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77796,7 +77796,7 @@
   "this_as_id": false
  },
  "0x538440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77808,7 +77808,7 @@
   "this_as_id": false
  },
  "0x538460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77820,7 +77820,7 @@
   "this_as_id": false
  },
  "0x538480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -77832,7 +77832,7 @@
   "this_as_id": false
  },
  "0x5384a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78031,7 +78031,7 @@
   "this_as_id": false
  },
  "0x538ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -78535,7 +78535,7 @@
   "this_as_id": false
  },
  "0x539890": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -78689,7 +78689,7 @@
   "this_as_id": false
  },
  "0x53ab50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Game_Load_Load_53AB50",
@@ -78810,7 +78810,7 @@
   "this_as_id": false
  },
  "0x53b460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_03B460",
@@ -79284,7 +79284,7 @@
   "this_as_id": false
  },
  "0x53d330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79308,7 +79308,7 @@
   "this_as_id": false
  },
  "0x53d580": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -79534,7 +79534,7 @@
   "this_as_id": false
  },
  "0x53e1d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Init",
@@ -80072,7 +80072,7 @@
   "this_as_id": false
  },
  "0x53f5d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80084,7 +80084,7 @@
   "this_as_id": false
  },
  "0x53f650": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80297,14 +80297,14 @@
   "this_as_id": false
  },
  "0x53fcb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "IPXGlobalConnClass::GetQueueSize",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "IPXGlobalConnClass::GetQueueSize",
-  "rule_violations": 8,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -80407,7 +80407,7 @@
   "status": "NG"
  },
  "0x5403f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -80419,7 +80419,7 @@
   "this_as_id": false
  },
  "0x540610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
