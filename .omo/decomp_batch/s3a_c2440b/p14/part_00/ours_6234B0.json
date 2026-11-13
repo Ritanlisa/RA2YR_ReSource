@@ -1,0 +1,33 @@
+{
+ "symbol": "?Rebuild@SymbolTable@@QAEXPAPAH@Z",
+ "sym_key": "SymbolTable::Rebuild",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "56578bf98b473485c074158b0850894f34e8000000008b473483c40485c075eb8b74240c85f674518b560852e8000000008d44001250e80000000083c40885c074158d48108948088b57348910c74004000000008947348b4e0c89480c8b56048950048b4e088b50085152e8000000008b3683c40885f675af5f5ec20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

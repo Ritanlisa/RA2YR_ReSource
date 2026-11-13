@@ -114359,7 +114359,7 @@
   "this_as_id": false
  },
  "0x5f5cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -114395,7 +114395,7 @@
   "this_as_id": false
  },
  "0x5f5dd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115027,14 +115027,14 @@
   "this_as_id": false
  },
  "0x5f7090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectTypeClass::ConstructFull",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectTypeClass::ConstructFull",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -115715,7 +115715,7 @@
   "this_as_id": false
  },
  "0x5fa4a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115727,7 +115727,7 @@
   "this_as_id": false
  },
  "0x5fa510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115739,7 +115739,7 @@
   "this_as_id": false
  },
  "0x5fa590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -115751,7 +115751,7 @@
   "this_as_id": false
  },
  "0x5fa620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115787,7 +115787,7 @@
   "this_as_id": false
  },
  "0x5fb160": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115841,7 +115841,7 @@
   "status": "OK"
  },
  "0x5fbf80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115853,7 +115853,7 @@
   "this_as_id": false
  },
  "0x5fc000": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116863,7 +116863,7 @@
   "this_as_id": false
  },
  "0x5ff420": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -117291,7 +117291,7 @@
   "this_as_id": false
  },
  "0x600880": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_600880",
@@ -118328,7 +118328,7 @@
   "this_as_id": false
  },
  "0x610570": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DestroyDialogChildWindow",
@@ -119018,15 +119018,15 @@
   "this_as_id": false
  },
  "0x6234b0": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 mov ecx, dword ptr [edi + 0x34]",
   "name": "SymbolTable::Rebuild",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SymbolTable::Rebuild",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x623560": {
@@ -119054,7 +119054,7 @@
   "this_as_id": false
  },
  "0x623610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119066,7 +119066,7 @@
   "this_as_id": false
  },
  "0x623730": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -119902,19 +119902,19 @@
   "this_as_id": false
  },
  "0x6267a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FileSystem::InitExtensionState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FileSystem::InitExtensionState",
-  "rule_violations": 7,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6269a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119937,26 +119937,26 @@
   "this_as_id": false
  },
  "0x626c60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::Surface_Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Surface_Update",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x626da0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FileSystem::ProcessNextFileExtension",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "FileSystem::ProcessNextFileExtension",
-  "rule_violations": 12,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
