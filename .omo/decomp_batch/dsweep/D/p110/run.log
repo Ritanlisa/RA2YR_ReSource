@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p110\part_00
+=== convert (20 addrs) ===
+[conv] 0x4016f0 IDXContainer::LoadSample -> IDXContainer
+[conv] 0x45e580 BuildingTypeClass::CleanupMembers -> BuildingTypeClass
+[conv] 0x59c630 FindMapCell -> _addr_59
+[conv] 0x431bc0 ObjectClass::sub_431BC0 -> ObjectClass
+[conv] 0x7b5f10 String::Tokenize -> String
+[conv] 0x55c7c0 LZOStraw::Decompress -> LZOStraw
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x6563b0 RadarClass::UpdateFoundationShapesCustom -> RadarClass
+[conv] 0x509400 HouseClass::UpdateFogVisibility -> HouseClass
+[conv] 0x7436e0 ObjectClass::ReadFootINI -> ObjectClass
+[conv] 0x6b04c0 FactoryClass::PlaceExitUnits -> FactoryClass
+[conv] 0x65cf00 RawFileClass::Seek -> RawFileClass
+[conv] 0x43c0d0 TechnoClass::CreateDominatorDestructionEffects -> TechnoClass
+[conv] 0x4ff700 BuildingClass::PowerUpdate -> BuildingClass
+[conv] 0x45ee70 BuildingClass::ApplyFoundationDamage -> BuildingClass
+[conv] 0x64b240 KickNetworkPlayerNow -> _addr_64
+[conv] 0x4155f0 TechnoClass::ApplyIronCurtain -> TechnoClass
+[conv] 0x777c30 InitWindowCreation -> _addr_77
+[conv] 0x5c7ba0 sub_5C7BA0 -> _addr_5C
+[conv] 0x60b000 RepositionGameSpeedIndicator -> _addr_60
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IDXContainer             rc=0
+[era] BuildingTypeClass        rc=2
+[era] _addr_59                 rc=2
+[era] ObjectClass              rc=2
+[era] String                   rc=0
+[era] LZOStraw                 rc=2
+[era] BinkMovie                rc=2
+[era] RadarClass               rc=0
+[era] HouseClass               rc=0
+[era] FactoryClass             rc=2
+[era] RawFileClass             rc=2
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=2
+[era] _addr_64                 rc=2
+[era] _addr_77                 rc=2
+[era] _addr_5C                 rc=2
+[era] _addr_60                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4016f0   MISMATCH         IDXContainer::LoadSample
+[diff] 0x431bc0   MISMATCH         ObjectClass::sub_431BC0
+[diff] 0x7b5f10   MISMATCH         String::Tokenize
+[diff] 0x6563b0   MISMATCH         RadarClass::UpdateFoundationShapesCustom
+[diff] 0x509400   MISMATCH         HouseClass::UpdateFogVisibility
+[diff] 0x43c0d0   MISMATCH         TechnoClass::CreateDominatorDestructionEffects
+[diff] 0x4155f0   MISMATCH         TechnoClass::ApplyIronCurtain
+[diff] 0x60b000   MISMATCH         RepositionGameSpeedIndicator
+[ledger] 0x4016f0 IDXContainer::LoadSample -> NG (attempt 1)
+[ledger] 0x45e580 BuildingTypeClass::CleanupMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59c630 FindMapCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431bc0 ObjectClass::sub_431BC0 -> NG (attempt 1)
+[ledger] 0x7b5f10 String::Tokenize -> NG (attempt 1)
+[ledger] 0x55c7c0 LZOStraw::Decompress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6563b0 RadarClass::UpdateFoundationShapesCustom -> NG (attempt 1)
+[ledger] 0x509400 HouseClass::UpdateFogVisibility -> NG (attempt 1)
+[ledger] 0x7436e0 ObjectClass::ReadFootINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b04c0 FactoryClass::PlaceExitUnits -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cf00 RawFileClass::Seek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43c0d0 TechnoClass::CreateDominatorDestructionEffects -> NG (attempt 1)
+[ledger] 0x4ff700 BuildingClass::PowerUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45ee70 BuildingClass::ApplyFoundationDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64b240 KickNetworkPlayerNow -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4155f0 TechnoClass::ApplyIronCurtain -> NG (attempt 1)
+[ledger] 0x777c30 InitWindowCreation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c7ba0 sub_5C7BA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b000 RepositionGameSpeedIndicator -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "width_mismatch": 1,
+  "branch_order": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p110\batch_report.json

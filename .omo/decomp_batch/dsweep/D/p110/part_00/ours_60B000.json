@@ -1,0 +1,105 @@
+{
+ "symbol": "?RepositionGameSpeedIndicator@@YIHPAXH@Z",
+ "sym_key": "Unnamed::RepositionGameSpeedIndicator",
+ "size": 432,
+ "link_base": 0,
+ "bytes_hex": "83ec50535556578bf98bda57e8000000008b0d000000008bf0e800000000884424138d4424205056e8000000008d4c24505157e8000000008a44241384c00f84900000008b15000000008b742428a100000000895424148b542420570fbf58040fbf68022bf281ee93000000e8000000008d4c24405150e8000000008d5424305257e8000000008b44243c8b4c24342bc16a00992bc28b542448d1f82bc253558d8c083affffffb8e9a28b2ef7e9c1fa038bc28b4c2420c1e81f03d08b69040fafd303d5525657e8000000005f5e5d5b83c450c3a1000000008b6c24248b700c8b48048b44242c894c241c2bc52d58020000992bc2ba00000000d1f80f98c24a23c28b530481ea58020000d1ea2bc28b5424542bc52bc103c28bd899f7fe8be88d4501894424180fafc62bc350e8000000008bc88bc399f7fe894c241852e8000000008b4c241c8b5c242083c4083bc17d028bdd8b4c24288b6c24208bc16a002bc52d20030000992bc28b15000000008be8b800000000d1fd0f98c00fafde8b7424204823c503de0fbf6a040fbf52025552538b5c24302bc82bcb81e99c0000005157e8000000005f5e5d5b83c450c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?GetGameSpeed@SessionClass@@QAEDXZ",
+   "sym_key": "SessionClass::GetGameSpeed"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC48@@3IA",
+   "sym_key": "DataGlobal_B0FC48"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0F9EC@@3IA",
+   "sym_key": "DataGlobal_B0F9EC"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC24@@3IA",
+   "sym_key": "DataGlobal_B0FC24"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 319,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 364,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FAC4@@3IA",
+   "sym_key": "DataGlobal_B0FAC4"
+  },
+  {
+   "off": 420,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  }
+ ]
+}

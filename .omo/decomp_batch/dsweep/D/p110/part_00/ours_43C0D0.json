@@ -1,0 +1,87 @@
+{
+ "symbol": "?CreateDominatorDestructionEffects@TechnoClass@@QAEPAHXZ",
+ "sym_key": "TechnoClass::CreateDominatorDestructionEffects",
+ "size": 428,
+ "link_base": 0,
+ "bytes_hex": "83ec20a1000000005355568b80b00200005785c08bf98944241c0f84840100008b0d0000000048506a0081c1680503008d9fc8050000e8000000008d530489442410bdd8150000895424188b87200500008b150000000003c58b083bca75118b50048b0d000000003bd10f8434010000833b000f852b0100008b4c241c51508d4c2428e8000000008b108b0f8d442424895424145057ff91ac0000008b088b74241403f168c801000089742418e8000000008bf083c40485f60f84c7000000a1000000006a006a0068000600000fbe88a40200006a018d5424246a00528b5424288b04918bce50e8000000008bf085f60f849000000089338b8f200500006a00e8000000008b8f200500008bd8e8000000008b972005000003c38d04808d0cc08b442a048d04402bc1d1e883c0f685c08986000100007e0ac78600010000000000008b86c80000008b80c002000085c07e1b8b0d0000000048506a0081c118020000e8000000008986ac0000008b7424108b44241c463bf0897424107c08c7442410000000008b44241883c5088bd883c00481fd18160000894424180f8ca9feffff8bc65f5e5d5b83c420c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_BuildingClassPool@@3IA",
+   "sym_key": "g_BuildingClassPool"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C84C@@3IA",
+   "sym_key": "DataGlobal_89C84C"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?ToScreen@World@@QAEPAIPAX0@Z",
+   "sym_key": "World::ToScreen"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  }
+ ]
+}

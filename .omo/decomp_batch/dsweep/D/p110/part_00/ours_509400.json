@@ -1,0 +1,75 @@
+{
+ "symbol": "?UpdateFogVisibility@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::UpdateFogVisibility",
+ "size": 478,
+ "link_base": 0,
+ "bytes_hex": "83ec0c538bd957b90442000033c08dbbf4570000f3aba164060000488bd085d2895424080f8cae0100008d1495fcffffff55568d0c850000000089542414a1340600008b34018a868100000084c00f85620100008a869000000084c00f84540100008b0e56ff91c00200008be885ed896c24180f8e3d0100008b1656ff522c83f80f741a8b0656ff502c83f801740f8b0e56ff512c83f8020f85d300000085f60f84cb0000000fbf8e5c0500008d865c05000033d2668b154a0600003bca75180fbf965e05000033c9668b0d520600003bd10f84de00000050e8000000008bb61c020000894424183bf30f84c60000008b0d000000008a83ec01000085c9751084c075108b83ec01000085c0742eeb0484c0742885f674248b4e308b43303bc80f849000000083f9ff74118b838c570000ba01000000d3e285c2757a33f6bf090000008b96000000008b4424188b8e0000000003d08bc583c604d3f88b8c93e457000003c84f898c93e457000075d4eb458b0e56ff91bc01000083c02450e80000000033f6bf09000000eb048b6c24188b96000000008b8e0000000003d083c604d3fd8b8c93e457000003cd4f898c93e457000075d68b5424108d42ff8b5424148bca83ea0485c089442410895424140f8d68feffff5e5d5f5b83c40cc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?Cell__PosToLinearIndex@@YGHPAX@Z",
+   "sym_key": "Cell__PosToLinearIndex"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243C8@@3PAIA",
+   "sym_key": "DataGlobal_8243C8"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243EC@@3PAIA",
+   "sym_key": "DataGlobal_8243EC"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?Cell__PosToLinearIndex@@YGHPAX@Z",
+   "sym_key": "Cell__PosToLinearIndex"
+  },
+  {
+   "off": 402,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243C8@@3PAIA",
+   "sym_key": "DataGlobal_8243C8"
+  },
+  {
+   "off": 408,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8243EC@@3PAIA",
+   "sym_key": "DataGlobal_8243EC"
+  }
+ ]
+}
