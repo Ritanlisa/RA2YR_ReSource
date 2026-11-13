@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x41b660 AircraftClass::HandleTargetDestroyed -> AircraftClass
+[conv] 0x41b760 TechnoClass::GetAutoFireDirection -> TechnoClass
+[conv] 0x41b870 AircraftClass::ProcessPassengerEjection -> AircraftClass
+[conv] 0x41b920 AircraftClass::IsHeightAboveThreshold -> AircraftClass
+[conv] 0x41b980 AircraftClass::IsBelowScreen -> AircraftClass
+[conv] 0x41b9f0 AircraftClass::UpdateDocking -> AircraftClass
+[conv] 0x41ba90 AircraftClass::MissionDispatch -> AircraftClass
+[conv] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> AircraftClass
+[conv] 0x41c250 ObjectClass::CreateInstanceCOM -> ObjectClass
+[conv] 0x41c430 Function::Method_41C430 -> Function
+[conv] 0x41c490 AbstractClass::processCleanup -> AbstractClass
+[conv] 0x41c8b0 AircraftTypeClass::AircraftTypeClass -> AircraftTypeClass
+[conv] 0x41cef0 KeywordClass::FindOrCreate -> KeywordClass
+[conv] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> ObjectClass
+[conv] 0x41db40 WTFMode::ResetUnitFlags -> WTFMode
+[conv] 0x41e720 TriggerClass::EvaluateCondition -> TriggerClass
+[conv] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> AITriggerTypeClass
+[conv] 0x41f490 CCINIClass::ReadInfantryTypeList -> CCINIClass
+[conv] 0x41f580 AITriggerTypeClass::LoadFromINI -> AITriggerTypeClass
+[conv] 0x422720 AnimClass::SimpleCtor -> AnimClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] Function                 rc=2
+[era] AbstractClass            rc=2
+[era] AircraftTypeClass        rc=2
+[era] KeywordClass             rc=2
+[era] WTFMode                  rc=2
+[era] TriggerClass             rc=2
+[era] AITriggerTypeClass       rc=2
+[era] CCINIClass               rc=2
+[era] AnimClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x41b660 AircraftClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b760 TechnoClass::GetAutoFireDirection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b870 AircraftClass::ProcessPassengerEjection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b920 AircraftClass::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b980 AircraftClass::IsBelowScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41b9f0 AircraftClass::UpdateDocking -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41ba90 AircraftClass::MissionDispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c250 ObjectClass::CreateInstanceCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c430 Function::Method_41C430 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c490 AbstractClass::processCleanup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41c8b0 AircraftTypeClass::AircraftTypeClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41cef0 KeywordClass::FindOrCreate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41db40 WTFMode::ResetUnitFlags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41e720 TriggerClass::EvaluateCondition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41f490 CCINIClass::ReadInfantryTypeList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x41f580 AITriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x422720 AnimClass::SimpleCtor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p03\batch_report.json
