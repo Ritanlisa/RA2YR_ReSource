@@ -1,0 +1,111 @@
+{
+ "symbol": "?SetupPlayerSlotControls@NetworkLobby@@QAEDXZ",
+ "sym_key": "NetworkLobby::SetupPlayerSlotControls",
+ "size": 317,
+ "link_base": 0,
+ "bytes_hex": "83ec08a10000000053555683f804578be9c6442413007528e80000000084c074158bcde80000000084c0750ac744241402000000eb12c744241406000000eb08c74424140800000033ff80cbff85ff74508d47ff83f8057731ff248500000000be12040000eb3fbe13040000eb38be14040000eb31be15040000eb2abe16040000eb23be17040000eb1c8bf783ee07f7de1bf681e6e7fbffff81c618040000eb05be110400006a006a0068470100005655e8000000006a005068500100005655e80000000085c0745e3b050000000074103b050000000074083b050000000075463b7c24147c0ea1000000008904bd00000000eb0d8b0d00000000890cbd000000006a008bd78bcde800000000881cbd2c000000881cbd4c000000881cbd6c000000c6442413014783ff080f8c1cffffff8a4424135f5e5d5b83c408c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?IsMultiplayerActive@Network@@QAE_NXZ",
+   "sym_key": "Network::IsMultiplayerActive"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "$L1928",
+   "sym_key": "$L1928"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?SetupSkirmishPlayerSlots@@YIDPAX0H@Z",
+   "sym_key": "SetupSkirmishPlayerSlots"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?CreateIdleAnim@BuildingClass@@QAEXXZ",
+ "sym_key": "BuildingClass::CreateIdleAnim",
+ "size": 299,
+ "link_base": 0,
+ "bytes_hex": "83ec14535556578bf9837f487e0f85100100008b87000100008bc881e10000ff0081f9000030000f82f600000084c00f85ee000000f78748010000000002000f85de0000008bb7e800000085f68bde0f84ce0000008b1656ff92c801000083f8050f8fae000000f64614010f84a40000008b0656ff90840000008a88910c000084c90f858d0000006a0856e80000000083c40884c0757e68c8010000e8000000008be883c40485ed74618b77388d4c2410b880000000518bcf8944241489442418e8000000008bd66a00c1fa100fbfca0fbfd6c1e108894c24208b0d40020000c1e2086a00894424286800060000895424248b91e80000006a018d4424286a0050528bcde8000000008bf3818f48010000000002008b5e3085db74078bf3e932ffffff5f5e5d5b83c414c3",
+ "relocs": [
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__HasVoiceResponse@@YAHPAXH@Z",
+   "sym_key": "TechnoTypeClass__HasVoiceResponse"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  }
+ ]
+}

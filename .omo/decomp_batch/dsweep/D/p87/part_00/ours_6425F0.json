@@ -1,0 +1,57 @@
+{
+ "symbol": "?RenderPaletteImage@ModemGame@@QAEHPAH@Z",
+ "sym_key": "ModemGame::RenderPaletteImage",
+ "size": 343,
+ "link_base": 0,
+ "bytes_hex": "83ec2c5355568b74243c8be9578b068b5e048b55008b4e088d7e08894424408b02895c242085c0897c241c894c241474078b086a0150ff116a24e80000000083c40485c074138b5424406a006a0153528bc8e800000000eb0233c08945008b086a0050ff51188b442414c74424100000000085db8d54460c895424140f8ecb0000008b44244033f685c00f8eaa0000008b44241433c9897424248a08408944241433c0668b444f048a0d000000008ad08b7d0081e2f0000000d3ea8b0d00000000d3e28bc883e10fc1e1048bd98b0d00000000d3fb8b0d00000000c1e80425f0000000d3e38b0d00000000d3e88b0d000000000bd3d3e00bd08d44242c895424188b542410895424288b1f5057ff53788b4c2418508b45008d542428515250ff93880000008b4424408b7c241c463bf00f8c5affffff8b5c24208b4c24108d41013bc3894424100f8c35ffffff5f5e5d5b83c42cc20400",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Construct@DSurface@@QAEPADHHDD@Z",
+   "sym_key": "DSurface::Construct"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

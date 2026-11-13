@@ -1,0 +1,111 @@
+{
+ "symbol": "?Constructor@VoxelAnimClass@@QAEHXZ",
+ "sym_key": "VoxelAnimClass::Constructor",
+ "size": 330,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1e8000000000fbe8ed801000033dbc7862c01000001000000899e38010000899e40010000899eac000000c7863001000064000000899e3c010000899e44010000899e48010000899e4c010000899ea0010000899ea4010000899ea8010000899ed0010000899ed4010000e8000000006a14899ef4010000c786f801000005000000c7862404000001000000899e28040000c786f001000000000000e8000000008986f4010000c7862804000001000000c786f001000000000000c786040200000a000000899e00020000891e895e04895e08c7460c00000000a1440500008b0d6405000083c4043bc87c2b391d5805000075043bc375378b0d740500003bcb7e2d03c8a12405000053516824050000ff500884c074188b0d640500008bc141890d640500008b0d34050000893481381d0000000075098b4c2408e8000000008bc65e5b59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ctor@ObjectClass@@QAEPAIXZ",
+   "sym_key": "ObjectClass::ctor"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Init@FrameSnapshot@@QAEPAV1@XZ",
+   "sym_key": "FrameSnapshot::Init"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_VectorClass_CellClass"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_CellClass"
+  },
+  {
+   "off": 218,
+   "type": "DIR32",
+   "sym": "?vt_WaveClass_2@@3PAXA",
+   "sym_key": "vt_WaveClass_2"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 265,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 294,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 300,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B725CC@@3EA",
+   "sym_key": "DataGlobal_B725CC"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?InitDistanceTable@Voxel@@QAEHXZ",
+   "sym_key": "Voxel::InitDistanceTable"
+  }
+ ]
+}

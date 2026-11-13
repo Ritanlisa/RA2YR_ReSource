@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p87\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f6d10 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x5eb660 NetworkLobby::SetupPlayerSlotControls -> NetworkLobby
+[conv] 0x627020 sub_627020 -> _addr_62
+[conv] 0x62d2a0 BuildingClass::UpdateFloatPosition -> BuildingClass
+[conv] 0x534e50 AssetClass::ReleaseAndReload -> AssetClass
+[conv] 0x741340 TechnoClass::FireWeaponBurst -> TechnoClass
+[conv] 0x68c3b0 FontClass::CreateGlyphColor -> FontClass
+[conv] 0x75ebe0 VoxelAnimClass::Constructor -> VoxelAnimClass
+[conv] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x486920 BuildingClass::CreateIdleAnim -> BuildingClass
+[conv] 0x4db690 ObjectClass::SaveToStream_Common -> ObjectClass
+[conv] 0x557230 ListClass::Construct -> ListClass
+[conv] 0x6425f0 ModemGame::RenderPaletteImage -> ModemGame
+[conv] 0x471ff0 CaptureManagerClass::FreeUnit -> CaptureManagerClass
+[conv] 0x5fe620 LoadBuildingTypeClassSHPs -> _addr_5F
+[conv] 0x4e5b60 FillLobbyPlayerSlot -> _addr_4E
+[conv] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> JumpjetLocomotionClass
+[conv] 0x62df20 ParticleSystemClass::ProcessCreation -> ParticleSystemClass
+[conv] 0x49b7e0 FillScoreScreenStats -> _addr_49
+[conv] 0x577f30 MapClass::ClearShroud -> MapClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] NetworkLobby             rc=0
+[era] _addr_62                 rc=2
+[era] BuildingClass            rc=2
+[era] AssetClass               rc=0
+[era] TechnoClass              rc=2
+[era] FontClass                rc=2
+[era] VoxelAnimClass           rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] ObjectClass              rc=2
+[era] ListClass                rc=0
+[era] ModemGame                rc=0
+[era] CaptureManagerClass      rc=2
+[era] _addr_5F                 rc=2
+[era] _addr_4E                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] ParticleSystemClass      rc=0
+[era] _addr_49                 rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4f6d10   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4
+[diff] 0x5eb660   MISMATCH         NetworkLobby::SetupPlayerSlotControls
+[diff] 0x486920   MISMATCH         BuildingClass::CreateIdleAnim
+[diff] 0x534e50   MISMATCH         AssetClass::ReleaseAndReload
+[diff] 0x75ebe0   MISMATCH         VoxelAnimClass::Constructor
+[diff] 0x557230   MISMATCH         ListClass::Construct
+[diff] 0x6425f0   MISMATCH         ModemGame::RenderPaletteImage
+[diff] 0x4e5b60   MISMATCH         FillLobbyPlayerSlot
+[diff] 0x62df20   MISMATCH         ParticleSystemClass::ProcessCreation
+[ledger] 0x4f6d10 VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4 -> NG (attempt 1)
+[ledger] 0x5eb660 NetworkLobby::SetupPlayerSlotControls -> NG (attempt 1)
+[ledger] 0x627020 sub_627020 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62d2a0 BuildingClass::UpdateFloatPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x534e50 AssetClass::ReleaseAndReload -> NG (attempt 1)
+[ledger] 0x741340 TechnoClass::FireWeaponBurst -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68c3b0 FontClass::CreateGlyphColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75ebe0 VoxelAnimClass::Constructor -> NG (attempt 1)
+[ledger] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x486920 BuildingClass::CreateIdleAnim -> NG (attempt 1)
+[ledger] 0x4db690 ObjectClass::SaveToStream_Common -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557230 ListClass::Construct -> NG (attempt 1)
+[ledger] 0x6425f0 ModemGame::RenderPaletteImage -> NG (attempt 1)
+[ledger] 0x471ff0 CaptureManagerClass::FreeUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fe620 LoadBuildingTypeClassSHPs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e5b60 FillLobbyPlayerSlot -> NG (attempt 1)
+[ledger] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62df20 ParticleSystemClass::ProcessCreation -> NG (attempt 1)
+[ledger] 0x49b7e0 FillScoreScreenStats -> COMPILE_FAIL (attempt 1)
+[ledger] 0x577f30 MapClass::ClearShroud -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 11
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "branch_polarity": 1,
+  "codegen_shape": 3,
+  "regalloc": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p87\batch_report.json
