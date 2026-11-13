@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x517840 sub_517840 -> _addr_51
+[conv] 0x517a10 sub_517A10 -> _addr_51
+[conv] 0x51f640 InfantryClass::FindIdleAITarget -> InfantryClass
+[conv] 0x523490 sub_523490 -> _addr_52
+[conv] 0x523660 sub_523660 -> _addr_52
+[conv] 0x524790 InfantryTypeClass::GetGameplayValue -> InfantryTypeClass
+[conv] 0x52b7c0 sub_52B7C0 -> _addr_52
+[conv] 0x52b990 sub_52B990 -> _addr_52
+[conv] 0x535ea0 SetInfantryTabCommandClass::performAction_12 -> SetInfantryTabCommandClass
+[conv] 0x535f30 SetUnitTabCommandClass::performAction_17 -> SetUnitTabCommandClass
+[conv] 0x536770 CombatantSelectCommandClass::performAction_39 -> CombatantSelectCommandClass
+[conv] 0x5368d0 HealthNavCommandClass::performAction_53 -> HealthNavCommandClass
+[conv] 0x536970 VeterancyNavCommandClass::performAction_59 -> VeterancyNavCommandClass
+[conv] 0x536a10 PrevObjectCommandClass::performAction_65 -> PrevObjectCommandClass
+[conv] 0x536b10 StopCommandClass::performAction_70 -> StopCommandClass
+[conv] 0x536b90 AllToCheerCommandClass::performAction_75 -> AllToCheerCommandClass
+[conv] 0x536fa0 ToggleRepairCommandClass::Execute -> ToggleRepairCommandClass
+[conv] 0x537020 ToggleSellCommandClass::performAction_118 -> ToggleSellCommandClass
+[conv] 0x537a50 MultiplayerDebugCommandClass::AddRef -> MultiplayerDebugCommandClass
+[conv] 0x537a70 MultiplayerDebugCommandClass::Release -> MultiplayerDebugCommandClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_51                 rc=0
+[era] InfantryClass            rc=0
+[era] _addr_52                 rc=0
+[era] InfantryTypeClass        rc=0
+[era] SetInfantryTabCommandClass rc=0
+[era] SetUnitTabCommandClass   rc=0
+[era] CombatantSelectCommandClass rc=0
+[era] HealthNavCommandClass    rc=0
+[era] VeterancyNavCommandClass rc=0
+[era] PrevObjectCommandClass   rc=0
+[era] StopCommandClass         rc=0
+[era] AllToCheerCommandClass   rc=0
+[era] ToggleRepairCommandClass rc=0
+[era] ToggleSellCommandClass   rc=0
+[era] MultiplayerDebugCommandClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x517840   MATCH            sub_517840
+[diff] 0x517a10   MATCH            sub_517A10
+[diff] 0x51f640   MATCH            InfantryClass::FindIdleAITarget
+[diff] 0x523490   MATCH            sub_523490
+[diff] 0x523660   MATCH            sub_523660
+[diff] 0x52b7c0   MATCH            sub_52B7C0
+[diff] 0x52b990   MATCH            sub_52B990
+[diff] 0x524790   MATCH            InfantryTypeClass::GetGameplayValue
+[diff] 0x535ea0   MISMATCH         SetInfantryTabCommandClass::performAction_12
+[diff] 0x535f30   MISMATCH         SetUnitTabCommandClass::performAction_17
+[diff] 0x536770   MISMATCH         CombatantSelectCommandClass::performAction_39
+[diff] 0x5368d0   MISMATCH         HealthNavCommandClass::performAction_53
+[diff] 0x536970   MISMATCH         VeterancyNavCommandClass::performAction_59
+[diff] 0x536a10   MISMATCH         PrevObjectCommandClass::performAction_65
+[diff] 0x536b10   MISMATCH         StopCommandClass::performAction_70
+[diff] 0x536b90   MISMATCH         AllToCheerCommandClass::performAction_75
+[diff] 0x536fa0   MATCH            ToggleRepairCommandClass::Execute
+[diff] 0x537020   MATCH            ToggleSellCommandClass::performAction_118
+[diff] 0x537a50   MISMATCH         MultiplayerDebugCommandClass::AddRef
+[diff] 0x537a70   MATCH            MultiplayerDebugCommandClass::Release
+[ledger] 0x517840 sub_517840 -> OK (attempt 2)
+[ledger] 0x517a10 sub_517A10 -> OK (attempt 3)
+[ledger] 0x51f640 InfantryClass::FindIdleAITarget -> OK (attempt 2)
+[ledger] 0x523490 sub_523490 -> OK (attempt 2)
+[ledger] 0x523660 sub_523660 -> OK (attempt 3)
+[ledger] 0x524790 InfantryTypeClass::GetGameplayValue -> OK (attempt 3)
+[ledger] 0x52b7c0 sub_52B7C0 -> OK (attempt 2)
+[ledger] 0x52b990 sub_52B990 -> OK (attempt 3)
+[ledger] 0x535ea0 SetInfantryTabCommandClass::performAction_12 -> NG (attempt 6)
+[ledger] 0x535f30 SetUnitTabCommandClass::performAction_17 -> NG (attempt 6)
+[ledger] 0x536770 CombatantSelectCommandClass::performAction_39 -> NG (attempt 6)
+[ledger] 0x5368d0 HealthNavCommandClass::performAction_53 -> NG (attempt 6)
+[ledger] 0x536970 VeterancyNavCommandClass::performAction_59 -> NG (attempt 6)
+[ledger] 0x536a10 PrevObjectCommandClass::performAction_65 -> NG (attempt 6)
+[ledger] 0x536b10 StopCommandClass::performAction_70 -> NG (attempt 6)
+[ledger] 0x536b90 AllToCheerCommandClass::performAction_75 -> NG (attempt 6)
+[ledger] 0x536fa0 ToggleRepairCommandClass::Execute -> OK (attempt 2)
+[ledger] 0x537020 ToggleSellCommandClass::performAction_118 -> OK (attempt 2)
+[ledger] 0x537a50 MultiplayerDebugCommandClass::AddRef -> NG (attempt 6)
+[ledger] 0x537a70 MultiplayerDebugCommandClass::Release -> OK (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 9
+ },
+ "match_rate_of_decided_pct": 55.0,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p10\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x524790",
+ "name": "InfantryTypeClass::GetGameplayValue",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x524790",
+ "bytes_hex": "a1e07188008b80d8160000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

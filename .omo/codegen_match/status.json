@@ -59532,14 +59532,14 @@
   "status": "NG"
  },
  "0x517840": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+12 call 0x7c8fb0",
   "name": "sub_517840",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_517840",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x517870": {
@@ -59660,14 +59660,14 @@
   "status": "OK"
  },
  "0x517a10": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+5 mov dword ptr [0xa8f230], 0",
   "name": "sub_517A10",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_517A10",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x517a30": {
@@ -59761,15 +59761,15 @@
   "this_as_id": false
  },
  "0x51f640": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+15 call 0x4d6aa0",
   "name": "InfantryClass::FindIdleAITarget",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "InfantryClass::FindIdleAITarget",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x51f660": {
@@ -60265,14 +60265,14 @@
   "this_as_id": false
  },
  "0x523490": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+12 call 0x7c8fb0",
   "name": "sub_523490",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_523490",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5234c0": {
@@ -60393,14 +60393,14 @@
   "this_as_id": false
  },
  "0x523660": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+5 mov dword ptr [0xa8f2b8], 0",
   "name": "sub_523660",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_523660",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x523680": {
@@ -60498,15 +60498,15 @@
   "this_as_id": false
  },
  "0x524790": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": "+0 mov eax, dword ptr [0x8871e0]",
   "name": "InfantryTypeClass::GetGameplayValue",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "InfantryTypeClass::GetGameplayValue",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5247a0": {
@@ -61415,14 +61415,14 @@
   "this_as_id": false
  },
  "0x52b7c0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "first_diff": "+12 call 0x7c8fb0",
   "name": "sub_52B7C0",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_52B7C0",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x52b7f0": {
@@ -61543,14 +61543,14 @@
   "this_as_id": false
  },
  "0x52b990": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "first_diff": "+5 mov dword ptr [0xa8f770], 0",
   "name": "sub_52B990",
-  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_52B990",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x52cb50": {
@@ -62003,11 +62003,16 @@
   "this_as_id": false
  },
  "0x535ea0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x827048",
-  "name": "CreateTeamCommand::performAction_12",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "SetInfantryTabCommandClass::performAction_12",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_12",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x535eb0": {
   "attempts": 1,
@@ -62058,11 +62063,16 @@
   "this_as_id": false
  },
  "0x535f30": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x827080",
-  "name": "CreateTeamCommand::performAction_17",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "SetUnitTabCommandClass::performAction_17",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_17",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x535f40": {
   "attempts": 1,
@@ -62571,11 +62581,16 @@
   "this_as_id": false
  },
  "0x536770": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x8272c0",
-  "name": "CreateTeamCommand::performAction_39",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "CombatantSelectCommandClass::performAction_39",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_39",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536780": {
   "attempts": 1,
@@ -62729,11 +62744,16 @@
   "this_as_id": false
  },
  "0x5368d0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x827334",
-  "name": "CreateTeamCommand::performAction_53",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "HealthNavCommandClass::performAction_53",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_53",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5368e0": {
   "attempts": 1,
@@ -62796,11 +62816,16 @@
   "this_as_id": false
  },
  "0x536970": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x827374",
-  "name": "CreateTeamCommand::performAction_59",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "VeterancyNavCommandClass::performAction_59",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_59",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536980": {
   "attempts": 1,
@@ -62863,11 +62888,16 @@
   "this_as_id": false
  },
  "0x536a10": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x8273b0",
-  "name": "CreateTeamCommand::performAction_65",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "PrevObjectCommandClass::performAction_65",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_65",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536a20": {
   "attempts": 1,
@@ -62906,11 +62936,16 @@
   "this_as_id": false
  },
  "0x536b10": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x8273e8",
-  "name": "CreateTeamCommand::performAction_70",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "StopCommandClass::performAction_70",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536b20": {
   "attempts": 5,
@@ -62961,11 +62996,16 @@
   "this_as_id": false
  },
  "0x536b90": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x82741c",
-  "name": "CreateTeamCommand::performAction_75",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "AllToCheerCommandClass::performAction_75",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_75",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x536ba0": {
   "attempts": 1,
@@ -63390,15 +63430,15 @@
   "this_as_id": false
  },
  "0x536fa0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+2 mov ecx, 0x87f7e8",
   "name": "ToggleRepairCommandClass::Execute",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "ToggleRepairModeCommandClass::Execute",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x536fb0": {
@@ -63450,15 +63490,15 @@
   "this_as_id": false
  },
  "0x537020": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": "+2 mov ecx, 0x87f7e8",
   "name": "ToggleSellCommandClass::performAction_118",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "CreateTeamCommand::performAction_118",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x537030": {
@@ -64283,11 +64323,16 @@
   "this_as_id": false
  },
  "0x537a50": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x8278a0",
-  "name": "Commands::AddRef",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "MultiplayerDebugCommandClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "Commands::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x537a60": {
   "attempts": 7,
@@ -64302,11 +64347,16 @@
   "this_as_id": false
  },
  "0x537a70": {
-  "attempts": 4,
+  "attempts": 5,
+  "clean": true,
+  "cls_src": "backfill",
   "first_diff": "+0 mov eax, 0x8278c0",
-  "name": "Commands::Release",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
-  "status": "NG"
+  "name": "MultiplayerDebugCommandClass::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Commands::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x537a80": {
   "attempts": 4,

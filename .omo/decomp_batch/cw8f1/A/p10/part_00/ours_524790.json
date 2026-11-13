@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetGameplayValue@InfantryTypeClass@@QAEHXZ",
+ "sym_key": "InfantryTypeClass::GetGameplayValue",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "a1400200008b80d8160000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
