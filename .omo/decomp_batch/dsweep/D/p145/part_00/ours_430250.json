@@ -1,0 +1,201 @@
+{
+ "symbol": "?RenderBuildingTag@ObjectClass@@QAEDHHHHH@Z",
+ "sym_key": "ObjectClass::RenderBuildingTag",
+ "size": 807,
+ "link_base": 0,
+ "bytes_hex": "81ec54010000538bd98b0d00000000558b8310010000568b14818b0d000000008b82508105008b14818b0d000000008d4424288954240c5053e8000000008b4c241c25ff00000080e1000bc184c00f84c70200008a430c8b0d00000000a80274068bf1d1eeeb0233f66a006a006a006a006a0068e80300006a006a006a008d94248c01000068000600008d4424505250a1540a000033d2d1e9f7f18b0d000000008bac249401000003d6528b542440518bcd8b920c030000e8000000008d730e56e80000000083c4048944241c85c00f84460200008a430c57b9400000008d7c2464a802f3a57456a00000000084c0743ee80000000033d2b9f4010000f7f181fafa00000073288d5424646a5f52e8000000008bf083c40885f6741356e80000000083c40483f801750566c7062000f6430c027409a00000000084c0754b8d4424646a5f50e8000000008bf083c40885f6740e56e80000000083c40483f80174238d4c24646a2051e8000000008bf083c40885f6741356e80000000083c40483f801750566c70600008b0d0000000033c08d5424148944241c8944241468c8000000528d4424248d54246c50528bf1e8000000008b4424308b4c242c8d78208b44241c992bc28b542414d1f82bc88d44241083e90483c208894c24188b4c24105081c1080300008954242ce800000000668b188a50026a008d842470010000885424286a00508d5424248d4c2460e8000000008b086a00894c24388b50048954243c8b4808894c24408b500c8a0d0000000033c08ac781e3ff000000d3f88b0d00000000895424448b54242881e2ff000000d3e08a0d00000000d3eb8b0d00000000d3e38a0d00000000d3ea8b0d000000000bc3d3e28d4c243851550bc28bd88b4500ff50148b55008d442434535055ff52586a018bcee8000000008b84246c0100008b8c2474010000894424448d5408ff8b8424700100008b8c24780100008954244c894424488d5408ff8d442444508bce89542454e800000000538bcee8000000008b4c24288b5424186a006a006a005183c70468c800000083c204578d44247c52505556e8000000008b4c242025ff00000080e1005f0bc15e5d5b81c454010000c21400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?HouseClass_Array@@3PAVHouseClass@@A",
+   "sym_key": "HouseClass_Array"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?dword_89C41C@@3IA",
+   "sym_key": "dword_89C41C"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C474@@3IA",
+   "sym_key": "DataGlobal_89C474"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHHHIPAX0HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?byte_A8BC79@@3EA",
+   "sym_key": "byte_A8BC79"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "_wcsrchr",
+   "sym_key": "wcsrchr"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?byte_A8BC79@@3EA",
+   "sym_key": "byte_A8BC79"
+  },
+  {
+   "off": 326,
+   "type": "REL32",
+   "sym": "_wcsrchr",
+   "sym_key": "wcsrchr"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "_wcsrchr",
+   "sym_key": "wcsrchr"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 492,
+   "type": "REL32",
+   "sym": "?ConvertToRGB@Color@@QAEHH@Z",
+   "sym_key": "Color::ConvertToRGB"
+  },
+  {
+   "off": 527,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 558,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 576,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 598,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 606,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 614,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 622,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 664,
+   "type": "REL32",
+   "sym": "?Swap@Char@@QAEDD@Z",
+   "sym_key": "Char::Swap"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 736,
+   "type": "REL32",
+   "sym": "?Set@Property@@QAEFF@Z",
+   "sym_key": "Property::Set"
+  },
+  {
+   "off": 776,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHPAXHHHHDHH@Z",
+   "sym_key": "Font__Print"
+  }
+ ]
+}

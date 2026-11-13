@@ -1,0 +1,471 @@
+{
+ "symbol": "?InitializeCliffRampTable@@YAPAHXZ",
+ "sym_key": "Unnamed::InitializeCliffRampTable",
+ "size": 789,
+ "link_base": 0,
+ "bytes_hex": "51b80000ffff6aff6aff8d4c2408a300000000a300000000a300000000c7442408ffffffffa300000000c705000000000000feffc70500000000fffffeffc70500000000ffffffffe8000000008b006a006aff8d4c2408a300000000e8000000008b086a00890d000000006aff8d4c2408e8000000008b106a006aff8d4c2408891500000000e8000000008b006a006aff8d4c2408a300000000e8000000008b086aff890d000000006afe8d4c2408e8000000008b106a006afe8d4c2408891500000000e8000000008b006a006aff8d4c2408a300000000e8000000008b086a00890d000000006aff8d4c2408e8000000008b106a006a008d4c2408891500000000e8000000008b006a006a008d4c2408a300000000e8000000008b086a00890d000000006a008d4c2408e8000000008b108915000000006a006a008d4c2408e8000000008b006a006a008d4c2408a300000000e8000000008b086a00890d000000006aff8d4c2408e8000000008b106a006a008d4c2408891500000000e8000000008b006a006a008d4c2408a300000000e8000000008b086a00890d000000006a008d4c2408e8000000008b106a006a008d4c2408891500000000e8000000008b006a006a008d4c2408a300000000e8000000008b086a00890d000000006a008d4c2408e8000000008b106aff6a008d4c2408891500000000e8000000008b006a006a008d4c2408a300000000e8000000008b086aff890d000000006a008d4c2408e8000000008b106aff6a008d4c2408891500000000e8000000008b006affa3000000006aff8d4c2408e8000000008b086aff890d000000006aff8d4c2408e8000000008b106a006aff8d4c2408891500000000e8000000008b006a006aff8d4c2408a300000000e8000000008b086a00890d000000006a008d4c2408e8000000008b106a006a008d4c2408891500000000e8000000008b006aff6a008d4c2408a300000000e8000000008b086aff890d000000006a008d4c2408e8000000008b106a006a008d4c2408891500000000e8000000008b006a006a008d4c2408a300000000e8000000008b08890d0000000059c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB68@@3IA",
+   "sym_key": "DataGlobal_ABDB68"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB6C@@3IA",
+   "sym_key": "DataGlobal_ABDB6C"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB70@@3IA",
+   "sym_key": "DataGlobal_ABDB70"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB74@@3IA",
+   "sym_key": "DataGlobal_ABDB74"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB78@@3IA",
+   "sym_key": "DataGlobal_ABDB78"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB7C@@3IA",
+   "sym_key": "DataGlobal_ABDB7C"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB80@@3IA",
+   "sym_key": "DataGlobal_ABDB80"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB84@@3IA",
+   "sym_key": "DataGlobal_ABDB84"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB88@@3IA",
+   "sym_key": "DataGlobal_ABDB88"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB8C@@3IA",
+   "sym_key": "DataGlobal_ABDB8C"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB90@@3IA",
+   "sym_key": "DataGlobal_ABDB90"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB94@@3IA",
+   "sym_key": "DataGlobal_ABDB94"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB98@@3IA",
+   "sym_key": "DataGlobal_ABDB98"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDB9C@@3IA",
+   "sym_key": "DataGlobal_ABDB9C"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBA0@@3IA",
+   "sym_key": "DataGlobal_ABDBA0"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBA4@@3IA",
+   "sym_key": "DataGlobal_ABDBA4"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBA8@@3IA",
+   "sym_key": "DataGlobal_ABDBA8"
+  },
+  {
+   "off": 279,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBAC@@3IA",
+   "sym_key": "DataGlobal_ABDBAC"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBB0@@3IA",
+   "sym_key": "DataGlobal_ABDBB0"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 336,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBB4@@3IA",
+   "sym_key": "DataGlobal_ABDBB4"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 351,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBB8@@3IA",
+   "sym_key": "DataGlobal_ABDBB8"
+  },
+  {
+   "off": 362,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 378,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBBC@@3IA",
+   "sym_key": "DataGlobal_ABDBBC"
+  },
+  {
+   "off": 383,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 398,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBC0@@3IA",
+   "sym_key": "DataGlobal_ABDBC0"
+  },
+  {
+   "off": 403,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 413,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBC4@@3IA",
+   "sym_key": "DataGlobal_ABDBC4"
+  },
+  {
+   "off": 424,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 440,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBC8@@3IA",
+   "sym_key": "DataGlobal_ABDBC8"
+  },
+  {
+   "off": 445,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 460,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBCC@@3IA",
+   "sym_key": "DataGlobal_ABDBCC"
+  },
+  {
+   "off": 465,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 475,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBD0@@3IA",
+   "sym_key": "DataGlobal_ABDBD0"
+  },
+  {
+   "off": 486,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 502,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBD4@@3IA",
+   "sym_key": "DataGlobal_ABDBD4"
+  },
+  {
+   "off": 507,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBD8@@3IA",
+   "sym_key": "DataGlobal_ABDBD8"
+  },
+  {
+   "off": 527,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 537,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBDC@@3IA",
+   "sym_key": "DataGlobal_ABDBDC"
+  },
+  {
+   "off": 548,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 564,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBE0@@3IA",
+   "sym_key": "DataGlobal_ABDBE0"
+  },
+  {
+   "off": 569,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 578,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBE4@@3IA",
+   "sym_key": "DataGlobal_ABDBE4"
+  },
+  {
+   "off": 589,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 599,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBE8@@3IA",
+   "sym_key": "DataGlobal_ABDBE8"
+  },
+  {
+   "off": 610,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 626,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBEC@@3IA",
+   "sym_key": "DataGlobal_ABDBEC"
+  },
+  {
+   "off": 631,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 646,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBF0@@3IA",
+   "sym_key": "DataGlobal_ABDBF0"
+  },
+  {
+   "off": 651,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 661,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBF4@@3IA",
+   "sym_key": "DataGlobal_ABDBF4"
+  },
+  {
+   "off": 672,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 688,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBF8@@3IA",
+   "sym_key": "DataGlobal_ABDBF8"
+  },
+  {
+   "off": 693,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 708,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDBFC@@3IA",
+   "sym_key": "DataGlobal_ABDBFC"
+  },
+  {
+   "off": 713,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 723,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC00@@3IA",
+   "sym_key": "DataGlobal_ABDC00"
+  },
+  {
+   "off": 734,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 750,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC04@@3IA",
+   "sym_key": "DataGlobal_ABDC04"
+  },
+  {
+   "off": 755,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 770,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC08@@3IA",
+   "sym_key": "DataGlobal_ABDC08"
+  },
+  {
+   "off": 775,
+   "type": "REL32",
+   "sym": "?Set@CellStruct@@QAEPAV1@FF@Z",
+   "sym_key": "CellStruct::Set"
+  },
+  {
+   "off": 783,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABDC0C@@3IA",
+   "sym_key": "DataGlobal_ABDC0C"
+  }
+ ]
+}

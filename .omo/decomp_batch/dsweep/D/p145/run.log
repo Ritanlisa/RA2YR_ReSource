@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p145\part_00
+=== convert (20 addrs) ===
+[conv] 0x481180 ObjectPlacement::CalcPosition -> ObjectPlacement
+[conv] 0x4f3140 ParseINIGadgetDefinition -> _addr_4F
+[conv] 0x427530 AnimTypeClass::Construct -> AnimTypeClass
+[conv] 0x575220 CellClass::ApplyCliffMod2 -> CellClass
+[conv] 0x575540 CellClass::ApplyCliffMod -> CellClass
+[conv] 0x56d6e0 MapClass::ProcessRegion -> MapClass
+[conv] 0x5dd8a0 ObjectClass::SynchronizeMultiplayerGameStart -> ObjectClass
+[conv] 0x4ff210 HouseClass::AIAircraftProduction -> HouseClass
+[conv] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> ObjectClass
+[conv] 0x6214b0 SetupDialogRenderBuffer -> _addr_62
+[conv] 0x443860 BuildingClass::SetRallyPoint -> BuildingClass
+[conv] 0x722440 ObjectClass::PropagateCellOccupancy -> ObjectClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x447210 BuildingClass::GetActionOnObject -> BuildingClass
+[conv] 0x458a80 TechnoClass::EvacuateFootprintCells -> TechnoClass
+[conv] 0x57a9c0 InitializeCliffRampTable -> _addr_57
+[conv] 0x430250 ObjectClass::RenderBuildingTag -> ObjectClass
+[conv] 0x622820 SetupDialog -> _addr_62
+[conv] 0x7cf7e8 ObjectClass::___sbh_free_block -> ObjectClass
+[conv] 0x688380 Multiplayer::FindStartPositions -> Multiplayer
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectPlacement          rc=2
+[era] _addr_4F                 rc=2
+[era] AnimTypeClass            rc=2
+[era] CellClass                rc=2
+[era] MapClass                 rc=2
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=2
+[era] _addr_62                 rc=2
+[era] BuildingClass            rc=2
+[era] Animation                rc=2
+[era] TechnoClass              rc=2
+[era] _addr_57                 rc=0
+[era] Multiplayer              rc=2
+=== diffasm byte-compare ===
+[diff] 0x430250   MISMATCH         ObjectClass::RenderBuildingTag
+[diff] 0x7cf7e8   MISMATCH         ObjectClass::___sbh_free_block
+[diff] 0x57a9c0   MISMATCH         InitializeCliffRampTable
+[ledger] 0x481180 ObjectPlacement::CalcPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3140 ParseINIGadgetDefinition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x427530 AnimTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x575220 CellClass::ApplyCliffMod2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x575540 CellClass::ApplyCliffMod -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56d6e0 MapClass::ProcessRegion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5dd8a0 ObjectClass::SynchronizeMultiplayerGameStart -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ff210 HouseClass::AIAircraftProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6214b0 SetupDialogRenderBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x443860 BuildingClass::SetRallyPoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x722440 ObjectClass::PropagateCellOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 1)
+[ledger] 0x447210 BuildingClass::GetActionOnObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x458a80 TechnoClass::EvacuateFootprintCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57a9c0 InitializeCliffRampTable -> NG (attempt 1)
+[ledger] 0x430250 ObjectClass::RenderBuildingTag -> NG (attempt 1)
+[ledger] 0x622820 SetupDialog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cf7e8 ObjectClass::___sbh_free_block -> NG (attempt 1)
+[ledger] 0x688380 Multiplayer::FindStartPositions -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p145\batch_report.json
