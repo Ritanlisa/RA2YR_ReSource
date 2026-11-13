@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cb25e _flsall -> _addr_7C
+[conv] 0x431dd0 BufferIO::Flush -> BufferIO
+[conv] 0x6bb2e0 WriteRegistryKeyCOM -> _addr_6B
+[conv] 0x4010c0 EndFrameAudioMixer -> _addr_40
+[conv] 0x6e21e0 TActionClass::executeFollowAction -> TActionClass
+[conv] 0x7db5e6 __except2 -> _addr_7D
+[conv] 0x774bc0 AsyncIO::WaitCompletion -> AsyncIO
+[conv] 0x72e1b0 ChangeVideoMode_Setup -> ChangeVideoMode
+[conv] 0x46dd70 EnableGameModeControls -> _addr_46
+[conv] 0x7b8e80 WWMouseClass::initCursorState -> WWMouseClass
+[conv] 0x70fbe0 TechnoClass::Activate -> TechnoClass
+[conv] 0x4db1a0 TechnoClass::ComputeSpeedFactorEx -> TechnoClass
+[conv] 0x581090 ObjectClass::CleanupMapSystems -> ObjectClass
+[conv] 0x46dcc0 sub_46DCC0 -> _addr_46
+[conv] 0x5ac290 RandomMap::Constructor_VectorClass_Cell_ -> RandomMap
+[conv] 0x5fdf70 OverlayClass::DrawObject -> OverlayClass
+[conv] 0x6b4fa0 SmudgeClass::DestroySmudge -> SmudgeClass
+[conv] 0x638b70 Team_Load -> Team
+[conv] 0x65b2f0 RadSiteClass::Constructor -> RadSiteClass
+[conv] 0x6fd570 TechnoClass::CreateFiringRadarBlip -> TechnoClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] BufferIO                 rc=0
+[era] _addr_6B                 rc=2
+[era] _addr_40                 rc=0
+[era] TActionClass             rc=2
+[era] _addr_7D                 rc=0
+[era] AsyncIO                  rc=2
+[era] ChangeVideoMode          rc=0
+[era] _addr_46                 rc=0
+[era] WWMouseClass             rc=0
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=0
+[era] RandomMap                rc=0
+[era] OverlayClass             rc=0
+[era] SmudgeClass              rc=0
+[era] Team                     rc=0
+[era] RadSiteClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x431dd0   MISMATCH         BufferIO::Flush
+[diff] 0x4010c0   MISMATCH         EndFrameAudioMixer
+[diff] 0x7db5e6   MISMATCH         __except2
+[diff] 0x72e1b0   MATCH            ChangeVideoMode_Setup
+[diff] 0x46dd70   MISMATCH         EnableGameModeControls
+[diff] 0x46dcc0   MISMATCH         sub_46DCC0
+[diff] 0x7b8e80   MISMATCH         WWMouseClass::initCursorState
+[diff] 0x70fbe0   MISMATCH         TechnoClass::Activate
+[diff] 0x6fd570   MISMATCH         TechnoClass::CreateFiringRadarBlip
+[diff] 0x581090   MISMATCH         ObjectClass::CleanupMapSystems
+[diff] 0x5ac290   MISMATCH         RandomMap::Constructor_VectorClass_Cell_
+[diff] 0x5fdf70   MISMATCH         OverlayClass::DrawObject
+[diff] 0x6b4fa0   MISMATCH         SmudgeClass::DestroySmudge
+[diff] 0x638b70   MISMATCH         Team_Load
+[diff] 0x65b2f0   MISMATCH         RadSiteClass::Constructor
+[ledger] 0x7cb25e _flsall -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431dd0 BufferIO::Flush -> NG (attempt 1)
+[ledger] 0x6bb2e0 WriteRegistryKeyCOM -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4010c0 EndFrameAudioMixer -> NG (attempt 1)
+[ledger] 0x6e21e0 TActionClass::executeFollowAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db5e6 __except2 -> NG (attempt 1)
+[ledger] 0x774bc0 AsyncIO::WaitCompletion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72e1b0 ChangeVideoMode_Setup -> OK (attempt 1)
+[ledger] 0x46dd70 EnableGameModeControls -> NG (attempt 1)
+[ledger] 0x7b8e80 WWMouseClass::initCursorState -> NG (attempt 1)
+[ledger] 0x70fbe0 TechnoClass::Activate -> NG (attempt 1)
+[ledger] 0x4db1a0 TechnoClass::ComputeSpeedFactorEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x581090 ObjectClass::CleanupMapSystems -> NG (attempt 1)
+[ledger] 0x46dcc0 sub_46DCC0 -> NG (attempt 1)
+[ledger] 0x5ac290 RandomMap::Constructor_VectorClass_Cell_ -> NG (attempt 1)
+[ledger] 0x5fdf70 OverlayClass::DrawObject -> NG (attempt 1)
+[ledger] 0x6b4fa0 SmudgeClass::DestroySmudge -> NG (attempt 1)
+[ledger] 0x638b70 Team_Load -> NG (attempt 1)
+[ledger] 0x65b2f0 RadSiteClass::Constructor -> NG (attempt 1)
+[ledger] 0x6fd570 TechnoClass::CreateFiringRadarBlip -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 14,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 8,
+  "codegen_shape": 4,
+  "branch_polarity": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 6.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p39\batch_report.json

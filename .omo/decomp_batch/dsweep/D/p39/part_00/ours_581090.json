@@ -1,0 +1,51 @@
+{
+ "symbol": "?CleanupMapSystems@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::CleanupMapSystems",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "5153558bd95657895c24108d7318bf0d0000008b0685c0740f50e80000000083c404c7060000000083c6044f75e533c08a43148bf085f6741a8b0685c074078b086a0350ff1156e80000000083c404c64314008dbb8000000081c38c000000bd030000008b1353ff520c8b3785f6741c8b0685c074078b086a0350ff1156e80000000083c404c7070000000083c70483c3184d75cfe800000000e8000000008b7424108bcee8000000008bcee8000000005f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?CleanupVeinholeSystem@@YAXXZ",
+   "sym_key": "CleanupVeinholeSystem"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Map_Destroy@@YAXXZ",
+   "sym_key": "Map_Destroy"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?FreeUpgradeQueue@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FreeUpgradeQueue"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?FreeUpgradeQueue2@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FreeUpgradeQueue2"
+  }
+ ]
+}

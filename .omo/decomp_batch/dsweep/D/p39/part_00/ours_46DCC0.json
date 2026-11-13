@@ -1,0 +1,93 @@
+{
+ "symbol": "?sub_46DCC0@@YIHPAXE@Z",
+ "sym_key": "Unnamed::sub_46DCC0",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "535556578bea8bd933ff8b04bd0000000050e80000000083c40485c0747f3b3d00000000747785ff74138bc748f7d81bc025edfbffff0512040000eb05b8110400005053e8000000008bf581e6ff0000005650e80000000057e80000000083c4045053e8000000005650e80000000057e80000000083c4045053e8000000005650e80000000057e80000000083c4045053e8000000005650e8000000004783ff080f8c63ffffff5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?IsKnownPointer@@YAHPAX@Z",
+   "sym_key": "IsKnownPointer"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerCount@@3IA",
+   "sym_key": "g_NetworkPlayerCount"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?GetResourceID2CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID2CSF"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?GetResourceIDCSF@@YAHPAX@Z",
+   "sym_key": "GetResourceIDCSF"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?GetResourceID3CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID3CSF"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  }
+ ]
+}

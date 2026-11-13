@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FDF70",
+ "name": "Object::DrawObject",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FDF70",
+ "bytes_hex": "51568bf1b201c706d4f37e00c74604b0f37e00c74608ccf37e00c7460ca8f37e00e83a7912008b1550eca8008d44240450b950eca80089742408ff521083f8ff742d8b0d60eca8003bc17d23493bc1890d60eca8007d188b0d54eca800408b1481895481fc8b0d60eca8003bc17ce8a0a0e9a80084c074078bcee8416dffff8bcec786ac00000000000000e8805bfffff644240c01740956e830ab1c0083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

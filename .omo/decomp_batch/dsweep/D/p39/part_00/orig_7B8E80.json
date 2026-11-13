@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B8E80",
+ "name": "WWMouseClass::initCursorState",
+ "size": 166,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B8E80",
+ "bytes_hex": "83ec105355568bf15733ff8b460433db33ed33c985c07473a16881b700681027000050ff15dc117e003d02010000751768fd040000681ce6840068dce58400e81cdac4ff83c40c8b4e088d542410518b4e0452e80859eeff8b388b4e148b56188b58048b68088b400c8944241c8b463c2bc88b46402bd0a16881b7005003f903daff1598117e008b4c241c8b4424248bd0893a5f5e895a04896a085d5b894a0c83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

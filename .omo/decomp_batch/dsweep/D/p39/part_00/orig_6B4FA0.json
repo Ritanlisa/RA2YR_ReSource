@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B4FA0",
+ "name": "UnitClass::DestroySmudge",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B4FA0",
+ "bytes_hex": "51568bf1b201c706fc327f00c74604d8327f00c74608f4327f00c7460cd0327f00e80a0907008b15e0b1a8008d44240450b9e0b1a80089742408ff521083f8ff742d8b0df0b1a8003bc17d23493bc1890df0b1a8007d188b0de4b1a800408b1481895481fc8b0df0b1a8003bc17ce8a0a0e9a80084c074078bcee811fdf3ff8bcec786ac00000000000000e850ebf3fff644240c01740956e8003b110083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

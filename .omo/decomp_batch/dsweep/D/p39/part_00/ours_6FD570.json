@@ -1,0 +1,21 @@
+{
+ "symbol": "?CreateFiringRadarBlip@TechnoClass@@QAEPAIPAE@Z",
+ "sym_key": "TechnoClass::CreateFiringRadarBlip",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "83ec18535556578b7c242c8bf157568b06ff90e40200008b0e8bd85356ff91f80300008b288b166a006a006a008d442428535056ff92b00000008b08894c24108b50048d4c2410895424148b40085155578bce89442424e8000000008bf885ff742e8b1656ff522c83f80175238a869000000084c074198b86dc06000085c0750f53568bcf89bedc060000e8000000008bc75f5e5d5b83c418c20400",
+ "relocs": [
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?CreateRadarBlip@TechnoClass@@QAEHPAXH0@Z",
+   "sym_key": "TechnoClass::CreateRadarBlip"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?updateSightRange@TechnoClass@@QAEXPAXH@Z",
+   "sym_key": "TechnoClass::updateSightRange"
+  }
+ ]
+}

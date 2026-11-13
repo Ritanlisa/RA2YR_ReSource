@@ -1,0 +1,11 @@
+{
+ "addr": "0x4010C0",
+ "name": "EndFrameAudioMixer",
+ "size": 164,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4010C0",
+ "bytes_hex": "5356578bfa8bf18b47048b5604c1ea10c1e8100fafd0c1ea0ee8726000008bcee8db6000008b4e2c8b572cc1e910c1ea100fafcab81f85eb518d5e28f7e9c1fa058bc28bcbc1e81f03d0e8416000008bcbe8aa6000008b5754c1ea1081ea0020000074358b4e54c1e91003d1791633d28d4e50e8186000008d4e50e8806000005f5e5bc381fa004000007605ba004000008d4e50e8f75f00008d4e505f5e5be95c600000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

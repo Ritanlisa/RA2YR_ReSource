@@ -1,0 +1,45 @@
+{
+ "symbol": "?initCursorState@WWMouseClass@@QAEPAIPAH@Z",
+ "sym_key": "WWMouseClass::initCursorState",
+ "size": 144,
+ "link_base": 0,
+ "bytes_hex": "83ec105355568bf15733ff8b460433db33ed33c985c0745fa100000000681027000050e8000000003d0201000075078bcee8000000008b4e088d5424145152e8000000008b480c8b7e148b188b5640894c24108b4e3c2bf98b4e188b680803fb8b58042bda8b15000000005203d9e8000000008b4c24108b44242489385f8968085e8958045d89480c5b83c410c20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  }
+ ]
+}

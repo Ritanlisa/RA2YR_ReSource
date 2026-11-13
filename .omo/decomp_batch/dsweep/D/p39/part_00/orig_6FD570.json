@@ -1,0 +1,11 @@
+{
+ "addr": "0x6FD570",
+ "name": "TechnoClass::CreateFiringRadarBlip",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6FD570",
+ "bytes_hex": "83ec185355568bf1578b7c242c8b0657ff90e40200008b168bd8538bceff92f80300008b2883ec0c8bcc33c08b165389018941048941088d44242c508bceff92b00000008b08894c24108d4c24108b50045189542418558b4008578bce89442424e88afeffff8bf885ff742f8b168bceff522c83f80175238a869000000084c074198b86dc06000085c0750f53568bcf89bedc060000e8c555dcff8bc75f5e5d5b83c418c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

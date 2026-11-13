@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B2F0",
+ "name": "RadSiteClass::Constructor",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B2F0",
+ "bytes_hex": "51568bf1b9e8f787008d4640c70610087f0050c74604f4077f00c74608ec077f00c7460ce4077f00e883a4f0ff6a008bc8e84ac9e2ffb2018bcee8a1a50c008b4e2485c9740e8b116a01ff5220c74624000000008b15d04bb0008d44240450b9d04bb00089742408ff521083f8ff742d8b0de04bb0003bc17d23493bc1890de04bb0007d188b0dd44bb000408b1481895481fc8b0de04bb0003bc17ce88bcee85c4edbff5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

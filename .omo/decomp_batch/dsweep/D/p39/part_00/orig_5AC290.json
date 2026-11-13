@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AC290",
+ "name": "RandomMap::Constructor_VectorClass_Cell_",
+ "size": 167,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AC290",
+ "bytes_hex": "51568bf18b0e85c9740c8b016a01ff10c706000000008b1590dfab008d4c240451b990dfab0089742408ff521083f8ff742d8b0da0dfab003bc17d23493bc1890da0dfab007d188b0d94dfab00408b1481895481fc8b0da0dfab003bc17ce88b462cc74628d0387e0085c074178a4e3584c9741050e833c8210083c404c7462c000000008a44240cc6463500a801c7463000000000740956e810c8210083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

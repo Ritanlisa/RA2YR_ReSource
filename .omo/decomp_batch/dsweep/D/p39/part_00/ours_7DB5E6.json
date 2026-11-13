@@ -1,0 +1,111 @@
+{
+ "symbol": "?__except2@@YAEKHNNNH@Z",
+ "sym_key": "Unnamed::__except2",
+ "size": 257,
+ "link_base": 0,
+ "bytes_hex": "8b44242483ec308d4c244c53568b74243c57505156e8000000008b5c245083c40c85c0751e8d5424588d4424485250538d4c246c568d5424245152e80000000083c41856e8000000008bf8a10000000083c40485c00f858200000085ff747e8b4424488b4c244cdd4424508944240c894c2410e8000000008b5424608bf0dd44245852e8000000005056e80000000083c4045056e800000000dd44245883c40450e80000000050e800000000dd44245c83c40450e80000000050e80000000083c404505357e800000000dd44242c83c420e8000000005f5e5b83c430c357e8000000000fbf44246450e800000000dd44246083c408e8000000005f5e5b83c430c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?_handle_exc@@YAHHPAXHZZ",
+   "sym_key": "_handle_exc"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?_raise_exc@@YAHHHHHHHZZ",
+   "sym_key": "_raise_exc"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?_errcode@@YAHHZZ",
+   "sym_key": "_errcode"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D700@@3IA",
+   "sym_key": "DataGlobal_87D700"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?SHIDWORD@@YAHHZZ",
+   "sym_key": "SHIDWORD"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?_umatherr@@YAHHHHHHHHHZZ",
+   "sym_key": "_umatherr"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?_set_errno@@YAHHZZ",
+   "sym_key": "_set_errno"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?_ctrlfp@@YAHHZZ",
+   "sym_key": "_ctrlfp"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

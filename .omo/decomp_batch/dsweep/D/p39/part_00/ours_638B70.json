@@ -1,0 +1,21 @@
+{
+ "symbol": "?Team_Load@@YIDPAHHDD@Z",
+ "sym_key": "Unnamed::Team_Load",
+ "size": 211,
+ "link_base": 0,
+ "bytes_hex": "515683fa0b578bf174085f32c05e59c208008a44241484c075085fb0015e59c2080085f675085f32c05e59c208008b068d4c24085156ff90b80100008b388b068d542414897c24085256ff90b80100008b308d4424105089742418e80000000083c40485c074058b4024eb1d8d4c2410e80000000085c0742e8b088d5424145250ff91b80100008b00663bf8753d33442408c1f810a9ffff0000752f5fb8010000005e59c20800663bfe751f8b4424148b74240833c6c1f810a9ffff0000750b5fb8010000005e59c208005f33c05e59c20800",
+ "relocs": [
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?Network_Process_6E7C20@@YAPAXPAX@Z",
+   "sym_key": "Network_Process_6E7C20"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Find@BuildingLoadQueue@@QAEPAXXZ",
+   "sym_key": "BuildingLoadQueue::Find"
+  }
+ ]
+}

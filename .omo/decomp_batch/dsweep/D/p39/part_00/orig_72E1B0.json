@@ -1,0 +1,11 @@
+{
+ "addr": "0x72E1B0",
+ "name": "ChangeVideoMode_Setup",
+ "size": 165,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72E1B0",
+ "bytes_hex": "a110fcb0005356578bfa8bd950e87ba909008b0d14fcb00033f651893510fcb000e867a909008b1518fcb000893514fcb00052e855a90900a11cfcb000893518fcb00050e844a909008b0d20fcb00089351cfcb00051e832a909008b1524fcb000893520fcb00052e820a90900a128fcb000893524fcb00050e80fa909008b0d2cfcb000893528fcb00051e8fda8090083c4208bd789352cfcb0008bcb5f5e5be91b0a0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

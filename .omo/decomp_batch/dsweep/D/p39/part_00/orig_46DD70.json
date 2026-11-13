@@ -1,0 +1,11 @@
+{
+ "addr": "0x46DD70",
+ "name": "EnableGameModeControls",
+ "size": 165,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46DD70",
+ "bytes_hex": "a18cdaa800535556578bf285c08bf97507b811040000eb0f48f7d81bc025edfbffff05120400008b1da8147e005057ffd38b2da0147e0081e6ff0000005650ffd58b0d8cdaa800e8145a07005057ffd35650ffd58b0d8cdaa800e8016407005057ffd35650ffd58b0d8cdaa800e87e7007005057ffd35650ffd5e871a9170084c0741d683207000057ffd38bf885ff740f5657ffd56a006a0057ff159c147e005f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

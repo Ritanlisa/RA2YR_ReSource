@@ -1,0 +1,21 @@
+{
+ "symbol": "?Activate@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::Activate",
+ "size": 205,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568bf157568b06ff90d003000085f67425f6461404741f8dbe7406000085ff750d6803400080e80000000083c4048b0f578b11ff52588b5c240c8bbed40100008bc333c725ff00000033d884db74678b0e56ff91840000008bd883bba8050000ff74538b86a00000008b969c0000008b8ea4000000894424148b065689542414894c241cff90840000008b88a80500006a008d542414e80000000025ff00000080e300c786d4010000000000005f0bc35e5b83c410c3c786d4010000000000005f8ac35e5b83c410c3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}

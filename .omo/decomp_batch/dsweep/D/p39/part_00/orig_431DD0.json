@@ -1,0 +1,11 @@
+{
+ "addr": "0x431DD0",
+ "name": "BufferIO::Flush",
+ "size": 164,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x431DD0",
+ "bytes_hex": "568bf18a462984c00f84920000008a462884c00f84870000008b46408a4e26578b7e442bf884c9743b8b4e3c8b565003ca6a0003c8518bcee8f3b022008b563057528bcee8b7af22008b464c8b565003c26a00508bcee8d5b02200c64628005fb0015ec36a018bcee813ad22008b4e508b563c8b464003ca03c86a00518bcee8acb022008b563057528bcee870af22008bcee839ae2200c64628005fb0015ec332c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,159 @@
+{
+ "symbol": "?ChangeVideoMode_Setup@@YIPAHHH@Z",
+ "sym_key": "Unnamed::ChangeVideoMode_Setup",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "a1000000005356578bfa8bd950e8000000008b0d0000000033f651893500000000e8000000008b150000000089350000000052e800000000a10000000089350000000050e8000000008b0d0000000089350000000051e8000000008b150000000089350000000052e800000000a10000000089350000000050e8000000008b0d0000000089350000000051e80000000083c4208bd78935000000008bcb5f5e5be900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC10@@3IA",
+   "sym_key": "DataGlobal_B0FC10"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC14@@3IA",
+   "sym_key": "DataGlobal_B0FC14"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC10@@3IA",
+   "sym_key": "DataGlobal_B0FC10"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC18@@3IA",
+   "sym_key": "DataGlobal_B0FC18"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC14@@3IA",
+   "sym_key": "DataGlobal_B0FC14"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_GadgetAnimState@@3PAXA",
+   "sym_key": "g_GadgetAnimState"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC18@@3IA",
+   "sym_key": "DataGlobal_B0FC18"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC20@@3IA",
+   "sym_key": "DataGlobal_B0FC20"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_GadgetAnimState@@3PAXA",
+   "sym_key": "g_GadgetAnimState"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC24@@3IA",
+   "sym_key": "DataGlobal_B0FC24"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC20@@3IA",
+   "sym_key": "DataGlobal_B0FC20"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC28@@3IA",
+   "sym_key": "DataGlobal_B0FC28"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC24@@3IA",
+   "sym_key": "DataGlobal_B0FC24"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC2C@@3IA",
+   "sym_key": "DataGlobal_B0FC2C"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC28@@3IA",
+   "sym_key": "DataGlobal_B0FC28"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC2C@@3IA",
+   "sym_key": "DataGlobal_B0FC2C"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?SetupMouseClassResources@@YIPAHHH@Z",
+   "sym_key": "SetupMouseClassResources"
+  }
+ ]
+}

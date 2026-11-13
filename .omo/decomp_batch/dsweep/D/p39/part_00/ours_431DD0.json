@@ -1,0 +1,51 @@
+{
+ "symbol": "?Flush@BufferIO@@QAEDXZ",
+ "sym_key": "BufferIO::Flush",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "51568bf18a462984c00f84980000008a462884c00f848d0000008b46408a4e26578b7e442bf884c9743e8b4e3c8b565003ca6a0003c8518bcee8000000008b563057528bcee8000000008b464c8b565003c26a00508bcee8000000002401c64628005f0c015e59c36a018bcee8000000008b4e508b563c8b464003ca03c86a00518bcee8000000008b563057528bcee8000000008bcee8000000002401c64628005f0c015e59c38b4424045e240059c3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Seek@FileClass@@QAEHHH@Z",
+   "sym_key": "FileClass::Seek"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Write2@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Write2"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?Seek@FileClass@@QAEHHH@Z",
+   "sym_key": "FileClass::Seek"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Open2@FileClass@@QAEHPAX@Z",
+   "sym_key": "FileClass::Open2"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?Seek@FileClass@@QAEHHH@Z",
+   "sym_key": "FileClass::Seek"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Write2@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Write2"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?CloseHandle@FileClass@@QAEHXZ",
+   "sym_key": "FileClass::CloseHandle"
+  }
+ ]
+}
