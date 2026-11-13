@@ -1,0 +1,22 @@
+[
+ {
+  "addr": "0x7df8c0",
+  "family": "stale_cw3_B"
+ },
+ {
+  "addr": "0x7df9c0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x7dfae0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x7dfc00",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x7dfd00",
+  "family": "stale_cw3_B"
+ }
+]
