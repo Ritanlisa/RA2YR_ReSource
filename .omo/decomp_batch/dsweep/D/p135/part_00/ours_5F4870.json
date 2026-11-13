@@ -1,0 +1,63 @@
+{
+ "symbol": "?GetBoundsRect@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::GetBoundsRect",
+ "size": 611,
+ "link_base": 0,
+ "bytes_hex": "83ec3c56578bf98d4c2420897c241c8b0751ff90ac0000008b0d000000008d54242c5250e8000000008b0757ff90880000008b0850ff919c0000008bf085f6752d8b4424248b15000000005f5e89108b0d000000008948048b15000000008950088b0d0000000089480c83c43cc38b1753555733edff522c83f80675158b87200500008a88c016000084c97405bd0f0000008d4c24285551e8000000008b188b50048b78088b400c0fbf4e06894424188bc1895424148d4c243c992bc2d1f803c55051e8000000008b288b48048b50088b400c89442420896c241c0fbf46028944242c0fbf4604894424308b44241885ff7e0885c0894424107f0e8b7424208bfa89742410894c24148b7424143bdd7e062bdd03fb8bdd8b6c24143be97e0a2bc18bf103c5894424108b44241c8d2c1f03c23be87d0a8b44241c2bd38d7c02018b4424208b54241003d68d2c083bd57d0a2bc68d440801894424108b442424895c2414508b08ff512c83f8060f85ae0000008b5424248b82200500008b881815000085c90f84960000008d4c243c6a0051e8000000008b088b50048b68088b400c85ff894424187e698b44241085c07e6185ed7e6b8b44241885c07e638b4424103bd9894424247e082bd9894c241403fb3bf27e0e8b4424102bf203f0897424248bf28b5c24148d042903df3bd87d082b6c24148d7c29018b5c24248b4424188d0c338d2c103bcd7d1a2bc68d5c1001eb128b5c2418894c24148bf28bfdeb048b5c24108b44242c8b4c242c992bc28b542434d1f82bd08b44241403d08b442430891189590c992bc28b542438d1f82bd05d03d68979085b5f8951048bc15e83c43cc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1350@@3IA",
+   "sym_key": "DataGlobal_AC1350"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1354@@3IA",
+   "sym_key": "DataGlobal_AC1354"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1358@@3IA",
+   "sym_key": "DataGlobal_AC1358"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC135C@@3IA",
+   "sym_key": "DataGlobal_AC135C"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  }
+ ]
+}

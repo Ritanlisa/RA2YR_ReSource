@@ -1,0 +1,21 @@
+{
+ "symbol": "?SelectRLEBlitter@LightConvertClass@@QAEHH@Z",
+ "sym_key": "LightConvertClass::SelectRLEBlitter",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460885c07505e8000000008b4c2408f6c1107419f6c540740af6c5088b46085ec204008b86280100005ec204008bc183e00683e802744e83e802743a83e802741cf6c540740a8b86140100005ec20400850d000000008b46085ec20400f6c508740a8b86600100005ec204008b86180100005ec20400f6c50874a18b86640100005ec20400f6c508740a8b86680100005ec204008b86200100005ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?InitTables@ConvertClass@@QAEPAIXZ",
+   "sym_key": "ConvertClass::InitTables"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?dword_81DC28@@3IA",
+   "sym_key": "dword_81DC28"
+  }
+ ]
+}

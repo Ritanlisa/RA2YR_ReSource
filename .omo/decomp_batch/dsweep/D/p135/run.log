@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p135\part_00
+=== convert (20 addrs) ===
+[conv] 0x63fb20 PowerClass::Render -> PowerClass
+[conv] 0x758b70 ObjectClass::GenerateLightRemapTable -> ObjectClass
+[conv] 0x6f4500 TechnoClass::DTOR -> TechnoClass
+[conv] 0x5f4870 IUnknown::GetBoundsRect -> IUnknown
+[conv] 0x7315a0 TAction::CenterOnStartCoords -> TAction
+[conv] 0x631060 PhoneEditor::PopulateList -> PhoneEditor
+[conv] 0x6b3e60 ComputeTerrainFlowField -> _addr_6B
+[conv] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> TechnoClass
+[conv] 0x4f2c70 ParseINIAnimGadgetDefinition -> _addr_4F
+[conv] 0x652960 RadarClass::Construct -> RadarClass
+[conv] 0x7b57a0 String::Replace -> String
+[conv] 0x531cc0 MainMenu::Screen -> MainMenu
+[conv] 0x709550 TechnoClass::SelectTargetByWeight -> TechnoClass
+[conv] 0x7a9550 CChatEventSink::DispatchStub_44 -> CChatEventSink
+[conv] 0x47bdb0 ObjectClass::GetBridgeCellColor -> ObjectClass
+[conv] 0x66b900 TechnoClass::ReadCrateRulesINI -> TechnoClass
+[conv] 0x490e50 LightConvertClass::SelectRLEBlitter -> LightConvertClass
+[conv] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> ObjectClass
+[conv] 0x55e160 SyncDelay::Start -> SyncDelay
+[conv] 0x4cbc40 ObjectClass::WalkPathfindingLine -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PowerClass               rc=0
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] IUnknown                 rc=0
+[era] TAction                  rc=0
+[era] PhoneEditor              rc=2
+[era] _addr_6B                 rc=0
+[era] _addr_4F                 rc=2
+[era] RadarClass               rc=2
+[era] String                   rc=0
+[era] MainMenu                 rc=2
+[era] CChatEventSink           rc=2
+[era] LightConvertClass        rc=0
+[era] SyncDelay                rc=2
+=== diffasm byte-compare ===
+[diff] 0x63fb20   MISMATCH         PowerClass::Render
+[diff] 0x5f4870   MISMATCH         IUnknown::GetBoundsRect
+[diff] 0x7315a0   MISMATCH         TAction::CenterOnStartCoords
+[diff] 0x6b3e60   MISMATCH         ComputeTerrainFlowField
+[diff] 0x7b57a0   MISMATCH         String::Replace
+[diff] 0x490e50   MISMATCH         LightConvertClass::SelectRLEBlitter
+[ledger] 0x63fb20 PowerClass::Render -> NG (attempt 1)
+[ledger] 0x758b70 ObjectClass::GenerateLightRemapTable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f4500 TechnoClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4870 IUnknown::GetBoundsRect -> NG (attempt 1)
+[ledger] 0x7315a0 TAction::CenterOnStartCoords -> NG (attempt 1)
+[ledger] 0x631060 PhoneEditor::PopulateList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b3e60 ComputeTerrainFlowField -> NG (attempt 1)
+[ledger] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2c70 ParseINIAnimGadgetDefinition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652960 RadarClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b57a0 String::Replace -> NG (attempt 1)
+[ledger] 0x531cc0 MainMenu::Screen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x709550 TechnoClass::SelectTargetByWeight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a9550 CChatEventSink::DispatchStub_44 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47bdb0 ObjectClass::GetBridgeCellColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66b900 TechnoClass::ReadCrateRulesINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x490e50 LightConvertClass::SelectRLEBlitter -> NG (attempt 1)
+[ledger] 0x684370 ObjectClass::WaitForMultiplayerLoadSync -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55e160 SyncDelay::Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cbc40 ObjectClass::WalkPathfindingLine -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "branch_polarity": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p135\batch_report.json
