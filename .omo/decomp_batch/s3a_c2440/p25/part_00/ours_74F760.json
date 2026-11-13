@@ -1,0 +1,99 @@
+{
+ "symbol": "?Read@VersionInfo@@QAEHXZ",
+ "sym_key": "VersionInfo::Read",
+ "size": 544,
+ "link_base": 0,
+ "bytes_hex": "83ec0853568bf133db57f64644080f858100000033c08d4c240ca00000000050e800000000538d4c2410e80000000084c0744e8d4e2a6a10518d4c2414e8000000008d96a800000083c9ff8bfa33c0885e36f2aef7d149807c31290d75268bfa83c9ff33c0f2aef7d1498bfa885c312983c9fff2aef7d149807c31290d74dfeb03895e2a8d4c240ce8000000008b46440c088946448b4644a801740a8b46045f5e5b83c408c3a8080f858200000033d28d4c240c8a150000000052e800000000538d4c2410e80000000084c0744e8d462a6a10508d4c2414e8000000008d96a800000083c9ff8bfa33c0885e36f2aef7d149807c31290d75268bfa83c9ff33c0f2aef7d1498bfa885c312983c9fff2aef7d149807c31290d74dfeb03895e2a8d4c240ce8000000008b46440c088946448b464455a8027406668b7e08eb0ebf010000000c0266897e088946448a46448befa8080f858400000033c98a0d00000000518d4c2418e800000000538d4c2418e80000000084c074508d562a6a10528d4c241ce8000000008d96a800000083c9ff8bfa33c0885e36f2aef7d149807c31290d75218bfa83c9ff33c0f2aef7d1498bfa885c312983c9fff2aef7d149807c31290d74df8bfdeb03895e2a8d4c2414e8000000008b46440c088946448b4e445df6c1047406668b460aeb0fb80100000083c9046689460a894e448b4e4481e7ffff0000c1e71025ffff00000bf883c9018bc7894e448946045f5e5b83c408c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_Str_File_VERSION_TXT@@3EA",
+   "sym_key": "g_Str_File_VERSION_TXT"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?Open@FileClass@@QAEDH@Z",
+   "sym_key": "FileClass::Open"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Read@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Read"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?g_Str_File_VERSION_TXT@@3EA",
+   "sym_key": "g_Str_File_VERSION_TXT"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?Open@FileClass@@QAEDH@Z",
+   "sym_key": "FileClass::Open"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Read@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Read"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?g_Str_File_VERSION_TXT@@3EA",
+   "sym_key": "g_Str_File_VERSION_TXT"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "?Construct@RawFileClass@@QAEPAV1@H@Z",
+   "sym_key": "RawFileClass::Construct"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "?Open@FileClass@@QAEDH@Z",
+   "sym_key": "FileClass::Open"
+  },
+  {
+   "off": 388,
+   "type": "REL32",
+   "sym": "?Read@FileClass@@QAEKPAXH@Z",
+   "sym_key": "FileClass::Read"
+  },
+  {
+   "off": 465,
+   "type": "REL32",
+   "sym": "?Dtor@RawFileClass@@QAEXXZ",
+   "sym_key": "RawFileClass::Dtor"
+  }
+ ]
+}

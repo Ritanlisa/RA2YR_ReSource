@@ -177409,7 +177409,7 @@
   "this_as_id": false
  },
  "0x733e10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SelectFactionThemeMusic",
@@ -177726,7 +177726,7 @@
   "this_as_id": false
  },
  "0x734d30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178240,7 +178240,7 @@
   "this_as_id": false
  },
  "0x7393c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178530,7 +178530,7 @@
   "this_as_id": false
  },
  "0x740fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180687,7 +180687,7 @@
   "this_as_id": false
  },
  "0x74c9f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -181084,15 +181084,15 @@
   "this_as_id": false
  },
  "0x74f540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "IRTTITypeInfo::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "IRTTITypeInfo::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x74f5f0": {
@@ -181163,27 +181163,27 @@
   "this_as_id": false
  },
  "0x74f760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x4c",
   "name": "VersionInfo::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "VersionInfo::Read",
-  "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 9,
+  "status": "NG",
   "this_as_id": false
  },
  "0x74f960": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "GameClass::ReadVersionFile",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GameClass::ReadVersionFile",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x74fa20": {
@@ -181667,7 +181667,7 @@
   "this_as_id": false
  },
  "0x750ac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ComputeAudioPosition",
@@ -181768,7 +181768,7 @@
   "this_as_id": false
  },
  "0x7513f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -181792,7 +181792,7 @@
   "this_as_id": false
  },
  "0x751520": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182205,7 +182205,7 @@
   "this_as_id": false
  },
  "0x752290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Init_752290",
@@ -182227,7 +182227,7 @@
   "this_as_id": false
  },
  "0x752370": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182250,7 +182250,7 @@
   "this_as_id": false
  },
  "0x752480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "UpdateThemeManager",
@@ -182284,7 +182284,7 @@
   "this_as_id": false
  },
  "0x752700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182330,7 +182330,7 @@
   "this_as_id": false
  },
  "0x752a40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ClearThemeQueuePlaylist",
@@ -182353,7 +182353,7 @@
   "this_as_id": false
  },
  "0x752ad0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Init_752AD0",
@@ -183244,7 +183244,7 @@
   "this_as_id": false
  },
  "0x754cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183738,7 +183738,7 @@
   "this_as_id": false
  },
  "0x758b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -183952,7 +183952,7 @@
   "this_as_id": false
  },
  "0x759260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
