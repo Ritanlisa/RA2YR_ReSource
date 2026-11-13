@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p107\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ce680 FootClass::UpdateDeployMovement -> FootClass
+[conv] 0x6f47a0 HouseClass::CalcProductionSpeed -> HouseClass
+[conv] 0x75dec0 WarheadTypeClass::ProcessPower -> WarheadTypeClass
+[conv] 0x5cd690 sub_5CD690 -> _addr_5C
+[conv] 0x422720 AnimClass::SimpleCtor -> AnimClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x525430 GetINIClassIntList -> _addr_52
+[conv] 0x529a30 INIClass::GetCoordPair -> INIClass
+[conv] 0x4a4130 ObjectClass::sub_4A4130 -> ObjectClass
+[conv] 0x6af1a0 SlaveManagerClass::ctor -> SlaveManagerClass
+[conv] 0x457020 BuildingClass::IsCellVisibleToPlayer -> BuildingClass
+[conv] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> DropPodLocomotionClass
+[conv] 0x4397e0 AnimClass::InitRotation -> AnimClass
+[conv] 0x475d70 INIClass::ReadIntList -> INIClass
+[conv] 0x6e53a0 TeamClass::Update_0 -> TeamClass
+[conv] 0x796960 ObjectClass::Event_Play -> ObjectClass
+[conv] 0x4dee80 FootClass::ValidatePlacementEx -> FootClass
+[conv] 0x7c2250 Audio_Helper_7C2250 -> Audio_Helper
+[conv] 0x4a4900 sub_4A4900 -> _addr_4A
+[conv] 0x438e70 AbstractClass::Initialize -> AbstractClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] HouseClass               rc=0
+[era] WarheadTypeClass         rc=2
+[era] _addr_5C                 rc=2
+[era] AnimClass                rc=2
+[era] TextLabelClass           rc=2
+[era] _addr_52                 rc=2
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] SlaveManagerClass        rc=0
+[era] BuildingClass            rc=0
+[era] DropPodLocomotionClass   rc=2
+[era] TeamClass                rc=2
+[era] Audio_Helper             rc=0
+[era] _addr_4A                 rc=2
+[era] AbstractClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6f47a0   MISMATCH         HouseClass::CalcProductionSpeed
+[diff] 0x6af1a0   MISMATCH         SlaveManagerClass::ctor
+[diff] 0x457020   MISMATCH         BuildingClass::IsCellVisibleToPlayer
+[diff] 0x7c2250   MISMATCH         Audio_Helper_7C2250
+[ledger] 0x4ce680 FootClass::UpdateDeployMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f47a0 HouseClass::CalcProductionSpeed -> NG (attempt 1)
+[ledger] 0x75dec0 WarheadTypeClass::ProcessPower -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cd690 sub_5CD690 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x422720 AnimClass::SimpleCtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x525430 GetINIClassIntList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x529a30 INIClass::GetCoordPair -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a4130 ObjectClass::sub_4A4130 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6af1a0 SlaveManagerClass::ctor -> NG (attempt 1)
+[ledger] 0x457020 BuildingClass::IsCellVisibleToPlayer -> NG (attempt 1)
+[ledger] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4397e0 AnimClass::InitRotation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x475d70 INIClass::ReadIntList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e53a0 TeamClass::Update_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x796960 ObjectClass::Event_Play -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dee80 FootClass::ValidatePlacementEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c2250 Audio_Helper_7C2250 -> NG (attempt 1)
+[ledger] 0x4a4900 sub_4A4900 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438e70 AbstractClass::Initialize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p107\batch_report.json

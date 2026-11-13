@@ -1,0 +1,69 @@
+{
+ "symbol": "?IsCellVisibleToPlayer@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::IsCellVisibleToPlayer",
+ "size": 405,
+ "link_base": 0,
+ "bytes_hex": "83ec1c53568bf18b86200500008a889a0c000084c90f85720100008a8e8100000084c90f85640100008b8e1c020000e80000000084c074118a861b0400005e84c00f95c05b83c41cc38b068d4c240c5156ff504833d28d4c24088a50058b44240824006a010bd051b9f801000089542410e80000000025ff00000084c00f840a0100008b8e2005000055576a00e8000000008b8e200500008bf8c1e70881ef00010000e8000000008b969c0000008b8ea40000008be88b86a0000000895424208d542420c1e5085281ed0001000089442428894c242c32dbe80000000084c0743b8b869c0000008b8ea400000003c58baea00000008d54241403fd5289442418897c241c894c2420e80000000084c0740ba10000000085c07402b3018b86240200005f83f8025d741f80beed0600000f74168a86e706000084c0750c84db75085eb0015b83c41cc38b0656ff902803000084c074388b8e1c020000518b0d00000000e80000000084c075188a8ee706000084c9750e84db750a8b542408c7020100000024015e0c015b83c41cc35e24005b83c41cc3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?GetFoundationHeight@BuildingTypeClass@@QAEHD@Z",
+   "sym_key": "BuildingTypeClass::GetFoundationHeight"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?GetFoundationWidth@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::GetFoundationWidth"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?Cell__IsPassable@@YG_NPAX@Z",
+   "sym_key": "Cell__IsPassable"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 350,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?IsAlliedWith@HouseClass@@QAEHPAX@Z",
+   "sym_key": "HouseClass::IsAlliedWith"
+  }
+ ]
+}
