@@ -113344,7 +113344,7 @@
   "this_as_id": false
  },
  "0x5f2950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113356,7 +113356,7 @@
   "this_as_id": false
  },
  "0x5f2ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -113368,7 +113368,7 @@
   "this_as_id": false
  },
  "0x5f3170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115027,14 +115027,14 @@
   "this_as_id": false
  },
  "0x5f7090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectTypeClass::ConstructFull",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectTypeClass::ConstructFull",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -115194,7 +115194,7 @@
   "this_as_id": false
  },
  "0x5f7a90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115206,7 +115206,7 @@
   "this_as_id": false
  },
  "0x5f7db0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115230,7 +115230,7 @@
   "this_as_id": false
  },
  "0x5f8110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115242,7 +115242,7 @@
   "this_as_id": false
  },
  "0x5f8ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115254,7 +115254,7 @@
   "this_as_id": false
  },
  "0x5f9070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115266,14 +115266,14 @@
   "this_as_id": false
  },
  "0x5f92d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectTypeClass::LoadFromINI",
-  "rule_violations": 2,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -115301,7 +115301,7 @@
   "this_as_id": false
  },
  "0x5f9720": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -115517,7 +115517,7 @@
   "this_as_id": false
  },
  "0x5f9e80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116508,7 +116508,7 @@
   "this_as_id": false
  },
  "0x5fe620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadBuildingTypeClassSHPs",
@@ -116610,7 +116610,7 @@
   "status": "NG"
  },
  "0x5fede0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118269,7 +118269,7 @@
   "this_as_id": false
  },
  "0x60f320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118626,7 +118626,7 @@
   "this_as_id": false
  },
  "0x61ef70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FormatHotkeyDisplayString",
@@ -118670,7 +118670,7 @@
   "this_as_id": false
  },
  "0x620720": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DrawScrollArrowUI",
@@ -118788,26 +118788,26 @@
   "this_as_id": false
  },
  "0x6219d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "Team_Find",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Team_Find",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x621b80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+3 push ebp",
   "name": "DSurface::FillRectWithColor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "DSurface::FillRectWithColor",
-  "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x621d30": {
@@ -119090,7 +119090,7 @@
   "this_as_id": false
  },
  "0x623880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DrawTextRendererMultiline",

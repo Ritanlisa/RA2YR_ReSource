@@ -1,0 +1,33 @@
+{
+ "symbol": "?FillRectWithColor@DSurface@@QAIHPAHHFE@Z",
+ "sym_key": "DSurface::FillRectWithColor",
+ "size": 445,
+ "link_base": 0,
+ "bytes_hex": "83ec2c53558b6c2438566a008bf28b45006a005589742438ff505c8bd885db895c24300f84890100008b4d005755ff51748b7e04992bc28b560c03d7897c2424d1f83bfa894424380f8d530100008bc80fafcf894c24288b168b6e0803ea895424143bd50f8d1a0100008b44244803d125ff0000008d0c53baff0000002bd0894424188954241c89542420894c2410668b098b1d000000008b7c24448bf189150000000081e6ffff00008bd381e7ffff000081e2ffff00008bcf8bee23ca23ea0fafc80faf6c242003cd8befc1e90823cba300000000c1eb10895c242081e3ffff000023eb8b5424100fafe88bc683c20223c38b5c241c0fafc303e88b4424208954242c8b1500000000c1ed0823e88b44241881e2ffff0000896c24208bea23d623ef0fafd30fafe88b4424108b74243003ea8b542420c1ed080bd50bd18b4c242c6689108b4424148b56088b1e4003d33bc2894c2410894424147d118b54241c8b44241889542420e921ffffff8b4c24288b5c24348b6c24408b7c24248b442438eb048b6c24408b560c03c803560447897c2424894c24283bfa0f8cb6feffff8b450055ff50605f5e5d5b83c42cc20c005e5d33c05b83c42cc20c00",
+ "relocs": [
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  }
+ ]
+}
