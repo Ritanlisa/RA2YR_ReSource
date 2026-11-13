@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x5ef4c0 sub_5EF4C0 -> _addr_5E
+[conv] 0x5f0040 Network::CleanupOnDisconnect -> Network
+[conv] 0x5f13d0 sub_5F13D0 -> _addr_5F
+[conv] 0x5f15a0 sub_5F15A0 -> _addr_5F
+[conv] 0x5f36f0 sub_5F36F0 -> _addr_5F
+[conv] 0x5f38c0 sub_5F38C0 -> _addr_5F
+[conv] 0x5f6de0 sub_5F6DE0 -> _addr_5F
+[conv] 0x5f6fb0 sub_5F6FB0 -> _addr_5F
+[conv] 0x5fa0d0 sub_5FA0D0 -> _addr_5F
+[conv] 0x5fa2a0 sub_5FA2A0 -> _addr_5F
+[conv] 0x5fc170 sub_5FC170 -> _addr_5F
+[conv] 0x5fc340 sub_5FC340 -> _addr_5F
+[conv] 0x5fd950 OverlayClass::SaveObject -> OverlayClass
+[conv] 0x5fe060 sub_5FE060 -> _addr_5F
+[conv] 0x5fe230 sub_5FE230 -> _addr_5F
+[conv] 0x5fefc0 sub_5FEFC0 -> _addr_5F
+[conv] 0x5ff190 sub_5FF190 -> _addr_5F
+[conv] 0x600340 sub_600340 -> _addr_60
+[conv] 0x600510 sub_600510 -> _addr_60
+[conv] 0x628f80 sub_628F80 -> _addr_62
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5E                 rc=0
+[era] Network                  rc=0
+[era] _addr_5F                 rc=0
+[era] OverlayClass             rc=0
+[era] _addr_60                 rc=0
+[era] _addr_62                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ef4c0   MATCH            sub_5EF4C0
+[diff] 0x5f0040   MATCH            Network::CleanupOnDisconnect
+[diff] 0x5f13d0   MATCH            sub_5F13D0
+[diff] 0x5f15a0   MATCH            sub_5F15A0
+[diff] 0x5f36f0   MATCH            sub_5F36F0
+[diff] 0x5f38c0   MATCH            sub_5F38C0
+[diff] 0x5f6de0   MATCH            sub_5F6DE0
+[diff] 0x5f6fb0   MATCH            sub_5F6FB0
+[diff] 0x5fa0d0   MATCH            sub_5FA0D0
+[diff] 0x5fa2a0   MATCH            sub_5FA2A0
+[diff] 0x5fc170   MATCH            sub_5FC170
+[diff] 0x5fc340   MATCH            sub_5FC340
+[diff] 0x5fe060   MATCH            sub_5FE060
+[diff] 0x5fe230   MATCH            sub_5FE230
+[diff] 0x5fefc0   MATCH            sub_5FEFC0
+[diff] 0x5ff190   MATCH            sub_5FF190
+[diff] 0x5fd950   MATCH            OverlayClass::SaveObject
+[diff] 0x600340   MATCH            sub_600340
+[diff] 0x600510   MATCH            sub_600510
+[diff] 0x628f80   MATCH            sub_628F80
+[ledger] 0x5ef4c0 sub_5EF4C0 -> OK (attempt 3)
+[ledger] 0x5f0040 Network::CleanupOnDisconnect -> OK (attempt 2)
+[ledger] 0x5f13d0 sub_5F13D0 -> OK (attempt 2)
+[ledger] 0x5f15a0 sub_5F15A0 -> OK (attempt 3)
+[ledger] 0x5f36f0 sub_5F36F0 -> OK (attempt 2)
+[ledger] 0x5f38c0 sub_5F38C0 -> OK (attempt 4)
+[ledger] 0x5f6de0 sub_5F6DE0 -> OK (attempt 2)
+[ledger] 0x5f6fb0 sub_5F6FB0 -> OK (attempt 3)
+[ledger] 0x5fa0d0 sub_5FA0D0 -> OK (attempt 2)
+[ledger] 0x5fa2a0 sub_5FA2A0 -> OK (attempt 3)
+[ledger] 0x5fc170 sub_5FC170 -> OK (attempt 2)
+[ledger] 0x5fc340 sub_5FC340 -> OK (attempt 3)
+[ledger] 0x5fd950 OverlayClass::SaveObject -> OK (attempt 2)
+[ledger] 0x5fe060 sub_5FE060 -> OK (attempt 2)
+[ledger] 0x5fe230 sub_5FE230 -> OK (attempt 3)
+[ledger] 0x5fefc0 sub_5FEFC0 -> OK (attempt 2)
+[ledger] 0x5ff190 sub_5FF190 -> OK (attempt 3)
+[ledger] 0x600340 sub_600340 -> OK (attempt 2)
+[ledger] 0x600510 sub_600510 -> OK (attempt 3)
+[ledger] 0x628f80 sub_628F80 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p17\batch_report.json
