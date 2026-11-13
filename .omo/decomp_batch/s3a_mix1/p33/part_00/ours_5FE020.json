@@ -1,0 +1,15 @@
+{
+ "symbol": "?updateOverlayState@OverlayClass@@QAEPAV1@HH@Z",
+ "sym_key": "OverlayClass::updateOverlayState",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b5424088bc18b4c2404894804895008c7400c00000000c70000000000c20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  }
+ ]
+}

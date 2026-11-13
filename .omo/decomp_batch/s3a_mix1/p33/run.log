@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cafc0 Performance::MeasureTicks -> Performance
+[conv] 0x5cb590 PaletteClass::Load -> PaletteClass
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5d90e0 Network::QueryAddress -> Network
+[conv] 0x5d9220 Network::WaitForPacket -> Network
+[conv] 0x5dc170 NetworkLobby::ValidateSerialNumber -> NetworkLobby
+[conv] 0x5e6520 ReadPlayerCountMap -> _addr_5E
+[conv] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> SetupMultiplayerLobbyScreen
+[conv] 0x5ee6f0 AssignRandomMapStartPositions -> _addr_5E
+[conv] 0x5f34d0 sub_5F34D0 -> _addr_5F
+[conv] 0x5f9e80 Checksummer::HashString -> Checksummer
+[conv] 0x5fe020 OverlayClass::updateOverlayState -> OverlayClass
+[conv] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> SkirmishDialog
+[conv] 0x60d450 DialogClass::RegisterWinClasses -> DialogClass
+[conv] 0x610810 sub_610810 -> _addr_61
+[conv] 0x6213a0 Dialog::Resize -> Dialog
+[conv] 0x621d30 sub_621D30 -> _addr_62
+[conv] 0x6255f0 Options::RebuildDropdownList -> Options
+[conv] 0x628690 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Add -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Performance              rc=0
+[era] PaletteClass             rc=2
+[era] MSOverlayAnim            rc=2
+[era] MSPCXAnim                rc=2
+[era] Network                  rc=2
+[era] NetworkLobby             rc=2
+[era] _addr_5E                 rc=2
+[era] SetupMultiplayerLobbyScreen rc=2
+[era] _addr_5F                 rc=2
+[era] Checksummer              rc=2
+[era] OverlayClass             rc=0
+[era] SkirmishDialog           rc=2
+[era] DialogClass              rc=2
+[era] _addr_61                 rc=2
+[era] Dialog                   rc=2
+[era] _addr_62                 rc=2
+[era] Options                  rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cafc0   MISMATCH         Performance::MeasureTicks
+[diff] 0x5ee6f0   MISMATCH         AssignRandomMapStartPositions
+[diff] 0x5fe020   MISMATCH         OverlayClass::updateOverlayState
+[diff] 0x628690   MISMATCH         _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Add
+[ledger] 0x5cafc0 Performance::MeasureTicks -> NG (attempt 2)
+[ledger] 0x5cb590 PaletteClass::Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> COMPILE_FAIL (attempt 14)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5d90e0 Network::QueryAddress -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d9220 Network::WaitForPacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dc170 NetworkLobby::ValidateSerialNumber -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e6520 ReadPlayerCountMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ee6f0 AssignRandomMapStartPositions -> NG (attempt 2)
+[ledger] 0x5f34d0 sub_5F34D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f9e80 Checksummer::HashString -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5fe020 OverlayClass::updateOverlayState -> NG (attempt 2)
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 6)
+[ledger] 0x60d450 DialogClass::RegisterWinClasses -> COMPILE_FAIL (attempt 2)
+[ledger] 0x610810 sub_610810 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6213a0 Dialog::Resize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x621d30 sub_621D30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6255f0 Options::RebuildDropdownList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x628690 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Add -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "const_fold": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p33\batch_report.json

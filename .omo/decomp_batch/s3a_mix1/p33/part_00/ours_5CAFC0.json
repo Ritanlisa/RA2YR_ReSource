@@ -1,0 +1,63 @@
+{
+ "symbol": "?MeasureTicks@Performance@@QAEIXZ",
+ "sym_key": "Performance::MeasureTicks",
+ "size": 451,
+ "link_base": 0,
+ "bytes_hex": "83ec30538d4424245533db50895c241033ed895c240c895c2414e8000000003bc30f849601000056578b4c2410896c241c41894c24108d4c242851e8000000008b5424288b44242c89542420894424248d4c242051e8000000008b5424208b4c24282bd183fa3272e7e8000000008b4c24248bf08b442420894c242c894424288d54242052e8000000008b4424208b5424282bc23de803000072e5e800000000998bf88b4424288954243c2bfe8d048003df8d04808d04808d04808d0c808b442420c1e1058d04808d04808d04808d04808d1480b8cdccccccc1e2058bf22bf18b4c2430f7e18bea8bc6c1ed0333d2f7f58b5424188bf003d68954241833d2f7f1d1e93bd17601468bc733d2f7f633d28be88bc7f7f6d1ee3bd67601458b7c241c8b5424148b4424108d342f03f283f8037c4383f8147d478d446d002bc650e80000000083c40483f8037f2a8d0c7f2bce51e80000000083c40483f8037f178b4424148d14402bd652e80000000083c40483f8037e09897c2414e9aafeffff8b7424188d049bd1e033d2f7f633d28bc88d049b8d0480c1e002f7f68d1489d1e22bc283f8067201418bc333d2f7f65f5e8d1480d1e22bca83f9067201405d5b83c430c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?QueryPerformanceFrequency@@YGHPAX@Z",
+   "sym_key": "QueryPerformanceFrequency"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?QueryPerformanceCounter@@YGHPAX@Z",
+   "sym_key": "QueryPerformanceCounter"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?QueryPerformanceCounter@@YGHPAX@Z",
+   "sym_key": "QueryPerformanceCounter"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__rdtsc@@YAHXZ",
+   "sym_key": "__rdtsc"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?QueryPerformanceCounter@@YGHPAX@Z",
+   "sym_key": "QueryPerformanceCounter"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?__rdtsc@@YAHXZ",
+   "sym_key": "__rdtsc"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 362,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  }
+ ]
+}

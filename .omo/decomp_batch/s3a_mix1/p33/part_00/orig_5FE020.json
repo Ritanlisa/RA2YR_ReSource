@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FE020",
+ "name": "OverlayClass::updateOverlayState",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FE020",
+ "bytes_hex": "8b5424088bc18b4c2404894804895008c7400c00000000c70004217e00c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
