@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x6980c0 ScenarioClass::LoadNetworkConfig -> ScenarioClass
+[conv] 0x69a3b0 MapFile::LoadDescription -> MapFile
+[conv] 0x69ae10 GameClass::initPlayerData -> GameClass
+[conv] 0x69b8c0 Player::RandomAssign -> Player
+[conv] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> DialogSkirmishFunc
+[conv] 0x6b4c80 UnitClass::ReadINI -> UnitClass
+[conv] 0x6b4dd0 UnitTypeClass::ReadINIEntry -> UnitTypeClass
+[conv] 0x6b5490 LoadFactoryClassTheaterSHP -> _addr_6B
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x6b7d80 TechnoClass::CountPassengers -> TechnoClass
+[conv] 0x6ba3e0 Surface::TileBlit -> Surface
+[conv] 0x6bb390 ObjectClass::RegisterClassesCOM -> ObjectClass
+[conv] 0x6c8f10 sub_6C8F10 -> _addr_6C
+[conv] 0x6c8fa0 sub_6C8FA0 -> _addr_6C
+[conv] 0x6c99d0 BinkMovie::CreateSurfaceTracker -> BinkMovie
+[conv] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> ObjectClass
+[conv] 0x6ca5a0 ObjectClass::sub_6CA5A0 -> ObjectClass
+[conv] 0x6ce800 SuperWeaponTypeClass::SaveLoad_Prefix -> SuperWeaponTypeClass
+[conv] 0x6d02b0 TabClass::LoadButtonSHPs -> TabClass
+[conv] 0x6d0f10 sub_6D0F10 -> _addr_6D
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] MapFile                  rc=2
+[era] GameClass                rc=2
+[era] Player                   rc=2
+[era] DialogSkirmishFunc       rc=2
+[era] UnitClass                rc=2
+[era] UnitTypeClass            rc=2
+[era] _addr_6B                 rc=2
+[era] SmudgeTypeClass          rc=2
+[era] TechnoClass              rc=2
+[era] Surface                  rc=0
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] BinkMovie                rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] TabClass                 rc=2
+[era] _addr_6D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ba3e0   MISMATCH         Surface::TileBlit
+[ledger] 0x6980c0 ScenarioClass::LoadNetworkConfig -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69a3b0 MapFile::LoadDescription -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69ae10 GameClass::initPlayerData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69b8c0 Player::RandomAssign -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4c80 UnitClass::ReadINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4dd0 UnitTypeClass::ReadINIEntry -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b5490 LoadFactoryClassTheaterSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6b7d80 TechnoClass::CountPassengers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ba3e0 Surface::TileBlit -> NG (attempt 2)
+[ledger] 0x6bb390 ObjectClass::RegisterClassesCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c8f10 sub_6C8F10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c8fa0 sub_6C8FA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c99d0 BinkMovie::CreateSurfaceTracker -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ca5a0 ObjectClass::sub_6CA5A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ce800 SuperWeaponTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d02b0 TabClass::LoadButtonSHPs -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6d0f10 sub_6D0F10 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p17\batch_report.json
