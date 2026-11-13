@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x774310 sub_774310 -> _addr_77
+[conv] 0x707e60 TechnoClass::ComputeScanDistance -> TechnoClass
+[conv] 0x413f80 AircraftClass::Update -> AircraftClass
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x5f99e0 TechnoClass::ClearArrays -> TechnoClass
+[conv] 0x6e1cc0 TActionClass::executeRetreatAction -> TActionClass
+[conv] 0x5cb440 UnholyAlliance::GetResult -> UnholyAlliance
+[conv] 0x5ca6d0 MultiplayerSiege::Write -> MultiplayerSiege
+[conv] 0x72b130 WinMainSetup_Setup_72AC40_Setup -> WinMainSetup_Setup_72AC40
+[conv] 0x58ce90 ObjectClass::Map_Helper_58CE90 -> ObjectClass
+[conv] 0x7be940 sub_7BE940 -> _addr_7B
+[conv] 0x56ae40 ObjectClass::sub_56AE40 -> ObjectClass
+[conv] 0x4165c0 AircraftClass::DeployWithAnim -> AircraftClass
+[conv] 0x565090 MapClass::RenderMapPreview -> MapClass
+[conv] 0x71c5b0 TerrainClass::PlayAmbientAnimation -> TerrainClass
+[conv] 0x557920 ListClass::DrawBuildingPlacement -> ListClass
+[conv] 0x753d00 Audio_Render -> Audio
+[conv] 0x4e6190 DetectProcessorType -> _addr_4E
+[conv] 0x6d03a0 TabClass::InitButtons -> TabClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_77                 rc=2
+[era] TechnoClass              rc=0
+[era] AircraftClass            rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] TActionClass             rc=0
+[era] UnholyAlliance           rc=2
+[era] MultiplayerSiege         rc=0
+[era] WinMainSetup_Setup_72AC40 rc=0
+[era] _addr_7B                 rc=0
+[era] MapClass                 rc=2
+[era] TerrainClass             rc=0
+[era] ListClass                rc=2
+[era] Audio                    rc=0
+[era] _addr_4E                 rc=2
+[era] TabClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x58ce90   MISMATCH         ObjectClass::Map_Helper_58CE90
+[diff] 0x56ae40   MISMATCH         ObjectClass::sub_56AE40
+[diff] 0x707e60   MISMATCH         TechnoClass::ComputeScanDistance
+[diff] 0x5f99e0   MISMATCH         TechnoClass::ClearArrays
+[diff] 0x6e1cc0   MISMATCH         TActionClass::executeRetreatAction
+[diff] 0x5ca6d0   MISMATCH         MultiplayerSiege::Write
+[diff] 0x72b130   MISMATCH         WinMainSetup_Setup_72AC40_Setup
+[diff] 0x7be940   MISMATCH         sub_7BE940
+[diff] 0x71c5b0   MISMATCH         TerrainClass::PlayAmbientAnimation
+[diff] 0x753d00   MISMATCH         Audio_Render
+[diff] 0x6d03a0   MISMATCH         TabClass::InitButtons
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x774310 sub_774310 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x707e60 TechnoClass::ComputeScanDistance -> NG (attempt 1)
+[ledger] 0x413f80 AircraftClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f99e0 TechnoClass::ClearArrays -> NG (attempt 1)
+[ledger] 0x6e1cc0 TActionClass::executeRetreatAction -> NG (attempt 1)
+[ledger] 0x5cb440 UnholyAlliance::GetResult -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ca6d0 MultiplayerSiege::Write -> NG (attempt 1)
+[ledger] 0x72b130 WinMainSetup_Setup_72AC40_Setup -> NG (attempt 1)
+[ledger] 0x58ce90 ObjectClass::Map_Helper_58CE90 -> NG (attempt 1)
+[ledger] 0x7be940 sub_7BE940 -> NG (attempt 1)
+[ledger] 0x56ae40 ObjectClass::sub_56AE40 -> NG (attempt 1)
+[ledger] 0x4165c0 AircraftClass::DeployWithAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x565090 MapClass::RenderMapPreview -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71c5b0 TerrainClass::PlayAmbientAnimation -> NG (attempt 1)
+[ledger] 0x557920 ListClass::DrawBuildingPlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x753d00 Audio_Render -> NG (attempt 1)
+[ledger] 0x4e6190 DetectProcessorType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d03a0 TabClass::InitButtons -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "signedness": 1,
+  "frame_sched": 3,
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "codegen_shape": 2,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p62\batch_report.json

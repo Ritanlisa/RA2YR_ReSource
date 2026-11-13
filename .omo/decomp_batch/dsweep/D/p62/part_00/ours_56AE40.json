@@ -1,0 +1,63 @@
+{
+ "symbol": "?sub_56AE40@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_56AE40",
+ "size": 243,
+ "link_base": 0,
+ "bytes_hex": "83ec205356578bf133db6800200000538d4c2414e8000000008b4424308d4c240c50e8000000008b864001000033ff85c07e308b8e3c0100006a028b04b985c0740683c03850eb0568901600008d4c2414e80000000003d88b8640010000473bf87cd08b864001000033ff85c07e328b963c0100006a018b04ba85c07408051a01000050eb0568721700008d4c2414e80000000003d88b8640010000473bf87cce8b864001000033ff85c07e328b863c0100006a018b04b885c07408051b01000050eb0568731700008d4c2414e80000000003d88b8640010000473bf87cce8d4c240ce8000000005f8bc35e5b83c420c20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?Constructor@LCWPipe@@QAEPAV1@HH@Z",
+   "sym_key": "LCWPipe::Constructor"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?SetDelegate@Pipe@@QAEXH@Z",
+   "sym_key": "Pipe::SetDelegate"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?Compress@LCW@@QAEPADPAXH@Z",
+   "sym_key": "LCW::Compress"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?Dtor@LCWPipe@@QAEHXZ",
+   "sym_key": "LCWPipe::Dtor"
+  }
+ ]
+}

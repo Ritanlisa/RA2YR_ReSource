@@ -1,0 +1,45 @@
+{
+ "symbol": "?PlayAmbientAnimation@TerrainClass@@QAEDXZ",
+ "sym_key": "TerrainClass::PlayAmbientAnimation",
+ "size": 261,
+ "link_base": 0,
+ "bytes_hex": "83ec18578bf98b87f400000085c00f85ea0000008b87f000000085c00f85dc0000008b87c800000083b89c000000060f85c90000008a88b102000084c90f85bb000000a10000000053568d8868050300e80000000068c80100008ad8e8000000008bf083c40485f674618b0f8d5424185257ff51488b50088b088b400483c250895424148b15400200006a006a0089442418894c24148b82940b0000680006000068ff0000008d4c241c83e3016a00518b0c98518bcee8000000008bf085f6740c578bcee800000000eb0233f68b8e0001000083c1ec898e000100008b860401000083d0ff8986040100005ec787f0000000010000005bb0015f83c418c332c05f83c418c3",
+ "relocs": [
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVGap2Recv_68FBB0@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?AimTurret@BuildingClass@@QAEXPAX@Z",
+   "sym_key": "BuildingClass::AimTurret"
+  }
+ ]
+}

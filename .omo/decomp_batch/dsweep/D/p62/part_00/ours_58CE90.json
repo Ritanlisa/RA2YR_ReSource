@@ -1,0 +1,105 @@
+{
+ "symbol": "?Map_Helper_58CE90@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::Map_Helper_58CE90",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "51a1182700005333db563bc357742da1000000000fafc03bc38bc8761f33c08b351827000083caff895406388b35182700008954063c83c0504975e3a1a81900008d78ff3bfb0f8c9e0000008b0d9c1900008b34b93bf30f84860000008b063bc374098b106a0150ff12891e8b0d981900008d44240c50689819000089742414ff511083f8ff742d8b0da81900003bc17d23493bc1890da81900007d188b0d9c190000408b1481895481fc8b0da81900003bc17ce88b462cc74628000000003bc37411385e35740c50e80000000083c404895e2c56885e35895e30e80000000083c4044f0f8962ffffff5f891d1c2700005e5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}

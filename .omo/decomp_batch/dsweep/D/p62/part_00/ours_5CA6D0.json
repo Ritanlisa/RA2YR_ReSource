@@ -1,0 +1,87 @@
+{
+ "symbol": "?Write@MultiplayerSiege@@QAGDPAPAX@Z",
+ "sym_key": "MultiplayerSiege::Write",
+ "size": 203,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c565755e80000000084c00f84ac0000008b350000000032db33ff33c985f6765a8b15000000008b028b406b85c074134885c0740883f801751347eb0684db7521b3014183c2043bce732cebda33c96a3c8a0d0000000033d2518b0d00000000eb4e8b0d0000000033d28a15000000006a335233d2eb3984db75148b0d0000000033c0a0000000006a415033d2eb2183ff017c095f5e5db0015bc2080033c96a468a0d0000000033d2518b0d00000000e800000000508bcde8000000005f5e5d32c05bc20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ScenarioClass__MissionStubReturnZero2@@YGDPAX@Z",
+   "sym_key": "ScenarioClass__MissionStubReturnZero2"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?Game_PlayerCount@@3IA",
+   "sym_key": "Game_PlayerCount"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IB",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_Str_File_MPSiege_cpp@@3EA",
+   "sym_key": "g_Str_File_MPSiege_cpp"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?aMpIllegalteam@@3HA",
+   "sym_key": "aMpIllegalteam"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?aMpOnlyonebesei@@3HA",
+   "sym_key": "aMpOnlyonebesei"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_Str_File_MPSiege_cpp@@3EA",
+   "sym_key": "g_Str_File_MPSiege_cpp"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?aMpNodefender@@3HA",
+   "sym_key": "aMpNodefender"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_Str_File_MPSiege_cpp@@3EA",
+   "sym_key": "g_Str_File_MPSiege_cpp"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_Str_File_MPSiege_cpp@@3EA",
+   "sym_key": "g_Str_File_MPSiege_cpp"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?aMpNoattackers@@3HA",
+   "sym_key": "aMpNoattackers"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?Assign_Alt@WideString@@QAEPAPAXPAX@Z",
+   "sym_key": "WideString::Assign_Alt"
+  }
+ ]
+}

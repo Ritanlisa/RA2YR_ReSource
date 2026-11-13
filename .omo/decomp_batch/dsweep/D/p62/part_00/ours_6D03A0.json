@@ -1,0 +1,171 @@
+{
+ "symbol": "?InitButtons@TabClass@@QAEDXZ",
+ "sym_key": "TabClass::InitButtons",
+ "size": 203,
+ "link_base": 0,
+ "bytes_hex": "53e800000000a00000000033db3ac30f85b4000000e8000000003ac30f84a700000056e800000000a1000000008b3500000000a300000000a100000000c70500000000f0000000881d00000000891d00000000c70500000000050000008b48048b105152b900000000e800000000535356b900000000e800000000a100000000c70500000000f1000000a300000000a100000000881d00000000891d00000000c70500000000050000008b48048b105152b900000000e800000000535356b900000000e8000000005e5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?Init@SidebarClass@@QAEDXZ",
+   "sym_key": "SidebarClass::Init"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?UI_Init_72F430@@YADXZ",
+   "sym_key": "UI_Init_72F430"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?UI_Init_6D0FD0@@YAHXZ",
+   "sym_key": "UI_Init_6D0FD0"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FA90@@3IA",
+   "sym_key": "DataGlobal_B0FA90"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CD00@@3IA",
+   "sym_key": "DataGlobal_B0CD00"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC60@@3IA",
+   "sym_key": "DataGlobal_B0FC60"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCD4@@3IA",
+   "sym_key": "DataGlobal_B0CCD4"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCDD@@3EA",
+   "sym_key": "DataGlobal_B0CCDD"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCE0@@3IA",
+   "sym_key": "DataGlobal_B0CCE0"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCD0@@3IA",
+   "sym_key": "DataGlobal_B0CCD0"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCB0@@3IA",
+   "sym_key": "DataGlobal_B0CCB0"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CCB0@@3IA",
+   "sym_key": "DataGlobal_B0CCB0"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?g_SidebarConfig@@3IA",
+   "sym_key": "g_SidebarConfig"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC64@@3IA",
+   "sym_key": "DataGlobal_B0CC64"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC90@@3IA",
+   "sym_key": "DataGlobal_B0CC90"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FC64@@3IA",
+   "sym_key": "DataGlobal_B0FC64"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC6D@@3EA",
+   "sym_key": "DataGlobal_B0CC6D"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC70@@3IA",
+   "sym_key": "DataGlobal_B0CC70"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC60@@3IA",
+   "sym_key": "DataGlobal_B0CC60"
+  },
+  {
+   "off": 178,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?Set@Rect_Point@@QAEHHH@Z",
+   "sym_key": "Rect_Point::Set"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?SetShape@ShapeButton@@QAEHHHH@Z",
+   "sym_key": "ShapeButton::SetShape"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "symbol": "?ClearArrays@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ClearArrays",
+ "size": 238,
+ "link_base": 0,
+ "bytes_hex": "a100000000535733db33ff3bc3770da1000000005fa3000000005bc356a1000000008b34b88b8e4402000051e8000000008b9658020000899e4402000052899e48020000899e4c020000889e50020000899e54020000e8000000008b866c020000899e5802000050899e5c020000899e60020000889e64020000899e68020000e8000000008b8e80020000899e6c02000051899e70020000899e74020000889e78020000899e7c020000e80000000083c410899e80020000899e84020000899e88020000889e8c020000899e90020000a100000000473bf80f823fffffff8b15000000005e5f8915000000005bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1428@@3IA",
+   "sym_key": "DataGlobal_AC1428"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?dword_887464@@3IA",
+   "sym_key": "dword_887464"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?dword_887468@@3IA",
+   "sym_key": "dword_887468"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC141C@@3IA",
+   "sym_key": "DataGlobal_AC141C"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1428@@3IA",
+   "sym_key": "DataGlobal_AC1428"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?dword_887464@@3IA",
+   "sym_key": "dword_887464"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?dword_887468@@3IA",
+   "sym_key": "dword_887468"
+  }
+ ]
+}

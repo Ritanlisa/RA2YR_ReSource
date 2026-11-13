@@ -1,0 +1,45 @@
+{
+ "symbol": "?Audio_Render@@YIDPAHHHPAM11M@Z",
+ "sym_key": "Unnamed::Audio_Render",
+ "size": 179,
+ "link_base": 0,
+ "bytes_hex": "83ec6056578bf28bf98b5424708d4c2438e8000000008b5424748d4c2438e8000000008b4424708b4c247850518d4c2410e8000000008b10895424208b4804894c24248b500833c08d4c2408894424088944240c8b4424708954242850518d4c2434c74424180000803fe8000000008b10895424148b4804894c24188b50088b44246c8bcf505689542424e80000000033c98a88a30000008b54247c51528d54241c8d4c2428e8000000005f5e83c460c21400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?InvertMatrix3x3Signs@@YIPAMPAX0@Z",
+   "sym_key": "InvertMatrix3x3Signs"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?InvertMatrix3x3Signs@@YIPAMPAX0@Z",
+   "sym_key": "InvertMatrix3x3Signs"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?TransformPoint@Matrix3x3@@QAEPAMPAX0@Z",
+   "sym_key": "Matrix3x3::TransformPoint"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?TransformPoint@Matrix3x3@@QAEPAMPAX0@Z",
+   "sym_key": "Matrix3x3::TransformPoint"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?GetInfo@VoxelSection@@QAEHHH@Z",
+   "sym_key": "VoxelSection::GetInfo"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?VoxelAnim__ComputeTransform@@YIDPAX0MH@Z",
+   "sym_key": "VoxelAnim__ComputeTransform"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "symbol": "?executeRetreatAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeRetreatAction",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "83ec108b41448d4c240450518b0d00000000e8000000008b008d4c240889442400510fbf5424060fbfc0c1e208c1e00881c2800000000580000000895424108944240ce8000000008d542400b9f801000052e8000000008b8840010000f6c501750f8d442400b9f801000050e80000000068c8010000e80000000083c40485c074358b15400200006a006a0068000600006a018d4c24186a00518b8a7c140000518bc8e800000000c6809801000001b00183c410c21000c6059801000001b00183c410c21000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  }
+ ]
+}
