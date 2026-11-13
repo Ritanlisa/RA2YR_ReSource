@@ -1,0 +1,39 @@
+{
+ "symbol": "?AllocateMapDataBuffer@DynamicVector@@QAEDHPAH@Z",
+ "sym_key": "DynamicVector::AllocateMapDataBuffer",
+ "size": 349,
+ "link_base": 0,
+ "bytes_hex": "83ec08535556578b7c241c8be985ff750c0fbe453055ff10e9270100008b5c2420c6450c0085db74288d4fff893b85c98d73047c138bdf8bcee80000000083c6244b75f38b5c24208d430489442410eb528d14ff8d04950400000050e80000000083c40485c074338d4fff8d580485c989388bf37c19897c24108bcee8000000008b44241083c624488944241075eb8bf3895c24108b5c2420eb0cc7442410000000008b74241085f6c6450c01750c5f5e5d32c05b83c408c208008b450485c074748b45083bf87d028bc785c07e4bbbe4ffffff8d7e1c2bde894424148b75048d4fe403f303f756e800000000668b5618668957fc8b461c89078b4e208b442414894f0483c724488944241475cf8b7424108b7c241c8b5c24208a450d84c074158b4d0485c974076a03e800000000c745040000000085db0f94c2897504897d0888550d8b45088b4d103bc17d038945105f5e5db0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?allocateMapBuffers@MapClass@@QAEPAIXZ",
+   "sym_key": "MapClass::allocateMapBuffers"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?allocateMapBuffers@MapClass@@QAEPAIXZ",
+   "sym_key": "MapClass::allocateMapBuffers"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?CopyDataArray@Radar@@QAEPAV1@PAX@Z",
+   "sym_key": "Radar::CopyDataArray"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?Destruct@SubzoneConnectionVector@@QAEPADD@Z",
+   "sym_key": "SubzoneConnectionVector::Destruct"
+  }
+ ]
+}

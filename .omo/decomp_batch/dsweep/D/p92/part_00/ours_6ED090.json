@@ -1,0 +1,39 @@
+{
+ "symbol": "?CoordinateSuperWeaponAttack@TeamClass@@QAEDHH@Z",
+ "sym_key": "TeamClass::CoordinateSuperWeaponAttack",
+ "size": 413,
+ "link_base": 0,
+ "bytes_hex": "83ec10558be9568b453c85c00f85250100008b755485f60f84130100005357c7442410ffffffff8bfe8b0656ff90840000008b98fc0500008a869000000084c0743b8b466c85c07434a10000000085c0750a8a868100000084c075218a868906000084c0750b8b0e56ff512c83f802750c3b5c24107e068bfe895c24108bb6d805000085f675a28b5424248b420450e8000000008b8f9c00000083c404894c24148b97a0000000895424188b8fa40000008b37894c241c8b4d2433d28a91f700000080e1000bd1528d542418525057ff96c4030000508bcde8000000008b453c5f85c05b74438b755485f6743c8b0656ff90840000008b888406000085c97e308b86fc02000085c07f268bb6d805000085f674158b0e56ff91840000008b888406000085c97fd9eb07c68580000000018b453c85c074508b755485f674498b1656ff92840000008b888406000085c97e3d8b86fc02000085c07f338bb6d805000085f674228b0656ff90840000008b888406000085c97fd98bcde8000000005e5d83c410c20800c68580000000018bcde8000000005e5d83c410c20800",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetSuperWeaponTypeFlag@@YAHPAX@Z",
+   "sym_key": "GetSuperWeaponTypeFlag"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?SelectMember@TeamClass@@QAEDH@Z",
+   "sym_key": "TeamClass::SelectMember"
+  },
+  {
+   "off": 379,
+   "type": "REL32",
+   "sym": "?AttackCoordinator@TeamClass@@QAEDXZ",
+   "sym_key": "TeamClass::AttackCoordinator"
+  },
+  {
+   "off": 401,
+   "type": "REL32",
+   "sym": "?AttackCoordinator@TeamClass@@QAEDXZ",
+   "sym_key": "TeamClass::AttackCoordinator"
+  }
+ ]
+}

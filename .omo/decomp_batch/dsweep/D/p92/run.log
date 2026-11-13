@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p92\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b3720 UDPInterfaceClass::Connect -> UDPInterfaceClass
+[conv] 0x452000 sub_452000 -> _addr_45
+[conv] 0x449540 AnimClass::resetAnimation -> AnimClass
+[conv] 0x746b20 TechnoClass::GetCommandTooltip -> TechnoClass
+[conv] 0x4fb6b0 HouseClass::ProcessPromotionSound -> HouseClass
+[conv] 0x645d60 ObjectClass::sub_645D60 -> ObjectClass
+[conv] 0x71b7b0 TerrainClass::CleanupMembers -> TerrainClass
+[conv] 0x642c80 TextRenderer::MeasureBuilding -> TextRenderer
+[conv] 0x76fd40 ObjectClass::Map_Process_76FD40 -> ObjectClass
+[conv] 0x4ac380 DisplayClass::ProcessScroll -> DisplayClass
+[conv] 0x508150 HouseClass::ComputePowerDistribution -> HouseClass
+[conv] 0x7228b0 AudioClass::ProcessEvent -> AudioClass
+[conv] 0x7233a0 BuildingClass::RebuildOccupancy2 -> BuildingClass
+[conv] 0x488520 CheckListClass::OnClick -> CheckListClass
+[conv] 0x6ed090 TeamClass::CoordinateSuperWeaponAttack -> TeamClass
+[conv] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> HoverLocomotionClass
+[conv] 0x589a60 DynamicVector::AllocateMapDataBuffer -> DynamicVector
+[conv] 0x4a2b60 CStreamClass::unnamed -> CStreamClass
+[conv] 0x632dc0 PKPipe::WriteEncryptedStream -> PKPipe
+[conv] 0x544a70 IsometricTileTypeClass::CleanupMembers -> IsometricTileTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UDPInterfaceClass        rc=2
+[era] _addr_45                 rc=0
+[era] AnimClass                rc=2
+[era] TechnoClass              rc=0
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] TerrainClass             rc=2
+[era] TextRenderer             rc=0
+[era] DisplayClass             rc=2
+[era] AudioClass               rc=2
+[era] BuildingClass            rc=2
+[era] CheckListClass           rc=2
+[era] TeamClass                rc=0
+[era] HoverLocomotionClass     rc=2
+[era] DynamicVector            rc=0
+[era] CStreamClass             rc=0
+[era] PKPipe                   rc=2
+[era] IsometricTileTypeClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x452000   MISMATCH         sub_452000
+[diff] 0x746b20   MISMATCH         TechnoClass::GetCommandTooltip
+[diff] 0x642c80   MISMATCH         TextRenderer::MeasureBuilding
+[diff] 0x6ed090   MISMATCH         TeamClass::CoordinateSuperWeaponAttack
+[diff] 0x589a60   MISMATCH         DynamicVector::AllocateMapDataBuffer
+[diff] 0x4a2b60   MISMATCH         CStreamClass::unnamed
+[diff] 0x544a70   MISMATCH         IsometricTileTypeClass::CleanupMembers
+[ledger] 0x7b3720 UDPInterfaceClass::Connect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452000 sub_452000 -> NG (attempt 1)
+[ledger] 0x449540 AnimClass::resetAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746b20 TechnoClass::GetCommandTooltip -> NG (attempt 1)
+[ledger] 0x4fb6b0 HouseClass::ProcessPromotionSound -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645d60 ObjectClass::sub_645D60 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b7b0 TerrainClass::CleanupMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x642c80 TextRenderer::MeasureBuilding -> NG (attempt 1)
+[ledger] 0x76fd40 ObjectClass::Map_Process_76FD40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ac380 DisplayClass::ProcessScroll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x508150 HouseClass::ComputePowerDistribution -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7228b0 AudioClass::ProcessEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7233a0 BuildingClass::RebuildOccupancy2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x488520 CheckListClass::OnClick -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ed090 TeamClass::CoordinateSuperWeaponAttack -> NG (attempt 1)
+[ledger] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589a60 DynamicVector::AllocateMapDataBuffer -> NG (attempt 1)
+[ledger] 0x4a2b60 CStreamClass::unnamed -> NG (attempt 1)
+[ledger] 0x632dc0 PKPipe::WriteEncryptedStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x544a70 IsometricTileTypeClass::CleanupMembers -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 2,
+  "frame_sched": 1,
+  "eval_order": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p92\batch_report.json

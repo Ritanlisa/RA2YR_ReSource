@@ -1,0 +1,111 @@
+{
+ "symbol": "?CleanupMembers@IsometricTileTypeClass@@QAEHXZ",
+ "sym_key": "IsometricTileTypeClass::CleanupMembers",
+ "size": 347,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1b800000000ba01000000890689460489460889460ce8000000008b86bc02000033db3bc3740e899ebc0200008b086a0150ff5120a1000000008d54240852680000000089742410ff501083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88b0d000000008d44240850680000000089742410ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e8578bbeb40200004f78488b86a80200008b04b83bc3740950e80000000083c4048b8eb40200003bf97d25498bc73bf9898eb402000073188b8ea8020000408b1481895481fc8b8eb40200003bc172e84f79b88b86a8020000899ea40200003bc35f7417389eb1020000740f50e80000000083c404899ea80200008bce889eb1020000899eac020000e8000000005e5b59c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?vt_IsometricTileTypeClass_4@@3PAXA",
+   "sym_key": "vt_IsometricTileTypeClass_4"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ED28@@3IA",
+   "sym_key": "DataGlobal_A8ED28"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ED28@@3IA",
+   "sym_key": "DataGlobal_A8ED28"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_FrameCounter@@3PAXA",
+   "sym_key": "g_FrameCounter"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_TechnoClassCount@@3IA",
+   "sym_key": "g_TechnoClassCount"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolCount@@3PAXA",
+   "sym_key": "g_AnimPoolCount"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 227,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?Destruct@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Destruct"
+  }
+ ]
+}

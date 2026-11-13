@@ -1,0 +1,99 @@
+{
+ "symbol": "?GetCommandTooltip@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetCommandTooltip",
+ "size": 341,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0d000000008b065156ff90c800000084c074328b166a0156ff92cc00000085c074238b066a0156ff90d000000085c074108b0e6a0156ff91cc0000008b40605ec333c05ec38bcee80000000084c00f84f20000008bcee80000000084c00f84e300000033c9538a8ef400000057e8000000008bf885ff0f84860000008b1757ff522c83f80f757b8b87c00600008bce8a98ca0e000084db0f95c3e8000000008bc883e900744c49743249741783f803740484db744d8b0f57ff91880000008b4060eb5a8b0d0000000033d28a150000000068982c00005233d2eb3d8b0d0000000033c0a00000000068942c00005033d2eb2633c968902c00008a0d0000000051eb0e33d268be2c00008a1500000000528b0d0000000033d2e8000000008b8ec40600008b516052508d86d00d0000680000000050e80000000083c4108d86a01b00005f5b5ec38b8ec40600005e8b4160c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?OwnerHasPower@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::OwnerHasPower"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?processEMPulse@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::processEMPulse"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?GetDB@CCINIClass@@QAEHXZ",
+   "sym_key": "CCINIClass::GetDB"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?applyEMPulseDamage@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::applyEMPulseDamage"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?aTipRepair@@3HA",
+   "sym_key": "aTipRepair"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Unit_CPP@@3EA",
+   "sym_key": "g_Str_File_Unit_CPP"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?aTipMachinegun@@3HA",
+   "sym_key": "aTipMachinegun"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Unit_CPP@@3EA",
+   "sym_key": "g_Str_File_Unit_CPP"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Unit_CPP@@3EA",
+   "sym_key": "g_Str_File_Unit_CPP"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Unit_CPP@@3EA",
+   "sym_key": "g_Str_File_Unit_CPP"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?aTipRocket@@3HA",
+   "sym_key": "aTipRocket"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 307,
+   "type": "DIR32",
+   "sym": "?DataGlobal_826960@@3PAXA",
+   "sym_key": "DataGlobal_826960"
+  },
+  {
+   "off": 313,
+   "type": "REL32",
+   "sym": "_swprintf",
+   "sym_key": "swprintf"
+  }
+ ]
+}
