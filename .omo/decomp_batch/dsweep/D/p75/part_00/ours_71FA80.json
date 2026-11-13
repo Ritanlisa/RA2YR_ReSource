@@ -1,0 +1,153 @@
+{
+ "symbol": "?Fire@TEventClass@@QAEPAPAXD@Z",
+ "sym_key": "TEventClass::Fire",
+ "size": 325,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1b800000000ba01000000890689460489460889460ce8000000008d4424048974240450a1180e000050ff50108bc883f9ff894c24087456db442408dc15280e0000dfe0f6c4017443dd05280e0000dc2500000000dd1d280e0000dc1d280e0000dfe0f6c4017426a11c0e000041894c2408db4424088b1488895488fcdc1d280e0000dfe0f6c40175deeb02ddd88b0d300e00008d4424045068300e00008974240cff511083f8ff742d8b0d400e00003bc17d23493bc1890d400e00007d188b0d340e0000408b1481895481fc8b0d400e00003bc17ce88b0d600900008d4424045068600900008974240cff511083f8ff742d8b0d700900003bc17d23493bc1890d700900007d188b0d64090000408b1481895481fc8b0d700900003bc17ce88bcee800000000f644241001740956e80000000083c4048bc65e83c408c20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?vt_TEventClass_4@@3PAXA",
+   "sym_key": "vt_TEventClass_4"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 271,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 296,
+   "type": "REL32",
+   "sym": "?DTOR@AbstractClass@@QAEXXZ",
+   "sym_key": "AbstractClass::DTOR"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetCapacity@VectorClass_UDirtyAreaStruct@@QAEDHPAD@Z",
+ "sym_key": "VectorClass_UDirtyAreaStruct::SetCapacity",
+ "size": 281,
+ "link_base": 0,
+ "bytes_hex": "51535556578b7c24188be985ff750b8b4500ff500ce9e80000008b74241cc6450c0085f6742a8d4fff85c97c628bdf6a006a006a006a008bcee800000000c646100083c6144b75e78b74241c8bdeeb458d14bfc1e20252e8000000008bf083c40485f689742410742a8d47ff85c07c1f8bdf6a006a006a006a008bcee800000000c646100083c6144b75e78b7424108bdeeb0233db85dbc6450c01750a5f5e5d32c05b59c208008b450485c074428b55083bfa7d028bd785d27e1b33c08b75048d3c1803f083c014b9050000004af3a575eb8b7c24188a450d84c074138b4d0451e80000000083c404c74504000000008b44241c895d0485c00f94c2897d0888550d8b45088b4d103bc17d038945105f5e5db0015b59c20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?Set@Rect@@QAEPAV1@HHHH@Z",
+   "sym_key": "Rect::Set"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Set@Rect@@QAEPAV1@HHHH@Z",
+   "sym_key": "Rect::Set"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

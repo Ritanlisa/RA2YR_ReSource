@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p75\part_00
+=== convert (20 addrs) ===
+[conv] 0x62d3f0 ParticleClass::CheckWaterImpact -> ParticleClass
+[conv] 0x6f24b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x7659f0 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::registerObject -> _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x769fe0 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setFrameRate -> _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x4880f0 ObjectClass::sub_4880F0 -> ObjectClass
+[conv] 0x5ea180 GameLobby_Setup -> GameLobby
+[conv] 0x49e7c0 ObjectClass::sub_49E7C0 -> ObjectClass
+[conv] 0x6dc850 VectorClass_UDirtyAreaStruct::SetCapacity -> VectorClass_UDirtyAreaStruct
+[conv] 0x7dc5dc ___crtGetLocaleInfoA -> _addr_7D
+[conv] 0x5d4d50 MessageLoop -> _addr_5D
+[conv] 0x50d320 HouseClass::RespawnStartingBuildings -> HouseClass
+[conv] 0x45f040 AbstractClass::LoadTypeFile -> AbstractClass
+[conv] 0x4f1b80 sub_4F1B80 -> _addr_4F
+[conv] 0x6c9b40 BinkMovie::InitKeyframeTracking -> BinkMovie
+[conv] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> JumpjetLocomotionClass
+[conv] 0x770850 ObjectClass::sub_770850 -> ObjectClass
+[conv] 0x71fa80 TEventClass::Fire -> TEventClass
+[conv] 0x726950 TriggerClass::CheckCondition -> TriggerClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleClass            rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=2
+[era] ObjectClass              rc=2
+[era] GameLobby                rc=2
+[era] VectorClass_UDirtyAreaStruct rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_5D                 rc=2
+[era] HouseClass               rc=0
+[era] AbstractClass            rc=2
+[era] _addr_4F                 rc=0
+[era] BinkMovie                rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] TEventClass              rc=0
+[era] TriggerClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7659f0   MISMATCH         _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::registerObject
+[diff] 0x769fe0   MISMATCH         _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setFrameRate
+[diff] 0x4880f0   MISMATCH         ObjectClass::sub_4880F0
+[diff] 0x6dc850   MISMATCH         VectorClass_UDirtyAreaStruct::SetCapacity
+[diff] 0x50d320   MISMATCH         HouseClass::RespawnStartingBuildings
+[diff] 0x4f1b80   MISMATCH         sub_4F1B80
+[diff] 0x6c9b40   MISMATCH         BinkMovie::InitKeyframeTracking
+[diff] 0x71fa80   MISMATCH         TEventClass::Fire
+[ledger] 0x62d3f0 ParticleClass::CheckWaterImpact -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f24b0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::SetCapacity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7659f0 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::registerObject -> NG (attempt 1)
+[ledger] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769fe0 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::setFrameRate -> NG (attempt 1)
+[ledger] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4880f0 ObjectClass::sub_4880F0 -> NG (attempt 1)
+[ledger] 0x5ea180 GameLobby_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49e7c0 ObjectClass::sub_49E7C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc850 VectorClass_UDirtyAreaStruct::SetCapacity -> NG (attempt 1)
+[ledger] 0x7dc5dc ___crtGetLocaleInfoA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4d50 MessageLoop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50d320 HouseClass::RespawnStartingBuildings -> NG (attempt 1)
+[ledger] 0x45f040 AbstractClass::LoadTypeFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f1b80 sub_4F1B80 -> NG (attempt 1)
+[ledger] 0x6c9b40 BinkMovie::InitKeyframeTracking -> NG (attempt 1)
+[ledger] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770850 ObjectClass::sub_770850 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71fa80 TEventClass::Fire -> NG (attempt 1)
+[ledger] 0x726950 TriggerClass::CheckCondition -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "branch_order": 1,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p75\batch_report.json

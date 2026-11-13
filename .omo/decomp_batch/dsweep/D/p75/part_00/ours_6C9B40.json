@@ -1,0 +1,111 @@
+{
+ "symbol": "?InitKeyframeTracking@BinkMovie@@QAEDPAD@Z",
+ "sym_key": "BinkMovie::InitKeyframeTracking",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "83ec7453568bb424800000008bd985f60f84b0000000578bfe83c9ff33c0f2aef7d1495f0f849c00000068000000008d4c242ce8000000006a008d4c242ce80000000084c074598d4c24188d442428518d4c240cc744242000000000c74424240000000089442428c744241c00000000e8000000000fbe5424085652e80000000083c408890385c08b442408507541e80000000083c4048d4c2418e8000000008b4c2428c701000000008d4c240ce8000000008b5424288d4c2428c70200000000e8000000005e32c05b83c474c20400e80000000083c4048d4c2418e8000000008b4c2428c701000000008d4c240ce8000000008b5424288d4c2428c70200000000e8000000005eb0015b83c474c20400",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_842194@@3PADA",
+   "sym_key": "DataGlobal_842194"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?VtableDispatch@BinkMovie@@QAEPAIH@Z",
+   "sym_key": "BinkMovie::VtableDispatch"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?ParseMovieSubtitles@@YAHHPAX@Z",
+   "sym_key": "ParseMovieSubtitles"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?nullsub_40@@YAHPAX@Z",
+   "sym_key": "nullsub_40"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Destructor@FileStraw@@QAEHXZ",
+   "sym_key": "FileStraw::Destructor"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?nullsub_40@@YAHPAX@Z",
+   "sym_key": "nullsub_40"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?Destructor@FileStraw@@QAEHXZ",
+   "sym_key": "FileStraw::Destructor"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 254,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

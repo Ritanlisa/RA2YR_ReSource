@@ -1,0 +1,39 @@
+{
+ "symbol": "?registerObject@_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour@@QAEDHPAH@Z",
+ "sym_key": "_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::registerObject",
+ "size": 303,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c241033db56573beb8bf9896c24180f84f80000008b44241c895f0c3bc37431892883c004894424108bf08d45ff85c07c1b8bdd8bcee8000000008b0e83c6084bc7010000000075eb8b7424108bdeeb3b8d14ed0400000052e80000000083c4043bc3742789288d58048d45ff8bf385c07c19896c24108bcee8000000008b44241083c608488944241075eb85dbc7470c01000000750a5f5e5d32c05b59c20800833f0074468b47083be87c04894424188b44241833f685c07e188b0f8b54f1048d0cf352e8000000008b442418463bf07ce88b470cf6c4ff741185c074078b086a0350ff11c707000000008b4f0c891f8b5c241c33d285db0f94c233c080e5008ae2896f080bc189470ceb078b178bcfff520c8b47088b4f103bc17d038947105f5e5db0015b59c20800",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_Conflict@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_Conflict"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?releaseInterface@COMClass@@QAEPAV1@XZ",
+   "sym_key": "COMClass::releaseInterface"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

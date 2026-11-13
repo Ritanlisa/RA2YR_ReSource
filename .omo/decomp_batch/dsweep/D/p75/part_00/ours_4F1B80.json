@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_4F1B80@@YAPAPADPAPADH@Z",
+ "sym_key": "Unnamed::sub_4F1B80",
+ "size": 277,
+ "link_base": 0,
+ "bytes_hex": "8b44240481eca40000008d4c24505650e80000000033f68d4c245456e80000000084c075308b4c2454c701000000008d4c2448e8000000008b5424548d4c2454c70200000000e80000000033c05e81c4a4000000c38d4c2420897424088974240c897424188974241c89742414e8000000008d4424208d4c24145051e8000000000fbe44240c33d283c4088954242c8d4c245489542430568954243851897424188854244089742444897424488d4c240cc70000000000e80000000085c07e1c8b9424b00000008b4c24448d442404525051e80000000083c40c8bf08d4c2404e8000000008b5424548d4c2448c70200000000e8000000008b4424548d4c2454c70000000000e8000000008bc65e81c4a4000000c3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Construct2@CCFileClass@@QAEPAV1@PAX@Z",
+   "sym_key": "CCFileClass::Construct2"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?Constructor@GenericNode@@QAEPAV1@XZ",
+   "sym_key": "GenericNode::Constructor"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?LinkedList__Prepend@@YAHPAXH@Z",
+   "sym_key": "LinkedList__Prepend"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?vt_INIClass@@3PAXA",
+   "sym_key": "vt_INIClass"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?Open@FileStraw@@QAEHHD@Z",
+   "sym_key": "FileStraw::Open"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?LoadFromINIGraphicMenu@@YAPAPADPAX0H@Z",
+   "sym_key": "LoadFromINIGraphicMenu"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 263,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}
