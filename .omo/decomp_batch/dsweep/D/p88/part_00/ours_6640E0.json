@@ -1,0 +1,159 @@
+{
+ "symbol": "?ProcessAddressChange@Network@@QAEPAGXZ",
+ "sym_key": "Network::ProcessAddressChange",
+ "size": 310,
+ "link_base": 0,
+ "bytes_hex": "83ec18558be98d4c2410e800000000a1540a000085c00f8e150100008d4424108d4c2410508d54241051526800000000b960000000e80000000085c00f84ef0000005657a0000000008bcd3c050f85b1000000e800000000a1000000008b0d02000000c1e808894c241a8d4c240c8844241066c744241e0000e8000000008d54241a6a008d44242852508d4c2418e8000000008b4c2410a173000000518d5424108b483052518d4c2434e8000000008b1500000000813a800000007d4c8b0d000000008bf08d14c98d0c918dbc4900000000b91b000000f3a566a5a4e8000000008b0d0000000089048d00000000a1000000004183e17f890d000000008b08418908eb05e8000000008d4424188d4c2418508d54241851526800000000b960000000e80000000085c00f8515ffffff5f5e5d83c418c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E9C@@3IA",
+   "sym_key": "DataGlobal_B04E9C"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?SendPacketThunk2@Network@@QAEHHHHH@Z",
+   "sym_key": "Network::SendPacketThunk2"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E9C@@3IA",
+   "sym_key": "DataGlobal_B04E9C"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E9C@@3IA",
+   "sym_key": "DataGlobal_B04E9C"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E9C@@3IA",
+   "sym_key": "DataGlobal_B04E9C"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Assign@NetworkID@@QAEFPAXHF@Z",
+   "sym_key": "NetworkID::Assign"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?initConnection@Network@@QAEPADHPAXD@Z",
+   "sym_key": "Network::initConnection"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 191,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3PAEA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 221,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?g_CrateSystemState@@3PAIA",
+   "sym_key": "g_CrateSystemState"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04E9C@@3IA",
+   "sym_key": "DataGlobal_B04E9C"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?SendPacketThunk2@Network@@QAEHHHHH@Z",
+   "sym_key": "Network::SendPacketThunk2"
+  }
+ ]
+}

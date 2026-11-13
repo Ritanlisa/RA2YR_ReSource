@@ -1,0 +1,33 @@
+{
+ "symbol": "?Scrollbar_Draw@@YIDHPAHHHEEEE@Z",
+ "sym_key": "Unnamed::Scrollbar_Draw",
+ "size": 331,
+ "link_base": 0,
+ "bytes_hex": "83ec408b4424445355568bd933f633ed83c9ff573bc68bfa894c245489742410750a8be989742454894c2410397424580f8e0b0100008b078b57088bc803c6894424208b47042bce03c68944241c894424248b4424548d4c11fe8b542460894c2418528d4c241c50518d54242c8bcbe8000000008b078b4f088bd003c62bd6894424288b47048d540aff8b4f0c2bc6895424148d5408ff8b442468508d4c24185589542434518d5424348bcbe8000000008b0f8b470403ce894c2430894c24388b4f0c8d5430012bc68954243c8d5408ff8b44245c8b4c245489542434508d54243451528d5424448bcbe8000000008b0f8b57088b47042bce8b6c24108d4c11ff8b570c894c2440894c24488d0c302bc6894c244c8b4c24648d4410fe518d542444558944244c528d5424548bcbe800000000463b7424580fbec00f8cf5feffff5f5e5d5b83c440c21800",
+ "relocs": [
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?DrawSurfaceLineAlpha@@YIDHPAX0FE@Z",
+   "sym_key": "DrawSurfaceLineAlpha"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?DrawSurfaceLineAlpha@@YIDHPAX0FE@Z",
+   "sym_key": "DrawSurfaceLineAlpha"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?DrawSurfaceLineAlpha@@YIDHPAX0FE@Z",
+   "sym_key": "DrawSurfaceLineAlpha"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?DrawSurfaceLineAlpha@@YIDHPAX0FE@Z",
+   "sym_key": "DrawSurfaceLineAlpha"
+  }
+ ]
+}

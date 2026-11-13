@@ -1,0 +1,87 @@
+{
+ "symbol": "?sub_7B9530@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_7B9530",
+ "size": 305,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec305668102700008bf150e8000000003d0201000075078bcee8000000008bcee80000000084c00f84da0000008a463684c00f84cf0000008b4e0453555733ff33ed33db33c085c974688b0d00000000681027000051e8000000003d0201000075078bcee8000000008b56088d4424305250e8000000008b480c33d28a56148b28894c24108b4e3c8bfa8b56402bf933c98a4e188b580803fd8be98b48042bea8b150000000003e952e8000000008b44241033d233c98a56308a4e2c03d58944242c8946548954242433c06a018d542424897e4803cf8b7e44894424188944241c508a4636528d542420894c242c896e4c895c2434895e50895c24288b0f505257ff51085f5d5b33c06a008a46366a00508bcee8000000008b0d0000000051e8000000005e83c430c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?CreateTripleBuffer@BSurface@@QAE_NXZ",
+   "sym_key": "BSurface::CreateTripleBuffer"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?WaitForSingleObject@@YGKPAXH@Z",
+   "sym_key": "WaitForSingleObject"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?DrawCursor@Mouse@@QAEXPAXHH@Z",
+   "sym_key": "Mouse::DrawCursor"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?hMutex@@3PAXA",
+   "sym_key": "hMutex"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?ReleaseMutex@@YGHPAX@Z",
+   "sym_key": "ReleaseMutex"
+  }
+ ]
+}

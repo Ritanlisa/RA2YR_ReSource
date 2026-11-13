@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p88\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c23b0 MovieClass::ReadConfig -> MovieClass
+[conv] 0x6205d0 Scrollbar_Draw -> Scrollbar
+[conv] 0x415b10 AircraftClass::FindLandingCell -> AircraftClass
+[conv] 0x6d6bb0 sub_6D6BB0 -> _addr_6D
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x56b0f0 ObjectClass::sub_56B0F0 -> ObjectClass
+[conv] 0x68f9b0 ScoreScreen::DisplayTimeText -> ScoreScreen
+[conv] 0x6640e0 Network::ProcessAddressChange -> Network
+[conv] 0x7b9530 ObjectClass::sub_7B9530 -> ObjectClass
+[conv] 0x6f3970 TechnoClass::GetValue -> TechnoClass
+[conv] 0x404e70 AudioStream::CleanupChannels -> AudioStream
+[conv] 0x7c1be0 UnitClass::Audio_Render_7C1BE0 -> UnitClass
+[conv] 0x49bce0 MPCooperative::BuildScoreEntries -> MPCooperative
+[conv] 0x773bc0 WebBrowser::Clone -> WebBrowser
+[conv] 0x4e38a0 SideClass::GetName -> SideClass
+[conv] 0x5b6f30 ReadEventINI -> _addr_5B
+[conv] 0x5bab00 SendSignOffEvent -> _addr_5B
+[conv] 0x4c98b0 TeamTypeClass::Construct -> TeamTypeClass
+[conv] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x7c1150 TechnoClass::Audio_Render_7C1150 -> TechnoClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MovieClass               rc=0
+[era] Scrollbar                rc=0
+[era] AircraftClass            rc=0
+[era] _addr_6D                 rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] ScoreScreen              rc=2
+[era] Network                  rc=0
+[era] TechnoClass              rc=0
+[era] AudioStream              rc=2
+[era] UnitClass                rc=0
+[era] MPCooperative            rc=0
+[era] WebBrowser               rc=2
+[era] SideClass                rc=2
+[era] _addr_5B                 rc=0
+[era] TeamTypeClass            rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c23b0   MISMATCH         MovieClass::ReadConfig
+[diff] 0x6205d0   MISMATCH         Scrollbar_Draw
+[diff] 0x415b10   MISMATCH         AircraftClass::FindLandingCell
+[diff] 0x7b9530   MISMATCH         ObjectClass::sub_7B9530
+[diff] 0x6640e0   MISMATCH         Network::ProcessAddressChange
+[diff] 0x6f3970   MISMATCH         TechnoClass::GetValue
+[diff] 0x7c1150   MISMATCH         TechnoClass::Audio_Render_7C1150
+[diff] 0x7c1be0   MISMATCH         UnitClass::Audio_Render_7C1BE0
+[diff] 0x49bce0   MISMATCH         MPCooperative::BuildScoreEntries
+[diff] 0x5b6f30   MISMATCH         ReadEventINI
+[diff] 0x5bab00   MISMATCH         SendSignOffEvent
+[ledger] 0x5c23b0 MovieClass::ReadConfig -> NG (attempt 1)
+[ledger] 0x6205d0 Scrollbar_Draw -> NG (attempt 1)
+[ledger] 0x415b10 AircraftClass::FindLandingCell -> NG (attempt 1)
+[ledger] 0x6d6bb0 sub_6D6BB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56b0f0 ObjectClass::sub_56B0F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68f9b0 ScoreScreen::DisplayTimeText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6640e0 Network::ProcessAddressChange -> NG (attempt 1)
+[ledger] 0x7b9530 ObjectClass::sub_7B9530 -> NG (attempt 1)
+[ledger] 0x6f3970 TechnoClass::GetValue -> NG (attempt 1)
+[ledger] 0x404e70 AudioStream::CleanupChannels -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1be0 UnitClass::Audio_Render_7C1BE0 -> NG (attempt 1)
+[ledger] 0x49bce0 MPCooperative::BuildScoreEntries -> NG (attempt 1)
+[ledger] 0x773bc0 WebBrowser::Clone -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e38a0 SideClass::GetName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b6f30 ReadEventINI -> NG (attempt 1)
+[ledger] 0x5bab00 SendSignOffEvent -> NG (attempt 1)
+[ledger] 0x4c98b0 TeamTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c1150 TechnoClass::Audio_Render_7C1150 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 9
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "frame_sched": 5,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p88\batch_report.json

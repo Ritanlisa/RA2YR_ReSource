@@ -1,0 +1,45 @@
+{
+ "symbol": "?BuildScoreEntries@MPCooperative@@QAEDHPAH@Z",
+ "sym_key": "MPCooperative::BuildScoreEntries",
+ "size": 353,
+ "link_base": 0,
+ "bytes_hex": "83ec088a416c894c240084c0750832c083c408c208005355568b742418578b461085c074388b46048b0851e8000000008b4e1083c40485c97e1c33c04985c9894e1076128b4e04408b1481895481fc8b4e103bc172ee8b461085c075c86a70e8000000008be883c40432d28bcd896c241ce8000000006a70e8000000008bd883c404b2018bcb895c2414e8000000008bcde8000000008b4c24108bf88a118ac23a17751c84c074148a51018ac23a5701750e83c10283c70284c075e033c0eb051bc083d8ff85c07408895c241c896c24148b44241033ed8d58508b7c241c85ed74048b7c24148b4bf8894f408b138b4c24108957508b43088947308b513889572c8b43108947608b460839461072218a4e0d84c9750485c075258b4e1485c97e1e8b1603c86a005156ff520884c0740f8b46108b56048d4801894e10893c824583c30483fd027c928b4424108b5424205f5e8b48685d890ab0015b83c408c20800",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?FillScoreScreenStats@@YIXPAXD@Z",
+   "sym_key": "FillScoreScreenStats"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?FillScoreScreenStats@@YIXPAXD@Z",
+   "sym_key": "FillScoreScreenStats"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  }
+ ]
+}

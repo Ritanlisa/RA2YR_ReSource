@@ -1,0 +1,189 @@
+{
+ "symbol": "?SendSignOffEvent@@YIPAXPAX@Z",
+ "sym_key": "Unnamed::SendSignOffEvent",
+ "size": 326,
+ "link_base": 0,
+ "bytes_hex": "81ec18010000894c240057b93e00000033c08d7c24246a01f3ab8a0d00000000a0000000008d542428884c244568fa00000052b90000000088442448c744243066000000e8000000008b0d0000000033d2685e0900006800000000e80000000033d28bc86a00e8000000008bf885ff74078bcfe800000000a100000000538b1d0000000083f8ff740de8000000002b050000000003d8b900000000e80000000085c00f8481000000558b6c240c56a1000000008b350000000083f8ff740de8000000002b050000000003f02bf381fe2c01000073528d4424148d4c24185051b900000000e80000000085c07e18837c2418667511a1000000008bd581e2ff0000003bd07422e800000000e800000000b900000000e800000000b900000000e80000000085c075875e5d8b4c2408e80000000085ff5b74078bcfe8000000005f81c418010000c3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_TauntCommandState@@3HA",
+   "sym_key": "g_TauntCommandState"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_EventDispatchState@@3IA",
+   "sym_key": "g_EventDispatchState"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?WriteBlock@Stream@@QAEHHHH@Z",
+   "sym_key": "Stream::WriteBlock"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?aTxtSigningOff@@3HA",
+   "sym_key": "aTxtSigningOff"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostMode_0@@3PADA",
+   "sym_key": "aDRa2mdpostMode_0"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?CreateMessageBox@@YIPAXHHH@Z",
+   "sym_key": "CreateMessageBox"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?GetCountQueue@Count_Helper@@QAEHXZ",
+   "sym_key": "Count_Helper::GetCountQueue"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?CreateInstance@ObjectTypeClass@@QAEHHH@Z",
+   "sym_key": "ObjectTypeClass::CreateInstance"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_EventDispatchState@@3IA",
+   "sym_key": "g_EventDispatchState"
+  },
+  {
+   "off": 262,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 267,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "?ReadPacket@Stream@@QAEHXZ",
+   "sym_key": "Stream::ReadPacket"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?g_EventManager@@3IA",
+   "sym_key": "g_EventManager"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?GetCountQueue@Count_Helper@@QAEHXZ",
+   "sym_key": "Count_Helper::GetCountQueue"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?CleanupOnDisconnect@Network@@QAEHXZ",
+   "sym_key": "Network::CleanupOnDisconnect"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  }
+ ]
+}
