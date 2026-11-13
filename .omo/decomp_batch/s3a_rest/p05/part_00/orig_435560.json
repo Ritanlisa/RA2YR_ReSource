@@ -1,0 +1,11 @@
+{
+ "addr": "0x435560",
+ "name": "BitText::ScalarDtor",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x435560",
+ "bytes_hex": "56578bf9c707803a7e008b35d0c4890085f674088b066a018bceff103b35d0c48900750ac705d0c4890000000000f644240c01740957e8a235390083c4048bc75f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

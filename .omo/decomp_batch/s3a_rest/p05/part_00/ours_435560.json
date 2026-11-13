@@ -1,0 +1,39 @@
+{
+ "symbol": "?ScalarDtor@BufferIOFileClass@@QAEPAID@Z",
+ "sym_key": "BufferIOFileClass::ScalarDtor",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "568bf157c70600000000a10000000085c08bf8740c8b086a0150ff11a1000000003bf8750ac7050000000000000000f644240c01740956e80000000083c4048b065f5ec20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?vt_BitText@@3PAXA",
+   "sym_key": "vt_BitText"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_FogOfWarState@@3HA",
+   "sym_key": "g_FogOfWarState"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

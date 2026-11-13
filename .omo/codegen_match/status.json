@@ -15048,19 +15048,19 @@
   "this_as_id": false
  },
  "0x42c290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Pathfinding::AStar",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Pathfinding::AStar",
-  "rule_violations": 45,
+  "rule_violations": 42,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x42c900": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15095,7 +15095,7 @@
   "this_as_id": false
  },
  "0x42d170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15719,7 +15719,7 @@
   "this_as_id": false
  },
  "0x42e6f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -15822,7 +15822,7 @@
   "this_as_id": false
  },
  "0x42ebe0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15846,7 +15846,7 @@
   "this_as_id": false
  },
  "0x42ee30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15877,7 +15877,7 @@
   "this_as_id": false
  },
  "0x42f1e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -16600,7 +16600,7 @@
   "this_as_id": false
  },
  "0x4311c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16714,7 +16714,7 @@
   "this_as_id": false
  },
  "0x431b80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16762,7 +16762,7 @@
   "this_as_id": false
  },
  "0x431e80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -16798,7 +16798,7 @@
   "this_as_id": false
  },
  "0x431f50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -16810,7 +16810,7 @@
   "this_as_id": false
  },
  "0x431f70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -16822,7 +16822,7 @@
   "this_as_id": false
  },
  "0x432050": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -16834,7 +16834,7 @@
   "this_as_id": false
  },
  "0x4322a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -16936,7 +16936,7 @@
   "this_as_id": false
  },
  "0x432750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16967,7 +16967,7 @@
   "this_as_id": false
  },
  "0x432c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -17089,15 +17089,15 @@
   "status": "NG"
  },
  "0x4333f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8ed80]",
   "name": "BinkMovieClass::RenderFrameToSurface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "BinkMovieClass::RenderFrameToSurface",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x433560": {
@@ -17167,7 +17167,7 @@
   "this_as_id": false
  },
  "0x433990": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -17460,7 +17460,7 @@
   "this_as_id": false
  },
  "0x434cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -17494,15 +17494,15 @@
   "this_as_id": false
  },
  "0x435560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push edi",
   "name": "BufferIOFileClass::ScalarDtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BitText::ScalarDtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4355b0": {
