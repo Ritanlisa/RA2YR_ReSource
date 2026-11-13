@@ -1,0 +1,27 @@
+{
+ "symbol": "?ComputeTeamAttackPriority@TechnoClass@@QAGHH@Z",
+ "sym_key": "TechnoClass::ComputeTeamAttackPriority",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "538b5c240856578b43048a88fc0d000084c9745d8b8358faffff85c075538db340f9ffff8bcee80000000084c074426a008bcee8000000008b0e568bf8ff918401000083f807752985ff74258b1757ff522c83f806751a8bbf200500008a87a916000084c075488a87cb16000084c0753e8d8b40f9ffffe80000000084c0740d8b43048a88fc0d000084c975178b8358faffff85c074188b4b048a81fc0d000084c0740b5f5eb8640000005bc208005f5e33c05bc20800",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?AllMembersValid@Team@@QAEDXZ",
+   "sym_key": "Team::AllMembersValid"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Get@Array@@QAEHH@Z",
+   "sym_key": "Array::Get"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?AllMembersValid@Team@@QAEDXZ",
+   "sym_key": "Team::AllMembersValid"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_76B7B0@ObjectClass@@QAEPAIPAI@Z",
+ "sym_key": "ObjectClass::sub_76B7B0",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf13bf3570f84a40000008b0656ff500c8b7b0885ff897e0875148b460c897e0480e4005f89460c8bc65e5bc204008d0cfd0400000051e80000000083c40485c0742d558d57ff8d6804893885d28bdd7c158bcbe8000000008b0383c3084fc7000000000075eb8b5c24148bc55deb0233c085c089460474368b4e0c8b460880e50033ff83c90185c0894e0c7e218b53048d0cfd000000008b440a048b56045003cae8000000008b4608473bf87cdf8bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

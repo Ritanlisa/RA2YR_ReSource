@@ -1,0 +1,11 @@
+{
+ "addr": "0x75ED30",
+ "name": "WaveClass::Destructor",
+ "size": 187,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75ED30",
+ "bytes_hex": "5156578bf9b201c707f46b7f00c74704d86b7f00c74708d06b7f00c7470cc86b7f00e8796bfcff8b1538eca8008d44240850b938eca800897c240cff521083f8ff742d8b0d48eca8003bc17d23493bc1890d48eca8007d188b0d3ceca800408b1481895481fc8b0d48eca8003bc17ce88b87f00100008db7f00100008bceff500c8b4604c70680d47e0085c074178a4e0d84c9741050e8729d060083c404c74604000000008bcfc6460d00c7460800000000e8994de9ff5f5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

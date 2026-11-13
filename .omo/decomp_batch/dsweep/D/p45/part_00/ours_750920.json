@@ -1,0 +1,81 @@
+{
+ "symbol": "?PlayVocClass@@YIHHHMH@Z",
+ "sym_key": "Unnamed::PlayVocClass",
+ "size": 212,
+ "link_base": 0,
+ "bytes_hex": "51a0000000008954240084c0750633c059c208005333db555685c97c123b0d00000000730aa1000000008b0c888b198b6c241833f685ed74238bcde8000000008bf085f6741656e80000000083c4043bc374098bcee80000000033f685db57745bd90500000000d84c241883ec08dd1c24e8000000008bc88b44242433c883c40881e1ff00000033c13d004000008bf87205bf0040000085f6750d8bcbe8000000008bf085f674148bd78bcee8000000008b5424108bcee80000000085ed5f740a538bd68bcde8000000008bc65e5d5b59c20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?VocClass_VoicesEnabled@@3EA",
+   "sym_key": "VocClass_VoicesEnabled"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_VocPlayState@@3IA",
+   "sym_key": "g_VocPlayState"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_VocAudioConfig@@3PAXA",
+   "sym_key": "g_VocAudioConfig"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?Get@AudioSource@@QAEPAHXZ",
+   "sym_key": "AudioSource::Get"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?sub_406310@@YAHPAX@Z",
+   "sym_key": "sub_406310"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Release@VocClass@@QAEHXZ",
+   "sym_key": "VocClass::Release"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7EF38C@@3MA",
+   "sym_key": "DataGlobal_7EF38C"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?ProcessQueue@AudioPool@@QAEPAHXZ",
+   "sym_key": "AudioPool::ProcessQueue"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?AudioMixer__PlayBuffer@@YIHPAXH@Z",
+   "sym_key": "AudioMixer__PlayBuffer"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?AudioMixer__RequestOrEndBuffer@@YIHHH@Z",
+   "sym_key": "AudioMixer__RequestOrEndBuffer"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?SetAudioSource@@YIXHPAXH@Z",
+   "sym_key": "SetAudioSource"
+  }
+ ]
+}

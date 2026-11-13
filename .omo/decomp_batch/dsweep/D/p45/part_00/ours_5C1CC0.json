@@ -1,0 +1,81 @@
+{
+ "symbol": "?InitSession@MPCooperative@@QAEHXZ",
+ "sym_key": "MPCooperative::InitSession",
+ "size": 233,
+ "link_base": 0,
+ "bytes_hex": "83ec0853568bd98d44240c5733f650b9000000008974241489742410e80000000039742410750a5f5e83c8ff5b83c408c3397340751c6a70e80000000083c4043bc674098bc8e800000000eb0233c08943408b4b4056e8000000008d4c240c56518b4b40e80000000039350000000076688b54240c83c9ff8bfa33c0f2aef7d14951528b15000000008b0283c05850e80000000083c40c85c07435a100000000463bf073348b54240c83c9ff8bfa33c0f2aef7d149518b0d00000000528b14b183c25852e80000000083c40c85c075cb8bc65f5e5b83c408c38b0353ff50105f5e83c8ff5b83c408c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetValue@CampaignClass@@QAEDPAX@Z",
+   "sym_key": "CampaignClass::GetValue"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Init@MissionClass@@QAEPAV1@XZ",
+   "sym_key": "MissionClass::Init"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?SetupScreen@Movie@@QAEDH@Z",
+   "sym_key": "Movie::SetupScreen"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?GetElementAt@Array@@QAEDPAXH@Z",
+   "sym_key": "Array::GetElementAt"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "__strnicmp",
+   "sym_key": "_strnicmp"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerOptions@@3IA",
+   "sym_key": "g_MultiplayerOptions"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerGameState@@3IA",
+   "sym_key": "g_MultiplayerGameState"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "__strnicmp",
+   "sym_key": "_strnicmp"
+  }
+ ]
+}

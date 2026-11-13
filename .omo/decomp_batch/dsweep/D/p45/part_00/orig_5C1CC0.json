@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C1CC0",
+ "name": "MPCooperative::InitSession",
+ "size": 186,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C1CC0",
+ "bytes_hex": "83ec085355568be98d44240c5733db50b918f58900895c2414895c2418e80ec8edff395c2410747d395d40751c6a70e82371200083c4043bc374098bc8e80e99edffeb0233c08945408b4d4053e8deadedff8d4c241453518b4d40e850b3edff391dd8b8a8007e358b15ccb8a8008b7424148bfe83c9ff8b149a33c083c258f2aef7d149515652e834b9200083c40c85c0741da1d8b8a800433bd87ccb8b45008bcdff50105f5e5d83c8ff5b83c408c35f5e8bc35d5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

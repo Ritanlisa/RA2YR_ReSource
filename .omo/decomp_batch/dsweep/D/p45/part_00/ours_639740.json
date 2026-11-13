@@ -1,0 +1,51 @@
+{
+ "symbol": "?CompleteProduction@BuildingClass@@QAIEHPAVScriptAction@@@Z",
+ "sym_key": "BuildingClass::CompleteProduction",
+ "size": 188,
+ "link_base": 0,
+ "bytes_hex": "515355568bea5755e8000000008b4c241c83c404894c24108b500483c0048d4c24105150ff52108bf855e8000000008bf0b30183c4048b561489be940000002bd7889e98000000899690000000a09801000084c075558b8d1c020000e80000000084c0743f881d980100008b46144878088b4e088b3c81eb0233ff8b5f1033f685db7e208b57048b04b28b008a888300000084c974098b0850ff9150010000463bf37ce08bcde8000000008b4c2418e8000000005f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B30@@3IA",
+   "sym_key": "DataGlobal_AC4B30"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?CheckExitPath@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::CheckExitPath"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?FindSquadMember@ScriptAction@@QAEHXZ",
+   "sym_key": "ScriptAction::FindSquadMember"
+  }
+ ]
+}

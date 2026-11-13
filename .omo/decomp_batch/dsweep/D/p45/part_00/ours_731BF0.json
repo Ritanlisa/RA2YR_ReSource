@@ -1,0 +1,75 @@
+{
+ "symbol": "?Render_Draw_731BF0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::Render_Draw_731BF0",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "a0000000005684c05774055fb0015ec3a1000000005350e80000000085c075148b0d0000000051e80000000085c0750432dbeb02b3018b150000000052e80000000085c07514a10000000050e80000000085c00f95c084c07402b00184db5b744084c0743ca10000000033f685c08bf87f055fb0015ec38b0d000000008b04b185c07413f6401401740d8b1050ff92c004000084c0740a463bf77cdb5fb0015ec35f32c05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FE58@@3EA",
+   "sym_key": "DataGlobal_B0FE58"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC00@@3IA",
+   "sym_key": "DataGlobal_A8EC00"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC04@@3IA",
+   "sym_key": "DataGlobal_A8EC04"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC08@@3IA",
+   "sym_key": "DataGlobal_A8EC08"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC0C@@3IA",
+   "sym_key": "DataGlobal_A8EC0C"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Mouse__IsButtonDown@@YGHH@Z",
+   "sym_key": "Mouse__IsButtonDown"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_ObjectClass_CurrentCount@@3IA",
+   "sym_key": "g_ObjectClass_CurrentCount"
+  }
+ ]
+}

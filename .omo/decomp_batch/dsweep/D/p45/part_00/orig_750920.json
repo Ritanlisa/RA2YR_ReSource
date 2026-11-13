@@ -1,0 +1,11 @@
+{
+ "addr": "0x750920",
+ "name": "PlayVocClass",
+ "size": 186,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750920",
+ "bytes_hex": "51a0ac6484008954240084c0750633c059c208005333db555685c97c123b0d88d3b1007d0aa17cd3b1008b0c888b198b6c241833f685ed74218bcde8d057cbff8bf085f674148bcee8a359cbff3bc374098bcee87849cbff33f685db577443d9442418d80d8cf37e00e8725507008bf881ff004000007205bf0040000085f6750d8bcbe8e847cbff8bf085f674148bd78bcee81958cbff8b5424108bcee8ae58cbff85ed5f740a538bd68bcde81f57cbff8bc65e5d5b59c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

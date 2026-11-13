@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x77e110 ObjectClass::RunWOLMainLoop_Find -> ObjectClass
+[conv] 0x54ac40 JumpjetLocomotionClass::Update -> JumpjetLocomotionClass
+[conv] 0x76b7b0 ObjectClass::sub_76B7B0 -> ObjectClass
+[conv] 0x731bf0 ObjectClass::Render_Draw_731BF0 -> ObjectClass
+[conv] 0x41b6a0 TechnoClass::ComputeTeamAttackPriority -> TechnoClass
+[conv] 0x5cc760 ArtConfig::loadConfig -> ArtConfig
+[conv] 0x5227f0 InfantryClass::CanAttackTarget -> InfantryClass
+[conv] 0x746750 TechnoClass::IsGuardingTarget -> TechnoClass
+[conv] 0x415a50 AircraftClass::ProcessReturnToBase -> AircraftClass
+[conv] 0x639740 BuildingClass::CompleteProduction -> BuildingClass
+[conv] 0x5cdb90 sub_5CDB90 -> _addr_5C
+[conv] 0x76afc0 WDTState::Constructor_WDTState -> WDTState
+[conv] 0x623170 UI_Connect -> UI
+[conv] 0x476eb0 INIEntry::GetTechnoType -> INIEntry
+[conv] 0x684180 ScenarioClass::ProcessIntroTimer -> ScenarioClass
+[conv] 0x682c70 sub_682C70 -> _addr_68
+[conv] 0x5c1cc0 MPCooperative::InitSession -> MPCooperative
+[conv] 0x750920 PlayVocClass -> _addr_75
+[conv] 0x5bd3d0 Text::DrawCharAtGrid -> Text
+[conv] 0x75ed30 WaveClass::Destructor -> WaveClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] TechnoClass              rc=2
+[era] ArtConfig                rc=0
+[era] InfantryClass            rc=2
+[era] AircraftClass            rc=2
+[era] BuildingClass            rc=0
+[era] _addr_5C                 rc=0
+[era] WDTState                 rc=2
+[era] UI                       rc=0
+[era] INIEntry                 rc=2
+[era] ScenarioClass            rc=2
+[era] _addr_68                 rc=2
+[era] MPCooperative            rc=0
+[era] _addr_75                 rc=0
+[era] Text                     rc=0
+[era] WaveClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x77e110   MISMATCH         ObjectClass::RunWOLMainLoop_Find
+[diff] 0x76b7b0   MISMATCH         ObjectClass::sub_76B7B0
+[diff] 0x731bf0   MISMATCH         ObjectClass::Render_Draw_731BF0
+[diff] 0x41b6a0   MISMATCH         TechnoClass::ComputeTeamAttackPriority
+[diff] 0x5cc760   MISMATCH         ArtConfig::loadConfig
+[diff] 0x639740   MISMATCH         BuildingClass::CompleteProduction
+[diff] 0x5cdb90   MISMATCH         sub_5CDB90
+[diff] 0x623170   MISMATCH         UI_Connect
+[diff] 0x5c1cc0   MISMATCH         MPCooperative::InitSession
+[diff] 0x750920   MISMATCH         PlayVocClass
+[diff] 0x5bd3d0   MISMATCH         Text::DrawCharAtGrid
+[diff] 0x75ed30   MISMATCH         WaveClass::Destructor
+[ledger] 0x77e110 ObjectClass::RunWOLMainLoop_Find -> NG (attempt 1)
+[ledger] 0x54ac40 JumpjetLocomotionClass::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76b7b0 ObjectClass::sub_76B7B0 -> NG (attempt 1)
+[ledger] 0x731bf0 ObjectClass::Render_Draw_731BF0 -> NG (attempt 1)
+[ledger] 0x41b6a0 TechnoClass::ComputeTeamAttackPriority -> NG (attempt 1)
+[ledger] 0x5cc760 ArtConfig::loadConfig -> NG (attempt 1)
+[ledger] 0x5227f0 InfantryClass::CanAttackTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746750 TechnoClass::IsGuardingTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x415a50 AircraftClass::ProcessReturnToBase -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639740 BuildingClass::CompleteProduction -> NG (attempt 1)
+[ledger] 0x5cdb90 sub_5CDB90 -> NG (attempt 1)
+[ledger] 0x76afc0 WDTState::Constructor_WDTState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x623170 UI_Connect -> NG (attempt 1)
+[ledger] 0x476eb0 INIEntry::GetTechnoType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x684180 ScenarioClass::ProcessIntroTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682c70 sub_682C70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1cc0 MPCooperative::InitSession -> NG (attempt 1)
+[ledger] 0x750920 PlayVocClass -> NG (attempt 1)
+[ledger] 0x5bd3d0 Text::DrawCharAtGrid -> NG (attempt 1)
+[ledger] 0x75ed30 WaveClass::Destructor -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "regalloc": 5,
+  "extern_reloc": 1,
+  "branch_polarity": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p45\batch_report.json

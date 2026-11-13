@@ -1,0 +1,11 @@
+{
+ "addr": "0x77E110",
+ "name": "RunWOLMainLoop_Find",
+ "size": 184,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77E110",
+ "bytes_hex": "a16c11ac0085c074268b15bc79b7008b085250ff517c8b153462b700a16c11ac00528b15f079b7008b085250ff516833c9e80a02e7ff8b150c69b70085d20f95c084c07466b9103da800e8712efaff84c075196a00b9103da800e8312dfaffb9103da8006afee8a529faffc3568b35143da80083feff75068b35183da80068a8638200b9103da800e87330faff3bf05e75256a00b9103da800e8f22cfaffb9103da8006afee86629faffc36afdb9103da800e85929faffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

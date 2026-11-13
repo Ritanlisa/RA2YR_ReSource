@@ -1,0 +1,11 @@
+{
+ "addr": "0x731BF0",
+ "name": "Render_Draw_731BF0",
+ "size": 185,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x731BF0",
+ "bytes_hex": "51a058feb0005684c05774065fb0015e59c3a100eca8008b0d70f787005350e8acd9e1ff84c07519a104eca8008b0d70f7870050e897d9e1ff84c0750432dbeb02b301a108eca8008b0d70f7870050e87cd9e1ff84c07515a10ceca8008b0d70f7870050e867d9e1ff84c07402b00184db5b743f84c0743b8b3dc8eca80033f685ff7e29a1bceca8008b0cb085c974188a511480e2018854240b740c8b01ff90c004000084c0740b463bf77cd75fb0015e59c35f32c05e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

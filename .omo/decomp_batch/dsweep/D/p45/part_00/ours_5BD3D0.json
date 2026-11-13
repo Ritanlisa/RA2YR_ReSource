@@ -1,0 +1,75 @@
+{
+ "symbol": "?DrawCharAtGrid@Text@@QAEHPAXHH@Z",
+ "sym_key": "Text::DrawCharAtGrid",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "8b44240853558b6c2414568bf18d4c8064578bf88d548d0003ca8b1c8e8b8e142700003bd9744e83fb01751ea1182b00008b4c24145051e8000000008b15302b00008b4424145250eb1c8b0d302b00008b5424145152e800000000a1182b00008b4c24145051e8000000008b442418899e142700008d0cbf24006a018d548d0003ca33d28a14318b0de02b00000bd08d44241c8954241c8b15d02b000050a1e82b000003d10fafc70fafd58b4c241c83c20a83c00a525051e8000000005f5e5d5bc20c00",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?SetBkColor@@YGKPAXH@Z",
+   "sym_key": "SetBkColor"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?SetBkColor@@YGKPAXH@Z",
+   "sym_key": "SetBkColor"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?SetTextColor@@YGKPAXH@Z",
+   "sym_key": "SetTextColor"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?TextOutA@@YGHPAXHH0H@Z",
+   "sym_key": "TextOutA"
+  }
+ ]
+}

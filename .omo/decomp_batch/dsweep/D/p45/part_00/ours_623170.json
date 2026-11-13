@@ -1,0 +1,57 @@
+{
+ "symbol": "?UI_Connect@@YIHPAXJJ@Z",
+ "sym_key": "Unnamed::UI_Connect",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "83ec20a100000000568bf2578bf989442410a1000000008b0d040000008d542408894c24145250c744241000000000c744241400000000e8000000008b15000000008d4c24105152e8000000008d4424185057e8000000008b4c24188b4424208b5424242bc1894424208b44241c2bd083feff8954242475062b4c2408eb028bce8b54242c894c241883faff75062b44240ceb028bc28b5424246a00528b5424285250515789442434e8000000005f5e83c420c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_DisplayWidth@@3IA",
+   "sym_key": "g_DisplayWidth"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  }
+ ]
+}

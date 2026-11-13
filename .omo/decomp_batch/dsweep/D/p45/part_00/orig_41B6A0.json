@@ -1,0 +1,11 @@
+{
+ "addr": "0x41B6A0",
+ "name": "TechnoClass::ComputeTeamAttackPriority",
+ "size": 185,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41B6A0",
+ "bytes_hex": "538b5c240856578b43048a88fc0d000084c9745f8b8358faffff85c075558db340f9ffff8bcee865f7230084c074446a008bcee868f623008b168bce8bf8ff928401000083f807752a85ff74268b078bcfff502c83f806751a8bbf200500008a87a916000084c075488a87cb16000084c0753e8d8b40f9ffffe812f7230084c0740d8b4b048a81fc0d000084c075178b8358faffff85c074188b53048a82fc0d000084c0740b5f5eb8640000005bc204005f5e33c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

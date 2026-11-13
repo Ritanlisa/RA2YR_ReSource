@@ -1,0 +1,57 @@
+{
+ "symbol": "?loadConfig@ArtConfig@@QAEPAV1@PAPADHHPAHD@Z",
+ "sym_key": "ArtConfig::loadConfig",
+ "size": 186,
+ "link_base": 0,
+ "bytes_hex": "5355568bf1578b7c24208b560c8b47048b0f80e201894e0483ca0189460889560ce8000000008b5c241889461033c0c7060000000089461889461c895e208b078b6c24148946248b4f04894e288b57088b4c241c89562c8b470c8a542424894e348bcd894630885638c70600000000e80000000085c074396a34e80000000083c4048944242485c074148bcde8000000008b4c24245350e800000000eb0233c089461c8b4f048b1751528bc8e8000000008b065f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?vt_MSAnim@@3PAXA",
+   "sym_key": "vt_MSAnim"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?vt_MSBinkAnim@@3PAXA",
+   "sym_key": "vt_MSBinkAnim"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Open@BinkMovie@@QAEPAIPAXH@Z",
+   "sym_key": "BinkMovie::Open"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?RenderFrameClipped@BinkMovieHandle@@QAEHHH@Z",
+   "sym_key": "BinkMovieHandle::RenderFrameClipped"
+  }
+ ]
+}
