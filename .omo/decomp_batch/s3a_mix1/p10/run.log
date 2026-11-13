@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x5800d0 CellClass::ApplyTileModification5 -> CellClass
+[conv] 0x580600 CellClass::ApplyTileModification8 -> CellClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+[conv] 0x588750 ScanBuildingPlacementCells -> _addr_58
+[conv] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x58bf70 RandomMap::TerrainTileDataConstructor -> RandomMap
+[conv] 0x58c4a0 ObjectClass::sub_58C4A0 -> ObjectClass
+[conv] 0x58d1c0 RandomMap::ExpandTerrainCells -> RandomMap
+[conv] 0x58d410 RandomMap::TerrainAlloc -> RandomMap
+[conv] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> TileSystem
+[conv] 0x58e740 RandomMap::CollectTerrainCells -> RandomMap
+[conv] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> RandomMap
+[conv] 0x58f0c0 RandomMap::CollectBorderCells -> RandomMap
+[conv] 0x5910f0 MapSeed::PlaceCityBlock -> MapSeed
+[conv] 0x591d80 MapSeed::PlaceCityBuildings -> MapSeed
+[conv] 0x592440 RandomMap::CheckPlacementArea -> RandomMap
+[conv] 0x594870 ObjectClass::PlaceRandomWaypoints -> ObjectClass
+[conv] 0x5958e0 RandomMap::CleanupRandomMapData -> RandomMap
+[conv] 0x5a0410 MapClass::GrowLayer -> MapClass
+[conv] 0x5a0700 RandomMap::CellListAlloc -> RandomMap
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=2
+[era] ObjectClass              rc=2
+[era] _addr_58                 rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=2
+[era] RandomMap                rc=2
+[era] TileSystem               rc=2
+[era] MapSeed                  rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5800d0 CellClass::ApplyTileModification5 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x580600 CellClass::ApplyTileModification8 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x583ad0 ObjectClass::sub_583AD0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x588750 ScanBuildingPlacementCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58bf70 RandomMap::TerrainTileDataConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58c4a0 ObjectClass::sub_58C4A0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58d1c0 RandomMap::ExpandTerrainCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58d410 RandomMap::TerrainAlloc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58e740 RandomMap::CollectTerrainCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58f0c0 RandomMap::CollectBorderCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5910f0 MapSeed::PlaceCityBlock -> COMPILE_FAIL (attempt 4)
+[ledger] 0x591d80 MapSeed::PlaceCityBuildings -> COMPILE_FAIL (attempt 7)
+[ledger] 0x592440 RandomMap::CheckPlacementArea -> COMPILE_FAIL (attempt 4)
+[ledger] 0x594870 ObjectClass::PlaceRandomWaypoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5958e0 RandomMap::CleanupRandomMapData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a0410 MapClass::GrowLayer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a0700 RandomMap::CellListAlloc -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_mix1\p10\batch_report.json

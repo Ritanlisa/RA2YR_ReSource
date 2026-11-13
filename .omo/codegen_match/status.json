@@ -91146,7 +91146,7 @@
   "this_as_id": false
  },
  "0x5800d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91158,7 +91158,7 @@
   "this_as_id": false
  },
  "0x580600": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91337,7 +91337,7 @@
   "this_as_id": false
  },
  "0x583ad0": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -91687,7 +91687,7 @@
   "this_as_id": false
  },
  "0x588750": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ScanBuildingPlacementCells",
@@ -92173,7 +92173,7 @@
   "this_as_id": false
  },
  "0x589740": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93473,7 +93473,7 @@
   "this_as_id": false
  },
  "0x58bf70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93556,7 +93556,7 @@
   "this_as_id": false
  },
  "0x58c4a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93668,7 +93668,7 @@
   "this_as_id": false
  },
  "0x58d1c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93680,7 +93680,7 @@
   "this_as_id": false
  },
  "0x58d410": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93704,7 +93704,7 @@
   "this_as_id": false
  },
  "0x58e5d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93716,7 +93716,7 @@
   "this_as_id": false
  },
  "0x58e740": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93728,7 +93728,7 @@
   "this_as_id": false
  },
  "0x58e9b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93764,7 +93764,7 @@
   "this_as_id": false
  },
  "0x58f0c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93846,7 +93846,7 @@
   "this_as_id": false
  },
  "0x5910f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93870,7 +93870,7 @@
   "this_as_id": false
  },
  "0x591d80": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93882,7 +93882,7 @@
   "this_as_id": false
  },
  "0x592440": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94012,14 +94012,14 @@
   "this_as_id": false
  },
  "0x594870": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::PlaceRandomWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PlaceRandomWaypoints",
-  "rule_violations": 10,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -94096,7 +94096,7 @@
   "this_as_id": false
  },
  "0x5958e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94655,7 +94655,7 @@
   "this_as_id": false
  },
  "0x5a0410": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94667,7 +94667,7 @@
   "this_as_id": false
  },
  "0x5a0700": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
