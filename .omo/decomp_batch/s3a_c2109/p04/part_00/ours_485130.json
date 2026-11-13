@@ -1,0 +1,45 @@
+{
+ "symbol": "?RemoveCellReference@MapClass@@QAEHH@Z",
+ "sym_key": "MapClass::RemoveCellReference",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4c2408578b463c8bf93bc1755e85c07403ff482cc7463c000000008d4e480fbe0554130000516854130000ff501083f8ff74388a0d641300000fbed13bc27d2bfec9880d641300000fbec93bc17d1c0fbe1558130000408d0c828b14828951fc0fbe0d641300003bc17ce4397e2c7507c7462c00000000397e307507c74630000000008b462885c074438b1757ff522c83f83d75388b76288d4c240c897c240c518b0656ff501083f8ff74218b4e103bc17d1a493bc1894e1073128b4e04408b1481895481fc8b4e103bc172ee5f5ec20400",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}

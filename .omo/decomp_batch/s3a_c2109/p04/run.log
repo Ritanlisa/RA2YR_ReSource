@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> ObjectTypeClass
+[conv] 0x478220 INIClass::parseKeyValue -> INIClass
+[conv] 0x479900 sub_479900 -> _addr_47
+[conv] 0x479ba0 sub_479BA0 -> _addr_47
+[conv] 0x479d60 sub_479D60 -> _addr_47
+[conv] 0x479ef0 sub_479EF0 -> _addr_47
+[conv] 0x47ab10 Game::FindGameDirectoryCD -> Game
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x47efe0 RenderFogOfWar -> _addr_47
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x485130 MapClass::RemoveCellReference -> MapClass
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x48b1f0 CommBufferClass::sub_48B1F0 -> CommBufferClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> TechnoClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x49d390 ObjectClass::LoadCoopCampaignSave -> ObjectClass
+[conv] 0x49db00 CampaignClass::LoadFromINI -> CampaignClass
+[conv] 0x49f920 sub_49F920 -> _addr_49
+[conv] 0x4a3660 ObjectClass::RenderTactical3DScene -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=2
+[era] INIClass                 rc=2
+[era] _addr_47                 rc=2
+[era] Game                     rc=2
+[era] CellClass                rc=2
+[era] MapClass                 rc=0
+[era] CommBufferClass          rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] CampaignClass            rc=2
+[era] _addr_49                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x47efe0   MISMATCH         RenderFogOfWar
+[diff] 0x485130   MISMATCH         MapClass::RemoveCellReference
+[ledger] 0x477590 ObjectTypeClass::loadTypeMember_5477590 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478220 INIClass::parseKeyValue -> COMPILE_FAIL (attempt 2)
+[ledger] 0x479900 sub_479900 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x479ba0 sub_479BA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x479d60 sub_479D60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x479ef0 sub_479EF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47ab10 Game::FindGameDirectoryCD -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47ca80 CellClass::DetermineTileType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47efe0 RenderFogOfWar -> NG (attempt 2)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x485130 MapClass::RemoveCellReference -> NG (attempt 2)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48b1f0 CommBufferClass::sub_48B1F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 6)
+[ledger] 0x49d390 ObjectClass::LoadCoopCampaignSave -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49db00 CampaignClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49f920 sub_49F920 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a3660 ObjectClass::RenderTactical3DScene -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109\p04\batch_report.json
