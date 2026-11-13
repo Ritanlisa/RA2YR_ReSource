@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x7759e0 MessageDialogLoopAlt -> _addr_77
+[conv] 0x7775c0 MainWindowProc -> _addr_77
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x77a080 ObjectClass::SaveProfileWOL -> ObjectClass
+[conv] 0x77bcb0 sub_77BCB0 -> _addr_77
+[conv] 0x77ca60 sub_77CA60 -> _addr_77
+[conv] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> ObjectClass
+[conv] 0x787010 ObjectClass::LoginFlowWOL -> ObjectClass
+[conv] 0x788b00 ObjectClass::CreateAccountWOL -> ObjectClass
+[conv] 0x78ebc0 DlgProcGameSetup -> _addr_78
+[conv] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> ObjectClass
+[conv] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> CComObject_CChatEventSink___ATL
+[conv] 0x79d110 ObjectClass::SendGameListWOL -> ObjectClass
+[conv] 0x79dfe0 GameSetupDlgProcWOL -> _addr_79
+[conv] 0x7a16b0 HandleWOLMatchMessage -> _addr_7A
+[conv] 0x7aa870 CChatEventSink::HandleChatChannelList -> CChatEventSink
+[conv] 0x7abd40 CChatEventSink::DispatchStub_34 -> CChatEventSink
+[conv] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x7b0cb0 sub_7B0CB0 -> _addr_7B
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_78                 rc=2
+[era] CComObject_CChatEventSink___ATL rc=2
+[era] _addr_79                 rc=2
+[era] _addr_7A                 rc=2
+[era] CChatEventSink           rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] ComStreamClass           rc=2
+[era] _addr_7B                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7775c0 MainWindowProc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x779f10 ObjectClass::SavePersonaConfigWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x77a080 ObjectClass::SaveProfileWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x77bcb0 sub_77BCB0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x77ca60 sub_77CA60 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> COMPILE_FAIL (attempt 4)
+[ledger] 0x787010 ObjectClass::LoginFlowWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x788b00 ObjectClass::CreateAccountWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78ebc0 DlgProcGameSetup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> COMPILE_FAIL (attempt 6)
+[ledger] 0x79d110 ObjectClass::SendGameListWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x79dfe0 GameSetupDlgProcWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a16b0 HandleWOLMatchMessage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7aa870 CChatEventSink::HandleChatChannelList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7abd40 CChatEventSink::DispatchStub_34 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7b0cb0 sub_7B0CB0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p25\batch_report.json

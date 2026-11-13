@@ -23,3 +23,4 @@
 {"part": 22, "n": 20, "seconds": 258.9, "ok": true, "verdicts": {"MATCH": 2, "COMPILE_FAIL": 17, "MISMATCH": 1}}
 {"part": 23, "n": 20, "seconds": 136.2, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
 {"part": 24, "n": 20, "seconds": 89.1, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"part": 25, "n": 20, "seconds": 66.5, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
