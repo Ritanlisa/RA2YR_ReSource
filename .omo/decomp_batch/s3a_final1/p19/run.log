@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f4520 ObjectClass::HandleSelection -> ObjectClass
+[conv] 0x5f5c60 BuildingClass::GetHealthRatio -> BuildingClass
+[conv] 0x5f5cd0 BuildingClass::IsHealthLow -> BuildingClass
+[conv] 0x5f5dd0 BuildingClass::GetSellPriority -> BuildingClass
+[conv] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> ObjectClass
+[conv] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> ObjectClass
+[conv] 0x5fa4a0 Audio::SetScoreVolume -> Audio
+[conv] 0x5fa510 Audio::SetSoundVolume -> Audio
+[conv] 0x5fa590 Audio::SetVoiceVolume -> Audio
+[conv] 0x5fa620 GameSettings::Read -> GameSettings
+[conv] 0x5fb160 AudioOptionsClass::ApplySettings -> AudioOptionsClass
+[conv] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> GameOptionsClass
+[conv] 0x5fc000 GameOptionsClass::PopulateMovieList -> GameOptionsClass
+[conv] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> ObjectClass
+[conv] 0x600880 sub_600880 -> _addr_60
+[conv] 0x610570 DestroyDialogChildWindow -> _addr_61
+[conv] 0x623610 DialogClass::CopyTemplateStruct -> DialogClass
+[conv] 0x623730 ObjectClass::sub_623730 -> ObjectClass
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+[conv] 0x6267a0 FileSystem::InitExtensionState -> FileSystem
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] Audio                    rc=2
+[era] GameSettings             rc=2
+[era] AudioOptionsClass        rc=2
+[era] GameOptionsClass         rc=2
+[era] _addr_60                 rc=2
+[era] _addr_61                 rc=2
+[era] DialogClass              rc=2
+[era] Dialog                   rc=2
+[era] FileSystem               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5f4520 ObjectClass::HandleSelection -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5f5c60 BuildingClass::GetHealthRatio -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f5cd0 BuildingClass::IsHealthLow -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f5dd0 BuildingClass::GetSellPriority -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5fa4a0 Audio::SetScoreVolume -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fa510 Audio::SetSoundVolume -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fa590 Audio::SetVoiceVolume -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fa620 GameSettings::Read -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fb160 AudioOptionsClass::ApplySettings -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fc000 GameOptionsClass::PopulateMovieList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> COMPILE_FAIL (attempt 5)
+[ledger] 0x600880 sub_600880 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x610570 DestroyDialogChildWindow -> COMPILE_FAIL (attempt 5)
+[ledger] 0x623610 DialogClass::CopyTemplateStruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x623730 ObjectClass::sub_623730 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6267a0 FileSystem::InitExtensionState -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p19\batch_report.json
