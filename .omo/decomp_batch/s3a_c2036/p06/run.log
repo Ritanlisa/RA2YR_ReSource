@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e9960 _VectorClass_PAVAITriggerTypeClass::Release -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9aa0 _DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9bc0 _VectorClass_PAVBuildingLightClass::Release -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9d00 _DynamicVectorClass_PAVBuildingLightClass::SetCapacity -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4e9e20 ParticleSystemClass::vt_02 -> ParticleSystemClass
+[conv] 0x4e9f60 _DynamicVectorClass_PAVParticleClass::Release -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4ea080 _VectorClass_PAVTeamClass::Release -> _VectorClass_PAVTeamClass
+[conv] 0x4ea1c0 _DynamicVectorClass_PAVTeamClass::SetCapacity -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4ea2e0 _VectorClass_PAUThemeControl::Remove -> _VectorClass_PAUThemeControl
+[conv] 0x4ea5a0 _DynamicVectorClass_PAVTriggerClass::SetCapacity_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4ea6c0 _VectorClass_PAVTriggerTypeClass::Release -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4ea920 _VectorClass_PAVTubeClass::Release -> _VectorClass_PAVTubeClass
+[conv] 0x4eaa60 _DynamicVectorClass_PAVTubeClass::SetCapacity -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4eab80 _VectorClass_PAVParticleSystemClass::Release -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eacc0 _DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0 -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4eade0 _VectorClass_PAVWaveClass::Release -> _VectorClass_PAVWaveClass
+[conv] 0x4eaf20 _DynamicVectorClass_PAVWaveClass::SetCapacity_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4eb040 _VectorClass_PAVOverlayClass::Release -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb180 _DynamicVectorClass_PAVOverlayClass::SetCapacity_1 -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4eb2a0 _VectorClass_PAVSmudgeClass::Release -> _VectorClass_PAVSmudgeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] ParticleSystemClass      rc=0
+[era] _DynamicVectorClass_PAVParticleClass rc=0
+[era] _VectorClass_PAVTeamClass rc=0
+[era] _DynamicVectorClass_PAVTeamClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+[era] _DynamicVectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _DynamicVectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _DynamicVectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _DynamicVectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e9960   MISMATCH         _VectorClass_PAVAITriggerTypeClass::Release
+[diff] 0x4e9aa0   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity
+[diff] 0x4e9bc0   MISMATCH         _VectorClass_PAVBuildingLightClass::Release
+[diff] 0x4e9d00   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::SetCapacity
+[diff] 0x4e9e20   MISMATCH         ParticleSystemClass::vt_02
+[diff] 0x4e9f60   MISMATCH         _DynamicVectorClass_PAVParticleClass::Release
+[diff] 0x4ea080   MISMATCH         _VectorClass_PAVTeamClass::Release
+[diff] 0x4ea1c0   MISMATCH         _DynamicVectorClass_PAVTeamClass::SetCapacity
+[diff] 0x4ea2e0   MISMATCH         _VectorClass_PAUThemeControl::Remove
+[diff] 0x4ea5a0   MISMATCH         _DynamicVectorClass_PAVTriggerClass::SetCapacity_0
+[diff] 0x4ea6c0   MISMATCH         _VectorClass_PAVTriggerTypeClass::Release
+[diff] 0x4ea920   MISMATCH         _VectorClass_PAVTubeClass::Release
+[diff] 0x4eaa60   MISMATCH         _DynamicVectorClass_PAVTubeClass::SetCapacity
+[diff] 0x4eab80   MISMATCH         _VectorClass_PAVParticleSystemClass::Release
+[diff] 0x4eacc0   MISMATCH         _DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0
+[diff] 0x4eade0   MISMATCH         _VectorClass_PAVWaveClass::Release
+[diff] 0x4eaf20   MISMATCH         _DynamicVectorClass_PAVWaveClass::SetCapacity_0
+[diff] 0x4eb040   MISMATCH         _VectorClass_PAVOverlayClass::Release
+[diff] 0x4eb180   MISMATCH         _DynamicVectorClass_PAVOverlayClass::SetCapacity_1
+[diff] 0x4eb2a0   MISMATCH         _VectorClass_PAVSmudgeClass::Release
+[ledger] 0x4e9960 _VectorClass_PAVAITriggerTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4e9aa0 _DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4e9bc0 _VectorClass_PAVBuildingLightClass::Release -> NG (attempt 2)
+[ledger] 0x4e9d00 _DynamicVectorClass_PAVBuildingLightClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4e9e20 ParticleSystemClass::vt_02 -> NG (attempt 2)
+[ledger] 0x4e9f60 _DynamicVectorClass_PAVParticleClass::Release -> NG (attempt 2)
+[ledger] 0x4ea080 _VectorClass_PAVTeamClass::Release -> NG (attempt 2)
+[ledger] 0x4ea1c0 _DynamicVectorClass_PAVTeamClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4ea2e0 _VectorClass_PAUThemeControl::Remove -> NG (attempt 2)
+[ledger] 0x4ea5a0 _DynamicVectorClass_PAVTriggerClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4ea6c0 _VectorClass_PAVTriggerTypeClass::Release -> NG (attempt 2)
+[ledger] 0x4ea920 _VectorClass_PAVTubeClass::Release -> NG (attempt 2)
+[ledger] 0x4eaa60 _DynamicVectorClass_PAVTubeClass::SetCapacity -> NG (attempt 2)
+[ledger] 0x4eab80 _VectorClass_PAVParticleSystemClass::Release -> NG (attempt 2)
+[ledger] 0x4eacc0 _DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4eade0 _VectorClass_PAVWaveClass::Release -> NG (attempt 2)
+[ledger] 0x4eaf20 _DynamicVectorClass_PAVWaveClass::SetCapacity_0 -> NG (attempt 2)
+[ledger] 0x4eb040 _VectorClass_PAVOverlayClass::Release -> NG (attempt 2)
+[ledger] 0x4eb180 _DynamicVectorClass_PAVOverlayClass::SetCapacity_1 -> NG (attempt 2)
+[ledger] 0x4eb2a0 _VectorClass_PAVSmudgeClass::Release -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p06\batch_report.json

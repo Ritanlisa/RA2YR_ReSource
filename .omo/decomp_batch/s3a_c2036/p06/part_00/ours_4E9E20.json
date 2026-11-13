@@ -1,0 +1,21 @@
+{
+ "symbol": "?vt_02@ParticleSystemClass@@QAEDHPAH@Z",
+ "sym_key": "ParticleSystemClass::vt_02",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84a60000008b4e108b6c241880e10085ed894e1074048bfdeb128d049d0000000050e80000000083c4048bf88b4e1080e10183c90185ff894e1074668b460885c0743a8b4e0c3bd97d028bcb33c085c97e108b5608403bc18b5482fc895487fc7cf08b4610f6c4ff74138b460850e80000000083c404c74608000000008b461033c985ed0f94c133d280e4008af1897e080bd0895e0c8956105f5e5db0015bc208005f5e5d32c05bc208008b168bceff125f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

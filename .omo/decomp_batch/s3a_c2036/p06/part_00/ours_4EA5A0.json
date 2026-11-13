@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetCapacity_0@_DynamicVectorClass_PAVTriggerClass@@QAEDHPAH@Z",
+ "sym_key": "_DynamicVectorClass_PAVTriggerClass::SetCapacity_0",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84980000008b6c2418c7460c0000000085ed74048bfdeb128d049d0000000050e80000000083c4048bf885ffc7460c0100000075095f5e5d32c05bc208008b460485c0743a8b4e083bd97d028bcb33c085c97e108b5604403bc18b5482fc895487fc7cf08b460cf6c4ff74138b460450e80000000083c404c74604000000008b460c33c985ed0f94c133d280e4008af1897e040bd0895e0889560ceb078b168bceff520c8b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -58692,15 +58692,15 @@
   "this_as_id": false
  },
  "0x4e9960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVAITriggerTypeClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_AITriggerTypeClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9a10": {
@@ -58735,15 +58735,15 @@
   "this_as_id": false
  },
  "0x4e9aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVAITriggerTypeClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_AITriggerTypeClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9b50": {
@@ -58771,15 +58771,15 @@
   "this_as_id": false
  },
  "0x4e9bc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVBuildingLightClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_BuildingLightClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9c70": {
@@ -58819,15 +58819,15 @@
   "this_as_id": false
  },
  "0x4e9d00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVBuildingLightClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_BuildingLightClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9db0": {
@@ -58855,15 +58855,15 @@
   "this_as_id": false
  },
  "0x4e9e20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "ParticleSystemClass::vt_02",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ParticleSystemClass::vt_02",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e9ed0": {
@@ -58898,15 +58898,15 @@
   "status": "NG"
  },
  "0x4e9f60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVParticleClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ParticleSystemClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea010": {
@@ -58934,15 +58934,15 @@
   "this_as_id": false
  },
  "0x4ea080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVTeamClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TeamClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea130": {
@@ -58982,15 +58982,15 @@
   "this_as_id": false
  },
  "0x4ea1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVTeamClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TeamClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea270": {
@@ -59018,15 +59018,15 @@
   "this_as_id": false
  },
  "0x4ea2e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAUThemeControl::Remove",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_ThemeControl::Remove",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea390": {
@@ -59116,15 +59116,15 @@
   "this_as_id": false
  },
  "0x4ea5a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVTriggerClass::SetCapacity_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_AITriggerTypeClass::SetCapacity_0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea650": {
@@ -59152,15 +59152,15 @@
   "this_as_id": false
  },
  "0x4ea6c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVTriggerTypeClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TriggerTypeClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea770": {
@@ -59221,15 +59221,15 @@
   "status": "NG"
  },
  "0x4ea920": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVTubeClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TubeClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ea9d0": {
@@ -59269,15 +59269,15 @@
   "this_as_id": false
  },
  "0x4eaa60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVTubeClass::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TubeClass::SetCapacity",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eab10": {
@@ -59305,15 +59305,15 @@
   "this_as_id": false
  },
  "0x4eab80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVParticleSystemClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_ParticleSystemClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eac30": {
@@ -59353,15 +59353,15 @@
   "this_as_id": false
  },
  "0x4eacc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVParticleSystemClass::SetCapacity_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_BuildingLightClass::SetCapacity_0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4ead70": {
@@ -59389,15 +59389,15 @@
   "this_as_id": false
  },
  "0x4eade0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVWaveClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_WaveClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eae90": {
@@ -59432,15 +59432,15 @@
   "this_as_id": false
  },
  "0x4eaf20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVWaveClass::SetCapacity_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TubeClass::SetCapacity_0",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eafd0": {
@@ -59468,15 +59468,15 @@
   "this_as_id": false
  },
  "0x4eb040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVOverlayClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_OverlayClass::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eb0f0": {
@@ -59516,15 +59516,15 @@
   "this_as_id": false
  },
  "0x4eb180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_DynamicVectorClass_PAVOverlayClass::SetCapacity_1",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VectorClass_ptr_TubeClass::SetCapacity_1",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eb230": {
@@ -59552,15 +59552,15 @@
   "this_as_id": false
  },
  "0x4eb2a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push ebp",
   "name": "_VectorClass_PAVSmudgeClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ParticleSystemClass_16::Release",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4eb350": {
