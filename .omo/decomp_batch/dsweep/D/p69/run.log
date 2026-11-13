@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p69\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> MultiplayerGameMode
+[conv] 0x474320 CCINIClass::LoadAndVerifyDigest -> CCINIClass
+[conv] 0x69e320 CCFileClass::ProcessStream -> CCFileClass
+[conv] 0x5ec290 sub_5EC290 -> _addr_5E
+[conv] 0x6213a0 Dialog::Resize -> Dialog
+[conv] 0x6432c0 sub_6432C0 -> _addr_64
+[conv] 0x698f90 GameSetup::WriteINI -> GameSetup
+[conv] 0x7ace60 HashTable::CleanupAndResize -> HashTable
+[conv] 0x5e8bf0 Player::FindByName -> Player
+[conv] 0x63d9c0 FactoryClass::RemoveFromArrays -> FactoryClass
+[conv] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> JumpjetLocomotionClass
+[conv] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> JumpjetLocomotionClass
+[conv] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> JumpjetLocomotionClass
+[conv] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> JumpjetLocomotionClass
+[conv] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> JumpjetLocomotionClass
+[conv] 0x5588e0 sub_5588E0 -> _addr_55
+[conv] 0x5f77f0 ObjectTypeClass::UnloadPipsSHP -> ObjectTypeClass
+[conv] 0x5add10 ObjectClass::Map_Delete -> ObjectClass
+[conv] 0x792be0 ShowUIMessage -> _addr_79
+[conv] 0x455a80 BuildingClass::UpdateTerrainEffect -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerGameMode      rc=2
+[era] CCINIClass               rc=0
+[era] CCFileClass              rc=0
+[era] _addr_5E                 rc=2
+[era] Dialog                   rc=2
+[era] _addr_64                 rc=0
+[era] GameSetup                rc=2
+[era] HashTable                rc=0
+[era] Player                   rc=2
+[era] FactoryClass             rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_55                 rc=0
+[era] ObjectTypeClass          rc=0
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=2
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x474320   MISMATCH         CCINIClass::LoadAndVerifyDigest
+[diff] 0x69e320   MISMATCH         CCFileClass::ProcessStream
+[diff] 0x6432c0   MISMATCH         sub_6432C0
+[diff] 0x7ace60   MISMATCH         HashTable::CleanupAndResize
+[diff] 0x63d9c0   MISMATCH         FactoryClass::RemoveFromArrays
+[diff] 0x5588e0   MISMATCH         sub_5588E0
+[diff] 0x5f77f0   MISMATCH         ObjectTypeClass::UnloadPipsSHP
+[diff] 0x455a80   MISMATCH         BuildingClass::UpdateTerrainEffect
+[ledger] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x474320 CCINIClass::LoadAndVerifyDigest -> NG (attempt 1)
+[ledger] 0x69e320 CCFileClass::ProcessStream -> NG (attempt 1)
+[ledger] 0x5ec290 sub_5EC290 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6213a0 Dialog::Resize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6432c0 sub_6432C0 -> NG (attempt 1)
+[ledger] 0x698f90 GameSetup::WriteINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ace60 HashTable::CleanupAndResize -> NG (attempt 1)
+[ledger] 0x5e8bf0 Player::FindByName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d9c0 FactoryClass::RemoveFromArrays -> NG (attempt 1)
+[ledger] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5588e0 sub_5588E0 -> NG (attempt 1)
+[ledger] 0x5f77f0 ObjectTypeClass::UnloadPipsSHP -> NG (attempt 1)
+[ledger] 0x5add10 ObjectClass::Map_Delete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x792be0 ShowUIMessage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x455a80 BuildingClass::UpdateTerrainEffect -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "frame_sched": 3,
+  "regalloc": 2,
+  "codegen_shape": 1,
+  "width_mismatch": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p69\batch_report.json

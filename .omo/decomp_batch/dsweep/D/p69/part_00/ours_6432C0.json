@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_6432C0@@YIHPAXD@Z",
+ "sym_key": "Unnamed::sub_6432C0",
+ "size": 225,
+ "link_base": 0,
+ "bytes_hex": "83ec2453555633ed578d442418558ada894c241450e8000000008b700c83c60684db741e33c9e8000000008bf885ff74118b0f57ff517c8b1757ff92800000008be88b4c2410e800000000894424148d7c2418bb0f00000033c9668b0d00000000e800000000668b0066890783c7024b75e68d4c24186a0051e8000000003bf58bc68b5424148b4a1c7f028bc53bc17f028bc18b4c24108d5804e8000000008be88d742418bf0f00000033c9668b0d00000000e800000000668b0066890683c6024f75e68d4c24186a0051e8000000008b551c8bc35f2bc25e5dd1e85b83c424c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?FindDefault@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindDefault"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_Str_W@@3GA",
+   "sym_key": "g_Str_W"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAE@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 122,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_Str_W@@3GA",
+   "sym_key": "g_Str_W"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?CharToWideString@@YIPADPAE@Z",
+   "sym_key": "CharToWideString"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  }
+ ]
+}

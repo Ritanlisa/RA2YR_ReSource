@@ -1,0 +1,63 @@
+{
+ "symbol": "?LoadAndVerifyDigest@CCINIClass@@QAEHHDD@Z",
+ "sym_key": "CCINIClass::LoadAndVerifyDigest",
+ "size": 204,
+ "link_base": 0,
+ "bytes_hex": "8b44240c83ec1c53568bf1508b4c242c518bcee8000000008bd8c646400085db0f849c0000008a44242c84c00f849000000033c08d542410a0000000006a1452508bcee80000000085c0750d5eb8020000005b83c41cc20c007e6733c9578a0d000000006a00518bcee8000000000fbe44240c33d28d4c240c8954241051895424188bce8854241cc70000000000e8000000008d7e418d4c240c57e8000000008d4c240cc6464001e800000000b9050000008d74241433d2b802000000f3a75f75028bc35e5b83c41cc20c00",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?LoadFile@INIClass@@QAEHHD@Z",
+   "sym_key": "INIClass::LoadFile"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Digest@@3EA",
+   "sym_key": "g_INI_Key_Digest"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?GetBase64Data@INIClass@@QAEHHHH@Z",
+   "sym_key": "INIClass::GetBase64Data"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Digest@@3EA",
+   "sym_key": "g_INI_Key_Digest"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?vt_SHAPipe@@3PAXA",
+   "sym_key": "vt_SHAPipe"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?WriteToString@INIClass@@QAEHH@Z",
+   "sym_key": "INIClass::WriteToString"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?ComputeThunk@SHA1@@QAEHPAX@Z",
+   "sym_key": "SHA1::ComputeThunk"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  }
+ ]
+}

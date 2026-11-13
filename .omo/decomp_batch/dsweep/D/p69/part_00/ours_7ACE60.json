@@ -1,0 +1,33 @@
+{
+ "symbol": "?CleanupAndResize@HashTable@@QAEIXZ",
+ "sym_key": "HashTable::CleanupAndResize",
+ "size": 268,
+ "link_base": 0,
+ "bytes_hex": "5153558be933db56578b450885c076358b45008b349885f674188bfe8b760857e80000000057e80000000083c40885f675e88b4d0043c74499fc000000008b45083bd872cb8b45308b75083bf0c74504000000000f86ac0000008a4d1484c90f85a10000003bf00f868b0000008a4d0c8b5d008bc6d1e8fec98945088d148500000000884d0c52e8000000008b4d088bf8c1e1028bd133c0c1e902897d0083c404f3ab8bca83e10385f6f3aa7e418bfb897424108b3785f6742756ff55188a4d0cba01000000d3e28b4d004a23c28d04818b0889308b4608894e0885c08bf075d98b44241083c704488944241075c553e80000000083c4048b45308b75083bf00f8754ffffff5f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
