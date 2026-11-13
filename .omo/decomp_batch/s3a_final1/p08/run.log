@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c9c70 FactoryClass::DemandProduction -> FactoryClass
+[conv] 0x4cbc40 ObjectClass::WalkPathfindingLine -> ObjectClass
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4ce840 DropPod::ProcessLanding -> DropPod
+[conv] 0x4d0980 FoggedObjectClass::InitBuildingFog -> FoggedObjectClass
+[conv] 0x4d0c40 FoggedObjectClass::InitTerrainFog -> FoggedObjectClass
+[conv] 0x4d0ef0 FoggedObjectClass::Constructor -> FoggedObjectClass
+[conv] 0x4d1370 FoggedObjectClass::InitDrawRecord -> FoggedObjectClass
+[conv] 0x4d1890 TacticalClass::DrawBuildings -> TacticalClass
+[conv] 0x4d3590 FootClass::Destruct -> FootClass
+[conv] 0x4d5350 FootClass::ProcessDeploy -> FootClass
+[conv] 0x4d7d50 TechnoClass::SpawnInfantry -> TechnoClass
+[conv] 0x4d8560 FootClass::GetCoords -> FootClass
+[conv] 0x4d85d0 FootClass::UpdateAI -> FootClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> BuildingClass
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FactoryClass             rc=2
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] DropPod                  rc=2
+[era] FoggedObjectClass        rc=2
+[era] TacticalClass            rc=2
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] InfantryClass            rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4c9c70 FactoryClass::DemandProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cbc40 ObjectClass::WalkPathfindingLine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce840 DropPod::ProcessLanding -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4d0980 FoggedObjectClass::InitBuildingFog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d0c40 FoggedObjectClass::InitTerrainFog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d0ef0 FoggedObjectClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d1370 FoggedObjectClass::InitDrawRecord -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d1890 TacticalClass::DrawBuildings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d3590 FootClass::Destruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d5350 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d7d50 TechnoClass::SpawnInfantry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4d8560 FootClass::GetCoords -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d85d0 FootClass::UpdateAI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 20)
+[ledger] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p08\batch_report.json
