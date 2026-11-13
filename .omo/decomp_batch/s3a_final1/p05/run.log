@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47c620 CellClass::IsPassable -> CellClass
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> JumpjetLocomotionClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x487190 Crate::FindPlacement -> Crate
+[conv] 0x488520 CheckListClass::OnClick -> CheckListClass
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+[conv] 0x48b1f0 CommBufferClass::sub_48B1F0 -> CommBufferClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x48e740 ConvertClass::Construct -> ConvertClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CDFileClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Crate                    rc=2
+[era] CheckListClass           rc=2
+[era] ColorListClass           rc=2
+[era] CommBufferClass          rc=2
+[era] ConnectionClass          rc=2
+[era] ConvertClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 5)
+[ledger] 0x47c620 CellClass::IsPassable -> COMPILE_FAIL (attempt 5)
+[ledger] 0x47ca80 CellClass::DetermineTileType -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 6)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> COMPILE_FAIL (attempt 3)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 6)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 8)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 6)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x488520 CheckListClass::OnClick -> COMPILE_FAIL (attempt 5)
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48b1f0 CommBufferClass::sub_48B1F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 18)
+[ledger] 0x48e740 ConvertClass::Construct -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p05\batch_report.json
