@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetRadLevel@RadSiteClass@@QAEHH@Z",
+ "sym_key": "RadSiteClass::SetRadLevel",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b54240489514ca1400200008b80041800000fafc289416c894170c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_65FB60@ObjectClass@@QAEXXZ",
+ "sym_key": "ObjectClass::sub_65FB60",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "51b9f8010000e800000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?RevealCell@FogOfWar@@QAEXPAX@Z",
+   "sym_key": "FogOfWar::RevealCell"
+  }
+ ]
+}
