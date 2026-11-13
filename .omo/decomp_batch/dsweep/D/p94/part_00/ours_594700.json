@@ -1,0 +1,171 @@
+{
+ "symbol": "?Cleanup@MapClass@@QAIHHH@Z",
+ "sym_key": "MapClass::Cleanup",
+ "size": 372,
+ "link_base": 0,
+ "bytes_hex": "83ec08a1000000005383cbff5685c05789542410742aa1000000000fafc085c08bc8761c33c08b150000000083c05049895c02e88b1500000000895c02ec75e6a1000000008d78ff85ff7c608b0d000000008b34b985f674508b0685c0740d8b106a0150ff12c706000000008b0d000000008d44240c50680000000089742414ff51103bc3740b50b900000000e8000000008d4e28c70100000000e80000000056e80000000083c4044f79a0b900000000c7050000000000000000e800000000b900000000e8000000008bf085f60f8495000000550fbf4e240fbf46268d7e248b15000000008d1c083bda765e8be92be83bea73568be82be93bea734e3b1d0000000077460faf050000000003c18d1480a100000000c1e204837c0238ff752b8b464c85c075248b5c24146a005357b900000000e8000000008b4c241c3bc1750a518bd38bcee800000000b900000000e8000000008bf085f60f8576ffffff5d5f5e5b83c408c204008bc65f5e5b83c408c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_TileData@@3IA",
+   "sym_key": "g_RandomMap_TileData"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_TerrainState@@3IA",
+   "sym_key": "g_RandomMap_TerrainState"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_BuildObject@@3IA",
+   "sym_key": "g_RandomMap_BuildObject"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_BuildObject@@3IA",
+   "sym_key": "g_RandomMap_BuildObject"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_RandomMap_BuildObject@@3IA",
+   "sym_key": "g_RandomMap_BuildObject"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?EraseAt@Vector4@@QAEDH@Z",
+   "sym_key": "Vector4::EraseAt"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_Cell@@3PAXA",
+   "sym_key": "vt_VectorClass_Cell"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Cleanup@Buffer@@QAEXXZ",
+   "sym_key": "Buffer::Cleanup"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_MapTileArrayEnd@@3IA",
+   "sym_key": "g_MapTileArrayEnd"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 264,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
+   "sym_key": "MapClass::GetTileIndex"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?FloodFillRandomMapTerrain@@YIXHHH@Z",
+   "sym_key": "FloodFillRandomMapTerrain"
+  },
+  {
+   "off": 332,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

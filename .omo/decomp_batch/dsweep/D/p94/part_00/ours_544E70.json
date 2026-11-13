@@ -1,0 +1,135 @@
+{
+ "symbol": "?CreateSurfaceClassPrimary@@YIHHHH@Z",
+ "sym_key": "Unnamed::CreateSurfaceClassPrimary",
+ "size": 327,
+ "link_base": 0,
+ "bytes_hex": "a100000000535556578bda85c08bf975095f5e5d33c05bc2040081ffe803000075213bdf751d397c24147517a10000000085c0740ea1000000005f5e5d8b005bc204008d4c2414e8000000008b35000000008b6c2414b9010000003bf1762f8b150000000083c2048b0239b898010000751439989c010000750c39a8a00100000f84ba0000004183c2043bce72da8d041fbe3500000003c53dd00700007d05be1b00000068b4010000e80000000083c40485c074318b1500000000a10000000033c95685d28b5424186a000f95c151525357506800000000b900000000e8000000008bf0eb0233f6a1000000008b0d000000003bc8722f8a0d0000000084c9750485c075398b0d0000000085c9762f03c86a00518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d000000008934828bc65f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?QuantizeColorRGB@@YIPAHPAX@Z",
+   "sym_key": "QuantizeColorRGB"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?FileSystem_TEMPERAT_PAL@@3EA",
+   "sym_key": "FileSystem_TEMPERAT_PAL"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?unk_ABBED0@@3EA",
+   "sym_key": "unk_ABBED0"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?Constructor@LightConvertClass@@QAEPAV1@PAX0HHHHHH@Z",
+   "sym_key": "LightConvertClass::Constructor"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6A0@@3IA",
+   "sym_key": "DataGlobal_87F6A0"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6A5@@3EA",
+   "sym_key": "DataGlobal_87F6A5"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F6AC@@3IA",
+   "sym_key": "DataGlobal_87F6AC"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F698@@3IA",
+   "sym_key": "DataGlobal_87F698"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F698@@3IA",
+   "sym_key": "DataGlobal_87F698"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  }
+ ]
+}

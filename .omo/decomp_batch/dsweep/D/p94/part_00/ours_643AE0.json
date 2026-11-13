@@ -1,0 +1,111 @@
+{
+ "symbol": "?Render@LoadScreen@@QAEDHHHN@Z",
+ "sym_key": "LoadScreen::Render",
+ "size": 419,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec248b44240453568b750833db24008a5e60570bd884db74798b5e5485db74728b466485c07476683906000050e8000000008d5424208bc8e8000000008a46618b4c24208b542424894c241084c0895424147e0cdd4608dc7648dd5c2418eb0e8b46488b4e4c89442418894c241c8b15000000008b44241c8b4c24186a00528b54242c508b44242c5152508bcee8000000008ac35f5e5b8be55dc214008b4d148b551883c8ff894c24103bc88954241475148bc23bc1750e8b4e688b566c894c2410895424148a46618b7e503c017566a10000000085c0741485ff7507a1000000008b386a00e800000000eb2f85ff7505bf000000008b8680000000ba0100000085c0740a33c98a0d00000000eb0833c98a0d00000000e80000000033c98d5424108a4e70516a0052575056e80000000083c418eb3533ff84c07e2f57e80000000033c98d5424108a4e70518b0d0000000057528b14b9525056e8000000000fbe466183c418473bf87cd18b4c24108b5424108b442410518b4d10528b550c50a1000000006a0057515250e80000000083c4205f5e5b8be55dc21400",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?ScreenDialogToClient@@YIHHPAX@Z",
+   "sym_key": "ScreenDialogToClient"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DSurface_Alternate@@3HA",
+   "sym_key": "DSurface_Alternate"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?RenderProgressBackground@LoadScreen@@QAEXNNPAXH@Z",
+   "sym_key": "LoadScreen::RenderProgressBackground"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Render_Render_642BB0@@YGHI@Z",
+   "sym_key": "Render_Render_642BB0"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_SovietLoad@@3EA",
+   "sym_key": "g_INI_Key_SovietLoad"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_AlliedLoad@@3EA",
+   "sym_key": "g_INI_Key_AlliedLoad"
+  },
+  {
+   "off": 287,
+   "type": "REL32",
+   "sym": "?FindBuildingAnimByName@@YIHPAXH@Z",
+   "sym_key": "FindBuildingAnimByName"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?RenderBuildingProductionButton@@YAHHHHPAXHH@Z",
+   "sym_key": "RenderBuildingProductionButton"
+  },
+  {
+   "off": 325,
+   "type": "REL32",
+   "sym": "?Render_Render_642BB0@@YGHI@Z",
+   "sym_key": "Render_Render_642BB0"
+  },
+  {
+   "off": 341,
+   "type": "DIR32",
+   "sym": "?Game_PlayerInfoArray@@3IA",
+   "sym_key": "Game_PlayerInfoArray"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "?RenderBuildingProductionButton@@YAHHHHPAXHH@Z",
+   "sym_key": "RenderBuildingProductionButton"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 403,
+   "type": "REL32",
+   "sym": "?Frame__Present@@YAHHHHHHHHPAX@Z",
+   "sym_key": "Frame__Present"
+  }
+ ]
+}

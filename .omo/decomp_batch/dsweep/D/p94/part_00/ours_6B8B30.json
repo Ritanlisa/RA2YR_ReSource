@@ -1,0 +1,243 @@
+{
+ "symbol": "?RevealMapForHouse@ScenarioClass@@QAEDPAD@Z",
+ "sym_key": "ScenarioClass::RevealMapForHouse",
+ "size": 396,
+ "link_base": 0,
+ "bytes_hex": "568bf18b150000000033c98b068a0d00000000c1e8062401578b7c240c5051528bcfe8000000008b068b0d000000008b1500000000c1e80724015051528bcfe8000000008b068b1500000000c1e80e33c924018a0d000000005051528bcfe8000000008b068b0d000000008b1500000000c1e80f24015051528bcfe8000000008b068b0d000000008b1500000000c1f80824015051528bcfe8000000008b068b0d000000008b1500000000c1e80924015051528bcfe8000000008b068b0d000000008b1500000000c1e80a24015051528bcfe8000000008b068b0d00000000c1e80b2401508b150000000051528bcfe8000000008b068b1500000000c1e80c33c924018a0d000000005051528bcfe8000000008b068b0d000000008b1500000000c1e80524015051528bcfe8000000008b068b0d000000008b1500000000c1e81124015051528bcfe8000000008b068b0d000000008b1500000000c1f81024015051528bcfe8000000008b068b0d000000008b1500000000c1e81224015051528bcfe8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_TiberiumGrows@@3EA",
+   "sym_key": "g_INI_Key_TiberiumGrows"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?aTiberiumspread@@3HA",
+   "sym_key": "aTiberiumspread"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_TiberiumExplosive@@3EA",
+   "sym_key": "g_INI_Key_TiberiumExplosive"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?aDestroyablebri@@3HA",
+   "sym_key": "aDestroyablebri"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?aMcvdeploy@@3HA",
+   "sym_key": "aMcvdeploy"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?aInitialveteran@@3HA",
+   "sym_key": "aInitialveteran"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?aFixedalliance@@3HA",
+   "sym_key": "aFixedalliance"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?aHarvesterimmun@@3HA",
+   "sym_key": "aHarvesterimmun"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_FogOfWar@@3EA",
+   "sym_key": "g_INI_Key_FogOfWar"
+  },
+  {
+   "off": 271,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?aInert@@3HA",
+   "sym_key": "aInert"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 308,
+   "type": "DIR32",
+   "sym": "?aIonstorms@@3HA",
+   "sym_key": "aIonstorms"
+  },
+  {
+   "off": 314,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 337,
+   "type": "DIR32",
+   "sym": "?aMeteorites@@3HA",
+   "sym_key": "aMeteorites"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 358,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?aVisceroids@@3HA",
+   "sym_key": "aVisceroids"
+  },
+  {
+   "off": 372,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8401C8@@3PAXA",
+   "sym_key": "DataGlobal_8401C8"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?SetBool@INIClass@@QAEDPAX0D@Z",
+   "sym_key": "INIClass::SetBool"
+  }
+ ]
+}

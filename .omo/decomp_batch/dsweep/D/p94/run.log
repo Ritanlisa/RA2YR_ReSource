@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p94\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ada30 ScenarioClass::GetScenarioData -> ScenarioClass
+[conv] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> ParticleSystemClass
+[conv] 0x47a3f0 CDROM::DeviceIoControl -> CDROM
+[conv] 0x4b0ad0 JumpjetLocomotion::MoveTo -> JumpjetLocomotion
+[conv] 0x6a01a0 WalkLocomotion::MoveTo -> WalkLocomotion
+[conv] 0x799d30 ObjectClass::RunWOLMainLoop_Init -> ObjectClass
+[conv] 0x798de0 ObjectClass::RunWOLMainLoop_Read -> ObjectClass
+[conv] 0x5e3850 WOLobby_Play -> WOLobby
+[conv] 0x643ae0 LoadScreen::Render -> LoadScreen
+[conv] 0x594700 MapClass::Cleanup -> MapClass
+[conv] 0x765410 ObjectClass::Team_Start_765410 -> ObjectClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+[conv] 0x6e11c0 TActionClass::RevealTileTypeAtWaypoint -> TActionClass
+[conv] 0x62ff20 ParticleSystemClass::Write -> ParticleSystemClass
+[conv] 0x6b8b30 ScenarioClass::RevealMapForHouse -> ScenarioClass
+[conv] 0x4333f0 BinkMovieClass::RenderFrameToSurface -> BinkMovieClass
+[conv] 0x46d8b0 ObjectClass::sub_46D8B0 -> ObjectClass
+[conv] 0x544e70 CreateSurfaceClassPrimary -> _addr_54
+[conv] 0x4116a0 sub_4116A0 -> _addr_41
+[conv] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> SidebarClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] ParticleSystemClass      rc=2
+[era] CDROM                    rc=2
+[era] JumpjetLocomotion        rc=2
+[era] WalkLocomotion           rc=2
+[era] ObjectClass              rc=2
+[era] WOLobby                  rc=0
+[era] LoadScreen               rc=0
+[era] MapClass                 rc=0
+[era] TActionClass             rc=0
+[era] BinkMovieClass           rc=2
+[era] _addr_54                 rc=0
+[era] _addr_41                 rc=0
+[era] SidebarClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x6b8b30   MISMATCH         ScenarioClass::RevealMapForHouse
+[diff] 0x765410   MISMATCH         ObjectClass::Team_Start_765410
+[diff] 0x5e3850   MISMATCH         WOLobby_Play
+[diff] 0x643ae0   MISMATCH         LoadScreen::Render
+[diff] 0x594700   MISMATCH         MapClass::Cleanup
+[diff] 0x6e11c0   MISMATCH         TActionClass::RevealTileTypeAtWaypoint
+[diff] 0x544e70   MISMATCH         CreateSurfaceClassPrimary
+[diff] 0x4116a0   MISMATCH         sub_4116A0
+[ledger] 0x4ada30 ScenarioClass::GetScenarioData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47a3f0 CDROM::DeviceIoControl -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b0ad0 JumpjetLocomotion::MoveTo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a01a0 WalkLocomotion::MoveTo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x799d30 ObjectClass::RunWOLMainLoop_Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x798de0 ObjectClass::RunWOLMainLoop_Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e3850 WOLobby_Play -> NG (attempt 1)
+[ledger] 0x643ae0 LoadScreen::Render -> NG (attempt 1)
+[ledger] 0x594700 MapClass::Cleanup -> NG (attempt 1)
+[ledger] 0x765410 ObjectClass::Team_Start_765410 -> NG (attempt 1)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e11c0 TActionClass::RevealTileTypeAtWaypoint -> NG (attempt 1)
+[ledger] 0x62ff20 ParticleSystemClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8b30 ScenarioClass::RevealMapForHouse -> NG (attempt 1)
+[ledger] 0x4333f0 BinkMovieClass::RenderFrameToSurface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46d8b0 ObjectClass::sub_46D8B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x544e70 CreateSurfaceClassPrimary -> NG (attempt 1)
+[ledger] 0x4116a0 sub_4116A0 -> NG (attempt 1)
+[ledger] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "codegen_shape": 1,
+  "branch_order": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p94\batch_report.json
