@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DC378",
+ "name": "__mbschr",
+ "size": 151,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DC378",
+ "bytes_hex": "558bec833d5c88b700005356750fff750cff7508e89febfeff5959eb766a19e85916ffff8b750859660fb61e6685db744a0fb6c3f6806189b70004741a8a46014684c0741d0fb7cb0fb6c0c1e1080bc8394d0c7419eb080fb7c339450c741c46ebc66a19e87516ffff5933c0eb256a19e86916ffff598d46ffeb186a19e85c16ffff8b450c590fb7cb2bc1f7d81bc0f7d023c65e5b5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

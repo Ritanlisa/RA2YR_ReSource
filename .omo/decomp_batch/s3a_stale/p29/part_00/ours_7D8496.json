@@ -1,0 +1,15 @@
+{
+ "symbol": "?unknown_libname_78@@YAXNN@Z",
+ "sym_key": "Unnamed::unknown_libname_78",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "518b4424088b4c240c8b542410894424008b442414894c2404895424088bca8b54240081e1ff00000081e2ff000000515289442414e80000000083c40cc3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?unknown_libname_76@@YAHHH@Z",
+   "sym_key": "unknown_libname_76"
+  }
+ ]
+}

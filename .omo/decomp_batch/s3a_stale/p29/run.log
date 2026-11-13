@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d8496 unknown_libname_78 -> _addr_7D
+[conv] 0x7d8d3b __set_exp -> _addr_7D
+[conv] 0x7d8da4 __set_bexp -> _addr_7D
+[conv] 0x7d92cd __finite -> _addr_7D
+[conv] 0x7d92e1 __isnan -> _addr_7D
+[conv] 0x7d9fac sub_7D9FAC -> _addr_7D
+[conv] 0x7daf28 ___getlocaleinfo -> _addr_7D
+[conv] 0x7db207 ObjectClass::__I10_OUTPUT -> ObjectClass
+[conv] 0x7db68b __raise_exc -> _addr_7D
+[conv] 0x7dbc68 __clrfp -> _addr_7D
+[conv] 0x7dc378 __mbschr -> _addr_7D
+[conv] 0x7dc468 ObjectClass::__setmode_lk -> ObjectClass
+[conv] 0x7dcee0 GetCurrentThread::_0 -> GetCurrentThread
+[conv] 0x7dcf22 GetCurrentProcessId::_0 -> GetCurrentProcessId
+[conv] 0x7dcf3a GetEnvironmentStrings -> _addr_7D
+[conv] 0x7df280 Object_Calc_7DF280 -> Object_Calc
+[conv] 0x7df3c2 Object_Calc_7DF3C2 -> Object_Calc
+[conv] 0x7df500 Object_Calc_7DF500 -> Object_Calc
+[conv] 0x7df640 Object_Calc_7DF640 -> Object_Calc
+[conv] 0x7df7c0 Audio_Process_7DF7C0 -> Audio_Process
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+[era] Object_Calc              rc=2
+[era] Audio_Process            rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d8496   MISMATCH         unknown_libname_78
+[diff] 0x7db68b   MISMATCH         __raise_exc
+[diff] 0x7dc378   MISMATCH         __mbschr
+[ledger] 0x7d8496 unknown_libname_78 -> NG (attempt 5)
+[ledger] 0x7d8d3b __set_exp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d8da4 __set_bexp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d92cd __finite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d92e1 __isnan -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d9fac sub_7D9FAC -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7daf28 ___getlocaleinfo -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7db207 ObjectClass::__I10_OUTPUT -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7db68b __raise_exc -> NG (attempt 4)
+[ledger] 0x7dbc68 __clrfp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc378 __mbschr -> NG (attempt 4)
+[ledger] 0x7dc468 ObjectClass::__setmode_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcee0 GetCurrentThread::_0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7dcf22 GetCurrentProcessId::_0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7dcf3a GetEnvironmentStrings -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df280 Object_Calc_7DF280 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df3c2 Object_Calc_7DF3C2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df500 Object_Calc_7DF500 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df640 Object_Calc_7DF640 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df7c0 Audio_Process_7DF7C0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p29\batch_report.json
