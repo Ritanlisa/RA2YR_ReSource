@@ -1,0 +1,39 @@
+{
+ "symbol": "?QueryInterface@StaticButtonClass@@QAEPAID@Z",
+ "sym_key": "StaticButtonClass::QueryInterface",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4630c7060000000085c0740950e80000000083c4048d8e90000000e8000000008bcee800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_StaticButtonClass@@3PAXA",
+   "sym_key": "vt_StaticButtonClass"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Dtor@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Dtor"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

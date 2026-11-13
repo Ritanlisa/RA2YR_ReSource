@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B55F0",
+ "name": "DropListClass::QueryInterface",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B55F0",
+ "bytes_hex": "568bf18d8eb0000000c706cc7f7e00e8fc1f0a008d4e50e8b4871e008bcee89dda0000f644240801740956e81d35310083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

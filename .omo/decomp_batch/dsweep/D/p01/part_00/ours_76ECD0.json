@@ -1,0 +1,39 @@
+{
+ "symbol": "?Team_Start_76ECD0@@YIXHH@Z",
+ "sym_key": "Unnamed::Team_Start_76ECD0",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "81ecb004000056578bf98bf28b0d00000000e8000000008d442408565750e8000000008d4c24145651e8000000008d54241c52e80000000083c4185f5e81c4b0040000c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?ConstructWDTSelection@@YAHHHH@Z",
+   "sym_key": "ConstructWDTSelection"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Team_Start_76E750@@YAPAIHH@Z",
+   "sym_key": "Team_Start_76E750"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?SelectionInitializeWOL@@YAXH@Z",
+   "sym_key": "SelectionInitializeWOL"
+  }
+ ]
+}

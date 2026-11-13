@@ -1,0 +1,39 @@
+{
+ "symbol": "?QueryInterface@DropListClass@@QAEPAID@Z",
+ "sym_key": "DropListClass::QueryInterface",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "568bf18d8eb0000000c70600000000e8000000008d4e50e8000000008bcee800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?vt_DropListClass@@3PAXA",
+   "sym_key": "vt_DropListClass"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Destruct@ListClass@@QAEHXZ",
+   "sym_key": "ListClass::Destruct"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Destructor@ShapeButtonClass@@QAEHXZ",
+   "sym_key": "ShapeButtonClass::Destructor"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Constructor@DropListClass@@QAEHXZ",
+   "sym_key": "DropListClass::Constructor"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

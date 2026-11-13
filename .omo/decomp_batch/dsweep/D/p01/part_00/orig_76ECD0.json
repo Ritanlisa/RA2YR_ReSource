@@ -1,0 +1,11 @@
+{
+ "addr": "0x76ECD0",
+ "name": "Team_Start_76ECD0",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76ECD0",
+ "bytes_hex": "81ecb004000056578bf98bf28b0d70f78700e8390adeff8d4c24085657e89ed5ffff8d4c240856e854faffff8d4c2408e8dbd9ffff5f5e81c4b0040000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

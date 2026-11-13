@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_4C4FC0@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_4C4FC0",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "568bf18b0650e8000000008b4e0485c9741f8b1151ff522c50e8000000008b76048b4e048d460450ff511050e8000000005ec20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

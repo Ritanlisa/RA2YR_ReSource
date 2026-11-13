@@ -1,0 +1,63 @@
+{
+ "symbol": "?Map_Process@@YIDPAX@Z",
+ "sym_key": "Unnamed::Map_Process",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "a0000000005684c08bf1753ae8000000008bcee8000000008bcee8000000008b0d00000000ba00200000e8000000008b0d00000000ba00200000e800000000c60500000000015ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF35C@@3EA",
+   "sym_key": "DataGlobal_ABF35C"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?CounterInc@AudioFrame@@QAEHXZ",
+   "sym_key": "AudioFrame::CounterInc"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?IncrementPriority@AudioQueue@@QAEPAHXZ",
+   "sym_key": "AudioQueue::IncrementPriority"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ReleaseBuffers@AudioQueue@@QAEHXZ",
+   "sym_key": "AudioQueue::ReleaseBuffers"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_MixerState@@3IA",
+   "sym_key": "g_MixerState"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_MixerChannel_Ambient@@3IA",
+   "sym_key": "g_MixerChannel_Ambient"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?RequestBufferMixer@@YIHPAXH@Z",
+   "sym_key": "RequestBufferMixer"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF35C@@3EA",
+   "sym_key": "DataGlobal_ABF35C"
+  }
+ ]
+}

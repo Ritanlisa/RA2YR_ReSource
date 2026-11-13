@@ -1,0 +1,39 @@
+{
+ "symbol": "?Audio_Create_76BE90@rc_ptr@@QAIPAVrc_ptr_base@@PAH@Z",
+ "sym_key": "rc_ptr::Audio_Create_76BE90",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "56578bfa8bf16a18e80000000083c40485c0740e5750e80000000083c4088bf8eb0233ff8bcee8000000008bcec7060000000057e8000000008bc65f5ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Audio_Create_76BF00@@YAPADPAX0@Z",
+   "sym_key": "Audio_Create_76BF00"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_CampaignProperties@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_CampaignProperties"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

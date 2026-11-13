@@ -1,0 +1,15 @@
+{
+ "symbol": "?Team_Start_7AF500@FactionSelectDialogControl_WorldDominationTour@@QAEXXZ",
+ "sym_key": "FactionSelectDialogControl_WorldDominationTour::Team_Start_7AF500",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4610c7060000000085c074078b086a0150ff118b461485c074078b106a0150ff128b461885c074078b086a0150ff118bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?InitVtable@OwnerDrawControl@@QAEXXZ",
+   "sym_key": "OwnerDrawControl::InitVtable"
+  }
+ ]
+}

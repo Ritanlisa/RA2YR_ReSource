@@ -1,0 +1,39 @@
+{
+ "symbol": "?Audio_Set@rc_ptr@@QAIPAVrc_ptr_base@@PAH@Z",
+ "sym_key": "rc_ptr::Audio_Set",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "56578bfa8bf16a4ce80000000083c40485c0740c578bc8e8000000008bf8eb0233ff8bcee8000000008bcec7060000000057e8000000008bc65f5ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?LoadWDT@File@@QAEPADPAX@Z",
+   "sym_key": "File::LoadWDT"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTState@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTState"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

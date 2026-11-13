@@ -1,0 +1,33 @@
+{
+ "symbol": "?ReleaseWaveAndString@ObjectTypeClass@@QAEXXZ",
+ "sym_key": "ObjectTypeClass::ReleaseWaveAndString",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b3e85ff74108bcfe80000000057e80000000083c4048b7e04c7060000000085ff74108bcfe80000000057e80000000083c404c74604000000005f5ec3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?Destroy@WaveClass@@QAEXXZ",
+   "sym_key": "WaveClass::Destroy"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Release@String@@QAEXXZ",
+   "sym_key": "String::Release"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

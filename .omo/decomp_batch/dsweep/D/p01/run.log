@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x65d150 RawFileClass::Close -> RawFileClass
+[conv] 0x4b55f0 DropListClass::QueryInterface -> DropListClass
+[conv] 0x7af500 FactionSelectDialogControl@WorldDominationTour::Team_Start_7AF500 -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x751040 sub_751040 -> _addr_75
+[conv] 0x557f00 ListClass::OnDblClick -> ListClass
+[conv] 0x7cb302 sub_7CB302 -> _addr_7C
+[conv] 0x76aba0 rc_ptr::Audio_Set -> rc_ptr
+[conv] 0x76be90 rc_ptr::Audio_Create_76BE90 -> rc_ptr
+[conv] 0x7ca7d8 _fprintf -> _addr_7C
+[conv] 0x46cfc0 CampaignClass::Stat -> CampaignClass
+[conv] 0x401580 ObjectClass::sub_401580 -> ObjectClass
+[conv] 0x709020 TechnoClass::GetSecondaryTargetOrFallback -> TechnoClass
+[conv] 0x709060 TechnoClass::GetTertiaryTargetOrFallback -> TechnoClass
+[conv] 0x6c6880 StaticButtonClass::QueryInterface -> StaticButtonClass
+[conv] 0x76ecd0 Team_Start_76ECD0 -> Team_Start
+[conv] 0x4b4ee0 DropListClass::OnClick -> DropListClass
+[conv] 0x77b030 PlayerProfile::QueryInterface -> PlayerProfile
+[conv] 0x5bf580 Map_Process -> Map
+[conv] 0x4c4fc0 ObjectClass::sub_4C4FC0 -> ObjectClass
+[conv] 0x5f61a0 ObjectTypeClass::ReleaseWaveAndString -> ObjectTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RawFileClass             rc=2
+[era] DropListClass            rc=0
+[era] FactionSelectDialogControl_WorldDominationTour rc=0
+[era] _addr_75                 rc=0
+[era] ListClass                rc=0
+[era] _addr_7C                 rc=2
+[era] rc_ptr                   rc=0
+[era] CampaignClass            rc=2
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] StaticButtonClass        rc=0
+[era] Team_Start               rc=0
+[era] PlayerProfile            rc=2
+[era] Map                      rc=0
+[era] ObjectTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x4b55f0   MISMATCH         DropListClass::QueryInterface
+[diff] 0x4b4ee0   MISMATCH         DropListClass::OnClick
+[diff] 0x7af500   MISMATCH         FactionSelectDialogControl@WorldDominationTour::Team_Start_7AF500
+[diff] 0x751040   MISMATCH         sub_751040
+[diff] 0x557f00   MISMATCH         ListClass::OnDblClick
+[diff] 0x7cb302   MISMATCH         sub_7CB302
+[diff] 0x76aba0   MATCH            rc_ptr::Audio_Set
+[diff] 0x76be90   MISMATCH         rc_ptr::Audio_Create_76BE90
+[diff] 0x401580   MISMATCH         ObjectClass::sub_401580
+[diff] 0x4c4fc0   MISMATCH         ObjectClass::sub_4C4FC0
+[diff] 0x709020   MISMATCH         TechnoClass::GetSecondaryTargetOrFallback
+[diff] 0x709060   MISMATCH         TechnoClass::GetTertiaryTargetOrFallback
+[diff] 0x6c6880   MISMATCH         StaticButtonClass::QueryInterface
+[diff] 0x76ecd0   MISMATCH         Team_Start_76ECD0
+[diff] 0x5bf580   MISMATCH         Map_Process
+[diff] 0x5f61a0   MATCH            ObjectTypeClass::ReleaseWaveAndString
+[ledger] 0x65d150 RawFileClass::Close -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b55f0 DropListClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x7af500 FactionSelectDialogControl@WorldDominationTour::Team_Start_7AF500 -> NG (attempt 1)
+[ledger] 0x751040 sub_751040 -> NG (attempt 1)
+[ledger] 0x557f00 ListClass::OnDblClick -> NG (attempt 1)
+[ledger] 0x7cb302 sub_7CB302 -> NG (attempt 1)
+[ledger] 0x76aba0 rc_ptr::Audio_Set -> OK (attempt 1)
+[ledger] 0x76be90 rc_ptr::Audio_Create_76BE90 -> NG (attempt 1)
+[ledger] 0x7ca7d8 _fprintf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46cfc0 CampaignClass::Stat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x401580 ObjectClass::sub_401580 -> NG (attempt 1)
+[ledger] 0x709020 TechnoClass::GetSecondaryTargetOrFallback -> NG (attempt 1)
+[ledger] 0x709060 TechnoClass::GetTertiaryTargetOrFallback -> NG (attempt 1)
+[ledger] 0x6c6880 StaticButtonClass::QueryInterface -> NG (attempt 1)
+[ledger] 0x76ecd0 Team_Start_76ECD0 -> NG (attempt 1)
+[ledger] 0x4b4ee0 DropListClass::OnClick -> NG (attempt 1)
+[ledger] 0x77b030 PlayerProfile::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bf580 Map_Process -> NG (attempt 1)
+[ledger] 0x4c4fc0 ObjectClass::sub_4C4FC0 -> NG (attempt 1)
+[ledger] 0x5f61a0 ObjectTypeClass::ReleaseWaveAndString -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 14,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 6,
+  "branch_polarity": 3,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 12.5,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p01\batch_report.json

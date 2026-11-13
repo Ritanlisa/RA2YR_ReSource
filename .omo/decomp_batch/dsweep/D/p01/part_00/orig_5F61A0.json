@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F61A0",
+ "name": "ObjectTypeClass::ReleaseWaveAndString",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F61A0",
+ "bytes_hex": "568bf1578b3e85ff74108bcfe85ffb150057e886291d0083c4048b7e04c7060000000085ff74108bcfe8d273fcff57e869291d0083c404c74604000000005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

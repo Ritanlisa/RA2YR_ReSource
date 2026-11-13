@@ -1,0 +1,11 @@
+{
+ "addr": "0x76ABA0",
+ "name": "Audio_Set",
+ "size": 60,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76ABA0",
+ "bytes_hex": "56578bfa8bf16a4ce86ae2050083c40485c0740c578bc8e8d40000008bf8eb0233ff8bcee86728efff8bcec706ec707f0057e8a928efff8bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

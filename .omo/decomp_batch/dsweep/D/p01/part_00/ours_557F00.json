@@ -1,0 +1,15 @@
+{
+ "symbol": "?OnDblClick@ListClass@@QAEHXZ",
+ "sym_key": "ListClass::OnDblClick",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "568bf18a465484c074218d861801000050ff963c0100008d8eb800000051ff96dc0000008d565852ff567c8bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Destroy@LinkClass@@QAEHXZ",
+   "sym_key": "LinkClass::Destroy"
+  }
+ ]
+}

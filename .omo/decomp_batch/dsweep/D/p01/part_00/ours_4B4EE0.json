@@ -1,0 +1,15 @@
+{
+ "symbol": "?OnClick@DropListClass@@QAEHXZ",
+ "sym_key": "DropListClass::OnClick",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf18a464884c074118d86b000000050ff96d4000000c64648008d8eb000000051ff96d00000008d565052ff56708bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Reset@Hash@@QAEHXZ",
+   "sym_key": "Hash::Reset"
+  }
+ ]
+}
