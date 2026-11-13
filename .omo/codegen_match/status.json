@@ -12954,14 +12954,14 @@
   "this_as_id": false
  },
  "0x4228e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AnimClass::Destruct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AnimClass::Destruct",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -13002,15 +13002,15 @@
   "this_as_id": false
  },
  "0x422be0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "AnimClass::UpdateZAdjust",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AnimClass::UpdateZAdjust",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x422c70": {
@@ -13026,14 +13026,14 @@
   "this_as_id": false
  },
  "0x422ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AnimClass::Render",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AnimClass::Render",
-  "rule_violations": 23,
+  "rule_violations": 14,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -13073,7 +13073,7 @@
   "this_as_id": false
  },
  "0x423930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13085,19 +13085,19 @@
   "this_as_id": false
  },
  "0x423ac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AnimClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoClass::CreateUnit",
-  "rule_violations": 50,
+  "rule_violations": 48,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x424b50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13145,7 +13145,7 @@
   "this_as_id": false
  },
  "0x424ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -13169,19 +13169,19 @@
   "this_as_id": false
  },
  "0x425150": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "AnimClass::ClearTargetReferences",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AnimClass::ClearTargetReferences",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4251f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_4251F0",
@@ -13240,7 +13240,7 @@
   "this_as_id": false
  },
  "0x425410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13312,7 +13312,7 @@
   "this_as_id": false
  },
  "0x425670": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -13681,7 +13681,7 @@
   "status": "OK"
  },
  "0x426590": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -13786,7 +13786,7 @@
   "this_as_id": false
  },
  "0x4267f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -13846,7 +13846,7 @@
   "this_as_id": false
  },
  "0x426a90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13917,7 +13917,7 @@
   "this_as_id": false
  },
  "0x427270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -14107,7 +14107,7 @@
   "this_as_id": false
  },
  "0x427530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -14190,7 +14190,7 @@
   "this_as_id": false
  },
  "0x428970": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -14214,7 +14214,7 @@
   "this_as_id": false
  },
  "0x4289d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -14855,7 +14855,7 @@
   "this_as_id": false
  },
  "0x42a460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -15025,7 +15025,7 @@
   "this_as_id": false
  },
  "0x42be20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WalkLineOfSight",

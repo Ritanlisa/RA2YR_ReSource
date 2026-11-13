@@ -1,0 +1,21 @@
+{
+ "symbol": "?UpdateZAdjust@AnimClass@@QAEPAHPAH@Z",
+ "sym_key": "AnimClass::UpdateZAdjust",
+ "size": 115,
+ "link_base": 0,
+ "bytes_hex": "51578bf98b87cc00000085c074435356e8000000008bf08b87cc0000008d54240c8b085250ff51488b48048b7e048b188b560803cf8b78088b065e03d88b44241003fa89188978085b8948045f59c204008bcfe8000000008b4c240c8b105f89118b50048951048b40088941088bc159c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetCoords@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetCoords"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetCoords@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetCoords"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x4228e0 AnimClass::Destruct -> AnimClass
+[conv] 0x422be0 AnimClass::UpdateZAdjust -> AnimClass
+[conv] 0x422ca0 AnimClass::Render -> AnimClass
+[conv] 0x423930 AnimClass::UpdateProjectileTrajectory -> AnimClass
+[conv] 0x423ac0 AnimClass::CreateUnit -> AnimClass
+[conv] 0x424b50 BuildingClass::AimTurret -> BuildingClass
+[conv] 0x424ce0 TechnoClass::ProductionCompletionCallback -> TechnoClass
+[conv] 0x425150 AnimClass::ClearTargetReferences -> AnimClass
+[conv] 0x4251f0 sub_4251F0 -> _addr_42
+[conv] 0x425410 AnimClass::ProcessPower -> AnimClass
+[conv] 0x425670 TechnoClass::ConstructionPositionTracker -> TechnoClass
+[conv] 0x426590 AnimClass::MissionStubReturnZero3 -> AnimClass
+[conv] 0x4267f0 UnitClass::sub_4267F0 -> UnitClass
+[conv] 0x426a90 AnimFile::ddtor -> AnimFile
+[conv] 0x427270 Animate::ScalarDtor -> Animate
+[conv] 0x427530 AnimTypeClass::Construct -> AnimTypeClass
+[conv] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> AnimTypeClass
+[conv] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> AnimTypeClass
+[conv] 0x42a460 BuildingClass::AddRectToDrawList -> BuildingClass
+[conv] 0x42be20 WalkLineOfSight -> _addr_42
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AnimClass                rc=2
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_42                 rc=2
+[era] UnitClass                rc=2
+[era] AnimFile                 rc=2
+[era] Animate                  rc=2
+[era] AnimTypeClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x422be0   MISMATCH         AnimClass::UpdateZAdjust
+[ledger] 0x4228e0 AnimClass::Destruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x422be0 AnimClass::UpdateZAdjust -> NG (attempt 2)
+[ledger] 0x422ca0 AnimClass::Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x423930 AnimClass::UpdateProjectileTrajectory -> COMPILE_FAIL (attempt 2)
+[ledger] 0x423ac0 AnimClass::CreateUnit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x424b50 BuildingClass::AimTurret -> COMPILE_FAIL (attempt 2)
+[ledger] 0x424ce0 TechnoClass::ProductionCompletionCallback -> COMPILE_FAIL (attempt 2)
+[ledger] 0x425150 AnimClass::ClearTargetReferences -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4251f0 sub_4251F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x425410 AnimClass::ProcessPower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x425670 TechnoClass::ConstructionPositionTracker -> COMPILE_FAIL (attempt 2)
+[ledger] 0x426590 AnimClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4267f0 UnitClass::sub_4267F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x426a90 AnimFile::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x427270 Animate::ScalarDtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x427530 AnimTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42a460 BuildingClass::AddRectToDrawList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42be20 WalkLineOfSight -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p04\batch_report.json

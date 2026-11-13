@@ -1,0 +1,11 @@
+{
+ "addr": "0x422BE0",
+ "name": "AnimClass::UpdateZAdjust",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x422BE0",
+ "bytes_hex": "83ec1856578bf98b87cc00000085c074488d44240850e8a5391d008b8fcc0000008bf08d4424148b1150ff52488b088b168b780403ca8b56048b760803d78b78088b44242403f78bf8890f8957048977085f5e83c418c204008d4c2414518bcfe85b391d008bd08b4424248bc85f8b3289318b72048971045e8b520889510883c418c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
