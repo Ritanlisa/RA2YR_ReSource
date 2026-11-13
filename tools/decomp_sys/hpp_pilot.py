@@ -181,6 +181,7 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("#include <stdio.h>    // sprintf/sscanf/printf (R5)")
     lines.append("#include <math.h>     // fabs/sqrt/pow (CW2: bodies call them)")
     lines.append("#include <stdarg.h>   // va_list (R5)")
+    lines.append("#include <time.h>    // time() (C2065)")
     lines.append("")
     lines.append("class %s" % cls_ident(cls))
     lines.append("{")

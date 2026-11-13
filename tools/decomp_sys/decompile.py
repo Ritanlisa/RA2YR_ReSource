@@ -1021,9 +1021,14 @@ def run_function(addr, reg, views, idx):
     # CW5-7b: `LOCAL.Class_field_0xNN` -- name-encoded owner+offset on a
     # local/param base (the ClassView never records these members)
     passes.pass_local_field_members(ctx)
+    # Stage 3a: `BASE->Owner_field_0xNN` arrow form of the same encoding
+    passes.pass_field_arrow_members(ctx)
     # CW5-5: `g_X_Instance[i].M` on a void*-typed global -> offset-true
     # element access (stride from the member's shallowest declaring class)
     passes.pass_global_array_members(ctx)
+    # Stage 3a: `G->M` on a void*-declared global whose element class owns
+    # M -> re-type the global `<ElemClass> *` (same 4-byte load).
+    passes.pass_global_arrow_members(ctx)
     # CW5-6: scalar-typed members used as pointers (`this->Owner->X`) and
     # `EXPR->vfptr` -> offset-true / vtable-pointer spellings
     passes.pass_member_chain_reads(ctx)
@@ -1041,11 +1046,19 @@ def run_function(addr, reg, views, idx):
     # audit-rem ②: `(T*)&this->m` member-address puns -> offset-true
     # char-array view (checker R3 contract; codegen-neutral `lea`)
     passes.pass_member_addr_view(ctx)
+    # Stage 3a: `void *` member/local byte arithmetic (C2036 family) --
+    # `(char *)V +- E` is byte-identical on x86-32; only provably void*
+    # operands fire, so compiling bodies cannot change.
+    passes.pass_voidptr_arith(ctx)
     # R6: bare receiver arithmetic re-spelled AFTER member restoration
     # (this_ptr_math/member_shapes consume the `*(T *)(this + K)` deref
     # shapes first; only value-level residuals reach this pass)
     passes.pass_receiver_arith(ctx)
     passes.pass_callees(ctx)
+    # Stage 3a: a `void`-declared callee whose result the body casts to a
+    # value type IS value-returning (C2440 `void -> int`); retype the
+    # callee declaration (same EAX value).
+    passes.pass_void_call_retype(ctx)
     passes.pass_fncast_harmonize(ctx)
     passes.pass_unknown_symbols(ctx)
     # CW5-10: declare F8 residual identifiers BEFORE the call-site typing
@@ -1074,6 +1087,14 @@ def run_function(addr, reg, views, idx):
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
     passes.pass_era_normalize(ctx)
+    # Stage 3a: array-view member assignment LHS (`this->m004 = RHS`) is
+    # C2440 (`char * -> char [1]`); store through the scalar sibling view
+    # the hpp already emits at that offset (same 4-byte storage).
+    passes.pass_array_lhs_store(ctx)
+    # Stage 3a: object-typed global/member cast to a pointer
+    # (`(T *)(g_Obj)` where g_Obj is declared `T`) -> `(T *)(&g_Obj)`
+    # (the binary's `offset`/`lea` address; C2440 value->ptr).
+    passes.pass_object_addr_cast(ctx)
     # R6: C2440 completion -- LAST text authority.  Runs after
     # era_normalize (final re-render) because pass_ret_view_align flips
     # pointer-typed views to `unsigned int` AFTER earlier passes; a
@@ -1099,6 +1120,11 @@ def run_function(addr, reg, views, idx):
     # vftable addresses, __usercall tokens, undeclared IDA data names
     # (asc_/loc_/dword_...), GUID constants and bare g_* globals.
     passes.pass_residual_idents(ctx)
+    # Stage 3a (late): the assignment harmonizers retype `int` locals that
+    # hold `operator new` results into `void *` AFTER the early void* pass
+    # ran, so `v3 + 8` (byte store) survived as C2036.  Re-run on the final
+    # text (idempotent: `(char *)`-guarded sites are skipped).
+    passes.pass_voidptr_arith(ctx)
     # CW7/W2: scalar-typed globals/members used with `[i]` -> site-level
     # address truth (unit-level declarations stay untouched); pointer-typed
     # index expressions cast to unsigned int.  Runs after the FINAL residual

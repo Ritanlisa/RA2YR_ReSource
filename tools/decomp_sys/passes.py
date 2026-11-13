@@ -99,8 +99,8 @@ def _vt_global_for(cls):
     return None
 
 
-_VT_CLS = (r"[A-Za-z_]\w*(?:\s*<[^<>]*>)?"
-           r"(?:::[A-Za-z_]\w*(?:\s*<[^<>]*>)?)*")
+_VT_CLS = (r"[A-Za-z_]\w*(?:\s*<[^<>]*(?:<[^<>]*>[^<>]*)*>)?"
+           r"(?:::[A-Za-z_]\w*(?:\s*<[^<>]*(?:<[^<>]*>[^<>]*)*>)?)*")
 # assignment-context install: `LHS = &Class::`vftable'`
 _VT_INSTALL = re.compile(
     r"(?P<lhs>[^\n;=]+?)\s*=\s*&\s*(?P<cls>%s)::\s*`vftable'" % _VT_CLS)
@@ -366,6 +366,21 @@ def pass_param_rename(ctx):
             idx = k - base
             if 0 <= idx < n_par:
                 return pnames[idx]
+            if n_par <= idx < n_par + 8:
+                # Stage 3a: the body READS aN beyond the derived arity --
+                # the registry/proto param list dropped a trailing stack
+                # argument (proto `char*(char*, int, unsigned __int16)` vs
+                # registry 2 params: a3 -> C2065).  The body reference is
+                # the arity proof; extend the signature with int slots.
+                while len(ctx.sig["params"]) <= idx:
+                    j = len(ctx.sig["params"])
+                    ctx.sig["params"].append(("int", "p%d" % j))
+                    ctx.sig["param_names"].append("p%d" % j)
+                ctx.sites.append(Site(
+                    "param_arity", "a%d -> p%d" % (k, idx),
+                    "body-proven arity: extended signature to %d explicit "
+                    "param(s) (C2065 undeclared aN)" % (idx + 1), True))
+                return "p%d" % idx
             # R7: an unnamed thiscall/fastcall receiver renders as `a1`
             # in the raw body (`*(_DWORD *)(a1 + 68)` == this+0x44) --
             # map it to `this`, never leave it dangling (C2065).  A
@@ -1306,10 +1321,26 @@ def pass_scalar_subscript(ctx):
         if elem not in WIDTH_OF:
             continue
         pat = re.compile(_SCALAR_SUB_G % re.escape(gname))
-        new = pat.sub(lambda m: "((%s *)(&(%s)))[%s]"
-                      % (elem, gname, m.group(1)), text)
+
+        def gsub(m):
+            # Stage 3a: a LOCAL ARRAY DECLARATION whose name collides with a
+            # registry global (`char Buffer[512];`) is not a subscript --
+            # rewriting it produced `char ((unsigned char *)(&(Buffer)))[512]`
+            # (C2109, 318 ledger rows).  Type prefix + `;` suffix = decl.
+            nonlocal n
+            ls = text.rfind("\n", 0, m.start()) + 1
+            prefix = text[ls:m.start()]
+            if re.match(
+                    r"^\s*(?:const\s+|unsigned\s+|signed\s+)*"
+                    r"(?:char|short|int|long|float|double|void|bool|wchar_t|"
+                    r"_BYTE|_WORD|_DWORD|_QWORD|[A-Z]\w*)\s*\**\s*$",
+                    prefix) and re.match(r"^\s*;", text[m.end():]):
+                return m.group(0)
+            n += 1
+            return "((%s *)(&(%s)))[%s]" % (elem, gname, m.group(1))
+
+        new = pat.sub(gsub, text)
         if new != text:
-            n += len(pat.findall(text))
             text = new
             ctx.sites.append(Site(
                 "scalar_subscript", gname,
@@ -1430,6 +1461,44 @@ def pass_scalar_subscript(ctx):
         ctx.lines = text.split("\n")
 
 
+# ---------------------------------------------------------------- void call ret
+#
+# Stage 3a: the registry/pseudo callee signature says `void` for a method
+# whose result the body casts to a value type
+# (`result = (unsigned int)(((AudioQueue *)(G))->GetNext());`).  C++ cannot
+# cast `void` to a value (C2440 `void -> int`), but the call-site cast IS
+# the return truth: retype the callee declaration to `int` (same EAX value
+# the binary leaves; ignored-result callers are unaffected).
+
+_VALUE_CASTS = ("unsigned int", "int", "unsigned long", "long",
+                "unsigned short", "short", "unsigned char", "char",
+                "_DWORD", "_WORD", "_BYTE")
+
+
+def pass_void_call_retype(ctx):
+    text = "\n".join(ctx.lines)
+    n = 0
+    for _owner, csigs in (getattr(ctx, "used_callees", None) or {}).items():
+        for cs in csigs:
+            if (cs.get("ret") or "void") not in ("void", ""):
+                continue
+            meth = cs.get("method")
+            if not meth:
+                continue
+            pat = re.compile(
+                r"\(\s*(?:%s)\s*\)\s*\(\s*[^;]*?(?:->|\.)\s*%s\s*\("
+                % ("|".join(re.escape(t) for t in _VALUE_CASTS),
+                   re.escape(meth)))
+            if pat.search(text):
+                cs["ret"] = "int"
+                n += 1
+    if n:
+        ctx.sites.append(Site(
+            "void_call_ret", "%d callee(s)" % n,
+            "void-returning callee used under a value cast -> ret int "
+            "(C2440 void->value)", True))
+
+
 # ------------------------------------------- CW7: comparison sites
 #
 # CW6 prep W5 (live 46 C2446 + the C2440 sites whose first error shifted to
@@ -1440,9 +1509,9 @@ def pass_scalar_subscript(ctx):
 # (`void **` vs `const void **`).
 
 _CMP_SIMPLE = re.compile(
-    r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)\s*"
+    r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)(?![\w\[])\s*"
     r"(?P<op>==|!=|<=|>=|<|>)\s*"
-    r"(?P<b>(?:this->)?[A-Za-z_]\w*)(?![\w(])")
+    r"(?P<b>(?:this->)?[A-Za-z_]\w*)(?![\w(\[])")
 _CMP_CASTSUB = re.compile(
     r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)\s*"
     r"(?P<op>==|!=|<=|>=|<|>)\s*"
@@ -5250,6 +5319,234 @@ def pass_assign_harmonize(ctx):
         ctx.lines = out
 
 
+# ---------------------------------------------------------------- void* arith
+#
+# Stage 3a (2026-11-13): C2036 `'void *' : unknown size` is the largest CF
+# family.  Two generator shapes feed it:
+#   * the vector/dynamic-vector shells declare an unknown-pointee member as
+#     `void * m004[1]` (element view); the body then does IDA's byte
+#     arithmetic on the loaded pointer value
+#     (`*(unsigned int *)(this->m004[0] + 4 * i - 4)`), 282 ledger rows;
+#   * the synthesized vtable slot is a SCALAR `void * vfptr` while the body
+#     keeps IDA's `this->vfptr[0]` (the field itself, not a dereference);
+#   * `void *` locals/params/globals with `+ N` byte offsets.
+# C forbids arithmetic/indexing on void*; `(char *)V + E` is byte-identical
+# on x86-32 (both are `lea`/`add` with the same immediate) and keeps the
+# value semantics IDA printed.  Only provably-void*-typed operands are
+# touched, so no currently-compiling body can change.
+
+def _void_ty(ty):
+    t = re.sub(r"\s+", " ", str(ty or "")).strip()
+    return re.sub(r"\s*\*+\s*",
+                  lambda m: " " + m.group(0).replace(" ", ""), t)
+
+
+def _match_paren_fwd(text, i):
+    """text[i] == '(' -> index just past the matching ')' (or -1)."""
+    if i >= len(text) or text[i] != "(":
+        return -1
+    depth = 0
+    n = len(text)
+    while i < n:
+        c = text[i]
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        elif c == '"':
+            i += 1
+            while i < n and text[i] != '"':
+                if text[i] == "\\":
+                    i += 1
+                i += 1
+        elif c == "'":
+            i += 1
+            while i < n and text[i] != "'":
+                if text[i] == "\\":
+                    i += 1
+                i += 1
+        i += 1
+    return -1
+
+
+_CHAR_CAST_TAIL = re.compile(
+    r"\(\s*(?:const\s+)?(?:unsigned\s+)?char\s*\*+\s*\)\s*$")
+
+
+def _voidptr_preceded_ok(text, s):
+    """True when a `(char *)`/`&` guard already applies to this operand."""
+    j = s
+    while j > 0 and text[j - 1] in " \t\r\n":
+        j -= 1
+    if j == 0:
+        return True
+    if text[j - 1] == "&":
+        return False            # &V is void** -- arithmetic is legal
+    if text[j - 1] == ")":
+        # walk back to the matching '(' -- a char* cast means already fixed
+        depth = 0
+        k = j - 1
+        while k >= 0:
+            if text[k] == ")":
+                depth += 1
+            elif text[k] == "(":
+                depth -= 1
+                if depth == 0:
+                    break
+            k -= 1
+        if k >= 0 and _CHAR_CAST_TAIL.search(text[k:j]):
+            return False
+    return True
+
+
+_VOID_DEREF = re.compile(r"\*\s*\(\s*void\s*\*\s*\*\s*\)\s*")
+
+
+def pass_voidptr_arith(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    void_arrays = {n for n, e in env.arrays.items() if _void_ty(e) == "void *"}
+    void_scalars = {n for n, t in env.members.items()
+                    if _void_ty(t) == "void *" and n not in env.arrays}
+    void_names = {n for n, t in env.map.items() if _void_ty(t) == "void *"}
+    void_names -= void_arrays | void_scalars
+
+    # 1. scalar vfptr-style member: `this->M[0]` is IDA's array-of-unknown
+    #    spelling of the field value itself; the shell declares `void * M`.
+    if void_scalars:
+        pat = re.compile(
+            r"this\s*->\s*(%s)\s*\[\s*0\s*\]"
+            % "|".join(sorted((re.escape(n) for n in void_scalars),
+                              key=len, reverse=True)))
+
+        def _drop(m):
+            ctx.sites.append(Site(
+                "voidptr_index", m.group(0),
+                "scalar void* member indexed as [0] -> field read "
+                "(C2036)", True))
+            return "this->" + m.group(1)
+
+        text = pat.sub(_drop, text)
+
+    # foreign member: `base->MEM` where base is a typed pointer local/param
+    # and MEM is a void*-typed member of that class (registry evidence)
+    _foreign_void = {}
+
+    def _is_foreign_void(base, mem):
+        key = (base, mem)
+        if key in _foreign_void:
+            return _foreign_void[key]
+        ok = False
+        ty = env.of(base)
+        if ty and _void_ty(ty).endswith("*"):
+            cls = re.sub(r"\s*\*+$", "", _void_ty(ty)).strip()
+            try:
+                off, rec, _src = ctx.reg.member_offset_by_ida_name(cls, mem)
+            except Exception:
+                off, rec = None, None
+            if off is not None and rec:
+                ok = _void_ty(spell_type(rec.get("type"))) == "void *"
+        _foreign_void[key] = ok
+        return ok
+
+    def operand_end(i):
+        while i < len(text) and text[i] in " \t\r\n":
+            i += 1
+        if i < len(text) and text[i] == "(":
+            return _match_paren_fwd(text, i)
+        mm = re.match(r"[A-Za-z_]\w*(?:\s*->\s*\w+|\s*\.\s*\w+"
+                      r"|\s*\[[^\[\]]*\])*", text[i:])
+        return i + (mm.end() if mm else 0)
+
+    def wrapped_span(s, e):
+        while True:
+            b = s
+            while b > 0 and text[b - 1] in " \t\r\n":
+                b -= 1
+            if b == 0 or text[b - 1] != "(":
+                return s, e
+            close = _match_paren_fwd(text, b - 1)
+            c = e
+            while c < len(text) and text[c] in " \t\r\n":
+                c += 1
+            if c < len(text) and text[c] == ")" and close == c + 1:
+                s, e = b - 1, close
+                continue
+            return s, e
+
+    def arith_follows(e):
+        j = e
+        while j < len(text) and text[j] in " \t\r\n":
+            j += 1
+        if j >= len(text) or text[j] not in "+-":
+            return False
+        k = j + 1
+        while k < len(text) and text[k] in " \t\r\n":
+            k += 1
+        return not (k < len(text) and text[k] in "=+-<>")
+
+    cand = re.compile(
+        r"this\s*->\s*(?P<mem>[A-Za-z_]\w*)\s*\[[^\[\]]*\]"
+        r"|this\s*->\s*(?P<mem2>[A-Za-z_]\w*)"
+        r"|(?<![\w.>])(?P<base>[A-Za-z_]\w*)\s*->\s*(?P<fmem>[A-Za-z_]\w*)"
+        r"|\*\s*\(\s*void\s*\*\s*\*\s*\)"
+        r"|(?<![\w.>])(?P<name>[A-Za-z_]\w*)(?![\w])")
+
+    out, pos, i, nwrap = [], 0, 0, 0
+    while True:
+        m = cand.search(text, i)
+        if not m:
+            break
+        s, e = m.start(), m.end()
+        if m.group("mem") is not None:
+            if m.group("mem") not in void_arrays:
+                i = e
+                continue
+        elif m.group("mem2") is not None:
+            if m.group("mem2") not in void_scalars:
+                i = e
+                continue
+        elif m.group("fmem") is not None:
+            if not _is_foreign_void(m.group("base"), m.group("fmem")):
+                i = e
+                continue
+        elif m.group("name") is not None:
+            nm = m.group("name")
+            if nm not in void_names:
+                i = e
+                continue
+            j = s
+            while j > 0 and text[j - 1] in " \t\r\n":
+                j -= 1
+            if (j >= 2 and text[j - 2:j] == "->") or \
+                    (j >= 1 and text[j - 1] == "."):
+                i = e
+                continue
+        else:
+            e = operand_end(m.end())
+            if e <= s:
+                i = m.end()
+                continue
+        s, e = wrapped_span(s, e)
+        if not arith_follows(e) or not _voidptr_preceded_ok(text, s):
+            i = m.end() if m.group("name") is not None else e
+            continue
+        out.append(text[pos:s])
+        out.append("(char *)" + text[s:e])
+        pos = e
+        nwrap += 1
+        i = e
+    if nwrap:
+        out.append(text[pos:])
+        ctx.lines = "".join(out).split("\n")
+        ctx.sites.append(Site(
+            "voidptr_arith", "%d sites" % nwrap,
+            "void* byte arithmetic re-spelled `(char *)V +- E` (C2036)",
+            True))
+
+
 # ---------------------------------------------------------------- receiver arith
 #
 # R6: the registry re-types the receiver as the CLASS, but IDA's pseudocode
@@ -5303,6 +5600,190 @@ def pass_receiver_arith(ctx):
             "this-elem scale %d applied -- class-typed this would scale "
             "by sizeof(cls) and mis-compile)" % scale, True))
         ctx.lines = out.split("\n")
+
+
+# ---------------------------------------------------------------- array lhs
+#
+# Stage 3a (2026-11-13): the dword-store restoration (`*(_DWORD *)&this->m_1[3]
+# = ...`) names the member through the ARRAY view at that offset
+# (`char m004[1]` / union sibling `int m004_dword`).  `this->m004 = RHS` is
+# ill-formed (array LHS, C2440 `char * -> char [1]`).  Re-spell the store to
+# the scalar sibling view when the hpp emitted one (same offset, same 4-byte
+# storage); otherwise store through an int pointer at the array's address.
+# Only `=` LHS sites are touched -- bare array READS decay to the address and
+# stay (they are what the cast forms consume).
+
+def pass_array_lhs_store(ctx):
+    cls = ctx.sig["cls"]
+    arrs = (ctx.views.arrays.get(cls) or {})
+    if not arrs:
+        return
+    scal = ctx.views.scalars.get(cls) or {}
+    text = "\n".join(ctx.lines)
+    n = 0
+
+    for off, arr in sorted(arrs.items()):
+        name = arr.get("name")
+        if not name:
+            continue
+        sib = None
+        for _role, v in (scal.get(off) or {}).items():
+            if v.get("name") and v.get("name") != name:
+                sib = v["name"]
+                break
+        pat = re.compile(r"(this\s*->\s*)%s(\s*=(?!=))" % re.escape(name))
+
+        def repl(m, _sib=sib, _name=name):
+            nonlocal n
+            n += 1
+            if _sib:
+                return m.group(1) + _sib + m.group(2)
+            return "*(int *)" + m.group(1) + _name + m.group(2)
+
+        text = pat.sub(repl, text)
+
+    if n:
+        ctx.lines = text.split("\n")
+        ctx.sites.append(Site(
+            "array_lhs", "%d sites" % n,
+            "array-view member assignment -> scalar sibling / int store "
+            "(C2440 array LHS)", True))
+
+
+# ---------------------------------------------------------------- object addr
+#
+# Stage 3a (2026-11-13): IDA passes the ADDRESS of a global/member object
+# where the export typed the symbol as the object itself
+# (`mov ecx, offset unk_87E810; call AudioQueue::GetNext` renders as
+# `((AudioQueue *)(DataGlobal_87E810))->GetNext()`, hpp declares
+# `extern AudioQueue DataGlobal_87E810;`).  Casting an object to a pointer is
+# C2440; `(T *)(&obj)` is the exact address the binary uses (`lea`/`offset`).
+# Only provably object-typed operands fire, so compiling bodies cannot change.
+
+_OBJ_CAST_PAREN = re.compile(
+    r"\(\s*(?P<ty>(?:const\s+)?[A-Za-z_]\w*)\s*\*\s*\)\s*"
+    r"\(\s*(?P<name>[A-Za-z_]\w*)\s*\)")
+_OBJ_CAST_BARE = re.compile(
+    r"\(\s*(?P<ty>(?:const\s+)?[A-Za-z_]\w*)\s*\*\s*\)\s*"
+    r"(?P<name>[A-Za-z_]\w*)\b(?!\s*[\[(\.])")
+
+
+def pass_object_addr_cast(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        ty = m.group("ty")
+        name = m.group("name")
+        dty = env.of(name)
+        if dty is None:
+            dty = env.member(name)
+        if not dty:
+            return m.group(0)
+        dty = _void_ty(dty)
+        if dty.endswith("*") or dty in ("void", ""):
+            return m.group(0)
+        if dty in _INT_FAMILY or dty in ("float", "double"):
+            return m.group(0)
+        if dty not in (ty, "class " + ty, "struct " + ty) and ty != "void":
+            return m.group(0)
+        n += 1
+        return "(%s *)(&%s)" % (ty, name)
+
+    text2 = _OBJ_CAST_PAREN.sub(repl, text)
+    text2 = _OBJ_CAST_BARE.sub(repl, text2)
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.sites.append(Site(
+            "object_addr", "%d sites" % n,
+            "object-typed operand cast to pointer -> `(T *)(&obj)` "
+            "(C2440 value->ptr)", True))
+
+
+# ---------------------------------------------------------------- global arrow
+#
+# Stage 3a (2026-11-13): a global the registry left as `void *` (or an int
+# placeholder) is dereferenced with `->M` where M is a known member of the
+# class its address was typed with in IDA (`g_RulesClass_Instance->PoseDir`).
+# The hpp declares the global from used_globals, so re-typing it to
+# `<ElemClass> *` makes every `G->M` legal (and keeps the same 4-byte load).
+# Only fires when the member resolves on the global's own element class --
+# no invented owner.
+
+_GARR_ARROW = re.compile(
+    r"(?<![\w.>])(?P<base>[A-Za-z_]\w*)\s*->\s*(?P<mem>[A-Za-z_]\w*)"
+    r"(?P<arr>\s*\[[^\[\]]*\])?")
+
+
+def pass_global_arrow_members(ctx):
+    globs = getattr(ctx, "used_globals", None) or {}
+    text = "\n".join(ctx.lines)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        base, mem = m.group("base"), m.group("mem")
+        gty = globs.get(base)
+        if not gty or not gty.endswith("*"):
+            return m.group(0)
+        core = _cw5_core(gty)
+        if core and core != "void" and ctx.reg.class_key(core):
+            return m.group(0)              # already class-typed
+        elem = _cw5_elem_class(ctx.reg, base)
+        if not elem:
+            return m.group(0)
+        try:
+            r = _cw5_member_load(ctx.reg, elem, mem)
+        except Exception:                  # noqa: BLE001
+            r = None
+        if not r:
+            return m.group(0)
+        off, ty = int(r[0]), r[1]
+        sp = spell_type(ty) if ty else None
+        n += 1
+        ctx.sites.append(Site(
+            "global_arrow", "%s->%s" % (base, mem),
+            "void*-global member access -> offset-true (char *)base + 0x%X "
+            "(member %s@0x%X)" % (off, elem, off), True))
+        return _cw5_value_read(sp, "(char *)(%s) + 0x%X" % (base, off),
+                               m.group("arr"))
+
+    text2 = _GARR_ARROW.sub(repl, text)
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.note("global_arrow_offset",
+                 "%d global `->member` site(s) re-spelled offset-true" % n)
+
+
+# ---------------------------------------------------------------- field arrow
+#
+# `BASE->Owner_field_0xNN` -- the name encodes owner + byte offset (the
+# ClassView never records these members).  Offset-true dword read/write:
+# `(*(int *)((char *)(BASE) + 0xNN))` (same displacement as the binary).
+
+_FIELD_ARROW = re.compile(
+    r"(?<![\w.>])(?P<base>[A-Za-z_]\w*)\s*->\s*"
+    r"(?P<cls>[A-Za-z_]\w*)_field_(?:0x)?(?P<off>[0-9A-Fa-f]+)\b")
+
+
+def pass_field_arrow_members(ctx):
+    text = "\n".join(ctx.lines)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        n += 1
+        return "(*(int *)((char *)(%s) + 0x%X))" % (
+            m.group("base"), int(m.group("off"), 16))
+
+    text2 = _FIELD_ARROW.sub(repl, text)
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.sites.append(Site(
+            "field_arrow", "%d sites" % n,
+            "BASE->Owner_field_XX -> offset-true dword access", True))
 
 
 # ---------------------------------------------------------------- assign harmonize 2
@@ -5528,6 +6009,8 @@ def _rhs_ptr_head(rhs, env):
                     return "int", elem
                 if elem in ("float", "double"):
                     return "float", elem
+                if _is_ptr_spelling(elem):
+                    return "ptr", elem      # element of a T*[] view
                 return None, None
             return "ptr", elem + " *"
         ty = env.member(name)
@@ -5577,6 +6060,26 @@ def _rhs_ptr_head(rhs, env):
                 return "ptr", cr
             if cr in _INT_FAMILY or cr in ("void",):
                 return "int", cr
+        return None, None
+    # Stage 3a: `ident[IDX]` -- element of a pointer-typed local/global/
+    # member view (`v1[86]` on `void **v1` is `void *`; `occupant[4]` on
+    # `unsigned int *` is int).  The bare-ident branch below rejects the
+    # subscript, so `void * -> int/unsigned int` assignment sites never
+    # fired (C2440).
+    m = re.match(r"^([A-Za-z_]\w*)\s*\[[^\[\]]*\]\s*$", s)
+    if m:
+        ty = env.of(m.group(1))
+        if ty is None:
+            ty = env.member(m.group(1))
+        if ty and _is_ptr_spelling(ty):
+            base = _ptr_base(ty)
+            if base:
+                if base.endswith("*"):
+                    return "ptr", base
+                if base in _INT_FAMILY:
+                    return "int", base
+                if base in ("float", "double"):
+                    return "float", base
         return None, None
     # bare identifier head (with optional callee args / arithmetic tail)
     m = re.match(r"^([A-Za-z_]\w*)\s*(?:\([^()]*\))?\s*(?:[+\-][^=].*)?$",
@@ -5829,6 +6332,40 @@ def pass_assign_harmonize2(ctx):
         return "%s = (%s)(%s);" % (lhs, cast, rhs)
 
     out = _ASSIGN_SITE.sub(wrap_site, text)
+    # Stage 3a: declaration initializers (`const char ** v2 = (char **)...`)
+    # are not assignment statements, so _ASSIGN_SITE never sees them; the
+    # qualifier-direction mismatch (`char ** -> const char **`) is the same
+    # C2440.  Wrap the initializer with the declared pointer spelling.
+    _DECL_INIT_PTR = re.compile(
+        r"(?P<head>\b[A-Za-z_][\w \t]*?\*+[ \t]+(?P<name>[A-Za-z_]\w*)"
+        r"\s*)=\s*(?P<rhs>[^;]+);")
+
+    def decl_wrap(m):
+        head = re.sub(r"\s+", " ", m.group("head")).strip()
+        nm = m.group("name")
+        lty = head[:head.rfind(nm)].strip()
+        rhs = m.group("rhs").strip()
+        if not _is_ptr_spelling(lty):
+            return m.group(0)
+        knd, rsp = _rhs_ptr_head(rhs, env)
+        if knd == "int":
+            # int-family initializer into a pointer slot (4-byte move);
+            # `char *p = (int)v;` is C2440, `(char *)((int)v)` is the
+            # codegen-identical spelling.
+            if rhs.startswith("(%s)" % lty):
+                return m.group(0)
+            changed.append("decl-init-int@%s" % nm)
+            return "%s = (%s)(%s);" % (m.group("head"), lty, rhs)
+        if knd != "ptr" or not rsp:
+            return m.group(0)
+        if _compatible_ptr(_ptr_base(lty), _ptr_base(rsp)):
+            return m.group(0)
+        if rhs.startswith("(%s)" % lty):
+            return m.group(0)
+        changed.append("decl-init@%s" % nm)
+        return "%s = (%s)(%s);" % (m.group("head"), lty, rhs)
+
+    out = _DECL_INIT_PTR.sub(decl_wrap, out)
     if changed:
         ctx.sites.append(Site(
             "assign_harmonize2", "%d sites" % len(changed),

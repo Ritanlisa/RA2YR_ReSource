@@ -237,6 +237,30 @@ typedef struct IDirectDrawPalette_era * LPDIRECTDRAWPALETTE;
 struct IDirectDrawClipper_era;
 typedef struct IDirectDrawClipper_era * LPDIRECTDRAWCLIPPER;
 
+// ---- Stage 3a: residual SDK spellings seen in CF evidence (C2065/C2061)
+typedef unsigned char       _TBYTE;
+#ifndef HWND_MESSAGE
+#define HWND_MESSAGE        ((HWND)-3)
+#endif
+typedef union _LARGE_INTEGER_era {
+    struct { unsigned long LowPart; long HighPart; };
+    __int64 QuadPart;
+} LARGE_INTEGER;
+typedef LARGE_INTEGER *     PLARGE_INTEGER;
+struct tagWNDCLASSA_era {
+    unsigned int  style;
+    long (__stdcall *lpfnWndProc)(void *, unsigned int, unsigned int, long);
+    int           cbClsExtra;
+    int           cbWndExtra;
+    void *        hInstance;
+    void *        hIcon;
+    void *        hCursor;
+    void *        hbrBackground;
+    const char *  lpszMenuName;
+    const char *  lpszClassName;
+};
+typedef struct tagWNDCLASSA_era WNDCLASSA;
+
 // ---- IDA pseudo-register names that leak into bodies (`_EA` etc.)
 typedef unsigned int        _EA;
 typedef unsigned int        _EBX;
