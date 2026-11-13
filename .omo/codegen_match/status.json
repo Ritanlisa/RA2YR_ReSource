@@ -155249,7 +155249,7 @@
   "this_as_id": false
  },
  "0x6ca4a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA4A0",
@@ -155305,7 +155305,7 @@
   "this_as_id": false
  },
  "0x6ca6a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA6A0",
@@ -155670,14 +155670,14 @@
   "this_as_id": false
  },
  "0x6caec0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SuperClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SuperClass::Constructor",
-  "rule_violations": 3,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -157073,14 +157073,14 @@
   "this_as_id": false
  },
  "0x6cfe20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TabClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TabClass::Constructor",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -157157,7 +157157,7 @@
   "this_as_id": false
  },
  "0x6d0680": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157181,7 +157181,7 @@
   "this_as_id": false
  },
  "0x6d0a20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157321,7 +157321,7 @@
   "this_as_id": false
  },
  "0x6d1660": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157763,15 +157763,15 @@
   "this_as_id": false
  },
  "0x6d2540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8d5f8]",
   "name": "Tactical::ScrollViewport",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TacticalClass::ScrollViewport",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d2790": {
@@ -158469,14 +158469,14 @@
   "status": "OK"
  },
  "0x6da380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TacticalClass::IsOccupiedByTechno",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TacticalClass::IsOccupiedByTechno",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -158505,7 +158505,7 @@
   "this_as_id": false
  },
  "0x6da740": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158623,14 +158623,14 @@
   "this_as_id": false
  },
  "0x6dbd20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "Tactical::InitMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Tactical::InitMap",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -159463,7 +159463,7 @@
   "this_as_id": false
  },
  "0x6e1440": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159475,7 +159475,7 @@
   "this_as_id": false
  },
  "0x6e14a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159641,7 +159641,7 @@
   "this_as_id": false
  },
  "0x6e21e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -159933,7 +159933,7 @@
   "this_as_id": false
  },
  "0x6e37f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -159945,7 +159945,7 @@
   "this_as_id": false
  },
  "0x6e38f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -161913,7 +161913,7 @@
   "this_as_id": false
  },
  "0x6e8220": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -161925,7 +161925,7 @@
   "this_as_id": false
  },
  "0x6e8340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -161961,7 +161961,7 @@
   "this_as_id": false
  },
  "0x6e85b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162393,7 +162393,7 @@
   "this_as_id": false
  },
  "0x6eb380": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

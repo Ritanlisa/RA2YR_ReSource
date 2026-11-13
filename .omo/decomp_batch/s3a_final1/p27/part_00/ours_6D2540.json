@@ -1,0 +1,129 @@
+{
+ "symbol": "?ScrollViewport@Tactical@@QAEDXZ",
+ "sym_key": "Tactical::ScrollViewport",
+ "size": 657,
+ "link_base": 0,
+ "bytes_hex": "83ec18a100000000538b5c2410568bf1c644240b008bc833cb81e1ff00000033d9a80274088ac35e5b83c418c38b96a8000000a1540a0000553bd0570f849f010000a1b409000033d23bc20f84450100008b86d00000008b0d000000003bc18dbe3c01000075138b8ed4000000a1000000003bc80f841c0100008b8ed800000089542424894c2420df6c2420dc1d00000000dfe0f6c4400f85f90000008b86dc0000008954242403c8894c2420df6c2420d9c0e8000000008986dc000000dc1d00000000dfe0f6c441750ac786dc0000000000803f8b96dc00000033ed89542420896c2424df6c2420518d4c2424d91c2457e8000000008b088b78048b86dc000000896c241889442414894c241cdf6c2414dc1d00000000dfe0f6c401752489ae3c01000089ae1c01000089aed400000089aecc00000089aed800000089aedc000000894c24148d4c241451e80000000084c0740da1f00900003bc58b44241474048b44241c8bce8986680d00008986780d000089be6c0d000089be7c0d0000e800000000c786d810000001000000c644241301eb048b7c24208b86a40d00008baeb00d000083f8ff7411e8000000002b86a40d00003bc57d062be885ed75218b15000000008b6a50e8000000004089beac0d000089aeb00d00008986a40d0000a1540a00008bc88986a80000008b86780d000033cb81e1ff00000033d98b8e680d00003bc175108b9e6c0d00008b8e7c0d00003bcb746f8a4c241384c975678bbe7c0d00008d5424145289442418e80000000084c07411a1f009000085c075088b4424148bcfeb0c8b86780d00008b8e7c0d0000898e6c0d0000898e7c0d00008bce8986680d00008986780d0000e80000000033c3c786d81000000100000025ff00000033d85f5d8ac35e5b83c418c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_NetworkEventPending@@3HA",
+   "sym_key": "g_NetworkEventPending"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE08@@3IA",
+   "sym_key": "DataGlobal_B0CE08"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CE0C@@3IA",
+   "sym_key": "DataGlobal_B0CE0C"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 243,
+   "type": "REL32",
+   "sym": "?CalcInverseAlpha@TacticalClass@@QAEPAV1@HM@Z",
+   "sym_key": "TacticalClass::CalcInverseAlpha"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 333,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YGDPAX@Z",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 342,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+   "sym_key": "TacticalClass::CalcViewportCells"
+  },
+  {
+   "off": 428,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 450,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 458,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 560,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YGDPAX@Z",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 624,
+   "type": "REL32",
+   "sym": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+   "sym_key": "TacticalClass::CalcViewportCells"
+  }
+ ]
+}

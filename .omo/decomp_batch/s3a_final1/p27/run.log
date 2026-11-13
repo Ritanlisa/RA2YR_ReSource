@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ca4a0 sub_6CA4A0 -> _addr_6C
+[conv] 0x6ca6a0 sub_6CA6A0 -> _addr_6C
+[conv] 0x6caec0 SuperClass::Constructor -> SuperClass
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d0680 TabClass::Seek -> TabClass
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6d2540 Tactical::ScrollViewport -> Tactical
+[conv] 0x6da380 TacticalClass::IsOccupiedByTechno -> TacticalClass
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x6dbd20 Tactical::InitMap -> Tactical
+[conv] 0x6e1440 ObjectClass::Render -> ObjectClass
+[conv] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> ObjectClass
+[conv] 0x6e21e0 TActionClass::executeFollowAction -> TActionClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x6e8220 TaskForceClass::LoadFromINI -> TaskForceClass
+[conv] 0x6e8340 ScriptTypeClass::ReadINI -> ScriptTypeClass
+[conv] 0x6e85b0 ObjectClass::sub_6E85B0 -> ObjectClass
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6C                 rc=2
+[era] SuperClass               rc=2
+[era] TabClass                 rc=2
+[era] ObjectClass              rc=2
+[era] Tactical                 rc=2
+[era] TacticalClass            rc=2
+[era] SuperWeaponClass         rc=2
+[era] TActionClass             rc=2
+[era] TaskForceClass           rc=2
+[era] ScriptTypeClass          rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d2540   MISMATCH         Tactical::ScrollViewport
+[ledger] 0x6ca4a0 sub_6CA4A0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6ca6a0 sub_6CA6A0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6caec0 SuperClass::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d0680 TabClass::Seek -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d2540 Tactical::ScrollViewport -> NG (attempt 2)
+[ledger] 0x6da380 TacticalClass::IsOccupiedByTechno -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6dbd20 Tactical::InitMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e1440 ObjectClass::Render -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e21e0 TActionClass::executeFollowAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e8220 TaskForceClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e8340 ScriptTypeClass::ReadINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e85b0 ObjectClass::sub_6E85B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p27\batch_report.json
