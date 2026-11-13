@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_434B40@@YGHHHHH@Z",
+ "sym_key": "Unnamed::sub_434B40",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f675088b4424145ec2100053578b7c24148bce57e8000000008bce8b5c241c53e800000000a1000000006aff8b4c241c5053518bcee800000000578bce8bd8e8000000008bc35f5b5ec21000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?InitContext@FontRenderer@@QAEHPAX@Z",
+   "sym_key": "FontRenderer::InitContext"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?Int_Set@Field@@QAEHH@Z",
+   "sym_key": "Field::Int_Set"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?yTop@@3IA",
+   "sym_key": "yTop"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?RenderGlyph@FontClass@@QAEHGHHH@Z",
+   "sym_key": "FontClass::RenderGlyph"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?Cleanup@BufferIO@@QAEHH@Z",
+   "sym_key": "BufferIO::Cleanup"
+  }
+ ]
+}

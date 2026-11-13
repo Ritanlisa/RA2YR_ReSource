@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F6E0",
+ "name": "BuildingClass::UpdateThreatBounds",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F6E0",
+ "bytes_hex": "56578b7c240c8bf185ff74408b86080500008b16f7d850ff5238508bcfe86e21d7ff8b068bcec7860805000000000000ff90c00200008b16508bce898608050000ff5238508bcfe84421d7ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b0440 FactionSelectDialogControl_WorldDominationTour::QueryInterface -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x5e9db0 ProcessNetworkLobbyOption -> _addr_5E
+[conv] 0x7c946e __heap_alloc -> _addr_7C
+[conv] 0x4325c0 CCFileClass::Close -> CCFileClass
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+[conv] 0x5f33b0 PumpEventLoop -> _addr_5F
+[conv] 0x42df40 Base64Pipe::ProcessBitmapAndDispatch -> Base64Pipe
+[conv] 0x434b40 sub_434B40 -> _addr_43
+[conv] 0x4c9160 sub_4C9160 -> _addr_4C
+[conv] 0x77d350 ObjectClass::sub_77D350 -> ObjectClass
+[conv] 0x77d3a0 ObjectClass::sub_77D3A0 -> ObjectClass
+[conv] 0x432700 BinkMovie::Stop -> BinkMovie
+[conv] 0x7bae60 XSurface::GetPixel -> XSurface
+[conv] 0x70f6e0 BuildingClass::UpdateThreatBounds -> BuildingClass
+[conv] 0x5c5dd0 FreeForAll::Seek -> FreeForAll
+[conv] 0x529820 INIClass::GetInt -> INIClass
+[conv] 0x76f910 rc_ptr::ArtConfig_Read -> rc_ptr
+[conv] 0x633370 PKStrawClass::applyGameSettings -> PKStrawClass
+[conv] 0x6b5850 SmudgeTypeClass::LoadTypeData -> SmudgeTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FactionSelectDialogControl_WorldDominationTour rc=0
+[era] _addr_5E                 rc=2
+[era] _addr_7C                 rc=0
+[era] CCFileClass              rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_5F                 rc=0
+[era] Base64Pipe               rc=0
+[era] _addr_43                 rc=0
+[era] _addr_4C                 rc=0
+[era] ObjectClass              rc=2
+[era] BinkMovie                rc=0
+[era] XSurface                 rc=2
+[era] BuildingClass            rc=0
+[era] FreeForAll               rc=0
+[era] INIClass                 rc=2
+[era] rc_ptr                   rc=0
+[era] PKStrawClass             rc=0
+[era] SmudgeTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b0440   MISMATCH         FactionSelectDialogControl_WorldDominationTour::QueryInterface
+[diff] 0x7c946e   MISMATCH         __heap_alloc
+[diff] 0x4325c0   MISMATCH         CCFileClass::Close
+[diff] 0x5f33b0   MISMATCH         PumpEventLoop
+[diff] 0x42df40   MISMATCH         Base64Pipe::ProcessBitmapAndDispatch
+[diff] 0x434b40   MISMATCH         sub_434B40
+[diff] 0x4c9160   MISMATCH         sub_4C9160
+[diff] 0x432700   MISMATCH         BinkMovie::Stop
+[diff] 0x70f6e0   MISMATCH         BuildingClass::UpdateThreatBounds
+[diff] 0x5c5dd0   MISMATCH         FreeForAll::Seek
+[diff] 0x76f910   MATCH            rc_ptr::ArtConfig_Read
+[diff] 0x633370   MISMATCH         PKStrawClass::applyGameSettings
+[diff] 0x6b5850   MISMATCH         SmudgeTypeClass::LoadTypeData
+[ledger] 0x7b0440 FactionSelectDialogControl_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x5e9db0 ProcessNetworkLobbyOption -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c946e __heap_alloc -> NG (attempt 1)
+[ledger] 0x4325c0 CCFileClass::Close -> NG (attempt 1)
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f33b0 PumpEventLoop -> NG (attempt 1)
+[ledger] 0x42df40 Base64Pipe::ProcessBitmapAndDispatch -> NG (attempt 1)
+[ledger] 0x434b40 sub_434B40 -> NG (attempt 1)
+[ledger] 0x4c9160 sub_4C9160 -> NG (attempt 1)
+[ledger] 0x77d350 ObjectClass::sub_77D350 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d3a0 ObjectClass::sub_77D3A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x432700 BinkMovie::Stop -> NG (attempt 1)
+[ledger] 0x7bae60 XSurface::GetPixel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f0120 0x5f0120 -> PENDING (attempt 1)
+[ledger] 0x70f6e0 BuildingClass::UpdateThreatBounds -> NG (attempt 1)
+[ledger] 0x5c5dd0 FreeForAll::Seek -> NG (attempt 1)
+[ledger] 0x529820 INIClass::GetInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76f910 rc_ptr::ArtConfig_Read -> OK (attempt 1)
+[ledger] 0x633370 PKStrawClass::applyGameSettings -> NG (attempt 1)
+[ledger] 0x6b5850 SmudgeTypeClass::LoadTypeData -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 6,
+  "NO_PSEUDO": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "extern_reloc": 1,
+  "ret_norm": 1,
+  "branch_order": 2,
+  "codegen_shape": 2,
+  "frame_sched": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p05\batch_report.json

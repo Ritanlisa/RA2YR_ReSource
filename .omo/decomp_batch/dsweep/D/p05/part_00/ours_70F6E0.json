@@ -1,0 +1,21 @@
+{
+ "symbol": "?UpdateThreatBounds@BuildingClass@@QAEXPAH@Z",
+ "sym_key": "BuildingClass::UpdateThreatBounds",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408568bf185db74428b06578bbe08050000f7dfff503857508bcbe8000000008b0656c7860805000000000000ff90c00200008bf88b065689be08050000ff503857508bcbe8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?SetThreatBounds@CellClass@@QAEHHH@Z",
+   "sym_key": "CellClass::SetThreatBounds"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?SetThreatBounds@CellClass@@QAEHHH@Z",
+   "sym_key": "CellClass::SetThreatBounds"
+  }
+ ]
+}

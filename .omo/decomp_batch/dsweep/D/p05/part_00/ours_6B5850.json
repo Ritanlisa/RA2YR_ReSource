@@ -1,0 +1,39 @@
+{
+ "symbol": "?LoadTypeData@SmudgeTypeClass@@QAGHPAD@Z",
+ "sym_key": "SmudgeTypeClass::LoadTypeData",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c07c3085f6741c8d4c240c518bcee800000000b800000000890689460489460889460c8bcee8000000008bcee80000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXPAD@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Construct@ObjectTypeClass@@QAEPAIH@Z",
+   "sym_key": "ObjectTypeClass::Construct"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?vt_SmudgeTypeClass_4@@3PAXA",
+   "sym_key": "vt_SmudgeTypeClass_4"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?LoadAnim@VoxelAnimType@@QAEHXZ",
+   "sym_key": "VoxelAnimType::LoadAnim"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Load2DArt@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Load2DArt"
+  }
+ ]
+}

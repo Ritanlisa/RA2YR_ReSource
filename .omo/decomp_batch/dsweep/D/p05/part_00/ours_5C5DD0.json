@@ -1,0 +1,45 @@
+{
+ "symbol": "?Seek@FreeForAll@@QAEJPAXH@Z",
+ "sym_key": "FreeForAll::Seek",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf18bcfe8000000008b4424108bce50e80000000085c07408578bc8e8000000006aff8bcee80000000085c07408578bc8e8000000006a006a00684e01000057e8000000005f5ec20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Clear@ListBox@@QAEHXZ",
+   "sym_key": "ListBox::Clear"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?readData@StreamWrapper@@QAEHH@Z",
+   "sym_key": "StreamWrapper::readData"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?AddToList@MPCombatTeam@@QAEJPAX@Z",
+   "sym_key": "MPCombatTeam::AddToList"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?readData@StreamWrapper@@QAEHH@Z",
+   "sym_key": "StreamWrapper::readData"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?AddToList@MPCombatTeam@@QAEJPAX@Z",
+   "sym_key": "MPCombatTeam::AddToList"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

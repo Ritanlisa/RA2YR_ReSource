@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_4C9160@@YADXZ",
+ "sym_key": "Unnamed::sub_4C9160",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "83ec64a10000000053508d4c2414e8000000006a008d4c2414e8000000008d4c24048ad8c744241000000000e8000000008d4c2410c744241000000000e8000000008ac35b83c464c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?aExpandDat@@3HA",
+   "sym_key": "aExpandDat"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

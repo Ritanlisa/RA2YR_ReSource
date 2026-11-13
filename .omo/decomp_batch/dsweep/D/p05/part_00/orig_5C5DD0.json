@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C5DD0",
+ "name": "StreamWrapper::Seek",
+ "size": 81,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C5DD0",
+ "bytes_hex": "56578b7c240c8bf18bcfe861da05008b4424108bce50e83508010085c07408578bc8e8192f01006aff8bcee82008010085c07408578bc8e8042f01006a006a00684e01000057ff15a4147e005f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

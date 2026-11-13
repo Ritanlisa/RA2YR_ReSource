@@ -1,0 +1,45 @@
+{
+ "symbol": "?__heap_alloc@@YAPAII@Z",
+ "sym_key": "Unnamed::__heap_alloc",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "a100000000568b742408573bf077226a09e80000000056e8000000006a098bf8e80000000083c40c85ff74058bc75f5ec385f67505be01000000a10000000083c60f83e6f0566a0050e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C584@@3IA",
+   "sym_key": "DataGlobal_87C584"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__sbh_alloc_block@@YAHHZZ",
+   "sym_key": "__sbh_alloc_block"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?HeapAlloc@@YGPAXPAXHH@Z",
+   "sym_key": "HeapAlloc"
+  }
+ ]
+}

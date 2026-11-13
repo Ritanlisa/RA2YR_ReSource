@@ -1,0 +1,11 @@
+{
+ "addr": "0x4325C0",
+ "name": "BufferIOFileClass::Close",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4325C0",
+ "bytes_hex": "568bf18a462984c0743de801f8ffff8a462684c0742b8b465085c074198b068bcec6462900ff5034c6462901c6462600c64625005ec38bcee8a3a62200c6462600c64625005ec3e894a622005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

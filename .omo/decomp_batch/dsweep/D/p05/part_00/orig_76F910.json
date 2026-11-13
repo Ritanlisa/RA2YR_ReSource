@@ -1,0 +1,11 @@
+{
+ "addr": "0x76F910",
+ "name": "ArtConfig_Read",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76F910",
+ "bytes_hex": "56578bfa8bf16a30e8fa94050083c40485c074208b4c24188b542414518b4c2414528b5424145152578bc8e8300000008bf8eb0233ff8bcee8e3daeeff8bcec706c4717f0057e825dbeeff8bc65f5ec21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

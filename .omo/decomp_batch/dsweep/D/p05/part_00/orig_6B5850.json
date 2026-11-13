@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B5850",
+ "name": "SmudgeTypeClass::LoadTypeData",
+ "size": 83,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B5850",
+ "bytes_hex": "8b442408568b7424085056e8c03ef4ff85c07c3b85f674278d4c240c518bcee8ac1af4ffc70628357f00c746040c357f00c7460804357f00c7460cfc347f008bcee87a28f4ff8bcee8d337f4ff33c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

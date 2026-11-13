@@ -1,0 +1,63 @@
+{
+ "symbol": "?PumpEventLoop@@YAHXZ",
+ "sym_key": "Unnamed::PumpEventLoop",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "56e800000000e8000000008b0d00000000e8000000008bf06685f67510a0000000005ef6d81bc02518fcffffc38b0d00000000e8000000006683fe1b7410a0000000005ef6d81bc02518fcffffc3c6050000000001b818fcffff5ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Process@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Process"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_BinkMoviePlayer@@3IA",
+   "sym_key": "g_BinkMoviePlayer"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?g_NetworkTestFlag@@3EA",
+   "sym_key": "g_NetworkTestFlag"
+  }
+ ]
+}

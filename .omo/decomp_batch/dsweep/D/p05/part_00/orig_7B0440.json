@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B0440",
+ "name": "StreamWrapper::QueryInterface",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B0440",
+ "bytes_hex": "568bf18b4e10c7061c797f0085c974068b016a01ff108b4e1485c974068b116a01ff128b4e1885c974068b016a01ff108bcee8b93ce7fff644240801740956e8b986010083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

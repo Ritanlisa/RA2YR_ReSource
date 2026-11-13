@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessBitmapAndDispatch@Base64Pipe@@QAEHXZ",
+ "sym_key": "Base64Pipe::ProcessBitmapAndDispatch",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b561085d274378b460c85c074108b4e148d7e186a0357e800000000eb0e8b7e146a04578d4e18e80000000050578bcee8000000008bf8c74610000000008bcee80000000003c75f5ec3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?DecodeBitmapRGB@@YIHPAXH0H@Z",
+   "sym_key": "DecodeBitmapRGB"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?EncodeBitmapRGB@@YIHPAXH0H@Z",
+   "sym_key": "EncodeBitmapRGB"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?Dispatch@Delegate@@QAEHHH@Z",
+   "sym_key": "Delegate::Dispatch"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?GetRelatedObject@GameClass@@QAEHXZ",
+   "sym_key": "GameClass::GetRelatedObject"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?ArtConfig_Read@rc_ptr@@QAIPAVrc_ptr_base@@PAHPAI0PADPAPBD@Z",
+ "sym_key": "rc_ptr::ArtConfig_Read",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "56578bfa8bf16a30e80000000083c40485c074208b4c24188b542414518b4c2414528b5424145152578bc8e8000000008bf8eb0233ff8bcee8000000008bcec7060000000057e8000000008bc65f5ec21000",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Constructor@WorldDominationTour__Territory@@QAEPADPAX0000@Z",
+   "sym_key": "WorldDominationTour__Territory::Constructor"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WorldDominationTour_Territory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WorldDominationTour_Territory"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}

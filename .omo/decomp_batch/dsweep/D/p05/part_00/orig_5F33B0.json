@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F33B0",
+ "name": "PumpEventLoop",
+ "size": 79,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F33B0",
+ "bytes_hex": "56e8ca9ce9ffe89519feff8b0d70f78700e83abcf5ff668bf081e6ffff0000741e8b0d70f78700e844c3f5ff83fe1b750ec6054413ac0001b818fcffff5ec3a04413ac005ef6d81bc02518fcffffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?QueryInterface@FactionSelectDialogControl_WorldDominationTour@@QAEPAID@Z",
+ "sym_key": "FactionSelectDialogControl_WorldDominationTour::QueryInterface",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4610c7060000000085c074078b086a0150ff118b461485c074078b106a0150ff128b461885c074078b086a0150ff118bcee800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_WorldDominationTour_FactionSelectDialogControl@@3PAXA",
+   "sym_key": "vt_WorldDominationTour_FactionSelectDialogControl"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?InitVtable@OwnerDrawControl@@QAEXXZ",
+   "sym_key": "OwnerDrawControl::InitVtable"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

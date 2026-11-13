@@ -1,0 +1,11 @@
+{
+ "addr": "0x633370",
+ "name": "GameClass::applyGameSettings",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x633370",
+ "bytes_hex": "5356578bf98b5f208d771485dbc70640df7e0074108bcbe8344ce0ff53e8ab57190083c4048bcec7460c00000000e8ad6409008bcfe8a6640900f644241001740957e88657190083c4048bc75f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

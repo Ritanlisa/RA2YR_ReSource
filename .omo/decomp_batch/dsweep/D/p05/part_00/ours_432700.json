@@ -1,0 +1,33 @@
+{
+ "symbol": "?Stop@BinkMovie@@QAEHXZ",
+ "sym_key": "BinkMovie::Stop",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7e2085ff74178bcfe80000000057e80000000083c404c74620000000008b460485c0741050e80000000083c404c74604000000008b462883f8ff740d50e800000000c74628ffffffff5f5ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?FreeSurfaceTracker@BinkMovie@@QAEHXZ",
+   "sym_key": "BinkMovie::FreeSurfaceTracker"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?BinkClose@@YAHHZZ",
+   "sym_key": "BinkClose"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHPAX@Z",
+   "sym_key": "CloseHandle"
+  }
+ ]
+}

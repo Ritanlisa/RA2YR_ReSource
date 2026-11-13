@@ -1,0 +1,11 @@
+{
+ "addr": "0x42DF40",
+ "name": "Delegate::ProcessBitmapAndDispatch",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42DF40",
+ "bytes_hex": "568bf15733ff8b561085d274378b460c85c075108d7e146a04578d4e18e8ce1d0000eb0e8d7e186a03578d4e14e8de1e000050578bcee8953d20008bf8c74610000000008bcee8a53d200003c75f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?Close@CCFileClass@@QAEDXZ",
+ "sym_key": "CCFileClass::Close",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4628f6c4ff7507e8000000005ec3e8000000008b4624c1e81084c0743e8b465085c074298b56288b0680e60056895628ff50348b4e2880e50180cd01894e288b4e2481e1ff0000ff894e245ec38bcee800000000816624ffff00ff8b4e2480e500894e245ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?CloseHandle@FileClass@@QAEHXZ",
+   "sym_key": "FileClass::CloseHandle"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Flush@BufferIO@@QAEDXZ",
+   "sym_key": "BufferIO::Flush"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?CloseHandle@FileClass@@QAEHXZ",
+   "sym_key": "FileClass::CloseHandle"
+  }
+ ]
+}
