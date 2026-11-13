@@ -1,0 +1,11 @@
+{
+ "addr": "0x552390",
+ "name": "LCWPipe_Destru::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x552390",
+ "bytes_hex": "568bf18b4614c7062ccf7e0050e89b6727008b4e18c746140000000051e88b67270083c4088bcec7461800000000e8bdf80d00f644240801740956e86d67270083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

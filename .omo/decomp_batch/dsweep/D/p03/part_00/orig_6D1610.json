@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D1610",
+ "name": "HouseClass::InitDefeatState",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D1610",
+ "bytes_hex": "568bf18a864455000084c075388b066840ccb000ff50348b0d6873880068f1000000e8f93005008bcec6864455000001e8bbfbffff8b166a008bcec6864555000001ff52385ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

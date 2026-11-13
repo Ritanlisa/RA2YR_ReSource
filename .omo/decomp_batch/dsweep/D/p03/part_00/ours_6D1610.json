@@ -1,0 +1,33 @@
+{
+ "symbol": "?InitDefeatState@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::InitDefeatState",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bf18a864455000084c0753c8b06680000000056ff50348b0d3c00000068f100000051e80000000083c4088bcec6864455000001e8000000008b066a0056c6864555000001ff50385ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CC40@@3IA",
+   "sym_key": "DataGlobal_B0CC40"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88732C@@3IA",
+   "sym_key": "DataGlobal_88732C"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?HashTable__Remove@@YAHPAXH@Z",
+   "sym_key": "HashTable__Remove"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?BuildBar@CommandClass@@QAEDXZ",
+   "sym_key": "CommandClass::BuildBar"
+  }
+ ]
+}

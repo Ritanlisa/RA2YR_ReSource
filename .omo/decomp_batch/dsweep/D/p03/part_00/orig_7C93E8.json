@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C93E8",
+ "name": "_free",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C93E8",
+ "bytes_hex": "568b74240885f6743d6a09e8fd45000056e8bf6300005985c05974135650e8dd6300006a09e84446000083c40c5ec36a09e83846000059566a00ff359c8bb700ff157c127e005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

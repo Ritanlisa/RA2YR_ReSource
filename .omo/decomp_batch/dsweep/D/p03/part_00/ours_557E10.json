@@ -1,0 +1,15 @@
+{
+ "symbol": "?ddtor@ListClass@@QAEHH@Z",
+ "sym_key": "ListClass::ddtor",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c240c8a465484c074248d86180100005750ff96240100008d8eb80000005751ff96c40000008d56585752ff56645756e80000000083c4085f5ec20400",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?LinkedList__InsertAfter@@YAHPAXH@Z",
+   "sym_key": "LinkedList__InsertAfter"
+  }
+ ]
+}

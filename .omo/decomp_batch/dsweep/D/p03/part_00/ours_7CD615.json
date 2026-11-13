@@ -1,0 +1,27 @@
+{
+ "symbol": "?_genfname@@YAHD@Z",
+ "sym_key": "Unnamed::_genfname",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "0fbe442404536a2e50e8000000008bd86a20436a0053e80000000083c414403dff7f0000720583c8ff5bc356578d4c24106a205150e8000000008bf883c9ff33c083c40cf2aef7d12bf98bd18bf78bfbc1e902f3a58bca83e103f3a45f5e5bc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?_mbsrchr@@YAHHHZZ",
+   "sym_key": "_mbsrchr"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_strtoul",
+   "sym_key": "strtoul"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?_ultoa@@YAHHPAXHZZ",
+   "sym_key": "_ultoa"
+  }
+ ]
+}

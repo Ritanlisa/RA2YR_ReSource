@@ -1,0 +1,39 @@
+{
+ "symbol": "?QueryInterface@LCWPipe@@QAEPAHD@Z",
+ "sym_key": "LCWPipe::QueryInterface",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4614c7060000000050e8000000008b4e18c746140000000051e80000000083c4088bcec7461800000000e800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?vt_LCWPipe@@3PAXA",
+   "sym_key": "vt_LCWPipe"
+  },
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

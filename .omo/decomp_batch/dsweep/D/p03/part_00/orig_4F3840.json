@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3840",
+ "name": "GraphicMenuImageItem::QueryInterface",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3840",
+ "bytes_hex": "568bf1578b7e30c70674a67e0085ff74108bcfe828cd0d0057e8df522d0083c4048d4e34e8870e2c008bcee800020000f644240c01740956e8c0522d0083c4048bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

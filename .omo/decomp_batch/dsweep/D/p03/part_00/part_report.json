@@ -1,0 +1,379 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 12,
+   "COMPILE_FAIL": 3,
+   "NO_PSEUDO": 5
+  },
+  "pathologies": {
+   "codegen_shape": 1,
+   "branch_polarity": 6,
+   "regalloc": 5
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7cd615",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 70B ours 96B",
+   "first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 movsx eax, byte ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
+   "name": "_genfname",
+   "emitted": "_genfname",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 70,
+   "ours_size": 96,
+   "clean": false
+  },
+  {
+   "addr": "0x557e10",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 70B ours 66B",
+   "first_diff": {
+    "orig": "+13 je 0x557e49",
+    "ours": "+13 je 0x33"
+   },
+   "pathology": "branch_polarity",
+   "name": "ListClass::ddtor",
+   "emitted": "ListClass::ddtor",
+   "unit": "ListClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/12",
+   "rule_violations": 0,
+   "orig_size": 70,
+   "ours_size": 66,
+   "clean": false
+  },
+  {
+   "addr": "0x5c01f0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 70B ours 98B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "BinkMovie::Cleanup",
+   "emitted": "BinkMovie::Cleanup",
+   "unit": "BinkMovie",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "12/13",
+   "rule_violations": 0,
+   "orig_size": 70,
+   "ours_size": 98,
+   "clean": false
+  },
+  {
+   "addr": "0x7d53c2",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p03\\part_00\\_addr_7D.cpp(18) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p03\\part_00\\_addr_7D.cpp(18) : error C2106: '",
+   "first_diff": null,
+   "pathology": null,
+   "name": "__access",
+   "emitted": "__access",
+   "unit": "_addr_7D",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/6",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x604060",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 71B ours 75B",
+   "first_diff": {
+    "orig": "+18 je 0x604095",
+    "ours": "+18 je 0x39"
+   },
+   "pathology": "branch_polarity",
+   "name": "GetSkirmishMenuOwnerName",
+   "emitted": "GetSkirmishMenuOwnerName",
+   "unit": "_addr_60",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "7/7",
+   "rule_violations": 0,
+   "orig_size": 71,
+   "ours_size": 75,
+   "clean": false
+  },
+  {
+   "addr": "0x6d1610",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 71B ours 75B",
+   "first_diff": {
+    "orig": "+11 jne 0x6d1655",
+    "ours": "+11 jne 0x49"
+   },
+   "pathology": "branch_polarity",
+   "name": "HouseClass::InitDefeatState",
+   "emitted": "HouseClass::InitDefeatState",
+   "unit": "HouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "8/8",
+   "rule_violations": 0,
+   "orig_size": 71,
+   "ours_size": 75,
+   "clean": false
+  },
+  {
+   "addr": "0x4f3840",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 71B ours 74B",
+   "first_diff": {
+    "orig": "+15 je 0x4f3861",
+    "ours": "+15 je 0x20"
+   },
+   "pathology": "branch_polarity",
+   "name": "GraphicMenuImageItem::QueryInterface",
+   "emitted": "GraphicMenuImageItem::QueryInterface",
+   "unit": "GraphicMenuImageItem",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "9/10",
+   "rule_violations": 0,
+   "orig_size": 71,
+   "ours_size": 74,
+   "clean": false
+  },
+  {
+   "addr": "0x7c93e8",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 72B ours 80B",
+   "first_diff": {
+    "orig": "+7 je 0x7c942e",
+    "ours": "+7 je 0x4a"
+   },
+   "pathology": "branch_polarity",
+   "name": "_free",
+   "emitted": "_free",
+   "unit": "_addr_7C",
+   "name_placeholder": false,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "2/6",
+   "rule_violations": 0,
+   "orig_size": 72,
+   "ours_size": 80,
+   "clean": false
+  },
+  {
+   "addr": "0x552390",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+67 mov eax, esi",
+    "ours": "+67 mov eax, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "LCWPipe_Destru::QueryInterface",
+   "emitted": "LCWPipe::QueryInterface",
+   "unit": "LCWPipe",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x5525f0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+67 mov eax, esi",
+    "ours": "+67 mov eax, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "LCWStraw_Destru::QueryInterface",
+   "emitted": "LCWStraw::QueryInterface",
+   "unit": "LCWStraw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x55c6d0",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+67 mov eax, esi",
+    "ours": "+67 mov eax, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "LZOPipe_Destru::QueryInterface",
+   "emitted": "LZOPipe::QueryInterface",
+   "unit": "LZOPipe",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x55c990",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+67 mov eax, esi",
+    "ours": "+67 mov eax, dword ptr [esi]"
+   },
+   "pathology": "regalloc",
+   "name": "LZOStraw_Destru::QueryInterface",
+   "emitted": "LZOStraw::QueryInterface",
+   "unit": "LZOStraw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "6/10",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x5d63e0",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p03\\part_00\\MapPreview.cpp(13) : error C2143: syntax error : missing ';' before '&&'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "MapPreview::Check",
+   "emitted": "MapPreview::Check",
+   "unit": "MapPreview",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "7/8",
+   "rule_violations": 1,
+   "clean": false
+  },
+  {
+   "addr": "0x6f3280",
+   "batch": "censusD",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\dsweep\\D\\p03\\part_00\\TechnoClass.cpp(10) : error C2143: syntax error : missing ';' before '&&'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TechnoClass::IsNotAircraftOrBuilding",
+   "emitted": "TechnoClass::IsNotAircraftOrBuilding",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "5/6",
+   "rule_violations": 1,
+   "clean": false
+  },
+  {
+   "addr": "0x5ee350",
+   "batch": "censusD",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 89B",
+   "first_diff": {
+    "orig": "+2 je 0x5ee359",
+    "ours": "+2 je 0xd"
+   },
+   "pathology": "branch_polarity",
+   "name": "Dialog::RefreshDialogsGame",
+   "emitted": "Dialog::RefreshDialogsGame",
+   "unit": "Dialog",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "5/5",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 89,
+   "clean": false
+  },
+  {
+   "addr": "0x69d720",
+   "batch": "censusD",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (73B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x5102c0",
+   "batch": "censusD",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (73B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x5ad3e0",
+   "batch": "censusD",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (73B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x421b10",
+   "batch": "censusD",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (73B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba1b0",
+   "batch": "censusD",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (73B disasm)",
+   "first_diff": null,
+   "pathology": null,
+   "clean": false
+  }
+ ]
+}

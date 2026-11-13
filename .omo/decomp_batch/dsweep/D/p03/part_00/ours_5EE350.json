@@ -1,0 +1,51 @@
+{
+ "symbol": "?RefreshDialogsGame@Dialog@@QAEPAXXZ",
+ "sym_key": "Dialog::RefreshDialogsGame",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "85c9740951e80000000083c404b916010000e80000000085c0740950e80000000083c404b913010000e80000000085c0740950e80000000083c40456b9bb000000e8000000008bf085f6740956e80000000083c4048bc65ec3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?UpdateObserveButtonWOL@@YAXPAX@Z",
+   "sym_key": "UpdateObserveButtonWOL"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?UpdateObserveButtonWOL@@YAXPAX@Z",
+   "sym_key": "UpdateObserveButtonWOL"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?UpdateObserveButtonWOL@@YAXPAX@Z",
+   "sym_key": "UpdateObserveButtonWOL"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?UpdateObserveButtonWOL@@YAXPAX@Z",
+   "sym_key": "UpdateObserveButtonWOL"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x557E10",
+ "name": "ListClass::ddtor",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557E10",
+ "bytes_hex": "568bf1578b7c240c8a465484c0742a8b86180100008d8e1801000057ff500c8b96b80000008d8eb800000057ff520c8b46588d4e5857ff500c578bcee84fe8ffff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?_free@@YAHPAX@Z",
+ "sym_key": "Unnamed::_free",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f674416a09e80000000056e80000000083c40885c074135650e8000000006a09e80000000083c40c5ec36a09e800000000a10000000083c404566a0050e8000000005ec38b4424085ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?__sbh_find_block@@YAHPAXZZ",
+   "sym_key": "__sbh_find_block"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__sbh_free_block@@YAHHPAXZZ",
+   "sym_key": "__sbh_free_block"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?HeapFree@@YGHPAXH0@Z",
+   "sym_key": "HeapFree"
+  }
+ ]
+}

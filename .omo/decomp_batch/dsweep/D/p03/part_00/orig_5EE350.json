@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EE350",
+ "name": "Dialog::RefreshDialogsGame",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EE350",
+ "bytes_hex": "85c97405e8a7feffffb916010000e8dd75180085c074078bc8e892feffffb913010000e8c875180085c074078bc8e87dfeffffb9bb000000e8b375180085c074078bc8e968feffffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

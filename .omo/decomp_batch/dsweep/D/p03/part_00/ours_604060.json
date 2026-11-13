@@ -1,0 +1,45 @@
+{
+ "symbol": "?GetSkirmishMenuOwnerName@@YIPAPAGPAPAGPAX1@Z",
+ "sym_key": "Unnamed::GetSkirmishMenuOwnerName",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "568bc28b5424088bf18bc8e80000000085c0742533c968a50700008a0d0000000033d2518bc8e8000000008bce50e8000000008bc65ec2040068000000008bcee8000000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?DlgSkirmishMenuProc@@YIPADPAX0@Z",
+   "sym_key": "DlgSkirmishMenuProc"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_Str_File_ownrdraw_cpp@@3EA",
+   "sym_key": "g_Str_File_ownrdraw_cpp"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x55C6D0",
+ "name": "LZOPipe_Destru::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55C6D0",
+ "bytes_hex": "568bf18b4614c7067cd37e0050e85bc426008b4e18c746140000000051e84bc4260083c4088bcec7461800000000e87d550d00f644240801740956e82dc4260083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

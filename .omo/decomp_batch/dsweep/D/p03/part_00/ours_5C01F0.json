@@ -1,0 +1,39 @@
+{
+ "symbol": "?Cleanup@BinkMovie@@QAEHXZ",
+ "sym_key": "BinkMovie::Cleanup",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b0e85c9742de8000000008b4c240c8b3e25ff00000080e1000bc185ff8bd874168bcfe80000000057e80000000083c404eb048b5c240c8b7e4885ff74178bcfe80000000057e80000000083c404c74648000000005f8bc35e5b59c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?FlipIfNeeded@DSurface@@QAEDXZ",
+   "sym_key": "DSurface::FlipIfNeeded"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Cleanup@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::Cleanup"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?FreeSurfaceTracker@BinkMovie@@QAEHXZ",
+   "sym_key": "BinkMovie::FreeSurfaceTracker"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

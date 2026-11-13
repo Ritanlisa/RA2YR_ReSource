@@ -1,0 +1,11 @@
+{
+ "addr": "0x604060",
+ "name": "GetSkirmishMenuOwnerName",
+ "size": 71,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x604060",
+ "bytes_hex": "568bc28b5424088bf18bc8e84000000085c0742168a5070000683037830033d28bc8e8d90d13008bce50e841261b008bc65ec2040068347788008bcee82f261b008bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

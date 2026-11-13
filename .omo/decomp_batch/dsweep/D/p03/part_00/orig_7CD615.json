@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD615",
+ "name": "_genfname",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD615",
+ "bytes_hex": "558bec566a2eff7508e8fc8000008bf06a20466a0056e8a9c9ffff83c414403dff7f0000720583c8ffeb188d4d086a205150e8f37000005056e89d75000083c41433c05e5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

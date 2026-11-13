@@ -1,0 +1,11 @@
+{
+ "addr": "0x5525F0",
+ "name": "LCWStraw_Destru::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5525F0",
+ "bytes_hex": "568bf18b4614c70644cf7e0050e83b6527008b4e18c746140000000051e82b65270083c4088bcec7461800000000e82d721700f644240801740956e80d65270083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

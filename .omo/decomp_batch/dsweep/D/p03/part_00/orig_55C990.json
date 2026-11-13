@@ -1,0 +1,11 @@
+{
+ "addr": "0x55C990",
+ "name": "LZOStraw_Destru::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55C990",
+ "bytes_hex": "568bf18b4614c70694d37e0050e89bc126008b4e18c746140000000051e88bc1260083c4088bcec7461800000000e88dce1600f644240801740956e86dc1260083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

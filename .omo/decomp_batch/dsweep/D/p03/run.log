@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cd615 _genfname -> _addr_7C
+[conv] 0x557e10 ListClass::ddtor -> ListClass
+[conv] 0x5c01f0 BinkMovie::Cleanup -> BinkMovie
+[conv] 0x7d53c2 __access -> _addr_7D
+[conv] 0x604060 GetSkirmishMenuOwnerName -> _addr_60
+[conv] 0x6d1610 HouseClass::InitDefeatState -> HouseClass
+[conv] 0x4f3840 GraphicMenuImageItem::QueryInterface -> GraphicMenuImageItem
+[conv] 0x7c93e8 _free -> _addr_7C
+[conv] 0x552390 LCWPipe::QueryInterface -> LCWPipe
+[conv] 0x5525f0 LCWStraw::QueryInterface -> LCWStraw
+[conv] 0x55c6d0 LZOPipe::QueryInterface -> LZOPipe
+[conv] 0x55c990 LZOStraw::QueryInterface -> LZOStraw
+[conv] 0x5d63e0 MapPreview::Check -> MapPreview
+[conv] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> TechnoClass
+[conv] 0x5ee350 Dialog::RefreshDialogsGame -> Dialog
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] ListClass                rc=0
+[era] BinkMovie                rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_60                 rc=0
+[era] HouseClass               rc=0
+[era] GraphicMenuImageItem     rc=0
+[era] LCWPipe                  rc=0
+[era] LCWStraw                 rc=0
+[era] LZOPipe                  rc=0
+[era] LZOStraw                 rc=0
+[era] MapPreview               rc=2
+[era] TechnoClass              rc=2
+[era] Dialog                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cd615   MISMATCH         _genfname
+[diff] 0x7c93e8   MISMATCH         _free
+[diff] 0x557e10   MISMATCH         ListClass::ddtor
+[diff] 0x5c01f0   MISMATCH         BinkMovie::Cleanup
+[diff] 0x604060   MISMATCH         GetSkirmishMenuOwnerName
+[diff] 0x6d1610   MISMATCH         HouseClass::InitDefeatState
+[diff] 0x4f3840   MISMATCH         GraphicMenuImageItem::QueryInterface
+[diff] 0x552390   MISMATCH         LCWPipe::QueryInterface
+[diff] 0x5525f0   MISMATCH         LCWStraw::QueryInterface
+[diff] 0x55c6d0   MISMATCH         LZOPipe::QueryInterface
+[diff] 0x55c990   MISMATCH         LZOStraw::QueryInterface
+[diff] 0x5ee350   MISMATCH         Dialog::RefreshDialogsGame
+[ledger] 0x7cd615 _genfname -> NG (attempt 1)
+[ledger] 0x557e10 ListClass::ddtor -> NG (attempt 1)
+[ledger] 0x5c01f0 BinkMovie::Cleanup -> NG (attempt 1)
+[ledger] 0x7d53c2 __access -> COMPILE_FAIL (attempt 1)
+[ledger] 0x604060 GetSkirmishMenuOwnerName -> NG (attempt 1)
+[ledger] 0x6d1610 HouseClass::InitDefeatState -> NG (attempt 1)
+[ledger] 0x4f3840 GraphicMenuImageItem::QueryInterface -> NG (attempt 1)
+[ledger] 0x7c93e8 _free -> NG (attempt 1)
+[ledger] 0x552390 LCWPipe::QueryInterface -> NG (attempt 1)
+[ledger] 0x5525f0 LCWStraw::QueryInterface -> NG (attempt 1)
+[ledger] 0x55c6d0 LZOPipe::QueryInterface -> NG (attempt 1)
+[ledger] 0x55c990 LZOStraw::QueryInterface -> NG (attempt 1)
+[ledger] 0x5d63e0 MapPreview::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ee350 Dialog::RefreshDialogsGame -> NG (attempt 1)
+[ledger] 0x69d720 0x69d720 -> PENDING (attempt 1)
+[ledger] 0x5102c0 0x5102c0 -> PENDING (attempt 1)
+[ledger] 0x5ad3e0 0x5ad3e0 -> PENDING (attempt 1)
+[ledger] 0x421b10 0x421b10 -> PENDING (attempt 1)
+[ledger] 0x4ba1b0 0x4ba1b0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 3,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_polarity": 6,
+  "regalloc": 5
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p03\batch_report.json
