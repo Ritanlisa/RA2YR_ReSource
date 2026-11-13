@@ -43148,7 +43148,7 @@
   "this_as_id": false
  },
  "0x4ae4f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43708,7 +43708,7 @@
   "this_as_id": false
  },
  "0x4afb80": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43804,7 +43804,7 @@
   "this_as_id": false
  },
  "0x4b0410": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43816,7 +43816,7 @@
   "this_as_id": false
  },
  "0x4b04d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -43828,7 +43828,7 @@
   "this_as_id": false
  },
  "0x4b0500": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -43991,7 +43991,7 @@
   "this_as_id": false
  },
  "0x4b4920": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44192,7 +44192,7 @@
   "status": "OK"
  },
  "0x4b4d00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -44399,7 +44399,7 @@
   "this_as_id": false
  },
  "0x4b5030": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -44826,7 +44826,7 @@
   "this_as_id": false
  },
  "0x4b6240": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -44946,7 +44946,7 @@
   "this_as_id": false
  },
  "0x4b6610": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -45928,7 +45928,7 @@
   "this_as_id": false
  },
  "0x4ba770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45940,7 +45940,7 @@
   "this_as_id": false
  },
  "0x4bac60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -45966,7 +45966,7 @@
   "status": "OK"
  },
  "0x4bad80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46050,7 +46050,7 @@
   "this_as_id": false
  },
  "0x4bb0d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -46316,7 +46316,7 @@
   "this_as_id": false
  },
  "0x4c1600": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -46595,14 +46595,14 @@
   "this_as_id": false
  },
  "0x4c2790": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_4C2790",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_4C2790",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -46841,7 +46841,7 @@
   "this_as_id": false
  },
  "0x4c2fc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -47214,14 +47214,14 @@
   "this_as_id": false
  },
  "0x4c3c90": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::sub_4C3C90",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_4C3C90",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -47775,7 +47775,7 @@
   "this_as_id": false
  },
  "0x4c54e0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -48599,14 +48599,14 @@
   "this_as_id": false
  },
  "0x4c6cb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "EventClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "EventClass::ProcessEvent",
-  "rule_violations": 53,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

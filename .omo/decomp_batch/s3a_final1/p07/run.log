@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ae4f0 DisplayClass::Draw -> DisplayClass
+[conv] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> JumpjetLocomotionClass
+[conv] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> DriveLocomotionClass
+[conv] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> DriveLocomotionClass
+[conv] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> DriveLocomotionClass
+[conv] 0x4b4920 DriveLocomotionClass::IsAtDestination -> DriveLocomotionClass
+[conv] 0x4b4d00 DriveLocomotionClass::ProcessMove -> DriveLocomotionClass
+[conv] 0x4b5030 DropListClass::OnKeyUp -> DropListClass
+[conv] 0x4b6240 DropPodLocomotionClass::BeginMove -> DropPodLocomotionClass
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4ba770 DSurface::CreatePrimary -> DSurface
+[conv] 0x4bac60 DSurface::CreateBackBuffer -> DSurface
+[conv] 0x4bad80 DSurface::Lock -> DSurface
+[conv] 0x4bb0d0 DSurface::Blit -> DSurface
+[conv] 0x4c1600 ObjectClass::sub_4C1600 -> ObjectClass
+[conv] 0x4c2790 ObjectClass::sub_4C2790 -> ObjectClass
+[conv] 0x4c2fc0 EditClass::sub_4C2FC0 -> EditClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DisplayClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] DriveLocomotionClass     rc=2
+[era] DropListClass            rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] LocomotionClass          rc=2
+[era] DSurface                 rc=2
+[era] ObjectClass              rc=2
+[era] EditClass                rc=2
+[era] EventClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ae4f0 DisplayClass::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b4920 DriveLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b4d00 DriveLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b5030 DropListClass::OnKeyUp -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b6240 DropPodLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ba770 DSurface::CreatePrimary -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bac60 DSurface::CreateBackBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bad80 DSurface::Lock -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bb0d0 DSurface::Blit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c1600 ObjectClass::sub_4C1600 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c2790 ObjectClass::sub_4C2790 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c2fc0 EditClass::sub_4C2FC0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p07\batch_report.json
