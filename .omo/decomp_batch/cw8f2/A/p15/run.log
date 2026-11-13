@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x5571c0 _DynamicVectorClass_PAVLineTrail::toggleItem -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x558130 _DynamicVectorClass_PBG::drawList -> _DynamicVectorClass_PBG
+[conv] 0x5584a0 _VectorClass_PBG::QueryInterface -> _VectorClass_PBG
+[conv] 0x55a410 _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___ -> _VectorClass_PAVFileEntryClass
+[conv] 0x55a460 _DynamicVectorClass_PAVFileEntryClass::vt00 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x55c310 LZOPipe::Destructor -> LZOPipe
+[conv] 0x55c780 LZOStraw::Destructor -> LZOStraw
+[conv] 0x5890b0 _DynamicVectorClass_USubzoneConnectionStruct::Add -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x58a3d0 _VectorClass_UZoneConnectionClass::Destruct -> _VectorClass_UZoneConnectionClass
+[conv] 0x58a420 _DynamicVectorClass_UZoneConnectionClass::QueryInterface -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x58aa90 _VectorClass_W4PassabilityType::QueryInterface -> _VectorClass_W4PassabilityType
+[conv] 0x58aae0 _DynamicVectorClass_W4PassabilityType::Constructor_1 -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> _VectorClass_U_HashObject_II
+[conv] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5ac650 _TypeList_PBVBuildingTypeClass::Add -> _TypeList_PBVBuildingTypeClass
+[conv] 0x5ad390 _VectorClass_PAVMapRegionClass::QueryInterface -> _VectorClass_PAVMapRegionClass
+[conv] 0x5ad430 _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad480 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___ -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> _VectorClass_V_TRect_H
+[conv] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> _DynamicVectorClass_V_TRect_H
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_PBG  rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] LZOPipe                  rc=0
+[era] LZOStraw                 rc=0
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=0
+[era] _VectorClass_UZoneConnectionClass rc=0
+[era] _DynamicVectorClass_UZoneConnectionClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] _VectorClass_U_HashObject_II rc=2
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] _TypeList_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_V_TRect_H   rc=2
+[era] _DynamicVectorClass_V_TRect_H rc=2
+=== diffasm byte-compare ===
+[diff] 0x5571c0   MISMATCH         _DynamicVectorClass_PAVLineTrail::toggleItem
+[diff] 0x558130   MISMATCH         _DynamicVectorClass_PBG::drawList
+[diff] 0x5584a0   MISMATCH         _VectorClass_PBG::QueryInterface
+[diff] 0x55a410   MISMATCH         _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___
+[diff] 0x55a460   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt00
+[diff] 0x55c310   MATCH            LZOPipe::Destructor
+[diff] 0x55c780   MATCH            LZOStraw::Destructor
+[diff] 0x5890b0   MISMATCH         _DynamicVectorClass_USubzoneConnectionStruct::Add
+[diff] 0x58a3d0   MISMATCH         _VectorClass_UZoneConnectionClass::Destruct
+[diff] 0x58a420   MISMATCH         _DynamicVectorClass_UZoneConnectionClass::QueryInterface
+[diff] 0x58aa90   MISMATCH         _VectorClass_W4PassabilityType::QueryInterface
+[diff] 0x58aae0   MISMATCH         _DynamicVectorClass_W4PassabilityType::Constructor_1
+[diff] 0x5ac650   MATCH            _TypeList_PBVBuildingTypeClass::Add
+[diff] 0x5ad390   MISMATCH         _VectorClass_PAVMapRegionClass::QueryInterface
+[diff] 0x5ad430   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface
+[diff] 0x5ad480   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___
+[ledger] 0x5571c0 _DynamicVectorClass_PAVLineTrail::toggleItem -> NG (attempt 2)
+[ledger] 0x558130 _DynamicVectorClass_PBG::drawList -> NG (attempt 2)
+[ledger] 0x5584a0 _VectorClass_PBG::QueryInterface -> NG (attempt 2)
+[ledger] 0x55a410 _VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___ -> NG (attempt 2)
+[ledger] 0x55a460 _DynamicVectorClass_PAVFileEntryClass::vt00 -> NG (attempt 2)
+[ledger] 0x55c310 LZOPipe::Destructor -> OK (attempt 2)
+[ledger] 0x55c780 LZOStraw::Destructor -> OK (attempt 2)
+[ledger] 0x5890b0 _DynamicVectorClass_USubzoneConnectionStruct::Add -> NG (attempt 2)
+[ledger] 0x58a3d0 _VectorClass_UZoneConnectionClass::Destruct -> NG (attempt 2)
+[ledger] 0x58a420 _DynamicVectorClass_UZoneConnectionClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x58aa90 _VectorClass_W4PassabilityType::QueryInterface -> NG (attempt 2)
+[ledger] 0x58aae0 _DynamicVectorClass_W4PassabilityType::Constructor_1 -> NG (attempt 4)
+[ledger] 0x58ab30 _VectorClass_U_HashObject_II::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58ab80 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ac650 _TypeList_PBVBuildingTypeClass::Add -> OK (attempt 5)
+[ledger] 0x5ad390 _VectorClass_PAVMapRegionClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ad430 _VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface -> NG (attempt 2)
+[ledger] 0x5ad480 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___ -> NG (attempt 2)
+[ledger] 0x5ad4d0 _VectorClass_V_TRect_H::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ad520 _DynamicVectorClass_V_TRect_H::Constructor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "MATCH": 3,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "branch_polarity": 8,
+  "const_fold": 4,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p15\batch_report.json

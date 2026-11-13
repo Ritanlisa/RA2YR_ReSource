@@ -72627,12 +72627,12 @@
   "this_as_id": false
  },
  "0x5571c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed0ec",
+  "first_diff": "+14 je 0x5571e7",
   "name": "_DynamicVectorClass_PAVLineTrail::toggleItem",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "CheckListClass::toggleItem",
   "rule_violations": 0,
   "status": "NG",
@@ -72844,7 +72844,7 @@
   "this_as_id": false
  },
  "0x558130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed1fc",
@@ -73000,7 +73000,7 @@
   "this_as_id": false
  },
  "0x5584a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed1fc",
@@ -73438,24 +73438,24 @@
   "status": "NG"
  },
  "0x55a410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed32c",
+  "first_diff": "+14 je 0x55a437",
   "name": "_VectorClass_PAVFileEntryClass::Constructor_VectorClass_FileEntryClass___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "LoadOptions::Constructor_VectorClass_FileEntryClass___",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x55a460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed32c",
+  "first_diff": "+14 je 0x55a487",
   "name": "_DynamicVectorClass_PAVFileEntryClass::vt00",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "LoadOptions::vt00",
   "rule_violations": 0,
   "status": "NG",
@@ -74311,15 +74311,15 @@
   "this_as_id": false
  },
  "0x55c310": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed37c",
   "name": "LZOPipe::Destructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "LZOPipe::Destructor",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x55c720": {
@@ -74335,15 +74335,15 @@
   "this_as_id": false
  },
  "0x55c780": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "signals_cls",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed394",
   "name": "LZOStraw::Destructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "LZOStraw::Destructor",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "OK",
   "this_as_id": false
  },
  "0x55c9e0": {
@@ -76303,12 +76303,12 @@
   "this_as_id": false
  },
  "0x5890b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7e177c",
+  "first_diff": "+14 je 0x5890d7",
   "name": "_DynamicVectorClass_USubzoneConnectionStruct::Add",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "DynamicVectorClass_SubzoneConn::Add",
   "rule_violations": 0,
   "status": "NG",
@@ -76733,24 +76733,24 @@
   "this_as_id": false
  },
  "0x58a3d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed4e0",
+  "first_diff": "+67 mov eax, esi",
   "name": "_VectorClass_UZoneConnectionClass::Destruct",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ZoneConnectionVector::Destruct",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x58a420": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed4e0",
+  "first_diff": "+14 je 0x58a447",
   "name": "_DynamicVectorClass_UZoneConnectionClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "unknown::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
@@ -76896,7 +76896,7 @@
   "this_as_id": false
  },
  "0x58aa90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed560",
@@ -76908,7 +76908,7 @@
   "this_as_id": false
  },
  "0x58aae0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed560",
@@ -76920,27 +76920,27 @@
   "this_as_id": false
  },
  "0x58ab30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed5c0",
   "name": "_VectorClass_U_HashObject_II::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_UHashObject_uint_uint::QueryInterface",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x58ab80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed5e0",
   "name": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_UHashObject_uint_SubzoneConn::QueryInterface",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x58abd0": {
@@ -78729,7 +78729,7 @@
   "this_as_id": false
  },
  "0x5ac650": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": true,
   "cls_src": "backfill",
   "first_diff": "+24 call 0x7c8b3d",
@@ -79095,63 +79095,63 @@
   "status": "NG"
  },
  "0x5ad390": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed878",
+  "first_diff": "+14 je 0x5ad3b7",
   "name": "_VectorClass_PAVMapRegionClass::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "VectorClass_ptr_MapRegionClass::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5ad430": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed92c",
+  "first_diff": "+14 je 0x5ad457",
   "name": "_VectorClass_PAU_WIN32_FIND_DATAA::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MapSeedClass_18::QueryInterface",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5ad480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": "+6 mov dword ptr [esi], 0x7ed92c",
+  "first_diff": "+14 je 0x5ad4a7",
   "name": "_DynamicVectorClass_PAU_WIN32_FIND_DATAA::Constructor_VectorClass__WIN32_FIND_DATAA___",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
  },
  "0x5ad4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed970",
   "name": "_VectorClass_V_TRect_H::QueryInterface",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSEngine::QueryInterface",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5ad520": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+6 mov dword ptr [esi], 0x7ed970",
   "name": "_DynamicVectorClass_V_TRect_H::Constructor",
-  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MSEngine::Constructor",
   "rule_violations": 0,
-  "status": "NG",
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5ad570": {

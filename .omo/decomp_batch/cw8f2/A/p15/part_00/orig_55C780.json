@@ -1,0 +1,11 @@
+{
+ "addr": "0x55C780",
+ "name": "LZOStraw::Destructor",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55C780",
+ "bytes_hex": "568bf18b4614c70694d37e0050e8abc326008b4e18c746140000000051e89bc3260083c4088bcec7461800000000e89dd016005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

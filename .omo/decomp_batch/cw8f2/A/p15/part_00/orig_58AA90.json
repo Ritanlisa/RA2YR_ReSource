@@ -1,0 +1,11 @@
+{
+ "addr": "0x58AA90",
+ "name": "VectorClass_W4PassabilityType::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58AA90",
+ "bytes_hex": "568bf18b4604c70660d57e0085c074178a4e0d84c9741050e890e0230083c404c74604000000008a442408c6460d00a801c7460800000000740956e86de0230083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
