@@ -1,0 +1,11 @@
+{
+ "addr": "0x637A10",
+ "name": "House_Play",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637A10",
+ "bytes_hex": "a0f44cac0083ec705333db563ac3577473a14c3da8006a2b8b4830518d4c2414e88bece8ff83ec70b91b0000008d74247c8bfcf3a566a5a4e873a70100a1e0718800891dcc4cac00891d384cac00891df04bac00881df44cac008b88e001000053ba00200000680000803fe8a08e11008b0d804bac003bcb740a8b115368c8110000ff125f5e5b83c470c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

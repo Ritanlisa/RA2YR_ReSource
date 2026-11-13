@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x626c60 ObjectClass::Surface_Update -> ObjectClass
+[conv] 0x626da0 FileSystem::ProcessNextFileExtension -> FileSystem
+[conv] 0x627020 sub_627020 -> _addr_62
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x62a980 ParasiteClass::TryInfect -> ParasiteClass
+[conv] 0x62c6e0 TechnoClass::UpdateParticleSystem -> TechnoClass
+[conv] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> ObjectClass
+[conv] 0x62d2a0 BuildingClass::UpdateFloatPosition -> BuildingClass
+[conv] 0x62dc50 ParticleSystemClass::Constructor -> ParticleSystemClass
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x62e650 ScenarioClass::DestroyAndClearVector -> ScenarioClass
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+[conv] 0x634550 ScriptAction::GetActionCoordinates -> ScriptAction
+[conv] 0x636120 TeamClass::RemoveAllMembers -> TeamClass
+[conv] 0x636b50 TeamClass::Cleanup -> TeamClass
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x637a10 ObjectClass::House_Play -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] FileSystem               rc=2
+[era] _addr_62                 rc=2
+[era] ParasiteClass            rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] ParticleSystemClass      rc=2
+[era] ScenarioClass            rc=2
+[era] ScriptAction             rc=2
+[era] TeamClass                rc=2
+[era] TabClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x637a10   MISMATCH         ObjectClass::House_Play
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 9)
+[ledger] 0x626c60 ObjectClass::Surface_Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x626da0 FileSystem::ProcessNextFileExtension -> COMPILE_FAIL (attempt 5)
+[ledger] 0x627020 sub_627020 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 8)
+[ledger] 0x62a980 ParasiteClass::TryInfect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62c6e0 TechnoClass::UpdateParticleSystem -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62d2a0 BuildingClass::UpdateFloatPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62dc50 ParticleSystemClass::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> COMPILE_FAIL (attempt 14)
+[ledger] 0x62e650 ScenarioClass::DestroyAndClearVector -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 5)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 5)
+[ledger] 0x634550 ScriptAction::GetActionCoordinates -> COMPILE_FAIL (attempt 5)
+[ledger] 0x636120 TeamClass::RemoveAllMembers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x636b50 TeamClass::Cleanup -> COMPILE_FAIL (attempt 5)
+[ledger] 0x637060 TabClass::processTabInput -> COMPILE_FAIL (attempt 10)
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x637a10 ObjectClass::House_Play -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_final1\p20\batch_report.json

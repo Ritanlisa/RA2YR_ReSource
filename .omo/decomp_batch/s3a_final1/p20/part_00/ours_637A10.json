@@ -1,0 +1,75 @@
+{
+ "symbol": "?House_Play@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::House_Play",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "a00000000083ec705333db3ac30f84f5000000a1000000006a2b8b4830518d4c2410e8000000008b5424048b4424048b4c247022d325ff0000000bd08b442468528b542470518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b54246c508b44246c518b4c246c528b542468505152e800000000a100000000891d00000000891d00000000891d00000000881d000000008b88e001000053680000803fba00200000e8000000008b0d000000003bcb740b8b115368c811000051ff125b83c470c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?AddEvent@EventClass@@QAEPADHE@Z",
+   "sym_key": "EventClass::AddEvent"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Network__RecordEvent@@YGDHHHHHHHHHHHHHHHHHHHHHHHHHHH@Z",
+   "sym_key": "Network__RecordEvent"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_ScriptPool@@3IA",
+   "sym_key": "g_ScriptPool"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_ScriptState@@3IA",
+   "sym_key": "g_ScriptState"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  },
+  {
+   "off": 217,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 239,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B80@@3IA",
+   "sym_key": "DataGlobal_AC4B80"
+  }
+ ]
+}
