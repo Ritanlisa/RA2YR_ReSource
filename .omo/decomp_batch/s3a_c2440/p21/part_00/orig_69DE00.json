@@ -1,0 +1,11 @@
+{
+ "addr": "0x69DE00",
+ "name": "ShapeButton::SetShape",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69DE00",
+ "bytes_hex": "53568bf133db385e5c741c8b46583bc3741550e825ad120083c404895e58885e5c895e14895e188b44240c3bc389465874100fbf4802894e140fbf5004895618eb06895e14895e188b4424103bc374038946148b4424143bc374038946185e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

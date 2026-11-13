@@ -140942,7 +140942,7 @@
   "this_as_id": false
  },
  "0x69ac30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141050,7 +141050,7 @@
   "this_as_id": false
  },
  "0x69b170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -141228,7 +141228,7 @@
   "this_as_id": false
  },
  "0x69bc20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141274,7 +141274,7 @@
   "this_as_id": false
  },
  "0x69bd60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142113,15 +142113,15 @@
   "this_as_id": false
  },
  "0x69de00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 cmp byte ptr [esi + 0x5c], bl",
   "name": "ShapeButtonClass::SetShape",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ShapeButton::SetShape",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x69de70": {
@@ -142215,15 +142215,15 @@
   "this_as_id": false
  },
  "0x69e090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x6c",
   "name": "House::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "House::Constructor",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x69e100": {
@@ -142978,7 +142978,7 @@
   "this_as_id": false
  },
  "0x6a3f50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -143709,7 +143709,7 @@
   "this_as_id": false
  },
  "0x6a4f20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -143792,7 +143792,7 @@
   "this_as_id": false
  },
  "0x6a5840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144369,14 +144369,14 @@
   "this_as_id": false
  },
  "0x6ac5f0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TActionClass::executeHarvestAction",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -144994,7 +144994,7 @@
   "this_as_id": false
  },
  "0x6af6c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145351,15 +145351,15 @@
   "this_as_id": false
  },
  "0x6b14b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::getAIPriority",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "AbstractClass::getAIPriority",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b1560": {
@@ -145580,15 +145580,15 @@
   "this_as_id": false
  },
  "0x6b1b20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x14]",
   "name": "SliderClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SliderClass::Constructor",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 4,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b1d00": {
@@ -147072,14 +147072,14 @@
   "this_as_id": false
  },
  "0x6b7010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SpawnManagerClass::Constructor_SpawnManagerClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SpawnManagerClass::Constructor_SpawnManagerClass",
-  "rule_violations": 2,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -147333,15 +147333,15 @@
   "this_as_id": false
  },
  "0x6b8260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass::allocatePathMemory",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "AbstractClass::allocatePathMemory",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6b8310": {
@@ -147832,14 +147832,14 @@
   "status": "NG"
  },
  "0x6b9530": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HashTable::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HashTable_flat::Clear",
-  "rule_violations": 10,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -154228,7 +154228,7 @@
   "this_as_id": false
  },
  "0x6c6de0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -155076,7 +155076,7 @@
   "this_as_id": false
  },
  "0x6ca4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA4A0",
@@ -155132,7 +155132,7 @@
   "this_as_id": false
  },
  "0x6ca6a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CA6A0",
@@ -155497,14 +155497,14 @@
   "this_as_id": false
  },
  "0x6caec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SuperClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SuperClass::Constructor",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

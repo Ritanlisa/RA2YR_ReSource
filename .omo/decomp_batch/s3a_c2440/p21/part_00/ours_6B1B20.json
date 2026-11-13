@@ -1,0 +1,93 @@
+{
+ "symbol": "?Constructor@SliderClass@@QAEPAV1@HHHHHH@Z",
+ "sym_key": "SliderClass::Constructor",
+ "size": 589,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec148b45188b551053568bf1578b4d14508b450c518b4d085250518bcee8000000008b451c8d5e3c85c00f95c285c0c70600000000885644c70300000000c74640000000000f85dd0000006a60e80000000083c4048944241885c0743a8b46148b4e0c8b7e108d5408028b0d000000008954241432d2e8000000008b4c24148b55086a006a006a0057518b4c242c5052e800000000eb0233c06a608903e80000000083c4048944241485c074368b46108b7e0c8b0d0000000032d28944241883ef06e8000000008b4c24188b55086a006a006a00518b4c2424575052e800000000eb0233c08d7e4085db8907741b8b035653ff90840000008b0b56538b11ff520c8b03538b08ff514885ff741b8b175657ff92840000008b0756578b08ff510c8b17578b02ff50488b4e308b1656894c241cc7464801000000ff52488a462c84c08844241374098b461489442414eb078b4e18894c2414db4630dd5c24188b54241c8b4424185250e8000000008b7c242083c40833c725ff00000033f883ff047f05bf04000000db4634897e4cdc742418dd5c24188b5c241c8b4c24185351e8000000008bc88b44242033c883c40881e1ff00000033c18b4c24142bcf3bc17c028bc18946508a44241384c074098b561489542414eb078b4618894424148b4c24185351e8000000008b7c242083c40833c725ff00000033f883ff047f05bf040000008b5424185352897e4ce8000000008bc88b44242033c883c40881e1ff00000033c18b4c24142bcf3bc17c028bc18946508b462c24005f89462c8b065e5b8be55dc21800",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Constructor@ListClass@@QAEPAV1@HHHHH@Z",
+   "sym_key": "ListClass::Constructor"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?vt_SliderClass@@3PAXA",
+   "sym_key": "vt_SliderClass"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?aBtnPlusShp@@3HA",
+   "sym_key": "aBtnPlusShp"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Constructor@ShapeButtonClass@@QAEPAV1@HHHHHHD@Z",
+   "sym_key": "ShapeButtonClass::Constructor"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?aBtnMinsShp@@3HA",
+   "sym_key": "aBtnMinsShp"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 228,
+   "type": "REL32",
+   "sym": "?Constructor@ShapeButtonClass@@QAEPAV1@HHHHHHD@Z",
+   "sym_key": "ShapeButtonClass::Constructor"
+  },
+  {
+   "off": 368,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 423,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 492,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 532,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

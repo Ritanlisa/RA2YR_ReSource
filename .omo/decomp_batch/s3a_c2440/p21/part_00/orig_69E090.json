@@ -1,0 +1,11 @@
+{
+ "addr": "0x69E090",
+ "name": "House::Constructor",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69E090",
+ "bytes_hex": "83ec6c568bf166833eff75528a461084c0754b8b46088d4c240450e84059ddff8d4c2404e8d757e0ff85c0740789460cc64610018d4c245cc7442404b0167e00c744246800000000e873cdd9ff8d4c2404c744240468167e00e8923ad9ff5e83c46cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

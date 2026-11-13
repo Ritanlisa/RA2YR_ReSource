@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetShape@ShapeButtonClass@@QAEHHHH@Z",
+ "sym_key": "ShapeButtonClass::SetShape",
+ "size": 102,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db57385e5c741d8d7e583bfb74168b0750e80000000083c404891f885e5c895e14895e188b4424103bc389465874100fbf4802894e140fbf5004895618eb06895e14895e188b4424143bc374038946148b4424183bc374038946185f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
