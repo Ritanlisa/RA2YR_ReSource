@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x71ca70 CCINIClass::LoadTypeFromINI -> CCINIClass
+[conv] 0x71cb90 ObjectTypeClass::ReadDestroyAnim -> ObjectTypeClass
+[conv] 0x71dca0 LoadObjectTypeClassTheaterSHP -> _addr_71
+[conv] 0x71dea0 TerrainTypeClass::LoadFromINI -> TerrainTypeClass
+[conv] 0x71f4e0 TriggerTypeClass::ParseActionData -> TriggerTypeClass
+[conv] 0x7207f0 Audio::LoadWAVFiles -> Audio
+[conv] 0x720bb0 ThemeClass::Play -> ThemeClass
+[conv] 0x727880 ObjectClass::ReadAudioEventINI -> ObjectClass
+[conv] 0x728280 InfantryClass::SetMission -> InfantryClass
+[conv] 0x732950 ObjectClass::SelectAllOfType -> ObjectClass
+[conv] 0x733380 UpdateUnitHealthTooltip -> _addr_73
+[conv] 0x7336c0 DrawUnitExperiencePopup -> _addr_73
+[conv] 0x7339b0 SelectUnitsByTheme -> _addr_73
+[conv] 0x734990 File::ParseCSFString -> File
+[conv] 0x738d30 UnitClass::DeployToBuilding -> UnitClass
+[conv] 0x743270 ObjectClass::PlaceScenarioUnits -> ObjectClass
+[conv] 0x7436e0 ObjectClass::ReadFootINI -> ObjectClass
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> VeinholeMonsterClass
+[conv] 0x74d450 Game_Load_Load -> Game_Load
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CCINIClass               rc=0
+[era] ObjectTypeClass          rc=0
+[era] _addr_71                 rc=0
+[era] TerrainTypeClass         rc=2
+[era] TriggerTypeClass         rc=2
+[era] Audio                    rc=0
+[era] ThemeClass               rc=2
+[era] ObjectClass              rc=2
+[era] InfantryClass            rc=2
+[era] _addr_73                 rc=2
+[era] File                     rc=2
+[era] UnitClass                rc=2
+[era] UnitTypeClass            rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] Game_Load                rc=0
+=== diffasm byte-compare ===
+[diff] 0x71ca70   MISMATCH         CCINIClass::LoadTypeFromINI
+[diff] 0x71cb90   MISMATCH         ObjectTypeClass::ReadDestroyAnim
+[diff] 0x71dca0   MISMATCH         LoadObjectTypeClassTheaterSHP
+[diff] 0x7207f0   MISMATCH         Audio::LoadWAVFiles
+[diff] 0x727880   MISMATCH         ObjectClass::ReadAudioEventINI
+[diff] 0x732950   MISMATCH         ObjectClass::SelectAllOfType
+[diff] 0x74d450   MISMATCH         Game_Load_Load
+[ledger] 0x71ca70 CCINIClass::LoadTypeFromINI -> NG (attempt 3)
+[ledger] 0x71cb90 ObjectTypeClass::ReadDestroyAnim -> NG (attempt 3)
+[ledger] 0x71dca0 LoadObjectTypeClassTheaterSHP -> NG (attempt 3)
+[ledger] 0x71dea0 TerrainTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71f4e0 TriggerTypeClass::ParseActionData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7207f0 Audio::LoadWAVFiles -> NG (attempt 3)
+[ledger] 0x720bb0 ThemeClass::Play -> COMPILE_FAIL (attempt 3)
+[ledger] 0x727880 ObjectClass::ReadAudioEventINI -> NG (attempt 3)
+[ledger] 0x728280 InfantryClass::SetMission -> COMPILE_FAIL (attempt 3)
+[ledger] 0x732950 ObjectClass::SelectAllOfType -> NG (attempt 3)
+[ledger] 0x733380 UpdateUnitHealthTooltip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7336c0 DrawUnitExperiencePopup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7339b0 SelectUnitsByTheme -> COMPILE_FAIL (attempt 3)
+[ledger] 0x734990 File::ParseCSFString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x738d30 UnitClass::DeployToBuilding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x743270 ObjectClass::PlaceScenarioUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7436e0 ObjectClass::ReadFootINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74d450 Game_Load_Load -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "extern_reloc": 3,
+  "frame_sched": 2,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2109b\p17\batch_report.json

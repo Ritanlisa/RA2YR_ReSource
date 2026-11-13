@@ -1,0 +1,11 @@
+{
+ "addr": "0x71CB90",
+ "name": "ObjectTypeClass::ReadDestroyAnim",
+ "size": 179,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71CB90",
+ "bytes_hex": "a1f0517f0083ec1453576a008bf950e81c8ce0ffa198e9a80033db85c00f8e8a000000568b0d8ce9a8008b349985f6746d8a868100000084c075638a869000000084c074598b168d442410508bceff92b80100008b008944240c0fbf4c240e0fbfd08d0c898d0c898d0c898d04ca8d4c241450686c7f810051e8e6c20a008b96c80000008b0df0517f0083c40c83c2248d4424145250518bcfe832bae0ffa198e9a800433bd80f8c78ffffff5e5f5b83c414c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

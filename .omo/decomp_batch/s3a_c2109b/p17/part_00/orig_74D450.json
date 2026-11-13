@@ -1,0 +1,11 @@
+{
+ "addr": "0x74D450",
+ "name": "Game_Load_Load",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74D450",
+ "bytes_hex": "8d04cd0000000083ec202bc18d4c2400c1e00405c61b7e0050681861840051e880ba070083c40c32d28d4c2400e82e6ce6ffa3ecd2b10083c420c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,81 @@
+{
+ "symbol": "?LoadObjectTypeClassTheaterSHP@@YIHH@Z",
+ "sym_key": "Unnamed::LoadObjectTypeClassTheaterSHP",
+ "size": 217,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ec6402000053555733db33ff3bc38be90f86b3000000568b0d000000008b34b9389e2c0200000f84930000008d14ed000000008d46242bd58d4c2474c1e20481c2000000005250535351e8000000008a86a800000083c4143ac374138b86a40000003bc3740950e80000000083c4048d5424748d4c241c52899ea4000000889ea8000000e8000000008d4c241ce8000000008986a40000008d4c2410c744241c00000000e8000000008d4c241cc744241c00000000e800000000a100000000473bf80f824fffffff5e5f5d5b81c464020000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_RulesClassInitState@@3IA",
+   "sym_key": "g_RulesClassInitState"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E31C@@3IA",
+   "sym_key": "DataGlobal_A8E31C"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH00ZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?ReadEntireFile@CCFileClass@@QAEPAXXZ",
+   "sym_key": "CCFileClass::ReadEntireFile"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 193,
+   "type": "DIR32",
+   "sym": "?g_RulesClassInitState@@3IA",
+   "sym_key": "g_RulesClassInitState"
+  }
+ ]
+}

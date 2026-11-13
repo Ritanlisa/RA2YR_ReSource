@@ -1,0 +1,63 @@
+{
+ "symbol": "?ReadDestroyAnim@ObjectTypeClass@@QAEHXZ",
+ "sym_key": "ObjectTypeClass::ReadDestroyAnim",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec1053576a008bf950e800000000a10000000033db85c00f8688000000568b0d000000008b349985f674708a8e8100000084c975668a8e9000000084c9745c8b168d44240c5056ff92b80100008b008bc8c1f9100fbfc90fbfc08d0c898d0c898d14898d0cd08d54241051680000000052e8000000008b86c80000008b150000000083c40c83c0248d4c24105051528bcfe800000000a100000000433bd80f827affffff5e5f5b83c410c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aTerrain@@3HA",
+   "sym_key": "aTerrain"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E998@@3IA",
+   "sym_key": "DataGlobal_A8E998"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E98C@@3IA",
+   "sym_key": "DataGlobal_A8E98C"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?aTerrain@@3HA",
+   "sym_key": "aTerrain"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E998@@3IA",
+   "sym_key": "DataGlobal_A8E998"
+  }
+ ]
+}

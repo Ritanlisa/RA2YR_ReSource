@@ -1,0 +1,39 @@
+{
+ "symbol": "?Game_Load_Load@@YIHH@Z",
+ "sym_key": "Unnamed::Game_Load_Load",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8d04cd0000000083ec202bc18d4c2400c1e004050000000050680000000051e80000000083c40c32d28d4c2400e800000000a30000000083c420c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1BC6@@3PAXA",
+   "sym_key": "DataGlobal_7E1BC6"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "??_C@_0M@BKDE@VEINHOLE?4?$CFs?$AA@",
+   "sym_key": "??_C@_0M@BKDE@VEINHOLE?4?$CFs?$AA@"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D2EC@@3IA",
+   "sym_key": "DataGlobal_B1D2EC"
+  }
+ ]
+}

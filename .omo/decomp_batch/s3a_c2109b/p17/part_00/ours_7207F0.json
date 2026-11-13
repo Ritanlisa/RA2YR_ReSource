@@ -1,0 +1,99 @@
+{
+ "symbol": "?LoadWAVFiles@Audio@@QAEDXZ",
+ "sym_key": "Audio::LoadWAVFiles",
+ "size": 358,
+ "link_base": 0,
+ "bytes_hex": "81ec740200008b44240053568bf18b0d140600008bd133d081e2ff00000033c285c90f84350100008bcee80000000085c00f84260100008b0dd40900008bd133d081e2ff00000033c285c90f850c0100008b462433db85c00f8eff00000055578b4e188d3c9d0000000033c08b1439a00000000081c20001000050526a008d8424900000006a0050e80000000083c4148d8c2484000000518d4c2444e8000000008b6e186a008d4c244403efe8000000008b550088828a0200008b46188b0c388a818a02000084c074638d4c2420e8000000006a018d4c2444e8000000008d5424108d4c2440528d542424e80000000085c074398b6e188b5424108d4c242003efe8000000006a0068e80300005250e8000000008b6d0089442418db442418894424148954241cd99d840200008d4c2478c744244000000000e8000000008d4c2440c744244000000000e8000000008b4624433bd80f8c05ffffff5f5d5e5b81c474020000c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?IsSoundEnabled@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundEnabled"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_Str_File__WAV@@3EA",
+   "sym_key": "g_Str_File__WAV"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Open@CCFileClass@@QAEDH@Z",
+   "sym_key": "CCFileClass::Open"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?ZeroInit32@Struct@@QAEHXZ",
+   "sym_key": "Struct::ZeroInit32"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?Load@FileClass@@QAEHPAX@Z",
+   "sym_key": "FileClass::Load"
+  },
+  {
+   "off": 236,
+   "type": "REL32",
+   "sym": "?ParseWaveFileHeader@@YIHHPAX0@Z",
+   "sym_key": "ParseWaveFileHeader"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?sub_408560@@YI_KHH@Z",
+   "sym_key": "sub_408560"
+  },
+  {
+   "off": 272,
+   "type": "REL32",
+   "sym": "__aulldiv",
+   "sym_key": "_aulldiv"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 331,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

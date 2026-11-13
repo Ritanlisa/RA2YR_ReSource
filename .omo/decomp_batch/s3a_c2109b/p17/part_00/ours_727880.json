@@ -1,0 +1,207 @@
+{
+ "symbol": "?ReadAudioEventINI@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ReadAudioEventINI",
+ "size": 351,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec2053568bf157508b0ee8000000008bd833ff85db7e3c8b0d0000000057518b0ee8000000008d54240c6a2052680000000050a100000000508bcee8000000008d4c240c6a00518b0ee800000000473bfb7cc48b15000000008b0e6a0052e800000000a1000000008b0e50e8000000008bd833ff85db7e3c8b0d0000000057518b0ee8000000008d54240c6a2052680000000050a100000000508bcee8000000008d4c240c6a00518b0ee800000000473bfb7cc48b15000000008b0e6a0052e800000000a1000000008b0e50e8000000008bd833ff85db7e3c8b0d0000000057518b0ee8000000008d54240c6a2052680000000050a100000000508bcee8000000008d4c240c6a00518b0ee800000000473bfb7cc48b15000000008b0e6a0052e8000000000fbf05c803000033ff8b0085c07e1e8b0dbc030000568b04b9508b10ff52680fbf05c8030000478b003bf87ce25f5e5b83c420c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?aEvents@@3HA",
+   "sym_key": "aEvents"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?aEvents@@3HA",
+   "sym_key": "aEvents"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?aEvents@@3HA",
+   "sym_key": "aEvents"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 203,
+   "type": "DIR32",
+   "sym": "?aActions@@3HA",
+   "sym_key": "aActions"
+  },
+  {
+   "off": 211,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?aActions@@3HA",
+   "sym_key": "aActions"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?aTriggers@@3HA",
+   "sym_key": "aTriggers"
+  },
+  {
+   "off": 260,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?aActions@@3HA",
+   "sym_key": "aActions"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

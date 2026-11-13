@@ -1,0 +1,93 @@
+{
+ "symbol": "?LoadTypeFromINI@CCINIClass@@QAEHXZ",
+ "sym_key": "CCINIClass::LoadTypeFromINI",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "81ec9000000055578bf9e800000000a1000000008b0f50e80000000033ed8944241085c00f8ee800000053568b0d0000000055518b0fe8000000008d54242068800000008bf0a10000000052680000000056508bcfe80000000085c0740d8d4c2420e8000000008bd8eb0233dba1340a00005683f8047d34e8000000008bc883c40481e17f00008079054983c980419983e27f66894c241403c2c1f80766894424168b54241489542410eb35e8000000008bc8bee803000099f7feb8d34d621083c404668954241cf7e9c1fa068bc2c1e81f03d0668954241e8b4c241c894c241085db741e68e0000000e80000000083c40485c0740d8d5424108bc85253e8000000008b442418453be80f8c1cffffff5e5b5f5d81c490000000c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?ResetSection@INIClass@@QAEHXZ",
+   "sym_key": "INIClass::ResetSection"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?aTerrain@@3HA",
+   "sym_key": "aTerrain"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?aTerrain@@3HA",
+   "sym_key": "aTerrain"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?aTerrain@@3HA",
+   "sym_key": "aTerrain"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?FindOrCreate@TerrainTypeClass@@QAEHXZ",
+   "sym_key": "TerrainTypeClass::FindOrCreate"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?Construct@TerrainClass@@QAEPAPAXPAX0@Z",
+   "sym_key": "TerrainClass::Construct"
+  }
+ ]
+}
