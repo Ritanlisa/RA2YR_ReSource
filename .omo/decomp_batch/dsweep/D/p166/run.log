@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p166\part_00
+=== convert (20 addrs) ===
+[conv] 0x69fc10 ShipLocomotionClass::ProcessImpact -> ShipLocomotionClass
+[conv] 0x788180 FindLobbyIDWOL -> _addr_78
+[conv] 0x657da0 Diplomacy::DlgProc -> Diplomacy
+[conv] 0x5c46e0 MPCooperative::SetupRematch -> MPCooperative
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x622b50 BaseDialogProc -> _addr_62
+[conv] 0x593550 MapSeed::PlaceCityBlock2 -> MapSeed
+[conv] 0x61e700 GroupLabel::WndProc -> GroupLabel
+[conv] 0x6a7780 SidebarClass::UpdateStrips -> SidebarClass
+[conv] 0x6ba690 Surface::AlphaBlend -> Surface
+[conv] 0x439b00 JumpjetLocomotionClass::Update2 -> JumpjetLocomotionClass
+[conv] 0x64bdd0 DecodeNetworkEvents -> _addr_64
+[conv] 0x780110 ObjectClass::ResetSystemWOL -> ObjectClass
+[conv] 0x43b740 BuildingClass::Construct -> BuildingClass
+[conv] 0x6b9740 ChatEvent::ProcessStrings -> ChatEvent
+[conv] 0x57d530 CellClass::ApplyTileModification4 -> CellClass
+[conv] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> BuildingClass
+[conv] 0x6941a0 ReceiveNetworkFile -> _addr_69
+[conv] 0x57bcf0 CellClass::ApplyTileModification -> CellClass
+[conv] 0x57c2b0 CellClass::ApplyTileModification2 -> CellClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ShipLocomotionClass      rc=2
+[era] _addr_78                 rc=2
+[era] Diplomacy                rc=2
+[era] MPCooperative            rc=2
+[era] _addr_56                 rc=2
+[era] _addr_62                 rc=2
+[era] MapSeed                  rc=2
+[era] GroupLabel               rc=2
+[era] SidebarClass             rc=2
+[era] Surface                  rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] _addr_64                 rc=0
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] ChatEvent                rc=2
+[era] CellClass                rc=2
+[era] _addr_69                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ba690   MISMATCH         Surface::AlphaBlend
+[diff] 0x64bdd0   MISMATCH         DecodeNetworkEvents
+[ledger] 0x69fc10 ShipLocomotionClass::ProcessImpact -> COMPILE_FAIL (attempt 1)
+[ledger] 0x788180 FindLobbyIDWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x657da0 Diplomacy::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c46e0 MPCooperative::SetupRematch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x622b50 BaseDialogProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x593550 MapSeed::PlaceCityBlock2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x61e700 GroupLabel::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a7780 SidebarClass::UpdateStrips -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ba690 Surface::AlphaBlend -> NG (attempt 1)
+[ledger] 0x439b00 JumpjetLocomotionClass::Update2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64bdd0 DecodeNetworkEvents -> NG (attempt 1)
+[ledger] 0x780110 ObjectClass::ResetSystemWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43b740 BuildingClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b9740 ChatEvent::ProcessStrings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57d530 CellClass::ApplyTileModification4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6941a0 ReceiveNetworkFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57bcf0 CellClass::ApplyTileModification -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57c2b0 CellClass::ApplyTileModification2 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p166\batch_report.json
