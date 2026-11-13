@@ -1,0 +1,27 @@
+{
+ "symbol": "?Map_Read_6823D0@@YGHHHPAH@Z",
+ "sym_key": "Unnamed::Map_Read_6823D0",
+ "size": 208,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec108d54241c56578b7c2424c744242400000000526a1266c70700008b08680000000050ff51108bf085f60f8c900000008b442420c7442408010000008944240c8b44242485c075116803400080e8000000008b44242883c4048b088d542410528d54240c526a0150ff510c8bf085f67c4166837c24101f75138b44242468800000005057e80000000083c40c8b44242485c0742c8b0850ff51088b44242485c0741e8b1050ff52088bc65f5e83c410c20c008b44242485c074068b0850ff51088bc65f5e83c410c20c00",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7D10@@3EA",
+   "sym_key": "DataGlobal_7F7D10"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  }
+ ]
+}

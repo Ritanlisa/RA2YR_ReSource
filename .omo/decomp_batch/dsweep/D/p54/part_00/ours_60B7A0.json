@@ -1,0 +1,45 @@
+{
+ "symbol": "?UI_Get_60B7A0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UI_Get_60B7A0",
+ "size": 241,
+ "link_base": 0,
+ "bytes_hex": "83ec2056578bf957e800000000b9000000008bf0e80000000084c00f84c80000008d4424185057e8000000008d4c24085156e8000000008b4424108b5424082bc233f63d200300007f107d2505e0fcffff992bc28bf0d1feeb1705e0fcffff992bc2ba00000000d1f80f98c24a23d08bf28b4c2414538b5c241033c02bcb81f9580200007f0f7d298d81a8fdffff992bc2d1f8eb1c8d81a8fdffffb900000000992bc2d1f80f98c181e1ff0000004923c18b54241c8d0c328b74242003c685c97d0233c985c07d0233c08b5c24286a002bde8b7424282bf25356505157e8000000005b5f5e83c420c35f32c05e83c420c3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetGameSpeed@SessionClass@@QAEDXZ",
+   "sym_key": "SessionClass::GetGameSpeed"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  }
+ ]
+}

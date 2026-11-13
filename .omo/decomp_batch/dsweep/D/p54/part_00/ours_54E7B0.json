@@ -1,0 +1,39 @@
+{
+ "symbol": "?LoadPointArray@LoadGame@@QAEHH@Z",
+ "sym_key": "LoadGame::LoadPointArray",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558b6c2414568bd9578b45006a008d4c24146a045155ff500c85c00f8ca30000008b4c2410c744241c0000000085c90f8e8f0000006a08e8000000008b550083c4048bf86a006a085755ff520c85c0894424147c6f576800000000e8000000008d4704506800000000e8000000008b43148b4b1c3bc88d730c7c228b4b18f6c5ff750485c075298b4b2085c97e228b1603c86a005156ff520884c074138b46108b56048d4801894e10893c82ff44241c8b44241c8b4c24103bc10f8c75ffffff8b4424145f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  }
+ ]
+}

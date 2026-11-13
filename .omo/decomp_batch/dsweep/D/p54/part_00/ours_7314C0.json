@@ -1,0 +1,123 @@
+{
+ "symbol": "?SelectAllMembers@SquadClass@@QAEHXZ",
+ "sym_key": "SquadClass::SelectAllMembers",
+ "size": 224,
+ "link_base": 0,
+ "bytes_hex": "558be9576a00b900000000e8000000006a006a00b900000000e8000000006a00b900000000e8000000006a00b900000000e8000000006a00b900000000e800000000a10000000033ffb90100000085c0890d0000000077095f890d000000005dc356a1000000008b34b885f6745a8a868100000084c075508b86140200008d4dff3bc17543a10000000085c0740d8b8e1c020000e800000000eb0c8b961c0200008a82ed01000084c0741d8a868300000084c075138b0656ff904c010000c7050000000000000000a100000000473bf872905e5fc70500000000010000005dc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?SetObserverMode@TacticalClass@@QAEDH@Z",
+   "sym_key": "TacticalClass::SetObserverMode"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?SetDisplayMode@TacticalClass@@QAEPAIPAXD@Z",
+   "sym_key": "TacticalClass::SetDisplayMode"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?TogglePower2@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower2"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?TogglePower@BuildingClass@@QAEDH@Z",
+   "sym_key": "BuildingClass::TogglePower"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?ToggleZoom@MapClass@@QAEHH@Z",
+   "sym_key": "MapClass::ToggleZoom"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  }
+ ]
+}

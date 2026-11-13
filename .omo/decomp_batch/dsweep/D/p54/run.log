@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x46c890 BulletTypeClass::ddtor -> BulletTypeClass
+[conv] 0x6f20d0 TeamTypeClass::ddtor -> TeamTypeClass
+[conv] 0x731f70 GatherTechnoClassFiltered -> _addr_73
+[conv] 0x410ce0 BSurface::Construct -> BSurface
+[conv] 0x6e2520 TActionClass::executeLoadAction -> TActionClass
+[conv] 0x776490 HitDialogTest -> _addr_77
+[conv] 0x743190 TechnoClass::SelectAutoTargetWithGarrison -> TechnoClass
+[conv] 0x7cd4de _tmpfile -> _addr_7C
+[conv] 0x72ac40 WinMainSetup_Setup_72AC40 -> WinMainSetup_Setup
+[conv] 0x639130 ObjectClass::ReadBuildingINI -> ObjectClass
+[conv] 0x54e7b0 LoadGame::LoadPointArray -> LoadGame
+[conv] 0x6823d0 Map_Read_6823D0 -> Map_Read
+[conv] 0x5c18a0 MPCooperative::Read -> MPCooperative
+[conv] 0x4c2a60 TechnoClass::CreateTrailParticle -> TechnoClass
+[conv] 0x5d3250 MSFont::Create -> MSFont
+[conv] 0x577bb0 TeamClass::DisbandTeam -> TeamClass
+[conv] 0x7314c0 SquadClass::SelectAllMembers -> SquadClass
+[conv] 0x60b7a0 ObjectClass::UI_Get_60B7A0 -> ObjectClass
+[conv] 0x7bc970 BSurface::ConstructEx -> BSurface
+[conv] 0x682d30 ReadBufferCOM -> _addr_68
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletTypeClass          rc=0
+[era] TeamTypeClass            rc=0
+[era] _addr_73                 rc=2
+[era] BSurface                 rc=2
+[era] TActionClass             rc=2
+[era] _addr_77                 rc=2
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=2
+[era] WinMainSetup_Setup       rc=0
+[era] ObjectClass              rc=2
+[era] LoadGame                 rc=0
+[era] Map_Read                 rc=0
+[era] MPCooperative            rc=0
+[era] MSFont                   rc=0
+[era] TeamClass                rc=2
+[era] SquadClass               rc=0
+[era] _addr_68                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x46c890   MISMATCH         BulletTypeClass::ddtor
+[diff] 0x6f20d0   MISMATCH         TeamTypeClass::ddtor
+[diff] 0x743190   MISMATCH         TechnoClass::SelectAutoTargetWithGarrison
+[diff] 0x4c2a60   MISMATCH         TechnoClass::CreateTrailParticle
+[diff] 0x72ac40   MISMATCH         WinMainSetup_Setup_72AC40
+[diff] 0x60b7a0   MISMATCH         ObjectClass::UI_Get_60B7A0
+[diff] 0x54e7b0   MISMATCH         LoadGame::LoadPointArray
+[diff] 0x6823d0   MISMATCH         Map_Read_6823D0
+[diff] 0x5c18a0   MISMATCH         MPCooperative::Read
+[diff] 0x5d3250   MISMATCH         MSFont::Create
+[diff] 0x7314c0   MISMATCH         SquadClass::SelectAllMembers
+[diff] 0x682d30   MISMATCH         ReadBufferCOM
+[ledger] 0x46c890 BulletTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x6f20d0 TeamTypeClass::ddtor -> NG (attempt 1)
+[ledger] 0x731f70 GatherTechnoClassFiltered -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410ce0 BSurface::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2520 TActionClass::executeLoadAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776490 HitDialogTest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x743190 TechnoClass::SelectAutoTargetWithGarrison -> NG (attempt 1)
+[ledger] 0x7cd4de _tmpfile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72ac40 WinMainSetup_Setup_72AC40 -> NG (attempt 1)
+[ledger] 0x639130 ObjectClass::ReadBuildingINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e7b0 LoadGame::LoadPointArray -> NG (attempt 1)
+[ledger] 0x6823d0 Map_Read_6823D0 -> NG (attempt 1)
+[ledger] 0x5c18a0 MPCooperative::Read -> NG (attempt 1)
+[ledger] 0x4c2a60 TechnoClass::CreateTrailParticle -> NG (attempt 1)
+[ledger] 0x5d3250 MSFont::Create -> NG (attempt 1)
+[ledger] 0x577bb0 TeamClass::DisbandTeam -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7314c0 SquadClass::SelectAllMembers -> NG (attempt 1)
+[ledger] 0x60b7a0 ObjectClass::UI_Get_60B7A0 -> NG (attempt 1)
+[ledger] 0x7bc970 BSurface::ConstructEx -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682d30 ReadBufferCOM -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "regalloc": 4,
+  "codegen_shape": 3,
+  "eval_order": 1,
+  "frame_sched": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p54\batch_report.json

@@ -1,0 +1,99 @@
+{
+ "symbol": "?CreateTrailParticle@TechnoClass@@QAEPAXHHHHHHH@Z",
+ "sym_key": "TechnoClass::CreateTrailParticle",
+ "size": 232,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b5424108b4c240c680001000089068b44241889460c8b44242485c0895608894e048b4c241c6a000f95c28856188b54242485d2894e10b9000000000f95c0884614e80000000085c00f95c1884e1ca100000000390500000000722f8a0d0000000084c9750485c075398b0d0000000085c9762f8b150000000003c86a00516800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934816800010000e80000000083c40485c05e74278b0d400200006a0068000000006a008d54241c6a00528b9120100000528bc8e800000000c21c0033c0c21c00",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E90@@3IA",
+   "sym_key": "DataGlobal_8A0E90"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E98@@3IA",
+   "sym_key": "DataGlobal_8A0E98"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E95@@3EA",
+   "sym_key": "DataGlobal_8A0E95"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E9C@@3IA",
+   "sym_key": "DataGlobal_8A0E9C"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E88@@3IA",
+   "sym_key": "DataGlobal_8A0E88"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E88@@3IA",
+   "sym_key": "DataGlobal_8A0E88"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E98@@3IA",
+   "sym_key": "DataGlobal_8A0E98"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E98@@3IA",
+   "sym_key": "DataGlobal_8A0E98"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E8C@@3IA",
+   "sym_key": "DataGlobal_8A0E8C"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0E50@@3IA",
+   "sym_key": "DataGlobal_8A0E50"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?SelectAutoTargetWithGarrison@TechnoClass@@QAEPAXPAHHHH@Z",
+ "sym_key": "TechnoClass::SelectAutoTargetWithGarrison",
+ "size": 226,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c8bd98b8e1c020000e80000000084c074178b86c40600008a88120e000084c974075e33c05bc21000578bfbf7c378b901000f858d0000008bcee80000000084c0742f8b8ec40600008a81d50c000084c0751f8b3e8bcee8000000005056ff97f80300008b08e8000000000fbef80bfbeb538b4424108b16506a0056ff92f803000083380074178b0e6a0056ff91f80300008b08e8000000000fbef80bfb8b166a0156ff92f803000083380074178b066a0156ff90f80300008b08e8000000000fbec80bf98b5424188b4424145250578bcee8000000005f5e5bc21000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?OwnerHasPower@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::OwnerHasPower"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?GetPoweredWeaponIndex@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::GetPoweredWeaponIndex"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?GetRenderType@Building@@QAEDXZ",
+   "sym_key": "Building::GetRenderType"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?SelectAutoTarget_Cloaked@FootClass@@QAEPAXHHD@Z",
+   "sym_key": "FootClass::SelectAutoTarget_Cloaked"
+  }
+ ]
+}

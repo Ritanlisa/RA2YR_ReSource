@@ -1,0 +1,11 @@
+{
+ "addr": "0x72AC40",
+ "name": "WinMainSetup_Setup_72AC40",
+ "size": 214,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72AC40",
+ "bytes_hex": "53e8ea040000e8e5050000a0e0fbb00033db3ac30f84a5000000881de0fbb000e8fb420000e8d6440000a110fcb00050e8c8de09008b0d14fcb000891d10fcb00051e8b6de09008b1518fcb000891d14fcb00052e8a4de0900a11cfcb000891d18fcb00050e893de09008b0d20fcb000891d1cfcb00051e881de09008b1524fcb000891d20fcb00052e86fde0900a128fcb000891d24fcb00050e85ede09008b0d2cfcb000891d28fcb00051e84cde090083c420891d2cfcb000e8e1a0e0ffe8fc530000e8f7560000e822580000881d0cfcb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

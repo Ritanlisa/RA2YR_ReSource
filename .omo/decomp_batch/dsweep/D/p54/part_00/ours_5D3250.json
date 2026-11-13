@@ -1,0 +1,33 @@
+{
+ "symbol": "?Create@MSFont@@QAEXPAHEHHHH@Z",
+ "sym_key": "MSFont::Create",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "0fbe44240883ec283db0000000538bd97505e8000000008d4c24346a018d5424385152e8000000008b4424343c200f868900000025ff00000083e82185c07e0e3dd80000007c09b8d8000000eb0233c0568d3440578d4c24148d46025051e8000000008b008b5424408b7c24382bd08b4424448954240c8b0f8d542424525789442418ff51786a006a006a008b4c24546a006a0068e80300008b53146a006a006a006800040000508d44243803f15056528b53188bcfe8000000005f5e5b83c428c21800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?CharToOemBuffA@@YGHPAX0H@Z",
+   "sym_key": "CharToOemBuffA"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAIPAXH@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?DrawToSurfaceSHP@@YIXHPAX0I00HHHHHHHIHH@Z",
+   "sym_key": "DrawToSurfaceSHP"
+  }
+ ]
+}
