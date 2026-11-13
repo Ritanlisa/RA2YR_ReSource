@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p170\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f0690 Modem::CheckStatus -> Modem
+[conv] 0x6aa600 SidebarClass::UpdateProduction -> SidebarClass
+[conv] 0x600ca0 ValidateDialogEvent -> _addr_60
+[conv] 0x5240a0 InfantryTypeClass::LoadFromINI -> InfantryTypeClass
+[conv] 0x52cd70 ObjectClass::InitRules -> ObjectClass
+[conv] 0x601d20 ValidateDialogControl -> _addr_60
+[conv] 0x7359f0 UnitClass::CalcMoveTarget -> UnitClass
+[conv] 0x470d30 CampaignScreen::Init -> CampaignScreen
+[conv] 0x4d6aa0 FootClass::FindAITarget -> FootClass
+[conv] 0x4fdd10 HouseClass::ManageProduction -> HouseClass
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x6547c0 ObjectClass::GenerateImageThumbnail -> ObjectClass
+[conv] 0x415ee0 BulletClass::FlightUpdate -> BulletClass
+[conv] 0x4c0750 DSurface::DrawDashedLineStipple -> DSurface
+[conv] 0x65ec30 ExecuteScriptTypeClassActions -> _addr_65
+[conv] 0x5ddbd0 NetworkSettings::DlgProc -> NetworkSettings
+[conv] 0x4aa440 CellClass::FindOpenNeighbor -> CellClass
+[conv] 0x75fa90 Voxel::ShadowCalc -> Voxel
+[conv] 0x7602e0 Surface::RenderToSurfaceVoxel -> Surface
+[conv] 0x6d5030 RadarClass::DrawBlips -> RadarClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Modem                    rc=0
+[era] SidebarClass             rc=2
+[era] _addr_60                 rc=2
+[era] InfantryTypeClass        rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] CampaignScreen           rc=2
+[era] FootClass                rc=2
+[era] HouseClass               rc=2
+[era] _addr_55                 rc=2
+[era] BulletClass              rc=2
+[era] DSurface                 rc=2
+[era] _addr_65                 rc=2
+[era] NetworkSettings          rc=2
+[era] CellClass                rc=2
+[era] Voxel                    rc=2
+[era] Surface                  rc=2
+[era] RadarClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f0690   MISMATCH         Modem::CheckStatus
+[diff] 0x6547c0   MISMATCH         ObjectClass::GenerateImageThumbnail
+[ledger] 0x5f0690 Modem::CheckStatus -> NG (attempt 1)
+[ledger] 0x6aa600 SidebarClass::UpdateProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600ca0 ValidateDialogEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5240a0 InfantryTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52cd70 ObjectClass::InitRules -> COMPILE_FAIL (attempt 1)
+[ledger] 0x601d20 ValidateDialogControl -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7359f0 UnitClass::CalcMoveTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x470d30 CampaignScreen::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d6aa0 FootClass::FindAITarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fdd10 HouseClass::ManageProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6547c0 ObjectClass::GenerateImageThumbnail -> NG (attempt 1)
+[ledger] 0x415ee0 BulletClass::FlightUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c0750 DSurface::DrawDashedLineStipple -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65ec30 ExecuteScriptTypeClassActions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ddbd0 NetworkSettings::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4aa440 CellClass::FindOpenNeighbor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75fa90 Voxel::ShadowCalc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7602e0 Surface::RenderToSurfaceVoxel -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d5030 RadarClass::DrawBlips -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p170\batch_report.json

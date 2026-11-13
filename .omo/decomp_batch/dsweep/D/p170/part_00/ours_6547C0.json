@@ -1,0 +1,213 @@
+{
+ "symbol": "?GenerateImageThumbnail@ObjectClass@@QAEPAVRadarClass@@PAH00D@Z",
+ "sym_key": "ObjectClass::GenerateImageThumbnail",
+ "size": 2037,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f881ecb40000008a4514538b5d0c568bf1578b7d108974242884c08974243074248b470885c07e078b470c85c07f168b0389078b4b04894f048b53088957088b430c89470c8b863c12000085c0756e8b7b080faf7b0c8d0c7f51e80000000083c40485c074208d57ff85d27c158d480242c641fe00c641ff00c6010083c1034a75ef8bf8eb0233ff89be3c1200008b43080faf430c8d0c4033c08bd1c1e902f3ab8bca83e103f3aa8b43088b7d108986401200008b4b0c898e441200008a451484c0740957538bcee8000000008b86201200008b53088b8e881400008954244c85c0894c240c74228b1050ff527c894424248b8620120000508b08ff91800000008944242ce906010000db44244cdd5c2440d90500000000dc742440d95c240cdb430cdd5c2418d944240cdc4c2418d90500000000d9c1ded9dfe0f6c401753dddd8d90500000000dc74241883ec08d9542414dc4c2448dd1c24e8000000008b7c244883c40833c7c744242c6c00000025ff00000033f8897c2424eb2883ec08bf8c000000dd1c24897c242ce8000000008b4c244883c40833c125ff00000033c18944242c8b54240c6a20899688140000e8000000008bf083c40485f674368b44242c897e040faff8d1e7576a008d4e14894608c7460c00000000c70600000000c7461002000000e800000000c70600000000eb0233f68b4424286a005689b0201200008b0eff51188b7424288b7d10db43088b86201200006a006a0050da7424308b10d95c2454db430cda742438d9542478d9442454d8c9dc3d00000000d99c2498000000ddd8ff525c8b3783ec088974241889442444db442418d84c2414dd1c24e8000000008b57088bc88b44243c03d68954241833c8db44241881e1ff00000033c1d84c24148944243c89442440dd1c24e8000000008bc88b44244833c883c40881e1ff00000033c18b4c2424403bc1894424607c04894c24608b770483ec0889742418db442418d84c2414dd1c24e8000000008b570c8bd88b44244803d68954241833d8db44241881e3ff00000033d8d84c2414895c2478dd1c24e8000000008b7424488b7c243433c683c40825ff00000033f0463bf77c08897c24108bf7eb0489742410db4424343bded874240cd9542440d95c2464db442470d874240cd95c24140f8d200400008bc38b4c24340faf4424242bf303c18b4c243c897424748d144189542450d944241483ec08dd1c24e8000000008bbc24a000000083c40833c725ff00000033f88b44242889bc24980000008bb0441200003bf77d028bfed9442414d844246c897c2468dd5c24188b4c241c8b5424185152e8000000008bc88b8424b400000033c883c40881e1ff0000008974241433c1898424ac000000403bf07c04894424148b4c24348b4424603bc80f8d320300008b5424502bc183c2fe894424388954243cd905000000008b44241c8b4c2418dd9c24a0000000d905000000005051dd9c2480000000c78424c000000000000000c78424c400000000000000e8000000008bb424b00000008b54243033c683c4088b9a4012000025ff00000033f0899c24900000003bde89b424a80000007d028bf38b44241c8b4c2418505189b42490000000e8000000008bc88b8424b800000033c883c40881e1ff00000033c1898424b00000008d48013bd9894c240c7d06895c240c8bcb8b5424148bc73bfa89bc24840000000f8d4c0100002bd7899424b40000008b54244c0faffadd8424b8000000dd8424a0000000dd44247803fe897c24588d3c7f897c245c83bc24b4000000017e08d90500000000eb04d944246c3bf10f8dc80000008b5424288b7c245c8bc18b4c240c8b92441200002bc60fafd38b5c2458898424a00000002bde83f8017e08d90500000000eb04d9442448d88c248c0000008d04333bc2d8c97d4e8b4c242833c08b893c12000003cf8a01894424308b442428db4424308944243033c08a4101d8c98944247833c08a41028b4c240cdec5db44247889442478d8c9dec4db442478d8c9dec3ddd8eb02ddd84683c7033bf17d0c8b8424a0000000e97bffffff8b8424840000008bb424880000008b9c24900000008b54244cddd8eb02ddd88b7c245c03fa40898424840000008d3c57897c245c8b7c245803fa897c24588b7c24143bc70f8cedfeffff8b7c2468ddd8ddd8ddd88b74241c8b4c24185651e8000000008bc88b84249c00000033c8bbff00000081e1ff00000083c40833c13bc3898424940000007f028bd88b5424185652e8000000008bc88b8424a400000033c8beff00000081e1ff00000083c40833c13bc68984249c0000007f028bf08b54241c8b4424185250e8000000008bc88b44245c33c883c40881e1ff00000033c13dff000000894424547e0cc7442454ff0000008b4424548b0d000000008b54243cd3f88b0d0000000083c202d9442464d8442448d3e08b0d000000008954243cd3fe8b0d00000000d95c2464d3e68b0d00000000d3fb8b0d000000000bc6d3e30bc36689028b44243848894424380f85ebfcffff8b5424348b5c2470895424388b4c24748b4424408b5424248b742450dd44241883f90189442464d95c24140f94c08d14564984c089542450894c24740f8406fcffff8b7424108b7c242c8b4424308b8020120000508b08ff51608bc70faf4424249983e20703c28b5424308bf88b8274120000c1ff034785c0752f57e8000000008bd08b4424348bcf8bfa8990741200008bd133c083c404c1e902f3ab8bca8b54243483e103f3aaeb048b5424388b4c24608b45082bca2bf389700c5f8958045e89108948085b8be55dc21000",
+ "relocs": [
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?UpdateBlips@RadarClass@@QAEHHPAX@Z",
+   "sym_key": "RadarClass::UpdateBlips"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F0420@@3MA",
+   "sym_key": "DataGlobal_7F0420"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F041C@@3MA",
+   "sym_key": "DataGlobal_7F041C"
+  },
+  {
+   "off": 329,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F041C@@3MA",
+   "sym_key": "DataGlobal_7F041C"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 439,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?XSurface_Vtable@@3PAXA",
+   "sym_key": "XSurface_Vtable"
+  },
+  {
+   "off": 494,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?BSurface_Vtable@@3PAXA",
+   "sym_key": "BSurface_Vtable"
+  },
+  {
+   "off": 576,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1718@@3NA",
+   "sym_key": "DataGlobal_7E1718"
+  },
+  {
+   "off": 617,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 666,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 773,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 891,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 964,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1045,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 1066,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 1102,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1173,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1303,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 1366,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 1587,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1638,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1693,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 1741,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 1753,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 1772,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 1784,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 1796,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 1804,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 1957,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
