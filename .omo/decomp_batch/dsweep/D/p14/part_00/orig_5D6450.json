@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D6450",
+ "name": "ListBox::FillEntries",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D6450",
+ "bytes_hex": "53578b7c240c8bcfe8e3d304008b44241033db8b481085c97e4e55568b4c24188b51048b349a566a00684301000057ff15a4147e008be88b44241c3bf0750f6a0055684e01000057ff15a4147e005655685101000057ff15a4147e008b442418433b58107cb65e5d5f5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x436950 BuildingLightClass::SD_vt05 -> BuildingLightClass
+[conv] 0x752a40 ClearThemeQueuePlaylist -> _addr_75
+[conv] 0x534de0 ObjectClass::ReleaseLoadingResources -> ObjectClass
+[conv] 0x652de0 RadarClass::Destru_vt07 -> RadarClass
+[conv] 0x53c450 TechnoClass::CanBePermaMC -> TechnoClass
+[conv] 0x7ab350 CChatEventSink::DispatchStub_29 -> CChatEventSink
+[conv] 0x4d55f0 FootClass::Destru_vt319 -> FootClass
+[conv] 0x4a40c0 ObjectClass::sub_4A40C0 -> ObjectClass
+[conv] 0x53e6b0 WinMain_Write_53E6B0 -> WinMain_Write
+[conv] 0x402ef0 ObjectClass::sub_402EF0 -> ObjectClass
+[conv] 0x7b3890 UDPInterfaceClass::Receive -> UDPInterfaceClass
+[conv] 0x7cd989 __mtdeletelocks -> _addr_7C
+[conv] 0x5d6450 MultiplayerGameMode::FillEntries -> MultiplayerGameMode
+[conv] 0x710670 TechnoClass::OnCellPlacementComplete -> TechnoClass
+[conv] 0x7d5791 __rmtmp -> _addr_7D
+[conv] 0x433180 BinkMovieClass::SetPosition -> BinkMovieClass
+[conv] 0x6fcd40 TechnoClass::ProcessDeploymentState -> TechnoClass
+[conv] 0x40a2d0 ObjectClass::sub_40A2D0 -> ObjectClass
+[conv] 0x5fa4a0 Audio::SetScoreVolume -> Audio
+[conv] 0x437f50 ObjectClass::sub_437F50 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLightClass       rc=0
+[era] _addr_75                 rc=2
+[era] ObjectClass              rc=2
+[era] RadarClass               rc=0
+[era] TechnoClass              rc=0
+[era] CChatEventSink           rc=2
+[era] FootClass                rc=2
+[era] WinMain_Write            rc=0
+[era] UDPInterfaceClass        rc=2
+[era] _addr_7C                 rc=2
+[era] MultiplayerGameMode      rc=0
+[era] _addr_7D                 rc=2
+[era] BinkMovieClass           rc=0
+[era] Audio                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x436950   MISMATCH         BuildingLightClass::SD_vt05
+[diff] 0x534de0   MISMATCH         ObjectClass::ReleaseLoadingResources
+[diff] 0x402ef0   MISMATCH         ObjectClass::sub_402EF0
+[diff] 0x40a2d0   MATCH            ObjectClass::sub_40A2D0
+[diff] 0x437f50   MISMATCH         ObjectClass::sub_437F50
+[diff] 0x652de0   MISMATCH         RadarClass::Destru_vt07
+[diff] 0x53c450   MISMATCH         TechnoClass::CanBePermaMC
+[diff] 0x710670   MISMATCH         TechnoClass::OnCellPlacementComplete
+[diff] 0x6fcd40   MISMATCH         TechnoClass::ProcessDeploymentState
+[diff] 0x53e6b0   MISMATCH         WinMain_Write_53E6B0
+[diff] 0x5d6450   MISMATCH         MultiplayerGameMode::FillEntries
+[diff] 0x433180   MISMATCH         BinkMovieClass::SetPosition
+[ledger] 0x436950 BuildingLightClass::SD_vt05 -> NG (attempt 1)
+[ledger] 0x752a40 ClearThemeQueuePlaylist -> COMPILE_FAIL (attempt 1)
+[ledger] 0x534de0 ObjectClass::ReleaseLoadingResources -> NG (attempt 1)
+[ledger] 0x652de0 RadarClass::Destru_vt07 -> NG (attempt 1)
+[ledger] 0x53c450 TechnoClass::CanBePermaMC -> NG (attempt 1)
+[ledger] 0x7ab350 CChatEventSink::DispatchStub_29 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d55f0 FootClass::Destru_vt319 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a40c0 ObjectClass::sub_4A40C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e6b0 WinMain_Write_53E6B0 -> NG (attempt 1)
+[ledger] 0x402ef0 ObjectClass::sub_402EF0 -> NG (attempt 1)
+[ledger] 0x7b3890 UDPInterfaceClass::Receive -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cd989 __mtdeletelocks -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6450 MultiplayerGameMode::FillEntries -> NG (attempt 1)
+[ledger] 0x710670 TechnoClass::OnCellPlacementComplete -> NG (attempt 1)
+[ledger] 0x7d5791 __rmtmp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x433180 BinkMovieClass::SetPosition -> NG (attempt 1)
+[ledger] 0x6fcd40 TechnoClass::ProcessDeploymentState -> NG (attempt 1)
+[ledger] 0x40a2d0 ObjectClass::sub_40A2D0 -> OK (attempt 1)
+[ledger] 0x5fa4a0 Audio::SetScoreVolume -> COMPILE_FAIL (attempt 1)
+[ledger] 0x437f50 ObjectClass::sub_437F50 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "branch_polarity": 1,
+  "frame_sched": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p14\batch_report.json

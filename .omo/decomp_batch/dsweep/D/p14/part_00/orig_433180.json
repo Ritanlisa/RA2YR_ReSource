@@ -1,0 +1,11 @@
+{
+ "addr": "0x433180",
+ "name": "BinkMovieClass::SetPosition",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x433180",
+ "bytes_hex": "53568b74240c578bf956e8a10100008b1633c933c051508bceff525c8bd885db743d8b06558bceff50748b168bce8be8ff92800000008b4f088b54241c81c900000080518b4c241c528b57045150555352ff15b8157e008b068bceff50605d568bcfe8890000005f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

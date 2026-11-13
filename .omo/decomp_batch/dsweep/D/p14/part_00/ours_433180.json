@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetPosition@BinkMovieClass@@QAEPAIHHH@Z",
+ "sym_key": "BinkMovieClass::SetPosition",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "53568b74240c578bf956e8000000008b066a006a0056ff505c8bd885db743c8b0e5556ff51748b16568be8ff92800000008b4f088b54241c81c900000080518b4c241c528b57045150555352e8000000008b0683c41c56ff50605d568bcfe8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+   "sym_key": "BinkMovie::AdjustSurfaceFormat"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?BinkCopyToBuffer@@YAHPAXHHHHHHZZ",
+   "sym_key": "BinkCopyToBuffer"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?BlitToTarget@BinkMovie@@QAEPAIH@Z",
+   "sym_key": "BinkMovie::BlitToTarget"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6FCD40",
+ "name": "TechnoClass::ProcessDeploymentState",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6FCD40",
+ "bytes_hex": "568bf16a008b06ff90c80300008b166a016a008bceff92800400008b066a038bceff908002000085f67410f6461404740a8a86ad06000084c075268b8ed002000085c97410e876a3fbff8b8ed0020000e81baefbff8b166a018bceff92dc0000008b068bceff90500100005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

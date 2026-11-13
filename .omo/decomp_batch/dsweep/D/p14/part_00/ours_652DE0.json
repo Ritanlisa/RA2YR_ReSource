@@ -1,0 +1,27 @@
+{
+ "symbol": "?Destru_vt07@RadarClass@@QAEXXZ",
+ "sym_key": "RadarClass::Destru_vt07",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008bcee80000000033c0c786dc140000010000008986ac1400008986b01400008986cc1400008986c81400008986001500008986141500008b8624120000ff500c8b8e5c1200008d865c12000050ff510c8bcee8000000005ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?SetSize@DisplayClass@@QAEHXZ",
+   "sym_key": "DisplayClass::SetSize"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

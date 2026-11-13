@@ -1,0 +1,11 @@
+{
+ "addr": "0x53C450",
+ "name": "TechnoClass::CanBePermaMC",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53C450",
+ "bytes_hex": "568bf185f6750432c05ec38b068bceff502c83f806750432c05ec38b168bceff92840000008a88350d000084c9740432c05ec38b068bceff906001000084c0740432c05ec38b168bceff92840000008a886a0d000084c9740432c05ec38b068bceff505484c00f94c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

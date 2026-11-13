@@ -1,0 +1,33 @@
+{
+ "symbol": "?FillEntries@MultiplayerGameMode@@QAGHHH@Z",
+ "sym_key": "MultiplayerGameMode::FillEntries",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408578bcbe8000000008b44241033ff8b481085c9764955568b40048b34b8566a00684301000053e8000000008be83b74241c750e6a0055684e01000053e8000000005655685101000053e800000000478b4c24188b41103bf88bc172bb5e5d5f5bc20c00",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Clear@ListBox@@QAEHXZ",
+   "sym_key": "ListBox::Clear"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

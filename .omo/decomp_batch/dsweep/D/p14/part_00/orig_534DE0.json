@@ -1,0 +1,11 @@
+{
+ "addr": "0x534DE0",
+ "name": "ReleaseLoadingResources",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x534DE0",
+ "bytes_hex": "a15c4e880085c0742b8b400c506820c38100e8e91aedff8b0d5c4e880083c40885c974068b116a01ff12c7055c4e880000000000a1584e880085c0742b8b400c506820c38100e8b51aedff8b0d584e880083c40885c974068b116a01ff12c705584e880000000000b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

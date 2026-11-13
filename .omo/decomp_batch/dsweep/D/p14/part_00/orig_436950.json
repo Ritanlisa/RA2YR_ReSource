@@ -1,0 +1,11 @@
+{
+ "addr": "0x436950",
+ "name": "BuildingLightClass::SD_vt05",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x436950",
+ "bytes_hex": "8b442408568b742408575056e81ff51b008bf885ff7c4d85f674278d4c2410518bcee8d9d11b00c706d03a7e00c74604b43a7e00c74608ac3a7e00c7460ca43a7e008d96e4000000526810c1b000e89d88290081c6e0000000566810c1b000e88c8829008bc75f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

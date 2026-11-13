@@ -1,0 +1,11 @@
+{
+ "addr": "0x53E6B0",
+ "name": "WinMain_Write_53E6B0",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53E6B0",
+ "bytes_hex": "a14804aa0085c07462681804aa00ff15e8117e00a16804aa0085c07443a15c04aa0085c0743a833d4404aa000175318b0d6404aa0085c974276a00e830acecff8b156804aa008b0d6404aa0050e82ea9ecffa16804aa0050e88fca280083c404681804aa00ff15ec117e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

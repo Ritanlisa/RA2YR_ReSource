@@ -1,0 +1,21 @@
+{
+ "symbol": "?ProcessDeploymentState@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ProcessDeploymentState",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "568bf16a00568b06ff90c80300008b0e6a016a0056ff91800400008b166a0356ff928002000085f67410f6461404740a8a86ad06000084c075258b8ed002000085c97410e8000000008b8ed0020000e8000000008b066a0156ff90dc0000008b0e56ff91500100005ec3",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Update@TaskManager@@QAEHXZ",
+   "sym_key": "TaskManager::Update"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?ProcessIdleOrders@UnitClass@@QAEXXZ",
+   "sym_key": "UnitClass::ProcessIdleOrders"
+  }
+ ]
+}

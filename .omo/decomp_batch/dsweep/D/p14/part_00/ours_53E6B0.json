@@ -1,0 +1,99 @@
+{
+ "symbol": "?WinMain_Write_53E6B0@@YAXXZ",
+ "sym_key": "Unnamed::WinMain_Write_53E6B0",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c074606800000000e800000000a10000000085c07443a10000000085c0743a833d000000000175318b0d0000000085c97427e8000000008b15000000008b0d000000006a0050e800000000a10000000050e80000000083c4046800000000e800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_StreamPool@@3IA",
+   "sym_key": "g_StreamPool"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0418@@3EA",
+   "sym_key": "DataGlobal_AA0418"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA045C@@3IA",
+   "sym_key": "DataGlobal_AA045C"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_StreamBufferState@@3IA",
+   "sym_key": "g_StreamBufferState"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_StreamConfig@@3IA",
+   "sym_key": "g_StreamConfig"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?GetSampleSize@Audio@@QAEHXZ",
+   "sym_key": "Audio::GetSampleSize"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_StreamConfig@@3IA",
+   "sym_key": "g_StreamConfig"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?WriteAudioStreamToFile@@YIHHPAXHPAD@Z",
+   "sym_key": "WriteAudioStreamToFile"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?Stream@@3PAXA",
+   "sym_key": "Stream"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?fflush@@YAHPAXZZ",
+   "sym_key": "fflush"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0418@@3EA",
+   "sym_key": "DataGlobal_AA0418"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  }
+ ]
+}

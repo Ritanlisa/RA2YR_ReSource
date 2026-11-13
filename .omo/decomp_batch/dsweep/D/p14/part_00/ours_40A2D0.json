@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_40A2D0@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::sub_40A2D0",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "538bd956578bb35801000033ff3bf774578b467c3bc7741250e80000000083c404897e7c89be880000008b86900000003bc7741550e80000000083c40489be9000000089be9c0000008b46643bc774098b0850ff5108897e6456e80000000083c40489bb580100005f5e33c05bc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

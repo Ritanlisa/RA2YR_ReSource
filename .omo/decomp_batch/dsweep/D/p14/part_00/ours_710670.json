@@ -1,0 +1,21 @@
+{
+ "symbol": "?OnCellPlacementComplete@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::OnCellPlacementComplete",
+ "size": 119,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf1578b7c240833c9578a8ef4000000e80000000085ff74508b0656ff908400000083b864050000ff74428b8e9c0000008b068b96a0000000894c240c8b8ea40000005689542414894c2418ff90840000008b88640500006a008d542410e8000000005f5e83c410c38b4424085f5e83c410c3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?AddObject@CellClass@@QAEXPAX@Z",
+   "sym_key": "CellClass::AddObject"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?PlayAudioAt2@@YIHHPAXH@Z",
+   "sym_key": "PlayAudioAt2"
+  }
+ ]
+}

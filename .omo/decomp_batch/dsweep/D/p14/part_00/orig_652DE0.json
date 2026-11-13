@@ -1,0 +1,11 @@
+{
+ "addr": "0x652DE0",
+ "name": "RadarClass::Destru_vt07",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x652DE0",
+ "bytes_hex": "568bf1e8d85ae5ff6814938300e8ee3adbff33c08d8e241200008986ac1400008986b01400008886bd1400008886bc1400008986fc1400008886d81400008b0183c404c686d914000001ff500c8b965c1200008d8e5c120000ff520c68f4928300e89a3adbff83c4045ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
