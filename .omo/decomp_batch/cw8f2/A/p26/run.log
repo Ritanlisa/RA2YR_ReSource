@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c5ec0 ObjectClass::WinMain_Helper_6C5EC0 -> ObjectClass
+[conv] 0x6c6040 ObjectClass::WinMain_Helper_6C6040 -> ObjectClass
+[conv] 0x6c6480 _VectorClass_K::QueryInterface -> _VectorClass_K
+[conv] 0x6c64d0 _DynamicVectorClass_K::Constructor -> _DynamicVectorClass_K
+[conv] 0x6c8840 rc_ptr::sub_6C8840 -> rc_ptr
+[conv] 0x6ca9c0 _DynamicVectorClass_PAVSubTitle::Constructor_VectorClass_SubTitle___ -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6cab50 _VectorClass_PAVSubTitle::QueryInterface -> _VectorClass_PAVSubTitle
+[conv] 0x6cf850 _VectorClass_VSwizzlePointerClass::QueryInterface -> _VectorClass_VSwizzlePointerClass
+[conv] 0x6cf8a0 _DynamicVectorClass_VSwizzlePointerClass::Constructor_VectorClass_SwizzlePointerClass_ -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6dcc30 _VectorClass_UDirtyAreaStruct::QueryInterface -> _VectorClass_UDirtyAreaStruct
+[conv] 0x6dccd0 _VectorClass_PAVShadowControlClass::QueryInterface -> _VectorClass_PAVShadowControlClass
+[conv] 0x6dcd20 _DynamicVectorClass_PAVShadowControlClass::Constructor_VectorClass_ShadowControlClass___ -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x6e4ab0 _VectorClass_PAVTActionClass::QueryInterface -> _VectorClass_PAVTActionClass
+[conv] 0x6e67a0 _VectorClass_PAVTagTypeClass::QueryInterface -> _VectorClass_PAVTagTypeClass
+[conv] 0x6e67f0 _DynamicVectorClass_PAVTagTypeClass::Constructor_VectorClass_TagTypeClass___ -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x6f2230 VectorClass::Team_Helper_6F2230 -> VectorClass
+[conv] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x717b70 _TypeList_PBVParticleSystemTypeClass::QueryInterface -> _TypeList_PBVParticleSystemTypeClass
+[conv] 0x717bc0 TechnoTypeClass::Constructor_0 -> TechnoTypeClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _VectorClass_K           rc=0
+[era] _DynamicVectorClass_K    rc=0
+[era] rc_ptr                   rc=0
+[era] _DynamicVectorClass_PAVSubTitle rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=0
+[era] _VectorClass_UDirtyAreaStruct rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+[era] _DynamicVectorClass_PAVShadowControlClass rc=0
+[era] _VectorClass_PAVTActionClass rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] _DynamicVectorClass_PAVTagTypeClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] _TypeList_PBVParticleSystemTypeClass rc=0
+[era] TechnoTypeClass          rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c5ec0   MATCH            ObjectClass::WinMain_Helper_6C5EC0
+[diff] 0x6c6040   MATCH            ObjectClass::WinMain_Helper_6C6040
+[diff] 0x6c6480   MISMATCH         _VectorClass_K::QueryInterface
+[diff] 0x6c64d0   MISMATCH         _DynamicVectorClass_K::Constructor
+[diff] 0x6c8840   MATCH            rc_ptr::sub_6C8840
+[diff] 0x6ca9c0   MISMATCH         _DynamicVectorClass_PAVSubTitle::Constructor_VectorClass_SubTitle___
+[diff] 0x6cab50   MISMATCH         _VectorClass_PAVSubTitle::QueryInterface
+[diff] 0x6cf850   MISMATCH         _VectorClass_VSwizzlePointerClass::QueryInterface
+[diff] 0x6cf8a0   MISMATCH         _DynamicVectorClass_VSwizzlePointerClass::Constructor_VectorClass_SwizzlePointerClass_
+[diff] 0x6dcc30   MISMATCH         _VectorClass_UDirtyAreaStruct::QueryInterface
+[diff] 0x6dccd0   MISMATCH         _VectorClass_PAVShadowControlClass::QueryInterface
+[diff] 0x6dcd20   MISMATCH         _DynamicVectorClass_PAVShadowControlClass::Constructor_VectorClass_ShadowControlClass___
+[diff] 0x6e4ab0   MISMATCH         _VectorClass_PAVTActionClass::QueryInterface
+[diff] 0x6e67a0   MISMATCH         _VectorClass_PAVTagTypeClass::QueryInterface
+[diff] 0x6e67f0   MISMATCH         _DynamicVectorClass_PAVTagTypeClass::Constructor_VectorClass_TagTypeClass___
+[diff] 0x6f2230   MISMATCH         VectorClass::Team_Helper_6F2230
+[diff] 0x717b70   MATCH            _TypeList_PBVParticleSystemTypeClass::QueryInterface
+[diff] 0x717bc0   MISMATCH         TechnoTypeClass::Constructor_0
+[ledger] 0x6c5ec0 ObjectClass::WinMain_Helper_6C5EC0 -> OK (attempt 3)
+[ledger] 0x6c6040 ObjectClass::WinMain_Helper_6C6040 -> OK (attempt 3)
+[ledger] 0x6c6480 _VectorClass_K::QueryInterface -> NG (attempt 2)
+[ledger] 0x6c64d0 _DynamicVectorClass_K::Constructor -> NG (attempt 4)
+[ledger] 0x6c8840 rc_ptr::sub_6C8840 -> OK (attempt 2)
+[ledger] 0x6ca9c0 _DynamicVectorClass_PAVSubTitle::Constructor_VectorClass_SubTitle___ -> NG (attempt 2)
+[ledger] 0x6cab50 _VectorClass_PAVSubTitle::QueryInterface -> NG (attempt 2)
+[ledger] 0x6cf850 _VectorClass_VSwizzlePointerClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6cf8a0 _DynamicVectorClass_VSwizzlePointerClass::Constructor_VectorClass_SwizzlePointerClass_ -> NG (attempt 2)
+[ledger] 0x6dcc30 _VectorClass_UDirtyAreaStruct::QueryInterface -> NG (attempt 2)
+[ledger] 0x6dccd0 _VectorClass_PAVShadowControlClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6dcd20 _DynamicVectorClass_PAVShadowControlClass::Constructor_VectorClass_ShadowControlClass___ -> NG (attempt 2)
+[ledger] 0x6e4ab0 _VectorClass_PAVTActionClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6e67a0 _VectorClass_PAVTagTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x6e67f0 _DynamicVectorClass_PAVTagTypeClass::Constructor_VectorClass_TagTypeClass___ -> NG (attempt 2)
+[ledger] 0x6f2230 VectorClass::Team_Helper_6F2230 -> NG (attempt 2)
+[ledger] 0x6f2680 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f2720 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x717b70 _TypeList_PBVParticleSystemTypeClass::QueryInterface -> OK (attempt 4)
+[ledger] 0x717bc0 TechnoTypeClass::Constructor_0 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 4,
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "const_fold": 3,
+  "branch_polarity": 10,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 22.2,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f2\A\p26\batch_report.json

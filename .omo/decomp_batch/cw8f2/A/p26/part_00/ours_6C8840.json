@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_6C8840@rc_ptr@@QAEPAIH@Z",
+ "sym_key": "rc_ptr::sub_6C8840",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1c70600000000e800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_PlayerProfile@@3PAXA",
+   "sym_key": "vt_rc_ptr_PlayerProfile"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
