@@ -1,0 +1,21 @@
+{
+ "symbol": "?Network_Process_6ABC40@@YAHXZ",
+ "sym_key": "Unnamed::Network_Process_6ABC40",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0740ac7050000000008000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EDA0@@3IA",
+   "sym_key": "DataGlobal_A8EDA0"
+  }
+ ]
+}

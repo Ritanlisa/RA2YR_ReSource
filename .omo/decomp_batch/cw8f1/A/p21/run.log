@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x6954e0 sub_6954E0 -> _addr_69
+[conv] 0x6956b0 sub_6956B0 -> _addr_69
+[conv] 0x696d20 sub_696D20 -> _addr_69
+[conv] 0x696ef0 sub_696EF0 -> _addr_69
+[conv] 0x69bcc0 sub_69BCC0 -> _addr_69
+[conv] 0x69ea40 sub_69EA40 -> _addr_69
+[conv] 0x69ebf0 sub_69EBF0 -> _addr_69
+[conv] 0x69ec10 sub_69EC10 -> _addr_69
+[conv] 0x6a4260 ShipLocomotionClass::AddRef -> ShipLocomotionClass
+[conv] 0x6a4270 ShipLocomotionClass::Release -> ShipLocomotionClass
+[conv] 0x6a4360 sub_6A4360 -> _addr_6A
+[conv] 0x6a4530 sub_6A4530 -> _addr_6A
+[conv] 0x6a4a20 sub_6A4A20 -> _addr_6A
+[conv] 0x6a4bf0 sub_6A4BF0 -> _addr_6A
+[conv] 0x6abc40 Network_Process_6ABC40 -> Network_Process
+[conv] 0x6ac970 sub_6AC970 -> _addr_6A
+[conv] 0x6acb40 sub_6ACB40 -> _addr_6A
+[conv] 0x6aef10 sub_6AEF10 -> _addr_6A
+[conv] 0x6af0e0 sub_6AF0E0 -> _addr_6A
+[conv] 0x6b21a0 sub_6B21A0 -> _addr_6B
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_69                 rc=0
+[era] ShipLocomotionClass      rc=0
+[era] _addr_6A                 rc=0
+[era] Network_Process          rc=0
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6954e0   MATCH            sub_6954E0
+[diff] 0x6956b0   MATCH            sub_6956B0
+[diff] 0x696d20   MATCH            sub_696D20
+[diff] 0x696ef0   MATCH            sub_696EF0
+[diff] 0x69bcc0   MATCH            sub_69BCC0
+[diff] 0x69ea40   MATCH            sub_69EA40
+[diff] 0x69ebf0   MATCH            sub_69EBF0
+[diff] 0x69ec10   MATCH            sub_69EC10
+[diff] 0x6a4260   MATCH            ShipLocomotionClass::AddRef
+[diff] 0x6a4270   MATCH            ShipLocomotionClass::Release
+[diff] 0x6a4360   MATCH            sub_6A4360
+[diff] 0x6a4530   MATCH            sub_6A4530
+[diff] 0x6a4a20   MATCH            sub_6A4A20
+[diff] 0x6a4bf0   MATCH            sub_6A4BF0
+[diff] 0x6ac970   MATCH            sub_6AC970
+[diff] 0x6acb40   MATCH            sub_6ACB40
+[diff] 0x6aef10   MATCH            sub_6AEF10
+[diff] 0x6af0e0   MATCH            sub_6AF0E0
+[diff] 0x6abc40   MATCH            Network_Process_6ABC40
+[diff] 0x6b21a0   MATCH            sub_6B21A0
+[ledger] 0x6954e0 sub_6954E0 -> OK (attempt 2)
+[ledger] 0x6956b0 sub_6956B0 -> OK (attempt 3)
+[ledger] 0x696d20 sub_696D20 -> OK (attempt 2)
+[ledger] 0x696ef0 sub_696EF0 -> OK (attempt 3)
+[ledger] 0x69bcc0 sub_69BCC0 -> OK (attempt 2)
+[ledger] 0x69ea40 sub_69EA40 -> OK (attempt 2)
+[ledger] 0x69ebf0 sub_69EBF0 -> OK (attempt 4)
+[ledger] 0x69ec10 sub_69EC10 -> OK (attempt 3)
+[ledger] 0x6a4260 ShipLocomotionClass::AddRef -> OK (attempt 2)
+[ledger] 0x6a4270 ShipLocomotionClass::Release -> OK (attempt 2)
+[ledger] 0x6a4360 sub_6A4360 -> OK (attempt 2)
+[ledger] 0x6a4530 sub_6A4530 -> OK (attempt 3)
+[ledger] 0x6a4a20 sub_6A4A20 -> OK (attempt 2)
+[ledger] 0x6a4bf0 sub_6A4BF0 -> OK (attempt 3)
+[ledger] 0x6abc40 Network_Process_6ABC40 -> OK (attempt 3)
+[ledger] 0x6ac970 sub_6AC970 -> OK (attempt 2)
+[ledger] 0x6acb40 sub_6ACB40 -> OK (attempt 3)
+[ledger] 0x6aef10 sub_6AEF10 -> OK (attempt 2)
+[ledger] 0x6af0e0 sub_6AF0E0 -> OK (attempt 3)
+[ledger] 0x6b21a0 sub_6B21A0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw8f1\A\p21\batch_report.json
