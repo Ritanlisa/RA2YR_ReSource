@@ -1,0 +1,51 @@
+{
+ "symbol": "?ShouldNotBeCloaked@TechnoClass@@QAE_NXZ",
+ "sym_key": "TechnoClass::ShouldNotBeCloaked",
+ "size": 289,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568bf157560fbe86120a0000ff1084c0750a8a86ca03000084c0743f0fbe8edf0d000056ff1184c075310fbe96ec0d000056ff1284c075230fbe864807000056ff1084c075150fbe8e5507000056ff1184c075075f5e5b83c410c38d9e4d01000053e80000000083c40485c0750d53e80000000083c40485c074560fbe960a02000056ff12538bf8e80000000083c40485c074138a87a202000084c074095f5e32c05b83c410c353e80000000083c40485c0741d8a87a202000084c0750a8a87b402000084c074095f5e32c05b83c410c30fbe86200100008d4c24105156ff1033d28b8e140200008a50058b44240c24000bd08954240c8b71308d54240cb90000000052e800000000568bc8e800000000f7d81bc05f5e405b83c410c3",
+ "relocs": [
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?Audio__IsMediumVolume@@YAHPAX@Z",
+   "sym_key": "Audio__IsMediumVolume"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Audio__IsLoud@@YAHPAX@Z",
+   "sym_key": "Audio__IsLoud"
+  },
+  {
+   "off": 259,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?HasOccupierBit@Cell@@QAEHH@Z",
+   "sym_key": "Cell::HasOccupierBit"
+  }
+ ]
+}

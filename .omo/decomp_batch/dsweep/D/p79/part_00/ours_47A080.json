@@ -1,0 +1,87 @@
+{
+ "symbol": "?sub_47A080@ObjectClass@@QAEXK@Z",
+ "sym_key": "ObjectClass::sub_47A080",
+ "size": 253,
+ "link_base": 0,
+ "bytes_hex": "83ec20538b5c24288ac355fec0568be9884424306a008d430168000000046a0033c933c38a0d000000006a006a0025ff0000006a005133d8e8000000006a008bf06a00535655e80000000084c075108bcde8000000005e5d5b83c420c204005356e80000000084c075188bcde800000000535655e8000000005e5d5b83c420c204000fbe54243057b90600000033c08d7c2418f3ab508d442414508d4c241c8954241c6a1c518d5424246a1c526a0156c74424400d440000c744243c49080000e80000000085c05f750ee8000000008bcde800000000eb07f64424280174078bcde800000000535655e80000000056e8000000005e5d5b83c420c20400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_Str_____vwin32@@3EA",
+   "sym_key": "g_Str_____vwin32"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?CreateFileA@@YGPAXHHHHHHH@Z",
+   "sym_key": "CreateFileA"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?CDROM__LockVolume@@YGDHHKHH@Z",
+   "sym_key": "CDROM__LockVolume"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?CDROM__DeviceIoControl@@YG_NHK@Z",
+   "sym_key": "CDROM__DeviceIoControl"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?DriveControlCD@@YGDHHH@Z",
+   "sym_key": "DriveControlCD"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?DeviceIoControl@@YGHHHPAXH0H0H@Z",
+   "sym_key": "DeviceIoControl"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?DriveControlCD@@YGDHHH@Z",
+   "sym_key": "DriveControlCD"
+  },
+  {
+   "off": 240,
+   "type": "REL32",
+   "sym": "?CloseHandle@@YGHH@Z",
+   "sym_key": "CloseHandle"
+  }
+ ]
+}

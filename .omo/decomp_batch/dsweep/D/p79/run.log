@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p79\part_00
+=== convert (20 addrs) ===
+[conv] 0x7235a0 CellClass::RegisterForRedraw -> CellClass
+[conv] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x60b420 ObjectClass::UI_Get_60B420 -> ObjectClass
+[conv] 0x60b610 ObjectClass::UI_Get_60B610 -> ObjectClass
+[conv] 0x410a60 AbstractTypeClass::LoadFromINI -> AbstractTypeClass
+[conv] 0x759fb0 VoxelRenderer::InitializeBuffers -> VoxelRenderer
+[conv] 0x47a080 ObjectClass::sub_47A080 -> ObjectClass
+[conv] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> BuildingClass
+[conv] 0x786390 LoginFlowWOL_Reset -> LoginFlowWOL
+[conv] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> SuperWeapon
+[conv] 0x6e5ca0 TagTypeClass::CleanupMembers -> TagTypeClass
+[conv] 0x4741f0 CCINIClass::Load -> CCINIClass
+[conv] 0x4c9ff0 BuildingClass::AbandonProduction -> BuildingClass
+[conv] 0x6fbc90 TechnoClass::ShouldNotBeCloaked -> TechnoClass
+[conv] 0x458200 BuildingClass::ProcessStructureAbandoned -> BuildingClass
+[conv] 0x77bae0 sub_77BAE0 -> _addr_77
+[conv] 0x77be80 sub_77BE80 -> _addr_77
+[conv] 0x77c050 sub_77C050 -> _addr_77
+[conv] 0x77c220 sub_77C220 -> _addr_77
+[conv] 0x77c450 sub_77C450 -> _addr_77
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=2
+[era] _DynamicVectorClass_UZoneConnectionClass rc=2
+[era] ObjectClass              rc=2
+[era] AbstractTypeClass        rc=2
+[era] VoxelRenderer            rc=2
+[era] BuildingClass            rc=2
+[era] LoginFlowWOL             rc=2
+[era] SuperWeapon              rc=2
+[era] TagTypeClass             rc=2
+[era] CCINIClass               rc=2
+[era] TechnoClass              rc=0
+[era] _addr_77                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x47a080   MISMATCH         ObjectClass::sub_47A080
+[diff] 0x6fbc90   MISMATCH         TechnoClass::ShouldNotBeCloaked
+[ledger] 0x7235a0 CellClass::RegisterForRedraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b420 ObjectClass::UI_Get_60B420 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b610 ObjectClass::UI_Get_60B610 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410a60 AbstractTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x759fb0 VoxelRenderer::InitializeBuffers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47a080 ObjectClass::sub_47A080 -> NG (attempt 1)
+[ledger] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786390 LoginFlowWOL_Reset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e5ca0 TagTypeClass::CleanupMembers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4741f0 CCINIClass::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c9ff0 BuildingClass::AbandonProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fbc90 TechnoClass::ShouldNotBeCloaked -> NG (attempt 1)
+[ledger] 0x458200 BuildingClass::ProcessStructureAbandoned -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77bae0 sub_77BAE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77be80 sub_77BE80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77c050 sub_77C050 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77c220 sub_77C220 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77c450 sub_77C450 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p79\batch_report.json
