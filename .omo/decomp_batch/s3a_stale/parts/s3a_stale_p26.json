@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x7b13d0",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7b33d0",
+  "family": "stale_batch"
+ },
+ {
+  "addr": "0x7b68e0",
+  "family": "stale_A1"
+ },
+ {
+  "addr": "0x7b6ee0",
+  "family": "stale_A3"
+ },
+ {
+  "addr": "0x7b7dd0",
+  "family": "stale_stale_cw5|CW5-10 uintN_t typedef"
+ },
+ {
+  "addr": "0x7b7f90",
+  "family": "stale_A2"
+ },
+ {
+  "addr": "0x7b8a00",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7b9750",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x7b9a60",
+  "family": "stale_W45"
+ },
+ {
+  "addr": "0x7b9d70",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7b9d80",
+  "family": "stale_adhoc"
+ },
+ {
+  "addr": "0x7bbab0",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7bcfb0",
+  "family": "stale_cw3_C"
+ },
+ {
+  "addr": "0x7c04e0",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c06b0",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c19f0",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c2590",
+  "family": "stale_cw3_D"
+ },
+ {
+  "addr": "0x7c3230",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c3690",
+  "family": "stale_W6"
+ },
+ {
+  "addr": "0x7c3840",
+  "family": "stale_W6"
+ }
+]

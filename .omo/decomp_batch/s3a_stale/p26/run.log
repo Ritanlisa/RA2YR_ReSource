@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b13d0 IPXInterfaceClass::SendPacket -> IPXInterfaceClass
+[conv] 0x7b33d0 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+[conv] 0x7b68e0 WideString::Reassign_Alt -> WideString
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x7b7dd0 FormatWideString -> _addr_7B
+[conv] 0x7b7f90 ToWideStringCharAlt -> _addr_7B
+[conv] 0x7b8a00 WWMouseClass::AddRef -> WWMouseClass
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+[conv] 0x7b9d80 WWMouseClass::checkVisible -> WWMouseClass
+[conv] 0x7bbab0 XSurface::Fill -> XSurface
+[conv] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> TacticalMap
+[conv] 0x7c04e0 Audio_Process_7C04E0 -> Audio_Process
+[conv] 0x7c06b0 Audio_Process_7C06B0 -> Audio_Process
+[conv] 0x7c19f0 Audio_Process_7C19F0 -> Audio_Process
+[conv] 0x7c2590 RenderAudioVideoFrame -> _addr_7C
+[conv] 0x7c3230 Render_Render_7C3230 -> Render_Render
+[conv] 0x7c3690 Render_Render_7C3690 -> Render_Render
+[conv] 0x7c3840 sub_7C3840 -> _addr_7C
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXInterfaceClass        rc=2
+[era] UDPInterfaceClass        rc=2
+[era] WideString               rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7B                 rc=2
+[era] WWMouseClass             rc=2
+[era] XSurface                 rc=2
+[era] TacticalMap              rc=2
+[era] Audio_Process            rc=2
+[era] _addr_7C                 rc=2
+[era] Render_Render            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b13d0 IPXInterfaceClass::SendPacket -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b33d0 UDPInterfaceClass::GetStatistics -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b68e0 WideString::Reassign_Alt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b7dd0 FormatWideString -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b8a00 WWMouseClass::AddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7b9d80 WWMouseClass::checkVisible -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7bbab0 XSurface::Fill -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> COMPILE_FAIL (attempt 14)
+[ledger] 0x7c04e0 Audio_Process_7C04E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c06b0 Audio_Process_7C06B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c19f0 Audio_Process_7C19F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c2590 RenderAudioVideoFrame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c3230 Render_Render_7C3230 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c3690 Render_Render_7C3690 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c3840 sub_7C3840 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_stale\p26\batch_report.json
