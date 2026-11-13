@@ -26914,7 +26914,7 @@
   "this_as_id": false
  },
  "0x474540": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26926,7 +26926,7 @@
   "this_as_id": false
  },
  "0x474620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -27163,7 +27163,7 @@
   "this_as_id": false
  },
  "0x474ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27230,7 +27230,7 @@
   "this_as_id": false
  },
  "0x4753f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27381,7 +27381,7 @@
   "this_as_id": false
  },
  "0x4759f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27567,15 +27567,15 @@
   "this_as_id": false
  },
  "0x476eb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov edx, dword ptr [esp + 8]",
   "name": "INIEntry::GetTechnoType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "INIEntry::GetTechnoType",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x476fc0": {
@@ -28453,7 +28453,7 @@
   "this_as_id": false
  },
  "0x478e10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28714,7 +28714,7 @@
   "this_as_id": false
  },
  "0x47a560": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_47A560",
@@ -28748,7 +28748,7 @@
   "this_as_id": false
  },
  "0x47a920": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DriveControlCD",
@@ -28864,7 +28864,7 @@
   "this_as_id": false
  },
  "0x47ae10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29110,7 +29110,7 @@
   "this_as_id": false
  },
  "0x47bdb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29170,7 +29170,7 @@
   "this_as_id": false
  },
  "0x47c550": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29194,7 +29194,7 @@
   "this_as_id": false
  },
  "0x47c620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29300,7 +29300,7 @@
   "this_as_id": false
  },
  "0x47eba0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29382,14 +29382,14 @@
   "this_as_id": false
  },
  "0x47f6a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::Draw_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::Draw_0",
-  "rule_violations": 22,
+  "rule_violations": 19,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -29492,7 +29492,7 @@
   "status": "NG"
  },
  "0x480630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29672,7 +29672,7 @@
   "this_as_id": false
  },
  "0x483480": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29816,7 +29816,7 @@
   "this_as_id": false
  },
  "0x484050": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30092,7 +30092,7 @@
   "this_as_id": false
  },
  "0x485af0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30484,7 +30484,7 @@
   "status": "OK"
  },
  "0x487190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

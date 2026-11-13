@@ -1,0 +1,69 @@
+{
+ "symbol": "?GetTechnoType@INIEntry@@QAEHPAE0@Z",
+ "sym_key": "INIEntry::GetTechnoType",
+ "size": 185,
+ "link_base": 0,
+ "bytes_hex": "81ec8000000033d28a15000000008d4424006880000000508b842490000000528b9424900000005052e8000000008d4c2400e80000000083f8ff74128b0d000000008b048181c480000000c208008d4c2400e80000000083f8ff74128b15000000008b048281c480000000c208008d4c2400e80000000083f8ff74128b0d000000008b048181c480000000c208008d4c2400e80000000083f8ff74128b15000000008b048281c480000000c2080033c081c480000000c20800",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?FindExitCellByName@Factory@@QAEHXZ",
+   "sym_key": "Factory::FindExitCellByName"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?FindIndex@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndex"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?FindByName@TypeClass@@QAEHXZ",
+   "sym_key": "TypeClass::FindByName"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_AircraftTypeCount@@3IA",
+   "sym_key": "g_AircraftTypeCount"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?FindIndexByName@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndexByName"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  }
+ ]
+}

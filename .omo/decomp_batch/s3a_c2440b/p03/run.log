@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x474540 ObjectClass::sub_474540 -> ObjectClass
+[conv] 0x474620 INIClass::ReadCoord -> INIClass
+[conv] 0x474ff0 ObjectTypeClass::ReadDouble2 -> ObjectTypeClass
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x476eb0 INIEntry::GetTechnoType -> INIEntry
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x47a560 sub_47A560 -> _addr_47
+[conv] 0x47a920 DriveControlCD -> _addr_47
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+[conv] 0x47bdb0 ObjectClass::GetBridgeCellColor -> ObjectClass
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47c620 CellClass::IsPassable -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x487190 Crate::FindPlacement -> Crate
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] ArmorType                rc=2
+[era] INIEntry                 rc=0
+[era] CCToolTip                rc=2
+[era] _addr_47                 rc=2
+[era] CDFileClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Tactical                 rc=2
+[era] Crate                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x476eb0   MISMATCH         INIEntry::GetTechnoType
+[ledger] 0x474540 ObjectClass::sub_474540 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474620 INIClass::ReadCoord -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474ff0 ObjectTypeClass::ReadDouble2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x476eb0 INIEntry::GetTechnoType -> NG (attempt 3)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47a920 DriveControlCD -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47bdb0 ObjectClass::GetBridgeCellColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47c620 CellClass::IsPassable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 14)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2440b\p03\batch_report.json
