@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x478630 VectorClass::vt00 -> VectorClass
+[conv] 0x478720 TypeList::Copy -> TypeList
+[conv] 0x478790 TypeList::TechnoTypeConstructor -> TypeList
+[conv] 0x478ba0 CCToolTip::CalculatePopupPosition -> CCToolTip
+[conv] 0x478db0 CCToolTip::Release -> CCToolTip
+[conv] 0x478e30 CCToolTip::Draw2 -> CCToolTip
+[conv] 0x479740 ObjectClass::sub_479740 -> ObjectClass
+[conv] 0x47a3f0 CDROM::DeviceIoControl -> CDROM
+[conv] 0x47aa50 sub_47AA50 -> _addr_47
+[conv] 0x47af10 CDFileClass::Reopen -> CDFileClass
+[conv] 0x47af70 FileClass::FindFirstWithCD -> FileClass
+[conv] 0x47b0c0 FileFind::Next -> FileFind
+[conv] 0x47b260 sub_47B260 -> _addr_47
+[conv] 0x47c060 ObjectClass::GetCellRadarColors -> ObjectClass
+[conv] 0x47d2b0 House::AnnounceUpgrade -> House
+[conv] 0x47dd70 CellClass::UpdateAnimations -> CellClass
+[conv] 0x47e8a0 CellClass::AddContent -> CellClass
+[conv] 0x47f250 RenderFogOfWarOverlay -> _addr_47
+[conv] 0x4834a0 Cell::IsBuildable -> Cell
+[conv] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> BuildingClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+[era] TypeList                 rc=2
+[era] CCToolTip                rc=2
+[era] ObjectClass              rc=2
+[era] CDROM                    rc=2
+[era] _addr_47                 rc=2
+[era] CDFileClass              rc=2
+[era] FileClass                rc=2
+[era] FileFind                 rc=2
+[era] House                    rc=2
+[era] CellClass                rc=2
+[era] Cell                     rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x47f250   MISMATCH         RenderFogOfWarOverlay
+[ledger] 0x478630 VectorClass::vt00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478720 TypeList::Copy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478790 TypeList::TechnoTypeConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478ba0 CCToolTip::CalculatePopupPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478db0 CCToolTip::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x478e30 CCToolTip::Draw2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x479740 ObjectClass::sub_479740 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47a3f0 CDROM::DeviceIoControl -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47aa50 sub_47AA50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47af10 CDFileClass::Reopen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47af70 FileClass::FindFirstWithCD -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47b0c0 FileFind::Next -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47b260 sub_47B260 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47c060 ObjectClass::GetCellRadarColors -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47d2b0 House::AnnounceUpgrade -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47dd70 CellClass::UpdateAnimations -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47e8a0 CellClass::AddContent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x47f250 RenderFogOfWarOverlay -> NG (attempt 2)
+[ledger] 0x4834a0 Cell::IsBuildable -> COMPILE_FAIL (attempt 2)
+[ledger] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p12\batch_report.json

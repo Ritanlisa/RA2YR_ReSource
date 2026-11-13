@@ -1,0 +1,93 @@
+{
+ "symbol": "?RenderFogOfWarOverlay@@YGPAGHPAHI@Z",
+ "sym_key": "Unnamed::RenderFogOfWarOverlay",
+ "size": 697,
+ "link_base": 0,
+ "bytes_hex": "a00000000083ec2884c075198b0d0000000032d2c6050000000001e800000000a3000000008b442434535556578d4c24285051e8000000008b48088b108b7c243c8b742440894c24108b480c8b5f048b6e04895424188b500403cb8954241403ca8d55013bca0f8c410200008b460c03c53bd88944243c0f8d320200008b078b5424108b7c241803d003d78b3e897c241c473bd7895424400f8c110200008b76088b7c241c03f73bc6897424200f8dfc0100008b7424148d3c333bef7e028bfd8bf72bf38b5c24142bf38b5c243c3bd9895c24147c04894c24148b6c24188b4c241c8d1c283bcb895c243c7e068bd9895c243c8bcb2bc88b4424202bcd3bc2894c241c7d068bd0895424408b6c24108bc32bc28b4c244403c5518b0d000000008944241ca1000000008b68282bea03ebe8000000008b0d0000000033d28a1500000000894424448bc72bc25053e8000000008b0d000000000faf7424108b542444894c242403f28b54241c03f28b542414897424448b71282bd70faff28954241c8bd3f7dac1e21f2bd38b5c244003de8b711c03d38d5450043bd60f830e0100003b7c24140f8d040100008b7424448b5c241c8b54243c8b7c24403bd77d502bfa8a164680fa7f885424207734668b086683f97f750a6633c98aca668908eb218b54242081e1ffff000081e2ff0000008d4c118133d285c90f9ec24a23d166891083c0024f75ba8b54243c8b7c24408b4c24188d046803f183fb010f94c14b84c974908b7424448b5c241c8b4c242403ed3bd77d5d2bfa8a164680fa7f885424447737668b086683f97f75076633c98acaeb1e8b54244481e1ffff000081e2ff0000008d4c118133d285c90f9ec24a23ca6689088b0d000000008b511c83c0023bc272032b41204f75ad8b54243c8b7c24400374241803c53b411c72032b41204b758e5f5e5d5b83c428c20c008bc15f5e5d5b83c428c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7C6@@3EA",
+   "sym_key": "DataGlobal_89E7C6"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?aFogShp@@3HA",
+   "sym_key": "aFogShp"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E7C6@@3EA",
+   "sym_key": "DataGlobal_89E7C6"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E760@@3IA",
+   "sym_key": "DataGlobal_89E760"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Building__GetFoundationSize@@YGPAHPAXI@Z",
+   "sym_key": "Building__GetFoundationSize"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E760@@3IA",
+   "sym_key": "DataGlobal_89E760"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 305,
+   "type": "REL32",
+   "sym": "?GetSubFile@MixFileClass@@QAEHI@Z",
+   "sym_key": "MixFileClass::GetSubFile"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 334,
+   "type": "REL32",
+   "sym": "?ReadAndSeek@StreamClass@@QAEIHH@Z",
+   "sym_key": "StreamClass::ReadAndSeek"
+  },
+  {
+   "off": 340,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 630,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3IA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  }
+ ]
+}
