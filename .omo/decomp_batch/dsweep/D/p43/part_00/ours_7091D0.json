@@ -1,0 +1,21 @@
+{
+ "symbol": "?CanEnterBuilding@FootClass@@QAE_NXZ",
+ "sym_key": "FootClass::CanEnterBuilding",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "53568bf1568b06ff90dc01000084c00f85940000008b86f002000085c00f85860000008b0e56ff91840000008a88990d000084c974738b1656ff522c83f806751d8b86200500008a887b15000084c9740d8b0e56ff910804000085c0744b8b8ed002000085c9740de80000000084c07404b301eb0232db8b1656ff923003000084c0740f8b8e1c020000e80000000084c0751684db75128b0656ff90ac02000084c074055eb0015bc35e32c05bc3",
+ "relocs": [
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?CannotControlAnyMore@CaptureManagerClass@@QAE_NXZ",
+   "sym_key": "CaptureManagerClass::CannotControlAnyMore"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x57A900",
+ "name": "sub_57A900",
+ "size": 178,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x57A900",
+ "bytes_hex": "83ec18535556578bfab804000000ba020000008944241c894424248bc78954241889542420992bc2bb01000000d1f88b6c841855e8d76ef0ff8bf0578bcee8cd6ef0ff8bce8bf8e814a7f0ff84c08bcf0f94442413e806a7f0ff8a4c241384c97446eb048b5c241484c0743c43558bce895c2418e8976ef0ff8bcf8bf055e88d6ef0ff8bce8bf8e8d4a6f0ff84c08bcf0f94c3e8c8a6f0ff84db75c88b4424145f5e5d5b83c418c35f5e8bc35d5b83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

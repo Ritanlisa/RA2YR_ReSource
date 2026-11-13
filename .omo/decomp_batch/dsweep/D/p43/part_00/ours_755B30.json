@@ -1,0 +1,63 @@
+{
+ "symbol": "?BuildDrawList@VoxelModel@@QAIXPAMHH@Z",
+ "sym_key": "VoxelModel::BuildDrawList",
+ "size": 193,
+ "link_base": 0,
+ "bytes_hex": "83ec6c8b44247053558bea8d1c408b44247cc1e3028b0c850000000056578d930000000051528d4c2424e8000000008d44241c8bd5508d4c2450e800000000b90c0000008bf08bfdf3a5d983d832b400dc0d00000000d95c2410d983dc32b400dc0d00000000d99c2480000000d983e032b4008b8c2480000000dc0d00000000d99c24800000008b8424800000008b942480000000894c2414508d4c24148954241ce8000000008bcd68000040406a006a00e8000000005f5e5d5b83c46cc20800",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?flt_8467E4@@3MA",
+   "sym_key": "flt_8467E4"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B444A0@@3PAMA",
+   "sym_key": "DataGlobal_B444A0"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?BuildRotationMatrix@Math@@QAEPAMPAXM@Z",
+   "sym_key": "Math::BuildRotationMatrix"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?MultiplyMatrix3x4@@YIPAMPAX00@Z",
+   "sym_key": "MultiplyMatrix3x4"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "__real@8@c000c000000000000000",
+   "sym_key": "_real@8@c000c000000000000000"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "__real@8@c000c000000000000000",
+   "sym_key": "_real@8@c000c000000000000000"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "__real@8@c000c000000000000000",
+   "sym_key": "_real@8@c000c000000000000000"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?Multiply@Matrix3x3@@QAEPAMPAX@Z",
+   "sym_key": "Matrix3x3::Multiply"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?MatrixMulVectorMath@Vector@@QAEXMMM@Z",
+   "sym_key": "Vector::MatrixMulVectorMath"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?Toggle@RadarClass@@QAEXDD@Z",
+ "sym_key": "RadarClass::Toggle",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "8a442404563c018bf174448d8ec0140000e8000000008a44240cc786ac1400000200000084c07470a1000000006a00680000803fba002000008b88f4060000e8000000008bcee8000000005ec208008b86ac14000085c0740583f80275418d8ec0140000c786ac14000003000000e8000000008a44240c84c0741d8b0d000000006a00680000803fba002000008b89f0060000e8000000008bcee8000000005ec20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@Mixer@@QAEHXZ",
+   "sym_key": "Mixer::ReleaseChannel"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

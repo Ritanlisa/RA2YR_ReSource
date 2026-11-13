@@ -1,0 +1,11 @@
+{
+ "addr": "0x657CE0",
+ "name": "FogOfWar::Render",
+ "size": 178,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x657CE0",
+ "bytes_hex": "a15035b70083ec2485c0535556578bf9754b8bb71c1200008b8f201200008bc66a018b116a008b188d44241c50ff52788b8f201200008b16508d44243051508bceff52788b8f1c12000050ff53088bcfe81be4ffff5f5e5d5b83c424c38b8f1c1200008b11ff527c8b8f1c1200008be88b01ff908000000033db8944241085c07e2833f685ed7e1d8d4c241489742414518bcf895c241ce8d4deffff463bf57ce78b442410433bd87cd85f5e5d5b83c424c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

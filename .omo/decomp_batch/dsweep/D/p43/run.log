@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x657ce0 FogOfWar::Render -> FogOfWar
+[conv] 0x57a900 sub_57A900 -> _addr_57
+[conv] 0x7091d0 FootClass::CanEnterBuilding -> FootClass
+[conv] 0x71cb90 ObjectTypeClass::ReadDestroyAnim -> ObjectTypeClass
+[conv] 0x6e2790 ObjectClass::sub_6E2790 -> ObjectClass
+[conv] 0x6b5490 LoadFactoryClassTheaterSHP -> _addr_6B
+[conv] 0x5d2350 sub_5D2350 -> _addr_5D
+[conv] 0x656be0 RadarClass::Toggle -> RadarClass
+[conv] 0x6e0aa0 TActionClass::executeEnterAction -> TActionClass
+[conv] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> MapSizeGameOption_WorldDominationTour
+[conv] 0x558060 ListClass::Destru_vt00 -> ListClass
+[conv] 0x734e60 GetStringCSF -> _addr_73
+[conv] 0x755b30 VoxelModel::BuildDrawList -> VoxelModel
+[conv] 0x7a0d10 sub_7A0D10 -> _addr_7A
+[conv] 0x437290 sub_437290 -> _addr_43
+[conv] 0x6b0690 BuildingClass::GetRallyPointCoord -> BuildingClass
+[conv] 0x696c40 ObjectClass::DlgProcLoadGame_Load_696C40 -> ObjectClass
+[conv] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> DriveLocomotionClass
+[conv] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> ShipLocomotionClass
+[conv] 0x696610 NetworkDialog::UpdateListBox -> NetworkDialog
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FogOfWar                 rc=0
+[era] _addr_57                 rc=0
+[era] FootClass                rc=0
+[era] ObjectTypeClass          rc=2
+[era] ObjectClass              rc=0
+[era] _addr_6B                 rc=2
+[era] _addr_5D                 rc=0
+[era] RadarClass               rc=0
+[era] TActionClass             rc=2
+[era] MapSizeGameOption_WorldDominationTour rc=2
+[era] ListClass                rc=0
+[era] _addr_73                 rc=2
+[era] VoxelModel               rc=0
+[era] _addr_7A                 rc=2
+[era] _addr_43                 rc=2
+[era] BuildingClass            rc=2
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+[era] NetworkDialog            rc=0
+=== diffasm byte-compare ===
+[diff] 0x657ce0   MISMATCH         FogOfWar::Render
+[diff] 0x57a900   MISMATCH         sub_57A900
+[diff] 0x7091d0   MISMATCH         FootClass::CanEnterBuilding
+[diff] 0x6e2790   MISMATCH         ObjectClass::sub_6E2790
+[diff] 0x696c40   MISMATCH         ObjectClass::DlgProcLoadGame_Load_696C40
+[diff] 0x5d2350   MISMATCH         sub_5D2350
+[diff] 0x656be0   MISMATCH         RadarClass::Toggle
+[diff] 0x558060   MISMATCH         ListClass::Destru_vt00
+[diff] 0x755b30   MISMATCH         VoxelModel::BuildDrawList
+[diff] 0x696610   MISMATCH         NetworkDialog::UpdateListBox
+[ledger] 0x657ce0 FogOfWar::Render -> NG (attempt 1)
+[ledger] 0x57a900 sub_57A900 -> NG (attempt 1)
+[ledger] 0x7091d0 FootClass::CanEnterBuilding -> NG (attempt 1)
+[ledger] 0x71cb90 ObjectTypeClass::ReadDestroyAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e2790 ObjectClass::sub_6E2790 -> NG (attempt 1)
+[ledger] 0x6b5490 LoadFactoryClassTheaterSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2350 sub_5D2350 -> NG (attempt 1)
+[ledger] 0x656be0 RadarClass::Toggle -> NG (attempt 1)
+[ledger] 0x6e0aa0 TActionClass::executeEnterAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558060 ListClass::Destru_vt00 -> NG (attempt 1)
+[ledger] 0x734e60 GetStringCSF -> COMPILE_FAIL (attempt 1)
+[ledger] 0x755b30 VoxelModel::BuildDrawList -> NG (attempt 1)
+[ledger] 0x7a0d10 sub_7A0D10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x437290 sub_437290 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b0690 BuildingClass::GetRallyPointCoord -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696c40 ObjectClass::DlgProcLoadGame_Load_696C40 -> NG (attempt 1)
+[ledger] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696610 NetworkDialog::UpdateListBox -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "frame_sched": 2,
+  "branch_order": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p43\batch_report.json

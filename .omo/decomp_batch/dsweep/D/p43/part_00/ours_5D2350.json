@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_5D2350@@YGHHPAH@Z",
+ "sym_key": "Unnamed::sub_5D2350",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "83ec20568b74242c578b460885c00f8e920000008b460c85c00f8e870000008b0d000000008d4424185051e800000000a1000000008d5424185250e800000000a1000000008b7c242c85c074098b086a005750ff513c8b56088b460c8b4e04895424108b54241c894424148b44241803ca8b166a0103d0a1000000008954240c6a00568d542414894c24188b08575250ff51088b0d0000000085c974098b016a005751ff50405f5e83c420c20800",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?GetClientRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetClientRect"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?ClientToScreen@@YGHPAX0@Z",
+   "sym_key": "ClientToScreen"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  }
+ ]
+}

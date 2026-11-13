@@ -1,0 +1,51 @@
+{
+ "symbol": "?Destru_vt00@ListClass@@QAEPAED@Z",
+ "sym_key": "ListClass::Destru_vt00",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8a4658c74604000000003ac3743b8b86300100008b4e1803c8885e58894e188d8e1c01000051ff96400100008d565c52ff96800000008d86bc00000050ff96e00000008b168bceff128d8e1c010000e8000000008d8ee1020000e8000000008d8e64010000e8000000008b463c895e383bc37411385e45740c50e80000000083c404895e3c8bce885e45895e40e800000000f644240c01740956e80000000083c4048b46045e5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?vt_ListClass@@3PAXA",
+   "sym_key": "vt_ListClass"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Destructor@SliderClass@@QAEHXZ",
+   "sym_key": "SliderClass::Destructor"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Destructor@ShapeButtonClass@@QAEHXZ",
+   "sym_key": "ShapeButtonClass::Destructor"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?Destructor@ShapeButtonClass@@QAEHXZ",
+   "sym_key": "ShapeButtonClass::Destructor"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Dtor@GadgetClass@@QAEHXZ",
+   "sym_key": "GadgetClass::Dtor"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

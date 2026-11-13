@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_57A900@@YIHPAVCell@@H@Z",
+ "sym_key": "Unnamed::sub_57A900",
+ "size": 180,
+ "link_base": 0,
+ "bytes_hex": "83ec1853b8040000005556894424188944242057b8020000008bfa89442418894424208bc7992bc2bb01000000d1f88b6c841855e8000000008bf0578bcee8000000008bce8bf8e80000000084c08bcf0f94442413e8000000008a4c241384c9743c84c0743843558bce895c2418e8000000008bcf8bf055e8000000008bce8bf8e80000000084c08bcf0f94c3e80000000084db74128b5c241484c075c85f5e8bc35d5b83c418c38b4424145f5e5d5b83c418c3",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?IsValidHeight@Cell@@QAEHXZ",
+   "sym_key": "Cell::IsValidHeight"
+  }
+ ]
+}

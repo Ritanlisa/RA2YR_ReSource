@@ -1,0 +1,27 @@
+{
+ "symbol": "?Render@FogOfWar@@QAEHXZ",
+ "sym_key": "FogOfWar::Render",
+ "size": 165,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec2485c0535556578bf98db71c120000744f8b06568b08ff517c8b168be8568b02ff908000000033db8944241085c07e6633f685ed7e1d8d4c241c8974241c518bcf895c2424e800000000463bf57ce78b442410433bd87cd85f5e5d5b83c424c38b97201200008b2e8d9f201200006a018b028d4c24206a005153ff50788b16508d442418535056ff52785056ff55088bcfe8000000005f5e5d5b83c424c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?RevealArea@FogOfWar@@QAEHPAX@Z",
+   "sym_key": "FogOfWar::RevealArea"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?RenderCell@FogOfWar@@QAEHXZ",
+   "sym_key": "FogOfWar::RenderCell"
+  }
+ ]
+}

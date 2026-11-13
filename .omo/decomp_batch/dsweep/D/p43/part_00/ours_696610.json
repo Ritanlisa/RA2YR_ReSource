@@ -1,0 +1,63 @@
+{
+ "symbol": "?UpdateListBox@NetworkDialog@@QAEPAXXZ",
+ "sym_key": "NetworkDialog::UpdateListBox",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "538bd955568b03685e06000050e8000000008bf085f68bee0f84a0000000576a006a00688401000056e800000000a10000000033ff85c076218b0d000000008b14b9526a0068c804000056e800000000a100000000473bf872df6a006a00688b01000056e80000000083cfff85c0742b39bb980000007c236a006a00688b01000056e8000000003983980000007c12c7839800000000000000eb0689bb980000008bb3980000003bf75f74126a0056688601000055e8000000005e5d5bc38bc65e5d5bc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB5C@@3IA",
+   "sym_key": "DataGlobal_A8DB5C"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB50@@3IA",
+   "sym_key": "DataGlobal_A8DB50"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB5C@@3IA",
+   "sym_key": "DataGlobal_A8DB5C"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}
