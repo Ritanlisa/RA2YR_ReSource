@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_406F40@@YIHPAX@Z",
+ "sym_key": "Unnamed::sub_406F40",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "568bf1e8000000008bcee800000000e8000000008bcee8000000008b0d0000000085c9743583c13ee80000000085c08bf07427f680a400000004740d83780c0175078bc8e80000000085f6740d8bcee80000000085c08bf075d95ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1@@YAHXZ",
+   "sym_key": "____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1"
+  },
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Pump@AudioMixer@@QAEHXZ",
+   "sym_key": "AudioMixer::Pump"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?sub_751080@@YAHXZ",
+   "sym_key": "sub_751080"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?UpdateCountdowners@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::UpdateCountdowners"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?ActivatePlay@AudioChannel@@QAEHXZ",
+   "sym_key": "AudioChannel::ActivatePlay"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

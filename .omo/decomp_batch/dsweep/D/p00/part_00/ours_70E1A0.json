@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetPoweredWeaponSlot@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetPoweredWeaponSlot",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff90840000008bc8e80000000084c074128b96380100008b0e5256ff91f80300005ec38b066a0056ff90f80300005ec3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?HasPower@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::HasPower"
+  }
+ ]
+}

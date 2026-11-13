@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE5A0",
+ "name": "MSEngine_Destru::DestroyComposite",
+ "size": 51,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE5A0",
+ "bytes_hex": "568bf18d8ec8000000e8426120008d4e50e8aa0802008bcee873350200f644240801740956e873a5210083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

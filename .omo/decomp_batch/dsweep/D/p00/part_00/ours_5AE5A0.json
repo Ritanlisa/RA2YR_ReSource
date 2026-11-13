@@ -1,0 +1,33 @@
+{
+ "symbol": "?DestroyComposite@MapSelect@@QAEPAPAXD@Z",
+ "sym_key": "MapSelect::DestroyComposite",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf18d86c800000050e8000000000fbe4e5083c404e8000000008bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?Destructor@MSEngine@@QAEXXZ",
+   "sym_key": "MSEngine::Destructor"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?Destruct@MSEngine@@QAEXXZ",
+   "sym_key": "MSEngine::Destruct"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

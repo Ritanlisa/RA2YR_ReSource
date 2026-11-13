@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x72daa0 CleanupEVASystem -> _addr_72
+[conv] 0x7dc223 unexpected_YAXXZ -> _addr_7D
+[conv] 0x406f40 sub_406F40 -> _addr_40
+[conv] 0x7cd960 __mtinitlocks -> _addr_7C
+[conv] 0x5289e0 INIClass::SetStringOrEmpty -> INIClass
+[conv] 0x4ae4c0 MapClass::UpdateLightingPostProcess -> MapClass
+[conv] 0x7cb19c _fflush -> _addr_7C
+[conv] 0x406f00 sub_406F00 -> _addr_40
+[conv] 0x5ae5a0 MapSelect::DestroyComposite -> MapSelect
+[conv] 0x5e26c0 Dialog::FindGameUI -> Dialog
+[conv] 0x486e30 ObjectClass::Helper_486E30 -> ObjectClass
+[conv] 0x767880 FlagGameOption_WorldDominationTour::coUninitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x770020 Territory_WorldDominationTour::QueryInterface -> Territory_WorldDominationTour
+[conv] 0x65cca0 RawFileClass::CloseHandle -> RawFileClass
+[conv] 0x4a3890 CCFileClass::ReadEntireFile -> CCFileClass
+[conv] 0x70e1a0 TechnoClass::GetPoweredWeaponSlot -> TechnoClass
+[conv] 0x652e50 ObjectClass::resetObjectState -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_40                 rc=0
+[era] _addr_7C                 rc=0
+[era] INIClass                 rc=0
+[era] MapClass                 rc=0
+[era] MapSelect                rc=0
+[era] Dialog                   rc=0
+[era] ObjectClass              rc=2
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] Territory_WorldDominationTour rc=0
+[era] RawFileClass             rc=2
+[era] CCFileClass              rc=2
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x72daa0   MISMATCH         CleanupEVASystem
+[diff] 0x406f40   MISMATCH         sub_406F40
+[diff] 0x406f00   MISMATCH         sub_406F00
+[diff] 0x7cd960   MISMATCH         __mtinitlocks
+[diff] 0x7cb19c   MISMATCH         _fflush
+[diff] 0x5289e0   MISMATCH         INIClass::SetStringOrEmpty
+[diff] 0x4ae4c0   MATCH            MapClass::UpdateLightingPostProcess
+[diff] 0x5ae5a0   MISMATCH         MapSelect::DestroyComposite
+[diff] 0x5e26c0   MISMATCH         Dialog::FindGameUI
+[diff] 0x486e30   MISMATCH         ObjectClass::Helper_486E30
+[diff] 0x770020   MISMATCH         Territory_WorldDominationTour::QueryInterface
+[diff] 0x70e1a0   MISMATCH         TechnoClass::GetPoweredWeaponSlot
+[ledger] 0x72daa0 CleanupEVASystem -> NG (attempt 1)
+[ledger] 0x4b4de0 0x4b4de0 -> PENDING (attempt 1)
+[ledger] 0x4b4dd0 0x4b4dd0 -> PENDING (attempt 1)
+[ledger] 0x4b4dc0 0x4b4dc0 -> PENDING (attempt 1)
+[ledger] 0x7dc223 unexpected_YAXXZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406f40 sub_406F40 -> NG (attempt 1)
+[ledger] 0x7cd960 __mtinitlocks -> NG (attempt 1)
+[ledger] 0x5289e0 INIClass::SetStringOrEmpty -> NG (attempt 1)
+[ledger] 0x4ae4c0 MapClass::UpdateLightingPostProcess -> OK (attempt 1)
+[ledger] 0x7cb19c _fflush -> NG (attempt 1)
+[ledger] 0x406f00 sub_406F00 -> NG (attempt 1)
+[ledger] 0x5ae5a0 MapSelect::DestroyComposite -> NG (attempt 1)
+[ledger] 0x5e26c0 Dialog::FindGameUI -> NG (attempt 1)
+[ledger] 0x486e30 ObjectClass::Helper_486E30 -> NG (attempt 1)
+[ledger] 0x767880 FlagGameOption_WorldDominationTour::coUninitialize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770020 Territory_WorldDominationTour::QueryInterface -> NG (attempt 1)
+[ledger] 0x65cca0 RawFileClass::CloseHandle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3890 CCFileClass::ReadEntireFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70e1a0 TechnoClass::GetPoweredWeaponSlot -> NG (attempt 1)
+[ledger] 0x652e50 ObjectClass::resetObjectState -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "NO_EXPORT": 3,
+  "COMPILE_FAIL": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "extern_reloc": 1,
+  "regalloc": 3,
+  "branch_polarity": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p00\batch_report.json

@@ -1,0 +1,51 @@
+{
+ "symbol": "?UpdateLightingPostProcess@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::UpdateLightingPostProcess",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "b900000000e800000000b900000000e80000000085c074158bc8e800000000b900000000e80000000085c075ebc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ComputeScreenTint@TacticalMap@@QAEHXZ",
+   "sym_key": "TacticalMap::ComputeScreenTint"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

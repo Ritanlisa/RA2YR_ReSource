@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AE4C0",
+ "name": "MapClass::UpdateLightingPostProcess",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AE4C0",
+ "bytes_hex": "b9e8f78700e8869e0c00b9e8f78700e8bc9d0c0085c074158bc8e8a161fdffb9e8f78700e8a79d0c0085c075ebc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

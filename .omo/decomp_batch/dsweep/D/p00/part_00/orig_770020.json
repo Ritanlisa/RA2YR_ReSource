@@ -1,0 +1,11 @@
+{
+ "addr": "0x770020",
+ "name": "Territory_WorldDominationTour::QueryInterface",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x770020",
+ "bytes_hex": "568bf18d4e20c70634737f00e8bf4604008d4e0ce8276704008bcee820d6eefff644240801740956e8f08a050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

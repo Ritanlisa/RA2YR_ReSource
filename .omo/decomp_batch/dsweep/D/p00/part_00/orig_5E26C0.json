@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E26C0",
+ "name": "Dialog::FindGameUI",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E26C0",
+ "bytes_hex": "b9c2000000e87632190085c07526b9c9000000e86832190085c07518b9bc000000e85a32190085c0750ab9bd000000e94c321900c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

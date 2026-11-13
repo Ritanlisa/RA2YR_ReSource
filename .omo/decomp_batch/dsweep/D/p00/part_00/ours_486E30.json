@@ -1,0 +1,39 @@
+{
+ "symbol": "?Helper_486E30@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Helper_486E30",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568bf1578d7e3657e80000000083c40485c0740d568bc8e8000000005f33c05ec357b9f8010000e8000000008bc8e8000000005f33c05ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Helper_486E30_Helper@@YAHPAX@Z",
+   "sym_key": "Helper_486E30_Helper"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?RemoveMatching@RandomMap@@QAEDH@Z",
+   "sym_key": "RandomMap::RemoveMatching"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?ProcessBridgeRepair@CellClass@@QAEXXZ",
+   "sym_key": "CellClass::ProcessBridgeRepair"
+  }
+ ]
+}

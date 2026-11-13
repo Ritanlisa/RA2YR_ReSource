@@ -1,0 +1,33 @@
+{
+ "symbol": "?QueryInterface@Territory_WorldDominationTour@@QAEPAPAXD@Z",
+ "sym_key": "Territory_WorldDominationTour::QueryInterface",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf18d461dc7060000000050e80000000083c4048d4e04e8000000008bcee800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Constructor@ReferenceCounted@@QAEXXZ",
+   "sym_key": "ReferenceCounted::Constructor"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CD960",
+ "name": "__mtinitlocks",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CD960",
+ "bytes_hex": "568b35f4117e00ff35ecc28700ffd6ff35dcc28700ffd6ff35ccc28700ffd6ff35acc28700ffd65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

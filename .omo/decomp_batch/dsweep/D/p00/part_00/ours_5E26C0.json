@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindGameUI@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::FindGameUI",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "b9c2000000e80000000085c07526b9c9000000e80000000085c07518b9bc000000e80000000085c0750ab9bd000000e900000000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  }
+ ]
+}

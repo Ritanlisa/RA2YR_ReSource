@@ -1,0 +1,57 @@
+{
+ "symbol": "?sub_406F00@@YIHPAX@Z",
+ "sym_key": "Unnamed::sub_406F00",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000085c075208b0d0000000085c9740aba01000000e8000000008bcee800000000e8000000008bcee8000000008b0d0000000085c95e7405e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?IsActive@ChronoScreen@@QAEHXZ",
+   "sym_key": "ChronoScreen::IsActive"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_Audio_Enabled@@3IA",
+   "sym_key": "g_Audio_Enabled"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?AudioQueue__DeactivateAllMatching@@YIHHH@Z",
+   "sym_key": "AudioQueue__DeactivateAllMatching"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?UpdateTimers@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::UpdateTimers"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?sub_751040@@YAHXZ",
+   "sym_key": "sub_751040"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?CounterInc@AudioFrame@@QAEHXZ",
+   "sym_key": "AudioFrame::CounterInc"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4D8@@3IA",
+   "sym_key": "DataGlobal_B1D4D8"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?ProcessAudioFrame@AudioFrame@@QAEHXZ",
+   "sym_key": "AudioFrame::ProcessAudioFrame"
+  }
+ ]
+}

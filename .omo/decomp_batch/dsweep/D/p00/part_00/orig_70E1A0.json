@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E1A0",
+ "name": "TechnoClass::GetPoweredWeaponSlot",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E1A0",
+ "bytes_hex": "568bf18b06ff90840000008bc8e8ce96000084c074138b86380100008b16508bceff92f80300005ec38b1633c0508bceff92f80300005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

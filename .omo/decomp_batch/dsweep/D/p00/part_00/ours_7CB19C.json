@@ -1,0 +1,33 @@
+{
+ "symbol": "?_fflush@@YAHPAX@Z",
+ "sym_key": "Unnamed::_fflush",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f6750b56e80000000083c4045ec35756e80000000056e800000000568bf8e80000000083c40c8bc75f5ec3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?flsall@@YAHHZZ",
+   "sym_key": "flsall"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?_lock_file@@YAHPAXZZ",
+   "sym_key": "_lock_file"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?_fflush_lk@@YAHPAXZZ",
+   "sym_key": "_fflush_lk"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?_unlock_file@@YAHPAXZZ",
+   "sym_key": "_unlock_file"
+  }
+ ]
+}
