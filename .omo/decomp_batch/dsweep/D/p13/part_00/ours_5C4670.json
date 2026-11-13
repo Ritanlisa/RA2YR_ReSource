@@ -1,0 +1,33 @@
+{
+ "symbol": "?checkVictory@MPCooperative@@QAEHXZ",
+ "sym_key": "MPCooperative::checkVictory",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf15733ff8b4e4085c975085f33c05e83c40cc38d44240850e8000000008d4c240c518b4e40e8000000008b5424088b44240c3bd0751f8b4e408d44241050e8000000008b4c2410bf01000000d3e78bcee8000000008bc75f5e83c40cc3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetMovieScore@MPCooperative@@QAEDPAX@Z",
+   "sym_key": "MPCooperative::GetMovieScore"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?GetState@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetState"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?GetSectionID@Movie@@QAEDPAX@Z",
+   "sym_key": "Movie::GetSectionID"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

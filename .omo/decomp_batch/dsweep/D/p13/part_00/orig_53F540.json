@@ -1,0 +1,11 @@
+{
+ "addr": "0x53F540",
+ "name": "Network_Init_53F540",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53F540",
+ "bytes_hex": "8b0d287688008b15b4eba800568b356805aa008b0152ff50508b0d2876880081e6ffff0000568b01ff503c25ff000000a3a805aa005e742f8b0d287688008b11ff521c84c0740bb801000000a3ac05aa00c38b0d287688008b01ff5004c705a805aa000000000033c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

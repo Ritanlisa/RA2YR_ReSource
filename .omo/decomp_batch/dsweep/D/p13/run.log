@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x732c30 IDTechnoClassMatches -> _addr_73
+[conv] 0x71e1d0 TerrainTypeClass::SaveLoad_Prefix -> TerrainTypeClass
+[conv] 0x5bc300 __ioterm -> _addr_5B
+[conv] 0x559e40 LoadOptions::Release -> LoadOptions
+[conv] 0x438a90 BombClass::Stat -> BombClass
+[conv] 0x538a20 CreateTeamCommand::performAction_243 -> CreateTeamCommand
+[conv] 0x5c4670 MPCooperative::checkVictory -> MPCooperative
+[conv] 0x767010 COMClass::lockServer -> COMClass
+[conv] 0x76a610 Map_WorldDominationTour::Constructor_0 -> Map_WorldDominationTour
+[conv] 0x672280 RulesClass::readCrateRules -> RulesClass
+[conv] 0x6722f0 RulesClass::LoadCountries -> RulesClass
+[conv] 0x672360 CCINIClass::LoadBuildingTypes -> CCINIClass
+[conv] 0x6723d0 RulesClass::readRadiation -> RulesClass
+[conv] 0x672660 RulesClass::LoadBuildingTypes -> RulesClass
+[conv] 0x6726d0 CCINIClass::LoadTypeList -> CCINIClass
+[conv] 0x6727d0 FactoryClass::LoadType -> FactoryClass
+[conv] 0x672840 ObjectClass::ReadBuildingTypesBuildingTypeClass -> ObjectClass
+[conv] 0x4d8560 FootClass::GetCoords -> FootClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x53f540 ObjectClass::Network_Init_53F540 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_73                 rc=0
+[era] TerrainTypeClass         rc=2
+[era] _addr_5B                 rc=0
+[era] LoadOptions              rc=2
+[era] BombClass                rc=0
+[era] CreateTeamCommand        rc=0
+[era] MPCooperative            rc=0
+[era] COMClass                 rc=0
+[era] Map_WorldDominationTour  rc=0
+[era] RulesClass               rc=2
+[era] CCINIClass               rc=2
+[era] FactoryClass             rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x732c30   MISMATCH         IDTechnoClassMatches
+[diff] 0x5bc300   MISMATCH         __ioterm
+[diff] 0x438a90   MISMATCH         BombClass::Stat
+[diff] 0x538a20   MISMATCH         CreateTeamCommand::performAction_243
+[diff] 0x5c4670   MISMATCH         MPCooperative::checkVictory
+[diff] 0x767010   MISMATCH         COMClass::lockServer
+[diff] 0x76a610   MISMATCH         Map_WorldDominationTour::Constructor_0
+[diff] 0x53f540   MISMATCH         ObjectClass::Network_Init_53F540
+[ledger] 0x732c30 IDTechnoClassMatches -> NG (attempt 1)
+[ledger] 0x71e1d0 TerrainTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bc300 __ioterm -> NG (attempt 1)
+[ledger] 0x559e40 LoadOptions::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438a90 BombClass::Stat -> NG (attempt 1)
+[ledger] 0x538a20 CreateTeamCommand::performAction_243 -> NG (attempt 1)
+[ledger] 0x5c4670 MPCooperative::checkVictory -> NG (attempt 1)
+[ledger] 0x767010 COMClass::lockServer -> NG (attempt 1)
+[ledger] 0x76a610 Map_WorldDominationTour::Constructor_0 -> NG (attempt 1)
+[ledger] 0x672280 RulesClass::readCrateRules -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6722f0 RulesClass::LoadCountries -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672360 CCINIClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6723d0 RulesClass::readRadiation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672660 RulesClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6726d0 CCINIClass::LoadTypeList -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6727d0 FactoryClass::LoadType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x672840 ObjectClass::ReadBuildingTypesBuildingTypeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d8560 FootClass::GetCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f540 ObjectClass::Network_Init_53F540 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 3,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p13\batch_report.json

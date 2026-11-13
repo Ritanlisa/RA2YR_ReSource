@@ -1,0 +1,81 @@
+{
+ "symbol": "?__ioterm@@YAHXZ",
+ "sym_key": "Unnamed::__ioterm",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "568b35000000008b0685c0740f50e80000000083c404c7060000000083c60481fe000000007ce0a1000000005e85c07436a10000000050e8000000008b0d00000000e8000000008b0d0000000051e800000000c7050000000000000000c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF168@@3IA",
+   "sym_key": "DataGlobal_ABF168"
+  },
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF188@@3IA",
+   "sym_key": "DataGlobal_ABF188"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF244@@3IA",
+   "sym_key": "DataGlobal_ABF244"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?DeleteObject@@YGHPAX@Z",
+   "sym_key": "DeleteObject"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?RemoveObjectArray@Object@@QAEPAPAXXZ",
+   "sym_key": "Object::RemoveObjectArray"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?DestroyWindow@@YGHH@Z",
+   "sym_key": "DestroyWindow"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF244@@3IA",
+   "sym_key": "DataGlobal_ABF244"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF240@@3IA",
+   "sym_key": "DataGlobal_ABF240"
+  }
+ ]
+}

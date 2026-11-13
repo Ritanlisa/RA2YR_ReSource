@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C4670",
+ "name": "MPCooperative::checkVictory",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C4670",
+ "bytes_hex": "83ec0c56578bf933f68b4f4085c975085f33c05e83c40cc38d44240850e80e76edff8d4c240c518b4f40e82176edff8b5424088b44240c3bd075278b4f408d44241050e8c875edff8b4c2410be01000000d3e6565168dcdf8200e81122e4ff83c40c8bc65f5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x438A90",
+ "name": "BombClass::Stat",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x438A90",
+ "bytes_hex": "56578b7c240c8bf157e87279fdff8b462885c074128b480483c00450ff5110508bcfe8999206008b462485c074128b500483c00450ff5210508bcfe8809206008b462c85c074128b480483c00450ff5110508bcfe8679206008a56588bcf52e8ac9106005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

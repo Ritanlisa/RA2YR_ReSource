@@ -1,0 +1,11 @@
+{
+ "addr": "0x732C30",
+ "name": "IDTechnoClassMatches",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x732C30",
+ "bytes_hex": "538bda55568b6b105733ff8bf185ed7e498b43048bce8b04b850e80112ecff84c074328b168bceff923c01000084c0753085f674208b068bceff502c83f80675148b168bceff92840000008b880804000085c9750c473bfd7cb75f5e5d32c05bc35f5e5db0015bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

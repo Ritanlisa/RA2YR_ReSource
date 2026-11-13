@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BC300",
+ "name": "__ioterm",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BC300",
+ "bytes_hex": "56be68f1ab008b0685c0740f50e82bc8200083c404c7060000000083c60481fe88f1ab007ce0a140f2ab005e85c07438a144f2ab0050ff15ac107e008b0d40f2ab00e8d920f8ff8b0d40f2ab0051ff15f4137e00c70544f2ab0000000000c70540f2ab0000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?IDTechnoClassMatches@@YIDPAXH@Z",
+ "sym_key": "Unnamed::IDTechnoClassMatches",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "538bda55568b6b105733ff8bf185ed7e4f8b43048b0cb8518bcee80000000084c0742f8b1656ff923c01000084c0752985f6741e8b0656ff502c83f80675138b0e56ff91840000008b880804000085c97507473bfd7d09ebb85f5e5db0015bc35f5e5d32c05bc3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?StepCleanup@ObjectClass@@QAEHPAX@Z",
+   "sym_key": "ObjectClass::StepCleanup"
+  }
+ ]
+}

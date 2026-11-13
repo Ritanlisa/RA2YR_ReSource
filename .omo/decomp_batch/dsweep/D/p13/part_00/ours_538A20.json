@@ -1,0 +1,45 @@
+{
+ "symbol": "?performAction_243@CreateTeamCommand@@QAEPADD@Z",
+ "sym_key": "CreateTeamCommand::performAction_243",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "538a5c2408568bf1f6c30274408b46fc558d6efc8d34c64885c07c1b578d78018b46f883ee088bcec70000000000e8000000004f75ea5ff6c301740955e80000000083c4048bc55d5e5bc204008bcec70600000000e800000000f6c301740956e80000000083c4048b065e5bc20400",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?vt_rc_ptr_WDTTerritory@@3PAXA",
+   "sym_key": "vt_rc_ptr_WDTTerritory"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
