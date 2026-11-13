@@ -16,6 +16,127 @@ import json
 import os
 import re
 
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+_VT_LOOKUP = None
+
+
+def _load_vt_lookup():
+    """class spelling -> `vt_<Class>` vtable-identity global.
+
+    Source of truth: anchors/vtable_slot_authority.json (RTTI vtable ->
+    class) crossed with signals.globals (`vt_<Class>` = address).  Only
+    identity-exact matches are returned; an unknown class keeps the old
+    `0` emission so no symbol is invented.
+    """
+    global _VT_LOOKUP
+    if _VT_LOOKUP is not None:
+        return _VT_LOOKUP
+    lookup = {"by_class": {}, "by_san": {}}
+    try:
+        auth = json.load(open(os.path.join(_ROOT, "anchors",
+                                           "vtable_slot_authority.json"),
+                              encoding="utf-8"))
+        glob = json.load(open(os.path.join(_ROOT, "signals.json"),
+                              encoding="utf-8")).get("globals", {})
+    except (OSError, ValueError):
+        _VT_LOOKUP = lookup
+        return lookup
+    vt_by_addr = {}
+    san = {}
+    for name, addr in glob.items():
+        if not name.startswith("vt_"):
+            continue
+        try:
+            ia = int(addr, 16)
+        except (ValueError, TypeError):
+            continue
+        vt_by_addr.setdefault(ia, name)
+        san.setdefault(name[3:], name)
+    by_class = {}
+    for k, rec in auth.items():
+        v = rec.get("vtable") if isinstance(rec, dict) else None
+        if not v:
+            continue
+        try:
+            ia = int(v, 16)
+        except (ValueError, TypeError):
+            continue
+        nm = vt_by_addr.get(ia)
+        if nm:
+            by_class[k] = nm
+            san.setdefault(k, nm)
+    lookup["by_class"] = by_class
+    lookup["by_san"] = san
+    _VT_LOOKUP = lookup
+    return lookup
+
+
+def _vt_cls_key(cls):
+    s = re.sub(r"\s+const\s*\*", "_const", cls)
+    s = s.replace("*", "").replace(" ", "").replace("\t", "")
+    s = s.replace("<", "_").replace(">", "").replace(",", "_")
+    s = s.replace("::", "_")
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s
+
+
+def _vt_global_for(cls):
+    """Resolve a pseudo-code vftable class spelling to its vt_ global."""
+    lk = _load_vt_lookup()
+    nm = lk["by_class"].get(cls)
+    if nm:
+        return nm
+    k = _vt_cls_key(cls)
+    san = lk["by_san"]
+    for cand in (k, k.lstrip("_"), k.replace("_PBV", "_") + "_const",
+                 k.replace("_PBV", "_"), k.replace("_PAV", "_"),
+                 k + "_const"):
+        if cand in san:
+            return san[cand]
+    nm = lk["by_class"].get(k)
+    if nm:
+        return nm
+    return None
+
+
+_VT_CLS = (r"[A-Za-z_]\w*(?:\s*<[^<>]*>)?"
+           r"(?:::[A-Za-z_]\w*(?:\s*<[^<>]*>)?)*")
+# assignment-context install: `LHS = &Class::`vftable'`
+_VT_INSTALL = re.compile(
+    r"(?P<lhs>[^\n;=]+?)\s*=\s*&\s*(?P<cls>%s)::\s*`vftable'" % _VT_CLS)
+# any residual token (rvalue contexts) -- old behaviour: 0
+_VT_TOKEN_ONLY = re.compile(r"&\s*%s::\s*`vftable'" % _VT_CLS)
+_VT_INT_CAST_LHS = re.compile(
+    r"\*\s*\(\s*(?:_DWORD|unsigned int|int|unsigned long|long|DWORD|"
+    r"unsigned __int32|unsigned __int64|__int64|unsigned short|short|"
+    r"unsigned char|char)\s*\*+\s*\)\s*$")
+
+
+def _rewrite_vftables(text, ctx):
+    """`&Class::`vftable'` -> identity symbol `vt_<Class>` (or 0).
+
+    CW8-P3: 552/572 null-store NG rows carry a resolvable vftable token whose
+    install value the generator dropped to 0.  Emitting the class's vtable
+    identity global reproduces the original store (reloc-keyed) instead of a
+    hardcoded address.  Unresolvable classes keep the old `0` (no invention).
+    """
+    def repl(m):
+        cls = m.group("cls")
+        name = _vt_global_for(cls)
+        lhs = m.group("lhs")
+        if not name:
+            return "%s = 0" % lhs
+        ctx.used_globals[name] = "void *"
+        is_int = bool(_VT_INT_CAST_LHS.search(lhs))
+        if not is_int and re.match(r"^\s*\*(?!\s*\()", lhs):
+            is_int = True          # `*this` / `*Block` (pseudo receiver)
+        cast = "(unsigned int)" if is_int else "(void *)"
+        return "%s = %s(&%s)" % (lhs, cast, name)
+
+    out = _VT_INSTALL.sub(repl, text)
+    out = _VT_TOKEN_ONLY.sub("0", out)
+    return out
+
 # ---------------------------------------------------------------- type tables
 
 TYPE_MAP = {
@@ -6263,6 +6384,132 @@ def pass_ret_view_align(ctx):
                          "context)" % mem)
 
 
+_LS1 = re.compile(
+    r"(?P<ind>[ \t]*)for\s*\(\s*(?P<it>[A-Za-z_]\w*)\s*=\s*"
+    r"(?P<base>[^;]+?)\s*;\s*\*\s*(?P=it)\s*!=\s*(?P<want>[^;]+?)\s*;\s*"
+    r"(?:\+\+\s*(?P=it)|(?P=it)\s*\+\+|(?P=it)\s*\+=\s*(?P<stride>\d+))"
+    r"\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*if\s*\(\s*\+\+\s*(?P<res>[A-Za-z_]\w*)\s*>=\s*"
+    r"(?P<n>[^()]+?)\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*return\s+\((?P<rt>[^()]*)\)\(\s*-1\s*\);\s*\n"
+    r"[ \t]*\}\s*\n"
+    r"[ \t]*\}\s*\n"
+    r"(?P=ind)return\s+\((?P<rt2>[^()]*)\)\(\s*(?P=res)\s*\);",
+    re.M)
+
+_LS2 = re.compile(
+    r"(?P<ind>[ \t]*)if\s*\(\s*(?P<n>[A-Za-z_]\w*)\s*==\s*"
+    r"(?P<other>.+)\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*(?P<res>[A-Za-z_]\w*)\s*=\s*0;\s*\n"
+    r"(?:[ \t]*if\s*\(\s*(?P=n)\s*<=\s*0\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*return\s+\((?P<rt0>[^()]*)\)\(\s*1\s*\);\s*\n"
+    r"[ \t]*\}\s*\n)?"
+    r"[ \t]*(?P<base>[A-Za-z_]\w*)\s*=\s*(?P<base_expr>[^;]+);\s*\n"
+    r"[ \t]*(?P<diff>[A-Za-z_]\w*)\s*=\s*(?P<diff_expr>[^;]+);\s*\n"
+    r"[ \t]*while\s*\(\s*\*\s*(?P<p>[A-Za-z_]\w*)\s*==\s*"
+    r"(?P<cmp>.+?)\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*\+\+\s*(?P=res);\s*\n"
+    r"[ \t]*(?:\+\+\s*(?P=p)|(?P=p)\s*\+=\s*(?P<stride>\d+));\s*\n"
+    r"[ \t]*if\s*\(\s*(?P=res)\s*>=\s*(?P=n)\s*\)\s*\n"
+    r"[ \t]*\{\s*\n"
+    r"[ \t]*return\s+\((?P<rt2>[^()]*)\)\(\s*1\s*\);\s*\n"
+    r"[ \t]*\}\s*\n"
+    r"[ \t]*\}\s*\n"
+    r"[ \t]*\}\s*\n"
+    r"(?P=ind)return\s+\((?P<rt3>[^()]*)\)\(\s*0\s*\);",
+    re.M)
+
+
+def pass_loop_search(ctx):
+    """loop-search source form (CW8-P2).
+
+    The export renders a linear search as
+
+        for (i = base; *i != *p0; i += S)
+        { if (++r >= n) return -1; }
+        return r;
+
+    while the original source is the classic
+
+        int i = 0;
+        if (n <= 0) return -1;
+        for (; i < n; i++) if (base[i] == *p0) return i;
+        return -1;
+
+    VC6 lays the latter out as a pointer walk with a SEPARATE index and a
+    shared epilogue; the former emits an extra block after the loop's ret
+    (DEAD_TAIL, 172 rows).  Both rewrites were byte-verified against the
+    original artifact (see report_cw8.md).  Only the exact shapes are
+    rewritten; anything else is left untouched.
+    """
+    text = "\n".join(ctx.lines)
+    n = 0
+
+    def s1(m):
+        nonlocal n
+        n += 1
+        d = m.groupdict()
+        ind = d["ind"]
+        # increment ORDER matters: VC6 emits the for-increment AFTER the
+        # body, and the original lays the index increment (body) before the
+        # pointer bump (for-increment).  Swapping them changes two bytes.
+        inc = ("%s += %s" % (d["it"], d["stride"]) if d.get("stride")
+               else "++%s" % d["it"])
+        return ("%(ind)sfor ( %(it)s = %(base)s; %(res)s < %(n)s; %(inc)s )\n"
+                "%(ind)s{\n"
+                "%(ind)s    if ( *%(it)s == %(want)s ) "
+                "return (%(rt)s)(%(res)s);\n"
+                "%(ind)s    %(res)s++;\n"
+                "%(ind)s}\n"
+                "%(ind)sreturn (%(rt)s)(-1);" % dict(d, inc=inc))
+
+    def s2(m):
+        nonlocal n
+        d = m.groupdict()
+        ind = d["ind"]
+        # the pseudo's two-temporary form
+        #   v4 = BASE;  v5 = OTHER - (unsigned int)v4;
+        #   while (*v4 == *(unsigned int *)((char *)v4 + v5)) ...
+        # is the vector equality loop.  The original source compares
+        # BASE[i*K] with OTHER[i*K]; VC6 then hoists both bases into the
+        # loop preheader and keeps ONE index (byte-verified: the inline
+        # index form reproduces the original `mov eax,[ecx+4];
+        # mov ecx,[edi+4]; sub ecx,eax` preheader exactly).
+        dm = re.match(r"^(.*?)\s*-\s*\(unsigned int\)\s*%s\s*$"
+                      % re.escape(d["base"]), d["diff_expr"])
+        if not dm:
+            return m.group(0)
+        n += 1
+        other2 = dm.group(1).strip()
+        k = d["stride"] or "1"
+        return ("%(ind)sif ( %(n)s == %(other)s )\n"
+                "%(ind)s{\n"
+                "%(ind)s    for ( %(res)s = 0; %(res)s < %(n)s; %(res)s++ )\n"
+                "%(ind)s    {\n"
+                "%(ind)s        if ( *((unsigned int *)(%(base_expr)s) + "
+                "%(res)s * %(k)s) != *((unsigned int *)(%(other2)s) + "
+                "%(res)s * %(k)s) ) return (%(rt2)s)(0);\n"
+                "%(ind)s    }\n"
+                "%(ind)s    return (%(rt2)s)(1);\n"
+                "%(ind)s}\n"
+                "%(ind)sreturn (%(rt3)s)(0);"
+                % dict(d, k=k, other2=other2))
+
+    text2 = _LS1.sub(s1, text)
+    text2 = _LS2.sub(s2, text2)
+    if n:
+        ctx.lines = text2.split("\n")
+        ctx.sites.append(Site(
+            "loop_search", "%d loop-search source form(s)" % n,
+            "pointer-walk early-exit loop -> index loop with shared "
+            "epilogue (byte-verified)", True))
+
+
 def pass_era_normalize(ctx):
     """Final textual cleanup for era C++ (VC6-safe, C-style casts only)."""
     from pseudo import render
@@ -6288,16 +6535,12 @@ def pass_era_normalize(ctx):
     text = re.sub(r"\b(\d+)ULL\b", r"(unsigned __int64)\1", text)
     text = re.sub(r"\b(\d+)LL\b", r"(__int64)\1", text)
     # CW2: IDA renders a vtable install as `&Class::`vftable'` -- the
-    # backtick spelling is not C++ (C2018).  Pilot shells carry no vtable
-    # object, so the install value degrades to 0 (address constant only).
-    # CW3-2: template instantiations spell their arguments
-    # (`VectorClass<int>::`vftable'`, `VectorClass<TechnoClass *>::...`) --
-    # the old identifier-only pattern stopped at `<` (C2065/C2275/C2018
-    # family, 102 functions).  Allow balanced `<...>` groups per segment.
-    text = re.sub(
-        r"&\s*[A-Za-z_]\w*(?:\s*<[^<>]*>)?"
-        r"(?:::[A-Za-z_]\w*(?:\s*<[^<>]*>)?)*::`vftable'",
-        "0", text)
+    # backtick spelling is not C++ (C2018).  CW8-P3: emit the class's
+    # vtable-identity global (reloc-keyed) instead of dropping the value to
+    # 0; unresolvable classes keep 0.  Template instantiations spell their
+    # arguments (`VectorClass<int>::`vftable'`) -- `_VT_CLS` allows balanced
+    # `<...>` groups per segment.
+    text = _rewrite_vftables(text, ctx)
     # CW3-3: `(int)((x))` double-paren cleanup -- but NEVER when the inner
     # expression starts with a POINTER cast: `(int)((char **)&G)[1]` is an
     # int context around a pointer element and dropping the cast turned it
@@ -7200,8 +7443,8 @@ def pass_residual_idents(ctx):
         changed = True
         text = text2
 
-    # templated vftable address: not declarable at this stage
-    text2 = _CW5_VFTABLE_TMPL.sub("0", text)
+    # templated vftable address: identity symbol when resolvable, else 0
+    text2 = _rewrite_vftables(text, ctx)
     if text2 != text:
         changed = True
         text = text2

@@ -1126,6 +1126,12 @@ def run_function(addr, reg, views, idx):
                      "free body used `this` (member-call receiver) -> "
                      "__fastcall + explicit void *this_ (C2673)")
 
+    # CW8-P2: loop-search source form (pointer-walk early-exit loop ->
+    # index loop with shared epilogue).  LAST text pass: the loop shapes are
+    # only final after global-canon / residual-ident rewrites; only the
+    # exact DEAD_TAIL shapes are rewritten (byte-verified).
+    passes.pass_loop_search(ctx)
+
     # CW7/W4-lite: return-truth arbitration (declaration layer only -- the
     # body bytes are untouched).  C4716 (`must return a value`) and C2562
     # (`void function returning a value`) are the two cheap forms.

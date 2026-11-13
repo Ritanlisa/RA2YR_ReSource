@@ -35,19 +35,40 @@ SIGNALS = os.path.join(REPO, "signals.json")
 _func_map_cache = None
 _glob_map_cache = None
 _glob_name_map_cache = None
+_func_name_map_cache = None
+_ext_alias_cache = None
 
 
 def _load_maps():
     global _func_map_cache, _glob_map_cache, _glob_name_map_cache
+    global _func_name_map_cache, _ext_alias_cache
     if _func_map_cache is None:
         with open(SIGNALS, encoding="utf-8") as f:
             sig = json.load(f)
         fm = {}
+        nf = {}
         for a, v in sig["symbols"].items():
             try:
-                fm[int(a, 16)] = v.get("name", "sub_%X" % int(a, 16))
+                ia = int(a, 16)
             except (ValueError, AttributeError):
                 continue
+            nm = v.get("name") or ("sub_%X" % ia)
+            fm[ia] = nm
+            nf.setdefault(nm, ia)
+        # R-CW8: signals._by_name carries the ALIAS spellings the export /
+        # generator use (`__3_YAXPAX_Z` and `??3_YAXPAX_Z` both point at the
+        # same address; the project renames the same routine OperatorDelete
+        # in symbols[]).  Registry-declared aliases are identity evidence --
+        # merge them so a COFF reloc key resolves to the real target.
+        for alias, rec in (sig.get("_by_name") or {}).items():
+            if not isinstance(rec, dict):
+                continue
+            for a in (rec.get("symbols") or {}):
+                try:
+                    ia = int(a, 16)
+                except (ValueError, TypeError):
+                    continue
+                nf.setdefault(alias, ia)
         gm = {}
         nm = {}
         for name, addr in sig.get("globals", {}).items():
@@ -57,8 +78,27 @@ def _load_maps():
                 continue
             gm[ia] = name
             nm.setdefault(name, ia)
+        # external/CRT alias map: the IDA spelling and the COFF C spelling of
+        # the same routine differ by decoration (`__CIpow` vs `_CIpow`,
+        # `??2_YAPAXI_Z` vs `__2_YAPAXI_Z`).  Normalising BOTH to the stripped
+        # spelling resolves them to the SAME signals address (identity, not a
+        # name guess).  Ambiguous stripped names are dropped (never guessed).
+        alias = {}
+        seen = {}
+        for iname, ia in nf.items():
+            if "::" in iname:
+                continue
+            k = _external_name(iname)
+            if k in seen and seen[k] != ia:
+                alias.pop(k, None)
+                seen[k] = None
+            elif k not in seen:
+                seen[k] = ia
+                alias[k] = ia
         _func_map_cache, _glob_map_cache = fm, gm
         _glob_name_map_cache = nm
+        _func_name_map_cache = nf
+        _ext_alias_cache = alias
     return _func_map_cache, _glob_map_cache
 
 
@@ -72,12 +112,19 @@ def _load_maps():
 # spelling, so a genuinely different location still mismatches.
 _IDA_PLATE_KEY = re.compile(
     r"^(?:stru|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{6,8})$")
+# `DataGlobal_<VA>` is the registry's by-address identity convention: the
+# trailing hex IS the address.  Parse it so a generator-supplied identity
+# symbol compares equal to the original absolute address.
+_DATA_GLOBAL_KEY = re.compile(r"^DataGlobal_([0-9A-Fa-f]{6,8})$")
 
 
 def data_key_canon(name):
     if _glob_name_map_cache is None:
         _load_maps()
     m = _IDA_PLATE_KEY.match(name)
+    if m:
+        return "0x%X" % int(m.group(1), 16)
+    m = _DATA_GLOBAL_KEY.match(name)
     if m:
         return "0x%X" % int(m.group(1), 16)
     nm = _glob_name_map_cache or {}
@@ -87,6 +134,81 @@ def data_key_canon(name):
     if und in nm:
         return "0x%X" % nm[und]
     return name
+
+
+def data_key_addr(name):
+    """Resolve a data key to a VA, or None when the spelling is not
+    identity-resolvable (local static / constant pool)."""
+    c = data_key_canon(name)
+    if c.startswith("0x"):
+        try:
+            return int(c, 16)
+        except ValueError:
+            return None
+    return None
+
+
+def data_ref_canon(name, addend=0):
+    """DATA canonical key for `symbol + addend` (link-time value).
+
+    Resolved symbols compare by ADDRESS (identity); unresolvable ones keep
+    the spelling plus a visible addend so a genuinely different location
+    still mismatches.
+    """
+    addr = data_key_addr(name)
+    if addr is not None:
+        return "DATA:0x%X" % ((addr + (addend or 0)) & 0xFFFFFFFF)
+    if addend:
+        return "DATA:%s+0x%X" % (data_key_canon(name), addend)
+    return "DATA:%s" % data_key_canon(name)
+
+
+def _external_name(key):
+    """Normalise a C/CRT symbol spelling to its bare identity."""
+    s = key.replace("?", "_")
+    if s.startswith("__imp_"):
+        s = s[6:]
+    return s.lstrip("_")
+
+
+def resolve_func_name(key):
+    """Resolve a COFF reloc symbol key to a signals function address.
+
+    Direct hit, then `Class__Method` -> `Class::Method` (the generator's
+    identifier sanitisation), then the decoration-stripped external alias
+    (identity map built from signals; ambiguous spellings excluded).
+    """
+    if _func_name_map_cache is None:
+        _load_maps()
+    nf = _func_name_map_cache or {}
+    if key in nf:
+        return nf[key]
+    if "__" in key:
+        a, b = key.split("__", 1)
+        alt = a + "::" + b
+        if alt in nf:
+            return nf[alt]
+    if key.startswith("_") and key != "_" and key[1:] in nf:
+        return nf[key[1:]]
+    return (_ext_alias_cache or {}).get(_external_name(key))
+
+
+def func_ref_canon(kind, target=None, key=None):
+    """Canonical FUNC: key.
+
+    - orig side: the call target address is absolute -> address identity.
+    - obj side: the COFF reloc symbol -> resolve to a signals address when
+      possible (identity); otherwise compare by decoration-stripped name.
+    """
+    if kind == "orig":
+        nm = (_func_map_cache or {}).get(target)
+        if nm is None:
+            return "FUNC:0x%X" % target
+        return "FUNC:@0x%X" % target
+    addr = resolve_func_name(key)
+    if addr is not None:
+        return "FUNC:@0x%X" % addr
+    return "FUNC:EXT:%s" % _external_name(key)
 
 
 def undecorate(sym):
@@ -153,6 +275,31 @@ def _find_field(blob, off, size, value):
     return None
 
 
+# relocation types that carry a 32-bit symbol/addend field
+_RELOC_KINDS = ("DIR32", "DIR32NB", "SECTION", "SECREL", "REL32", "REL32_1",
+                "REL32_2", "REL32_3", "REL32_4", "REL32_5")
+
+
+def _split_ops(op_str):
+    """Split `ins.op_str` on top-level commas (never inside `[...]`)."""
+    out = []
+    depth = 0
+    cur = ""
+    for ch in op_str:
+        if ch == "[":
+            depth += 1
+        elif ch == "]":
+            depth = max(0, depth - 1)
+        if ch == "," and depth == 0:
+            out.append(cur)
+            cur = ""
+        else:
+            cur += ch
+    if cur:
+        out.append(cur)
+    return out
+
+
 class Side:
     """One disassembled function side with normalization context."""
 
@@ -176,6 +323,43 @@ class Side:
                 return True
         return False
 
+    def _reloc_field(self, ins, off):
+        """(kind, field_off) of the 4-byte field a reloc at `off` covers.
+
+        W1R-a (CW8): relocations belong to ONE operand field.  The old code
+        let the IMM branch and the MEM branch both consume the same DIR32
+        (double patch) and patched the first matching text token (which can
+        be the disp of `[ecx + 0xc]`, not the immediate).  Ownership is read
+        from the x86 encoding, never guessed from the rendered text.
+        """
+        fo = off - (ins.address - self.base)
+        enc = getattr(ins, "encoding", None)
+        if enc is not None:
+            if getattr(enc, "imm_size", 0) == 4 and enc.imm_offset == fo:
+                return "imm", fo
+            if getattr(enc, "disp_size", 0) == 4 and enc.disp_offset == fo:
+                return "disp", fo
+        return None, fo
+
+    @staticmethod
+    def _field_pos(ins, kind):
+        enc = getattr(ins, "encoding", None)
+        if enc is None:
+            return None
+        if kind == "imm" and getattr(enc, "imm_size", 0) == 4:
+            return enc.imm_offset
+        if kind == "disp" and getattr(enc, "disp_size", 0) == 4:
+            return enc.disp_offset
+        return None
+
+    @staticmethod
+    def _replace_last_num(txt, new):
+        ms = list(re.finditer(r"0x[0-9a-fA-F]+|\b\d+\b", txt))
+        if not ms:
+            return txt
+        m = ms[-1]
+        return txt[:m.start()] + new + txt[m.end():]
+
     def normalize(self):
         """-> list of dicts: {off,size,hex,disasm,canon,mask:[positions]}"""
         out = []
@@ -190,70 +374,87 @@ class Side:
             is_jump = ins.group(CS_GRP_JUMP)
             is_call = ins.group(CS_GRP_CALL)
 
-            if (is_jump or is_call) and ins.operands and ins.operands[0].type == CS_OP_IMM:
+            if (is_jump or is_call) and ins.operands and \
+                    ins.operands[0].type == CS_OP_IMM:
                 op = ins.operands[0]
                 target = op.imm
                 toff = target - self.base
                 if 0 <= toff < self.size and not rel_here:
                     canon = "%s INTRA:+0x%X" % (ins.mnemonic, toff)
                 else:
-                    key = None
                     if self.mode == "orig":
-                        nm = self.func_map.get(target)
-                        key = "FUNC:%s" % (nm if nm else "0x%X" % target)
+                        key = func_ref_canon("orig", target=target)
                     else:
+                        rk = None
                         for _o, r in rel_here:
-                            if r.get("type") == "REL32":
-                                key = "FUNC:%s" % r["key"]
+                            if r.get("type") in _RELOC_KINDS:
+                                rk = r
                                 break
-                        if key is None:
-                            key = "FUNC:EXT:+0x%X" % toff if toff >= 0 else "FUNC:0x%X" % target
+                        if rk is not None:
+                            key = func_ref_canon("obj", key=rk["key"])
+                        else:
+                            key = "FUNC:0x%X" % target
                     canon = "%s %s" % (ins.mnemonic, key)
-                pos = _find_field(self.blob, off, ins.size,
-                                  target - (ins.address + ins.size))
+                pos = self._field_pos(ins, "imm")
+                if pos is None:
+                    pos = _find_field(self.blob, off, ins.size,
+                                      target - (ins.address + ins.size))
                 if pos is not None:
                     masks.append(pos)
             else:
-                # non-branch immediates & memory displacements
-                for op in ins.operands:
+                ops_txt = _split_ops(ins.op_str)
+                changed = list(ops_txt)
+                any_change = False
+                for idx, op in enumerate(ins.operands):
+                    if idx >= len(changed):
+                        break
+                    txt = changed[idx]
                     if op.type == CS_OP_IMM:
                         val = op.imm & 0xFFFFFFFF
                         key = None
+                        fpos = None
                         for _o, r in rel_here:
-                            if r.get("type") in ("DIR32", "DIR32NB", "SECTION", "SECREL"):
-                                key = "DATA:%s" % data_key_canon(r["key"])
-                                masks.append(_o - off)
+                            kind, fo = self._reloc_field(ins, _o)
+                            if kind == "imm" and r.get("type") in _RELOC_KINDS:
+                                key = data_ref_canon(r["key"], op.imm)
+                                fpos = fo
                                 break
-                        if key is None and self.mode == "orig" and self._in_data(val):
+                        if key is None and self.mode == "orig" and \
+                                self._in_data(val):
                             nm = self.glob_map.get(val)
-                            key = "DATA:%s" % data_key_canon(nm if nm else "0x%X" % val)
+                            key = data_ref_canon(nm if nm else "0x%X" % val)
+                            fpos = self._field_pos(ins, "imm")
                         if key is not None:
-                            canon = self._patch_imm(canon, op.imm, key)
-                            pos = _find_field(self.blob, off, ins.size, val)
-                            if pos is not None and pos not in masks:
-                                masks.append(pos)
+                            changed[idx] = key
+                            any_change = True
+                            if fpos is not None and fpos not in masks:
+                                masks.append(fpos)
                     elif op.type == CS_OP_MEM:
                         disp = op.mem.disp & 0xFFFFFFFF
-                        if op.mem.base == 0 and op.mem.index == 0:  # absolute [addr]
-                            key = None
-                            for _o, r in rel_here:
-                                if r.get("type") in ("DIR32", "DIR32NB", "SECTION", "SECREL"):
-                                    key = "DATA:%s" % data_key_canon(r["key"])
-                                    masks.append(_o - off)
-                                    break
-                            if key is None and self.mode == "orig" and self._in_data(disp):
-                                nm = self.glob_map.get(disp)
-                                key = "DATA:%s" % data_key_canon(nm if nm else "0x%X" % disp)
-                            if key is not None:
-                                for s in ("0x%x" % disp, "0x%X" % disp, "%d" % disp):
-                                    if s and s in canon:
-                                        canon = canon.replace(s, key, 1)
-                                        break
-                                else:
-                                    canon = canon + " <" + key + ">"
-                                pos = _find_field(self.blob, off, ins.size, disp)
-                                if pos is not None and pos not in masks:
-                                    masks.append(pos)
+                        key = None
+                        fpos = None
+                        for _o, r in rel_here:
+                            kind, fo = self._reloc_field(ins, _o)
+                            if kind == "disp" and r.get("type") in _RELOC_KINDS:
+                                key = data_ref_canon(r["key"], op.mem.disp)
+                                fpos = fo
+                                break
+                        if key is None and self.mode == "orig" and \
+                                self._in_data(disp):
+                            nm = self.glob_map.get(disp)
+                            key = data_ref_canon(nm if nm else "0x%X" % disp)
+                            fpos = self._field_pos(ins, "disp")
+                        if key is not None:
+                            if not re.search(r"0x[0-9a-fA-F]+|\b\d+\b", txt):
+                                changed[idx] = (txt.rstrip("]") + " + " +
+                                                key + "]")
+                            else:
+                                changed[idx] = self._replace_last_num(txt, key)
+                            any_change = True
+                            if fpos is not None and fpos not in masks:
+                                masks.append(fpos)
+                if any_change:
+                    canon = "%s %s" % (ins.mnemonic, ", ".join(changed))
             out.append({"off": off, "size": ins.size, "hex": hexs,
                         "disasm": dis, "canon": canon, "mask": sorted(set(masks))})
         return out
