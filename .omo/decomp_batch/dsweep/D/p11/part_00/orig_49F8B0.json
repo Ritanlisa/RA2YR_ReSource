@@ -1,0 +1,11 @@
+{
+ "addr": "0x49F8B0",
+ "name": "WinMain::CleanupResource",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49F8B0",
+ "bytes_hex": "5168b8f58100e82570f6ffa15cf7890083c40485c0741150ff1538127e00c7055cf78900000000008d44240050683f000f006a006854f581006800000080ff150c107e0085c0751b8b4c24006850f5810051ff1510107e008b54240052ff1504107e0059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

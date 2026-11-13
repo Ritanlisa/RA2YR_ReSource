@@ -1,0 +1,69 @@
+{
+ "symbol": "?SmallFunc_59B6D0@@YAHXZ",
+ "sym_key": "Unnamed::SmallFunc_59B6D0",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "53b900000000e800000000b900000000e8000000008bd885db744856578bcbe80000000084c0742733f6568bcbe8000000008bf88bcfe80000000084c07408a10000000089473883c60283fe087cdbb900000000e8000000008bd885db75be5f5e5bc38bc35bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?CellIteratorReset@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorReset"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?IsTerrainType@CellClass@@QAE_NXZ",
+   "sym_key": "CellClass::IsTerrainType"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?IsEmpty@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsEmpty"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E18@@3IA",
+   "sym_key": "DataGlobal_AA0E18"
+  },
+  {
+   "off": 80,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

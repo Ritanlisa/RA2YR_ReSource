@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6966D0@ObjectClass@@QAEPAXXZ",
+ "sym_key": "ObjectClass::sub_6966D0",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1685c0600008a8e940000008b0684c90f94c350885c2410e80000000085c074188b4c24086a0081e1ff0000005168f100000050e8000000008b16685b06000052e80000000085c0741933c96a0084db0f94c15168f100000050e8000000005e5b59c35e33c05b59c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

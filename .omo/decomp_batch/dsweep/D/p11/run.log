@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x6966d0 ObjectClass::sub_6966D0 -> ObjectClass
+[conv] 0x752ad0 Audio_Init_752AD0 -> Audio_Init
+[conv] 0x4b5530 DropListClass::OnKeyDown -> DropListClass
+[conv] 0x59b6d0 SmallFunc_59B6D0 -> SmallFunc
+[conv] 0x7b02a0 ComStreamClass::getStreamSize -> ComStreamClass
+[conv] 0x5d6370 MultiplayerGameMode::FindOpenSlot -> MultiplayerGameMode
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x406760 ObjectClass::sub_406760 -> ObjectClass
+[conv] 0x41ce20 AircraftTypeClass::LoadFromINI -> AircraftTypeClass
+[conv] 0x7a2970 RunWOLMainLoop_Read_7A2970 -> RunWOLMainLoop_Read
+[conv] 0x4cfd20 FlyLocomotionClass::ClearLocomotionDirty -> FlyLocomotionClass
+[conv] 0x488380 CheckListClass::GetSelected -> CheckListClass
+[conv] 0x696950 ObjectClass::sub_696950 -> ObjectClass
+[conv] 0x52a0a0 INIClass::ReadBool -> INIClass
+[conv] 0x51f2c0 InfantryClass::GetTooltipName -> InfantryClass
+[conv] 0x4799d0 sub_4799D0 -> _addr_47
+[conv] 0x7d07df __read -> _addr_7D
+[conv] 0x7d0d55 __write -> _addr_7D
+[conv] 0x7d7638 __lseek -> _addr_7D
+[conv] 0x49f8b0 WinMain::CleanupResource -> WinMain
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Audio_Init               rc=2
+[era] DropListClass            rc=2
+[era] SmallFunc                rc=0
+[era] ComStreamClass           rc=2
+[era] MultiplayerGameMode      rc=2
+[era] DDraw                    rc=2
+[era] AircraftTypeClass        rc=0
+[era] RunWOLMainLoop_Read      rc=2
+[era] FlyLocomotionClass       rc=2
+[era] CheckListClass           rc=2
+[era] INIClass                 rc=2
+[era] InfantryClass            rc=2
+[era] _addr_47                 rc=0
+[era] _addr_7D                 rc=2
+[era] WinMain                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x6966d0   MISMATCH         ObjectClass::sub_6966D0
+[diff] 0x696950   MISMATCH         ObjectClass::sub_696950
+[diff] 0x59b6d0   MISMATCH         SmallFunc_59B6D0
+[diff] 0x41ce20   MISMATCH         AircraftTypeClass::LoadFromINI
+[diff] 0x4799d0   MISMATCH         sub_4799D0
+[diff] 0x49f8b0   MISMATCH         WinMain::CleanupResource
+[ledger] 0x6966d0 ObjectClass::sub_6966D0 -> NG (attempt 1)
+[ledger] 0x752ad0 Audio_Init_752AD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b5530 DropListClass::OnKeyDown -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59b6d0 SmallFunc_59B6D0 -> NG (attempt 1)
+[ledger] 0x7b02a0 ComStreamClass::getStreamSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d6370 MultiplayerGameMode::FindOpenSlot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406760 ObjectClass::sub_406760 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41ce20 AircraftTypeClass::LoadFromINI -> NG (attempt 1)
+[ledger] 0x7a2970 RunWOLMainLoop_Read_7A2970 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfd20 FlyLocomotionClass::ClearLocomotionDirty -> COMPILE_FAIL (attempt 1)
+[ledger] 0x488380 CheckListClass::GetSelected -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696950 ObjectClass::sub_696950 -> NG (attempt 1)
+[ledger] 0x52a0a0 INIClass::ReadBool -> COMPILE_FAIL (attempt 1)
+[ledger] 0x51f2c0 InfantryClass::GetTooltipName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4799d0 sub_4799D0 -> NG (attempt 1)
+[ledger] 0x7d07df __read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d0d55 __write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d7638 __lseek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49f8b0 WinMain::CleanupResource -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 14
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "branch_polarity": 1,
+  "branch_order": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p11\batch_report.json

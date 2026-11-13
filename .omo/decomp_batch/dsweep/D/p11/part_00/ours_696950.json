@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_696950@ObjectClass@@QAEPAXXZ",
+ "sym_key": "ObjectClass::sub_696950",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "53568bf1685a0600008b0650e8000000008bd885db744e576a0053e8000000006a0053e8000000008d7e08576a1068b504000053e8000000008b4e1480e500894e148bcfe80000000057e80000000083c4048bce576a036859060000e8000000005f5e5bc35e33c05bc3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHPAXH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?EnableWindow@@YGHHH@Z",
+   "sym_key": "EnableWindow"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Trim@String@@QAEPADXZ",
+   "sym_key": "String::Trim"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?_strupr@@YAHPAXZZ",
+   "sym_key": "_strupr"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?SetCustomEntry@ListBox@@QAEPAXHHPAX@Z",
+   "sym_key": "ListBox::SetCustomEntry"
+  }
+ ]
+}

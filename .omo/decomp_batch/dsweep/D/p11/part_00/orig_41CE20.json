@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CE20",
+ "name": "AircraftTypeClass::LoadFromINI",
+ "size": 100,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CE20",
+ "bytes_hex": "8b442408568b7424085056e8c0942f0085c07c4c85f674278d4c240c518bcee8fc492f00c70668287e00c746044c287e00c7460844287e00c7460c3c287e008d96000e0000526810c1b000e8d0232b008bcee899b21d008bcee8f2c11d0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

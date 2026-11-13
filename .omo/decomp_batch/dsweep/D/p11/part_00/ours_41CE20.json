@@ -1,0 +1,51 @@
+{
+ "symbol": "?LoadFromINI@AircraftTypeClass@@QAGHH@Z",
+ "sym_key": "AircraftTypeClass::LoadFromINI",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c07c4385f6741e8d4c240c518bcee8000000008b16b800000000890289460489460889460c8d86000e0000506800000000e8000000008b0ee8000000008b0ee80000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?TechnoTypeClass__SaveLoad_Prefix@@YGHPAXH@Z",
+   "sym_key": "TechnoTypeClass__SaveLoad_Prefix"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Construct@TechnoTypeClass@@QAEPAV1@H@Z",
+   "sym_key": "TechnoTypeClass::Construct"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_AircraftTypeClass_4@@3PAXA",
+   "sym_key": "vt_AircraftTypeClass_4"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?LoadAnim@VoxelAnimType@@QAEHXZ",
+   "sym_key": "VoxelAnimType::LoadAnim"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Load2DArt@ObjectTypeClass@@QAEHXZ",
+   "sym_key": "ObjectTypeClass::Load2DArt"
+  }
+ ]
+}
