@@ -1,0 +1,75 @@
+{
+ "symbol": "?UpdateReadyIcons@Lobby@@QAEPAXXZ",
+ "sym_key": "Lobby::UpdateReadyIcons",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "a154020000535556576a00508bf96800000000e8000000008b0d580200006a005168000000008bd8e80000000083c41833f68be88b0cb50000000085c9744c51e80000000083c40484c0743f85f6740c83fe017536b8d3060000eb05b8d20600005057e80000000085c0741f8a8e0000000084c9740c85f674048bd5eb068bd3eb0233d28bc8e8000000004683fe087ca35f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXPBXH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?aNukeball@@3IA",
+   "sym_key": "aNukeball"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_DialogHashTable@@3HA",
+   "sym_key": "g_DialogHashTable"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?HashTable__Find@@YAHPAXPBXH@Z",
+   "sym_key": "HashTable__Find"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?IsKnownPointer@@YAHPAX@Z",
+   "sym_key": "IsKnownPointer"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptionState@@3IA",
+   "sym_key": "g_GameModeOptionState"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?CacheDialogInvalidate@@YIPAPAXPAXH@Z",
+   "sym_key": "CacheDialogInvalidate"
+  }
+ ]
+}

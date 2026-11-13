@@ -1,0 +1,75 @@
+{
+ "symbol": "?PlayAudioAt2@@YIHHPAHH@Z",
+ "sym_key": "Unnamed::PlayAudioAt2",
+ "size": 154,
+ "link_base": 0,
+ "bytes_hex": "558be9565785ed8bfa0f8c83000000a10000000050e8000000008bf083c40485f6746f538d5e0c8bcbe8000000008bcee800000000c74630000000008b0f8d562053890a8b47048946248b4f088b442418894e288bcd89462ce80000000033c98bd68a0d000000008bf8e800000000a1000000008b0d00000000405b3bc1a3000000007605a3000000008bc75f5e5dc204005f5e33c05dc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3A4@@3IA",
+   "sym_key": "DataGlobal_B1D3A4"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LinkedList__Next@@YAPAHPAX@Z",
+   "sym_key": "LinkedList__Next"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?InitEmpty@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::InitEmpty"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAX0@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D320@@3EA",
+   "sym_key": "DataGlobal_B1D320"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?InsertAfterDListNode@@YIHHPAX@Z",
+   "sym_key": "InsertAfterDListNode"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3A8@@3IA",
+   "sym_key": "DataGlobal_B1D3A8"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3AC@@3IA",
+   "sym_key": "DataGlobal_B1D3AC"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3A8@@3IA",
+   "sym_key": "DataGlobal_B1D3A8"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D3AC@@3IA",
+   "sym_key": "DataGlobal_B1D3AC"
+  }
+ ]
+}

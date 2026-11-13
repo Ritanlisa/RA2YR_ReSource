@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a38d0 LoadFileSHP -> _addr_4A
+[conv] 0x69e740 MixFileClass::GetSubFile -> MixFileClass
+[conv] 0x750e20 PlayAudioAt2 -> _addr_75
+[conv] 0x46fa20 Lobby::UpdateReadyIcons -> Lobby
+[conv] 0x7db54e __except1 -> _addr_7D
+[conv] 0x603fc0 sub_603FC0 -> _addr_60
+[conv] 0x781090 WOLobby_Get -> WOLobby
+[conv] 0x40a6d0 Buffer::UpdateVolumeSettings -> Buffer
+[conv] 0x473750 CarryoverClass::sub_473750 -> CarryoverClass
+[conv] 0x7d5b79 __setargv -> _addr_7D
+[conv] 0x67fd20 LoadOptions_Load -> LoadOptions
+[conv] 0x66d150 RulesClass::readAudioVisual -> RulesClass
+[conv] 0x4370c0 BuildingLightClass::SDDTOR -> BuildingLightClass
+[conv] 0x4baf40 DSurface::Unlock -> DSurface
+[conv] 0x7c2c60 DSurface::Flip -> DSurface
+[conv] 0x630100 ParticleSystemClass::PowerDrainUpdate -> ParticleSystemClass
+[conv] 0x4c2790 ObjectClass::sub_4C2790 -> ObjectClass
+[conv] 0x607fd0 Dialog::StopBink -> Dialog
+[conv] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> TeleportLocomotionClass
+[conv] 0x7294e0 ObjectClass::sub_7294E0 -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4A                 rc=0
+[era] MixFileClass             rc=2
+[era] _addr_75                 rc=0
+[era] Lobby                    rc=0
+[era] _addr_7D                 rc=2
+[era] _addr_60                 rc=2
+[era] WOLobby                  rc=0
+[era] Buffer                   rc=0
+[era] CarryoverClass           rc=2
+[era] LoadOptions              rc=2
+[era] RulesClass               rc=2
+[era] BuildingLightClass       rc=2
+[era] DSurface                 rc=2
+[era] ParticleSystemClass      rc=0
+[era] ObjectClass              rc=2
+[era] Dialog                   rc=2
+[era] TeleportLocomotionClass  rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a38d0   MISMATCH         LoadFileSHP
+[diff] 0x750e20   MISMATCH         PlayAudioAt2
+[diff] 0x46fa20   MISMATCH         Lobby::UpdateReadyIcons
+[diff] 0x7d5b79   MISMATCH         __setargv
+[diff] 0x781090   MISMATCH         WOLobby_Get
+[diff] 0x40a6d0   MISMATCH         Buffer::UpdateVolumeSettings
+[diff] 0x7c2c60   MISMATCH         DSurface::Flip
+[diff] 0x630100   MISMATCH         ParticleSystemClass::PowerDrainUpdate
+[ledger] 0x4a38d0 LoadFileSHP -> NG (attempt 1)
+[ledger] 0x69e740 MixFileClass::GetSubFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750e20 PlayAudioAt2 -> NG (attempt 1)
+[ledger] 0x46fa20 Lobby::UpdateReadyIcons -> NG (attempt 1)
+[ledger] 0x7db54e __except1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x603fc0 sub_603FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781090 WOLobby_Get -> NG (attempt 1)
+[ledger] 0x40a6d0 Buffer::UpdateVolumeSettings -> NG (attempt 1)
+[ledger] 0x473750 CarryoverClass::sub_473750 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5b79 __setargv -> NG (attempt 1)
+[ledger] 0x67fd20 LoadOptions_Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66d150 RulesClass::readAudioVisual -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4370c0 BuildingLightClass::SDDTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4baf40 DSurface::Unlock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c2c60 DSurface::Flip -> NG (attempt 1)
+[ledger] 0x630100 ParticleSystemClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x4c2790 ObjectClass::sub_4C2790 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x607fd0 Dialog::StopBink -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7294e0 ObjectClass::sub_7294E0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "branch_order": 2,
+  "codegen_shape": 1,
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p35\batch_report.json

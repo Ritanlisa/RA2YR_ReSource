@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A38D0",
+ "name": "LoadFileSHP",
+ "size": 151,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A38D0",
+ "bytes_hex": "83ec6c538bda568bf132d2c60300e8cd07110085c0757a57568d4c2410e8fe00fdff33f68d4c240c8b44240c56ff501484c074298b54240c8d4c240cff522c8bf857e8005532008bf083c40485f6740f8b44240c57568d4c2414ff502485f60f95c1880b8d4c2464c744240cb0167e00c744247000000000e80375f9ff8d4c240cc744240c68167e00e822e2f8ff8bc65f5e5b83c46cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

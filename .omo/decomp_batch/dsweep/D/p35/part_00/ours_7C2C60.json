@@ -1,0 +1,27 @@
+{
+ "symbol": "?Flip@DSurface@@QAEHXZ",
+ "sym_key": "DSurface::Flip",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "568bf1f6868c010000017429f68624030000037420e800000000f786c007000000000040740fe80000000081a6c0070000ffffffbff686e40100002074378b865c01000085c0742d8b8e640100000faf8e6001000051506a0556ff968c0000008b965c0100006a00526a0356ff968c00000083c4208bcee8000000006a006a006a0456ff567c68dc070000566a0556ff968c0000006a00566a0356ff968c00000083c4305ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?LockAndPrepareRect@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::LockAndPrepareRect"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?sub_412600@@YAHXZ",
+   "sym_key": "sub_412600"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?CommitBuffers@DSurface@@QAEHXZ",
+   "sym_key": "DSurface::CommitBuffers"
+  }
+ ]
+}

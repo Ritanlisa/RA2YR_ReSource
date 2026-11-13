@@ -1,0 +1,11 @@
+{
+ "addr": "0x750E20",
+ "name": "PlayAudioAt2",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750E20",
+ "bytes_hex": "558be9565785ed8bfa7d085f5e33c05dc204008b0da4d3b100e8e266cbff8bf085f675065f5e5dc20400538d5e0c8bcbe88b4dcbff8bcee87464cbffc74630000000008b0f8d5620538bc289088b4f048948048b4f088948088b4424188bcd89462ce859fbffff8bd6b920d3b1008bf8e88b65cbffa1a8d3b1008b0dacd3b100405b3bc1a3a8d3b1007e05a3acd3b1008bc75f5e5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

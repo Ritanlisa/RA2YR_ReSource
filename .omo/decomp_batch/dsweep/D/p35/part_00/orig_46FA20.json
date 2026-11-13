@@ -1,0 +1,11 @@
+{
+ "addr": "0x46FA20",
+ "name": "Lobby::UpdateReadyIcons",
+ "size": 152,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46FA20",
+ "bytes_hex": "51a1e0b18100535556578bf96a0050b94848ac00e807a724008b0de4b181008be86a0051b94848ac00e8f2a624008b1da8147e0033f6894424108b0cb590daa80085c97447e88699170084c0743e85f67507b8d2060000eb0a83fe01752eb8d30600005057ffd38bc885c9741f8a8600e0890084c0740e85f675048bd5eb088b542410eb0233d2e8844219004683fe087ca85f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

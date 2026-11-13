@@ -1,0 +1,11 @@
+{
+ "addr": "0x781090",
+ "name": "WOLobby_Get",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x781090",
+ "bytes_hex": "8b44240483ec6c83f8ff538bd9750768ea0b0000eb616a0050689901000052ff15a4147e008bd085d27c473b150079b7007d3f5657b91b00000033c08d7c240cf3ab8b0d0879b7008d04528d7c240c8d54240c8d04c08d3481b91b000000f3a58bcbe899f9ffff8bc35f5e5b83c46cc2040068ef0b00006830a4840033d2b9b8538300e8483dfbff8bcb50e8b05503008bc35b83c46cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

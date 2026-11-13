@@ -1,0 +1,11 @@
+{
+ "addr": "0x40A6D0",
+ "name": "Buffer::UpdateVolumeSettings",
+ "size": 153,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40A6D0",
+ "bytes_hex": "568bf1578b86dc0000008bbe58010000c1e8108b4f648d04808b118d0480c1e002c1e80e8b0485806381005051ff523c8b862c010000c1e8108d04808d0480c1e003c1e80e83e86479138b4f648b04851065810050518b11ff5240eb1a8b4f6453c1e002bb106581008b112bd88b03f7d85051ff52405b8b0f8b91840100008d8ed8000000e8366affff8b7f6450578b17ff524433c05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

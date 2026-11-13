@@ -1,0 +1,33 @@
+{
+ "symbol": "?UpdateVolumeSettings@Buffer@@QAEHXZ",
+ "sym_key": "Buffer::UpdateVolumeSettings",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b86dc0000008bbe58010000c1e8108b4f648d04808b118d0480c1e002c1e80e8b0485000000005051ff523c8b862c010000c1e8108d04808d0480c1e003c1e80e83e864781c8b4f6453c1e002bb000000008b112bd88b03f7d85051ff52405beb118b4f648b04850000000050518b11ff52408b0f8b91840100008d8e60030000e8000000008b7f6450578b17ff52445f33c05ec3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816380@@3PAIA",
+   "sym_key": "DataGlobal_816380"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816510@@3PAIA",
+   "sym_key": "DataGlobal_816510"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816510@@3PAIA",
+   "sym_key": "DataGlobal_816510"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?sub_401190@@YIHHH@Z",
+   "sym_key": "sub_401190"
+  }
+ ]
+}

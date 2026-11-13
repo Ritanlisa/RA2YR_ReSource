@@ -1,0 +1,57 @@
+{
+ "symbol": "?WOLobby_Get@@YIPAPAGPAPAGPAXI@Z",
+ "sym_key": "Unnamed::WOLobby_Get",
+ "size": 141,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec6c83f8ff538bd9750768ea0b0000eb516a0050689901000052e80000000085c07c3a3b05000000007d328b15000000008d044056578d0cc08d7c240c8d348ab91b000000f3a58d54240c8bcbe8000000008bc35f5e5b83c46cc2040068ef0b00008b0d0000000033c0a00000000033d250e8000000008bcb50e8000000008bc35b83c46cc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_WOL_State@@3IA",
+   "sym_key": "g_WOL_State"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionFlags@@3PAXA",
+   "sym_key": "g_WOL_ConnectionFlags"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?FormatWOLPlayerInfo@@YIPAPAGPAX0@Z",
+   "sym_key": "FormatWOLPlayerInfo"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?aSttLobbylistus@@3HA",
+   "sym_key": "aSttLobbylistus"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  }
+ ]
+}

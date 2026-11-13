@@ -1,0 +1,51 @@
+{
+ "symbol": "?LoadFileSHP@@YIPAXPADPA_N@Z",
+ "sym_key": "Unnamed::LoadFileSHP",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "83ec68538bda568bf132d2c60300e80000000085c00f859100000057568d4c2424e80000000033f68d5424208b44242056528b08ff511484c074348b4424208d542420528b08ff512c8bf857e8000000008bf083c40485f60f94c085f674158b442420578d542424568b0852ff512485f60f94c08b4c242084c00f94c08803c701000000008d4c240cc744241800000000e8000000008b5424208d4c2420c70200000000e8000000008bc65f5e5b83c468c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}
