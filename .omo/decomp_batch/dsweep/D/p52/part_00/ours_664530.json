@@ -1,0 +1,69 @@
+{
+ "symbol": "?WaitForResponse@NetworkEventQueueClass@@QAEDXZ",
+ "sym_key": "NetworkEventQueueClass::WaitForResponse",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "81ec5801000033c0568bf157b9540000008d7c240cf3ab66abe8000000008bc833c08a461880e1000bc184c0746a8b461c85c074636a018d442410685201000050b900000000c644241803e800000000e800000000b9000000008bf0e80000000085c07e3383feff741be8000000002bc63d840300007d20b9840300002bc8894c24087413e800000000b900000000e80000000085c07fcd5f5e81c458010000c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?SendPacket@Network@@QAEHHHE@Z",
+   "sym_key": "Network::SendPacket"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 86,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?GetUpgradeValue@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::GetUpgradeValue"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?Event__Dispatch@@YADXZ",
+   "sym_key": "Event__Dispatch"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetUpgradeValue@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::GetUpgradeValue"
+  }
+ ]
+}

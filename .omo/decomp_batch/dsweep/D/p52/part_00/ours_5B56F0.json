@@ -1,0 +1,99 @@
+{
+ "symbol": "?processStartup@Game@@QAEXXZ",
+ "sym_key": "Game::processStartup",
+ "size": 183,
+ "link_base": 0,
+ "bytes_hex": "83ec2856578bf1e8000000008b0668c105000050e80000000085c074258d4c2408516a1468b304000050e80000000033c96aff8a0d000000008d54240ce8000000008bcee8000000008b16680504000052e80000000085c074146a006a00684701000050e800000000a3000000008bcee8000000008b06686706000050e8000000008bf885ff74226a006a00684701000057e8000000006a0050685001000057e800000000a3000000008bcee8000000005f5e83c428c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?CopyWideToChar@@YIXPAEPAXH@Z",
+   "sym_key": "CopyWideToChar"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_TauntCommandState@@3HA",
+   "sym_key": "g_TauntCommandState"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?g_CommandExecState@@3PAXA",
+   "sym_key": "g_CommandExecState"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "symbol": "?processAcknowledgment@Network@@QAEPADPAX@Z",
+ "sym_key": "Network::processAcknowledgment",
+ "size": 210,
+ "link_base": 0,
+ "bytes_hex": "83ec08b00153568bf1578a0d0000000084c875218ad1b9000000000ad0881500000000e8000000006800000000e80000000083c4040fbe0d000000008d44240c33ff50897c2410e80000000057b900000000e800000000397e107e688b4e048b5c2418538b114252e80000000083c40885c0741d8b4610473bf87d488b4604538b0cb84151e80000000083c40885c075e38b56048b04ba8d542410528b4821894c24140fbe0d00000000e8000000008b46048b0cb8668b5125b90000000052e8000000005f5eb8000000005b83c408c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052A8@@3EA",
+   "sym_key": "DataGlobal_B052A8"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052A8@@3EA",
+   "sym_key": "DataGlobal_B052A8"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?nullsub_33@@YAHPBX0@Z",
+   "sym_key": "nullsub_33"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Copy6Bytes@Struct@@QAEFH@Z",
+   "sym_key": "Struct::Copy6Bytes"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?SetPort@Network@@QAEFF@Z",
+   "sym_key": "Network::SetPort"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 166,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?Copy6Bytes@Struct@@QAEFH@Z",
+   "sym_key": "Struct::Copy6Bytes"
+  },
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?SetPort@Network@@QAEFF@Z",
+   "sym_key": "Network::SetPort"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B052C0@@3IA",
+   "sym_key": "DataGlobal_B052C0"
+  }
+ ]
+}

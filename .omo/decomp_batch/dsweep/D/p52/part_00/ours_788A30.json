@@ -1,0 +1,105 @@
+{
+ "symbol": "?JoinGameLobbyWOL@@YAHD@Z",
+ "sym_key": "Unnamed::JoinGameLobbyWOL",
+ "size": 251,
+ "link_base": 0,
+ "bytes_hex": "8a4c240481ec1401000053e8000000008bd883fbff0f849200000085db567c283b1d680300007d208b15700300008bc3c1e00503c3578d7c24148d0c438d348ab943000000f3a55fa1000000008d4c240c50e80000000033c968012a00008a0d0000000033d25133c9668b0d00000000e8000000008b542408508d4c240c8954240ce8000000008b4424088d54240c508d4c2414e8000000008d4c240c8bf051e80000000083c40485f65e74188b54240452e80000000083c40483c8ff5b81c414010000c3b913010000e80000000085c07411684005000050e80000000050e8000000008b44240450e80000000083c4048bc35b81c414010000c3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?FindLobbyIDWOL@@YIHD@Z",
+   "sym_key": "FindLobbyIDWOL"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_WindowManager@@3IA",
+   "sym_key": "g_WindowManager"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?aZotclot9@@3HA",
+   "sym_key": "aZotclot9"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_Str_File_wonline_cpp@@3EA",
+   "sym_key": "g_Str_File_wonline_cpp"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_Str_TXT_JOINLOB@@3GA",
+   "sym_key": "g_Str_TXT_JOINLOB"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?Assign@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::Assign"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?LeaveChannelExWOL@@YIHHPAX0@Z",
+   "sym_key": "LeaveChannelExWOL"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?GameListRenderWOL@@YAXPAX@Z",
+   "sym_key": "GameListRenderWOL"
+  },
+  {
+   "off": 203,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXH@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?GameListRenderWOL@@YAXPAX@Z",
+   "sym_key": "GameListRenderWOL"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+[conv] 0x71f4e0 TriggerTypeClass::ParseActionData -> TriggerTypeClass
+[conv] 0x788a30 JoinGameLobbyWOL -> _addr_78
+[conv] 0x7dd20f __getch -> _addr_7D
+[conv] 0x5e99c0 GameClass::GetDifficultyString -> GameClass
+[conv] 0x664530 NetworkEventQueueClass::WaitForResponse -> NetworkEventQueueClass
+[conv] 0x5d6540 MultiplayerGameMode::FillPlayers -> MultiplayerGameMode
+[conv] 0x776670 ObjectClass::sub_776670 -> ObjectClass
+[conv] 0x770b30 ObjectClass::sub_770B30 -> ObjectClass
+[conv] 0x6562d0 FogOfWar::RevealCell -> FogOfWar
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4da0e0 BuildingClass::AddToProductionQueue -> BuildingClass
+[conv] 0x74bdc0 ObjectClass::sub_74BDC0 -> ObjectClass
+[conv] 0x6642a0 Network::processAcknowledgment -> Network
+[conv] 0x471420 CampaignScore::InitScoreScreenData -> CampaignScore
+[conv] 0x4f21a0 HouseClass::processTargetSelection -> HouseClass
+[conv] 0x5b56f0 Game::processStartup -> Game
+[conv] 0x4353f0 sub_4353F0 -> _addr_43
+[conv] 0x703770 TechnoClass::StartEffectAudio -> TechnoClass
+[conv] 0x778030 Render_Draw_778030 -> Render_Draw
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TriggerTypeClass         rc=2
+[era] _addr_78                 rc=0
+[era] _addr_7D                 rc=2
+[era] GameClass                rc=0
+[era] NetworkEventQueueClass   rc=0
+[era] MultiplayerGameMode      rc=2
+[era] ObjectClass              rc=2
+[era] FogOfWar                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] Network                  rc=0
+[era] CampaignScore            rc=2
+[era] HouseClass               rc=2
+[era] Game                     rc=0
+[era] _addr_43                 rc=2
+[era] TechnoClass              rc=2
+[era] Render_Draw              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4da0e0   MISMATCH         BuildingClass::AddToProductionQueue
+[diff] 0x788a30   MISMATCH         JoinGameLobbyWOL
+[diff] 0x5e99c0   MISMATCH         GameClass::GetDifficultyString
+[diff] 0x664530   MISMATCH         NetworkEventQueueClass::WaitForResponse
+[diff] 0x776670   MISMATCH         ObjectClass::sub_776670
+[diff] 0x770b30   MISMATCH         ObjectClass::sub_770B30
+[diff] 0x6562d0   MISMATCH         FogOfWar::RevealCell
+[diff] 0x6642a0   MISMATCH         Network::processAcknowledgment
+[diff] 0x5b56f0   MISMATCH         Game::processStartup
+[diff] 0x778030   MISMATCH         Render_Draw_778030
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71f4e0 TriggerTypeClass::ParseActionData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x788a30 JoinGameLobbyWOL -> NG (attempt 1)
+[ledger] 0x7dd20f __getch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e99c0 GameClass::GetDifficultyString -> NG (attempt 1)
+[ledger] 0x664530 NetworkEventQueueClass::WaitForResponse -> NG (attempt 1)
+[ledger] 0x5d6540 MultiplayerGameMode::FillPlayers -> COMPILE_FAIL (attempt 1)
+[ledger] 0x776670 ObjectClass::sub_776670 -> NG (attempt 1)
+[ledger] 0x770b30 ObjectClass::sub_770B30 -> NG (attempt 1)
+[ledger] 0x6562d0 FogOfWar::RevealCell -> NG (attempt 1)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4da0e0 BuildingClass::AddToProductionQueue -> NG (attempt 1)
+[ledger] 0x74bdc0 ObjectClass::sub_74BDC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6642a0 Network::processAcknowledgment -> NG (attempt 1)
+[ledger] 0x471420 CampaignScore::InitScoreScreenData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f21a0 HouseClass::processTargetSelection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b56f0 Game::processStartup -> NG (attempt 1)
+[ledger] 0x4353f0 sub_4353F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x703770 TechnoClass::StartEffectAudio -> COMPILE_FAIL (attempt 1)
+[ledger] 0x778030 Render_Draw_778030 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "frame_sched": 4,
+  "branch_polarity": 1,
+  "regalloc": 3,
+  "codegen_shape": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p52\batch_report.json

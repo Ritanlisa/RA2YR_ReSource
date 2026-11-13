@@ -1,0 +1,99 @@
+{
+ "symbol": "?sub_770B30@ObjectClass@@QAEDHPAPAX@Z",
+ "sym_key": "ObjectClass::sub_770B30",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec088bc18b4c2410538b188d145256578bf98db4d07c030000e8000000008b461085c07f0b5f5e32c05b83c408c2080083f801750433c0eb0e48b900000000506a00e8000000008b4e0483fb036a028b148175458d4c2420e80000000033d2508a15000000008d4c241ce800000000508bcfe8000000008d54241852e8000000008d44242050e80000000083c408b0015f5e5b83c408c208008d4c2414e80000000033d2508a15000000008d4c2410e800000000508bcfe8000000008d4c240c51e8000000008d54241452e80000000083c408b0015f5e5b83c408c20800",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Alt2@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt2"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?FormatStringInt@@YIPAPADPAXHH@Z",
+   "sym_key": "FormatStringInt"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_Str_WWD_Soviet@@3EA",
+   "sym_key": "g_Str_WWD_Soviet"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?ProcessStringAndCopy@@YIPAPADPAXPBDPAPAD@Z",
+   "sym_key": "ProcessStringAndCopy"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?FormatStringInt@@YIPAPADPAXHH@Z",
+   "sym_key": "FormatStringInt"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?g_Str_WWD_Allied@@3EA",
+   "sym_key": "g_Str_WWD_Allied"
+  },
+  {
+   "off": 181,
+   "type": "REL32",
+   "sym": "?ProcessStringAndCopy@@YIPAPADPAXPBDPAPAD@Z",
+   "sym_key": "ProcessStringAndCopy"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}
