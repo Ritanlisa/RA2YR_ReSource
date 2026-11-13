@@ -23301,7 +23301,7 @@
   "this_as_id": false
  },
  "0x464b30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23313,7 +23313,7 @@
   "this_as_id": false
  },
  "0x465010": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23325,7 +23325,7 @@
   "this_as_id": false
  },
  "0x465300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23799,14 +23799,14 @@
   "this_as_id": false
  },
  "0x466380": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BulletClass::BulletClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::BulletClass",
-  "rule_violations": 4,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23865,7 +23865,7 @@
   "this_as_id": false
  },
  "0x4666e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23889,7 +23889,7 @@
   "this_as_id": false
  },
  "0x468090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23913,19 +23913,19 @@
   "this_as_id": false
  },
  "0x4684e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BulletClass::ProcessImpact",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::ProcessImpact",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x468670": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23949,14 +23949,14 @@
   "this_as_id": false
  },
  "0x468bb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BulletClass::CheckBulletCollision",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::CheckBulletCollision",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23973,14 +23973,14 @@
   "this_as_id": false
  },
  "0x4690b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Warhead::ApplyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Warhead::ApplyDamage",
-  "rule_violations": 53,
+  "rule_violations": 52,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -24028,7 +24028,7 @@
   "this_as_id": false
  },
  "0x46aff0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24094,7 +24094,7 @@
   "this_as_id": false
  },
  "0x46b310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24151,7 +24151,7 @@
   "status": "OK"
  },
  "0x46b5c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24403,7 +24403,7 @@
   "this_as_id": false
  },
  "0x46baa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_46BAA0",
@@ -24476,7 +24476,7 @@
   "this_as_id": false
  },
  "0x46bbc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24774,7 +24774,7 @@
   "this_as_id": false
  },
  "0x46cb60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24798,14 +24798,14 @@
   "this_as_id": false
  },
  "0x46ccd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CampaignClass::GetMapData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignClass::GetMapData",
-  "rule_violations": 0,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -24834,14 +24834,14 @@
   "this_as_id": false
  },
  "0x46cfc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CampaignClass::Stat",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignClass::Stat",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25098,7 +25098,7 @@
   "this_as_id": false
  },
  "0x46d4a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -25121,7 +25121,7 @@
   "this_as_id": false
  },
  "0x46d810": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

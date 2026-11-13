@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x464b30 BuildingTypeClass::UpdatePower -> BuildingTypeClass
+[conv] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> BuildingTypeClass
+[conv] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> BuildingTypeClass
+[conv] 0x466380 BulletClass::BulletClass -> BulletClass
+[conv] 0x4666e0 BulletClass::ProcessNukeExplosion -> BulletClass
+[conv] 0x468090 BulletClass::SetupVoxelTransform -> BulletClass
+[conv] 0x4684e0 BulletClass::ProcessImpact -> BulletClass
+[conv] 0x468670 BulletClass::ProcessObstacle -> BulletClass
+[conv] 0x468bb0 BulletClass::CheckBulletCollision -> BulletClass
+[conv] 0x4690b0 Warhead::ApplyDamage -> Warhead
+[conv] 0x46aff0 BulletClass::ValidateTarget -> BulletClass
+[conv] 0x46b310 SuperWeapon::CreateNukePayload -> SuperWeapon
+[conv] 0x46b5c0 BulletClass::CheckActionStatus -> BulletClass
+[conv] 0x46baa0 sub_46BAA0 -> _addr_46
+[conv] 0x46bbc0 BulletTypeClass::Construct -> BulletTypeClass
+[conv] 0x46cb60 CampaignClass::CampaignClass -> CampaignClass
+[conv] 0x46ccd0 CampaignClass::GetMapData -> CampaignClass
+[conv] 0x46cfc0 CampaignClass::Stat -> CampaignClass
+[conv] 0x46d4a0 Game::SendCampaignOptions -> Game
+[conv] 0x46d810 ObjectClass::sub_46D810 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingTypeClass        rc=2
+[era] BulletClass              rc=2
+[era] Warhead                  rc=2
+[era] SuperWeapon              rc=2
+[era] _addr_46                 rc=2
+[era] BulletTypeClass          rc=2
+[era] CampaignClass            rc=2
+[era] Game                     rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x464b30 BuildingTypeClass::UpdatePower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x466380 BulletClass::BulletClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4666e0 BulletClass::ProcessNukeExplosion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x468090 BulletClass::SetupVoxelTransform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4684e0 BulletClass::ProcessImpact -> COMPILE_FAIL (attempt 2)
+[ledger] 0x468670 BulletClass::ProcessObstacle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x468bb0 BulletClass::CheckBulletCollision -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4690b0 Warhead::ApplyDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46aff0 BulletClass::ValidateTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46b310 SuperWeapon::CreateNukePayload -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46b5c0 BulletClass::CheckActionStatus -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46baa0 sub_46BAA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46bbc0 BulletTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46cb60 CampaignClass::CampaignClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46ccd0 CampaignClass::GetMapData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46cfc0 CampaignClass::Stat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46d4a0 Game::SendCampaignOptions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x46d810 ObjectClass::sub_46D810 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_rest\p10\batch_report.json
