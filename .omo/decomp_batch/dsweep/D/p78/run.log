@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p78\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b9930 WWMouseClass::hideCursor -> WWMouseClass
+[conv] 0x7dac6c __chsize_lk -> _addr_7D
+[conv] 0x7bbcf0 XSurface::Blit -> XSurface
+[conv] 0x4d2370 ObjectClass::MarkAllFootOccupancies -> ObjectClass
+[conv] 0x502160 WaypointClass::FindOrAddPath -> WaypointClass
+[conv] 0x679d90 GameConfig::ComputeHash -> GameConfig
+[conv] 0x509cd0 HouseClass::Fire_ParaDrop -> HouseClass
+[conv] 0x7d9fca __flswbuf -> _addr_7D
+[conv] 0x5e3720 Network::SendOptionsGame -> Network
+[conv] 0x4e3560 BuildingType::FindDefault -> BuildingType
+[conv] 0x7b30b0 UDPInterfaceClass::Send -> UDPInterfaceClass
+[conv] 0x77e1d0 ObjectClass::FillPlayerListWOL -> ObjectClass
+[conv] 0x77e300 ObjectClass::FillBuddyListExWOL -> ObjectClass
+[conv] 0x692f30 TacticalClass::ProcessView -> TacticalClass
+[conv] 0x7b31e0 UDPInterfaceClass::SetAddress -> UDPInterfaceClass
+[conv] 0x4a9ca0 DisplayClass::vt_entry_94 -> DisplayClass
+[conv] 0x52d870 sub_52D870 -> _addr_52
+[conv] 0x7a8da0 CChatEventSink::DispatchStub_16 -> CChatEventSink
+[conv] 0x4f4480 GScreenClass::Redraw -> GScreenClass
+[conv] 0x79c520 MapSeed::CheckName -> MapSeed
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WWMouseClass             rc=2
+[era] _addr_7D                 rc=2
+[era] XSurface                 rc=2
+[era] ObjectClass              rc=2
+[era] WaypointClass            rc=0
+[era] GameConfig               rc=0
+[era] HouseClass               rc=2
+[era] Network                  rc=2
+[era] BuildingType             rc=2
+[era] UDPInterfaceClass        rc=2
+[era] TacticalClass            rc=2
+[era] DisplayClass             rc=2
+[era] _addr_52                 rc=2
+[era] CChatEventSink           rc=0
+[era] GScreenClass             rc=2
+[era] MapSeed                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d9fca   MISMATCH         __flswbuf
+[diff] 0x4d2370   MISMATCH         ObjectClass::MarkAllFootOccupancies
+[diff] 0x502160   MISMATCH         WaypointClass::FindOrAddPath
+[diff] 0x679d90   MISMATCH         GameConfig::ComputeHash
+[diff] 0x7a8da0   MISMATCH         CChatEventSink::DispatchStub_16
+[ledger] 0x7b9930 WWMouseClass::hideCursor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dac6c __chsize_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bbcf0 XSurface::Blit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2370 ObjectClass::MarkAllFootOccupancies -> NG (attempt 1)
+[ledger] 0x502160 WaypointClass::FindOrAddPath -> NG (attempt 1)
+[ledger] 0x679d90 GameConfig::ComputeHash -> NG (attempt 1)
+[ledger] 0x509cd0 HouseClass::Fire_ParaDrop -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9fca __flswbuf -> NG (attempt 1)
+[ledger] 0x5e3720 Network::SendOptionsGame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e3560 BuildingType::FindDefault -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b30b0 UDPInterfaceClass::Send -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e1d0 ObjectClass::FillPlayerListWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77e300 ObjectClass::FillBuddyListExWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x692f30 TacticalClass::ProcessView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b31e0 UDPInterfaceClass::SetAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a9ca0 DisplayClass::vt_entry_94 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52d870 sub_52D870 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a8da0 CChatEventSink::DispatchStub_16 -> NG (attempt 1)
+[ledger] 0x4f4480 GScreenClass::Redraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79c520 MapSeed::CheckName -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 2,
+  "regalloc": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\dsweep\D\p78\batch_report.json

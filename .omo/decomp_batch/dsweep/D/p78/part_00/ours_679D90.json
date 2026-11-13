@@ -1,0 +1,147 @@
+{
+ "symbol": "?ComputeHash@GameConfig@@QAEHXZ",
+ "sym_key": "GameConfig::ComputeHash",
+ "size": 278,
+ "link_base": 0,
+ "bytes_hex": "81ec9800000055568bf1578b0d00000000e8000000008bce8bf8e8000000008be8be010000003bee7c208bcee80000000085c074108bc8e8000000008bc8e80000000003f8463bf57ee0a00000000084c07411a10000000003c75f5e5d81c498000000c38d4c2418c744241000000000c744241400000000e80000000033c933d28a1500000000894c2434894c243852894c24408d4c2450c744241c00000000c744241000000000e8000000006a008d4424506a00508d4c2418e80000000085c0740e8d4c240ce800000000a3000000008d4c2440c6050000000001c744244c00000000e8000000008d4c244cc744244c00000000e8000000008d4c240ce8000000008b0d000000008d04395f5e5d81c498000000c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887048@@3IA",
+   "sym_key": "DataGlobal_887048"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?ComputeHashSHA1@Hash@@QAEHXZ",
+   "sym_key": "Hash::ComputeHashSHA1"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?ListGet@MultiplayerGameMode@@QAEHXZ",
+   "sym_key": "MultiplayerGameMode::ListGet"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Find@MultiplayerGameMode@@QAEHXZ",
+   "sym_key": "MultiplayerGameMode::Find"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?Constructor@GameConfig@@QAEPADXZ",
+   "sym_key": "GameConfig::Constructor"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?ComputeHashSHA1@Hash@@QAEHXZ",
+   "sym_key": "Hash::ComputeHashSHA1"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B8@@3EA",
+   "sym_key": "DataGlobal_B053B8"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B4@@3IA",
+   "sym_key": "DataGlobal_B053B4"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?Constructor@GenericList@@QAEPAIXZ",
+   "sym_key": "GenericList::Constructor"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_Str_File_CoopCampMD_ini@@3EA",
+   "sym_key": "g_Str_File_CoopCampMD_ini"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?vt_List_INIClass_INISection@@3PAXA",
+   "sym_key": "vt_List_INIClass_INISection"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?Load@CCINIClass@@QAEHHDD@Z",
+   "sym_key": "CCINIClass::Load"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?ComputeHashSHA1@Hash@@QAEHXZ",
+   "sym_key": "Hash::ComputeHashSHA1"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B4@@3IA",
+   "sym_key": "DataGlobal_B053B4"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B8@@3EA",
+   "sym_key": "DataGlobal_B053B8"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 246,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  },
+  {
+   "off": 255,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B053B4@@3IA",
+   "sym_key": "DataGlobal_B053B4"
+  }
+ ]
+}

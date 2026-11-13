@@ -1,0 +1,111 @@
+{
+ "symbol": "?DispatchStub_16@CChatEventSink@@QAGHHHPBD0@Z",
+ "sym_key": "CChatEventSink::DispatchStub_16",
+ "size": 296,
+ "link_base": 0,
+ "bytes_hex": "a14000000056f6c4ff570f85110100008b44241085c00f8c05010000a10000000083f8030f84e300000083f8010f84da00000083f8020f84d10000008b44241c53508d4c24248bf8e8000000008b74241c85f6741bf60601740ab9c2000000e800000000a11000000085c00f95c3eb0232db8d44242050e80000000083c40484db5b0f849900000056e80000000083c40484c00f8488000000578d4c2420e8000000008d54241c8d4c2410e8000000008d4c241c51e8000000008a0683c404a801bff0f000007405bf00ffff0033d283c6248a15000000005652e80000000083c40885c074178d4c2410e800000000505668000000008bcfe8000000008d4c2410e8000000005f33c05ec214008b442418f60001740b8b4c241c32d2e8000000005f33c05ec21400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77D80@@3IA",
+   "sym_key": "DataGlobal_B77D80"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_GameOptionsFlags@@3IA",
+   "sym_key": "g_GameOptionsFlags"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?FindByHandle@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::FindByHandle"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_WOL_BuddyList@@3IA",
+   "sym_key": "g_WOL_BuddyList"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 138,
+   "type": "REL32",
+   "sym": "?IsBuddyOrIgnoreWOL@@YA_NPAX@Z",
+   "sym_key": "IsBuddyOrIgnoreWOL"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?CharStringToWide@@YIPAPAGPAXPBX@Z",
+   "sym_key": "CharStringToWide"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?g_GameSetupBuffer@@3EA",
+   "sym_key": "g_GameSetupBuffer"
+  },
+  {
+   "off": 219,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@WideString@@QAEPAGXZ",
+   "sym_key": "WideString::GetOrEmpty"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?aHsS_1@@3PADA",
+   "sym_key": "aHsS_1"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?ShowMessage@Dialog@@QAEPAXHPAX0@Z",
+   "sym_key": "Dialog::ShowMessage"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?Alt@DeleteAndZero_Helper@@QAEXXZ",
+   "sym_key": "DeleteAndZero_Helper::Alt"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?HandleWOLMatchMessage@@YIXPAXD@Z",
+   "sym_key": "HandleWOLMatchMessage"
+  }
+ ]
+}

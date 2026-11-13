@@ -1,0 +1,45 @@
+{
+ "symbol": "?FindOrAddPath@WaypointClass@@QAEDPAH@Z",
+ "sym_key": "WaypointClass::FindOrAddPath",
+ "size": 302,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355894c240c8da9100200008b4c2418565733ff8b01897c24109981e2ff00000003c28bd88b41049981e2ff00000003c2c1fb08c1f80889442418837d0000751d6a40e80000000083c40485c0740a578bc8e800000000eb0233c08945008b4d0033f68b413885c07e5556e8000000008bc88b019981e2ff00000003c2c1f808663bc3752d8b41040fbf4c24189981e2ff00000003c2c1f80825ffff00003bc175108b5424148b4424103b820c020000756f8b4d00463b713872af8b7c24104783c50483ff0c897c24100f8c6bffffff8b7c24148bb70c0200008b84b71002000085c075216a40e80000000083c40485c0740a568bc8e800000000eb0233c08984b7100200008b8f0c0200008b442420508b948f1002000052e80000000083c4085f5e5d5b83c40cc20400",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Construct@WaypointPathClass@@QAEPAV1@I@Z",
+   "sym_key": "WaypointPathClass::Construct"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?GetElement@Array@@QAEHH@Z",
+   "sym_key": "Array::GetElement"
+  },
+  {
+   "off": 235,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?Construct@WaypointPathClass@@QAEPAV1@I@Z",
+   "sym_key": "WaypointPathClass::Construct"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?WaypointClass_Find@@YADPAX0@Z",
+   "sym_key": "WaypointClass_Find"
+  }
+ ]
+}
