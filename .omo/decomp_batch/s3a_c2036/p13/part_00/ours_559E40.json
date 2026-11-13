@@ -1,0 +1,63 @@
+{
+ "symbol": "?Release@LoadOptions@@QAGDPAG@Z",
+ "sym_key": "LoadOptions::Release",
+ "size": 109,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c0a000000000535668530400005033d2e8000000006a0033d28bc8e8000000008bf0a100000000508b08ff510c85f674078bcee8000000008b5424108b4c24106a00e8000000008ad8a100000000508b10ff521085f674078bcee8000000008ac35e5bc20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?aTxtSavingGame@@3HA",
+   "sym_key": "aTxtSavingGame"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_Str_File_LoadDlg_CPP@@3EA",
+   "sym_key": "g_Str_File_LoadDlg_CPP"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?CreateMessageBox@@YIPAXHHH@Z",
+   "sym_key": "CreateMessageBox"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Show@Dialog@@QAEHXZ",
+   "sym_key": "Dialog::Show"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?SaveScenarioClassGame_AdjustMPSaveFileName@@YIDPAX0H@Z",
+   "sym_key": "SaveScenarioClassGame_AdjustMPSaveFileName"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?g_WWMouseClass_Instance@@3PAXA",
+   "sym_key": "g_WWMouseClass_Instance"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?Destroy@Dialog@@QAEPAXXZ",
+   "sym_key": "Dialog::Destroy"
+  }
+ ]
+}

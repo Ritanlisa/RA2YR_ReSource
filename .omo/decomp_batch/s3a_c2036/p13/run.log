@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x559e40 LoadOptions::Release -> LoadOptions
+[conv] 0x55a1f0 _VectorClass_PAVFileEntryClass::CopyItems -> _VectorClass_PAVFileEntryClass
+[conv] 0x55a330 _DynamicVectorClass_PAVFileEntryClass::vt02 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x583820 Pathfinding::CheckCliff -> Pathfinding
+[conv] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x58a030 _DynamicVectorClass_W4PassabilityType::SetCapacity -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x58f2c0 RandomMap::PlaceBuildings -> RandomMap
+[conv] 0x596300 SkirmishMapGen::DlgProc -> SkirmishMapGen
+[conv] 0x599650 RandomMap::SetupTheater -> RandomMap
+[conv] 0x59e740 Tiberium::CalculateSpread -> Tiberium
+[conv] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> RandomMap
+[conv] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> ObjectClass
+[conv] 0x5ac6e0 _VectorClass_PAVMapRegionClass::Release -> _VectorClass_PAVMapRegionClass
+[conv] 0x5acaa0 _VectorClass_PAU_WIN32_FIND_DATAA::Release -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5acbe0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::SetCapacity -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> _DynamicVectorClass_PAVCellClass
+[conv] 0x5b3950 FromNameIndex -> _addr_5B
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadOptions              rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] Scenario                 rc=2
+[era] _addr_56                 rc=2
+[era] Pathfinding              rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_UZoneConnectionClass rc=2
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] RandomMap                rc=2
+[era] SkirmishMapGen           rc=2
+[era] Tiberium                 rc=2
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _DynamicVectorClass_PAVCellClass rc=2
+[era] _addr_5B                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x559e40   MISMATCH         LoadOptions::Release
+[diff] 0x55a1f0   MISMATCH         _VectorClass_PAVFileEntryClass::CopyItems
+[diff] 0x55a330   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt02
+[diff] 0x58a030   MISMATCH         _DynamicVectorClass_W4PassabilityType::SetCapacity
+[diff] 0x5ac6e0   MISMATCH         _VectorClass_PAVMapRegionClass::Release
+[diff] 0x5acaa0   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::Release
+[diff] 0x5acbe0   MISMATCH         _DynamicVectorClass_PAU_WIN32_FIND_DATAA::SetCapacity
+[ledger] 0x559e40 LoadOptions::Release -> NG (attempt 2)
+[ledger] 0x55a1f0 _VectorClass_PAVFileEntryClass::CopyItems -> NG (attempt 2)
+[ledger] 0x55a330 _DynamicVectorClass_PAVFileEntryClass::vt02 -> NG (attempt 2)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 2)
+[ledger] 0x583820 Pathfinding::CheckCliff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58a030 _DynamicVectorClass_W4PassabilityType::SetCapacity -> NG (attempt 2)
+[ledger] 0x58f2c0 RandomMap::PlaceBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x596300 SkirmishMapGen::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x599650 RandomMap::SetupTheater -> COMPILE_FAIL (attempt 2)
+[ledger] 0x59e740 Tiberium::CalculateSpread -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ac6e0 _VectorClass_PAVMapRegionClass::Release -> NG (attempt 2)
+[ledger] 0x5acaa0 _VectorClass_PAU_WIN32_FIND_DATAA::Release -> NG (attempt 2)
+[ledger] 0x5acbe0 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::SetCapacity -> NG (attempt 2)
+[ledger] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b3950 FromNameIndex -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3a_c2036\p13\batch_report.json
