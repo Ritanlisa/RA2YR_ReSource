@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p76\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x5d8cb0 MultiplayerTeam::SetHouse -> MultiplayerTeam
+[conv] 0x5d8fd0 CCFileClass::WriteINIString -> CCFileClass
+[conv] 0x5d90e0 Network::QueryAddress -> Network
+[conv] 0x5d9220 Network::WaitForPacket -> Network
+[conv] 0x5d9410 Network::ResolveAndConnect -> Network
+[conv] 0x5d9db0 DetectPortAllocationPattern -> _addr_5D
+[conv] 0x5da0b0 Network::ResolveNetworkAddress -> Network
+[conv] 0x5da750 HandleNetworkPlayerDisconnect -> _addr_5D
+[conv] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> ObjectClass
+[conv] 0x5dafe0 GameSetup::DisplayPlayers -> GameSetup
+[conv] 0x5dbb60 Game::BuildGameSettingsPacket -> Game
+[conv] 0x5dbe20 SetGameSetupPlayerState -> _addr_5D
+[conv] 0x5dbec0 ObjectClass::SendMultiplayerStartSignal_Start -> ObjectClass
+[conv] 0x5dbf50 UpdateMultiplayerPlayerOptions -> _addr_5D
+[conv] 0x5dc170 NetworkLobby::ValidateSerialNumber -> NetworkLobby
+[conv] 0x5dc350 NetworkLobby::CreateGame -> NetworkLobby
+[conv] 0x5dd8a0 ObjectClass::SynchronizeMultiplayerGameStart -> ObjectClass
+[conv] 0x5ddbd0 NetworkSettings::DlgProc -> NetworkSettings
+[conv] 0x5de360 SendNetworkLobbyChatMessage -> _addr_5D
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=2
+[era] MultiplayerTeam          rc=2
+[era] CCFileClass              rc=2
+[era] Network                  rc=2
+[era] _addr_5D                 rc=2
+[era] ObjectClass              rc=2
+[era] GameSetup                rc=2
+[era] Game                     rc=2
+[era] NetworkLobby             rc=2
+[era] NetworkSettings          rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5d8730 _DynamicVectorClass_PAVMultiplayerGameMode::ResizeAndCopy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d8cb0 MultiplayerTeam::SetHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d8fd0 CCFileClass::WriteINIString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d90e0 Network::QueryAddress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d9220 Network::WaitForPacket -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d9410 Network::ResolveAndConnect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d9db0 DetectPortAllocationPattern -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5da0b0 Network::ResolveNetworkAddress -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5da750 HandleNetworkPlayerDisconnect -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5daf30 ObjectClass::PlayerSkirmishSlotHandler_Handle -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5dafe0 GameSetup::DisplayPlayers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5dbb60 Game::BuildGameSettingsPacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5dbe20 SetGameSetupPlayerState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5dbec0 ObjectClass::SendMultiplayerStartSignal_Start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5dbf50 UpdateMultiplayerPlayerOptions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5dc170 NetworkLobby::ValidateSerialNumber -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5dc350 NetworkLobby::CreateGame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dd8a0 ObjectClass::SynchronizeMultiplayerGameStart -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ddbd0 NetworkSettings::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5de360 SendNetworkLobbyChatMessage -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p76\batch_report.json
