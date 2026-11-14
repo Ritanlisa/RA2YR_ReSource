@@ -1,0 +1,118 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p00\part_00
+=== convert (40 addrs) ===
+[conv] 0x401080 Audio::InitChannels -> Audio
+[conv] 0x401190 sub_401190 -> _addr_40
+[conv] 0x4011c0 LoadAudioFile -> _addr_40
+[conv] 0x4015c0 sub_4015C0 -> _addr_40
+[conv] 0x401980 CCFileClass::Destru_vt08 -> CCFileClass
+[conv] 0x402040 AudioController::Constructor -> AudioController
+[conv] 0x4023f0 AudioController::CleanupStream -> AudioController
+[conv] 0x4024a0 AudioSample::ResetState -> AudioSample
+[conv] 0x402990 ObjectClass::sub_402990 -> ObjectClass
+[conv] 0x402f60 ObjectClass::ProcessAudioMixerFrame -> ObjectClass
+[conv] 0x403210 ObjectClass::sub_403210 -> ObjectClass
+[conv] 0x403530 AudioQueue::PreallocateChannels -> AudioQueue
+[conv] 0x403870 CoordBounds::Constructor -> CoordBounds
+[conv] 0x4039c0 sub_4039C0 -> _addr_40
+[conv] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> TechnoClass
+[conv] 0x403fa0 sub_403FA0 -> _addr_40
+[conv] 0x4041d0 ObjectClass::ProcessAudioFrame -> ObjectClass
+[conv] 0x4048b0 ObjectClass::PrefetchAudioSamples -> ObjectClass
+[conv] 0x404e70 AudioStream::CleanupChannels -> AudioStream
+[conv] 0x405190 AudioPool::ProcessQueue -> AudioPool
+[conv] 0x4054a0 Audio::UpdatePlaybackPosition -> Audio
+[conv] 0x4055c0 TechnoClass::UpdateVoicePlayback -> TechnoClass
+[conv] 0x405fd0 AudioFile::Stop -> AudioFile
+[conv] 0x406060 Mixer::ReleaseChannel -> Mixer
+[conv] 0x4060f0 SetAudioSource -> _addr_40
+[conv] 0x406130 AudioSource::Get -> AudioSource
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x406820 sub_406820 -> _addr_40
+[conv] 0x4068f0 Array::ForEach -> Array
+[conv] 0x406e80 AudioMixer::Shutdown -> AudioMixer
+[conv] 0x407100 SetupSampleAudioMixer -> _addr_40
+[conv] 0x4073b0 SaveGame::CountLinkedList -> SaveGame
+[conv] 0x407420 InsertAfterDListNode -> _addr_40
+[conv] 0x407550 sub_407550 -> _addr_40
+[conv] 0x407680 StartAddress -> _addr_40
+[conv] 0x407860 AudioStream::Constructor -> AudioStream
+[conv] 0x407b60 ThreadAudioMixerMain -> _addr_40
+[conv] 0x408560 sub_408560 -> _addr_40
+[conv] 0x408970 ObjectClass::sub_408970 -> ObjectClass
+[conv] 0x408eb0 sub_408EB0 -> _addr_40
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=2
+[era] _addr_40                 rc=2
+[era] CCFileClass              rc=2
+[era] AudioController          rc=2
+[era] AudioSample              rc=2
+[era] ObjectClass              rc=2
+[era] AudioQueue               rc=2
+[era] CoordBounds              rc=2
+[era] TechnoClass              rc=2
+[era] AudioStream              rc=2
+[era] AudioPool                rc=2
+[era] AudioFile                rc=2
+[era] Mixer                    rc=2
+[era] AudioSource              rc=2
+[era] VocClass                 rc=2
+[era] Array                    rc=2
+[era] AudioMixer               rc=2
+[era] SaveGame                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x401080 Audio::InitChannels -> COMPILE_FAIL (attempt 6)
+[ledger] 0x401190 sub_401190 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4011c0 LoadAudioFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4015c0 sub_4015C0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x401980 CCFileClass::Destru_vt08 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x402040 AudioController::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4023f0 AudioController::CleanupStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4024a0 AudioSample::ResetState -> COMPILE_FAIL (attempt 13)
+[ledger] 0x402990 ObjectClass::sub_402990 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x402f60 ObjectClass::ProcessAudioMixerFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x403210 ObjectClass::sub_403210 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x403530 AudioQueue::PreallocateChannels -> COMPILE_FAIL (attempt 3)
+[ledger] 0x403870 CoordBounds::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4039c0 sub_4039C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x403a80 TechnoClass::DumpAudioDeviceDebug -> COMPILE_FAIL (attempt 6)
+[ledger] 0x403fa0 sub_403FA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4041d0 ObjectClass::ProcessAudioFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4048b0 ObjectClass::PrefetchAudioSamples -> COMPILE_FAIL (attempt 3)
+[ledger] 0x404e70 AudioStream::CleanupChannels -> COMPILE_FAIL (attempt 3)
+[ledger] 0x405190 AudioPool::ProcessQueue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4054a0 Audio::UpdatePlaybackPosition -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4055c0 TechnoClass::UpdateVoicePlayback -> COMPILE_FAIL (attempt 4)
+[ledger] 0x405fd0 AudioFile::Stop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406060 Mixer::ReleaseChannel -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4060f0 SetAudioSource -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406130 AudioSource::Get -> COMPILE_FAIL (attempt 4)
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 7)
+[ledger] 0x406820 sub_406820 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4068f0 Array::ForEach -> COMPILE_FAIL (attempt 3)
+[ledger] 0x406e80 AudioMixer::Shutdown -> COMPILE_FAIL (attempt 6)
+[ledger] 0x407100 SetupSampleAudioMixer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4073b0 SaveGame::CountLinkedList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x407420 InsertAfterDListNode -> COMPILE_FAIL (attempt 4)
+[ledger] 0x407550 sub_407550 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 8)
+[ledger] 0x407860 AudioStream::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x407b60 ThreadAudioMixerMain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x408560 sub_408560 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x408970 ObjectClass::sub_408970 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x408eb0 sub_408EB0 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 40
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 24,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p00\batch_report.json
