@@ -186044,7 +186044,7 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186056,7 +186056,7 @@
   "this_as_id": false
  },
  "0x760f50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186075,7 +186075,7 @@
   "status": "NG"
  },
  "0x7610f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186087,14 +186087,14 @@
   "this_as_id": false
  },
  "0x761640": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::SectionProject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::SectionProject",
-  "rule_violations": 11,
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186110,14 +186110,14 @@
   "this_as_id": false
  },
  "0x762070": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::LightRender",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::LightRender",
-  "rule_violations": 15,
+  "rule_violations": 10,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186133,7 +186133,7 @@
   "this_as_id": false
  },
  "0x762af0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186364,7 +186364,7 @@
   "this_as_id": false
  },
  "0x763610": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -186376,7 +186376,7 @@
   "this_as_id": false
  },
  "0x763690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186520,7 +186520,7 @@
   "this_as_id": false
  },
  "0x763c70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186642,7 +186642,7 @@
   "this_as_id": false
  },
  "0x763ff0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -186654,7 +186654,7 @@
   "this_as_id": false
  },
  "0x764050": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187019,7 +187019,7 @@
   "this_as_id": false
  },
  "0x764a20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -187043,7 +187043,7 @@
   "this_as_id": false
  },
  "0x764b90": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187055,7 +187055,7 @@
   "this_as_id": false
  },
  "0x764fa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187091,7 +187091,7 @@
   "this_as_id": false
  },
  "0x765000": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "first_diff": null,
   "name": "sub_765000",
@@ -187102,7 +187102,7 @@
   "this_as_id": false
  },
  "0x7651d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -187114,7 +187114,7 @@
   "this_as_id": false
  },
  "0x765380": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187233,7 +187233,7 @@
   "this_as_id": false
  },
  "0x765770": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f6f9c",
@@ -187591,7 +187591,7 @@
   "this_as_id": false
  },
  "0x765f60": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Team_Create_765F60",
@@ -187647,7 +187647,7 @@
   "this_as_id": false
  },
  "0x7665d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
