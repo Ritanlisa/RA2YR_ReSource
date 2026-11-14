@@ -1,0 +1,69 @@
+{
+ "symbol": "?ReadTimeString@INIClass@@QAEHPAE0H@Z",
+ "sym_key": "INIClass::ReadTimeString",
+ "size": 525,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec085333db55563bd3578bf1750e8b4424245f5e5d5b83c408c20c008b6c24203beb750e8b4424245f5e5d5b83c408c20c003b56040f84980000008bfa83c9ff33c0895c2414f2aef7d14951528d4c241ce8000000008bf88b462c3bc3897c2410745c8b46383bc37404393874148d4424108d4e2850e8000000003bc374408946388d4c2410897c2410518d8e000a0000e80000000084c074088b463883c004eb05b8000000008b1885db74108b54241c8b6c2420895e08895604eb1933db8b442424895e04895e085f5e5d5b83c408c20c008b5e0885db750e8b4424245f5e5d5b83c408c20c008bfd83c9ff33c0c744241400000000f2aef7d14951558d4c241ce8000000008b4b3033ff3bcf8d732c8944241c750e8b4424245f5e5d5b83c408c20c008b4e103bcf7404390174258d44241c8bce50e8000000003bc7750e8b4424245f5e5d5b83c408c20c008946108b44241c397e04741b8b4e103bcf74043901741a8d4c241c518bcee8000000003bc77507be00000000eb098946108b761083c6048b363bf7750e8b4424245f5e5d5b83c408c20c008b46103bc7750e8b4424245f5e5d5b83c408c20c008d5424248d4c2420528d5424205152680000000050897c2430897c2434897c2438e8000000008b4424308b4c243483c4148d04405f5e8d04805d5b8d04818d04408d14808b4424148d04908d04408d0480c1e00283c408c20c00",
+ "relocs": [
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78830@@3EA",
+   "sym_key": "DataGlobal_B78830"
+  },
+  {
+   "off": 451,
+   "type": "DIR32",
+   "sym": "??_C@_0P@INAO@?$CF02d?3?$CF02d?3?$CF02d?$AA@",
+   "sym_key": "??_C@_0P@INAO@?$CF02d?3?$CF02d?3?$CF02d?$AA@"
+  },
+  {
+   "off": 469,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH000ZZ",
+   "sym_key": "sscanf"
+  }
+ ]
+}

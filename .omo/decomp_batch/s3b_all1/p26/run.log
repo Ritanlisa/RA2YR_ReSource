@@ -1,0 +1,132 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p26\part_00
+=== convert (40 addrs) ===
+[conv] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> INIClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x52a4d0 ObjectClass::sub_52A4D0 -> ObjectClass
+[conv] 0x52a760 INIClass::ReadTimeString -> INIClass
+[conv] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> INIEntry_INIClass
+[conv] 0x52ab80 WarheadTypeClass::parseVerses -> WarheadTypeClass
+[conv] 0x52ace0 GenericList::Constructor -> GenericList
+[conv] 0x52ad50 WarheadTypeClass::parseModifiers -> WarheadTypeClass
+[conv] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> WarheadTypeClass
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+[conv] 0x52b430 SortedArray::FindValue -> SortedArray
+[conv] 0x52b4f0 HashTable::BinarySearchAlt -> HashTable
+[conv] 0x52b620 SortedArray::BinarySearch -> SortedArray
+[conv] 0x52b9b0 BINK::Background_Setup -> BINK
+[conv] 0x52ba60 ObjectClass::InitGame -> ObjectClass
+[conv] 0x52cb90 Credits::Screen -> Credits
+[conv] 0x52cd70 ObjectClass::InitRules -> ObjectClass
+[conv] 0x52d640 CampaignMenu::DlgProc -> CampaignMenu
+[conv] 0x52d870 sub_52D870 -> _addr_52
+[conv] 0x52d9a0 ObjectClass::MenuSelect -> ObjectClass
+[conv] 0x52ec00 CampaignSelect::DlgProc -> CampaignSelect
+[conv] 0x52f3f0 Network::Init -> Network
+[conv] 0x52f620 ParseCommandLine -> _addr_52
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x5312a0 ObjectClass::ShowLoadingScreen -> ObjectClass
+[conv] 0x531680 InitBulkData -> _addr_53
+[conv] 0x531cc0 MainMenu::Screen -> MainMenu
+[conv] 0x532150 ObjectClass::InitCommands -> ObjectClass
+[conv] 0x533d20 KeyboardConfig::LoadINI -> KeyboardConfig
+[conv] 0x533fd0 AllocateSurfaceScreenSurfaces -> _addr_53
+[conv] 0x534450 Game::DestroyAllObjects -> Game
+[conv] 0x5349c0 LoadTheaterClassMIX -> _addr_53
+[conv] 0x534fa0 MixFile::LoadSide -> MixFile
+[conv] 0x5355d0 Performance::Profile -> Performance
+=== emit 21 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] INIEntry_INIClass        rc=2
+[era] WarheadTypeClass         rc=2
+[era] GenericList              rc=2
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+[era] BINK                     rc=2
+[era] Credits                  rc=2
+[era] CampaignMenu             rc=0
+[era] _addr_52                 rc=2
+[era] CampaignSelect           rc=2
+[era] Network                  rc=2
+[era] TechnoClass              rc=2
+[era] MixFileClass             rc=2
+[era] MixFile                  rc=2
+[era] _addr_53                 rc=2
+[era] MainMenu                 rc=2
+[era] KeyboardConfig           rc=0
+[era] Game                     rc=2
+[era] Performance              rc=2
+=== diffasm byte-compare ===
+[diff] 0x52a760   MISMATCH         INIClass::ReadTimeString
+[diff] 0x52a4d0   MISMATCH         ObjectClass::sub_52A4D0
+[diff] 0x532150   MISMATCH         ObjectClass::InitCommands
+[diff] 0x52d640   MISMATCH         CampaignMenu::DlgProc
+[diff] 0x533d20   MISMATCH         KeyboardConfig::LoadINI
+[ledger] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52a4d0 ObjectClass::sub_52A4D0 -> NG (attempt 3)
+[ledger] 0x52a760 INIClass::ReadTimeString -> NG (attempt 3)
+[ledger] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52ab80 WarheadTypeClass::parseVerses -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52ace0 GenericList::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52ad50 WarheadTypeClass::parseModifiers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 13)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 13)
+[ledger] 0x52b430 SortedArray::FindValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52b4f0 HashTable::BinarySearchAlt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52b620 SortedArray::BinarySearch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52b9b0 BINK::Background_Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52ba60 ObjectClass::InitGame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52cb90 Credits::Screen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52cd70 ObjectClass::InitRules -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52d640 CampaignMenu::DlgProc -> NG (attempt 5)
+[ledger] 0x52d870 sub_52D870 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52d9a0 ObjectClass::MenuSelect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52ec00 CampaignSelect::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52f3f0 Network::Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52f620 ParseCommandLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x52fc20 TechnoClass::InitRandomSeed -> COMPILE_FAIL (attempt 8)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5312a0 ObjectClass::ShowLoadingScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x531680 InitBulkData -> COMPILE_FAIL (attempt 6)
+[ledger] 0x531cc0 MainMenu::Screen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x532150 ObjectClass::InitCommands -> NG (attempt 3)
+[ledger] 0x533d20 KeyboardConfig::LoadINI -> NG (attempt 3)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 6)
+[ledger] 0x534450 Game::DestroyAllObjects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5349c0 LoadTheaterClassMIX -> COMPILE_FAIL (attempt 4)
+[ledger] 0x534fa0 MixFile::LoadSide -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5355d0 Performance::Profile -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 35,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 2,
+  "cc_mismatch": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p26\batch_report.json
