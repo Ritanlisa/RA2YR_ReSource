@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p159\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ccb2e ObjectClass::__expandtime -> ObjectClass
+[conv] 0x7ccf1d ObjectClass::__store_str -> ObjectClass
+[conv] 0x7cd2cb _localtime -> _addr_7C
+[conv] 0x7cd460 _tmpnam -> _addr_7C
+[conv] 0x7cd4de _tmpfile -> _addr_7C
+[conv] 0x7cd80f ObjectClass::start -> ObjectClass
+[conv] 0x7cd989 __mtdeletelocks -> _addr_7C
+[conv] 0x7cda90 _strcmp -> _addr_7C
+[conv] 0x7cdb14 _setlocale -> _addr_7C
+[conv] 0x7cdd5a __setlocale_set_cat -> _addr_7C
+[conv] 0x7cdf2e __expandlocale -> _addr_7C
+[conv] 0x7ce06e ___lc_strtolc -> _addr_7C
+[conv] 0x7ce18d __flsbuf -> _addr_7C
+[conv] 0x7ce2a5 __output -> _addr_7C
+[conv] 0x7ce9e6 _write_char -> _addr_7C
+[conv] 0x7cec26 __cftoe -> _addr_7C
+[conv] 0x7cec87 ObjectClass::__cftoe2 -> ObjectClass
+[conv] 0x7cef29 __shift -> _addr_7C
+[conv] 0x7cf0ae __ffexpm1 -> _addr_7C
+[conv] 0x7cf0f1 _isintTOS -> _addr_7C
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7ccb2e ObjectClass::__expandtime -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ccf1d ObjectClass::__store_str -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cd2cb _localtime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cd460 _tmpnam -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7cd4de _tmpfile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cd80f ObjectClass::start -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cd989 __mtdeletelocks -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cda90 _strcmp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cdb14 _setlocale -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cdd5a __setlocale_set_cat -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cdf2e __expandlocale -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ce06e ___lc_strtolc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ce18d __flsbuf -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ce2a5 __output -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7ce9e6 _write_char -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cec26 __cftoe -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cec87 ObjectClass::__cftoe2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cef29 __shift -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cf0ae __ffexpm1 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cf0f1 _isintTOS -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p159\batch_report.json
