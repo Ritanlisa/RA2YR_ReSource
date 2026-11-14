@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p127\part_00
+=== convert (20 addrs) ===
+[conv] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> JumpjetLocomotionClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x72d830 Game::shutdownGame -> Game
+[conv] 0x72d9a0 InitializeGameLoading -> _addr_72
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+[conv] 0x72e450 RenderScoreScreen -> _addr_72
+[conv] 0x72e730 UI_Draw_72E730 -> UI_Draw
+[conv] 0x72f350 House_Load -> House
+[conv] 0x72fa10 LoadingScreen::LoadSHPs -> LoadingScreen
+[conv] 0x72fbc0 Sides::MixFileYuriFiles3 -> Sides
+[conv] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> ObjectClass
+[conv] 0x730af0 TechnoClass::ProcessSelectionExperience -> TechnoClass
+[conv] 0x730f30 ObjectClass::UI_Create_730F30 -> ObjectClass
+[conv] 0x7311c0 TacticalClass::SetObserverView -> TacticalClass
+[conv] 0x731840 SquadClass::ProcessMove -> SquadClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] TextLabelClass           rc=2
+[era] LoadingScreen            rc=2
+[era] CampaignScore            rc=2
+[era] Game                     rc=2
+[era] _addr_72                 rc=2
+[era] UI_Draw                  rc=2
+[era] House                    rc=2
+[era] Sides                    rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] TacticalClass            rc=2
+[era] SquadClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 10)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 10)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 10)
+[ledger] 0x72d830 Game::shutdownGame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72d9a0 InitializeGameLoading -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72e450 RenderScoreScreen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72e730 UI_Draw_72E730 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 10)
+[ledger] 0x72fa10 LoadingScreen::LoadSHPs -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72fbc0 Sides::MixFileYuriFiles3 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> COMPILE_FAIL (attempt 5)
+[ledger] 0x730af0 TechnoClass::ProcessSelectionExperience -> COMPILE_FAIL (attempt 4)
+[ledger] 0x730f30 ObjectClass::UI_Create_730F30 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7311c0 TacticalClass::SetObserverView -> COMPILE_FAIL (attempt 5)
+[ledger] 0x731840 SquadClass::ProcessMove -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p127\batch_report.json
