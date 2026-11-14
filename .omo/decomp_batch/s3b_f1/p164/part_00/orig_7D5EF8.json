@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D5EF8",
+ "name": "__FF_MSGBANNER",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D5EF8",
+ "bytes_hex": "a13082b70083f801740d85c0752a833da4c2870001752168fc000000e818000000a10085b7005985c07402ffd068ff000000e80200000059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

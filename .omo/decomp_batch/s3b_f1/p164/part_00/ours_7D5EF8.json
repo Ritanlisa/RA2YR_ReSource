@@ -1,0 +1,39 @@
+{
+ "symbol": "?__FF_MSGBANNER@@YAHXZ",
+ "sym_key": "Unnamed::__FF_MSGBANNER",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "a10000000083f801740d85c0752e833d0000000001752568fc000000e800000000a10000000083c40485c07402ffd068ff000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78230@@3IA",
+   "sym_key": "CRTGlobal_B78230"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C2A4@@3IA",
+   "sym_key": "DataGlobal_87C2A4"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?_NMSG_WRITE@@YAHHZZ",
+   "sym_key": "_NMSG_WRITE"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78500@@3IA",
+   "sym_key": "CRTGlobal_B78500"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?_NMSG_WRITE@@YAHHZZ",
+   "sym_key": "_NMSG_WRITE"
+  }
+ ]
+}

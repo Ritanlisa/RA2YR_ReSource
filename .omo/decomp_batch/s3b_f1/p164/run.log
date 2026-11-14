@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p164\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d482c _signal -> _addr_7D
+[conv] 0x7d4d24 __tzset_lk -> _addr_7D
+[conv] 0x7d4fcc __isindst_0 -> _addr_7D
+[conv] 0x7d52b8 _gmtime -> _addr_7D
+[conv] 0x7d53c2 __access -> _addr_7D
+[conv] 0x7d5433 __open -> _addr_7D
+[conv] 0x7d544a __sopen -> _addr_7D
+[conv] 0x7d5791 __rmtmp -> _addr_7D
+[conv] 0x7d57fe _asctime -> _addr_7D
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7d5dc6 ___crtGetEnvironmentStringsA -> _addr_7D
+[conv] 0x7d5ef8 __FF_MSGBANNER -> _addr_7D
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+[conv] 0x7d6494 __free_lc_time -> _addr_7D
+[conv] 0x7d6624 ObjectClass::___init_numeric -> ObjectClass
+[conv] 0x7d6830 ___init_monetary -> _addr_7D
+[conv] 0x7d68fb __get_lc_lconv -> _addr_7D
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+[conv] 0x7d6aa2 ObjectClass::___init_ctype -> ObjectClass
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x7d5ef8   MISMATCH         __FF_MSGBANNER
+[ledger] 0x7d482c _signal -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d4d24 __tzset_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d4fcc __isindst_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d52b8 _gmtime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d53c2 __access -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d5433 __open -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d544a __sopen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5791 __rmtmp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d57fe _asctime -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 13)
+[ledger] 0x7d5dc6 ___crtGetEnvironmentStringsA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5ef8 __FF_MSGBANNER -> NG (attempt 6)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d6494 __free_lc_time -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d6624 ObjectClass::___init_numeric -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d6830 ___init_monetary -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7d68fb __get_lc_lconv -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d6aa2 ObjectClass::___init_ctype -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p164\batch_report.json
