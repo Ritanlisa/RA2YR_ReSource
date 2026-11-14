@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p71\part_00
+=== convert (20 addrs) ===
+[conv] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x74fae0 ObjectClass::GetModuleInternalVersion -> ObjectClass
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x74ff50 VeterancyStruct::Accumulate -> VeterancyStruct
+[conv] 0x74ffc0 Crate::IsRookie -> Crate
+[conv] 0x750440 ObjectClass::LoadVocFromINI -> ObjectClass
+[conv] 0x750ac0 ComputeAudioPosition -> _addr_75
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x7513f0 Audio::LoadSoundINI -> Audio
+[conv] 0x7514d0 VocClass::FindIndex -> VocClass
+[conv] 0x751520 ObjectClass::System_Get_751520 -> ObjectClass
+[conv] 0x752290 Audio_Init_752290 -> Audio_Init
+[conv] 0x752370 ThemeClass::ClearQueues -> ThemeClass
+[conv] 0x752480 UpdateThemeManager -> _addr_75
+[conv] 0x752700 VoxClass::FindAndPlay -> VoxClass
+[conv] 0x752a40 ClearThemeQueuePlaylist -> _addr_75
+[conv] 0x752ad0 Audio_Init_752AD0 -> Audio_Init
+[conv] 0x752db0 AudioEvent::LoadFromINI -> AudioEvent
+[conv] 0x753b10 sub_753B10 -> _addr_75
+[conv] 0x753b40 sub_753B40 -> _addr_75
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVVeinholeMonsterClass rc=2
+[era] ObjectClass              rc=2
+[era] _addr_74                 rc=2
+[era] VeterancyStruct          rc=0
+[era] Crate                    rc=2
+[era] _addr_75                 rc=2
+[era] Audio                    rc=2
+[era] VocClass                 rc=2
+[era] Audio_Init               rc=2
+[era] ThemeClass               rc=2
+[era] VoxClass                 rc=2
+[era] AudioEvent               rc=2
+=== diffasm byte-compare ===
+[diff] 0x750440   MISMATCH         ObjectClass::LoadVocFromINI
+[diff] 0x74ff50   MISMATCH         VeterancyStruct::Accumulate
+[ledger] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74fae0 ObjectClass::GetModuleInternalVersion -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 9)
+[ledger] 0x74ff50 VeterancyStruct::Accumulate -> NG (attempt 5)
+[ledger] 0x74ffc0 Crate::IsRookie -> COMPILE_FAIL (attempt 3)
+[ledger] 0x750440 ObjectClass::LoadVocFromINI -> NG (attempt 5)
+[ledger] 0x750ac0 ComputeAudioPosition -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7513f0 Audio::LoadSoundINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7514d0 VocClass::FindIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x751520 ObjectClass::System_Get_751520 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x752290 Audio_Init_752290 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752370 ThemeClass::ClearQueues -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752480 UpdateThemeManager -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752700 VoxClass::FindAndPlay -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752a40 ClearThemeQueuePlaylist -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752ad0 Audio_Init_752AD0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x752db0 AudioEvent::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x753b10 sub_753B10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x753b40 sub_753B40 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p71\batch_report.json

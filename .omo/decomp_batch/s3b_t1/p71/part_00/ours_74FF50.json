@@ -1,0 +1,27 @@
+{
+ "symbol": "?Accumulate@VeterancyStruct@@QAEHHH@Z",
+ "sym_key": "VeterancyStruct::Accumulate",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "8b54240833c0a00200000080e200db442408db4424040bc28b1500000000562400dc8a680600008b54240c81e2ff000000def90bd0d801d9118b3500000000dd8698060000d8d9dfe0f6c4417408ddd8dd8698060000d9198bc25ec20800",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  }
+ ]
+}

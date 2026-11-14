@@ -1,0 +1,11 @@
+{
+ "addr": "0x74FF50",
+ "name": "VeterancyStruct::Accumulate",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74FF50",
+ "bytes_hex": "db442408db442404a1e0718800dc8868060000def9d801d9118b15e0718800d9c0dd8298060000ded9dfe0f6c4417408ddd8dd8298060000d919c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
