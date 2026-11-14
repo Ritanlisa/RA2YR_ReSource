@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p120\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> TriggerClass
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f2b40 TechnoClass::TechnoClass_6F2B40 -> TechnoClass
+[conv] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> TechnoClass
+[conv] 0x6f3ad0 TechnoClass::ComputeTransform -> TechnoClass
+[conv] 0x6f3d60 TechnoClass::GetTurretOffset -> TechnoClass
+[conv] 0x6f3f40 TechnoClass::Update -> TechnoClass
+[conv] 0x6f4500 TechnoClass::DTOR -> TechnoClass
+[conv] 0x6f4960 TechnoClass::SetHouseFlag -> TechnoClass
+[conv] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> TechnoClass
+[conv] 0x6f4eb0 TechnoClass::PushNearbyUnits -> TechnoClass
+[conv] 0x6f5190 TechnoClass::DrawHealthBar -> TechnoClass
+[conv] 0x6f5ef0 DrawTacticalLine3D -> _addr_6F
+[conv] 0x6f6030 globalHelper_0F6030 -> _addr_6F
+[conv] 0x6f6ca0 TechnoClass::FinishDeploy -> TechnoClass
+[conv] 0x6f7220 TechnoClass::CheckTargetLOS -> TechnoClass
+[conv] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> TechnoClass
+[conv] 0x6f7ca0 TechnoClass::EvaluateTarget -> TechnoClass
+[conv] 0x6f8960 SelectTechnoClassAreaTarget -> _addr_6F
+[conv] 0x6f8c10 TechnoClass::EvaluateBuildingTarget -> TechnoClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TriggerClass             rc=2
+[era] TeamTypeClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_6F                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6f2b40 TechnoClass::TechnoClass_6F2B40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f3ad0 TechnoClass::ComputeTransform -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f3d60 TechnoClass::GetTurretOffset -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f3f40 TechnoClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f4500 TechnoClass::DTOR -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f4960 TechnoClass::SetHouseFlag -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f4eb0 TechnoClass::PushNearbyUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f5190 TechnoClass::DrawHealthBar -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f5ef0 DrawTacticalLine3D -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f6030 globalHelper_0F6030 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f6ca0 TechnoClass::FinishDeploy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f7220 TechnoClass::CheckTargetLOS -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6f7ca0 TechnoClass::EvaluateTarget -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6f8960 SelectTechnoClassAreaTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f8c10 TechnoClass::EvaluateBuildingTarget -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p120\batch_report.json
