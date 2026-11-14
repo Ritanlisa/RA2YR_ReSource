@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x52b170 SortedArray::Find -> SortedArray
+[conv] 0x52b390 HashTable::BinarySearch -> HashTable
+[conv] 0x52b430 SortedArray::FindValue -> SortedArray
+[conv] 0x52b4f0 HashTable::BinarySearchAlt -> HashTable
+[conv] 0x52b620 SortedArray::BinarySearch -> SortedArray
+[conv] 0x52b9b0 BINK::Background_Setup -> BINK
+[conv] 0x52ba60 ObjectClass::InitGame -> ObjectClass
+[conv] 0x52cb90 Credits::Screen -> Credits
+[conv] 0x52cd70 ObjectClass::InitRules -> ObjectClass
+[conv] 0x52d870 sub_52D870 -> _addr_52
+[conv] 0x52d9a0 ObjectClass::MenuSelect -> ObjectClass
+[conv] 0x52ec00 CampaignSelect::DlgProc -> CampaignSelect
+[conv] 0x52f3f0 Network::Init -> Network
+[conv] 0x52f620 ParseCommandLine -> _addr_52
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x5312a0 ObjectClass::ShowLoadingScreen -> ObjectClass
+[conv] 0x531680 InitBulkData -> _addr_53
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SortedArray              rc=2
+[era] HashTable                rc=2
+[era] BINK                     rc=2
+[era] ObjectClass              rc=2
+[era] Credits                  rc=2
+[era] _addr_52                 rc=2
+[era] CampaignSelect           rc=2
+[era] Network                  rc=2
+[era] TechnoClass              rc=2
+[era] MixFileClass             rc=2
+[era] MixFile                  rc=2
+[era] _addr_53                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x52b170 SortedArray::Find -> COMPILE_FAIL (attempt 15)
+[ledger] 0x52b390 HashTable::BinarySearch -> COMPILE_FAIL (attempt 15)
+[ledger] 0x52b430 SortedArray::FindValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52b4f0 HashTable::BinarySearchAlt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52b620 SortedArray::BinarySearch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52b9b0 BINK::Background_Setup -> COMPILE_FAIL (attempt 6)
+[ledger] 0x52ba60 ObjectClass::InitGame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52cb90 Credits::Screen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52cd70 ObjectClass::InitRules -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52d870 sub_52D870 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52d9a0 ObjectClass::MenuSelect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52ec00 CampaignSelect::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52f3f0 Network::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52f620 ParseCommandLine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52fc20 TechnoClass::InitRandomSeed -> COMPILE_FAIL (attempt 10)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 6)
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5312a0 ObjectClass::ShowLoadingScreen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x531680 InitBulkData -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p48\batch_report.json
