@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B1AB0",
+ "name": "WinsockInterfaceClass::WinsockInterfaceClass",
+ "size": 160,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B1AB0",
+ "bytes_hex": "53568bf133db8a8668f00300c706bc797f003ac37418ff15dc797f008b068bceff5004e8de6e0100889e68f003008b463cc746383c7a7f003bc37411385e45740c50e84670010083c404895e3c885e45895e408b4624c746203c7a7f003bc37411385e2d740c50e82170010083c404895e24885e2d895e288b460cc746083c7a7f003bc37411385e15740c50e8fc6f010083c404895e0c885e15895e105e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

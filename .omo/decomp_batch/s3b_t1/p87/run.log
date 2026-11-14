@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p87\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> ObjectClass
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x7af2a0 StaticString::Factory -> StaticString
+[conv] 0x7af6c0 WorldDominationFactionDlgProc -> _addr_7A
+[conv] 0x7af970 ObjectClass::sub_7AF970 -> ObjectClass
+[conv] 0x7afb90 StartWDTCampaign -> _addr_7A
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x7b02a0 ComStreamClass::getStreamSize -> ComStreamClass
+[conv] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x7b05c0 CompressScreenshot -> _addr_7B
+[conv] 0x7b0cb0 sub_7B0CB0 -> _addr_7B
+[conv] 0x7b1ab0 WinsockInterfaceClass::WinsockInterfaceClass_7B1AB0 -> WinsockInterfaceClass
+[conv] 0x7b1bc0 WinsockInterfaceClass::Receive -> WinsockInterfaceClass
+[conv] 0x7b1de0 WinsockInterface::Init -> WinsockInterface
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+[conv] 0x7b2e50 UDPInterfaceClass::sub_7B2E50 -> UDPInterfaceClass
+[conv] 0x7b2f90 UDPInterfaceClass::GetQueueSize -> UDPInterfaceClass
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x7b33d0 UDPInterfaceClass::GetStatistics -> UDPInterfaceClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] DynamicVector            rc=2
+[era] StaticString             rc=2
+[era] _addr_7A                 rc=2
+[era] ComStreamClass           rc=2
+[era] FactionSelectDialogControl_WorldDominationTour rc=2
+[era] _addr_7B                 rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] WinsockInterface         rc=2
+[era] UDPInterfaceClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b0cb0   MISMATCH         sub_7B0CB0
+[diff] 0x7b1ab0   MISMATCH         WinsockInterfaceClass::WinsockInterfaceClass_7B1AB0
+[ledger] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7af2a0 StaticString::Factory -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7af6c0 WorldDominationFactionDlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7af970 ObjectClass::sub_7AF970 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7afb90 StartWDTCampaign -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7b02a0 ComStreamClass::getStreamSize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b05c0 CompressScreenshot -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b0cb0 sub_7B0CB0 -> NG (attempt 6)
+[ledger] 0x7b1ab0 WinsockInterfaceClass::WinsockInterfaceClass_7B1AB0 -> NG (attempt 2)
+[ledger] 0x7b1bc0 WinsockInterfaceClass::Receive -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b1de0 WinsockInterface::Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7b2e50 UDPInterfaceClass::sub_7B2E50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b2f90 UDPInterfaceClass::GetQueueSize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b2ff0 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 17)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> COMPILE_FAIL (attempt 17)
+[ledger] 0x7b33d0 UDPInterfaceClass::GetStatistics -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p87\batch_report.json
