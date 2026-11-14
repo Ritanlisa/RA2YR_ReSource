@@ -105,3 +105,4 @@
 {"part": 104, "n": 20, "seconds": 44.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 105, "n": 20, "seconds": 66.9, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 106, "n": 20, "seconds": 43.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 107, "n": 20, "seconds": 80.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
