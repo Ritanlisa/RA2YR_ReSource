@@ -1,0 +1,11 @@
+{
+ "addr": "0x69AE10",
+ "name": "GameClass::initPlayerData",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69AE10",
+ "bytes_hex": "5356578bf98b87b401000085c075148b4c24106868f68300e8e39811005f5e5bc2040033f685c07e248b5c24108b87a80100008d0cb0518bcbe83299110084c075138b87b4010000463bf07ce05f5e32c05bc204005f5eb0015bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

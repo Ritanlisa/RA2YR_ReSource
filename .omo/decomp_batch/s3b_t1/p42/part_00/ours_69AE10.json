@@ -1,0 +1,33 @@
+{
+ "symbol": "?initPlayerData@GameClass@@QAE_NPAPBD@Z",
+ "sym_key": "GameClass::initPlayerData",
+ "size": 111,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b86b401000085c075148b4c24106800000000e8000000005f5e5bc2040033ff85c07f085f5e32c05bc204008b86a80100008b5c2410508bcbe80000000084c075208b86b4010000473bf873d78b8ea80100008d14b98bcb52e80000000084c074e05f5eb0015bc20400",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F668@@3PADA",
+   "sym_key": "DataGlobal_83F668"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Equals_Alt@String@@QAE_NPAX@Z",
+   "sym_key": "String::Equals_Alt"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  }
+ ]
+}

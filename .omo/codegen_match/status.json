@@ -140920,19 +140920,19 @@
   "this_as_id": false
  },
  "0x697b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SessionClass::CreateConnections",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SessionClass::CreateConnections",
-  "rule_violations": 20,
+  "rule_violations": 19,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x697e70": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140944,7 +140944,7 @@
   "this_as_id": false
  },
  "0x697f10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140956,7 +140956,7 @@
   "this_as_id": false
  },
  "0x6980c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140980,7 +140980,7 @@
   "this_as_id": false
  },
  "0x698f90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140992,7 +140992,7 @@
   "this_as_id": false
  },
  "0x6990a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -141016,7 +141016,7 @@
   "this_as_id": false
  },
  "0x6994f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ParseMapFileHeader",
@@ -141086,7 +141086,7 @@
   "this_as_id": false
  },
  "0x69a3b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141098,7 +141098,7 @@
   "this_as_id": false
  },
  "0x69a980": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141110,7 +141110,7 @@
   "this_as_id": false
  },
  "0x69ac30": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141134,7 +141134,7 @@
   "this_as_id": false
  },
  "0x69acd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141182,19 +141182,19 @@
   "this_as_id": false
  },
  "0x69ae10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 push edi",
   "name": "GameClass::initPlayerData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GameClass::initPlayerData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x69ae70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141206,7 +141206,7 @@
   "this_as_id": false
  },
  "0x69ae90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141218,7 +141218,7 @@
   "this_as_id": false
  },
  "0x69b170": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -141290,7 +141290,7 @@
   "this_as_id": false
  },
  "0x69b700": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141302,7 +141302,7 @@
   "this_as_id": false
  },
  "0x69b720": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141349,7 +141349,7 @@
   "this_as_id": false
  },
  "0x69b8c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141396,7 +141396,7 @@
   "this_as_id": false
  },
  "0x69bc20": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141442,7 +141442,7 @@
   "this_as_id": false
  },
  "0x69bd60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

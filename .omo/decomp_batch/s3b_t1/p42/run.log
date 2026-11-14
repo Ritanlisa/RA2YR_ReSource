@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x697b70 SessionClass::CreateConnections -> SessionClass
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x697f10 ObjectClass::ReadGameSettingsINI -> ObjectClass
+[conv] 0x6980c0 ScenarioClass::LoadNetworkConfig -> ScenarioClass
+[conv] 0x698f90 GameSetup::WriteINI -> GameSetup
+[conv] 0x6990a0 TechnoClass::SaveConfigWOL -> TechnoClass
+[conv] 0x6994f0 ParseMapFileHeader -> _addr_69
+[conv] 0x69a3b0 MapFile::LoadDescription -> MapFile
+[conv] 0x69a980 SessionClass::ParseGameInfo -> SessionClass
+[conv] 0x69ac30 ScenarioClass::CheckExists -> ScenarioClass
+[conv] 0x69acd0 GameOption::SetDescriptionWStr -> GameOption
+[conv] 0x69ae10 GameClass::initPlayerData -> GameClass
+[conv] 0x69ae70 IsRandMap::Sed2 -> IsRandMap
+[conv] 0x69ae90 Multiplayer::ShowProgress -> Multiplayer
+[conv] 0x69b170 ObjectClass::ParseAndApplyAlliances -> ObjectClass
+[conv] 0x69b700 Session::GetPlayerOption -> Session
+[conv] 0x69b720 Session::GetPlayerColor -> Session
+[conv] 0x69b8c0 Player::RandomAssign -> Player
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SessionClass             rc=2
+[era] ObjectClass              rc=2
+[era] ScenarioClass            rc=2
+[era] GameSetup                rc=2
+[era] TechnoClass              rc=2
+[era] _addr_69                 rc=2
+[era] MapFile                  rc=2
+[era] GameOption               rc=2
+[era] GameClass                rc=0
+[era] IsRandMap                rc=2
+[era] Multiplayer              rc=2
+[era] Session                  rc=2
+[era] Player                   rc=2
+[era] IPXConnClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x69ae10   MISMATCH         GameClass::initPlayerData
+[ledger] 0x697b70 SessionClass::CreateConnections -> COMPILE_FAIL (attempt 2)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 17)
+[ledger] 0x697f10 ObjectClass::ReadGameSettingsINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6980c0 ScenarioClass::LoadNetworkConfig -> COMPILE_FAIL (attempt 5)
+[ledger] 0x698f90 GameSetup::WriteINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6990a0 TechnoClass::SaveConfigWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6994f0 ParseMapFileHeader -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69a3b0 MapFile::LoadDescription -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69a980 SessionClass::ParseGameInfo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69ac30 ScenarioClass::CheckExists -> COMPILE_FAIL (attempt 6)
+[ledger] 0x69acd0 GameOption::SetDescriptionWStr -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69ae10 GameClass::initPlayerData -> NG (attempt 5)
+[ledger] 0x69ae70 IsRandMap::Sed2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69ae90 Multiplayer::ShowProgress -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69b170 ObjectClass::ParseAndApplyAlliances -> COMPILE_FAIL (attempt 6)
+[ledger] 0x69b700 Session::GetPlayerOption -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b720 Session::GetPlayerColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b8c0 Player::RandomAssign -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 8)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p42\batch_report.json
