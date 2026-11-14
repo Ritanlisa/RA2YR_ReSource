@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p85\part_00
+=== convert (20 addrs) ===
+[conv] 0x60b880 sub_60B880 -> _addr_60
+[conv] 0x60b950 Control::RepositionControlsDialog -> Control
+[conv] 0x60c0c0 RepositionDialogControls -> _addr_60
+[conv] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> SkirmishDialog
+[conv] 0x60c540 Control::CheckControlTypeDialog -> Control
+[conv] 0x60cba0 CampaignScore::LookupDialogHash -> CampaignScore
+[conv] 0x60cc00 CampaignScore::FindDialogTemplate -> CampaignScore
+[conv] 0x60d2c0 UI_Helper_60D2C0 -> UI_Helper
+[conv] 0x60d380 Campaign::Screen -> Campaign
+[conv] 0x60d450 DialogClass::RegisterWinClasses -> DialogClass
+[conv] 0x60d540 GameScreen::DlgProc -> GameScreen
+[conv] 0x60f4b0 InitializeDialogControls -> _addr_60
+[conv] 0x60f760 Dialog::InitWindow -> Dialog
+[conv] 0x60f9a0 Dialog::InitializeControls -> Dialog
+[conv] 0x610570 DestroyDialogChildWindow -> _addr_61
+[conv] 0x610810 sub_610810 -> _addr_61
+[conv] 0x610950 TriggerClass::FindByEventType -> TriggerClass
+[conv] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> ComboBoxOwnerDraw
+[conv] 0x612a60 sub_612A60 -> _addr_61
+[conv] 0x612b70 TabControl::WndProc -> TabControl
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] Control                  rc=2
+[era] SkirmishDialog           rc=2
+[era] CampaignScore            rc=2
+[era] UI_Helper                rc=2
+[era] Campaign                 rc=2
+[era] DialogClass              rc=2
+[era] GameScreen               rc=2
+[era] Dialog                   rc=2
+[era] _addr_61                 rc=2
+[era] TriggerClass             rc=2
+[era] ComboBoxOwnerDraw        rc=2
+[era] TabControl               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x60b880 sub_60B880 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60b950 Control::RepositionControlsDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60c0c0 RepositionDialogControls -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 8)
+[ledger] 0x60c540 Control::CheckControlTypeDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60cba0 CampaignScore::LookupDialogHash -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60cc00 CampaignScore::FindDialogTemplate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60d2c0 UI_Helper_60D2C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60d380 Campaign::Screen -> COMPILE_FAIL (attempt 6)
+[ledger] 0x60d450 DialogClass::RegisterWinClasses -> COMPILE_FAIL (attempt 4)
+[ledger] 0x60d540 GameScreen::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60f4b0 InitializeDialogControls -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60f760 Dialog::InitWindow -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60f9a0 Dialog::InitializeControls -> COMPILE_FAIL (attempt 3)
+[ledger] 0x610570 DestroyDialogChildWindow -> COMPILE_FAIL (attempt 7)
+[ledger] 0x610810 sub_610810 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x610950 TriggerClass::FindByEventType -> COMPILE_FAIL (attempt 6)
+[ledger] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x612a60 sub_612A60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x612b70 TabControl::WndProc -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p85\batch_report.json
