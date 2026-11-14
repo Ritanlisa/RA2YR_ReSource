@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p66\part_00
+=== convert (20 addrs) ===
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5aec40 ObjectClass::sub_5AEC40 -> ObjectClass
+[conv] 0x5aed50 ObjectClass::sub_5AED50 -> ObjectClass
+[conv] 0x5aee50 ObjectClass::sub_5AEE50 -> ObjectClass
+[conv] 0x5aef60 Matrix3x3::RotateX -> Matrix3x3
+[conv] 0x5af080 Matrix3D::RotateZ -> Matrix3D
+[conv] 0x5af120 ObjectClass::sub_5AF120 -> ObjectClass
+[conv] 0x5af1a0 Matrix2D::Rotate -> Matrix2D
+[conv] 0x5af550 ObjectClass::sub_5AF550 -> ObjectClass
+[conv] 0x5aff80 JumpjetLocomotionClass::GetMovementCoordinate_1 -> JumpjetLocomotionClass
+[conv] 0x5b01c0 BuildingClass::ProcessMission -> BuildingClass
+[conv] 0x5b17b0 BuildingClass::UpdateMovingPosition -> BuildingClass
+[conv] 0x5b1d90 ObjectClass::sub_5B1D90 -> ObjectClass
+[conv] 0x5b20f0 Movement::CalcVelocity -> Movement
+[conv] 0x5b2a30 Movement::UpdateLocomotion -> Movement
+[conv] 0x5b3760 MissionClass::LoadFromINI -> MissionClass
+[conv] 0x5b3950 FromNameIndex -> _addr_5B
+[conv] 0x5b3c20 MixFileClass::FromFile -> MixFileClass
+[conv] 0x5b3e90 ObjectClass::sub_5B3E90 -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] Matrix3x3                rc=2
+[era] Matrix3D                 rc=2
+[era] Matrix2D                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Movement                 rc=2
+[era] MissionClass             rc=2
+[era] _addr_5B                 rc=2
+[era] MixFileClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5aec40 ObjectClass::sub_5AEC40 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5aed50 ObjectClass::sub_5AED50 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5aee50 ObjectClass::sub_5AEE50 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5aef60 Matrix3x3::RotateX -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5af080 Matrix3D::RotateZ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5af120 ObjectClass::sub_5AF120 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5af1a0 Matrix2D::Rotate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5af550 ObjectClass::sub_5AF550 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5aff80 JumpjetLocomotionClass::GetMovementCoordinate_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b01c0 BuildingClass::ProcessMission -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b17b0 BuildingClass::UpdateMovingPosition -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b1d90 ObjectClass::sub_5B1D90 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5b20f0 Movement::CalcVelocity -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5b2a30 Movement::UpdateLocomotion -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b3760 MissionClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b3950 FromNameIndex -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5b3c20 MixFileClass::FromFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b3e90 ObjectClass::sub_5B3E90 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p66\batch_report.json
