@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReadXYZFromINI@ParticleSystemTypeClass@@QAEPAMPAMPAE10@Z",
+ "sym_key": "ParticleSystemTypeClass::ReadXYZFromINI",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "558bec81ec000200008b55108d8500feffff6800020000508b450c68000000005250e80000000085c0746a8d8d00feffff680000000051e80000000050e800000000ddd8dd5c241068000000006a00e80000000050e800000000ddd8dd5c242068000000006a00e80000000050e800000000ddd883c424dd5c2430d945088b45088b55088b4d08d9188950048948088be55dc210008b4d148b45088b1189108b51048950048b49088948088be55dc21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "_atof",
+   "sym_key": "atof"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "_atof",
+   "sym_key": "atof"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "_atof",
+   "sym_key": "atof"
+  }
+ ]
+}

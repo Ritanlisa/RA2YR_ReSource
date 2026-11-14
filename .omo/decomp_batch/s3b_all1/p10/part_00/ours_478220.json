@@ -1,0 +1,33 @@
+{
+ "symbol": "?parseKeyValue@INIClass@@QAEPAV1@PAH@Z",
+ "sym_key": "INIClass::parseKeyValue",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c568bf133db3bf557895e04895e08c6460c01885e0dc70600000000750c5f5e5db8000000005bc204008bcee8000000008b7d083bfb897e08750f8b06895e04885e0d5f5e5d5bc204008d047f50e80000000083c4043bc3741a8d4fff85c97c158d48028859fe8859ff881983c1034f75f2eb0233c03bc389460474328b460833ff3bc3c6460d017e2533d28b45048b5e0403c28bca03cb47668b1883c2036689198a40028841028b46083bf87cdd8b065f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_RGBClass@@3PAXA",
+   "sym_key": "vt_VectorClass_RGBClass"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_RGBClass@@3PAXA",
+   "sym_key": "vt_VectorClass_RGBClass"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?ddtor@FilePipe_38@@QAEXXZ",
+   "sym_key": "FilePipe_38::ddtor"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

@@ -26744,7 +26744,7 @@
   "this_as_id": false
  },
  "0x473f00": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -26922,7 +26922,7 @@
   "this_as_id": false
  },
  "0x4741f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -26958,19 +26958,19 @@
   "this_as_id": false
  },
  "0x474540": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [esp + 8]",
   "name": "ObjectClass::sub_474540",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_474540",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x474620": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -27018,7 +27018,7 @@
   "this_as_id": false
  },
  "0x474740": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27054,7 +27054,7 @@
   "this_as_id": false
  },
  "0x4748a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27147,7 +27147,7 @@
   "this_as_id": false
  },
  "0x474da0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27207,7 +27207,7 @@
   "this_as_id": false
  },
  "0x474ff0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27274,7 +27274,7 @@
   "this_as_id": false
  },
  "0x4753f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27298,15 +27298,15 @@
   "this_as_id": false
  },
  "0x475540": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+15 push 0x80",
   "name": "SuperWeaponTypeClass::FindOrCreate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SuperWeaponTypeClass::FindOrCreate",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x475610": {
@@ -27365,7 +27365,7 @@
   "this_as_id": false
  },
  "0x4758c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27425,7 +27425,7 @@
   "this_as_id": false
  },
  "0x4759f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -27463,7 +27463,7 @@
   "status": "NG"
  },
  "0x475d70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27482,7 +27482,7 @@
   "status": "NG"
  },
  "0x476020": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27501,15 +27501,15 @@
   "status": "NG"
  },
  "0x476340": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x20c",
   "name": "ParticleSystemTypeClass::ReadXYZFromINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ParticleSystemTypeClass::ReadXYZFromINI",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x476420": {
@@ -27525,7 +27525,7 @@
   "this_as_id": false
  },
  "0x4764f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27544,7 +27544,7 @@
   "status": "NG"
  },
  "0x4767c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27587,15 +27587,15 @@
   "this_as_id": false
  },
  "0x476e20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x80",
   "name": "ObjectClass::sub_476E20",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_476E20",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x476ea0": {
@@ -27647,7 +27647,7 @@
   "this_as_id": false
  },
  "0x4770e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LoadBuildingTypeClassPrerequisites",
@@ -27701,7 +27701,7 @@
   "status": "NG"
  },
  "0x477740": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -27881,7 +27881,7 @@
   "this_as_id": false
  },
  "0x4779e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28147,15 +28147,15 @@
   "this_as_id": false
  },
  "0x478220": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+33 je 0x4782cc",
   "name": "INIClass::parseKeyValue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "INIClass::parseKeyValue",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4782e0": {
@@ -28233,7 +28233,7 @@
   "this_as_id": false
  },
  "0x478630": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28269,7 +28269,7 @@
   "this_as_id": false
  },
  "0x478720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28281,7 +28281,7 @@
   "this_as_id": false
  },
  "0x478790": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28478,7 +28478,7 @@
   "this_as_id": false
  },
  "0x478ba0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28490,7 +28490,7 @@
   "this_as_id": false
  },
  "0x478db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28502,7 +28502,7 @@
   "this_as_id": false
  },
  "0x478e10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28514,7 +28514,7 @@
   "this_as_id": false
  },
  "0x478e30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28596,7 +28596,7 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28637,7 +28637,7 @@
   "status": "OK"
  },
  "0x479740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -28693,7 +28693,7 @@
   "this_as_id": false
  },
  "0x479d60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_479D60",
@@ -28704,7 +28704,7 @@
   "this_as_id": false
  },
  "0x479ef0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_479EF0",
@@ -28751,7 +28751,7 @@
   "this_as_id": false
  },
  "0x47a3f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -28763,7 +28763,7 @@
   "this_as_id": false
  },
  "0x47a560": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "sub_47A560",
@@ -28797,7 +28797,7 @@
   "this_as_id": false
  },
  "0x47a920": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "DriveControlCD",
@@ -28844,7 +28844,7 @@
   "this_as_id": false
  },
  "0x47aa50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_47AA50",
@@ -28913,7 +28913,7 @@
   "this_as_id": false
  },
  "0x47ae10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28925,7 +28925,7 @@
   "this_as_id": false
  },
  "0x47af10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -28937,7 +28937,7 @@
   "this_as_id": false
  },
  "0x47af70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,63 @@
+{
+ "symbol": "?FindOrCreate@SuperWeaponTypeClass@@QAEHPAE0H@Z",
+ "sym_key": "SuperWeaponTypeClass::FindOrCreate",
+ "size": 209,
+ "link_base": 0,
+ "bytes_hex": "8b54240881ec800000008d44240056576880000000508b84249400000068000000005250e80000000085c075128b8424940000005f5e81c480000000c20c008d4c2408e8000000008bf08bcee80000000084c0740d8bc65f5e81c480000000c20c008d4c2408e80000000083f8ff755668b0010000e80000000083c40485c0740e8d4c2408518bc8e800000000eb0233c08b350000000033d285f6770e5f83c8ff5e81c480000000c20c008b0d000000003901740f423bd673e38b790483c1043bf875f18bc25f5e81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?NameToDialogID@PlayerSlot@@QAEHXZ",
+   "sym_key": "PlayerSlot::NameToDialogID"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Construct@SuperWeaponTypeClass@@QAEPAV1@PAX@Z",
+   "sym_key": "SuperWeaponTypeClass::Construct"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p10\part_00
+=== convert (40 addrs) ===
+[conv] 0x473f00 CCFileClass::Destru_vt15 -> CCFileClass
+[conv] 0x4741f0 CCINIClass::Load -> CCINIClass
+[conv] 0x474540 ObjectClass::sub_474540 -> ObjectClass
+[conv] 0x474620 INIClass::ReadCoord -> INIClass
+[conv] 0x474740 ObjectTypeClass::ReadSoundList -> ObjectTypeClass
+[conv] 0x4748a0 INIClass::GetPipIdx -> INIClass
+[conv] 0x474da0 INIClass::LookupEnum -> INIClass
+[conv] 0x474ff0 ObjectTypeClass::ReadDouble2 -> ObjectTypeClass
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x475540 SuperWeaponTypeClass::FindOrCreate -> SuperWeaponTypeClass
+[conv] 0x4758c0 MapClass::loadTheaterINI -> MapClass
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x475d70 INIClass::ReadIntList -> INIClass
+[conv] 0x476020 INIClass::ReadExitCellList -> INIClass
+[conv] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> ParticleSystemTypeClass
+[conv] 0x4764f0 INIClass::ReadTechnoTypeList -> INIClass
+[conv] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> INIClass
+[conv] 0x476e20 ObjectClass::sub_476E20 -> ObjectClass
+[conv] 0x4770e0 LoadBuildingTypeClassPrerequisites -> _addr_47
+[conv] 0x477740 Pipe::Method_477740 -> Pipe
+[conv] 0x4779e0 DynamicVectorClass::Copy -> DynamicVectorClass
+[conv] 0x478220 INIClass::parseKeyValue -> INIClass
+[conv] 0x478630 VectorClass::vt00 -> VectorClass
+[conv] 0x478720 TypeList::Copy -> TypeList
+[conv] 0x478790 TypeList::TechnoTypeConstructor -> TypeList
+[conv] 0x478ba0 CCToolTip::CalculatePopupPosition -> CCToolTip
+[conv] 0x478db0 CCToolTip::Release -> CCToolTip
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x478e30 CCToolTip::Draw2 -> CCToolTip
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+[conv] 0x479740 ObjectClass::sub_479740 -> ObjectClass
+[conv] 0x479d60 sub_479D60 -> _addr_47
+[conv] 0x479ef0 sub_479EF0 -> _addr_47
+[conv] 0x47a3f0 CDROM::DeviceIoControl -> CDROM
+[conv] 0x47a560 sub_47A560 -> _addr_47
+[conv] 0x47a920 DriveControlCD -> _addr_47
+[conv] 0x47aa50 sub_47AA50 -> _addr_47
+[conv] 0x47ae10 CDFileClass::OpenWithCDSearch -> CDFileClass
+[conv] 0x47af10 CDFileClass::Reopen -> CDFileClass
+[conv] 0x47af70 FileClass::FindFirstWithCD -> FileClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CCFileClass              rc=2
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] ArmorType                rc=2
+[era] SuperWeaponTypeClass     rc=0
+[era] MapClass                 rc=2
+[era] ParticleSystemTypeClass  rc=0
+[era] _addr_47                 rc=2
+[era] Pipe                     rc=2
+[era] DynamicVectorClass       rc=2
+[era] VectorClass              rc=2
+[era] TypeList                 rc=2
+[era] CCToolTip                rc=2
+[era] CD                       rc=2
+[era] CDROM                    rc=2
+[era] CDFileClass              rc=2
+[era] FileClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x474540   MISMATCH         ObjectClass::sub_474540
+[diff] 0x476e20   MISMATCH         ObjectClass::sub_476E20
+[diff] 0x478220   MISMATCH         INIClass::parseKeyValue
+[diff] 0x475540   MISMATCH         SuperWeaponTypeClass::FindOrCreate
+[diff] 0x476340   MISMATCH         ParticleSystemTypeClass::ReadXYZFromINI
+[ledger] 0x473f00 CCFileClass::Destru_vt15 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4741f0 CCINIClass::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474540 ObjectClass::sub_474540 -> NG (attempt 5)
+[ledger] 0x474620 INIClass::ReadCoord -> COMPILE_FAIL (attempt 6)
+[ledger] 0x474740 ObjectTypeClass::ReadSoundList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4748a0 INIClass::GetPipIdx -> COMPILE_FAIL (attempt 4)
+[ledger] 0x474da0 INIClass::LookupEnum -> COMPILE_FAIL (attempt 4)
+[ledger] 0x474ff0 ObjectTypeClass::ReadDouble2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 5)
+[ledger] 0x475540 SuperWeaponTypeClass::FindOrCreate -> NG (attempt 7)
+[ledger] 0x4758c0 MapClass::loadTheaterINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x475d70 INIClass::ReadIntList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x476020 INIClass::ReadExitCellList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x476340 ParticleSystemTypeClass::ReadXYZFromINI -> NG (attempt 4)
+[ledger] 0x4764f0 INIClass::ReadTechnoTypeList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x476e20 ObjectClass::sub_476E20 -> NG (attempt 3)
+[ledger] 0x4770e0 LoadBuildingTypeClassPrerequisites -> COMPILE_FAIL (attempt 3)
+[ledger] 0x477740 Pipe::Method_477740 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4779e0 DynamicVectorClass::Copy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478220 INIClass::parseKeyValue -> NG (attempt 5)
+[ledger] 0x478630 VectorClass::vt00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x478720 TypeList::Copy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x478790 TypeList::TechnoTypeConstructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x478ba0 CCToolTip::CalculatePopupPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x478db0 CCToolTip::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x478e30 CCToolTip::Draw2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4791f0 CD::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 7)
+[ledger] 0x479740 ObjectClass::sub_479740 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x479d60 sub_479D60 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x479ef0 sub_479EF0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x47a3f0 CDROM::DeviceIoControl -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47a920 DriveControlCD -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47aa50 sub_47AA50 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47ae10 CDFileClass::OpenWithCDSearch -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47af10 CDFileClass::Reopen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47af70 FileClass::FindFirstWithCD -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 35,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 1,
+  "frame_sched": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p10\batch_report.json
