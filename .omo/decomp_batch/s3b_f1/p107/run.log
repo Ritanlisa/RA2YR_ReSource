@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p107\part_00
+=== convert (20 addrs) ===
+[conv] 0x69ac30 ScenarioClass::CheckExists -> ScenarioClass
+[conv] 0x69acd0 GameOption::SetDescriptionWStr -> GameOption
+[conv] 0x69ae70 IsRandMap::Sed2 -> IsRandMap
+[conv] 0x69ae90 Multiplayer::ShowProgress -> Multiplayer
+[conv] 0x69b170 ObjectClass::ParseAndApplyAlliances -> ObjectClass
+[conv] 0x69b700 Session::GetPlayerOption -> Session
+[conv] 0x69b720 Session::GetPlayerColor -> Session
+[conv] 0x69b7e0 SessionClass::AssignColor -> SessionClass
+[conv] 0x69b8c0 Player::RandomAssign -> Player
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x69db30 SHA1::Transform -> SHA1
+[conv] 0x69e100 BTree::DeleteSubtree -> BTree
+[conv] 0x69e500 FileTreeNode::Destroy -> FileTreeNode
+[conv] 0x69e580 MixFileClass::LoadSubFile -> MixFileClass
+[conv] 0x69e740 MixFileClass::GetSubFile -> MixFileClass
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> JumpjetLocomotionClass
+[conv] 0x69ee30 ShipLocomotionClass::QueryInterface -> ShipLocomotionClass
+[conv] 0x69ee90 ShipLocomotionClass::BeginMove -> ShipLocomotionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] GameOption               rc=2
+[era] IsRandMap                rc=2
+[era] Multiplayer              rc=2
+[era] ObjectClass              rc=2
+[era] Session                  rc=2
+[era] SessionClass             rc=2
+[era] Player                   rc=2
+[era] IPXConnClass             rc=2
+[era] SHA1                     rc=2
+[era] BTree                    rc=2
+[era] FileTreeNode             rc=2
+[era] MixFileClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ShipLocomotionClass      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x69ac30 ScenarioClass::CheckExists -> COMPILE_FAIL (attempt 7)
+[ledger] 0x69acd0 GameOption::SetDescriptionWStr -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69ae70 IsRandMap::Sed2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69ae90 Multiplayer::ShowProgress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69b170 ObjectClass::ParseAndApplyAlliances -> COMPILE_FAIL (attempt 7)
+[ledger] 0x69b700 Session::GetPlayerOption -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69b720 Session::GetPlayerColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69b7e0 SessionClass::AssignColor -> COMPILE_FAIL (attempt 18)
+[ledger] 0x69b8c0 Player::RandomAssign -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 9)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 7)
+[ledger] 0x69db30 SHA1::Transform -> COMPILE_FAIL (attempt 14)
+[ledger] 0x69e100 BTree::DeleteSubtree -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69e500 FileTreeNode::Destroy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69e580 MixFileClass::LoadSubFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69e740 MixFileClass::GetSubFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69ee30 ShipLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69ee90 ShipLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p107\batch_report.json

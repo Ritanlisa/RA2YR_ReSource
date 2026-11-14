@@ -141110,7 +141110,7 @@
   "this_as_id": false
  },
  "0x69ac30": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141134,7 +141134,7 @@
   "this_as_id": false
  },
  "0x69acd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141194,7 +141194,7 @@
   "this_as_id": false
  },
  "0x69ae70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141206,7 +141206,7 @@
   "this_as_id": false
  },
  "0x69ae90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141218,7 +141218,7 @@
   "this_as_id": false
  },
  "0x69b170": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -141290,7 +141290,7 @@
   "this_as_id": false
  },
  "0x69b700": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141302,7 +141302,7 @@
   "this_as_id": false
  },
  "0x69b720": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141326,7 +141326,7 @@
   "this_as_id": false
  },
  "0x69b7e0": {
-  "attempts": 17,
+  "attempts": 18,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141349,7 +141349,7 @@
   "this_as_id": false
  },
  "0x69b8c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141396,7 +141396,7 @@
   "this_as_id": false
  },
  "0x69bc20": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141442,7 +141442,7 @@
   "this_as_id": false
  },
  "0x69bd60": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142222,7 +142222,7 @@
   "this_as_id": false
  },
  "0x69db30": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -142395,7 +142395,7 @@
   "this_as_id": false
  },
  "0x69e100": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142455,7 +142455,7 @@
   "this_as_id": false
  },
  "0x69e500": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142467,7 +142467,7 @@
   "this_as_id": false
  },
  "0x69e580": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142479,7 +142479,7 @@
   "this_as_id": false
  },
  "0x69e740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142527,7 +142527,7 @@
   "this_as_id": false
  },
  "0x69e930": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142737,7 +142737,7 @@
   "this_as_id": false
  },
  "0x69ed20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142749,26 +142749,26 @@
   "this_as_id": false
  },
  "0x69ee30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ShipLocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ShipLocomotionClass::QueryInterface",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x69ee90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ShipLocomotionClass::BeginMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ShipLocomotionClass::BeginMove",
-  "rule_violations": 5,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
