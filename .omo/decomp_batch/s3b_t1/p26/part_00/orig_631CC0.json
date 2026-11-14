@@ -1,0 +1,11 @@
+{
+ "addr": "0x631CC0",
+ "name": "Pipe::SetDelegate",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631CC0",
+ "bytes_hex": "568b742408578bf9397704743985f674158b4e0885c9740e8b016a00ff500cc74608000000008b470485c0740fc74008000000008b4f048b11ff520485f68977047403897e085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

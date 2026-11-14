@@ -1,0 +1,159 @@
+{
+ "symbol": "?UI_Get_630EA0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UI_Get_630EA0",
+ "size": 467,
+ "link_base": 0,
+ "bytes_hex": "51538bd955568b035768e505000050e8000000008d7309566a1568b504000050e8000000008b0b68e005000051e8000000006a006a00688801000050e80000000083f8ffa300000000743f8b15000000008b0482059a0000008a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c00f84410100008d7b0983c9ff33c0f2aef7d14975085f5e5d32c05b59c368b0000000e8000000008be883c40485ed75085f5e5d32c05b59c368e7000000681c01000033d2b910010000e800000000508d457050e80000000083caff8d7b098bca33c083c4088db59a000000f2aef7d12bf9897424108bc18bf78b7c2410c1e902f3a58bc883e103f3a4c7450000000000895504895508c7450c00000000895510c7451403000000c6452000a100000000390500000000722f8a0d0000000084c9750485c075398b0d0000000085c9762f03c86a00518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d00000000892c828bcbe8000000008b430824010c018943088b150000000033c085d27e238b0d000000003929741c4083c1043bc27d11392975f45f5ea3000000005db0015b59c383c8ffa3000000005f5e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83665C@@3IA",
+   "sym_key": "DataGlobal_83665C"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83665C@@3IA",
+   "sym_key": "DataGlobal_83665C"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBXH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB3C@@3IA",
+   "sym_key": "DataGlobal_A8DB3C"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 318,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB41@@3EA",
+   "sym_key": "DataGlobal_A8DB41"
+  },
+  {
+   "off": 332,
+   "type": "DIR32",
+   "sym": "?dword_A8DB48@@3IA",
+   "sym_key": "dword_A8DB48"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB34@@3IA",
+   "sym_key": "DataGlobal_A8DB34"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB34@@3IA",
+   "sym_key": "DataGlobal_A8DB34"
+  },
+  {
+   "off": 365,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 380,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 390,
+   "type": "REL32",
+   "sym": "?PopulateList@PhoneEditor@@QAEXXZ",
+   "sym_key": "PhoneEditor::PopulateList"
+  },
+  {
+   "off": 406,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8DB44@@3IA",
+   "sym_key": "DataGlobal_A8DB44"
+  },
+  {
+   "off": 418,
+   "type": "DIR32",
+   "sym": "?g_EventProcessState@@3PAXA",
+   "sym_key": "g_EventProcessState"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  },
+  {
+   "off": 455,
+   "type": "DIR32",
+   "sym": "?g_GameFlagsMisc@@3IA",
+   "sym_key": "g_GameFlagsMisc"
+  }
+ ]
+}
