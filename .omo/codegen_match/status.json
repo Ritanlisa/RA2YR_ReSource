@@ -90876,7 +90876,7 @@
   "this_as_id": false
  },
  "0x579620": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90888,7 +90888,7 @@
   "this_as_id": false
  },
  "0x579b70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90924,7 +90924,7 @@
   "this_as_id": false
  },
  "0x57a430": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "RecursiveCellClassNeighbourUpdate",
@@ -90957,7 +90957,7 @@
   "this_as_id": false
  },
  "0x57acf0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "first_diff": null,
   "name": "GenerateMapClassCliffTransitions",
@@ -90991,7 +90991,7 @@
   "this_as_id": false
  },
  "0x57b790": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91235,7 +91235,7 @@
   "this_as_id": false
  },
  "0x57f6a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91247,7 +91247,7 @@
   "this_as_id": false
  },
  "0x57fbc0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91259,7 +91259,7 @@
   "this_as_id": false
  },
  "0x5800d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91271,7 +91271,7 @@
   "this_as_id": false
  },
  "0x580600": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91331,7 +91331,7 @@
   "this_as_id": false
  },
  "0x581140": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91355,7 +91355,7 @@
   "this_as_id": false
  },
  "0x581f90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91367,7 +91367,7 @@
   "this_as_id": false
  },
  "0x5824a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91391,19 +91391,19 @@
   "this_as_id": false
  },
  "0x582d70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "RadarClass::RenderBlips",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "RadarClass::RenderBlips",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x583180": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -91427,18 +91427,18 @@
   "this_as_id": false
  },
  "0x5835d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 8]",
   "name": "FindCliffSeedCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "FindCliffSeedCell",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x583820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91450,7 +91450,7 @@
   "this_as_id": false
  },
  "0x583ad0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -91462,7 +91462,7 @@
   "this_as_id": false
  },
  "0x583c60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91497,7 +91497,7 @@
   "this_as_id": false
  },
  "0x584550": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91509,7 +91509,7 @@
   "this_as_id": false
  },
  "0x584e50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
