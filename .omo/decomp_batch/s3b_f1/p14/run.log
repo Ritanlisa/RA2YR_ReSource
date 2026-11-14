@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x454260 BuildingClass::PowerDrainUpdate -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+[conv] 0x4547c0 BuildingClass::UpdateAnimationSlots -> BuildingClass
+[conv] 0x454930 BuildingClass::ProcessDamageAnim -> BuildingClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x454db0 BuildingClass::CleanupOccupation -> BuildingClass
+[conv] 0x4556d0 BuildingClass::ScanCircleForUnits -> BuildingClass
+[conv] 0x455980 BuildingClass::ScanCircleForTiberium -> BuildingClass
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+[conv] 0x455d50 BuildingClass::AssignDestination_SyncLog -> BuildingClass
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x456980 DrawTechnoDeployCircle -> _addr_45
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x4571e0 BuildingClass::Infiltrate -> BuildingClass
+[conv] 0x457630 BuildingClass::SWAvailable -> BuildingClass
+[conv] 0x457690 BuildingClass::SW2Available -> BuildingClass
+[conv] 0x457de0 BuildingClass::UnloadUnits -> BuildingClass
+[conv] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> TechnoClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] Animation                rc=2
+[era] TechnoClass              rc=2
+[era] _addr_45                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 10)
+[ledger] 0x454260 BuildingClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 7)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4547c0 BuildingClass::UpdateAnimationSlots -> COMPILE_FAIL (attempt 5)
+[ledger] 0x454930 BuildingClass::ProcessDamageAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 6)
+[ledger] 0x454db0 BuildingClass::CleanupOccupation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4556d0 BuildingClass::ScanCircleForUnits -> COMPILE_FAIL (attempt 4)
+[ledger] 0x455980 BuildingClass::ScanCircleForTiberium -> COMPILE_FAIL (attempt 4)
+[ledger] 0x455c20 TechnoClass::GetScreenCoords -> COMPILE_FAIL (attempt 16)
+[ledger] 0x455d50 BuildingClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x456980 DrawTechnoDeployCircle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4571e0 BuildingClass::Infiltrate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x457630 BuildingClass::SWAvailable -> COMPILE_FAIL (attempt 5)
+[ledger] 0x457690 BuildingClass::SW2Available -> COMPILE_FAIL (attempt 5)
+[ledger] 0x457de0 BuildingClass::UnloadUnits -> COMPILE_FAIL (attempt 4)
+[ledger] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p14\batch_report.json
