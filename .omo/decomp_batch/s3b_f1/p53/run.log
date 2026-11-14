@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> IPXGlobalConnClass
+[conv] 0x5403f0 IPXGlobalConnClass::SetAddress -> IPXGlobalConnClass
+[conv] 0x540610 IPXGlobalConnClass::Release -> IPXGlobalConnClass
+[conv] 0x540a80 ObjectClass::Network_Init -> ObjectClass
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+[conv] 0x540e70 SessionClass::initInternet -> SessionClass
+[conv] 0x541070 IPXManagerClass::receivePacket -> IPXManagerClass
+[conv] 0x5410f0 Network::SendMessage -> Network
+[conv] 0x541170 ObjectClass::sub_541170 -> ObjectClass
+[conv] 0x541260 Network::SendToPlayer -> Network
+[conv] 0x541820 IPXManagerClass::ReceiveLoop -> IPXManagerClass
+[conv] 0x542620 ScoreBoard::Render -> ScoreBoard
+[conv] 0x543780 IsometricTileClass::IsometricTileClass_543780 -> IsometricTileClass
+[conv] 0x5447c0 TerrainTypeClass::Construct -> TerrainTypeClass
+[conv] 0x545150 LoadTerrainTypeClassTheatre -> _addr_54
+[conv] 0x547230 TacticalClass::DrawCellOverlay -> TacticalClass
+[conv] 0x547cf0 TerrainClass::GenerateTexture -> TerrainClass
+[conv] 0x54a990 ObjectClass::sub_54A990 -> ObjectClass
+[conv] 0x54a9e0 ObjectClass::sub_54A9E0 -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXGlobalConnClass       rc=2
+[era] ObjectClass              rc=2
+[era] SessionClass             rc=2
+[era] IPXManagerClass          rc=2
+[era] Network                  rc=2
+[era] ScoreBoard               rc=2
+[era] IsometricTileClass       rc=2
+[era] TerrainTypeClass         rc=2
+[era] _addr_54                 rc=2
+[era] TacticalClass            rc=2
+[era] TerrainClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> COMPILE_FAIL (attempt 16)
+[ledger] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5403f0 IPXGlobalConnClass::SetAddress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x540610 IPXGlobalConnClass::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x540a80 ObjectClass::Network_Init -> COMPILE_FAIL (attempt 6)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x540e70 SessionClass::initInternet -> COMPILE_FAIL (attempt 4)
+[ledger] 0x541070 IPXManagerClass::receivePacket -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5410f0 Network::SendMessage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x541170 ObjectClass::sub_541170 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x541260 Network::SendToPlayer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x541820 IPXManagerClass::ReceiveLoop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x542620 ScoreBoard::Render -> COMPILE_FAIL (attempt 7)
+[ledger] 0x543780 IsometricTileClass::IsometricTileClass_543780 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5447c0 TerrainTypeClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x545150 LoadTerrainTypeClassTheatre -> COMPILE_FAIL (attempt 4)
+[ledger] 0x547230 TacticalClass::DrawCellOverlay -> COMPILE_FAIL (attempt 15)
+[ledger] 0x547cf0 TerrainClass::GenerateTexture -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54a990 ObjectClass::sub_54A990 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54a9e0 ObjectClass::sub_54A9E0 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p53\batch_report.json
