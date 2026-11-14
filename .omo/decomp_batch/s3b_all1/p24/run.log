@@ -1,0 +1,107 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p24\part_00
+=== convert (40 addrs) ===
+[conv] 0x5163b0 MovementAI::MarkOccupiedPathCell -> MovementAI
+[conv] 0x5164d0 MovementAI::StepFootClass -> MovementAI
+[conv] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> HoverLocomotionClass
+[conv] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> HoverLocomotionClass
+[conv] 0x517110 ObjectClass::sub_517110 -> ObjectClass
+[conv] 0x5172f0 LocomotionClass::ProcessMove -> LocomotionClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+[conv] 0x517a50 InfantryClass::Construct -> InfantryClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x517fa0 InfantryClass::ProcessDeployment -> InfantryClass
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+[conv] 0x518f90 InfantryClass::Draw -> InfantryClass
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x51aa10 InfantryClass::HandleTargetDestroyed -> InfantryClass
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> InfantryClass
+[conv] 0x51b350 InfantryClass::CalcMoveTarget -> InfantryClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x51bf90 InfantryClass::EvaluateTarget -> InfantryClass
+[conv] 0x51c8b0 InfantryClass::GetFireError -> InfantryClass
+[conv] 0x51cba0 InfantryClass::ValidatePlacement -> InfantryClass
+[conv] 0x51cdb0 InfantryClass::ProcessIdleAction -> InfantryClass
+[conv] 0x51d0d0 InfantryClass::FindMoveTarget -> InfantryClass
+[conv] 0x51d6f0 InfantryClass::ProcessDeployAction -> InfantryClass
+[conv] 0x51dbd0 InfantryClass::CalcFacingToTarget -> InfantryClass
+[conv] 0x51df10 InfantryClass::CancelMovement -> InfantryClass
+[conv] 0x51dff0 InfantryClass::MoveToCell -> InfantryClass
+[conv] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> InfantryClass
+[conv] 0x51f250 InfantryClass::ProcessUpdate -> InfantryClass
+[conv] 0x51f2c0 InfantryClass::GetTooltipName -> InfantryClass
+[conv] 0x51f330 InfantryClass::FindPathToBuilding -> InfantryClass
+[conv] 0x51f660 InfantryClass::ProcessIvanBombResult -> InfantryClass
+[conv] 0x51f6e0 InfantryClass::ProcessIvanBomb -> InfantryClass
+[conv] 0x51fef0 ObjectClass::SaveInfantryToINI -> ObjectClass
+[conv] 0x5200b0 InfantryClass::ProcessIdleDeploy -> InfantryClass
+[conv] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> TechnoClass
+[conv] 0x5206b0 TechnoClass::FireTechnoAtTarget -> TechnoClass
+[conv] 0x520ae0 Mission::ExecuteTechnoMissionAction -> Mission
+[conv] 0x520f40 Mission::ProcessUnitMissionAI -> Mission
+[conv] 0x521320 InfantryClass::GetIdleTimer -> InfantryClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MovementAI               rc=2
+[era] HoverLocomotionClass     rc=2
+[era] ObjectClass              rc=2
+[era] LocomotionClass          rc=2
+[era] InfantryClass            rc=2
+[era] TechnoClass              rc=2
+[era] Mission                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5163b0 MovementAI::MarkOccupiedPathCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5164d0 MovementAI::StepFootClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> COMPILE_FAIL (attempt 3)
+[ledger] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x517110 ObjectClass::sub_517110 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5172f0 LocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x517a50 InfantryClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x517fa0 InfantryClass::ProcessDeployment -> COMPILE_FAIL (attempt 3)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 6)
+[ledger] 0x518f90 InfantryClass::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 8)
+[ledger] 0x51aa10 InfantryClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51b350 InfantryClass::CalcMoveTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 6)
+[ledger] 0x51bf90 InfantryClass::EvaluateTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51c8b0 InfantryClass::GetFireError -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51cba0 InfantryClass::ValidatePlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x51cdb0 InfantryClass::ProcessIdleAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51d0d0 InfantryClass::FindMoveTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51d6f0 InfantryClass::ProcessDeployAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51dbd0 InfantryClass::CalcFacingToTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51df10 InfantryClass::CancelMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51dff0 InfantryClass::MoveToCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51f250 InfantryClass::ProcessUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51f2c0 InfantryClass::GetTooltipName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51f330 InfantryClass::FindPathToBuilding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x51f660 InfantryClass::ProcessIvanBombResult -> COMPILE_FAIL (attempt 6)
+[ledger] 0x51f6e0 InfantryClass::ProcessIvanBomb -> COMPILE_FAIL (attempt 3)
+[ledger] 0x51fef0 ObjectClass::SaveInfantryToINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5200b0 InfantryClass::ProcessIdleDeploy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5206b0 TechnoClass::FireTechnoAtTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x520ae0 Mission::ExecuteTechnoMissionAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x520f40 Mission::ProcessUnitMissionAI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x521320 InfantryClass::GetIdleTimer -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 40
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 35,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p24\batch_report.json
