@@ -196800,7 +196800,7 @@
   "this_as_id": false
  },
  "0x78a6b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196812,7 +196812,7 @@
   "this_as_id": false
  },
  "0x78a8f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196835,7 +196835,7 @@
   "this_as_id": false
  },
  "0x78ac10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -196847,7 +196847,7 @@
   "this_as_id": false
  },
  "0x78d120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "OnlineLobbyDlgProcWOL",
@@ -196858,7 +196858,7 @@
   "this_as_id": false
  },
  "0x78da30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_78DA30",
@@ -196915,7 +196915,7 @@
   "this_as_id": false
  },
  "0x78ebc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DlgProcGameSetup",
@@ -196926,7 +196926,7 @@
   "this_as_id": false
  },
  "0x78f000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196938,15 +196938,15 @@
   "this_as_id": false
  },
  "0x78f200": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x154",
   "name": "ObjectClass::BuildWOLPlayerTooltip",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "BuildWOLPlayerTooltip",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x78f5c0": {
@@ -196962,7 +196962,7 @@
   "this_as_id": false
  },
  "0x78f7f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -196974,7 +196974,7 @@
   "this_as_id": false
  },
  "0x791aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196986,7 +196986,7 @@
   "this_as_id": false
  },
  "0x791b10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -196998,7 +196998,7 @@
   "this_as_id": false
  },
  "0x792be0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ShowUIMessage",
@@ -197031,7 +197031,7 @@
   "this_as_id": false
  },
  "0x792f10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197054,7 +197054,7 @@
   "this_as_id": false
  },
  "0x793120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197089,7 +197089,7 @@
   "this_as_id": false
  },
  "0x793490": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197112,7 +197112,7 @@
   "this_as_id": false
  },
  "0x7937b0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197124,14 +197124,14 @@
   "this_as_id": false
  },
  "0x793930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+3 or eax, 0xffffffff",
   "name": "UI_Setup_793930",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "UI_Setup_793930",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x793a10": {
@@ -197180,7 +197180,7 @@
   "this_as_id": false
  },
  "0x793cd0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197192,7 +197192,7 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
@@ -197214,7 +197214,7 @@
   "this_as_id": false
  },
  "0x794ba0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
