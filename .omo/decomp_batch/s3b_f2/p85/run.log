@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p85\part_00
+=== convert (20 addrs) ===
+[conv] 0x614b30 EditControl::WndProc -> EditControl
+[conv] 0x6153e0 BinkMovie::WndProc -> BinkMovie
+[conv] 0x6163a0 Checkbox::WndProc -> Checkbox
+[conv] 0x616980 ButtonOwnerDraw::DlgProc -> ButtonOwnerDraw
+[conv] 0x617250 ComboBoxDropDown::WndProc -> ComboBoxDropDown
+[conv] 0x618d40 Options::DialogProc -> Options
+[conv] 0x61c690 Scrollbar::DlgProc -> Scrollbar
+[conv] 0x61d6d0 NetworkLobbyPaintProc -> _addr_61
+[conv] 0x61d950 TabControl::DlgProc -> TabControl
+[conv] 0x61e700 GroupLabel::WndProc -> GroupLabel
+[conv] 0x61eca0 RenderDialogSurface -> _addr_61
+[conv] 0x6213a0 Dialog::Resize -> Dialog
+[conv] 0x6214b0 SetupDialogRenderBuffer -> _addr_62
+[conv] 0x621d30 sub_621D30 -> _addr_62
+[conv] 0x621e90 Dialog::DrawBackground -> Dialog
+[conv] 0x622650 CreateDialog -> _addr_62
+[conv] 0x622820 SetupDialog -> _addr_62
+[conv] 0x622b50 BaseDialogProc -> _addr_62
+[conv] 0x623120 Dialog::PumpMessages -> Dialog
+[conv] 0x623230 CreateMessageBox -> _addr_62
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EditControl              rc=2
+[era] BinkMovie                rc=2
+[era] Checkbox                 rc=2
+[era] ButtonOwnerDraw          rc=2
+[era] ComboBoxDropDown         rc=2
+[era] Options                  rc=2
+[era] Scrollbar                rc=2
+[era] _addr_61                 rc=2
+[era] TabControl               rc=2
+[era] GroupLabel               rc=2
+[era] Dialog                   rc=2
+[era] _addr_62                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x614b30 EditControl::WndProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6153e0 BinkMovie::WndProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6163a0 Checkbox::WndProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x616980 ButtonOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x617250 ComboBoxDropDown::WndProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x618d40 Options::DialogProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61c690 Scrollbar::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61d6d0 NetworkLobbyPaintProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61d950 TabControl::DlgProc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x61e700 GroupLabel::WndProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61eca0 RenderDialogSurface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6213a0 Dialog::Resize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6214b0 SetupDialogRenderBuffer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x621d30 sub_621D30 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x621e90 Dialog::DrawBackground -> COMPILE_FAIL (attempt 4)
+[ledger] 0x622650 CreateDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x622820 SetupDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x622b50 BaseDialogProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x623120 Dialog::PumpMessages -> COMPILE_FAIL (attempt 7)
+[ledger] 0x623230 CreateMessageBox -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p85\batch_report.json
