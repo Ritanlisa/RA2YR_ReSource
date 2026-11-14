@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x54ba30 TechnoClass::UpdateFootMovement -> TechnoClass
+[conv] 0x54bd30 TechnoClass::UpdateFootMoveToState -> TechnoClass
+[conv] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> BuildingPlacement
+[conv] 0x54ca90 JumpjetLocomotion::Land -> JumpjetLocomotion
+[conv] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> JumpjetLocomotion
+[conv] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> JumpjetLocomotionClass
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> JumpjetLocomotionClass
+[conv] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> JumpjetLocomotionClass
+[conv] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> JumpjetLocomotionClass
+[conv] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x54e4d0 ScenarioClass::UpdateScriptActions -> ScenarioClass
+[conv] 0x550260 TacticalClass::RenderCells -> TacticalClass
+[conv] 0x5509f0 PrepareTacticalClassCellTransform -> _addr_55
+[conv] 0x551630 WebBrowser::OpenURL -> WebBrowser
+[conv] 0x551e50 DecompressCoreLCW -> _addr_55
+[conv] 0x5520a0 LCWPipe::Compress -> LCWPipe
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] BuildingPlacement        rc=2
+[era] JumpjetLocomotion        rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] ScenarioClass            rc=2
+[era] TacticalClass            rc=2
+[era] _addr_55                 rc=2
+[era] WebBrowser               rc=2
+[era] LCWPipe                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x54ba30 TechnoClass::UpdateFootMovement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54bd30 TechnoClass::UpdateFootMoveToState -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54ca90 JumpjetLocomotion::Land -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> COMPILE_FAIL (attempt 10)
+[ledger] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 8)
+[ledger] 0x54e4d0 ScenarioClass::UpdateScriptActions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x550260 TacticalClass::RenderCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5509f0 PrepareTacticalClassCellTransform -> COMPILE_FAIL (attempt 5)
+[ledger] 0x551630 WebBrowser::OpenURL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x551e50 DecompressCoreLCW -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5520a0 LCWPipe::Compress -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p54\batch_report.json
