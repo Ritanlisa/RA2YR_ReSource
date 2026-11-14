@@ -121038,19 +121038,19 @@
   "this_as_id": false
  },
  "0x6297f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ParasiteClass::DeploySquad",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParasiteClass::DeploySquad",
-  "rule_violations": 7,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x629e90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121074,14 +121074,14 @@
   "this_as_id": false
  },
  "0x62a260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ParasiteClass::DeployUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TeamClass::DeployUnit",
-  "rule_violations": 4,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -121110,7 +121110,7 @@
   "this_as_id": false
  },
  "0x62a980": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121134,7 +121134,7 @@
   "this_as_id": false
  },
  "0x62ac30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121470,14 +121470,14 @@
   "this_as_id": false
  },
  "0x62b5e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ParticleClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleClass::Construct",
-  "rule_violations": 20,
+  "rule_violations": 22,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -121506,7 +121506,7 @@
   "this_as_id": false
  },
  "0x62c3a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121518,19 +121518,19 @@
   "this_as_id": false
  },
  "0x62c540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ParticleClass::UpdateAnimationDrift",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleClass::UpdateAnimationDrift",
-  "rule_violations": 8,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x62c6e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -121542,7 +121542,7 @@
   "this_as_id": false
  },
  "0x62cb10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121566,14 +121566,14 @@
   "this_as_id": false
  },
  "0x62cec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ParticleClass::DrawParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ParticleClass::DrawParticle",
-  "rule_violations": 7,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -121590,7 +121590,7 @@
   "this_as_id": false
  },
  "0x62d3f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -121602,7 +121602,7 @@
   "this_as_id": false
  },
  "0x62d510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121884,7 +121884,7 @@
   "this_as_id": false
  },
  "0x62dc50": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121932,7 +121932,7 @@
   "this_as_id": false
  },
  "0x62e380": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121968,19 +121968,19 @@
   "this_as_id": false
  },
  "0x62e650": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+1 push edi",
   "name": "ScenarioClass::DestroyAndClearVector",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ScenarioClass::DestroyAndClearVector",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x62e6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -121992,7 +121992,7 @@
   "this_as_id": false
  },
  "0x62e840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -122004,19 +122004,19 @@
   "this_as_id": false
  },
  "0x62ed40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::UpdateBuildingParticleSystem",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UpdateBuildingParticleSystem",
-  "rule_violations": 39,
+  "rule_violations": 38,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x62f230": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

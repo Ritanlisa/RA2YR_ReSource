@@ -1,0 +1,11 @@
+{
+ "addr": "0x62E650",
+ "name": "ScenarioClass::DestroyAndClearVector",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62E650",
+ "bytes_hex": "53578bf98b9fcc0000004b7865563b9fcc0000007d588b87c00000008d349d000000008b0c308b11ff92f80000008b87c00000008b97bc00000003c68db7bc000000508bceff521083f8ff74218b4e103bc17d1a493bc1894e107d128b4e04408b1481895481fc8b4e103bc17cee4b799d5e5f5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

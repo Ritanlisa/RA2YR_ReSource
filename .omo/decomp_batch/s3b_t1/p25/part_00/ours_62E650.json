@@ -1,0 +1,8 @@
+{
+ "symbol": "?DestroyAndClearVector@ScenarioClass@@QAEXXZ",
+ "sym_key": "ScenarioClass::DestroyAndClearVector",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b9ecc0000004b7873573b9ecc0000007d668b86c00000008d3c9d000000008b0438508b08ff91f80000008b8ec00000008b96bc0000008d86bc00000003cf5150ff521083f8ff742f8b8ecc0000003bc17d25493bc1898ecc0000007d1a8b96c0000000408d0c828b14828951fc8b8ecc0000003bc17ce64b798f5f5e5bc3",
+ "relocs": []
+}
