@@ -1,0 +1,111 @@
+{
+ "symbol": "?SetWaypointTarget@DriveLocomotionClass@@QAGDHHI@Z",
+ "sym_key": "DriveLocomotionClass::SetWaypointTarget",
+ "size": 481,
+ "link_base": 0,
+ "bytes_hex": "83ec108b4424188b54241c538b5c241833c95556894364894b6c8b3500000000a1000000003bd65789742424751239442430750c3b0d040000000f84930100008b4b408d7bfc3bce8954242875288b534c33c9895424148b53480bca8b54241433ed0bd53bc875083b1504000000742c8b3500000000897340a100000000894348a104000000c647630089434c8b3500000000a1000000008974242433d233c90bc28b5424308944241c895424148b54242c33c00bc28b54241433ed0bce0bd58b6c241c3bc175293bd575258b0d040000008b5424348bc189442410c1f81f8ac13bd1884424240f84ea0000008b7424248b44242c8b4c2430c647630189434033ed894b48896b4c8b570c8d442428b9f80100005089542428e8000000008b4c2424518bc8e80000000084c074598b570c8a828100000084c0754c8d4424286a01508bcfe8000000008acb81e600ffffff8b4424308b54242c80e92c89433881e1ff0000005f0bce896b3c896b585e895330c743600000f03f5d894c24188ac15b83c410c210008b4f0c33d281e600ffffff8a91900000008bca0bce8ac1894c242484c07431a1000000008bd0894340a10000000033d181e2ff00000089434833ca894c24248b0d04000000894b4cc64763008a4424245f5e5d5b83c410c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 294,
+   "type": "REL32",
+   "sym": "?ProcessPickup@CrateClass@@QAEDH@Z",
+   "sym_key": "CrateClass::ProcessPickup"
+  },
+  {
+   "off": 325,
+   "type": "REL32",
+   "sym": "?MoveTo@JumpjetLocomotion@@QAEDPAXH@Z",
+   "sym_key": "JumpjetLocomotion::MoveTo"
+  },
+  {
+   "off": 423,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 456,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  }
+ ]
+}

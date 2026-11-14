@@ -1,0 +1,105 @@
+{
+ "symbol": "?sub_4B0DF0@ObjectClass@@QAEDPAI@Z",
+ "sym_key": "ObjectClass::sub_4B0DF0",
+ "size": 273,
+ "link_base": 0,
+ "bytes_hex": "a100000000568bf15733d28bc88b7e483bf875218b7e4c3bfa751a8b56408b3d000000003bd7750d8b56448b3d040000003bd7742a894648a1000000008946508b0d04000000894e54a10400000099894658c646650089565c8b0d000000008b7c240c8b073bc1751e8b57048b0d000000003bd175118b4f088b15040000003bca0f84830000008946488b5704895650c74654000000008b4708558b6e0c5799894658b9f8010000c646650189565ce800000000558bc8e80000000084c05d741e8b460c8a888100000084c975116a01578bcee8000000005fb0015ec204008b4e0c8a819000000084c0741e8b1500000000895648a1000000008946408b0d04000000894e44c64665005f32c05ec20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 176,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?ProcessPickup@CrateClass@@QAEDH@Z",
+   "sym_key": "CrateClass::ProcessPickup"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?MoveTo@JumpjetLocomotion@@QAEDPAXH@Z",
+   "sym_key": "JumpjetLocomotion::MoveTo"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?g_DDraw_ClipRect@@3IA",
+   "sym_key": "g_DDraw_ClipRect"
+  },
+  {
+   "off": 246,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0794@@3_JA",
+   "sym_key": "DataGlobal_8A0794"
+  }
+ ]
+}
