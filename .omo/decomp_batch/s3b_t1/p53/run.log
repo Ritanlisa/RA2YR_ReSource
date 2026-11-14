@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p53\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dd300 ScriptAction::Serialize -> ScriptAction
+[conv] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> ScriptAction
+[conv] 0x6dd8b0 TerrainClass::ProcessUpdate -> TerrainClass
+[conv] 0x6e0290 ObjectClass::sub_6E0290 -> ObjectClass
+[conv] 0x6e0aa0 TActionClass::executeEnterAction -> TActionClass
+[conv] 0x6e1440 ObjectClass::Render -> ObjectClass
+[conv] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> ObjectClass
+[conv] 0x6e21e0 TActionClass::executeFollowAction -> TActionClass
+[conv] 0x6e2520 TActionClass::executeLoadAction -> TActionClass
+[conv] 0x6e2c40 TActionClass::SpawnMeteorShower -> TActionClass
+[conv] 0x6e2e60 TActionClass::executeSelfDestructAction -> TActionClass
+[conv] 0x6e2f00 TActionClass::executeChronoshiftAction -> TActionClass
+[conv] 0x6e3380 sub_6E3380 -> _addr_6E
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x6e42d0 TActionClass::executeIronCurtainAction -> TActionClass
+[conv] 0x6e4f60 TagClass::Destructor -> TagClass
+[conv] 0x6e53a0 TeamClass::Update_0 -> TeamClass
+[conv] 0x6e57c0 TechnoClass::HasAnyMission -> TechnoClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] TerrainClass             rc=2
+[era] ObjectClass              rc=2
+[era] TActionClass             rc=2
+[era] _addr_6E                 rc=2
+[era] SuperWeaponClass         rc=2
+[era] TagClass                 rc=2
+[era] TeamClass                rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6dd300 ScriptAction::Serialize -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dd5b0 ScriptAction::ParseScriptActionParams -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6dd8b0 TerrainClass::ProcessUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e0290 ObjectClass::sub_6E0290 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e0aa0 TActionClass::executeEnterAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e1440 ObjectClass::Render -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e14a0 ObjectClass::ProcessDataObjectClass -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e21e0 TActionClass::executeFollowAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e2520 TActionClass::executeLoadAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e2c40 TActionClass::SpawnMeteorShower -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e2e60 TActionClass::executeSelfDestructAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e2f00 TActionClass::executeChronoshiftAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e3380 sub_6E3380 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e35f0 ObjectClass::sub_6E35F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e42d0 TActionClass::executeIronCurtainAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e4f60 TagClass::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e53a0 TeamClass::Update_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e57c0 TechnoClass::HasAnyMission -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p53\batch_report.json
