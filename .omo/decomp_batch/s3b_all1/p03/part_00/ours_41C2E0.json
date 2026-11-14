@@ -1,0 +1,39 @@
+{
+ "symbol": "?ToFacingMath@Vector@@QAEPAGPAG@Z",
+ "sym_key": "Vector::ToFacingMath",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec0c8b5424048b442404568bf18b4c240ca3000000005152e8000000008b4424148b4c241050a100000000518b50148b40105250ddd8e8000000008b4c24248b5424205152ddd8e80000000083c4206689068bc65e8be55dc20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?_ESI@@3IA",
+   "sym_key": "_ESI"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?_ESI@@3IA",
+   "sym_key": "_ESI"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

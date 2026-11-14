@@ -1,0 +1,8 @@
+{
+ "symbol": "?sub_426E80@UnitClass@@QAEHH@Z",
+ "sym_key": "UnitClass::sub_426E80",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8b81cc0000005356578b7c24103bf87d4633db33c0668b99920000006685db74368b5424108db1780b000033c980e200668b0e3bcf7f1633ca81e1ff00000033d133c9668b4e0203ca3bcf7f0d403bc37d0583c606ebd483c8ff5f5e5bc20400",
+ "relocs": []
+}

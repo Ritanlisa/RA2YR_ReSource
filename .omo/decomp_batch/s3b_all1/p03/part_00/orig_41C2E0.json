@@ -1,0 +1,11 @@
+{
+ "addr": "0x41C2E0",
+ "name": "Vector::ToFacingMath",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41C2E0",
+ "bytes_hex": "83ec08568bf183ec08dd4608dd06d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e83ce90a008b5614dd5c240c8b4424108b4c240c508b4610515250e811eb0a00dc2520287e0083c418dc0d18287e00e8cd9b3a008b4c24105e6689018bc183c408c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

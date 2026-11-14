@@ -1,0 +1,132 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p03\part_00
+=== convert (40 addrs) ===
+[conv] 0x41c2e0 Vector::ToFacingMath -> Vector
+[conv] 0x41c3f0 BulletClass::NormalizeZeroVector -> BulletClass
+[conv] 0x41c430 Function::Method_41C430 -> Function
+[conv] 0x41c490 AbstractClass::processCleanup -> AbstractClass
+[conv] 0x41c8b0 AircraftTypeClass::AircraftTypeClass_41C8B0 -> AircraftTypeClass
+[conv] 0x41cef0 KeywordClass::FindOrCreate -> KeywordClass
+[conv] 0x41d380 AirstrikeClass::AirstrikeClass_41D380 -> AirstrikeClass
+[conv] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> ObjectClass
+[conv] 0x41d860 AirstrikeClass::SpawnAircraft -> AirstrikeClass
+[conv] 0x41db40 WTFMode::ResetUnitFlags -> WTFMode
+[conv] 0x41e720 TriggerClass::EvaluateCondition -> TriggerClass
+[conv] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> AITriggerTypeClass
+[conv] 0x41f490 CCINIClass::ReadInfantryTypeList -> CCINIClass
+[conv] 0x41f580 AITriggerTypeClass::LoadFromINI -> AITriggerTypeClass
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x420f40 UpdateSpotlightsFoo -> _addr_42
+[conv] 0x421ea0 AnimClass::ctor -> AnimClass
+[conv] 0x422720 AnimClass::SimpleCtor -> AnimClass
+[conv] 0x4228e0 AnimClass::Destruct -> AnimClass
+[conv] 0x422ca0 AnimClass::Render -> AnimClass
+[conv] 0x423930 AnimClass::UpdateProjectileTrajectory -> AnimClass
+[conv] 0x423ac0 AnimClass::CreateUnit -> AnimClass
+[conv] 0x424b50 BuildingClass::AimTurret -> BuildingClass
+[conv] 0x424ce0 TechnoClass::ProductionCompletionCallback -> TechnoClass
+[conv] 0x425150 AnimClass::ClearTargetReferences -> AnimClass
+[conv] 0x4251f0 sub_4251F0 -> _addr_42
+[conv] 0x425410 AnimClass::ProcessPower -> AnimClass
+[conv] 0x425510 AnimClass::CheckEndOfSequence -> AnimClass
+[conv] 0x4255b0 AnimClass::ProcessCraterFormation -> AnimClass
+[conv] 0x425670 TechnoClass::ConstructionPositionTracker -> TechnoClass
+[conv] 0x425d10 Building::ComputePosition -> Building
+[conv] 0x4261d0 TechnoClass::FindBuildingClass -> TechnoClass
+[conv] 0x426590 AnimClass::MissionStubReturnZero3 -> AnimClass
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x4267f0 UnitClass::sub_4267F0 -> UnitClass
+[conv] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> ObjectClass
+[conv] 0x426a90 AnimFile::ddtor -> AnimFile
+[conv] 0x426e80 UnitClass::sub_426E80 -> UnitClass
+[conv] 0x426ed0 UnitClass::sub_426ED0 -> UnitClass
+[conv] 0x426fd0 UnitClass::sub_426FD0 -> UnitClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Vector                   rc=0
+[era] BulletClass              rc=2
+[era] Function                 rc=2
+[era] AbstractClass            rc=2
+[era] AircraftTypeClass        rc=2
+[era] KeywordClass             rc=0
+[era] AirstrikeClass           rc=2
+[era] ObjectClass              rc=2
+[era] WTFMode                  rc=0
+[era] TriggerClass             rc=2
+[era] AITriggerTypeClass       rc=2
+[era] CCINIClass               rc=2
+[era] _addr_42                 rc=2
+[era] AnimClass                rc=2
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] Building                 rc=2
+[era] Cell                     rc=2
+[era] UnitClass                rc=2
+[era] AnimFile                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x41c2e0   MISMATCH         Vector::ToFacingMath
+[diff] 0x41cef0   MISMATCH         KeywordClass::FindOrCreate
+[diff] 0x41d380   MISMATCH         AirstrikeClass::AirstrikeClass_41D380
+[diff] 0x41db40   MISMATCH         WTFMode::ResetUnitFlags
+[diff] 0x426e80   MISMATCH         UnitClass::sub_426E80
+[diff] 0x426a90   MISMATCH         AnimFile::ddtor
+[ledger] 0x41c2e0 Vector::ToFacingMath -> NG (attempt 3)
+[ledger] 0x41c3f0 BulletClass::NormalizeZeroVector -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41c430 Function::Method_41C430 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41c490 AbstractClass::processCleanup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41c8b0 AircraftTypeClass::AircraftTypeClass_41C8B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41cef0 KeywordClass::FindOrCreate -> NG (attempt 3)
+[ledger] 0x41d380 AirstrikeClass::AirstrikeClass_41D380 -> NG (attempt 5)
+[ledger] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41d860 AirstrikeClass::SpawnAircraft -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41db40 WTFMode::ResetUnitFlags -> NG (attempt 3)
+[ledger] 0x41e720 TriggerClass::EvaluateCondition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41f180 AITriggerTypeClass::ChronoSphereCharged -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41f490 CCINIClass::ReadInfantryTypeList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41f580 AITriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x420f40 UpdateSpotlightsFoo -> COMPILE_FAIL (attempt 7)
+[ledger] 0x421ea0 AnimClass::ctor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x422720 AnimClass::SimpleCtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4228e0 AnimClass::Destruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x422ca0 AnimClass::Render -> COMPILE_FAIL (attempt 3)
+[ledger] 0x423930 AnimClass::UpdateProjectileTrajectory -> COMPILE_FAIL (attempt 3)
+[ledger] 0x423ac0 AnimClass::CreateUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x424b50 BuildingClass::AimTurret -> COMPILE_FAIL (attempt 3)
+[ledger] 0x424ce0 TechnoClass::ProductionCompletionCallback -> COMPILE_FAIL (attempt 3)
+[ledger] 0x425150 AnimClass::ClearTargetReferences -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4251f0 sub_4251F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x425410 AnimClass::ProcessPower -> COMPILE_FAIL (attempt 4)
+[ledger] 0x425510 AnimClass::CheckEndOfSequence -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4255b0 AnimClass::ProcessCraterFormation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x425670 TechnoClass::ConstructionPositionTracker -> COMPILE_FAIL (attempt 3)
+[ledger] 0x425d10 Building::ComputePosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4261d0 TechnoClass::FindBuildingClass -> COMPILE_FAIL (attempt 6)
+[ledger] 0x426590 AnimClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4267f0 UnitClass::sub_4267F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> COMPILE_FAIL (attempt 3)
+[ledger] 0x426a90 AnimFile::ddtor -> NG (attempt 3)
+[ledger] 0x426e80 UnitClass::sub_426E80 -> NG (attempt 4)
+[ledger] 0x426ed0 UnitClass::sub_426ED0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x426fd0 UnitClass::sub_426FD0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 34
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "regalloc": 2,
+  "ret_norm": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 23,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p03\batch_report.json

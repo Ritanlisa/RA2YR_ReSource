@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CEF0",
+ "name": "KeywordClass::FindOrCreate",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CEF0",
+ "bytes_hex": "56578bf9576874748100e821be3a0083c40885c07468576894768100e80fbe3a0083c40885c07456a128b2a80033f685c07e23a11cb2a800578b0cb083c12451e8ebbd3a0083c40885c07426a128b2a800463bf07cdd68100e0000e8c7be3a0083c40485c07417578bc8e851f9ffff5f5ec38b151cb2a8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

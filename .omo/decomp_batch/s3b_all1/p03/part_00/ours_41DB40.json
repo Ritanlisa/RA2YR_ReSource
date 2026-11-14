@@ -1,0 +1,33 @@
+{
+ "symbol": "?ResetUnitFlags@WTFMode@@QAEDXZ",
+ "sym_key": "WTFMode::ResetUnitFlags",
+ "size": 311,
+ "link_base": 0,
+ "bytes_hex": "51a1000000005333db553bc38be90f841f0100008b4d5c8bc13bc389442408743c3998801e010074168b80003102003bc374263998801e010075ee894424088bc13bcb8944240874148998801e01008b80003102003bc375f089442408568b755c5733ff3bf374348b06536a0456ff90e80100008b0e5356ff91c80300008b166a015356ff92800400008bb6d80500004783ff647f0a3bf375ceeb048a4424108b7550885d3d3bf30f84800000008b0656ff502c83f80689442410756d39ae940200007565a10000000033d23bc376268b0d000000008bf88b013bc589442410740a39b0001e000075028bd083c1044f75e68a4424103bd38996940200007513391d00000000740b8b0e6a0256ff912401000039ae940200007513899e940200005f895d505e5d5b59c38a4424105f895d505e5d5b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC8@@3IA",
+   "sym_key": "DataGlobal_889FC8"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FBC@@3IA",
+   "sym_key": "DataGlobal_889FBC"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  }
+ ]
+}

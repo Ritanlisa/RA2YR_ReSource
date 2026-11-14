@@ -1,0 +1,75 @@
+{
+ "symbol": "?AirstrikeClass_41D380@AirstrikeClass@@QAEHH@Z",
+ "sym_key": "AirstrikeClass::AirstrikeClass_41D380",
+ "size": 258,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e800000000b80000000033db890689460489460889460ca1000000008b0d000000003bc8722b381d0000000075043bc375378b0d000000003bcb762d03c8a10000000053516800000000ff500884c074188b0d000000008bc141890d000000008b0d000000008934818b44240c885e3c89464c885e3d8b1050ff92840000008b4e4c8b801c060000894624518b11ff92840000008b4e4c8b8020060000894628518b11ff92840000008b4e4c8b802c060000894644518b11ff92840000008b4e4c8b8030060000894648518b11ff92840000008b4e4c8b8024060000894654518b11ff92840000008b8028060000895e5c894658895e508bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?vt_AirstrikeClass_4@@3PAXA",
+   "sym_key": "vt_AirstrikeClass_4"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC0@@3IA",
+   "sym_key": "DataGlobal_889FC0"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC8@@3IA",
+   "sym_key": "DataGlobal_889FC8"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC5@@3EA",
+   "sym_key": "DataGlobal_889FC5"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FCC@@3IA",
+   "sym_key": "DataGlobal_889FCC"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FB8@@3IA",
+   "sym_key": "DataGlobal_889FB8"
+  },
+  {
+   "off": 74,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FB8@@3IA",
+   "sym_key": "DataGlobal_889FB8"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC8@@3IA",
+   "sym_key": "DataGlobal_889FC8"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FC8@@3IA",
+   "sym_key": "DataGlobal_889FC8"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_889FBC@@3IA",
+   "sym_key": "DataGlobal_889FBC"
+  }
+ ]
+}
