@@ -1,0 +1,45 @@
+{
+ "symbol": "?InitMultiFieldArray_0@TeleportLocomotionClass@@QAGJPAH@Z",
+ "sym_key": "TeleportLocomotionClass::InitMultiFieldArray_0",
+ "size": 160,
+ "link_base": 0,
+ "bytes_hex": "8b44240855568b74240c5750568be8e8000000008bf885ff7d065f5e5dc2080085f67434c70600000000c7460400000000a1540a0000c746440000000089463cb800000000c7464800000000c706000000008946048946188b45006a008d4c24186a015155ff500c8a44241484c075088bc75f5e5dc208008b464883c64885c074068b1050ff520856680000000055c70600000000e8000000005f5e5dc20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?vt_LocomotionClass@@3PAXA",
+   "sym_key": "vt_LocomotionClass"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?vt_TeleportLocomotionClass_2@@3PAXA",
+   "sym_key": "vt_TeleportLocomotionClass_2"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?IID_ILocomotion@@3U_GUID_era@@A",
+   "sym_key": "IID_ILocomotion"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?OleLoadFromStream@@YGJPAX00@Z",
+   "sym_key": "OleLoadFromStream"
+  }
+ ]
+}

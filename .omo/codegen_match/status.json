@@ -167563,19 +167563,19 @@
   "this_as_id": false
  },
  "0x7162f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+23 lea ebp, [edi + 0x3e8]",
   "name": "TechnoTypeClass::SaveLoad_Prefix",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TechnoTypeClass::SaveLoad_Prefix",
   "rule_violations": 14,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x716dc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167599,7 +167599,7 @@
   "this_as_id": false
  },
  "0x7171a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -167706,15 +167706,15 @@
   "this_as_id": false
  },
  "0x7178c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "BuildingTypeClass::GetUpgradeOffset",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingTypeClass::GetUpgradeOffset",
   "rule_violations": 10,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7179a0": {
@@ -167928,7 +167928,7 @@
   "status": "NG"
  },
  "0x717c70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -167940,7 +167940,7 @@
   "this_as_id": false
  },
  "0x717cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168130,11 +168130,11 @@
   "this_as_id": false
  },
  "0x718000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TeleportLocomotionClass::TeleportLocomotionClass",
+  "name": "TeleportLocomotionClass::TeleportLocomotionClass_718000",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TeleportLocomotionClass::TeleportLocomotionClass",
   "rule_violations": 0,
@@ -168142,15 +168142,15 @@
   "this_as_id": false
  },
  "0x718080": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 cmp byte ptr [eax + 0x30], 1",
   "name": "JumpjetLocomotionClass::ShortFunc_718080",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "JumpjetLocomotionClass::ShortFunc_718080",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x718090": {
@@ -168166,7 +168166,7 @@
   "this_as_id": false
  },
  "0x7180a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168202,19 +168202,19 @@
   "this_as_id": false
  },
  "0x718260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::FindPlacementPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ObjectClass::FindPlacementPosition",
-  "rule_violations": 14,
+  "rule_violations": 12,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7187a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -168226,7 +168226,7 @@
   "this_as_id": false
  },
  "0x718b70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -168250,15 +168250,15 @@
   "this_as_id": false
  },
  "0x7192f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x20",
   "name": "TeleportLocomotionClass::Deploy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "UnitClass::Deploy",
   "rule_violations": 32,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x719bf0": {
@@ -168286,19 +168286,19 @@
   "this_as_id": false
  },
  "0x719ca0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "TeleportLocomotionClass::InitMultiFieldArray_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotionClass::InitMultiFieldArray_0",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x719d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168322,7 +168322,7 @@
   "this_as_id": false
  },
  "0x719e30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168365,7 +168365,7 @@
   "this_as_id": false
  },
  "0x719f80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168389,7 +168389,7 @@
   "this_as_id": false
  },
  "0x71a0e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168401,7 +168401,7 @@
   "this_as_id": false
  },
  "0x71a0f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+5 call 0x55a970",
@@ -168437,7 +168437,7 @@
   "this_as_id": false
  },
  "0x71a130": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

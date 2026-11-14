@@ -1,0 +1,687 @@
+{
+ "symbol": "?SaveLoad_Prefix@TechnoTypeClass@@QAGHH@Z",
+ "sym_key": "TechnoTypeClass::SaveLoad_Prefix",
+ "size": 2915,
+ "link_base": 0,
+ "bytes_hex": "81ec10020000535556578bbc24240200008b87e80300008d9fe803000053ff500c8b8f140300008daf1403000055ff510c8b97c40500008d87c405000050ff520c8b8f140400008d871404000050ff510c8b97300400008d873004000050ff520c8b8f4c0400008d874c04000050ff510c8b97680400008d876804000050ff520c8b8f840400008d878404000050ff510c8b97a00400008d87a004000050ff520c8b8fbc0400008d87bc04000050ff510c8b97d80400008d87d804000050ff520c8b8ff40400008d87f404000050ff510c8b97100500008d871005000050ff520c8b8f2c0700008d872c07000050ff510c8b97480700008d874807000050ff520c8b8f380600008d873806000050ff510c8b97540600008d875406000050ff520c8b8f300300008d873003000050ff510c8bb424280200005657e80000000085c00f8c0f0a00008d9704040000526800000000e8000000008d8708040000506800000000e8000000008d8f0c040000516800000000e8000000008d9764070000526800000000e8000000008d8774070000506800000000e8000000008d8f580d0000516800000000e8000000008d97400d0000526800000000e8000000008d87180d0000506800000000e8000000008d8f24060000516800000000e8000000008d9728060000526800000000e8000000008d87b8060000506800000000e8000000008d8fbc060000516800000000e80000000081ff18fcffff74078bcbe8000000008b166a008d4424146a045056ff520c8b442410c74424180000000085c07e2c8b0e6a008d5424186a045256ff510c8d4424148bcb50e8000000008b4424188b4c2410403bc1894424187cd481ffecfcffff74078bcde8000000008b0e6a008d5424146a045256ff510c33db8b44241085c07e228b066a008d4c24186a045156ff500c8d5424148bcd52e800000000433b5c24107cde81ff3cfaffff740b8d8fc4050000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8fc4050000e800000000453b6c24107cda81ffecfbffff740b8d8f14040000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e268b0e6a008d5424186a045256ff510c8d4424148d8f1404000050e800000000453b6c24107cda81ffd0fbffff740b8d8f30040000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e268b066a008d4c24186a045156ff500c8d5424148d8f3004000052e800000000453b6c24107cda81ffb4fbffff740b8d8f4c040000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8f4c040000e800000000453b6c24107cda81ff98fbffff740b8d8f68040000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e268b0e6a008d5424186a045256ff510c8d4424148d8f6804000050e800000000453b6c24107cda81ff7cfbffff740b8d8f84040000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e268b066a008d4c24186a045156ff500c8d5424148d8f8404000052e800000000453b6c24107cda81ff60fbffff740b8d8fa0040000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8fa0040000e800000000453b6c24107cda81ff44fbffff740b8d8fbc040000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e268b0e6a008d5424186a045256ff510c8d4424148d8fbc04000050e800000000453b6c24107cda81ff28fbffff740b8d8fd8040000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e268b066a008d4c24186a045156ff500c8d5424148d8fd804000052e800000000453b6c24107cda81ff0cfbffff740b8d8ff4040000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8ff4040000e800000000453b6c24107cda81fff0faffff740b8d8f10050000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e268b0e6a008d5424186a045256ff510c8d4424148d8f1005000050e800000000453b6c24107cda81ffd4f8ffff740b8d8f2c070000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e268b066a008d4c24186a045156ff500c8d5424148d8f2c07000052e800000000453b6c24107cda81ffb8f8ffff740b8d8f48070000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8f48070000e800000000453b6c24107cda81ffd0fcffff740b8d8f30030000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e268b0e6a008d5424186a045256ff510c8d4424148d8f3003000050e800000000453b6c24107cda81ffc8f9ffff740b8d8f38060000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e268b066a008d4c24186a045156ff500c8d5424148d8f3806000052e800000000453b6c24107cda81ffacf9ffff740b8d8f54060000e8000000008b066a008d4c24146a045156ff500c33ed8b44241085c07e268b166a008d4424186a045056ff520c8d4c2414518d8f54060000e800000000453b6c24107cda81ff88f8ffff740b8d8f78070000e8000000008b166a008d4424146a045056ff520c33ed8b44241085c07e288d9f780700008b0e6a008d5424186a045256ff510c8d4424148bcb50e800000000453b6c24107cde81ff6cf8ffff740b8d8f94070000e8000000008b0e6a008d5424146a045256ff510c33ed8b44241085c07e288d9f940700008b066a008d4c24186a045156ff500c8d5424148bcb52e800000000453b6c24107cde8b87f803000033f685c07e1f8b87ec0300008d0cb0516800000000e8000000008b87f8030000463bf07ce18b873c07000033f685c07e1f8b97300700008d04b2506800000000e8000000008b873c070000463bf07ce18b875807000033f685c07e1f8b8f4c0700008d14b1526800000000e8000000008b8758070000463bf07ce18b872403000033f685c07e1f8b87180300008d0cb0516800000000e8000000008b8724030000463bf07ce18b87d405000033f685c07e1f8b97c80500008d04b2506800000000e8000000008b87d4050000463bf07ce18bb798080000bb12000000566800000000e80000000083c61c4b75ef8bb7940a0000bd12000000566800000000e80000000083c61c4d75ef8b878807000033db33f63bc37e1f8b8f7c0700008d14b1526800000000e8000000008b8788070000463bf07ce18b87a407000033f63bc37e1f8b87980700008d0cb0516800000000e8000000008b87a4070000463bf07ce18b97f8010000680000000052538d8424280100005350e80000000083c41432d28d8c241c010000e8000000008b97f80100008d4c241c6800010000516800000000680000000052b9000000008987a4000000e8000000008d44241c680000000050e80000000083c40885c075228b57248d4c241c6800010000516800000000680000000052b900000000e8000000008d44241c680000000050538d8c24280100005351e80000000083c41432d28d8c241c010000899ff0060000e8000000003bc38987f0060000751232d2b900000000e8000000008987f0060000a1000000008b8ff80100008d54241c68000100005268000000005051b900000000e8000000008d54241c680000000052538d8424280100005350e80000000083c41432d28d8c241c010000899f10070000e8000000008b97f80100008db7e80d00008987100700008b0d000000006a205668000000005152b900000000e800000000391e740d8bcee8000000008987f00d000033c05f5e5d5b81c410020000c20800",
+ "relocs": [
+  {
+   "off": 315,
+   "type": "REL32",
+   "sym": "?ObjectTypeClass__LoadCleanup@@YGHPAXH@Z",
+   "sym_key": "ObjectTypeClass__LoadCleanup"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 352,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 357,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 369,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 386,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 403,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 408,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 420,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 425,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 437,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 442,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 454,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 459,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 471,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 476,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 488,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 493,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 505,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 510,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 522,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 527,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?BuildingTypeConstructor@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::BuildingTypeConstructor"
+  },
+  {
+   "off": 600,
+   "type": "REL32",
+   "sym": "?Add_Alt3@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt3"
+  },
+  {
+   "off": 632,
+   "type": "REL32",
+   "sym": "?VoxelAnimConstructor@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::VoxelAnimConstructor"
+  },
+  {
+   "off": 684,
+   "type": "REL32",
+   "sym": "?Add2@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add2"
+  },
+  {
+   "off": 710,
+   "type": "REL32",
+   "sym": "?Constructor@AnimTypeList@@QAEPAIXZ",
+   "sym_key": "AnimTypeList::Constructor"
+  },
+  {
+   "off": 766,
+   "type": "REL32",
+   "sym": "?Add_Alt4@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt4"
+  },
+  {
+   "off": 792,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 848,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 874,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 930,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 956,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1012,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1038,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1094,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1120,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1176,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1202,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1258,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1284,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1340,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1366,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1422,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1448,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1504,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1530,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1586,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1612,
+   "type": "REL32",
+   "sym": "?Constructor@AnimTypeList@@QAEPAIXZ",
+   "sym_key": "AnimTypeList::Constructor"
+  },
+  {
+   "off": 1668,
+   "type": "REL32",
+   "sym": "?Add_Alt4@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt4"
+  },
+  {
+   "off": 1694,
+   "type": "REL32",
+   "sym": "?Constructor@AnimTypeList@@QAEPAIXZ",
+   "sym_key": "AnimTypeList::Constructor"
+  },
+  {
+   "off": 1750,
+   "type": "REL32",
+   "sym": "?Add_Alt4@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt4"
+  },
+  {
+   "off": 1776,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1832,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1858,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1914,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 1940,
+   "type": "REL32",
+   "sym": "?Construct@TypeList@@QAEPAIXZ",
+   "sym_key": "TypeList::Construct"
+  },
+  {
+   "off": 1996,
+   "type": "REL32",
+   "sym": "?Add_Alt@DynamicVector@@QAEDPAX@Z",
+   "sym_key": "DynamicVector::Add_Alt"
+  },
+  {
+   "off": 2022,
+   "type": "REL32",
+   "sym": "?Constructor@TechnoTypeClass@@QAEPAIXZ",
+   "sym_key": "TechnoTypeClass::Constructor"
+  },
+  {
+   "off": 2080,
+   "type": "REL32",
+   "sym": "?PushBack@TypeList@@QAEDPAX@Z",
+   "sym_key": "TypeList::PushBack"
+  },
+  {
+   "off": 2106,
+   "type": "REL32",
+   "sym": "?Constructor@TechnoTypeClass@@QAEPAIXZ",
+   "sym_key": "TechnoTypeClass::Constructor"
+  },
+  {
+   "off": 2164,
+   "type": "REL32",
+   "sym": "?PushBack@TypeList@@QAEDPAX@Z",
+   "sym_key": "TypeList::PushBack"
+  },
+  {
+   "off": 2198,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2203,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2241,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2246,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2284,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2289,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2327,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2332,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2370,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2375,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2403,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2408,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2431,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2436,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2471,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2476,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2514,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 2519,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 2541,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 2557,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 2574,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 2595,
+   "type": "DIR32",
+   "sym": "?aXxicon@@3PADA",
+   "sym_key": "aXxicon"
+  },
+  {
+   "off": 2600,
+   "type": "DIR32",
+   "sym": "?aCameo@@3PADA",
+   "sym_key": "aCameo"
+  },
+  {
+   "off": 2606,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 2617,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 2626,
+   "type": "DIR32",
+   "sym": "?aXxicon@@3PADA",
+   "sym_key": "aXxicon"
+  },
+  {
+   "off": 2632,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 2657,
+   "type": "DIR32",
+   "sym": "?aXxicon@@3PADA",
+   "sym_key": "aXxicon"
+  },
+  {
+   "off": 2662,
+   "type": "DIR32",
+   "sym": "?aCameo@@3PADA",
+   "sym_key": "aCameo"
+  },
+  {
+   "off": 2668,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 2673,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 2682,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 2698,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 2721,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 2738,
+   "type": "DIR32",
+   "sym": "?aXxiconShp@@3PADA",
+   "sym_key": "aXxiconShp"
+  },
+  {
+   "off": 2743,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 2754,
+   "type": "DIR32",
+   "sym": "?aAltcameo@@3HA",
+   "sym_key": "aAltcameo"
+  },
+  {
+   "off": 2775,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 2782,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 2787,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 2796,
+   "type": "DIR32",
+   "sym": "?Ext@@YAHPBX0@Z",
+   "sym_key": "Ext"
+  },
+  {
+   "off": 2812,
+   "type": "REL32",
+   "sym": "?_makepath@@YAHPAXHH0HZZ",
+   "sym_key": "_makepath"
+  },
+  {
+   "off": 2835,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPAXD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 2859,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Palette@@3_KA",
+   "sym_key": "g_INI_Key_Palette"
+  },
+  {
+   "off": 2867,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 2874,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 2879,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 2890,
+   "type": "REL32",
+   "sym": "?MapHandler@FileExtension@@QAEHXZ",
+   "sym_key": "FileExtension::MapHandler"
+  }
+ ]
+}

@@ -1,0 +1,339 @@
+{
+ "symbol": "?Deploy@TeleportLocomotionClass@@QAGDPAH@Z",
+ "sym_key": "TeleportLocomotionClass::Deploy",
+ "size": 2137,
+ "link_base": 0,
+ "bytes_hex": "83ec1c5355568b74242c8974240c578b46088a887102000084c974178b4e3433ed3bcd751039a8800200000f84a4060000eb0233ed8b4e343bcd75198b90800200003bd5740f8956345f5e5d32c05b83c41cc208008a907c02000084d20f84730400003bcd7531c6807002000001a1540a00008946388b4c2430894e3cc746403c0000008b76345f8b064089065e5d32c05b83c41cc208000f8f380400008b1656ff521084c00f84a10700008b4e088b56248d5e248b819c0000003bc2751a8b91a00000008b46283bd0750d8b81a40000008b562c3bc274248b13a1000000003bd075378b46288b15000000003bc2752a8b562ca1000000003bd0751e8b016a015551ff90800400008b0e56ff51485f5e5d32c05b83c41cc20800e8000000008b15840900008d7aff3bfd7c1da1540900008b0cb88b46088b910c0100003bd07505e8000000004f79e368c8010000e80000000083c4043bc574308b4e08555568000600008b919c0000006a01895424408b15000000008d4c244055518b8a3c030000518bc8e8000000008b46088d4c242451508b10ff52488b088b138b7e2c2bca8b50048b40082bc7894c2418894c24308b4e28894424142bd1db442414db4424188954241c83ec08db442424d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8000000008b5424308b44242c5250ddd8e8000000008b0d540a0000668944242c8b44242c8d7e388944242083c410890f8b6c2430896e3cc74640000000008b0d000000008a91f80b000084d2741b99f7b9f40b00008b15540a00008917896e3c8946408b0d000000008b078b564083f8ff741c8b2d540a00002be83bea7c0433d2eb082b05540a000003d08b6c24303b91fc0b00007f0fa1540a0000894424308d442430eb028bc78b08890f8b500489563c8b40088b4c2410894640a1000000003b88000c00007d148b0d540a00008b80fc0b0000890f896e3c8946408b5608c68271020000018b4608508b08ff512c83f801752f8b56088b82c40600008a880e0e000084c9741c8b0d540a0000890f8b5608896e3cc7464000000000c68271020000008b46088b889406000085c9740b8b4c24305753e8000000008b46086a00508b08ff91240100008b7e08578b17ff92840000008b807805000083f8ff7510a1000000008b801c02000083f8ff74178b8f9c0000006a00894c24348d5424348bc8e8000000008b460853508b10ff92b40100008b038b4c24109981e2ff00000003c2c1f80833c125ff00000033c8894c24108b46289981e2ff00000003c2c1f80833c125ff00000033c88d442420894c2410894c242050b900000000e8000000008be88b460853508b08ff91b40100008b95dc0100008b4608c1ea0880e2016a0088908c0000008b4608508b08ff91cc0100008b46086a01508b10ff92240100008b7e08578b07ff90840000008b807405000083f8ff75118b0d000000008b811802000083f8ff74178b979c0000006a00895424348d5424348bc8e8000000008b46086a02508b08ff918c0100008b1656ff52488b46088bcd50e8000000008b46086a016a00508b08ff918004000068c8010000e80000000083c40485c074338b56086a006a0068000600008b8a9c0000006a01894c24408b0d000000008d5424406a00528b913c030000528bc8e8000000008b46085f5e5dc780800200000000000032c05b83c41cc208008d51ff83fa030f87a3010000ff24950000000068c8010000e80000000083c4043bc574308b4e08555568000600008b919c0000006a01895424408b15000000008d4c244055518b8a3c030000518bc8e8000000008b460855508b10ff92240100008b7e08578b07ff90840000008b807805000083f8ff75118b0d000000008b811c02000083f8ff74168b979c00000055895424348d5424348bc8e8000000008b460855c68071020000018b4e08c6817c020000008b5608c68270020000008b4608c6808c000000008b46088b88900200008b908c0200008b80880200005152508d4efce8000000008b56348b0a4184c0890a0f847f0200008b56345f415e5d890a32c05b83c41cc208008b88900200008b908c0200008b8088020000555152508d4efce8000000008b46345f8b084189088b15000000008b4e085e8b82ec0b00005d89818402000032c05b83c41cc208008b88900200008b908c0200008b80880200006a015152508d4efce8000000008b46088d562452508b08ff91b40100008b460855508b08ff91cc0100008b46086a01508b10ff92240100008b76345f8b064089065e5d32c05b83c41cc2080083f905746183f906744683f9070f85b5010000c68071020000008b4e0855e8000000008b46086a0155508b08ff91800400008b5608c64630005f89aa800200008b46345e89285d32c05b83c41cc208008b4efc8d46fc50ff51285f5e5d32c05b83c41cc208008b108d5e245350ff92b40100008b460855508b08ff91cc0100008b46086a01508b10ff92240100008b7e08578b07ff90840000008b807405000083f8ff75118b0d000000008b811802000083f8ff74168b979c00000055895424348d5424348bc8e8000000008b46088d54241052508b08ff91b80100006a0150b900000000e80000000084c0750a8b4608c680d5030000008b4e0839a98002000075178b562c8b46288b0b52508d56fc5152e80000000083c4108b46088a889000000084c90f849d0000008b086a0250ff918c0100008b1656ff52488b46085589a8280400008b4e0889a92c0400008b4e08e8000000008b46086a0155508b10ff92800400008b46088b0d540a000068c80100008b8084020000894e388b54243489464089563ce80000000083c4043bc574308b4e08555568000600008b919c0000006a01895424408b15000000008d4c244055518b8a3c030000518bc8e8000000008b7634ff065f5e5d32c05b83c41cc20800",
+ "relocs": [
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EBF8@@3IA",
+   "sym_key": "DataGlobal_B0EBF8"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EBFC@@3IA",
+   "sym_key": "DataGlobal_B0EBFC"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0EC00@@3IA",
+   "sym_key": "DataGlobal_B0EC00"
+  },
+  {
+   "off": 284,
+   "type": "REL32",
+   "sym": "?AbstractClass__ClearTargetToMeClearManagerTarget@@YIXH@Z",
+   "sym_key": "AbstractClass__ClearTargetToMeClearManagerTarget"
+  },
+  {
+   "off": 290,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?LoseTarget@BulletClass@@QAEFXZ",
+   "sym_key": "BulletClass::LoseTarget"
+  },
+  {
+   "off": 336,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 488,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 505,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 511,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 575,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 589,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 605,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 621,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 640,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 677,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 691,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 754,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 800,
+   "type": "REL32",
+   "sym": "?Deploy@BuildingClass@@QAEHHH@Z",
+   "sym_key": "BuildingClass::Deploy"
+  },
+  {
+   "off": 842,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 876,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 962,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 967,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1060,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1094,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 1125,
+   "type": "REL32",
+   "sym": "?ProcessPickup@CrateClass@@QAEDPAX@Z",
+   "sym_key": "CrateClass::ProcessPickup"
+  },
+  {
+   "off": 1151,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1188,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1209,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 1253,
+   "type": "DIR32",
+   "sym": "$L2816",
+   "sym_key": "$L2816"
+  },
+  {
+   "off": 1263,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1298,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1318,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  },
+  {
+   "off": 1360,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1393,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 1466,
+   "type": "REL32",
+   "sym": "?FindPlacementPosition@ObjectClass@@QAEDHHHH@Z",
+   "sym_key": "ObjectClass::FindPlacementPosition"
+  },
+  {
+   "off": 1530,
+   "type": "REL32",
+   "sym": "?FindPlacementPosition@ObjectClass@@QAEDHHHH@Z",
+   "sym_key": "ObjectClass::FindPlacementPosition"
+  },
+  {
+   "off": 1545,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1602,
+   "type": "REL32",
+   "sym": "?FindPlacementPosition@ObjectClass@@QAEDHHHH@Z",
+   "sym_key": "ObjectClass::FindPlacementPosition"
+  },
+  {
+   "off": 1700,
+   "type": "REL32",
+   "sym": "?SetFocus@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::SetFocus"
+  },
+  {
+   "off": 1836,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 1869,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YIHHPAXH@Z",
+   "sym_key": "StartAudioControllerAt"
+  },
+  {
+   "off": 1894,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1899,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 1944,
+   "type": "REL32",
+   "sym": "?ProcessUnitDeploymentAtCell@@YADPAXHHH@Z",
+   "sym_key": "ProcessUnitDeploymentAtCell"
+  },
+  {
+   "off": 2008,
+   "type": "REL32",
+   "sym": "?SetFocus@TechnoClass@@QAEHH@Z",
+   "sym_key": "TechnoClass::SetFocus"
+  },
+  {
+   "off": 2032,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 2061,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 2096,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 2116,
+   "type": "REL32",
+   "sym": "?ctor@AnimClass@@QAEPAPAXPAX00H00D@Z",
+   "sym_key": "AnimClass::ctor"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetUpgradeOffset@BuildingTypeClass@@QAEPAIPAHH@Z",
+ "sym_key": "BuildingTypeClass::GetUpgradeOffset",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec14568b7508578bf98a86bc07000084c00f84a40000008b86b00700008b8eb40700008b55088945f8538d45f8894dfc52508d4dece8000000008b96b80700008b088b40048d1492d1e28955ecdb4424188b55ec2bca2bc28bd9894508d9c0d8c9dcc0dd1c24ddd88b45fc8b4df85051e800000000ddd83edc0dc04f7f008b550c52e8000000008bc88b450833c883c40c81e1ff00000033c18b8eb807000085c97c02f7d88b5508891f8947088957048bc75b5f5e8be55dc208008b86b007000089078b8eb4070000894f048b96b80700008957088bc75f5e8be55dc20800",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?ToScreen@World@@QAEPAIPAX0@Z",
+   "sym_key": "World::ToScreen"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JH@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

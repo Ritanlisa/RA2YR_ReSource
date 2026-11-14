@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p61\part_00
+=== convert (20 addrs) ===
+[conv] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> TechnoTypeClass
+[conv] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> TechnoTypeClass
+[conv] 0x7171a0 BuildingTypeClass::ProcessPower -> BuildingTypeClass
+[conv] 0x7178c0 BuildingTypeClass::GetUpgradeOffset -> BuildingTypeClass
+[conv] 0x717c70 TypeList::ParticleConstructor -> TypeList
+[conv] 0x717cd0 TypeList::PushBack -> TypeList
+[conv] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> TeleportLocomotionClass
+[conv] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> JumpjetLocomotionClass
+[conv] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> JumpjetLocomotionClass
+[conv] 0x718260 ObjectClass::FindPlacementPosition -> ObjectClass
+[conv] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> TechnoClass
+[conv] 0x718b70 Factory::CalculateExitCell -> Factory
+[conv] 0x7192f0 TeleportLocomotionClass::Deploy -> TeleportLocomotionClass
+[conv] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> TeleportLocomotionClass
+[conv] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> TeleportLocomotionClass
+[conv] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> TeleportLocomotionClass
+[conv] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> JumpjetLocomotionClass
+[conv] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> TeleportLocomotionClass
+[conv] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> TeleportLocomotionClass
+[conv] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> TeleportLocomotionClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoTypeClass          rc=2
+[era] BuildingTypeClass        rc=2
+[era] TypeList                 rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Factory                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7162f0   MISMATCH         TechnoTypeClass::SaveLoad_Prefix
+[diff] 0x7178c0   MISMATCH         BuildingTypeClass::GetUpgradeOffset
+[diff] 0x7192f0   MISMATCH         TeleportLocomotionClass::Deploy
+[diff] 0x719ca0   MISMATCH         TeleportLocomotionClass::InitMultiFieldArray_0
+[diff] 0x718080   MISMATCH         JumpjetLocomotionClass::ShortFunc_718080
+[ledger] 0x7162f0 TechnoTypeClass::SaveLoad_Prefix -> NG (attempt 5)
+[ledger] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7171a0 BuildingTypeClass::ProcessPower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7178c0 BuildingTypeClass::GetUpgradeOffset -> NG (attempt 3)
+[ledger] 0x717c70 TypeList::ParticleConstructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x717cd0 TypeList::PushBack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x718080 JumpjetLocomotionClass::ShortFunc_718080 -> NG (attempt 4)
+[ledger] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> COMPILE_FAIL (attempt 2)
+[ledger] 0x718260 ObjectClass::FindPlacementPosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x718b70 Factory::CalculateExitCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7192f0 TeleportLocomotionClass::Deploy -> NG (attempt 2)
+[ledger] 0x719ca0 TeleportLocomotionClass::InitMultiFieldArray_0 -> NG (attempt 6)
+[ledger] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> COMPILE_FAIL (attempt 2)
+[ledger] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 15
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "width_mismatch": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p61\batch_report.json
