@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x58c800",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58d1c0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58d410",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58d620",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58e5d0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58e740",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58e9b0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58ef10",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58f0c0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x58f2c0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x5905d0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x590970",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x590fd0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x5910f0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x591740",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x591d80",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x592440",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x592af0",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x593030",
+  "family": "s3b_final"
+ },
+ {
+  "addr": "0x593550",
+  "family": "s3b_final"
+ }
+]
