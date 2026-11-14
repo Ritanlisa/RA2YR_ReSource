@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x447b20 BuildingClass::CalculateTurretAngle -> BuildingClass
+[conv] 0x447f10 BuildingClass::GetFireError -> BuildingClass
+[conv] 0x448260 BuildingClass::drawFrame -> BuildingClass
+[conv] 0x449540 AnimClass::resetAnimation -> AnimClass
+[conv] 0x4496b0 BuildingClass::CheckState1 -> BuildingClass
+[conv] 0x449a50 BuildingClass::setLoopCount -> BuildingClass
+[conv] 0x449c30 BuildingClass::finalizeAnimation -> BuildingClass
+[conv] 0x44abd0 BuildingClass::FireLaser -> BuildingClass
+[conv] 0x44acf0 BuildingClass::ProcessActiveUpdate -> BuildingClass
+[conv] 0x44b780 BuildingClass::ProcessRepair -> BuildingClass
+[conv] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> BuildingClass
+[conv] 0x44d5d0 BuildingClass::CaptureBuilding -> BuildingClass
+[conv] 0x44d700 BuildingClass::GetAmmoCountScaled -> BuildingClass
+[conv] 0x44d760 BuildingClass::PushScriptAction -> BuildingClass
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x44d880 BuildingClass::ClearFactoryBib -> BuildingClass
+[conv] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> BuildingClass
+[conv] 0x44e7b0 BuildingClass::GetPowerOutput -> BuildingClass
+[conv] 0x44e880 BuildingClass::GetPowerDrain -> BuildingClass
+[conv] 0x44e8f0 BuildingClass::OnObjectExpired -> BuildingClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] AnimClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x447b20 BuildingClass::CalculateTurretAngle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x447f10 BuildingClass::GetFireError -> COMPILE_FAIL (attempt 4)
+[ledger] 0x448260 BuildingClass::drawFrame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x449540 AnimClass::resetAnimation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4496b0 BuildingClass::CheckState1 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x449a50 BuildingClass::setLoopCount -> COMPILE_FAIL (attempt 4)
+[ledger] 0x449c30 BuildingClass::finalizeAnimation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x44abd0 BuildingClass::FireLaser -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44acf0 BuildingClass::ProcessActiveUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x44b780 BuildingClass::ProcessRepair -> COMPILE_FAIL (attempt 7)
+[ledger] 0x44c980 BuildingClass::ProcessSuperWeaponEffects -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44d5d0 BuildingClass::CaptureBuilding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44d700 BuildingClass::GetAmmoCountScaled -> COMPILE_FAIL (attempt 5)
+[ledger] 0x44d760 BuildingClass::PushScriptAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> COMPILE_FAIL (attempt 17)
+[ledger] 0x44d880 BuildingClass::ClearFactoryBib -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44e440 BuildingClass::ProcessPowerPlantEffect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x44e7b0 BuildingClass::GetPowerOutput -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44e880 BuildingClass::GetPowerDrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44e8f0 BuildingClass::OnObjectExpired -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p12\batch_report.json
