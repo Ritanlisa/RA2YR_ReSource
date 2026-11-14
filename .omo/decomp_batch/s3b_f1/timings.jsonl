@@ -5,3 +5,4 @@
 {"part": 4, "n": 20, "seconds": 97.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 5, "n": 20, "seconds": 57.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 6, "n": 20, "seconds": 66.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 7, "n": 20, "seconds": 82.7, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MATCH": 1}}
