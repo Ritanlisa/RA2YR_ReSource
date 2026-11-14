@@ -71,3 +71,4 @@
 {"part": 70, "n": 20, "seconds": 43.9, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 71, "n": 20, "seconds": 49.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 72, "n": 20, "seconds": 62.1, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MATCH": 1}}
+{"part": 73, "n": 20, "seconds": 44.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
