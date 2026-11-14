@@ -29,3 +29,4 @@
 {"part": 28, "n": 20, "seconds": 59.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 29, "n": 20, "seconds": 85.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 30, "n": 20, "seconds": 42.3, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 31, "n": 20, "seconds": 71.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

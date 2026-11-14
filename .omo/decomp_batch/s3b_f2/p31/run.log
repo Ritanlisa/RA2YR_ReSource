@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c3e30 CreditsPower::Display -> CreditsPower
+[conv] 0x4c4f90 TaskForceClass::Check -> TaskForceClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x4c6210 GameResult::CalcScore -> GameResult
+[conv] 0x4c65e0 EventClass::Add -> EventClass
+[conv] 0x4c66c0 EventClass::AddEvent -> EventClass
+[conv] 0x4c6720 EventClass::Add2 -> EventClass
+[conv] 0x4c6780 ScenarioClass::SetEvent -> ScenarioClass
+[conv] 0x4c6970 EventClass::AddEventEx -> EventClass
+[conv] 0x4c6b60 SidebarClass::SetFlashEntry -> SidebarClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+[conv] 0x4c85e0 ExceptionHandler::GenerateReport -> ExceptionHandler
+[conv] 0x4c91c0 FrameSnapshot::Init -> FrameSnapshot
+[conv] 0x4c95d0 ObjectClass::sub_4C95D0 -> ObjectClass
+[conv] 0x4c98b0 TeamTypeClass::Construct -> TeamTypeClass
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+[conv] 0x4c9c70 FactoryClass::DemandProduction -> FactoryClass
+[conv] 0x4c9ff0 BuildingClass::AbandonProduction -> BuildingClass
+[conv] 0x4ca130 ObjectClass::IsCliffWall -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CreditsPower             rc=2
+[era] TaskForceClass           rc=2
+[era] GameResult               rc=2
+[era] EventClass               rc=2
+[era] ScenarioClass            rc=2
+[era] SidebarClass             rc=2
+[era] ExceptionHandler         rc=2
+[era] FrameSnapshot            rc=2
+[era] TeamTypeClass            rc=2
+[era] FactoryClass             rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4c3e30 CreditsPower::Display -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c4f90 TaskForceClass::Check -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4c6210 GameResult::CalcScore -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c65e0 EventClass::Add -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c66c0 EventClass::AddEvent -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c6720 EventClass::Add2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c6780 ScenarioClass::SetEvent -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c6970 EventClass::AddEventEx -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c6b60 SidebarClass::SetFlashEntry -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4c85e0 ExceptionHandler::GenerateReport -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c91c0 FrameSnapshot::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c95d0 ObjectClass::sub_4C95D0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c98b0 TeamTypeClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4c9c70 FactoryClass::DemandProduction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c9ff0 BuildingClass::AbandonProduction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ca130 ObjectClass::IsCliffWall -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p31\batch_report.json
