@@ -1,0 +1,81 @@
+{
+ "symbol": "?SmallFunc_721D10@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::SmallFunc_721D10",
+ "size": 177,
+ "link_base": 0,
+ "bytes_hex": "83ec1833c0a0000000005355578bf9508b0fe8000000008be833db85ed7f095f5db0015b83c418c35633c9538a0d00000000518b0fe8000000008bf08d5424106a1833c0a00000000052680000000056508bcfe80000000085c0764656e8000000008b0db80c000083c4043bc17c236828010000e80000000083c40485c0740e8d4c2410518bc8e800000000eb0d33c0eb098b15d80700008b04828b085750ff5164433bdd7c825e5f5db0015b83c418c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Tiberiums@@3EA",
+   "sym_key": "g_INI_Key_Tiberiums"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetKeyCount@INIClass@@QAEHPAX@Z",
+   "sym_key": "INIClass::GetKeyCount"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Tiberiums@@3EA",
+   "sym_key": "g_INI_Key_Tiberiums"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetStringByIndex@INIClass@@QAEHPAXH@Z",
+   "sym_key": "INIClass::GetStringByIndex"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Tiberiums@@3EA",
+   "sym_key": "g_INI_Key_Tiberiums"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?TiberiumClass_7216C0@TiberiumClass@@QAEPAIPAX@Z",
+   "sym_key": "TiberiumClass::TiberiumClass_7216C0"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

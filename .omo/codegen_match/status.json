@@ -169703,14 +169703,14 @@
   "this_as_id": false
  },
  "0x71da80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TerrainTypeClass::TerrainTypeClass",
+  "name": "TerrainTypeClass::TerrainTypeClass_71DA80",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainTypeClass::TerrainTypeClass",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -169762,7 +169762,7 @@
   "this_as_id": false
  },
  "0x71de40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169785,14 +169785,14 @@
   "this_as_id": false
  },
  "0x71dea0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TerrainTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainTypeClass::LoadFromINI",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -169821,19 +169821,19 @@
   "this_as_id": false
  },
  "0x71e1d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TerrainTypeClass::SaveLoad_Prefix",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TerrainTypeClass::SaveLoad_Prefix",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x71e240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -170070,19 +170070,19 @@
   "this_as_id": false
  },
  "0x71e6a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
-  "name": "TActionClass::TActionClass",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "first_diff": "+11 mov dword ptr [esi + 0x24], 0xffffffff",
+  "name": "TActionClass::TActionClass_71E6A0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TActionClass::TActionClass",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71e940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170094,7 +170094,7 @@
   "this_as_id": false
  },
  "0x71f390": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170106,15 +170106,15 @@
   "this_as_id": false
  },
  "0x71f4e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+7 mov esi, ecx",
   "name": "TriggerTypeClass::ParseActionData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TriggerTypeClass::ParseActionData",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71f680": {
@@ -170418,7 +170418,7 @@
   "this_as_id": false
  },
  "0x71ffe0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -170658,7 +170658,7 @@
   "this_as_id": false
  },
  "0x720590": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170749,27 +170749,27 @@
   "status": "NG"
  },
  "0x720b20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Theme::QueueSong",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Theme::QueueSong",
-  "rule_violations": 4,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x720bb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8ec74]",
   "name": "ThemeClass::Play",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "ThemeClass::Play",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x720e50": {
@@ -170785,7 +170785,7 @@
   "this_as_id": false
  },
  "0x720ea0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171112,14 +171112,14 @@
   "this_as_id": false
  },
  "0x7216c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TiberiumClass::TiberiumClass",
+  "name": "TiberiumClass::TiberiumClass_7216C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TiberiumClass::TiberiumClass",
-  "rule_violations": 3,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -171136,7 +171136,7 @@
   "this_as_id": false
  },
  "0x721a50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171148,19 +171148,19 @@
   "this_as_id": false
  },
  "0x721d10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 push ebx",
   "name": "ObjectClass::SmallFunc_721D10",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SmallFunc_721D10",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x721dc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -171184,7 +171184,7 @@
   "this_as_id": false
  },
  "0x721e80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171232,7 +171232,7 @@
   "this_as_id": false
  },
  "0x7221b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

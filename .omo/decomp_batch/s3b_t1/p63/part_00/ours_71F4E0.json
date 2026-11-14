@@ -1,0 +1,87 @@
+{
+ "symbol": "?ParseActionData@TriggerTypeClass@@QAEPADXZ",
+ "sym_key": "TriggerTypeClass::ParseActionData",
+ "size": 223,
+ "link_base": 0,
+ "bytes_hex": "83ec1c535556578be968000000006a00c7453400000000e80000000050e80000000068000000006a0089452ce80000000050e80000000068000000006a008bf0e8000000008bf857e8000000008bd883c42433c083fe027510680000000050e80000000083c408eb0485f674674e85f6745083fe01756085c0895d3474146a18508d44241c50e80000000083c40c32d2eb098a542413c6442414008d4d298d7424143bf174318d7d38b9060000008d7424140fbed2f3a55f8955785e5d5b83c41cc38bcfe8000000005f8945305e5d5b83c41cc3895d345f5e5d5b83c41cc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "_atoi",
+   "sym_key": "atoi"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?FindByName@TeamTypeClass@@QAEHXZ",
+   "sym_key": "TeamTypeClass::FindByName"
+  }
+ ]
+}
