@@ -1,0 +1,69 @@
+{
+ "symbol": "?DrawFactoryProduction@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::DrawFactoryProduction",
+ "size": 383,
+ "link_base": 0,
+ "bytes_hex": "a00000000083ec1884c0535556578bf975398b1d0000000085db742f8a44241384c0750e8b878000000085c00f84400100008b477485c00f84350100008b878000000085c00f85270100008b7424146a006a0068000000008bd68d4c2424c7878000000000000000e8000000008b08890e8b50048956048b4808894e088b500c89560c8b0f8b1d0000000033c0a0000000008d54241852578be8ff912c0100008b088b500403cb8b580c8b400803d58b2e03c13be80f8db70000008b460403da3bc30f8daa000000036e088bdd3bd90f8e9d0000008b4e0c03c83bca0f8e900000008b178d4424185057ff92ac0000008d4c2414518b0d0000000050e8000000008b0ea1000000003bc87e0c2bc18b4c241403c8894c24148b4e0433c0a0000000003bc87e022bc18a4c241384c974238b8fec06000085c975288b178d442414565057ff92e40400005f5e5db0015b83c418c38b0f8d542414565257ff911401000024015f0c015e8bd85d8ac35b83c418c380e3005f5e8ac35d5b83c418c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  },
+  {
+   "off": 247,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 253,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  }
+ ]
+}
