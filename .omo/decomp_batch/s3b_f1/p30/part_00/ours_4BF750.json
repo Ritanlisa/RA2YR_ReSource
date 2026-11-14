@@ -1,0 +1,273 @@
+{
+ "symbol": "?DrawGradientLine@DSurface@@QAEDHPAH0HHPAM1@Z",
+ "sym_key": "DSurface::DrawGradientLine",
+ "size": 1415,
+ "link_base": 0,
+ "bytes_hex": "83ec38538bd955568b038d4c2424575153895c2420ff50788b54244c6a006a00508d4c2444e8000000008b5424508b08894c24208b40048b328b7a048b54245403f18974241003f88b72048b1203f003d18d44242089542414508d5424188d4c2414e80000000084c00f840c0500008b4c24108b5424143bca7e0e8bc78bfe89542410894c24148bf08b0b53ff517083f8020f85e30400008b4424108b13575053ff525c8be885ed0f84cd0400003bfe0f85120100008b4c24148b4424102bc8c744244c000000000f889b0400008b7424648b7c24608b168b44245c8b4c24585250518d4c246ce800000000668b108b0d00000000668954246433d28a5424658a4002d3ea8b0d00000000660fb6d2d3e28a0d00000000d2e88b0d00000000660fb6c0d3e08a0d000000000bd08a442464d2e88b0d00000000660fb6c0d3e00bd08a44246466895500d907d80684c0d9167419d907d81d00000000dfe0f6c401740addd8c70600000000eb26d90500000000d9c9ded9dfe0f6c441751bd907d81d00000000dfe0f6c441750cc7060000803fd907d9e0d91f8b44244c8b4c24148b54241083c502402bca3bc18944244c0f8e20ffffff8b1353ff52605f5e5db0015b83c438c21c008b4424108b4c24143bc10f85230100003bfe7f088b1353ff5274eb088b0353ff5074f7d82bf78944244c56e80000000083c40485c00f8c660300008b7424648b7c24608d58018b0e8b54245c8b4424585152508d4c246ce800000000668b0833d266894c24648b0d000000008a5424658a4002d3ea8b0d00000000660fb6d2d3e28a0d00000000d2e88b0d00000000660fb6c0d3e08a0d000000000bd08a442464d2e88b0d00000000660fb6c0d3e00bd08a44246466895500d907d80684c0d9167419d907d81d00000000dfe0f6c401740addd8c70600000000eb26d90500000000d9c9ded9dfe0f6c441751bd907d81d00000000dfe0f6c441750cc7060000803fd907d9e0d91f8b4c244c83fb010f94c003e94b84c00f8429ffffff8b5c2418538b13ff52605f5e5db0015b83c438c21c008bd92bf72bd88b442418508b08ff517485f68944244c7d06f7d88944244c8d3c1b56897c2458e80000000083c4048d0c003bd8894c241c0f8e1e0100008bc133ff2bc385db894424500f8c1b0200008b5424608b742464895424248b068b4c245c8b5424585051528d4c246ce800000000668b0833d266894c24648b0d000000008a5424658a4002d3ea8b0d00000000660fb6d2d3e28a0d00000000d2e88b0d00000000660fb6c0d3e08a0d000000000bd08a442464d2e88b0d00000000660fb6c0d3e08b4c24240bd08a4424646689547d00d901d80684c0d9167419d901d81d00000000dfe0f6c401740addd8c70600000000eb26d90500000000d9c9ded9dfe0f6c441751bd901d81d00000000dfe0f6c441750cc7060000803fd901d9e0d9198b4c244c8b4424548b54245003e98b4c241c2bc803d1473bfb895424500f8e16ffffff8b442418508b10ff52605f5e5db0015b83c438c21c008bcf2bc885c0894c24500f8cff0000008b4c24608b742464894c24248d580133ff8b168b44245c8b4c24585250518d4c246ce800000000668b108b0d00000000668954246433d28a5424658a4002d3ea8b0d00000000660fb6d2d3e28a0d00000000d2e88b0d00000000660fb6c0d3e08a0d000000000bd08a442464d2e88b0d00000000660fb6c0d3e08b4c24240bd08a4424646689142fd901d80684c0d9167419d901dc1d00000000dfe0f6c401740addd8c70600000000eb22dc1d00000000dfe0f6c441751bd901dc1d00000000dfe0f6c441750cc7060000803fd901d9e0d9198b4c24548b54241c8b4424502bca83c70203c18b4c244c83fb01894424500f94c003e94b84c00f8412ffffff8b5c24188b1353ff52605f5e5db0015b83c438c21c005f5e5d32c05b83c438c21c00",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?ClipLine@@YIDPAX00@Z",
+   "sym_key": "ClipLine"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 241,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 275,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 295,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 385,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 500,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 544,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 560,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 575,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 587,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 595,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 607,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 621,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 655,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 678,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 697,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 802,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 872,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 888,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 903,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 915,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 923,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 935,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 949,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 988,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 1011,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E2AC8@@3MA",
+   "sym_key": "DataGlobal_7E2AC8"
+  },
+  {
+   "off": 1030,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 1161,
+   "type": "REL32",
+   "sym": "?Lerp2@Color@@QAEPAV1@HHM@Z",
+   "sym_key": "Color::Lerp2"
+  },
+  {
+   "off": 1170,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 1192,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 1204,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 1212,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 1224,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 1238,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 1276,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 1299,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 1314,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

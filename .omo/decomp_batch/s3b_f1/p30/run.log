@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4b66a0 DropPodLocomotionClass::AddRef -> DropPodLocomotionClass
+[conv] 0x4b66b0 DropPodLocomotionClass::Release -> DropPodLocomotionClass
+[conv] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> DropPodLocomotionClass
+[conv] 0x4b6c30 LoadScreen::RenderLoop -> LoadScreen
+[conv] 0x4b96a0 TextRenderer::RenderCentered -> TextRenderer
+[conv] 0x4b9890 DisplayBuildingInfoPanel -> _addr_4B
+[conv] 0x4ba5a0 DSurface::Construct -> DSurface
+[conv] 0x4ba770 DSurface::CreatePrimary -> DSurface
+[conv] 0x4bac60 DSurface::CreateBackBuffer -> DSurface
+[conv] 0x4bad80 DSurface::Lock -> DSurface
+[conv] 0x4baec0 DSurface::CanLock -> DSurface
+[conv] 0x4baf20 DSurface::CheckBltStatus -> DSurface
+[conv] 0x4bb0d0 DSurface::Blit -> DSurface
+[conv] 0x4bbca0 DSurface::DrawLineModulated -> DSurface
+[conv] 0x4bc750 DSurface::DrawLineFaded -> DSurface
+[conv] 0x4bdf00 DSurface::DrawLineZBufColored -> DSurface
+[conv] 0x4beac0 AudioStream::DrawWaveform -> AudioStream
+[conv] 0x4bf750 DSurface::DrawGradientLine -> DSurface
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] LocomotionClass          rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] LoadScreen               rc=2
+[era] TextRenderer             rc=2
+[era] _addr_4B                 rc=2
+[era] DSurface                 rc=2
+[era] AudioStream              rc=2
+=== diffasm byte-compare ===
+[diff] 0x4bf750   MISMATCH         DSurface::DrawGradientLine
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b66a0 DropPodLocomotionClass::AddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b66b0 DropPodLocomotionClass::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b6c30 LoadScreen::RenderLoop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b96a0 TextRenderer::RenderCentered -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b9890 DisplayBuildingInfoPanel -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ba5a0 DSurface::Construct -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4ba770 DSurface::CreatePrimary -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4bac60 DSurface::CreateBackBuffer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4bad80 DSurface::Lock -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4baec0 DSurface::CanLock -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4baf20 DSurface::CheckBltStatus -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bb0d0 DSurface::Blit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4bbca0 DSurface::DrawLineModulated -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bc750 DSurface::DrawLineFaded -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bdf00 DSurface::DrawLineZBufColored -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4beac0 AudioStream::DrawWaveform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bf750 DSurface::DrawGradientLine -> NG (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p30\batch_report.json
