@@ -1,0 +1,165 @@
+{
+ "symbol": "?PlaceRandomTerrainFeatures@@YIDHPAGHPAH11@Z",
+ "sym_key": "Unnamed::PlaceRandomTerrainFeatures",
+ "size": 743,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec648b45085356be010000003bc6578954243c894c241c8974240c897424280f8eaa000000db4508c744243000000000c74424340000e03fc744242000000000c744242400000040dd542410dc1d00000000dfe0f6c4017422dd442410dc2500000000dc0d00000000dd5c2430dd0500000000dc442430dd5c2420b900000000e800000000dc4c2430dc442420dd542428dc1d00000000dfe0f6c40175dddd442428dc5c2410dfe0f6c44174ce8b44242c8b4c24285051e80000000083c4088944240c89442428eb048b44240c8bf08b54241c83fe028d04968b3c85000000008b048500000000897c2420894424300f858500000033dbb900000000895c2410e80000000089442440895c2444df6c2440dc0d00000000dc1d00000000dfe0f6c40174608d4ff9895c244c894c2448df6c2448dd5c2468eb0233dbb900000000e80000000089442450895c2454df6c245083ec08dc4c2470dc0d00000000dc0500000000dd1c24e8000000008bd88d47ff83c4083bd877c1eb55c74424100000000033db897c2458895c245cdf6c2458dd5c2468eb0233dbb900000000e80000000089442460895c2464df6c246083ec08dc4c2470dc0d00000000dd1c24e8000000008bd88d47ff83c4083bd877c785ff7e75eb048b7c24208b54241033f68d041399f7ff8b4424308b14908d04528dbc52dcf82a00c1e002c1e7028b880000000085c97e1d8b80000000008b54241c83c0043910740c4683c0083bf17d04391075f4ba010000008bcae80000000084c075608b4424108b4c2420403bc1894424107c918b74240c8b4d088d46019941f7f985d28954240c7509ba010000008954240c3b5424280f855cfeffff8b550c8b45108b4d14c702ffff0000c70000000000c701ffffffff32c05f5e5b8be55dc210008b57048b4c243c8b04f28b54243c668b1a668b52022bd833d981e3ff000000c1f81033cb2bd08b451033d181e2ff00000033d189108b550c8b4f088b4514890a5f89305eb0015b8be55dc21000",
+ "relocs": [
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?dbl_7E48F0@@3NA",
+   "sym_key": "dbl_7E48F0"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1708@@3NA",
+   "sym_key": "DataGlobal_7E1708"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1738@@3NA",
+   "sym_key": "DataGlobal_7E1738"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1708@@3NA",
+   "sym_key": "DataGlobal_7E1708"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_TileSystemInit@@3EA",
+   "sym_key": "g_TileSystemInit"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?Gaussian@Random@@QAENXZ",
+   "sym_key": "Random::Gaussian"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1708@@3NA",
+   "sym_key": "DataGlobal_7E1708"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82B5B0@@3PAXA",
+   "sym_key": "DataGlobal_82B5B0"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82B530@@3PAIA",
+   "sym_key": "DataGlobal_82B530"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 264,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 282,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?dbl_7ED838@@3NA",
+   "sym_key": "dbl_7ED838"
+  },
+  {
+   "off": 323,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 353,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 359,
+   "type": "DIR32",
+   "sym": "?dbl_7E7FB0@@3NA",
+   "sym_key": "dbl_7E7FB0"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 416,
+   "type": "DIR32",
+   "sym": "?g_Randomizer@@3IA",
+   "sym_key": "g_Randomizer"
+  },
+  {
+   "off": 421,
+   "type": "REL32",
+   "sym": "?State@Random@@QAEHXZ",
+   "sym_key": "Random::State"
+  },
+  {
+   "off": 446,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7ED898@@3NA",
+   "sym_key": "DataGlobal_7ED898"
+  },
+  {
+   "off": 454,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE370@@3PAIA",
+   "sym_key": "DataGlobal_ABE370"
+  },
+  {
+   "off": 527,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE374@@3PAIA",
+   "sym_key": "DataGlobal_ABE374"
+  },
+  {
+   "off": 562,
+   "type": "REL32",
+   "sym": "?Map_Helper_5A7D00@@YIDHH@Z",
+   "sym_key": "Map_Helper_5A7D00"
+  }
+ ]
+}
