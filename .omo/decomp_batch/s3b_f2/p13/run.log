@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> BuildingClass
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x450630 BuildingClass::ProcessActiveAnimation -> BuildingClass
+[conv] 0x4509d0 BuildingClass::UpdateAnimFrames -> BuildingClass
+[conv] 0x451400 UpdateBuildingActiveAnim -> _addr_45
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x451890 BuildingClass::PlayAnim -> BuildingClass
+[conv] 0x451b40 BuildingClass::StopAnim -> BuildingClass
+[conv] 0x452410 BuildingClass::EnableStuff -> BuildingClass
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x4525f0 BuildingClass::IsPoweredOn -> BuildingClass
+[conv] 0x452820 Warhead::RemoveFromDamageList -> Warhead
+[conv] 0x452d40 ObjectClass::ProcessDataBuildingClass -> ObjectClass
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+[conv] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> BuildingClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x454260 BuildingClass::PowerDrainUpdate -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_45                 rc=2
+[era] Warhead                  rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 8)
+[ledger] 0x450630 BuildingClass::ProcessActiveAnimation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4509d0 BuildingClass::UpdateAnimFrames -> COMPILE_FAIL (attempt 6)
+[ledger] 0x451400 UpdateBuildingActiveAnim -> COMPILE_FAIL (attempt 6)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 9)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 7)
+[ledger] 0x451890 BuildingClass::PlayAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x451b40 BuildingClass::StopAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x452410 BuildingClass::EnableStuff -> COMPILE_FAIL (attempt 5)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4525f0 BuildingClass::IsPoweredOn -> COMPILE_FAIL (attempt 5)
+[ledger] 0x452820 Warhead::RemoveFromDamageList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x452d40 ObjectClass::ProcessDataBuildingClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 7)
+[ledger] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 11)
+[ledger] 0x454260 BuildingClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 8)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p13\batch_report.json
