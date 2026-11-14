@@ -164109,7 +164109,7 @@
   "this_as_id": false
  },
  "0x6f4960": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164140,19 +164140,19 @@
   "this_as_id": false
  },
  "0x6f4ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::Mission_RepairDispatch",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoClass::Mission_RepairDispatch",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6f4eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164176,7 +164176,7 @@
   "this_as_id": false
  },
  "0x6f5190": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164188,7 +164188,7 @@
   "this_as_id": false
  },
  "0x6f5ef0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DrawTacticalLine3D",
@@ -164199,7 +164199,7 @@
   "this_as_id": false
  },
  "0x6f6030": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0F6030",
@@ -164234,15 +164234,15 @@
   "this_as_id": false
  },
  "0x6f64a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TechnoClass::DrawHealthBar",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "name": "0x6f64a0",
+  "note": "decomp_batch r2: DUP_SKIP",
   "orig_name": "BuildingClass::DrawHealthBar",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x6f6ac0": {
@@ -164258,7 +164258,7 @@
   "this_as_id": false
  },
  "0x6f6ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164294,7 +164294,7 @@
   "this_as_id": false
  },
  "0x6f7220": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164378,7 +164378,7 @@
   "this_as_id": false
  },
  "0x6f79a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164390,7 +164390,7 @@
   "this_as_id": false
  },
  "0x6f7ca0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164402,7 +164402,7 @@
   "this_as_id": false
  },
  "0x6f8960": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SelectTechnoClassAreaTarget",
@@ -164413,7 +164413,7 @@
   "this_as_id": false
  },
  "0x6f8c10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164480,14 +164480,14 @@
   "this_as_id": false
  },
  "0x6f9e50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::Begin",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "MovementAI::Begin",
-  "rule_violations": 33,
+  "rule_violations": 32,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -164540,7 +164540,7 @@
   "this_as_id": false
  },
  "0x6fb740": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164564,7 +164564,7 @@
   "this_as_id": false
  },
  "0x6fbdc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164612,7 +164612,7 @@
   "this_as_id": false
  },
  "0x6fc0b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164636,7 +164636,7 @@
   "this_as_id": false
  },
  "0x6fcdb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164648,7 +164648,7 @@
   "this_as_id": false
  },
  "0x6fcfa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164660,7 +164660,7 @@
   "this_as_id": false
  },
  "0x6fd210": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
