@@ -95,3 +95,4 @@
 {"part": 94, "n": 20, "seconds": 57.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 95, "n": 20, "seconds": 34.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 96, "n": 20, "seconds": 42.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 97, "n": 20, "seconds": 49.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
