@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p122\part_00
+=== convert (20 addrs) ===
+[conv] 0x703590 MapClass::FindPlacementCellsAlt -> MapClass
+[conv] 0x703770 TechnoClass::StartEffectAudio -> TechnoClass
+[conv] 0x703860 TechnoClass::UpdatePowerDrain -> TechnoClass
+[conv] 0x704000 TechnoClass::IsValidBuildingPlacement -> TechnoClass
+[conv] 0x704350 TechnoClass::GetDrawHeight -> TechnoClass
+[conv] 0x704e40 DrawTacticalLaserLine -> _addr_70
+[conv] 0x705270 Render::DrawLine -> Render
+[conv] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> TechnoClass
+[conv] 0x705d70 TechnoClass::GetBuildAnim -> TechnoClass
+[conv] 0x706640 TechnoClass::UpdateState -> TechnoClass
+[conv] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> TechnoClass
+[conv] 0x706ed0 RenderTechnoClassVoxel -> _addr_70
+[conv] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> ObjectClass
+[conv] 0x707480 Surface::BlitTechnoTo -> Surface
+[conv] 0x7077c0 TechnoClass::NotifyExpired -> TechnoClass
+[conv] 0x707cb0 TechnoClass::CleanupAll -> TechnoClass
+[conv] 0x708080 TechnoClass::EvaluateMission -> TechnoClass
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x709550 TechnoClass::SelectTargetByWeight -> TechnoClass
+[conv] 0x709a90 TechnoClass::DrawPips -> TechnoClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] Render                   rc=2
+[era] ObjectClass              rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x703590 MapClass::FindPlacementCellsAlt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x703770 TechnoClass::StartEffectAudio -> COMPILE_FAIL (attempt 4)
+[ledger] 0x703860 TechnoClass::UpdatePowerDrain -> COMPILE_FAIL (attempt 9)
+[ledger] 0x704000 TechnoClass::IsValidBuildingPlacement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x704350 TechnoClass::GetDrawHeight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x704e40 DrawTacticalLaserLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x705270 Render::DrawLine -> COMPILE_FAIL (attempt 5)
+[ledger] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> COMPILE_FAIL (attempt 7)
+[ledger] 0x705d70 TechnoClass::GetBuildAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x706640 TechnoClass::UpdateState -> COMPILE_FAIL (attempt 6)
+[ledger] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x706ed0 RenderTechnoClassVoxel -> COMPILE_FAIL (attempt 7)
+[ledger] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> COMPILE_FAIL (attempt 3)
+[ledger] 0x707480 Surface::BlitTechnoTo -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7077c0 TechnoClass::NotifyExpired -> COMPILE_FAIL (attempt 3)
+[ledger] 0x707cb0 TechnoClass::CleanupAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x708080 TechnoClass::EvaluateMission -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 8)
+[ledger] 0x709550 TechnoClass::SelectTargetByWeight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x709a90 TechnoClass::DrawPips -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p122\batch_report.json
