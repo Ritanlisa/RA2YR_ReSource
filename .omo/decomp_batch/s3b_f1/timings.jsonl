@@ -152,3 +152,4 @@
 {"part": 151, "n": 20, "seconds": 34.1, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "DUP_SKIP": 1}}
 {"part": 152, "n": 20, "seconds": 30.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 153, "n": 20, "seconds": 47.6, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"part": 154, "n": 20, "seconds": 52.4, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}

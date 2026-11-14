@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p154\part_00
+=== convert (20 addrs) ===
+[conv] 0x7bbb90 XSurface::BlitPart -> XSurface
+[conv] 0x7bbcf0 XSurface::Blit -> XSurface
+[conv] 0x7bc040 CalcSurfaceBlitRects -> _addr_7B
+[conv] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> _BlitPlain_E
+[conv] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> _BlitPlain_G
+[conv] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> _BlitTrans_E
+[conv] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> _BlitTrans_G
+[conv] 0x7bc780 _BlitPlain_E::sub_7BC780 -> _BlitPlain_E
+[conv] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> _BlitPlain_E
+[conv] 0x7bc820 _BlitPlain_G::sub_7BC820 -> _BlitPlain_G
+[conv] 0x7bc870 _BlitPlain_G::sub_7BC870 -> _BlitPlain_G
+[conv] 0x7bc970 BSurface::ConstructEx -> BSurface
+[conv] 0x7bcb50 Buffer::FillCircularBufferScroll2 -> Buffer
+[conv] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> TacticalMap
+[conv] 0x7bd130 Audio::GetSamplePosition -> Audio
+[conv] 0x7bd170 UnitClass::Audio_Render_7BD170 -> UnitClass
+[conv] 0x7be5d0 AllocCallback::Dispatch -> AllocCallback
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+[conv] 0x7bea80 AudioStream::ProcessStream -> AudioStream
+[conv] 0x7bf470 FillAudioStreamBuffer -> _addr_7B
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] _addr_7B                 rc=2
+[era] _BlitPlain_E             rc=2
+[era] _BlitPlain_G             rc=2
+[era] _BlitTrans_E             rc=2
+[era] _BlitTrans_G             rc=2
+[era] BSurface                 rc=2
+[era] Buffer                   rc=0
+[era] TacticalMap              rc=0
+[era] Audio                    rc=2
+[era] UnitClass                rc=2
+[era] AllocCallback            rc=2
+[era] AudioStream              rc=2
+=== diffasm byte-compare ===
+[diff] 0x7bcb50   MISMATCH         Buffer::FillCircularBufferScroll2
+[diff] 0x7bcfb0   MISMATCH         TacticalMap::FillScanlinesOpaque
+[ledger] 0x7bbb90 XSurface::BlitPart -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bbcf0 XSurface::Blit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc040 CalcSurfaceBlitRects -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc780 _BlitPlain_E::sub_7BC780 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc820 _BlitPlain_G::sub_7BC820 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc870 _BlitPlain_G::sub_7BC870 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bc970 BSurface::ConstructEx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bcb50 Buffer::FillCircularBufferScroll2 -> NG (attempt 2)
+[ledger] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> NG (attempt 15)
+[ledger] 0x7bd130 Audio::GetSamplePosition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bd170 UnitClass::Audio_Render_7BD170 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7be5d0 AllocCallback::Dispatch -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7be670 UnitClass::Audio_Render_7BE670 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7bea80 AudioStream::ProcessStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bf470 FillAudioStreamBuffer -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p154\batch_report.json
