@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x458a00 UnitClass::IsCellBlockedByBridge -> UnitClass
+[conv] 0x458a80 TechnoClass::EvacuateFootprintCells -> TechnoClass
+[conv] 0x458e50 BuildingClass::UpdateBunker -> BuildingClass
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+[conv] 0x4595c0 BuildingClass::EmptyBunker -> BuildingClass
+[conv] 0x459870 BuildingClass::MissionStubReturnZero -> BuildingClass
+[conv] 0x459880 BuildingClass::MissionStubReturnZero2 -> BuildingClass
+[conv] 0x459890 BuildingClass::MissionStubReturnZero3 -> BuildingClass
+[conv] 0x45a050 Stream::GetChecked -> Stream
+[conv] 0x45aa60 VectorClass::QueryInterface -> VectorClass
+[conv] 0x45aea0 StreamClass::Set2 -> StreamClass
+[conv] 0x45af20 StreamClass::Set -> StreamClass
+[conv] 0x45b1c0 MapData::InitHeights -> MapData
+[conv] 0x45c300 InitCellOffsetsMap -> _addr_45
+[conv] 0x45dd20 ObjectClass::sub_45DD20 -> ObjectClass
+[conv] 0x45dd50 ObjectClass::sub_45DD50 -> ObjectClass
+[conv] 0x45dd90 BuildingTypeClass::ConstructFull -> BuildingTypeClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45ece0 BuildingTypeClass::GetMaxPips -> BuildingTypeClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] Stream                   rc=2
+[era] VectorClass              rc=2
+[era] StreamClass              rc=2
+[era] MapData                  rc=2
+[era] _addr_45                 rc=2
+[era] ObjectClass              rc=2
+[era] BuildingTypeClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x458a00 UnitClass::IsCellBlockedByBridge -> COMPILE_FAIL (attempt 4)
+[ledger] 0x458a80 TechnoClass::EvacuateFootprintCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x458e50 BuildingClass::UpdateBunker -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 7)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4595c0 BuildingClass::EmptyBunker -> COMPILE_FAIL (attempt 4)
+[ledger] 0x459870 BuildingClass::MissionStubReturnZero -> COMPILE_FAIL (attempt 4)
+[ledger] 0x459880 BuildingClass::MissionStubReturnZero2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x459890 BuildingClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45a050 Stream::GetChecked -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45aa60 VectorClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45aea0 StreamClass::Set2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45af20 StreamClass::Set -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45b1c0 MapData::InitHeights -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45c300 InitCellOffsetsMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45dd20 ObjectClass::sub_45DD20 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x45dd50 ObjectClass::sub_45DD50 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45dd90 BuildingTypeClass::ConstructFull -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 7)
+[ledger] 0x45ece0 BuildingTypeClass::GetMaxPips -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p15\batch_report.json
