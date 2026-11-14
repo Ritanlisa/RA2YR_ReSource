@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p143\part_00
+=== convert (20 addrs) ===
+[conv] 0x789b60 ObjectClass::CreateGameWOL -> ObjectClass
+[conv] 0x78a6b0 ObjectClass::HandlePageWOL -> ObjectClass
+[conv] 0x78a8f0 ObjectClass::HandleReplyWOL -> ObjectClass
+[conv] 0x78ac10 WOLobby::DlgProc -> WOLobby
+[conv] 0x78d120 OnlineLobbyDlgProcWOL -> _addr_78
+[conv] 0x78da30 sub_78DA30 -> _addr_78
+[conv] 0x78ebc0 DlgProcGameSetup -> _addr_78
+[conv] 0x78f000 SessionClass::BuildLaunchString -> SessionClass
+[conv] 0x78f7f0 WOLobby::SetupDlgProc -> WOLobby
+[conv] 0x791aa0 ObjectClass::UI_Setup_791AA0 -> ObjectClass
+[conv] 0x791b10 WOLobby::ChatDlgProc -> WOLobby
+[conv] 0x792be0 ShowUIMessage -> _addr_79
+[conv] 0x792f10 Network::SyncPlayerList -> Network
+[conv] 0x793120 ObjectClass::sub_793120 -> ObjectClass
+[conv] 0x793490 ObjectClass::HandleWOLForwardingError -> ObjectClass
+[conv] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> CComObject_CChatEventSink___ATL
+[conv] 0x793bb0 ObjectClass::Network_Connect_793BB0 -> ObjectClass
+[conv] 0x793cd0 ObjectClass::sub_793CD0 -> ObjectClass
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x794ba0 ObjectClass::StartGameWOL -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] WOLobby                  rc=2
+[era] _addr_78                 rc=2
+[era] SessionClass             rc=2
+[era] _addr_79                 rc=2
+[era] Network                  rc=2
+[era] CComObject_CChatEventSink___ATL rc=2
+=== diffasm byte-compare ===
+[ledger] 0x789b60 ObjectClass::CreateGameWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78a6b0 ObjectClass::HandlePageWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x78a8f0 ObjectClass::HandleReplyWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x78ac10 WOLobby::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78d120 OnlineLobbyDlgProcWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x78da30 sub_78DA30 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78ebc0 DlgProcGameSetup -> COMPILE_FAIL (attempt 7)
+[ledger] 0x78f000 SessionClass::BuildLaunchString -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78f7f0 WOLobby::SetupDlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x791aa0 ObjectClass::UI_Setup_791AA0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x791b10 WOLobby::ChatDlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x792be0 ShowUIMessage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x792f10 Network::SyncPlayerList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x793120 ObjectClass::sub_793120 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x793490 ObjectClass::HandleWOLForwardingError -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> COMPILE_FAIL (attempt 9)
+[ledger] 0x793bb0 ObjectClass::Network_Connect_793BB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x793cd0 ObjectClass::sub_793CD0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 10)
+[ledger] 0x794ba0 ObjectClass::StartGameWOL -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p143\batch_report.json
