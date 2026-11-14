@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x538180 BeaconPlacementCommandClass::performAction_213 -> BeaconPlacementCommandClass
+[conv] 0x5381a0 ToggleSellCommandClass::performAction_214 -> ToggleSellCommandClass
+[conv] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> ToggleRepairCommandClass
+[conv] 0x538240 ScatterCommandClass::performAction_219 -> ScatterCommandClass
+[conv] 0x538260 GuardCommandClass::performAction_220 -> GuardCommandClass
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+[conv] 0x5382c0 DeployCommandClass::performAction_223 -> DeployCommandClass
+[conv] 0x538440 ScreenCaptureCommandClass::performAction_235 -> ScreenCaptureCommandClass
+[conv] 0x538460 PageUserCommandClass::performAction_236 -> PageUserCommandClass
+[conv] 0x538480 CursorPositionCommandClass::performAction_237 -> CursorPositionCommandClass
+[conv] 0x5384a0 DeleteCommandClass::performAction_238 -> DeleteCommandClass
+[conv] 0x538ae0 DynamicVector::performAction_244 -> DynamicVector
+[conv] 0x539890 SuperWeaponClass::LoadFromSaveStream -> SuperWeaponClass
+[conv] 0x539eb0 LightningStorm::Start -> LightningStorm
+[conv] 0x53a140 LightningStorm::Strike -> LightningStorm
+[conv] 0x53a300 LightningStorm::Strike2 -> LightningStorm
+[conv] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> ObjectClass
+[conv] 0x53ab50 Game_Load_Load_53AB50 -> Game_Load_Load
+[conv] 0x53ae50 SuperClass::LaunchPsychicDominator -> SuperClass
+[conv] 0x53af40 ObjectClass::UpdatePsyDom -> ObjectClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BeaconPlacementCommandClass rc=2
+[era] ToggleSellCommandClass   rc=2
+[era] ToggleRepairCommandClass rc=2
+[era] ScatterCommandClass      rc=2
+[era] GuardCommandClass        rc=2
+[era] StopCommandClass         rc=2
+[era] DeployCommandClass       rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] DynamicVector            rc=2
+[era] SuperWeaponClass         rc=2
+[era] LightningStorm           rc=2
+[era] ObjectClass              rc=2
+[era] Game_Load_Load           rc=2
+[era] SuperClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x538180 BeaconPlacementCommandClass::performAction_213 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5381a0 ToggleSellCommandClass::performAction_214 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x538240 ScatterCommandClass::performAction_219 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x538260 GuardCommandClass::performAction_220 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x538280 StopCommandClass::performAction_221 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5382c0 DeployCommandClass::performAction_223 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x538440 ScreenCaptureCommandClass::performAction_235 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x538460 PageUserCommandClass::performAction_236 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x538480 CursorPositionCommandClass::performAction_237 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5384a0 DeleteCommandClass::performAction_238 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x538ae0 DynamicVector::performAction_244 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x539890 SuperWeaponClass::LoadFromSaveStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x539eb0 LightningStorm::Start -> COMPILE_FAIL (attempt 7)
+[ledger] 0x53a140 LightningStorm::Strike -> COMPILE_FAIL (attempt 9)
+[ledger] 0x53a300 LightningStorm::Strike2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> COMPILE_FAIL (attempt 7)
+[ledger] 0x53ab50 Game_Load_Load_53AB50 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53ae50 SuperClass::LaunchPsychicDominator -> COMPILE_FAIL (attempt 6)
+[ledger] 0x53af40 ObjectClass::UpdatePsyDom -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p51\batch_report.json
