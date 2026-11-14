@@ -1,0 +1,75 @@
+{
+ "symbol": "?ProcessTiberiumHarvest@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::ProcessTiberiumHarvest",
+ "size": 382,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec0853568bf18b8ec00600008b068b910008000085d20f843901000056ff90bc0100008bd88bcbe80000000084c0741c8b1656ff92b40200003edc1d18177e00dfe0a100000000f6c44074278b066a006a006a0056ff90580500008b0e6a006a0556ff91e80100005eb8010000005b8be55dc383bec406000026740f8b166a006a006a2656ff9258050000578bcbe8000000008945fc8b86c0060000a300000000db8000080000dd5c24108dbe840200008bcfe800000000ddd8dc6c24103ed81dc82a7e00dfe0a100000000f6c44174258b8ec0060000890d00000000db8100080000dd5c24108bcfe800000000ddd8dc6c2410eb073ed905c82a7e008b55fc8b45f85250e8000000008bc88b45fc33c883c40881e1ff00000033c18bcb50e80000000085c07e1adb442410dd1c248b55fc8b45fc52508bcfe800000000ddd8ddd88b8ec00600005f5e5b8b81b80e00008be55dc36a006a006a0056ff90580500008b166a006a0556ff92e80100005eb8010000005b8be55dc3",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?IsBridge2@Cell@@QAE_NXZ",
+   "sym_key": "Cell::IsBridge2"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?FindByCellHash@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FindByCellHash"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?_EAX@@3IA",
+   "sym_key": "_EAX"
+  },
+  {
+   "off": 184,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?_ECX@@3IA",
+   "sym_key": "_ECX"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 292,
+   "type": "REL32",
+   "sym": "?ReduceTiberium@CellClass@@QAEHH@Z",
+   "sym_key": "CellClass::ReduceTiberium"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?Accumulate@Float@@QAENMH@Z",
+   "sym_key": "Float::Accumulate"
+  }
+ ]
+}

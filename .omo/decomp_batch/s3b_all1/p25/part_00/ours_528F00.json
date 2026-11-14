@@ -1,0 +1,123 @@
+{
+ "symbol": "?ParseValue_Wide@INIClass@@QAEIPAE0PAG1I@Z",
+ "sym_key": "INIClass::ParseValue_Wide",
+ "size": 539,
+ "link_base": 0,
+ "bytes_hex": "83ec148d44240483f8f4535556578be90f846f0100008b5c242885db0f84630100008b54242c85d20f84570100003b5d0475088b7508e99a00000033c98bfb894c241433c0894c2418894c241c83c9fff2aef7d14951538d4c241ce8000000008bf08b452c85c089742428744d8d7d288d542428528bcfe80000000084c075138d4424288bcf50e80000000085c0742a8945388d4c241089742410518bcfe80000000084c074088b453883c004eb05b8000000008b3085f6751133c089450489450888442420e9ba0000008b54242c897508895d0485f6747833c08bfa8944241483c9ff89442418f2aef7d1498944241c51528d4c241ce8000000008b4e3083c62c85c98944242874478b4e1085c97404390174138d4c2428518bcee80000000085c0742c8946108b0e8d54242852e80000000084c074088b761083c604eb048b74242c8b3685f674078b761085f67507c644242000eb2d68005000008d4424245650e8000000008d4c242c51e8000000008d7c243083c9ff33c083c410f2aef7d14975278b5424388b4424308b742434525056e80000000056e80000000083c4105f5e5d5b83c414c214008d4c2420680000000051e8000000008b5c243c83c40885c08bf3743b8b7c243885ff74338d54241052680000000050e800000000668b44241c68000000006689066a0083c602e80000000083c4144f85c0740485ff75cd5366c7060000e80000000083c4045f5e5d5b83c414c21400",
+ "relocs": [
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?CheckCache@SortedArray@@QAE_NPAX@Z",
+   "sym_key": "SortedArray::CheckCache"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 285,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 304,
+   "type": "REL32",
+   "sym": "?Find@SortedArray@@QAEDPAX@Z",
+   "sym_key": "SortedArray::Find"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 366,
+   "type": "REL32",
+   "sym": "?p4__Trim@@YAHPAX@Z",
+   "sym_key": "p4__Trim"
+  },
+  {
+   "off": 405,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 439,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 470,
+   "type": "DIR32",
+   "sym": "??_C@_02JDLK@?$CFx?$AA@",
+   "sym_key": "??_C@_02JDLK@?$CFx?$AA@"
+  },
+  {
+   "off": 476,
+   "type": "REL32",
+   "sym": "?sscanf@@YAHPAXH0ZZ",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 486,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 499,
+   "type": "REL32",
+   "sym": "_strtok",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 522,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

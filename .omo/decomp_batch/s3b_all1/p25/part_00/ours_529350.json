@@ -1,0 +1,93 @@
+{
+ "symbol": "?GetCSFString@INIClass@@QAEIPAE0PAG1I@Z",
+ "sym_key": "INIClass::GetCSFString",
+ "size": 496,
+ "link_base": 0,
+ "bytes_hex": "81ec180400008d44241885c0535556578be90f84760100008b9c242c04000085db0f84670100008b94243004000085d20f84580100003b5d0475088b7508e9a300000033c98bfb894c241833c0894c241c894c242083c9fff2aef7d14951538d4c2420e80000000089442414894424108b452c85c074518d75288d542410528bcee80000000084c075138d4424108bce50e80000000085c0742e8945388a4c24148d542424884c2424528bcee80000000084c074088b453883c004eb05b8000000008b3085f6751133c089450489450888442428e9b50000008b942430040000897508895d0485f6747833c08bfa8944241883c9ff8944241cf2aef7d1498944242051528d4c2420e8000000008b4e3083c62c85c98944241074478b4e1085c97404390174138d4c2410518bcee80000000085c0742c8946108b0e8d54241052e80000000084c074088b761083c604eb048b7424148b3685f674078b761085f67507c644242800eb2568000400008d44242c5650e8000000008d4c2434c68424330400000051e80000000083c4108d7c242883c9ff33c0f2aef7d149741b33d268520700008a15000000008d4c242c5233d2e800000000eb048b4424148bbc243c0400008bb42434040000575056e8000000005666c7447efe0000e80000000083c4105f5e5d5b81c418040000c21400",
+ "relocs": [
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?CheckCache@SortedArray@@QAE_NPAX@Z",
+   "sym_key": "SortedArray::CheckCache"
+  },
+  {
+   "off": 146,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 321,
+   "type": "REL32",
+   "sym": "?Find@SortedArray@@QAEDPAX@Z",
+   "sym_key": "SortedArray::Find"
+  },
+  {
+   "off": 373,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?p3__Trim@@YAHPAX@Z",
+   "sym_key": "p3__Trim"
+  },
+  {
+   "off": 423,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Ini_CPP@@3EA",
+   "sym_key": "g_Str_File_Ini_CPP"
+  },
+  {
+   "off": 435,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 463,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  },
+  {
+   "off": 476,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

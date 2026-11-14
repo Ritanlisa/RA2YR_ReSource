@@ -1,0 +1,93 @@
+{
+ "symbol": "?GetStringEx@INIClass@@QAEIPAE0PAGI@Z",
+ "sym_key": "INIClass::GetStringEx",
+ "size": 461,
+ "link_base": 0,
+ "bytes_hex": "81ec0c0400008d44240c85c0535556578bf10f84690100008b9c242004000085db0f845a0100008b94242404000085d20f844b0100003b5e0475088b6e08e9960000008bfb83c9ff33c0c744241400000000f2aef7d14951538d4c241ce8000000008be88b462c85c0896c24100f84010100008d4c24108d7e28518bcfe80000000084c075178d5424108bcf52e80000000085c00f84da0000008946388d4424188d8e000a000050896c241ce80000000084c074088b463883c004eb05b8000000008b2885ed0f84a80000008b942424040000896e08895e048bfa83c9ff33c0c744241400000000f2aef7d14951528d4c241ce8000000008b4d308d752c85c98944241074768b4e1085c97404390174138d4c2410518bcee80000000085c0745b8946108d5424108bce52e80000000084c074088b761083c604eb048b7424188b3685f674368b761085f6742f68000400008d4424205650e8000000008d4c2428c68424270400000051e80000000083c410eb0d33c0894604894608c644241c0033d268420700008a15000000008d4c24205233d2e8000000008bbc242c0400008bb42428040000575056e8000000005666c7447efe0000e80000000083c4105f5e5d5b81c40c040000c21000",
+ "relocs": [
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?CheckCache@SortedArray@@QAE_NPAX@Z",
+   "sym_key": "SortedArray::CheckCache"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 300,
+   "type": "REL32",
+   "sym": "?Find@SortedArray@@QAEDPAX@Z",
+   "sym_key": "SortedArray::Find"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 363,
+   "type": "REL32",
+   "sym": "?p3__Trim@@YAHPAX@Z",
+   "sym_key": "p3__Trim"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?g_Str_File_Ini_CPP@@3EA",
+   "sym_key": "g_Str_File_Ini_CPP"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAXPAHPBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 428,
+   "type": "REL32",
+   "sym": "_wcsncpy",
+   "sym_key": "wcsncpy"
+  },
+  {
+   "off": 441,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "symbol": "?ReadBool_Overwrite@INIClass@@QAEDPAE0D@Z",
+ "sym_key": "INIClass::ReadBool_Overwrite",
+ "size": 393,
+ "link_base": 0,
+ "bytes_hex": "83ec088b54240c5333db55563bd3578bf1895424140f849c0000008b6c24203beb0f84900000003b56040f84950000008bfa83c9ff33c0895c2410f2aef7d14951528d4c2418e8000000008bf88b462c3bc3897c241c74598b46383bc37404393874148d44241c8d4e2850e8000000003bc3743d8946388d4c241c897c241c518d4e28e80000000084c074088b463883c004eb05b8000000008b1885db74108b5424148b6c2420895e08895604eb1933db895e04895e088a4424245f5e5d5b83c408c20c008b5e0885db74eb8bfd83c9ff33c0c744241000000000f2aef7d14951558d4c2418e8000000008b4b308d732c85c98944242074be8b4e1085c97404390174178d4424208bce50e80000000085c074a38946108b4424208b4e0485c9741b8b4e1085c974043901741a8d4c2420518bcee80000000085c07507be00000000eb098946108b761083c6048b3685f60f8460ffffff8b761085f60f8455ffffff0fbe1652e80000000083e83083c40483f8290f873dffffff33c98a8800000000ff248d00000000",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 132,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 268,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 318,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78830@@3EA",
+   "sym_key": "DataGlobal_B78830"
+  },
+  {
+   "off": 359,
+   "type": "REL32",
+   "sym": "_toupper",
+   "sym_key": "toupper"
+  },
+  {
+   "off": 382,
+   "type": "DIR32",
+   "sym": "$L2142",
+   "sym_key": "$L2142"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "$L2143",
+   "sym_key": "$L2143"
+  }
+ ]
+}

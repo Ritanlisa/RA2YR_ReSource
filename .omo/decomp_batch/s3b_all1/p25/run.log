@@ -1,0 +1,124 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p25\part_00
+=== convert (40 addrs) ===
+[conv] 0x5216d0 InfantryClass::CanMoveFreely -> InfantryClass
+[conv] 0x521b00 InfantryClass::SaveLoad_Prefix -> InfantryClass
+[conv] 0x521b60 InfantryClass::CanInitiateDeploy -> InfantryClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+[conv] 0x522340 InfantryClass::CalculateApproachPath -> InfantryClass
+[conv] 0x522600 InfantryClass::FireAtTargetPos -> InfantryClass
+[conv] 0x5226c0 InfantryClass::GetProductionHouse -> InfantryClass
+[conv] 0x5227f0 InfantryClass::CanAttackTarget -> InfantryClass
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+[conv] 0x522e70 InfantryClass::ProcessTiberiumHarvest -> InfantryClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x5236a0 InfantryTypeClass::Constructor -> InfantryTypeClass
+[conv] 0x523d00 AnimSequence::Parse -> AnimSequence
+[conv] 0x5240a0 InfantryTypeClass::LoadFromINI -> InfantryTypeClass
+[conv] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> InfantryTypeClass
+[conv] 0x524960 InfantryTypeClass::LoadTypeData -> InfantryTypeClass
+[conv] 0x524fc0 TypeList::QueryInterface -> TypeList
+[conv] 0x525250 DynamicVectorClass::AnimTypeConstructor -> DynamicVectorClass
+[conv] 0x525430 GetINIClassIntList -> _addr_52
+[conv] 0x5255f0 TypeList::AnimTypeCopy -> TypeList
+[conv] 0x525a60 INIClass::LoadFile -> INIClass
+[conv] 0x526b10 HashTableSection::FindSection -> HashTableSection
+[conv] 0x5272b0 ObjectClass::LookupCSFString -> ObjectClass
+[conv] 0x5275c0 INIClass::SetInt -> INIClass
+[conv] 0x527640 INIClass::SetIntFormat -> INIClass
+[conv] 0x5276d0 INIClass::ReadInt_Overwrite -> INIClass
+[conv] 0x527920 INIClass::ReadGUID_Overwrite -> INIClass
+[conv] 0x527b90 INIClass::ReadDouble -> INIClass
+[conv] 0x527cc0 INIClass::ParseValue -> INIClass
+[conv] 0x527f20 INIClass::GetRect -> INIClass
+[conv] 0x528220 ObjectClass::sub_528220 -> ObjectClass
+[conv] 0x5283d0 INIClass::ReadDouble_Overwrite -> INIClass
+[conv] 0x528a10 INIClass::GetString -> INIClass
+[conv] 0x528f00 INIClass::ParseValue_Wide -> INIClass
+[conv] 0x529160 INIClass::GetStringEx -> INIClass
+[conv] 0x529350 INIClass::GetCSFString -> INIClass
+[conv] 0x5295f0 INIClass::ReadBool_Overwrite -> INIClass
+[conv] 0x529880 INIClass::ReadPoint2D_Overwrite -> INIClass
+[conv] 0x529a30 INIClass::GetCoordPair -> INIClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] InfantryTypeClass        rc=2
+[era] AnimSequence             rc=2
+[era] TypeList                 rc=2
+[era] DynamicVectorClass       rc=2
+[era] _addr_52                 rc=2
+[era] INIClass                 rc=2
+[era] HashTableSection         rc=0
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x521b00   MATCH            InfantryClass::SaveLoad_Prefix
+[diff] 0x522e70   MISMATCH         InfantryClass::ProcessTiberiumHarvest
+[diff] 0x527920   MISMATCH         INIClass::ReadGUID_Overwrite
+[diff] 0x528a10   MISMATCH         INIClass::GetString
+[diff] 0x528f00   MISMATCH         INIClass::ParseValue_Wide
+[diff] 0x529160   MISMATCH         INIClass::GetStringEx
+[diff] 0x529350   MISMATCH         INIClass::GetCSFString
+[diff] 0x5295f0   MISMATCH         INIClass::ReadBool_Overwrite
+[diff] 0x526b10   MISMATCH         HashTableSection::FindSection
+[ledger] 0x5216d0 InfantryClass::CanMoveFreely -> COMPILE_FAIL (attempt 3)
+[ledger] 0x521b00 InfantryClass::SaveLoad_Prefix -> OK (attempt 3)
+[ledger] 0x521b60 InfantryClass::CanInitiateDeploy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x522340 InfantryClass::CalculateApproachPath -> COMPILE_FAIL (attempt 3)
+[ledger] 0x522600 InfantryClass::FireAtTargetPos -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5226c0 InfantryClass::GetProductionHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5227f0 InfantryClass::CanAttackTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 6)
+[ledger] 0x522e70 InfantryClass::ProcessTiberiumHarvest -> NG (attempt 3)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5236a0 InfantryTypeClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x523d00 AnimSequence::Parse -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5240a0 InfantryTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x524960 InfantryTypeClass::LoadTypeData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x524fc0 TypeList::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x525250 DynamicVectorClass::AnimTypeConstructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x525430 GetINIClassIntList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5255f0 TypeList::AnimTypeCopy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x525a60 INIClass::LoadFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x526b10 HashTableSection::FindSection -> NG (attempt 3)
+[ledger] 0x5272b0 ObjectClass::LookupCSFString -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5275c0 INIClass::SetInt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x527640 INIClass::SetIntFormat -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5276d0 INIClass::ReadInt_Overwrite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x527920 INIClass::ReadGUID_Overwrite -> NG (attempt 4)
+[ledger] 0x527b90 INIClass::ReadDouble -> COMPILE_FAIL (attempt 3)
+[ledger] 0x527cc0 INIClass::ParseValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x527f20 INIClass::GetRect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x528220 ObjectClass::sub_528220 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5283d0 INIClass::ReadDouble_Overwrite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x528a10 INIClass::GetString -> NG (attempt 3)
+[ledger] 0x528f00 INIClass::ParseValue_Wide -> NG (attempt 3)
+[ledger] 0x529160 INIClass::GetStringEx -> NG (attempt 3)
+[ledger] 0x529350 INIClass::GetCSFString -> NG (attempt 4)
+[ledger] 0x5295f0 INIClass::ReadBool_Overwrite -> NG (attempt 3)
+[ledger] 0x529880 INIClass::ReadPoint2D_Overwrite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x529a30 INIClass::GetCoordPair -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 31,
+  "MATCH": 1,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 3,
+  "frame_sched": 4
+ },
+ "match_rate_of_decided_pct": 11.1,
+ "match_rate_of_total_pct": 2.5,
+ "rule_violation_fns": 29,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p25\batch_report.json

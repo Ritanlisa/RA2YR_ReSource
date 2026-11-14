@@ -1,0 +1,69 @@
+{
+ "symbol": "?FindSection@HashTableSection@@QAEHPAE0@Z",
+ "sym_key": "HashTableSection::FindSection",
+ "size": 437,
+ "link_base": 0,
+ "bytes_hex": "83ec1c8b5424205355568bf1578bda3b560475088b6e08e99300000085d2747733c08bfa8944241483c9ff894424188944241cf2aef7d14951528d4c241ce8000000008bf88b462c85c0897c243074478b463885c07404393874148d4c2430518d4e28e80000000085c0742b8946388d5424108d4e2852897c2414e80000000084c074088b463883c004eb05b8000000008b2885ed751233c05f8946048946085e5d5b83c41cc20800896e08895e0485ed750c5f5e5d33c05b83c41cc208008b54243485d2750c5f5e5d33c05b83c41cc2080033c08bfa8944242083c9ff89442424f2aef7d1498944242851528d4c2428e8000000008b4d308d752c85c989442430750c5f5e5d33c05b83c41cc208008b561085d27404390274518a560c84d2752268000000006a08518b0e51e8000000008b44244083c410c7461000000000c6460c018b56048b0e894424148d44241450e80000000085c0750a5f5e5d5b83c41cc208008946108b4424308b4e1085c974113901750d8b41045f5e5d5b83c41cc208008d4c2430518bcee80000000085c074108946108b40045f5e5d5b83c41cc208005f33c0a0000000005e5d5b83c41cc20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIPAX@Z",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?BinarySearch@HashTable@@QAEDPAX@Z",
+   "sym_key": "HashTable::BinarySearch"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?CompareFunc3Int@@YAHPBX0@Z",
+   "sym_key": "CompareFunc3Int"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 339,
+   "type": "REL32",
+   "sym": "?UI_Find@@YIHHHPAX@Z",
+   "sym_key": "UI_Find"
+  },
+  {
+   "off": 396,
+   "type": "REL32",
+   "sym": "?BinarySearchAlt@HashTable@@QAEIPAX@Z",
+   "sym_key": "HashTable::BinarySearchAlt"
+  },
+  {
+   "off": 424,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B78830@@3EA",
+   "sym_key": "DataGlobal_B78830"
+  }
+ ]
+}
