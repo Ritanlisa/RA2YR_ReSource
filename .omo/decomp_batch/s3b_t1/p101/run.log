@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p101\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d899e unknown_libname_92 -> _addr_7D
+[conv] 0x7d8ba4 unknown_libname_93 -> _addr_7D
+[conv] 0x7d8d3b __set_exp -> _addr_7D
+[conv] 0x7d8da4 __set_bexp -> _addr_7D
+[conv] 0x7d8e22 __decomp -> _addr_7D
+[conv] 0x7d8f51 __logb -> _addr_7D
+[conv] 0x7d9038 __nextafter -> _addr_7D
+[conv] 0x7d92cd __finite -> _addr_7D
+[conv] 0x7d92e1 __isnan -> _addr_7D
+[conv] 0x7d930f __fpclass -> _addr_7D
+[conv] 0x7d94c4 __set_osfhnd -> _addr_7D
+[conv] 0x7d9540 ObjectClass::__free_osfhnd -> ObjectClass
+[conv] 0x7d95bf __get_osfhandle -> _addr_7D
+[conv] 0x7d9601 __open_osfhandle -> _addr_7D
+[conv] 0x7d9ddc __mbtowc_lk -> _addr_7D
+[conv] 0x7d9ef8 _ungetc_0 -> _addr_7D
+[conv] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> _addr_7D
+[conv] 0x7d9fac sub_7D9FAC -> _addr_7D
+[conv] 0x7d9fbd sub_7D9FBD -> _addr_7D
+[conv] 0x7da0f1 ___crtGetStringTypeW -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7d899e unknown_libname_92 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8ba4 unknown_libname_93 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8d3b __set_exp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d8da4 __set_bexp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d8e22 __decomp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8f51 __logb -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9038 __nextafter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d92cd __finite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d92e1 __isnan -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d930f __fpclass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d94c4 __set_osfhnd -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9540 ObjectClass::__free_osfhnd -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d95bf __get_osfhandle -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9601 __open_osfhandle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d9ddc __mbtowc_lk -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9ef8 _ungetc_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d9f66 __CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d9fac sub_7D9FAC -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d9fbd sub_7D9FBD -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7da0f1 ___crtGetStringTypeW -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p101\batch_report.json
