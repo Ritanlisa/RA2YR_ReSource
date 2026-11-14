@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x52ec00 CampaignSelect::DlgProc -> CampaignSelect
+[conv] 0x52f3f0 Network::Init -> Network
+[conv] 0x52f620 ParseCommandLine -> _addr_52
+[conv] 0x52fc20 TechnoClass::InitRandomSeed -> TechnoClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x5301a0 MixFileClass::Bootstrap -> MixFileClass
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x5312a0 ObjectClass::ShowLoadingScreen -> ObjectClass
+[conv] 0x531680 InitBulkData -> _addr_53
+[conv] 0x531cc0 MainMenu::Screen -> MainMenu
+[conv] 0x533fd0 AllocateSurfaceScreenSurfaces -> _addr_53
+[conv] 0x534450 Game::DestroyAllObjects -> Game
+[conv] 0x5349c0 LoadTheaterClassMIX -> _addr_53
+[conv] 0x534fa0 MixFile::LoadSide -> MixFile
+[conv] 0x5355d0 Performance::Profile -> Performance
+[conv] 0x535cd0 CreateTeamCommand::performAction_0 -> CreateTeamCommand
+[conv] 0x535d00 CommandClass::performAction_1 -> CommandClass
+[conv] 0x535fc0 SelectTeamCommand::Construct -> SelectTeamCommand
+[conv] 0x536090 SelectTeamCommand::performAction_22 -> SelectTeamCommand
+[conv] 0x5360b0 AddTeamCommand::Construct -> AddTeamCommand
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CampaignSelect           rc=2
+[era] Network                  rc=2
+[era] _addr_52                 rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] MixFileClass             rc=2
+[era] MixFile                  rc=2
+[era] _addr_53                 rc=2
+[era] MainMenu                 rc=2
+[era] Game                     rc=2
+[era] Performance              rc=2
+[era] CreateTeamCommand        rc=2
+[era] CommandClass             rc=2
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x52ec00 CampaignSelect::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52f3f0 Network::Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52f620 ParseCommandLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x52fc20 TechnoClass::InitRandomSeed -> COMPILE_FAIL (attempt 9)
+[ledger] 0x530000 ObjectClass::LoadExpansionMixFiles -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5301a0 MixFileClass::Bootstrap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5312a0 ObjectClass::ShowLoadingScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x531680 InitBulkData -> COMPILE_FAIL (attempt 7)
+[ledger] 0x531cc0 MainMenu::Screen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 7)
+[ledger] 0x534450 Game::DestroyAllObjects -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5349c0 LoadTheaterClassMIX -> COMPILE_FAIL (attempt 5)
+[ledger] 0x534fa0 MixFile::LoadSide -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5355d0 Performance::Profile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x535cd0 CreateTeamCommand::performAction_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x535d00 CommandClass::performAction_1 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x535fc0 SelectTeamCommand::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x536090 SelectTeamCommand::performAction_22 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5360b0 AddTeamCommand::Construct -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p49\batch_report.json
