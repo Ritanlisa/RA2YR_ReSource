@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x4109c0 AbstractTypeClass::Dtor -> AbstractTypeClass
+[conv] 0x410a60 AbstractTypeClass::LoadFromINI -> AbstractTypeClass
+[conv] 0x410c30 AbstractTypeClass::ddtor -> AbstractTypeClass
+[conv] 0x410ce0 BSurface::Construct -> BSurface
+[conv] 0x411330 TacticalClass::FillScanlinesTransparent -> TacticalClass
+[conv] 0x4114b0 StreamClass::ReadAndSeek -> StreamClass
+[conv] 0x4115a0 XSurface::ScalarDtor -> XSurface
+[conv] 0x4115d0 Surface::getObjectValue -> Surface
+[conv] 0x4115f0 BSurface::Lock -> BSurface
+[conv] 0x411640 BSurface::GetPitch -> BSurface
+[conv] 0x411650 BSurface::ScalarDtor -> BSurface
+[conv] 0x411820 ManageMultimediaTimer -> _addr_41
+[conv] 0x411b20 sub_411B20 -> _addr_41
+[conv] 0x411df0 InitializeSoundBufferPlayback -> _addr_41
+[conv] 0x4123a0 fptc -> _addr_41
+[conv] 0x4128f0 sub_4128F0 -> _addr_41
+[conv] 0x412b40 AircraftTrackerClass::FillCurrentVector -> AircraftTrackerClass
+[conv] 0x413d20 AircraftClass::Construct -> AircraftClass
+[conv] 0x414080 AircraftClass::Destruct -> AircraftClass
+[conv] 0x414310 AircraftClass::MoveTo -> AircraftClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractTypeClass        rc=2
+[era] BSurface                 rc=2
+[era] TacticalClass            rc=2
+[era] StreamClass              rc=2
+[era] XSurface                 rc=2
+[era] Surface                  rc=2
+[era] _addr_41                 rc=2
+[era] AircraftTrackerClass     rc=2
+[era] AircraftClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4109c0 AbstractTypeClass::Dtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x410a60 AbstractTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x410c30 AbstractTypeClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x410ce0 BSurface::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411330 TacticalClass::FillScanlinesTransparent -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4114b0 StreamClass::ReadAndSeek -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4115a0 XSurface::ScalarDtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4115d0 Surface::getObjectValue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4115f0 BSurface::Lock -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411640 BSurface::GetPitch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411650 BSurface::ScalarDtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411820 ManageMultimediaTimer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x411b20 sub_411B20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x411df0 InitializeSoundBufferPlayback -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4123a0 fptc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4128f0 sub_4128F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x412b40 AircraftTrackerClass::FillCurrentVector -> COMPILE_FAIL (attempt 4)
+[ledger] 0x413d20 AircraftClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x414080 AircraftClass::Destruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x414310 AircraftClass::MoveTo -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p03\batch_report.json
