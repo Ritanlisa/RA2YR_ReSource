@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x4f2280 ObjectClass::sub_4F2280 -> ObjectClass
+[conv] 0x4f2300 ObjectClass::ProcessGraphicMenu -> ObjectClass
+[conv] 0x4f26e0 ObjectClass::sub_4F26E0 -> ObjectClass
+[conv] 0x4f2770 ObjectClass::sub_4F2770 -> ObjectClass
+[conv] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> DynamicVector
+[conv] 0x4f2c70 ParseINIAnimGadgetDefinition -> _addr_4F
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+[conv] 0x4f3140 ParseINIGadgetDefinition -> _addr_4F
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x4f3d40 ObjectClass::sub_4F3D40 -> ObjectClass
+[conv] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> GraphicMenuShortcutItem
+[conv] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4240 GScreenClass::QueryInterface -> GScreenClass
+[conv] 0x4f42f0 GScreenClass::MarkForRedraw -> GScreenClass
+[conv] 0x4f4480 GScreenClass::Redraw -> GScreenClass
+[conv] 0x4f45b0 GScreenClass::RenderFrame -> GScreenClass
+[conv] 0x4f4780 Frame::Present -> Frame
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_4F                 rc=2
+[era] GraphicMenuAnimItem      rc=2
+[era] GraphicMenuImageItem     rc=2
+[era] GraphicMenuShortcutItem  rc=2
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=2
+[era] GScreenClass             rc=2
+[era] Frame                    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f2280 ObjectClass::sub_4F2280 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f2300 ObjectClass::ProcessGraphicMenu -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f26e0 ObjectClass::sub_4F26E0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f2770 ObjectClass::sub_4F2770 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f2c70 ParseINIAnimGadgetDefinition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f3140 ParseINIGadgetDefinition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f3d40 ObjectClass::sub_4F3D40 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f4240 GScreenClass::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f42f0 GScreenClass::MarkForRedraw -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f4480 GScreenClass::Redraw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f45b0 GScreenClass::RenderFrame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 9)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p38\batch_report.json
