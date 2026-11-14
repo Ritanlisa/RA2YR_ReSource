@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p110\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> ObjectClass
+[conv] 0x6bb9a0 WinMain -> _addr_6B
+[conv] 0x6be1c0 WinMainSetup -> _addr_6B
+[conv] 0x6bedb0 COMClassFactory::Register -> COMClassFactory
+[conv] 0x6bf090 _TClassFactory_VWaveClass::ddtor -> _TClassFactory_VWaveClass
+[conv] 0x6bf390 _TClassFactory_VTerrainClass::ddtor -> _TClassFactory_VTerrainClass
+[conv] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> _TClassFactory_VSuperClass
+[conv] 0x6bf810 _TClassFactory_VTactical::ddtor -> _TClassFactory_VTactical
+[conv] 0x6bfc90 _TClassFactory_VLightSourceClass::ddtor -> _TClassFactory_VLightSourceClass
+[conv] 0x6c0290 _TClassFactory_VCampaignClass::ddtor -> _TClassFactory_VCampaignClass
+[conv] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> _TClassFactory_VTemporalClass
+[conv] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> _TClassFactory_VParasiteClass
+[conv] 0x6c1190 _TClassFactory_VBombClass::ddtor -> _TClassFactory_VBombClass
+[conv] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> _TClassFactory_VTEventClass
+[conv] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> _TClassFactory_VVoxelAnimClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_6B                 rc=2
+[era] COMClassFactory          rc=2
+[era] _TClassFactory_VWaveClass rc=2
+[era] _TClassFactory_VTerrainClass rc=2
+[era] _TClassFactory_VSuperWeaponTypeClass rc=2
+[era] _TClassFactory_VSuperClass rc=2
+[era] _TClassFactory_VTactical rc=2
+[era] _TClassFactory_VLightSourceClass rc=2
+[era] _TClassFactory_VCampaignClass rc=2
+[era] _TClassFactory_VWaypointPathClass rc=2
+[era] _TClassFactory_VTemporalClass rc=2
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VSlaveManagerClass rc=2
+[era] _TClassFactory_VDiskLaserClass rc=2
+[era] _TClassFactory_VParasiteClass rc=2
+[era] _TClassFactory_VBombClass rc=2
+[era] _TClassFactory_VTEventClass rc=2
+[era] _TClassFactory_VVoxelAnimClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6bb8e0 ObjectClass::WinMainSetup_Setup_6BB8E0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6bb9a0 WinMain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6be1c0 WinMainSetup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6bedb0 COMClassFactory::Register -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6bf090 _TClassFactory_VWaveClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6bf390 _TClassFactory_VTerrainClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6bf510 _TClassFactory_VSuperWeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6bf690 _TClassFactory_VSuperClass::ddtor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6bf810 _TClassFactory_VTactical::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6bfc90 _TClassFactory_VLightSourceClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c0290 _TClassFactory_VCampaignClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c1190 _TClassFactory_VBombClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p110\batch_report.json
