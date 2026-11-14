@@ -50,3 +50,4 @@
 {"part": 49, "n": 20, "seconds": 40.7, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
 {"part": 50, "n": 20, "seconds": 41.3, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 51, "n": 20, "seconds": 80.7, "ok": true, "verdicts": {"COMPILE_FAIL": 13, "MISMATCH": 7}}
+{"part": 52, "n": 20, "seconds": 82.5, "ok": true, "verdicts": {"COMPILE_FAIL": 13, "MISMATCH": 7}}

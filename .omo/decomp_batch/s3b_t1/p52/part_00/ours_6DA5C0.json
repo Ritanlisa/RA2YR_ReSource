@@ -1,0 +1,63 @@
+{
+ "symbol": "?ProcessOccupancy@BuildingClass@@QAEHPAHPAX@Z",
+ "sym_key": "BuildingClass::ProcessOccupancy",
+ "size": 380,
+ "link_base": 0,
+ "bytes_hex": "51538b5c240c558be9b901000000890d000000008b430885c00f8e510100008b430c85c00f8e460100008b85b00d0000c74424080000000085c00f8e3001000056578b3d000000008b3785f60f84f00000008a869000000084c00f84e20000008b47048b8db00000008b95b40000002bc18b4f082bca8b133bc20f8cc20000000353083bc20f8db70000008b43043bc80f8cac00000003430c3bc80f8da10000008bcde80000000084c0741f8b0656ff90880000008d4824e8000000008b44241c85c0740656ffd083c4048b0e5632dbff512c83f806751e8b86200500008b880804000085c9740e50e80000000083c40485c00f95c38b1656ff523c85c0743e8bc8e80000000084c074338b0656ff903801000084c074268b0e56ff512c83f806750484db74178b1656ff924c01000084c0740ac70500000000000000008b5c24188b4424108b95b00d00004083c70c8bc83bca894c24100f8ceafeffff5f5e5dc70500000000010000005b59c208005d890d000000005b59c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CEC8@@3IA",
+   "sym_key": "DataGlobal_B0CEC8"
+  },
+  {
+   "off": 164,
+   "type": "REL32",
+   "sym": "?GetFlag@Selection@@QAEDXZ",
+   "sym_key": "Selection::GetFlag"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?ProcessCommand@MoveFeedback@@QAEDXZ",
+   "sym_key": "MoveFeedback::ProcessCommand"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable@@YAHPAX@Z",
+   "sym_key": "BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 355,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?g_MoveFeedback@@3IA",
+   "sym_key": "g_MoveFeedback"
+  }
+ ]
+}

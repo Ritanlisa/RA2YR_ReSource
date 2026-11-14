@@ -1,0 +1,51 @@
+{
+ "symbol": "?InitMap@Tactical@@QAGHH@Z",
+ "sym_key": "Tactical::InitMap",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c00f8cad00000085f6740e8d4c240c5156e80000000083c4088b86e00000005733ff85c089beb40d00007e21538d9ee4000000536800000000e8000000008b86e00000004783c3043bf872e75b8b96680d00008bbe6c0d00008d44240c8954240c50e80000000084c07411a1f009000085c075088b44240c8bcfeb0c8b86680d00008b8e6c0d0000898e6c0d0000898e7c0d00008bce8986680d00008986780d0000e800000000c786d81000000100000033c05f5ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix_0@@YGHPAX0@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix_0"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?SmallFunc_6D1E30@@YAPAVTactical@@PAXH@Z",
+   "sym_key": "SmallFunc_6D1E30"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?SwizzleManagerClass_Instance@@3IA",
+   "sym_key": "SwizzleManagerClass_Instance"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?ObjectPtr__RegisterForTracking@@YGHHPAX@Z",
+   "sym_key": "ObjectPtr__RegisterForTracking"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YGDPAX@Z",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+   "sym_key": "TacticalClass::CalcViewportCells"
+  }
+ ]
+}

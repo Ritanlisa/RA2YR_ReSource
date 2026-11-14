@@ -1,0 +1,57 @@
+{
+ "symbol": "?ScrollMap@Tactical@@QAGPAHH@Z",
+ "sym_key": "Tactical::ScrollMap",
+ "size": 73,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b4c240439087506c7000000000083c00c3d000000007cec3b0d8813000075216a00b9f8010000e800000000c6058813000000c6058c13000000c60590130000ffc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CEC8@@3IA",
+   "sym_key": "DataGlobal_B0CEC8"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?dword_B0E638@@3IA",
+   "sym_key": "dword_B0E638"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?CopyHeader@MIXClass@@QAEHPAX@Z",
+   "sym_key": "MIXClass::CopyHeader"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}

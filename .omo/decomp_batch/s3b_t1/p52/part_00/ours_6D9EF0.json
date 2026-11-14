@@ -1,0 +1,39 @@
+{
+ "symbol": "?AddToDrawQueue@TacticalClass@@QAEDHHH@Z",
+ "sym_key": "TacticalClass::AddToDrawQueue",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "8b81b00d0000563df401000057747c8b7c241083ffe07c730fbe15080000008b1283c2203bfa77638b74241483fee07c5a8b150c00000083c2203bf2774d8b54240c8d044053891485000000008b81b00d00008b91b40000008b99b00000008d044003df03d6891c8500000000891485000000008b81b00d00005b405f8981b00d000024010c015ec20c005f24005ec20c00",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CEC8@@3PAIA",
+   "sym_key": "DataGlobal_B0CEC8"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CECC@@3PAIA",
+   "sym_key": "DataGlobal_B0CECC"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CED0@@3PAIA",
+   "sym_key": "DataGlobal_B0CED0"
+  }
+ ]
+}

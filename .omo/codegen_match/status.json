@@ -158113,7 +158113,7 @@
   "this_as_id": false
  },
  "0x6d6bb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6D6BB0",
@@ -158124,7 +158124,7 @@
   "this_as_id": false
  },
  "0x6d6d10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158160,19 +158160,19 @@
   "this_as_id": false
  },
  "0x6d7840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x48",
   "name": "TacticalClass::DrawMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TacticalClass::DrawMap",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d7c00": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158191,7 +158191,7 @@
   "status": "NG"
  },
  "0x6d8260": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158237,7 +158237,7 @@
   "this_as_id": false
  },
  "0x6d8640": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ClampCoordMap",
@@ -158272,7 +158272,7 @@
   "this_as_id": false
  },
  "0x6d8c60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6D8C60",
@@ -158342,27 +158342,27 @@
   "this_as_id": false
  },
  "0x6d9ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "ObjectClass::FindBuildingsInScreenRect",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FindBuildingsInScreenRect",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d9ef0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 je 0x6d9f74",
   "name": "TacticalClass::AddToDrawQueue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "TacticalClass::AddToDrawQueue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d9f80": {
@@ -158428,7 +158428,7 @@
   "status": "NG"
  },
  "0x6da230": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158469,7 +158469,7 @@
   "status": "OK"
  },
  "0x6da380": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158481,31 +158481,31 @@
   "this_as_id": false
  },
  "0x6da560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "Tactical::ScrollMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "Tactical::ScrollMap",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6da5c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 mov byte ptr [0x822cf2], 1",
   "name": "BuildingClass::ProcessOccupancy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingClass::ProcessOccupancy",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6da740": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158517,7 +158517,7 @@
   "this_as_id": false
  },
  "0x6da770": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SelectAllOfType_Play",
@@ -158551,7 +158551,7 @@
   "this_as_id": false
  },
  "0x6da9d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -158563,7 +158563,7 @@
   "this_as_id": false
  },
  "0x6dad60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -158623,15 +158623,15 @@
   "this_as_id": false
  },
  "0x6dbd20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+4 sub esp, 8",
   "name": "Tactical::InitMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Tactical::InitMap",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6dbe00": {
@@ -158647,7 +158647,7 @@
   "this_as_id": false
  },
  "0x6dbe20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -159175,15 +159175,15 @@
   "this_as_id": false
  },
  "0x6dd000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 mov dword ptr [esi + 0x24], 0xffffffff",
   "name": "TActionClass::ctor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TActionClass::ctor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6dd2c0": {

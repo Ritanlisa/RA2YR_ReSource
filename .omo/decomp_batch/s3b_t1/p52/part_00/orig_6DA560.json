@@ -1,0 +1,11 @@
+{
+ "addr": "0x6DA560",
+ "name": "Tactical::ScrollMap",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6DA560",
+ "bytes_hex": "8b4c2404b8c8ceb00039087506c7000000000083c00c3d38e6b0007cec3b0d78098800752a6a00b9e8f78700e8bfe7dcffc7057809880000000000c7057c09880000000000c70580098800ffffffffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

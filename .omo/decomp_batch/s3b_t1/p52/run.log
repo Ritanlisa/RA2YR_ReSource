@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d6bb0 sub_6D6BB0 -> _addr_6D
+[conv] 0x6d6d10 TacticalClass::DrawBuildingsInView -> TacticalClass
+[conv] 0x6d7840 TacticalClass::DrawMap -> TacticalClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x6d8260 MapClass::TransformCoordToScreen -> MapClass
+[conv] 0x6d8640 ClampCoordMap -> _addr_6D
+[conv] 0x6d8c60 sub_6D8C60 -> _addr_6D
+[conv] 0x6d9ce0 ObjectClass::FindBuildingsInScreenRect -> ObjectClass
+[conv] 0x6d9ef0 TacticalClass::AddToDrawQueue -> TacticalClass
+[conv] 0x6da230 DisplayClass::GetCoordDelta -> DisplayClass
+[conv] 0x6da380 TacticalClass::IsOccupiedByTechno -> TacticalClass
+[conv] 0x6da560 Tactical::ScrollMap -> Tactical
+[conv] 0x6da5c0 BuildingClass::ProcessOccupancy -> BuildingClass
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x6da770 SelectAllOfType_Play -> SelectAllOfType
+[conv] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> ObjectClass
+[conv] 0x6dad60 ObjectClass::RenderRallyPointLines -> ObjectClass
+[conv] 0x6dbd20 Tactical::InitMap -> Tactical
+[conv] 0x6dbe20 TacticalClass::DrawPlacementCircles -> TacticalClass
+[conv] 0x6dd000 TActionClass::ctor -> TActionClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6D                 rc=2
+[era] TacticalClass            rc=2
+[era] MapClass                 rc=2
+[era] ObjectClass              rc=2
+[era] DisplayClass             rc=2
+[era] Tactical                 rc=0
+[era] BuildingClass            rc=0
+[era] SuperWeaponClass         rc=2
+[era] SelectAllOfType          rc=2
+[era] TActionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x6d7840   MISMATCH         TacticalClass::DrawMap
+[diff] 0x6d9ef0   MISMATCH         TacticalClass::AddToDrawQueue
+[diff] 0x6d9ce0   MISMATCH         ObjectClass::FindBuildingsInScreenRect
+[diff] 0x6da560   MISMATCH         Tactical::ScrollMap
+[diff] 0x6dbd20   MISMATCH         Tactical::InitMap
+[diff] 0x6da5c0   MISMATCH         BuildingClass::ProcessOccupancy
+[diff] 0x6dd000   MISMATCH         TActionClass::ctor
+[ledger] 0x6d6bb0 sub_6D6BB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d6d10 TacticalClass::DrawBuildingsInView -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d7840 TacticalClass::DrawMap -> NG (attempt 5)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6d8260 MapClass::TransformCoordToScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d8640 ClampCoordMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d8c60 sub_6D8C60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d9ce0 ObjectClass::FindBuildingsInScreenRect -> NG (attempt 2)
+[ledger] 0x6d9ef0 TacticalClass::AddToDrawQueue -> NG (attempt 4)
+[ledger] 0x6da230 DisplayClass::GetCoordDelta -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6da380 TacticalClass::IsOccupiedByTechno -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6da560 Tactical::ScrollMap -> NG (attempt 2)
+[ledger] 0x6da5c0 BuildingClass::ProcessOccupancy -> NG (attempt 4)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6da770 SelectAllOfType_Play -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dad60 ObjectClass::RenderRallyPointLines -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6dbd20 Tactical::InitMap -> NG (attempt 5)
+[ledger] 0x6dbe20 TacticalClass::DrawPlacementCircles -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6dd000 TActionClass::ctor -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "frame_sched": 2,
+  "branch_polarity": 1,
+  "extern_reloc": 1,
+  "codegen_shape": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p52\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6D9EF0",
+ "name": "TacticalClass::AddToDrawQueue",
+ "size": 139,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6D9EF0",
+ "bytes_hex": "8b81b00d0000563df40100005774758b74241083fee07c6c8b15a86f880083c2203bf27f5f8b7c241483ffe07c568b15ac6f880083c2203bfa7f498b54240c8d0440891485c8ceb0008b81b00000008b91b400000003f08b81b00d000003d75f8d0440893485ccceb0005e891485d0ceb0008b81b00d0000408981b00d0000b001c20c005f32c05ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
