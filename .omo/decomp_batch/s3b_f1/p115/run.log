@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p115\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cf070 sub_6CF070 -> _addr_6C
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x6d04f0 TabClass::BuildCommandBar -> TabClass
+[conv] 0x6d0680 TabClass::Seek -> TabClass
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6d2120 Coord::ScaleToScreenY -> Coord
+[conv] 0x6d2b60 TacticalMap::RenderCell -> TacticalMap
+[conv] 0x6d4b50 PrintTimerOnTactical::Start -> PrintTimerOnTactical
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x6d6590 Tactical::PixelToCell -> Tactical
+[conv] 0x6d6bb0 sub_6D6BB0 -> _addr_6D
+[conv] 0x6d6d10 TacticalClass::DrawBuildingsInView -> TacticalClass
+[conv] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> TacticalClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x6d8260 MapClass::TransformCoordToScreen -> MapClass
+[conv] 0x6d8640 ClampCoordMap -> _addr_6D
+[conv] 0x6d8c60 sub_6D8C60 -> _addr_6D
+[conv] 0x6d8db0 TacticalMap::RenderAllObjects -> TacticalMap
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6C                 rc=2
+[era] TabClass                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6D                 rc=2
+[era] Coord                    rc=2
+[era] TacticalMap              rc=2
+[era] PrintTimerOnTactical     rc=2
+[era] TechnoClass              rc=2
+[era] Tactical                 rc=2
+[era] TacticalClass            rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6cf070 sub_6CF070 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d04f0 TabClass::BuildCommandBar -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d0680 TabClass::Seek -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6d2120 Coord::ScaleToScreenY -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d2b60 TacticalMap::RenderCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d4b50 PrintTimerOnTactical::Start -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6d6590 Tactical::PixelToCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d6bb0 sub_6D6BB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d6d10 TacticalClass::DrawBuildingsInView -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6d8260 MapClass::TransformCoordToScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d8640 ClampCoordMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d8c60 sub_6D8C60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d8db0 TacticalMap::RenderAllObjects -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p115\batch_report.json
