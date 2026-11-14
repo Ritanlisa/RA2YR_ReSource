@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> ObjectClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x63be60 BuildingClass::DrawActionLines -> BuildingClass
+[conv] 0x63cae0 ObjectClass::RenderScenarioActionLines2 -> ObjectClass
+[conv] 0x63d070 HouseClass::ColorLerpAndPack -> HouseClass
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x63d560 BuildingClass::DrawSelectionBlip -> BuildingClass
+[conv] 0x63d910 DrawTacticalFillScanline -> _addr_63
+[conv] 0x63dfd0 FactoryClass::RemoveItemAt -> FactoryClass
+[conv] 0x63f080 ProcessVoxelVertexData -> _addr_63
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x63f7c0 PowerClass::checkBlackout -> PowerClass
+[conv] 0x640710 Skirmish::RenderPreview -> Skirmish
+[conv] 0x640a40 Tactical::Radar_Render -> Tactical
+[conv] 0x641140 MiniMap::Render -> MiniMap
+[conv] 0x6418b0 MiniMap::SavePreviewToINI -> MiniMap
+[conv] 0x641b00 ObjectClass::LoadMapPreviewImage -> ObjectClass
+[conv] 0x641db0 Surface::LoadToSurfaceSHP -> Surface
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] ScriptAction             rc=2
+[era] BuildingClass            rc=2
+[era] HouseClass               rc=2
+[era] _addr_63                 rc=2
+[era] FactoryClass             rc=2
+[era] Audio                    rc=2
+[era] PowerClass               rc=2
+[era] Skirmish                 rc=2
+[era] Tactical                 rc=2
+[era] MiniMap                  rc=2
+[era] Surface                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x63f080   MISMATCH         ProcessVoxelVertexData
+[diff] 0x641db0   MISMATCH         Surface::LoadToSurfaceSHP
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63be60 BuildingClass::DrawActionLines -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63cae0 ObjectClass::RenderScenarioActionLines2 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63d070 HouseClass::ColorLerpAndPack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x63d2d0 ObjectClass::sub_63D2D0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63d560 BuildingClass::DrawSelectionBlip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63d910 DrawTacticalFillScanline -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63dfd0 FactoryClass::RemoveItemAt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63f080 ProcessVoxelVertexData -> NG (attempt 2)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 9)
+[ledger] 0x63f7c0 PowerClass::checkBlackout -> COMPILE_FAIL (attempt 6)
+[ledger] 0x640710 Skirmish::RenderPreview -> COMPILE_FAIL (attempt 6)
+[ledger] 0x640a40 Tactical::Radar_Render -> COMPILE_FAIL (attempt 2)
+[ledger] 0x641140 MiniMap::Render -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6418b0 MiniMap::SavePreviewToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x641b00 ObjectClass::LoadMapPreviewImage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x641db0 Surface::LoadToSurfaceSHP -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p28\batch_report.json
