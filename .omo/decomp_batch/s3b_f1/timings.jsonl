@@ -33,3 +33,4 @@
 {"part": 32, "n": 20, "seconds": 48.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 33, "n": 20, "seconds": 79.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 34, "n": 20, "seconds": 130.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 35, "n": 20, "seconds": 52.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
