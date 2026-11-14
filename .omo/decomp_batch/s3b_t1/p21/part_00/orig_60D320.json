@@ -1,0 +1,11 @@
+{
+ "addr": "0x60D320",
+ "name": "GameSetup::LookupDialogHash",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x60D320",
+ "bytes_hex": "51a1041bac00894c240085c074388d4c2400ff15181bac008b0d0c1bac00ba01000000d3e24a23d0a1001bac008b049085c074128b4c24003908740e8b800402000085c075f233c059c385c074f883c00485c074f18b406c59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

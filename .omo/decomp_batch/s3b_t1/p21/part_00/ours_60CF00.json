@@ -1,0 +1,375 @@
+{
+ "symbol": "?CreateControlDialog@Control@@QAEPAIXZ",
+ "sym_key": "Control::CreateControlDialog",
+ "size": 859,
+ "link_base": 0,
+ "bytes_hex": "51a14402000056578bf985c0897c24080f84410300008d44240850ff15580200008a0d4c020000ba01000000d3e28b0d400200004a23c28b048185c00f84150300008b4c24088b103bd1740e8b800402000085c07467390875f283f8fc8d70040f84f10200008b40703d0e0100000f8f220100000f842802000083c0953d9d0000000f876a02000033d28a9000000000ff2495000000008bcfe8000000008946748b0d2c120000898ee00000008b152c1200008996e40000005f5e59c35f33c05e59c3e800000000894674a1dc1200008986e0000000a1dc1200008986e40000005f5e59c3e8000000008946748b0d10130000898ee0000000a1781200008986e40000005f5e59c3e8000000008946748b15101300008996e00000008b0dd8110000898ee40000005f5e59c3e8000000008946748b15101300008996e00000008b0d24120000898ee40000005f5e59c3e8000000008946748b15101300008996e0000000a1f01100008986e40000005f5e59c3e800000000894674a1101300008986e00000008b0d14130000898ee40000005f5e59c33d170100000f8fcb0000000f84a200000005f1feffff83f8070f873d010000ff248500000000e8000000008946748b15101300008996e00000008b0d6c120000898ee40000005f5e59c3e800000000894674a1101300008986e00000008b15201200008996e40000005f5e59c3e8000000008946748b0d10130000898ee00000008b150c1200008996e40000005f5e59c3e800000000894674a1101300008986e0000000a1581200008986e40000005f5e59c3e800000000894674a1101300008986e00000008b0d5c120000898ee40000005f5e59c33dbc0200007f75744f2d1c0100007426487573e800000000894674a1101300008986e00000008b15cc1200008996e40000005f5e59c3e800000000894674a1101300008986e0000000a1a81100008986e40000005f5e59c3e8000000008946748b0d10130000898ee00000008b15ec1200008996e40000005f5e59c32dc60b00007448487422e800000000894674a1101300008986e0000000a1c41100008986e40000005f5e59c3e800000000894674a1f41200008986e00000008b0df4120000898ee40000005f5e59c3e8000000008946748b15f41200008996e00000008b0df4120000898ee40000005f5e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "$L2207",
+   "sym_key": "$L2207"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "$L2208",
+   "sym_key": "$L2208"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?GetManager@CreatureClass@@QAEHXZ",
+   "sym_key": "CreatureClass::GetManager"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?UI_Create_72D820@@YAHXZ",
+   "sym_key": "UI_Create_72D820"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?UI_Create_72D210@@YAHXZ",
+   "sym_key": "UI_Create_72D210"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 250,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?UI_Create_72D030@@YAHXZ",
+   "sym_key": "UI_Create_72D030"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 301,
+   "type": "REL32",
+   "sym": "?UI_Create_72C510@@YAHXZ",
+   "sym_key": "UI_Create_72C510"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 337,
+   "type": "REL32",
+   "sym": "?UI_Create_72C330@@YAHXZ",
+   "sym_key": "UI_Create_72C330"
+  },
+  {
+   "off": 346,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 357,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 372,
+   "type": "REL32",
+   "sym": "?UI_Create_72B9D0@@YAHXZ",
+   "sym_key": "UI_Create_72B9D0"
+  },
+  {
+   "off": 380,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 392,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 440,
+   "type": "DIR32",
+   "sym": "$L2209",
+   "sym_key": "$L2209"
+  },
+  {
+   "off": 445,
+   "type": "REL32",
+   "sym": "?UI_Create_72CE50@@YAHXZ",
+   "sym_key": "UI_Create_72CE50"
+  },
+  {
+   "off": 454,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 466,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 481,
+   "type": "REL32",
+   "sym": "?UI_Create_72CAB0@@YAHXZ",
+   "sym_key": "UI_Create_72CAB0"
+  },
+  {
+   "off": 489,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 501,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 516,
+   "type": "REL32",
+   "sym": "?UI_Create_72C150@@YAHXZ",
+   "sym_key": "UI_Create_72C150"
+  },
+  {
+   "off": 525,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 537,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 552,
+   "type": "REL32",
+   "sym": "?UI_Create_72BD90@@YAHXZ",
+   "sym_key": "UI_Create_72BD90"
+  },
+  {
+   "off": 560,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 571,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 586,
+   "type": "REL32",
+   "sym": "?UI_Create_72BF70@@YAHXZ",
+   "sym_key": "UI_Create_72BF70"
+  },
+  {
+   "off": 594,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 606,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 640,
+   "type": "REL32",
+   "sym": "?UI_Create_72C6F0@@YAHXZ",
+   "sym_key": "UI_Create_72C6F0"
+  },
+  {
+   "off": 648,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 660,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 675,
+   "type": "REL32",
+   "sym": "?UI_Create_72C8D0@@YAHXZ",
+   "sym_key": "UI_Create_72C8D0"
+  },
+  {
+   "off": 683,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 694,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 709,
+   "type": "REL32",
+   "sym": "?UI_Create_72BBB0@@YAHXZ",
+   "sym_key": "UI_Create_72BBB0"
+  },
+  {
+   "off": 718,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 730,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 755,
+   "type": "REL32",
+   "sym": "?VtableStub_72E280@@YAHXZ",
+   "sym_key": "VtableStub_72E280"
+  },
+  {
+   "off": 763,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 774,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 789,
+   "type": "REL32",
+   "sym": "?VtableStub_72D450@@YAHXZ",
+   "sym_key": "VtableStub_72D450"
+  },
+  {
+   "off": 797,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 809,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 824,
+   "type": "REL32",
+   "sym": "?VtableStub_72D450@@YAHXZ",
+   "sym_key": "VtableStub_72D450"
+  },
+  {
+   "off": 833,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 845,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  }
+ ]
+}

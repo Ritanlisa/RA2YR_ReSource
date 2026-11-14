@@ -1,0 +1,33 @@
+{
+ "symbol": "?UI_Helper_60CCC0@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UI_Helper_60CCC0",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "51a144020000894c240085c0750432c059c38d44240050ff15580200008a0d4c020000ba01000000d3e28b0d400200004a23c28b048185c0750432c059c38b4c24008b103bd1740e8b800402000085c07427390875f283f8fc750432c059c38b487081f903010000741381f9c70b0000740bc680db0000000032c059c3c680db00000001b00159c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_DialogPool@@3PAXA",
+   "sym_key": "g_DialogPool"
+  }
+ ]
+}

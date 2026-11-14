@@ -118124,15 +118124,15 @@
   "this_as_id": false
  },
  "0x60b610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 call dword ptr [0x7e14ec]",
   "name": "ObjectClass::UI_Get_60B610",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "UI_Get_60B610",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60b740": {
@@ -118160,7 +118160,7 @@
   "this_as_id": false
  },
  "0x60b880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_60B880",
@@ -118171,7 +118171,7 @@
   "this_as_id": false
  },
  "0x60b950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118183,7 +118183,7 @@
   "this_as_id": false
  },
  "0x60c0c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RepositionDialogControls",
@@ -118194,7 +118194,7 @@
   "this_as_id": false
  },
  "0x60c4a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118206,7 +118206,7 @@
   "this_as_id": false
  },
  "0x60c540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118218,43 +118218,43 @@
   "this_as_id": false
  },
  "0x60c7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60c825",
   "name": "ObjectClass::UI_Helper_60C7D0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "UI_Helper_60C7D0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60c930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60c985",
   "name": "ObjectClass::UI_Helper_60C930",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "UI_Helper_60C930",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60caf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60cb45",
   "name": "ObjectClass::UI_Helper_60CAF0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "UI_Helper_60CAF0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60cba0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -118266,7 +118266,7 @@
   "this_as_id": false
  },
  "0x60cc00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -118278,43 +118278,43 @@
   "this_as_id": false
  },
  "0x60ccc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60cd15",
   "name": "ObjectClass::UI_Helper_60CCC0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "UI_Helper_60CCC0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60cdb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60ce05",
   "name": "ObjectClass::UI_Helper_60CDB0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "UI_Helper_60CDB0",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60cf00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+7 test eax, eax",
   "name": "Control::CreateControlDialog",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Control::CreateControlDialog",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60d2c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "UI_Helper_60D2C0",
@@ -118325,19 +118325,19 @@
   "this_as_id": false
  },
  "0x60d320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 je 0x60d366",
   "name": "GameSetup::LookupDialogHash",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "GameSetup::LookupDialogHash",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x60d380": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118367,7 +118367,7 @@
   "this_as_id": false
  },
  "0x60d450": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118390,7 +118390,7 @@
   "this_as_id": false
  },
  "0x60d540": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118414,7 +118414,7 @@
   "this_as_id": false
  },
  "0x60f4b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InitializeDialogControls",

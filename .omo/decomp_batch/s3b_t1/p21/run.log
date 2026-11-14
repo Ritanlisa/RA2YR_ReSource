@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x60b610 ObjectClass::UI_Get_60B610 -> ObjectClass
+[conv] 0x60b880 sub_60B880 -> _addr_60
+[conv] 0x60b950 Control::RepositionControlsDialog -> Control
+[conv] 0x60c0c0 RepositionDialogControls -> _addr_60
+[conv] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> SkirmishDialog
+[conv] 0x60c540 Control::CheckControlTypeDialog -> Control
+[conv] 0x60c7d0 ObjectClass::UI_Helper_60C7D0 -> ObjectClass
+[conv] 0x60c930 ObjectClass::UI_Helper_60C930 -> ObjectClass
+[conv] 0x60caf0 ObjectClass::UI_Helper_60CAF0 -> ObjectClass
+[conv] 0x60cba0 CampaignScore::LookupDialogHash -> CampaignScore
+[conv] 0x60cc00 CampaignScore::FindDialogTemplate -> CampaignScore
+[conv] 0x60ccc0 ObjectClass::UI_Helper_60CCC0 -> ObjectClass
+[conv] 0x60cdb0 ObjectClass::UI_Helper_60CDB0 -> ObjectClass
+[conv] 0x60cf00 Control::CreateControlDialog -> Control
+[conv] 0x60d2c0 UI_Helper_60D2C0 -> UI_Helper
+[conv] 0x60d320 GameSetup::LookupDialogHash -> GameSetup
+[conv] 0x60d380 Campaign::Screen -> Campaign
+[conv] 0x60d450 DialogClass::RegisterWinClasses -> DialogClass
+[conv] 0x60d540 GameScreen::DlgProc -> GameScreen
+[conv] 0x60f4b0 InitializeDialogControls -> _addr_60
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_60                 rc=2
+[era] Control                  rc=2
+[era] SkirmishDialog           rc=2
+[era] CampaignScore            rc=2
+[era] UI_Helper                rc=2
+[era] GameSetup                rc=0
+[era] Campaign                 rc=2
+[era] DialogClass              rc=2
+[era] GameScreen               rc=2
+=== diffasm byte-compare ===
+[diff] 0x60b610   MISMATCH         ObjectClass::UI_Get_60B610
+[diff] 0x60c7d0   MISMATCH         ObjectClass::UI_Helper_60C7D0
+[diff] 0x60c930   MISMATCH         ObjectClass::UI_Helper_60C930
+[diff] 0x60caf0   MISMATCH         ObjectClass::UI_Helper_60CAF0
+[diff] 0x60ccc0   MISMATCH         ObjectClass::UI_Helper_60CCC0
+[diff] 0x60cdb0   MISMATCH         ObjectClass::UI_Helper_60CDB0
+[diff] 0x60cf00   MISMATCH         Control::CreateControlDialog
+[diff] 0x60d320   MISMATCH         GameSetup::LookupDialogHash
+[ledger] 0x60b610 ObjectClass::UI_Get_60B610 -> NG (attempt 2)
+[ledger] 0x60b880 sub_60B880 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60b950 Control::RepositionControlsDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60c0c0 RepositionDialogControls -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 7)
+[ledger] 0x60c540 Control::CheckControlTypeDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60c7d0 ObjectClass::UI_Helper_60C7D0 -> NG (attempt 2)
+[ledger] 0x60c930 ObjectClass::UI_Helper_60C930 -> NG (attempt 2)
+[ledger] 0x60caf0 ObjectClass::UI_Helper_60CAF0 -> NG (attempt 2)
+[ledger] 0x60cba0 CampaignScore::LookupDialogHash -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60cc00 CampaignScore::FindDialogTemplate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60ccc0 ObjectClass::UI_Helper_60CCC0 -> NG (attempt 2)
+[ledger] 0x60cdb0 ObjectClass::UI_Helper_60CDB0 -> NG (attempt 2)
+[ledger] 0x60cf00 Control::CreateControlDialog -> NG (attempt 2)
+[ledger] 0x60d2c0 UI_Helper_60D2C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60d320 GameSetup::LookupDialogHash -> NG (attempt 2)
+[ledger] 0x60d380 Campaign::Screen -> COMPILE_FAIL (attempt 5)
+[ledger] 0x60d450 DialogClass::RegisterWinClasses -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60d540 GameScreen::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60f4b0 InitializeDialogControls -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "branch_order": 5,
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p21\batch_report.json
