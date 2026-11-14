@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p83\part_00
+=== convert (20 addrs) ===
+[conv] 0x6015e0 CtlDialogColorHandler -> _addr_60
+[conv] 0x601d20 ValidateDialogControl -> _addr_60
+[conv] 0x6023f0 sub_6023F0 -> _addr_60
+[conv] 0x602490 IsValidActionDialog -> _addr_60
+[conv] 0x602b90 UI_Helper_602B90 -> UI_Helper
+[conv] 0x602dd0 IsDialogControlHidden -> _addr_60
+[conv] 0x603040 LoadCampaignMissionData -> _addr_60
+[conv] 0x603240 UI_Helper_603240 -> UI_Helper
+[conv] 0x6033f0 BinkMovie::HandleKeyboard -> BinkMovie
+[conv] 0x6035f0 DispatchDialogControlAction -> _addr_60
+[conv] 0x603870 GetDialogControlSHP -> _addr_60
+[conv] 0x603aa0 IsDialogWindowClass -> _addr_60
+[conv] 0x603d30 CacheDialogInvalidate -> _addr_60
+[conv] 0x603e40 sub_603E40 -> _addr_60
+[conv] 0x603fc0 sub_603FC0 -> _addr_60
+[conv] 0x6040b0 DlgSkirmishMenuProc -> _addr_60
+[conv] 0x606740 SetDialogActiveFlag -> _addr_60
+[conv] 0x606800 Dialog::MapControlToAction -> Dialog
+[conv] 0x6071e0 RenderGadgetClassAnimation -> _addr_60
+[conv] 0x607fd0 Dialog::StopBink -> Dialog
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_60                 rc=2
+[era] UI_Helper                rc=2
+[era] BinkMovie                rc=2
+[era] Dialog                   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6015e0 CtlDialogColorHandler -> COMPILE_FAIL (attempt 3)
+[ledger] 0x601d20 ValidateDialogControl -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6023f0 sub_6023F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x602490 IsValidActionDialog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x602b90 UI_Helper_602B90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x602dd0 IsDialogControlHidden -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603040 LoadCampaignMissionData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603240 UI_Helper_603240 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6033f0 BinkMovie::HandleKeyboard -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6035f0 DispatchDialogControlAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603870 GetDialogControlSHP -> COMPILE_FAIL (attempt 6)
+[ledger] 0x603aa0 IsDialogWindowClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603d30 CacheDialogInvalidate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603e40 sub_603E40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x603fc0 sub_603FC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6040b0 DlgSkirmishMenuProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x606740 SetDialogActiveFlag -> COMPILE_FAIL (attempt 7)
+[ledger] 0x606800 Dialog::MapControlToAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6071e0 RenderGadgetClassAnimation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x607fd0 Dialog::StopBink -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p83\batch_report.json
