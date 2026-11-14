@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x5272b0 ObjectClass::LookupCSFString -> ObjectClass
+[conv] 0x5275c0 INIClass::SetInt -> INIClass
+[conv] 0x527640 INIClass::SetIntFormat -> INIClass
+[conv] 0x5276d0 INIClass::ReadInt_Overwrite -> INIClass
+[conv] 0x527b90 INIClass::ReadDouble -> INIClass
+[conv] 0x527cc0 INIClass::ParseValue -> INIClass
+[conv] 0x527f20 INIClass::GetRect -> INIClass
+[conv] 0x528220 ObjectClass::sub_528220 -> ObjectClass
+[conv] 0x5283d0 INIClass::ReadDouble_Overwrite -> INIClass
+[conv] 0x529880 INIClass::ReadPoint2D_Overwrite -> INIClass
+[conv] 0x529a30 INIClass::GetCoordPair -> INIClass
+[conv] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> INIClass
+[conv] 0x529e70 ObjectClass::sub_529E70 -> ObjectClass
+[conv] 0x52a110 ObjectClass::sub_52A110 -> ObjectClass
+[conv] 0x52a2f0 ObjectClass::sub_52A2F0 -> ObjectClass
+[conv] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> INIEntry_INIClass
+[conv] 0x52ab80 WarheadTypeClass::parseVerses -> WarheadTypeClass
+[conv] 0x52ace0 GenericList::Constructor -> GenericList
+[conv] 0x52ad50 WarheadTypeClass::parseModifiers -> WarheadTypeClass
+[conv] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> WarheadTypeClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] INIClass                 rc=2
+[era] INIEntry_INIClass        rc=2
+[era] WarheadTypeClass         rc=2
+[era] GenericList              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5272b0 ObjectClass::LookupCSFString -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5275c0 INIClass::SetInt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x527640 INIClass::SetIntFormat -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5276d0 INIClass::ReadInt_Overwrite -> COMPILE_FAIL (attempt 5)
+[ledger] 0x527b90 INIClass::ReadDouble -> COMPILE_FAIL (attempt 5)
+[ledger] 0x527cc0 INIClass::ParseValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x527f20 INIClass::GetRect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x528220 ObjectClass::sub_528220 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5283d0 INIClass::ReadDouble_Overwrite -> COMPILE_FAIL (attempt 5)
+[ledger] 0x529880 INIClass::ReadPoint2D_Overwrite -> COMPILE_FAIL (attempt 6)
+[ledger] 0x529a30 INIClass::GetCoordPair -> COMPILE_FAIL (attempt 6)
+[ledger] 0x529ca0 INIClass::ReadPoint3D_Overwrite -> COMPILE_FAIL (attempt 6)
+[ledger] 0x529e70 ObjectClass::sub_529E70 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52a110 ObjectClass::sub_52A110 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52a2f0 ObjectClass::sub_52A2F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52aaf0 INIEntry@INIClass::sub_52AAF0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x52ab80 WarheadTypeClass::parseVerses -> COMPILE_FAIL (attempt 7)
+[ledger] 0x52ace0 GenericList::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x52ad50 WarheadTypeClass::parseModifiers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x52afc0 WarheadTypeClass::ReadParticleSystems -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p47\batch_report.json
