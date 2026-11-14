@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p81\part_00
+=== convert (20 addrs) ===
+[conv] 0x780e30 FormatWOLPlayerInfoForDisplay -> _addr_78
+[conv] 0x781480 ObjectClass::GameListRenderWOL -> ObjectClass
+[conv] 0x781cc0 sub_781CC0 -> _addr_78
+[conv] 0x781fb0 InsertGameSettings -> _addr_78
+[conv] 0x782320 InsertBuddyList -> _addr_78
+[conv] 0x7835c0 sub_7835C0 -> _addr_78
+[conv] 0x783c80 ObjectClass::DisplayRankingsWOL -> ObjectClass
+[conv] 0x785370 ObjectClass::InitializeWestwoodOnline -> ObjectClass
+[conv] 0x785740 ObjectClass::LeaveChannelWOL -> ObjectClass
+[conv] 0x785ea0 ObjectClass::RunWOLMainLoop_Delete -> ObjectClass
+[conv] 0x786080 ObjectClass::HandleLogoutWOL -> ObjectClass
+[conv] 0x7864c0 ObjectClass::ConnectAndLoginWOL -> ObjectClass
+[conv] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> ObjectClass
+[conv] 0x787010 ObjectClass::LoginFlowWOL -> ObjectClass
+[conv] 0x787770 NetworkLobbyWOL -> _addr_78
+[conv] 0x788180 FindLobbyIDWOL -> _addr_78
+[conv] 0x788b00 ObjectClass::CreateAccountWOL -> ObjectClass
+[conv] 0x789630 sub_789630 -> _addr_78
+[conv] 0x789960 ObjectClass::ValidateJoinWOL -> ObjectClass
+[conv] 0x789b60 ObjectClass::CreateGameWOL -> ObjectClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_78                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x780e30 FormatWOLPlayerInfoForDisplay -> COMPILE_FAIL (attempt 2)
+[ledger] 0x781480 ObjectClass::GameListRenderWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x781cc0 sub_781CC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x781fb0 InsertGameSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x782320 InsertBuddyList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7835c0 sub_7835C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x783c80 ObjectClass::DisplayRankingsWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x785370 ObjectClass::InitializeWestwoodOnline -> COMPILE_FAIL (attempt 6)
+[ledger] 0x785740 ObjectClass::LeaveChannelWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x785ea0 ObjectClass::RunWOLMainLoop_Delete -> COMPILE_FAIL (attempt 2)
+[ledger] 0x786080 ObjectClass::HandleLogoutWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7864c0 ObjectClass::ConnectAndLoginWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x786ef0 ObjectClass::LoginFlowWOL_Open -> COMPILE_FAIL (attempt 4)
+[ledger] 0x787010 ObjectClass::LoginFlowWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x787770 NetworkLobbyWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x788180 FindLobbyIDWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x788b00 ObjectClass::CreateAccountWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x789630 sub_789630 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x789960 ObjectClass::ValidateJoinWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x789b60 ObjectClass::CreateGameWOL -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p81\batch_report.json
