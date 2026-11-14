@@ -58,3 +58,4 @@
 {"part": 57, "n": 20, "seconds": 109.7, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "DUP_SKIP": 1}}
 {"part": 58, "n": 20, "seconds": 124.8, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "DUP_SKIP": 1}}
 {"part": 59, "n": 20, "seconds": 79.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 60, "n": 20, "seconds": 181.0, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 1, "DUP_SKIP": 1}}

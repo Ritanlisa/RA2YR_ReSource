@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p60\part_00
+=== convert (20 addrs) ===
+[conv] 0x70c620 TechnoClass::CheckCliffTransition -> TechnoClass
+[conv] 0x70c690 Weapon::DestroyTerrain -> Weapon
+[conv] 0x70d1d0 TechnoClass::ShouldScanArea -> TechnoClass
+[conv] 0x70d7e0 FootClass::ProcessEnterTransport -> FootClass
+[conv] 0x70d8f0 TechnoClass::PlaceAtCell -> TechnoClass
+[conv] 0x70d990 TechnoClass::OnEnterCell -> TechnoClass
+[conv] 0x70de70 TechnoClass::GattlingRateUp_GattlingRateDownReset -> TechnoClass
+[conv] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> ObjectClass
+[conv] 0x70ece0 TechnoClass::Fire -> TechnoClass
+[conv] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> ObjectClass
+[conv] 0x70fd70 TechnoClass::LinkToBridge -> TechnoClass
+[conv] 0x70fee0 TechnoClass::EjectPassengers -> TechnoClass
+[conv] 0x710000 FootClass::FootClass_ImbueLocomotor -> FootClass
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x711f60 TechnoTypeClass::ComputeValue -> TechnoTypeClass
+[conv] 0x712040 TechnoTypeClass::SelectArtOrAlt -> TechnoTypeClass
+[conv] 0x712170 TechnoTypeClass::LoadExtras -> TechnoTypeClass
+[conv] 0x716290 TechnoTypeClass::GetModeSpecificValue -> TechnoTypeClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Weapon                   rc=2
+[era] FootClass                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x711f60   MISMATCH         TechnoTypeClass::ComputeValue
+[ledger] 0x70c620 TechnoClass::CheckCliffTransition -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70c690 Weapon::DestroyTerrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70d1d0 TechnoClass::ShouldScanArea -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70d7e0 FootClass::ProcessEnterTransport -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70d8f0 TechnoClass::PlaceAtCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70d990 TechnoClass::OnEnterCell -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70de70 TechnoClass::GattlingRateUp_GattlingRateDownReset -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70e5a0 ObjectClass::UpdateTechnoIdleTimer -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70ece0 TechnoClass::Fire -> COMPILE_FAIL (attempt 7)
+[ledger] 0x70f1d0 ObjectClass::DrawBuildingRangeIndicator -> COMPILE_FAIL (attempt 4)
+[ledger] 0x70fd70 TechnoClass::LinkToBridge -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70fee0 TechnoClass::EjectPassengers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x710000 FootClass::FootClass_ImbueLocomotor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 6)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 8)
+[ledger] 0x711f60 TechnoTypeClass::ComputeValue -> NG (attempt 3)
+[ledger] 0x712040 TechnoTypeClass::SelectArtOrAlt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7120d0 0x7120d0 -> PENDING (attempt 4)
+[ledger] 0x712170 TechnoTypeClass::LoadExtras -> COMPILE_FAIL (attempt 3)
+[ledger] 0x716290 TechnoTypeClass::GetModeSpecificValue -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 1,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p60\batch_report.json

@@ -1,0 +1,51 @@
+{
+ "symbol": "?ComputeValue@TechnoTypeClass@@QAEHPAHM@Z",
+ "sym_key": "TechnoTypeClass::ComputeValue",
+ "size": 280,
+ "link_base": 0,
+ "bytes_hex": "83ec08a10000000056578bf1dd80381700008a442418d95c240884c07408c74424080000803f8b7c241485ff0f84ab000000568bcfe800000000d95c2418568bcfe8000000008b8614060000d95c240c85c089442414740ddb442414d84c2418e98d0000008b1656ff92ac0000008944241483ec08db44241cd84c2414d84c2420dd1c24e8000000008b74242083c40833c68bcf25ff00000033f089742418e80000000084c0742bdb44241883ec08d84c2410dd1c24e8000000008b4c242083c40833c125ff0000005f33c15e83c408c208008bc65f5e83c408c208008b0656ff90ac00000089442418db442418d84c240883ec08dd1c24e8000000008bc88b44242083c40833c881e1ff0000005f33c15e83c408c20800",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Dispatch@TechnoTypeClass@@QAENPAX@Z",
+   "sym_key": "TechnoTypeClass::Dispatch"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?GetThreatMultiplier@TechnoTypeClass@@QAENPAX@Z",
+   "sym_key": "TechnoTypeClass::GetThreatMultiplier"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}
