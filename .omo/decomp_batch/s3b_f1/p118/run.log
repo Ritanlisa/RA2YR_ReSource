@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p118\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e8340 ScriptTypeClass::ReadINI -> ScriptTypeClass
+[conv] 0x6e8420 TaskForceClass::GetUnitCount -> TaskForceClass
+[conv] 0x6e8de0 TeamClass::Destructor -> TeamClass
+[conv] 0x6e9140 TeamClass::Update -> TeamClass
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+[conv] 0x6ea500 TeamClass::AddMember -> TeamClass
+[conv] 0x6ea610 TeamClass::ValidateMember -> TeamClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x6eaa90 TeamClass::RecruitMember -> TeamClass
+[conv] 0x6eae60 TeamClass::ExecuteAction -> TeamClass
+[conv] 0x6eaee0 TeamClass::FindClosestEnemy -> TeamClass
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x6eb870 HouseClass::EvaluateTarget -> HouseClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x6ebf50 TeamClass::ProcessMemberPositions -> TeamClass
+[conv] 0x6ec300 TechnoClass::IsWaypointHidden -> TechnoClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptTypeClass          rc=2
+[era] TaskForceClass           rc=2
+[era] TeamClass                rc=2
+[era] FootClass                rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6e8340 ScriptTypeClass::ReadINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e8420 TaskForceClass::GetUnitCount -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e8de0 TeamClass::Destructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e9140 TeamClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6ea500 TeamClass::AddMember -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ea610 TeamClass::ValidateMember -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6eaa90 TeamClass::RecruitMember -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6eae60 TeamClass::ExecuteAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6eaee0 TeamClass::FindClosestEnemy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6eb870 HouseClass::EvaluateTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ebf50 TeamClass::ProcessMemberPositions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ec300 TechnoClass::IsWaypointHidden -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p118\batch_report.json
