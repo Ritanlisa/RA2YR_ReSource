@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x5980c0 Random::Gaussian -> Random
+[conv] 0x5981f0 RandomMap::LoadConfig -> RandomMap
+[conv] 0x598960 RandomMap::Generate -> RandomMap
+[conv] 0x599650 RandomMap::SetupTheater -> RandomMap
+[conv] 0x59afa0 RandomMap::FillTerrainProgressively -> RandomMap
+[conv] 0x59b200 RandomMap::PlaceTerrainFeatures -> RandomMap
+[conv] 0x59b940 Map_Helper_59B940 -> Map_Helper
+[conv] 0x59bbc0 RandomMap::PlaceTerrain -> RandomMap
+[conv] 0x59c920 TiberiumClass::Grow -> TiberiumClass
+[conv] 0x59d510 Tiberium::ProcessGrowth -> Tiberium
+[conv] 0x59e740 Tiberium::CalculateSpread -> Tiberium
+[conv] 0x5a0410 MapClass::GrowLayer -> MapClass
+[conv] 0x5a0700 RandomMap::CellListAlloc -> RandomMap
+[conv] 0x5a08d0 RandomMap::SpreadArea -> RandomMap
+[conv] 0x5a1190 sub_5A1190 -> _addr_5A
+[conv] 0x5a1350 SelectTerrainTileVariant -> _addr_5A
+[conv] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> ObjectClass
+[conv] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> RandomMap
+[conv] 0x5a28c0 Terrain::PlaceTiberiumTrees -> Terrain
+[conv] 0x5a2f50 ObjectClass::SmoothTerrainMap -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Random                   rc=2
+[era] RandomMap                rc=2
+[era] Map_Helper               rc=0
+[era] TiberiumClass            rc=2
+[era] Tiberium                 rc=2
+[era] MapClass                 rc=2
+[era] _addr_5A                 rc=2
+[era] ObjectClass              rc=2
+[era] Terrain                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x59b940   MISMATCH         Map_Helper_59B940
+[diff] 0x5a28c0   MISMATCH         Terrain::PlaceTiberiumTrees
+[ledger] 0x5980c0 Random::Gaussian -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5981f0 RandomMap::LoadConfig -> COMPILE_FAIL (attempt 3)
+[ledger] 0x598960 RandomMap::Generate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x599650 RandomMap::SetupTheater -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59afa0 RandomMap::FillTerrainProgressively -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59b200 RandomMap::PlaceTerrainFeatures -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59b940 Map_Helper_59B940 -> NG (attempt 3)
+[ledger] 0x59bbc0 RandomMap::PlaceTerrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59c920 TiberiumClass::Grow -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59d510 Tiberium::ProcessGrowth -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59e740 Tiberium::CalculateSpread -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a0410 MapClass::GrowLayer -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5a0700 RandomMap::CellListAlloc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5a08d0 RandomMap::SpreadArea -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a1190 sub_5A1190 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a1350 SelectTerrainTileVariant -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5a28c0 Terrain::PlaceTiberiumTrees -> NG (attempt 5)
+[ledger] 0x5a2f50 ObjectClass::SmoothTerrainMap -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p01\batch_report.json
