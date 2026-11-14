@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E96A0",
+ "name": "NetworkLobby::CheckPlayerNameValid",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E96A0",
+ "bytes_hex": "56578bf983fffe746abe90daa8008b0e85c974413b0d9c11ac0074393b0da011ac0074313b0db011ac0074293b0db411ac0074213b0da411ac0074193b0da811ac0074113b0dac11ac007409e82fd80a003bc7742383c60481feb0daa8007caeb8bcb2a8003938740f83c0043ddcb2a8007cf25f32c05ec35fb0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

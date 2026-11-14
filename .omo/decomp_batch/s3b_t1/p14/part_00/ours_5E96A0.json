@@ -1,0 +1,87 @@
+{
+ "symbol": "?CheckPlayerNameValid@NetworkLobby@@QAEDXZ",
+ "sym_key": "NetworkLobby::CheckPlayerNameValid",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "56578bf983fffe75055f32c05ec38b35000000008b0e85c974413b0d0000000074393b0d0000000074313b0d0000000074293b0d0000000074213b0d0000000074193b0d0000000074113b0d000000007409e8000000003bc7742883c60481fe000000007cae8b0d6c000000b86c0000003bcf740e83c0043d8c0000007d8a393875f25fb0015ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerCount@@3HA",
+   "sym_key": "g_Lobby_PlayerCount"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerReady@@3PAGA",
+   "sym_key": "g_Lobby_PlayerReady"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?GetPlayerColor@SessionClass@@QAEHXZ",
+   "sym_key": "SessionClass::GetPlayerColor"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  }
+ ]
+}
