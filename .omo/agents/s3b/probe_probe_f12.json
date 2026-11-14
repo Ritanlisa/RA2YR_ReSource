@@ -1,0 +1,18 @@
+[
+ {
+  "addr": "0x406e80",
+  "family": "probe"
+ },
+ {
+  "addr": "0x40ffff",
+  "family": "probe"
+ },
+ {
+  "addr": "0x406170",
+  "family": "probe"
+ },
+ {
+  "addr": "0x403a80",
+  "family": "probe"
+ }
+]

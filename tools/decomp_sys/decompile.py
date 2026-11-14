@@ -759,6 +759,17 @@ def derive_signature(reg, ex):
     params, dom_notes = _solver_domain_params(
         ex.addr, params, ex.body_lines, dropped)
     ret_notes.extend(dom_notes)
+    # Stage 3b: a registry method whose name EQUALS its class is a
+    # constructor in C++ terms -- but the emitted body ends with
+    # `return (int)(this)`, which no constructor may do, and the hpp
+    # declaration would be C2533/C2380 (return type on a ctor).  Rename
+    # the member deterministically (addr suffix, the CW5-12 `_Helper`
+    # precedent); pass_callees applies the identical rename to call sites.
+    if cls and method == re.sub(r"[^A-Za-z0-9_]", "_", cls):
+        _new = "%s_%s" % (method, ex.addr[2:].upper().lstrip("0"))
+        ret_notes.append(("ctor_name_collision",
+                          "method name equals class name -> %s" % _new))
+        method = _new
     return {
         "addr": ex.addr,
         "cls": cls,
@@ -1104,6 +1115,10 @@ def run_function(addr, reg, views, idx):
     # CW7/W5: pointer<->integer and incompatible-pointer comparison sites
     # (C2446) -- 32-bit cmp identity, codegen-neutral re-spelling.
     passes.pass_compare_harmonize(ctx)
+    # Stage 3b: bitwise operators on pointer/float operands (C2296) and
+    # calls through code-pointer VARIABLES (C2064).
+    passes.pass_bitop_harmonize(ctx)
+    passes.pass_indirect_var_calls(ctx)
     # CW7/W3: IDA's mutable receiver (`this = 0;` / `this = v19;`) -- bind a
     # local `Cls *this_ = this;` and rewrite.  MUST stay last: every member
     # pass above matches the literal `this->` spelling.
@@ -1175,6 +1190,13 @@ def run_function(addr, reg, views, idx):
         sig["ret_spelled"] = "int"
         ctx.note("return_truth",
                  "body returns a value -> return type int (was void; C2562)")
+
+    # Stage 3b: marker decls -> the original `__asm { ... }` blocks.
+    if getattr(ctx, "asm_blocks", None):
+        ctx.lines = pseudo.restore_asm_blocks(ctx.lines, ctx.asm_blocks)
+        ctx.note("asm_block",
+                 "%d inline-asm block(s) preserved verbatim (C2065/C2400 "
+                 "mnemonic leaks)" % len(ctx.asm_blocks))
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls

@@ -261,15 +261,21 @@ struct tagWNDCLASSA_era {
 };
 typedef struct tagWNDCLASSA_era WNDCLASSA;
 
-// ---- IDA pseudo-register names that leak into bodies (`_EA` etc.)
-typedef unsigned int        _EA;
-typedef unsigned int        _EBX;
-typedef unsigned int        _ECX;
-typedef unsigned int        _EDX;
-typedef unsigned int        _ESI;
-typedef unsigned int        _EDI;
-typedef unsigned int        _EBP;
-typedef unsigned int        _ESP;
+// ---- IDA pseudo-register names that leak into bodies (`_EAX` etc.)
+// Stage 3b: these are REGISTER VALUES, not types.  Declaring them as
+// typedefs made every `(_AX & 0x4100)` parse as a declaration
+// (C2143 "missing ')' before 'constant'") -- an extern variable keeps the
+// expression an expression.  The declarations are never defined; the unit
+// only has to compile.
+extern unsigned int         _EA;
+extern unsigned int         _EAX;
+extern unsigned int         _EBX;
+extern unsigned int         _ECX;
+extern unsigned int         _EDX;
+extern unsigned int         _ESI;
+extern unsigned int         _EDI;
+extern unsigned int         _EBP;
+extern unsigned int         _ESP;
 
 // ---- bit/slice macros (IDA LOWORD-family).  windef.h normally supplies
 // LOBYTE/LOWORD/HIBYTE/HIWORD; without <windows.h> the pilot hpp needs them.
@@ -334,8 +340,8 @@ typedef unsigned short      WCHAR;
 typedef unsigned __int64    __m64;
 typedef int (__cdecl *_CoreCrtNonSecureSearchSortCompareFunction)(
     const void *, const void *);
-typedef unsigned char       _AH, _AL, _BH, _BL, _CH, _CL, _DH, _DL;
-typedef unsigned short      _AX, _BX, _CX, _DX, _SI, _DI, _BP, _SP;
+extern unsigned char        _AH, _AL, _BH, _BL, _CH, _CL, _DH, _DL;
+extern unsigned short       _AX, _BX, _CX, _DX, _SI, _DI, _BP, _SP;
 
 // Win32 registry root handles (winreg.h normally supplies these constants).
 #ifndef HKEY_LOCAL_MACHINE
@@ -347,6 +353,29 @@ typedef unsigned short      _AX, _BX, _CX, _DX, _SI, _DI, _BP, _SP;
 #ifndef HKEY_CLASSES_ROOT
 #define HKEY_CLASSES_ROOT   ((HKEY)0x80000000)
 #endif
+
+// ---- Stage 3b: residual SDK/COM spellings (C2061/C2065/C2027 evidence)
+// Pure spelling aliases; the two tag forward-declarations exist so the
+// emitted `struct X *p` slots have a type (no layout is implied).
+typedef void *              LPPERSISTSTREAM;
+typedef void *              LPTHREAD_START_ROUTINE;
+typedef void *              LPDDENUMMODESCALLBACK;
+typedef void *              LPOVERLAPPED;
+typedef unsigned int        SIZE_T;
+typedef unsigned long       DWORD_PTR;
+typedef unsigned short      VARTYPE;
+typedef const wchar_t *     LPCWCH;
+typedef struct _FILETIME *  PFILETIME;
+typedef struct _FILETIME *  LPFILETIME;
+typedef __int64             LONGLONG;
+typedef unsigned __int64    ULONGLONG;
+struct IPersistStreamVtbl;
+struct IStreamVtbl;
+struct IStorageVtbl;
+struct IDirectDraw7Vtbl;
+// IDA's unresolved return type (`unknown Stub(...)`, `unknown v3;`): a
+// 4-byte scalar slot, never a class.
+typedef int                 unknown;
 
 // `min`/`max` are macros in VC6 <windef.h>; emitted bodies may spell member
 // functions with those names, so keep them out of the namespace entirely.

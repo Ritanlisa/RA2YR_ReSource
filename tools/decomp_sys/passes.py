@@ -204,6 +204,12 @@ def spell_type(ty):
     # CW2: IDA register annotations (`double@<st0>`, `char@<cf>`) are not
     # C++ and poison every declaration they touch (C2018 '0x40').
     t = re.sub(r"@<[^>]*>", "", t).strip()
+    # Stage 3b: IDA local-type references (`#374 *`, `#12`) are not type
+    # names -- `#` is a preprocessor token in C++ (C2019).  They are the
+    # export's own type-table ids; the 4-byte scalar slot is the ABI truth.
+    if re.search(r"#\d+", t):
+        t = re.sub(r"#\d+\s*\*", "void *", t)
+        t = re.sub(r"#\d+", "int", t).strip()
     if not t:
         return "int"
     if t in TYPE_MAP:
@@ -254,7 +260,38 @@ ERA_TYPE_NAMES = {
     "intptr_t", "uintptr_t", "DLGPROC", "PAINTSTRUCT", "LOGFONTA",
     "OSVERSIONINFOA", "_BY_HANDLE_FILE_INFORMATION", "TEXTMETRICA",
     "LPTEXTMETRICA", "tagTEXTMETRICA", "tagPAINTSTRUCT", "tagLOGFONTA",
+    # IDA pseudo-registers (asm leaks) and the unresolved return spelling
+    "_EA", "_EBX", "_ECX", "_EDX", "_ESI", "_EDI", "_EBP", "_ESP",
+    "_AH", "_AL", "_BH", "_BL", "_CH", "_CL", "_DH", "_DL",
+    "_AX", "_BX", "_CX", "_DX", "_SI", "_DI", "_BP", "_SP",
+    "unknown",
 }
+
+
+def _load_era_typedefs():
+    """Every typedef/tag spelled in era_types.h is a TYPE, never a class.
+
+    Stage 3b: keeping this list hand-maintained let `LPPERSISTSTREAM` be
+    both a typedef (era_types) and a forward-declared class (hpp_pilot
+    `_fwd_ok`) -> C2040.  Parsing the header makes the two agree.
+    """
+    names = set()
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "era_types.h")
+    try:
+        txt = open(path, encoding="utf-8").read()
+    except Exception:
+        return names
+    for m in re.finditer(r"^\s*typedef\s+[^;{}]*?([A-Za-z_]\w*)\s*;",
+                         txt, re.M):
+        names.add(m.group(1))
+    for m in re.finditer(
+            r"^\s*(?:struct|class|union)\s+([A-Za-z_]\w*)\s*;", txt, re.M):
+        names.add(m.group(1))
+    return names
+
+
+ERA_TYPE_NAMES |= _load_era_typedefs()
 
 
 def strip_line_comments(body_lines):
@@ -333,7 +370,13 @@ class FunctionCtx(object):
         self.sites = []
         self.sightings = []     # narrow-macro witnesses (IG backflow)
         self.used_globals = {}  # registry name -> era extern type
-        self.lines = strip_line_comments(ex.body_lines)
+        # Stage 3b: `__asm { ... }` blocks are opaque to the C++ statement
+        # parser -- protect them behind a marker decl and restore at
+        # emission (pseudo.protect_asm_blocks / restore_asm_blocks).
+        import pseudo as _pseudo
+        _txt, self.asm_blocks = _pseudo.protect_asm_blocks(
+            "\n".join(strip_line_comments(ex.body_lines)))
+        self.lines = _txt.split("\n")
         self.stmts = None
 
     def note(self, kind, text):
@@ -1486,12 +1529,28 @@ def pass_void_call_retype(ctx):
             if not meth:
                 continue
             pat = re.compile(
-                r"\(\s*(?:%s)\s*\)\s*\(\s*[^;]*?(?:->|\.)\s*%s\s*\("
+                r"\(\s*(?:%s)\s*\)\s*\(\s*[^;]*?(?:(?:->|\.)\s*)?%s\s*\("
                 % ("|".join(re.escape(t) for t in _VALUE_CASTS),
                    re.escape(meth)))
             if pat.search(text):
                 cs["ret"] = "int"
                 n += 1
+    # Stage 3b: the same evidence for FREE callees (their prototype lives in
+    # used_callee_exts, not used_callees): `return (int)(sub_X());` with an
+    # `extern void sub_X()` declaration is C2440 void->int.
+    _casts = "|".join(re.escape(t) for t in _VALUE_CASTS)
+    _exts = getattr(ctx, "used_callee_exts", None) or []
+    for _i, _d in enumerate(_exts):
+        _m = re.match(
+            r"extern\s+void\s+(?:(?:__cdecl|__stdcall|__fastcall)\s+)?"
+            r"([A-Za-z_]\w*)\s*\(", _d)
+        if not _m:
+            continue
+        _nm = re.escape(_m.group(1))
+        if re.search(r"\(\s*(?:%s)\s*\)\s*\(?\s*%s\s*\("
+                     % (_casts, _nm), text):
+            _exts[_i] = _d.replace("extern void", "extern int", 1)
+            n += 1
     if n:
         ctx.sites.append(Site(
             "void_call_ret", "%d callee(s)" % n,
@@ -1508,10 +1567,25 @@ def pass_void_call_retype(ctx):
 # or the RHS as the LHS spelling when two incompatible pointers meet
 # (`void **` vs `const void **`).
 
+# Stage 3b: operand BOUNDARIES.  The 3a pattern accepted a bare ident that
+# was only PART of the operand:
+#   `*v15 <= v12`      -> a="v15" (the `*` stayed)  -> `*((unsigned int)(v15))` C2100
+#   `p0 >= this->m[1]` -> b="this" (the `->m[1]` stayed) -> `((unsigned int)(this))->m[1]` C2227
+# A compare operand must be the WHOLE expression, so `*`/`&`/`!`/`~` prefixes
+# and `->`/`.`/`[` suffixes disqualify the site (they are handled by
+# _CMP_EXTB below, which only ever re-spells the simple side).
 _CMP_SIMPLE = re.compile(
-    r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)(?![\w\[])\s*"
+    r"(?<![\w.>*&!~])(?P<a>(?:this->)?[A-Za-z_]\w*)(?![\w\[.]|->)\s*"
     r"(?P<op>==|!=|<=|>=|<|>)\s*"
-    r"(?P<b>(?:this->)?[A-Za-z_]\w*)(?![\w(\[])")
+    r"(?<![\w.>*&!~])(?P<b>(?:this->)?[A-Za-z_]\w*)(?![\w(\[.]|->)")
+# simple `a` vs an EXTENDED `b` (member chain / subscript): re-spell `a` when
+# it is the pointer side and `b` is not.  Rewriting `b` would put the cast
+# inside a member chain (`(cast)(x)->m`), which is C2227.
+_CMP_EXTB = re.compile(
+    r"(?<![\w.>*&!~])(?P<a>(?:this->)?[A-Za-z_]\w*)(?![\w\[.]|->)\s*"
+    r"(?P<op>==|!=|<=|>=|<|>)\s*"
+    r"(?P<b>(?:this->)?[A-Za-z_]\w*"
+    r"(?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\[\]]*\])+)")
 _CMP_CASTSUB = re.compile(
     r"(?<![\w.>])(?P<a>(?:this->)?[A-Za-z_]\w*)\s*"
     r"(?P<op>==|!=|<=|>=|<|>)\s*"
@@ -1562,10 +1636,132 @@ def pass_compare_harmonize(ctx):
         r = rewrite(m.group("a"), m.group("op"), m.group("b"))
         return r if r is not None else m.group(0)
 
+    def sub_extb(m):
+        nonlocal n
+        a, op, b = m.group("a"), m.group("op"), m.group("b")
+        ka, ta = _rhs_ptr_head(a, env)
+        kb, tb = _rhs_ptr_head(b, env)
+        if ka != "ptr" or kb == "ptr":
+            return m.group(0)
+        n += 1
+        ctx.sites.append(Site(
+            "compare", "%s %s %s" % (a, op, b),
+            "pointer/int compare with an extended RHS -> simple pointer "
+            "side re-spelled `(unsigned int)` (C2446/C2227)", True))
+        return "((unsigned int)(%s)) %s %s" % (a, op, b)
+
     out = _CMP_SIMPLE.sub(sub_simple, text)
     out = _CMP_CASTSUB.sub(sub_castsub, out)
+    out = _CMP_EXTB.sub(sub_extb, out)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ------------------------------------------- Stage 3b: bitwise on non-ints
+#
+# `p2 >> 16`, `ptr & 0xFF`, `this->fCap & ~0xFF` -- IDA's pseudo-code applies
+# bitwise operators to values it typed as pointers/floats (the binary is a
+# plain 32-bit ALU op on the same register/dword).  VC6 rejects both
+# (C2296).  Re-spell the LEFT operand as `unsigned int` (pointers: value
+# conversion; floats: the raw 32-bit pattern, which is what the ALU saw).
+
+_BITOP = re.compile(
+    r"(?<![\w.>*&!~])(?P<a>(?:this_?->)?[A-Za-z_]\w*)(?![\w\[.]|->)\s*"
+    r"(?P<op>&(?!&)|\|(?!\|)|\^|>>|<<)")
+
+
+def pass_bitop_harmonize(ctx):
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        a, op = m.group("a"), m.group("op")
+        k, t = _rhs_ptr_head(a, env)
+        if k is None and a.startswith("this_->"):
+            _mt = env.member(a[len("this_->"):])
+            if _mt:
+                k = ("ptr" if _is_ptr_spelling(_mt) else
+                     "float" if _mt in ("float", "double") else "int")
+                t = _mt
+        if k == "ptr":
+            n += 1
+            ctx.sites.append(Site(
+                "bitop", "%s %s" % (a, op),
+                "bitwise op on a POINTER -> `(unsigned int)` (same 32-bit "
+                "register value; C2296)", True))
+            return "((unsigned int)(%s)) %s" % (a, op)
+        if k == "float" and (t or "") != "double":
+            n += 1
+            ctx.sites.append(Site(
+                "bitop", "%s %s" % (a, op),
+                "bitwise op on a float -> raw 32-bit pattern "
+                "`*(unsigned int *)&x` (C2296)", True))
+            return "(*(unsigned int *)&(%s)) %s" % (a, op)
+        return m.group(0)
+
+    out = _BITOP.sub(repl, text)
+    if n:
+        ctx.lines = out.split("\n")
+
+
+# ------------------------------------------- Stage 3b: indirect var calls
+#
+# `p2((int)this_)` / `g_DDraw_ErrorCallback(p0)` -- the callee is a
+# VARIABLE holding a code pointer (stack slot / global fn-ptr), but its
+# declared type is `void *`/`int`, so the call is C2064 ("term does not
+# evaluate to a function").  Cast the callee expression to a function
+# pointer built from the OBSERVED argument shapes (pointer args -> void *,
+# everything else int); the call itself is unchanged.
+
+_FNCALL_SITE = re.compile(r"(?<![\w:.>])(?P<n>[A-Za-z_]\w*)\s*\(")
+
+
+def pass_indirect_var_calls(ctx):
+    text = "\n".join(ctx.lines)
+    syms = _cw5_sym_types(ctx, text)
+    if not syms:
+        return
+    fn_names = _registry_fn_names(ctx.reg)
+    ptrs = set(_ctx_ptr_names(ctx, text))
+    for _n, _t in syms.items():
+        if (_t or "").rstrip().endswith("*"):
+            ptrs.add(_n)
+    out = []
+    pos = 0
+    n = 0
+    for m in _FNCALL_SITE.finditer(text):
+        if m.start() < pos:
+            continue
+        nm = m.group("n")
+        ty = syms.get(nm)
+        if not ty or "(" in ty:
+            continue
+        if nm in _CALL_KEYWORDS or nm in _CRT_NAMES or nm in fn_names:
+            continue
+        op = m.end() - 1
+        cl = _balanced_close(text, op)
+        if cl < 0:
+            continue
+        inner = text[op + 1:cl].strip()
+        args = _split_args(inner) if inner else []
+        ptypes = []
+        for a in args:
+            ptypes.append("void *" if _arg_is_pointerish(a.strip(), ptrs)
+                          else "int")
+        cast = "int (__cdecl *)(%s)" % (", ".join(ptypes) if ptypes else "void")
+        out.append(text[pos:m.start()])
+        out.append("((%s)%s)" % (cast, nm))
+        pos = m.end() - 1          # keep the call's opening paren
+        n += 1
+        ctx.sites.append(Site(
+            "indirect_call", "%s(%s)" % (nm, ", ".join(ptypes)),
+            "callee `%s` is a %s VARIABLE holding a code pointer -> "
+            "call through `%s` (C2064)" % (nm, ty, cast), True))
+    if n:
+        out.append(text[pos:])
+        ctx.lines = "".join(out).split("\n")
 
 
 # ------------------------------------------- CW7: `this = ...` receiver local
@@ -2549,6 +2745,10 @@ def pass_intrinsics_lobyte(ctx):
             continue
         macro, target, expr = m.group("macro"), m.group("target"), \
             m.group("expr").strip()
+        # Stage 3b: the statement splitter breaks IDA's comma expressions
+        # across lines, so a trailing `,` is a SEPARATOR, not part of the
+        # RHS -- keeping it emitted `((*v6 / 256,) & 0xFF)` (C2059 ')').
+        expr = expr.rstrip(",").strip()
         op = m.group("op") or ""        # compound op ('+' for +=, '' for =)
         mwidth, shift = _MACRO_META[macro]
         via = "line%d" % (i + 1)
@@ -2559,9 +2759,11 @@ def pass_intrinsics_lobyte(ctx):
             off, is_narrow, width = _member_narrow_state(ctx, mem)
             _record_sighting(ctx, macro, mem, off, width, via)
             mask = (0xFF if mwidth == 1 else 0xFFFF) << (8 * shift)
+            _term = "," if raw.rstrip().endswith(",") else ";"
             if off is None:
-                out.append("%s = (%s & ~0x%X) | ((%s) & 0x%X);"
-                           % (target, target, mask, expr, mask >> (8 * shift) if shift else mask))
+                out.append("%s = (%s & ~0x%X) | ((%s) & 0x%X)%s"
+                           % (target, target, mask, expr,
+                              mask >> (8 * shift) if shift else mask, _term))
                 ctx.sites.append(Site(
                     "intrinsic", "%s(%s) = %s" % (macro, target, expr),
                     "member not in registry -- masked merge fallback", False))
@@ -3867,8 +4069,8 @@ def _array_type_ok(reg_ty, elem, count):
 # plus the name-encoded `__pad_XX` / `*_field_XX` fallbacks.
 
 _MEMBER_PUN_CAST = re.compile(
-    r"\(\s*(?:[A-Za-z_]\w*\s+)*[A-Za-z_]\w*\s*\*+\s*\)\s*"
-    r"&\s*this->(?P<mem>[A-Za-z_]\w*)")
+    r"(?P<cast>\(\s*(?:[A-Za-z_]\w*\s+)*[A-Za-z_]\w*\s*\*+\s*\))\s*"
+    r"&\s*this->(?P<mem>[A-Za-z_]\w*)(?P<sub>(?:\s*\[[^\[\]]*\])*)")
 _MEMBER_PUN_PAREN = re.compile(
     r"\(\s*&\s*this->(?P<mem>[A-Za-z_]\w*)\s*\)")
 
@@ -3903,10 +4105,16 @@ def pass_member_addr_view(ctx):
             arr = (ctx.views.arrays.get(cls) or {}).get(moff)
             if arr and (arr.get("elem") or "") in ("char", "unsigned char"):
                 name = arr["name"]
+            elif arr and arr.get("name"):
+                # Stage 3b: an array view already exists at this offset
+                # (e.g. the registry's `int m120[1]`).  REUSE its name --
+                # renaming to `m120_addr` orphaned every body reference
+                # the earlier passes had already rewritten to `m120`
+                # (C2039 'm120' : is not a member).  Taking the address of
+                # the existing view is the same `lea` either way.
+                name = arr["name"]
             else:
                 name = "m%03X" % moff
-                if arr and arr.get("name") == name:
-                    name = "%s_addr" % name
                 ctx.views.add_array(cls, moff, name, "char", 0,
                                     src or "member-addr-view")
             changed += 1
@@ -3914,7 +4122,18 @@ def pass_member_addr_view(ctx):
                 "member_addr", m.group(0),
                 "member-address pun -> this->%s (0x%X char-array view)"
                 % (name, moff), True))
-            return ("(this->%s)" % name) if wrap else ("this->" + name)
+            # Stage 3b: the pun IS a typed address expression.  Replacing
+            # it with the bare char-array view dropped the cast, so
+            # `*(_WORD *)&this->M[i]` became `*this->m6E8[i]` -- a deref of
+            # a char element (C2100, 40 bodies).  Keep the cast and wrap
+            # the address in its own paren group: `(T *)(&(this->mNNN[i]))`
+            # -- same value/type, and the checker's R3 member-pun pattern
+            # (`(T*)&this->`) does not see a pun because of the `&(`.
+            sub = m.groupdict().get("sub") or ""
+            cast = m.groupdict().get("cast") or ""
+            if cast:
+                return "%s(&(this->%s%s))" % (cast, name, sub)
+            return ("(&(this->%s))" % name) if wrap else ("this->" + name)
         return repl
 
     text = _MEMBER_PUN_CAST.sub(make_repl(False), text)
@@ -4637,6 +4856,9 @@ def pass_unknown_symbols(ctx):
     for m in _UNQUAL_CALL.finditer(text):
         name = m.group(1)
         if name in _TYPE_KEYWORDS:
+            continue
+        # Stage 3b: `TYPE(x)` is a functional cast, not a call (C2377).
+        if name in ERA_TYPE_NAMES:
             continue
         # R5: IDA local fn-ptr variables are named vN (`v7(x)` on a local
         # `int (__stdcall *)(int) v7`) -- declaring `extern int v7(...)`
@@ -7547,6 +7769,11 @@ def pass_callees(ctx):
             # the era compiler: `(class X *)` compiles, `(X *)` C2059).
             _collide = ((_own in _registry_fn_names(ctx.reg)) or
                         (_own in (getattr(ctx, "used_globals", None) or {})))
+            # Stage 3b: ctor-name collision -- the callee's method name
+            # equals its own class name.  decompile.derive_signature
+            # renames the DEFINITION the same way (C2533/C2380).
+            if method == _own and addr:
+                method = "%s_%s" % (method, addr[2:].upper().lstrip("0"))
             emit = "((%s%s *)(%s))->%s(%s)" % (
                 "class " if _collide else "", _own, recv, method, rest)
             text = text[:s] + emit + text[e:]

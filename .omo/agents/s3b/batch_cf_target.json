@@ -1,0 +1,8374 @@
+[
+ {
+  "addr": "0x4068f0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x414080",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x418e20",
+  "family": "code:C2059,pat:asm"
+ },
+ {
+  "addr": "0x42be20",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x432c10",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x434cd0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x43ae50",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x44acf0",
+  "family": "code:C2059,pat:asm"
+ },
+ {
+  "addr": "0x4a3dd0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x595400",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x595680",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x595710",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5958e0",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x595bc0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x595ce0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x596300",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x596e50",
+  "family": "code:C2109,pat:pun"
+ },
+ {
+  "addr": "0x597430",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x597a30",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x597d60",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5980c0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x5981f0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x598960",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x599650",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x59afa0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x59b200",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x59b940",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x59bbc0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x59c920",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x59d510",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x59e740",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5a0410",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5a0700",
+  "family": "code:C2109,pat:pun"
+ },
+ {
+  "addr": "0x5a08d0",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x5a1190",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5a1350",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5a1fb0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5a23a0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x5a28c0",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5a2f50",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x5a35f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5a3ae0",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5a4280",
+  "family": "code:C2036,pat:asm"
+ },
+ {
+  "addr": "0x5a4b60",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5a5360",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5a6510",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5a82e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5a8f00",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5a95b0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5a9a70",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5a9c40",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5ac230",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x5ac400",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5ac900",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5ad010",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5ad660",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x5add10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5ade20",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5adf20",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5ae500",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5ae750",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5aead0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5aeaf0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5aeb20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5aec40",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5aed50",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5aee50",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5aef60",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5af080",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5af120",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5af1a0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5af550",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5aff80",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5b01c0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x5b17b0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5b1d90",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5b20f0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5b3760",
+  "family": "code:C2446,pat:asm"
+ },
+ {
+  "addr": "0x5b3950",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5b3c20",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5b3e90",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5b3f50",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5b4080",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5b4350",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5b4590",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5b4610",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5b4630",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5b49b0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5b4ee0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5b57d0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b5960",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5b59b0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b5a50",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5b5ad0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b6020",
+  "family": "code:C2653,pat:cmp"
+ },
+ {
+  "addr": "0x5b67f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5b6da0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5b6eb0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b7090",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x5b7360",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x5b76c0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x5b77e0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5b7970",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b82f0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5b9250",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b93f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5b9450",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5b94c0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5b9550",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5b9a60",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5b9c90",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5ba060",
+  "family": "code:C2653,pat:cmp"
+ },
+ {
+  "addr": "0x5ba970",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5baa80",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5bac60",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5bb290",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5bb580",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5bb6e0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5bc530",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5bcc90",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5bd240",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5bdf70",
+  "family": "code:C2653,pat:pun"
+ },
+ {
+  "addr": "0x5be6d0",
+  "family": "code:C2036,pat:pun"
+ },
+ {
+  "addr": "0x5bed40",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5bfaa0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c0630",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c0640",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5c09b0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5c0a30",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5c0d30",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c0d80",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c1470",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c1640",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5c17b0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c1a10",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c1d80",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c1dc0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c21d0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5c2500",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5c2710",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x5c2de0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c2ef0",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x5c30c0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5c34f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c35f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c3b10",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c3ec0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c3f30",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5c4110",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c42d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5c46e0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x5c4fc0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c5850",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c58a0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c5990",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5c5d90",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5c5e90",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x5c5fa0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x5c6bc0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5c6dd0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5c7310",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5c7520",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5c7990",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5c7ba0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5c80a0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5c8470",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x5c8ab0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5c9020",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5c9430",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x5c98a0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5c9b10",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5ca110",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5ca800",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5caac0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5cae70",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5caf00",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5caf40",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5cb590",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5cbd20",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5cc330",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5cc550",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5cc8a0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5cca20",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5ccc30",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5cce90",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5cd0e0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5cd850",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5cdee0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5ce0c0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x5ce330",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5ce3a0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5ce4a0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5ce640",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5ce7d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5ceef0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5cf5f0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5cf760",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x5cf840",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5cf8e0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5d0070",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5d0470",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5d1c90",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5d1d80",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5d1fd0",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x5d25d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5d2650",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x5d2e90",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5d3170",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5d3330",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5d3490",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5d39d0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5d3a40",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5d3ba0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5d4210",
+  "family": "code:C2664,pat:pun"
+ },
+ {
+  "addr": "0x5d4d50",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x5d5ac0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d5e10",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d5ed0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d5f30",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5d6000",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d6130",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d62c0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5d63e0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x5d6440",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5d6540",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x5d6620",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x5d6690",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5d6890",
+  "family": "code:C2446,pat:asm"
+ },
+ {
+  "addr": "0x5d6be0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5d6c70",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x5d6d80",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5d70f0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x5d7550",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5d7590",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5d7ce0",
+  "family": "code:C2653,pat:cmp"
+ },
+ {
+  "addr": "0x5d7e50",
+  "family": "code:C2653,pat:cmp"
+ },
+ {
+  "addr": "0x5d7ff0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5d8010",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5d8170",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x5d8470",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5d8730",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5d8cb0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5d8fd0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5d90e0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5d9220",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5d9410",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5d9db0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5da0b0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5da750",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5daf30",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5dafe0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5dbb60",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5dbe20",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5dbec0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5dbf50",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x5dc170",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5dd8a0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x5ddbd0",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x5de360",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5de520",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5e1ca0",
+  "family": "code:C2653,pat:cmp"
+ },
+ {
+  "addr": "0x5e2700",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5e2790",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5e2cd0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5e35a0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5e3630",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5e39c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5e3ab0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5e3d10",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5e6520",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5e68a0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5e7160",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5e7bf0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5e7eb0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5e8590",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5e8740",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5e8760",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5e8bf0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5e8ea0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x5e95e0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5e96a0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5e9720",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5e9b60",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5e9c00",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5e9ce0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5e9db0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5e9e00",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5e9e70",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5ea0d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5ea180",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5ea3e0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5ea920",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5ea9b0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5eaa10",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5eaa70",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x5eab30",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5eac00",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5eacd0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5eaee0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5eb7b0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5eba00",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5ebc00",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5ebec0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5ec030",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5ec290",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5ec3a0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x5ec9f0",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x5ed5a0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5edde0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5edef0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5edfc0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5ee3a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5ee510",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x5ee9d0",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x5eef60",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5ef4e0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5eff70",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5f0180",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f16e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f1bf0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x5f1c30",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5f1c60",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x5f1f20",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5f1fa0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5f2ce0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5f3170",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5f34d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5f3540",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x5f3b80",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x5f3e70",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f4160",
+  "family": "code:C2664,pat:pun"
+ },
+ {
+  "addr": "0x5f44a0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5f4520",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f4ec0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x5f5390",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5f5c60",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f5cd0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f5dd0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f60a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f6120",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5f6b60",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x5f6b90",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x5f7090",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5f8110",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5f9070",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x5f92d0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x5f9e80",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x5fa4a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fa510",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fa590",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fa620",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x5fad10",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5fb160",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fb320",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5fbef0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x5fbf80",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fc000",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x5fc570",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x5fd970",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x5fdd20",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5fe250",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5fe570",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x5fe770",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5fea50",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5feaf0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5fec10",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5fec70",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x5fede0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5ff420",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6001a0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x600250",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x600750",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600880",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x600920",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600af0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600c70",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x600ca0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x601360",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6015e0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x601d20",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x6023f0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x602490",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x602b90",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x602dd0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603040",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603240",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x6033f0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x6035f0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603870",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603aa0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603d30",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x603e40",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x603fc0",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x6040b0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x606740",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x6067a0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x606800",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6071e0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x607fd0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x608070",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x608260",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x608380",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6083e0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x608440",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x608cd0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x6096a0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x609730",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x609aa0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x609b30",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x609bc0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x609cf0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x609e20",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x60a100",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x60a180",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60a250",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60a330",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60a5b0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60aab0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60b1d0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x60b420",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60b610",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60b880",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x60b950",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x60c0c0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x60c4a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x60c540",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x60c7d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60c930",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60caf0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60cba0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x60cc00",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x60ccc0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60cdb0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60cf00",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60d2c0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x60d320",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x60d380",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x60d450",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x60d540",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x60f4b0",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x60f760",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x60f9a0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x610570",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x610810",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x610ca0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x612930",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x612a60",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x612b70",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6137d0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x614b30",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6153e0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6163a0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x616980",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x617250",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x618d40",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x61c690",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x61d6d0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x61d950",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x61e700",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x61eca0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6213a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6214b0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x6217e0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x621d30",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x621e90",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6223c0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x622650",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x622720",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x622820",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x622b50",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x623120",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x623230",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6233a0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x623460",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x623610",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x623730",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x623880",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x623cd0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6241f0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x6242b0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x624480",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x624530",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6249a0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x624ca0",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x625560",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6255f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x625ab0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6267a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6269a0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x626c60",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x626da0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x627020",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x627170",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x627590",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x628170",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x628410",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x6285a0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x6288f0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x628bb0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6295b0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6297f0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x629e90",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x62a260",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x62a980",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x62ac30",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x62b5e0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x62c3a0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x62c540",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x62c6e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x62cb10",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x62cec0",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x62d3f0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x62d510",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x62dc50",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x62e380",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x62e650",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x62e6d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x62e840",
+  "family": "code:C2036,pat:asm"
+ },
+ {
+  "addr": "0x62ed40",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x62f230",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x62fd60",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x62fe90",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x62ff20",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x630090",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x630230",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x630310",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x630b90",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x630ea0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x631060",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6316e0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x631cc0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x632a20",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x632b20",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x632c40",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x632dc0",
+  "family": "code:C2664,pat:pun"
+ },
+ {
+  "addr": "0x632fe0",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x633a50",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6340b0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x634290",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6343c0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x634400",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x634550",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x634e10",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x635830",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x636120",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x636b50",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x636ce0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x637060",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x637270",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x637e00",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x638120",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x639210",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x639470",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x639a50",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x639bc0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x63a440",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x63a4a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63a8e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63ad30",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63ad50",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x63b080",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63b2f0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x63b550",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63be60",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x63cae0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x63d070",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x63d0f0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x63d2d0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x63d560",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x63d910",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x63dfd0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x63f080",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x63f2e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x63f7c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x640710",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x640a40",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x641140",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6418b0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x641b00",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x641db0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x641ee0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x642130",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x642b60",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x643670",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x643720",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x6440a0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6442d0",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x644700",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x644be0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x644f50",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x645660",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6457a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x645b10",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x645ba0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x645d60",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x647040",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6470f0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6471a0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x647260",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6475f0",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x648350",
+  "family": "code:C2143,pat:cmp"
+ },
+ {
+  "addr": "0x649ca0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x64a000",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x64a0c0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x64a7b0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x64aae0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x64ad10",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x64b410",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x64b660",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x64c380",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x64cda0",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x64dab0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x64dea0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x650a90",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x6516f0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x652110",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6523a0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x652960",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x652cf0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x652e50",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x653100",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x653850",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x653f50",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x653fa0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x654320",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x654490",
+  "family": "code:C2059,pat:pun"
+ },
+ {
+  "addr": "0x6558d0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x655990",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x655a90",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x655b20",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x656750",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x656e50",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x656ec0",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x6578f0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x6579e0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x657da0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x658640",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6586d0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6591b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6593f0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x659650",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6599c0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x659ac0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x659e30",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x659ee0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x65a970",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x65ad50",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x65b1e0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x65b530",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65b580",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65bb50",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x65c340",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x65c560",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x65c610",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65ca00",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65cac0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x65cb30",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x65cb50",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x65cbf0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65cca0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65d150",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x65d190",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x65d2b0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x65d660",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65d6a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65d8e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65dd30",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x65e660",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65e850",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65eab0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x65ec30",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x65f520",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x65fa70",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6613a0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x661ec0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x661f30",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x661f50",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x661fb0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6620f0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x662240",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6622c0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x663030",
+  "family": "code:C2653,pat:asm"
+ },
+ {
+  "addr": "0x663470",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6635c0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6639d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x663b40",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x663db0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x664240",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x664440",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6646c0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x664d20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x665650",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x667a30",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6686c0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6691e0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x66b900",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x66bbb0",
+  "family": "pat:cmp,pat:asm"
+ },
+ {
+  "addr": "0x66cf70",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x66d150",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x66d1f0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x66d270",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x66d530",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x672440",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x672ae0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x673e80",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x674000",
+  "family": "code:C2143,pat:asm"
+ },
+ {
+  "addr": "0x6743d0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x674730",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x675210",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x678850",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x679a10",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x67a030",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x67a090",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x67a110",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x67a290",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x67a390",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x67a4f0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x67a570",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x67a600",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x67a820",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x67b550",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x67b720",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x67b8f0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x67bb10",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x67bdd0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x67c1f0",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x67c6e0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x67d300",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x67e440",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67e730",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x67fd20",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67fdf0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67fe70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67fef0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67ff70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x67fff0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680070",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6800f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680170",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6801f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680270",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6802f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680370",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6803f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680470",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6804f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680570",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6805f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680670",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6806f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680770",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6807f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680870",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6808f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680970",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x6809f0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680a70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680af0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680b70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680bf0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680c70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680cf0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680d70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680df0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680e70",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680ef0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x680f70",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6810a0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6810d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x681840",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x682240",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6822f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6824b0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x682780",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x682a90",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x682c70",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x682e10",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x683610",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x683ab0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x683fb0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x684180",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x684240",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x684290",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6842f0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x684370",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x684620",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x684c30",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x6851f0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x685670",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x685dc0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x6863e0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x686570",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x686730",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x686890",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x686b20",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x687ce0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x687f10",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x688380",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6886b0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x689910",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x689960",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x689c60",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x689d30",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x689e90",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x68bce0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x68c050",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x68c3b0",
+  "family": "code:C2664,pat:asm"
+ },
+ {
+  "addr": "0x68c9c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x68ca50",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x68cab0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x68cd20",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x68ed80",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x68f060",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x68f8a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x68f9b0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x690160",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x690530",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6907a0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x690910",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x690d60",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6915b0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6916b0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6917f0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x691970",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x691c00",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x691e30",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x692300",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x692610",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x692b60",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6930a0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x693840",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x693b70",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6941a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x694760",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6956d0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x695fd0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x696200",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6964c0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6967b0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6977c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x697b70",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x697e70",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x697f10",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x6980c0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x698f90",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6990a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6994f0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x69a3b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69a980",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69ac30",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x69acd0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69ae10",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x69ae70",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x69ae90",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x69b170",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x69b700",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x69b720",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x69b8c0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x69bc20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x69bd60",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x69e100",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69e500",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69e580",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69e740",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69e930",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69e9f0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x69ed20",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x69ee30",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x69ee90",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69ef10",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x69f290",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x69f330",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69f450",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x69f510",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69f670",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x69fbe0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x69fc10",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x6a01a0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6a0310",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6a04c0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6a05f0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x6a1c80",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x6a3f50",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6a42b0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6a4780",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x6a4dc0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6a4e60",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6a4f20",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x6a5000",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x6a5310",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6a5840",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6a5f20",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6a6a00",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6a6c30",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6a7780",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6a8330",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6a8710",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6a87f0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6a8b30",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6a92e0",
+  "family": "code:C2228,pat:pun"
+ },
+ {
+  "addr": "0x6a93f0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6a9540",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6aa600",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6aad00",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x6aba60",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6abd30",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6ac5f0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6acd60",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6acee0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6adf00",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6ae080",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6ae2c0",
+  "family": "code:C2027,pat:cmp"
+ },
+ {
+  "addr": "0x6ae6e0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6af6c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6afd60",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x6b0300",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6b0690",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6b0880",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x6b0ae0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6b0db0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6b1930",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6b1a70",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6b1f50",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6b2160",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6b2700",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6b2f30",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6b3850",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6b4100",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6b4240",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6b4c80",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6b5260",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6b56d0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6b58b0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6b5910",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6b59a0",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6b5c90",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6b6160",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6b6230",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x6b6300",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6b6c90",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6b7010",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6b7230",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x6b7c60",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6b7d80",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6b8740",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6b8ca0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6b9530",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6b9740",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x6bb2e0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6bb390",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6bb760",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6bb8e0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6be1c0",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x6bedb0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6bf090",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6bf210",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6bf390",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6bf510",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6bf690",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6bf810",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6bfc90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6bff90",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6c0290",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c0590",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c0710",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c0a10",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c0b90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c0e90",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c1010",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c1190",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c1310",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6c1490",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c1790",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c1910",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c1a90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c2090",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c2390",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c2810",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c2990",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c2b10",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c2c90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3110",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6c3290",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x6c3410",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3590",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3710",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3890",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3a10",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c3e90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4010",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4190",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4310",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4490",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c4790",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4a90",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c4c10",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c4f10",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c5090",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c5210",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c5390",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c5690",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c5990",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c5e10",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6c6110",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6c6640",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6c6740",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6c6d00",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6c6de0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6c8f10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6c8ff0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6c9780",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6c9c60",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x6c9f10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6ca310",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6ca4a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ca6a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6caec0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6cb120",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6cb920",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x6cbca0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6cc390",
+  "family": "pat:cmp,pat:asm"
+ },
+ {
+  "addr": "0x6cdff0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6ce380",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6ce5b0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6cea20",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x6ceef0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6cf070",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x6cfe20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6d04d0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6d04f0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6d0680",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6d0a20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6d0fb0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x6d1660",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6d2280",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6d4b50",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6d5730",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6d5c50",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6d6410",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6d6590",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6d6bb0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6d6d10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x6d7840",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6d7c00",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6d8260",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6d8640",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x6d8c60",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6d9ce0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6d9ef0",
+  "family": "code:C2065,pat:pun"
+ },
+ {
+  "addr": "0x6da230",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x6da380",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6da560",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6da5c0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x6da740",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6da770",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6da9d0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6dad60",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6dbd20",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x6dbe20",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6dd000",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6dd300",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6dd5b0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6dd8b0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x6e0290",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6e0aa0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6e1440",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x6e14a0",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x6e21e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6e2520",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6e2c40",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x6e2e60",
+  "family": "pat:pun"
+ },
+ {
+  "addr": "0x6e2f00",
+  "family": "pat:pun"
+ },
+ {
+  "addr": "0x6e3380",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x6e35f0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e37f0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6e38f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6e42d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e4f60",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e53a0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e57c0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e5b60",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6e5ca0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e6080",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6e6160",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e6e20",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e6f20",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e6ff0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e7330",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e7c20",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6e8220",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6e8340",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6e8420",
+  "family": "code:C2664,pat:pun"
+ },
+ {
+  "addr": "0x6e85b0",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x6e8de0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6e9140",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6ea3e0",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6ea610",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6ea870",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6eaa90",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x6eae60",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6eaee0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6eb380",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6eb490",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6eb870",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x6ebad0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6ebf50",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x6ec300",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6ec3a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ec7d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ecfb0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ed200",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x6ed4d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6edb50",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ee310",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6ee3f0",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x6ee5c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ee800",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6eeea0",
+  "family": "code:C2446,pat:asm"
+ },
+ {
+  "addr": "0x6ef610",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6ef700",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x6ef9e0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6efa10",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x6efc70",
+  "family": "code:C2143,pat:asm"
+ },
+ {
+  "addr": "0x6efe60",
+  "family": "code:C2143,pat:asm"
+ },
+ {
+  "addr": "0x6f0130",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x6f06e0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6f0ab0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x6f1090",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6f1550",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6f19b0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6f1ab0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6f1e20",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6f1f70",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6f2b40",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6f3280",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6f3ad0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x6f3d60",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x6f3f40",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6f4300",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6f4500",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6f4960",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x6f4ab0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6f4eb0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6f5190",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x6f5ef0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6f6030",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6f64a0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x6f6ca0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6f7220",
+  "family": "code:C2227,pat:asm"
+ },
+ {
+  "addr": "0x6f79a0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x6f7ca0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x6f8960",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x6f8c10",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6f9e50",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x6fb740",
+  "family": "pat:cmp,pat:asm"
+ },
+ {
+  "addr": "0x6fbdc0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x6fc0b0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6fcdb0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x6fcfa0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x6fd210",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x6fd800",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x6fda00",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x6fdb80",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6fdd50",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x6ff960",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x6ffe00",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x700600",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x700d10",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7010d0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x701140",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7014a0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x701900",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x702d40",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x703230",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x703770",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x703860",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x704000",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x704350",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x704e40",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x705270",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x705ca0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x705d70",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x706640",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x706bd0",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x706ed0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x707280",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x707480",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7077c0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x707cb0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x708080",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x7090a0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x709550",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x709a90",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70a990",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70aa60",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x70b280",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x70b570",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x70bcb0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x70be80",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70c270",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70c620",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70c690",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x70d1d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x70d7e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x70d8f0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70d990",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70de70",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x70e5a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x70ece0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70f1d0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x70fd70",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x70fee0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x710000",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7104f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x711840",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x711f60",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x712040",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x7120d0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x712170",
+  "family": "code:C2059,pat:asm"
+ },
+ {
+  "addr": "0x716290",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7162f0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x716dc0",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x7171a0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7178c0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x717c70",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x717cd0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x718000",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x718080",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7180a0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x718260",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7187a0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x718b70",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7192f0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x719ca0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x719d40",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x719e30",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x719f80",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x71a0e0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x71a0f0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x71a130",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x71a4e0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x71a760",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x71ab10",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x71ab60",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x71abc0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x71ad40",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x71ade0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x71af20",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x71b7b0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x71b920",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x71bb90",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x71bdf0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x71c070",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x71c110",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x71c730",
+  "family": "code:C2036,pat:pun"
+ },
+ {
+  "addr": "0x71cc50",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x71cda0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x71cf50",
+  "family": "code:C2664,pat:pun"
+ },
+ {
+  "addr": "0x71d000",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x71d580",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x71da80",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x71de40",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x71dea0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x71e1d0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x71e240",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x71e6a0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x71e940",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x71f390",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x71f4e0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x71ffe0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x720590",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x720b20",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x720bb0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x720ea0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7216c0",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x721a50",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x721d10",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x721dc0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x721e80",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x7221b0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x722440",
+  "family": "pat:cmp,pat:pun"
+ },
+ {
+  "addr": "0x722af0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x722c40",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x722f00",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7235a0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x723ec0",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x7240b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7241a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x724580",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x724730",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x7248c0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x724ad0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7258d0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x725fa0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x726250",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x726290",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x726950",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x726fb0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7271d0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7271e0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x727240",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x727fd0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x728280",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7283c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x728540",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x728a90",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x728c00",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x7291f0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x729370",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7294e0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x729580",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x729aa0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x729b40",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x72a4a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x72b2f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x72b310",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x72d300",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x72d460",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x72d730",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x72d830",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x72d9a0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x72dfb0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x72e450",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x72e730",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x72f350",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x72fa10",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x72fbc0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x730a10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x730af0",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x730f30",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7311c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x731840",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7318f0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x731d00",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x731eb0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x731f70",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x732110",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x732140",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x732190",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7321d0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x732210",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7327d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x732d10",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x732ff0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7331b0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x733380",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7336c0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7339b0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x733cd0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x733e10",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x7346a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x734990",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x734d30",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x734f50",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x734f80",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x7353c0",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x735780",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7359f0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x736990",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x736df0",
+  "family": "code:C2228,pat:asm"
+ },
+ {
+  "addr": "0x737430",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x737c90",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x738680",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x738970",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x738d30",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x7393c0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x739ec0",
+  "family": "code:C2143,pat:cmp"
+ },
+ {
+  "addr": "0x73b140",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x73b470",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x73c5f0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x73cec0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x73d450",
+  "family": "code:C2143,pat:asm"
+ },
+ {
+  "addr": "0x73d630",
+  "family": "pat:cmp,pat:asm"
+ },
+ {
+  "addr": "0x73e5e0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x73efc0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x73f0a0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7404b0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x740810",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x740b60",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x740fd0",
+  "family": "code:C2440,pat:asm"
+ },
+ {
+  "addr": "0x7416a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x741970",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x743270",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x7436e0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x743a50",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x744100",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x744270",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7446e0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7447b0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x746100",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7463a0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x746750",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x7468c0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7470d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7473c0",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x747620",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x747f70",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7480d0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x748190",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7493b0",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x749b20",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x749b70",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x749f30",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x74ab50",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x74ad80",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x74b050",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x74ba30",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x74bca0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x74bdc0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x74bf40",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x74c5b0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x74c9f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x74ce50",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x74d490",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x74d7c0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x74e1c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x74e6b0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x74ea70",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x74ef10",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x74f620",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x74f650",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x74fae0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x74fdc0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x74ff50",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x74ffc0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x750440",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x750ac0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7510d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7513f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7514d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x751520",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x752290",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752370",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752480",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752700",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752a40",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752ad0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x752db0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x753b10",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x753b40",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7542f0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x754cb0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x755db0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x757120",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x757e70",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7581f0",
+  "family": "code:C2296,pat:cmp"
+ },
+ {
+  "addr": "0x758b70",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x759260",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x759940",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x759fb0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x75a2f0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x75ab30",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x75ab40",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x75aba0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75c240",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x75c680",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75c700",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75c7f0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x75c920",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x75cbe0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75d3a0",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x75dec0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75e0c0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x75e2c0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x75e440",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x75e510",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75e690",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75e6a0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75e950",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75f020",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x75f330",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x75f610",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x75f650",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x75f8b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x75f9f0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x75fa90",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7602e0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7609e0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x760f50",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7610f0",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x761640",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x762070",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x762af0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x763610",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x763690",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x763ff0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x764050",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x764a20",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x764b90",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x764fa0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x765000",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7651d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x765380",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x765770",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x765f60",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7665d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x766880",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7669f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x766aa0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x766dc0",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x767460",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x767500",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x767740",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x767880",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x767b00",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x767ec0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x768000",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7681e0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x768f50",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x769330",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x769550",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x769bd0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x769d70",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x769dc0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x76afc0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x76ba70",
+  "family": "code:C2036,pat:cmp"
+ },
+ {
+  "addr": "0x76c290",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x76c6e0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x76ca60",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x76cbf0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x76cda0",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x76d3a0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x76d470",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x76d4d0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x76ded0",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x76df50",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x76e090",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x76e2f0",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x76e750",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x76e8b0",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x76ebe0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x76ed10",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x76f120",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x76f470",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x76fd40",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x76feb0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x76ff40",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x770550",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x770850",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x770e70",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7712c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x771710",
+  "family": "code:C2227,pat:cmp"
+ },
+ {
+  "addr": "0x771890",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x771a30",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x771c70",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x771f50",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x772080",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x772cd0",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x7730f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x773600",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x773bc0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x773d40",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x773e90",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7740a0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x774310",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x774bc0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x774c70",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x775110",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7754d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x775700",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7759e0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x775b50",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x775ba0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x776230",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x776320",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x776490",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x776570",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7767b0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7767f0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x776a70",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x776cd0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x776eb0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7775c0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x777b30",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x777bb0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x777c30",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x778180",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x778710",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x778a20",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x779690",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x779b50",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x779c90",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x779f10",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x77a080",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x77a4d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x77a9f0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x77b030",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x77ba40",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77bae0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77bc10",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77bcb0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x77bde0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77be80",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77bfb0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77c050",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77c180",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77c220",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77c3b0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77c450",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77ca60",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x77cb00",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77cc30",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x77ccd0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77d840",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x77da50",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x77db90",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x77e1d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x77e300",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x77e430",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x77e900",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x77eba0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x77ef90",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x77f120",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x77f320",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x77f520",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x77f710",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x77f900",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x780110",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7806c0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x780a90",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x780e30",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x781480",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x781cc0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x781fb0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x782320",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x7835c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x783c80",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x785370",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x785740",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x785ea0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x786080",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7864c0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x786ef0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x787010",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x787770",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x788180",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x788b00",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x789630",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x789960",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x789b60",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x78a6b0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x78a8f0",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x78ac10",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x78d120",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x78da30",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x78ebc0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x78f000",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x78f200",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x78f7f0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x791aa0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x791b10",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x792be0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x792f10",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x793120",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x793490",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7937b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x793930",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x793cd0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x793d20",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x794ba0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x796710",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x796960",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x796b30",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x796fc0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7970d0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x797640",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x797c20",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x798120",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7982d0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x798340",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x798de0",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x799080",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x799d30",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x799ea0",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x79af10",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x79bc80",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x79c040",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x79c3a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x79c520",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x79c650",
+  "family": "code:C2027,pat:cmp"
+ },
+ {
+  "addr": "0x79c8d0",
+  "family": "code:C2027,pat:cmp"
+ },
+ {
+  "addr": "0x79cba0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x79ce70",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x79d110",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x79d2f0",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x79d4e0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x79dfe0",
+  "family": "code:C2146,pat:cmp"
+ },
+ {
+  "addr": "0x79e520",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x79f140",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x79fc40",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7a0430",
+  "family": "code:C2228,pat:cmp"
+ },
+ {
+  "addr": "0x7a0f40",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a1330",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7a16b0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7a19e0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7a1bb0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x7a2330",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7a2600",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a2730",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7a2970",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7a29e0",
+  "family": "code:C2146,pat:cmp"
+ },
+ {
+  "addr": "0x7a2ea0",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x7a2fe0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7a3100",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a3b30",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7a41c0",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7a4c10",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7a4ec0",
+  "family": "code:C2027"
+ },
+ {
+  "addr": "0x7a5290",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7a5690",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7a5890",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x7a7110",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a7b60",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7a7ea0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7a8260",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7a8ed0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a9110",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7a9200",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7a9550",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7a9970",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7aa6d0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7aa870",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7ab0a0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ab260",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ab350",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7ab440",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7ab670",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7ab8e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7abaf0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7abd40",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7abfa0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7ac5d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ac700",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7ac870",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7acbe0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ad310",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7ad350",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7ad410",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7ad480",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7ad690",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7ae830",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7af000",
+  "family": "code:C2109,pat:cmp"
+ },
+ {
+  "addr": "0x7af2a0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7af6c0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7af970",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7afb90",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7b0220",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b02a0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b0490",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7b05c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b0cb0",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x7b1ab0",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x7b1bc0",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7b1de0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7b2630",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b2e50",
+  "family": "code:C2380"
+ },
+ {
+  "addr": "0x7b2f90",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7b2ff0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b3310",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x7b33d0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7b36c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b3720",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b3890",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b3a20",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b4170",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7b6280",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6720",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6780",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b67c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b68e0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6970",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6ae0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6be0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b6ee0",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7b72f0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b73f0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b7dd0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b7e40",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7b7f90",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b8090",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b8170",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7b82e0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b84f0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7b8a00",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x7b90c0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b92d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7b9750",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x7b9a60",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x7b9d70",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x7b9d80",
+  "family": "code:C2040"
+ },
+ {
+  "addr": "0x7b9e30",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7ba090",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x7ba450",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ba530",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ba5e0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bab90",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7bad90",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7badc0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bae60",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7baeb0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7baf10",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7baf90",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bb020",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bb050",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x7bb350",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7bbab0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bbaf0",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bbb90",
+  "family": "code:C2660"
+ },
+ {
+  "addr": "0x7bc040",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7bc640",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7bc660",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7bc680",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7bc6a0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7bc780",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7bc7d0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7bc820",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7bc870",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7bc970",
+  "family": "code:C2228"
+ },
+ {
+  "addr": "0x7bd170",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7bdf80",
+  "family": "code:C2660,pat:cmp"
+ },
+ {
+  "addr": "0x7be5d0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7be670",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7bea80",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7bf470",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7c04e0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c06b0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c19f0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c1d40",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c20b0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c2410",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c2590",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7c3230",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c34b0",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c3690",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c3840",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7c3860",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c3950",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c5f3d",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x7c5fff",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x7c61cf",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c6620",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x7c8368",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c836e",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8386",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c83da",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c83e6",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c83f2",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8410",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8482",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8488",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c848e",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8494",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7c84a0",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c84a6",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c84ac",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c84d0",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c84d6",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c84dc",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c850c",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c851e",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c852a",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8530",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c8548",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7c855a",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8566",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c856c",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8572",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8578",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c85a2",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c85a8",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c8614",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c86b6",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c8710",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c871c",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8746",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8764",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c877c",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c87c4",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c88b4",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c88c0",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c88d2",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c88d8",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c88de",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c88ea",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c8902",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c890e",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c893e",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c8956",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c89bc",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c89c2",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7c89c8",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c89da",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c89e0",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8a2e",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7c8ad3",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7c8aee",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c8c9c",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7c8d20",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7c8ef4",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7c8f5e",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7c8fb0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7c8fd2",
+  "family": "pat:asm"
+ },
+ {
+  "addr": "0x7c91a5",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x7c92d0",
+  "family": "code:C2059,pat:cmp"
+ },
+ {
+  "addr": "0x7c9602",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c970c",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c978a",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7c979c",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7c9dd4",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7c9fd9",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7c9ff0",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7ca090",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x7ca530",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7ca67f",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7ca75b",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7ca7d8",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7ca971",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7caa05",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7caae4",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cac66",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7cacc0",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7cadb9",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7caef1",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cb1f9",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7cb33d",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cb3f9",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cb44b",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cb49d",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x7cb80b",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cbbdb",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7cbc32",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cbdaf",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7cbe1c",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7cbed3",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7cbf5f",
+  "family": "code:C2100,pat:asm"
+ },
+ {
+  "addr": "0x7cc0dc",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cc11e",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cc186",
+  "family": "code:C2227"
+ },
+ {
+  "addr": "0x7cc1b2",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cc1d4",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cc309",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7cc4a4",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7cc682",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cc752",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cc7e7",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ccb2e",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7ccf1d",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7cd460",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cd4de",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7cd917",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7cd989",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7cdb14",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7cdd5a",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7cdf2e",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ce06e",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7ce18d",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7ce2a5",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7ce9e6",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cec26",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7cec87",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7cef29",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7cf0ae",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x7cf0f1",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7cf125",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7cf347",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7cf390",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7cf51c",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cf64c",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7cf6ed",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7d038f",
+  "family": "code:C2039,pat:cmp"
+ },
+ {
+  "addr": "0x7d06be",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d06e8",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7d0703",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d07df",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d0844",
+  "family": "code:C2100,pat:cmp"
+ },
+ {
+  "addr": "0x7d0a20",
+  "family": "code:C2065,pat:asm"
+ },
+ {
+  "addr": "0x7d0d55",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d0dba",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x7d107d",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d12e6",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d140b",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d1512",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7d161b",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d170d",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x7d2169",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d219a",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d21be",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x7d2a74",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d2da6",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d2fc8",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d3164",
+  "family": "pat:cmp"
+ },
+ {
+  "addr": "0x7d3320",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x7d3374",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d3482",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d482c",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d4d24",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d4fcc",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d53c2",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d5433",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d57fe",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d5ac0",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d5f31",
+  "family": "code:C2440,pat:cmp"
+ },
+ {
+  "addr": "0x7d6494",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d6624",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d6a54",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d6d2a",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d6eff",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d6f86",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d718a",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d71e0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x7d729d",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d745b",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7d7491",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d7638",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d769d",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d77d6",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d7d49",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d7ff7",
+  "family": "code:C2059,pat:asm"
+ },
+ {
+  "addr": "0x7d86e6",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d88ec",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d899e",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d8ba4",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7d8d3b",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d8da4",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d8e22",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d8f51",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d9038",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d92cd",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d92e1",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d930f",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7d94c4",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d9540",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d95bf",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7d9601",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d9ddc",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7d9ef8",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7d9f66",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7d9fac",
+  "family": "code:C2377"
+ },
+ {
+  "addr": "0x7d9fbd",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7da0f1",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7da2b6",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7da512",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7da638",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7da9a2",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7da9cd",
+  "family": "code:C2446"
+ },
+ {
+  "addr": "0x7dabac",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7dac6c",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7dae6e",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dae9f",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7db207",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7db49a",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7db4ee",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7db93e",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7dbbdd",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7dbc68",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7dbcf0",
+  "family": "code:C2296"
+ },
+ {
+  "addr": "0x7dc1c2",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x7dc223",
+  "family": "code:C2109"
+ },
+ {
+  "addr": "0x7dc291",
+  "family": "code:C2664,pat:cmp"
+ },
+ {
+  "addr": "0x7dc468",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7dc4c9",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7dc5dc",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x7dc78f",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dc7cb",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dcc74",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dcd9c",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x7dce68",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dce6e",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dce74",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dce7a",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dce92",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dce98",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dce9e",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dcea4",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dceb0",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7dcee0",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7dcf04",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7dcf16",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dcf22",
+  "family": "code:C2653"
+ },
+ {
+  "addr": "0x7dcf2e",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dcf34",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dcf3a",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7dcf40",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x7dcf58",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dcf70",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dcf76",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dcfac",
+  "family": "code:C2061"
+ },
+ {
+  "addr": "0x7dd334",
+  "family": "code:C2065"
+ },
+ {
+  "addr": "0x7dd4f4",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x7dd505",
+  "family": "code:C2065,pat:cmp"
+ },
+ {
+  "addr": "0x7ddf78",
+  "family": "code:C2100"
+ },
+ {
+  "addr": "0x7de1c2",
+  "family": "code:C2146"
+ },
+ {
+  "addr": "0x7de1d4",
+  "family": "code:C2061"
+ }
+]
