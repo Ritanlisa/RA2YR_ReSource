@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x49db00 CampaignClass::LoadFromINI -> CampaignClass
+[conv] 0x49e400 CampaignClass::FindMission -> CampaignClass
+[conv] 0x49e8e0 INISectionList::Constructor -> INISectionList
+[conv] 0x49f420 RandomCoordScatter -> _addr_49
+[conv] 0x49f5c0 CopyProtection::CheckLauncher -> CopyProtection
+[conv] 0x49ff80 EnumConnectionsClass::QueryInterface -> EnumConnectionsClass
+[conv] 0x4a00b0 EnumConnectionsClass::ddtor -> EnumConnectionsClass
+[conv] 0x4a02b0 EnumConnectionsClass::sub_4A02B0 -> EnumConnectionsClass
+[conv] 0x4a0380 EnumConnectionsClass::sub_4A0380 -> EnumConnectionsClass
+[conv] 0x4a04b0 ConnectionPointClass::QueryInterface -> ConnectionPointClass
+[conv] 0x4a0630 ConnectionPointClass::Unadvise -> ConnectionPointClass
+[conv] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> ConnectionPointClass
+[conv] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> EnumConnectionPointsClass
+[conv] 0x4a0a50 EnumConnectionPointsClass::ddtor -> EnumConnectionPointsClass
+[conv] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> EnumConnectionPointsClass
+[conv] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x4a0ce0 EnumConnectionPointsClass::sub_4A0CE0 -> EnumConnectionPointsClass
+[conv] 0x4a1750 CellClass::Cleanup -> CellClass
+[conv] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> BuildingClass
+[conv] 0x4a18f0 BuildingClass::CreateCraterAtCell -> BuildingClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CampaignClass            rc=2
+[era] INISectionList           rc=2
+[era] _addr_49                 rc=2
+[era] CopyProtection           rc=2
+[era] EnumConnectionsClass     rc=2
+[era] ConnectionPointClass     rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x49db00 CampaignClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49e400 CampaignClass::FindMission -> COMPILE_FAIL (attempt 14)
+[ledger] 0x49e8e0 INISectionList::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x49f420 RandomCoordScatter -> COMPILE_FAIL (attempt 4)
+[ledger] 0x49f5c0 CopyProtection::CheckLauncher -> COMPILE_FAIL (attempt 6)
+[ledger] 0x49ff80 EnumConnectionsClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a00b0 EnumConnectionsClass::ddtor -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4a02b0 EnumConnectionsClass::sub_4A02B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a0380 EnumConnectionsClass::sub_4A0380 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a04b0 ConnectionPointClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a0630 ConnectionPointClass::Unadvise -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a0760 ConnectionPointClass::GetConnectionInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a0920 EnumConnectionPointsClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a0a50 EnumConnectionPointsClass::ddtor -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4a0b20 EnumConnectionPointsClass::_vt06 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a0c20 VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a0ce0 EnumConnectionPointsClass::sub_4A0CE0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a1750 CellClass::Cleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a17c0 BuildingClass::BeginCrumblingTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a18f0 BuildingClass::CreateCraterAtCell -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p25\batch_report.json
