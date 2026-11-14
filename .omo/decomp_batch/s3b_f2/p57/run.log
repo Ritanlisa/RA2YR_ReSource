@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x55ad10 IUnknown::GetSpecialValue -> IUnknown
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x55b720 ObjectClass::sub_55B720 -> ObjectClass
+[conv] 0x55c350 LZOPipe::Read -> LZOPipe
+[conv] 0x55c5e0 LZOPipe::AddRef -> LZOPipe
+[conv] 0x55c7c0 LZOStraw::Decompress -> LZOStraw
+[conv] 0x55cfd0 ObjectClass::GameFrameCheck -> ObjectClass
+[conv] 0x55d360 ObjectClass::GameFrameLoop -> ObjectClass
+[conv] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> SyncDelayClass
+[conv] 0x55e160 SyncDelay::Start -> SyncDelay
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x55faa0 Options::Screen_Save -> Options
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x560480 NetworkOptions::DlgProc -> NetworkOptions
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x565090 MapClass::RenderMapPreview -> MapClass
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IUnknown                 rc=2
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] LZOPipe                  rc=2
+[era] LZOStraw                 rc=2
+[era] SyncDelayClass           rc=2
+[era] SyncDelay                rc=2
+[era] Chat                     rc=2
+[era] Options                  rc=2
+[era] _addr_55                 rc=2
+[era] NetworkOptions           rc=2
+[era] _addr_56                 rc=2
+[era] MapClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x55ad10 IUnknown::GetSpecialValue -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55b720 ObjectClass::sub_55B720 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55c350 LZOPipe::Read -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55c5e0 LZOPipe::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55c7c0 LZOStraw::Decompress -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55cfd0 ObjectClass::GameFrameCheck -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55d360 ObjectClass::GameFrameLoop -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55e160 SyncDelay::Start -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 7)
+[ledger] 0x55f1e0 ObjectClass::DrawHUD -> COMPILE_FAIL (attempt 7)
+[ledger] 0x55faa0 Options::Screen_Save -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 8)
+[ledger] 0x560480 NetworkOptions::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 6)
+[ledger] 0x561180 ObjectClass::Team_Start -> COMPILE_FAIL (attempt 7)
+[ledger] 0x565090 MapClass::RenderMapPreview -> COMPILE_FAIL (attempt 5)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p57\batch_report.json
