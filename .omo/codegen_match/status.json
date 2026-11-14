@@ -135106,7 +135106,7 @@
   "this_as_id": false
  },
  "0x673e80": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135118,7 +135118,7 @@
   "this_as_id": false
  },
  "0x674000": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135142,7 +135142,7 @@
   "this_as_id": false
  },
  "0x6743d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135190,7 +135190,7 @@
   "this_as_id": false
  },
  "0x674730": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135202,19 +135202,19 @@
   "this_as_id": false
  },
  "0x675210": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::SaveLoad_Prefix_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::SaveLoad_Prefix_0",
-  "rule_violations": 43,
+  "rule_violations": 112,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x678850": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -135226,7 +135226,7 @@
   "this_as_id": false
  },
  "0x679a10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -135354,7 +135354,7 @@
   "this_as_id": false
  },
  "0x67a030": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135378,7 +135378,7 @@
   "this_as_id": false
  },
  "0x67a090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135390,7 +135390,7 @@
   "this_as_id": false
  },
  "0x67a110": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135426,7 +135426,7 @@
   "this_as_id": false
  },
  "0x67a290": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135450,7 +135450,7 @@
   "this_as_id": false
  },
  "0x67a390": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135529,7 +135529,7 @@
   "this_as_id": false
  },
  "0x67a4f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135553,7 +135553,7 @@
   "this_as_id": false
  },
  "0x67a570": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135565,14 +135565,14 @@
   "this_as_id": false
  },
  "0x67a600": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::ConstructSmudge",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::ConstructSmudge",
-  "rule_violations": 8,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135687,14 +135687,14 @@
   "this_as_id": false
  },
  "0x67a820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::InfantryConstructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::InfantryConstructor",
-  "rule_violations": 8,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -136175,7 +136175,7 @@
   "this_as_id": false
  },
  "0x67b550": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassBuildingTypeList",
@@ -136186,7 +136186,7 @@
   "this_as_id": false
  },
  "0x67b720": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136198,7 +136198,7 @@
   "this_as_id": false
  },
  "0x67b8f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136221,7 +136221,7 @@
   "this_as_id": false
  },
  "0x67bb10": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassInfantryTypeList",
