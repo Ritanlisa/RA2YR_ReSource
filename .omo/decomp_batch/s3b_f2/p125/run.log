@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p125\part_00
+=== convert (20 addrs) ===
+[conv] 0x720ea0 Theme::Stop -> Theme
+[conv] 0x7216c0 TiberiumClass::TiberiumClass_7216C0 -> TiberiumClass
+[conv] 0x721a50 TiberiumClass::LoadFromINI -> TiberiumClass
+[conv] 0x721dc0 TiberiumClass::Harvest -> TiberiumClass
+[conv] 0x721e80 TiberiumClass::SaveLoad_Prefix -> TiberiumClass
+[conv] 0x7221b0 ObjectClass::ProcessSpeechEvents -> ObjectClass
+[conv] 0x722440 ObjectClass::PropagateCellOccupancy -> ObjectClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x722c40 ObjectClass::UpdateAudioTriggers -> ObjectClass
+[conv] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> ObjectClass
+[conv] 0x7235a0 CellClass::RegisterForRedraw -> CellClass
+[conv] 0x723b60 sub_723B60 -> _addr_72
+[conv] 0x723ca0 ScriptTypeClass::SetField -> ScriptTypeClass
+[conv] 0x723ec0 ToggleClass::ProcessMouseOver -> ToggleClass
+[conv] 0x7241a0 Tooltip::Enable -> Tooltip
+[conv] 0x724580 CommandClass::AddAction -> CommandClass
+[conv] 0x724730 HashTable::Remove -> HashTable
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x724ad0 ToolTipClass::initString -> ToolTipClass
+[conv] 0x725190 sub_725190 -> _addr_72
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Theme                    rc=2
+[era] TiberiumClass            rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] CellClass                rc=2
+[era] _addr_72                 rc=2
+[era] ScriptTypeClass          rc=2
+[era] ToggleClass              rc=2
+[era] Tooltip                  rc=2
+[era] CommandClass             rc=2
+[era] HashTable                rc=2
+[era] TooltipClass             rc=2
+[era] ToolTipClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x720ea0 Theme::Stop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7216c0 TiberiumClass::TiberiumClass_7216C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x721a50 TiberiumClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x721dc0 TiberiumClass::Harvest -> COMPILE_FAIL (attempt 4)
+[ledger] 0x721e80 TiberiumClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7221b0 ObjectClass::ProcessSpeechEvents -> COMPILE_FAIL (attempt 4)
+[ledger] 0x722440 ObjectClass::PropagateCellOccupancy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 10)
+[ledger] 0x722c40 ObjectClass::UpdateAudioTriggers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x722f00 ObjectClass::RebuildBuildingOccupancy -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7235a0 CellClass::RegisterForRedraw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x723b60 sub_723B60 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x723ca0 ScriptTypeClass::SetField -> COMPILE_FAIL (attempt 3)
+[ledger] 0x723ec0 ToggleClass::ProcessMouseOver -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7241a0 Tooltip::Enable -> COMPILE_FAIL (attempt 8)
+[ledger] 0x724580 CommandClass::AddAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x724730 HashTable::Remove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7248c0 TooltipClass::GetText -> COMPILE_FAIL (attempt 18)
+[ledger] 0x724ad0 ToolTipClass::initString -> COMPILE_FAIL (attempt 8)
+[ledger] 0x725190 sub_725190 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p125\batch_report.json
