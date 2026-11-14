@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b77e0 ModemHost::Dialog -> ModemHost
+[conv] 0x5b7970 NetworkGameSetup::DlgProc -> NetworkGameSetup
+[conv] 0x5b82f0 ModemHost::InitDialog -> ModemHost
+[conv] 0x5b9250 ObjectClass::sub_5B9250 -> ObjectClass
+[conv] 0x5b93f0 ObjectClass::sub_5B93F0 -> ObjectClass
+[conv] 0x5b9450 ObjectClass::sub_5B9450 -> ObjectClass
+[conv] 0x5b94c0 ObjectClass::sub_5B94C0 -> ObjectClass
+[conv] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> ModemGuest
+[conv] 0x5b9a60 SkirmishDialog::HandleGameStart -> SkirmishDialog
+[conv] 0x5b9c90 RandomMap::RegenerateRandomMapPreview -> RandomMap
+[conv] 0x5ba060 ModemGuest::ProcessPacket -> ModemGuest
+[conv] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> NetworkGameSetup
+[conv] 0x5baa80 ObjectClass::sub_5BAA80 -> ObjectClass
+[conv] 0x5bac60 ModemHost::StartGame -> ModemHost
+[conv] 0x5bb290 ObjectClass::GenerateRandomMapPreview -> ObjectClass
+[conv] 0x5bb580 Network_Find -> Network
+[conv] 0x5bb6e0 Modem::EnumerateDevices -> Modem
+[conv] 0x5bc530 CreateDebugOutput -> _addr_5B
+[conv] 0x5bcc90 TextBuffer::Init -> TextBuffer
+[conv] 0x5bd240 sub_5BD240 -> _addr_5B
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ModemHost                rc=2
+[era] NetworkGameSetup         rc=2
+[era] ObjectClass              rc=2
+[era] ModemGuest               rc=2
+[era] SkirmishDialog           rc=2
+[era] RandomMap                rc=2
+[era] Network                  rc=2
+[era] Modem                    rc=2
+[era] _addr_5B                 rc=2
+[era] TextBuffer               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5b77e0 ModemHost::Dialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b7970 NetworkGameSetup::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b82f0 ModemHost::InitDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b9250 ObjectClass::sub_5B9250 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b93f0 ObjectClass::sub_5B93F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b9450 ObjectClass::sub_5B9450 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b94c0 ObjectClass::sub_5B94C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5b9a60 SkirmishDialog::HandleGameStart -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b9c90 RandomMap::RegenerateRandomMapPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ba060 ModemGuest::ProcessPacket -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ba970 NetworkGameSetup::SendGameSetupPacket -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5baa80 ObjectClass::sub_5BAA80 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5bac60 ModemHost::StartGame -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5bb290 ObjectClass::GenerateRandomMapPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5bb580 Network_Find -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5bb6e0 Modem::EnumerateDevices -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5bc530 CreateDebugOutput -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5bcc90 TextBuffer::Init -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5bd240 sub_5BD240 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p68\batch_report.json
