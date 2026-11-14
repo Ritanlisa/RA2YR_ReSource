@@ -177929,7 +177929,7 @@
   "this_as_id": false
  },
  "0x734d30": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -177941,7 +177941,7 @@
   "this_as_id": false
  },
  "0x734e60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetStringCSF",
@@ -177952,7 +177952,7 @@
   "this_as_id": false
  },
  "0x734f50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -177964,7 +177964,7 @@
   "this_as_id": false
  },
  "0x734f80": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178009,7 +178009,7 @@
   "this_as_id": false
  },
  "0x734fe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "WideMessageBox",
@@ -178221,7 +178221,7 @@
   "this_as_id": false
  },
  "0x7353c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178233,19 +178233,19 @@
   "this_as_id": false
  },
  "0x735780": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::Destructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::Destructor",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7359f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178269,14 +178269,14 @@
   "this_as_id": false
  },
  "0x736990": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::UpdateRotation_TurretFacing_EMP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::UpdateRotation_TurretFacing_EMP",
-  "rule_violations": 10,
+  "rule_violations": 12,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -178312,7 +178312,7 @@
   "this_as_id": false
  },
  "0x736df0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -178336,14 +178336,14 @@
   "this_as_id": false
  },
  "0x737430": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "UnitClass::MissionDispatch",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::MissionDispatch",
-  "rule_violations": 16,
+  "rule_violations": 17,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -178360,7 +178360,7 @@
   "this_as_id": false
  },
  "0x737c90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178372,7 +178372,7 @@
   "this_as_id": false
  },
  "0x738680": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178408,7 +178408,7 @@
   "this_as_id": false
  },
  "0x738970": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178420,14 +178420,14 @@
   "this_as_id": false
  },
  "0x738d30": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::DeployToBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::DeployToBuilding",
-  "rule_violations": 4,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -178443,7 +178443,7 @@
   "this_as_id": false
  },
  "0x7393c0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178479,7 +178479,7 @@
   "this_as_id": false
  },
  "0x739ec0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178503,7 +178503,7 @@
   "this_as_id": false
  },
  "0x73b140": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178515,7 +178515,7 @@
   "this_as_id": false
  },
  "0x73b470": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178527,7 +178527,7 @@
   "this_as_id": false
  },
  "0x73c5f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,

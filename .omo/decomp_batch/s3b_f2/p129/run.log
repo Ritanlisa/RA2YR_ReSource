@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p129\part_00
+=== convert (20 addrs) ===
+[conv] 0x734d30 WinMain::ShutdownCleanup -> WinMain
+[conv] 0x734e60 GetStringCSF -> _addr_73
+[conv] 0x734f50 ObjectClass::RestartNetworkSession -> ObjectClass
+[conv] 0x734f80 ObjectClass::ToggleNetworkSession -> ObjectClass
+[conv] 0x734fe0 WideMessageBox -> _addr_73
+[conv] 0x7353c0 UnitClass::Construct -> UnitClass
+[conv] 0x735780 UnitClass::Destructor -> UnitClass
+[conv] 0x7359f0 UnitClass::CalcMoveTarget -> UnitClass
+[conv] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> UnitClass
+[conv] 0x736df0 TechnoClass::UpdateTechnoFiring -> TechnoClass
+[conv] 0x737430 UnitClass::MissionDispatch -> UnitClass
+[conv] 0x737c90 UnitClass::OnUnderAttack -> UnitClass
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x738970 FootClass::RespondToDestruction -> FootClass
+[conv] 0x738d30 UnitClass::DeployToBuilding -> UnitClass
+[conv] 0x7393c0 TechnoClass::Deploy -> TechnoClass
+[conv] 0x739ec0 BuildingClass::ProcessSell -> BuildingClass
+[conv] 0x73b140 TechnoClass::RenderTechnoSHP -> TechnoClass
+[conv] 0x73b470 TechnoClass::DrawVoxel -> TechnoClass
+[conv] 0x73c5f0 VoxelClass::RenderObject -> VoxelClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WinMain                  rc=2
+[era] _addr_73                 rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] FootClass                rc=2
+[era] BuildingClass            rc=2
+[era] VoxelClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x734d30 WinMain::ShutdownCleanup -> COMPILE_FAIL (attempt 8)
+[ledger] 0x734e60 GetStringCSF -> COMPILE_FAIL (attempt 3)
+[ledger] 0x734f50 ObjectClass::RestartNetworkSession -> COMPILE_FAIL (attempt 5)
+[ledger] 0x734f80 ObjectClass::ToggleNetworkSession -> COMPILE_FAIL (attempt 5)
+[ledger] 0x734fe0 WideMessageBox -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7353c0 UnitClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x735780 UnitClass::Destructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7359f0 UnitClass::CalcMoveTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x736990 UnitClass::UpdateRotation_TurretFacing_EMP -> COMPILE_FAIL (attempt 8)
+[ledger] 0x736df0 TechnoClass::UpdateTechnoFiring -> COMPILE_FAIL (attempt 4)
+[ledger] 0x737430 UnitClass::MissionDispatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x737c90 UnitClass::OnUnderAttack -> COMPILE_FAIL (attempt 5)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 9)
+[ledger] 0x738970 FootClass::RespondToDestruction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x738d30 UnitClass::DeployToBuilding -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7393c0 TechnoClass::Deploy -> COMPILE_FAIL (attempt 8)
+[ledger] 0x739ec0 BuildingClass::ProcessSell -> COMPILE_FAIL (attempt 7)
+[ledger] 0x73b140 TechnoClass::RenderTechnoSHP -> COMPILE_FAIL (attempt 5)
+[ledger] 0x73b470 TechnoClass::DrawVoxel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x73c5f0 VoxelClass::RenderObject -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p129\batch_report.json
