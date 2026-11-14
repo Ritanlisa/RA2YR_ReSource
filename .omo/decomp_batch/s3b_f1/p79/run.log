@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p79\part_00
+=== convert (20 addrs) ===
+[conv] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> ObjectClass
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> ObjectClass
+[conv] 0x5eb7b0 UpdateMultiplayerLobbySlots -> _addr_5E
+[conv] 0x5eba00 Lobby::SetupPlayerWidgets -> Lobby
+[conv] 0x5ebc00 DisableCampaignSlots -> _addr_5E
+[conv] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> SetupMultiplayerLobbyScreen
+[conv] 0x5ec030 MultiplayerLobby::FillSlots -> MultiplayerLobby
+[conv] 0x5ec290 sub_5EC290 -> _addr_5E
+[conv] 0x5ec3a0 SetupMultiplayerLobbyScreen -> _addr_5E
+[conv] 0x5ec9f0 PlayerSkirmishSlotHandler -> _addr_5E
+[conv] 0x5ed5a0 SetupMultiplayerLobbyPlayers -> _addr_5E
+[conv] 0x5edde0 EnablePlayerSlotControls -> _addr_5E
+[conv] 0x5edef0 GetPlayerTypeString -> _addr_5E
+[conv] 0x5edfc0 NetworkLobby::DeleteAndZero -> NetworkLobby
+[conv] 0x5ee3a0 NetworkLobby::FillOptionCombo -> NetworkLobby
+[conv] 0x5ee510 RefreshLobbyPlayerSlots -> _addr_5E
+[conv] 0x5ee9d0 HouseClass::FindStartPositions -> HouseClass
+[conv] 0x5eef60 ObjectClass::String_Process -> ObjectClass
+[conv] 0x5ef4e0 Network::ModemConnectionDialog -> Network
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_5E                 rc=2
+[era] Lobby                    rc=2
+[era] SetupMultiplayerLobbyScreen rc=2
+[era] MultiplayerLobby         rc=2
+[era] NetworkLobby             rc=2
+[era] HouseClass               rc=2
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5eac00 ObjectClass::RefreshLobbyAll_Get_5EAC00 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5eaee0 ObjectClass::RefreshLobbyAll_Play_5EAEE0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5eb7b0 UpdateMultiplayerLobbySlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5eba00 Lobby::SetupPlayerWidgets -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ebc00 DisableCampaignSlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ebec0 SetupMultiplayerLobbyScreen_Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ec030 MultiplayerLobby::FillSlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ec290 sub_5EC290 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ec3a0 SetupMultiplayerLobbyScreen -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ec9f0 PlayerSkirmishSlotHandler -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ed5a0 SetupMultiplayerLobbyPlayers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5edef0 GetPlayerTypeString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5edfc0 NetworkLobby::DeleteAndZero -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ee3a0 NetworkLobby::FillOptionCombo -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ee510 RefreshLobbyPlayerSlots -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ee9d0 HouseClass::FindStartPositions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eef60 ObjectClass::String_Process -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ef4e0 Network::ModemConnectionDialog -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p79\batch_report.json
