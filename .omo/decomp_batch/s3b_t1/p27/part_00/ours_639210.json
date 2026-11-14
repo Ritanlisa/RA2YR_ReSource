@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_639210@@YIHHHHHH@Z",
+ "sym_key": "Unnamed::sub_639210",
+ "size": 186,
+ "link_base": 0,
+ "bytes_hex": "83ec14a10000000053555633db5785c08bea894c24108bf8894424140f868c000000a1000000008b34988b4e048b118d4c24188b5204e8000000008b4c24288b103bd175568b54242c8b48043bca754b8b4c24308b50083bd1754083fdff74053b6e1875368b56048b028b088b891c0200008b7930e80000000084c0740ca10000000085c074038b78308b44241083f8ff740f3bc7740b8b7c2414433bdf7d0eeb808bc65f5e5d5b83c414c20c005f5e5d33c05b83c414c20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B40@@3IA",
+   "sym_key": "DataGlobal_AC4B40"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B34@@3IA",
+   "sym_key": "DataGlobal_AC4B34"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAXPAE@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

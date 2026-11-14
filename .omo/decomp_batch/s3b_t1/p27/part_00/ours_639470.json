@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_639470@@YGHHHH@Z",
+ "sym_key": "Unnamed::sub_639470",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec0c53555633f685c0578be8770c5f5e5d33c05b83c40cc20c008b5c2420a1000000008b3cb08b4f048b118d4c24108b5204e800000000391875168b4c24248b50043bd1750b8b5424288b48083bca7411463bf57cc85f5e5d33c05b83c40cc20c008bc75f5e5d5b83c40cc20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C28@@3IA",
+   "sym_key": "DataGlobal_AC4C28"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C1C@@3IA",
+   "sym_key": "DataGlobal_AC4C1C"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAXPAE@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  }
+ ]
+}
