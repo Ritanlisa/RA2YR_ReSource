@@ -102,3 +102,4 @@
 {"part": 101, "n": 20, "seconds": 21.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 102, "n": 20, "seconds": 20.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 103, "n": 20, "seconds": 49.9, "ok": true, "verdicts": {"COMPILE_FAIL": 12, "MISMATCH": 8}}
+{"part": 104, "n": 13, "seconds": 32.2, "ok": true, "verdicts": {"COMPILE_FAIL": 12, "MISMATCH": 1}}

@@ -215000,7 +215000,7 @@
   "this_as_id": false
  },
  "0x7dcf34": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsW",
@@ -215011,7 +215011,7 @@
   "this_as_id": false
  },
  "0x7dcf3a": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "GetEnvironmentStrings",
@@ -215022,7 +215022,7 @@
   "this_as_id": false
  },
  "0x7dcf40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetEnvironmentStringsW",
@@ -215066,7 +215066,7 @@
   "this_as_id": false
  },
  "0x7dcf58": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "EnumSystemLocalesA",
@@ -215110,7 +215110,7 @@
   "this_as_id": false
  },
  "0x7dcf70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetStringTypeW",
@@ -215121,7 +215121,7 @@
   "this_as_id": false
  },
  "0x7dcf76": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CompareStringA",
@@ -215220,14 +215220,14 @@
   "this_as_id": false
  },
  "0x7dcfac": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1374]",
   "name": "VariantChangeType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VariantChangeType",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dcfb2": {
@@ -215315,7 +215315,7 @@
   "this_as_id": false
  },
  "0x7dd334": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__kbhit",
@@ -215349,7 +215349,7 @@
   "this_as_id": false
  },
  "0x7dd4f4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__cwprintf",
@@ -215360,7 +215360,7 @@
   "this_as_id": false
  },
  "0x7dd505": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -215479,7 +215479,7 @@
   "this_as_id": false
  },
  "0x7ddf78": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__filelength",
@@ -215556,7 +215556,7 @@
   "this_as_id": false
  },
  "0x7de1c2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ReadConsoleInputA",
@@ -215589,7 +215589,7 @@
   "this_as_id": false
  },
  "0x7de1d4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "PeekConsoleInputA",

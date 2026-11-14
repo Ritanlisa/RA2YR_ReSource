@@ -1,0 +1,15 @@
+{
+ "symbol": "?VariantChangeType@@YGJPAVVARIANTARG@@PBV1@GG@Z",
+ "sym_key": "Unnamed::VariantChangeType",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b54240825ffff000081e1ffff0000508b442408515250e800000000c21000",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__imp_VariantChangeType@@YGJPBX0HH@Z",
+   "sym_key": "__imp_VariantChangeType"
+  }
+ ]
+}
