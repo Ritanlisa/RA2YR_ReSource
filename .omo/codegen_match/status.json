@@ -84674,7 +84674,7 @@
   "this_as_id": false
  },
  "0x5522d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84722,7 +84722,7 @@
   "this_as_id": false
  },
  "0x552490": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84931,7 +84931,7 @@
   "this_as_id": false
  },
  "0x552b10": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84943,7 +84943,7 @@
   "this_as_id": false
  },
  "0x552be0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84975,7 +84975,7 @@
   "status": "PENDING"
  },
  "0x552d60": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84987,7 +84987,7 @@
   "this_as_id": false
  },
  "0x554100": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84999,7 +84999,7 @@
   "this_as_id": false
  },
  "0x554150": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85339,7 +85339,7 @@
   "this_as_id": false
  },
  "0x554d50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "UpdateDeferredLightSurfaces",
@@ -85880,7 +85880,7 @@
   "this_as_id": false
  },
  "0x555da0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85892,7 +85892,7 @@
   "this_as_id": false
  },
  "0x556090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85928,14 +85928,14 @@
   "this_as_id": false
  },
  "0x5565a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LinkClass::Destruct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LinkClass::Destruct",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -85964,7 +85964,7 @@
   "this_as_id": false
  },
  "0x556620": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -85976,7 +85976,7 @@
   "this_as_id": false
  },
  "0x556630": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -85988,7 +85988,7 @@
   "this_as_id": false
  },
  "0x556640": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86000,7 +86000,7 @@
   "this_as_id": false
  },
  "0x556670": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -86012,7 +86012,7 @@
   "this_as_id": false
  },
  "0x5566a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86048,7 +86048,7 @@
   "this_as_id": false
  },
  "0x556730": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -86272,26 +86272,26 @@
   "this_as_id": false
  },
  "0x556b70": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::Render_Render_556B70",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Render_Render_556B70",
-  "rule_violations": 11,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x556c00": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::Render_Render_556C00",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Render_Render_556C00",
-  "rule_violations": 7,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -86558,7 +86558,7 @@
   "this_as_id": false
  },
  "0x557830": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

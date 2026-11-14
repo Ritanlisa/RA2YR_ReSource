@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x5522d0 LCWPipe::AddRef -> LCWPipe
+[conv] 0x552490 LCWStraw::DecompressReader -> LCWStraw
+[conv] 0x552b10 Scenario::ComputeDisplayPosition -> Scenario
+[conv] 0x552be0 Scenario::ComputeDialogPos -> Scenario
+[conv] 0x552d60 LoadingScreen::Render -> LoadingScreen
+[conv] 0x554100 LoadingScreen::AdjustForResolution -> LoadingScreen
+[conv] 0x554150 LoadingScreen::CalcProgressBarRect -> LoadingScreen
+[conv] 0x554d50 UpdateDeferredLightSurfaces -> _addr_55
+[conv] 0x555da0 LightConvertClass::Constructor -> LightConvertClass
+[conv] 0x556090 LightConvertClass::UpdateColors -> LightConvertClass
+[conv] 0x5565a0 LinkClass::Destruct -> LinkClass
+[conv] 0x556620 LinkClass::GetWidth -> LinkClass
+[conv] 0x556630 LinkClass::GetHeight -> LinkClass
+[conv] 0x556640 LinkClass::FindPrev -> LinkClass
+[conv] 0x556670 LinkClass::FindNext -> LinkClass
+[conv] 0x5566a0 LinkClass::InsertAfter -> LinkClass
+[conv] 0x556730 LinkClass::RemoveNode -> LinkClass
+[conv] 0x556b70 ObjectClass::Render_Render_556B70 -> ObjectClass
+[conv] 0x556c00 ObjectClass::Render_Render_556C00 -> ObjectClass
+[conv] 0x557830 ListClass::DrawWithFlags -> ListClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LCWPipe                  rc=2
+[era] LCWStraw                 rc=2
+[era] Scenario                 rc=2
+[era] LoadingScreen            rc=2
+[era] _addr_55                 rc=2
+[era] LightConvertClass        rc=2
+[era] LinkClass                rc=2
+[era] ObjectClass              rc=2
+[era] ListClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5522d0 LCWPipe::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x552490 LCWStraw::DecompressReader -> COMPILE_FAIL (attempt 5)
+[ledger] 0x552b10 Scenario::ComputeDisplayPosition -> COMPILE_FAIL (attempt 14)
+[ledger] 0x552be0 Scenario::ComputeDialogPos -> COMPILE_FAIL (attempt 5)
+[ledger] 0x552d60 LoadingScreen::Render -> COMPILE_FAIL (attempt 7)
+[ledger] 0x554100 LoadingScreen::AdjustForResolution -> COMPILE_FAIL (attempt 6)
+[ledger] 0x554150 LoadingScreen::CalcProgressBarRect -> COMPILE_FAIL (attempt 6)
+[ledger] 0x554d50 UpdateDeferredLightSurfaces -> COMPILE_FAIL (attempt 5)
+[ledger] 0x555da0 LightConvertClass::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x556090 LightConvertClass::UpdateColors -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5565a0 LinkClass::Destruct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x556620 LinkClass::GetWidth -> COMPILE_FAIL (attempt 14)
+[ledger] 0x556630 LinkClass::GetHeight -> COMPILE_FAIL (attempt 14)
+[ledger] 0x556640 LinkClass::FindPrev -> COMPILE_FAIL (attempt 8)
+[ledger] 0x556670 LinkClass::FindNext -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5566a0 LinkClass::InsertAfter -> COMPILE_FAIL (attempt 7)
+[ledger] 0x556730 LinkClass::RemoveNode -> COMPILE_FAIL (attempt 7)
+[ledger] 0x556b70 ObjectClass::Render_Render_556B70 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x556c00 ObjectClass::Render_Render_556C00 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x557830 ListClass::DrawWithFlags -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p55\batch_report.json
