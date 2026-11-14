@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x43ef90 BuildingClass::GetProductionFrame -> BuildingClass
+[conv] 0x43f180 BuildingClass::ProductionDisplayUpdate -> BuildingClass
+[conv] 0x43fb20 BuildingClass::ProcessSpreadEffect -> BuildingClass
+[conv] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> BuildingClass
+[conv] 0x4415f0 BuildingClass::ProcessDemolish -> BuildingClass
+[conv] 0x441f60 BuildingClass::AfterDestruction -> BuildingClass
+[conv] 0x442230 BuildingClass::ProcessAttack -> BuildingClass
+[conv] 0x442c40 BuildingClass::Update -> BuildingClass
+[conv] 0x443860 BuildingClass::SetRallyPoint -> BuildingClass
+[conv] 0x443b90 BuildingClass::AssignTarget_SyncLog -> BuildingClass
+[conv] 0x443c60 BuildingClass::UpdateConstruction -> BuildingClass
+[conv] 0x4456d0 BuildingClass::UpdateSidebar -> BuildingClass
+[conv] 0x445880 BuildingClass::Sell -> BuildingClass
+[conv] 0x445e50 BuildingClass::GetFacingToTarget -> BuildingClass
+[conv] 0x445f80 BuildingClass::CreateUnits -> BuildingClass
+[conv] 0x446ff0 BuildingClass::ToggleRepairMode -> BuildingClass
+[conv] 0x447210 BuildingClass::GetActionOnObject -> BuildingClass
+[conv] 0x447540 BuildingClass::HandleRepairCursor -> BuildingClass
+[conv] 0x447780 BuildingClass::StartProduction -> BuildingClass
+[conv] 0x447ac0 BuildingClass::GetExitCoords -> BuildingClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x43ef90 BuildingClass::GetProductionFrame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x43f180 BuildingClass::ProductionDisplayUpdate -> COMPILE_FAIL (attempt 6)
+[ledger] 0x43fb20 BuildingClass::ProcessSpreadEffect -> COMPILE_FAIL (attempt 7)
+[ledger] 0x440580 BuildingClass::Unlimbo_UnitDeliveryFix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4415f0 BuildingClass::ProcessDemolish -> COMPILE_FAIL (attempt 5)
+[ledger] 0x441f60 BuildingClass::AfterDestruction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x442230 BuildingClass::ProcessAttack -> COMPILE_FAIL (attempt 6)
+[ledger] 0x442c40 BuildingClass::Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x443860 BuildingClass::SetRallyPoint -> COMPILE_FAIL (attempt 4)
+[ledger] 0x443b90 BuildingClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x443c60 BuildingClass::UpdateConstruction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4456d0 BuildingClass::UpdateSidebar -> COMPILE_FAIL (attempt 8)
+[ledger] 0x445880 BuildingClass::Sell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x445e50 BuildingClass::GetFacingToTarget -> COMPILE_FAIL (attempt 6)
+[ledger] 0x445f80 BuildingClass::CreateUnits -> COMPILE_FAIL (attempt 6)
+[ledger] 0x446ff0 BuildingClass::ToggleRepairMode -> COMPILE_FAIL (attempt 4)
+[ledger] 0x447210 BuildingClass::GetActionOnObject -> COMPILE_FAIL (attempt 4)
+[ledger] 0x447540 BuildingClass::HandleRepairCursor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x447780 BuildingClass::StartProduction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x447ac0 BuildingClass::GetExitCoords -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p11\batch_report.json
