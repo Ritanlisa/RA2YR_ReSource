@@ -204161,7 +204161,7 @@
   "this_as_id": false
  },
  "0x7be5d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -204197,7 +204197,7 @@
   "this_as_id": false
  },
  "0x7be670": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -204243,7 +204243,7 @@
   "this_as_id": false
  },
  "0x7bea80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -204357,7 +204357,7 @@
   "this_as_id": false
  },
  "0x7bf470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FillAudioStreamBuffer",
@@ -204391,7 +204391,7 @@
   "this_as_id": false
  },
  "0x7c04e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C04E0",
@@ -204413,7 +204413,7 @@
   "this_as_id": false
  },
  "0x7c06b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C06B0",
@@ -204493,7 +204493,7 @@
   "this_as_id": false
  },
  "0x7c19f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C19F0",
@@ -204528,7 +204528,7 @@
   "this_as_id": false
  },
  "0x7c1d40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Render_7C1D40",
@@ -204572,7 +204572,7 @@
   "this_as_id": false
  },
  "0x7c20b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Helper_7C20B0",
@@ -204605,7 +204605,7 @@
   "this_as_id": false
  },
  "0x7c2410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Render_7C2410",
@@ -204616,7 +204616,7 @@
   "this_as_id": false
  },
  "0x7c2590": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RenderAudioVideoFrame",
@@ -204661,7 +204661,7 @@
   "this_as_id": false
  },
  "0x7c3230": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Render_Render_7C3230",
@@ -204690,7 +204690,7 @@
   "this_as_id": false
  },
  "0x7c34b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SeekAudioStream",
@@ -204727,7 +204727,7 @@
   "this_as_id": false
  },
  "0x7c3690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Render_Render_7C3690",
@@ -204778,7 +204778,7 @@
   "status": "NG"
  },
  "0x7c3840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_7C3840",
@@ -204789,7 +204789,7 @@
   "this_as_id": false
  },
  "0x7c3860": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Render_7C3860",
@@ -204811,7 +204811,7 @@
   "this_as_id": false
  },
  "0x7c3950": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7C3950",
@@ -204987,7 +204987,7 @@
   "this_as_id": false
  },
  "0x7c5f3d": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Event_Process_7C5F3D",
@@ -204998,14 +204998,14 @@
   "this_as_id": false
  },
  "0x7c5fff": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "Event_Process_7C5FFF",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "Event_Process_7C5FFF",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c6064": {
@@ -205021,7 +205021,7 @@
   "this_as_id": false
  },
  "0x7c61cf": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_0C61CF",

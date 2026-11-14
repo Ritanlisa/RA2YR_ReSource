@@ -1,0 +1,51 @@
+{
+ "symbol": "?Event_Process_7C5FFF@@YAHXZ",
+ "sym_key": "Unnamed::Event_Process_7C5FFF",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8a0d0000000080f90572278b1500000000b801000000f6c680a300000000741280f905a2000000000f97c1880d00000000c332c0a200000000a20000000033c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E863@@3EA",
+   "sym_key": "DataGlobal_84E863"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?_EDX@@3IA",
+   "sym_key": "_EDX"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?_EAX@@3IA",
+   "sym_key": "_EAX"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E861@@3EA",
+   "sym_key": "DataGlobal_84E861"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E860@@3EA",
+   "sym_key": "DataGlobal_84E860"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E860@@3EA",
+   "sym_key": "DataGlobal_84E860"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E861@@3EA",
+   "sym_key": "DataGlobal_84E861"
+  }
+ ]
+}

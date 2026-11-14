@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C5FFF",
+ "name": "Event_Process_7C5FFF",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C5FFF",
+ "bytes_hex": "5351803d63e88400057244b8010000000fa2f7c2008000007435803d63e88400057616c60560e8840001c60561e8840001b801000000595bc3c60560e8840000c60561e8840001b801000000595bc3c60560e8840000c60561e8840000b800000000595bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
