@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p78\part_00
+=== convert (20 addrs) ===
+[conv] 0x7759e0 MessageDialogLoopAlt -> _addr_77
+[conv] 0x775b50 sub_775B50 -> _addr_77
+[conv] 0x775ba0 Dialog::GetField -> Dialog
+[conv] 0x776230 sub_776230 -> _addr_77
+[conv] 0x776320 ObjectClass::sub_776320 -> ObjectClass
+[conv] 0x776490 HitDialogTest -> _addr_77
+[conv] 0x776570 ObjectClass::sub_776570 -> ObjectClass
+[conv] 0x7767b0 sub_7767B0 -> _addr_77
+[conv] 0x7767f0 ObjectClass::sub_7767F0 -> ObjectClass
+[conv] 0x776a70 SaveWOLLobbySettings -> _addr_77
+[conv] 0x776cd0 sub_776CD0 -> _addr_77
+[conv] 0x776eb0 ObjectClass::sub_776EB0 -> ObjectClass
+[conv] 0x7775c0 MainWindowProc -> _addr_77
+[conv] 0x777b30 String::FormatDword -> String
+[conv] 0x777bb0 ObjectClass::sub_777BB0 -> ObjectClass
+[conv] 0x777c30 InitWindowCreation -> _addr_77
+[conv] 0x778180 Network_Append -> Network
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x778a20 LoadPlayerProfile -> _addr_77
+[conv] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> ReferenceCounted
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] Dialog                   rc=2
+[era] ObjectClass              rc=2
+[era] String                   rc=2
+[era] Network                  rc=2
+[era] ReferenceCounted         rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 8)
+[ledger] 0x775b50 sub_775B50 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x775ba0 Dialog::GetField -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776230 sub_776230 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x776320 ObjectClass::sub_776320 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776490 HitDialogTest -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776570 ObjectClass::sub_776570 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7767b0 sub_7767B0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7767f0 ObjectClass::sub_7767F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x776a70 SaveWOLLobbySettings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x776cd0 sub_776CD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x776eb0 ObjectClass::sub_776EB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7775c0 MainWindowProc -> COMPILE_FAIL (attempt 8)
+[ledger] 0x777b30 String::FormatDword -> COMPILE_FAIL (attempt 2)
+[ledger] 0x777bb0 ObjectClass::sub_777BB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x777c30 InitWindowCreation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x778180 Network_Append -> COMPILE_FAIL (attempt 6)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 10)
+[ledger] 0x778a20 LoadPlayerProfile -> COMPILE_FAIL (attempt 6)
+[ledger] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p78\batch_report.json

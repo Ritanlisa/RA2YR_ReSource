@@ -193106,7 +193106,7 @@
   "this_as_id": false
  },
  "0x7759e0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "MessageDialogLoopAlt",
@@ -193163,7 +193163,7 @@
   "this_as_id": false
  },
  "0x775b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_775B50",
@@ -193174,7 +193174,7 @@
   "this_as_id": false
  },
  "0x775ba0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -193253,7 +193253,7 @@
   "this_as_id": false
  },
  "0x776230": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_776230",
@@ -193264,7 +193264,7 @@
   "this_as_id": false
  },
  "0x776320": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -193276,7 +193276,7 @@
   "this_as_id": false
  },
  "0x776490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "HitDialogTest",
@@ -193287,7 +193287,7 @@
   "this_as_id": false
  },
  "0x776570": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -193322,7 +193322,7 @@
   "this_as_id": false
  },
  "0x7767b0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "sub_7767B0",
@@ -193333,7 +193333,7 @@
   "this_as_id": false
  },
  "0x7767f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -193380,7 +193380,7 @@
   "this_as_id": false
  },
  "0x776a70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SaveWOLLobbySettings",
@@ -193402,7 +193402,7 @@
   "this_as_id": false
  },
  "0x776cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_776CD0",
@@ -193447,7 +193447,7 @@
   "this_as_id": false
  },
  "0x776eb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -193649,7 +193649,7 @@
   "this_as_id": false
  },
  "0x7775c0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "MainWindowProc",
@@ -193683,7 +193683,7 @@
   "this_as_id": false
  },
  "0x777b30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -193719,7 +193719,7 @@
   "this_as_id": false
  },
  "0x777bb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -193731,7 +193731,7 @@
   "this_as_id": false
  },
  "0x777c30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitWindowCreation",
@@ -193809,7 +193809,7 @@
   "this_as_id": false
  },
  "0x778180": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "Network_Append",
@@ -194042,7 +194042,7 @@
   "this_as_id": false
  },
  "0x778710": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -194054,7 +194054,7 @@
   "this_as_id": false
  },
  "0x778a20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "LoadPlayerProfile",
@@ -194087,7 +194087,7 @@
   "this_as_id": false
  },
  "0x779690": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
