@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d4280 FootClass::ApproachEvaluate -> FootClass
+[conv] 0x4d4dc0 FootClass::ScanTarget -> FootClass
+[conv] 0x4d5070 FootClass::FindMovePosition -> FootClass
+[conv] 0x4d5350 FootClass::ProcessDeploy -> FootClass
+[conv] 0x4d55c0 FootClass::PlayCOM_audio -> FootClass
+[conv] 0x4d55f0 FootClass::Destru_vt319 -> FootClass
+[conv] 0x4d5690 FootClass::CalculateApproachPath -> FootClass
+[conv] 0x4d6aa0 FootClass::FindAITarget -> FootClass
+[conv] 0x4d74e0 FootClass::ValidateMove -> FootClass
+[conv] 0x4d7d50 TechnoClass::SpawnInfantry -> TechnoClass
+[conv] 0x4d82b0 FootClass::ValidatePlacement -> FootClass
+[conv] 0x4d8560 FootClass::GetCoords -> FootClass
+[conv] 0x4d85d0 FootClass::UpdateAI -> FootClass
+[conv] 0x4d8fb0 FootClass::MissionDispatch -> FootClass
+[conv] 0x4d9290 FootClass::ProcessTeamAction -> FootClass
+[conv] 0x4d94b0 FootClass::AssignDestination -> FootClass
+[conv] 0x4d9960 FootClass::HandleTargetDestroyed -> FootClass
+[conv] 0x4d9c10 FootClass::Destru_vt107 -> FootClass
+[conv] 0x4d9e70 FootClass::CheckCohesion -> FootClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4d4280 FootClass::ApproachEvaluate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d4dc0 FootClass::ScanTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d5070 FootClass::FindMovePosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d5350 FootClass::ProcessDeploy -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4d55c0 FootClass::PlayCOM_audio -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d55f0 FootClass::Destru_vt319 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d5690 FootClass::CalculateApproachPath -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d6aa0 FootClass::FindAITarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d74e0 FootClass::ValidateMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d7d50 TechnoClass::SpawnInfantry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4d82b0 FootClass::ValidatePlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4d8560 FootClass::GetCoords -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4d85d0 FootClass::UpdateAI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4d8fb0 FootClass::MissionDispatch -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4d9290 FootClass::ProcessTeamAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d94b0 FootClass::AssignDestination -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d9960 FootClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d9c10 FootClass::Destru_vt107 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4d9e70 FootClass::CheckCohesion -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 23)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p34\batch_report.json
