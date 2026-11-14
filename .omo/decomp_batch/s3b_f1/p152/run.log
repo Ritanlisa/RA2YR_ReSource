@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p152\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b6be0 WideString::AssignConcat -> WideString
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x7b72f0 EditControl::GrowBuffer -> EditControl
+[conv] 0x7b73f0 WideString::Replace -> WideString
+[conv] 0x7b7dd0 FormatWideString -> _addr_7B
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x7b7f90 ToWideStringCharAlt -> _addr_7B
+[conv] 0x7b8090 FormatWideStringPrefix -> _addr_7B
+[conv] 0x7b8170 ConcatWString -> _addr_7B
+[conv] 0x7b82e0 Game_Set -> Game
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+[conv] 0x7b8a00 WWMouseClass::AddRef -> WWMouseClass
+[conv] 0x7b8f30 WWMouseClass::updateCursorRect -> WWMouseClass
+[conv] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> WWMouseClass
+[conv] 0x7b92d0 WWMouseClass::updateCursor -> WWMouseClass
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7b9930 WWMouseClass::hideCursor -> WWMouseClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x7b9c30 WWMouseClass::releaseMouse -> WWMouseClass
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WideString               rc=2
+[era] ObjectClass              rc=2
+[era] EditControl              rc=2
+[era] _addr_7B                 rc=2
+[era] WDTGame                  rc=2
+[era] Game                     rc=2
+[era] WinMain_Helper           rc=2
+[era] WWMouseClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b6be0 WideString::AssignConcat -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7b72f0 EditControl::GrowBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b73f0 WideString::Replace -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b7dd0 FormatWideString -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7b8090 FormatWideStringPrefix -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b8170 ConcatWString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b82e0 Game_Set -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b8a00 WWMouseClass::AddRef -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b8f30 WWMouseClass::updateCursorRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b92d0 WWMouseClass::updateCursor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b9930 WWMouseClass::hideCursor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b9c30 WWMouseClass::releaseMouse -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> COMPILE_FAIL (attempt 11)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p152\batch_report.json

@@ -150,3 +150,4 @@
 {"part": 149, "n": 20, "seconds": 39.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 150, "n": 20, "seconds": 63.4, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"part": 151, "n": 20, "seconds": 34.1, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "DUP_SKIP": 1}}
+{"part": 152, "n": 20, "seconds": 30.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
