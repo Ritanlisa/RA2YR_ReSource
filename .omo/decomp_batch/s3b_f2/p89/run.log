@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p89\part_00
+=== convert (20 addrs) ===
+[conv] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> ObjectClass
+[conv] 0x632a20 ObjectClass::sub_632A20 -> ObjectClass
+[conv] 0x632b20 ObjectClass::sub_632B20 -> ObjectClass
+[conv] 0x632c40 CheckSum::AccumulateModulo -> CheckSum
+[conv] 0x632dc0 PKPipe::WriteEncryptedStream -> PKPipe
+[conv] 0x632fe0 PKPipe::loadGameState -> PKPipe
+[conv] 0x633130 PKStrawClass::ReadEncryptedStream -> PKStrawClass
+[conv] 0x633360 PKStrawClass::parseGameOptions -> PKStrawClass
+[conv] 0x633a50 sub_633A50 -> _addr_63
+[conv] 0x6340b0 TeamClass::DestroyAllMembers -> TeamClass
+[conv] 0x634290 Array::FindValue -> Array
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+[conv] 0x634550 ScriptAction::GetActionCoordinates -> ScriptAction
+[conv] 0x634e10 ScriptAction::PlaceObject -> ScriptAction
+[conv] 0x635830 BuildingClass::GetDrawColor -> BuildingClass
+[conv] 0x636120 TeamClass::RemoveAllMembers -> TeamClass
+[conv] 0x636b50 TeamClass::Cleanup -> TeamClass
+[conv] 0x636ce0 ScriptAction::ClearBuildingState -> ScriptAction
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CheckSum                 rc=2
+[era] PKPipe                   rc=2
+[era] PKStrawClass             rc=2
+[era] _addr_63                 rc=2
+[era] TeamClass                rc=2
+[era] Array                    rc=2
+[era] ScriptAction             rc=2
+[era] BuildingClass            rc=2
+[era] TabClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x632a20 ObjectClass::sub_632A20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x632b20 ObjectClass::sub_632B20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x632c40 CheckSum::AccumulateModulo -> COMPILE_FAIL (attempt 4)
+[ledger] 0x632dc0 PKPipe::WriteEncryptedStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x632fe0 PKPipe::loadGameState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x633130 PKStrawClass::ReadEncryptedStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x633360 PKStrawClass::parseGameOptions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x633a50 sub_633A50 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6340b0 TeamClass::DestroyAllMembers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x634290 Array::FindValue -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 8)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 8)
+[ledger] 0x634550 ScriptAction::GetActionCoordinates -> COMPILE_FAIL (attempt 8)
+[ledger] 0x634e10 ScriptAction::PlaceObject -> COMPILE_FAIL (attempt 8)
+[ledger] 0x635830 BuildingClass::GetDrawColor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x636120 TeamClass::RemoveAllMembers -> COMPILE_FAIL (attempt 8)
+[ledger] 0x636b50 TeamClass::Cleanup -> COMPILE_FAIL (attempt 8)
+[ledger] 0x636ce0 ScriptAction::ClearBuildingState -> COMPILE_FAIL (attempt 15)
+[ledger] 0x637060 TabClass::processTabInput -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p89\batch_report.json
