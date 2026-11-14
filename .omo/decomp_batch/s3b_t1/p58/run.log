@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> ObjectClass
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> TechnoClass
+[conv] 0x6fdd50 TechnoClass::FireWeapon -> TechnoClass
+[conv] 0x6ff960 TechnoClass::DrawTargetLine -> TechnoClass
+[conv] 0x6ffe00 TechnoClass::RecordEvent -> TechnoClass
+[conv] 0x700600 TechnoClass::HandleCursor -> TechnoClass
+[conv] 0x700d10 TechnoClass::IsDeadOrInactive -> TechnoClass
+[conv] 0x7010d0 TechnoClass::HasValidWeapon -> TechnoClass
+[conv] 0x701140 TechnoClass::CheckHealthDiff -> TechnoClass
+[conv] 0x7014a0 TechnoClass::ProcessCapture -> TechnoClass
+[conv] 0x701900 TechnoClass::ReceiveDamage_Shield -> TechnoClass
+[conv] 0x702d40 TechnoClass::RegisterKill -> TechnoClass
+[conv] 0x703770 TechnoClass::StartEffectAudio -> TechnoClass
+[conv] 0x703860 TechnoClass::UpdatePowerDrain -> TechnoClass
+[conv] 0x704000 TechnoClass::IsValidBuildingPlacement -> TechnoClass
+[conv] 0x704350 TechnoClass::GetDrawHeight -> TechnoClass
+[conv] 0x704e40 DrawTacticalLaserLine -> _addr_70
+[conv] 0x705270 Render::DrawLine -> Render
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] Render                   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6fdd50 TechnoClass::FireWeapon -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ff960 TechnoClass::DrawTargetLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ffe00 TechnoClass::RecordEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x700600 TechnoClass::HandleCursor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x700d10 TechnoClass::IsDeadOrInactive -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7010d0 TechnoClass::HasValidWeapon -> COMPILE_FAIL (attempt 2)
+[ledger] 0x701140 TechnoClass::CheckHealthDiff -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7014a0 TechnoClass::ProcessCapture -> COMPILE_FAIL (attempt 3)
+[ledger] 0x701900 TechnoClass::ReceiveDamage_Shield -> COMPILE_FAIL (attempt 2)
+[ledger] 0x702d40 TechnoClass::RegisterKill -> COMPILE_FAIL (attempt 2)
+[ledger] 0x703230 0x703230 -> PENDING (attempt 3)
+[ledger] 0x703770 TechnoClass::StartEffectAudio -> COMPILE_FAIL (attempt 3)
+[ledger] 0x703860 TechnoClass::UpdatePowerDrain -> COMPILE_FAIL (attempt 8)
+[ledger] 0x704000 TechnoClass::IsValidBuildingPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x704350 TechnoClass::GetDrawHeight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x704e40 DrawTacticalLaserLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x705270 Render::DrawLine -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p58\batch_report.json
