@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x475d70 INIClass::ReadIntList -> INIClass
+[conv] 0x476020 INIClass::ReadExitCellList -> INIClass
+[conv] 0x4764f0 INIClass::ReadTechnoTypeList -> INIClass
+[conv] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> INIClass
+[conv] 0x4770e0 LoadBuildingTypeClassPrerequisites -> _addr_47
+[conv] 0x477740 Pipe::Method_477740 -> Pipe
+[conv] 0x4779e0 DynamicVectorClass::Copy -> DynamicVectorClass
+[conv] 0x478630 VectorClass::vt00 -> VectorClass
+[conv] 0x478720 TypeList::Copy -> TypeList
+[conv] 0x478790 TypeList::TechnoTypeConstructor -> TypeList
+[conv] 0x478ba0 CCToolTip::CalculatePopupPosition -> CCToolTip
+[conv] 0x478db0 CCToolTip::Release -> CCToolTip
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x478e30 CCToolTip::Draw2 -> CCToolTip
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+[conv] 0x479740 ObjectClass::sub_479740 -> ObjectClass
+[conv] 0x479d60 sub_479D60 -> _addr_47
+[conv] 0x479ef0 sub_479EF0 -> _addr_47
+[conv] 0x47a3f0 CDROM::DeviceIoControl -> CDROM
+[conv] 0x47a560 sub_47A560 -> _addr_47
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] _addr_47                 rc=2
+[era] Pipe                     rc=2
+[era] DynamicVectorClass       rc=2
+[era] VectorClass              rc=2
+[era] TypeList                 rc=2
+[era] CCToolTip                rc=2
+[era] CD                       rc=2
+[era] ObjectClass              rc=2
+[era] CDROM                    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x475d70 INIClass::ReadIntList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x476020 INIClass::ReadExitCellList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4764f0 INIClass::ReadTechnoTypeList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4770e0 LoadBuildingTypeClassPrerequisites -> COMPILE_FAIL (attempt 5)
+[ledger] 0x477740 Pipe::Method_477740 -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4779e0 DynamicVectorClass::Copy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x478630 VectorClass::vt00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478720 TypeList::Copy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478790 TypeList::TechnoTypeConstructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478ba0 CCToolTip::CalculatePopupPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478db0 CCToolTip::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x478e30 CCToolTip::Draw2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4791f0 CD::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 9)
+[ledger] 0x479740 ObjectClass::sub_479740 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x479d60 sub_479D60 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x479ef0 sub_479EF0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47a3f0 CDROM::DeviceIoControl -> COMPILE_FAIL (attempt 5)
+[ledger] 0x47a560 sub_47A560 -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p19\batch_report.json
