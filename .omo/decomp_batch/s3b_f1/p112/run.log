@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p112\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> _TClassFactory_VTemporalClass
+[conv] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> _TClassFactory_VParasiteClass
+[conv] 0x6c1190 _TClassFactory_VBombClass::ddtor -> _TClassFactory_VBombClass
+[conv] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> _TClassFactory_VTEventClass
+[conv] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> _TClassFactory_VVoxelAnimClass
+[conv] 0x6c1910 _TClassFactory_VTActionClass::ddtor -> _TClassFactory_VTActionClass
+[conv] 0x6c1a90 _TClassFactory_VTriggerClass::ddtor -> _TClassFactory_VTriggerClass
+[conv] 0x6c2090 _TClassFactory_VTagClass::ddtor -> _TClassFactory_VTagClass
+[conv] 0x6c2390 _TClassFactory_VTeamClass::ddtor -> _TClassFactory_VTeamClass
+[conv] 0x6c2810 _TClassFactory_VUnitTypeClass::GetClassIdentifier -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c2990 _TClassFactory_VBuildingTypeClass::GetClassIdentifier -> _TClassFactory_VBuildingTypeClass
+[conv] 0x6c2b10 _TClassFactory_VAircraftTypeClass::GetClassIdentifier -> _TClassFactory_VAircraftTypeClass
+[conv] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c3410 _TClassFactory_VUnitClass::ddtor -> _TClassFactory_VUnitClass
+[conv] 0x6c3590 _TClassFactory_VBuildingClass::ddtor -> _TClassFactory_VBuildingClass
+[conv] 0x6c3710 _TClassFactory_VAircraftClass::ddtor -> _TClassFactory_VAircraftClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VWaypointPathClass rc=2
+[era] _TClassFactory_VTemporalClass rc=2
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VSlaveManagerClass rc=2
+[era] _TClassFactory_VDiskLaserClass rc=2
+[era] _TClassFactory_VParasiteClass rc=2
+[era] _TClassFactory_VBombClass rc=2
+[era] _TClassFactory_VTEventClass rc=2
+[era] _TClassFactory_VVoxelAnimClass rc=2
+[era] _TClassFactory_VTActionClass rc=2
+[era] _TClassFactory_VTriggerClass rc=2
+[era] _TClassFactory_VTagClass rc=2
+[era] _TClassFactory_VTeamClass rc=2
+[era] _TClassFactory_VUnitTypeClass rc=2
+[era] _TClassFactory_VBuildingTypeClass rc=2
+[era] _TClassFactory_VAircraftTypeClass rc=2
+[era] _TClassFactory_VInfantryTypeClass rc=2
+[era] _TClassFactory_VUnitClass rc=2
+[era] _TClassFactory_VBuildingClass rc=2
+[era] _TClassFactory_VAircraftClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c0590 _TClassFactory_VWaypointPathClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c0710 _TClassFactory_VTemporalClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c0a10 _TClassFactory_VSpawnManagerClass::ddtor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6c0b90 _TClassFactory_VSlaveManagerClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c0e90 _TClassFactory_VDiskLaserClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c1010 _TClassFactory_VParasiteClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1190 _TClassFactory_VBombClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1490 _TClassFactory_VTEventClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c1790 _TClassFactory_VVoxelAnimClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1910 _TClassFactory_VTActionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c1a90 _TClassFactory_VTriggerClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c2090 _TClassFactory_VTagClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c2390 _TClassFactory_VTeamClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c2810 _TClassFactory_VUnitTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c2990 _TClassFactory_VBuildingTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c2b10 _TClassFactory_VAircraftTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c2c90 _TClassFactory_VInfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6c3410 _TClassFactory_VUnitClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c3590 _TClassFactory_VBuildingClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c3710 _TClassFactory_VAircraftClass::ddtor -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p112\batch_report.json
