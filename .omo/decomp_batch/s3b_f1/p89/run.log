@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p89\part_00
+=== convert (20 addrs) ===
+[conv] 0x62b5e0 ParticleClass::Construct -> ParticleClass
+[conv] 0x62bd50 ParasiteClass::Update -> ParasiteClass
+[conv] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> ParticleClass
+[conv] 0x62c540 ParticleClass::UpdateAnimationDrift -> ParticleClass
+[conv] 0x62c6e0 TechnoClass::UpdateParticleSystem -> TechnoClass
+[conv] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> ObjectClass
+[conv] 0x62ce40 ParticleClass::Dispatch -> ParticleClass
+[conv] 0x62cec0 ParticleClass::DrawParticle -> ParticleClass
+[conv] 0x62d2a0 BuildingClass::UpdateFloatPosition -> BuildingClass
+[conv] 0x62d3f0 ParticleClass::CheckWaterImpact -> ParticleClass
+[conv] 0x62d510 ObjectClass::sub_62D510 -> ObjectClass
+[conv] 0x62dc50 ParticleSystemClass::Constructor -> ParticleSystemClass
+[conv] 0x62e280 ParticleSystemClass::CreateBuildingLight -> ParticleSystemClass
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> ParticleSystemClass
+[conv] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> TechnoClass
+[conv] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> TechnoClass
+[conv] 0x62f230 ParticleSystemClass::SpawnParticle -> ParticleSystemClass
+[conv] 0x62fd60 ParticleSystemClass::Update -> ParticleSystemClass
+[conv] 0x62fe90 ParticleSystemClass::UpdateSystem -> ParticleSystemClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleClass            rc=2
+[era] ParasiteClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] ParticleSystemClass      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62b5e0 ParticleClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x62bd50 ParasiteClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62c540 ParticleClass::UpdateAnimationDrift -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62c6e0 TechnoClass::UpdateParticleSystem -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> COMPILE_FAIL (attempt 7)
+[ledger] 0x62ce40 ParticleClass::Dispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62cec0 ParticleClass::DrawParticle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62d2a0 BuildingClass::UpdateFloatPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62d3f0 ParticleClass::CheckWaterImpact -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62d510 ObjectClass::sub_62D510 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62dc50 ParticleSystemClass::Constructor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x62e280 ParticleSystemClass::CreateBuildingLight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> COMPILE_FAIL (attempt 16)
+[ledger] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62f230 ParticleSystemClass::SpawnParticle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62fd60 ParticleSystemClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62fe90 ParticleSystemClass::UpdateSystem -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p89\batch_report.json
