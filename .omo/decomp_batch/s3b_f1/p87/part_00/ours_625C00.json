@@ -1,0 +1,57 @@
+{
+ "symbol": "?Event_Process_625C00@ObjectClass@@QAEPAGPAH@Z",
+ "sym_key": "ObjectClass::Event_Process_625C00",
+ "size": 336,
+ "link_base": 0,
+ "bytes_hex": "51535556578b7c24188bd933c0c707040000008a43048bf085f674298b0783c00889078a56068ac803ca33d2668b560683e103f7d983e10303c103d089178b760c85f675d78b0750e80000000033c983c404668b0f8be851896c2414e80000000033d2668945008a530252e8000000006689450233c08a43048d75048bd885db750a5f8bc55e5d5b59c2040053e8000000008b0b33c0890e8b530483c404895604668b43068d6e0850e8000000008b7308668bc881e1ffff00008bfd8bd133c0c1e902f3a58bca83e103f3a4668b430650e80000000033c925ffff0000668b4b0603c5518bf0e800000000668bd083e203f7da83e203743a8bca33c0c1e902c1e102894c24188be98bfec1e902f3ab8bcd83e103f3aa8bc58bca83e1038d3c3003f28bd133c0c1e902f3ab8bca83e103f3aa8bcbe8000000008b5b0c85db0f8548ffffff8b4424105f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?htons@@YGGH@Z",
+   "sym_key": "htons"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?htons@@YGGH@Z",
+   "sym_key": "htons"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?sub_4CB8B0@@YAGH@Z",
+   "sym_key": "sub_4CB8B0"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?ntohs@@YGGH@Z",
+   "sym_key": "ntohs"
+  },
+  {
+   "off": 210,
+   "type": "REL32",
+   "sym": "?ntohs@@YGGH@Z",
+   "sym_key": "ntohs"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?ntohs@@YGGH@Z",
+   "sym_key": "ntohs"
+  },
+  {
+   "off": 309,
+   "type": "REL32",
+   "sym": "?Dispatch@File@@QAEFXZ",
+   "sym_key": "File::Dispatch"
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p87\part_00
+=== convert (20 addrs) ===
+[conv] 0x622b50 BaseDialogProc -> _addr_62
+[conv] 0x623120 Dialog::PumpMessages -> Dialog
+[conv] 0x623230 CreateMessageBox -> _addr_62
+[conv] 0x6233a0 Dialog::CleanupTree -> Dialog
+[conv] 0x623460 LinkedList::Remove -> LinkedList
+[conv] 0x623610 DialogClass::CopyTemplateStruct -> DialogClass
+[conv] 0x623730 ObjectClass::sub_623730 -> ObjectClass
+[conv] 0x623880 DrawTextRendererMultiline -> _addr_62
+[conv] 0x623cd0 CD::CreateDialog -> CD
+[conv] 0x6241f0 RunDialog -> _addr_62
+[conv] 0x6242b0 ObjectClass::sub_6242B0 -> ObjectClass
+[conv] 0x624480 DeleteAndZero::OrFree -> DeleteAndZero
+[conv] 0x624530 SymbolTable::Insert -> SymbolTable
+[conv] 0x6247d0 Struct::WideStringCopy -> Struct
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+[conv] 0x625560 Options::DestroyComposite -> Options
+[conv] 0x6255f0 Options::RebuildDropdownList -> Options
+[conv] 0x625af0 File::LoadPaletteData -> File
+[conv] 0x625c00 ObjectClass::Event_Process_625C00 -> ObjectClass
+[conv] 0x626200 Palette::FindClosestColor -> Palette
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=2
+[era] Dialog                   rc=2
+[era] LinkedList               rc=2
+[era] DialogClass              rc=2
+[era] ObjectClass              rc=2
+[era] CD                       rc=2
+[era] DeleteAndZero            rc=2
+[era] SymbolTable              rc=2
+[era] Struct                   rc=2
+[era] Options                  rc=2
+[era] File                     rc=2
+[era] Palette                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x625c00   MISMATCH         ObjectClass::Event_Process_625C00
+[ledger] 0x622b50 BaseDialogProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x623120 Dialog::PumpMessages -> COMPILE_FAIL (attempt 6)
+[ledger] 0x623230 CreateMessageBox -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6233a0 Dialog::CleanupTree -> COMPILE_FAIL (attempt 3)
+[ledger] 0x623460 LinkedList::Remove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x623610 DialogClass::CopyTemplateStruct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x623730 ObjectClass::sub_623730 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x623880 DrawTextRendererMultiline -> COMPILE_FAIL (attempt 5)
+[ledger] 0x623cd0 CD::CreateDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6241f0 RunDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6242b0 ObjectClass::sub_6242B0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x624480 DeleteAndZero::OrFree -> COMPILE_FAIL (attempt 3)
+[ledger] 0x624530 SymbolTable::Insert -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6247d0 Struct::WideStringCopy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 6)
+[ledger] 0x625560 Options::DestroyComposite -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6255f0 Options::RebuildDropdownList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x625af0 File::LoadPaletteData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x625c00 ObjectClass::Event_Process_625C00 -> NG (attempt 2)
+[ledger] 0x626200 Palette::FindClosestColor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p87\batch_report.json

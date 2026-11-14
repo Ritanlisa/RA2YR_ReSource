@@ -119053,7 +119053,7 @@
   "this_as_id": false
  },
  "0x622b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "BaseDialogProc",
@@ -119064,7 +119064,7 @@
   "this_as_id": false
  },
  "0x623120": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -119087,7 +119087,7 @@
   "this_as_id": false
  },
  "0x623230": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CreateMessageBox",
@@ -119132,7 +119132,7 @@
   "this_as_id": false
  },
  "0x6233a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119144,7 +119144,7 @@
   "this_as_id": false
  },
  "0x623460": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119192,7 +119192,7 @@
   "this_as_id": false
  },
  "0x623610": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119204,7 +119204,7 @@
   "this_as_id": false
  },
  "0x623730": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -119228,7 +119228,7 @@
   "this_as_id": false
  },
  "0x623880": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DrawTextRendererMultiline",
@@ -119239,7 +119239,7 @@
   "this_as_id": false
  },
  "0x623cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -119427,7 +119427,7 @@
   "status": "OK"
  },
  "0x6241f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RunDialog",
@@ -119438,7 +119438,7 @@
   "this_as_id": false
  },
  "0x6242b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -119462,7 +119462,7 @@
   "this_as_id": false
  },
  "0x624480": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119510,7 +119510,7 @@
   "this_as_id": false
  },
  "0x624530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119534,7 +119534,7 @@
   "this_as_id": false
  },
  "0x6247d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -119613,7 +119613,7 @@
   "this_as_id": false
  },
  "0x624ca0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119706,7 +119706,7 @@
   "this_as_id": false
  },
  "0x625560": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119718,7 +119718,7 @@
   "this_as_id": false
  },
  "0x6255f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119799,7 +119799,7 @@
   "this_as_id": false
  },
  "0x625af0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -119811,15 +119811,15 @@
   "this_as_id": false
  },
  "0x625c00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "ObjectClass::Event_Process_625C00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "Event_Process_625C00",
   "rule_violations": 9,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x625db0": {
@@ -119950,7 +119950,7 @@
   "this_as_id": false
  },
  "0x626200": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
