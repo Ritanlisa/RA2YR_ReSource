@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x50e450 BuildLocation::InitCandidate -> BuildLocation
+[conv] 0x50ff50 HouseClass::AddCoordTrackingEntry -> HouseClass
+[conv] 0x510220 DynamicVector::updateThreatMap -> DynamicVector
+[conv] 0x510ed0 BuildingType::FindOwnerHouse -> BuildingType
+[conv] 0x510f60 BuildingType::IsSpecialType -> BuildingType
+[conv] 0x511850 HouseTypeClass::LoadFromINI -> HouseTypeClass
+[conv] 0x512170 HouseTypeClass::ProcessPower -> HouseTypeClass
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x5125a0 HouseTypeClass::QueryInterface -> HouseTypeClass
+[conv] 0x5132f0 DynamicVectorClass::PushBack -> DynamicVectorClass
+[conv] 0x513740 TypeList::CopyConstructor -> TypeList
+[conv] 0x513c20 LocomotionClass::ProcessData -> LocomotionClass
+[conv] 0x513d20 BuildingLightClass::UpdateOscillation -> BuildingLightClass
+[conv] 0x513f40 TechnoClass::BuildTransform -> TechnoClass
+[conv] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> HoverLocomotionClass
+[conv] 0x514310 HoverLocomotionClass::DeployAnimation -> HoverLocomotionClass
+[conv] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> JumpjetLocomotionClass
+[conv] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> JumpjetLocomotionClass
+[conv] 0x514d90 HoverLocomotionClass::SetMovementTarget -> HoverLocomotionClass
+[conv] 0x514f70 MovementAI::MainFootClass -> MovementAI
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildLocation            rc=2
+[era] HouseClass               rc=2
+[era] DynamicVector            rc=2
+[era] BuildingType             rc=2
+[era] HouseTypeClass           rc=2
+[era] DynamicVectorClass       rc=2
+[era] TypeList                 rc=2
+[era] LocomotionClass          rc=2
+[era] BuildingLightClass       rc=2
+[era] TechnoClass              rc=2
+[era] HoverLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] MovementAI               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x50e450 BuildLocation::InitCandidate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x50ff50 HouseClass::AddCoordTrackingEntry -> COMPILE_FAIL (attempt 8)
+[ledger] 0x510220 DynamicVector::updateThreatMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x510ed0 BuildingType::FindOwnerHouse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x510f60 BuildingType::IsSpecialType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x511850 HouseTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 9)
+[ledger] 0x512170 HouseTypeClass::ProcessPower -> COMPILE_FAIL (attempt 5)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5125a0 HouseTypeClass::QueryInterface -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5132f0 DynamicVectorClass::PushBack -> COMPILE_FAIL (attempt 5)
+[ledger] 0x513740 TypeList::CopyConstructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x513c20 LocomotionClass::ProcessData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x513d20 BuildingLightClass::UpdateOscillation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x513f40 TechnoClass::BuildTransform -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x514310 HoverLocomotionClass::DeployAnimation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> COMPILE_FAIL (attempt 5)
+[ledger] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x514d90 HoverLocomotionClass::SetMovementTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x514f70 MovementAI::MainFootClass -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p43\batch_report.json
