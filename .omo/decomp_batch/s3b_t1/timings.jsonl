@@ -82,3 +82,4 @@
 {"part": 81, "n": 20, "seconds": 68.3, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 82, "n": 20, "seconds": 72.0, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
 {"part": 83, "n": 20, "seconds": 69.6, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
+{"part": 84, "n": 20, "seconds": 40.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
