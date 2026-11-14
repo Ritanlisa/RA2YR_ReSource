@@ -205974,7 +205974,7 @@
   "this_as_id": false
  },
  "0x7c852a": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DosDateTimeToFileTime",
@@ -205985,7 +205985,7 @@
   "this_as_id": false
  },
  "0x7c8530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetStartupInfoA",
@@ -206025,7 +206025,7 @@
   "this_as_id": false
  },
  "0x7c8548": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetUnhandledExceptionFilter",
@@ -206058,7 +206058,7 @@
   "this_as_id": false
  },
  "0x7c855a": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetFileTime",
@@ -206080,7 +206080,7 @@
   "this_as_id": false
  },
  "0x7c8566": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ClearCommError",
@@ -206091,7 +206091,7 @@
   "this_as_id": false
  },
  "0x7c856c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetCommTimeouts",
@@ -206102,7 +206102,7 @@
   "this_as_id": false
  },
  "0x7c8572": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetCommState",
@@ -206113,7 +206113,7 @@
   "this_as_id": false
  },
  "0x7c8578": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetCommState",
@@ -206190,7 +206190,7 @@
   "this_as_id": false
  },
  "0x7c85a2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetOverlappedResult",
@@ -206201,7 +206201,7 @@
   "this_as_id": false
  },
  "0x7c85a8": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetVersionExA",
@@ -206388,7 +206388,7 @@
   "this_as_id": false
  },
  "0x7c8614": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetTimer",
@@ -206685,7 +206685,7 @@
   "this_as_id": false
  },
  "0x7c86b6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ChildWindowFromPointEx",
@@ -206850,7 +206850,7 @@
   "this_as_id": false
  },
  "0x7c8710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "BeginPaint",
@@ -206872,7 +206872,7 @@
   "this_as_id": false
  },
  "0x7c871c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "TranslateAcceleratorA",
@@ -206949,7 +206949,7 @@
   "this_as_id": false
  },
  "0x7c8746": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "EnumChildWindows",
@@ -207000,7 +207000,7 @@
   "this_as_id": false
  },
  "0x7c8764": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CallWindowProcA",
@@ -207044,7 +207044,7 @@
   "this_as_id": false
  },
  "0x7c877c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WindowFromPoint",
@@ -207176,7 +207176,7 @@
   "this_as_id": false
  },
  "0x7c87c4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ChildWindowFromPoint",
@@ -207612,7 +207612,7 @@
   "this_as_id": false
  },
  "0x7c88b4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RegEnumKeyExA",
@@ -207634,7 +207634,7 @@
   "this_as_id": false
  },
  "0x7c88c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RegQueryInfoKeyA",
