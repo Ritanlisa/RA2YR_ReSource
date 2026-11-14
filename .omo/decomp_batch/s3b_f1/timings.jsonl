@@ -91,3 +91,4 @@
 {"part": 90, "n": 20, "seconds": 51.9, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"part": 91, "n": 20, "seconds": 46.3, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 92, "n": 20, "seconds": 44.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 93, "n": 20, "seconds": 61.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
