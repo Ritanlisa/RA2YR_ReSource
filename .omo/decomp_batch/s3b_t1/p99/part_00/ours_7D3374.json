@@ -1,0 +1,57 @@
+{
+ "symbol": "?_calloc@@YAPAXII@Z",
+ "sym_key": "Unnamed::_calloc",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "538b5c24080faf5c240c565783fbe08bfb770f85ff7505bf0100000083c70f83e7f033c083ffe077373b1d00000000771d6a09e80000000053e8000000006a098bf0e80000000083c40c85f6752ba100000000576a0850e80000000085c075358b0d0000000085c9742b57e80000000083c40485c0741ceba98bcb33c08bd18bfec1e902f3ab8bca83e103f3aa8bc65f5e5bc333c05f5e5bc3",
+ "relocs": [
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C584@@3IA",
+   "sym_key": "DataGlobal_87C584"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__sbh_alloc_block@@YAHHZZ",
+   "sym_key": "__sbh_alloc_block"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?hHeap@@3PAXA",
+   "sym_key": "hHeap"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?HeapAlloc@@YGPAXPAXHH@Z",
+   "sym_key": "HeapAlloc"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782C4@@3IA",
+   "sym_key": "CRTGlobal_B782C4"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?_callnewh@@YAHHZZ",
+   "sym_key": "_callnewh"
+  }
+ ]
+}

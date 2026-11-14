@@ -211673,7 +211673,7 @@
   "this_as_id": false
  },
  "0x7d140b": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__getptd",
@@ -211684,7 +211684,7 @@
   "this_as_id": false
  },
  "0x7d1512": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -211729,7 +211729,7 @@
   "this_as_id": false
  },
  "0x7d161b": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__dosmaperr",
@@ -211773,7 +211773,7 @@
   "this_as_id": false
  },
  "0x7d170d": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__input",
@@ -211795,7 +211795,7 @@
   "this_as_id": false
  },
  "0x7d2169": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_fgetc_0",
@@ -211813,7 +211813,7 @@
   "status": "NG"
  },
  "0x7d219a": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__whiteout",
@@ -211824,7 +211824,7 @@
   "this_as_id": false
  },
  "0x7d21be": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__woutput",
@@ -211903,7 +211903,7 @@
   "this_as_id": false
  },
  "0x7d2a74": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__close",
@@ -211969,7 +211969,7 @@
   "this_as_id": false
  },
  "0x7d2da6": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -212087,7 +212087,7 @@
   "this_as_id": false
  },
  "0x7d2fc8": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__putwc_lk",
@@ -212109,7 +212109,7 @@
   "this_as_id": false
  },
  "0x7d3164": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -212121,7 +212121,7 @@
   "this_as_id": false
  },
  "0x7d3320": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__ioterm_0",
@@ -212132,14 +212132,14 @@
   "this_as_id": false
  },
  "0x7d3374": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+1 push esi",
   "name": "_calloc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_calloc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7d3401": {
@@ -212154,7 +212154,7 @@
   "this_as_id": false
  },
  "0x7d3482": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__setmbcp",
@@ -212431,13 +212431,13 @@
   "this_as_id": false
  },
  "0x7d482c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_signal",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "_signal",
-  "rule_violations": 3,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -212523,7 +212523,7 @@
   "this_as_id": false
  },
  "0x7d4d24": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__tzset_lk",
@@ -212545,7 +212545,7 @@
   "this_as_id": false
  },
  "0x7d4fcc": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__isindst_0",
@@ -212579,7 +212579,7 @@
   "this_as_id": false
  },
  "0x7d53c2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__access",
@@ -212597,7 +212597,7 @@
   "status": "NG"
  },
  "0x7d5433": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__open",
@@ -212652,7 +212652,7 @@
   "this_as_id": false
  },
  "0x7d57fe": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "_asctime",

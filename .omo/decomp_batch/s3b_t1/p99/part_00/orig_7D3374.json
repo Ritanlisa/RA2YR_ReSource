@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D3374",
+ "name": "_calloc",
+ "size": 141,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D3374",
+ "bytes_hex": "53568b74240c570faf74241483fee08bde770d85f675036a015e83c60f83e6f033ff83fee0773a3b1d84c58700771d6a09e84ba6ffff53e863c7ffff6a098bf8e89da6ffff83c40c85ff752b566a08ff359c8bb700ff1578127e008bf885ff7522833dc482b70000741956e804d3ffff85c0597414eba9536a0057e8ec41000083c40c8bc75f5e5bc333c0ebf8",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
