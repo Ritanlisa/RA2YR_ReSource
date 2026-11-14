@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p85\part_00
+=== convert (20 addrs) ===
+[conv] 0x7a29e0 BuddyDlgProcWOL -> _addr_7A
+[conv] 0x7a2ea0 System_Init_7A2EA0 -> System_Init
+[conv] 0x7a2fe0 CNetUtilEventSink::SetSize -> CNetUtilEventSink
+[conv] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> CNetUtilEventSink
+[conv] 0x7a3b30 CNetUtilEventSink::Commit -> CNetUtilEventSink
+[conv] 0x7a41c0 CChatEventSink::HandleServerList -> CChatEventSink
+[conv] 0x7a4c10 CChatEventSink::unnamed -> CChatEventSink
+[conv] 0x7a4ec0 CChatEventSink::DispatchStub_32 -> CChatEventSink
+[conv] 0x7a5290 CChatEventSink::GetTypeInfo -> CChatEventSink
+[conv] 0x7a5690 CChatEventSink::FireEvent -> CChatEventSink
+[conv] 0x7a5890 CChatEventSink::HandleChatEvent -> CChatEventSink
+[conv] 0x7a7110 CChatEventSink::HandleChannelJoin -> CChatEventSink
+[conv] 0x7a7b60 CChatEventSink::DispatchStub_23 -> CChatEventSink
+[conv] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> CChatEventSink
+[conv] 0x7a8260 CChatEventSink::HandleLobbyPlayerUpdate -> CChatEventSink
+[conv] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> CChatEventSink
+[conv] 0x7a9110 CChatEventSink::DispatchStub_41 -> CChatEventSink
+[conv] 0x7a9200 CChatEventSink::DispatchStub_28 -> CChatEventSink
+[conv] 0x7a9550 CChatEventSink::DispatchStub_44 -> CChatEventSink
+[conv] 0x7a9970 CChatEventSink::HandleUserSearch -> CChatEventSink
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7A                 rc=2
+[era] System_Init              rc=2
+[era] CNetUtilEventSink        rc=2
+[era] CChatEventSink           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7a29e0 BuddyDlgProcWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a2ea0 System_Init_7A2EA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a2fe0 CNetUtilEventSink::SetSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a3100 CNetUtilEventSink::PopulateLobbyLists -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7a3b30 CNetUtilEventSink::Commit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a41c0 CChatEventSink::HandleServerList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a4c10 CChatEventSink::unnamed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a4ec0 CChatEventSink::DispatchStub_32 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a5290 CChatEventSink::GetTypeInfo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a5690 CChatEventSink::FireEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a5890 CChatEventSink::HandleChatEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a7110 CChatEventSink::HandleChannelJoin -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a7b60 CChatEventSink::DispatchStub_23 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a7ea0 CChatEventSink::DispatchStub_22 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a8260 CChatEventSink::HandleLobbyPlayerUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a8ed0 CChatEventSink::DispatchStub_40 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7a9110 CChatEventSink::DispatchStub_41 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7a9200 CChatEventSink::DispatchStub_28 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a9550 CChatEventSink::DispatchStub_44 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a9970 CChatEventSink::HandleUserSearch -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p85\batch_report.json
