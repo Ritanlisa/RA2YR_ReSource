@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p90\part_00
+=== convert (20 addrs) ===
+[conv] 0x62ff20 ParticleSystemClass::Write -> ParticleSystemClass
+[conv] 0x630090 ParticleSystemClass::vt_06 -> ParticleSystemClass
+[conv] 0x630230 ParticleSystemClass::ddtor -> ParticleSystemClass
+[conv] 0x630310 DecodeFrameSHP -> _addr_63
+[conv] 0x630b90 Network::resetConnectionState -> Network
+[conv] 0x631060 PhoneEditor::PopulateList -> PhoneEditor
+[conv] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> ObjectClass
+[conv] 0x632a20 ObjectClass::sub_632A20 -> ObjectClass
+[conv] 0x632b20 ObjectClass::sub_632B20 -> ObjectClass
+[conv] 0x632c40 CheckSum::AccumulateModulo -> CheckSum
+[conv] 0x632dc0 PKPipe::WriteEncryptedStream -> PKPipe
+[conv] 0x632fe0 PKPipe::loadGameState -> PKPipe
+[conv] 0x633130 PKStrawClass::ReadEncryptedStream -> PKStrawClass
+[conv] 0x633360 PKStrawClass::parseGameOptions -> PKStrawClass
+[conv] 0x633a50 sub_633A50 -> _addr_63
+[conv] 0x6340b0 TeamClass::DestroyAllMembers -> TeamClass
+[conv] 0x634290 Array::FindValue -> Array
+[conv] 0x6343c0 ScriptAction::GetCoords -> ScriptAction
+[conv] 0x634400 ScriptAction::GetScreenPos -> ScriptAction
+[conv] 0x634550 ScriptAction::GetActionCoordinates -> ScriptAction
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=2
+[era] _addr_63                 rc=2
+[era] Network                  rc=2
+[era] PhoneEditor              rc=2
+[era] ObjectClass              rc=2
+[era] CheckSum                 rc=2
+[era] PKPipe                   rc=2
+[era] PKStrawClass             rc=2
+[era] TeamClass                rc=2
+[era] Array                    rc=2
+[era] ScriptAction             rc=2
+=== diffasm byte-compare ===
+[diff] 0x630230   MISMATCH         ParticleSystemClass::ddtor
+[ledger] 0x62ff20 ParticleSystemClass::Write -> COMPILE_FAIL (attempt 3)
+[ledger] 0x630090 ParticleSystemClass::vt_06 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x630230 ParticleSystemClass::ddtor -> NG (attempt 3)
+[ledger] 0x630310 DecodeFrameSHP -> COMPILE_FAIL (attempt 4)
+[ledger] 0x630b90 Network::resetConnectionState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x631060 PhoneEditor::PopulateList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6316e0 ObjectClass::UI_Pop_631500_Pop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632a20 ObjectClass::sub_632A20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632b20 ObjectClass::sub_632B20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632c40 CheckSum::AccumulateModulo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632dc0 PKPipe::WriteEncryptedStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x632fe0 PKPipe::loadGameState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x633130 PKStrawClass::ReadEncryptedStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x633360 PKStrawClass::parseGameOptions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x633a50 sub_633A50 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6340b0 TeamClass::DestroyAllMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x634290 Array::FindValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6343c0 ScriptAction::GetCoords -> COMPILE_FAIL (attempt 7)
+[ledger] 0x634400 ScriptAction::GetScreenPos -> COMPILE_FAIL (attempt 7)
+[ledger] 0x634550 ScriptAction::GetActionCoordinates -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p90\batch_report.json

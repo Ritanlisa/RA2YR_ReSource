@@ -1,0 +1,21 @@
+{
+ "symbol": "?ddtor@ParticleSystemClass@@QAEPAXD@Z",
+ "sym_key": "ParticleSystemClass::ddtor",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf15650e8000000008a44241083c408a801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?DestructParticleSystemClass@@YAHPAXH@Z",
+   "sym_key": "DestructParticleSystemClass"
+  },
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
