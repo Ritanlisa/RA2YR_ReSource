@@ -144281,7 +144281,7 @@
   "this_as_id": false
  },
  "0x6a93f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -144300,7 +144300,7 @@
   "status": "NG"
  },
  "0x6a9540": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144312,7 +144312,7 @@
   "this_as_id": false
  },
  "0x6aa600": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144336,7 +144336,7 @@
   "this_as_id": false
  },
  "0x6aad00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144384,15 +144384,15 @@
   "this_as_id": false
  },
  "0x6aba60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+10 jle 0x6aba88",
   "name": "ObjectClass::sub_6ABA60",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "sub_6ABA60",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6abac0": {
@@ -144466,7 +144466,7 @@
   "this_as_id": false
  },
  "0x6abd30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144537,15 +144537,15 @@
   "this_as_id": false
  },
  "0x6ac5f0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 push esi",
   "name": "TActionClass::executeHarvestAction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TActionClass::executeHarvestAction",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ac780": {
@@ -144804,7 +144804,7 @@
   "this_as_id": false
  },
  "0x6acd60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144823,7 +144823,7 @@
   "status": "NG"
  },
  "0x6acee0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DialogSkirmishFunc_UpdateMultiEngineer",
@@ -144856,7 +144856,7 @@
   "this_as_id": false
  },
  "0x6adf00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "Skirmish_Setup_6ADDF0_Setup",
@@ -144867,7 +144867,7 @@
   "this_as_id": false
  },
  "0x6ae080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "HideSkirmishSpawnLocations",
@@ -144878,7 +144878,7 @@
   "this_as_id": false
  },
  "0x6ae2c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -144902,7 +144902,7 @@
   "this_as_id": false
  },
  "0x6ae6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145162,7 +145162,7 @@
   "this_as_id": false
  },
  "0x6af6c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145174,7 +145174,7 @@
   "this_as_id": false
  },
  "0x6afd60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145186,7 +145186,7 @@
   "this_as_id": false
  },
  "0x6b0300": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -145222,7 +145222,7 @@
   "this_as_id": false
  },
  "0x6b0690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145246,7 +145246,7 @@
   "this_as_id": false
  },
  "0x6b0880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145282,7 +145282,7 @@
   "this_as_id": false
  },
  "0x6b0ae0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -145337,7 +145337,7 @@
   "this_as_id": false
  },
  "0x6b0db0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_6ABA60@ObjectClass@@QAEDHHH@Z",
+ "sym_key": "ObjectClass::sub_6ABA60",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "53568b715433c05785f67e4b8b7c24188b5c24148d5158395a047504393a740a403bc67d3283c234ebed8d1440b3016a0068f80100008d04908b5424188954816488593d88593ce80000000083c4088ac35f5e5bc20c005f5e32c05bc20c00",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}
