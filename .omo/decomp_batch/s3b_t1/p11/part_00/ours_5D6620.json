@@ -1,0 +1,8 @@
+{
+ "symbol": "?readData@StreamWrapper@@QAEHH@Z",
+ "sym_key": "StreamWrapper::readData",
+ "size": 108,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b461883f8037d3433ff85c07e198b460c8b04b885c074078b086a0150ff118b4618473bf87ce78b56088d7e0857ff520c8b06578bceff90c00000008b561833c985d27e1c8b760c8b7c240c8b0685c07405397808740c413bca7d0583c604ebeb33c05f5ec20400",
+ "relocs": []
+}

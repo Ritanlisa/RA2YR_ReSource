@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d6130 SkirmishSetup_Setup -> SkirmishSetup
+[conv] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> MultiplayerGameMode
+[conv] 0x5d63e0 MapPreview::Check -> MapPreview
+[conv] 0x5d6440 MultiplayerGameMode::MissionStubReturnZero3 -> MultiplayerGameMode
+[conv] 0x5d6540 MultiplayerGameMode::FillPlayers -> MultiplayerGameMode
+[conv] 0x5d6620 StreamWrapper::readData -> StreamWrapper
+[conv] 0x5d6690 MultiplayerGameMode::AddEntries -> MultiplayerGameMode
+[conv] 0x5d6890 MultiplayerGameMode::FindStartingCell -> MultiplayerGameMode
+[conv] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> MultiplayerGameMode
+[conv] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> MultiplayerGameMode
+[conv] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> TechnoClass
+[conv] 0x5d70f0 MultiplayerGameMode::AIDecision -> MultiplayerGameMode
+[conv] 0x5d7550 sub_5D7550 -> _addr_5D
+[conv] 0x5d7590 LoadMultiplayerModesList -> _addr_5D
+[conv] 0x5d7ce0 ObjectClass::CompleteGameInit -> ObjectClass
+[conv] 0x5d7e50 ObjectClass::WinMain_Helper_5D7E50 -> ObjectClass
+[conv] 0x5d7ff0 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_127 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d8010 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_128 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d8170 MPBattleClass::MPBattleClass_5D8170 -> MPBattleClass
+[conv] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> _DynamicVectorClass_PAVMultiplayerTeam
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SkirmishSetup            rc=2
+[era] MultiplayerGameMode      rc=2
+[era] MapPreview               rc=2
+[era] StreamWrapper            rc=0
+[era] TechnoClass              rc=2
+[era] _addr_5D                 rc=2
+[era] ObjectClass              rc=2
+[era] InitializerBase_MultiplayerGameMode rc=2
+[era] MPBattleClass            rc=0
+[era] _DynamicVectorClass_PAVMultiplayerTeam rc=2
+=== diffasm byte-compare ===
+[diff] 0x5d6620   MISMATCH         StreamWrapper::readData
+[diff] 0x5d8170   MISMATCH         MPBattleClass::MPBattleClass_5D8170
+[ledger] 0x5d6130 SkirmishSetup_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d62c0 MultiplayerGameMode::AssignPlayerIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d63e0 MapPreview::Check -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6440 MultiplayerGameMode::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5d6540 MultiplayerGameMode::FillPlayers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6620 StreamWrapper::readData -> NG (attempt 2)
+[ledger] 0x5d6690 MultiplayerGameMode::AddEntries -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6890 MultiplayerGameMode::FindStartingCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d6be0 MultiplayerGameMode::AssignStartPositions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d6c70 MultiplayerGameMode::AssignStartingPoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d6d80 TechnoClass::ComputeMultiEngineerAdjustment -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5d70f0 MultiplayerGameMode::AIDecision -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7550 sub_5D7550 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d7590 LoadMultiplayerModesList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7ce0 ObjectClass::CompleteGameInit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7e50 ObjectClass::WinMain_Helper_5D7E50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d7ff0 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_127 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d8010 InitializerBase@MultiplayerGameMode::_Gfacet_locale_std__UAEPAXI_Z_128 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d8170 MPBattleClass::MPBattleClass_5D8170 -> NG (attempt 2)
+[ledger] 0x5d8470 _DynamicVectorClass_PAVMultiplayerTeam::ResizeAndCopy -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_order": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p11\batch_report.json

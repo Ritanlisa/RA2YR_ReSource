@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D6620",
+ "name": "StreamWrapper::readData",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D6620",
+ "bytes_hex": "568bf1578b461883f8037d3433ff85c07e188b460c8b0cb885c974068b116a01ff128b4618473bf87ce88b46088d7e088bcfff500c8b16578bceff92c00000008b561833c985d27e1a8b760c8b7c240c8b0685c07405397808740a4183c6043bca7ced33c05f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
