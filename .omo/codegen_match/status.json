@@ -21651,7 +21651,7 @@
   "this_as_id": false
  },
  "0x458e50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21663,7 +21663,7 @@
   "this_as_id": false
  },
  "0x4593a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21675,7 +21675,7 @@
   "this_as_id": false
  },
  "0x459470": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21687,7 +21687,7 @@
   "this_as_id": false
  },
  "0x4595c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21706,7 +21706,7 @@
   "status": "OK"
  },
  "0x459870": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21718,7 +21718,7 @@
   "this_as_id": false
  },
  "0x459880": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21730,7 +21730,7 @@
   "this_as_id": false
  },
  "0x459890": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22136,7 +22136,7 @@
   "this_as_id": false
  },
  "0x45a050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22568,7 +22568,7 @@
   "this_as_id": false
  },
  "0x45aa60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22736,7 +22736,7 @@
   "this_as_id": false
  },
  "0x45aea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -22748,7 +22748,7 @@
   "this_as_id": false
  },
  "0x45af20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -22921,7 +22921,7 @@
   "this_as_id": false
  },
  "0x45b1c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -22944,7 +22944,7 @@
   "this_as_id": false
  },
  "0x45c300": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitCellOffsetsMap",
@@ -22955,7 +22955,7 @@
   "this_as_id": false
  },
  "0x45dd20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -22967,7 +22967,7 @@
   "this_as_id": false
  },
  "0x45dd50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22979,7 +22979,7 @@
   "this_as_id": false
  },
  "0x45dd90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23133,7 +23133,7 @@
   "this_as_id": false
  },
  "0x45ec90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23157,14 +23157,14 @@
   "this_as_id": false
  },
  "0x45ece0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingTypeClass::GetMaxPips",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingTypeClass::GetMaxPips",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -23193,7 +23193,7 @@
   "this_as_id": false
  },
  "0x45ee70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23241,7 +23241,7 @@
   "this_as_id": false
  },
  "0x45f230": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23289,31 +23289,31 @@
   "this_as_id": false
  },
  "0x464af0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingTypeClass::GetSizeInLeptons",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingTypeClass::GetSizeInLeptons",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x464b30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingTypeClass::UpdatePower",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingTypeClass::UpdatePower",
-  "rule_violations": 8,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x465010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23325,7 +23325,7 @@
   "this_as_id": false
  },
  "0x465300": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23409,7 +23409,7 @@
   "this_as_id": false
  },
  "0x465960": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23799,11 +23799,11 @@
   "this_as_id": false
  },
  "0x466380": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BulletClass::BulletClass",
+  "name": "BulletClass::BulletClass_466380",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::BulletClass",
   "rule_violations": 5,
@@ -23865,7 +23865,7 @@
   "this_as_id": false
  },
  "0x4666e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23877,19 +23877,19 @@
   "this_as_id": false
  },
  "0x468000": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BulletClass::GetAnimFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BulletClass::GetAnimFrame",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x468090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23901,19 +23901,19 @@
   "this_as_id": false
  },
  "0x468430": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+10 mov ecx, dword ptr [esi + 0x10c]",
   "name": "BulletClass::LoseTarget",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BulletClass::LoseTarget",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4684e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23925,7 +23925,7 @@
   "this_as_id": false
  },
  "0x468670": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23949,7 +23949,7 @@
   "this_as_id": false
  },
  "0x468bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23973,7 +23973,7 @@
   "this_as_id": false
  },
  "0x4690b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23985,7 +23985,7 @@
   "this_as_id": false
  },
  "0x46a310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24028,7 +24028,7 @@
   "this_as_id": false
  },
  "0x46aff0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24040,7 +24040,7 @@
   "this_as_id": false
  },
  "0x46b050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CreateUIObjectCOM",
@@ -24051,7 +24051,7 @@
   "this_as_id": false
  },
  "0x46b0c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24094,7 +24094,7 @@
   "this_as_id": false
  },
  "0x46b310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24151,7 +24151,7 @@
   "status": "OK"
  },
  "0x46b5c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

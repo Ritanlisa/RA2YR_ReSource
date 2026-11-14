@@ -1,0 +1,33 @@
+{
+ "symbol": "?LoseTarget@BulletClass@@QAEFXZ",
+ "sym_key": "BulletClass::LoseTarget",
+ "size": 136,
+ "link_base": 0,
+ "bytes_hex": "83ec14568bf18d54240c8b860c01000052508b08ff51488b54240833c98a480589442404a10000000080e2000bca85c0894c240875438b860c010000508b08ff51548ac8668944240484c9752c8b4424088b0d000000003bc1741e8d542408b9f801000052e80000000089860c010000894424045e83c414c3c7860c010000000000005e83c414c3",
+ "relocs": [
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89DDF0@@3IA",
+   "sym_key": "DataGlobal_89DDF0"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

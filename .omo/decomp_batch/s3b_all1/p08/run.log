@@ -1,0 +1,117 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p08\part_00
+=== convert (40 addrs) ===
+[conv] 0x458e50 BuildingClass::UpdateBunker -> BuildingClass
+[conv] 0x4593a0 BuildingClass::RemoveLimpet -> BuildingClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+[conv] 0x4595c0 BuildingClass::EmptyBunker -> BuildingClass
+[conv] 0x459870 BuildingClass::MissionStubReturnZero -> BuildingClass
+[conv] 0x459880 BuildingClass::MissionStubReturnZero2 -> BuildingClass
+[conv] 0x459890 BuildingClass::MissionStubReturnZero3 -> BuildingClass
+[conv] 0x45a050 Stream::GetChecked -> Stream
+[conv] 0x45aa60 VectorClass::QueryInterface -> VectorClass
+[conv] 0x45aea0 StreamClass::Set2 -> StreamClass
+[conv] 0x45af20 StreamClass::Set -> StreamClass
+[conv] 0x45b1c0 MapData::InitHeights -> MapData
+[conv] 0x45c300 InitCellOffsetsMap -> _addr_45
+[conv] 0x45dd20 ObjectClass::sub_45DD20 -> ObjectClass
+[conv] 0x45dd50 ObjectClass::sub_45DD50 -> ObjectClass
+[conv] 0x45dd90 BuildingTypeClass::ConstructFull -> BuildingTypeClass
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x45ece0 BuildingTypeClass::GetMaxPips -> BuildingTypeClass
+[conv] 0x45ee70 BuildingClass::ApplyFoundationDamage -> BuildingClass
+[conv] 0x45f230 BuildingTypeClass::LoadAnimations -> BuildingTypeClass
+[conv] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> BuildingTypeClass
+[conv] 0x464b30 BuildingTypeClass::UpdatePower -> BuildingTypeClass
+[conv] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> BuildingTypeClass
+[conv] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> BuildingTypeClass
+[conv] 0x465960 AbstractClass::LoadTheaterSHP -> AbstractClass
+[conv] 0x466380 BulletClass::BulletClass_466380 -> BulletClass
+[conv] 0x4666e0 BulletClass::ProcessNukeExplosion -> BulletClass
+[conv] 0x468000 BulletClass::GetAnimFrame -> BulletClass
+[conv] 0x468090 BulletClass::SetupVoxelTransform -> BulletClass
+[conv] 0x468430 BulletClass::LoseTarget -> BulletClass
+[conv] 0x4684e0 BulletClass::ProcessImpact -> BulletClass
+[conv] 0x468670 BulletClass::ProcessObstacle -> BulletClass
+[conv] 0x468bb0 BulletClass::CheckBulletCollision -> BulletClass
+[conv] 0x4690b0 Warhead::ApplyDamage -> Warhead
+[conv] 0x46a310 Warhead::ApplyPostDamageEffects -> Warhead
+[conv] 0x46aff0 BulletClass::ValidateTarget -> BulletClass
+[conv] 0x46b050 CreateUIObjectCOM -> _addr_46
+[conv] 0x46b0c0 BulletClass::RenderVoxelBullet -> BulletClass
+[conv] 0x46b310 SuperWeapon::CreateNukePayload -> SuperWeapon
+[conv] 0x46b5c0 BulletClass::CheckActionStatus -> BulletClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] Stream                   rc=2
+[era] VectorClass              rc=2
+[era] StreamClass              rc=2
+[era] MapData                  rc=2
+[era] _addr_45                 rc=2
+[era] ObjectClass              rc=2
+[era] BuildingTypeClass        rc=2
+[era] AbstractClass            rc=2
+[era] BulletClass              rc=2
+[era] Warhead                  rc=2
+[era] _addr_46                 rc=2
+[era] SuperWeapon              rc=2
+=== diffasm byte-compare ===
+[diff] 0x468430   MISMATCH         BulletClass::LoseTarget
+[ledger] 0x458e50 BuildingClass::UpdateBunker -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4593a0 BuildingClass::RemoveLimpet -> COMPILE_FAIL (attempt 6)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4595c0 BuildingClass::EmptyBunker -> COMPILE_FAIL (attempt 3)
+[ledger] 0x459870 BuildingClass::MissionStubReturnZero -> COMPILE_FAIL (attempt 3)
+[ledger] 0x459880 BuildingClass::MissionStubReturnZero2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x459890 BuildingClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45a050 Stream::GetChecked -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45aa60 VectorClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45aea0 StreamClass::Set2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45af20 StreamClass::Set -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45b1c0 MapData::InitHeights -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45c300 InitCellOffsetsMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45dd20 ObjectClass::sub_45DD20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x45dd50 ObjectClass::sub_45DD50 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45dd90 BuildingTypeClass::ConstructFull -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 6)
+[ledger] 0x45ece0 BuildingTypeClass::GetMaxPips -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45ee70 BuildingClass::ApplyFoundationDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x45f230 BuildingTypeClass::LoadAnimations -> COMPILE_FAIL (attempt 4)
+[ledger] 0x464af0 BuildingTypeClass::GetSizeInLeptons -> COMPILE_FAIL (attempt 5)
+[ledger] 0x464b30 BuildingTypeClass::UpdatePower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x465960 AbstractClass::LoadTheaterSHP -> COMPILE_FAIL (attempt 5)
+[ledger] 0x466380 BulletClass::BulletClass_466380 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4666e0 BulletClass::ProcessNukeExplosion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x468000 BulletClass::GetAnimFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x468090 BulletClass::SetupVoxelTransform -> COMPILE_FAIL (attempt 3)
+[ledger] 0x468430 BulletClass::LoseTarget -> NG (attempt 13)
+[ledger] 0x4684e0 BulletClass::ProcessImpact -> COMPILE_FAIL (attempt 3)
+[ledger] 0x468670 BulletClass::ProcessObstacle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x468bb0 BulletClass::CheckBulletCollision -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4690b0 Warhead::ApplyDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46a310 Warhead::ApplyPostDamageEffects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46aff0 BulletClass::ValidateTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46b050 CreateUIObjectCOM -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46b0c0 BulletClass::RenderVoxelBullet -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46b310 SuperWeapon::CreateNukePayload -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46b5c0 BulletClass::CheckActionStatus -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 39,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p08\batch_report.json
