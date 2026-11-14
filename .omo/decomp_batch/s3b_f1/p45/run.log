@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x518f90 InfantryClass::Draw -> InfantryClass
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x51aa10 InfantryClass::HandleTargetDestroyed -> InfantryClass
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> InfantryClass
+[conv] 0x51b350 InfantryClass::CalcMoveTarget -> InfantryClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x51bf90 InfantryClass::EvaluateTarget -> InfantryClass
+[conv] 0x51c8b0 InfantryClass::GetFireError -> InfantryClass
+[conv] 0x51cba0 InfantryClass::ValidatePlacement -> InfantryClass
+[conv] 0x51cdb0 InfantryClass::ProcessIdleAction -> InfantryClass
+[conv] 0x51d0d0 InfantryClass::FindMoveTarget -> InfantryClass
+[conv] 0x51d6f0 InfantryClass::ProcessDeployAction -> InfantryClass
+[conv] 0x51dbd0 InfantryClass::CalcFacingToTarget -> InfantryClass
+[conv] 0x51df10 InfantryClass::CancelMovement -> InfantryClass
+[conv] 0x51dff0 InfantryClass::MoveToCell -> InfantryClass
+[conv] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> InfantryClass
+[conv] 0x51f250 InfantryClass::ProcessUpdate -> InfantryClass
+[conv] 0x51f2c0 InfantryClass::GetTooltipName -> InfantryClass
+[conv] 0x51f330 InfantryClass::FindPathToBuilding -> InfantryClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x518f90 InfantryClass::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 9)
+[ledger] 0x51aa10 InfantryClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 7)
+[ledger] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51b350 InfantryClass::CalcMoveTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 7)
+[ledger] 0x51bf90 InfantryClass::EvaluateTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51c8b0 InfantryClass::GetFireError -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51cba0 InfantryClass::ValidatePlacement -> COMPILE_FAIL (attempt 7)
+[ledger] 0x51cdb0 InfantryClass::ProcessIdleAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51d0d0 InfantryClass::FindMoveTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51d6f0 InfantryClass::ProcessDeployAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51dbd0 InfantryClass::CalcFacingToTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51df10 InfantryClass::CancelMovement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51dff0 InfantryClass::MoveToCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51e3b0 InfantryClass::GetActionOnObject_EMP -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51f250 InfantryClass::ProcessUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51f2c0 InfantryClass::GetTooltipName -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51f330 InfantryClass::FindPathToBuilding -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p45\batch_report.json
