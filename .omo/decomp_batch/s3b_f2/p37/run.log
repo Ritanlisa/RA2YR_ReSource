@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e1de0 GameOptions::GameSpeedChanged -> GameOptions
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x4e2690 GaugeClass::HandleClick -> GaugeClass
+[conv] 0x4e2830 GaugeClass::DrawDispatch -> GaugeClass
+[conv] 0x4e29a0 GaugeClass::SetRange -> GaugeClass
+[conv] 0x4e2b50 TriColorGaugeClass::Draw -> TriColorGaugeClass
+[conv] 0x4e3560 BuildingType::FindDefault -> BuildingType
+[conv] 0x4e38a0 SideClass::GetName -> SideClass
+[conv] 0x4e42a0 GameSetup::GetColorTooltip -> GameSetup
+[conv] 0x4e45a0 FillComboBoxFactions -> _addr_4E
+[conv] 0x4e4f50 __cfltcvt_init -> _addr_4E
+[conv] 0x4e5ac0 GDlg::LoadLetterStrings -> GDlg
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+[conv] 0x4ef4e0 VectorClass::vt_00 -> VectorClass
+[conv] 0x4ef530 DynamicVector::COMStub_0 -> DynamicVector
+[conv] 0x4f10e0 OpenGameUI -> _addr_4F
+[conv] 0x4f11b0 Options::DlgProc -> Options
+[conv] 0x4f1720 Options::InitDialogControls -> Options
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameOptions              rc=2
+[era] _addr_4E                 rc=2
+[era] GaugeClass               rc=2
+[era] TriColorGaugeClass       rc=2
+[era] BuildingType             rc=2
+[era] SideClass                rc=2
+[era] GameSetup                rc=2
+[era] GDlg                     rc=2
+[era] HouseClass               rc=2
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_4F                 rc=2
+[era] Options                  rc=2
+[era] OptionQueue              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4e1de0 GameOptions::GameSpeedChanged -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4e2690 GaugeClass::HandleClick -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e2830 GaugeClass::DrawDispatch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e29a0 GaugeClass::SetRange -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e2b50 TriColorGaugeClass::Draw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e3560 BuildingType::FindDefault -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e38a0 SideClass::GetName -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e42a0 GameSetup::GetColorTooltip -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e45a0 FillComboBoxFactions -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e4f50 __cfltcvt_init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e5ac0 GDlg::LoadLetterStrings -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4ef4e0 VectorClass::vt_00 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ef530 DynamicVector::COMStub_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f10e0 OpenGameUI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f11b0 Options::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f1720 Options::InitDialogControls -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p37\batch_report.json

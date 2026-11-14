@@ -54460,7 +54460,7 @@
   "this_as_id": false
  },
  "0x4e1de0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54472,7 +54472,7 @@
   "this_as_id": false
  },
  "0x4e1fe0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "GameOptionsDlgProc",
@@ -54568,7 +54568,7 @@
   "this_as_id": false
  },
  "0x4e2690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54580,7 +54580,7 @@
   "this_as_id": false
  },
  "0x4e2830": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54592,7 +54592,7 @@
   "this_as_id": false
  },
  "0x4e29a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54640,7 +54640,7 @@
   "this_as_id": false
  },
  "0x4e2b50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54880,7 +54880,7 @@
   "this_as_id": false
  },
  "0x4e3560": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54927,7 +54927,7 @@
   "this_as_id": false
  },
  "0x4e38a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55030,7 +55030,7 @@
   "this_as_id": false
  },
  "0x4e42a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55065,7 +55065,7 @@
   "this_as_id": false
  },
  "0x4e45a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "FillComboBoxFactions",
@@ -55178,7 +55178,7 @@
   "this_as_id": false
  },
  "0x4e4f50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__cfltcvt_init",
@@ -55309,7 +55309,7 @@
   "this_as_id": false
  },
  "0x4e5ac0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -57101,7 +57101,7 @@
   "this_as_id": false
  },
  "0x4e8270": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61900,7 +61900,7 @@
   "this_as_id": false
  },
  "0x4ef4e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61912,7 +61912,7 @@
   "this_as_id": false
  },
  "0x4ef530": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63050,7 +63050,7 @@
   "this_as_id": false
  },
  "0x4f10e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "OpenGameUI",
@@ -63061,7 +63061,7 @@
   "this_as_id": false
  },
  "0x4f11b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -63095,7 +63095,7 @@
   "this_as_id": false
  },
  "0x4f1720": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63107,7 +63107,7 @@
   "this_as_id": false
  },
  "0x4f1840": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "ShowGameDialog",
@@ -63129,7 +63129,7 @@
   "this_as_id": false
  },
  "0x4f1aa0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
