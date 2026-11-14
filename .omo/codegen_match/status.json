@@ -214484,7 +214484,7 @@
   "this_as_id": false
  },
  "0x7dc4c9": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "___crtGetLocaleInfoW",
@@ -214495,7 +214495,7 @@
   "this_as_id": false
  },
  "0x7dc5dc": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "___crtGetLocaleInfoA",
@@ -214529,18 +214529,18 @@
   "status": "OK"
  },
  "0x7dc78f": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "sub_7DC78F",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7DC78F",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dc7cb": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "HandleErrorCOM",
@@ -214551,18 +214551,18 @@
   "this_as_id": false
  },
  "0x7dcc74": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "sub_7DCC74",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_7DCC74",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dcd9c": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "ThrowErrorCOM",
@@ -214628,18 +214628,18 @@
   "status": "NG"
  },
  "0x7dce68": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1278]",
   "name": "HeapAlloc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HeapAlloc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dce6e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetTimeZoneInformation",
@@ -214650,7 +214650,7 @@
   "this_as_id": false
  },
  "0x7dce74": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetLocalTime",
@@ -214661,7 +214661,7 @@
   "this_as_id": false
  },
  "0x7dce7a": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "RtlUnwind",
@@ -214705,47 +214705,47 @@
   "this_as_id": false
  },
  "0x7dce92": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1298]",
   "name": "HeapCreate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HeapCreate",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dce98": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1290]",
   "name": "VirtualFree",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VirtualFree",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dce9e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1294]",
   "name": "VirtualAlloc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "VirtualAlloc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dcea4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e12a4]",
   "name": "HeapReAlloc",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HeapReAlloc",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dceaa": {
@@ -214760,14 +214760,14 @@
   "this_as_id": false
  },
  "0x7dceb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e12a0]",
   "name": "HeapSize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HeapSize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7dceb6": {
@@ -214848,7 +214848,7 @@
   "this_as_id": false
  },
  "0x7dcee0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -214911,7 +214911,7 @@
   "this_as_id": false
  },
  "0x7dcf04": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetCPInfo",
@@ -214944,7 +214944,7 @@
   "this_as_id": false
  },
  "0x7dcf16": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SetConsoleCtrlHandler",
@@ -214966,7 +214966,7 @@
   "this_as_id": false
  },
  "0x7dcf22": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -214989,7 +214989,7 @@
   "this_as_id": false
  },
  "0x7dcf2e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsA",

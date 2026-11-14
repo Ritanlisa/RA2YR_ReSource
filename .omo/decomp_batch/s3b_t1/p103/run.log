@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p103\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dc4c9 ___crtGetLocaleInfoW -> _addr_7D
+[conv] 0x7dc5dc ___crtGetLocaleInfoA -> _addr_7D
+[conv] 0x7dc78f sub_7DC78F -> _addr_7D
+[conv] 0x7dc7cb HandleErrorCOM -> _addr_7D
+[conv] 0x7dcc74 sub_7DCC74 -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+[conv] 0x7dce68 HeapAlloc -> _addr_7D
+[conv] 0x7dce6e GetTimeZoneInformation -> _addr_7D
+[conv] 0x7dce74 GetLocalTime -> _addr_7D
+[conv] 0x7dce7a RtlUnwind -> _addr_7D
+[conv] 0x7dce92 HeapCreate -> _addr_7D
+[conv] 0x7dce98 VirtualFree -> _addr_7D
+[conv] 0x7dce9e VirtualAlloc -> _addr_7D
+[conv] 0x7dcea4 HeapReAlloc -> _addr_7D
+[conv] 0x7dceb0 HeapSize -> _addr_7D
+[conv] 0x7dcee0 GetCurrentThread::_0 -> GetCurrentThread
+[conv] 0x7dcf04 GetCPInfo -> _addr_7D
+[conv] 0x7dcf16 SetConsoleCtrlHandler -> _addr_7D
+[conv] 0x7dcf22 GetCurrentProcessId::_0 -> GetCurrentProcessId
+[conv] 0x7dcf2e FreeEnvironmentStringsA -> _addr_7D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+=== diffasm byte-compare ===
+[diff] 0x7dc78f   MISMATCH         sub_7DC78F
+[diff] 0x7dcc74   MISMATCH         sub_7DCC74
+[diff] 0x7dce68   MISMATCH         HeapAlloc
+[diff] 0x7dce92   MISMATCH         HeapCreate
+[diff] 0x7dce98   MISMATCH         VirtualFree
+[diff] 0x7dce9e   MISMATCH         VirtualAlloc
+[diff] 0x7dcea4   MISMATCH         HeapReAlloc
+[diff] 0x7dceb0   MISMATCH         HeapSize
+[ledger] 0x7dc4c9 ___crtGetLocaleInfoW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dc5dc ___crtGetLocaleInfoA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dc78f sub_7DC78F -> NG (attempt 2)
+[ledger] 0x7dc7cb HandleErrorCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcc74 sub_7DCC74 -> NG (attempt 2)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dce68 HeapAlloc -> NG (attempt 2)
+[ledger] 0x7dce6e GetTimeZoneInformation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dce74 GetLocalTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dce7a RtlUnwind -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dce92 HeapCreate -> NG (attempt 2)
+[ledger] 0x7dce98 VirtualFree -> NG (attempt 2)
+[ledger] 0x7dce9e VirtualAlloc -> NG (attempt 2)
+[ledger] 0x7dcea4 HeapReAlloc -> NG (attempt 2)
+[ledger] 0x7dceb0 HeapSize -> NG (attempt 2)
+[ledger] 0x7dcee0 GetCurrentThread::_0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7dcf04 GetCPInfo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf16 SetConsoleCtrlHandler -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcf22 GetCurrentProcessId::_0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7dcf2e FreeEnvironmentStringsA -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 8
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p103\batch_report.json

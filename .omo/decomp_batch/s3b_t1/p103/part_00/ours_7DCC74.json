@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_7DCC74@@YAHHHHGPAVICreateErrorInfo@@PBGH@Z",
+ "sym_key": "Unnamed::sub_7DCC74",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "8b5424188d442414568d4c2420508b44241c518b4c241c528b54241c81e1ffff0000508b44241c518b4c241c525051e8000000008bf083c42085f67d108b5424188b442418525056e8000000008bc65ec3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?HandleErrorCOM@@YAHHHHHPAX0H0@Z",
+   "sym_key": "HandleErrorCOM"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?ThrowErrorCOM@@YGXHHH@Z",
+   "sym_key": "ThrowErrorCOM"
+  }
+ ]
+}
