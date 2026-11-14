@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p72\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x5cd240 MSVQAnim::Stop -> MSVQAnim
+[conv] 0x5cd690 sub_5CD690 -> _addr_5C
+[conv] 0x5cd850 WrapWideStringText -> _addr_5C
+[conv] 0x5cdee0 MSPrintAnim::Draw -> MSPrintAnim
+[conv] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> ObjectClass
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> ObjectClass
+[conv] 0x5ce4a0 MSAnim::UI_Load -> MSAnim
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5ce8c0 MSPCXAnim::Draw -> MSPCXAnim
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x5cf8e0 MSChoiceClass::LoadFromINI -> MSChoiceClass
+[conv] 0x5d0070 SessionClass::loadSettings -> SessionClass
+[conv] 0x5d0470 Audio::ParseVolume -> Audio
+[conv] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> ObjectClass
+[conv] 0x5d1d80 Session::RemoveTeam -> Session
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSVQAnim                 rc=2
+[era] _addr_5C                 rc=2
+[era] MSPrintAnim              rc=2
+[era] ObjectClass              rc=2
+[era] MSAnim                   rc=2
+[era] MSPCXAnim                rc=2
+[era] SessionClass             rc=2
+[era] CampaignClass            rc=2
+[era] MSChoiceClass            rc=2
+[era] Audio                    rc=2
+[era] Session                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 17)
+[ledger] 0x5cd240 MSVQAnim::Stop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cd690 sub_5CD690 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cd850 WrapWideStringText -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cdee0 MSPrintAnim::Draw -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ce330 ObjectClass::sub_5CE330 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ce4a0 MSAnim::UI_Load -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5ce8c0 MSPCXAnim::Draw -> COMPILE_FAIL (attempt 14)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5cf8e0 MSChoiceClass::LoadFromINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5d0070 SessionClass::loadSettings -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5d0470 Audio::ParseVolume -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d1c90 ObjectClass::UI_Load_5D1C90 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5d1d80 Session::RemoveTeam -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p72\batch_report.json
