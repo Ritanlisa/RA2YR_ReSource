@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1130",
+ "name": "BulletClass::InitDetonationTimer",
+ "size": 188,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1130",
+ "bytes_hex": "8b54240c83ec0c568bf18b4c2420573bca7f028bcaa184eda8008bfe83ec0889078b442414894704894f08a184eda8008d4e0c89460c8b4424148941048b4424248951088bd08d4e188b3a89398b7a048979048b52088951088b4c24208b388b112bd78b7804895424108b51048b49082bd7895424148b5008db4424142bca894c2418db442418db442410d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8679afeff83c408e81f4d2e008946245f5e83c40cc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

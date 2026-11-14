@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DB810",
+ "name": "TechnoClass::SetPositionAnimated",
+ "size": 133,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DB810",
+ "bytes_hex": "53568bf1578b7c24108d869c0000008b1f8bd08b023bd88b4a048b5208750a394f0475053957087404b301eb0232db8a467484c074228b066a008bceff9024010000578bcee8e6b011008b166a018bceff9224010000eb08578bcee8d0b0110084db741b8b068bceff90840000008a88e405000084c974078bcee8614c23005f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

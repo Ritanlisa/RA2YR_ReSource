@@ -1,0 +1,33 @@
+{
+ "symbol": "?InitDetonationTimer@BulletClass@@QAE_JPAH0HH@Z",
+ "sym_key": "BulletClass::InitDetonationTimer",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "8b44241083ec08568bf18b4c2418573bc17f028bc10fbe15a001000089168b5424208956048946080fbe05a001000089460c8b442418894e108b08894e188b50048b4c240c8956208b5424088b40085152894624e8000000008b4424148b4c24105051ddd8e8000000008b4c24188bd0c1fa1025ff000000668954241c8b7c241c80e1009983c4100bc10bd78946285f5e83c408c21000",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E11F0",
+ "name": "BulletClass::CheckProximityDetonation",
+ "size": 189,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E11F0",
+ "bytes_hex": "83ec0c568bf18b560c8b461483faff740e8b0d84eda8002bca3bc87d0a2bc185c00f858d0000008b4424148b561883ec088b082bca8b50048b4008894c240c8b4e1c2bd18b4e202bc18954241089442414db442414db442410db44240cd9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dd1c24ddd8ddd8ddd8e8d599feff83c408e88d4c2e00992bc2d1f883f8207d0cb8010000005e83c40cc204003d000100007d113b46247e0cb8020000005e83c40cc2040089462433c05e83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

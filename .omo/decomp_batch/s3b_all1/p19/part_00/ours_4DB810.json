@@ -1,0 +1,27 @@
+{
+ "symbol": "?SetPositionAnimated@TechnoClass@@QAEHPAH@Z",
+ "sym_key": "TechnoClass::SetPositionAnimated",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568bf18b083b8e9c000000751e8b50048b8ea00000003bd175118b40088b8ea40000003bc1750432dbeb02b3018a467484c0741f8b0e6a0056ff91240100008bcee8000000008b166a0156ff9224010000eb078bcee80000000084db741a8b0656ff90840000008a88e405000084c974078bcee8000000005e5bc20400",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?SetPosition@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::SetPosition"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?SetPosition@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::SetPosition"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?UpdatePassengerCoords@FootClass@@QAEHXZ",
+   "sym_key": "FootClass::UpdatePassengerCoords"
+  }
+ ]
+}

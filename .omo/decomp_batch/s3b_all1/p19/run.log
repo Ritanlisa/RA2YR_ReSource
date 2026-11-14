@@ -1,0 +1,115 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p19\part_00
+=== convert (40 addrs) ===
+[conv] 0x4da230 FootClass::CanBeRecruited -> FootClass
+[conv] 0x4da4e0 FootClass::CheckTargetValidity -> FootClass
+[conv] 0x4da530 FootClass::MovementAI -> FootClass
+[conv] 0x4daf10 FootClass::UpdateState -> FootClass
+[conv] 0x4db0a0 FootClass::GetAttackSpeed -> FootClass
+[conv] 0x4db260 FootClass::CleanupDirection -> FootClass
+[conv] 0x4db690 ObjectClass::SaveToStream_Common -> ObjectClass
+[conv] 0x4db7e0 FootClass::Destru_vt30 -> FootClass
+[conv] 0x4db810 TechnoClass::SetPositionAnimated -> TechnoClass
+[conv] 0x4db9b0 FootClass::vt_entry_504 -> FootClass
+[conv] 0x4dbad0 FootClass::BeginPowerUpdate -> FootClass
+[conv] 0x4dbda0 FootClass::CanBeHunted -> FootClass
+[conv] 0x4dbdf0 FootClass::GetDeployCoords -> FootClass
+[conv] 0x4dbed0 FootClass::LiberateMember -> FootClass
+[conv] 0x4dc060 FootClass::CheckTargetCell -> FootClass
+[conv] 0x4dc340 TechnoClass::DrawFootTargetLine -> TechnoClass
+[conv] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> BuildingClass
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+[conv] 0x4ddde0 FootClass::HandleCursorWithCheck -> FootClass
+[conv] 0x4dded0 FootClass::GetActionOnObject -> FootClass
+[conv] 0x4ddf90 FootClass::ProcessMissionState -> FootClass
+[conv] 0x4de1d0 ObjectClass::FindPlacementCell -> ObjectClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x4de7b0 FootClass::IsTargetInRange -> FootClass
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+[conv] 0x4dee80 FootClass::ValidatePlacementEx -> FootClass
+[conv] 0x4df510 FootClass::ScanAdjacentCells -> FootClass
+[conv] 0x4df7f0 FootClass::Destru_vt322 -> FootClass
+[conv] 0x4dfa70 TechnoClass::FindClosestInfantry -> TechnoClass
+[conv] 0x4dfb70 TechnoClass::FindClosestUnit -> TechnoClass
+[conv] 0x4dfcb0 FootClass::FindClosestForRepair -> FootClass
+[conv] 0x4dfe00 FootClass::FindClosestForRepair2 -> FootClass
+[conv] 0x4e01f0 FoggedObjectClass::ClearBuffer -> FoggedObjectClass
+[conv] 0x4e0220 FoggedObjectClass::PointerToIndex -> FoggedObjectClass
+[conv] 0x4e0270 DynamicVector::processMissionQueue -> DynamicVector
+[conv] 0x4e0700 FoggedObjectClass::SetCapacity -> FoggedObjectClass
+[conv] 0x4e07b0 FoggedObjectClass::FindItem -> FoggedObjectClass
+[conv] 0x4e1130 BulletClass::InitDetonationTimer -> BulletClass
+[conv] 0x4e11f0 BulletClass::CheckProximityDetonation -> BulletClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] FoggedObjectClass        rc=2
+[era] DynamicVector            rc=2
+[era] BulletClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4db810   MISMATCH         TechnoClass::SetPositionAnimated
+[diff] 0x4e1130   MISMATCH         BulletClass::InitDetonationTimer
+[diff] 0x4e11f0   MISMATCH         BulletClass::CheckProximityDetonation
+[ledger] 0x4da230 FootClass::CanBeRecruited -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4da4e0 FootClass::CheckTargetValidity -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4da530 FootClass::MovementAI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4daf10 FootClass::UpdateState -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4db0a0 FootClass::GetAttackSpeed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4db260 FootClass::CleanupDirection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4db690 ObjectClass::SaveToStream_Common -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4db7e0 FootClass::Destru_vt30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4db810 TechnoClass::SetPositionAnimated -> NG (attempt 3)
+[ledger] 0x4db9b0 FootClass::vt_entry_504 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dbad0 FootClass::BeginPowerUpdate -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4dbda0 FootClass::CanBeHunted -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4dbdf0 FootClass::GetDeployCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dbed0 FootClass::LiberateMember -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dc060 FootClass::CheckTargetCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dc340 TechnoClass::DrawFootTargetLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ddde0 FootClass::HandleCursorWithCheck -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dded0 FootClass::GetActionOnObject -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ddf90 FootClass::ProcessMissionState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4de1d0 ObjectClass::FindPlacementCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4de7b0 FootClass::IsTargetInRange -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4dee80 FootClass::ValidatePlacementEx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4df510 FootClass::ScanAdjacentCells -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4df7f0 FootClass::Destru_vt322 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4dfa70 TechnoClass::FindClosestInfantry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dfb70 TechnoClass::FindClosestUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4dfcb0 FootClass::FindClosestForRepair -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dfe00 FootClass::FindClosestForRepair2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4e01f0 FoggedObjectClass::ClearBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e0220 FoggedObjectClass::PointerToIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e0270 DynamicVector::processMissionQueue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e0700 FoggedObjectClass::SetCapacity -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e07b0 FoggedObjectClass::FindItem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1130 BulletClass::InitDetonationTimer -> NG (attempt 6)
+[ledger] 0x4e11f0 BulletClass::CheckProximityDetonation -> NG (attempt 6)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 37,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "cc_mismatch": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 25,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p19\batch_report.json
