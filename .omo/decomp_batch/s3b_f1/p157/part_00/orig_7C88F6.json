@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C88F6",
+ "name": "StgCreateDocfile",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C88F6",
+ "bytes_hex": "ff25c8157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

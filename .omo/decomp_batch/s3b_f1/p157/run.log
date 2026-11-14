@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p157\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c85a2 GetOverlappedResult -> _addr_7C
+[conv] 0x7c85a8 GetVersionExA -> _addr_7C
+[conv] 0x7c8614 SetTimer -> _addr_7C
+[conv] 0x7c86b6 ChildWindowFromPointEx -> _addr_7C
+[conv] 0x7c8710 BeginPaint -> _addr_7C
+[conv] 0x7c871c TranslateAcceleratorA -> _addr_7C
+[conv] 0x7c8746 EnumChildWindows -> _addr_7C
+[conv] 0x7c8764 CallWindowProcA -> _addr_7C
+[conv] 0x7c877c WindowFromPoint -> _addr_7C
+[conv] 0x7c87c4 ChildWindowFromPoint -> _addr_7C
+[conv] 0x7c88b4 RegEnumKeyExA -> _addr_7C
+[conv] 0x7c88c0 RegQueryInfoKeyA -> _addr_7C
+[conv] 0x7c88d2 CoCreateInstance -> _addr_7C
+[conv] 0x7c88d8 OleLoadFromStream -> _addr_7C
+[conv] 0x7c88de OleSaveToStream -> _addr_7C
+[conv] 0x7c88ea StringFromCLSID -> _addr_7C
+[conv] 0x7c88f6 StgCreateDocfile -> _addr_7C
+[conv] 0x7c88fc StgOpenStorage -> _addr_7C
+[conv] 0x7c8902 StringFromGUID2 -> _addr_7C
+[conv] 0x7c890e CoRegisterClassObject -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c88f6   MISMATCH         StgCreateDocfile
+[ledger] 0x7c85a2 GetOverlappedResult -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c85a8 GetVersionExA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8614 SetTimer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c86b6 ChildWindowFromPointEx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8710 BeginPaint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c871c TranslateAcceleratorA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8746 EnumChildWindows -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8764 CallWindowProcA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c877c WindowFromPoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c87c4 ChildWindowFromPoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88b4 RegEnumKeyExA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88c0 RegQueryInfoKeyA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88d2 CoCreateInstance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88d8 OleLoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88de OleSaveToStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c88ea StringFromCLSID -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c88f6 StgCreateDocfile -> NG (attempt 2)
+[ledger] 0x7c88fc StgOpenStorage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8902 StringFromGUID2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c890e CoRegisterClassObject -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p157\batch_report.json
