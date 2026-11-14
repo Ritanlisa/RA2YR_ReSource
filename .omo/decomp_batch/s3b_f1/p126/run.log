@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p126\part_00
+=== convert (20 addrs) ===
+[conv] 0x71da80 TerrainTypeClass::TerrainTypeClass_71DA80 -> TerrainTypeClass
+[conv] 0x71de40 TerrainTypeClass::SingletonGetter -> TerrainTypeClass
+[conv] 0x71dea0 TerrainTypeClass::LoadFromINI -> TerrainTypeClass
+[conv] 0x71e1d0 TerrainTypeClass::SaveLoad_Prefix -> TerrainTypeClass
+[conv] 0x71e240 TerrainTypeClass::SaveLoad_Prefix_0 -> TerrainTypeClass
+[conv] 0x71e2a0 TerrainTypeClass::FindOrCreate -> TerrainTypeClass
+[conv] 0x71e940 TEventClass::Execute -> TEventClass
+[conv] 0x71f390 TEventClass::PrepareSaveToINI -> TEventClass
+[conv] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> TextButtonClass
+[conv] 0x720590 ThemeClass::InitializeThemes -> ThemeClass
+[conv] 0x720b20 Theme::QueueSong -> Theme
+[conv] 0x720ea0 Theme::Stop -> Theme
+[conv] 0x7216c0 TiberiumClass::TiberiumClass_7216C0 -> TiberiumClass
+[conv] 0x721a50 TiberiumClass::LoadFromINI -> TiberiumClass
+[conv] 0x721dc0 TiberiumClass::Harvest -> TiberiumClass
+[conv] 0x721e80 TiberiumClass::SaveLoad_Prefix -> TiberiumClass
+[conv] 0x7221b0 ObjectClass::ProcessSpeechEvents -> ObjectClass
+[conv] 0x722440 ObjectClass::PropagateCellOccupancy -> ObjectClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x722c40 ObjectClass::UpdateAudioTriggers -> ObjectClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainTypeClass         rc=2
+[era] TEventClass              rc=2
+[era] TextButtonClass          rc=2
+[era] ThemeClass               rc=2
+[era] Theme                    rc=2
+[era] TiberiumClass            rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x71e2a0   MISMATCH         TerrainTypeClass::FindOrCreate
+[ledger] 0x71da80 TerrainTypeClass::TerrainTypeClass_71DA80 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71de40 TerrainTypeClass::SingletonGetter -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71dea0 TerrainTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71e1d0 TerrainTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71e240 TerrainTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71e2a0 TerrainTypeClass::FindOrCreate -> NG (attempt 2)
+[ledger] 0x71e940 TEventClass::Execute -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71f390 TEventClass::PrepareSaveToINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> COMPILE_FAIL (attempt 6)
+[ledger] 0x720590 ThemeClass::InitializeThemes -> COMPILE_FAIL (attempt 8)
+[ledger] 0x720b20 Theme::QueueSong -> COMPILE_FAIL (attempt 3)
+[ledger] 0x720ea0 Theme::Stop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7216c0 TiberiumClass::TiberiumClass_7216C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x721a50 TiberiumClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x721dc0 TiberiumClass::Harvest -> COMPILE_FAIL (attempt 3)
+[ledger] 0x721e80 TiberiumClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7221b0 ObjectClass::ProcessSpeechEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x722440 ObjectClass::PropagateCellOccupancy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 9)
+[ledger] 0x722c40 ObjectClass::UpdateAudioTriggers -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p126\batch_report.json

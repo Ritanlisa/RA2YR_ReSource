@@ -1,0 +1,11 @@
+{
+ "addr": "0x71E2A0",
+ "name": "TerrainTypeClass::FindOrCreate",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71E2A0",
+ "bytes_hex": "56578bf9576874748100e871aa0a0083c40885c07468576894768100e85faa0a0083c40885c07456a128e3a80033f685c07e23a11ce3a800578b0cb083c12451e83baa0a0083c40885c07426a128e3a800463bf07cdd68bc020000e817ab0a0083c40485c07417578bc8e871f7ffff5f5ec38b151ce3a8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

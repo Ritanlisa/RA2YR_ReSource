@@ -169703,7 +169703,7 @@
   "this_as_id": false
  },
  "0x71da80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169762,7 +169762,7 @@
   "this_as_id": false
  },
  "0x71de40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169785,7 +169785,7 @@
   "this_as_id": false
  },
  "0x71dea0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169821,7 +169821,7 @@
   "this_as_id": false
  },
  "0x71e1d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169833,7 +169833,7 @@
   "this_as_id": false
  },
  "0x71e240": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169857,15 +169857,15 @@
   "this_as_id": false
  },
  "0x71e2a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "TerrainTypeClass::FindOrCreate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TerrainTypeClass::FindOrCreate",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71e330": {
@@ -170082,7 +170082,7 @@
   "this_as_id": false
  },
  "0x71e940": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170094,7 +170094,7 @@
   "this_as_id": false
  },
  "0x71f390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170418,7 +170418,7 @@
   "this_as_id": false
  },
  "0x71ffe0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -170658,7 +170658,7 @@
   "this_as_id": false
  },
  "0x720590": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170749,7 +170749,7 @@
   "status": "NG"
  },
  "0x720b20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -170785,7 +170785,7 @@
   "this_as_id": false
  },
  "0x720ea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171112,7 +171112,7 @@
   "this_as_id": false
  },
  "0x7216c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171136,7 +171136,7 @@
   "this_as_id": false
  },
  "0x721a50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171160,7 +171160,7 @@
   "this_as_id": false
  },
  "0x721dc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -171184,7 +171184,7 @@
   "this_as_id": false
  },
  "0x721e80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171232,7 +171232,7 @@
   "this_as_id": false
  },
  "0x7221b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171263,7 +171263,7 @@
   "status": "NG"
  },
  "0x722440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171323,7 +171323,7 @@
   "this_as_id": false
  },
  "0x722af0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171335,7 +171335,7 @@
   "this_as_id": false
  },
  "0x722c40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
