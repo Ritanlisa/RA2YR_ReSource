@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5B76C0@@YA_JN@Z",
+ "sym_key": "Unnamed::sub_5B76C0",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c24045051e8000000008b5424108b44240c5250ddd8e8000000008bc88b44241433c883c41081e1ff00000033c1a30000000099c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Math__Sin@@YANN@Z",
+   "sym_key": "Math__Sin"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF108@@3IA",
+   "sym_key": "DataGlobal_ABF108"
+  }
+ ]
+}
