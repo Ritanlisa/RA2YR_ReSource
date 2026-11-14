@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f4c00 GScreenClass::getHouseHandle -> GScreenClass
+[conv] 0x4f4e53 sub_4F4E53 -> _addr_4F
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> SuperWeaponTypeClass
+[conv] 0x4f6830 HouseClass::QueryInterface -> HouseClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x4f7870 HouseClass::CanBuild -> HouseClass
+[conv] 0x4f8440 HouseClass::Update_TogglePower -> HouseClass
+[conv] 0x4f9610 HouseClass::GiveTiberium_Storage -> HouseClass
+[conv] 0x4f9670 UnitClass::sub_4F9670 -> UnitClass
+[conv] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> FactoryClass
+[conv] 0x4f9750 BuildingClass::checkRepairEligibility -> BuildingClass
+[conv] 0x4f9790 HouseClass::ProcessPowerDrain -> HouseClass
+[conv] 0x4f9a90 Object::IsAlliedWithObjectHouse -> Object
+[conv] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> Object
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x4f9f90 HouseClass::SetAlliance -> HouseClass
+[conv] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> SuperWeapon
+[conv] 0x4faf00 SuperWeapon::EvaluateAITarget -> SuperWeapon
+[conv] 0x4fb0e0 HouseClass::CompleteProduction -> HouseClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GScreenClass             rc=2
+[era] _addr_4F                 rc=2
+[era] HouseClass               rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] UnitClass                rc=2
+[era] FactoryClass             rc=2
+[era] BuildingClass            rc=2
+[era] Object                   rc=2
+[era] SuperWeapon              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4f4c00 GScreenClass::getHouseHandle -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f4e53 sub_4F4E53 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f6830 HouseClass::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4f7870 HouseClass::CanBuild -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f8440 HouseClass::Update_TogglePower -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9610 HouseClass::GiveTiberium_Storage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9670 UnitClass::sub_4F9670 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f9750 BuildingClass::checkRepairEligibility -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f9790 HouseClass::ProcessPowerDrain -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9a90 Object::IsAlliedWithObjectHouse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f9f90 HouseClass::SetAlliance -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4faf00 SuperWeapon::EvaluateAITarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4fb0e0 HouseClass::CompleteProduction -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p39\batch_report.json
