@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p123\part_00
+=== convert (20 addrs) ===
+[conv] 0x717cd0 TypeList::PushBack -> TypeList
+[conv] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> TeleportLocomotionClass
+[conv] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> JumpjetLocomotionClass
+[conv] 0x718260 ObjectClass::FindPlacementPosition -> ObjectClass
+[conv] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> TechnoClass
+[conv] 0x718b70 Factory::CalculateExitCell -> Factory
+[conv] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> TeleportLocomotionClass
+[conv] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> TeleportLocomotionClass
+[conv] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> JumpjetLocomotionClass
+[conv] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> TeleportLocomotionClass
+[conv] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> TeleportLocomotionClass
+[conv] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> TeleportLocomotionClass
+[conv] 0x71a760 TemporalClass::ProcessTimeWarp -> TemporalClass
+[conv] 0x71ab10 TemporalClass::GetWarpPerStep -> TemporalClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x71abc0 FactoryClass::CompleteItem -> FactoryClass
+[conv] 0x71ad40 TriggerClass::UnlinkTags -> TriggerClass
+[conv] 0x71ade0 TagClass::Unlink -> TagClass
+[conv] 0x71af20 OreManagerClass::AssignMinerToRefinery -> OreManagerClass
+[conv] 0x71b7b0 TerrainClass::CleanupMembers -> TerrainClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TypeList                 rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Factory                  rc=2
+[era] TemporalClass            rc=2
+[era] FactoryClass             rc=2
+[era] TriggerClass             rc=2
+[era] TagClass                 rc=2
+[era] OreManagerClass          rc=2
+[era] TerrainClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x717cd0 TypeList::PushBack -> COMPILE_FAIL (attempt 4)
+[ledger] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> COMPILE_FAIL (attempt 4)
+[ledger] 0x718260 ObjectClass::FindPlacementPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x718b70 Factory::CalculateExitCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> COMPILE_FAIL (attempt 4)
+[ledger] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71a0f0 TeleportLocomotionClass::IUnknownRelease -> COMPILE_FAIL (attempt 6)
+[ledger] 0x71a130 TeleportLocomotionClass::ConstructLocomotor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71a760 TemporalClass::ProcessTimeWarp -> COMPILE_FAIL (attempt 7)
+[ledger] 0x71ab10 TemporalClass::GetWarpPerStep -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 10)
+[ledger] 0x71abc0 FactoryClass::CompleteItem -> COMPILE_FAIL (attempt 15)
+[ledger] 0x71ad40 TriggerClass::UnlinkTags -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71ade0 TagClass::Unlink -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71af20 OreManagerClass::AssignMinerToRefinery -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71b7b0 TerrainClass::CleanupMembers -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p123\batch_report.json
