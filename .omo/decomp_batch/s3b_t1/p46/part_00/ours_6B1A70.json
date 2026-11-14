@@ -1,0 +1,21 @@
+{
+ "symbol": "?Calc2DDistance@SlaveManagerClass@@QAE_JXZ",
+ "sym_key": "SlaveManagerClass::Calc2DDistance",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "83ec088b4424048b4c2400565051e8000000008b5424108b44240c5250ddd8e8000000008bc825ff000000c1f91066894c24188b4c24148b74241880e1009983c4100bc10bd65e83c408c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

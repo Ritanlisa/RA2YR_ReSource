@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B1A70",
+ "name": "SlaveManagerClass::Calc2DDistance",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B1A70",
+ "bytes_hex": "510fbf41020fbf098944240083ec08db442408894c2408db442408d9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd8e89f91e1ffe85a44110083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

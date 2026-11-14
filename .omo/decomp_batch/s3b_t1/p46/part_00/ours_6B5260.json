@@ -1,0 +1,93 @@
+{
+ "symbol": "?SmudgeTypeClass_6B5260@SmudgeTypeClass@@QAEPADPAD@Z",
+ "sym_key": "SmudgeTypeClass::SmudgeTypeClass_6B5260",
+ "size": 264,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568bf150e8000000008d4604bb01000000b90000000050c78698020000ffffffff899e9c020000899ea0020000c686a402000000c686a502000000890e8908894e08894e0ce800000000889e30020000c6863202000000889e33020000899e04020000c6863602000000a1000000008b0d000000003bc172398a150000000084d2750485c975428b150000000085d2763803d18b0d000000006a00526800000000ff510884c0a1000000000f94c184c975178b0d000000008d5001891500000000893481a10000000033c985c07e238b15000000003932740c4183c2043bc87d11393275f4898e980200008bc65e5bc20400c78698020000ffffffff8bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ConstructFull@ObjectTypeClass@@QAEHPAX@Z",
+   "sym_key": "ObjectTypeClass::ConstructFull"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?vt_SmudgeTypeClass_4@@3PAXA",
+   "sym_key": "vt_SmudgeTypeClass_4"
+  },
+  {
+   "off": 75,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHH@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  },
+  {
+   "off": 118,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC20@@3IA",
+   "sym_key": "DataGlobal_A8EC20"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC25@@3EA",
+   "sym_key": "DataGlobal_A8EC25"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC2C@@3IA",
+   "sym_key": "DataGlobal_A8EC2C"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC18@@3IA",
+   "sym_key": "DataGlobal_A8EC18"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EC18@@3IA",
+   "sym_key": "DataGlobal_A8EC18"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Array@@3PAXA",
+   "sym_key": "FactoryClass_Array"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Count@@3IA",
+   "sym_key": "FactoryClass_Count"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?FactoryClass_Array@@3PAXA",
+   "sym_key": "FactoryClass_Array"
+  }
+ ]
+}

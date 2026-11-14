@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b1930 VectorClass::checkAIResources -> VectorClass
+[conv] 0x6b1a70 SlaveManagerClass::Calc2DDistance -> SlaveManagerClass
+[conv] 0x6b1f50 SliderClass::SetValue -> SliderClass
+[conv] 0x6b2160 SliderClass::SetRange -> SliderClass
+[conv] 0x6b2700 InitializeBuildabilityGrid -> _addr_6B
+[conv] 0x6b2f30 ProcessBuildingClassConstruction -> _addr_6B
+[conv] 0x6b3850 ObjectClass::ProcessSlaveManagerTerrain -> ObjectClass
+[conv] 0x6b4100 ObjectClass::Map_Get_6B4100 -> ObjectClass
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x6b4c80 UnitClass::ReadINI -> UnitClass
+[conv] 0x6b5260 SmudgeTypeClass::SmudgeTypeClass_6B5260 -> SmudgeTypeClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x6b58b0 SmudgeTypeClass::SaveToINI -> SmudgeTypeClass
+[conv] 0x6b5910 FactoryClass::FindOrCreate -> FactoryClass
+[conv] 0x6b59a0 StandardCreateUnitAtCoords -> _addr_6B
+[conv] 0x6b5c90 TimedCreateUnitAtCoords -> _addr_6B
+[conv] 0x6b6160 SmudgeTypeClass::ddtor -> SmudgeTypeClass
+[conv] 0x6b6230 ShowAudioSettingsDialog -> _addr_6B
+[conv] 0x6b6300 AudioSettings::DlgProc -> AudioSettings
+[conv] 0x6b6c90 SpawnManagerClass::SpawnManagerClass_6B6C90 -> SpawnManagerClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+[era] SlaveManagerClass        rc=0
+[era] SliderClass              rc=2
+[era] _addr_6B                 rc=2
+[era] ObjectClass              rc=0
+[era] Map_Helper               rc=2
+[era] UnitClass                rc=0
+[era] SmudgeTypeClass          rc=2
+[era] FactoryClass             rc=0
+[era] AudioSettings            rc=2
+[era] SpawnManagerClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b1a70   MISMATCH         SlaveManagerClass::Calc2DDistance
+[diff] 0x6b2f30   MISMATCH         ProcessBuildingClassConstruction
+[diff] 0x6b3850   MISMATCH         ObjectClass::ProcessSlaveManagerTerrain
+[diff] 0x6b4100   MISMATCH         ObjectClass::Map_Get_6B4100
+[diff] 0x6b4c80   MISMATCH         UnitClass::ReadINI
+[diff] 0x6b5260   MISMATCH         SmudgeTypeClass::SmudgeTypeClass_6B5260
+[diff] 0x6b5910   MISMATCH         FactoryClass::FindOrCreate
+[diff] 0x6b6c90   MISMATCH         SpawnManagerClass::SpawnManagerClass_6B6C90
+[ledger] 0x6b1930 VectorClass::checkAIResources -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b1a70 SlaveManagerClass::Calc2DDistance -> NG (attempt 3)
+[ledger] 0x6b1f50 SliderClass::SetValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b2160 SliderClass::SetRange -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b2700 InitializeBuildabilityGrid -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b2f30 ProcessBuildingClassConstruction -> NG (attempt 2)
+[ledger] 0x6b3850 ObjectClass::ProcessSlaveManagerTerrain -> NG (attempt 3)
+[ledger] 0x6b4100 ObjectClass::Map_Get_6B4100 -> NG (attempt 2)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6b4c80 UnitClass::ReadINI -> NG (attempt 5)
+[ledger] 0x6b5260 SmudgeTypeClass::SmudgeTypeClass_6B5260 -> NG (attempt 2)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6b58b0 SmudgeTypeClass::SaveToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b5910 FactoryClass::FindOrCreate -> NG (attempt 2)
+[ledger] 0x6b59a0 StandardCreateUnitAtCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b5c90 TimedCreateUnitAtCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b6160 SmudgeTypeClass::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b6230 ShowAudioSettingsDialog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6b6300 AudioSettings::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b6c90 SpawnManagerClass::SpawnManagerClass_6B6C90 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "frame_sched": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p46\batch_report.json

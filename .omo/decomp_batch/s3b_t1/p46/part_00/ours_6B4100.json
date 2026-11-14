@@ -1,0 +1,69 @@
+{
+ "symbol": "?Map_Get_6B4100@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Map_Get_6B4100",
+ "size": 314,
+ "link_base": 0,
+ "bytes_hex": "83ec185355568b71248bc68b1500000000c1f810578b2d000000000fbff8a100000000894c24140fbfde8bcf897424102bca8bd32bd08bc50fafc103c2410fafcd03ca8b15000000008b6cc2088b04c2896c241c8b2cca8b4cca08896c242489442418894c2420bde80300008d442418ba040000008b083bcd7d028be983c0044a75f2a10c2700008d0c3b3bc8897424100f8e860000008bd32bd73bd07d7e2bfb3bf87d783b0d102700007f708b7c2414837f44ff756a8b87e400000085c075608d4c241089742410e8000000008a484584c9754c0fbe0d5401000033c08a47383bc17d1b3dffff000074140fbe15480100008b04828a88e002000084c97421b8898888885ff7ed8bc25e03c55dc1f8038bc85bc1e91f03c183c418c38b7c241433d28a975401000052e80000000083c4045f5e5d5b83c418c3",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759AC@@3IA",
+   "sym_key": "DataGlobal_8759AC"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A8@@3IA",
+   "sym_key": "DataGlobal_8759A8"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?GetCellData@Tactical@@QAEPADXZ",
+   "sym_key": "Tactical::GetCellData"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 299,
+   "type": "REL32",
+   "sym": "?SHIBYTE@@YAHHZZ",
+   "sym_key": "SHIBYTE"
+  }
+ ]
+}
