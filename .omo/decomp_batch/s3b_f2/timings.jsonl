@@ -68,3 +68,4 @@
 {"part": 67, "n": 20, "seconds": 34.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 68, "n": 20, "seconds": 43.1, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 69, "n": 20, "seconds": 36.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 70, "n": 20, "seconds": 41.2, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
