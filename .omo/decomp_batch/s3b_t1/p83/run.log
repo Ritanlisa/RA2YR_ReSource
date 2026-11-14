@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p83\part_00
+=== convert (20 addrs) ===
+[conv] 0x796710 HandleWOLRematch -> _addr_79
+[conv] 0x796960 ObjectClass::Event_Play -> ObjectClass
+[conv] 0x796b30 sub_796B30 -> _addr_79
+[conv] 0x796fc0 ObjectClass::Network_Init_796FC0 -> ObjectClass
+[conv] 0x7970d0 ObjectClass::InitNetworkGame -> ObjectClass
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x797c20 ObjectClass::InitVersionStringsWOL -> ObjectClass
+[conv] 0x798120 sub_798120 -> _addr_79
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x798340 GameOptionsScreenWOL_Helper -> GameOptionsScreenWOL
+[conv] 0x798de0 ObjectClass::RunWOLMainLoop_Read -> ObjectClass
+[conv] 0x799080 MainLobbyDlgProcWOL -> _addr_79
+[conv] 0x799d30 ObjectClass::RunWOLMainLoop_Init -> ObjectClass
+[conv] 0x799ea0 OptionsDlgProcWOL -> _addr_79
+[conv] 0x79af10 ObjectClass::FillBuddyListWOL -> ObjectClass
+[conv] 0x79bc80 FindBuddyWOL -> _addr_79
+[conv] 0x79c040 ObjectClass::ShowUserProfileWOL -> ObjectClass
+[conv] 0x79c3a0 ObjectClass::Network_Cleanup -> ObjectClass
+[conv] 0x79c520 MapSeed::CheckName -> MapSeed
+[conv] 0x79c650 MapSeed::InsertName -> MapSeed
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_79                 rc=2
+[era] ObjectClass              rc=2
+[era] GameOptionsScreenWOL     rc=2
+[era] MapSeed                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x79bc80   MISMATCH         FindBuddyWOL
+[diff] 0x7970d0   MISMATCH         ObjectClass::InitNetworkGame
+[ledger] 0x796710 HandleWOLRematch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x796960 ObjectClass::Event_Play -> COMPILE_FAIL (attempt 6)
+[ledger] 0x796b30 sub_796B30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x796fc0 ObjectClass::Network_Init_796FC0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7970d0 ObjectClass::InitNetworkGame -> NG (attempt 4)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 8)
+[ledger] 0x797c20 ObjectClass::InitVersionStringsWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x798120 sub_798120 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x798340 GameOptionsScreenWOL_Helper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x798de0 ObjectClass::RunWOLMainLoop_Read -> COMPILE_FAIL (attempt 2)
+[ledger] 0x799080 MainLobbyDlgProcWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x799d30 ObjectClass::RunWOLMainLoop_Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x799ea0 OptionsDlgProcWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x79af10 ObjectClass::FillBuddyListWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79bc80 FindBuddyWOL -> NG (attempt 2)
+[ledger] 0x79c040 ObjectClass::ShowUserProfileWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79c3a0 ObjectClass::Network_Cleanup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x79c520 MapSeed::CheckName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79c650 MapSeed::InsertName -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p83\batch_report.json

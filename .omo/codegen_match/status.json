@@ -197249,7 +197249,7 @@
   "this_as_id": false
  },
  "0x796710": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "HandleWOLRematch",
@@ -197260,7 +197260,7 @@
   "this_as_id": false
  },
  "0x796960": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197283,7 +197283,7 @@
   "this_as_id": false
  },
  "0x796b30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_796B30",
@@ -197329,7 +197329,7 @@
   "this_as_id": false
  },
  "0x796fc0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197341,19 +197341,19 @@
   "this_as_id": false
  },
  "0x7970d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x42c",
   "name": "ObjectClass::InitNetworkGame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "InitNetworkGame",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x797640": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "LoginWOL",
@@ -197376,7 +197376,7 @@
   "this_as_id": false
  },
  "0x797c20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197388,7 +197388,7 @@
   "this_as_id": false
  },
  "0x798120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_798120",
@@ -197410,7 +197410,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -197421,7 +197421,7 @@
   "this_as_id": false
  },
  "0x798340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GameOptionsScreenWOL_Helper",
@@ -197465,7 +197465,7 @@
   "this_as_id": false
  },
  "0x798de0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197489,7 +197489,7 @@
   "this_as_id": false
  },
  "0x799080": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "MainLobbyDlgProcWOL",
@@ -197523,7 +197523,7 @@
   "this_as_id": false
  },
  "0x799d30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197535,7 +197535,7 @@
   "this_as_id": false
  },
  "0x799ea0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "OptionsDlgProcWOL",
@@ -197557,7 +197557,7 @@
   "this_as_id": false
  },
  "0x79af10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197580,14 +197580,14 @@
   "this_as_id": false
  },
  "0x79bc80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+44 je 0x79bd1b",
   "name": "FindBuddyWOL",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "FindBuddyWOL",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x79bf50": {
@@ -197603,7 +197603,7 @@
   "this_as_id": false
  },
  "0x79c040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197615,7 +197615,7 @@
   "this_as_id": false
  },
  "0x79c3a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197627,7 +197627,7 @@
   "this_as_id": false
  },
  "0x79c520": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197639,7 +197639,7 @@
   "this_as_id": false
  },
  "0x79c650": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

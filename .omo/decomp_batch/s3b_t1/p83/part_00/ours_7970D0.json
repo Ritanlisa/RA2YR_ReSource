@@ -1,0 +1,729 @@
+{
+ "symbol": "?InitNetworkGame@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::InitNetworkGame",
+ "size": 1263,
+ "link_base": 0,
+ "bytes_hex": "81ec1c040000a10000000053558be98b0d00000000c705000000000000000089088b15000000005657b930000000c70200000000e8000000008bf883c9ff33c0f2aef7d12bf98bc18bf7bf10000000c1e902f3a58bc883e103f3a4b970020000e8000000008d4c24148d5424345152c744241cf7030000e800000000a1000000008d4c24345051c644241b00e80000000083c408bb0100000085c074568b15000000008d4424345250e8000000008b4c241c83c40885c0741de8000000008b4c2414e8000000008b4c241451e80000000083c404eb40e8000000008b4c2414e8000000008b4c241451e80000000083c404eb238b54241452e8000000008b4c241883c404e8000000008b4c2414e800000000885c2413a100000000500fbe088b11ff5230bf0000000083c9ff33c08d54241cf2aef7d12bf98bc18bf78bfac1e902f3a58bc8a08002000083e1033ac3f3a48bf3bf280000007e3c0fbe05740200008d4c242c8d542418518b0cb05203cfe800000000a1000000006a000fbe088b118d4c24205150ff522c0fbe1580020000463bf27cc48bcdc7050000000002000000e8000000008b150000000033c9668b0d000000006affe8000000008b0d0000000033c080e101be0a0000000bcbc70500000000ffffffff890d000000008bcba300000000891d940a0000893500000000c605200000000ac6050c00000010a200000000881d10000000881d11000000881d00000000a300000000881d08000000a200000000a224000000a228000000881d12000000881d13000000a214000000881d1c000000881d04000000a218000000e8000000000fbe1504000000a100000000c6051800000002c6050002000002899028730100c70500000000050000000fbe051800000083f8050f8785000000ff248500000000893d00000000c705000000003c000000893500000000eb72893d00000000c705000000002d000000893500000000eb5ab81e000000a300000000a300000000eb49b814000000a300000000a300000000eb38c7050000000014000000c705000000000f000000eb22c7050000000014000000c705000000000c000000eb0c8935000000008935000000008a44241333ff84c0893d000000007506893d00000000a08002000033f684c07e178b0d000000000fbed08b013bc67e028bf083c1044a75f23bf7881d980300000f84e800000081fee80300000f84dc0000008bcde80000000081fee80300007f1081fe580200007d0f881d98030000eb07c60598030000028d0476538d0c80b8d34d6210c1e102f7e9c1fa068bcac1e91f03d18bca8d04498d1480b81f85eb51c1e203f7eac1fa058bc2c1e81f03d08d040a8d0cc500000000516aff50b960000000e8000000008a44241384c0746c6a786aff6a05b960000000e8000000000fbe059803000083f8037727ff2485000000008b0d00000000eb1ea1000000008bc8d1e903c8eb118b15000000008d0c12eb068b0d00000000b8cdccccccf7e1c1ea038d0492d1e0a300000000eb0d8bcd893d00000000e8000000008bcde8000000008bcde8000000008bcde8000000008bcde8000000008b0d000000008a1518000000890d00000000b9d000000033c0bf00000000f3ab8b4c2418c70500000000d2040000881500020000c70500000000d3040000c70500000000d4040000c70500000000d5040000a3540a0000a200000000a200000000e8000000008b4424185f5e5d5b81c41c040000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77D6C@@3IA",
+   "sym_key": "DataGlobal_B77D6C"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_NetworkRematchState@@3IA",
+   "sym_key": "g_NetworkRematchState"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779D4@@3IA",
+   "sym_key": "DataGlobal_B779D4"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B779C4@@3IA",
+   "sym_key": "DataGlobal_B779C4"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_WOL_AuthPool@@3IA",
+   "sym_key": "g_WOL_AuthPool"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?GetOrEmpty@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77820@@3IA",
+   "sym_key": "DataGlobal_B77820"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?Destroy@PtrVector@@QAEHXZ",
+   "sym_key": "PtrVector::Destroy"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?GetComputerNameA@@YGHPAX0@Z",
+   "sym_key": "GetComputerNameA"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "?aSteveT3@@3HA",
+   "sym_key": "aSteveT3"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?aSteveT2@@3HA",
+   "sym_key": "aSteveT2"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer_Potato@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer_Potato"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?Network_Init_796FC0@@YAHPAX@Z",
+   "sym_key": "Network_Init_796FC0"
+  },
+  {
+   "off": 215,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer_Potato@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer_Potato"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?Network_Init_796FC0@@YAHPAX@Z",
+   "sym_key": "Network_Init_796FC0"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?Network_Init_796FC0@@YAHPAX@Z",
+   "sym_key": "Network_Init_796FC0"
+  },
+  {
+   "off": 261,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer"
+  },
+  {
+   "off": 270,
+   "type": "REL32",
+   "sym": "?CreateAIPlayer_Potato@Game@@QAEHXZ",
+   "sym_key": "Game::CreateAIPlayer_Potato"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 293,
+   "type": "DIR32",
+   "sym": "??_C@_0BA@FOMN@xxx?4xxx?4xxx?4xxx?$AA@",
+   "sym_key": "??_C@_0BA@FOMN@xxx?4xxx?4xxx?4xxx?$AA@"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 349,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 369,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?g_NetworkInterface@@3IA",
+   "sym_key": "g_NetworkInterface"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?g_NetworkLobbyState@@3IA",
+   "sym_key": "g_NetworkLobbyState"
+  },
+  {
+   "off": 419,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 425,
+   "type": "DIR32",
+   "sym": "?aPotatotoo@@3HA",
+   "sym_key": "aPotatotoo"
+  },
+  {
+   "off": 434,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E258@@3GA",
+   "sym_key": "DataGlobal_A8E258"
+  },
+  {
+   "off": 441,
+   "type": "REL32",
+   "sym": "?BulkCharToWide@@YIEPAGPAXH@Z",
+   "sym_key": "BulkCharToWide"
+  },
+  {
+   "off": 447,
+   "type": "DIR32",
+   "sym": "?MCVRedeploy@@3IA",
+   "sym_key": "MCVRedeploy"
+  },
+  {
+   "off": 465,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E2AC@@3IA",
+   "sym_key": "DataGlobal_A8E2AC"
+  },
+  {
+   "off": 475,
+   "type": "DIR32",
+   "sym": "?MCVRedeploy@@3IA",
+   "sym_key": "MCVRedeploy"
+  },
+  {
+   "off": 482,
+   "type": "DIR32",
+   "sym": "?g_CommandExecState@@3PAXA",
+   "sym_key": "g_CommandExecState"
+  },
+  {
+   "off": 488,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 494,
+   "type": "DIR32",
+   "sym": "?g_RulesInitConfig@@3HA",
+   "sym_key": "g_RulesInitConfig"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 507,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 513,
+   "type": "DIR32",
+   "sym": "?FOW@@3EA",
+   "sym_key": "FOW"
+  },
+  {
+   "off": 519,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 525,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 531,
+   "type": "DIR32",
+   "sym": "?AlliesAllowed@@3EA",
+   "sym_key": "AlliesAllowed"
+  },
+  {
+   "off": 536,
+   "type": "DIR32",
+   "sym": "?HarvesterTruce@@3IA",
+   "sym_key": "HarvesterTruce"
+  },
+  {
+   "off": 542,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 547,
+   "type": "DIR32",
+   "sym": "?CTF@@3EA",
+   "sym_key": "CTF"
+  },
+  {
+   "off": 552,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 557,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 563,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 574,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 580,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 586,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 591,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 596,
+   "type": "REL32",
+   "sym": "?LoadScenarioClassByIndex@@YIDH@Z",
+   "sym_key": "LoadScenarioClassByIndex"
+  },
+  {
+   "off": 603,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 608,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAVCampaignClass@@A",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 614,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 621,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 634,
+   "type": "DIR32",
+   "sym": "?g_ScenarioLoadState@@3IA",
+   "sym_key": "g_ScenarioLoadState"
+  },
+  {
+   "off": 645,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 661,
+   "type": "DIR32",
+   "sym": "$L2384",
+   "sym_key": "$L2384"
+  },
+  {
+   "off": 667,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 673,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 683,
+   "type": "DIR32",
+   "sym": "?g_ScenarioLoadState@@3IA",
+   "sym_key": "g_ScenarioLoadState"
+  },
+  {
+   "off": 691,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 697,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 707,
+   "type": "DIR32",
+   "sym": "?g_ScenarioLoadState@@3IA",
+   "sym_key": "g_ScenarioLoadState"
+  },
+  {
+   "off": 719,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 724,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 736,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 741,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 749,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 759,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 771,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 781,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 793,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 799,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 813,
+   "type": "DIR32",
+   "sym": "?g_GameSessionPool@@3IA",
+   "sym_key": "g_GameSessionPool"
+  },
+  {
+   "off": 821,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 826,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 838,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7790C@@3IA",
+   "sym_key": "DataGlobal_B7790C"
+  },
+  {
+   "off": 863,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 888,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 910,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 918,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 993,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 998,
+   "type": "REL32",
+   "sym": "?SetConnectionParams@Network@@QAEHHHHD@Z",
+   "sym_key": "Network::SetConnectionParams"
+  },
+  {
+   "off": 1017,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 1022,
+   "type": "REL32",
+   "sym": "?sendPacket@IPXManagerClass@@QAEHHHH@Z",
+   "sym_key": "IPXManagerClass::sendPacket"
+  },
+  {
+   "off": 1029,
+   "type": "DIR32",
+   "sym": "?Network_EventValue@@3IA",
+   "sym_key": "Network_EventValue"
+  },
+  {
+   "off": 1041,
+   "type": "DIR32",
+   "sym": "$L2385",
+   "sym_key": "$L2385"
+  },
+  {
+   "off": 1047,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 1054,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 1068,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 1079,
+   "type": "DIR32",
+   "sym": "?g_GameSessionPool@@3IA",
+   "sym_key": "g_GameSessionPool"
+  },
+  {
+   "off": 1099,
+   "type": "DIR32",
+   "sym": "?g_GameSessionPool@@3IA",
+   "sym_key": "g_GameSessionPool"
+  },
+  {
+   "off": 1109,
+   "type": "DIR32",
+   "sym": "?g_GameSessionFlags@@3IA",
+   "sym_key": "g_GameSessionFlags"
+  },
+  {
+   "off": 1114,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1121,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1128,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1135,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1142,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1148,
+   "type": "DIR32",
+   "sym": "?g_ScenarioState@@3IA",
+   "sym_key": "g_ScenarioState"
+  },
+  {
+   "off": 1154,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 1160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B568@@3IA",
+   "sym_key": "DataGlobal_A8B568"
+  },
+  {
+   "off": 1172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B574@@3EA",
+   "sym_key": "DataGlobal_A8B574"
+  },
+  {
+   "off": 1184,
+   "type": "DIR32",
+   "sym": "?hostshort@@3GA",
+   "sym_key": "hostshort"
+  },
+  {
+   "off": 1194,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 1200,
+   "type": "DIR32",
+   "sym": "?DataGlobal_841F34@@3IA",
+   "sym_key": "DataGlobal_841F34"
+  },
+  {
+   "off": 1210,
+   "type": "DIR32",
+   "sym": "?DataGlobal_841F38@@3IA",
+   "sym_key": "DataGlobal_841F38"
+  },
+  {
+   "off": 1220,
+   "type": "DIR32",
+   "sym": "?DataGlobal_841F3C@@3IA",
+   "sym_key": "DataGlobal_841F3C"
+  },
+  {
+   "off": 1229,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 1234,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B77A04@@3EA",
+   "sym_key": "DataGlobal_B77A04"
+  },
+  {
+   "off": 1239,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76568@@3PAEA",
+   "sym_key": "DataGlobal_B76568"
+  },
+  {
+   "off": 1244,
+   "type": "REL32",
+   "sym": "?PreGameInit@Scenario@@QAEHXZ",
+   "sym_key": "Scenario::PreGameInit"
+  }
+ ]
+}

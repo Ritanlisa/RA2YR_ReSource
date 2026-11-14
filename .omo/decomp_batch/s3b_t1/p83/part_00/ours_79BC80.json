@@ -1,0 +1,165 @@
+{
+ "symbol": "?FindBuddyWOL@@YA_NXZ",
+ "sym_key": "Unnamed::FindBuddyWOL",
+ "size": 551,
+ "link_base": 0,
+ "bytes_hex": "81ec1c020000b90000000053555657e80000000085c0750d5f5e5d32c05b81c41c020000c3a10000000085c0750d5f5e5d32c05b81c41c020000c36800000000ff15000000008b0d00000000ba01000000d3e28b0d0000000083c4044a23c28b348185f6750d5f5e5d32c05b81c41c020000c368000000008bcee80000000084c075128b760885f675e95f5e5d5b81c41c020000c383c60485f6750d5f5e5d32c05b81c41c020000c38b3683fe04750d5f5e5db0015b81c41c020000c383fe05740d5f5e5d32c05b81c41c020000c3a10000000085c0750d5f5e5d32c05b81c41c020000c36800000000ff15000000008b0d00000000ba01000000d3e28b0d0000000083c4044a23c28b348185f6750d5f5e5d32c05b81c41c020000c368000000008bcee80000000084c075158bb61001000085f675e65f5e5d5b81c41c020000c383c60485f6740eb9430000008dbc2420010000f3a58d9424540100008d4c241052e800000000b94300000033c08d7c241433dbf3aba10000000085c07e4833ed85ed7c173bd87d13a100000000b9430000008d7c24148d3428f3a58d4c2410e8000000008d4c24485051e80000000083c40885c07437a1000000004381c50c0100003bd87cbab94300000033c08d7c24148d542410f3ab52e80000000083c40432c05f5e5d5b81c41c020000c38b1d000000008d4c241485db0f95c05032d2e8000000008d4c24108ad851e80000000083c40433c084db5f5e5d5b0f95c081c41c020000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Length@String@@QAEIXZ",
+   "sym_key": "String::Length"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76994@@3IA",
+   "sym_key": "DataGlobal_B76994"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B769A8@@3IA",
+   "sym_key": "DataGlobal_B769A8"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7699C@@3IA",
+   "sym_key": "DataGlobal_B7699C"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_WOL_AccountInfo@@3PAXA",
+   "sym_key": "g_WOL_AccountInfo"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7660C@@3IA",
+   "sym_key": "DataGlobal_B7660C"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 236,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76620@@3IA",
+   "sym_key": "DataGlobal_B76620"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76614@@3IA",
+   "sym_key": "DataGlobal_B76614"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_WOL_LoginObject@@3PBDB",
+   "sym_key": "g_WOL_LoginObject"
+  },
+  {
+   "off": 293,
+   "type": "REL32",
+   "sym": "?Compare@String@@QAE_NPAX@Z",
+   "sym_key": "String::Compare"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?Assign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Assign"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChatState@@3IA",
+   "sym_key": "g_WOL_ChatState"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?g_WOL_ConnectionHandler@@3PAXA",
+   "sym_key": "g_WOL_ConnectionHandler"
+  },
+  {
+   "off": 418,
+   "type": "REL32",
+   "sym": "?GetOrEmpty_Alt@String@@QAEPADXZ",
+   "sym_key": "String::GetOrEmpty_Alt"
+  },
+  {
+   "off": 429,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "?g_WOL_ChatState@@3IA",
+   "sym_key": "g_WOL_ChatState"
+  },
+  {
+   "off": 475,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 497,
+   "type": "DIR32",
+   "sym": "?g_MenuStateFlags@@3IA",
+   "sym_key": "g_MenuStateFlags"
+  },
+  {
+   "off": 514,
+   "type": "REL32",
+   "sym": "?ValidateGameJoinWOL@@YIDHDD@Z",
+   "sym_key": "ValidateGameJoinWOL"
+  },
+  {
+   "off": 526,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  }
+ ]
+}
