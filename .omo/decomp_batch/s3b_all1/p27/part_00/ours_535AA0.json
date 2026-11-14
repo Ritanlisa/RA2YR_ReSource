@@ -1,0 +1,33 @@
+{
+ "symbol": "?INIClass_535AA0@INIClass@@QAEPAIXZ",
+ "sym_key": "INIClass::INIClass_535AA0",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b018b49105633d28d701c895004895008895104895108891157895020895024c70600000000c7400c000000008b79048948248978208b79043bfa74038977088971045fc7400c0000000089502889502c89503088503489503889503cc700000000005ec3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?vt_GenericNode@@3PAXA",
+   "sym_key": "vt_GenericNode"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?vt_GenericList@@3PAXA",
+   "sym_key": "vt_GenericList"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "?vt_List_INIClass_INISection@@3PAXA",
+   "sym_key": "vt_List_INIClass_INISection"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?vt_INIClass@@3PAXA",
+   "sym_key": "vt_INIClass"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?performAction_11@SetDefenseTabCommandClass@@QAGDXZ",
+ "sym_key": "SetDefenseTabCommandClass::performAction_11",
+ "size": 103,
+ "link_base": 0,
+ "bytes_hex": "5153b900000000e8000000008bc88b44240433c881e1ff00000033c184c074426a01b900000000e800000000e8000000008bd885db74298b136a006a0053ff92900100008b0d000000005350e80000000025ff00000080e3000bc35b59c204008ac35b59c20400",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?stru_881CC0@@3EA",
+   "sym_key": "stru_881CC0"
+  },
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?HasPlayers@PlayerClass@@QAEHXZ",
+   "sym_key": "PlayerClass::HasPlayers"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?SwitchTab@SidebarClass@@QAEHH@Z",
+   "sym_key": "SidebarClass::SwitchTab"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?UI_Create_7342B0@@YAHXZ",
+   "sym_key": "UI_Create_7342B0"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?Activate@BuildingPlacement@@QAEDHPAX@Z",
+   "sym_key": "BuildingPlacement::Activate"
+  }
+ ]
+}

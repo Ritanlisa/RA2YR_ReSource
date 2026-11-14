@@ -1,0 +1,139 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p27\part_00
+=== convert (40 addrs) ===
+[conv] 0x535aa0 INIClass::INIClass_535AA0 -> INIClass
+[conv] 0x535b30 CCINIClass::CCINIClass_535B30 -> CCINIClass
+[conv] 0x535cd0 CreateTeamCommand::performAction_0 -> CreateTeamCommand
+[conv] 0x535d00 CommandClass::performAction_1 -> CommandClass
+[conv] 0x535d90 SetStructureTabCommandClass::performAction_6 -> SetStructureTabCommandClass
+[conv] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> SetDefenseTabCommandClass
+[conv] 0x535fc0 SelectTeamCommand::Construct -> SelectTeamCommand
+[conv] 0x536090 SelectTeamCommand::performAction_22 -> SelectTeamCommand
+[conv] 0x5360b0 AddTeamCommand::Construct -> AddTeamCommand
+[conv] 0x536180 AddTeamCommand::performAction_23 -> AddTeamCommand
+[conv] 0x5361a0 CenterTeamCommand::Construct -> CenterTeamCommand
+[conv] 0x536270 CenterTeamCommand::performAction_24 -> CenterTeamCommand
+[conv] 0x536290 TauntCommandClass::Construct -> TauntCommandClass
+[conv] 0x536350 TauntCommandClass::Do -> TauntCommandClass
+[conv] 0x536580 TauntCommandClass::performAction_25 -> TauntCommandClass
+[conv] 0x537440 View2CommandClass::performAction_153 -> View2CommandClass
+[conv] 0x537530 View3CommandClass::performAction_158 -> View3CommandClass
+[conv] 0x537620 View4CommandClass::InitView -> View4CommandClass
+[conv] 0x5377d0 SetView2CommandClass::performAction_172 -> SetView2CommandClass
+[conv] 0x537b40 ScreenCaptureCommandClass::Constructor -> ScreenCaptureCommandClass
+[conv] 0x537dd0 PageUserCommandClass::PageUserCommandClass_537DD0 -> PageUserCommandClass
+[conv] 0x537e70 CursorPositionCommandClass::Constructor -> CursorPositionCommandClass
+[conv] 0x537f10 DeleteCommandClass::Constructor -> DeleteCommandClass
+[conv] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> MultiplayerDebugCommandClass
+[conv] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> MultiplayerSyncCommandClass
+[conv] 0x537fe0 FollowCommandClass::performAction_200 -> FollowCommandClass
+[conv] 0x538000 View1CommandClass::performAction_201 -> View1CommandClass
+[conv] 0x538020 View2CommandClass::performAction_202 -> View2CommandClass
+[conv] 0x538040 View3CommandClass::performAction_203 -> View3CommandClass
+[conv] 0x538060 View4CommandClass::performAction_204 -> View4CommandClass
+[conv] 0x538080 SetView1CommandClass::performAction_205 -> SetView1CommandClass
+[conv] 0x5380a0 SetView2CommandClass::performAction_206 -> SetView2CommandClass
+[conv] 0x5380c0 SetView3CommandClass::performAction_207 -> SetView3CommandClass
+[conv] 0x5380e0 SetView4CommandClass::performAction_208 -> SetView4CommandClass
+[conv] 0x538100 OptionsCommandClass::performAction_209 -> OptionsCommandClass
+[conv] 0x538120 SidebarUpCommandClass::performAction_210 -> SidebarUpCommandClass
+[conv] 0x538140 SidebarDownCommandClass::performAction_211 -> SidebarDownCommandClass
+[conv] 0x538160 CenterREventCommandClass::performAction_212 -> CenterREventCommandClass
+[conv] 0x538180 BeaconPlacementCommandClass::performAction_213 -> BeaconPlacementCommandClass
+[conv] 0x5381a0 ToggleSellCommandClass::performAction_214 -> ToggleSellCommandClass
+=== emit 31 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=0
+[era] CCINIClass               rc=0
+[era] CreateTeamCommand        rc=2
+[era] CommandClass             rc=2
+[era] SetStructureTabCommandClass rc=0
+[era] SetDefenseTabCommandClass rc=0
+[era] SelectTeamCommand        rc=2
+[era] AddTeamCommand           rc=2
+[era] CenterTeamCommand        rc=2
+[era] TauntCommandClass        rc=2
+[era] View2CommandClass        rc=2
+[era] View3CommandClass        rc=2
+[era] View4CommandClass        rc=2
+[era] SetView2CommandClass     rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] MultiplayerDebugCommandClass rc=2
+[era] MultiplayerSyncCommandClass rc=2
+[era] FollowCommandClass       rc=2
+[era] View1CommandClass        rc=2
+[era] SetView1CommandClass     rc=2
+[era] SetView3CommandClass     rc=2
+[era] SetView4CommandClass     rc=2
+[era] OptionsCommandClass      rc=2
+[era] SidebarUpCommandClass    rc=2
+[era] SidebarDownCommandClass  rc=2
+[era] CenterREventCommandClass rc=2
+[era] BeaconPlacementCommandClass rc=2
+[era] ToggleSellCommandClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x535aa0   MISMATCH         INIClass::INIClass_535AA0
+[diff] 0x535b30   MISMATCH         CCINIClass::CCINIClass_535B30
+[diff] 0x535d90   MISMATCH         SetStructureTabCommandClass::performAction_6
+[diff] 0x535e50   MISMATCH         SetDefenseTabCommandClass::performAction_11
+[ledger] 0x535aa0 INIClass::INIClass_535AA0 -> NG (attempt 3)
+[ledger] 0x535b30 CCINIClass::CCINIClass_535B30 -> NG (attempt 3)
+[ledger] 0x535cd0 CreateTeamCommand::performAction_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x535d00 CommandClass::performAction_1 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x535d90 SetStructureTabCommandClass::performAction_6 -> NG (attempt 3)
+[ledger] 0x535e50 SetDefenseTabCommandClass::performAction_11 -> NG (attempt 3)
+[ledger] 0x535fc0 SelectTeamCommand::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x536090 SelectTeamCommand::performAction_22 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5360b0 AddTeamCommand::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x536180 AddTeamCommand::performAction_23 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5361a0 CenterTeamCommand::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x536270 CenterTeamCommand::performAction_24 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x536290 TauntCommandClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x536350 TauntCommandClass::Do -> COMPILE_FAIL (attempt 3)
+[ledger] 0x536580 TauntCommandClass::performAction_25 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537440 View2CommandClass::performAction_153 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537530 View3CommandClass::performAction_158 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x537620 View4CommandClass::InitView -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5377d0 SetView2CommandClass::performAction_172 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x537b40 ScreenCaptureCommandClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x537dd0 PageUserCommandClass::PageUserCommandClass_537DD0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537e70 CursorPositionCommandClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x537f10 DeleteCommandClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x537fa0 MultiplayerDebugCommandClass::performAction_198 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x537fe0 FollowCommandClass::performAction_200 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538000 View1CommandClass::performAction_201 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538020 View2CommandClass::performAction_202 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538040 View3CommandClass::performAction_203 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538060 View4CommandClass::performAction_204 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538080 SetView1CommandClass::performAction_205 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5380a0 SetView2CommandClass::performAction_206 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5380c0 SetView3CommandClass::performAction_207 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5380e0 SetView4CommandClass::performAction_208 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538100 OptionsCommandClass::performAction_209 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538120 SidebarUpCommandClass::performAction_210 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x538140 SidebarDownCommandClass::performAction_211 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538160 CenterREventCommandClass::performAction_212 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x538180 BeaconPlacementCommandClass::performAction_213 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5381a0 ToggleSellCommandClass::performAction_214 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 36
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p27\batch_report.json

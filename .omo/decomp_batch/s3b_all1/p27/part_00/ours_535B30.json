@@ -1,0 +1,27 @@
+{
+ "symbol": "?CCINIClass_535B30@CCINIClass@@QAEPAIXZ",
+ "sym_key": "CCINIClass::CCINIClass_535B30",
+ "size": 138,
+ "link_base": 0,
+ "bytes_hex": "8b018b51105333db83c11c895804895808895a04895a08891a5689590489590889193bcb57c7400c0000000074208b79043bfb74198b71083bf37412897e048b71048b7908897e088959088959048b72048951088971048b72043bf37403894e08894a045f89582889582c89583088583489583889583c8858405ec7400c00000000c700000000005bc3",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?vt_GenericList@@3PAXA",
+   "sym_key": "vt_GenericList"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?vt_List_INIClass_INISection@@3PAXA",
+   "sym_key": "vt_List_INIClass_INISection"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?CCINIClass_Vtable@@3PAXA",
+   "sym_key": "CCINIClass_Vtable"
+  }
+ ]
+}
