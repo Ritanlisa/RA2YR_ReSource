@@ -215315,7 +215315,7 @@
   "this_as_id": false
  },
  "0x7dd334": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__kbhit",
@@ -215349,7 +215349,7 @@
   "this_as_id": false
  },
  "0x7dd4f4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__cwprintf",
@@ -215360,7 +215360,7 @@
   "this_as_id": false
  },
  "0x7dd505": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -215479,7 +215479,7 @@
   "this_as_id": false
  },
  "0x7ddf78": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__filelength",
@@ -215556,7 +215556,7 @@
   "this_as_id": false
  },
  "0x7de1c2": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ReadConsoleInputA",
@@ -215589,7 +215589,7 @@
   "this_as_id": false
  },
  "0x7de1d4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "PeekConsoleInputA",
@@ -215694,7 +215694,7 @@
   "status": "NG"
  },
  "0x7df280": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF280",
@@ -215705,7 +215705,7 @@
   "this_as_id": false
  },
  "0x7df3c2": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF3C2",
@@ -215716,7 +215716,7 @@
   "this_as_id": false
  },
  "0x7df500": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF500",
@@ -215727,7 +215727,7 @@
   "this_as_id": false
  },
  "0x7df640": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "Object_Calc_7DF640",
@@ -215738,7 +215738,7 @@
   "this_as_id": false
  },
  "0x7df7c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DF7C0",
@@ -215749,7 +215749,7 @@
   "this_as_id": false
  },
  "0x7df8c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DF8C0",
@@ -215771,7 +215771,7 @@
   "this_as_id": false
  },
  "0x7df9c0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -215783,7 +215783,7 @@
   "this_as_id": false
  },
  "0x7dfae0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -215795,7 +215795,7 @@
   "this_as_id": false
  },
  "0x7dfc00": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -215807,7 +215807,7 @@
   "this_as_id": false
  },
  "0x7dfd00": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DFD00",
