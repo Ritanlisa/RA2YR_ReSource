@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x585930 ObjectClass::FloodFillConnectedCells -> ObjectClass
+[conv] 0x586360 Cell::IsPassable -> Cell
+[conv] 0x586bf0 MarkCliffEdgePassability -> _addr_58
+[conv] 0x587180 CellClass::SetTerrainType -> CellClass
+[conv] 0x587410 CellClass::CheckConnectivity -> CellClass
+[conv] 0x587c50 ObjectClass::DiagnoseMapCheck -> ObjectClass
+[conv] 0x588750 ScanBuildingPlacementCells -> _addr_58
+[conv] 0x589060 VectorClass::InitCellVe_vt00 -> VectorClass
+[conv] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x589680 Init -> _addr_58
+[conv] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x58abd0 Radar::CopyDataArray -> Radar
+[conv] 0x58b820 ObjectClass::ComputeMapCameraBounds -> ObjectClass
+[conv] 0x58bdc0 TileData::Constructor -> TileData
+[conv] 0x58bf70 RandomMap::TerrainTileDataConstructor -> RandomMap
+[conv] 0x58c320 ObjectClass::sub_58C320 -> ObjectClass
+[conv] 0x58c3b0 ObjectClass::sub_58C3B0 -> ObjectClass
+[conv] 0x58c4a0 ObjectClass::sub_58C4A0 -> ObjectClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Cell                     rc=0
+[era] _addr_58                 rc=2
+[era] CellClass                rc=2
+[era] VectorClass              rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_UZoneConnectionClass rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=2
+[era] Radar                    rc=2
+[era] TileData                 rc=2
+[era] RandomMap                rc=2
+=== diffasm byte-compare ===
+[diff] 0x586360   MISMATCH         Cell::IsPassable
+[ledger] 0x585930 ObjectClass::FloodFillConnectedCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x586360 Cell::IsPassable -> NG (attempt 15)
+[ledger] 0x586bf0 MarkCliffEdgePassability -> COMPILE_FAIL (attempt 4)
+[ledger] 0x587180 CellClass::SetTerrainType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x587410 CellClass::CheckConnectivity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x587c50 ObjectClass::DiagnoseMapCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x588750 ScanBuildingPlacementCells -> COMPILE_FAIL (attempt 7)
+[ledger] 0x589060 VectorClass::InitCellVe_vt00 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x589680 Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> COMPILE_FAIL (attempt 7)
+[ledger] 0x58abd0 Radar::CopyDataArray -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58b820 ObjectClass::ComputeMapCameraBounds -> COMPILE_FAIL (attempt 5)
+[ledger] 0x58bdc0 TileData::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x58bf70 RandomMap::TerrainTileDataConstructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x58c320 ObjectClass::sub_58C320 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58c3b0 ObjectClass::sub_58C3B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58c4a0 ObjectClass::sub_58C4A0 -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p62\batch_report.json

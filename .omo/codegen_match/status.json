@@ -91552,7 +91552,7 @@
   "this_as_id": false
  },
  "0x585930": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91609,15 +91609,15 @@
   "this_as_id": false
  },
  "0x586360": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "Cell::IsPassable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Cell::IsPassable",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5864a0": {
@@ -91706,7 +91706,7 @@
   "status": "NG"
  },
  "0x586bf0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "MarkCliffEdgePassability",
@@ -91741,7 +91741,7 @@
   "this_as_id": false
  },
  "0x587180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91753,7 +91753,7 @@
   "this_as_id": false
  },
  "0x587410": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -91765,7 +91765,7 @@
   "this_as_id": false
  },
  "0x587c50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -91800,7 +91800,7 @@
   "this_as_id": false
  },
  "0x588750": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ScanBuildingPlacementCells",
@@ -92112,7 +92112,7 @@
   "this_as_id": false
  },
  "0x589060": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92148,7 +92148,7 @@
   "this_as_id": false
  },
  "0x589190": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -92172,7 +92172,7 @@
   "this_as_id": false
  },
  "0x5892d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92239,7 +92239,7 @@
   "this_as_id": false
  },
  "0x589550": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92251,7 +92251,7 @@
   "this_as_id": false
  },
  "0x589680": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "Init",
@@ -92286,7 +92286,7 @@
   "this_as_id": false
  },
  "0x589740": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -92813,7 +92813,7 @@
   "this_as_id": false
  },
  "0x58abd0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93482,7 +93482,7 @@
   "this_as_id": false
  },
  "0x58b820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93550,7 +93550,7 @@
   "this_as_id": false
  },
  "0x58bdc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93586,7 +93586,7 @@
   "this_as_id": false
  },
  "0x58bf70": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -93645,7 +93645,7 @@
   "this_as_id": false
  },
  "0x58c320": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93657,7 +93657,7 @@
   "this_as_id": false
  },
  "0x58c3b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -93669,7 +93669,7 @@
   "this_as_id": false
  },
  "0x58c4a0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
