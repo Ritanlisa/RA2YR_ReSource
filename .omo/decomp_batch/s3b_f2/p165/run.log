@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p165\part_00
+=== convert (20 addrs) ===
+[conv] 0x7da9a2 _strncnt_0 -> _addr_7D
+[conv] 0x7da9cd ___crtsetenv -> _addr_7D
+[conv] 0x7dab54 _findenv -> _addr_7D
+[conv] 0x7dabac ObjectClass::_copy_environ -> ObjectClass
+[conv] 0x7dac6c __chsize_lk -> _addr_7D
+[conv] 0x7dae6e CRTisctype -> _addr_7D
+[conv] 0x7dae9f ___crtMessageBoxA -> _addr_7D
+[conv] 0x7db207 ObjectClass::__I10_OUTPUT -> ObjectClass
+[conv] 0x7db49a __handle_qnan1 -> _addr_7D
+[conv] 0x7db4ee __handle_qnan2 -> _addr_7D
+[conv] 0x7db54e __except1 -> _addr_7D
+[conv] 0x7db93e ObjectClass::__handle_exc -> ObjectClass
+[conv] 0x7dbbdd __set_errno -> _addr_7D
+[conv] 0x7dbc68 __clrfp -> _addr_7D
+[conv] 0x7dbcf0 _ldexp -> _addr_7D
+[conv] 0x7dbed6 ObjectClass::___ld12mul -> ObjectClass
+[conv] 0x7dc1c2 terminate_YAXXZ -> _addr_7D
+[conv] 0x7dc223 unexpected_YAXXZ -> _addr_7D
+[conv] 0x7dc291 ObjectClass::__filwbuf -> ObjectClass
+[conv] 0x7dc468 ObjectClass::__setmode_lk -> ObjectClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7da9a2 _strncnt_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7da9cd ___crtsetenv -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dab54 _findenv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dabac ObjectClass::_copy_environ -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7dac6c __chsize_lk -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dae6e CRTisctype -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dae9f ___crtMessageBoxA -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7db207 ObjectClass::__I10_OUTPUT -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7db49a __handle_qnan1 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7db4ee __handle_qnan2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7db54e __except1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7db93e ObjectClass::__handle_exc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dbbdd __set_errno -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dbc68 __clrfp -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dbcf0 _ldexp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dbed6 ObjectClass::___ld12mul -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc1c2 terminate_YAXXZ -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dc223 unexpected_YAXXZ -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dc291 ObjectClass::__filwbuf -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dc468 ObjectClass::__setmode_lk -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p165\batch_report.json
