@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA5A0",
+ "name": "FactoryClass::StartProduction_2",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA5A0",
+ "bytes_hex": "568bf1578b465085c074648b465885c0755d8b463885c074078a467084c0744f8b46448b388b465085c07e1e8d48ff33c085c9894e507e128b4e44408b1481895481fc8b4e503bc17cee8b078bcfff504085c07c1a8a8fce0c00008b176a0151508bcfff522c8b4e6c50e841fd02005f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

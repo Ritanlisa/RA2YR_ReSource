@@ -1,0 +1,87 @@
+{
+ "symbol": "?WalkPathfindingLine@ObjectClass@@QAEPAHPAHH0HH@Z",
+ "sym_key": "ObjectClass::WalkPathfindingLine",
+ "size": 826,
+ "link_base": 0,
+ "bytes_hex": "83ec208b44242c53558b54242456578bf9520fbf48028b44242c8b54242c894c243c8b4c2430505152e8000000008b44243c8b4c24385051ddd8e8000000008b54245083c41833c28b4c244025ff000000894c243833d08b442444c1ea0c42894c2414d1ea80f2fcfeca80e2073bc8885424130f8d970200008b6c24388b5c241c8b44243c85c98b308bc67e5d83e2078b14950000000089542420c1fa1089542440eb048b542440c1f81003c2498bd08b44242433d081e2ff00000033c28b54242003d633d681e2ff00000033f28bd033d681e2ff00000033c285c98944242475c28b4c24388a542413f6c201c7442440000000000f84a900000003c985c90f8ef201000083c2038bda83e307895c24208b178b0c9d00000000895424188b5424288d1c3133da81e3ff000000c1f910c1f81033d303c833ca8d44243881e1ff0000005033d1b9000000008954242c8954243ce8000000008b5c24208b4c24186a016a006aff535057ff91ac01000085c00f84af0100008b4c24148b442440408d1409894424403bc20f8d5e0100008b4424388bce33c881e1ff00000033f1e96dffffff85c90f8ea100000083c2028bca83e107894c2418eb048b4c24188b178b0c8d00000000895424208d143133d381e2ff000000c1f910c1f81033da03c833cb8d44243881e1ff0000005033d9b900000000895c2420895c243ce8000000008b4c24188b5424206a016a006aff515057ff92ac01000085c00f84060100008b4424408b4c2414408bd6894424408b44243833d081e2ff00000033f28bd1395424400f8c71ffffff8a54241385c9c7442440000000000f8e9e00000083ea048bca83e107894c24188b178b0c8d00000000895424208d143133d581e2ff000000c1f910c1f81033ea03c833cd8d44243881e1ff0000005033e9b900000000896c243ce8000000008b4c24188b5424206a016a006aff515057ff92ac01000085c074638b4424408b4c2414403bc1894424407d1d8b4424388bce33c881e1ff00000033f18b4c2418e97cffffff8b5c241c8a542413eb048b4c24388b442444413bc8894c2438894c24140f8c71fdffff8b4424348b0d000000005f5e5d89085b83c420c214008b4424348b5424385f5e5d89105b83c420c21400",
+ "relocs": [
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?Math__CalcAngle@@YANNN@Z",
+   "sym_key": "Math__CalcAngle"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 451,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 496,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 509,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 622,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 667,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 676,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 790,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3B48@@3IA",
+   "sym_key": "DataGlobal_8B3B48"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?StartProduction_2@FactoryClass@@QAEDXZ",
+ "sym_key": "FactoryClass::StartProduction_2",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b465085c08944240c0f84810000008b4e5885c9894c240c75768b4e3885c974078a4e7084c974718b4e4485c08b197e2133c94885c0894650761733d28b464483c21003c2418b388978f08b46503bc872eb8b0b53ff51408bf885ff897c240c7c2e8a93ce0c00008b035388542410ff502c8b4c240c6a01518b4e6c5750e80000000033c725ff00000033f8897c240c8a44240c5f5e5b59c35f5e8ac15b59c3",
+ "relocs": [
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?StartSidebarProduction@Sidebar@@QAEHPAXHDD@Z",
+   "sym_key": "Sidebar::StartSidebarProduction"
+  }
+ ]
+}

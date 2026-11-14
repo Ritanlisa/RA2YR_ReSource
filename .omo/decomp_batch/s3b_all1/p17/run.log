@@ -1,0 +1,127 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p17\part_00
+=== convert (40 addrs) ===
+[conv] 0x4c66c0 EventClass::AddEvent -> EventClass
+[conv] 0x4c6720 EventClass::Add2 -> EventClass
+[conv] 0x4c6780 ScenarioClass::SetEvent -> ScenarioClass
+[conv] 0x4c6970 EventClass::AddEventEx -> EventClass
+[conv] 0x4c6b60 SidebarClass::SetFlashEntry -> SidebarClass
+[conv] 0x4c6cb0 EventClass::ProcessEvent -> EventClass
+[conv] 0x4c85e0 ExceptionHandler::GenerateReport -> ExceptionHandler
+[conv] 0x4c91c0 FrameSnapshot::Init -> FrameSnapshot
+[conv] 0x4c95d0 ObjectClass::sub_4C95D0 -> ObjectClass
+[conv] 0x4c98b0 TeamTypeClass::Construct -> TeamTypeClass
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+[conv] 0x4c9c70 FactoryClass::DemandProduction -> FactoryClass
+[conv] 0x4c9ff0 BuildingClass::AbandonProduction -> BuildingClass
+[conv] 0x4ca130 ObjectClass::IsCliffWall -> ObjectClass
+[conv] 0x4ca430 FactoryClass::Stat -> FactoryClass
+[conv] 0x4ca5a0 FactoryClass::StartProduction_2 -> FactoryClass
+[conv] 0x4ca670 FactoryClass::CountType -> FactoryClass
+[conv] 0x4caba0 DynamicVector::resetScriptState -> DynamicVector
+[conv] 0x4caf20 VoxelAnimClass::ProcessFrame -> VoxelAnimClass
+[conv] 0x4cb4c0 sub_4CB4C0 -> _addr_4C
+[conv] 0x4cb920 File::Dispatch -> File
+[conv] 0x4cbba0 FootClass::FindPathWithRetry -> FootClass
+[conv] 0x4cbc40 ObjectClass::WalkPathfindingLine -> ObjectClass
+[conv] 0x4cc360 TrajectoryHelper::GetObstacle -> TrajectoryHelper
+[conv] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> FlyLocomotionClass
+[conv] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> JumpjetLocomotionClass
+[conv] 0x4ccae0 JumpjetLocomotionClass::GetMovementCoordinate -> JumpjetLocomotionClass
+[conv] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> FlyLocomotionClass
+[conv] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> FlyLocomotionClass
+[conv] 0x4cd2a0 FootClass::ProcessDeployMission -> FootClass
+[conv] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> JumpjetLocomotionClass
+[conv] 0x4cd600 DamageArea::ApplyScatter -> DamageArea
+[conv] 0x4ce4b0 ObjectClass::ProcessDataHelper -> ObjectClass
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4ce680 FootClass::UpdateDeployMovement -> FootClass
+[conv] 0x4ce840 DropPod::ProcessLanding -> DropPod
+[conv] 0x4cefb0 LandFootClassAtPosition -> _addr_4C
+[conv] 0x4cf610 JumpjetLocomotionClass::ComputeRotationMatrix -> JumpjetLocomotionClass
+[conv] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> FlyLocomotionClass
+[conv] 0x4cf950 TechnoClass::GetData -> TechnoClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EventClass               rc=2
+[era] ScenarioClass            rc=2
+[era] SidebarClass             rc=2
+[era] ExceptionHandler         rc=2
+[era] FrameSnapshot            rc=2
+[era] ObjectClass              rc=2
+[era] TeamTypeClass            rc=2
+[era] FactoryClass             rc=2
+[era] BuildingClass            rc=2
+[era] DynamicVector            rc=2
+[era] VoxelAnimClass           rc=2
+[era] _addr_4C                 rc=2
+[era] File                     rc=2
+[era] FootClass                rc=2
+[era] TrajectoryHelper         rc=2
+[era] FlyLocomotionClass       rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] DamageArea               rc=2
+[era] DropPod                  rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x4cbc40   MISMATCH         ObjectClass::WalkPathfindingLine
+[diff] 0x4ca5a0   MISMATCH         FactoryClass::StartProduction_2
+[diff] 0x4ca670   MISMATCH         FactoryClass::CountType
+[ledger] 0x4c66c0 EventClass::AddEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c6720 EventClass::Add2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c6780 ScenarioClass::SetEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c6970 EventClass::AddEventEx -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c6b60 SidebarClass::SetFlashEntry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c6cb0 EventClass::ProcessEvent -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c85e0 ExceptionHandler::GenerateReport -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c91c0 FrameSnapshot::Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c95d0 ObjectClass::sub_4C95D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c98b0 TeamTypeClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4c9c70 FactoryClass::DemandProduction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c9ff0 BuildingClass::AbandonProduction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ca130 ObjectClass::IsCliffWall -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ca430 FactoryClass::Stat -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ca5a0 FactoryClass::StartProduction_2 -> NG (attempt 4)
+[ledger] 0x4ca670 FactoryClass::CountType -> NG (attempt 3)
+[ledger] 0x4caba0 DynamicVector::resetScriptState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4caf20 VoxelAnimClass::ProcessFrame -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4cb4c0 sub_4CB4C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cb920 File::Dispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cbba0 FootClass::FindPathWithRetry -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4cbc40 ObjectClass::WalkPathfindingLine -> NG (attempt 6)
+[ledger] 0x4cc360 TrajectoryHelper::GetObstacle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ccae0 JumpjetLocomotionClass::GetMovementCoordinate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cd2a0 FootClass::ProcessDeployMission -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4cd600 DamageArea::ApplyScatter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ce4b0 ObjectClass::ProcessDataHelper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ce680 FootClass::UpdateDeployMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ce840 DropPod::ProcessLanding -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4cefb0 LandFootClassAtPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cf610 JumpjetLocomotionClass::ComputeRotationMatrix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cf830 FlyLocomotionClass::CalculateBobOffset -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cf950 TechnoClass::GetData -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 37,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 21,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p17\batch_report.json
