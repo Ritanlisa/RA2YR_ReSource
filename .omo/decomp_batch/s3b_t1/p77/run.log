@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p77\part_00
+=== convert (20 addrs) ===
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x771710 TechnoClass::sub_771710 -> TechnoClass
+[conv] 0x771890 sub_771890 -> _addr_77
+[conv] 0x771a30 Anim_Voices_WorldDominationTour::QueryInterface -> Anim_Voices_WorldDominationTour
+[conv] 0x771c70 WeaponTypeClass::Constructor -> WeaponTypeClass
+[conv] 0x771f50 WeaponTypeClass::Destructor -> WeaponTypeClass
+[conv] 0x772080 WeaponTypeClass::ReadINI -> WeaponTypeClass
+[conv] 0x772cd0 WeaponTypeClass::SaveLoad_Prefix -> WeaponTypeClass
+[conv] 0x7730f0 WeaponTypeClass::ddtor -> WeaponTypeClass
+[conv] 0x773600 WebBrowser::LoadURLFromRegistry -> WebBrowser
+[conv] 0x773bc0 WebBrowser::Clone -> WebBrowser
+[conv] 0x773d40 WebBrowser::GoBack -> WebBrowser
+[conv] 0x773e90 WebBrowser::ShowDialog -> WebBrowser
+[conv] 0x7740a0 WebBrowser::GoForward -> WebBrowser
+[conv] 0x774310 sub_774310 -> _addr_77
+[conv] 0x774bc0 AsyncIO::WaitCompletion -> AsyncIO
+[conv] 0x774c70 WinModemClass::WriteSerial -> WinModemClass
+[conv] 0x775110 WinModemClass::Dial -> WinModemClass
+[conv] 0x7754d0 WinModemClass::LogCommErrors -> WinModemClass
+[conv] 0x775700 CreateDialogIndirect -> _addr_77
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScoreScreen              rc=2
+[era] TechnoClass              rc=0
+[era] _addr_77                 rc=2
+[era] Anim_Voices_WorldDominationTour rc=2
+[era] WeaponTypeClass          rc=2
+[era] WebBrowser               rc=2
+[era] AsyncIO                  rc=2
+[era] WinModemClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x771710   MISMATCH         TechnoClass::sub_771710
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 11)
+[ledger] 0x771710 TechnoClass::sub_771710 -> NG (attempt 5)
+[ledger] 0x771890 sub_771890 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x771a30 Anim_Voices_WorldDominationTour::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x771c70 WeaponTypeClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x771f50 WeaponTypeClass::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x772080 WeaponTypeClass::ReadINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x772cd0 WeaponTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7730f0 WeaponTypeClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x773600 WebBrowser::LoadURLFromRegistry -> COMPILE_FAIL (attempt 7)
+[ledger] 0x773bc0 WebBrowser::Clone -> COMPILE_FAIL (attempt 5)
+[ledger] 0x773d40 WebBrowser::GoBack -> COMPILE_FAIL (attempt 2)
+[ledger] 0x773e90 WebBrowser::ShowDialog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7740a0 WebBrowser::GoForward -> COMPILE_FAIL (attempt 5)
+[ledger] 0x774310 sub_774310 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x774bc0 AsyncIO::WaitCompletion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x774c70 WinModemClass::WriteSerial -> COMPILE_FAIL (attempt 3)
+[ledger] 0x775110 WinModemClass::Dial -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7754d0 WinModemClass::LogCommErrors -> COMPILE_FAIL (attempt 6)
+[ledger] 0x775700 CreateDialogIndirect -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p77\batch_report.json

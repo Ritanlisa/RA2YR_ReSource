@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_771710@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::sub_771710",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "53568bf18b86d00300008b8ebc0300003bc18d58ff7e44578b86d00300003bd87d2b488bfb3bd88986d0030000731e8b86c40300008d4cb804518d0cb8e8000000008b86d0030000473bf872e28b8ebc0300008bc34b3bc17fbe5f8b86bc03000085c075128b967c03000080e20183ca0189967c0300005e5bc3",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Reassign@String@@QAEPAPADPAX@Z",
+   "sym_key": "String::Reassign"
+  }
+ ]
+}
