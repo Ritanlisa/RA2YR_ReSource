@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p148\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ad350 CChatEventSink::DeleteAndZero -> CChatEventSink
+[conv] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> __CComObject_VCDownloadEventSink___ATL
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> ObjectClass
+[conv] 0x7af000 DynamicVector::EnsureCapacity -> DynamicVector
+[conv] 0x7af2a0 StaticString::Factory -> StaticString
+[conv] 0x7af6c0 WorldDominationFactionDlgProc -> _addr_7A
+[conv] 0x7af970 ObjectClass::sub_7AF970 -> ObjectClass
+[conv] 0x7afb90 StartWDTCampaign -> _addr_7A
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x7b02a0 ComStreamClass::getStreamSize -> ComStreamClass
+[conv] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> FactionSelectDialogControl_WorldDominationTour
+[conv] 0x7b05c0 CompressScreenshot -> _addr_7B
+[conv] 0x7b0dd0 IPXInterfaceClass::initSocket -> IPXInterfaceClass
+[conv] 0x7b10c0 IPXInterfaceClass::Bind -> IPXInterfaceClass
+[conv] 0x7b13d0 IPXInterfaceClass::SendPacket -> IPXInterfaceClass
+[conv] 0x7b1bc0 WinsockInterfaceClass::Receive -> WinsockInterfaceClass
+[conv] 0x7b1de0 WinsockInterface::Init -> WinsockInterface
+[conv] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> WinsockInterfaceClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CChatEventSink           rc=2
+[era] __CComObject_VCDownloadEventSink___ATL rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] ObjectClass              rc=2
+[era] DynamicVector            rc=2
+[era] StaticString             rc=2
+[era] _addr_7A                 rc=2
+[era] ComStreamClass           rc=2
+[era] FactionSelectDialogControl_WorldDominationTour rc=2
+[era] _addr_7B                 rc=2
+[era] IPXInterfaceClass        rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] WinsockInterface         rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7ad350 CChatEventSink::DeleteAndZero -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7ae830 ObjectClass::RemoveWOLPlayerLogin_Remove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7af000 DynamicVector::EnsureCapacity -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7af2a0 StaticString::Factory -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7af6c0 WorldDominationFactionDlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7af970 ObjectClass::sub_7AF970 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7afb90 StartWDTCampaign -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 13)
+[ledger] 0x7b02a0 ComStreamClass::getStreamSize -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b0490 FactionSelectDialogControl@WorldDominationTour::Team_Start_7B0490 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b05c0 CompressScreenshot -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7b0dd0 IPXInterfaceClass::initSocket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b10c0 IPXInterfaceClass::Bind -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7b13d0 IPXInterfaceClass::SendPacket -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b1bc0 WinsockInterfaceClass::Receive -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b1de0 WinsockInterface::Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b2630 WinsockInterfaceClass::ConfigureBuffers -> COMPILE_FAIL (attempt 11)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p148\batch_report.json
