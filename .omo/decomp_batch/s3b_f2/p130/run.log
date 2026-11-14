@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p130\part_00
+=== convert (20 addrs) ===
+[conv] 0x73cec0 TechnoClass::Draw -> TechnoClass
+[conv] 0x73d630 UnitClass::Mission_Harvest -> UnitClass
+[conv] 0x73e5e0 VoxelTypeClass::ReadINI -> VoxelTypeClass
+[conv] 0x73efc0 UnitClass::DeployIntoBuilding -> UnitClass
+[conv] 0x73f0a0 UnitClass::EvaluateTarget -> UnitClass
+[conv] 0x7404b0 TechnoClass::GetInfantryCursorAction -> TechnoClass
+[conv] 0x740810 UnitClass::ProcessAIDecision -> UnitClass
+[conv] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> TechnoClass
+[conv] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> TechnoClass
+[conv] 0x741970 UnitClass::AssignDestination_SyncLog -> UnitClass
+[conv] 0x743a50 UnitClass::Scatter -> UnitClass
+[conv] 0x744100 TechnoClass::SelectAITarget -> TechnoClass
+[conv] 0x744270 TechnoClass::CanBeTargeted -> TechnoClass
+[conv] 0x7446e0 UnitClass::HandleTargetDestroyed -> UnitClass
+[conv] 0x7447b0 BuildingClass::FindPlacementCells -> BuildingClass
+[conv] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> TechnoClass
+[conv] 0x7463a0 TechnoClass::TransferSlavedUnit -> TechnoClass
+[conv] 0x746750 TechnoClass::IsGuardingTarget -> TechnoClass
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> UnitTypeClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] UnitClass                rc=2
+[era] VoxelTypeClass           rc=2
+[era] BuildingClass            rc=2
+[era] UnitTypeClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x73cec0 TechnoClass::Draw -> COMPILE_FAIL (attempt 7)
+[ledger] 0x73d630 UnitClass::Mission_Harvest -> COMPILE_FAIL (attempt 4)
+[ledger] 0x73e5e0 VoxelTypeClass::ReadINI -> COMPILE_FAIL (attempt 10)
+[ledger] 0x73efc0 UnitClass::DeployIntoBuilding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x73f0a0 UnitClass::EvaluateTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7404b0 TechnoClass::GetInfantryCursorAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x740810 UnitClass::ProcessAIDecision -> COMPILE_FAIL (attempt 8)
+[ledger] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> COMPILE_FAIL (attempt 5)
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 9)
+[ledger] 0x743a50 UnitClass::Scatter -> COMPILE_FAIL (attempt 4)
+[ledger] 0x744100 TechnoClass::SelectAITarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x744270 TechnoClass::CanBeTargeted -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7446e0 UnitClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7447b0 BuildingClass::FindPlacementCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7463a0 TechnoClass::TransferSlavedUnit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x746750 TechnoClass::IsGuardingTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p130\batch_report.json
