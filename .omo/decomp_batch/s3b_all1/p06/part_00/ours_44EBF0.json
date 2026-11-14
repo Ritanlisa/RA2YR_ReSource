@@ -1,0 +1,111 @@
+{
+ "symbol": "?Disappear_PrismForward@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Disappear_PrismForward",
+ "size": 886,
+ "link_base": 0,
+ "bytes_hex": "8a4424fb83ec0884c05356578bf10f84110300008b86280500005585c0bd01000000742450e8000000008b862805000083c40485c074078b085550ff5120c78628050000000000008b8e2002000085c90f84b50200008b86240500008b90b80e000083fa070f851f0200008b89bc53000085c9746ee8000000008a9e840000008bf885ff89ae84000000744e8b1757ff92840000008b96200200008b08526a006a005550ff919400000085c0752c8b0757ff90840000008b0850ff51408b96240500008b8e200200006a006a00508b82b80e000050e8000000000fbecb898e840000008b96200200008b8ac053000085c9746ee8000000008a9e840000008bf885ff89ae84000000744e8b0757ff90840000008b96200200008b08526a006a005550ff919400000085c0752c8b0757ff90840000008b0850ff51408b96240500008b8e200200006a006a00508b82b80e000050e8000000000fbecb898e840000008b96200200008b8ac453000085c9746ee8000000008a9e840000008bf885ff89ae84000000744e8b0757ff90840000008b96200200008b08526a006a005550ff919400000085c0752c8b0757ff90840000008b0850ff51408b96240500008b8e200200006a006a00508b82b80e000050e8000000000fbecb898e840000008b96200200008b8ac853000085c9746ee8000000008a9e840000008bf885ff89ae84000000744e8b0757ff90840000008b96200200008b08526a006a005550ff919400000085c0752c8b0757ff90840000008b0850ff51408b96240500008b8e200200006a006a00508b82b80e000050e8000000000fbecb898e840000008b96200200008b8acc53000085c90f849a000000e8000000008a9e840000008bf885ff89ae84000000747aeb2c8a80ce0c00006a005052e80000000085c0746e8bc8e8000000008a9e840000008bf885ff89ae84000000744c8b5424148b0f5257ff91840000008b086a006a005550ff919400000085c0752c8b1757ff92840000008b0850ff51408b96240500008b8e200200006a006a00508b82b80e000050e8000000000fbecb898e840000008b166a0356ff92800200008bcee8000000005d5f5e5b83c408c38b86ec00000033db85c07e375356e8000000008bf883c40885ff741c8b8e2002000057e80000000084c0750c8b06576a0356ff90780200008b86ec000000433bd87cc98bcee8000000005f5e5b83c408c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?BuildingClass__AbandonProduction@@YAHH@Z",
+   "sym_key": "BuildingClass__AbandonProduction"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+   "sym_key": "HouseClass::CancelProduction"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+   "sym_key": "HouseClass::CancelProduction"
+  },
+  {
+   "off": 370,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 466,
+   "type": "REL32",
+   "sym": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+   "sym_key": "HouseClass::CancelProduction"
+  },
+  {
+   "off": 496,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 592,
+   "type": "REL32",
+   "sym": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+   "sym_key": "HouseClass::CancelProduction"
+  },
+  {
+   "off": 626,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 661,
+   "type": "REL32",
+   "sym": "?GetBuildLimit@HouseClass@@QAEHHDH@Z",
+   "sym_key": "HouseClass::GetBuildLimit"
+  },
+  {
+   "off": 672,
+   "type": "REL32",
+   "sym": "?GetType@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::GetType"
+  },
+  {
+   "off": 766,
+   "type": "REL32",
+   "sym": "?CancelProduction@HouseClass@@QAEHPAXHDD@Z",
+   "sym_key": "HouseClass::CancelProduction"
+  },
+  {
+   "off": 793,
+   "type": "REL32",
+   "sym": "?Destroy2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Destroy2"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?Team__GetMember@@YAHPAXH@Z",
+   "sym_key": "Team__GetMember"
+  },
+  {
+   "off": 841,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 875,
+   "type": "REL32",
+   "sym": "?Destroy2@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Destroy2"
+  }
+ ]
+}
