@@ -1,0 +1,93 @@
+{
+ "symbol": "?BulletClass_466380@BulletClass@@QAEHXZ",
+ "sym_key": "BulletClass::BulletClass_466380",
+ "size": 314,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e80000000033ff8d8ec400000089beac00000089beb000000089beb4000000e800000000b80100000089be640100008986f40100008986f8010000b8ffff000089be000100006689864c0100006689864e0100008d460489be080100005089be0c01000089be10010000c78614010000ffffffff89be1801000089be2401000089be2801000089be8001000089be8401000089be3001000089be5401000089be58010000c706000000008938897e08c7460c00000000e80000000089be3401000089be3801000089be3c01000089be4001000089be4401000089be48010000a1640900008b0d840900003bc87c2b393d7809000075043bc775378b0d940900003bcf7e2d03c8a14409000057516844090000ff500884c074188b0d840900008bc141890d840900008b0d540900008934818b065f5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?ctor@ObjectClass@@QAEPAIXZ",
+   "sym_key": "ObjectClass::ctor"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ResetDetonationTimer@BulletClass@@QAEPAV1@XZ",
+   "sym_key": "BulletClass::ResetDetonationTimer"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?vt_BulletClass_4@@3PAXA",
+   "sym_key": "vt_BulletClass_4"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?vt_BulletClass_4@@3PAXA",
+   "sym_key": "vt_BulletClass_4"
+  },
+  {
+   "off": 187,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHPAX@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 228,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 234,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 287,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

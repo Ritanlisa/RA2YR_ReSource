@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> BuildingTypeClass
+[conv] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> BuildingTypeClass
+[conv] 0x465960 AbstractClass::LoadTheaterSHP -> AbstractClass
+[conv] 0x466380 BulletClass::BulletClass_466380 -> BulletClass
+[conv] 0x4666e0 BulletClass::ProcessNukeExplosion -> BulletClass
+[conv] 0x468000 BulletClass::GetAnimFrame -> BulletClass
+[conv] 0x468090 BulletClass::SetupVoxelTransform -> BulletClass
+[conv] 0x4684e0 BulletClass::ProcessImpact -> BulletClass
+[conv] 0x468670 BulletClass::ProcessObstacle -> BulletClass
+[conv] 0x468bb0 BulletClass::CheckBulletCollision -> BulletClass
+[conv] 0x4690b0 Warhead::ApplyDamage -> Warhead
+[conv] 0x46a310 Warhead::ApplyPostDamageEffects -> Warhead
+[conv] 0x46aff0 BulletClass::ValidateTarget -> BulletClass
+[conv] 0x46b050 CreateUIObjectCOM -> _addr_46
+[conv] 0x46b0c0 BulletClass::RenderVoxelBullet -> BulletClass
+[conv] 0x46b310 SuperWeapon::CreateNukePayload -> SuperWeapon
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x46bbc0 BulletTypeClass::Construct -> BulletTypeClass
+[conv] 0x46bee0 BulletTypeClass::LoadFromINI -> BulletTypeClass
+[conv] 0x46ccd0 CampaignClass::GetMapData -> CampaignClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingTypeClass        rc=2
+[era] AbstractClass            rc=2
+[era] BulletClass              rc=2
+[era] Warhead                  rc=2
+[era] _addr_46                 rc=2
+[era] SuperWeapon              rc=2
+[era] BulletTypeClass          rc=2
+[era] CampaignClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x466380   MISMATCH         BulletClass::BulletClass_466380
+[ledger] 0x465010 BuildingTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x465300 BuildingTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x465960 AbstractClass::LoadTheaterSHP -> COMPILE_FAIL (attempt 7)
+[ledger] 0x466380 BulletClass::BulletClass_466380 -> NG (attempt 5)
+[ledger] 0x4666e0 BulletClass::ProcessNukeExplosion -> COMPILE_FAIL (attempt 5)
+[ledger] 0x468000 BulletClass::GetAnimFrame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x468090 BulletClass::SetupVoxelTransform -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4684e0 BulletClass::ProcessImpact -> COMPILE_FAIL (attempt 5)
+[ledger] 0x468670 BulletClass::ProcessObstacle -> COMPILE_FAIL (attempt 5)
+[ledger] 0x468bb0 BulletClass::CheckBulletCollision -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4690b0 Warhead::ApplyDamage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46a310 Warhead::ApplyPostDamageEffects -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46aff0 BulletClass::ValidateTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46b050 CreateUIObjectCOM -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46b0c0 BulletClass::RenderVoxelBullet -> COMPILE_FAIL (attempt 7)
+[ledger] 0x46b310 SuperWeapon::CreateNukePayload -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x46bbc0 BulletTypeClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46bee0 BulletTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46ccd0 CampaignClass::GetMapData -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p16\batch_report.json

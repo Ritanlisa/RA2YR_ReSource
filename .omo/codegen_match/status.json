@@ -23313,7 +23313,7 @@
   "this_as_id": false
  },
  "0x465010": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23325,7 +23325,7 @@
   "this_as_id": false
  },
  "0x465300": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23409,7 +23409,7 @@
   "this_as_id": false
  },
  "0x465960": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23799,15 +23799,15 @@
   "this_as_id": false
  },
  "0x466380": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "BulletClass::BulletClass_466380",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "BulletClass::BulletClass",
-  "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4664c0": {
@@ -23865,7 +23865,7 @@
   "this_as_id": false
  },
  "0x4666e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23877,7 +23877,7 @@
   "this_as_id": false
  },
  "0x468000": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23889,7 +23889,7 @@
   "this_as_id": false
  },
  "0x468090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23913,7 +23913,7 @@
   "this_as_id": false
  },
  "0x4684e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23925,7 +23925,7 @@
   "this_as_id": false
  },
  "0x468670": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23949,7 +23949,7 @@
   "this_as_id": false
  },
  "0x468bb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23973,7 +23973,7 @@
   "this_as_id": false
  },
  "0x4690b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23985,7 +23985,7 @@
   "this_as_id": false
  },
  "0x46a310": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24028,7 +24028,7 @@
   "this_as_id": false
  },
  "0x46aff0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24040,7 +24040,7 @@
   "this_as_id": false
  },
  "0x46b050": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "CreateUIObjectCOM",
@@ -24051,7 +24051,7 @@
   "this_as_id": false
  },
  "0x46b0c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24094,7 +24094,7 @@
   "this_as_id": false
  },
  "0x46b310": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24300,7 +24300,7 @@
   "status": "PENDING"
  },
  "0x46b960": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -24476,7 +24476,7 @@
   "this_as_id": false
  },
  "0x46bbc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24488,7 +24488,7 @@
   "this_as_id": false
  },
  "0x46bee0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24798,14 +24798,14 @@
   "this_as_id": false
  },
  "0x46ccd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CampaignClass::GetMapData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CampaignClass::GetMapData",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
