@@ -132,3 +132,4 @@
 {"part": 131, "n": 20, "seconds": 146.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 132, "n": 20, "seconds": 128.5, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MATCH": 1}}
 {"part": 133, "n": 20, "seconds": 72.1, "ok": true, "verdicts": {"MATCH": 1, "COMPILE_FAIL": 19}}
+{"part": 134, "n": 20, "seconds": 29.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

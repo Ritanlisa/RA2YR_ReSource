@@ -181481,7 +181481,7 @@
   "this_as_id": false
  },
  "0x74fdc0": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "first_diff": null,
   "name": "GetModuleVersion",
@@ -181547,7 +181547,7 @@
   "status": "NG"
  },
  "0x74ffc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -181875,7 +181875,7 @@
   "this_as_id": false
  },
  "0x750ac0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ComputeAudioPosition",
@@ -181964,7 +181964,7 @@
   "this_as_id": false
  },
  "0x7510d0": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -181976,7 +181976,7 @@
   "this_as_id": false
  },
  "0x7513f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -181988,7 +181988,7 @@
   "this_as_id": false
  },
  "0x7514d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182000,7 +182000,7 @@
   "this_as_id": false
  },
  "0x751520": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182036,7 +182036,7 @@
   "this_as_id": false
  },
  "0x751620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182237,7 +182237,7 @@
   "this_as_id": false
  },
  "0x751ea0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_751EA0",
@@ -182413,7 +182413,7 @@
   "this_as_id": false
  },
  "0x752290": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Init_752290",
@@ -182435,7 +182435,7 @@
   "this_as_id": false
  },
  "0x752370": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182458,7 +182458,7 @@
   "this_as_id": false
  },
  "0x752480": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "UpdateThemeManager",
@@ -182492,7 +182492,7 @@
   "this_as_id": false
  },
  "0x752700": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182538,7 +182538,7 @@
   "this_as_id": false
  },
  "0x752a40": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ClearThemeQueuePlaylist",
@@ -182561,7 +182561,7 @@
   "this_as_id": false
  },
  "0x752ad0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Init_752AD0",
@@ -182617,7 +182617,7 @@
   "this_as_id": false
  },
  "0x752db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -182712,7 +182712,7 @@
   "this_as_id": false
  },
  "0x7533f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183019,7 +183019,7 @@
   "this_as_id": false
  },
  "0x753b10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_753B10",
@@ -183030,7 +183030,7 @@
   "this_as_id": false
  },
  "0x753b40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_753B40",
@@ -183143,7 +183143,7 @@
   "this_as_id": false
  },
  "0x7542f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitializeAudioOcclusion",
