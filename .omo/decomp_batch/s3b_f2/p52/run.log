@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x53b460 globalHelper_03B460 -> _addr_53
+[conv] 0x53cbe0 ExplosionClass::ProcessFrame -> ExplosionClass
+[conv] 0x53d330 ObjectClass::GenerateLightningStormGlow -> ObjectClass
+[conv] 0x53d580 ZBuffer::RenderSprite -> ZBuffer
+[conv] 0x53e1d0 Audio_Init -> Audio
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> ObjectClass
+[conv] 0x53e550 ObjectClass::WinMain_Write -> ObjectClass
+[conv] 0x53e770 GameLoopMessagePump -> _addr_53
+[conv] 0x53f5d0 IPXConnClass::send -> IPXConnClass
+[conv] 0x53f650 IPXConnClass::receive -> IPXConnClass
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> IPXGlobalConnClass
+[conv] 0x5403f0 IPXGlobalConnClass::SetAddress -> IPXGlobalConnClass
+[conv] 0x540610 IPXGlobalConnClass::Release -> IPXGlobalConnClass
+[conv] 0x540a80 ObjectClass::Network_Init -> ObjectClass
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+[conv] 0x540e70 SessionClass::initInternet -> SessionClass
+[conv] 0x541070 IPXManagerClass::receivePacket -> IPXManagerClass
+[conv] 0x5410f0 Network::SendMessage -> Network
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=2
+[era] ExplosionClass           rc=2
+[era] ObjectClass              rc=2
+[era] ZBuffer                  rc=2
+[era] Audio                    rc=2
+[era] TimerPool                rc=2
+[era] IPXConnClass             rc=2
+[era] IPXGlobalConnClass       rc=2
+[era] SessionClass             rc=2
+[era] IPXManagerClass          rc=2
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x53b460 globalHelper_03B460 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53cbe0 ExplosionClass::ProcessFrame -> COMPILE_FAIL (attempt 7)
+[ledger] 0x53d330 ObjectClass::GenerateLightningStormGlow -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53d580 ZBuffer::RenderSprite -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53e1d0 Audio_Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 10)
+[ledger] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53e550 ObjectClass::WinMain_Write -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53e770 GameLoopMessagePump -> COMPILE_FAIL (attempt 8)
+[ledger] 0x53f5d0 IPXConnClass::send -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53f650 IPXConnClass::receive -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> COMPILE_FAIL (attempt 17)
+[ledger] 0x53fcb0 IPXGlobalConnClass::GetQueueSize -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5403f0 IPXGlobalConnClass::SetAddress -> COMPILE_FAIL (attempt 5)
+[ledger] 0x540610 IPXGlobalConnClass::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x540a80 ObjectClass::Network_Init -> COMPILE_FAIL (attempt 7)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x540e70 SessionClass::initInternet -> COMPILE_FAIL (attempt 5)
+[ledger] 0x541070 IPXManagerClass::receivePacket -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5410f0 Network::SendMessage -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p52\batch_report.json
