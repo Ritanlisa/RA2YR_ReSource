@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x6213a0 Dialog::Resize -> Dialog
+[conv] 0x6214b0 SetupDialogRenderBuffer -> _addr_62
+[conv] 0x6217e0 UI_Helper_6217E0 -> UI_Helper
+[conv] 0x621d30 sub_621D30 -> _addr_62
+[conv] 0x621e90 Dialog::DrawBackground -> Dialog
+[conv] 0x6223c0 ObjectClass::DestroyDialog -> ObjectClass
+[conv] 0x622650 CreateDialog -> _addr_62
+[conv] 0x622720 Dialog::Destroy -> Dialog
+[conv] 0x622820 SetupDialog -> _addr_62
+[conv] 0x622b50 BaseDialogProc -> _addr_62
+[conv] 0x623120 Dialog::PumpMessages -> Dialog
+[conv] 0x623230 CreateMessageBox -> _addr_62
+[conv] 0x6233a0 Dialog::CleanupTree -> Dialog
+[conv] 0x623460 LinkedList::Remove -> LinkedList
+[conv] 0x623610 DialogClass::CopyTemplateStruct -> DialogClass
+[conv] 0x623730 ObjectClass::sub_623730 -> ObjectClass
+[conv] 0x623880 DrawTextRendererMultiline -> _addr_62
+[conv] 0x623cd0 CD::CreateDialog -> CD
+[conv] 0x6241f0 RunDialog -> _addr_62
+[conv] 0x6242b0 ObjectClass::sub_6242B0 -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Dialog                   rc=2
+[era] _addr_62                 rc=2
+[era] UI_Helper                rc=0
+[era] ObjectClass              rc=2
+[era] LinkedList               rc=2
+[era] DialogClass              rc=2
+[era] CD                       rc=2
+=== diffasm byte-compare ===
+[diff] 0x622720   MISMATCH         Dialog::Destroy
+[diff] 0x6217e0   MISMATCH         UI_Helper_6217E0
+[diff] 0x6223c0   MISMATCH         ObjectClass::DestroyDialog
+[ledger] 0x6213a0 Dialog::Resize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6214b0 SetupDialogRenderBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6217e0 UI_Helper_6217E0 -> NG (attempt 2)
+[ledger] 0x621d30 sub_621D30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x621e90 Dialog::DrawBackground -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6223c0 ObjectClass::DestroyDialog -> NG (attempt 2)
+[ledger] 0x622650 CreateDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x622720 Dialog::Destroy -> NG (attempt 2)
+[ledger] 0x622820 SetupDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x622b50 BaseDialogProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x623120 Dialog::PumpMessages -> COMPILE_FAIL (attempt 5)
+[ledger] 0x623230 CreateMessageBox -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6233a0 Dialog::CleanupTree -> COMPILE_FAIL (attempt 2)
+[ledger] 0x623460 LinkedList::Remove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x623610 DialogClass::CopyTemplateStruct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x623730 ObjectClass::sub_623730 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x623880 DrawTextRendererMultiline -> COMPILE_FAIL (attempt 4)
+[ledger] 0x623cd0 CD::CreateDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6241f0 RunDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6242b0 ObjectClass::sub_6242B0 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p23\batch_report.json

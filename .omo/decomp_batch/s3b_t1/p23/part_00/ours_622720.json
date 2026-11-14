@@ -1,0 +1,147 @@
+{
+ "symbol": "?Destroy@Dialog@@QAEPAXXZ",
+ "sym_key": "Dialog::Destroy",
+ "size": 246,
+ "link_base": 0,
+ "bytes_hex": "5153568bf1578b0d80010000e8000000008b4c240c56e80000000056e8000000008b150000000033db33c03bd30f86bc0000008b3d00000000b9000000003bfe7413403bc20f83a60000008b790883c1083bfe75ed8bca8d34c5302db7002bc88d3cc5282db700891cd500000000891cd5000000008d0ccdf8ffffff8bc1c1e902f3a58bc88d42ff83e1033bc3f3a4a3000000007f298b0d00000000891d0000000051891d00000000e8000000008b150000000052e8000000005f5e5b59c38b0cc5000000008b04c50000000051890d00000000a300000000e8000000008b0d0000000051e8000000005f5e5b59c333c05f5e5b59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 13,
+   "type": "REL32",
+   "sym": "?PumpMessages@Timer@@QAEPAXXZ",
+   "sym_key": "Timer::PumpMessages"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?IdleProcess@Dialog@@QAEDPAX@Z",
+   "sym_key": "Dialog::IdleProcess"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?DestroyWindow@@YGHPAX@Z",
+   "sym_key": "DestroyWindow"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?g_DialogTrackingList@@3IA",
+   "sym_key": "g_DialogTrackingList"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?stru_B72D28@@3EA",
+   "sym_key": "stru_B72D28"
+  },
+  {
+   "off": 58,
+   "type": "DIR32",
+   "sym": "?stru_B72D28@@3EA",
+   "sym_key": "stru_B72D28"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B72D24@@3PAIA",
+   "sym_key": "DataGlobal_B72D24"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?g_DialogTrackingList@@3IA",
+   "sym_key": "g_DialogTrackingList"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 158,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B72F48@@3IA",
+   "sym_key": "DataGlobal_B72F48"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?SetForegroundWindow@@YGHPAX@Z",
+   "sym_key": "SetForegroundWindow"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXPAX@Z",
+   "sym_key": "SetFocus"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B72D24@@3PAIA",
+   "sym_key": "DataGlobal_B72D24"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B72F48@@3IA",
+   "sym_key": "DataGlobal_B72F48"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?SetForegroundWindow@@YGHPAX@Z",
+   "sym_key": "SetForegroundWindow"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?hWnd@@3IA",
+   "sym_key": "hWnd"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?SetFocus@@YGPAXPAX@Z",
+   "sym_key": "SetFocus"
+  }
+ ]
+}

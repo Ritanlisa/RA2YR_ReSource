@@ -1,0 +1,11 @@
+{
+ "addr": "0x6223C0",
+ "name": "DestroyDialog",
+ "size": 119,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6223C0",
+ "bytes_hex": "51a1041bac005685c0894c240474658d4c2404ff15181bac008b0d0c1bac00ba01000000d3e24a23d0a1001bac008b049085c0743f8b4c24043908740d8b800402000085c075f25e59c385c074268d700485f6741f8b4e1085c974188b116a01ff12c7461000000000a1b448ac0048a3b448ac005e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

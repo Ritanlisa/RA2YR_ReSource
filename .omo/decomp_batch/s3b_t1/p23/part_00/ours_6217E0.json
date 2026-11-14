@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Helper_6217E0@@YIXPAHHFH@Z",
+ "sym_key": "Unnamed::UI_Helper_6217E0",
+ "size": 547,
+ "link_base": 0,
+ "bytes_hex": "83ec345355568b742448578bf98bdab8010000000faf77088beb895c243cc1fe10897c2440896c242089742410894424148974241c0f88de01000085f6750a894424108944241c8bf08b036a006a0053ff505c85c08944242c0f84ba0100008b470cc744244c0000000085c00f8ea00100008b6c24488b0b53ff5174998b4c244c2bc28b5704d1f803d18b0f0fafc203c18b4f0cc1e9028d14493954244c7508c744241401000000394c244c7508c74424140000000085f60f8e3c0100008b4c242c89742418c7442428fe0100008d3441b8ff000000897424248b4c241485c90f84db00000033d2668b1ef777088b54241c81e3ffff0000895424108bd581e2ffff0000bfff0000008bcb8bea895c243888442430a1000000008b74243025ffff000081e6ff00000023c82bfe23e80fafcf0fafeea10000000003cd8be825ffff0000c1ed10896c243481e5ffff0000894424208bc523c38bda23dd0fafc70fafde8b6c243403c38b5c2420893d00000000c1e80823c58b6c243823dd8b2d000000000fafdf8b7c242025ff00000023d78b7c24400fafd603da8935000000008b742424c1eb0823dd8b6c24480bc38b5c243cc1e9080bc8895c242066890eeb0366892e8b4c24188b54242883c60283f9018bc2897424240f94c181c2ff000000895424288b5424184a84c9895424180f84e4feffff8b7424108b44244c8b4f0c403bc18944244c0f8268feffff8b6c24208b450055ff50605f5e5d5b83c434c20800",
+ "relocs": [
+  {
+   "off": 278,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenState@@3IA",
+   "sym_key": "g_CreditsScreenState"
+  },
+  {
+   "off": 310,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?g_GameScreenConfig@@3IA",
+   "sym_key": "g_GameScreenConfig"
+  },
+  {
+   "off": 383,
+   "type": "DIR32",
+   "sym": "?g_ScreenSaverState@@3IA",
+   "sym_key": "g_ScreenSaverState"
+  },
+  {
+   "off": 412,
+   "type": "DIR32",
+   "sym": "?g_GameScreenFlags@@3IA",
+   "sym_key": "g_GameScreenFlags"
+  }
+ ]
+}
