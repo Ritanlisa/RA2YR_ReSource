@@ -137,3 +137,4 @@
 {"part": 136, "n": 20, "seconds": 47.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 137, "n": 20, "seconds": 63.3, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"part": 138, "n": 20, "seconds": 61.5, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"part": 139, "n": 20, "seconds": 46.6, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
