@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p117\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e2f00 TActionClass::executeChronoshiftAction -> TActionClass
+[conv] 0x6e3380 sub_6E3380 -> _addr_6E
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x6e37f0 ObjectClass::sub_6E37F0 -> ObjectClass
+[conv] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> SuperWeaponClass
+[conv] 0x6e42d0 TActionClass::executeIronCurtainAction -> TActionClass
+[conv] 0x6e4f60 TagClass::Destructor -> TagClass
+[conv] 0x6e53a0 TeamClass::Update_0 -> TeamClass
+[conv] 0x6e57c0 TechnoClass::HasAnyMission -> TechnoClass
+[conv] 0x6e5b60 TagTypeClass::Construct -> TagTypeClass
+[conv] 0x6e5ca0 TagTypeClass::CleanupMembers -> TagTypeClass
+[conv] 0x6e6080 TagTypeClass::GetAction -> TagTypeClass
+[conv] 0x6e6160 TagTypeClass::GetParameter -> TagTypeClass
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x6e6ff0 BuildingLoadQueue::FindObject -> BuildingLoadQueue
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x6e7a80 BuildingLoadQueue::FindBuilding -> BuildingLoadQueue
+[conv] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> ObjectClass
+[conv] 0x6e8220 TaskForceClass::LoadFromINI -> TaskForceClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TActionClass             rc=2
+[era] _addr_6E                 rc=2
+[era] ObjectClass              rc=2
+[era] SuperWeaponClass         rc=2
+[era] TagClass                 rc=2
+[era] TeamClass                rc=2
+[era] TechnoClass              rc=2
+[era] TagTypeClass             rc=2
+[era] BuildingLoadQueue        rc=2
+[era] TaskForceClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6e2f00 TActionClass::executeChronoshiftAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e3380 sub_6E3380 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e35f0 ObjectClass::sub_6E35F0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6e37f0 ObjectClass::sub_6E37F0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6e38f0 SuperWeaponClass::CreateChemLauncher -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6e42d0 TActionClass::executeIronCurtainAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e4f60 TagClass::Destructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e53a0 TeamClass::Update_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e57c0 TechnoClass::HasAnyMission -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e5b60 TagTypeClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e5ca0 TagTypeClass::CleanupMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e6080 TagTypeClass::GetAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e6160 TagTypeClass::GetParameter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> COMPILE_FAIL (attempt 17)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6e6ff0 BuildingLoadQueue::FindObject -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6e7330 ObjectClass::System_Read_6E7330 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6e7a80 BuildingLoadQueue::FindBuilding -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e8220 TaskForceClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p117\batch_report.json
