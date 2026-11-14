@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p89\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b8170 ConcatWString -> _addr_7B
+[conv] 0x7b82e0 Game_Set -> Game
+[conv] 0x7b84f0 WinMain_Helper_7B84F0 -> WinMain_Helper
+[conv] 0x7b8a00 WWMouseClass::AddRef -> WWMouseClass
+[conv] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> WWMouseClass
+[conv] 0x7b92d0 WWMouseClass::updateCursor -> WWMouseClass
+[conv] 0x7b9750 WWMouseClass::showCursor -> WWMouseClass
+[conv] 0x7b9a60 WWMouseClass::captureMouse -> WWMouseClass
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+[conv] 0x7b9d80 WWMouseClass::checkVisible -> WWMouseClass
+[conv] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> WWMouseClass
+[conv] 0x7ba090 WWMouseClass::UpdateCursorMovement -> WWMouseClass
+[conv] 0x7ba450 FilePipe::Release -> FilePipe
+[conv] 0x7ba530 FileStraw::Release -> FileStraw
+[conv] 0x7ba5e0 XSurface::DrawLine -> XSurface
+[conv] 0x7bab90 XSurface::WalkLine -> XSurface
+[conv] 0x7bad90 XSurface::DrawRect -> XSurface
+[conv] 0x7badc0 XSurface::DrawRectEx -> XSurface
+[conv] 0x7bae60 XSurface::GetPixel -> XSurface
+[conv] 0x7baeb0 XSurface::SetPixel -> XSurface
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=2
+[era] Game                     rc=2
+[era] WinMain_Helper           rc=2
+[era] WWMouseClass             rc=2
+[era] FilePipe                 rc=2
+[era] FileStraw                rc=2
+[era] XSurface                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7bab90   MISMATCH         XSurface::WalkLine
+[ledger] 0x7b8170 ConcatWString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b82e0 Game_Set -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b84f0 WinMain_Helper_7B84F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b8a00 WWMouseClass::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b90c0 WWMouseClass::DrawCursorBuffered -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b92d0 WWMouseClass::updateCursor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b9750 WWMouseClass::showCursor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b9a60 WWMouseClass::captureMouse -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7b9d80 WWMouseClass::checkVisible -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ba090 WWMouseClass::UpdateCursorMovement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7ba450 FilePipe::Release -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ba530 FileStraw::Release -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ba5e0 XSurface::DrawLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bab90 XSurface::WalkLine -> NG (attempt 2)
+[ledger] 0x7bad90 XSurface::DrawRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7badc0 XSurface::DrawRectEx -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bae60 XSurface::GetPixel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7baeb0 XSurface::SetPixel -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p89\batch_report.json
