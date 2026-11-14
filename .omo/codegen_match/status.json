@@ -194926,7 +194926,7 @@
   "this_as_id": false
  },
  "0x77c180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C180",
@@ -194970,7 +194970,7 @@
   "this_as_id": false
  },
  "0x77c3b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C3B0",
@@ -195300,7 +195300,7 @@
   "this_as_id": false
  },
  "0x77ca60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CA60",
@@ -195322,7 +195322,7 @@
   "this_as_id": false
  },
  "0x77cc30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CC30",
@@ -195821,7 +195821,7 @@
   "this_as_id": false
  },
  "0x77d840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ShowWOLLobbyDialog",
@@ -195967,7 +195967,7 @@
   "this_as_id": false
  },
  "0x77db90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -195979,7 +195979,7 @@
   "this_as_id": false
  },
  "0x77dc90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "OpenURLWOL",
@@ -196024,7 +196024,7 @@
   "this_as_id": false
  },
  "0x77e1d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196036,7 +196036,7 @@
   "this_as_id": false
  },
  "0x77e300": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196048,7 +196048,7 @@
   "this_as_id": false
  },
  "0x77e430": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196094,7 +196094,7 @@
   "this_as_id": false
  },
  "0x77e900": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "first_diff": null,
   "name": "AssignWOLPlayerSide",
@@ -196105,7 +196105,7 @@
   "this_as_id": false
  },
  "0x77eba0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196128,7 +196128,7 @@
   "this_as_id": false
  },
  "0x77ef90": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "RequestChannelList2WOL",
@@ -196139,7 +196139,7 @@
   "this_as_id": false
  },
  "0x77f120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RequestChannelListWOL",
@@ -196150,7 +196150,7 @@
   "this_as_id": false
  },
  "0x77f320": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RequestChannelListExWOL",
@@ -196161,7 +196161,7 @@
   "this_as_id": false
  },
  "0x77f520": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77F520",
@@ -196172,7 +196172,7 @@
   "this_as_id": false
  },
  "0x77f710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77F710",
@@ -196183,7 +196183,7 @@
   "this_as_id": false
  },
  "0x77f900": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196195,7 +196195,7 @@
   "this_as_id": false
  },
  "0x780110": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196207,7 +196207,7 @@
   "this_as_id": false
  },
  "0x7806c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
