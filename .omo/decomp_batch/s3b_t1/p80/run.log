@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p80\part_00
+=== convert (20 addrs) ===
+[conv] 0x77cb00 sub_77CB00 -> _addr_77
+[conv] 0x77cc30 sub_77CC30 -> _addr_77
+[conv] 0x77ccd0 sub_77CCD0 -> _addr_77
+[conv] 0x77d840 ShowWOLLobbyDialog -> _addr_77
+[conv] 0x77da50 SidebarClass::FindProductionData -> SidebarClass
+[conv] 0x77db90 Lobby::BuildPlayerList -> Lobby
+[conv] 0x77e1d0 ObjectClass::FillPlayerListWOL -> ObjectClass
+[conv] 0x77e300 ObjectClass::FillBuddyListExWOL -> ObjectClass
+[conv] 0x77e430 Game::EncodeGameSetupState -> Game
+[conv] 0x77e900 AssignWOLPlayerSide -> _addr_77
+[conv] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> ObjectClass
+[conv] 0x77ef90 RequestChannelList2WOL -> _addr_77
+[conv] 0x77f120 RequestChannelListWOL -> _addr_77
+[conv] 0x77f320 RequestChannelListExWOL -> _addr_77
+[conv] 0x77f520 sub_77F520 -> _addr_77
+[conv] 0x77f710 sub_77F710 -> _addr_77
+[conv] 0x77f900 CreateGameDialogControl::ProcessIdle -> CreateGameDialogControl
+[conv] 0x780110 ObjectClass::ResetSystemWOL -> ObjectClass
+[conv] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> ObjectClass
+[conv] 0x780a90 FormatWOLPlayerInfo -> _addr_78
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] SidebarClass             rc=0
+[era] Lobby                    rc=2
+[era] ObjectClass              rc=2
+[era] Game                     rc=2
+[era] CreateGameDialogControl  rc=2
+[era] _addr_78                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x77cb00   MISMATCH         sub_77CB00
+[diff] 0x77ccd0   MISMATCH         sub_77CCD0
+[diff] 0x77da50   MISMATCH         SidebarClass::FindProductionData
+[ledger] 0x77cb00 sub_77CB00 -> NG (attempt 2)
+[ledger] 0x77cc30 sub_77CC30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77ccd0 sub_77CCD0 -> NG (attempt 2)
+[ledger] 0x77d840 ShowWOLLobbyDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77da50 SidebarClass::FindProductionData -> NG (attempt 2)
+[ledger] 0x77db90 Lobby::BuildPlayerList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77e1d0 ObjectClass::FillPlayerListWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77e300 ObjectClass::FillBuddyListExWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77e430 Game::EncodeGameSetupState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77e900 AssignWOLPlayerSide -> COMPILE_FAIL (attempt 10)
+[ledger] 0x77eba0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x77ef90 RequestChannelList2WOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77f120 RequestChannelListWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77f320 RequestChannelListExWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77f520 sub_77F520 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77f710 sub_77F710 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77f900 CreateGameDialogControl::ProcessIdle -> COMPILE_FAIL (attempt 6)
+[ledger] 0x780110 ObjectClass::ResetSystemWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7806c0 ObjectClass::PopulateWOLLobbyListBox -> COMPILE_FAIL (attempt 5)
+[ledger] 0x780a90 FormatWOLPlayerInfo -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p80\batch_report.json

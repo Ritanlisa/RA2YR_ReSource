@@ -1,0 +1,159 @@
+{
+ "symbol": "?sub_77CCD0@@YAXXZ",
+ "sym_key": "Unnamed::sub_77CCD0",
+ "size": 320,
+ "link_base": 0,
+ "bytes_hex": "5355568b350000000033db5785f67640a1000000008b349885f6741b8bfe8bb61001000057e80000000057e80000000083c40885f675e58b0d0000000043c74499fc000000008b35000000003bde72c0a100000000c70500000000000000003bf00f86c60000008a0d0000000084c90f85b80000003bf00f86b00000008b2d000000008b1d000000008bc6d1e84da3000000008d148500000000892d0000000052e8000000008b0d000000008bf883c40433c0893d0000000085f6f3ab7e488bfb8bee8b3785f6743856ff15000000008b0d00000000ba01000000d3e28b0d0000000083c4044a23c28b14818934818b861001000089961001000085c08bf075c883c7044d75bc53e800000000a1000000008b350000000083c4043bf0760e8a0d0000000084c90f8448ffffffa10000000050e80000000083c4045f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_WOL_PacketQueue@@3IA",
+   "sym_key": "g_WOL_PacketQueue"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXH@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_WOL_PacketQueue@@3IA",
+   "sym_key": "g_WOL_PacketQueue"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76638@@3IA",
+   "sym_key": "DataGlobal_B76638"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7660C@@3IA",
+   "sym_key": "DataGlobal_B7660C"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7661C@@3EA",
+   "sym_key": "DataGlobal_B7661C"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76614@@3IA",
+   "sym_key": "DataGlobal_B76614"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 143,
+   "type": "DIR32",
+   "sym": "?g_WOL_PacketQueue@@3IA",
+   "sym_key": "g_WOL_PacketQueue"
+  },
+  {
+   "off": 156,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76614@@3IA",
+   "sym_key": "DataGlobal_B76614"
+  },
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_WOL_PacketQueue@@3IA",
+   "sym_key": "g_WOL_PacketQueue"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76620@@3IA",
+   "sym_key": "DataGlobal_B76620"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76614@@3IA",
+   "sym_key": "DataGlobal_B76614"
+  },
+  {
+   "off": 223,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 265,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76638@@3IA",
+   "sym_key": "DataGlobal_B76638"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?g_WOL_PacketQueue@@3IA",
+   "sym_key": "g_WOL_PacketQueue"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7661C@@3EA",
+   "sym_key": "DataGlobal_B7661C"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?g_WOL_EventQueue@@3PAXA",
+   "sym_key": "g_WOL_EventQueue"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
