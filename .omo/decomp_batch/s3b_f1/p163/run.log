@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p163\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d12e6 _strncnt -> _addr_7D
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x7d1512 GetCurrentThreadId::_0 -> GetCurrentThreadId
+[conv] 0x7d161b __dosmaperr -> _addr_7D
+[conv] 0x7d170d __input -> _addr_7D
+[conv] 0x7d2169 _fgetc_0 -> _addr_7D
+[conv] 0x7d219a __whiteout -> _addr_7D
+[conv] 0x7d21be __woutput -> _addr_7D
+[conv] 0x7d2a74 __close -> _addr_7D
+[conv] 0x7d2da6 ObjectClass::__getstream -> ObjectClass
+[conv] 0x7d2fc8 __putwc_lk -> _addr_7D
+[conv] 0x7d30d1 __commit -> _addr_7D
+[conv] 0x7d3164 ObjectClass::__ioinit -> ObjectClass
+[conv] 0x7d3320 __ioterm_0 -> _addr_7D
+[conv] 0x7d3482 __setmbcp -> _addr_7D
+[conv] 0x7d36d5 ObjectClass::_setSBUpLow -> ObjectClass
+[conv] 0x7d3886 __mbsnbcpy -> _addr_7D
+[conv] 0x7d3a6d __winput -> _addr_7D
+[conv] 0x7d45df __mbsnbicoll -> _addr_7D
+[conv] 0x7d461e ___wtomb_environ -> _addr_7D
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] GetCurrentThreadId       rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7d12e6 _strncnt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d1512 GetCurrentThreadId::_0 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7d161b __dosmaperr -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d170d __input -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d2169 _fgetc_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d219a __whiteout -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d21be __woutput -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d2a74 __close -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d2da6 ObjectClass::__getstream -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d2fc8 __putwc_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d30d1 __commit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d3164 ObjectClass::__ioinit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d3320 __ioterm_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d3482 __setmbcp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d36d5 ObjectClass::_setSBUpLow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d3886 __mbsnbcpy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d3a6d __winput -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d45df __mbsnbicoll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d461e ___wtomb_environ -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p163\batch_report.json
