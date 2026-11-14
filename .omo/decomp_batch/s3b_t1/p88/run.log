@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p88\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b36c0 UDPInterfaceClass::ddtor -> UDPInterfaceClass
+[conv] 0x7b3720 UDPInterfaceClass::Connect -> UDPInterfaceClass
+[conv] 0x7b3890 UDPInterfaceClass::Receive -> UDPInterfaceClass
+[conv] 0x7b3a20 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x7b4170 UDPInterfaceClass::Destructor -> UDPInterfaceClass
+[conv] 0x7b6280 ObjectClass::_1_Timevec_std__QAE_XZ -> ObjectClass
+[conv] 0x7b6720 WideString::AssignFromPtr -> WideString
+[conv] 0x7b6780 ObjectClass::String_Helper -> ObjectClass
+[conv] 0x7b67c0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start -> ObjectClass
+[conv] 0x7b68e0 WideString::Reassign_Alt -> WideString
+[conv] 0x7b6970 WString::Append -> WString
+[conv] 0x7b6ae0 WideString::Append2 -> WideString
+[conv] 0x7b6be0 WideString::AssignConcat -> WideString
+[conv] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> ObjectClass
+[conv] 0x7b72f0 EditControl::GrowBuffer -> EditControl
+[conv] 0x7b73f0 WideString::Replace -> WideString
+[conv] 0x7b7dd0 FormatWideString -> _addr_7B
+[conv] 0x7b7e40 WDTGame_Helper -> WDTGame
+[conv] 0x7b7f90 ToWideStringCharAlt -> _addr_7B
+[conv] 0x7b8090 FormatWideStringPrefix -> _addr_7B
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UDPInterfaceClass        rc=2
+[era] ObjectClass              rc=2
+[era] WideString               rc=2
+[era] WString                  rc=2
+[era] EditControl              rc=2
+[era] _addr_7B                 rc=2
+[era] WDTGame                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b36c0 UDPInterfaceClass::ddtor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b3720 UDPInterfaceClass::Connect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b3890 UDPInterfaceClass::Receive -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b3a20 UDPInterfaceClass::Flush -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b4170 UDPInterfaceClass::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6280 ObjectClass::_1_Timevec_std__QAE_XZ -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6720 WideString::AssignFromPtr -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6780 ObjectClass::String_Helper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b67c0 ObjectClass::SendMultiplayerStartSignal_Start_77EBA0_Start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b68e0 WideString::Reassign_Alt -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b6970 WString::Append -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6ae0 WideString::Append2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7b6be0 WideString::AssignConcat -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b6ee0 ObjectClass::sub_7B6EE0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b72f0 EditControl::GrowBuffer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b73f0 WideString::Replace -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b7dd0 FormatWideString -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7b7e40 WDTGame_Helper -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b8090 FormatWideStringPrefix -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p88\batch_report.json
