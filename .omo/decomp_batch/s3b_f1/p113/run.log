@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p113\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> _TClassFactory_VInfantryClass
+[conv] 0x6c3a10 _TClassFactory_VAnimClass::ddtor -> _TClassFactory_VAnimClass
+[conv] 0x6c3e90 _TClassFactory_VHouseClass::ddtor -> _TClassFactory_VHouseClass
+[conv] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c4190 _TClassFactory_VJumpjetLocomotionClass::ddtor -> _TClassFactory_VJumpjetLocomotionClass
+[conv] 0x6c4310 _TClassFactory_VHoverLocomotionClass::ddtor -> _TClassFactory_VHoverLocomotionClass
+[conv] 0x6c4490 _TClassFactory_VRocketLocomotionClass::ddtor -> _TClassFactory_VRocketLocomotionClass
+[conv] 0x6c4790 _TClassFactory_VWalkLocomotionClass::ddtor -> _TClassFactory_VWalkLocomotionClass
+[conv] 0x6c4a90 _TClassFactory_VFlyLocomotionClass::ddtor -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> _TClassFactory_VBulletClass
+[conv] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> _TClassFactory_VFactoryClass
+[conv] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> _TClassFactory_VParticleClass
+[conv] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> _TClassFactory_VNeuronClass
+[conv] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> _TClassFactory_VAlphaShapeClass
+[conv] 0x6c6640 StaticButtonClass::SetText -> StaticButtonClass
+[conv] 0x6c6740 StaticButtonClass::HitTest -> StaticButtonClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VInfantryClass rc=2
+[era] _TClassFactory_VAnimClass rc=2
+[era] _TClassFactory_VHouseClass rc=2
+[era] _TClassFactory_VDriveLocomotionClass rc=2
+[era] _TClassFactory_VJumpjetLocomotionClass rc=2
+[era] _TClassFactory_VHoverLocomotionClass rc=2
+[era] _TClassFactory_VRocketLocomotionClass rc=2
+[era] _TClassFactory_VWalkLocomotionClass rc=2
+[era] _TClassFactory_VFlyLocomotionClass rc=2
+[era] _TClassFactory_VTeleportLocomotionClass rc=2
+[era] _TClassFactory_VShipLocomotionClass rc=2
+[era] _TClassFactory_VBulletClass rc=2
+[era] _TClassFactory_VFactoryClass rc=2
+[era] _TClassFactory_VWarheadTypeClass rc=2
+[era] _TClassFactory_VParticleClass rc=2
+[era] _TClassFactory_VParticleSystemClass rc=2
+[era] _TClassFactory_VNeuronClass rc=2
+[era] _TClassFactory_VAlphaShapeClass rc=2
+[era] StaticButtonClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c3890 _TClassFactory_VInfantryClass::ddtor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6c3a10 _TClassFactory_VAnimClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c3e90 _TClassFactory_VHouseClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4010 _TClassFactory_VDriveLocomotionClass::ddtor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6c4190 _TClassFactory_VJumpjetLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4310 _TClassFactory_VHoverLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4490 _TClassFactory_VRocketLocomotionClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c4790 _TClassFactory_VWalkLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4a90 _TClassFactory_VFlyLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c6640 StaticButtonClass::SetText -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c6740 StaticButtonClass::HitTest -> COMPILE_FAIL (attempt 14)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p113\batch_report.json
