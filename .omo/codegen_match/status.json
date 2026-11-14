@@ -94496,19 +94496,19 @@
   "this_as_id": false
  },
  "0x5981f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::LoadConfig",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::LoadConfig",
-  "rule_violations": 20,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x598960": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94532,7 +94532,7 @@
   "this_as_id": false
  },
  "0x599650": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94579,7 +94579,7 @@
   "this_as_id": false
  },
  "0x59afa0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94591,7 +94591,7 @@
   "this_as_id": false
  },
  "0x59b200": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94644,7 +94644,7 @@
   "status": "NG"
  },
  "0x59bbc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94674,7 +94674,7 @@
   "status": "NG"
  },
  "0x59c630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "FindMapCell",
@@ -94685,7 +94685,7 @@
   "this_as_id": false
  },
  "0x59c920": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94708,7 +94708,7 @@
   "this_as_id": false
  },
  "0x59d510": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94720,7 +94720,7 @@
   "this_as_id": false
  },
  "0x59e740": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94768,7 +94768,7 @@
   "this_as_id": false
  },
  "0x5a0410": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94780,7 +94780,7 @@
   "this_as_id": false
  },
  "0x5a0700": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94792,7 +94792,7 @@
   "this_as_id": false
  },
  "0x5a08d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94804,7 +94804,7 @@
   "this_as_id": false
  },
  "0x5a1190": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_5A1190",
@@ -94815,7 +94815,7 @@
   "this_as_id": false
  },
  "0x5a1350": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "SelectTerrainTileVariant",
@@ -94875,7 +94875,7 @@
   "status": "NG"
  },
  "0x5a1fb0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94887,7 +94887,7 @@
   "this_as_id": false
  },
  "0x5a23a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94922,7 +94922,7 @@
   "this_as_id": false
  },
  "0x5a2f50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94970,7 +94970,7 @@
   "this_as_id": false
  },
  "0x5a3ae0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94982,7 +94982,7 @@
   "this_as_id": false
  },
  "0x5a4280": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
