@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x557920 ListClass::DrawBuildingPlacement -> ListClass
+[conv] 0x557a20 ListClass::SetItemState -> ListClass
+[conv] 0x557a70 ListClass::OnKeyUp -> ListClass
+[conv] 0x557b10 CheckListClass::vt_19 -> CheckListClass
+[conv] 0x557eb0 ListClass::Draw -> ListClass
+[conv] 0x557f40 ListClass::Clear -> ListClass
+[conv] 0x557fb0 ListClass::ScrollDown -> ListClass
+[conv] 0x558010 ListClass::RemoveColor -> ListClass
+[conv] 0x5584f0 sub_5584F0 -> _addr_55
+[conv] 0x558810 ObjectClass::ShowSaveLoadDialog -> ObjectClass
+[conv] 0x558dd0 SaveLoadDialog::DlgProc -> SaveLoadDialog
+[conv] 0x5596a0 LoadSaveDialog::FillList -> LoadSaveDialog
+[conv] 0x559c20 LoadOptions::Check -> LoadOptions
+[conv] 0x55a6c0 LocomotionClass::Init -> LocomotionClass
+[conv] 0x55a6f0 LocomotionClass::Construct -> LocomotionClass
+[conv] 0x55a7d0 IUnknown::ComputeRotation -> IUnknown
+[conv] 0x55a8c0 IUnknown::ComputeScreenYOffset -> IUnknown
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x55a9b0 LocomotionClass::QueryInterface -> LocomotionClass
+[conv] 0x55aa60 LocomotionClass::LoadIPersistStream -> LocomotionClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ListClass                rc=2
+[era] CheckListClass           rc=2
+[era] _addr_55                 rc=2
+[era] ObjectClass              rc=2
+[era] SaveLoadDialog           rc=2
+[era] LoadSaveDialog           rc=2
+[era] LoadOptions              rc=2
+[era] LocomotionClass          rc=2
+[era] IUnknown                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x557920 ListClass::DrawBuildingPlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557a20 ListClass::SetItemState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557a70 ListClass::OnKeyUp -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557b10 CheckListClass::vt_19 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557eb0 ListClass::Draw -> COMPILE_FAIL (attempt 8)
+[ledger] 0x557f40 ListClass::Clear -> COMPILE_FAIL (attempt 5)
+[ledger] 0x557fb0 ListClass::ScrollDown -> COMPILE_FAIL (attempt 5)
+[ledger] 0x558010 ListClass::RemoveColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5584f0 sub_5584F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x558810 ObjectClass::ShowSaveLoadDialog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x558dd0 SaveLoadDialog::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5596a0 LoadSaveDialog::FillList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x559c20 LoadOptions::Check -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a6c0 LocomotionClass::Init -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55a6f0 LocomotionClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55a7d0 IUnknown::ComputeRotation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55a8c0 IUnknown::ComputeScreenYOffset -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55a970 LocomotionClass::ReleaseRef -> COMPILE_FAIL (attempt 9)
+[ledger] 0x55a9b0 LocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 15)
+[ledger] 0x55aa60 LocomotionClass::LoadIPersistStream -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p56\batch_report.json
