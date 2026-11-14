@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBDAF",
+ "name": "__cinit",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBDAF",
+ "bytes_hex": "a1b8be870085c07402ffd068bc5d810068a85d8100e80a01000068a45d81006800208100e8fb00000083c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

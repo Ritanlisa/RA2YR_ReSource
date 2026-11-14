@@ -209587,29 +209587,29 @@
   "this_as_id": false
  },
  "0x7cacc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "?FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7cadb9": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "?FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7caef1": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "PMDtoOffset_YAHPAXABUPMD___Z",
@@ -209693,7 +209693,7 @@
   "this_as_id": false
  },
  "0x7cb1f9": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__flush",
@@ -209737,7 +209737,7 @@
   "this_as_id": false
  },
  "0x7cb33d": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -209760,7 +209760,7 @@
   "this_as_id": false
  },
  "0x7cb3f9": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__lock_file",
@@ -209782,7 +209782,7 @@
   "this_as_id": false
  },
  "0x7cb44b": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__unlock_file",
@@ -209804,7 +209804,7 @@
   "this_as_id": false
  },
  "0x7cb49d": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_srand",
@@ -209877,7 +209877,7 @@
   "this_as_id": false
  },
  "0x7cb80b": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_fgetc",
@@ -210057,7 +210057,7 @@
   "this_as_id": false
  },
  "0x7cbbdb": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_swscanf",
@@ -210079,7 +210079,7 @@
   "this_as_id": false
  },
  "0x7cbc32": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "_getenv",
@@ -210145,14 +210145,14 @@
   "this_as_id": false
  },
  "0x7cbdaf": {
-  "attempts": 5,
-  "clean": false,
+  "attempts": 6,
+  "clean": true,
   "first_diff": null,
   "name": "__cinit",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "__cinit",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x7cbddc": {
@@ -210200,7 +210200,7 @@
   "this_as_id": false
  },
  "0x7cbe1c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_doexit",
@@ -210233,7 +210233,7 @@
   "this_as_id": false
  },
  "0x7cbed3": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__initterm",
@@ -210288,7 +210288,7 @@
   "this_as_id": false
  },
  "0x7cbf5f": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "__fpreset",
@@ -210332,7 +210332,7 @@
   "this_as_id": false
  },
  "0x7cc0dc": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__global_unwind2",
@@ -210355,7 +210355,7 @@
   "this_as_id": false
  },
  "0x7cc11e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__local_unwind2",
@@ -210366,7 +210366,7 @@
   "this_as_id": false
  },
  "0x7cc186": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__abnormal_termination",
@@ -210388,7 +210388,7 @@
   "this_as_id": false
  },
  "0x7cc1b2": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__NLG_Notify",
@@ -210399,7 +210399,7 @@
   "this_as_id": false
  },
  "0x7cc1d4": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__except_handler3",
