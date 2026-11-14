@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p76\part_00
+=== convert (20 addrs) ===
+[conv] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> TechnoClass
+[conv] 0x76d3a0 TechnoClass::sub_76D3A0 -> TechnoClass
+[conv] 0x76d470 TechnoClass::sub_76D470 -> TechnoClass
+[conv] 0x76d4d0 Trigger::ProcessMapEvents -> Trigger
+[conv] 0x76ded0 TechnoClass::sub_76DED0 -> TechnoClass
+[conv] 0x76df50 TechnoClass::sub_76DF50 -> TechnoClass
+[conv] 0x76e090 TechnoClass::sub_76E090 -> TechnoClass
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x76e750 ObjectClass::Team_Start_76E750 -> ObjectClass
+[conv] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> TechnoClass
+[conv] 0x76ebe0 MSSfxClass::FindByName -> MSSfxClass
+[conv] 0x76ed10 Team_Start_76ED10 -> Team_Start
+[conv] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f470 ActivateScreenWDT_Create -> ActivateScreenWDT
+[conv] 0x76fd40 ObjectClass::Map_Process_76FD40 -> ObjectClass
+[conv] 0x76feb0 ObjectClass::TerritorySelectWDT_Process -> ObjectClass
+[conv] 0x76ff40 rc_ptr::FindTerritoryWOL -> rc_ptr
+[conv] 0x770550 Animation::LoadSidebarAnimations -> Animation
+[conv] 0x770850 ObjectClass::sub_770850 -> ObjectClass
+[conv] 0x770e70 ObjectClass::sub_770E70 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Trigger                  rc=2
+[era] ObjectClass              rc=2
+[era] MSSfxClass               rc=2
+[era] Team_Start               rc=2
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=2
+[era] ActivateScreenWDT        rc=2
+[era] rc_ptr                   rc=2
+[era] Animation                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x76cda0 TechnoClass::ShowWDTTerritorySelection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76d3a0 TechnoClass::sub_76D3A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76d470 TechnoClass::sub_76D470 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76d4d0 Trigger::ProcessMapEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76ded0 TechnoClass::sub_76DED0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76df50 TechnoClass::sub_76DF50 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76e090 TechnoClass::sub_76E090 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x76e750 ObjectClass::Team_Start_76E750 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76e8b0 TechnoClass::Team_Start_76E8B0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76ebe0 MSSfxClass::FindByName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76ed10 Team_Start_76ED10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76f120 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::updateCursor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x76f470 ActivateScreenWDT_Create -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76fd40 ObjectClass::Map_Process_76FD40 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76feb0 ObjectClass::TerritorySelectWDT_Process -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76ff40 rc_ptr::FindTerritoryWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x770550 Animation::LoadSidebarAnimations -> COMPILE_FAIL (attempt 2)
+[ledger] 0x770850 ObjectClass::sub_770850 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x770e70 ObjectClass::sub_770E70 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p76\batch_report.json
