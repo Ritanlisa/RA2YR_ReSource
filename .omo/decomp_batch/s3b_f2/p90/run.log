@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p90\part_00
+=== convert (20 addrs) ===
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x637e00 ScriptAction::DispatchBuilding -> ScriptAction
+[conv] 0x638120 ExecuteActionPlanManager -> _addr_63
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x639bc0 BuildingClass::FlushScriptActions -> BuildingClass
+[conv] 0x63a440 sub_63A440 -> _addr_63
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63a8e0 ScriptAction::HitTest -> ScriptAction
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> ObjectClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x63be60 BuildingClass::DrawActionLines -> BuildingClass
+[conv] 0x63c690 ObjectClass::RenderScenarioActionLines -> ObjectClass
+[conv] 0x63cae0 ObjectClass::RenderScenarioActionLines2 -> ObjectClass
+[conv] 0x63d070 HouseClass::ColorLerpAndPack -> HouseClass
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x63d560 BuildingClass::DrawSelectionBlip -> BuildingClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ScriptAction             rc=2
+[era] _addr_63                 rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 7)
+[ledger] 0x637e00 ScriptAction::DispatchBuilding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x638120 ExecuteActionPlanManager -> COMPILE_FAIL (attempt 8)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 8)
+[ledger] 0x639bc0 BuildingClass::FlushScriptActions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63a440 sub_63A440 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x63a8e0 ScriptAction::HitTest -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63be60 BuildingClass::DrawActionLines -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63c690 ObjectClass::RenderScenarioActionLines -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63cae0 ObjectClass::RenderScenarioActionLines2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63d070 HouseClass::ColorLerpAndPack -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x63d2d0 ObjectClass::sub_63D2D0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x63d560 BuildingClass::DrawSelectionBlip -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p90\batch_report.json
