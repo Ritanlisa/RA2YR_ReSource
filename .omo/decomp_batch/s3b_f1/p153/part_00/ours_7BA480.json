@@ -1,0 +1,8 @@
+{
+ "symbol": "?Read@FilePipe@@QAEHHH@Z",
+ "sym_key": "FilePipe::Read",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b460c85c0743a8b5c241085db74328b7c241485ff7e2a8b0850ff511884c0750f8b460cc64610016a02508b10ff521c8b460c5753508b08ff51305f5e5bc208005f5e33c05bc20800",
+ "relocs": []
+}

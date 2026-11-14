@@ -203089,7 +203089,7 @@
   "this_as_id": false
  },
  "0x7b9d80": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203125,7 +203125,7 @@
   "this_as_id": false
  },
  "0x7b9e30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203137,7 +203137,7 @@
   "this_as_id": false
  },
  "0x7ba090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203276,7 +203276,7 @@
   "this_as_id": false
  },
  "0x7ba450": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203288,15 +203288,15 @@
   "this_as_id": false
  },
  "0x7ba480": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+5 mov ecx, dword ptr [esi + 0xc]",
   "name": "FilePipe::Read",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "FilePipe::Read",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7ba4d0": {
@@ -203312,7 +203312,7 @@
   "this_as_id": false
  },
  "0x7ba530": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203347,7 +203347,7 @@
   "this_as_id": false
  },
  "0x7ba5e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203359,7 +203359,7 @@
   "this_as_id": false
  },
  "0x7ba610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203371,7 +203371,7 @@
   "this_as_id": false
  },
  "0x7ba8c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203442,7 +203442,7 @@
   "this_as_id": false
  },
  "0x7bad90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203454,7 +203454,7 @@
   "this_as_id": false
  },
  "0x7badc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203466,7 +203466,7 @@
   "this_as_id": false
  },
  "0x7bae60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203478,7 +203478,7 @@
   "this_as_id": false
  },
  "0x7baeb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203490,7 +203490,7 @@
   "this_as_id": false
  },
  "0x7baf10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203502,7 +203502,7 @@
   "this_as_id": false
  },
  "0x7baf90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203514,7 +203514,7 @@
   "this_as_id": false
  },
  "0x7bb020": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203526,7 +203526,7 @@
   "this_as_id": false
  },
  "0x7bb050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203545,7 +203545,7 @@
   "status": "OK"
  },
  "0x7bb350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203569,7 +203569,7 @@
   "this_as_id": false
  },
  "0x7bbab0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203581,7 +203581,7 @@
   "this_as_id": false
  },
  "0x7bbaf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
