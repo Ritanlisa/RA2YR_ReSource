@@ -1,0 +1,11 @@
+{
+ "addr": "0x64B410",
+ "name": "Network_Process_64B410",
+ "size": 187,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x64B410",
+ "bytes_hex": "83ec08a138b2a800558bea5683f801896c240c8bf1746683f802746183f803740983f8040f85860000008b06535733ff8bcebbffffff7f897c2410ff501085c07e208b45003bc37d068bd8897c24108b168bce4783c518ff52103bf87ce48b6c24148b5424106a01558bcee8c0fdffffb8010000005f5b5e5d83c408c38b068bceff501085c07428ff05b4daa800e87d4cfaff84c0a1b4daa800750e485ea3b4daa80033c05d83c408c348a3b4daa8005eb8010000005d83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

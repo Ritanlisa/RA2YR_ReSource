@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x648350 ObjectClass::RunNetworkGameLoop -> ObjectClass
+[conv] 0x649ca0 BuildNetworkEventPacket -> _addr_64
+[conv] 0x64a000 SendNetworkFrameSync -> _addr_64
+[conv] 0x64a0c0 ProcessNetworkFrameSync -> _addr_64
+[conv] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> ObjectClass
+[conv] 0x64aae0 KickNetworkPlayer -> _addr_64
+[conv] 0x64ad10 Network_Process_64AD10 -> Network_Process
+[conv] 0x64b410 Network_Process_64B410 -> Network_Process
+[conv] 0x64b660 CompressNetworkMegaMission -> _addr_64
+[conv] 0x64c380 Network::ProcessEventList -> Network
+[conv] 0x64cda0 ProcessNetworkMapEvent -> _addr_64
+[conv] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> TechnoClass
+[conv] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> Multiplay
+[conv] 0x650a90 AllocateTriggerLog -> _addr_65
+[conv] 0x6516f0 LogMultiplayToSync_MPDEBUG -> LogMultiplayToSync
+[conv] 0x652110 Network_Process_652110 -> Network_Process
+[conv] 0x6523a0 Network::SendUnreachable -> Network
+[conv] 0x652960 RadarClass::Construct -> RadarClass
+[conv] 0x652cf0 RadarClass::Destru_vt05 -> RadarClass
+[conv] 0x652e50 ObjectClass::resetObjectState -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_64                 rc=2
+[era] Network_Process          rc=2
+[era] Network                  rc=2
+[era] TechnoClass              rc=2
+[era] Multiplay                rc=2
+[era] _addr_65                 rc=2
+[era] LogMultiplayToSync       rc=2
+[era] RadarClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x64a0c0   MISMATCH         ProcessNetworkFrameSync
+[diff] 0x64aae0   MISMATCH         KickNetworkPlayer
+[diff] 0x64cda0   MISMATCH         ProcessNetworkMapEvent
+[diff] 0x64b410   MISMATCH         Network_Process_64B410
+[ledger] 0x648350 ObjectClass::RunNetworkGameLoop -> COMPILE_FAIL (attempt 2)
+[ledger] 0x649ca0 BuildNetworkEventPacket -> COMPILE_FAIL (attempt 9)
+[ledger] 0x64a000 SendNetworkFrameSync -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64a0c0 ProcessNetworkFrameSync -> NG (attempt 2)
+[ledger] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> COMPILE_FAIL (attempt 6)
+[ledger] 0x64aae0 KickNetworkPlayer -> NG (attempt 2)
+[ledger] 0x64ad10 Network_Process_64AD10 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x64b410 Network_Process_64B410 -> NG (attempt 2)
+[ledger] 0x64b660 CompressNetworkMegaMission -> COMPILE_FAIL (attempt 6)
+[ledger] 0x64c380 Network::ProcessEventList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64cda0 ProcessNetworkMapEvent -> NG (attempt 2)
+[ledger] 0x64dab0 TechnoClass::ComputeNetworkFrameCRC -> COMPILE_FAIL (attempt 6)
+[ledger] 0x64dea0 Multiplay::LogToSYNC_NOMPDEBUG -> COMPILE_FAIL (attempt 4)
+[ledger] 0x650a90 AllocateTriggerLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6516f0 LogMultiplayToSync_MPDEBUG -> COMPILE_FAIL (attempt 4)
+[ledger] 0x652110 Network_Process_652110 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6523a0 Network::SendUnreachable -> COMPILE_FAIL (attempt 6)
+[ledger] 0x652960 RadarClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x652cf0 RadarClass::Destru_vt05 -> COMPILE_FAIL (attempt 15)
+[ledger] 0x652e50 ObjectClass::resetObjectState -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p30\batch_report.json

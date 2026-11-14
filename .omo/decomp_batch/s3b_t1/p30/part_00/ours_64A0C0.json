@@ -1,0 +1,363 @@
+{
+ "symbol": "?ProcessNetworkFrameSync@@YIHPAXHHHIHPAH@Z",
+ "sym_key": "Unnamed::ProcessNetworkFrameSync",
+ "size": 1299,
+ "link_base": 0,
+ "bytes_hex": "81ec880000008b02538b9c2490000000894c24048b8c249400000055565733ed51895424208bfb896c2424ff50188bf0a10000000085c00f84670200008a033c2574083c260f85590200000fbe73023c26c74424140000000074043c2575098b4c2410e80000000085f60f9ec085f675188b4c2410e80000000033c05f5e5d5b81c488000000c2140084c00f85fa0100008d7b0789742418897c24208bef803b250f85fc0000000fbe4d0b8b44241c51508b10ff521883f8ff0f84c40000008b4d008bb424a800000033d28a550a2bca8d14408d34d6390e7c2d0fbe450b8b0d0000000050e80000000085c0747e0fbe4d0b518b0d00000000e8000000008bc8e800000000eb5c890e8b8c24a80000008bd0e8000000000fbe550b8b0d0000000052e80000000085c074200fbe450b8b0d0000000050e8000000008bc8e8000000008b4c2410e8000000008b560433c0668b45088bc881e1ffff00003bd1730c8946048b4c2410e800000000f6450c017511e8000000008b9424ac0000002b0289460c8b0d000000000fbe073b413075128b57028b4c2410891500000000e8000000000fbe178b44241c52508b08ff511883f8ff0f84b40000008bb424a80000008b4f028d1440894cd610890c8500000000394c24147704894c24148a470184c00f84870000008b0d000000006a00e80000000084c074760fbe07390500000000746b50a1000000006a288b4830518d4c2434e800000000813d0000000080000000734a8b0d000000008bf08d14c98d0c918dbc4900000000b91b000000f3a566a5a4e8000000008b0d000000008b7c242089048d00000000a1000000004183e17f40890d00000000a3000000008b44241883c50d83c70848897c2420894424180f8517feffff8b6c241485ed7406892d000000005f5e5d33c05b81c488000000c214008bac24a80000008b53038d047633c98a4b0d8d44c5002bd1894424148b003bc2732f83f8ff75118b4c2410c744242001000000e8000000008b4b038b54241433c08a430d2bc8890a8bd68bcde8000000008b6c241433c0668b430b8b55048bc881e1ffff00003bca7603894504803b19756ca10000000083f804740583f803751c8b9424a00000008b0d0000000052e8000000008b4c2410e8000000008b43078b0d000000003bc174125f5e5db8020000005b81c488000000c21400e8000000008b8c24ac0000005f5e2b0189450c8b4424185d5b81c488000000c214008b0d0000000033c03bc88944242474138b9424a40000008bcbe800000000e9180100008944241c8b8424a400000083f86f894424180f82e10000008b5424248a041a8d2c1a3c190f84ac0000008a550180e2fe3c1f885501753e8b450b50e8000000008b4d0b8d736f8bd18bf8c1e90289450783c404f3a58bca8b54242483e103f3a48b450b8b4c241803d02bc88bfb89542424894c2418813d0000000000400000737ea1000000008bf58d0cc08d0488b91b0000008dbc4000000000f3a566a5a48bfbe8000000008b0d0000000089048d000000008b44241c4181e1ff3f0000890d000000008b0d000000004140890d000000008944241c8b4424188b74242483e86f83c66f83f86f89742424894424180f8323ffffff8b6c24148b44241ceb19807d001f750c8b550752e80000000083c4048b6c241483c8ff83f8ff8bf07434803f1c750785c07e038d70ff8b4c2410e8000000008b450881e6ffff000003c65f8945088b44241c5e5d5b81c488000000c214008b4c2410e800000000b8030000005f5e5d5b81c488000000c21400",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_Network_IsHosting@@3IA",
+   "sym_key": "g_Network_IsHosting"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 224,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 230,
+   "type": "REL32",
+   "sym": "?GetClass@Network@@QAEHH@Z",
+   "sym_key": "Network::GetClass"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?GetClass@Network@@QAEHH@Z",
+   "sym_key": "Network::GetClass"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?Network_Process_652110@@YIPADHH@Z",
+   "sym_key": "Network_Process_652110"
+  },
+  {
+   "off": 285,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 291,
+   "type": "REL32",
+   "sym": "?GetClass@Network@@QAEHH@Z",
+   "sym_key": "Network::GetClass"
+  },
+  {
+   "off": 305,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?GetClass@Network@@QAEHH@Z",
+   "sym_key": "Network::GetClass"
+  },
+  {
+   "off": 318,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YIPADPAX@Z",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 327,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 360,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 371,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 410,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E2D4@@3IA",
+   "sym_key": "DataGlobal_A8E2D4"
+  },
+  {
+   "off": 415,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 462,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5210@@3PAIA",
+   "sym_key": "DataGlobal_AC5210"
+  },
+  {
+   "off": 489,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 496,
+   "type": "REL32",
+   "sym": "?IsValidHouse@SessionClass@@QAEDPAX@Z",
+   "sym_key": "SessionClass::IsValidHouse"
+  },
+  {
+   "off": 509,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E2CC@@3IA",
+   "sym_key": "DataGlobal_A8E2CC"
+  },
+  {
+   "off": 517,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 532,
+   "type": "REL32",
+   "sym": "?Add2@EventClass@@QAEPADHEH@Z",
+   "sym_key": "EventClass::Add2"
+  },
+  {
+   "off": 538,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 550,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 565,
+   "type": "DIR32",
+   "sym": "?g_NetworkPacketIndex@@3PAEA",
+   "sym_key": "g_NetworkPacketIndex"
+  },
+  {
+   "off": 580,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 586,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 597,
+   "type": "DIR32",
+   "sym": "?g_CrateSystemState@@3PAIA",
+   "sym_key": "g_CrateSystemState"
+  },
+  {
+   "off": 602,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 613,
+   "type": "DIR32",
+   "sym": "?Networking_NextPacketIndex@@3IA",
+   "sym_key": "Networking_NextPacketIndex"
+  },
+  {
+   "off": 618,
+   "type": "DIR32",
+   "sym": "?Networking_LastEventIndex@@3IA",
+   "sym_key": "Networking_LastEventIndex"
+  },
+  {
+   "off": 657,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E2C4@@3IA",
+   "sym_key": "DataGlobal_A8E2C4"
+  },
+  {
+   "off": 728,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 753,
+   "type": "REL32",
+   "sym": "?Network_Process_652110@@YIPADHH@Z",
+   "sym_key": "Network_Process_652110"
+  },
+  {
+   "off": 791,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 814,
+   "type": "DIR32",
+   "sym": "?g_NetworkManager@@3HA",
+   "sym_key": "g_NetworkManager"
+  },
+  {
+   "off": 820,
+   "type": "REL32",
+   "sym": "?GetClass@Network@@QAEHH@Z",
+   "sym_key": "Network::GetClass"
+  },
+  {
+   "off": 829,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 838,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E7A8@@3IA",
+   "sym_key": "DataGlobal_A8E7A8"
+  },
+  {
+   "off": 865,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 900,
+   "type": "DIR32",
+   "sym": "?g_GameTypeFlags@@3IA",
+   "sym_key": "g_GameTypeFlags"
+  },
+  {
+   "off": 924,
+   "type": "REL32",
+   "sym": "?DecodeNetworkEvents@@YIHPAXI@Z",
+   "sym_key": "DecodeNetworkEvents"
+  },
+  {
+   "off": 993,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 1052,
+   "type": "DIR32",
+   "sym": "?g_GameInitState@@3IA",
+   "sym_key": "g_GameInitState"
+  },
+  {
+   "off": 1063,
+   "type": "DIR32",
+   "sym": "?g_MenuInitState@@3IA",
+   "sym_key": "g_MenuInitState"
+  },
+  {
+   "off": 1083,
+   "type": "DIR32",
+   "sym": "?g_MenuInitComplete@@3PAEA",
+   "sym_key": "g_MenuInitComplete"
+  },
+  {
+   "off": 1095,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 1101,
+   "type": "DIR32",
+   "sym": "?g_MenuInitState@@3IA",
+   "sym_key": "g_MenuInitState"
+  },
+  {
+   "off": 1108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A70204@@3PAIA",
+   "sym_key": "DataGlobal_A70204"
+  },
+  {
+   "off": 1125,
+   "type": "DIR32",
+   "sym": "?g_MenuInitState@@3IA",
+   "sym_key": "g_MenuInitState"
+  },
+  {
+   "off": 1131,
+   "type": "DIR32",
+   "sym": "?g_GameInitState@@3IA",
+   "sym_key": "g_GameInitState"
+  },
+  {
+   "off": 1139,
+   "type": "DIR32",
+   "sym": "?g_GameInitState@@3IA",
+   "sym_key": "g_GameInitState"
+  },
+  {
+   "off": 1199,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 1237,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 1277,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "symbol": "?Network_Process_64B410@@YIHHPAH@Z",
+ "sym_key": "Unnamed::Network_Process_64B410",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "83ec08a100000000555683f80157895424108bf18bea746383f802745e83f803740983f8040f85920000008b065333ff56bbffffff7f897c2414ff501085c07e1b8b45003bc37d068bd8897c24108b0e564783c518ff51103bf87ce58b5424146a01528b5424188bcee800000000b8010000005b5f5e5d83c408c38b0656ff501085c074388b3d000000008b4c24104751893d00000000e80000000083c40484c0a100000000750f485fa3000000005e33c05d83c408c348a3000000005f5eb8010000005d83c408c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?KickNetworkPlayerNow@@YIXHHHE@Z",
+   "sym_key": "KickNetworkPlayerNow"
+  },
+  {
+   "off": 135,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  },
+  {
+   "off": 152,
+   "type": "REL32",
+   "sym": "?Network_Process_5F0120@@YADH@Z",
+   "sym_key": "Network_Process_5F0120"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  },
+  {
+   "off": 185,
+   "type": "DIR32",
+   "sym": "?g_GameFlags_Campaign@@3IA",
+   "sym_key": "g_GameFlags_Campaign"
+  }
+ ]
+}
