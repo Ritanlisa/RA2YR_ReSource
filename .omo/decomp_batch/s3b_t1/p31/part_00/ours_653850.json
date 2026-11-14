@@ -1,0 +1,165 @@
+{
+ "symbol": "?MouseInput@RadarClass@@QAEXPAH0@Z",
+ "sym_key": "RadarClass::MouseInput",
+ "size": 365,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578b7c2418578bd955e8000000008b3534020000a1000000008b0d00000000f7de1bf623f08b078d14313bc272358b150000000003d103d63bc273278b47048b0d000000003bc1721a8b150000000003d13bc2730e6a006a00b900000000e8000000008b0d000000008b078d14313bc272348b150000000003d103d63bc273268b7f04a1000000003bf8721a8b0d0000000003c83bf9730e6a006a00b900000000e800000000817d00f2800000755ea10000000085c0743883f803740583f8047522a10000000085c074198b1050ff522084c0740fa100000000508b08ff511084c0750cc705c40a000008000000eb0ac705c40a000009000000817d00f3800000750ac705c40a000001000000a10000000085c0762b8b83b014000083f803742083f804741b6a006a048bcb8983b4140000e800000000c783b81400000000000083bbb01400000475158bcbe800000000e80000000085c07505e8000000005f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Update@DisplayClass@@QAEXHH@Z",
+   "sym_key": "DisplayClass::Update"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRectOffset@@3IA",
+   "sym_key": "g_Map_VisibleRectOffset"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A00@@3IA",
+   "sym_key": "DataGlobal_B04A00"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?dword_B04A08@@3IA",
+   "sym_key": "dword_B04A08"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04A04@@3IA",
+   "sym_key": "DataGlobal_B04A04"
+  },
+  {
+   "off": 82,
+   "type": "DIR32",
+   "sym": "?dword_B04A0C@@3IA",
+   "sym_key": "dword_B04A0C"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?SetCursor@Mouse@@QAEDHD@Z",
+   "sym_key": "Mouse::SetCursor"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048C8@@3IA",
+   "sym_key": "DataGlobal_B048C8"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?dword_B048D0@@3IA",
+   "sym_key": "dword_B048D0"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B048CC@@3IA",
+   "sym_key": "DataGlobal_B048CC"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?dword_B048D4@@3IA",
+   "sym_key": "dword_B048D4"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?SetCursor@Mouse@@QAEDHD@Z",
+   "sym_key": "Mouse::SetCursor"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 202,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 268,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?g_AsyncIOState@@3IA",
+   "sym_key": "g_AsyncIOState"
+  },
+  {
+   "off": 314,
+   "type": "REL32",
+   "sym": "?SetViewMode@RadarClass@@QAEHHD@Z",
+   "sym_key": "RadarClass::SetViewMode"
+  },
+  {
+   "off": 340,
+   "type": "REL32",
+   "sym": "?ProcessChronoEffect@TacticalClass@@QAEXXZ",
+   "sym_key": "TacticalClass::ProcessChronoEffect"
+  },
+  {
+   "off": 345,
+   "type": "REL32",
+   "sym": "?UI_Helper@@YAHXZ",
+   "sym_key": "UI_Helper"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "?ChronoScreenEffect__DecrementCounter@@YAHXZ",
+   "sym_key": "ChronoScreenEffect__DecrementCounter"
+  }
+ ]
+}
