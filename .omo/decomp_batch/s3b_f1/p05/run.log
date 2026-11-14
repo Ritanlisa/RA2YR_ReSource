@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> AircraftClass
+[conv] 0x41adc0 AircraftClass::ProcessDockCheck -> AircraftClass
+[conv] 0x41b110 ObjectClass::PlaceAircraftFromINI -> ObjectClass
+[conv] 0x41b430 AircraftClass::LoadFromStream -> AircraftClass
+[conv] 0x41b660 AircraftClass::HandleTargetDestroyed -> AircraftClass
+[conv] 0x41b760 TechnoClass::GetAutoFireDirection -> TechnoClass
+[conv] 0x41b870 AircraftClass::ProcessPassengerEjection -> AircraftClass
+[conv] 0x41b920 AircraftClass::IsHeightAboveThreshold -> AircraftClass
+[conv] 0x41b980 AircraftClass::IsBelowScreen -> AircraftClass
+[conv] 0x41b9f0 AircraftClass::UpdateDocking -> AircraftClass
+[conv] 0x41ba90 AircraftClass::MissionDispatch -> AircraftClass
+[conv] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> AircraftClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+[conv] 0x41c250 ObjectClass::CreateInstanceCOM -> ObjectClass
+[conv] 0x41c3f0 BulletClass::NormalizeZeroVector -> BulletClass
+[conv] 0x41c430 Function::Method_41C430 -> Function
+[conv] 0x41c490 AbstractClass::processCleanup -> AbstractClass
+[conv] 0x41c8b0 AircraftTypeClass::AircraftTypeClass_41C8B0 -> AircraftTypeClass
+[conv] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> ObjectClass
+[conv] 0x41d860 AirstrikeClass::SpawnAircraft -> AirstrikeClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] BulletClass              rc=2
+[era] Function                 rc=2
+[era] AbstractClass            rc=2
+[era] AircraftTypeClass        rc=2
+[era] AirstrikeClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41adc0 AircraftClass::ProcessDockCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b110 ObjectClass::PlaceAircraftFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b430 AircraftClass::LoadFromStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41b660 AircraftClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b760 TechnoClass::GetAutoFireDirection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b870 AircraftClass::ProcessPassengerEjection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b920 AircraftClass::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b980 AircraftClass::IsBelowScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b9f0 AircraftClass::UpdateDocking -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41ba90 AircraftClass::MissionDispatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 7)
+[ledger] 0x41c250 ObjectClass::CreateInstanceCOM -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41c3f0 BulletClass::NormalizeZeroVector -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41c430 Function::Method_41C430 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41c490 AbstractClass::processCleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41c8b0 AircraftTypeClass::AircraftTypeClass_41C8B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41d540 ObjectClass::CleanupAirstrikeTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41d860 AirstrikeClass::SpawnAircraft -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p05\batch_report.json
