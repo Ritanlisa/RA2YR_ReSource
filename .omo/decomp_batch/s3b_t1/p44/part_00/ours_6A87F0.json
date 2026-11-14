@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_6A87F0@ObjectClass@@QAEDHH@Z",
+ "sym_key": "ObjectClass::sub_6A87F0",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b565483fa4b7e085f5e32c05bc208008b5c24148b7c241033c985d27e148d46583978047504391874de4183c0343bca7cefa10000000085c0751183ff1f740c6affb900000000e80000000053578bcee800000000b0015f88463c5ea2000000005bc20800",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83FA64@@3IA",
+   "sym_key": "DataGlobal_83FA64"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?FindAndPlay@VoxClass@@QAEXH@Z",
+   "sym_key": "VoxClass::FindAndPlay"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?AddCameo_ReplaceItAll@TabCameoListClass@@QAEHHH@Z",
+   "sym_key": "TabCameoListClass::AddCameo_ReplaceItAll"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?g_CameoRenderFlag@@3EA",
+   "sym_key": "g_CameoRenderFlag"
+  }
+ ]
+}

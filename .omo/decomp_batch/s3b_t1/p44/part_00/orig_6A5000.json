@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A5000",
+ "name": "ObjectClass::processDamage",
+ "size": 33,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A5000",
+ "bytes_hex": "56e8aaa7f9ffbe0400000032d2b92cf98300e899f0f0ff4ea3c07bb00075ec5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

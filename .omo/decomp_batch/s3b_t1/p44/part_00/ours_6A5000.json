@@ -1,0 +1,33 @@
+{
+ "symbol": "?processDamage@SidebarClass@@QAEHXZ",
+ "sym_key": "SidebarClass::processDamage",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "518b4424005650e800000000be0400000032d2b900000000e8000000004ea30000000075ec5e59c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?Stub@PowerClass@@QAEHH@Z",
+   "sym_key": "PowerClass::Stub"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_83F92C@@3PADA",
+   "sym_key": "DataGlobal_83F92C"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?SearchMIXFile@@YIHPADD@Z",
+   "sym_key": "SearchMIXFile"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B07BC0@@3IA",
+   "sym_key": "DataGlobal_B07BC0"
+  }
+ ]
+}
