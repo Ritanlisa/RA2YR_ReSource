@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e5b60 TagTypeClass::Construct -> TagTypeClass
+[conv] 0x6e5ca0 TagTypeClass::CleanupMembers -> TagTypeClass
+[conv] 0x6e6080 TagTypeClass::GetAction -> TagTypeClass
+[conv] 0x6e6160 TagTypeClass::GetParameter -> TagTypeClass
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x6e6ff0 BuildingLoadQueue::FindObject -> BuildingLoadQueue
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> ObjectClass
+[conv] 0x6e8220 TaskForceClass::LoadFromINI -> TaskForceClass
+[conv] 0x6e8340 ScriptTypeClass::ReadINI -> ScriptTypeClass
+[conv] 0x6e8420 TaskForceClass::GetUnitCount -> TaskForceClass
+[conv] 0x6e85b0 ObjectClass::sub_6E85B0 -> ObjectClass
+[conv] 0x6e8de0 TeamClass::Destructor -> TeamClass
+[conv] 0x6e9140 TeamClass::Update -> TeamClass
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+[conv] 0x6ea610 TeamClass::ValidateMember -> TeamClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x6eaa90 TeamClass::RecruitMember -> TeamClass
+[conv] 0x6eae60 TeamClass::ExecuteAction -> TeamClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TagTypeClass             rc=2
+[era] BuildingLoadQueue        rc=2
+[era] ObjectClass              rc=2
+[era] TaskForceClass           rc=2
+[era] ScriptTypeClass          rc=2
+[era] TeamClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e85b0   MISMATCH         ObjectClass::sub_6E85B0
+[ledger] 0x6e5b60 TagTypeClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e5ca0 TagTypeClass::CleanupMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e6080 TagTypeClass::GetAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e6160 TagTypeClass::GetParameter -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6e6ff0 BuildingLoadQueue::FindObject -> COMPILE_FAIL (attempt 13)
+[ledger] 0x6e7330 ObjectClass::System_Read_6E7330 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6e7c20 ObjectClass::Network_Process_6E7C20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e8220 TaskForceClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e8340 ScriptTypeClass::ReadINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e8420 TaskForceClass::GetUnitCount -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e85b0 ObjectClass::sub_6E85B0 -> NG (attempt 5)
+[ledger] 0x6e8de0 TeamClass::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e9140 TeamClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6ea610 TeamClass::ValidateMember -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6eaa90 TeamClass::RecruitMember -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6eae60 TeamClass::ExecuteAction -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p54\batch_report.json
