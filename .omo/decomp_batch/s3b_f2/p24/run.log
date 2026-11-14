@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x49a3e0 _BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x49a400 _BlitTranslucent50ZeroAlpha_G::Constructor_Blitter_2 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x49a760 _RLEBlitTransXlat_G::Constructor_RLEBlitter -> _RLEBlitTransXlat_G
+[conv] 0x49a780 _RLEBlitTransZRemapXlat_G::Constructor_RLEBlitter_0 -> _RLEBlitTransZRemapXlat_G
+[conv] 0x49a7a0 _RLEBlitTransDarken_G::Constructor_RLEBlitter_1 -> _RLEBlitTransDarken_G
+[conv] 0x49a9a0 _RLEBlitTransLucent75ZReadWrite_G::Constructor_RLEBlitter -> _RLEBlitTransLucent75ZReadWrite_G
+[conv] 0x49a9c0 _RLEBlitTransLucent50ZReadWrite_G::Constructor_RLEBlitter_0 -> _RLEBlitTransLucent50ZReadWrite_G
+[conv] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> _RLEBlitTransLucent25ZReadWrite_G
+[conv] 0x49b7e0 FillScoreScreenStats -> _addr_49
+[conv] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> TechnoClass
+[conv] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> ObjectClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x49cc50 MPCooperative::validateMove -> MPCooperative
+[conv] 0x49d120 MPCooperative::ReadCoopSaveINI -> MPCooperative
+[conv] 0x49d680 ObjectClass::SerializeCampaignOptions -> ObjectClass
+[conv] 0x49db00 CampaignClass::LoadFromINI -> CampaignClass
+[conv] 0x49e400 CampaignClass::FindMission -> CampaignClass
+[conv] 0x49e8e0 INISectionList::Constructor -> INISectionList
+[conv] 0x49f420 RandomCoordScatter -> _addr_49
+[conv] 0x49f5c0 CopyProtection::CheckLauncher -> CopyProtection
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTranslucent50NonzeroAlpha_G rc=2
+[era] _BlitTranslucent50ZeroAlpha_G rc=2
+[era] _RLEBlitTransXlat_G      rc=2
+[era] _RLEBlitTransZRemapXlat_G rc=2
+[era] _RLEBlitTransDarken_G    rc=2
+[era] _RLEBlitTransLucent75ZReadWrite_G rc=2
+[era] _RLEBlitTransLucent50ZReadWrite_G rc=2
+[era] _RLEBlitTransLucent25ZReadWrite_G rc=2
+[era] _addr_49                 rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] CampaignClass            rc=2
+[era] MPCooperative            rc=2
+[era] INISectionList           rc=2
+[era] CopyProtection           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x49a3e0 _BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x49a400 _BlitTranslucent50ZeroAlpha_G::Constructor_Blitter_2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a760 _RLEBlitTransXlat_G::Constructor_RLEBlitter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a780 _RLEBlitTransZRemapXlat_G::Constructor_RLEBlitter_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a7a0 _RLEBlitTransDarken_G::Constructor_RLEBlitter_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a9a0 _RLEBlitTransLucent75ZReadWrite_G::Constructor_RLEBlitter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a9c0 _RLEBlitTransLucent50ZReadWrite_G::Constructor_RLEBlitter_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49a9e0 _RLEBlitTransLucent25ZReadWrite_G::Constructor_RLEBlitter_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49b7e0 FillScoreScreenStats -> COMPILE_FAIL (attempt 8)
+[ledger] 0x49b930 TechnoClass::UpdateScoreScreenStatistics -> COMPILE_FAIL (attempt 7)
+[ledger] 0x49c0d0 ObjectClass::LoadCampaignCoopSave -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 10)
+[ledger] 0x49cc50 MPCooperative::validateMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49d120 MPCooperative::ReadCoopSaveINI -> COMPILE_FAIL (attempt 10)
+[ledger] 0x49d680 ObjectClass::SerializeCampaignOptions -> COMPILE_FAIL (attempt 7)
+[ledger] 0x49db00 CampaignClass::LoadFromINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x49e400 CampaignClass::FindMission -> COMPILE_FAIL (attempt 15)
+[ledger] 0x49e8e0 INISectionList::Constructor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x49f420 RandomCoordScatter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x49f5c0 CopyProtection::CheckLauncher -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p24\batch_report.json
