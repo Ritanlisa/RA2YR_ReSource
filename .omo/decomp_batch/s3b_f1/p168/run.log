@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p168\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dbed6 ObjectClass::___ld12mul -> ObjectClass
+[conv] 0x7dc1c2 terminate_YAXXZ -> _addr_7D
+[conv] 0x7dc223 unexpected_YAXXZ -> _addr_7D
+[conv] 0x7dc291 ObjectClass::__filwbuf -> ObjectClass
+[conv] 0x7dc468 ObjectClass::__setmode_lk -> ObjectClass
+[conv] 0x7dc4c9 ___crtGetLocaleInfoW -> _addr_7D
+[conv] 0x7dc5dc ___crtGetLocaleInfoA -> _addr_7D
+[conv] 0x7dc7cb HandleErrorCOM -> _addr_7D
+[conv] 0x7dcd9c ThrowErrorCOM -> _addr_7D
+[conv] 0x7dce0e _com_error::sub_7DCE0E -> _com_error
+[conv] 0x7dce6e GetTimeZoneInformation -> _addr_7D
+[conv] 0x7dce74 GetLocalTime -> _addr_7D
+[conv] 0x7dce7a RtlUnwind -> _addr_7D
+[conv] 0x7dcee0 GetCurrentThread::_0 -> GetCurrentThread
+[conv] 0x7dcf04 GetCPInfo -> _addr_7D
+[conv] 0x7dcf16 SetConsoleCtrlHandler -> _addr_7D
+[conv] 0x7dcf22 GetCurrentProcessId::_0 -> GetCurrentProcessId
+[conv] 0x7dcf2e FreeEnvironmentStringsA -> _addr_7D
+[conv] 0x7dcf34 FreeEnvironmentStringsW -> _addr_7D
+[conv] 0x7dcf3a GetEnvironmentStrings -> _addr_7D
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+[era] _com_error               rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7dbed6 ObjectClass::___ld12mul -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dc1c2 terminate_YAXXZ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7dc223 unexpected_YAXXZ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7dc291 ObjectClass::__filwbuf -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc468 ObjectClass::__setmode_lk -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7dc4c9 ___crtGetLocaleInfoW -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc5dc ___crtGetLocaleInfoA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dc7cb HandleErrorCOM -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcd9c ThrowErrorCOM -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7dce0e _com_error::sub_7DCE0E -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dce6e GetTimeZoneInformation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dce74 GetLocalTime -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dce7a RtlUnwind -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcee0 GetCurrentThread::_0 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7dcf04 GetCPInfo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcf16 SetConsoleCtrlHandler -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcf22 GetCurrentProcessId::_0 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7dcf2e FreeEnvironmentStringsA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcf34 FreeEnvironmentStringsW -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcf3a GetEnvironmentStrings -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p168\batch_report.json
