@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p99\part_00
+=== convert (20 addrs) ===
+[conv] 0x66d150 RulesClass::readAudioVisual -> RulesClass
+[conv] 0x66d1f0 RulesClass::readSpecialWeapons -> RulesClass
+[conv] 0x66d270 INIClass::ReadDifficultyModifiers -> INIClass
+[conv] 0x66d530 RulesClass::LoadFromINI -> RulesClass
+[conv] 0x672440 RulesClass::ReadDataList -> RulesClass
+[conv] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> RulesClass
+[conv] 0x673e80 RulesClass::ReadPowerupsSection -> RulesClass
+[conv] 0x674000 RulesClass::LoadSpeedTypes -> RulesClass
+[conv] 0x6743d0 RulesClass::readDifficulty -> RulesClass
+[conv] 0x674730 RulesClass::SaveLoad_Prefix -> RulesClass
+[conv] 0x675210 RulesClass::SaveLoad_Prefix_0 -> RulesClass
+[conv] 0x678850 TechnoClass::InitInterfaceStubsCOM -> TechnoClass
+[conv] 0x679a10 SideClass::LoadAllFromINI -> SideClass
+[conv] 0x67a030 TypeList::InfantryCleanup -> TypeList
+[conv] 0x67a090 TypeList::CopyFull -> TypeList
+[conv] 0x67a110 TypeList::CopyAircraft -> TypeList
+[conv] 0x67a290 TypeList::CopyInfantry -> TypeList
+[conv] 0x67a390 TypeList::VoxelAnimConstructor -> TypeList
+[conv] 0x67a4f0 TypeList::Construct -> TypeList
+[conv] 0x67a570 Rules::CopyDataArray -> Rules
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RulesClass               rc=2
+[era] INIClass                 rc=2
+[era] TechnoClass              rc=2
+[era] SideClass                rc=2
+[era] TypeList                 rc=2
+[era] Rules                    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x66d150 RulesClass::readAudioVisual -> COMPILE_FAIL (attempt 3)
+[ledger] 0x66d1f0 RulesClass::readSpecialWeapons -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66d270 INIClass::ReadDifficultyModifiers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66d530 RulesClass::LoadFromINI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x672440 RulesClass::ReadDataList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> COMPILE_FAIL (attempt 4)
+[ledger] 0x673e80 RulesClass::ReadPowerupsSection -> COMPILE_FAIL (attempt 6)
+[ledger] 0x674000 RulesClass::LoadSpeedTypes -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6743d0 RulesClass::readDifficulty -> COMPILE_FAIL (attempt 4)
+[ledger] 0x674730 RulesClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 7)
+[ledger] 0x675210 RulesClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x678850 TechnoClass::InitInterfaceStubsCOM -> COMPILE_FAIL (attempt 3)
+[ledger] 0x679a10 SideClass::LoadAllFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67a030 TypeList::InfantryCleanup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67a090 TypeList::CopyFull -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67a110 TypeList::CopyAircraft -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67a290 TypeList::CopyInfantry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67a390 TypeList::VoxelAnimConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x67a4f0 TypeList::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x67a570 Rules::CopyDataArray -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p99\batch_report.json
