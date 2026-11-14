@@ -1,0 +1,116 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p21\part_00
+=== convert (40 addrs) ===
+[conv] 0x4f3140 ParseINIGadgetDefinition -> _addr_4F
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x4f3d40 ObjectClass::sub_4F3D40 -> ObjectClass
+[conv] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> GraphicMenuShortcutItem
+[conv] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4240 GScreenClass::QueryInterface -> GScreenClass
+[conv] 0x4f42f0 GScreenClass::MarkForRedraw -> GScreenClass
+[conv] 0x4f4480 GScreenClass::Redraw -> GScreenClass
+[conv] 0x4f45b0 GScreenClass::RenderFrame -> GScreenClass
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x4f4c00 GScreenClass::getHouseHandle -> GScreenClass
+[conv] 0x4f4e53 sub_4F4E53 -> _addr_4F
+[conv] 0x4f54a0 HouseClass::Construct -> HouseClass
+[conv] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> SuperWeaponTypeClass
+[conv] 0x4f6830 HouseClass::QueryInterface -> HouseClass
+[conv] 0x4f7140 HouseClass::Destruct -> HouseClass
+[conv] 0x4f7870 HouseClass::CanBuild -> HouseClass
+[conv] 0x4f8440 HouseClass::Update_TogglePower -> HouseClass
+[conv] 0x4f9610 HouseClass::GiveTiberium_Storage -> HouseClass
+[conv] 0x4f9670 UnitClass::sub_4F9670 -> UnitClass
+[conv] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> FactoryClass
+[conv] 0x4f9750 BuildingClass::checkRepairEligibility -> BuildingClass
+[conv] 0x4f9790 HouseClass::ProcessPowerDrain -> HouseClass
+[conv] 0x4f9a90 Object::IsAlliedWithObjectHouse -> Object
+[conv] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> Object
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x4f9f90 HouseClass::SetAlliance -> HouseClass
+[conv] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> SuperWeapon
+[conv] 0x4faf00 SuperWeapon::EvaluateAITarget -> SuperWeapon
+[conv] 0x4fb0e0 HouseClass::CompleteProduction -> HouseClass
+[conv] 0x4fb840 BuildingPlacement::Activate -> BuildingPlacement
+[conv] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> AbstractClass
+[conv] 0x4fbd00 ObjectClass::sub_4FBD00 -> ObjectClass
+[conv] 0x4fbf60 HouseClass::DroppedFlag -> HouseClass
+[conv] 0x4fc0b0 HouseClass::DefeatPlayer -> HouseClass
+[conv] 0x4fce80 BuildingClass::Capture -> BuildingClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x4fd150 BuildingClass::CalcExitCoords -> BuildingClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4F                 rc=2
+[era] GraphicMenuImageItem     rc=2
+[era] ObjectClass              rc=2
+[era] GraphicMenuShortcutItem  rc=2
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=2
+[era] GScreenClass             rc=2
+[era] Frame                    rc=2
+[era] HouseClass               rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] UnitClass                rc=2
+[era] FactoryClass             rc=2
+[era] BuildingClass            rc=2
+[era] Object                   rc=2
+[era] SuperWeapon              rc=2
+[era] BuildingPlacement        rc=2
+[era] AbstractClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4f3140 ParseINIGadgetDefinition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f3d40 ObjectClass::sub_4F3D40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f3ee0 GraphicMenuShortcutItem::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f3fd0 _VectorCursor_IV_DynamicVectorClass_I::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f4240 GScreenClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f42f0 GScreenClass::MarkForRedraw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f4480 GScreenClass::Redraw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f45b0 GScreenClass::RenderFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f4c00 GScreenClass::getHouseHandle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f4e53 sub_4F4E53 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f54a0 HouseClass::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f6540 SuperWeaponTypeClass::IsAvailable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f6830 HouseClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f7140 HouseClass::Destruct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f7870 HouseClass::CanBuild -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f8440 HouseClass::Update_TogglePower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9610 HouseClass::GiveTiberium_Storage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9670 UnitClass::sub_4F9670 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9700 FactoryClass::AccumulateCreditsProgress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f9750 BuildingClass::checkRepairEligibility -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f9790 HouseClass::ProcessPowerDrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9a90 Object::IsAlliedWithObjectHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9af0 Object::IsAlliedWithObjectSimpleHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f9f90 HouseClass::SetAlliance -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fad20 SuperWeapon::SelectSuperWeaponTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4faf00 SuperWeapon::EvaluateAITarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fb0e0 HouseClass::CompleteProduction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4fb9b0 AbstractClass::RemoveObjectFromHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fbd00 ObjectClass::sub_4FBD00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fbf60 HouseClass::DroppedFlag -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4fc0b0 HouseClass::DefeatPlayer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4fce80 BuildingClass::Capture -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> COMPILE_FAIL (attempt 17)
+[ledger] 0x4fd150 BuildingClass::CalcExitCoords -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 40
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 23,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p21\batch_report.json
