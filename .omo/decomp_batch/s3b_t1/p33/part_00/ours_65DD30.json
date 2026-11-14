@@ -1,0 +1,117 @@
+{
+ "symbol": "?ConstructTeamMembers@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::ConstructTeamMembers",
+ "size": 759,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec1c5356578bd968a0000000895df8e8000000008bf083c40485f674258bcbe8000000006a0050538bcee8000000008bf885ff897df47414c6477701c6477a00eb0ac745f4000000008b7df48b93e000000033c08845fe8b8aa000000085c97e228bb2a400000081c2a400000083fe08740d4083c2083bc17d09833a0875f3c645fe0157e8000000008845fd8b83e400000083c40433d28b889c0000008855ff85c97e2b8b98a80000008db0a80000003893ce0c000075134283c6083bd17d0f8b1e80bbce0c00000074edc645ff0133db33f633d285c98955ec8955f00f8efb0100008955e48b8cd8a40000008bbcd8a800000085c9c745e8000000000f8e590100008bdaa1000000008b55f44033c9a3000000008a4a2c8b075157ff908c0000008b0d000000008bf04985f6890d000000000f84000100008b870008000085c07e2a8b45f88b88a4000000f6c5ff741cdb442424dd1c248b4de46a00518d8e3c030000e800000000ddd8ddd88b55f88b82a000000085c0742983c0fe85c0741383f801752e508d8e50010000e800000000eb206a018d8e50010000e800000000eb118d86500100006a0150e80000000083c4088b4df485c974278b15000000006a004256891500000000e800000000a10000000048a300000000c68689060000018b87e005000085c07e448b4df88b81a4000000f6c4ff74368a45fd84c074168b1656ff522c83f80275248b0656ff502c83f80175198a87ce0c000084c075078a45ff84c075088b45ec8975eceb068b45f08975f08946308b4df88b45e8408b91e40000008b4de48945e83b8411a40000000f82acfeffff8b75ec8b55f8438b82e40000008d0cdd00000000894de48bd33b989c0000000f8268feffff8b45f085f6745285c075098bc65f5e5b8be55dc38b55f88b8aa4000000f6c5ff75098bc65f5e5b8be55dc3508d8e14010000e8000000008a45fe84c074128b0656ff502c83f8027507c686d4030000018bc65f5e5b8be55dc385c075118b7df485ff74088b0f6a0157ff512033c05f5e5b8be55dc3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetOwnerHouse@Techno@@QAEHXZ",
+   "sym_key": "Techno::GetOwnerHouse"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Construct@MissionClass@@QAEPAVTeamClass@@HHH@Z",
+   "sym_key": "MissionClass::Construct"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Team_Create@@YADPAX@Z",
+   "sym_key": "Team_Create"
+  },
+  {
+   "off": 266,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 296,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 307,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?Accumulate@Float@@QAENMH@Z",
+   "sym_key": "Float::Accumulate"
+  },
+  {
+   "off": 402,
+   "type": "REL32",
+   "sym": "?SetFlag@Timer@@QAEDD@Z",
+   "sym_key": "Timer::SetFlag"
+  },
+  {
+   "off": 417,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  },
+  {
+   "off": 433,
+   "type": "REL32",
+   "sym": "?Team_Create_750060@@YADPAXH@Z",
+   "sym_key": "Team_Create_750060"
+  },
+  {
+   "off": 449,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 459,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 464,
+   "type": "REL32",
+   "sym": "?AddMember@TeamClass@@QAEDHD@Z",
+   "sym_key": "TeamClass::AddMember"
+  },
+  {
+   "off": 469,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 475,
+   "type": "DIR32",
+   "sym": "?g_IKnowWhatImDoing@@3IA",
+   "sym_key": "g_IKnowWhatImDoing"
+  },
+  {
+   "off": 693,
+   "type": "REL32",
+   "sym": "?AddObject@CellClass@@QAEXPAX@Z",
+   "sym_key": "CellClass::AddObject"
+  }
+ ]
+}

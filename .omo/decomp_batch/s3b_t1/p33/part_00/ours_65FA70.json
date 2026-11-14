@@ -1,0 +1,69 @@
+{
+ "symbol": "?CreateTriggerClassIfFarEnough@@YIDHHH@Z",
+ "sym_key": "Unnamed::CreateTriggerClassIfFarEnough",
+ "size": 229,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec085356578bf98bc7897dfcc1e0048a880000000084c90f849b000000a10000000033f685c00f868c000000a1000000008b7dfc8b5d088b0cb08b55fc39117559db44241cdb44241cd9c0d8c9d9c2d8cbdec1dd1c24ddd8ddd88b45f85750e8000000008b4dfc8b55f85152ddd8e80000000033c383c41025ff00000033d8a1000000000fbfdb8b0cb08b110fbfcbc1e2043b8a00000000720d8b0d00000000463bf17310eb9080e3005f8ac35e5b8be55dc204008b7dfc6a40e80000000083c40485c0740e8b5508525750e80000000083c40c24015f5e0c015b8be55dc20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F09A4@@3PAEA",
+   "sym_key": "DataGlobal_7F09A4"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?g_TriggerEventState@@3IA",
+   "sym_key": "g_TriggerEventState"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_TriggerPool@@3PAXA",
+   "sym_key": "g_TriggerPool"
+  },
+  {
+   "off": 100,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?g_TriggerPool@@3PAXA",
+   "sym_key": "g_TriggerPool"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F0998@@3PAIA",
+   "sym_key": "DataGlobal_7F0998"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_TriggerEventState@@3IA",
+   "sym_key": "g_TriggerEventState"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?Team_Load_65FB80@@YAPAIPAXHH@Z",
+   "sym_key": "Team_Load_65FB80"
+  }
+ ]
+}

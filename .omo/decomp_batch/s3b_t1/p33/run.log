@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x65d150 RawFileClass::Close -> RawFileClass
+[conv] 0x65d190 RawFileClass::Delete -> RawFileClass
+[conv] 0x65d2b0 RawFileClass::GetFileSizeOp -> RawFileClass
+[conv] 0x65d660 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x65d6a0 ReferenceCounted::initInterface -> ReferenceCounted
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x65dd30 ObjectClass::ConstructTeamMembers -> ObjectClass
+[conv] 0x65e660 SpawnSuperWeaponUnits -> _addr_65
+[conv] 0x65e850 PlaceAircraftOnMap -> _addr_65
+[conv] 0x65eab0 globalHelper_05EAB0 -> _addr_65
+[conv] 0x65ec30 ExecuteScriptTypeClassActions -> _addr_65
+[conv] 0x65f520 ScenarioClass::ShowMissionBriefing -> ScenarioClass
+[conv] 0x65fa70 CreateTriggerClassIfFarEnough -> _addr_65
+[conv] 0x6613a0 ComputeColorSaturation -> _addr_66
+[conv] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass_661EC0 -> RocketLocomotionClass
+[conv] 0x661f30 RocketLocomotionClass::sub_661F30 -> RocketLocomotionClass
+[conv] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> JumpjetLocomotionClass
+[conv] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x6620f0 BulletClass::ComputeImpactTrajectory -> BulletClass
+[conv] 0x662240 ObjectClass::sub_662240 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RawFileClass             rc=2
+[era] ReferenceCounted         rc=2
+[era] _addr_65                 rc=2
+[era] ObjectClass              rc=0
+[era] ScenarioClass            rc=2
+[era] _addr_66                 rc=2
+[era] RocketLocomotionClass    rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] BulletClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x65fa70   MISMATCH         CreateTriggerClassIfFarEnough
+[diff] 0x65dd30   MISMATCH         ObjectClass::ConstructTeamMembers
+[diff] 0x662240   MISMATCH         ObjectClass::sub_662240
+[ledger] 0x65d150 RawFileClass::Close -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65d190 RawFileClass::Delete -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65d2b0 RawFileClass::GetFileSizeOp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65d660 ReferenceCounted::Constructor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65d6a0 ReferenceCounted::initInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 10)
+[ledger] 0x65dd30 ObjectClass::ConstructTeamMembers -> NG (attempt 4)
+[ledger] 0x65e660 SpawnSuperWeaponUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65e850 PlaceAircraftOnMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65eab0 globalHelper_05EAB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65ec30 ExecuteScriptTypeClassActions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65f520 ScenarioClass::ShowMissionBriefing -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65fa70 CreateTriggerClassIfFarEnough -> NG (attempt 3)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass_661EC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x661f30 RocketLocomotionClass::sub_661F30 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> COMPILE_FAIL (attempt 4)
+[ledger] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6620f0 BulletClass::ComputeImpactTrajectory -> COMPILE_FAIL (attempt 3)
+[ledger] 0x662240 ObjectClass::sub_662240 -> NG (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p33\batch_report.json

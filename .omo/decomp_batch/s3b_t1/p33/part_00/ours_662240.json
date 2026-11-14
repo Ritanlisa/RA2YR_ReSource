@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_662240@ObjectClass@@QAENH@Z",
+ "sym_key": "ObjectClass::sub_662240",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec088b45fc8b4df85051e800000000a10000000083c408f6c441ddd87412ddd83edd05100c7f00dd45f88be55dc20400db44240cd8f1dd1c24ddd88b55fc8b45f85250e800000000ddd8dd45f883c4088be55dc20400",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  }
+ ]
+}
