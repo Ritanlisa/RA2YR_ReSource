@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x680270 SaveGame_Start_680270 -> SaveGame_Start
+[conv] 0x6802f0 SaveGame_Start_6802F0 -> SaveGame_Start
+[conv] 0x680370 SaveGame_Start_680370 -> SaveGame_Start
+[conv] 0x6803f0 SaveGame_Start_6803F0 -> SaveGame_Start
+[conv] 0x680470 SaveGame_Start_680470 -> SaveGame_Start
+[conv] 0x6804f0 SaveGame_Start_6804F0 -> SaveGame_Start
+[conv] 0x680570 SaveGame_Start_680570 -> SaveGame_Start
+[conv] 0x6805f0 SaveGame_Start_6805F0 -> SaveGame_Start
+[conv] 0x680670 SaveGame_Start_680670 -> SaveGame_Start
+[conv] 0x6806f0 SaveGame_Start_6806F0 -> SaveGame_Start
+[conv] 0x680770 SaveGame_Start_680770 -> SaveGame_Start
+[conv] 0x6807f0 SaveGame_Start_6807F0 -> SaveGame_Start
+[conv] 0x680870 SaveGame_Start_680870 -> SaveGame_Start
+[conv] 0x6808f0 SaveGame_Start_6808F0 -> SaveGame_Start
+[conv] 0x680970 SaveGame_Start_680970 -> SaveGame_Start
+[conv] 0x6809f0 SaveGame_Start_6809F0 -> SaveGame_Start
+[conv] 0x680a70 SaveGame_Start_680A70 -> SaveGame_Start
+[conv] 0x680af0 SaveGame_Start_680AF0 -> SaveGame_Start
+[conv] 0x680b70 SaveGame_Start_680B70 -> SaveGame_Start
+[conv] 0x680bf0 SaveGame_Start_680BF0 -> SaveGame_Start
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SaveGame_Start           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x680270 SaveGame_Start_680270 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6802f0 SaveGame_Start_6802F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x680370 SaveGame_Start_680370 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6803f0 SaveGame_Start_6803F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680470 SaveGame_Start_680470 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6804f0 SaveGame_Start_6804F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680570 SaveGame_Start_680570 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6805f0 SaveGame_Start_6805F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680670 SaveGame_Start_680670 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6806f0 SaveGame_Start_6806F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680770 SaveGame_Start_680770 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6807f0 SaveGame_Start_6807F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680870 SaveGame_Start_680870 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6808f0 SaveGame_Start_6808F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680970 SaveGame_Start_680970 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6809f0 SaveGame_Start_6809F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x680a70 SaveGame_Start_680A70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680af0 SaveGame_Start_680AF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680b70 SaveGame_Start_680B70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680bf0 SaveGame_Start_680BF0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p37\batch_report.json
