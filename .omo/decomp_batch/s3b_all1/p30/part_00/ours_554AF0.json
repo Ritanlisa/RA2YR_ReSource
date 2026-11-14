@@ -1,0 +1,153 @@
+{
+ "symbol": "?ScrollView@TacticalClass@@QAEDD@Z",
+ "sym_key": "TacticalClass::ScrollView",
+ "size": 597,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec2c8b4508568bf133d28a0d0000000024008ad18975e00bc284c90f8429020000a1240200008b4e343bc10f82190200008a450884c0741ea10000000085c07415dd45d4e80000000050ba0100000033c9e8000000008b463857c1e8088945f88b463c9981e2ff00000003c28bc833c08a46448bf0c1ee08c1f90846894dd88bc68975f4f7d83bc68945dc8bf88945e80f8fa4010000533bfe897df00f8f8b01000003c1668945ee8b5dec0fbf4df803cf33cb81e1ff00000033d98b4df8895dfc8d140f6681fa00020f8302010000663d00020f83f80000008d45fcb90000000050e80000000084c00f84e2000000db442428dd1c248b4dd88b55d45152e8000000008b45d88b4dd45051ddd8e8000000008bc88b45e433c833d281e1ff00000083c41033c18b4de08945e48a51443bc20f8f9a0000008a450884c00f84b00000006a14e80000000033f683c4043bc674268b4dfcbae8030000893066897008c74004000001006689500a6689500c6689500e8948108bf0a1000000008b0d000000003bc8722f8a0d0000000084c9750485c075398b0d0000000085c9762f8b150000000003c86a00516800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818b75f48b45f0408bc88945f033cf81e1ff00000033f93bc67f398bc3c1f810e9b9feffff8d55fcb90000000052e80000000068e803000068e803000068e80300006a0068000001006a008bc8e800000000ebb08b45e88b7ddc8b4dd8895dec403bc68945e80f8e5efeffff5b6a016800000000e80000000083c4085f5e8be55dc20400",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_829AE4@@3EA",
+   "sym_key": "DataGlobal_829AE4"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA50@@3IA",
+   "sym_key": "DataGlobal_ABCA50"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?UpdateDeferredLightSurfaces@@YIXHHH@Z",
+   "sym_key": "UpdateDeferredLightSurfaces"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?Exists@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::Exists"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 274,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 329,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA48@@3IA",
+   "sym_key": "DataGlobal_ABCA48"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA50@@3IA",
+   "sym_key": "DataGlobal_ABCA50"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA4D@@3EA",
+   "sym_key": "DataGlobal_ABCA4D"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA54@@3IA",
+   "sym_key": "DataGlobal_ABCA54"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA40@@3IA",
+   "sym_key": "DataGlobal_ABCA40"
+  },
+  {
+   "off": 431,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA40@@3IA",
+   "sym_key": "DataGlobal_ABCA40"
+  },
+  {
+   "off": 444,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA50@@3IA",
+   "sym_key": "DataGlobal_ABCA50"
+  },
+  {
+   "off": 453,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA50@@3IA",
+   "sym_key": "DataGlobal_ABCA50"
+  },
+  {
+   "off": 459,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABCA44@@3IA",
+   "sym_key": "DataGlobal_ABCA44"
+  },
+  {
+   "off": 506,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 512,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 543,
+   "type": "REL32",
+   "sym": "?SetView@TacticalClass@@QAEFHHFFFF@Z",
+   "sym_key": "TacticalClass::SetView"
+  },
+  {
+   "off": 577,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 582,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

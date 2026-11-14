@@ -1,0 +1,21 @@
+{
+ "symbol": "?LoadOptions_558740@LoadOptions@@QAEPAIXZ",
+ "sym_key": "LoadOptions::LoadOptions_558740",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "568bf133c98d462050894804894808c6400c0188480d8908c740140a000000894810894e04894e0c894e148b08c70600000000c7460800000000c7461000080000ff510c8bc65ec3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?vt_LoadOptionsClass@@3PAXA",
+   "sym_key": "vt_LoadOptionsClass"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?off_829EA0@@3IA",
+   "sym_key": "off_829EA0"
+  }
+ ]
+}

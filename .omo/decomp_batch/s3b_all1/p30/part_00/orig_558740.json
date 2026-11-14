@@ -1,0 +1,11 @@
+{
+ "addr": "0x558740",
+ "name": "LoadOptions::LoadOptions",
+ "size": 75,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x558740",
+ "bytes_hex": "568bf133c08d4e20894104894108c6410c0188410dc7010cd37e00c741140a00000089411089460489460c8946148b01c706e4d27e00c74608a09e8200c7461000080000ff500c8bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
