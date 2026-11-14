@@ -1,0 +1,93 @@
+{
+ "symbol": "?InitDistanceTable@Voxel@@QAEHXZ",
+ "sym_key": "Voxel::InitDistanceTable",
+ "size": 283,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec08538b5df85633f6668b3500000000578b7dfcc6050000000001c745fc2c010000db44241cdd1c248b45fc8b4df85051e8000000005753ddd8e8000000006689068b45fc83c41083c602488945fc75d181fe000000007cc233f6668b3500000000db4424143edc0de06d7f00dd1c248b55fc8b45f85250e800000000ddd83edc0dd8d87e003edc0510db7e005753e80000000033c9668906668b0d0000000083c60283c4103bf17cb833f6668b3500000000db4424143edc0d60387e00dd1c248b55fc8b45f85250e800000000ddd83edc0dd8d87e003edc0510db7e005753e80000000066890683c60283c41081fe000000007cbd8b0d000000005f5eb86e0000005b890183c00883c1043dd60000007cf18be55dc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B4669C@@3GA",
+   "sym_key": "DataGlobal_B4669C"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B725CC@@3EA",
+   "sym_key": "DataGlobal_B725CC"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 87,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B725BC@@3IA",
+   "sym_key": "DataGlobal_B725BC"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B46254@@3GA",
+   "sym_key": "DataGlobal_B46254"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B4663C@@3GA",
+   "sym_key": "DataGlobal_B4663C"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45E68@@3GA",
+   "sym_key": "DataGlobal_B45E68"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?Math__SinCos@@YANN@Z",
+   "sym_key": "Math__SinCos"
+  },
+  {
+   "off": 229,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 244,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B46248@@3IA",
+   "sym_key": "DataGlobal_B46248"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B46648@@3IA",
+   "sym_key": "DataGlobal_B46648"
+  }
+ ]
+}

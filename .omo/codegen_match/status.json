@@ -185454,7 +185454,7 @@
   "this_as_id": false
  },
  "0x75d3a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185466,7 +185466,7 @@
   "this_as_id": false
  },
  "0x75dec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185490,7 +185490,7 @@
   "this_as_id": false
  },
  "0x75e0c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185502,7 +185502,7 @@
   "this_as_id": false
  },
  "0x75e2c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185526,7 +185526,7 @@
   "this_as_id": false
  },
  "0x75e440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185564,19 +185564,19 @@
   "status": "OK"
  },
  "0x75e510": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WarheadTypeClass::Destructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WarheadTypeClass::Destructor",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x75e690": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185588,7 +185588,7 @@
   "this_as_id": false
  },
  "0x75e6a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185766,14 +185766,14 @@
   "this_as_id": false
  },
  "0x75e950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WaveClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WaveClass::Constructor",
-  "rule_violations": 14,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -185825,15 +185825,15 @@
   "this_as_id": false
  },
  "0x75f020": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+3 and esp, 0xfffffff8",
   "name": "Voxel::InitDistanceTable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Voxel::InitDistanceTable",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x75f140": {
@@ -185855,7 +185855,7 @@
   "this_as_id": false
  },
  "0x75f330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185903,7 +185903,7 @@
   "this_as_id": false
  },
  "0x75f610": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185915,7 +185915,7 @@
   "this_as_id": false
  },
  "0x75f650": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185972,7 +185972,7 @@
   "status": "OK"
  },
  "0x75f8b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185996,7 +185996,7 @@
   "this_as_id": false
  },
  "0x75f9f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186008,7 +186008,7 @@
   "this_as_id": false
  },
  "0x75fa90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186032,7 +186032,7 @@
   "this_as_id": false
  },
  "0x7602e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186044,7 +186044,7 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186056,7 +186056,7 @@
   "this_as_id": false
  },
  "0x760f50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186075,7 +186075,7 @@
   "status": "NG"
  },
  "0x7610f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p73\part_00
+=== convert (20 addrs) ===
+[conv] 0x75d3a0 WarheadTypeClass::ReadINI -> WarheadTypeClass
+[conv] 0x75dec0 WarheadTypeClass::ProcessPower -> WarheadTypeClass
+[conv] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> WarheadTypeClass
+[conv] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> WarheadTypeClass
+[conv] 0x75e440 WarheadTypeClass::GetDamage -> WarheadTypeClass
+[conv] 0x75e510 WarheadTypeClass::Destructor -> WarheadTypeClass
+[conv] 0x75e690 WarheadTypeClass::checkImmunity -> WarheadTypeClass
+[conv] 0x75e6a0 WarheadTypeClass::calculateDamage -> WarheadTypeClass
+[conv] 0x75e950 WaveClass::Constructor -> WaveClass
+[conv] 0x75f020 Voxel::InitDistanceTable -> Voxel
+[conv] 0x75f330 WaveClass::DamageArea -> WaveClass
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x75f8b0 WaveClass::DrawWave -> WaveClass
+[conv] 0x75f9f0 WaveClass::ProcessWaveCollision -> WaveClass
+[conv] 0x75fa90 Voxel::ShadowCalc -> Voxel
+[conv] 0x7602e0 Surface::RenderToSurfaceVoxel -> Surface
+[conv] 0x7609e0 Voxel::FaceDraw -> Voxel
+[conv] 0x760f50 WaveClass::Update -> WaveClass
+[conv] 0x7610f0 Voxel::FaceBlit -> Voxel
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WarheadTypeClass         rc=2
+[era] WaveClass                rc=2
+[era] Voxel                    rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x75f020   MISMATCH         Voxel::InitDistanceTable
+[ledger] 0x75d3a0 WarheadTypeClass::ReadINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75dec0 WarheadTypeClass::ProcessPower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75e440 WarheadTypeClass::GetDamage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e510 WarheadTypeClass::Destructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75e690 WarheadTypeClass::checkImmunity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e6a0 WarheadTypeClass::calculateDamage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e950 WaveClass::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f020 Voxel::InitDistanceTable -> NG (attempt 3)
+[ledger] 0x75f330 WaveClass::DamageArea -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 6)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75f8b0 WaveClass::DrawWave -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75f9f0 WaveClass::ProcessWaveCollision -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75fa90 Voxel::ShadowCalc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7602e0 Surface::RenderToSurfaceVoxel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7609e0 Voxel::FaceDraw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x760f50 WaveClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7610f0 Voxel::FaceBlit -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p73\batch_report.json
