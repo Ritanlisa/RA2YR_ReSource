@@ -1,0 +1,105 @@
+{
+ "symbol": "?WalkLineOfSight@@YGDPADHPAHPAF1HD@Z",
+ "sym_key": "Unnamed::WalkLineOfSight",
+ "size": 871,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f883ec445356578b7d14668b17668b4f026685d20fbfc20fbff17c0f33d26685c90f9cc24a83e20242eb0f33d26685c90f9cc24a83e2fe83c2078bca894c241c8d0c062bc685c07f1033c085c90f9fc04883e00283c004eb0d33c085c90f9fc04824fe83c0025689442424e8000000000fbf378bce83c404c1f91f8bd133d62bd13bd0895424147c06894424147f028bd08b4d188b4424148bf12bd08974243c89542424e8000000008b861c020000c744244001000000dd5c2448894424388b4c2414c74424100000000085c9894c24180f844b0200008b45108b7c24248b751c32d28b00897c242885c9894424300f8e0a0100008b4c241c668bd883e107894c2444eb048b4c2444668bd36603148d000000008b0c8d00000000c1e810c1f91003c1668954242c668944242e8d45188b54242c50b900000000895518e800000000dd442448dc1d000000008bf8dfe0f6c441752b8b4c24388d55185152e80000000089442430db442430dc4c2448dc1d00000000dfe0f6c4017504ff4424108b44243c8b54241c6a016a008b0856525750ff91ac01000085c07524f787400100000000040075188b44241083f8037f0f8a4d2084c9750485c07f0432d2eb02b2010fbe8f1b0100008b4424182bf14883fe04894424188b4518750cf68741010000018d710475058bf1668bd88b4c241885c97e0f84d20f8408ffffffeb05668b5c24308b4c242485c90f8e0a01000084d20f85020100008b4c242083e107894c2444eb048b4c2444668b148d000000008b0c8d00000000c1f910c1e8106603d303c8668954243466894c24368b5424348d451850b900000000895518e800000000dd442448dc1d000000008bf8dfe0f6c441752b8b4c24388d55185152e80000000089442430db442430dc4c2448dc1d00000000dfe0f6c4017504ff4424108b44243c8b5424206a016a008b0856525750ff91ac01000085c07524f787400100000000040075188b44241083f8037f0f8a4d2084c9750485c07f0432c9eb02b101ff4c24280fbe871b0100002bf083fe04750e8b97400100008d7004f6c60175028bf08b44242885c07e0e8b451884c9668bd80f840bffffff8b442414894424188b4c24208b44241c8b542424894c241c8b4c24408944242083f902895424148b5424180f9cc0418954242484c0894c24400f8566fdffff5f5e5b8be55dc21c00",
+ "relocs": [
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "?GetSpeedMultiplier@LocomotionClass@@QAENXZ",
+   "sym_key": "LocomotionClass::GetSpeedMultiplier"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 284,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 323,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 333,
+   "type": "DIR32",
+   "sym": "__real@8@3feea7c5ac471b478800",
+   "sym_key": "_real@8@3feea7c5ac471b478800"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?CellClass__GetTileData@@YGHPAXH@Z",
+   "sym_key": "CellClass__GetTileData"
+  },
+  {
+   "off": 374,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  },
+  {
+   "off": 562,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 603,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 611,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 621,
+   "type": "DIR32",
+   "sym": "__real@8@3feea7c5ac471b478800",
+   "sym_key": "_real@8@3feea7c5ac471b478800"
+  },
+  {
+   "off": 644,
+   "type": "REL32",
+   "sym": "?CellClass__GetTileData@@YGHPAXH@Z",
+   "sym_key": "CellClass__GetTileData"
+  },
+  {
+   "off": 662,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E3808@@3NA",
+   "sym_key": "DataGlobal_7E3808"
+  }
+ ]
+}

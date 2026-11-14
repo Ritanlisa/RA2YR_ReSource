@@ -1,0 +1,57 @@
+{
+ "symbol": "?Constructor@MapSeedClass@@QAEPAV1@XZ",
+ "sym_key": "MapSeedClass::Constructor",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "56578bf1e8000000008d7e7833c0b901000000894638894e3c894e40894644894e4889464cc746500200000089465489465889465c89466089466489466889466c894670c74674ffffffffc70600000000c7460800000000668907897e0ce80000000085c07420685e0f0000680000000033d2b900000000e8000000005057e80000000083c4088bc65f5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?LoadOptions_558740@LoadOptions@@QAEPAIXZ",
+   "sym_key": "LoadOptions::LoadOptions_558740"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?vt_MapSeedClass@@3PAXA",
+   "sym_key": "vt_MapSeedClass"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?unk_82BA60@@3EA",
+   "sym_key": "unk_82BA60"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Map_Create_734FD0@@YAHXZ",
+   "sym_key": "Map_Create_734FD0"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?aDRa2mdpostMapg@@3PADA",
+   "sym_key": "aDRa2mdpostMapg"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?aTxtRandomMapDe@@3PADA",
+   "sym_key": "aTxtRandomMapDe"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?GetStringCSF@@YIPAGPAH0PBDH@Z",
+   "sym_key": "GetStringCSF"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x4068f0 Array::ForEach -> Array
+[conv] 0x414080 AircraftClass::Destruct -> AircraftClass
+[conv] 0x418e20 InfantryClass::FindNearbyCell -> InfantryClass
+[conv] 0x42be20 WalkLineOfSight -> _addr_42
+[conv] 0x432c10 WeaponTypeClass::COMStub_432C10 -> WeaponTypeClass
+[conv] 0x434cd0 Font::Print -> Font
+[conv] 0x43ae50 Vector::Clear -> Vector
+[conv] 0x44acf0 BuildingClass::ProcessActiveUpdate -> BuildingClass
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x595400 TechnoClass::PlaceNeutralBuilding -> TechnoClass
+[conv] 0x595680 MapSeedClass::Constructor -> MapSeedClass
+[conv] 0x595710 CSFClass::CopyString -> CSFClass
+[conv] 0x5958e0 RandomMap::CleanupRandomMapData -> RandomMap
+[conv] 0x595bc0 CCFileClass::Load -> CCFileClass
+[conv] 0x595ce0 ObjectClass::CleanupRandomMapCache -> ObjectClass
+[conv] 0x596300 SkirmishMapGen::DlgProc -> SkirmishMapGen
+[conv] 0x596e50 RandomMap::SetupDialog -> RandomMap
+[conv] 0x597430 ObjectClass::Team_Start_597430 -> ObjectClass
+[conv] 0x597a30 MapSeedClass::AddRef -> MapSeedClass
+[conv] 0x597d60 MapSeedClass::LoadInfo -> MapSeedClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Array                    rc=0
+[era] AircraftClass            rc=2
+[era] InfantryClass            rc=2
+[era] _addr_42                 rc=0
+[era] WeaponTypeClass          rc=2
+[era] Font                     rc=2
+[era] Vector                   rc=2
+[era] BuildingClass            rc=2
+[era] DDraw                    rc=2
+[era] TechnoClass              rc=2
+[era] MapSeedClass             rc=2
+[era] CSFClass                 rc=2
+[era] RandomMap                rc=2
+[era] CCFileClass              rc=2
+[era] ObjectClass              rc=2
+[era] SkirmishMapGen           rc=2
+=== diffasm byte-compare ===
+[diff] 0x4068f0   MISMATCH         Array::ForEach
+[diff] 0x42be20   MISMATCH         WalkLineOfSight
+[diff] 0x595680   MISMATCH         MapSeedClass::Constructor
+[ledger] 0x4068f0 Array::ForEach -> NG (attempt 4)
+[ledger] 0x414080 AircraftClass::Destruct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x418e20 InfantryClass::FindNearbyCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x42be20 WalkLineOfSight -> NG (attempt 4)
+[ledger] 0x432c10 WeaponTypeClass::COMStub_432C10 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x434cd0 Font::Print -> COMPILE_FAIL (attempt 4)
+[ledger] 0x43ae50 Vector::Clear -> COMPILE_FAIL (attempt 4)
+[ledger] 0x44acf0 BuildingClass::ProcessActiveUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 5)
+[ledger] 0x595400 TechnoClass::PlaceNeutralBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x595680 MapSeedClass::Constructor -> NG (attempt 5)
+[ledger] 0x595710 CSFClass::CopyString -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5958e0 RandomMap::CleanupRandomMapData -> COMPILE_FAIL (attempt 6)
+[ledger] 0x595bc0 CCFileClass::Load -> COMPILE_FAIL (attempt 5)
+[ledger] 0x595ce0 ObjectClass::CleanupRandomMapCache -> COMPILE_FAIL (attempt 6)
+[ledger] 0x596300 SkirmishMapGen::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x596e50 RandomMap::SetupDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x597430 ObjectClass::Team_Start_597430 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x597a30 MapSeedClass::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x597d60 MapSeedClass::LoadInfo -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p00\batch_report.json
