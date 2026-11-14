@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c7310 SubtractBigInteger -> _addr_5C
+[conv] 0x5c7520 SubtractBigIntegerWithSign -> _addr_5C
+[conv] 0x5c7990 DivideBigInteger -> _addr_5C
+[conv] 0x5c7ba0 sub_5C7BA0 -> _addr_5C
+[conv] 0x5c80a0 ObjectClass::ComputeModularInverse -> ObjectClass
+[conv] 0x5c8470 ObjectClass::sub_5C8470 -> ObjectClass
+[conv] 0x5c8ab0 ValidateRSAKey -> _addr_5C
+[conv] 0x5c9020 ModCryptoExp -> _addr_5C
+[conv] 0x5c9430 Megawealth::ProcessTick -> Megawealth
+[conv] 0x5c98a0 ObjectClass::Map_Get_5C98A0 -> ObjectClass
+[conv] 0x5c9b10 MPScore::DlgProc -> MPScore
+[conv] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> Game
+[conv] 0x5ca800 MultiplayerSiege::ProcessTurn -> MultiplayerSiege
+[conv] 0x5caac0 MultiplayerSiege::GetResult -> MultiplayerSiege
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> MultiplayerSiegeAttackerTeam
+[conv] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cb590 PaletteClass::Load -> PaletteClass
+[conv] 0x5cbd20 Trigger::initTrigger -> Trigger
+[conv] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> MSOverlayAnim
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=2
+[era] ObjectClass              rc=2
+[era] Megawealth               rc=2
+[era] MPScore                  rc=2
+[era] Game                     rc=2
+[era] MultiplayerSiege         rc=2
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] MultiplayerSiegeAttackerTeam rc=2
+[era] PaletteClass             rc=2
+[era] Trigger                  rc=0
+[era] MSOverlayAnim            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c98a0   MISMATCH         ObjectClass::Map_Get_5C98A0
+[diff] 0x5cbd20   MISMATCH         Trigger::initTrigger
+[ledger] 0x5c7310 SubtractBigInteger -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c7520 SubtractBigIntegerWithSign -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c7990 DivideBigInteger -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c7ba0 sub_5C7BA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c80a0 ObjectClass::ComputeModularInverse -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c8470 ObjectClass::sub_5C8470 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c8ab0 ValidateRSAKey -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c9020 ModCryptoExp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c9430 Megawealth::ProcessTick -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c98a0 ObjectClass::Map_Get_5C98A0 -> NG (attempt 2)
+[ledger] 0x5c9b10 MPScore::DlgProc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ca800 MultiplayerSiege::ProcessTurn -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5caac0 MultiplayerSiege::GetResult -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5cb590 PaletteClass::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cbd20 Trigger::initTrigger -> NG (attempt 5)
+[ledger] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p08\batch_report.json

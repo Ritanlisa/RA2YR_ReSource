@@ -103717,7 +103717,7 @@
   "this_as_id": false
  },
  "0x5c7310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SubtractBigInteger",
@@ -103728,7 +103728,7 @@
   "this_as_id": false
  },
  "0x5c7520": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "SubtractBigIntegerWithSign",
@@ -103750,7 +103750,7 @@
   "this_as_id": false
  },
  "0x5c7990": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "DivideBigInteger",
@@ -103761,7 +103761,7 @@
   "this_as_id": false
  },
  "0x5c7ba0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_5C7BA0",
@@ -103805,7 +103805,7 @@
   "this_as_id": false
  },
  "0x5c80a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -103817,7 +103817,7 @@
   "this_as_id": false
  },
  "0x5c8470": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -103858,7 +103858,7 @@
   "this_as_id": false
  },
  "0x5c8ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ValidateRSAKey",
@@ -103891,7 +103891,7 @@
   "this_as_id": false
  },
  "0x5c9020": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ModCryptoExp",
@@ -104080,7 +104080,7 @@
   "this_as_id": false
  },
  "0x5c9430": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104323,15 +104323,15 @@
   "this_as_id": false
  },
  "0x5c98a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "ObjectClass::Map_Get_5C98A0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Map_Get_5C98A0",
   "rule_violations": 7,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c9ae0": {
@@ -104342,7 +104342,7 @@
   "status": "NG"
  },
  "0x5c9b10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -104354,7 +104354,7 @@
   "this_as_id": false
  },
  "0x5ca110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104600,7 +104600,7 @@
   "this_as_id": false
  },
  "0x5ca800": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104624,7 +104624,7 @@
   "this_as_id": false
  },
  "0x5caac0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -104828,7 +104828,7 @@
   "this_as_id": false
  },
  "0x5cae70": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -104852,7 +104852,7 @@
   "this_as_id": false
  },
  "0x5caf00": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -104876,7 +104876,7 @@
   "this_as_id": false
  },
  "0x5caf40": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -105166,7 +105166,7 @@
   "this_as_id": false
  },
  "0x5cb590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -105269,15 +105269,15 @@
   "this_as_id": false
  },
  "0x5cbd20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "Trigger::initTrigger",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "Trigger::initTrigger",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5cbda0": {
@@ -105317,7 +105317,7 @@
   "this_as_id": false
  },
  "0x5cc330": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

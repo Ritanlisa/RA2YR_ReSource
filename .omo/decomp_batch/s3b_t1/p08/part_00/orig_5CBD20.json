@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CBD20",
+ "name": "Trigger::initTrigger",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CBD20",
+ "bytes_hex": "8b44240853568bf18b4c2414894e088d4e14894604c6460c01e802cf0f008b5424188b4c242033db8946108b44241c895e188956208d563c894e388b4c240c894624895e28885e34881ac70610e97e00e8fb7bedff89461c895e2c0fbf50068b4424244a894644895630895e40c70638e97e008bc65e5bc21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

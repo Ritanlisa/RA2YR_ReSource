@@ -1,0 +1,33 @@
+{
+ "symbol": "?initTrigger@Trigger@@QAEPAXPAPADHHHHHH@Z",
+ "sym_key": "Trigger::initTrigger",
+ "size": 123,
+ "link_base": 0,
+ "bytes_hex": "8b44240c568bf1578b4c2410894608894e04c7461801000000e8000000008b5424188b4c241c8946108b44242033ff895620894e248b4c240c8d563c897e18894638897e28897e40897e60c70600000000e8000000008b54242489461c897e2c0fbf400648897e40894630895644c706000000008bc65f5ec21c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?vt_MSShapeAnim@@3PAXA",
+   "sym_key": "vt_MSShapeAnim"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?LoadFileClassToBuffer@@YIHPAX0@Z",
+   "sym_key": "LoadFileClassToBuffer"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?vt_MSFadeAnim@@3PAXA",
+   "sym_key": "vt_MSFadeAnim"
+  }
+ ]
+}
