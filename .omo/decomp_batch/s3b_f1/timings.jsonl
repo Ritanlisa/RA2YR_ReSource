@@ -125,3 +125,4 @@
 {"part": 124, "n": 20, "seconds": 168.5, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 125, "n": 20, "seconds": 59.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 126, "n": 20, "seconds": 66.4, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
+{"part": 127, "n": 20, "seconds": 43.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
