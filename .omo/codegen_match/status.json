@@ -197283,7 +197283,7 @@
   "this_as_id": false
  },
  "0x796b30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_796B30",
@@ -197329,7 +197329,7 @@
   "this_as_id": false
  },
  "0x796fc0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197353,7 +197353,7 @@
   "this_as_id": false
  },
  "0x797640": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "first_diff": null,
   "name": "LoginWOL",
@@ -197364,7 +197364,7 @@
   "this_as_id": false
  },
  "0x797800": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197376,7 +197376,7 @@
   "this_as_id": false
  },
  "0x797c20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197388,7 +197388,7 @@
   "this_as_id": false
  },
  "0x798120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_798120",
@@ -197410,7 +197410,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -197421,7 +197421,7 @@
   "this_as_id": false
  },
  "0x798340": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameOptionsScreenWOL_Helper",
@@ -197465,7 +197465,7 @@
   "this_as_id": false
  },
  "0x798de0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197489,7 +197489,7 @@
   "this_as_id": false
  },
  "0x799080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "MainLobbyDlgProcWOL",
@@ -197523,7 +197523,7 @@
   "this_as_id": false
  },
  "0x799d30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -197535,7 +197535,7 @@
   "this_as_id": false
  },
  "0x799ea0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "OptionsDlgProcWOL",
@@ -197557,7 +197557,7 @@
   "this_as_id": false
  },
  "0x79af10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197603,7 +197603,7 @@
   "this_as_id": false
  },
  "0x79c040": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197615,7 +197615,7 @@
   "this_as_id": false
  },
  "0x79c3a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197627,7 +197627,7 @@
   "this_as_id": false
  },
  "0x79c520": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197639,7 +197639,7 @@
   "this_as_id": false
  },
  "0x79c650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197651,7 +197651,7 @@
   "this_as_id": false
  },
  "0x79c8d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -197663,7 +197663,7 @@
   "this_as_id": false
  },
  "0x79cba0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "RemoveWOLPlayerLogin",
@@ -197674,7 +197674,7 @@
   "this_as_id": false
  },
  "0x79ce70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
