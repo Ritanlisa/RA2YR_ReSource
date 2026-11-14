@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p121\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f9e50 TechnoClass::Begin -> TechnoClass
+[conv] 0x6fb740 TechnoClass::UpdateLocomotion -> TechnoClass
+[conv] 0x6fbdc0 TechnoClass::ShouldBeCloaked -> TechnoClass
+[conv] 0x6fc0b0 TechnoClass::ReadINI -> TechnoClass
+[conv] 0x6fcdb0 TechnoClass::AssignTarget_SyncLog -> TechnoClass
+[conv] 0x6fcfa0 TechnoClass::CalculateROF -> TechnoClass
+[conv] 0x6fd210 TechnoClass::CreateFireEffect -> TechnoClass
+[conv] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> ObjectClass
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> TechnoClass
+[conv] 0x6fdd50 TechnoClass::FireWeapon -> TechnoClass
+[conv] 0x6ff960 TechnoClass::DrawTargetLine -> TechnoClass
+[conv] 0x6ffe00 TechnoClass::RecordEvent -> TechnoClass
+[conv] 0x700600 TechnoClass::HandleCursor -> TechnoClass
+[conv] 0x700d10 TechnoClass::IsDeadOrInactive -> TechnoClass
+[conv] 0x7010d0 TechnoClass::HasValidWeapon -> TechnoClass
+[conv] 0x701140 TechnoClass::CheckHealthDiff -> TechnoClass
+[conv] 0x7014a0 TechnoClass::ProcessCapture -> TechnoClass
+[conv] 0x701900 TechnoClass::ReceiveDamage_Shield -> TechnoClass
+[conv] 0x702d40 TechnoClass::RegisterKill -> TechnoClass
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6f9e50 TechnoClass::Begin -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fb740 TechnoClass::UpdateLocomotion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fbdc0 TechnoClass::ShouldBeCloaked -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fc0b0 TechnoClass::ReadINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fcdb0 TechnoClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fcfa0 TechnoClass::CalculateROF -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fd210 TechnoClass::CreateFireEffect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6fd800 ObjectClass::SpreadRadiationAreaEffect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6fdb80 TechnoClass::ComputeAudioFalloffDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6fdd50 TechnoClass::FireWeapon -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6ff960 TechnoClass::DrawTargetLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ffe00 TechnoClass::RecordEvent -> COMPILE_FAIL (attempt 5)
+[ledger] 0x700600 TechnoClass::HandleCursor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x700d10 TechnoClass::IsDeadOrInactive -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7010d0 TechnoClass::HasValidWeapon -> COMPILE_FAIL (attempt 3)
+[ledger] 0x701140 TechnoClass::CheckHealthDiff -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7014a0 TechnoClass::ProcessCapture -> COMPILE_FAIL (attempt 4)
+[ledger] 0x701900 TechnoClass::ReceiveDamage_Shield -> COMPILE_FAIL (attempt 3)
+[ledger] 0x702d40 TechnoClass::RegisterKill -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p121\batch_report.json
