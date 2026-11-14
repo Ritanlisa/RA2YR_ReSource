@@ -571,6 +571,26 @@ def pass_globals(ctx):
                 ctx.note("global_type_evidence",
                          "%s -> %s (binary comparison evidence)" %
                          (g["name"], ty))
+            # R1 (ultod): rule-hunt mechanism -- a global converted to
+            # double/float in this body was compiled by the original as
+            # SIGNED (fild m32; 754/762 evidence).  Re-type unsigned
+            # spellings to int only in FP-conversion context (gated to
+            # avoid flipping shr/sar on already-matching signedness).
+            if ty in ("unsigned int", "unsigned long", "DWORD",
+                      "unsigned __int32", "uint32_t", "UINT"):
+                _gn = re.escape(g["name"])
+                if (re.search(r"\((?:double|float)\)\s*\(?\s*[^;\n]{0,40}?\b"
+                              + _gn + r"\b", body)
+                        or re.search(r"\b" + _gn
+                                     + r"\b[^;\n]{0,24}?\)\s*(?:to|as)?\s*"
+                                       r"(?:double|float)", body, re.I)):
+                    ty = "int"
+                    ctx.note("r1_ultod",
+                             "%s unsigned->int (FP conversion context)"
+                             % g["name"])
+                    ctx.sites.append(Site(
+                        "global", g["name"],
+                        "R1 ultod: FP-conv context -> signed int", True))
             ctx.used_globals[g["name"]] = ty
             ctx.sites.append(Site(
                 "global", m.group(0),
