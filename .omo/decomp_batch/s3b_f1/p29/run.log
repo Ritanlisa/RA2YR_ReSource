@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> DriveLocomotionClass
+[conv] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> JumpjetLocomotionClass
+[conv] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> DriveLocomotionClass
+[conv] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> DriveLocomotionClass
+[conv] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> DriveLocomotionClass
+[conv] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> JumpjetLocomotion
+[conv] 0x4b2630 JumpjetLocomotion::Update -> JumpjetLocomotion
+[conv] 0x4b4920 DriveLocomotionClass::IsAtDestination -> DriveLocomotionClass
+[conv] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> DriveLocomotionClass
+[conv] 0x4b4d00 DriveLocomotionClass::ProcessMove -> DriveLocomotionClass
+[conv] 0x4b4d70 Timeout::GetRemaining -> Timeout
+[conv] 0x4b4fb0 DropListClass::SetFocus -> DropListClass
+[conv] 0x4b5030 DropListClass::OnKeyUp -> DropListClass
+[conv] 0x4b53e0 EditClass::sub_4B53E0 -> EditClass
+[conv] 0x4b5530 DropListClass::OnKeyDown -> DropListClass
+[conv] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> DropPodLocomotionClass
+[conv] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> DropPodLocomotionClass
+[conv] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> DropPodLocomotionClass
+[conv] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> DropPodLocomotionClass
+[conv] 0x4b6470 DropPodLocomotionClass::QueryInterface -> DropPodLocomotionClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DriveLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] JumpjetLocomotion        rc=2
+[era] Timeout                  rc=2
+[era] DropListClass            rc=2
+[era] EditClass                rc=2
+[era] DropPodLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b2630 JumpjetLocomotion::Update -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b4920 DriveLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4b4d00 DriveLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b4d70 Timeout::GetRemaining -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b4fb0 DropListClass::SetFocus -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b5030 DropListClass::OnKeyUp -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b53e0 EditClass::sub_4B53E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b5530 DropListClass::OnKeyDown -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b5ab0 DropPodLocomotionClass::SmallFunc_4B5AB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b6470 DropPodLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p29\batch_report.json
