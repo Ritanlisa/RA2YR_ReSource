@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x51f660 InfantryClass::ProcessIvanBombResult -> InfantryClass
+[conv] 0x51f6e0 InfantryClass::ProcessIvanBomb -> InfantryClass
+[conv] 0x51fef0 ObjectClass::SaveInfantryToINI -> ObjectClass
+[conv] 0x5200b0 InfantryClass::ProcessIdleDeploy -> InfantryClass
+[conv] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> TechnoClass
+[conv] 0x5206b0 TechnoClass::FireTechnoAtTarget -> TechnoClass
+[conv] 0x520ae0 Mission::ExecuteTechnoMissionAction -> Mission
+[conv] 0x520f40 Mission::ProcessUnitMissionAI -> Mission
+[conv] 0x521320 InfantryClass::GetIdleTimer -> InfantryClass
+[conv] 0x5216d0 InfantryClass::CanMoveFreely -> InfantryClass
+[conv] 0x521b60 InfantryClass::CanInitiateDeploy -> InfantryClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+[conv] 0x522340 InfantryClass::CalculateApproachPath -> InfantryClass
+[conv] 0x522600 InfantryClass::FireAtTargetPos -> InfantryClass
+[conv] 0x5226c0 InfantryClass::GetProductionHouse -> InfantryClass
+[conv] 0x5227f0 InfantryClass::CanAttackTarget -> InfantryClass
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x5236a0 InfantryTypeClass::Constructor -> InfantryTypeClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Mission                  rc=2
+[era] InfantryTypeClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x51f660 InfantryClass::ProcessIvanBombResult -> COMPILE_FAIL (attempt 7)
+[ledger] 0x51f6e0 InfantryClass::ProcessIvanBomb -> COMPILE_FAIL (attempt 4)
+[ledger] 0x51fef0 ObjectClass::SaveInfantryToINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5200b0 InfantryClass::ProcessIdleDeploy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5202f0 TechnoClass::ProcessTechnoSquadResponse -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5206b0 TechnoClass::FireTechnoAtTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x520ae0 Mission::ExecuteTechnoMissionAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x520f40 Mission::ProcessUnitMissionAI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x521320 InfantryClass::GetIdleTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5216d0 InfantryClass::CanMoveFreely -> COMPILE_FAIL (attempt 4)
+[ledger] 0x521b60 InfantryClass::CanInitiateDeploy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x522340 InfantryClass::CalculateApproachPath -> COMPILE_FAIL (attempt 4)
+[ledger] 0x522600 InfantryClass::FireAtTargetPos -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5226c0 InfantryClass::GetProductionHouse -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5227f0 InfantryClass::CanAttackTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 7)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5236a0 InfantryTypeClass::Constructor -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p46\batch_report.json
