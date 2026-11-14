@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x515ed0 TechnoClass::UpdateFootFacing -> TechnoClass
+[conv] 0x5163b0 MovementAI::MarkOccupiedPathCell -> MovementAI
+[conv] 0x5164d0 MovementAI::StepFootClass -> MovementAI
+[conv] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> HoverLocomotionClass
+[conv] 0x517110 ObjectClass::sub_517110 -> ObjectClass
+[conv] 0x5172f0 LocomotionClass::ProcessMove -> LocomotionClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+[conv] 0x517a50 InfantryClass::Construct -> InfantryClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x517fa0 InfantryClass::ProcessDeployment -> InfantryClass
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+[conv] 0x518f90 InfantryClass::Draw -> InfantryClass
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x51aa10 InfantryClass::HandleTargetDestroyed -> InfantryClass
+[conv] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> InfantryClass
+[conv] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> InfantryClass
+[conv] 0x51b350 InfantryClass::CalcMoveTarget -> InfantryClass
+[conv] 0x51bab0 InfantryClass::Update -> InfantryClass
+[conv] 0x51bf90 InfantryClass::EvaluateTarget -> InfantryClass
+[conv] 0x51c8b0 InfantryClass::GetFireError -> InfantryClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] MovementAI               rc=2
+[era] HoverLocomotionClass     rc=2
+[era] ObjectClass              rc=2
+[era] LocomotionClass          rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x515ed0 TechnoClass::UpdateFootFacing -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5163b0 MovementAI::MarkOccupiedPathCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5164d0 MovementAI::StepFootClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> COMPILE_FAIL (attempt 5)
+[ledger] 0x517110 ObjectClass::sub_517110 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5172f0 LocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x517a50 InfantryClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 8)
+[ledger] 0x517fa0 InfantryClass::ProcessDeployment -> COMPILE_FAIL (attempt 5)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 8)
+[ledger] 0x518f90 InfantryClass::Draw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 10)
+[ledger] 0x51aa10 InfantryClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51aa40 InfantryClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 8)
+[ledger] 0x51b1f0 InfantryClass::AssignTarget_SyncLog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51b350 InfantryClass::CalcMoveTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51bab0 InfantryClass::Update -> COMPILE_FAIL (attempt 8)
+[ledger] 0x51bf90 InfantryClass::EvaluateTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x51c8b0 InfantryClass::GetFireError -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p44\batch_report.json
