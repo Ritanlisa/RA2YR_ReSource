@@ -1,0 +1,8 @@
+{
+ "symbol": "?CountPassengers@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::CountPassengers",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933db33f68b474885c07e3f8b473c8b04b08b480483f901742883f90275248b0085c0741e8a888100000084c975148b0850ff91840000008a88680d000084c97401438b4748463bf07cc15f8bc35e5bc3",
+ "relocs": []
+}

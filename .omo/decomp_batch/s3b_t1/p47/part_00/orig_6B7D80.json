@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B7D80",
+ "name": "TechnoClass::CountPassengers",
+ "size": 85,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B7D80",
+ "bytes_hex": "5356578bf933db33f68b474885c07e3f8b473c8b04b08b480483f90175014383f90275238b0885c9741d8a818100000084c075138b11ff92840000008a88680d000084c97401438b4748463bf07cc15f8bc35e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
