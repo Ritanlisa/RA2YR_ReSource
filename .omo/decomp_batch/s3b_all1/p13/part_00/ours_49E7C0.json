@@ -1,0 +1,69 @@
+{
+ "symbol": "?sub_49E7C0@ObjectClass@@QAEPADD@Z",
+ "sym_key": "ObjectClass::sub_49E7C0",
+ "size": 298,
+ "link_base": 0,
+ "bytes_hex": "518a44240853568bf1a8020f84a30000008b46fc558d6efc33db8d48ff573bcb8bfd7c768d14c003f0418d7c562c894c24108d771883ee4c83ef4c8d460450e80000000056e8000000008b0783c4083bc3895ee47410385ef1740b50e80000000083c404891f8b46d0885ef13bc3895eec895ecc7411385ed9740c50e80000000083c404895ed08b442410885ed948895ed489442410759d8bfdf644241801740957e80000000083c4048bc75f5d5e5b59c204008d4e3f51e8000000008d563e52e80000000033c033db8a462c83c4083bc3895e287411385e35740c50e80000000083c404885e2c33c0885e358a4614885e303bc3895e107411385e1d740c50e80000000083c404885e148a442410885e1da801885e18740956e80000000083c4048bc65e5b59c20400",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 185,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 194,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 283,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
