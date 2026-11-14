@@ -88841,7 +88841,7 @@
   "this_as_id": false
  },
  "0x55f1e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89057,7 +89057,7 @@
   "this_as_id": false
  },
  "0x55faa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89081,7 +89081,7 @@
   "this_as_id": false
  },
  "0x55fdb0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "ScreenDlgProcOptions",
@@ -89092,7 +89092,7 @@
   "this_as_id": false
  },
  "0x560480": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -89104,7 +89104,7 @@
   "this_as_id": false
  },
  "0x560bf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ChangeVideoMode",
@@ -89115,7 +89115,7 @@
   "this_as_id": false
  },
  "0x561180": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89344,7 +89344,7 @@
   "this_as_id": false
  },
  "0x565090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89483,7 +89483,7 @@
   "this_as_id": false
  },
  "0x565800": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89538,7 +89538,7 @@
   "this_as_id": false
  },
  "0x565c10": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89562,7 +89562,7 @@
   "this_as_id": false
  },
  "0x567230": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89632,7 +89632,7 @@
   "this_as_id": false
  },
  "0x568300": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89644,7 +89644,7 @@
   "this_as_id": false
  },
  "0x568350": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89656,7 +89656,7 @@
   "this_as_id": false
  },
  "0x5683c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89668,7 +89668,7 @@
   "this_as_id": false
  },
  "0x5687f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89692,7 +89692,7 @@
   "this_as_id": false
  },
  "0x568e40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89704,7 +89704,7 @@
   "this_as_id": false
  },
  "0x569760": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -89728,27 +89728,27 @@
   "this_as_id": false
  },
  "0x56a4c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "ObjectClass::FlattenCliffMap",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "FlattenCliffMap",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x56a980": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x14",
   "name": "ObjectClass::RepairMapCliff",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "RepairMapCliff",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x56ae40": {
@@ -89776,15 +89776,15 @@
   "this_as_id": false
  },
  "0x56b0f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "ObjectClass::sub_56B0F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "sub_56B0F0",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x56b250": {
@@ -89812,7 +89812,7 @@
   "this_as_id": false
  },
  "0x56b5a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x55faa0 Options::Screen_Save -> Options
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x560480 NetworkOptions::DlgProc -> NetworkOptions
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x565090 MapClass::RenderMapPreview -> MapClass
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x567230 MapClass::UpdateVisibility -> MapClass
+[conv] 0x568300 LayerClass::CoordinatesLegal -> LayerClass
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x568e40 Terrain::PlaceCliffs -> Terrain
+[conv] 0x569760 TechnoClass::DestroyCliffMap -> TechnoClass
+[conv] 0x56a4c0 ObjectClass::FlattenCliffMap -> ObjectClass
+[conv] 0x56a980 ObjectClass::RepairMapCliff -> ObjectClass
+[conv] 0x56b0f0 ObjectClass::sub_56B0F0 -> ObjectClass
+[conv] 0x56b5a0 CellClass::LoadTerrainTiles -> CellClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Options                  rc=2
+[era] _addr_55                 rc=2
+[era] NetworkOptions           rc=2
+[era] _addr_56                 rc=2
+[era] MapClass                 rc=2
+[era] LayerClass               rc=2
+[era] Tactical                 rc=2
+[era] Terrain                  rc=2
+[era] TechnoClass              rc=2
+[era] CellClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x56a4c0   MISMATCH         ObjectClass::FlattenCliffMap
+[diff] 0x56a980   MISMATCH         ObjectClass::RepairMapCliff
+[diff] 0x56b0f0   MISMATCH         ObjectClass::sub_56B0F0
+[ledger] 0x55f1e0 ObjectClass::DrawHUD -> COMPILE_FAIL (attempt 6)
+[ledger] 0x55faa0 Options::Screen_Save -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 7)
+[ledger] 0x560480 NetworkOptions::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 5)
+[ledger] 0x561180 ObjectClass::Team_Start -> COMPILE_FAIL (attempt 6)
+[ledger] 0x565090 MapClass::RenderMapPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 7)
+[ledger] 0x567230 MapClass::UpdateVisibility -> COMPILE_FAIL (attempt 4)
+[ledger] 0x568300 LayerClass::CoordinatesLegal -> COMPILE_FAIL (attempt 4)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 7)
+[ledger] 0x568e40 Terrain::PlaceCliffs -> COMPILE_FAIL (attempt 4)
+[ledger] 0x569760 TechnoClass::DestroyCliffMap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56a4c0 ObjectClass::FlattenCliffMap -> NG (attempt 4)
+[ledger] 0x56a980 ObjectClass::RepairMapCliff -> NG (attempt 4)
+[ledger] 0x56b0f0 ObjectClass::sub_56B0F0 -> NG (attempt 5)
+[ledger] 0x56b5a0 CellClass::LoadTerrainTiles -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p58\batch_report.json

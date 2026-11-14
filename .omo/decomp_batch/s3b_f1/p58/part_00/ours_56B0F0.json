@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_56B0F0@ObjectClass@@QAEHPAH@Z",
+ "sym_key": "ObjectClass::sub_56B0F0",
+ "size": 348,
+ "link_base": 0,
+ "bytes_hex": "83ec148a91d401000033c0568b74241c84d2894c2410894424048944240c0f86140100005355578b913c01000085c08b2c820f84e400000085ed0f84dc0000008b7d248b91f40000008bc7c1f810668944242a0fbfc0894424148b442428c1e8100fbfff0fbfc003c73bc2894424280f8ea70000008bdf2b5c24143bda0f8d990000008b5c24142bdf3bda0f8d8b0000008bb98c0100008d147a3bc27f7e8b45248b158a2700003bc289442428746d81fd5816000074658b45388d5d383dffff0000750a8a851b01000084c07e4e8b068d4c24286a045156ff50108b5424108bf803fa8b166a045356ff52108d8d1a0100008bd88b066a01515603dfff50108b1681c51b0100006a018bf8555603fbff52108b4c241c03c7894424108b44241833d28a91d4010000403bc2894424180f8cf2feffff5f5d5b8b068b0d8a2700008d5424146a045256894c2420ff50108b4c24045e03c183c414c20400",
+ "relocs": [
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  }
+ ]
+}
