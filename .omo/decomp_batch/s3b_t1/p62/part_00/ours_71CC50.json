@@ -1,0 +1,63 @@
+{
+ "symbol": "?CheckSpawnConditions@TerrainClass@@QAEDPAHDH@Z",
+ "sym_key": "TerrainClass::CheckSpawnConditions",
+ "size": 297,
+ "link_base": 0,
+ "bytes_hex": "a1f009000083ec1085c0535556578bf97538a10000000085c0742f8a44242884c0750e8b878000000085c00f84ec0000008b477485c00f84e10000008b878000000085c00f85d30000008b7424246a006a0068000000008bd68d4c241cc7878000000000000000e8000000008b08890e8b50048956048b4808894e088b500c8d4c241089560c8b078b1d000000008b2d040000005157ff902c0100008b50048b0803d58b680803cb8b1e03e93bdd7d6d8b400c8b6e0403c23be87d61035e083bd97e5a8b4e0c03cd3bca7e518b178d4424105057ff92ac0000008d4c2428518b0d0000000050e8000000008b0ea1000000003bc87e0c2bc18b4c242803c8894c24288b178d442428565057ff92140100005f5e5db0015b83c410c20c005f5e5d32c05b83c410c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_hWnd@@3PAXA",
+   "sym_key": "g_hWnd"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?ClipRectIntersection@@YIPAIPAX00PAH1@Z",
+   "sym_key": "ClipRectIntersection"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

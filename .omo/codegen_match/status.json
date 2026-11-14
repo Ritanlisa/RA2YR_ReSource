@@ -168709,15 +168709,15 @@
   "this_as_id": false
  },
  "0x71a4e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
-  "name": "TemporalClass::TemporalClass",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "TemporalClass::TemporalClass_71A4E0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TemporalClass::TemporalClass",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71a650": {
@@ -168769,7 +168769,7 @@
   "this_as_id": false
  },
  "0x71a760": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -168781,7 +168781,7 @@
   "this_as_id": false
  },
  "0x71ab10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -168793,7 +168793,7 @@
   "this_as_id": false
  },
  "0x71ab60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -168805,7 +168805,7 @@
   "this_as_id": false
  },
  "0x71abc0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -168828,26 +168828,26 @@
   "this_as_id": false
  },
  "0x71ad40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TriggerClass::UnlinkTags",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TriggerClass::UnlinkTags",
-  "rule_violations": 4,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x71ade0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TagClass::Unlink",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TagClass::Unlink",
-  "rule_violations": 4,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -168864,7 +168864,7 @@
   "this_as_id": false
  },
  "0x71af20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169200,7 +169200,7 @@
   "this_as_id": false
  },
  "0x71b7b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169212,7 +169212,7 @@
   "this_as_id": false
  },
  "0x71b920": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169224,7 +169224,7 @@
   "this_as_id": false
  },
  "0x71bb90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169236,7 +169236,7 @@
   "this_as_id": false
  },
  "0x71bdf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169260,7 +169260,7 @@
   "this_as_id": false
  },
  "0x71c070": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169272,7 +169272,7 @@
   "this_as_id": false
  },
  "0x71c110": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169339,7 +169339,7 @@
   "this_as_id": false
  },
  "0x71c730": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169399,19 +169399,19 @@
   "this_as_id": false
  },
  "0x71cc50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov al, byte ptr [0xa8ed6b]",
   "name": "TerrainClass::CheckSpawnConditions",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "TerrainClass::CheckSpawnConditions",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x71cda0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169435,7 +169435,7 @@
   "this_as_id": false
  },
  "0x71cf50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -169459,7 +169459,7 @@
   "this_as_id": false
  },
  "0x71d000": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -169692,7 +169692,7 @@
   "this_as_id": false
  },
  "0x71d580": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InitializeCellSpreadTables",

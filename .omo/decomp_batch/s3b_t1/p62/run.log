@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p62\part_00
+=== convert (20 addrs) ===
+[conv] 0x71a4e0 TemporalClass::TemporalClass_71A4E0 -> TemporalClass
+[conv] 0x71a760 TemporalClass::ProcessTimeWarp -> TemporalClass
+[conv] 0x71ab10 TemporalClass::GetWarpPerStep -> TemporalClass
+[conv] 0x71ab60 ObjectClass::UnlinkFromFactory -> ObjectClass
+[conv] 0x71abc0 FactoryClass::CompleteItem -> FactoryClass
+[conv] 0x71ad40 TriggerClass::UnlinkTags -> TriggerClass
+[conv] 0x71ade0 TagClass::Unlink -> TagClass
+[conv] 0x71af20 OreManagerClass::AssignMinerToRefinery -> OreManagerClass
+[conv] 0x71b7b0 TerrainClass::CleanupMembers -> TerrainClass
+[conv] 0x71b920 TerrainClass::UpdateAnims -> TerrainClass
+[conv] 0x71bb90 TerrainClass::Construct -> TerrainClass
+[conv] 0x71bdf0 ObjectClass::ProcessFoggedState -> ObjectClass
+[conv] 0x71c070 TerrainClass::ClearCellFlags -> TerrainClass
+[conv] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> TerrainClass
+[conv] 0x71c730 TerrainClass::Update -> TerrainClass
+[conv] 0x71cc50 TerrainClass::CheckSpawnConditions -> TerrainClass
+[conv] 0x71cda0 TerrainClass::LoadFromStream -> TerrainClass
+[conv] 0x71cf50 TerrainClass::PowerDrainUpdate -> TerrainClass
+[conv] 0x71d000 TerrainClass::ProcessSpawnAnim -> TerrainClass
+[conv] 0x71d580 InitializeCellSpreadTables -> _addr_71
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TemporalClass            rc=2
+[era] ObjectClass              rc=2
+[era] FactoryClass             rc=2
+[era] TriggerClass             rc=2
+[era] TagClass                 rc=2
+[era] OreManagerClass          rc=2
+[era] TerrainClass             rc=2
+[era] _addr_71                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x71a4e0   MISMATCH         TemporalClass::TemporalClass_71A4E0
+[diff] 0x71cc50   MISMATCH         TerrainClass::CheckSpawnConditions
+[ledger] 0x71a4e0 TemporalClass::TemporalClass_71A4E0 -> NG (attempt 2)
+[ledger] 0x71a760 TemporalClass::ProcessTimeWarp -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71ab10 TemporalClass::GetWarpPerStep -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71ab60 ObjectClass::UnlinkFromFactory -> COMPILE_FAIL (attempt 8)
+[ledger] 0x71abc0 FactoryClass::CompleteItem -> COMPILE_FAIL (attempt 13)
+[ledger] 0x71ad40 TriggerClass::UnlinkTags -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71ade0 TagClass::Unlink -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71af20 OreManagerClass::AssignMinerToRefinery -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71b7b0 TerrainClass::CleanupMembers -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71b920 TerrainClass::UpdateAnims -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71bb90 TerrainClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71bdf0 ObjectClass::ProcessFoggedState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x71c070 TerrainClass::ClearCellFlags -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71c110 TerrainClass::SetOccupyBit_PassableTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71c730 TerrainClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71cc50 TerrainClass::CheckSpawnConditions -> NG (attempt 3)
+[ledger] 0x71cda0 TerrainClass::LoadFromStream -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71cf50 TerrainClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71d000 TerrainClass::ProcessSpawnAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71d580 InitializeCellSpreadTables -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p62\batch_report.json
