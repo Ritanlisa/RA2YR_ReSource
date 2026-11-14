@@ -1,0 +1,162 @@
+[
+ {
+  "addr": "0x488ee0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x489180",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x489280",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48ab90",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48b0e0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48b1f0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48bf40",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48c040",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48c320",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48c3b0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48c5a0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48c8b0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48ccc0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48d080",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48d1e0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48dfd0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48e030",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48e090",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48e0b0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48e740",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x48ebf0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x494430",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x494590",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x494d90",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x494f20",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x4950c0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x495250",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x495590",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x4958d0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x497b80",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x497cf0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x497e60",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x499cc0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x499d20",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x499da0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x49a1a0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x49a1c0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x49a1e0",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x49a380",
+  "family": "s3b_cf"
+ },
+ {
+  "addr": "0x49a3a0",
+  "family": "s3b_cf"
+ }
+]

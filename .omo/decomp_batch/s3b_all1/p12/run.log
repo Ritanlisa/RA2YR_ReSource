@@ -1,0 +1,134 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p12\part_00
+=== convert (40 addrs) ===
+[conv] 0x488ee0 ColorListClass::GetColor -> ColorListClass
+[conv] 0x489180 ComputeTechnoClassDamageFalloff -> _addr_48
+[conv] 0x489280 PlaySoundEffectAt -> _addr_48
+[conv] 0x48ab90 TechnoClass::ComputeScanRange -> TechnoClass
+[conv] 0x48b0e0 CommBufferClass::sub_48B0E0 -> CommBufferClass
+[conv] 0x48b1f0 CommBufferClass::sub_48B1F0 -> CommBufferClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x48c040 ModemConnectionClass::receivePacket -> ModemConnectionClass
+[conv] 0x48c320 ModemConnectionClass::processTileUpdate -> ModemConnectionClass
+[conv] 0x48c3b0 ConnectionClass::IsValid -> ConnectionClass
+[conv] 0x48c5a0 ModemConnectionClass::connect -> ModemConnectionClass
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x48d080 Event::Dispatch -> Event
+[conv] 0x48d1e0 Network::Dispatch -> Network
+[conv] 0x48dfd0 sub_48DFD0 -> _addr_48
+[conv] 0x48e030 sub_48E030 -> _addr_48
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x48e0b0 ObjectClass::DumpNetworkStats -> ObjectClass
+[conv] 0x48e740 ConvertClass::Construct -> ConvertClass
+[conv] 0x48ebf0 ConvertClass::InitTables -> ConvertClass
+[conv] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> _BlitTransLucent25Alpha_G
+[conv] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x494d90 _BlitTransZRemapXlatAlphaZRead_G::AddRef -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x4950c0 _BlitTransLucent50AlphaZRead_G::AddRef -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x495250 _BlitTransLucent25AlphaZRead_G::AddRef -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x495590 _BlitTransLucent50AlphaZReadWarp_G::AddRef -> _BlitTransLucent50AlphaZReadWarp_G
+[conv] 0x4958d0 _BlitTransXlatAlphaZReadWrite_G::AddRef -> _BlitTransXlatAlphaZReadWrite_G
+[conv] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> _RLEBlitTransLucent75Alpha_G
+[conv] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x499cc0 Blitter::getTileIndex -> Blitter
+[conv] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> __BlitTransZRemapXlat_E
+[conv] 0x499da0 RLEBlitter::clearOverlayFlags -> RLEBlitter
+[conv] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatWriteAlpha_G
+[conv] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> _BlitTransXlatMultWriteAlpha_G
+=== emit 28 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ColorListClass           rc=2
+[era] _addr_48                 rc=2
+[era] TechnoClass              rc=0
+[era] CommBufferClass          rc=2
+[era] ConnectionClass          rc=2
+[era] ModemConnectionClass     rc=2
+[era] ObjectClass              rc=2
+[era] Event                    rc=2
+[era] Network                  rc=2
+[era] ConvertClass             rc=2
+[era] _BlitTransLucent25Alpha_G rc=2
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] _BlitTransZRemapXlatAlphaZRead_G rc=2
+[era] _BlitTransLucent75AlphaZRead_G rc=2
+[era] _BlitTransLucent50AlphaZRead_G rc=2
+[era] _BlitTransLucent25AlphaZRead_G rc=2
+[era] _BlitTransLucent50AlphaZReadWarp_G rc=2
+[era] _BlitTransXlatAlphaZReadWrite_G rc=2
+[era] _RLEBlitTransLucent75Alpha_G rc=2
+[era] _RLEBlitTransLucent50Alpha_G rc=2
+[era] _RLEBlitTransLucent25Alpha_G rc=2
+[era] Blitter                  rc=2
+[era] __BlitTransZRemapXlat_E  rc=2
+[era] RLEBlitter               rc=2
+[era] _BlitTransLucent75ZReadWrite_G rc=2
+[era] _BlitTransLucent50ZReadWrite_G rc=2
+[era] _BlitTransLucent25ZReadWrite_G rc=2
+[era] _BlitTransXlatWriteAlpha_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x48ab90   MISMATCH         TechnoClass::ComputeScanRange
+[diff] 0x48b1f0   MISMATCH         CommBufferClass::sub_48B1F0
+[ledger] 0x488ee0 ColorListClass::GetColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x489180 ComputeTechnoClassDamageFalloff -> COMPILE_FAIL (attempt 3)
+[ledger] 0x489280 PlaySoundEffectAt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48ab90 TechnoClass::ComputeScanRange -> NG (attempt 3)
+[ledger] 0x48b0e0 CommBufferClass::sub_48B0E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48b1f0 CommBufferClass::sub_48B1F0 -> NG (attempt 5)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 19)
+[ledger] 0x48c040 ModemConnectionClass::receivePacket -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48c320 ModemConnectionClass::processTileUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48c3b0 ConnectionClass::IsValid -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48c5a0 ModemConnectionClass::connect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48c8b0 ObjectClass::MainGameFrame -> COMPILE_FAIL (attempt 7)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48d080 Event::Dispatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x48d1e0 Network::Dispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48dfd0 sub_48DFD0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48e030 sub_48E030 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48e0b0 ObjectClass::DumpNetworkStats -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48e740 ConvertClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x48ebf0 ConvertClass::InitTables -> COMPILE_FAIL (attempt 3)
+[ledger] 0x494430 _BlitTransLucent25Alpha_G::BlitRect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 5)
+[ledger] 0x494d90 _BlitTransZRemapXlatAlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 13)
+[ledger] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4950c0 _BlitTransLucent50AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 17)
+[ledger] 0x495250 _BlitTransLucent25AlphaZRead_G::AddRef -> COMPILE_FAIL (attempt 14)
+[ledger] 0x495590 _BlitTransLucent50AlphaZReadWarp_G::AddRef -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4958d0 _BlitTransXlatAlphaZReadWrite_G::AddRef -> COMPILE_FAIL (attempt 14)
+[ledger] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> COMPILE_FAIL (attempt 17)
+[ledger] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> COMPILE_FAIL (attempt 16)
+[ledger] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> COMPILE_FAIL (attempt 15)
+[ledger] 0x499cc0 Blitter::getTileIndex -> COMPILE_FAIL (attempt 3)
+[ledger] 0x499d20 ?$BlitTransZRemapXlat@E::setOverlayFlags -> COMPILE_FAIL (attempt 3)
+[ledger] 0x499da0 RLEBlitter::clearOverlayFlags -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49a1a0 _BlitTransLucent75ZReadWrite_G::Constructor_Blitter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49a1c0 _BlitTransLucent50ZReadWrite_G::Constructor_Blitter_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49a1e0 _BlitTransLucent25ZReadWrite_G::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49a380 _BlitTransXlatWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x49a3a0 _BlitTransXlatMultWriteAlpha_G::Constructor_Blitter -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 38,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 24,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p12\batch_report.json

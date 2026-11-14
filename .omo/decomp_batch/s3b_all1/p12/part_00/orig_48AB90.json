@@ -1,0 +1,11 @@
+{
+ "addr": "0x48AB90",
+ "name": "TechnoClass::ComputeScanRange",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48AB90",
+ "bytes_hex": "51894c240083ec08db442408dc4c2410dc0d90517e00dd1c24e892000400e84db3330083c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
