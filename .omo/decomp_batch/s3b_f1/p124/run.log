@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p124\part_00
+=== convert (20 addrs) ===
+[conv] 0x7104f0 FootClass::UpdatePassengerCoords -> FootClass
+[conv] 0x710af0 TechnoTypeClass::ReadINI -> TechnoTypeClass
+[conv] 0x711840 TechnoTypeClass::Construct -> TechnoTypeClass
+[conv] 0x711ae0 TechnoTypeClass::DTOR -> TechnoTypeClass
+[conv] 0x712040 TechnoTypeClass::SelectArtOrAlt -> TechnoTypeClass
+[conv] 0x712170 TechnoTypeClass::LoadExtras -> TechnoTypeClass
+[conv] 0x716290 TechnoTypeClass::GetModeSpecificValue -> TechnoTypeClass
+[conv] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> TechnoTypeClass
+[conv] 0x7171a0 BuildingTypeClass::ProcessPower -> BuildingTypeClass
+[conv] 0x717c70 TypeList::ParticleConstructor -> TypeList
+[conv] 0x717cd0 TypeList::PushBack -> TypeList
+[conv] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> TeleportLocomotionClass
+[conv] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> JumpjetLocomotionClass
+[conv] 0x718260 ObjectClass::FindPlacementPosition -> ObjectClass
+[conv] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> TechnoClass
+[conv] 0x718b70 Factory::CalculateExitCell -> Factory
+[conv] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> TeleportLocomotionClass
+[conv] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> TeleportLocomotionClass
+[conv] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> JumpjetLocomotionClass
+[conv] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> TeleportLocomotionClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] TechnoTypeClass          rc=2
+[era] BuildingTypeClass        rc=2
+[era] TypeList                 rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] Factory                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7104f0 FootClass::UpdatePassengerCoords -> COMPILE_FAIL (attempt 7)
+[ledger] 0x710af0 TechnoTypeClass::ReadINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x711840 TechnoTypeClass::Construct -> COMPILE_FAIL (attempt 9)
+[ledger] 0x711ae0 TechnoTypeClass::DTOR -> COMPILE_FAIL (attempt 8)
+[ledger] 0x712040 TechnoTypeClass::SelectArtOrAlt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x712170 TechnoTypeClass::LoadExtras -> COMPILE_FAIL (attempt 4)
+[ledger] 0x716290 TechnoTypeClass::GetModeSpecificValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x716dc0 TechnoTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7171a0 BuildingTypeClass::ProcessPower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x717c70 TypeList::ParticleConstructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x717cd0 TypeList::PushBack -> COMPILE_FAIL (attempt 3)
+[ledger] 0x718000 TeleportLocomotionClass::TeleportLocomotionClass_718000 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7180a0 JumpjetLocomotionClass::GetCoordinateConditional -> COMPILE_FAIL (attempt 3)
+[ledger] 0x718260 ObjectClass::FindPlacementPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7187a0 TechnoClass::ProcessUnitDeploymentAtCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x718b70 Factory::CalculateExitCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x719d40 TeleportLocomotionClass::CheckWindowsErrorWrapper_2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x719e30 TeleportLocomotionClass::UpdateAltitude -> COMPILE_FAIL (attempt 3)
+[ledger] 0x719f80 JumpjetLocomotionClass::LoadLocomotionFromStream_3 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x71a0e0 TeleportLocomotionClass::IUnknownAddRef -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p124\batch_report.json
