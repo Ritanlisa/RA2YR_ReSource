@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p67\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b3f50 MixFileClass::sub_5B3F50 -> MixFileClass
+[conv] 0x5b4080 Tree::Destructor -> Tree
+[conv] 0x5b4350 ObjectClass::sub_5B4350 -> ObjectClass
+[conv] 0x5b4430 LookupFileInfoCache -> _addr_5B
+[conv] 0x5b4590 MixFileClass::LinkIntoPool -> MixFileClass
+[conv] 0x5b4610 MixFileClass::UnlinkFromPool -> MixFileClass
+[conv] 0x5b4630 MixFileClass::Constructor_MixFileClass -> MixFileClass
+[conv] 0x5b49b0 ModemGuest::Dialog -> ModemGuest
+[conv] 0x5b4ee0 ModemGuest::InitDialog -> ModemGuest
+[conv] 0x5b57d0 ObjectClass::sub_5B57D0 -> ObjectClass
+[conv] 0x5b5960 ObjectClass::sub_5B5960 -> ObjectClass
+[conv] 0x5b59b0 ModemGame::AdvanceTauntCommand -> ModemGame
+[conv] 0x5b5a50 ObjectClass::sub_5B5A50 -> ObjectClass
+[conv] 0x5b5ad0 ModemGame::UpdatePlayerNameAndColor -> ModemGame
+[conv] 0x5b6020 ModemGame::ProcessPacket -> ModemGame
+[conv] 0x5b67f0 ApplyGameOptions -> _addr_5B
+[conv] 0x5b6da0 ObjectClass::sub_5B6DA0 -> ObjectClass
+[conv] 0x5b6eb0 ObjectClass::UI_Setup -> ObjectClass
+[conv] 0x5b7090 Game::StartModemMultiplayer -> Game
+[conv] 0x5b7360 ModemGame::ReceiveMapPreview -> ModemGame
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MixFileClass             rc=2
+[era] Tree                     rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5B                 rc=2
+[era] ModemGuest               rc=2
+[era] ModemGame                rc=2
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5b3f50 MixFileClass::sub_5B3F50 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4080 Tree::Destructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4350 ObjectClass::sub_5B4350 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b4430 LookupFileInfoCache -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4590 MixFileClass::LinkIntoPool -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4610 MixFileClass::UnlinkFromPool -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4630 MixFileClass::Constructor_MixFileClass -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5b49b0 ModemGuest::Dialog -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b4ee0 ModemGuest::InitDialog -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5b57d0 ObjectClass::sub_5B57D0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5b5960 ObjectClass::sub_5B5960 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b59b0 ModemGame::AdvanceTauntCommand -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b5a50 ObjectClass::sub_5B5A50 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b5ad0 ModemGame::UpdatePlayerNameAndColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5b6020 ModemGame::ProcessPacket -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b67f0 ApplyGameOptions -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5b6da0 ObjectClass::sub_5B6DA0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b6eb0 ObjectClass::UI_Setup -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5b7090 Game::StartModemMultiplayer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5b7360 ModemGame::ReceiveMapPreview -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p67\batch_report.json
