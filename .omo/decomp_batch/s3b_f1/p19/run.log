@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x474da0 INIClass::LookupEnum -> INIClass
+[conv] 0x474ff0 ObjectTypeClass::ReadDouble2 -> ObjectTypeClass
+[conv] 0x4753f0 ArmorType::FindIndex -> ArmorType
+[conv] 0x4758c0 MapClass::loadTheaterINI -> MapClass
+[conv] 0x4759f0 INIClass::ReadStringValue -> INIClass
+[conv] 0x475d70 INIClass::ReadIntList -> INIClass
+[conv] 0x476020 INIClass::ReadExitCellList -> INIClass
+[conv] 0x4764f0 INIClass::ReadTechnoTypeList -> INIClass
+[conv] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> INIClass
+[conv] 0x4770e0 LoadBuildingTypeClassPrerequisites -> _addr_47
+[conv] 0x477740 Pipe::Method_477740 -> Pipe
+[conv] 0x4779e0 DynamicVectorClass::Copy -> DynamicVectorClass
+[conv] 0x478630 VectorClass::vt00 -> VectorClass
+[conv] 0x478720 TypeList::Copy -> TypeList
+[conv] 0x478790 TypeList::TechnoTypeConstructor -> TypeList
+[conv] 0x478ba0 CCToolTip::CalculatePopupPosition -> CCToolTip
+[conv] 0x478db0 CCToolTip::Release -> CCToolTip
+[conv] 0x478e10 CCToolTip::Draw1 -> CCToolTip
+[conv] 0x478e30 CCToolTip::Draw2 -> CCToolTip
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] ArmorType                rc=2
+[era] MapClass                 rc=2
+[era] _addr_47                 rc=2
+[era] Pipe                     rc=2
+[era] DynamicVectorClass       rc=2
+[era] VectorClass              rc=2
+[era] TypeList                 rc=2
+[era] CCToolTip                rc=2
+[era] CD                       rc=2
+=== diffasm byte-compare ===
+[ledger] 0x474da0 INIClass::LookupEnum -> COMPILE_FAIL (attempt 5)
+[ledger] 0x474ff0 ObjectTypeClass::ReadDouble2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4753f0 ArmorType::FindIndex -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4758c0 MapClass::loadTheaterINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4759f0 INIClass::ReadStringValue -> COMPILE_FAIL (attempt 6)
+[ledger] 0x475d70 INIClass::ReadIntList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x476020 INIClass::ReadExitCellList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4764f0 INIClass::ReadTechnoTypeList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4767c0 INIClass::ReadSuperWeaponTypeList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4770e0 LoadBuildingTypeClassPrerequisites -> COMPILE_FAIL (attempt 4)
+[ledger] 0x477740 Pipe::Method_477740 -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4779e0 DynamicVectorClass::Copy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x478630 VectorClass::vt00 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478720 TypeList::Copy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478790 TypeList::TechnoTypeConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478ba0 CCToolTip::CalculatePopupPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478db0 CCToolTip::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x478e10 CCToolTip::Draw1 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x478e30 CCToolTip::Draw2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4791f0 CD::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p19\batch_report.json
