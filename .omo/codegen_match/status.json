@@ -138297,7 +138297,7 @@
   "this_as_id": false
  },
  "0x689960": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -138357,7 +138357,7 @@
   "this_as_id": false
  },
  "0x689c60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138369,7 +138369,7 @@
   "this_as_id": false
  },
  "0x689d30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138381,7 +138381,7 @@
   "this_as_id": false
  },
  "0x689e90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138453,15 +138453,15 @@
   "this_as_id": false
  },
  "0x68bce0": {
-  "attempts": 1,
-  "clean": false,
+  "attempts": 2,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ScenarioClass::GetCellFromArray",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "ScenarioClass::GetCellFromArray",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x68bd00": {
@@ -138556,7 +138556,7 @@
   "status": "NG"
  },
  "0x68c050": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138626,7 +138626,7 @@
   "this_as_id": false
  },
  "0x68c3b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -138674,7 +138674,7 @@
   "this_as_id": false
  },
  "0x68c9c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "System_Read_68C9C0",
@@ -138685,7 +138685,7 @@
   "this_as_id": false
  },
  "0x68ca50": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "FindBuildingAnimByName",
@@ -138696,7 +138696,7 @@
   "this_as_id": false
  },
  "0x68cab0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "Network_Assign",
@@ -138861,14 +138861,14 @@
   "this_as_id": false
  },
  "0x68cd20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScoreScreen::Display",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ScoreScreen::Display",
-  "rule_violations": 85,
+  "rule_violations": 57,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -138897,7 +138897,7 @@
   "this_as_id": false
  },
  "0x68ed80": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "Render_Get",
@@ -138920,19 +138920,19 @@
   "this_as_id": false
  },
  "0x68f060": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Screen::TransitionRender",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Screen::TransitionRender",
-  "rule_violations": 6,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x68f8a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -138944,7 +138944,7 @@
   "this_as_id": false
  },
  "0x68f9b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -139003,7 +139003,7 @@
   "this_as_id": false
  },
  "0x690160": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -139039,15 +139039,15 @@
   "this_as_id": false
  },
  "0x690530": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 je 0x69056d",
   "name": "ObjectClass::sub_690530",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "sub_690530",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6905f0": {
@@ -139075,7 +139075,7 @@
   "this_as_id": false
  },
  "0x6907a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -139111,7 +139111,7 @@
   "this_as_id": false
  },
  "0x690910": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -139159,7 +139159,7 @@
   "this_as_id": false
  },
  "0x690d60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

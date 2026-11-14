@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetCellFromArray@ScenarioClass@@QAEPAXH@Z",
+ "sym_key": "ScenarioClass::GetCellFromArray",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b4424048d8c813206000051b9f8010000e800000000c20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}
