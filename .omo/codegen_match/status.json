@@ -206388,7 +206388,7 @@
   "this_as_id": false
  },
  "0x7c8614": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SetTimer",
@@ -206685,7 +206685,7 @@
   "this_as_id": false
  },
  "0x7c86b6": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ChildWindowFromPointEx",
@@ -206850,7 +206850,7 @@
   "this_as_id": false
  },
  "0x7c8710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "BeginPaint",
@@ -206872,7 +206872,7 @@
   "this_as_id": false
  },
  "0x7c871c": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "TranslateAcceleratorA",
@@ -206949,7 +206949,7 @@
   "this_as_id": false
  },
  "0x7c8746": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "EnumChildWindows",
@@ -207000,7 +207000,7 @@
   "this_as_id": false
  },
  "0x7c8764": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "CallWindowProcA",
@@ -207044,7 +207044,7 @@
   "this_as_id": false
  },
  "0x7c877c": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WindowFromPoint",
@@ -207176,7 +207176,7 @@
   "this_as_id": false
  },
  "0x7c87c4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ChildWindowFromPoint",
@@ -207612,7 +207612,7 @@
   "this_as_id": false
  },
  "0x7c88b4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RegEnumKeyExA",
@@ -207634,7 +207634,7 @@
   "this_as_id": false
  },
  "0x7c88c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RegQueryInfoKeyA",
@@ -207667,7 +207667,7 @@
   "this_as_id": false
  },
  "0x7c88d2": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "CoCreateInstance",
@@ -207678,7 +207678,7 @@
   "this_as_id": false
  },
  "0x7c88d8": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "OleLoadFromStream",
@@ -207689,7 +207689,7 @@
   "this_as_id": false
  },
  "0x7c88de": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "OleSaveToStream",
@@ -207711,7 +207711,7 @@
   "this_as_id": false
  },
  "0x7c88ea": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "StringFromCLSID",
@@ -207744,7 +207744,7 @@
   "this_as_id": false
  },
  "0x7c88fc": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "StgOpenStorage",
@@ -207755,7 +207755,7 @@
   "this_as_id": false
  },
  "0x7c8902": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "StringFromGUID2",
@@ -207777,7 +207777,7 @@
   "this_as_id": false
  },
  "0x7c890e": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "CoRegisterClassObject",
@@ -207866,7 +207866,7 @@
   "this_as_id": false
  },
  "0x7c893e": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "RegisterActiveObject",
@@ -207910,7 +207910,7 @@
   "this_as_id": false
  },
  "0x7c8956": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "timeSetEvent",
@@ -207998,7 +207998,7 @@
   "this_as_id": false
  },
  "0x7c8986": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ntoainet",
