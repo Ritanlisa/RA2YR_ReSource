@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p96\part_00
+=== convert (20 addrs) ===
+[conv] 0x65d660 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x65d6a0 ReferenceCounted::initInterface -> ReferenceCounted
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x65e010 MoveScriptTypeClassToWaypoint -> _addr_65
+[conv] 0x65e660 SpawnSuperWeaponUnits -> _addr_65
+[conv] 0x65e850 PlaceAircraftOnMap -> _addr_65
+[conv] 0x65eab0 globalHelper_05EAB0 -> _addr_65
+[conv] 0x65ec30 ExecuteScriptTypeClassActions -> _addr_65
+[conv] 0x65f520 ScenarioClass::ShowMissionBriefing -> ScenarioClass
+[conv] 0x6607d0 SaveGame::SaveTriggerEvents -> SaveGame
+[conv] 0x660840 LoadGame::LoadTriggerEvents -> LoadGame
+[conv] 0x6613a0 ComputeColorSaturation -> _addr_66
+[conv] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass_661EC0 -> RocketLocomotionClass
+[conv] 0x661f30 RocketLocomotionClass::sub_661F30 -> RocketLocomotionClass
+[conv] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> JumpjetLocomotionClass
+[conv] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x6620f0 BulletClass::ComputeImpactTrajectory -> BulletClass
+[conv] 0x6622c0 RocketLocomotionClass::UpdateBullets -> RocketLocomotionClass
+[conv] 0x663030 TechnoClass::CalculateDamage -> TechnoClass
+[conv] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> JumpjetLocomotionClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ReferenceCounted         rc=2
+[era] _addr_65                 rc=2
+[era] ScenarioClass            rc=2
+[era] SaveGame                 rc=2
+[era] LoadGame                 rc=2
+[era] _addr_66                 rc=2
+[era] RocketLocomotionClass    rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] BulletClass              rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x65d660 ReferenceCounted::Constructor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x65d6a0 ReferenceCounted::initInterface -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 12)
+[ledger] 0x65e010 MoveScriptTypeClassToWaypoint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65e660 SpawnSuperWeaponUnits -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65e850 PlaceAircraftOnMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65eab0 globalHelper_05EAB0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65ec30 ExecuteScriptTypeClassActions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65f520 ScenarioClass::ShowMissionBriefing -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6607d0 SaveGame::SaveTriggerEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x660840 LoadGame::LoadTriggerEvents -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 9)
+[ledger] 0x661ec0 RocketLocomotionClass::RocketLocomotionClass_661EC0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x661f30 RocketLocomotionClass::sub_661F30 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x661f50 JumpjetLocomotionClass::HasFieldStateChanged -> COMPILE_FAIL (attempt 6)
+[ledger] 0x661fb0 JumpjetLocomotionClass::GetCoordinate_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6620f0 BulletClass::ComputeImpactTrajectory -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6622c0 RocketLocomotionClass::UpdateBullets -> COMPILE_FAIL (attempt 5)
+[ledger] 0x663030 TechnoClass::CalculateDamage -> COMPILE_FAIL (attempt 7)
+[ledger] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p96\batch_report.json
