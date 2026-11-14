@@ -1,0 +1,11 @@
+{
+ "addr": "0x46CFC0",
+ "name": "CampaignClass::Stat",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46CFC0",
+ "bytes_hex": "56578b7c240c8bf157e8123cfaff8b86980000008bcf50e8744d03008d8e9c000000518bcfe8c64d03008b969c0200008bcf52e8584d03005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,87 @@
+{
+ "symbol": "?CampaignClass_46CB60@CampaignClass@@QAEHPAD@Z",
+ "sym_key": "CampaignClass::CampaignClass_46CB60",
+ "size": 163,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e800000000b80000000083c9ff8906898e98000000898e9c02000089460489460889460ca1000000008b0d000000003bc8722f8a0d0000000084c9750485c075398b0d0000000085c9762f03c86a00518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d000000008934828d8649020000680000000050c6869c00000000e80000000083c4088bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?vt_CampaignClass_4@@3PAXA",
+   "sym_key": "vt_CampaignClass_4"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D00@@3IA",
+   "sym_key": "DataGlobal_A83D00"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D05@@3EA",
+   "sym_key": "DataGlobal_A83D05"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D0C@@3IA",
+   "sym_key": "DataGlobal_A83D0C"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CF8@@3IA",
+   "sym_key": "DataGlobal_A83CF8"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CF8@@3IA",
+   "sym_key": "DataGlobal_A83CF8"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_CampaignTypeArray@@3PAXA",
+   "sym_key": "g_CampaignTypeArray"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeInitState@@3IA",
+   "sym_key": "g_UnitTypeInitState"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_TypeClass_DefaultString@@3GA",
+   "sym_key": "g_TypeClass_DefaultString"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

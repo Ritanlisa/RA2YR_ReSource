@@ -1,0 +1,11 @@
+{
+ "addr": "0x472330",
+ "name": "HouseClass::AssignCivilianToLowPowerTargets",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x472330",
+ "bytes_hex": "5355568b353802a800578bf9b964818100e88a23230033c985f67e2d8b1d2c02a8008bd38b2a8b6d343985bc00000074114183c2043bce7ceb5f5e5d32c05bc204008b0c8b85c975095f5e5d32c05bc204008b57344a78148b7424148b47288b0490393075038948044a79f05f5e5db0015bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

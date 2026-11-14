@@ -1,0 +1,81 @@
+{
+ "symbol": "?CaptureManagerClass_4717D0@CaptureManagerClass@@QAEHHHD@Z",
+ "sym_key": "CaptureManagerClass::CaptureManagerClass_4717D0",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000b1018b54240c884e30884e388b4c240833c0894e48b900000000890e894e04894e08894e0c8a4c24108946283ac889462c0f95c1884631c746240000000089463489563c884e40884641c7464c1e0000008946448b0d000000008b15000000003bd1722c38050000000075043bc875388b15000000003bd0762e03d150528b15000000006800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818bc65ec20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?vt_CaptureManagerClass_4@@3PAXA",
+   "sym_key": "vt_CaptureManagerClass_4"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_ControlNode@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_ControlNode"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0F8@@3IA",
+   "sym_key": "DataGlobal_89E0F8"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E100@@3IA",
+   "sym_key": "DataGlobal_89E100"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0FD@@3EA",
+   "sym_key": "DataGlobal_89E0FD"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E104@@3IA",
+   "sym_key": "DataGlobal_89E104"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0F0@@3IA",
+   "sym_key": "DataGlobal_89E0F0"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0F0@@3IA",
+   "sym_key": "DataGlobal_89E0F0"
+  },
+  {
+   "off": 154,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E100@@3IA",
+   "sym_key": "DataGlobal_89E100"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E100@@3IA",
+   "sym_key": "DataGlobal_89E100"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89E0F4@@3IA",
+   "sym_key": "DataGlobal_89E0F4"
+  }
+ ]
+}

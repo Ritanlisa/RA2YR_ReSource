@@ -1,0 +1,33 @@
+{
+ "symbol": "?AssignCivilianToLowPowerTargets@HouseClass@@QAEDH@Z",
+ "sym_key": "HouseClass::AssignCivilianToLowPowerTargets",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "5355568b3518000000578bf9b900000000e80000000033d285f67f095f5e5d32c05bc204008b1d0c0000008bcb8b298b6d343985bc0000007416423bd67d188b690483c1048b6d343985bc00000075ea8b149385d275095f5e5d32c05bc204008b4f344978148b7424148b47288b0488393075038950044979f05f5e5db0015bc20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Civilian@@3EA",
+   "sym_key": "g_INI_Key_Civilian"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?Find@HouseTypeClass@@QAEHXZ",
+   "sym_key": "HouseTypeClass::Find"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  }
+ ]
+}

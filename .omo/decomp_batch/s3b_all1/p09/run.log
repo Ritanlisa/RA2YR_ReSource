@@ -1,0 +1,128 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p09\part_00
+=== convert (40 addrs) ===
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x46baa0 sub_46BAA0 -> _addr_46
+[conv] 0x46bbc0 BulletTypeClass::Construct -> BulletTypeClass
+[conv] 0x46bee0 BulletTypeClass::LoadFromINI -> BulletTypeClass
+[conv] 0x46cb60 CampaignClass::CampaignClass_46CB60 -> CampaignClass
+[conv] 0x46ccd0 CampaignClass::GetMapData -> CampaignClass
+[conv] 0x46ce10 CampaignClass::LoadFromINIList -> CampaignClass
+[conv] 0x46cfc0 CampaignClass::Stat -> CampaignClass
+[conv] 0x46d4a0 Game::SendCampaignOptions -> Game
+[conv] 0x46d810 ObjectClass::sub_46D810 -> ObjectClass
+[conv] 0x46d8b0 ObjectClass::sub_46D8B0 -> ObjectClass
+[conv] 0x46da70 ObjectClass::sub_46DA70 -> ObjectClass
+[conv] 0x46dfd0 CampaignScore::DialogProc -> CampaignScore
+[conv] 0x46f6d0 Count::SetupAllCountriesLobby -> Count
+[conv] 0x46f810 GetLobbyPlayerColor -> _addr_46
+[conv] 0x46f880 GetHouseClassSideIndex -> _addr_46
+[conv] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> Skirmish
+[conv] 0x46fc00 CampaignScore::ProcessScreen -> CampaignScore
+[conv] 0x471420 CampaignScore::InitScoreScreenData -> CampaignScore
+[conv] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> CampaignScore
+[conv] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> CampaignScore
+[conv] 0x4717d0 CaptureManagerClass::CaptureManagerClass_4717D0 -> CaptureManagerClass
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x471d40 CaptureManagerClass::CaptureUnit -> CaptureManagerClass
+[conv] 0x471f90 ObjectClass::RemoveFromPointerList -> ObjectClass
+[conv] 0x471ff0 CaptureManagerClass::FreeUnit -> CaptureManagerClass
+[conv] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> CaptureManagerClass
+[conv] 0x472330 HouseClass::AssignCivilianToLowPowerTargets -> HouseClass
+[conv] 0x4723b0 CaptureManagerClass::DecideUnitFate -> CaptureManagerClass
+[conv] 0x472720 CaptureManagerClass::LoadFromStream -> CaptureManagerClass
+[conv] 0x4728e0 CaptureManagerClass::SaveToINI -> CaptureManagerClass
+[conv] 0x473750 CarryoverClass::sub_473750 -> CarryoverClass
+[conv] 0x4737f0 ReinforcementClass::CreateObject -> ReinforcementClass
+[conv] 0x473960 sub_473960 -> _addr_47
+[conv] 0x473ab0 CCFileClass::Destru_vt16 -> CCFileClass
+[conv] 0x473ae0 CCFileClass::Write -> CCFileClass
+[conv] 0x473b10 CCFileClass::Read -> CCFileClass
+[conv] 0x473c50 CCFileClass::Open -> CCFileClass
+[conv] 0x473d10 CCFileClass::Load -> CCFileClass
+[conv] 0x473e50 CCFileClass::Destru_vt14 -> CCFileClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=2
+[era] _addr_46                 rc=2
+[era] BulletTypeClass          rc=2
+[era] CampaignClass            rc=2
+[era] Game                     rc=2
+[era] ObjectClass              rc=2
+[era] CampaignScore            rc=2
+[era] Count                    rc=2
+[era] Skirmish                 rc=2
+[era] CaptureManagerClass      rc=2
+[era] HouseClass               rc=0
+[era] CarryoverClass           rc=2
+[era] ReinforcementClass       rc=2
+[era] _addr_47                 rc=2
+[era] CCFileClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x46baa0   MISMATCH         sub_46BAA0
+[diff] 0x46cb60   MISMATCH         CampaignClass::CampaignClass_46CB60
+[diff] 0x46cfc0   MISMATCH         CampaignClass::Stat
+[diff] 0x46da70   MISMATCH         ObjectClass::sub_46DA70
+[diff] 0x4717d0   MISMATCH         CaptureManagerClass::CaptureManagerClass_4717D0
+[diff] 0x472330   MISMATCH         HouseClass::AssignCivilianToLowPowerTargets
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x46baa0 sub_46BAA0 -> NG (attempt 3)
+[ledger] 0x46bbc0 BulletTypeClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46bee0 BulletTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46cb60 CampaignClass::CampaignClass_46CB60 -> NG (attempt 3)
+[ledger] 0x46ccd0 CampaignClass::GetMapData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46ce10 CampaignClass::LoadFromINIList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46cfc0 CampaignClass::Stat -> NG (attempt 3)
+[ledger] 0x46d4a0 Game::SendCampaignOptions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46d810 ObjectClass::sub_46D810 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46d8b0 ObjectClass::sub_46D8B0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46da70 ObjectClass::sub_46DA70 -> NG (attempt 3)
+[ledger] 0x46dfd0 CampaignScore::DialogProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46f6d0 Count::SetupAllCountriesLobby -> COMPILE_FAIL (attempt 6)
+[ledger] 0x46f810 GetLobbyPlayerColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46f880 GetHouseClassSideIndex -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46fc00 CampaignScore::ProcessScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471420 CampaignScore::InitScoreScreenData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4717d0 CaptureManagerClass::CaptureManagerClass_4717D0 -> NG (attempt 3)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 8)
+[ledger] 0x471d40 CaptureManagerClass::CaptureUnit -> COMPILE_FAIL (attempt 6)
+[ledger] 0x471f90 ObjectClass::RemoveFromPointerList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x471ff0 CaptureManagerClass::FreeUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> COMPILE_FAIL (attempt 4)
+[ledger] 0x472330 HouseClass::AssignCivilianToLowPowerTargets -> NG (attempt 3)
+[ledger] 0x4723b0 CaptureManagerClass::DecideUnitFate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x472720 CaptureManagerClass::LoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4728e0 CaptureManagerClass::SaveToINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473750 CarryoverClass::sub_473750 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4737f0 ReinforcementClass::CreateObject -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473960 sub_473960 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x473ab0 CCFileClass::Destru_vt16 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473ae0 CCFileClass::Write -> COMPILE_FAIL (attempt 6)
+[ledger] 0x473b10 CCFileClass::Read -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473c50 CCFileClass::Open -> COMPILE_FAIL (attempt 6)
+[ledger] 0x473d10 CCFileClass::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x473e50 CCFileClass::Destru_vt14 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 34,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "width_mismatch": 1,
+  "codegen_shape": 2,
+  "frame_sched": 1,
+  "eval_order": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p09\batch_report.json

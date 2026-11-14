@@ -1,0 +1,33 @@
+{
+ "symbol": "?Stat@CampaignClass@@QAEHPAH@Z",
+ "sym_key": "CampaignClass::Stat",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e8000000008b869800000050e8000000008d4e45518bcfe8000000008b969c02000052e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::ProcessPower"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 33,
+   "type": "REL32",
+   "sym": "?AddString@Checksum@@QAEHPAX@Z",
+   "sym_key": "Checksum::AddString"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}
