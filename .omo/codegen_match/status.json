@@ -196364,7 +196364,7 @@
   "this_as_id": false
  },
  "0x781fb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InsertGameSettings",
@@ -196375,7 +196375,7 @@
   "this_as_id": false
  },
  "0x782320": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "InsertBuddyList",
@@ -196452,7 +196452,7 @@
   "this_as_id": false
  },
  "0x7835c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "sub_7835C0",
@@ -196510,7 +196510,7 @@
   "this_as_id": false
  },
  "0x783c80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196533,7 +196533,7 @@
   "this_as_id": false
  },
  "0x785370": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196545,7 +196545,7 @@
   "this_as_id": false
  },
  "0x785740": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196557,7 +196557,7 @@
   "this_as_id": false
  },
  "0x785ea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196569,7 +196569,7 @@
   "this_as_id": false
  },
  "0x786080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196581,15 +196581,15 @@
   "this_as_id": false
  },
  "0x786270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+6 mov eax, 0x8313b0",
   "name": "ObjectClass::Event_Process_786270",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "Event_Process_786270",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x786390": {
@@ -196604,7 +196604,7 @@
   "this_as_id": false
  },
  "0x7864c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196640,7 +196640,7 @@
   "this_as_id": false
  },
  "0x786ef0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196652,7 +196652,7 @@
   "this_as_id": false
  },
  "0x787010": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196664,7 +196664,7 @@
   "this_as_id": false
  },
  "0x787770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "NetworkLobbyWOL",
@@ -196675,7 +196675,7 @@
   "this_as_id": false
  },
  "0x788180": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "FindLobbyIDWOL",
@@ -196719,7 +196719,7 @@
   "this_as_id": false
  },
  "0x788b00": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196742,7 +196742,7 @@
   "this_as_id": false
  },
  "0x789630": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_789630",
@@ -196764,7 +196764,7 @@
   "this_as_id": false
  },
  "0x789960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196776,7 +196776,7 @@
   "this_as_id": false
  },
  "0x789b60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196800,7 +196800,7 @@
   "this_as_id": false
  },
  "0x78a6b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -196812,7 +196812,7 @@
   "this_as_id": false
  },
  "0x78a8f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
