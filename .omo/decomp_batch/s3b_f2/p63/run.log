@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p63\part_00
+=== convert (20 addrs) ===
+[conv] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> ObjectClass
+[conv] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> ObjectClass
+[conv] 0x593550 MapSeed::PlaceCityBlock2 -> MapSeed
+[conv] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> ObjectClass
+[conv] 0x594010 BuildingTypeClass::CheckPlacementArea -> BuildingTypeClass
+[conv] 0x594870 ObjectClass::PlaceRandomWaypoints -> ObjectClass
+[conv] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> ObjectClass
+[conv] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> BuildingPlacement
+[conv] 0x595400 TechnoClass::PlaceNeutralBuilding -> TechnoClass
+[conv] 0x595710 CSFClass::CopyString -> CSFClass
+[conv] 0x5958e0 RandomMap::CleanupRandomMapData -> RandomMap
+[conv] 0x595bc0 CCFileClass::Load -> CCFileClass
+[conv] 0x595ce0 ObjectClass::CleanupRandomMapCache -> ObjectClass
+[conv] 0x595fb0 GenerateRandomMapAndMinimap -> _addr_59
+[conv] 0x596300 SkirmishMapGen::DlgProc -> SkirmishMapGen
+[conv] 0x596e50 RandomMap::SetupDialog -> RandomMap
+[conv] 0x597430 ObjectClass::Team_Start_597430 -> ObjectClass
+[conv] 0x597a30 MapSeedClass::AddRef -> MapSeedClass
+[conv] 0x597d60 MapSeedClass::LoadInfo -> MapSeedClass
+[conv] 0x5980c0 Random::Gaussian -> Random
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] MapSeed                  rc=2
+[era] BuildingTypeClass        rc=2
+[era] BuildingPlacement        rc=2
+[era] TechnoClass              rc=2
+[era] CSFClass                 rc=2
+[era] RandomMap                rc=2
+[era] CCFileClass              rc=2
+[era] _addr_59                 rc=2
+[era] SkirmishMapGen           rc=2
+[era] MapSeedClass             rc=2
+[era] Random                   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> COMPILE_FAIL (attempt 6)
+[ledger] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> COMPILE_FAIL (attempt 5)
+[ledger] 0x593550 MapSeed::PlaceCityBlock2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x594010 BuildingTypeClass::CheckPlacementArea -> COMPILE_FAIL (attempt 5)
+[ledger] 0x594870 ObjectClass::PlaceRandomWaypoints -> COMPILE_FAIL (attempt 8)
+[ledger] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> COMPILE_FAIL (attempt 5)
+[ledger] 0x595400 TechnoClass::PlaceNeutralBuilding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x595710 CSFClass::CopyString -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5958e0 RandomMap::CleanupRandomMapData -> COMPILE_FAIL (attempt 8)
+[ledger] 0x595bc0 CCFileClass::Load -> COMPILE_FAIL (attempt 7)
+[ledger] 0x595ce0 ObjectClass::CleanupRandomMapCache -> COMPILE_FAIL (attempt 8)
+[ledger] 0x595fb0 GenerateRandomMapAndMinimap -> COMPILE_FAIL (attempt 4)
+[ledger] 0x596300 SkirmishMapGen::DlgProc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x596e50 RandomMap::SetupDialog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x597430 ObjectClass::Team_Start_597430 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x597a30 MapSeedClass::AddRef -> COMPILE_FAIL (attempt 5)
+[ledger] 0x597d60 MapSeedClass::LoadInfo -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5980c0 Random::Gaussian -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p63\batch_report.json
