@@ -1,0 +1,69 @@
+{
+ "symbol": "?FadePalette@@YIHPBXHPAX@Z",
+ "sym_key": "Unnamed::FadePalette",
+ "size": 358,
+ "link_base": 0,
+ "bytes_hex": "81ec04090000a1000000005355894c24088b0856578bea50ff517083f8010f8535010000e8000000008bd88d842415030000b900010000c640ff00c60000c640010083c0034975efb9c0000000be000000008dbc2414030000f3a58b742410b9c00000008d7c2414f3a583fbff8bcd7413e8000000002bc33bc50f8dd00000008bcd2bc885c90f84c4000000b9c00000008db424140300008dbc241406000083fbfff3a58bcd7413e8000000002bc33bc57c0433c9eb048bcd2bc88bc52bc1c1e00899f7fd3dff0000007c05b8ff0000008d5424145250e80000000083c40883fbff8bcd7413e8000000002bc33bc57c0433f6eb068bcd2bc88bf18d8c2414060000e8000000008b84241809000085c0753583fbff8bcd7413e8000000002bc33bc57c0433c9eb048bcd2bc83bce0f8536ffffff85f60f842effffff8b84241809000085c074cbff942418090000ebc28d4c2414e8000000005f5e5d5b81c404090000c20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Primary@@3PAXA",
+   "sym_key": "g_DSurface_Primary"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F990@@3EA",
+   "sym_key": "DataGlobal_89F990"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?Render_Helper@@YAHHPAXZZ",
+   "sym_key": "Render_Helper"
+  },
+  {
+   "off": 231,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "?CreateSurfacePalette@Surface@@QAEPAUIDirectDraw_era@@XZ",
+   "sym_key": "Surface::CreateSurfacePalette"
+  },
+  {
+   "off": 282,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  },
+  {
+   "off": 341,
+   "type": "REL32",
+   "sym": "?CreateSurfacePalette@Surface@@QAEPAUIDirectDraw_era@@XZ",
+   "sym_key": "Surface::CreateSurfacePalette"
+  }
+ ]
+}
