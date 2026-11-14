@@ -118,3 +118,4 @@
 {"part": 117, "n": 20, "seconds": 46.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 118, "n": 20, "seconds": 59.5, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 119, "n": 20, "seconds": 136.3, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 120, "n": 20, "seconds": 122.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
