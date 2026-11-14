@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p91\part_00
+=== convert (20 addrs) ===
+[conv] 0x634e10 ScriptAction::PlaceObject -> ScriptAction
+[conv] 0x635830 BuildingClass::GetDrawColor -> BuildingClass
+[conv] 0x636120 TeamClass::RemoveAllMembers -> TeamClass
+[conv] 0x636b50 TeamClass::Cleanup -> TeamClass
+[conv] 0x636ce0 ScriptAction::ClearBuildingState -> ScriptAction
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+[conv] 0x637270 TechnoClass::ExecutePlanningQueue -> TechnoClass
+[conv] 0x637e00 ScriptAction::DispatchBuilding -> ScriptAction
+[conv] 0x638120 ExecuteActionPlanManager -> _addr_63
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x639bc0 BuildingClass::FlushScriptActions -> BuildingClass
+[conv] 0x63a440 sub_63A440 -> _addr_63
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63a8e0 ScriptAction::HitTest -> ScriptAction
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> ObjectClass
+[conv] 0x63b550 ScriptAction::ProcessIdleAction -> ScriptAction
+[conv] 0x63be60 BuildingClass::DrawActionLines -> BuildingClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScriptAction             rc=2
+[era] BuildingClass            rc=2
+[era] TeamClass                rc=2
+[era] TabClass                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_63                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x634e10 ScriptAction::PlaceObject -> COMPILE_FAIL (attempt 7)
+[ledger] 0x635830 BuildingClass::GetDrawColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x636120 TeamClass::RemoveAllMembers -> COMPILE_FAIL (attempt 7)
+[ledger] 0x636b50 TeamClass::Cleanup -> COMPILE_FAIL (attempt 7)
+[ledger] 0x636ce0 ScriptAction::ClearBuildingState -> COMPILE_FAIL (attempt 14)
+[ledger] 0x637060 TabClass::processTabInput -> COMPILE_FAIL (attempt 12)
+[ledger] 0x637270 TechnoClass::ExecutePlanningQueue -> COMPILE_FAIL (attempt 6)
+[ledger] 0x637e00 ScriptAction::DispatchBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x638120 ExecuteActionPlanManager -> COMPILE_FAIL (attempt 7)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 7)
+[ledger] 0x639bc0 BuildingClass::FlushScriptActions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63a440 sub_63A440 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63a8e0 ScriptAction::HitTest -> COMPILE_FAIL (attempt 7)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63ad50 ObjectClass::ExportSelectionAsScriptAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63b2f0 ObjectClass::RenderScriptActionHighlight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63b550 ScriptAction::ProcessIdleAction -> COMPILE_FAIL (attempt 7)
+[ledger] 0x63be60 BuildingClass::DrawActionLines -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p91\batch_report.json
