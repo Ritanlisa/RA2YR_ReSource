@@ -393,6 +393,30 @@ class Registry(object):
         off = next(iter(offs))
         return (off, offs[off])
 
+    def _ml_inherited_index(self):
+        """{ida_name: [(offset, inherited_from, grp_cls)]} -- JSON order.
+
+        member_offset_inherited used to scan ALL of member_lookup (2.7MB,
+        ~100K offsets) on every call: 347 calls / 2.2s in a 20-function
+        part.  Entries are indexed once, preserving the original
+        member_lookup iteration order so first-hit semantics are
+        unchanged.
+        """
+        idx = getattr(self, "_ml_inh_idx", None)
+        if idx is None:
+            if self._ml is None:
+                self._ml = _j(MEMBER_LOOKUP)
+            idx = {}
+            for grp_cls, grp in self._ml.items():
+                for o_s, mm in grp.items():
+                    inh = mm.get("inherited_from")
+                    if not inh:
+                        continue
+                    idx.setdefault(mm.get("name"), []).append(
+                        (int(o_s), inh, grp_cls, mm))
+            self._ml_inh_idx = idx
+        return idx
+
     def member_offset_inherited(self, cls, ida_name):
         """R5: member_lookup parks inherited members on DERIVED classes
         with `inherited_from=<base>`; the base's own table misses them
@@ -407,23 +431,17 @@ class Registry(object):
 
         Returns (offset, record, source) or (None, None, None).
         """
-        if self._ml is None:
-            self._ml = _j(MEMBER_LOOKUP)
         keys = set(self.class_keys(cls))
         agree = {}
-        for grp_cls, grp in self._ml.items():
-            for o_s, mm in grp.items():
-                if mm.get("name") != ida_name or not mm.get("inherited_from"):
-                    continue
-                o = int(o_s)
-                if mm.get("inherited_from") in keys:
-                    # tier 1: parked on a derivative of THIS class
-                    return o, {
-                        "offset": o, "name": ida_name,
-                        "type": mm.get("type"),
-                        "width": mm.get("size") or 4,
-                    }, "member_lookup_inherited:%s" % grp_cls
-                agree.setdefault(o, []).append(grp_cls)
+        for o, inh, grp_cls, mm in self._ml_inherited_index().get(ida_name) or ():
+            if inh in keys:
+                # tier 1: parked on a derivative of THIS class
+                return o, {
+                    "offset": o, "name": ida_name,
+                    "type": mm.get("type"),
+                    "width": mm.get("size") or 4,
+                }, "member_lookup_inherited:%s" % grp_cls
+            agree.setdefault(o, []).append(grp_cls)
         if len(agree) == 1:
             o = next(iter(agree))
             return o, {

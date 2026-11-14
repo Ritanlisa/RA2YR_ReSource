@@ -29,6 +29,11 @@ import sys
 from capstone import (Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP, CS_GRP_CALL,
                       CS_OP_IMM, CS_OP_MEM)
 
+try:
+    from .signals_maps import maps
+except ImportError:                     # bare-script execution
+    from signals_maps import maps
+
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SIGNALS = os.path.join(REPO, "signals.json")
 
@@ -43,41 +48,13 @@ def _load_maps():
     global _func_map_cache, _glob_map_cache, _glob_name_map_cache
     global _func_name_map_cache, _ext_alias_cache
     if _func_map_cache is None:
-        with open(SIGNALS, encoding="utf-8") as f:
-            sig = json.load(f)
-        fm = {}
-        nf = {}
-        for a, v in sig["symbols"].items():
-            try:
-                ia = int(a, 16)
-            except (ValueError, AttributeError):
-                continue
-            nm = v.get("name") or ("sub_%X" % ia)
-            fm[ia] = nm
-            nf.setdefault(nm, ia)
-        # R-CW8: signals._by_name carries the ALIAS spellings the export /
-        # generator use (`__3_YAXPAX_Z` and `??3_YAXPAX_Z` both point at the
-        # same address; the project renames the same routine OperatorDelete
-        # in symbols[]).  Registry-declared aliases are identity evidence --
-        # merge them so a COFF reloc key resolves to the real target.
-        for alias, rec in (sig.get("_by_name") or {}).items():
-            if not isinstance(rec, dict):
-                continue
-            for a in (rec.get("symbols") or {}):
-                try:
-                    ia = int(a, 16)
-                except (ValueError, TypeError):
-                    continue
-                nf.setdefault(alias, ia)
-        gm = {}
-        nm = {}
-        for name, addr in sig.get("globals", {}).items():
-            try:
-                ia = int(addr, 16)
-            except (ValueError, TypeError):
-                continue
-            gm[ia] = name
-            nm.setdefault(name, ia)
+        # signals.json (265MB) is parsed ONCE per process by signals_maps
+        # (disk-cached derived maps); this module used to parse its own
+        # private copy (~4.7s) in addition to passes/extract doing the same.
+        fm = maps()["func_by_addr"]
+        nf = maps()["func_by_name"]
+        gm = maps()["glob_by_addr_strict"]
+        nm = maps()["glob_by_name"]
         # external/CRT alias map: the IDA spelling and the COFF C spelling of
         # the same routine differ by decoration (`__CIpow` vs `_CIpow`,
         # `??2_YAPAXI_Z` vs `__2_YAPAXI_Z`).  Normalising BOTH to the stripped

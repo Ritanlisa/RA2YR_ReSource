@@ -180,9 +180,11 @@ def guess_size_by_disasm(pe, va, max_size=4096):
 # Process-level caches: a 100-function batch used to re-read signals.json
 # (~10MB), functions.json and the 7.6MB exe for EVERY function (13-26 s per
 # diff).  These loads are immutable for a run, so cache them.
+# (signals.json itself is no longer parsed here -- see _signals_maps.)
 _SIGNALS_CACHE = None
 _SIZE_MAP_CACHE = None
 _PE_CACHE = {}
+_MAPS_CACHE = None
 
 
 def _load_signals():
@@ -201,35 +203,45 @@ def _get_pe(path):
     return pe
 
 
-def resolve_target(ident, symbols_by_addr, symbols_by_name):
-    """ident = hex address string or function name -> (va:int, name)."""
+def _signals_maps():
+    """Derived signals.json maps (one parse per process, disk-cached).
+
+    Replaces the per-call rebuild of the 25K-entry symbol tables from the
+    parsed 265MB signals.json (the parse itself is shared with diffasm /
+    passes through signals_maps.maps()).
+    """
+    global _MAPS_CACHE
+    if _MAPS_CACHE is None:
+        try:
+            from .signals_maps import maps
+        except ImportError:             # bare-script execution
+            from signals_maps import maps
+        _MAPS_CACHE = maps()
+    return _MAPS_CACHE
+
+
+def resolve_target(ident, func_by_addr, by_name_first):
+    """ident = hex address string or function name -> (va:int, name).
+
+    `func_by_addr`  : {int VA: name}   (signals_maps["func_by_addr"])
+    `by_name_first` : {name: '0xADDR'} (signals_maps["by_name_first"])
+    """
     s = ident.strip()
     if re.fullmatch(r"0x[0-9a-fA-F]+", s) or re.fullmatch(r"[0-9a-fA-F]{6,8}", s):
         va = int(s, 16)
-        return va, symbols_by_addr.get(va, {}).get("name", "sub_%X" % va)
-    if s in symbols_by_name:
-        entries = symbols_by_name[s]["symbols"]
-        va = int(list(entries.keys())[0], 16)
-        return va, s
+        return va, func_by_addr.get(va) or ("sub_%X" % va)
+    if s in by_name_first:
+        return int(by_name_first[s], 16), s
     # try last-resort: case-sensitive substring
-    cands = [k for k in symbols_by_name if s.lower() == k.lower()]
+    cands = [k for k in by_name_first if s.lower() == k.lower()]
     if len(cands) == 1:
-        entries = symbols_by_name[cands[0]]["symbols"]
-        va = int(list(entries.keys())[0], 16)
-        return va, cands[0]
+        return int(by_name_first[cands[0]], 16), cands[0]
     raise SystemExit("ERROR: cannot resolve %r in signals.json" % ident)
 
 
 def extract_function(ident, exe_path=DEFAULT_EXE, size_override=None, verbose=True):
-    sig = _load_signals()
-    symbols_by_addr = {}
-    for a, v in sig["symbols"].items():
-        try:
-            symbols_by_addr[int(a, 16)] = v
-        except ValueError:
-            continue
-    symbols_by_name = sig.get("_by_name", {})
-    va, name = resolve_target(ident, symbols_by_addr, symbols_by_name)
+    m = _signals_maps()
+    va, name = resolve_target(ident, m["func_by_addr"], m["by_name_first"])
 
     pe = _get_pe(exe_path)
     sec = pe.section_of(va)

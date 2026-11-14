@@ -36,19 +36,14 @@ def _load_vt_lookup():
         auth = json.load(open(os.path.join(_ROOT, "anchors",
                                            "vtable_slot_authority.json"),
                               encoding="utf-8"))
-        glob = json.load(open(os.path.join(_ROOT, "signals.json"),
-                              encoding="utf-8")).get("globals", {})
+        glob = _signals_globals_by_name()
     except (OSError, ValueError):
         _VT_LOOKUP = lookup
         return lookup
     vt_by_addr = {}
     san = {}
-    for name, addr in glob.items():
+    for name, ia in glob.items():
         if not name.startswith("vt_"):
-            continue
-        try:
-            ia = int(addr, 16)
-        except (ValueError, TypeError):
             continue
         vt_by_addr.setdefault(ia, name)
         san.setdefault(name[3:], name)
@@ -7976,6 +7971,19 @@ def _extern_data_addr(name):
     return None
 
 
+def _signals_maps():
+    """Derived signals.json maps (one parse per process, disk-cached).
+
+    signals.json is 265MB; parsing it per consumer cost ~4.7s CPU each.
+    tools/codegen_match/signals_maps.py owns the single parse + pickle.
+    """
+    try:
+        from tools.codegen_match import signals_maps as sm
+    except ImportError:                 # bare script / inserted sys.path
+        from codegen_match import signals_maps as sm
+    return sm.maps()
+
+
 def _signals_globals_by_addr():
     """{addr:int -> name} straight from signals.json (cache-independent).
 
@@ -7984,21 +7992,21 @@ def _signals_globals_by_addr():
     signals.json after the last registry build.
     """
     if "g" not in _STR_LIT_CACHE:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "..", "..", "signals.json")
         try:
-            with open(os.path.normpath(path), encoding="utf-8") as f:
-                sig = json.load(f)
-            m = {}
-            for n, v in (sig.get("globals") or {}).items():
-                try:
-                    m[int(v, 16) if isinstance(v, str) else int(v)] = n
-                except (TypeError, ValueError):
-                    continue
-            _STR_LIT_CACHE["g"] = m
+            _STR_LIT_CACHE["g"] = _signals_maps()["glob_by_addr"]
         except (OSError, ValueError):
             _STR_LIT_CACHE["g"] = {}
     return _STR_LIT_CACHE["g"]
+
+
+def _signals_globals_by_name():
+    """{name -> addr:int} straight from signals.json (same single parse)."""
+    if "gn" not in _STR_LIT_CACHE:
+        try:
+            _STR_LIT_CACHE["gn"] = _signals_maps()["glob_by_name"]
+        except (OSError, ValueError):
+            _STR_LIT_CACHE["gn"] = {}
+    return _STR_LIT_CACHE["gn"]
 
 
 def _canon_global_name(ctx, name):

@@ -304,6 +304,62 @@ def _proto_params(proto, keep_this=False):
 #   * signed pairs resolve through the signed_default_ledger policy
 
 _DOMAIN_CACHE = {}
+_DOMAIN_CACHE_DIR = os.path.join(ROOT, ".omo", "decomp_sys", "cache")
+
+
+def _domain_cache_load(asg_path, ledger_path):
+    """Compact ({ent: (confidence, joined candidates)}, ledger) cache.
+
+    anchors/minclass_assignments.json is 232MB / 87,804 solver clusters,
+    ~800MB RSS once parsed.  Only `P:<ADDR>:<i>` entities are ever
+    queried (parameter domains), and only three fields matter
+    (candidates / confidence).  Candidates are stored joined with \x1f:
+    `_domain_answer` set/sorts them, so order and duplicates carry no
+    information.  Cache key = both source files' (size, mtime_ns).
+    """
+    import pickle
+    try:
+        ka = (os.path.getsize(asg_path), os.stat(asg_path).st_mtime_ns)
+        kl = (os.path.getsize(ledger_path),
+              os.stat(ledger_path).st_mtime_ns)
+    except OSError:
+        return None
+    cpath = os.path.join(_DOMAIN_CACHE_DIR, "domain_params.pkl")
+    try:
+        with open(cpath, "rb") as f:
+            obj = pickle.load(f)
+        if obj.get("key") == (ka, kl):
+            return obj["asg"], obj["ledger"]
+    except (OSError, EOFError, ValueError, AttributeError):
+        pass
+    try:
+        with open(asg_path, encoding="utf-8") as f:
+            raw = json.load(f)
+    except (OSError, ValueError):
+        raw = {}
+    asg = {}
+    for ent, rec in raw.items():
+        if not isinstance(rec, dict) or not ent.startswith("P:"):
+            continue
+        cands = rec.get("candidates") or ()
+        asg[ent] = (rec.get("confidence"), "\x1f".join(cands))
+    del raw
+    try:
+        with open(ledger_path, encoding="utf-8") as f:
+            led = json.load(f)
+    except (OSError, ValueError):
+        led = {}
+    ledger = {e.get("ent"): e for e in (led.get("entities") or [])}
+    try:
+        os.makedirs(_DOMAIN_CACHE_DIR, exist_ok=True)
+        tmp = "%s.tmp.%d" % (cpath, os.getpid())
+        with open(tmp, "wb") as f:
+            pickle.dump({"key": (ka, kl), "asg": asg, "ledger": ledger}, f,
+                        protocol=pickle.HIGHEST_PROTOCOL)
+        os.replace(tmp, cpath)
+    except OSError:
+        pass
+    return asg, ledger
 
 
 def _load_solver_domains():
@@ -311,19 +367,14 @@ def _load_solver_domains():
         path = os.path.join(ROOT, "anchors", "minclass_assignments.json")
         ledger_path = os.path.join(ROOT, "anchors",
                                    "signed_default_ledger.json")
-        try:
-            with open(path, encoding="utf-8") as f:
-                asg = json.load(f)
-        except (OSError, ValueError):
-            asg = {}
-        try:
-            with open(ledger_path, encoding="utf-8") as f:
-                led = json.load(f)
-        except (OSError, ValueError):
-            led = {}
+        got = _domain_cache_load(path, ledger_path)
+        if got is not None:
+            asg, led = got
+        else:
+            # sources missing: keep the historical empty-map behaviour
+            asg, led = {}, {}
         _DOMAIN_CACHE["asg"] = asg
-        _DOMAIN_CACHE["ledger"] = {
-            e.get("ent"): e for e in (led.get("entities") or [])}
+        _DOMAIN_CACHE["ledger"] = led
     return _DOMAIN_CACHE["asg"], _DOMAIN_CACHE["ledger"]
 
 
@@ -376,13 +427,15 @@ def _solver_domain_params(addr, params, body_lines, dropped):
     for i, (ty, nm) in enumerate(out):
         ent = "P:%s:%d" % (a6, i)
         rec = asg.get(ent)
-        if not rec or rec.get("confidence") not in ("forced", "narrow"):
+        # compact cache record: (confidence, candidates joined by \x1f)
+        if not rec or rec[0] not in ("forced", "narrow"):
             continue
         # int-family current spelling only (ptr spellings keep proto)
         if ty not in ("int", "unsigned int", "long", "unsigned long",
                       "_DWORD", "short", "unsigned short"):
             continue
-        ans = _domain_answer(rec.get("candidates", []), ledger, ent)
+        cands = rec[1].split("\x1f") if rec[1] else []
+        ans = _domain_answer(cands, ledger, ent)
         if not ans or not ans[0].endswith("*"):
             continue
         spelled = ans[0]
@@ -392,7 +445,7 @@ def _solver_domain_params(addr, params, body_lines, dropped):
         out[i] = (spelled, nm)
         notes.append(("solver_domain_param",
                       "%s domain %s (%s) -> %s (was %s)"
-                      % (ent, rec.get("candidates"), rec.get("confidence"),
+                      % (ent, cands, rec[0],
                          spelled, ty)))
     return out, notes
 
@@ -849,6 +902,14 @@ def _cw5_unit_extra_members(reg, by_cls, ctxs):
     Placeholder names are never supplied.
     """
     body = "\n".join("\n".join(c.lines) for c in ctxs)
+    # `add_members` used to run `re.search(r"\b<name>\b", body)` for every
+    # candidate member of every shell class + ancestors: 47.5K regex scans
+    # of the whole unit body = 52s on a member-heavy part (profile p04).
+    # For an all-word member name, `\bname\b` is exactly "name is one of
+    # the body's maximal \w runs", so tokenize the body ONCE and test set
+    # membership; non-word names (rare) keep the regex path.
+    body_tokens = set(re.findall(r"\w+", body))
+    _WORD_ONLY = re.compile(r"^\w+$")
     out = {}
     cl = None
     for cls in by_cls:
@@ -868,7 +929,10 @@ def _cw5_unit_extra_members(reg, by_cls, ctxs):
                     continue
                 if reg._is_placeholder(nm):
                     continue
-                if not re.search(r"\b%s\b" % re.escape(nm), body):
+                if _WORD_ONLY.match(nm):
+                    if nm not in body_tokens:
+                        continue
+                elif not re.search(r"\b%s\b" % re.escape(nm), body):
                     continue
                 seen.add(nm)
                 try:

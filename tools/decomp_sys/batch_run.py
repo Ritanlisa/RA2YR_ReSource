@@ -29,12 +29,15 @@ Usage:
   python tools/decomp_sys/batch_run.py --only family --max 10   # legacy batches
 """
 import argparse
+import contextlib
 import json
 import os
 import re
 import sys
+import time
 import traceback
 from collections import Counter, OrderedDict
+from concurrent import futures
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -108,6 +111,19 @@ def extract_fn_from_obj(obj_path, cls, method):
 
 def norm_addr(a):
     return "0x%x" % int(a, 16)
+
+
+def _compile_threads():
+    """cl.exe spawn concurrency (DECOMP_COMPILE_THREADS, default 4).
+
+    Each compile is an independent subprocess, so a thread pool overlaps
+    the waits; the GIL is released in subprocess.run.  part-level pools
+    set this to 1 (they already saturate the cores).
+    """
+    try:
+        return max(1, int(os.environ.get("DECOMP_COMPILE_THREADS", "4")))
+    except ValueError:
+        return 1
 
 
 JCC_SIGNED = re.compile(r"^j(?:l|le|g|ge)$")
@@ -400,20 +416,42 @@ def run_part(addrs, batch_src, out, reg, idx):
             r["note"] = (r["note"] or "") + "rule:%s" % rep.violations[0]["pattern"]
 
     # ---- era compile per unit (+ per-function isolation fallback)
+    # Compiles are independent subprocesses: DEconcurrent cl.exe spawns
+    # (DECOMP_COMPILE_THREADS, default 4) overlap the waits.  Only the
+    # *spawns* are parallel -- file generation, verdict assignment, and
+    # every piece of bookkeeping stay in this thread and in the original
+    # order, so results/artifacts are byte-identical to a serial run.
+    # parallel_run.py sets DECOMP_COMPILE_THREADS=1 for its workers (the
+    # part-level pool already saturates the cores).
     print("=== era compile ===")
+    cthreads = _compile_threads()
+
+    def _compile_many(paths):
+        if cthreads > 1 and len(paths) > 1:
+            with futures.ThreadPoolExecutor(
+                    max_workers=min(cthreads, len(paths))) as ex:
+                return list(ex.map(
+                    lambda p: decompile.era_compile(p, out), paths))
+        return [decompile.era_compile(p, out) for p in paths]
+
+    unit_order = list(units)
     unit_rc = {}
     unit_objs = {}
-    for unit in units:
-        cpp_path = os.path.join(out, unit + ".cpp")
-        cr = decompile.era_compile(cpp_path, out)
+    rc_list = _compile_many([os.path.join(out, u + ".cpp")
+                             for u in unit_order])
+    for unit, cr in zip(unit_order, rc_list):
         unit_rc[unit] = cr
         print("[era] %-24s rc=%d" % (unit, cr.returncode))
         if cr.returncode == 0:
             unit_objs[unit] = os.path.join(out, unit + ".obj")
+
+    # ---- isolation fallback: generate every per-function cpp/hpp first
+    # (deterministic, no subprocess), then compile them in one parallel batch.
+    iso_jobs = []          # (unit, ctx, iso_path)
+    for unit in unit_order:
+        cr = unit_rc[unit]
+        if cr.returncode == 0:
             continue
-        err = (cr.stdout + cr.stderr).strip().splitlines()
-        errtxt = "; ".join(x for x in err if "error" in x.lower())[:200]
-        good = []
         for ctx in units[unit]:
             a_tag = norm_addr(ctx.sig["addr"])[2:]
             iso_base = "%s_%s" % (unit, a_tag)
@@ -462,9 +500,26 @@ def run_part(addrs, batch_src, out, reg, idx):
                         iso_base,
                         used_globals=getattr(ctx, "used_globals", {}),
                         extra_externs=exts2, extra_fwd=fwd2))
-            icr = decompile.era_compile(iso, out)
+            iso_jobs.append((unit, ctx, iso))
+
+    iso_rc = {}
+    if iso_jobs:
+        icrs = _compile_many([j[2] for j in iso_jobs])
+        for (unit, ctx, _iso), icr in zip(iso_jobs, icrs):
+            iso_rc[(unit, norm_addr(ctx.sig["addr"]))] = icr
+
+    for unit in unit_order:
+        cr = unit_rc[unit]
+        if cr.returncode == 0:
+            continue
+        err = (cr.stdout + cr.stderr).strip().splitlines()
+        errtxt = "; ".join(x for x in err if "error" in x.lower())[:200]
+        good = []
+        for ctx in units[unit]:
+            iso_base = "%s_%s" % (unit, norm_addr(ctx.sig["addr"])[2:])
+            icr = iso_rc[(unit, norm_addr(ctx.sig["addr"]))]
             if icr.returncode == 0:
-                good.append((ctx, os.path.splitext(iso)[0] + ".obj"))
+                good.append((ctx, os.path.join(out, iso_base + ".obj")))
             else:
                 ierr = (icr.stdout + icr.stderr).strip().splitlines()
                 itxt = "; ".join(x for x in ierr
@@ -555,6 +610,126 @@ def run_part(addrs, batch_src, out, reg, idx):
     return results, check_viol
 
 
+# ---------------------------------------------------------------- parallel parts
+#
+# Parts are fully independent: each one owns its output directory and its
+# whole chain (pseudo fetch -> decompile passes -> emission -> checker ->
+# cl.exe compiles -> COFF extraction -> diffasm).  A persistent process
+# pool therefore parallelises the entire chain across parts -- the
+# decompile CPU time (the dominant cost) included.
+#
+# What stays in the PARENT (single thread, strict part order):
+#   results.jsonl append, ledger record, part_report.json, batch_report.
+# That is the only shared state, so the committed bytes are identical to a
+# serial run and there is no concurrent ledger write.
+
+_PAR_WORKER_REG = None
+_PAR_WORKER_IDX = None
+
+
+def _par_worker_init():
+    """Pay every process-level cache once per worker, not once per part."""
+    global _PAR_WORKER_REG, _PAR_WORKER_IDX
+    # The part-level pool already saturates the cores; each worker compiles
+    # its units serially (8 workers x 1 cl.exe instead of 8 x 4).
+    os.environ["DECOMP_COMPILE_THREADS"] = "1"
+    _PAR_WORKER_REG = Registry.get()
+    _PAR_WORKER_IDX = pseudo.load_index()
+    # Single-flight warm-up of the lazy one-shot caches (signals derived
+    # maps, solver domains, differ maps) so the first parts do not pay them
+    # concurrently on a cold .omo cache.
+    decompile._load_solver_domains()
+    exmod._signals_maps()
+    dmod._load_maps()
+
+
+def _par_worker_run(job):
+    """One part inside a worker. Artifacts + run.log only.
+
+    results.jsonl / ledger / part_report.json are the parent's job.
+    """
+    index, addrs, batch_src, out = job
+    os.makedirs(out, exist_ok=True)
+    log_path = os.path.join(out, "run.log")
+    t0 = time.time()
+    try:
+        with open(log_path, "w", encoding="utf-8", newline="\n") as lf, \
+                contextlib.redirect_stdout(lf), \
+                contextlib.redirect_stderr(lf):
+            results, check_viol = run_part(addrs, batch_src, out,
+                                           _PAR_WORKER_REG, _PAR_WORKER_IDX)
+        return {"index": index, "out": out,
+                "results": list(results.values()),
+                "check_viol": check_viol, "secs": time.time() - t0,
+                "error": None}
+    except BaseException:
+        tb = traceback.format_exc(limit=8)
+        try:
+            with open(log_path, "a", encoding="utf-8") as lf:
+                lf.write("\n=== WORKER ERROR ===\n" + tb + "\n")
+        except OSError:
+            pass
+        return {"index": index, "out": out, "results": [], "check_viol": 0,
+                "secs": time.time() - t0, "error": tb}
+
+
+def _commit_part(out, results, write_results=True, write_ledger=True):
+    """Serial commit of ONE finished part (same order as a serial run)."""
+    if write_results:
+        append_results(results)
+    if write_ledger:
+        record_ledger(results)
+    with open(os.path.join(out, "part_report.json"), "w",
+              encoding="utf-8") as f:
+        json.dump({"summary": summarize(results),
+                   "results": list(results.values())},
+                  f, indent=1, ensure_ascii=False)
+
+
+def run_part_parallel(jobs, workers=8, write_results=True,
+                      write_ledger=True):
+    """Run independent parts in a persistent multiprocessing pool.
+
+    jobs = [(index, addrs, batch_src, out_dir), ...] -- one tuple per part.
+    Each worker builds its caches ONCE (initializer), then runs parts
+    end-to-end; the parent commits in part-index order as results arrive.
+
+    Returns (OrderedDict addr->result over all parts, rule-violation count).
+    """
+    from multiprocessing import get_context
+    jobs = list(jobs)
+    ctx = get_context("spawn")
+    all_results = OrderedDict()
+    check_viol_total = 0
+    t_start = time.time()
+    done = 0
+    with ctx.Pool(processes=max(1, workers),
+                  initializer=_par_worker_init) as pool:
+        try:
+            for res in pool.imap(_par_worker_run, jobs, chunksize=1):
+                done += 1
+                if res["error"]:
+                    print("[part %03d] FAILED after %.1fs\n%s"
+                          % (res["index"], res["secs"], res["error"]))
+                    continue
+                results = OrderedDict((r["addr"], r) for r in res["results"])
+                check_viol_total += res["check_viol"]
+                all_results.update(results)
+                _commit_part(res["out"], results,
+                             write_results=write_results,
+                             write_ledger=write_ledger)
+                vc = Counter(r["verdict"] for r in results.values())
+                print("[part %03d] %2d fns %.1fs %s  (%d/%d parts, %.1fs)"
+                      % (res["index"], len(results), res["secs"],
+                         json.dumps(dict(vc)), done, len(jobs),
+                         time.time() - t_start))
+        except KeyboardInterrupt:
+            pool.terminate()
+            raise
+    return all_results, check_viol_total
+
+
+
 # ---------------------------------------------------------------- report
 
 def summarize(results):
@@ -638,6 +813,11 @@ def main():
     ap.add_argument("--resume", action="store_true",
                     help="skip addresses already decided in results.jsonl")
     ap.add_argument("--no-ledger", action="store_true")
+    ap.add_argument("--workers", type=int, default=1,
+                    help="parts to run in parallel (1 = serial in-process). "
+                         "Workers are persistent processes; the ledger and "
+                         "results.jsonl are written by this process in part "
+                         "order (byte-identical to a serial run).")
     args = ap.parse_args()
 
     addrs = [a.lower() for a in args.addrs]
@@ -678,30 +858,37 @@ def main():
 
     out_root = os.path.abspath(args.out)
     os.makedirs(out_root, exist_ok=True)
-    reg = Registry.get()
-    idx = pseudo.load_index()
 
     all_results = OrderedDict()
     check_viol_total = 0
     nparts = (len(addrs) + args.chunk - 1) // args.chunk
+    parts = []
     for pi in range(nparts):
         part = addrs[pi * args.chunk:(pi + 1) * args.chunk]
         if not part:
             continue
-        pout = os.path.join(out_root, "part_%02d" % pi)
-        print("=" * 70)
-        print("PART %d/%d  (%d fns) -> %s" % (pi + 1, nparts, len(part), pout))
-        results, cv = run_part(part, batch_src, pout, reg, idx)
+        parts.append((pi, part, batch_src,
+                      os.path.join(out_root, "part_%02d" % pi)))
+
+    if args.workers > 1:
+        print("[parallel] %d parts, workers=%d, -> %s"
+              % (len(parts), args.workers, out_root))
+        par_results, cv = run_part_parallel(
+            parts, workers=args.workers,
+            write_ledger=not args.no_ledger)
+        all_results.update(par_results)
         check_viol_total += cv
-        all_results.update(results)
-        append_results(results)
-        if not args.no_ledger:
-            record_ledger(results)
-        with open(os.path.join(pout, "part_report.json"), "w",
-                  encoding="utf-8") as f:
-            json.dump({"summary": summarize(results),
-                       "results": list(results.values())},
-                      f, indent=1, ensure_ascii=False)
+    else:
+        reg = Registry.get()
+        idx = pseudo.load_index()
+        for pi, part, bsrc, pout in parts:
+            print("=" * 70)
+            print("PART %d/%d  (%d fns) -> %s"
+                  % (pi + 1, nparts, len(part), pout))
+            results, cv = run_part(part, bsrc, pout, reg, idx)
+            check_viol_total += cv
+            all_results.update(results)
+            _commit_part(pout, results, write_ledger=not args.no_ledger)
 
     # ---- cumulative over this invocation + everything decided before
     merged = dict(done)

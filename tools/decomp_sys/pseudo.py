@@ -28,9 +28,20 @@ class ExportFn(object):
         return "\n".join(self.body_lines)
 
 
+_INDEX_CACHE = None
+
+
 def load_index():
-    with open(os.path.join(EXPORT_DIR, "index.json"), encoding="utf-8") as f:
-        return json.load(f)
+    """full_export address index (2.6MB JSON).
+
+    Process-level cached: `fetch()` used to re-parse it on every call
+    (20 parses per 20-function part).
+    """
+    global _INDEX_CACHE
+    if _INDEX_CACHE is None:
+        with open(os.path.join(EXPORT_DIR, "index.json"), encoding="utf-8") as f:
+            _INDEX_CACHE = json.load(f)
+    return _INDEX_CACHE
 
 
 _BLOCK_CACHE = {}
