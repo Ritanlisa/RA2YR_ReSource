@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p114\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+[conv] 0x6c6f50 ProcessGameResults -> _addr_6C
+[conv] 0x6c8f10 sub_6C8F10 -> _addr_6C
+[conv] 0x6c8ff0 DlgProcScoreScreen -> _addr_6C
+[conv] 0x6c9650 Float4::Sum -> Float4
+[conv] 0x6c9780 ObjectClass::sub_6C9780 -> ObjectClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x6c9d40 BinkMovie::ProcessKeyframe -> BinkMovie
+[conv] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> ObjectClass
+[conv] 0x6ca310 Render_Parse_6CA310 -> Render_Parse
+[conv] 0x6ca4a0 sub_6CA4A0 -> _addr_6C
+[conv] 0x6ca6a0 sub_6CA6A0 -> _addr_6C
+[conv] 0x6caec0 SuperClass::Constructor -> SuperClass
+[conv] 0x6cb120 SuperClass::CleanupMembers -> SuperClass
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> SuperWeapon
+[conv] 0x6cc390 SuperClass::Launch -> SuperClass
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> SuperWeaponTypeClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] Float4                   rc=2
+[era] BinkMovie                rc=2
+[era] Render_Parse             rc=2
+[era] SuperClass               rc=2
+[era] SuperWeapon              rc=2
+[era] SuperWeaponTypeClass     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6c6f50 ProcessGameResults -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c8f10 sub_6C8F10 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6c9650 Float4::Sum -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c9780 ObjectClass::sub_6C9780 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6c9d40 BinkMovie::ProcessKeyframe -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ca310 Render_Parse_6CA310 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6ca4a0 sub_6CA4A0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ca6a0 sub_6CA6A0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6caec0 SuperClass::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6cb120 SuperClass::CleanupMembers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cc390 SuperClass::Launch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p114\batch_report.json
