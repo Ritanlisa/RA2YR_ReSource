@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4265b0 Cell::GetHeight -> Cell
+[conv] 0x4267f0 UnitClass::sub_4267F0 -> UnitClass
+[conv] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> ObjectClass
+[conv] 0x426ed0 UnitClass::sub_426ED0 -> UnitClass
+[conv] 0x426fd0 UnitClass::sub_426FD0 -> UnitClass
+[conv] 0x427270 Animate::ScalarDtor -> Animate
+[conv] 0x427530 AnimTypeClass::Construct -> AnimTypeClass
+[conv] 0x427d00 AnimTypeClass::LoadFromINI -> AnimTypeClass
+[conv] 0x428800 AnimTypeClass::SaveLoad_Prefix -> AnimTypeClass
+[conv] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> AnimTypeClass
+[conv] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> AnimTypeClass
+[conv] 0x428c30 AnimTypeClass::GetDamage -> AnimTypeClass
+[conv] 0x429500 ApplicationClass::sub_429500 -> ApplicationClass
+[conv] 0x429a90 BuildingClass::UpdatePowerAnimation -> BuildingClass
+[conv] 0x42a460 BuildingClass::AddRectToDrawList -> BuildingClass
+[conv] 0x42b7f0 ObjectClass::SimplifyPathFilter -> ObjectClass
+[conv] 0x42c1c0 MapClass::AllocArrays -> MapClass
+[conv] 0x42c290 Pathfinding::AStar -> Pathfinding
+[conv] 0x42c900 ObjectClass::FindPathWithRetry -> ObjectClass
+[conv] 0x42d170 Pathfinding::CalcDistance -> Pathfinding
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Cell                     rc=2
+[era] UnitClass                rc=2
+[era] ObjectClass              rc=2
+[era] Animate                  rc=2
+[era] AnimTypeClass            rc=2
+[era] ApplicationClass         rc=2
+[era] BuildingClass            rc=2
+[era] MapClass                 rc=2
+[era] Pathfinding              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4265b0 Cell::GetHeight -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4267f0 UnitClass::sub_4267F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x426ed0 UnitClass::sub_426ED0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x426fd0 UnitClass::sub_426FD0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x427270 Animate::ScalarDtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x427530 AnimTypeClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x427d00 AnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x428800 AnimTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 6)
+[ledger] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x428c30 AnimTypeClass::GetDamage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x429500 ApplicationClass::sub_429500 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x429a90 BuildingClass::UpdatePowerAnimation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x42a460 BuildingClass::AddRectToDrawList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42b7f0 ObjectClass::SimplifyPathFilter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42c1c0 MapClass::AllocArrays -> COMPILE_FAIL (attempt 8)
+[ledger] 0x42c290 Pathfinding::AStar -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42c900 ObjectClass::FindPathWithRetry -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42d170 Pathfinding::CalcDistance -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p07\batch_report.json
