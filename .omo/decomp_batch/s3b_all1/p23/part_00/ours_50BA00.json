@@ -1,0 +1,69 @@
+{
+ "symbol": "?ComputeSessionColorVector@ObjectClass@@QAE_JXZ",
+ "sym_key": "ObjectClass::ComputeSessionColorVector",
+ "size": 435,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec088b45fc53568bf18b4df8575051e800000000a100000000bf0040000083c408bb0041000085c7ddd87412ddd83edd0550aa7e00dd542408e99d000000dd4424103edc0d785f7e00d8f1dd5424103edc1d50aa7e00dfe0dd4424183edc0d785f7e00d8f1dd5424183edc1d50aa7e00dfe0dd4424083edc0d785f7e00def13edc1550aa7e00dd542408dfe0851d00000000750dddd83edd0550aa7e00dd542408dd4424103edc1d48aa7e00dfe0dd4424183edc1d48aa7e00dfe03edc1548aa7e00dfe0a100000000f6c401740dddd83edd0500287e00dd5424088b55fc8b45f85250e800000000a10000000083c40885c7ddd8740bddd83edd0550aa7e00eb5bdd4424103edc0d785f7e00d8f1dd5424103edc1d50aa7e00dfe0dd4424183edc0d785f7e00d8f1dd5424183edc1d50aa7e00dfe0dd4424083edc0d785f7e00def13edc1550aa7e00dfe0851d000000007509ddd83edd0550aa7e008b7dfc8b5df85753e80000000057538886fc560000e80000000057538886fd560000e8000000008bc88886fe560000c1f91066894dfc8b4df88b75fc25ff0000009983c41880e1000bc10bd65f5e5b8be55dc3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 146,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 337,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 361,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 374,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 387,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

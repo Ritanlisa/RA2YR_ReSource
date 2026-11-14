@@ -1,0 +1,45 @@
+{
+ "symbol": "?ChooseHouseEnemy@House@@QAEHH@Z",
+ "sym_key": "House::ChooseHouseEnemy",
+ "size": 341,
+ "link_base": 0,
+ "bytes_hex": "83ec1c8b4424208b15ea070000538b1dca070000558b2dda07000056578bf9896c241833c9895c24143bc1895424188954241074583888d303000074508bb02005000083beb80e00000775418b008d4c242051ff50488b10895424148b48048b5008894c2418895424188b87c07905005f5e5d85c05b0f8cd100000033c983f8030f9fc14923c183c41cc20400398ff402000074d58b4778894c24303bc17eca8b872c0100008b340885f674768a868100000084c0756c8b8e200500008a81b916000084c0752f3b1dca07000075543b2dda070000754c3954241075468b168d44241c5056ff52488b48088b188b6804894c2410eb2d8b168d4424205056ff52488b08894c24148b50048b400889542418894424188a86d303000084c00f8547ffffff8b4c24308bd18d41018d0c95040000008b57783bc2894424300f8d28ffffff8b15ea070000e953ffffff33c083c41cc20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 324,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

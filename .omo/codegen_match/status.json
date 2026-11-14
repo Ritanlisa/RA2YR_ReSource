@@ -66314,7 +66314,7 @@
   "this_as_id": false
  },
  "0x509610": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66338,7 +66338,7 @@
   "this_as_id": false
  },
  "0x5098f0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66375,7 +66375,7 @@
   "this_as_id": false
  },
  "0x509cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66423,7 +66423,7 @@
   "this_as_id": false
  },
  "0x50a350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66442,14 +66442,14 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::AIBuildBase",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::AIBuildBase",
-  "rule_violations": 55,
+  "rule_violations": 53,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -66478,15 +66478,15 @@
   "this_as_id": false
  },
  "0x50b370": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 mov ebp, ecx",
   "name": "HouseClass::ShouldDisableCameo",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HouseClass::ShouldDisableCameo",
   "rule_violations": 13,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50b6f0": {
@@ -66544,15 +66544,15 @@
   "this_as_id": false
  },
  "0x50ba00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 and esp, 0xfffffff8",
   "name": "ObjectClass::ComputeSessionColorVector",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Gap2Recv_BA00::ComputeSessionColorVector",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50bc90": {
@@ -66592,7 +66592,7 @@
   "this_as_id": false
  },
  "0x50bd30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66635,7 +66635,7 @@
   "status": "NG"
  },
  "0x50c050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66659,7 +66659,7 @@
   "this_as_id": false
  },
  "0x50c160": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66695,7 +66695,7 @@
   "this_as_id": false
  },
  "0x50c340": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66719,7 +66719,7 @@
   "this_as_id": false
  },
  "0x50c920": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66743,7 +66743,7 @@
   "this_as_id": false
  },
  "0x50cbf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66779,7 +66779,7 @@
   "this_as_id": false
  },
  "0x50d290": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66827,7 +66827,7 @@
   "this_as_id": false
  },
  "0x50d610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66990,15 +66990,15 @@
   "status": "NG"
  },
  "0x50db00": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x28",
   "name": "House::ChooseHouseEnemy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "House::ChooseHouseEnemy",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x50def0": {
@@ -67052,7 +67052,7 @@
   "status": "OK"
  },
  "0x50e010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -67064,7 +67064,7 @@
   "this_as_id": false
  },
  "0x50e0e0": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -67180,7 +67180,7 @@
   "this_as_id": false
  },
  "0x50e450": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68181,7 +68181,7 @@
   "this_as_id": false
  },
  "0x50ff50": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -68289,7 +68289,7 @@
   "this_as_id": false
  },
  "0x510220": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -68816,7 +68816,7 @@
   "this_as_id": false
  },
  "0x510ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -68828,7 +68828,7 @@
   "this_as_id": false
  },
  "0x510f60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -69054,7 +69054,7 @@
   "this_as_id": false
  },
  "0x511850": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69066,7 +69066,7 @@
   "this_as_id": false
  },
  "0x512170": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -69085,7 +69085,7 @@
   "status": "OK"
  },
  "0x512290": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69121,7 +69121,7 @@
   "this_as_id": false
  },
  "0x5125a0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -69631,7 +69631,7 @@
   "this_as_id": false
  },
  "0x5132f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -69787,7 +69787,7 @@
   "this_as_id": false
  },
  "0x513740": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70034,7 +70034,7 @@
   "this_as_id": false
  },
  "0x513c20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70070,7 +70070,7 @@
   "this_as_id": false
  },
  "0x513d20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70082,7 +70082,7 @@
   "this_as_id": false
  },
  "0x513f40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -70094,7 +70094,7 @@
   "this_as_id": false
  },
  "0x5142a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70106,7 +70106,7 @@
   "this_as_id": false
  },
  "0x514310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70118,7 +70118,7 @@
   "this_as_id": false
  },
  "0x514c30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70142,7 +70142,7 @@
   "this_as_id": false
  },
  "0x514cb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70166,7 +70166,7 @@
   "this_as_id": false
  },
  "0x514d90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70178,7 +70178,7 @@
   "this_as_id": false
  },
  "0x514f70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70190,7 +70190,7 @@
   "this_as_id": false
  },
  "0x515ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -70202,15 +70202,15 @@
   "this_as_id": false
  },
  "0x516320": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+34 mov edx, dword ptr [0xa8f180]",
   "name": "HoverLocomotionClass::HasScoreDisplayChanged_516320",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "JumpjetLocomotionClass::HasScoreDisplayChanged_516320",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x516370": {

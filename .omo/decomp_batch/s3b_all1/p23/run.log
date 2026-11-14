@@ -1,0 +1,127 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p23\part_00
+=== convert (40 addrs) ===
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x509cd0 HouseClass::Fire_ParaDrop -> HouseClass
+[conv] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> HouseClass
+[conv] 0x50a5c0 HouseClass::AIBuildBase -> HouseClass
+[conv] 0x50b370 HouseClass::ShouldDisableCameo -> HouseClass
+[conv] 0x50ba00 ObjectClass::ComputeSessionColorVector -> ObjectClass
+[conv] 0x50bd30 TechnoClass::GetDamageMultiplier -> TechnoClass
+[conv] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> TechnoClass
+[conv] 0x50c160 ObjectClass::sub_50C160 -> ObjectClass
+[conv] 0x50c340 HouseClass::FindBuildLocation -> HouseClass
+[conv] 0x50c920 TechnoClass::FindDeployDestination -> TechnoClass
+[conv] 0x50cbf0 HouseClass::FindSWBuilding -> HouseClass
+[conv] 0x50d290 TActionClass::executeAttackAction -> TActionClass
+[conv] 0x50d610 Scenario::ProcessSidebarUnits -> Scenario
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x50e010 TechnoClass::Find -> TechnoClass
+[conv] 0x50e0e0 HouseClass::LostPoweredCenter -> HouseClass
+[conv] 0x50e450 BuildLocation::InitCandidate -> BuildLocation
+[conv] 0x50ff50 HouseClass::AddCoordTrackingEntry -> HouseClass
+[conv] 0x510220 DynamicVector::updateThreatMap -> DynamicVector
+[conv] 0x510ed0 BuildingType::FindOwnerHouse -> BuildingType
+[conv] 0x510f60 BuildingType::IsSpecialType -> BuildingType
+[conv] 0x511850 HouseTypeClass::LoadFromINI -> HouseTypeClass
+[conv] 0x512170 HouseTypeClass::ProcessPower -> HouseTypeClass
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x5125a0 HouseTypeClass::QueryInterface -> HouseTypeClass
+[conv] 0x5132f0 DynamicVectorClass::PushBack -> DynamicVectorClass
+[conv] 0x513740 TypeList::CopyConstructor -> TypeList
+[conv] 0x513c20 LocomotionClass::ProcessData -> LocomotionClass
+[conv] 0x513d20 BuildingLightClass::UpdateOscillation -> BuildingLightClass
+[conv] 0x513f40 TechnoClass::BuildTransform -> TechnoClass
+[conv] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> HoverLocomotionClass
+[conv] 0x514310 HoverLocomotionClass::DeployAnimation -> HoverLocomotionClass
+[conv] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> JumpjetLocomotionClass
+[conv] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> JumpjetLocomotionClass
+[conv] 0x514d90 HoverLocomotionClass::SetMovementTarget -> HoverLocomotionClass
+[conv] 0x514f70 MovementAI::MainFootClass -> MovementAI
+[conv] 0x515ed0 TechnoClass::UpdateFootFacing -> TechnoClass
+[conv] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> HoverLocomotionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TriggerClass             rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] TActionClass             rc=2
+[era] Scenario                 rc=2
+[era] House                    rc=0
+[era] BuildLocation            rc=2
+[era] DynamicVector            rc=2
+[era] BuildingType             rc=2
+[era] HouseTypeClass           rc=2
+[era] DynamicVectorClass       rc=2
+[era] TypeList                 rc=2
+[era] LocomotionClass          rc=2
+[era] BuildingLightClass       rc=2
+[era] HoverLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] MovementAI               rc=2
+=== diffasm byte-compare ===
+[diff] 0x50b370   MISMATCH         HouseClass::ShouldDisableCameo
+[diff] 0x50ba00   MISMATCH         ObjectClass::ComputeSessionColorVector
+[diff] 0x50db00   MISMATCH         House::ChooseHouseEnemy
+[diff] 0x516320   MISMATCH         HoverLocomotionClass::HasScoreDisplayChanged_516320
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> COMPILE_FAIL (attempt 16)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 8)
+[ledger] 0x509cd0 HouseClass::Fire_ParaDrop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50a5c0 HouseClass::AIBuildBase -> COMPILE_FAIL (attempt 8)
+[ledger] 0x50b370 HouseClass::ShouldDisableCameo -> NG (attempt 3)
+[ledger] 0x50ba00 ObjectClass::ComputeSessionColorVector -> NG (attempt 3)
+[ledger] 0x50bd30 TechnoClass::GetDamageMultiplier -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50c160 ObjectClass::sub_50C160 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50c340 HouseClass::FindBuildLocation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50c920 TechnoClass::FindDeployDestination -> COMPILE_FAIL (attempt 6)
+[ledger] 0x50cbf0 HouseClass::FindSWBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50d290 TActionClass::executeAttackAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x50d610 Scenario::ProcessSidebarUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> NG (attempt 7)
+[ledger] 0x50e010 TechnoClass::Find -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50e0e0 HouseClass::LostPoweredCenter -> COMPILE_FAIL (attempt 15)
+[ledger] 0x50e450 BuildLocation::InitCandidate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50ff50 HouseClass::AddCoordTrackingEntry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x510220 DynamicVector::updateThreatMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x510ed0 BuildingType::FindOwnerHouse -> COMPILE_FAIL (attempt 3)
+[ledger] 0x510f60 BuildingType::IsSpecialType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x511850 HouseTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x512170 HouseTypeClass::ProcessPower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5125a0 HouseTypeClass::QueryInterface -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5132f0 DynamicVectorClass::PushBack -> COMPILE_FAIL (attempt 3)
+[ledger] 0x513740 TypeList::CopyConstructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x513c20 LocomotionClass::ProcessData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x513d20 BuildingLightClass::UpdateOscillation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x513f40 TechnoClass::BuildTransform -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x514310 HoverLocomotionClass::DeployAnimation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> COMPILE_FAIL (attempt 3)
+[ledger] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x514d90 HoverLocomotionClass::SetMovementTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x514f70 MovementAI::MainFootClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x515ed0 TechnoClass::UpdateFootFacing -> COMPILE_FAIL (attempt 3)
+[ledger] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> NG (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 36,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 27,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p23\batch_report.json

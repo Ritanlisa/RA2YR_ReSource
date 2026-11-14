@@ -1,0 +1,27 @@
+{
+ "symbol": "?HasScoreDisplayChanged_516320@HoverLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "HoverLocomotionClass::HasScoreDisplayChanged_516320",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b48148b50203bca75148b50188b48243bd1750a8b481c8b50283bca74288b15ea0d00008950148b0dfa0d00008948188b150a0e000089501c8b4008c780e0050000ffffffffc20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}
