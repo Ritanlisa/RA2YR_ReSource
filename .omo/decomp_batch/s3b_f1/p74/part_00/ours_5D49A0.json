@@ -1,0 +1,57 @@
+{
+ "symbol": "?DrawCursor@TacticalMap@@QAEDXZ",
+ "sym_key": "TacticalMap::DrawCursor",
+ "size": 262,
+ "link_base": 0,
+ "bytes_hex": "83ec20568bf1c7442404000000008a461984c00f84da000000a1a800000057508b08ff510c8b46246a01508b10ff526c8bcee8000000008b46246a008b483051e8000000006683beb8020000008bf80f84920000008b96b00200008b86b40200002bd08b4610483bd0737c8b4624508b08ff515884c0746f8a96b80200008b44240881e2ff00000024000bd08b462489542408538b480c8b501003cf89542418894c24148b782c0fbe0d040000008b40348b1c81a1000000000fbe108b0a8d54241c5250ff51788b1500000000576a008d4c241c5351508d44242052508d4c242ce8000000005ba1a8000000508b08ff51105f8b3685f674088b166a0156ff522c5e83c420c3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  },
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?ColorScheme_Array@@3IA",
+   "sym_key": "ColorScheme_Array"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?DrawText@TextRenderer@@QAEPAHHHPAXHHHH@Z",
+   "sym_key": "TextRenderer::DrawText"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887598@@3IA",
+   "sym_key": "DataGlobal_887598"
+  }
+ ]
+}
