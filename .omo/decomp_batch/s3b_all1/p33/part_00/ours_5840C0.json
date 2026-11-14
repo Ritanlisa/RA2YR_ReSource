@@ -1,0 +1,99 @@
+{
+ "symbol": "?CheckMapReachability@ObjectClass@@QAEDHHHH@Z",
+ "sym_key": "ObjectClass::CheckMapReachability",
+ "size": 1241,
+ "link_base": 0,
+ "bytes_hex": "83ec388b442440538bd9558d4801bd010000005633f6d3e55756568d4c2428895c2418896c241ce8000000008b44241c897424203bc68974241874158a4c245884c9740d50e80000000083c4048974241c3bee7e598bd58bc5c1ea02c1e20283e003be50180000896c2430894424388bca33c08bd98bfec1e902f3ab8bcb83e103f3aa8b4c24388d3c328bd933c0c1e902f3ab8bcb83c60883e103f3aa8b442430488944243075c78b5c241033f68b7c244c8bcb8d47245089442438e8000000003bc67c0e33c98a4b6c3bc17c078d41ffeb0233c08b4c245089742438be010000008d148133c98a4b7003c2668b14418b4c24346689542430893d701400000fbf110fbf4f268d45ff8944244423d023c88b44245850c684d150180000018b10ff92840000008b80b4050000c1e00505000000008944243c8b0cb56c1400008d46ff8d14b564daab006a00c744242c0000000089442430894c244889542438e8000000008b4c241c8bf08b4424188d5441feb8020000002bc189542424894424400fbf7e248d46248d4dff0fbf6e2623f923e9508bcbe80000000085c07c0e33c98a4b6c3bc17c078d41ffeb0233c08b4c24506a016a008d148133c98a4b7003c28b542460668b1c410fbe8e1b0100008b028b542430515256ff90ac01000085c074118b464c8b4c243c833c81010f84b00000008b4424300fbfd325ffff00003bd00f859c0000008a84fd5018000084c0751e8b442434c684fd501800000189308b74242c4683c0048974242c89442434663b5c2438746c6685db74678b7c24188b74242483ff01895c24388d47ff7c1c33ed8bce668b2e3bea74114883e90285c07c0933ed668b293bea75ef83f8ff753285ff7c148b5424206a008d4c24246a0a51ff520884c0741a8b4424408b4c241c03c64783c602897c24188974242466891c088b4424284083f808894424287d198b4c24448b6c241450e8000000008b5c24108bf0e9b6feffff8b74242c85f67e0d8b6c24148b5c2410e958feffff8b5424148b4c244cc7442438000000008d42ff8d5924668b49268be866232b23c885d2896c2440894c24440f8e040100008b742458c744242c5018000085d2c7442458000000000f8ed60000000fbfed668b13668b4b020fbf44244403d58b7c241033d603c881e2ff0000006a0133f28d54245033ce5281e1ff00000033f18bcf89742454e80000000084c0745d8b87f80000008b8ff40000008d4408018b4c244c8bd1c1fa100fbfd20fafc20fbfc903c1780e33c98a4f6c3bc17c078d41ffeb0233c08b5424508d0c8233d28a577003c1668b4c2430663b0c42750e8b54242c8b442458803c0200743e8b4424588b4c2414403bc1894424580f8c50ffffff8b6c24408bd18b4424388b4c242c4083c1083bc289442438894c242c7d1be91affffff8b7c2410ebdd5f5e5db0015b83c438c210008b7c24108b4424508d4c40128b44243025ffff00008d14c08b04cf8d0c908b449010480f888f0000008b49048b5424188b7424548d2cc140894424588d5aff8b7d008bc385db7c228b4c241c33d2668b14418d0c413bd774114883e90285c07c0933d2668b113bd775ef83f8ff753b8b4e088b46103bc172218a460d84c0750485c975268b461485c07e1f8b1603c16a005056ff520884c074108b46108b56048d4801894e1066893c428b44245883ed08488944245875875f5e5d32c05b83c438c21000",
+ "relocs": [
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?Constructor@WordVector@@QAEPAV1@HH@Z",
+   "sym_key": "WordVector::Constructor"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?CoordToIndex@Cell@@QAEHPAX@Z",
+   "sym_key": "Cell::CoordToIndex"
+  },
+  {
+   "off": 251,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 281,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?DataGlobal_82A594@@3PAIA",
+   "sym_key": "DataGlobal_82A594"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 352,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 407,
+   "type": "REL32",
+   "sym": "?CoordToIndex@Cell@@QAEHPAX@Z",
+   "sym_key": "Cell::CoordToIndex"
+  },
+  {
+   "off": 523,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 538,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 700,
+   "type": "REL32",
+   "sym": "?GetNeighbourContent@Cell@@QAEPAXI@Z",
+   "sym_key": "Cell::GetNeighbourContent"
+  },
+  {
+   "off": 793,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 870,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  }
+ ]
+}

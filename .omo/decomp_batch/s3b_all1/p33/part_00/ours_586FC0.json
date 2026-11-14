@@ -1,0 +1,57 @@
+{
+ "symbol": "?FindNearestApproachableCell@FootClass@@QAEPAHPAHPAF1@Z",
+ "sym_key": "FootClass::FindNearestApproachableCell",
+ "size": 410,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec28a18a270000894de48b4d0c8945f0560fbf41020fbf11c1e00903c23d0000040073120fbe15340300008b048285c074048bf0eb0c8b01be58160000a37c1600008b463885c00f8c3b0100000fbe0d4801000053578b3c81578b17ff929c0000008945e88b87e402000033c98945f88a8e1a0100008b9fe80200008bc1895ddc99f77df88b450cc745f400000000668b308bc18b4d0c668b490232d381e2ff00000033d3662bf299f77df88975ec662bc885db894de00f8eba0000008b750c8b45f833db85c00f8e980000008b55f40fbf45ec03ca89450c33ce81e1ff00000033f18b87e40200008b4d0c0faf45f48b55e833ce81e1ff00000003c333f18975fc8b4c821085c974498b4de48d45fc6a0150e80000000084c07437db442434dd1c248b4ddc8b55d85152e800000000ddd883c408dc542440dfe0a100000000f6c401740cdd5c24388b45fc8945f0eb02ddd88b4d0c8b45f843413bd8894d0c7c818b4de08b45f48b55dc403bc28945f40f8c49ffffff8b45088b4df05f5b89085e8be55dc20c008b45088b115e89108be55dc20c00",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 280,
+   "type": "REL32",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
+   "sym_key": "LayerClass::IsWithinUsableArea"
+  },
+  {
+   "off": 304,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 320,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  }
+ ]
+}
