@@ -149153,7 +149153,7 @@
   "this_as_id": false
  },
  "0x6bfc90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -149292,15 +149292,15 @@
   "this_as_id": false
  },
  "0x6bff90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
   "name": "_TClassFactory_VTiberiumClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TClassFactory_TiberiumClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c0010": {
@@ -149447,7 +149447,7 @@
   "this_as_id": false
  },
  "0x6c0290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -149591,7 +149591,7 @@
   "this_as_id": false
  },
  "0x6c0590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -149663,7 +149663,7 @@
   "this_as_id": false
  },
  "0x6c0710": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -149807,7 +149807,7 @@
   "this_as_id": false
  },
  "0x6c0a10": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -149879,7 +149879,7 @@
   "this_as_id": false
  },
  "0x6c0b90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150018,7 +150018,7 @@
   "this_as_id": false
  },
  "0x6c0e90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150090,7 +150090,7 @@
   "this_as_id": false
  },
  "0x6c1010": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150162,7 +150162,7 @@
   "this_as_id": false
  },
  "0x6c1190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150234,15 +150234,15 @@
   "this_as_id": false
  },
  "0x6c1310": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
   "name": "_TClassFactory_VRadSiteClass::ddtor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TClassFactory_RadSiteClass::ddtor",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c1390": {
@@ -150306,7 +150306,7 @@
   "this_as_id": false
  },
  "0x6c1490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150450,7 +150450,7 @@
   "this_as_id": false
  },
  "0x6c1790": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150522,7 +150522,7 @@
   "this_as_id": false
  },
  "0x6c1910": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150594,7 +150594,7 @@
   "this_as_id": false
  },
  "0x6c1a90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -150877,7 +150877,7 @@
   "this_as_id": false
  },
  "0x6c2090": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -151021,7 +151021,7 @@
   "this_as_id": false
  },
  "0x6c2390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -151237,7 +151237,7 @@
   "this_as_id": false
  },
  "0x6c2810": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -151309,7 +151309,7 @@
   "this_as_id": false
  },
  "0x6c2990": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -151381,7 +151381,7 @@
   "this_as_id": false
  },
  "0x6c2b10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
