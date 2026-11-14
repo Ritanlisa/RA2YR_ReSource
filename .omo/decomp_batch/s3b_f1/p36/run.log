@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p36\part_00
+=== convert (20 addrs) ===
+[conv] 0x4dc060 FootClass::CheckTargetCell -> FootClass
+[conv] 0x4dc340 TechnoClass::DrawFootTargetLine -> TechnoClass
+[conv] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> BuildingClass
+[conv] 0x4ddc60 FootClass::ValidateTargetCell -> FootClass
+[conv] 0x4ddde0 FootClass::HandleCursorWithCheck -> FootClass
+[conv] 0x4dded0 FootClass::GetActionOnObject -> FootClass
+[conv] 0x4ddf90 FootClass::ProcessMissionState -> FootClass
+[conv] 0x4de1d0 ObjectClass::FindPlacementCell -> ObjectClass
+[conv] 0x4de670 FootClass::RemovePassenger -> FootClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x4de7b0 FootClass::IsTargetInRange -> FootClass
+[conv] 0x4deae0 FootClass::DeployAction -> FootClass
+[conv] 0x4dee80 FootClass::ValidatePlacementEx -> FootClass
+[conv] 0x4df510 FootClass::ScanAdjacentCells -> FootClass
+[conv] 0x4df7f0 FootClass::Destru_vt322 -> FootClass
+[conv] 0x4dfa70 TechnoClass::FindClosestInfantry -> TechnoClass
+[conv] 0x4dfb70 TechnoClass::FindClosestUnit -> TechnoClass
+[conv] 0x4dfcb0 FootClass::FindClosestForRepair -> FootClass
+[conv] 0x4dfe00 FootClass::FindClosestForRepair2 -> FootClass
+[conv] 0x4e01f0 FoggedObjectClass::ClearBuffer -> FoggedObjectClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FootClass                rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] FoggedObjectClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4dc060 FootClass::CheckTargetCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dc340 TechnoClass::DrawFootTargetLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dc8c0 BuildingClass::ValidateFoundation_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ddc60 FootClass::ValidateTargetCell -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4ddde0 FootClass::HandleCursorWithCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dded0 FootClass::GetActionOnObject -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ddf90 FootClass::ProcessMissionState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4de1d0 ObjectClass::FindPlacementCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4de670 FootClass::RemovePassenger -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4de7b0 FootClass::IsTargetInRange -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4deae0 FootClass::DeployAction -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4dee80 FootClass::ValidatePlacementEx -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4df510 FootClass::ScanAdjacentCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4df7f0 FootClass::Destru_vt322 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4dfa70 TechnoClass::FindClosestInfantry -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4dfb70 TechnoClass::FindClosestUnit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4dfcb0 FootClass::FindClosestForRepair -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4dfe00 FootClass::FindClosestForRepair2 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4e01f0 FoggedObjectClass::ClearBuffer -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p36\batch_report.json
