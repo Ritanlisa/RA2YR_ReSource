@@ -1,0 +1,62 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p100\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7d5f31 __NMSG_WRITE -> _addr_7D
+[conv] 0x7d6494 __free_lc_time -> _addr_7D
+[conv] 0x7d6624 ObjectClass::___init_numeric -> ObjectClass
+[conv] 0x7d6a54 __free_lc_lconv -> _addr_7D
+[conv] 0x7d6d2a ___get_qualified_locale -> _addr_7D
+[conv] 0x7d6eff _GetLcidFromLangCountry -> _addr_7D
+[conv] 0x7d6f86 _LangCountryEnumProc_4 -> _addr_7D
+[conv] 0x7d718a _GetLcidFromLanguage -> _addr_7D
+[conv] 0x7d71e0 _LanguageEnumProc_4 -> _addr_7D
+[conv] 0x7d729d _GetLcidFromCountry -> _addr_7D
+[conv] 0x7d745b _IsThisWindowsNT -> _addr_7D
+[conv] 0x7d7491 _crtGetLocaleInfoA_16 -> _addr_7D
+[conv] 0x7d7638 __lseek -> _addr_7D
+[conv] 0x7d769d __lseek_lk -> _addr_7D
+[conv] 0x7d77d6 __wctomb_lk -> _addr_7D
+[conv] 0x7d7d49 __fptostr -> _addr_7D
+[conv] 0x7d7ff7 unknown_libname_77 -> _addr_7D
+[conv] 0x7d86e6 unknown_libname_90 -> _addr_7D
+[conv] 0x7d88ec unknown_libname_91 -> _addr_7D
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7d5f31 __NMSG_WRITE -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d6494 __free_lc_time -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d6624 ObjectClass::___init_numeric -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d6a54 __free_lc_lconv -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d6d2a ___get_qualified_locale -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d6eff _GetLcidFromLangCountry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d6f86 _LangCountryEnumProc_4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d718a _GetLcidFromLanguage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d71e0 _LanguageEnumProc_4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d729d _GetLcidFromCountry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d745b _IsThisWindowsNT -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d7638 __lseek -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d769d __lseek_lk -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d77d6 __wctomb_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d7d49 __fptostr -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d7ff7 unknown_libname_77 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d86e6 unknown_libname_90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d88ec unknown_libname_91 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p100\batch_report.json
