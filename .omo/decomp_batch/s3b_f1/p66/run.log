@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p66\part_00
+=== convert (20 addrs) ===
+[conv] 0x5a6510 ScatterMapSeedBuildings2 -> _addr_5A
+[conv] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> ObjectClass
+[conv] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> ObjectClass
+[conv] 0x5a9a70 WaypointPath::Constructor -> WaypointPath
+[conv] 0x5a9c40 ObjectClass::InitializePathData -> ObjectClass
+[conv] 0x5ac230 MapSeed::IsCellInBounds -> MapSeed
+[conv] 0x5ac400 TypeList::BuildingTypeConstructor -> TypeList
+[conv] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> DynamicVectorClass
+[conv] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> _DynamicVectorClass_PAVCellClass
+[conv] 0x5ad660 TypeList::BuildingTypeCopy -> TypeList
+[conv] 0x5add10 ObjectClass::Map_Delete -> ObjectClass
+[conv] 0x5ade20 Map_Delete_5ADE20 -> Map_Delete
+[conv] 0x5adf20 SessionClass::LoadGameSession -> SessionClass
+[conv] 0x5ae220 CampaignClass::LoadMovieDisplay -> CampaignClass
+[conv] 0x5ae500 ObjectClass::sub_5AE500 -> ObjectClass
+[conv] 0x5ae750 Math::BuildRotationMatrix -> Math
+[conv] 0x5aead0 BuildingClass::processBaseExpansion -> BuildingClass
+[conv] 0x5aeaf0 BuildingClass::updateFoundation -> BuildingClass
+[conv] 0x5aeb20 BuildingClass::recalcAdjacency -> BuildingClass
+[conv] 0x5aec40 ObjectClass::sub_5AEC40 -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5A                 rc=2
+[era] ObjectClass              rc=2
+[era] WaypointPath             rc=2
+[era] MapSeed                  rc=2
+[era] TypeList                 rc=2
+[era] DynamicVectorClass       rc=2
+[era] _DynamicVectorClass_PAVCellClass rc=2
+[era] Map_Delete               rc=2
+[era] SessionClass             rc=2
+[era] CampaignClass            rc=2
+[era] Math                     rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5a6510 ScatterMapSeedBuildings2 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5a82e0 ObjectClass::ScatterMapSeedBuildings -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5a95b0 ObjectClass::PlaceRandomAIBuildings -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a9a70 WaypointPath::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5a9c40 ObjectClass::InitializePathData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ac230 MapSeed::IsCellInBounds -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ac400 TypeList::BuildingTypeConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ac900 DynamicVectorClass::BuildingTypeConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ad010 _DynamicVectorClass_PAVCellClass::ResizeAndCopy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ad660 TypeList::BuildingTypeCopy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5add10 ObjectClass::Map_Delete -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ade20 Map_Delete_5ADE20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5adf20 SessionClass::LoadGameSession -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5ae220 CampaignClass::LoadMovieDisplay -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ae500 ObjectClass::sub_5AE500 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ae750 Math::BuildRotationMatrix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5aead0 BuildingClass::processBaseExpansion -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5aeaf0 BuildingClass::updateFoundation -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5aeb20 BuildingClass::recalcAdjacency -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5aec40 ObjectClass::sub_5AEC40 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p66\batch_report.json
