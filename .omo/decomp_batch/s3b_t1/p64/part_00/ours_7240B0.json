@@ -1,0 +1,51 @@
+{
+ "symbol": "?updateString@ToolTipClass@@QAEXXZ",
+ "sym_key": "ToolTipClass::updateString",
+ "size": 248,
+ "link_base": 0,
+ "bytes_hex": "53568bf168504954548b4608c7060000000050e8000000008b460433db3bc3740b8b168d4618508bceff52088b8e4c0200005751e8000000008b864402000083c40433ff3bc3899e4c020000899e50020000899e54020000889e58020000899e5c0200007e218b86380200008b04b83bc3740950e80000000083c4048b8644020000473bf87cdf8dbe3402000057ff96400200008b964c02000052e8000000008b863802000083c404c707000000003bc3899e4c020000899e50020000899e54020000889e58020000899e5c0200005f7417389e41020000740f50e80000000083c404899e38020000889e41020000899e3c0200005e5bc3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?vt_ToolTipManager@@3PAXA",
+   "sym_key": "vt_ToolTipManager"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?KillTimer@@YGHHH@Z",
+   "sym_key": "KillTimer"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_ToolTip_const@@3PAXA",
+   "sym_key": "vt_VectorClass_ToolTip_const"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -171263,14 +171263,14 @@
   "status": "NG"
  },
  "0x722440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::PropagateCellOccupancy",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "PropagateCellOccupancy",
-  "rule_violations": 25,
+  "rule_violations": 23,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -171323,7 +171323,7 @@
   "this_as_id": false
  },
  "0x722af0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171335,7 +171335,7 @@
   "this_as_id": false
  },
  "0x722c40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171366,7 +171366,7 @@
   "status": "NG"
  },
  "0x722f00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171414,7 +171414,7 @@
   "this_as_id": false
  },
  "0x7235a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171830,7 +171830,7 @@
   "this_as_id": false
  },
  "0x723ec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171865,19 +171865,19 @@
   "this_as_id": false
  },
  "0x7240b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 push edi",
   "name": "ToolTipClass::updateString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ToolTipClass::updateString",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 5,
+  "status": "NG",
   "this_as_id": false
  },
  "0x7241a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -171985,19 +171985,19 @@
   "this_as_id": false
  },
  "0x724580": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CommandClass::AddAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CommandClass::AddAction",
-  "rule_violations": 19,
+  "rule_violations": 18,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x724730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -172009,7 +172009,7 @@
   "this_as_id": false
  },
  "0x7248c0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -172052,7 +172052,7 @@
   "this_as_id": false
  },
  "0x724ad0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -172735,7 +172735,7 @@
   "this_as_id": false
  },
  "0x7258d0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -172909,7 +172909,7 @@
   "this_as_id": false
  },
  "0x725fa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -172921,7 +172921,7 @@
   "this_as_id": false
  },
  "0x726250": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -172933,7 +172933,7 @@
   "this_as_id": false
  },
  "0x726290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -173160,7 +173160,7 @@
   "status": "OK"
  },
  "0x726950": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -173374,7 +173374,7 @@
   "this_as_id": false
  },
  "0x726fb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -173458,7 +173458,7 @@
   "this_as_id": false
  },
  "0x7271d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "sub_7271D0",
@@ -173469,7 +173469,7 @@
   "this_as_id": false
  },
  "0x7271e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
