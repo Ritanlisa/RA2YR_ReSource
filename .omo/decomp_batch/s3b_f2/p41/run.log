@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x501210 HouseClass::SaveToINI -> HouseClass
+[conv] 0x501400 HouseClass::SetCapacity_5 -> HouseClass
+[conv] 0x501640 HouseClass::CanDetect -> HouseClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+[conv] 0x5018c0 HouseClass::NotifyPowerStateChange -> HouseClass
+[conv] 0x501ac0 HouseClass::GenerateAttackCoords -> HouseClass
+[conv] 0x502550 HouseClass::StubReturnNullPointer_0 -> HouseClass
+[conv] 0x5025f0 HouseClass::RegisterGain -> HouseClass
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x505310 BuildingClass::FindBySWType -> BuildingClass
+[conv] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> HouseClass
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x505fd0 globalHelper_005FD0 -> _addr_50
+[conv] 0x5060b0 HouseClass::ScanBuildLocation -> HouseClass
+[conv] 0x506ef0 HouseClass::AutoBuildScanAndSort -> HouseClass
+[conv] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> ObjectClass
+[conv] 0x508150 HouseClass::ComputePowerDistribution -> HouseClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CCINIClass               rc=2
+[era] HouseClass               rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] _addr_50                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 20)
+[ledger] 0x501210 HouseClass::SaveToINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501400 HouseClass::SetCapacity_5 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x501640 HouseClass::CanDetect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501750 ObjectClass::sub_501750 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5018c0 HouseClass::NotifyPowerStateChange -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501ac0 HouseClass::GenerateAttackCoords -> COMPILE_FAIL (attempt 5)
+[ledger] 0x502550 HouseClass::StubReturnNullPointer_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5025f0 HouseClass::RegisterGain -> COMPILE_FAIL (attempt 5)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 9)
+[ledger] 0x505310 BuildingClass::FindBySWType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 11)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x505fd0 globalHelper_005FD0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5060b0 HouseClass::ScanBuildLocation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x506ef0 HouseClass::AutoBuildScanAndSort -> COMPILE_FAIL (attempt 5)
+[ledger] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> COMPILE_FAIL (attempt 5)
+[ledger] 0x508150 HouseClass::ComputePowerDistribution -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p41\batch_report.json
