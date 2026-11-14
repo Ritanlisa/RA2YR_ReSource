@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p126\part_00
+=== convert (20 addrs) ===
+[conv] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> AbstractClass
+[conv] 0x725fa0 TriggerClass::Construct -> TriggerClass
+[conv] 0x726250 TriggerClass::HasCrossesHorizontalLineEvent -> TriggerClass
+[conv] 0x726290 TriggerClass::HasCrossesVerticalLineEvent -> TriggerClass
+[conv] 0x726950 TriggerClass::CheckCondition -> TriggerClass
+[conv] 0x726fb0 HouseClass::FindType24 -> HouseClass
+[conv] 0x7271d0 sub_7271D0 -> _addr_72
+[conv] 0x7271e0 TriggerTypeClass::GetFlags -> TriggerTypeClass
+[conv] 0x727240 TriggerTypeClass::LoadFromINI -> TriggerTypeClass
+[conv] 0x728280 InfantryClass::SetMission -> InfantryClass
+[conv] 0x7283c0 ScenarioClass::LoadWaypoints -> ScenarioClass
+[conv] 0x728540 ObjectClass::sub_728540 -> ObjectClass
+[conv] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> JumpjetLocomotionClass
+[conv] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> TunnelLocomotionClass
+[conv] 0x728e30 TunnelLocomotionClass::IdleStateMachine -> TunnelLocomotionClass
+[conv] 0x7291f0 InfantryClass::ProcessTunnelMovement -> InfantryClass
+[conv] 0x729370 AnimClass::ProcessSequence -> AnimClass
+[conv] 0x7294e0 ObjectClass::sub_7294E0 -> ObjectClass
+[conv] 0x729580 ObjectClass::FindUnitPlacementTarget -> ObjectClass
+[conv] 0x729aa0 FootClass::Process -> FootClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=2
+[era] TriggerClass             rc=2
+[era] HouseClass               rc=2
+[era] _addr_72                 rc=2
+[era] TriggerTypeClass         rc=2
+[era] InfantryClass            rc=2
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TunnelLocomotionClass    rc=2
+[era] AnimClass                rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7258d0 AbstractClass::AnnounceExpiredPointer -> COMPILE_FAIL (attempt 9)
+[ledger] 0x725fa0 TriggerClass::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x726250 TriggerClass::HasCrossesHorizontalLineEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x726290 TriggerClass::HasCrossesVerticalLineEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x726950 TriggerClass::CheckCondition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x726fb0 HouseClass::FindType24 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7271d0 sub_7271D0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7271e0 TriggerTypeClass::GetFlags -> COMPILE_FAIL (attempt 4)
+[ledger] 0x727240 TriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x728280 InfantryClass::SetMission -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7283c0 ScenarioClass::LoadWaypoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x728540 ObjectClass::sub_728540 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x728e30 TunnelLocomotionClass::IdleStateMachine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7291f0 InfantryClass::ProcessTunnelMovement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x729370 AnimClass::ProcessSequence -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7294e0 ObjectClass::sub_7294E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x729580 ObjectClass::FindUnitPlacementTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x729aa0 FootClass::Process -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p126\batch_report.json
