@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p160\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cf125 _usepowhlp -> _addr_7C
+[conv] 0x7cf347 __startOneArgErrorHandling -> _addr_7C
+[conv] 0x7cf390 __twoToTOS -> _addr_7C
+[conv] 0x7cf51c __powhlp -> _addr_7C
+[conv] 0x7cf64c __d_inttype -> _addr_7C
+[conv] 0x7cf6ed __heap_term -> _addr_7C
+[conv] 0x7cf77f ___sbh_heap_init -> _addr_7C
+[conv] 0x7cfe1c ObjectClass::___sbh_alloc_new_region -> ObjectClass
+[conv] 0x7d038f ObjectClass::___sbh_heap_check -> ObjectClass
+[conv] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> _addr_7D
+[conv] 0x7d0703 __filbuf -> _addr_7D
+[conv] 0x7d07df __read -> _addr_7D
+[conv] 0x7d0844 __read_lk -> _addr_7D
+[conv] 0x7d0a20 _memcpy_0 -> _addr_7D
+[conv] 0x7d0d55 __write -> _addr_7D
+[conv] 0x7d0dba __write_lk -> _addr_7D
+[conv] 0x7d10c2 ___crtLCMapStringA -> _addr_7D
+[conv] 0x7d12e6 _strncnt -> _addr_7D
+[conv] 0x7d140b __getptd -> _addr_7D
+[conv] 0x7d1512 GetCurrentThreadId::_0 -> GetCurrentThreadId
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7D                 rc=2
+[era] GetCurrentThreadId       rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cf125 _usepowhlp -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7cf347 __startOneArgErrorHandling -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cf390 __twoToTOS -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cf51c __powhlp -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cf64c __d_inttype -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cf6ed __heap_term -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cf77f ___sbh_heap_init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cfe1c ObjectClass::___sbh_alloc_new_region -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d038f ObjectClass::___sbh_heap_check -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d06be _set_new_handler_YAP6AHI_ZP6AHI_Z_Z -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7d0703 __filbuf -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d07df __read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d0844 __read_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d0a20 _memcpy_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d0d55 __write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d0dba __write_lk -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d10c2 ___crtLCMapStringA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d12e6 _strncnt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d140b __getptd -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7d1512 GetCurrentThreadId::_0 -> COMPILE_FAIL (attempt 13)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p160\batch_report.json
