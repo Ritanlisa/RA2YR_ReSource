@@ -1,0 +1,123 @@
+{
+ "symbol": "?ProcessCellReveal@DisplayClass@@QAEDPAFH@Z",
+ "sym_key": "DisplayClass::ProcessCellReveal",
+ "size": 625,
+ "link_base": 0,
+ "bytes_hex": "83ec2853558b6c243456578bd955e8000000008bf88b87400100008ac824bf8db7400100000c02d1e9f6d180e1016a01884c2428884c24178b4c24248b54242880e10081e2ff0000000bca55897c2420897c243489742430894c24288906e8000000008a97210100008d8f210100003ac2894c24287407c64424130188018039ff75068b060c0189068a44241384c0740c8b0d0000000057e8000000008b74243cc7442414000000008b4424148a55028b4c242883e00780e1008a807a000000c0f81002c28d54243025ff000000520bc18bcb8944242c89442434e8000000008bf8668b442430663b4500750f668b4c2432663b4d020f8410010000f68740010000010f85030100008d5424306a0152e80000000083f8ff0f85aa0000008b8740010000a8020f84aa0000000c01578987400100008b0d00000000e80000000033ed8a5424308bc583e00781e600ffffff8a807a0000008ac802ca8b54243281e1ff000000c0f8100bf103c233c68bcb25ff00000033f08d44241c5089742420e8000000008d4c241c6a01518bf8e80000000033d28a97210100000fbec83bca74128887210100008b0d0000000057e8000000004583fd087c888b54242c8b6c243c89542418eb4483f8fe741ef687400100000275158b4c24408b038d542430515253ff9098000000eb2185c07c1d0fbe8f210100003bc174128887210100008b0d0000000057e8000000008b4424144083f808894424140f8c8bfeffff8a5c241384db74168b5424208b4424408b742418525056e800000000eb048b742418f6864001000002741c8a44242484c074148b0d000000008b01f6c41074078bcee8000000005f5e8ac35d5b83c428c20800",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 316,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 339,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 385,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 399,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 426,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 432,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 514,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 520,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 566,
+   "type": "REL32",
+   "sym": "?CellClass__SpiralFindClosest@@YGHHHD@Z",
+   "sym_key": "CellClass__SpiralFindClosest"
+  },
+  {
+   "off": 595,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 609,
+   "type": "REL32",
+   "sym": "?UpdateZone@CellClass@@QAEPAIXZ",
+   "sym_key": "CellClass::UpdateZone"
+  }
+ ]
+}

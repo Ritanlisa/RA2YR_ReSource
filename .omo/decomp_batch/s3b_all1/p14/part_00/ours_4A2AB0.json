@@ -1,0 +1,27 @@
+{
+ "symbol": "?StreamRead@CStreamClass@@QAGHPAI@Z",
+ "sym_key": "CStreamClass::StreamRead",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b460cf6c4ff741d8b461085c07e168b4e0485c9740f8b4c24088b5614515052e8000000008b460485c07509b8054000805ec20800578b7c241085ff740b8b0850ff51048b560489178b46045f85c0750d6803400080e80000000083c4048b46046a00508b08ff512085c07c268b460485c0750d6803400080e80000000083c4048b4604508b10ff5208c746040000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?IStream__Read@@YGJHHH@Z",
+   "sym_key": "IStream__Read"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}

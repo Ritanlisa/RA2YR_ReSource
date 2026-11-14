@@ -1,0 +1,189 @@
+{
+ "symbol": "?UpdateCellPassability@DisplayClass@@QAEDPAFH@Z",
+ "sym_key": "DisplayClass::UpdateCellPassability",
+ "size": 1043,
+ "link_base": 0,
+ "bytes_hex": "83ec30538b5c24385556578be953896c2420e8000000008bf88b87400100008bc8897c24208d9740010000897c2428d1e9f6d180e10189542434a802884c241374108a8f2c010000c644241400f6c1087505c6442414018b4c242c8b74241480e10081e6ff00000024bf0bce0c028db72c01000089026a008b165383ca08894c24348974243c8916e8000000008a97200100008d8f200100003ac2894c24347407c64424140188018039ff75068b060c1089066a0153e8000000008a97210100008d8f210100003ac2894c24347407c64424140188018039ff750e8b87400100000c018987400100008a44241484c0740c8b0d0000000057e8000000008b7c24448b742444c744242400000000eb048b5c24448b4424248a1383e0078a807a0000008ac802ca8b5424300fbec081e1ff00000080e2000bca668b5302c1f81003c233c125ff00000033c88d442438894c2430894c2438508bcde800000000668b4c24388bd88b442444895c2434663b08750f668b54243a663b50020f841f010000f6832c010000100f85120100008d4424386a0050e80000000083f8ff0f85b80000008b832c010000a8080f84b80000000c105389832c0100008b0d00000000e80000000033dbeb048b6c241c8a5424388bc383e00781e700ffffff8a807a0000008ac802ca0fbed081e1ff0000008d4424180bf98b4c243ac1fa1003d15033d78bcd81e2ff00000033fa897c241ce8000000008d4c24186a00518be8e80000000033d28a95200100000fbec83bca74128885200100008b0d0000000055e8000000004383fb087c808b5424288b6c241c8b5c243489542420eb4583f8fe741ff6832c0100000875168b4c24488b45008d542438515255ff9090000000eb2185c07c1d0fbe8b200100003bc174128883200100008b0d0000000053e8000000008d5424386a0152e80000000083f8ff0f85b40000008b8340010000a8020f84b40000000c01538983400100008b0d00000000e80000000033dbeb048b6c241c8a5424388bc383e00781e600ffffff8a807a0000008ac802ca0fbed081e1ff0000008d4424180bf18b4c243ac1fa1003d15033d68bcd81e2ff00000033f28974241ce8000000008d4c24186a01518be8e80000000033d28a95210100000fbec83bca74128885210100008b0d0000000055e8000000004383fb087c808b5424288b6c241c89542420eb4583f8fe741ff683400100000275168b4c24488b45008d542438515255ff9090000000eb2185c07c1d0fbe8b210100003bc174128883210100008b0d0000000053e8000000008b4424244083f808894424240f8c4ffdffff8a5c241484db74168b54242c8b4424488b742420525056e800000000eb048b742420f6864001000002741c8a44241384c074148b0d000000008b01f6c41074078bcee8000000005f5e8ac35d5b83c430c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 137,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 183,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAXH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 286,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 346,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 406,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 444,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 449,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 478,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 528,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 542,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 569,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 575,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 662,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 668,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 680,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 718,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 723,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 752,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 802,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 816,
+   "type": "REL32",
+   "sym": "?Cell__GetAdjacentPassableMask@@YGHPAFH@Z",
+   "sym_key": "Cell__GetAdjacentPassableMask"
+  },
+  {
+   "off": 843,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 849,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 932,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 938,
+   "type": "REL32",
+   "sym": "?AddCellToDrawList@Tactical@@QAEHH@Z",
+   "sym_key": "Tactical::AddCellToDrawList"
+  },
+  {
+   "off": 984,
+   "type": "REL32",
+   "sym": "?CellClass__SpiralFindClosest@@YGHHHD@Z",
+   "sym_key": "CellClass__SpiralFindClosest"
+  },
+  {
+   "off": 1013,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 1027,
+   "type": "REL32",
+   "sym": "?UpdateZone@CellClass@@QAEPAIXZ",
+   "sym_key": "CellClass::UpdateZone"
+  }
+ ]
+}

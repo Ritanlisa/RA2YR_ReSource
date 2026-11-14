@@ -1,0 +1,126 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p14\part_00
+=== convert (40 addrs) ===
+[conv] 0x4a1de0 Checksummer::Add_Buffer -> Checksummer
+[conv] 0x4a2600 CountdownTimer::UpdateDisplay -> CountdownTimer
+[conv] 0x4a2950 CStreamClass::Release -> CStreamClass
+[conv] 0x4a2990 CStreamClass::QueryInterface -> CStreamClass
+[conv] 0x4a2a20 CStreamClass::StubReturnNullPointer -> CStreamClass
+[conv] 0x4a2ab0 CStreamClass::StreamRead -> CStreamClass
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x4a33a0 AudioStream::ReadSamples -> AudioStream
+[conv] 0x4a3660 ObjectClass::RenderTactical3DScene -> ObjectClass
+[conv] 0x4a3890 CCFileClass::ReadEntireFile -> CCFileClass
+[conv] 0x4a3a10 sub_4A3A10 -> _addr_4A
+[conv] 0x4a3c30 FadePalette -> _addr_4A
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x4a3e40 DDraw::CapabilityCheck -> DDraw
+[conv] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> ObjectClass
+[conv] 0x4a40c0 ObjectClass::sub_4A40C0 -> ObjectClass
+[conv] 0x4a4130 ObjectClass::sub_4A4130 -> ObjectClass
+[conv] 0x4a42f0 InitializeDDraw -> _addr_4A
+[conv] 0x4a44f0 ObjectClass::sub_4A44F0 -> ObjectClass
+[conv] 0x4a45c0 ObjectClass::sub_4A45C0 -> ObjectClass
+[conv] 0x4a4620 DDraw::CheckCapabilities -> DDraw
+[conv] 0x4a4700 ObjectClass::sub_4A4700 -> ObjectClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4a4900 sub_4A4900 -> _addr_4A
+[conv] 0x4a51f0 RateScaler::Init -> RateScaler
+[conv] 0x4a5660 Dial8Class::SetValue -> Dial8Class
+[conv] 0x4a57b0 Dial8Class::GetValue -> Dial8Class
+[conv] 0x4a61c0 TextRenderer::DrawText -> TextRenderer
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x4a7340 DiskLaserClass::Update -> DiskLaserClass
+[conv] 0x4a7a30 DiskLaserClass::DiskLaserClass_4A7A30 -> DiskLaserClass
+[conv] 0x4a88c0 DisplayClass::SetSize -> DisplayClass
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x4a91b0 Tactical::MouseMove -> Tactical
+[conv] 0x4a9890 DisplayClass::UpdateCellPassability -> DisplayClass
+[conv] 0x4a9ca0 DisplayClass::vt_entry_94 -> DisplayClass
+[conv] 0x4a9dd0 DisplayClass::ProcessCellReveal -> DisplayClass
+[conv] 0x4aa440 CellClass::FindOpenNeighbor -> CellClass
+[conv] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> TacticalClass_DisplayClass
+[conv] 0x4aae90 DisplayClass::HandlePlayerAction -> DisplayClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Checksummer              rc=2
+[era] CountdownTimer           rc=2
+[era] CStreamClass             rc=2
+[era] AudioStream              rc=2
+[era] ObjectClass              rc=2
+[era] CCFileClass              rc=2
+[era] _addr_4A                 rc=2
+[era] DDraw                    rc=2
+[era] Surface                  rc=2
+[era] RateScaler               rc=2
+[era] Dial8Class               rc=2
+[era] TextRenderer             rc=2
+[era] DiskLaserClass           rc=2
+[era] DisplayClass             rc=2
+[era] Tactical                 rc=2
+[era] CellClass                rc=2
+[era] TacticalClass_DisplayClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4a2ab0   MISMATCH         CStreamClass::StreamRead
+[diff] 0x4a7a30   MISMATCH         DiskLaserClass::DiskLaserClass_4A7A30
+[diff] 0x4a9890   MISMATCH         DisplayClass::UpdateCellPassability
+[diff] 0x4a9dd0   MISMATCH         DisplayClass::ProcessCellReveal
+[ledger] 0x4a1de0 Checksummer::Add_Buffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2600 CountdownTimer::UpdateDisplay -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4a2950 CStreamClass::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2990 CStreamClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2a20 CStreamClass::StubReturnNullPointer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2ab0 CStreamClass::StreamRead -> NG (attempt 7)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4a33a0 AudioStream::ReadSamples -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a3660 ObjectClass::RenderTactical3DScene -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a3890 CCFileClass::ReadEntireFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a3a10 sub_4A3A10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a3c30 FadePalette -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a3e40 DDraw::CapabilityCheck -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a40c0 ObjectClass::sub_4A40C0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a4130 ObjectClass::sub_4A4130 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a42f0 InitializeDDraw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a44f0 ObjectClass::sub_4A44F0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a45c0 ObjectClass::sub_4A45C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a4620 DDraw::CheckCapabilities -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a4700 ObjectClass::sub_4A4700 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 16)
+[ledger] 0x4a4900 sub_4A4900 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a51f0 RateScaler::Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a5660 Dial8Class::SetValue -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a57b0 Dial8Class::GetValue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a61c0 TextRenderer::DrawText -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4a7340 DiskLaserClass::Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a7a30 DiskLaserClass::DiskLaserClass_4A7A30 -> NG (attempt 5)
+[ledger] 0x4a88c0 DisplayClass::SetSize -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4a8960 DisplayClass::SetViewDimensions -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4a91b0 Tactical::MouseMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a9890 DisplayClass::UpdateCellPassability -> NG (attempt 4)
+[ledger] 0x4a9ca0 DisplayClass::vt_entry_94 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a9dd0 DisplayClass::ProcessCellReveal -> NG (attempt 4)
+[ledger] 0x4aa440 CellClass::FindOpenNeighbor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4aae90 DisplayClass::HandlePlayerAction -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 36,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "regalloc": 1,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p14\batch_report.json

@@ -1,0 +1,75 @@
+{
+ "symbol": "?DiskLaserClass_4A7A30@DiskLaserClass@@QAEHXZ",
+ "sym_key": "DiskLaserClass::DiskLaserClass_4A7A30",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c0c7060000000089460489460889460c89462489462889462c89463089463489463889463c8b0d000000008b15000000003bd1722b38050000000075043bc875378b15000000003bd0762d03d150a100000000526800000000ff500884c074188b0d000000008bc141890d000000008b0d000000008934818b065ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?vt_DiskLaserClass_4@@3PAXA",
+   "sym_key": "vt_DiskLaserClass_4"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0210@@3IA",
+   "sym_key": "DataGlobal_8A0210"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0218@@3IA",
+   "sym_key": "DataGlobal_8A0218"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0215@@3EA",
+   "sym_key": "DataGlobal_8A0215"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A021C@@3IA",
+   "sym_key": "DataGlobal_8A021C"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0208@@3IA",
+   "sym_key": "DataGlobal_8A0208"
+  },
+  {
+   "off": 94,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0208@@3IA",
+   "sym_key": "DataGlobal_8A0208"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0218@@3IA",
+   "sym_key": "DataGlobal_8A0218"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A0218@@3IA",
+   "sym_key": "DataGlobal_8A0218"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8A020C@@3IA",
+   "sym_key": "DataGlobal_8A020C"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A7A30",
+ "name": "DiskLaserClass::DiskLaserClass",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A7A30",
+ "bytes_hex": "568bf1e83887f6ff33c0c706b85f7e00c746049c5f7e00c74608945f7e00c7460c8c5f7e0089462489462889462c89463089463489463889463c8b0d10028a008b1518028a003bd17c2b380515028a0075043bc875378b151c028a003bd07e2d50a108028a0003d1b908028a0052ff500884c074188b0d18028a008bc141890d18028a008b0d0c028a008934818bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
