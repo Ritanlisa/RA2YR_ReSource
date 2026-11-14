@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p165\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d6eff _GetLcidFromLangCountry -> _addr_7D
+[conv] 0x7d6f86 _LangCountryEnumProc_4 -> _addr_7D
+[conv] 0x7d718a _GetLcidFromLanguage -> _addr_7D
+[conv] 0x7d71e0 _LanguageEnumProc_4 -> _addr_7D
+[conv] 0x7d729d _GetLcidFromCountry -> _addr_7D
+[conv] 0x7d72d4 _CountryEnumProc_4 -> _addr_7D
+[conv] 0x7d7374 _ProcessCodePage -> _addr_7D
+[conv] 0x7d73f9 _TestDefaultLanguage -> _addr_7D
+[conv] 0x7d745b _IsThisWindowsNT -> _addr_7D
+[conv] 0x7d7491 _crtGetLocaleInfoA_16 -> _addr_7D
+[conv] 0x7d75e0 _memset -> _addr_7D
+[conv] 0x7d7638 __lseek -> _addr_7D
+[conv] 0x7d769d __lseek_lk -> _addr_7D
+[conv] 0x7d77d6 __wctomb_lk -> _addr_7D
+[conv] 0x7d7d49 __fptostr -> _addr_7D
+[conv] 0x7d7ee0 unknown_libname_76 -> _addr_7D
+[conv] 0x7d7ff7 unknown_libname_77 -> _addr_7D
+[conv] 0x7d86e6 unknown_libname_90 -> _addr_7D
+[conv] 0x7d88ec unknown_libname_91 -> _addr_7D
+[conv] 0x7d899e unknown_libname_92 -> _addr_7D
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7d6eff _GetLcidFromLangCountry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d6f86 _LangCountryEnumProc_4 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d718a _GetLcidFromLanguage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d71e0 _LanguageEnumProc_4 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d729d _GetLcidFromCountry -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d72d4 _CountryEnumProc_4 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d7374 _ProcessCodePage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d73f9 _TestDefaultLanguage -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7d745b _IsThisWindowsNT -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7d75e0 _memset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d7638 __lseek -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d769d __lseek_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d77d6 __wctomb_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d7d49 __fptostr -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7d7ee0 unknown_libname_76 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7d7ff7 unknown_libname_77 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d86e6 unknown_libname_90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d88ec unknown_libname_91 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d899e unknown_libname_92 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p165\batch_report.json

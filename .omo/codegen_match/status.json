@@ -212935,7 +212935,7 @@
   "this_as_id": false
  },
  "0x7d6eff": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_GetLcidFromLangCountry",
@@ -212946,7 +212946,7 @@
   "this_as_id": false
  },
  "0x7d6f86": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_LangCountryEnumProc_4",
@@ -212957,7 +212957,7 @@
   "this_as_id": false
  },
  "0x7d718a": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_GetLcidFromLanguage",
@@ -212968,7 +212968,7 @@
   "this_as_id": false
  },
  "0x7d71e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_LanguageEnumProc_4",
@@ -212979,7 +212979,7 @@
   "this_as_id": false
  },
  "0x7d729d": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_GetLcidFromCountry",
@@ -212990,7 +212990,7 @@
   "this_as_id": false
  },
  "0x7d72d4": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_CountryEnumProc_4",
@@ -213012,7 +213012,7 @@
   "this_as_id": false
  },
  "0x7d7374": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_ProcessCodePage",
@@ -213034,7 +213034,7 @@
   "this_as_id": false
  },
  "0x7d73f9": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "_TestDefaultLanguage",
@@ -213045,7 +213045,7 @@
   "this_as_id": false
  },
  "0x7d745b": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_IsThisWindowsNT",
@@ -213056,7 +213056,7 @@
   "this_as_id": false
  },
  "0x7d7491": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "_crtGetLocaleInfoA_16",
@@ -213089,7 +213089,7 @@
   "this_as_id": false
  },
  "0x7d75e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_memset",
@@ -213100,7 +213100,7 @@
   "this_as_id": false
  },
  "0x7d7638": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__lseek",
@@ -213111,7 +213111,7 @@
   "this_as_id": false
  },
  "0x7d769d": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__lseek_lk",
@@ -213156,7 +213156,7 @@
   "this_as_id": false
  },
  "0x7d77d6": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__wctomb_lk",
@@ -213331,7 +213331,7 @@
   "this_as_id": false
  },
  "0x7d7d49": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__fptostr",
@@ -213376,7 +213376,7 @@
   "this_as_id": false
  },
  "0x7d7ee0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_76",
@@ -213387,7 +213387,7 @@
   "this_as_id": false
  },
  "0x7d7ff7": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_77",
@@ -213442,7 +213442,7 @@
   "this_as_id": false
  },
  "0x7d86e6": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_90",
@@ -213453,7 +213453,7 @@
   "this_as_id": false
  },
  "0x7d88ec": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_91",
@@ -213464,7 +213464,7 @@
   "this_as_id": false
  },
  "0x7d899e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_92",
