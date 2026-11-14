@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p135\part_00
+=== convert (20 addrs) ===
+[conv] 0x754cb0 Voxel::Projection_Setup -> Voxel
+[conv] 0x755db0 Voxel::SortDepth -> Voxel
+[conv] 0x757e70 VoxelRenderer::ProcessVoxelData -> VoxelRenderer
+[conv] 0x758b70 ObjectClass::GenerateLightRemapTable -> ObjectClass
+[conv] 0x759260 Stream::InitializeBinkAudio -> Stream
+[conv] 0x759940 MovieClass::RenderLoop -> MovieClass
+[conv] 0x759fb0 VoxelRenderer::InitializeBuffers -> VoxelRenderer
+[conv] 0x75a2f0 sub_75A2F0 -> _addr_75
+[conv] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> WalkLocomotionClass
+[conv] 0x75aba0 JumpjetLocomotionClass::GetMovementCoordinate_2 -> JumpjetLocomotionClass
+[conv] 0x75aec0 VoxelAnim::Draw -> VoxelAnim
+[conv] 0x75c240 Voxel::DrawHelper -> Voxel
+[conv] 0x75c680 WalkLocomotionClass::BeginMove -> WalkLocomotionClass
+[conv] 0x75c700 WalkLocomotionClass::LoadFromStream -> WalkLocomotionClass
+[conv] 0x75c7f0 WalkLocomotionClass::QueryInterface -> WalkLocomotionClass
+[conv] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> JumpjetLocomotionClass
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x75d3a0 WarheadTypeClass::ReadINI -> WarheadTypeClass
+[conv] 0x75dec0 WarheadTypeClass::ProcessPower -> WarheadTypeClass
+[conv] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> WarheadTypeClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Voxel                    rc=2
+[era] VoxelRenderer            rc=2
+[era] ObjectClass              rc=2
+[era] Stream                   rc=2
+[era] MovieClass               rc=2
+[era] _addr_75                 rc=2
+[era] WalkLocomotionClass      rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] VoxelAnim                rc=2
+[era] WarheadTypeClass         rc=2
+=== diffasm byte-compare ===
+[ledger] 0x754cb0 Voxel::Projection_Setup -> COMPILE_FAIL (attempt 7)
+[ledger] 0x755db0 Voxel::SortDepth -> COMPILE_FAIL (attempt 8)
+[ledger] 0x757e70 VoxelRenderer::ProcessVoxelData -> COMPILE_FAIL (attempt 15)
+[ledger] 0x758b70 ObjectClass::GenerateLightRemapTable -> COMPILE_FAIL (attempt 6)
+[ledger] 0x759260 Stream::InitializeBinkAudio -> COMPILE_FAIL (attempt 7)
+[ledger] 0x759940 MovieClass::RenderLoop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x759fb0 VoxelRenderer::InitializeBuffers -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75a2f0 sub_75A2F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x75ab40 WalkLocomotionClass::ComputeFloatExpression_4 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x75aba0 JumpjetLocomotionClass::GetMovementCoordinate_2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75aec0 VoxelAnim::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x75c240 Voxel::DrawHelper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75c680 WalkLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 8)
+[ledger] 0x75c700 WalkLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75c7f0 WalkLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 8)
+[ledger] 0x75d3a0 WarheadTypeClass::ReadINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75dec0 WarheadTypeClass::ProcessPower -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p135\batch_report.json
