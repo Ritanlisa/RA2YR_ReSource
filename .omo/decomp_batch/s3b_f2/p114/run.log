@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p114\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d4b50 PrintTimerOnTactical::Start -> PrintTimerOnTactical
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x6d6590 Tactical::PixelToCell -> Tactical
+[conv] 0x6d6bb0 sub_6D6BB0 -> _addr_6D
+[conv] 0x6d6d10 TacticalClass::DrawBuildingsInView -> TacticalClass
+[conv] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> TacticalClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x6d8260 MapClass::TransformCoordToScreen -> MapClass
+[conv] 0x6d8640 ClampCoordMap -> _addr_6D
+[conv] 0x6d8c60 sub_6D8C60 -> _addr_6D
+[conv] 0x6d8db0 TacticalMap::RenderAllObjects -> TacticalMap
+[conv] 0x6da230 DisplayClass::GetCoordDelta -> DisplayClass
+[conv] 0x6da380 TacticalClass::IsOccupiedByTechno -> TacticalClass
+[conv] 0x6da740 SuperWeaponClass::UpdateAll -> SuperWeaponClass
+[conv] 0x6da770 SelectAllOfType_Play -> SelectAllOfType
+[conv] 0x6da7d0 Tactical::AddCellToDrawList -> Tactical
+[conv] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> ObjectClass
+[conv] 0x6dad60 ObjectClass::RenderRallyPointLines -> ObjectClass
+[conv] 0x6dbb60 Tactical::DrawOverlay -> Tactical
+[conv] 0x6dbe20 TacticalClass::DrawPlacementCircles -> TacticalClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PrintTimerOnTactical     rc=2
+[era] TechnoClass              rc=2
+[era] Tactical                 rc=2
+[era] _addr_6D                 rc=2
+[era] TacticalClass            rc=2
+[era] MapClass                 rc=2
+[era] TacticalMap              rc=2
+[era] DisplayClass             rc=2
+[era] SuperWeaponClass         rc=2
+[era] SelectAllOfType          rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6d4b50 PrintTimerOnTactical::Start -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6d6590 Tactical::PixelToCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d6bb0 sub_6D6BB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d6d10 TacticalClass::DrawBuildingsInView -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d71e0 TacticalClass::CalcBuildingDrawPos -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6d8260 MapClass::TransformCoordToScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d8640 ClampCoordMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d8c60 sub_6D8C60 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d8db0 TacticalMap::RenderAllObjects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6da230 DisplayClass::GetCoordDelta -> COMPILE_FAIL (attempt 16)
+[ledger] 0x6da380 TacticalClass::IsOccupiedByTechno -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6da740 SuperWeaponClass::UpdateAll -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6da770 SelectAllOfType_Play -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6da7d0 Tactical::AddCellToDrawList -> COMPILE_FAIL (attempt 14)
+[ledger] 0x6da9d0 ObjectClass::RenderSelectionBeacons -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6dad60 ObjectClass::RenderRallyPointLines -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6dbb60 Tactical::DrawOverlay -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6dbe20 TacticalClass::DrawPlacementCircles -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p114\batch_report.json
