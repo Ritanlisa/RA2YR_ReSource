@@ -1,0 +1,120 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p34\part_00
+=== convert (40 addrs) ===
+[conv] 0x5889f0 globalHelper_0889F0 -> _addr_58
+[conv] 0x589060 VectorClass::InitCellVe_vt00 -> VectorClass
+[conv] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> _DynamicVectorClass_USubzoneConnectionStruct
+[conv] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x589680 Init -> _addr_58
+[conv] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x58abd0 Radar::CopyDataArray -> Radar
+[conv] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> VectorClass_USubzoneTrackingStruct
+[conv] 0x58b820 ObjectClass::ComputeMapCameraBounds -> ObjectClass
+[conv] 0x58bdc0 TileData::Constructor -> TileData
+[conv] 0x58bf70 RandomMap::TerrainTileDataConstructor -> RandomMap
+[conv] 0x58c320 ObjectClass::sub_58C320 -> ObjectClass
+[conv] 0x58c3b0 ObjectClass::sub_58C3B0 -> ObjectClass
+[conv] 0x58c4a0 ObjectClass::sub_58C4A0 -> ObjectClass
+[conv] 0x58c800 RandomMap::GenerateTerrain -> RandomMap
+[conv] 0x58d1c0 RandomMap::ExpandTerrainCells -> RandomMap
+[conv] 0x58d410 RandomMap::TerrainAlloc -> RandomMap
+[conv] 0x58d620 TileSystem::BuildNodes -> TileSystem
+[conv] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> TileSystem
+[conv] 0x58e740 RandomMap::CollectTerrainCells -> RandomMap
+[conv] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> RandomMap
+[conv] 0x58ef10 ObjectClass::ResetMapState -> ObjectClass
+[conv] 0x58f0c0 RandomMap::CollectBorderCells -> RandomMap
+[conv] 0x58f2c0 RandomMap::PlaceBuildings -> RandomMap
+[conv] 0x5905d0 RandomMap::AllocateArea -> RandomMap
+[conv] 0x590970 RandomMap::CheckCellPlacement -> RandomMap
+[conv] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> RandomMap
+[conv] 0x5910f0 MapSeed::PlaceCityBlock -> MapSeed
+[conv] 0x591740 ObjectClass::PlaceMapSeedCityArea -> ObjectClass
+[conv] 0x591d80 MapSeed::PlaceCityBuildings -> MapSeed
+[conv] 0x592440 RandomMap::CheckPlacementArea -> RandomMap
+[conv] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> ObjectClass
+[conv] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> ObjectClass
+[conv] 0x593550 MapSeed::PlaceCityBlock2 -> MapSeed
+[conv] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> ObjectClass
+[conv] 0x594010 BuildingTypeClass::CheckPlacementArea -> BuildingTypeClass
+[conv] 0x594870 ObjectClass::PlaceRandomWaypoints -> ObjectClass
+[conv] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> ObjectClass
+[conv] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> BuildingPlacement
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_58                 rc=2
+[era] VectorClass              rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_UZoneConnectionClass rc=2
+[era] _VectorClass_USubzoneTrackingStruct rc=2
+[era] Radar                    rc=2
+[era] VectorClass_USubzoneTrackingStruct rc=0
+[era] ObjectClass              rc=2
+[era] TileData                 rc=2
+[era] RandomMap                rc=2
+[era] TileSystem               rc=2
+[era] MapSeed                  rc=2
+[era] BuildingTypeClass        rc=2
+[era] BuildingPlacement        rc=2
+=== diffasm byte-compare ===
+[diff] 0x5889f0   MISMATCH         globalHelper_0889F0
+[diff] 0x58ad10   MISMATCH         VectorClass_USubzoneTrackingStruct::SetCapacity
+[ledger] 0x5889f0 globalHelper_0889F0 -> NG (attempt 8)
+[ledger] 0x589060 VectorClass::InitCellVe_vt00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x589190 _DynamicVectorClass_USubzoneConnectionStruct::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 4)
+[ledger] 0x589550 _DynamicVectorClass_UZoneConnectionClass::Release -> COMPILE_FAIL (attempt 4)
+[ledger] 0x589680 Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x589740 _VectorClass_USubzoneTrackingStruct::Release -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58abd0 Radar::CopyDataArray -> COMPILE_FAIL (attempt 5)
+[ledger] 0x58ad10 VectorClass_USubzoneTrackingStruct::SetCapacity -> NG (attempt 3)
+[ledger] 0x58b820 ObjectClass::ComputeMapCameraBounds -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58bdc0 TileData::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x58bf70 RandomMap::TerrainTileDataConstructor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58c320 ObjectClass::sub_58C320 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58c3b0 ObjectClass::sub_58C3B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58c4a0 ObjectClass::sub_58C4A0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58c800 RandomMap::GenerateTerrain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58d1c0 RandomMap::ExpandTerrainCells -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58d410 RandomMap::TerrainAlloc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58d620 TileSystem::BuildNodes -> COMPILE_FAIL (attempt 3)
+[ledger] 0x58e5d0 TileSystem::AnalyzeTileConnectivity -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58e740 RandomMap::CollectTerrainCells -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58e9b0 RandomMap::PlaceRandomMapTerrain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58ef10 ObjectClass::ResetMapState -> COMPILE_FAIL (attempt 7)
+[ledger] 0x58f0c0 RandomMap::CollectBorderCells -> COMPILE_FAIL (attempt 6)
+[ledger] 0x58f2c0 RandomMap::PlaceBuildings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5905d0 RandomMap::AllocateArea -> COMPILE_FAIL (attempt 3)
+[ledger] 0x590970 RandomMap::CheckCellPlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x590fd0 RandomMap::CheckNeighborhoodCompatibility -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5910f0 MapSeed::PlaceCityBlock -> COMPILE_FAIL (attempt 6)
+[ledger] 0x591740 ObjectClass::PlaceMapSeedCityArea -> COMPILE_FAIL (attempt 4)
+[ledger] 0x591d80 MapSeed::PlaceCityBuildings -> COMPILE_FAIL (attempt 9)
+[ledger] 0x592440 RandomMap::CheckPlacementArea -> COMPILE_FAIL (attempt 6)
+[ledger] 0x592af0 ObjectClass::PlaceMapSeedCityBlockVariant -> COMPILE_FAIL (attempt 4)
+[ledger] 0x593030 ObjectClass::PlaceMapSeedCityBlockDiagonal -> COMPILE_FAIL (attempt 3)
+[ledger] 0x593550 MapSeed::PlaceCityBlock2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x593af0 ObjectClass::PlaceMapSeedCityBlockVariant2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x594010 BuildingTypeClass::CheckPlacementArea -> COMPILE_FAIL (attempt 3)
+[ledger] 0x594870 ObjectClass::PlaceRandomWaypoints -> COMPILE_FAIL (attempt 6)
+[ledger] 0x594b50 ObjectClass::DistributeRandomMapTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x594f40 BuildingPlacement::SelectBuildingPlacementCells -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 38
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 24,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p34\batch_report.json

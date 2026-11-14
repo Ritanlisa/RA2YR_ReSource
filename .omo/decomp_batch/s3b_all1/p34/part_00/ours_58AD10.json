@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetCapacity@VectorClass_USubzoneTrackingStruct@@QAEPAIPAH@Z",
+ "sym_key": "VectorClass_USubzoneTrackingStruct::SetCapacity",
+ "size": 147,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c568bf1573bf58b06747cff500c8b7d0833db3bfb897e08750f8b06895e04885e0d5f5e5d5bc204008d0cfd0000000051e80000000083c4043bc374168d57ff8bc885d27c0f891988590483c1084f75f5eb0233c03bc389460474298b4e0833c03bcbc6460d017e1c8b4d048b56048b3cc1893cc28b4cc104894cc2048b4e08403bc17ce48b065f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

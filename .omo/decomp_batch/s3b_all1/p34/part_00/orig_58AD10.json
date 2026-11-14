@@ -1,0 +1,11 @@
+{
+ "addr": "0x58AD10",
+ "name": "VectorClass_USubzoneTrackingStruct::SetCapacity",
+ "size": 148,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58AD10",
+ "bytes_hex": "53558b6c240c568bf1573bf5747d8b06ff500c8b7d0833db3bfb897e0874668d0cfd0000000051e8dbe0230083c4043bc374178d57ff8bc83bd37c1042891988590483c1084a75f5eb0233c03bc389460474388b4e0833c03bcbc6460d017e2b8b55048b4e048b3cc2893cc18b54c2048954c1048b4e08403bc17ce48bc65f5e5d5bc20400895e04885e0d8bc65f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
