@@ -1,0 +1,115 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p32\part_00
+=== convert (40 addrs) ===
+[conv] 0x56b0f0 ObjectClass::sub_56B0F0 -> ObjectClass
+[conv] 0x56b5a0 CellClass::LoadTerrainTiles -> CellClass
+[conv] 0x56b780 CellClass::CreateOverlay -> CellClass
+[conv] 0x56b8a0 CellClass::DecompressRawCellData -> CellClass
+[conv] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> CellClass
+[conv] 0x56bac0 CellClass::DecompressTerrainData -> CellClass
+[conv] 0x56bec0 BuildingClass::SearchPlacement -> BuildingClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x56cb90 Terrain::FloodFillConnectivity -> Terrain
+[conv] 0x56d6e0 MapClass::ProcessRegion -> MapClass
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+[conv] 0x56dc20 LayerClass::Pathfinding_Find -> LayerClass
+[conv] 0x56e990 Cell::UpdateTileType -> Cell
+[conv] 0x56eb80 Cell::SetTileType -> Cell
+[conv] 0x56ef50 CellClass::UpdateVariant3 -> CellClass
+[conv] 0x56f2f0 CellClass::UpdateVariant4 -> CellClass
+[conv] 0x56f8b0 CellClass::UpdateTerrain -> CellClass
+[conv] 0x570050 Terrain::ProcessCellModification -> Terrain
+[conv] 0x570ae0 CellClass::RecursiveTileUpdate -> CellClass
+[conv] 0x571050 CellClass::ProcessTileChange -> CellClass
+[conv] 0x571490 CellClass::PropagateTerrainVariant2 -> CellClass
+[conv] 0x572440 CellClass::UpdateVariant7 -> CellClass
+[conv] 0x5727e0 CellClass::UpdateVariant8 -> CellClass
+[conv] 0x572da0 CellClass::UpdateVariant5 -> CellClass
+[conv] 0x573170 CellClass::UpdateVariant6 -> CellClass
+[conv] 0x573540 Terrain::RecursiveModify -> Terrain
+[conv] 0x574000 TerrainClass::ProcessSlope -> TerrainClass
+[conv] 0x574c20 MapClass::ApplyTerrainDamage -> MapClass
+[conv] 0x575220 CellClass::ApplyCliffMod2 -> CellClass
+[conv] 0x575540 CellClass::ApplyCliffMod -> CellClass
+[conv] 0x575870 CellClass::ApplyTerrainMod2 -> CellClass
+[conv] 0x575ba0 CellClass::ApplyTerrainMod -> CellClass
+[conv] 0x575ee0 UpdateTeamsInAreaMap -> _addr_57
+[conv] 0x576200 CellClass::RecursiveCraterUpdate -> CellClass
+[conv] 0x576ba0 CellClass::PropagateTerrainVariant5 -> CellClass
+[conv] 0x577bb0 TeamClass::DisbandTeam -> TeamClass
+[conv] 0x577c90 TActionClass::executeRepairAction -> TActionClass
+[conv] 0x577d90 LayerClass::Reveal -> LayerClass
+[conv] 0x577f30 MapClass::ClearShroud -> MapClass
+[conv] 0x578460 LayerClass::IsWithinUsableArea -> LayerClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Terrain                  rc=2
+[era] MapClass                 rc=2
+[era] LayerClass               rc=2
+[era] Cell                     rc=2
+[era] TerrainClass             rc=2
+[era] _addr_57                 rc=2
+[era] TeamClass                rc=2
+[era] TActionClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x56cb90   MISMATCH         Terrain::FloodFillConnectivity
+[ledger] 0x56b0f0 ObjectClass::sub_56B0F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56b5a0 CellClass::LoadTerrainTiles -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56b780 CellClass::CreateOverlay -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56b8a0 CellClass::DecompressRawCellData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56bac0 CellClass::DecompressTerrainData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56bec0 BuildingClass::SearchPlacement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56cb90 Terrain::FloodFillConnectivity -> NG (attempt 3)
+[ledger] 0x56d6e0 MapClass::ProcessRegion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56dc20 LayerClass::Pathfinding_Find -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56e990 Cell::UpdateTileType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56eb80 Cell::SetTileType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56ef50 CellClass::UpdateVariant3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56f2f0 CellClass::UpdateVariant4 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56f8b0 CellClass::UpdateTerrain -> COMPILE_FAIL (attempt 3)
+[ledger] 0x570050 Terrain::ProcessCellModification -> COMPILE_FAIL (attempt 3)
+[ledger] 0x570ae0 CellClass::RecursiveTileUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x571050 CellClass::ProcessTileChange -> COMPILE_FAIL (attempt 3)
+[ledger] 0x571490 CellClass::PropagateTerrainVariant2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x572440 CellClass::UpdateVariant7 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5727e0 CellClass::UpdateVariant8 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x572da0 CellClass::UpdateVariant5 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x573170 CellClass::UpdateVariant6 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x573540 Terrain::RecursiveModify -> COMPILE_FAIL (attempt 6)
+[ledger] 0x574000 TerrainClass::ProcessSlope -> COMPILE_FAIL (attempt 6)
+[ledger] 0x574c20 MapClass::ApplyTerrainDamage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x575220 CellClass::ApplyCliffMod2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x575540 CellClass::ApplyCliffMod -> COMPILE_FAIL (attempt 3)
+[ledger] 0x575870 CellClass::ApplyTerrainMod2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x575ba0 CellClass::ApplyTerrainMod -> COMPILE_FAIL (attempt 3)
+[ledger] 0x575ee0 UpdateTeamsInAreaMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x576200 CellClass::RecursiveCraterUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x576ba0 CellClass::PropagateTerrainVariant5 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x577bb0 TeamClass::DisbandTeam -> COMPILE_FAIL (attempt 3)
+[ledger] 0x577c90 TActionClass::executeRepairAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x577d90 LayerClass::Reveal -> COMPILE_FAIL (attempt 3)
+[ledger] 0x577f30 MapClass::ClearShroud -> COMPILE_FAIL (attempt 3)
+[ledger] 0x578460 LayerClass::IsWithinUsableArea -> COMPILE_FAIL (attempt 14)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 39,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 33,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p32\batch_report.json

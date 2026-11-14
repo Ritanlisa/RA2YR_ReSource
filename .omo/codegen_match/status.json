@@ -89776,7 +89776,7 @@
   "this_as_id": false
  },
  "0x56b0f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89812,31 +89812,31 @@
   "this_as_id": false
  },
  "0x56b5a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::LoadTerrainTiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::LoadTerrainTiles",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x56b780": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::CreateOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::CreateOverlay",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x56b8a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -89848,26 +89848,26 @@
   "this_as_id": false
  },
  "0x56b9a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::DecompressTerrainDataSimple",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::DecompressTerrainDataSimple",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x56bac0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::DecompressTerrainData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::DecompressTerrainData",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -89920,7 +89920,7 @@
   "this_as_id": false
  },
  "0x56bec0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -89978,7 +89978,7 @@
   "this_as_id": false
  },
  "0x56c510": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90002,15 +90002,15 @@
   "this_as_id": false
  },
  "0x56cb90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x24",
   "name": "Terrain::FloodFillConnectivity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Terrain::FloodFillConnectivity",
   "rule_violations": 48,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x56d100": {
@@ -90076,7 +90076,7 @@
   "status": "NG"
  },
  "0x56d6e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90088,7 +90088,7 @@
   "this_as_id": false
  },
  "0x56da10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90124,7 +90124,7 @@
   "this_as_id": false
  },
  "0x56dc20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90155,7 +90155,7 @@
   "this_as_id": false
  },
  "0x56e990": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90167,7 +90167,7 @@
   "this_as_id": false
  },
  "0x56eb80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90201,7 +90201,7 @@
   "this_as_id": false
  },
  "0x56ef50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90213,7 +90213,7 @@
   "this_as_id": false
  },
  "0x56f2f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90247,7 +90247,7 @@
   "this_as_id": false
  },
  "0x56f8b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90266,7 +90266,7 @@
   "status": "NG"
  },
  "0x570050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90278,7 +90278,7 @@
   "this_as_id": false
  },
  "0x570ae0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90290,7 +90290,7 @@
   "this_as_id": false
  },
  "0x571050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90302,7 +90302,7 @@
   "this_as_id": false
  },
  "0x571490": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90336,7 +90336,7 @@
   "this_as_id": false
  },
  "0x572440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90348,7 +90348,7 @@
   "this_as_id": false
  },
  "0x5727e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90384,7 +90384,7 @@
   "this_as_id": false
  },
  "0x572da0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90396,7 +90396,7 @@
   "this_as_id": false
  },
  "0x573170": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -90408,7 +90408,7 @@
   "this_as_id": false
  },
  "0x573540": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90420,7 +90420,7 @@
   "this_as_id": false
  },
  "0x574000": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90474,7 +90474,7 @@
   "this_as_id": false
  },
  "0x574c20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90486,7 +90486,7 @@
   "this_as_id": false
  },
  "0x575220": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90498,7 +90498,7 @@
   "this_as_id": false
  },
  "0x575540": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90510,7 +90510,7 @@
   "this_as_id": false
  },
  "0x575870": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90522,7 +90522,7 @@
   "this_as_id": false
  },
  "0x575ba0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90534,7 +90534,7 @@
   "this_as_id": false
  },
  "0x575ee0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "UpdateTeamsInAreaMap",
@@ -90545,7 +90545,7 @@
   "this_as_id": false
  },
  "0x576200": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90569,7 +90569,7 @@
   "this_as_id": false
  },
  "0x576ba0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90600,7 +90600,7 @@
   "status": "NG"
  },
  "0x577bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90612,7 +90612,7 @@
   "this_as_id": false
  },
  "0x577c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90624,7 +90624,7 @@
   "this_as_id": false
  },
  "0x577d90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90636,7 +90636,7 @@
   "this_as_id": false
  },
  "0x577f30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90703,7 +90703,7 @@
   "this_as_id": false
  },
  "0x578460": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
