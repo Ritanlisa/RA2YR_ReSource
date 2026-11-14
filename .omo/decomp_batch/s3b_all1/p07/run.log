@@ -1,0 +1,111 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p07\part_00
+=== convert (40 addrs) ===
+[conv] 0x44fec0 BuildingClass::ReadConstructionData -> BuildingClass
+[conv] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> BuildingClass
+[conv] 0x4500f0 TechnoClass::ProcessAutoProduction -> TechnoClass
+[conv] 0x450630 BuildingClass::ProcessActiveAnimation -> BuildingClass
+[conv] 0x4509d0 BuildingClass::UpdateAnimFrames -> BuildingClass
+[conv] 0x451400 UpdateBuildingActiveAnim -> _addr_45
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+[conv] 0x451750 BuildingClass::PlayUpgradeAnim -> BuildingClass
+[conv] 0x451890 BuildingClass::PlayAnim -> BuildingClass
+[conv] 0x451b40 BuildingClass::StopAnim -> BuildingClass
+[conv] 0x452410 BuildingClass::EnableStuff -> BuildingClass
+[conv] 0x452480 BuildingClass::Deactivate -> BuildingClass
+[conv] 0x4525f0 BuildingClass::IsPoweredOn -> BuildingClass
+[conv] 0x452820 Warhead::RemoveFromDamageList -> Warhead
+[conv] 0x452d40 ObjectClass::ProcessDataBuildingClass -> ObjectClass
+[conv] 0x453840 BuildingClass::RenderExitPosition -> BuildingClass
+[conv] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> BuildingClass
+[conv] 0x453e20 BuildingClass::LoadFromStream -> BuildingClass
+[conv] 0x454260 BuildingClass::PowerDrainUpdate -> BuildingClass
+[conv] 0x4545d0 BuildingClass::ProcessAnimationStates -> BuildingClass
+[conv] 0x454730 BuildingClass::UpdateIdleAnims -> BuildingClass
+[conv] 0x4547c0 BuildingClass::UpdateAnimationSlots -> BuildingClass
+[conv] 0x454930 BuildingClass::ProcessDamageAnim -> BuildingClass
+[conv] 0x4549b0 Animation::UpdateBuildingAnimations -> Animation
+[conv] 0x454db0 BuildingClass::CleanupOccupation -> BuildingClass
+[conv] 0x4556d0 BuildingClass::ScanCircleForUnits -> BuildingClass
+[conv] 0x455980 BuildingClass::ScanCircleForTiberium -> BuildingClass
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+[conv] 0x455d50 BuildingClass::AssignDestination_SyncLog -> BuildingClass
+[conv] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> TechnoClass
+[conv] 0x456980 DrawTechnoDeployCircle -> _addr_45
+[conv] 0x456fb0 globalHelper_056FB0 -> _addr_45
+[conv] 0x4571e0 BuildingClass::Infiltrate -> BuildingClass
+[conv] 0x457630 BuildingClass::SWAvailable -> BuildingClass
+[conv] 0x457690 BuildingClass::SW2Available -> BuildingClass
+[conv] 0x457ce0 BuildingClass::CanRepair -> BuildingClass
+[conv] 0x457de0 BuildingClass::UnloadUnits -> BuildingClass
+[conv] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> TechnoClass
+[conv] 0x458a00 UnitClass::IsCellBlockedByBridge -> UnitClass
+[conv] 0x458a80 TechnoClass::EvacuateFootprintCells -> TechnoClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _addr_45                 rc=2
+[era] Warhead                  rc=2
+[era] ObjectClass              rc=2
+[era] Animation                rc=2
+[era] UnitClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x457ce0   MISMATCH         BuildingClass::CanRepair
+[ledger] 0x44fec0 BuildingClass::ReadConstructionData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4500a0 BuildingClass::GetAdjustedExitCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4500f0 TechnoClass::ProcessAutoProduction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x450630 BuildingClass::ProcessActiveAnimation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4509d0 BuildingClass::UpdateAnimFrames -> COMPILE_FAIL (attempt 4)
+[ledger] 0x451400 UpdateBuildingActiveAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 7)
+[ledger] 0x451750 BuildingClass::PlayUpgradeAnim -> COMPILE_FAIL (attempt 5)
+[ledger] 0x451890 BuildingClass::PlayAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x451b40 BuildingClass::StopAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452410 BuildingClass::EnableStuff -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452480 BuildingClass::Deactivate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4525f0 BuildingClass::IsPoweredOn -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452820 Warhead::RemoveFromDamageList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x452d40 ObjectClass::ProcessDataBuildingClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x453840 BuildingClass::RenderExitPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x453bf0 BuildingClass::CalcBarrelFlashPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x453e20 BuildingClass::LoadFromStream -> COMPILE_FAIL (attempt 9)
+[ledger] 0x454260 BuildingClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4545d0 BuildingClass::ProcessAnimationStates -> COMPILE_FAIL (attempt 6)
+[ledger] 0x454730 BuildingClass::UpdateIdleAnims -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4547c0 BuildingClass::UpdateAnimationSlots -> COMPILE_FAIL (attempt 4)
+[ledger] 0x454930 BuildingClass::ProcessDamageAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4549b0 Animation::UpdateBuildingAnimations -> COMPILE_FAIL (attempt 5)
+[ledger] 0x454db0 BuildingClass::CleanupOccupation -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4556d0 BuildingClass::ScanCircleForUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x455980 BuildingClass::ScanCircleForTiberium -> COMPILE_FAIL (attempt 3)
+[ledger] 0x455c20 TechnoClass::GetScreenCoords -> COMPILE_FAIL (attempt 15)
+[ledger] 0x455d50 BuildingClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4561f0 TechnoClass::RecalculateBuildingFoundation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x456980 DrawTechnoDeployCircle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x456fb0 globalHelper_056FB0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4571e0 BuildingClass::Infiltrate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x457630 BuildingClass::SWAvailable -> COMPILE_FAIL (attempt 4)
+[ledger] 0x457690 BuildingClass::SW2Available -> COMPILE_FAIL (attempt 4)
+[ledger] 0x457ce0 BuildingClass::CanRepair -> NG (attempt 4)
+[ledger] 0x457de0 BuildingClass::UnloadUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x458330 TechnoClass::PlayHealthDependentBuildingAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x458a00 UnitClass::IsCellBlockedByBridge -> COMPILE_FAIL (attempt 3)
+[ledger] 0x458a80 TechnoClass::EvacuateFootprintCells -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 39,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 30,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p07\batch_report.json

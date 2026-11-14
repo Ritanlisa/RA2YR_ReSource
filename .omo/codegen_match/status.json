@@ -20409,7 +20409,7 @@
   "this_as_id": false
  },
  "0x44fec0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20421,7 +20421,7 @@
   "this_as_id": false
  },
  "0x4500a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20433,7 +20433,7 @@
   "this_as_id": false
  },
  "0x4500f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -20464,7 +20464,7 @@
   "this_as_id": false
  },
  "0x450630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20476,7 +20476,7 @@
   "this_as_id": false
  },
  "0x4509d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20512,7 +20512,7 @@
   "this_as_id": false
  },
  "0x451400": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "UpdateBuildingActiveAnim",
@@ -20523,7 +20523,7 @@
   "this_as_id": false
  },
  "0x451690": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20535,7 +20535,7 @@
   "this_as_id": false
  },
  "0x451750": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20554,7 +20554,7 @@
   "status": "NG"
  },
  "0x451890": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -20566,7 +20566,7 @@
   "this_as_id": false
  },
  "0x451b40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20686,7 +20686,7 @@
   "this_as_id": false
  },
  "0x452410": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20698,7 +20698,7 @@
   "this_as_id": false
  },
  "0x452480": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20717,7 +20717,7 @@
   "status": "NG"
  },
  "0x4525f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -20777,7 +20777,7 @@
   "this_as_id": false
  },
  "0x452820": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20837,7 +20837,7 @@
   "this_as_id": false
  },
  "0x452d40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20897,7 +20897,7 @@
   "this_as_id": false
  },
  "0x453840": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20921,7 +20921,7 @@
   "this_as_id": false
  },
  "0x453bf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20957,7 +20957,7 @@
   "this_as_id": false
  },
  "0x453e20": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -20993,7 +20993,7 @@
   "this_as_id": false
  },
  "0x454260": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21017,7 +21017,7 @@
   "this_as_id": false
  },
  "0x4545d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21029,7 +21029,7 @@
   "this_as_id": false
  },
  "0x454730": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21041,7 +21041,7 @@
   "this_as_id": false
  },
  "0x4547c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21053,7 +21053,7 @@
   "this_as_id": false
  },
  "0x454930": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21065,7 +21065,7 @@
   "this_as_id": false
  },
  "0x4549b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21089,7 +21089,7 @@
   "this_as_id": false
  },
  "0x454db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21113,7 +21113,7 @@
   "this_as_id": false
  },
  "0x4556d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21137,7 +21137,7 @@
   "this_as_id": false
  },
  "0x455980": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21173,7 +21173,7 @@
   "this_as_id": false
  },
  "0x455c20": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21185,7 +21185,7 @@
   "this_as_id": false
  },
  "0x455d50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21232,7 +21232,7 @@
   "this_as_id": false
  },
  "0x4561f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21310,7 +21310,7 @@
   "this_as_id": false
  },
  "0x456980": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DrawTechnoDeployCircle",
@@ -21345,7 +21345,7 @@
   "this_as_id": false
  },
  "0x456fb0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_056FB0",
@@ -21368,7 +21368,7 @@
   "this_as_id": false
  },
  "0x4571e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21404,7 +21404,7 @@
   "this_as_id": false
  },
  "0x457630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21416,7 +21416,7 @@
   "this_as_id": false
  },
  "0x457690": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21500,19 +21500,19 @@
   "this_as_id": false
  },
  "0x457ce0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 je 0x457da3",
   "name": "BuildingClass::CanRepair",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "BuildingClass::CanRepair",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x457de0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21543,7 +21543,7 @@
   "this_as_id": false
  },
  "0x458330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -21591,7 +21591,7 @@
   "this_as_id": false
  },
  "0x458a00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -21603,7 +21603,7 @@
   "this_as_id": false
  },
  "0x458a80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

@@ -1,0 +1,39 @@
+{
+ "symbol": "?CanRepair@BuildingClass@@QAE_NH@Z",
+ "sym_key": "BuildingClass::CanRepair",
+ "size": 262,
+ "link_base": 0,
+ "bytes_hex": "83ec0c56578b7c24188bf185ff0f84e90000008b86200500008a887b15000084c90f84d50000008b86ac00000083f8120f84c600000083f8130f84bd0000008b0e8d5424085256ff51485068f8010000e80000000083c40884c00f849c0000008b0656ff90d401000084c00f858b0000008b87c00600008a88b40e000084c975318a88b50e000084c974718b8e1c02000057e80000000084c075618b0e56ff910804000085c074545fb0015e83c40cc204008b861c0200008b8f1c0200003bc1740d8b50348a82a601000084c0742d8b0656ff90080400008b8e200500003b818015000074168bcee80000000084c0750b8bcfe80000000084c074ac5f32c05e83c40cc20400",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?IsCoordVisibleMap@@YA_NPAX0@Z",
+   "sym_key": "IsCoordVisibleMap"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 233,
+   "type": "REL32",
+   "sym": "?IsHealthLow@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::IsHealthLow"
+  },
+  {
+   "off": 244,
+   "type": "REL32",
+   "sym": "?IsBeingRepairedOrCaptured@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::IsBeingRepairedOrCaptured"
+  }
+ ]
+}

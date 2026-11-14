@@ -5,3 +5,4 @@
 {"part": 4, "n": 40, "seconds": 151.0, "ok": true, "verdicts": {"COMPILE_FAIL": 39, "MISMATCH": 1}}
 {"part": 5, "n": 40, "seconds": 228.3, "ok": true, "verdicts": {"COMPILE_FAIL": 38, "MISMATCH": 2}}
 {"part": 6, "n": 40, "seconds": 558.7, "ok": true, "verdicts": {"COMPILE_FAIL": 39, "MISMATCH": 1}}
+{"part": 7, "n": 40, "seconds": 209.8, "ok": true, "verdicts": {"COMPILE_FAIL": 39, "MISMATCH": 1}}
