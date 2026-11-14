@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p113\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> ObjectClass
+[conv] 0x6ca310 Render_Parse_6CA310 -> Render_Parse
+[conv] 0x6ca4a0 sub_6CA4A0 -> _addr_6C
+[conv] 0x6ca6a0 sub_6CA6A0 -> _addr_6C
+[conv] 0x6caec0 SuperClass::Constructor -> SuperClass
+[conv] 0x6cb120 SuperClass::CleanupMembers -> SuperClass
+[conv] 0x6cb920 SuperClass::ClickFire -> SuperClass
+[conv] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> SuperWeapon
+[conv] 0x6cc390 SuperClass::Launch -> SuperClass
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> SuperWeaponTypeClass
+[conv] 0x6cf070 sub_6CF070 -> _addr_6C
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x6d04f0 TabClass::BuildCommandBar -> TabClass
+[conv] 0x6d0680 TabClass::Seek -> TabClass
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6d2120 Coord::ScaleToScreenY -> Coord
+[conv] 0x6d2b60 TacticalMap::RenderCell -> TacticalMap
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Render_Parse             rc=2
+[era] _addr_6C                 rc=2
+[era] SuperClass               rc=2
+[era] SuperWeapon              rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] TabClass                 rc=2
+[era] _addr_6D                 rc=2
+[era] Coord                    rc=2
+[era] TacticalMap              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c9f10 ObjectClass::ParseMovieSubtitles -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ca310 Render_Parse_6CA310 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ca4a0 sub_6CA4A0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6ca6a0 sub_6CA6A0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6caec0 SuperClass::Constructor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6cb120 SuperClass::CleanupMembers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cb920 SuperClass::ClickFire -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6cbca0 SuperWeapon::UpdateSuperWeaponReadyState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cc390 SuperClass::Launch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cf070 sub_6CF070 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d04f0 TabClass::BuildCommandBar -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d0680 TabClass::Seek -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6d2120 Coord::ScaleToScreenY -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d2b60 TacticalMap::RenderCell -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p113\batch_report.json
