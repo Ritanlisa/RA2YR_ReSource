@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p156\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c83f2 WideCharToMultiByte -> _addr_7C
+[conv] 0x7c8482 WriteFile -> _addr_7C
+[conv] 0x7c848e VirtualProtect -> _addr_7C
+[conv] 0x7c8494 VirtualQuery -> _addr_7C
+[conv] 0x7c84a0 GetSystemTime -> _addr_7C
+[conv] 0x7c84a6 GlobalMemoryStatus -> _addr_7C
+[conv] 0x7c84ac CreateProcessA -> _addr_7C
+[conv] 0x7c84d0 FileTimeToSystemTime -> _addr_7C
+[conv] 0x7c84d6 FileTimeToLocalFileTime -> _addr_7C
+[conv] 0x7c84dc SystemTimeToFileTime -> _addr_7C
+[conv] 0x7c850c ReadFile -> _addr_7C
+[conv] 0x7c851e GetFileInformationByHandle -> _addr_7C
+[conv] 0x7c852a DosDateTimeToFileTime -> _addr_7C
+[conv] 0x7c8530 GetStartupInfoA -> _addr_7C
+[conv] 0x7c8548 SetUnhandledExceptionFilter -> _addr_7C
+[conv] 0x7c855a GetFileTime -> _addr_7C
+[conv] 0x7c8566 ClearCommError -> _addr_7C
+[conv] 0x7c856c SetCommTimeouts -> _addr_7C
+[conv] 0x7c8572 SetCommState -> _addr_7C
+[conv] 0x7c8578 GetCommState -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c83f2 WideCharToMultiByte -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8482 WriteFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c848e VirtualProtect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8494 VirtualQuery -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84a0 GetSystemTime -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c84a6 GlobalMemoryStatus -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c84ac CreateProcessA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84d0 FileTimeToSystemTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84d6 FileTimeToLocalFileTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84dc SystemTimeToFileTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c850c ReadFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c851e GetFileInformationByHandle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c852a DosDateTimeToFileTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8530 GetStartupInfoA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8548 SetUnhandledExceptionFilter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c855a GetFileTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8566 ClearCommError -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c856c SetCommTimeouts -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8572 SetCommState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8578 GetCommState -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p156\batch_report.json
