@@ -1,0 +1,11 @@
+{
+ "addr": "0x628170",
+ "name": "FileSystem::closeFile",
+ "size": 128,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x628170",
+ "bytes_hex": "5355568b742410578bd98a460884c0755d8b068b4b083bc17d508b068b138d0c408b46048d3cca8b4cca103bc17d268b57048bc8c1e10603c8408946048d2c8a8bcde8e9caecff84c0742c8b46048b4f103bc17cda8b16c74604000000004289168b4b088bc23bc17cb0c64608015f5e5d33c05bc204005f8bc55e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

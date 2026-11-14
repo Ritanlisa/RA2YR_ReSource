@@ -1,0 +1,15 @@
+{
+ "symbol": "?closeFile@FileSystem@@QAEPAEPAH@Z",
+ "sym_key": "FileSystem::closeFile",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "5355568b742410578bd98a460884c075698b068b4b083bc17d5c8b0e8b138b46048d0c498d3cca8b4cca103bc173288b4f048d50018956048bd0c1e20603d08d2c918bcde80000000084c0741f8b46048b4f103bc172d88b06c74604000000004089068b4b083bc17d0cebae8b45005f5e5d5bc20400c64608015f5e5d33c05bc20400",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?IsZero@Flag@@QAEHXZ",
+   "sym_key": "Flag::IsZero"
+  }
+ ]
+}

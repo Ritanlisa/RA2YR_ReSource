@@ -1,0 +1,11 @@
+{
+ "addr": "0x625AB0",
+ "name": "ResultNode::CleanupList",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x625AB0",
+ "bytes_hex": "568b710485f6741f578b7e0c85f674108bcee8c95deaff56e870301a0083c40485ff8bf775e35f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x624480 DeleteAndZero::OrFree -> DeleteAndZero
+[conv] 0x624530 SymbolTable::Insert -> SymbolTable
+[conv] 0x6249a0 DynamicArray::Resize -> DynamicArray
+[conv] 0x624ca0 Dialog::BindGadgetData -> Dialog
+[conv] 0x625560 Options::DestroyComposite -> Options
+[conv] 0x6255f0 Options::RebuildDropdownList -> Options
+[conv] 0x625ab0 ResultNode::CleanupList -> ResultNode
+[conv] 0x6267a0 FileSystem::InitExtensionState -> FileSystem
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x626c60 ObjectClass::Surface_Update -> ObjectClass
+[conv] 0x626da0 FileSystem::ProcessNextFileExtension -> FileSystem
+[conv] 0x627020 sub_627020 -> _addr_62
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x627590 MIXFile::Load -> MIXFile
+[conv] 0x628170 FileSystem::closeFile -> FileSystem
+[conv] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> _VectorClass_VHSVClass
+[conv] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> _DynamicVectorClass_VHSVClass
+[conv] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6295b0 ParasiteClass::LoadParasite -> ParasiteClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DeleteAndZero            rc=2
+[era] SymbolTable              rc=2
+[era] DynamicArray             rc=0
+[era] Dialog                   rc=2
+[era] Options                  rc=2
+[era] ResultNode               rc=0
+[era] FileSystem               rc=2
+[era] ObjectClass              rc=2
+[era] _addr_62                 rc=2
+[era] MIXFile                  rc=2
+[era] _VectorClass_VHSVClass   rc=2
+[era] _DynamicVectorClass_VHSVClass rc=2
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] ParasiteClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x6249a0   MISMATCH         DynamicArray::Resize
+[diff] 0x625ab0   MATCH            ResultNode::CleanupList
+[diff] 0x628170   MISMATCH         FileSystem::closeFile
+[ledger] 0x624480 DeleteAndZero::OrFree -> COMPILE_FAIL (attempt 2)
+[ledger] 0x624530 SymbolTable::Insert -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6249a0 DynamicArray::Resize -> NG (attempt 2)
+[ledger] 0x624ca0 Dialog::BindGadgetData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x625560 Options::DestroyComposite -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6255f0 Options::RebuildDropdownList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x625ab0 ResultNode::CleanupList -> OK (attempt 2)
+[ledger] 0x6267a0 FileSystem::InitExtensionState -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 10)
+[ledger] 0x626c60 ObjectClass::Surface_Update -> COMPILE_FAIL (attempt 6)
+[ledger] 0x626da0 FileSystem::ProcessNextFileExtension -> COMPILE_FAIL (attempt 6)
+[ledger] 0x627020 sub_627020 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 9)
+[ledger] 0x627590 MIXFile::Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x628170 FileSystem::closeFile -> NG (attempt 2)
+[ledger] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6295b0 ParasiteClass::LoadParasite -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p24\batch_report.json
