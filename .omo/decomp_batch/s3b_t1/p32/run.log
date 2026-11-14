@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x659650 ObjectClass::RenderProjectileTrail -> ObjectClass
+[conv] 0x6599c0 ObjectClass::sub_6599C0 -> ObjectClass
+[conv] 0x659ac0 ProjectileTrail::ComputeRenderData -> ProjectileTrail
+[conv] 0x659e30 ObjectClass::Weapon_Update_Update -> ObjectClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65b1e0 RadSiteClass::RadSiteClass_65B1E0 -> RadSiteClass
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+[conv] 0x65b580 Warhead::ProcessDamageArea -> Warhead
+[conv] 0x65bb50 RadSiteClass::Deactivate -> RadSiteClass
+[conv] 0x65c340 RAMFileClass::dispatchTeamEvent -> RAMFileClass
+[conv] 0x65c560 RAMFileClass::nullsub_0_6 -> RAMFileClass
+[conv] 0x65c610 FileClass::processAITrigger -> FileClass
+[conv] 0x65ca00 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x65cac0 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x65cb30 RawFileClass::Close -> RawFileClass
+[conv] 0x65cb50 RawFileClass::Open2 -> RawFileClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x65cca0 RawFileClass::CloseHandle -> RawFileClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] ProjectileTrail          rc=2
+[era] RadioClass               rc=2
+[era] Array                    rc=2
+[era] RadSiteClass             rc=2
+[era] Warhead                  rc=2
+[era] RAMFileClass             rc=2
+[era] FileClass                rc=2
+[era] BufferIOFileClass        rc=2
+[era] RawFileClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x65b1e0   MISMATCH         RadSiteClass::RadSiteClass_65B1E0
+[ledger] 0x659650 ObjectClass::RenderProjectileTrail -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6599c0 ObjectClass::sub_6599C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x659ac0 ProjectileTrail::ComputeRenderData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x659e30 ObjectClass::Weapon_Update_Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 7)
+[ledger] 0x65b1e0 RadSiteClass::RadSiteClass_65B1E0 -> NG (attempt 2)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65b580 Warhead::ProcessDamageArea -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65bb50 RadSiteClass::Deactivate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c340 RAMFileClass::dispatchTeamEvent -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65c560 RAMFileClass::nullsub_0_6 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65c610 FileClass::processAITrigger -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65ca00 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65cac0 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65cb30 RawFileClass::Close -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65cb50 RawFileClass::Open2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 9)
+[ledger] 0x65cca0 RawFileClass::CloseHandle -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p32\batch_report.json

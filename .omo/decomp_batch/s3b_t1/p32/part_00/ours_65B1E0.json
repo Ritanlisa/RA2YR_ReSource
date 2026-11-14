@@ -1,0 +1,87 @@
+{
+ "symbol": "?RadSiteClass_65B1E0@RadSiteClass@@QAEPAIXZ",
+ "sym_key": "RadSiteClass::RadSiteClass_65B1E0",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000033c08946240fbe0da0010000894e288946300fbe0da0010000894e34b90000000089463c668946406689464289464489464889464c89465089465489466489465c89466c894670890e894e04894e08894e0c8b0d000000008b15000000003bd1722c38050000000075043bc875388b15000000003bd0762e03d150528b15000000006800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818bc65ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?vt_RadSiteClass_4@@3PAXA",
+   "sym_key": "vt_RadSiteClass_4"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BD8@@3IA",
+   "sym_key": "DataGlobal_B04BD8"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BE0@@3IA",
+   "sym_key": "DataGlobal_B04BE0"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BDD@@3EA",
+   "sym_key": "DataGlobal_B04BDD"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BE4@@3IA",
+   "sym_key": "DataGlobal_B04BE4"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?RadSiteClass_Array@@3IA",
+   "sym_key": "RadSiteClass_Array"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?RadSiteClass_Array@@3IA",
+   "sym_key": "RadSiteClass_Array"
+  },
+  {
+   "off": 152,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BE0@@3IA",
+   "sym_key": "DataGlobal_B04BE0"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BE0@@3IA",
+   "sym_key": "DataGlobal_B04BE0"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B04BD4@@3IA",
+   "sym_key": "DataGlobal_B04BD4"
+  }
+ ]
+}

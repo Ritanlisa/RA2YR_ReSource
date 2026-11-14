@@ -130526,7 +130526,7 @@
   "this_as_id": false
  },
  "0x659650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130538,7 +130538,7 @@
   "this_as_id": false
  },
  "0x6599c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130562,7 +130562,7 @@
   "this_as_id": false
  },
  "0x659ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -130586,7 +130586,7 @@
   "this_as_id": false
  },
  "0x659e30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130598,7 +130598,7 @@
   "this_as_id": false
  },
  "0x659ee0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -130958,7 +130958,7 @@
   "status": "NG"
  },
  "0x65a970": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131090,7 +131090,7 @@
   "this_as_id": false
  },
  "0x65ad50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131350,15 +131350,15 @@
   "this_as_id": false
  },
  "0x65b1e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
-  "name": "RadSiteClass::RadSiteClass",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "first_diff": "+13 mov ecx, dword ptr [0xa8ed84]",
+  "name": "RadSiteClass::RadSiteClass_65B1E0",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "orig_name": "RadSiteClass::RadSiteClass",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x65b2f0": {
@@ -131491,7 +131491,7 @@
   "this_as_id": false
  },
  "0x65b530": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131503,7 +131503,7 @@
   "this_as_id": false
  },
  "0x65b580": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131546,7 +131546,7 @@
   "this_as_id": false
  },
  "0x65bb50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -131800,14 +131800,14 @@
   "this_as_id": false
  },
  "0x65c340": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RAMFileClass::dispatchTeamEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "AbstractClass::dispatchTeamEvent",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -131896,7 +131896,7 @@
   "this_as_id": false
  },
  "0x65c560": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131975,7 +131975,7 @@
   "status": "OK"
  },
  "0x65c610": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -132061,7 +132061,7 @@
   "this_as_id": false
  },
  "0x65ca00": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -132097,7 +132097,7 @@
   "this_as_id": false
  },
  "0x65cac0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -132109,7 +132109,7 @@
   "this_as_id": false
  },
  "0x65cb30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -132121,7 +132121,7 @@
   "this_as_id": false
  },
  "0x65cb50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132133,7 +132133,7 @@
   "this_as_id": false
  },
  "0x65cbf0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132145,7 +132145,7 @@
   "this_as_id": false
  },
  "0x65cca0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
