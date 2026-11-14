@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p84\part_00
+=== convert (20 addrs) ===
+[conv] 0x608070 Dialog::IdleProcess -> Dialog
+[conv] 0x608260 SkirmishSetup::PlayButtonClickAnim -> SkirmishSetup
+[conv] 0x608380 SaveLoadDialog::LookupDialogHash -> SaveLoadDialog
+[conv] 0x6083e0 SaveLoadDialog::FindDialogTemplate -> SaveLoadDialog
+[conv] 0x608440 HashTable::LookupAndMark -> HashTable
+[conv] 0x608cd0 IsDialogControlVisible -> _addr_60
+[conv] 0x6096a0 sub_6096A0 -> _addr_60
+[conv] 0x609730 GetDialogDefaultButton -> _addr_60
+[conv] 0x609aa0 sub_609AA0 -> _addr_60
+[conv] 0x609b30 sub_609B30 -> _addr_60
+[conv] 0x609bc0 sub_609BC0 -> _addr_60
+[conv] 0x609cf0 sub_609CF0 -> _addr_60
+[conv] 0x609e20 FilterDialogButtonAction -> _addr_60
+[conv] 0x60a100 sub_60A100 -> _addr_60
+[conv] 0x60a180 EnumFunc -> _addr_60
+[conv] 0x60a250 sub_60A250 -> _addr_60
+[conv] 0x60a330 Dialog::HandleTabKey -> Dialog
+[conv] 0x60a5b0 Dialog::DispatchEvent -> Dialog
+[conv] 0x60aab0 GadgetClass::FindByWindow -> GadgetClass
+[conv] 0x60b1d0 UI_Get_60B1D0 -> UI_Get
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Dialog                   rc=2
+[era] SkirmishSetup            rc=2
+[era] SaveLoadDialog           rc=2
+[era] HashTable                rc=2
+[era] _addr_60                 rc=2
+[era] GadgetClass              rc=2
+[era] UI_Get                   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x608070 Dialog::IdleProcess -> COMPILE_FAIL (attempt 3)
+[ledger] 0x608260 SkirmishSetup::PlayButtonClickAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x608380 SaveLoadDialog::LookupDialogHash -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6083e0 SaveLoadDialog::FindDialogTemplate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x608440 HashTable::LookupAndMark -> COMPILE_FAIL (attempt 3)
+[ledger] 0x608cd0 IsDialogControlVisible -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6096a0 sub_6096A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x609730 GetDialogDefaultButton -> COMPILE_FAIL (attempt 3)
+[ledger] 0x609aa0 sub_609AA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x609b30 sub_609B30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x609bc0 sub_609BC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x609cf0 sub_609CF0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x609e20 FilterDialogButtonAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x60a100 sub_60A100 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60a180 EnumFunc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60a250 sub_60A250 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60a330 Dialog::HandleTabKey -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60a5b0 Dialog::DispatchEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60aab0 GadgetClass::FindByWindow -> COMPILE_FAIL (attempt 3)
+[ledger] 0x60b1d0 UI_Get_60B1D0 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p84\batch_report.json
