@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p153\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c19f0 Audio_Process_7C19F0 -> Audio_Process
+[conv] 0x7c1d40 Audio_Render_7C1D40 -> Audio_Render
+[conv] 0x7c20b0 Audio_Helper_7C20B0 -> Audio_Helper
+[conv] 0x7c2410 Audio_Render_7C2410 -> Audio_Render
+[conv] 0x7c2590 RenderAudioVideoFrame -> _addr_7C
+[conv] 0x7c3230 Render_Render_7C3230 -> Render_Render
+[conv] 0x7c34b0 SeekAudioStream -> _addr_7C
+[conv] 0x7c3690 Render_Render_7C3690 -> Render_Render
+[conv] 0x7c3840 sub_7C3840 -> _addr_7C
+[conv] 0x7c3860 Audio_Render_7C3860 -> Audio_Render
+[conv] 0x7c3950 Audio_Process_7C3950 -> Audio_Process
+[conv] 0x7c5f3d Event_Process_7C5F3D -> Event_Process
+[conv] 0x7c61cf globalHelper_0C61CF -> _addr_7C
+[conv] 0x7c8368 FindNextFileA -> _addr_7C
+[conv] 0x7c836e FindFirstFileA -> _addr_7C
+[conv] 0x7c8386 CreateThread -> _addr_7C
+[conv] 0x7c83da SetFilePointer -> _addr_7C
+[conv] 0x7c83e6 DeviceIoControl -> _addr_7C
+[conv] 0x7c83f2 WideCharToMultiByte -> _addr_7C
+[conv] 0x7c8482 WriteFile -> _addr_7C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio_Process            rc=2
+[era] Audio_Render             rc=2
+[era] Audio_Helper             rc=2
+[era] _addr_7C                 rc=2
+[era] Render_Render            rc=2
+[era] Event_Process            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c19f0 Audio_Process_7C19F0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c1d40 Audio_Render_7C1D40 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c20b0 Audio_Helper_7C20B0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c2410 Audio_Render_7C2410 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c2590 RenderAudioVideoFrame -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c3230 Render_Render_7C3230 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c34b0 SeekAudioStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c3690 Render_Render_7C3690 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c3840 sub_7C3840 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c3860 Audio_Render_7C3860 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c3950 Audio_Process_7C3950 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c5f3d Event_Process_7C5F3D -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c61cf globalHelper_0C61CF -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7c8368 FindNextFileA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c836e FindFirstFileA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8386 CreateThread -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c83da SetFilePointer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c83e6 DeviceIoControl -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c83f2 WideCharToMultiByte -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8482 WriteFile -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p153\batch_report.json
