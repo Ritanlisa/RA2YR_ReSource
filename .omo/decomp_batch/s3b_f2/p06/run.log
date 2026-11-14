@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x41f490 CCINIClass::ReadInfantryTypeList -> CCINIClass
+[conv] 0x41f580 AITriggerTypeClass::LoadFromINI -> AITriggerTypeClass
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x420f40 UpdateSpotlightsFoo -> _addr_42
+[conv] 0x421ea0 AnimClass::ctor -> AnimClass
+[conv] 0x422720 AnimClass::SimpleCtor -> AnimClass
+[conv] 0x4228e0 AnimClass::Destruct -> AnimClass
+[conv] 0x422ca0 AnimClass::Render -> AnimClass
+[conv] 0x423930 AnimClass::UpdateProjectileTrajectory -> AnimClass
+[conv] 0x423ac0 AnimClass::CreateUnit -> AnimClass
+[conv] 0x424b50 BuildingClass::AimTurret -> BuildingClass
+[conv] 0x424ce0 TechnoClass::ProductionCompletionCallback -> TechnoClass
+[conv] 0x425150 AnimClass::ClearTargetReferences -> AnimClass
+[conv] 0x4251f0 sub_4251F0 -> _addr_42
+[conv] 0x425410 AnimClass::ProcessPower -> AnimClass
+[conv] 0x425510 AnimClass::CheckEndOfSequence -> AnimClass
+[conv] 0x4255b0 AnimClass::ProcessCraterFormation -> AnimClass
+[conv] 0x425670 TechnoClass::ConstructionPositionTracker -> TechnoClass
+[conv] 0x425d10 Building::ComputePosition -> Building
+[conv] 0x4261d0 TechnoClass::FindBuildingClass -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CCINIClass               rc=2
+[era] AITriggerTypeClass       rc=2
+[era] ObjectClass              rc=2
+[era] _addr_42                 rc=2
+[era] AnimClass                rc=2
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] Building                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x422720   MISMATCH         AnimClass::SimpleCtor
+[ledger] 0x41f490 CCINIClass::ReadInfantryTypeList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x41f580 AITriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x420f40 UpdateSpotlightsFoo -> COMPILE_FAIL (attempt 9)
+[ledger] 0x421ea0 AnimClass::ctor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x422720 AnimClass::SimpleCtor -> NG (attempt 5)
+[ledger] 0x4228e0 AnimClass::Destruct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x422ca0 AnimClass::Render -> COMPILE_FAIL (attempt 5)
+[ledger] 0x423930 AnimClass::UpdateProjectileTrajectory -> COMPILE_FAIL (attempt 5)
+[ledger] 0x423ac0 AnimClass::CreateUnit -> COMPILE_FAIL (attempt 5)
+[ledger] 0x424b50 BuildingClass::AimTurret -> COMPILE_FAIL (attempt 5)
+[ledger] 0x424ce0 TechnoClass::ProductionCompletionCallback -> COMPILE_FAIL (attempt 5)
+[ledger] 0x425150 AnimClass::ClearTargetReferences -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4251f0 sub_4251F0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x425410 AnimClass::ProcessPower -> COMPILE_FAIL (attempt 6)
+[ledger] 0x425510 AnimClass::CheckEndOfSequence -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4255b0 AnimClass::ProcessCraterFormation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x425670 TechnoClass::ConstructionPositionTracker -> COMPILE_FAIL (attempt 5)
+[ledger] 0x425d10 Building::ComputePosition -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4261d0 TechnoClass::FindBuildingClass -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p06\batch_report.json

@@ -1,0 +1,105 @@
+{
+ "symbol": "?SimpleCtor@AnimClass@@QAEHXZ",
+ "sym_key": "AnimClass::SimpleCtor",
+ "size": 432,
+ "link_base": 0,
+ "bytes_hex": "535556578bf1e80000000033dbbf01000000899eac000000899eb0000000a1540a0000899ebc0000008986b4000000899ec0000000680000803f89bec400000053899ec800000083c8ff53899ecc000000538d8e000200008986d0000000899ed40000008986d8000000c786fc000000e8030000899e00010000899e04010000899e18010000899e24010000899e1c010000899e20010000899e28010000899e30010000899e38010000899e2c010000899e34010000899e3c010000e800000000680000803f5353538d8e40020000e80000000089be980100008dbea00100008daeb4010000899e88010000899e7c010000899e84010000899e8c010000899e94010000899e9c010000891f899eb0010000c7450001000000899eb8010000899ebc010000891e895e04895e08c7460c00000000a0500000008a0d580000003ac87c33381d5500000075043ac375428a0d5c0000003acb7e380fbe15480000000fbec90fbec003c853516848000000ff520884c0741b8a0d580000000fbec1fec1880d580000000fbe0d4c0000008934818bcfe8000000008bcde800000000c786cc000000010000008bc65f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?ctor@ObjectClass@@QAEPAIXZ",
+   "sym_key": "ObjectClass::ctor"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 189,
+   "type": "REL32",
+   "sym": "?Set@Int4@@QAEPAV1@HHHH@Z",
+   "sym_key": "Int4::Set"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "?Set@Int4@@QAEPAV1@HHHH@Z",
+   "sym_key": "Int4::Set"
+  },
+  {
+   "off": 304,
+   "type": "DIR32",
+   "sym": "?vt_AnimClass_2@@3PAXA",
+   "sym_key": "vt_AnimClass_2"
+  },
+  {
+   "off": 309,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 337,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 348,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 363,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 376,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 387,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 404,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  },
+  {
+   "off": 411,
+   "type": "REL32",
+   "sym": "?Init@AudioController@@QAEHXZ",
+   "sym_key": "AudioController::Init"
+  }
+ ]
+}
