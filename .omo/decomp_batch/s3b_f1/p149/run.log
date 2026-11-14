@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p149\part_00
+=== convert (20 addrs) ===
+[conv] 0x7a9970 CChatEventSink::HandleUserSearch -> CChatEventSink
+[conv] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> CChatEventSink
+[conv] 0x7aa870 CChatEventSink::HandleChatChannelList -> CChatEventSink
+[conv] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> CChatEventSink
+[conv] 0x7ab260 CChatEventSink::DispatchStub_43 -> CChatEventSink
+[conv] 0x7ab350 CChatEventSink::DispatchStub_29 -> CChatEventSink
+[conv] 0x7ab440 CChatEventSink::DispatchStub_30 -> CChatEventSink
+[conv] 0x7ab670 CChatEventSink::DispatchStub_24 -> CChatEventSink
+[conv] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> CChatEventSink
+[conv] 0x7abaf0 CChatEventSink::DispatchStub_35 -> CChatEventSink
+[conv] 0x7abd40 CChatEventSink::DispatchStub_34 -> CChatEventSink
+[conv] 0x7abfa0 CChatEventSink::DispatchStub_36 -> CChatEventSink
+[conv] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> WonlineStringDialogControl
+[conv] 0x7ac700 _CComObject_VCChatEventSink_ATL::QueryInterface -> _CComObject_VCChatEventSink_ATL
+[conv] 0x7ac870 _CComObject_VCNetUtilEventSink_ATL::QueryInterface -> _CComObject_VCNetUtilEventSink_ATL
+[conv] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> ObjectClass
+[conv] 0x7ad310 ScalarDtor::DeleteAndZero -> ScalarDtor
+[conv] 0x7ad350 CChatEventSink::DeleteAndZero -> CChatEventSink
+[conv] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> __CComObject_VCDownloadEventSink___ATL
+[conv] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> _CComObject_VCDownloadEventSink_ATL
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CChatEventSink           rc=2
+[era] WonlineStringDialogControl rc=2
+[era] _CComObject_VCChatEventSink_ATL rc=2
+[era] _CComObject_VCNetUtilEventSink_ATL rc=2
+[era] ObjectClass              rc=2
+[era] ScalarDtor               rc=2
+[era] __CComObject_VCDownloadEventSink___ATL rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7a9970 CChatEventSink::HandleUserSearch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7aa6d0 CChatEventSink::DispatchStub_19 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7aa870 CChatEventSink::HandleChatChannelList -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7ab0a0 CChatEventSink::DispatchStub_42 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ab260 CChatEventSink::DispatchStub_43 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ab350 CChatEventSink::DispatchStub_29 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab440 CChatEventSink::DispatchStub_30 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab670 CChatEventSink::DispatchStub_24 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ab8e0 CChatEventSink::DispatchStub_33 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7abaf0 CChatEventSink::DispatchStub_35 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7abd40 CChatEventSink::DispatchStub_34 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7abfa0 CChatEventSink::DispatchStub_36 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ac5d0 WonlineStringDialogControl::QueryInterface -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ac700 _CComObject_VCChatEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ac870 _CComObject_VCNetUtilEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7acbe0 ObjectClass::ConnectAndLoginWOL_Connect_7ACBE0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7ad310 ScalarDtor::DeleteAndZero -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad350 CChatEventSink::DeleteAndZero -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad410 ?$CComObject@VCDownloadEventSink@@@ATL::System_Init_7AD410 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ad480 _CComObject_VCDownloadEventSink_ATL::Write -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p149\batch_report.json
