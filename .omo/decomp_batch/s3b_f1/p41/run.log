@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ff550 HouseClass::DecrementUnitCount -> HouseClass
+[conv] 0x4ff700 BuildingClass::PowerUpdate -> BuildingClass
+[conv] 0x4ffb20 PathfindingClass::FindPath -> PathfindingClass
+[conv] 0x500200 BuildingPlacement::FindPosition -> BuildingPlacement
+[conv] 0x500300 CellClass::ScanOccupiers -> CellClass
+[conv] 0x5009b0 HouseClass::LoadTypeList -> HouseClass
+[conv] 0x500b40 HouseClass::ReadFromINI -> HouseClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x501210 HouseClass::SaveToINI -> HouseClass
+[conv] 0x501400 HouseClass::SetCapacity_5 -> HouseClass
+[conv] 0x501640 HouseClass::CanDetect -> HouseClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+[conv] 0x5018c0 HouseClass::NotifyPowerStateChange -> HouseClass
+[conv] 0x501ac0 HouseClass::GenerateAttackCoords -> HouseClass
+[conv] 0x502550 HouseClass::StubReturnNullPointer_0 -> HouseClass
+[conv] 0x5025f0 HouseClass::RegisterGain -> HouseClass
+[conv] 0x502a80 HouseClass::RegisterGain_0 -> HouseClass
+[conv] 0x503040 HouseClass::SaveLoad_Prefix -> HouseClass
+[conv] 0x505310 BuildingClass::FindBySWType -> BuildingClass
+[conv] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> HouseClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] BuildingClass            rc=2
+[era] PathfindingClass         rc=2
+[era] BuildingPlacement        rc=2
+[era] CellClass                rc=2
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ff550 HouseClass::DecrementUnitCount -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4ff700 BuildingClass::PowerUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ffb20 PathfindingClass::FindPath -> COMPILE_FAIL (attempt 4)
+[ledger] 0x500200 BuildingPlacement::FindPosition -> COMPILE_FAIL (attempt 7)
+[ledger] 0x500300 CellClass::ScanOccupiers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5009b0 HouseClass::LoadTypeList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x500b40 HouseClass::ReadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x501160 CCINIClass::WriteHouses -> COMPILE_FAIL (attempt 19)
+[ledger] 0x501210 HouseClass::SaveToINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x501400 HouseClass::SetCapacity_5 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x501640 HouseClass::CanDetect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x501750 ObjectClass::sub_501750 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5018c0 HouseClass::NotifyPowerStateChange -> COMPILE_FAIL (attempt 4)
+[ledger] 0x501ac0 HouseClass::GenerateAttackCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x502550 HouseClass::StubReturnNullPointer_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5025f0 HouseClass::RegisterGain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x502a80 HouseClass::RegisterGain_0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x503040 HouseClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 8)
+[ledger] 0x505310 BuildingClass::FindBySWType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x505360 HouseClass::PrerequisitesForTechnoTypeAreListed -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p41\batch_report.json
