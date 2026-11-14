@@ -1,0 +1,117 @@
+{
+ "symbol": "?FindOrCreate2@BuildingTypeClass@@QAEHXZ",
+ "sym_key": "BuildingTypeClass::FindOrCreate2",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d00000000565051e80000000083c40885c00f84b100000033d233c08a1500000000a0000000005250e80000000083c40885c00f8490000000a04000000033f684c07e620fbe153400000033c98a0d000000008b02518b0883c12451e80000000083c40885c074300fbe1540000000463bf27d320fbe0d3400000033c0a0000000008b11508b04b283c02450e80000000083c40885c075d00fbe15340000008b028b04b05ec368bc020000e80000000083c40485c0741233c98a0d00000000518bc8e8000000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 165,
+   "type": "DIR32",
+   "sym": "?SuperClass_ShowTimers@@3IA",
+   "sym_key": "SuperClass_ShowTimers"
+  },
+  {
+   "off": 182,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 205,
+   "type": "REL32",
+   "sym": "?OverlayTypeClass_5FE250@OverlayTypeClass@@QAEPAIPAX@Z",
+   "sym_key": "OverlayTypeClass::OverlayTypeClass_5FE250"
+  }
+ ]
+}

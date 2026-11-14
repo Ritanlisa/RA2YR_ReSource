@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FEC70",
+ "name": "BuildingTypeClass::FindOrCreate2",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FEC70",
+ "bytes_hex": "56578bf9576874748100e8a1a01c0083c40885c07468576894768100e88fa01c0083c40885c07456a1903da80033f685c07e23a1843da800578b0cb083c12451e86ba01c0083c40885c07426a1903da800463bf07cdd68bc020000e847a11c0083c40485c07417578bc8e871f5ffff5f5ec38b15843da8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

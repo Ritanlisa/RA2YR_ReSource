@@ -1,0 +1,82 @@
+[
+ {
+  "addr": "0x5fe250",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5fe570",
+  "family": "code:C2019"
+ },
+ {
+  "addr": "0x5fe770",
+  "family": "code:C2664"
+ },
+ {
+  "addr": "0x5fea50",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x5feaf0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5fec10",
+  "family": "code:C2059"
+ },
+ {
+  "addr": "0x5fec70",
+  "family": "code:C2533"
+ },
+ {
+  "addr": "0x5fede0",
+  "family": "code:C2036"
+ },
+ {
+  "addr": "0x5ff420",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x6001a0",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x600250",
+  "family": "code:C2039"
+ },
+ {
+  "addr": "0x600750",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600880",
+  "family": "code:C2440"
+ },
+ {
+  "addr": "0x600920",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600af0",
+  "family": "code:C2064"
+ },
+ {
+  "addr": "0x600c70",
+  "family": "code:C2446,pat:cmp"
+ },
+ {
+  "addr": "0x600ca0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x601360",
+  "family": "code:C2143"
+ },
+ {
+  "addr": "0x6015e0",
+  "family": "code:C2064,pat:cmp"
+ },
+ {
+  "addr": "0x601d20",
+  "family": "code:C2064,pat:cmp"
+ }
+]
