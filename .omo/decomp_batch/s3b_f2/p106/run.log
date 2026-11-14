@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p106\part_00
+=== convert (20 addrs) ===
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x69bd60 SessionClass::SetupNetwork -> SessionClass
+[conv] 0x69db30 SHA1::Transform -> SHA1
+[conv] 0x69e100 BTree::DeleteSubtree -> BTree
+[conv] 0x69e500 FileTreeNode::Destroy -> FileTreeNode
+[conv] 0x69e580 MixFileClass::LoadSubFile -> MixFileClass
+[conv] 0x69e740 MixFileClass::GetSubFile -> MixFileClass
+[conv] 0x69e930 MixFileClass::CacheNode_Dtor -> MixFileClass
+[conv] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> JumpjetLocomotionClass
+[conv] 0x69ee30 ShipLocomotionClass::QueryInterface -> ShipLocomotionClass
+[conv] 0x69ee90 ShipLocomotionClass::BeginMove -> ShipLocomotionClass
+[conv] 0x69ef10 ShipLocomotionClass::LoadFromStream -> ShipLocomotionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> ShipLocomotionClass
+[conv] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> ShipLocomotionClass
+[conv] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> ShipLocomotionClass
+[conv] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> JumpjetLocomotionClass
+[conv] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> ShipLocomotionClass
+[conv] 0x69fc10 ShipLocomotionClass::ProcessImpact -> ShipLocomotionClass
+[conv] 0x6a05f0 WalkLocomotion::ProcessCollision -> WalkLocomotion
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXConnClass             rc=2
+[era] SessionClass             rc=2
+[era] SHA1                     rc=2
+[era] BTree                    rc=2
+[era] FileTreeNode             rc=2
+[era] MixFileClass             rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ShipLocomotionClass      rc=2
+[era] WalkLocomotion           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 10)
+[ledger] 0x69bd60 SessionClass::SetupNetwork -> COMPILE_FAIL (attempt 8)
+[ledger] 0x69db30 SHA1::Transform -> COMPILE_FAIL (attempt 15)
+[ledger] 0x69e100 BTree::DeleteSubtree -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69e500 FileTreeNode::Destroy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69e580 MixFileClass::LoadSubFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69e740 MixFileClass::GetSubFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69e930 MixFileClass::CacheNode_Dtor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x69ed20 JumpjetLocomotionClass::LoadLocomotionFromStream_2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69ee30 ShipLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69ee90 ShipLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69ef10 ShipLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> COMPILE_FAIL (attempt 16)
+[ledger] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x69fc10 ShipLocomotionClass::ProcessImpact -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a05f0 WalkLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p106\batch_report.json

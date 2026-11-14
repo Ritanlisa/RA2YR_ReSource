@@ -141396,7 +141396,7 @@
   "this_as_id": false
  },
  "0x69bc20": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -141442,7 +141442,7 @@
   "this_as_id": false
  },
  "0x69bd60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142222,7 +142222,7 @@
   "this_as_id": false
  },
  "0x69db30": {
-  "attempts": 14,
+  "attempts": 15,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -142395,7 +142395,7 @@
   "this_as_id": false
  },
  "0x69e100": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142455,7 +142455,7 @@
   "this_as_id": false
  },
  "0x69e500": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142467,7 +142467,7 @@
   "this_as_id": false
  },
  "0x69e580": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142479,7 +142479,7 @@
   "this_as_id": false
  },
  "0x69e740": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142527,7 +142527,7 @@
   "this_as_id": false
  },
  "0x69e930": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142737,7 +142737,7 @@
   "this_as_id": false
  },
  "0x69ed20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142749,31 +142749,31 @@
   "this_as_id": false
  },
  "0x69ee30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ShipLocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ShipLocomotionClass::QueryInterface",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x69ee90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ShipLocomotionClass::BeginMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ShipLocomotionClass::BeginMove",
-  "rule_violations": 3,
+  "rule_violations": 5,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x69ef10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142859,7 +142859,7 @@
   "this_as_id": false
  },
  "0x69f290": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142871,14 +142871,14 @@
   "this_as_id": false
  },
  "0x69f330": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ShipLocomotionClass::StubReturnTrue_6",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::StubReturnTrue_6",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -142907,7 +142907,7 @@
   "this_as_id": false
  },
  "0x69f450": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142919,7 +142919,7 @@
   "this_as_id": false
  },
  "0x69f510": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -142943,7 +142943,7 @@
   "this_as_id": false
  },
  "0x69f670": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -142967,19 +142967,19 @@
   "this_as_id": false
  },
  "0x69fbe0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ShipLocomotionClass::DispatchVirtualCall_6",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "JumpjetLocomotionClass::DispatchVirtualCall_6",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x69fc10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -143039,7 +143039,7 @@
   "this_as_id": false
  },
  "0x6a05f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
