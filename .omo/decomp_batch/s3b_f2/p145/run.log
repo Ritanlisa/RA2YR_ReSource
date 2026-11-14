@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p145\part_00
+=== convert (20 addrs) ===
+[conv] 0x79c8d0 ObjectClass::QueueWOLAuthRequest -> ObjectClass
+[conv] 0x79cba0 RemoveWOLPlayerLogin -> _addr_79
+[conv] 0x79ce70 ObjectClass::RefreshChannelListWOL -> ObjectClass
+[conv] 0x79d110 ObjectClass::SendGameListWOL -> ObjectClass
+[conv] 0x79d2f0 ObjectClass::RefreshGameListWOL -> ObjectClass
+[conv] 0x79d4e0 ObjectClass::CleanupWOLSession -> ObjectClass
+[conv] 0x79dfe0 GameSetupDlgProcWOL -> _addr_79
+[conv] 0x79e520 PlayerOptionsDlgProcWOL -> _addr_79
+[conv] 0x79f140 ObjectClass::GameOptionsScreenWOL -> ObjectClass
+[conv] 0x79fc40 ObjectClass::JoinLobbyWOL -> ObjectClass
+[conv] 0x7a0430 ObjectClass::CollectWOLConnectionTokens -> ObjectClass
+[conv] 0x7a0690 ObjectClass::RequestMatchWOL -> ObjectClass
+[conv] 0x7a0d10 sub_7A0D10 -> _addr_7A
+[conv] 0x7a0f40 Event_Handle_7A0F40 -> Event_Handle
+[conv] 0x7a1060 ObjectClass::ProcessPingRequestsWOL -> ObjectClass
+[conv] 0x7a1330 ObjectClass::UpdateWOLLobbyPings -> ObjectClass
+[conv] 0x7a16b0 HandleWOLMatchMessage -> _addr_7A
+[conv] 0x7a19e0 MatchGameWOL_Delete -> MatchGameWOL
+[conv] 0x7a1bb0 ObjectClass::MatchGameWOL -> ObjectClass
+[conv] 0x7a2330 Game::SetupWOLTournament -> Game
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_79                 rc=2
+[era] _addr_7A                 rc=2
+[era] Event_Handle             rc=2
+[era] MatchGameWOL             rc=2
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x79c8d0 ObjectClass::QueueWOLAuthRequest -> COMPILE_FAIL (attempt 4)
+[ledger] 0x79cba0 RemoveWOLPlayerLogin -> COMPILE_FAIL (attempt 8)
+[ledger] 0x79ce70 ObjectClass::RefreshChannelListWOL -> COMPILE_FAIL (attempt 5)
+[ledger] 0x79d110 ObjectClass::SendGameListWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x79d2f0 ObjectClass::RefreshGameListWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x79d4e0 ObjectClass::CleanupWOLSession -> COMPILE_FAIL (attempt 6)
+[ledger] 0x79dfe0 GameSetupDlgProcWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x79e520 PlayerOptionsDlgProcWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x79f140 ObjectClass::GameOptionsScreenWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x79fc40 ObjectClass::JoinLobbyWOL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a0430 ObjectClass::CollectWOLConnectionTokens -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a0690 ObjectClass::RequestMatchWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a0d10 sub_7A0D10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a0f40 Event_Handle_7A0F40 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7a1060 ObjectClass::ProcessPingRequestsWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7a1330 ObjectClass::UpdateWOLLobbyPings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a16b0 HandleWOLMatchMessage -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7a19e0 MatchGameWOL_Delete -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7a1bb0 ObjectClass::MatchGameWOL -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7a2330 Game::SetupWOLTournament -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p145\batch_report.json
