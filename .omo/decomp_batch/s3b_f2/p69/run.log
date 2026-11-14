@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p69\part_00
+=== convert (20 addrs) ===
+[conv] 0x5bdf70 MouseClass::LoadGameAssets -> MouseClass
+[conv] 0x5be6d0 MouseClass::DrawCursor -> MouseClass
+[conv] 0x5bed40 Movie::Play -> Movie
+[conv] 0x5bfaa0 LoadVQMovie -> _addr_5B
+[conv] 0x5c0630 MovieHandle::sub_5C0630 -> MovieHandle
+[conv] 0x5c0640 Render_Play -> Render
+[conv] 0x5c09b0 VQMovieHandle::processCombatState -> VQMovieHandle
+[conv] 0x5c0a30 BinkMovieHandle::QueryInterface -> BinkMovieHandle
+[conv] 0x5c0d30 VectorClass::processDeathEvent -> VectorClass
+[conv] 0x5c0d80 DynamicVector::DestroyVector -> DynamicVector
+[conv] 0x5c1470 MPCooperative::ctor -> MPCooperative
+[conv] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> MPCooperative
+[conv] 0x5c17b0 MPCooperative::unnamed -> MPCooperative
+[conv] 0x5c1a10 MPCooperative::CopyTo -> MPCooperative
+[conv] 0x5c1d80 MPCooperative::Write -> MPCooperative
+[conv] 0x5c1dc0 MPCooperative::Seek -> MPCooperative
+[conv] 0x5c21d0 CampaignCoop::Setup -> CampaignCoop
+[conv] 0x5c2500 Campaign::SetupMovie -> Campaign
+[conv] 0x5c2710 MPCooperative::SyncState -> MPCooperative
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MouseClass               rc=2
+[era] Movie                    rc=2
+[era] _addr_5B                 rc=2
+[era] MovieHandle              rc=2
+[era] Render                   rc=2
+[era] VQMovieHandle            rc=2
+[era] BinkMovieHandle          rc=2
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] MPCooperative            rc=2
+[era] CampaignCoop             rc=2
+[era] Campaign                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5bdf70 MouseClass::LoadGameAssets -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5be6d0 MouseClass::DrawCursor -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5bed40 Movie::Play -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5bfaa0 LoadVQMovie -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5c0630 MovieHandle::sub_5C0630 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5c0640 Render_Play -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5c09b0 VQMovieHandle::processCombatState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c0a30 BinkMovieHandle::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c0d30 VectorClass::processDeathEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c0d80 DynamicVector::DestroyVector -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c1470 MPCooperative::ctor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5c17b0 MPCooperative::unnamed -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c1a10 MPCooperative::CopyTo -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c1d80 MPCooperative::Write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c1dc0 MPCooperative::Seek -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5c21d0 CampaignCoop::Setup -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5c2500 Campaign::SetupMovie -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5c2710 MPCooperative::SyncState -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 21)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p69\batch_report.json
