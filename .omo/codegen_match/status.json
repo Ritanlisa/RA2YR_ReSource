@@ -188263,7 +188263,7 @@
   "this_as_id": false
  },
  "0x767460": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -188287,7 +188287,7 @@
   "this_as_id": false
  },
  "0x767500": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188322,7 +188322,7 @@
   "this_as_id": false
  },
  "0x767740": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188358,15 +188358,15 @@
   "this_as_id": false
  },
  "0x767880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 lea ecx, [esi + 0x18]",
   "name": "FlagGameOption_WorldDominationTour::coUninitialize",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "COMClass::coUninitialize",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7678c0": {
@@ -188536,7 +188536,7 @@
   "this_as_id": false
  },
  "0x767b00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "Team_Create_767B00",
@@ -188748,7 +188748,7 @@
   "this_as_id": false
  },
  "0x767ec0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -188808,7 +188808,7 @@
   "this_as_id": false
  },
  "0x768000": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -188832,7 +188832,7 @@
   "this_as_id": false
  },
  "0x7681e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188844,7 +188844,7 @@
   "this_as_id": false
  },
  "0x768f50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188880,14 +188880,14 @@
   "this_as_id": false
  },
  "0x769330": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Surface::PixelToIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Surface::PixelToIndex",
-  "rule_violations": 1,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -188964,7 +188964,7 @@
   "this_as_id": false
  },
  "0x769550": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "LoadWDTMapAsset",
@@ -188975,7 +188975,7 @@
   "this_as_id": false
  },
  "0x769bd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -189119,7 +189119,7 @@
   "this_as_id": false
  },
  "0x769d70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": "+12 mov dword ptr [eax], 0x7f71cc",
   "name": "Map_Load_769D70",
@@ -189142,7 +189142,7 @@
   "this_as_id": false
  },
  "0x769dc0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f71cc",
@@ -189701,7 +189701,7 @@
   "this_as_id": false
  },
  "0x76afc0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -189878,7 +189878,7 @@
   "status": "NG"
  },
  "0x76ba70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -190319,19 +190319,19 @@
   "this_as_id": false
  },
  "0x76c290": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::ConstructWDTSelection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ConstructWDTSelection",
-  "rule_violations": 6,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x76c6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -190355,7 +190355,7 @@
   "this_as_id": false
  },
  "0x76ca60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -190367,7 +190367,7 @@
   "this_as_id": false
  },
  "0x76cbf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,

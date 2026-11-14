@@ -1,0 +1,11 @@
+{
+ "addr": "0x767880",
+ "name": "COMClass::coUninitialize",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767880",
+ "bytes_hex": "568bf18d4e18e865ce04008d4e14e85dce04008bcec70660707f00e8c05deffff644240801740956e89012060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
