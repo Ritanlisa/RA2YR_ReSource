@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x538ae0 DynamicVector::performAction_244 -> DynamicVector
+[conv] 0x539890 SuperWeaponClass::LoadFromSaveStream -> SuperWeaponClass
+[conv] 0x539eb0 LightningStorm::Start -> LightningStorm
+[conv] 0x53a140 LightningStorm::Strike -> LightningStorm
+[conv] 0x53a300 LightningStorm::Strike2 -> LightningStorm
+[conv] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> ObjectClass
+[conv] 0x53ab50 Game_Load_Load_53AB50 -> Game_Load_Load
+[conv] 0x53ae50 SuperClass::LaunchPsychicDominator -> SuperClass
+[conv] 0x53af40 ObjectClass::UpdatePsyDom -> ObjectClass
+[conv] 0x53b460 globalHelper_03B460 -> _addr_53
+[conv] 0x53cbe0 ExplosionClass::ProcessFrame -> ExplosionClass
+[conv] 0x53d330 ObjectClass::GenerateLightningStormGlow -> ObjectClass
+[conv] 0x53d580 ZBuffer::RenderSprite -> ZBuffer
+[conv] 0x53e1d0 Audio_Init -> Audio
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> ObjectClass
+[conv] 0x53e550 ObjectClass::WinMain_Write -> ObjectClass
+[conv] 0x53e770 GameLoopMessagePump -> _addr_53
+[conv] 0x53f5d0 IPXConnClass::send -> IPXConnClass
+[conv] 0x53f650 IPXConnClass::receive -> IPXConnClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=2
+[era] SuperWeaponClass         rc=2
+[era] LightningStorm           rc=2
+[era] ObjectClass              rc=2
+[era] Game_Load_Load           rc=2
+[era] SuperClass               rc=2
+[era] _addr_53                 rc=2
+[era] ExplosionClass           rc=2
+[era] ZBuffer                  rc=2
+[era] Audio                    rc=2
+[era] TimerPool                rc=2
+[era] IPXConnClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x538ae0 DynamicVector::performAction_244 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x539890 SuperWeaponClass::LoadFromSaveStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x539eb0 LightningStorm::Start -> COMPILE_FAIL (attempt 6)
+[ledger] 0x53a140 LightningStorm::Strike -> COMPILE_FAIL (attempt 8)
+[ledger] 0x53a300 LightningStorm::Strike2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53a6c0 ObjectClass::UpdateSuperWeapons -> COMPILE_FAIL (attempt 6)
+[ledger] 0x53ab50 Game_Load_Load_53AB50 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53ae50 SuperClass::LaunchPsychicDominator -> COMPILE_FAIL (attempt 5)
+[ledger] 0x53af40 ObjectClass::UpdatePsyDom -> COMPILE_FAIL (attempt 7)
+[ledger] 0x53b460 globalHelper_03B460 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53cbe0 ExplosionClass::ProcessFrame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x53d330 ObjectClass::GenerateLightningStormGlow -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53d580 ZBuffer::RenderSprite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53e1d0 Audio_Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 9)
+[ledger] 0x53e4f0 ObjectClass::WinMain_Helper_53E4F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53e550 ObjectClass::WinMain_Write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53e770 GameLoopMessagePump -> COMPILE_FAIL (attempt 7)
+[ledger] 0x53f5d0 IPXConnClass::send -> COMPILE_FAIL (attempt 4)
+[ledger] 0x53f650 IPXConnClass::receive -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p52\batch_report.json
