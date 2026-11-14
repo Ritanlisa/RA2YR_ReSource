@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x4054a0 Audio::UpdatePlaybackPosition -> Audio
+[conv] 0x4055c0 TechnoClass::UpdateVoicePlayback -> TechnoClass
+[conv] 0x405fd0 AudioFile::Stop -> AudioFile
+[conv] 0x406060 Mixer::ReleaseChannel -> Mixer
+[conv] 0x4060f0 SetAudioSource -> _addr_40
+[conv] 0x406130 AudioSource::Get -> AudioSource
+[conv] 0x406170 VocClass::Check -> VocClass
+[conv] 0x406820 sub_406820 -> _addr_40
+[conv] 0x406e80 AudioMixer::Shutdown -> AudioMixer
+[conv] 0x407100 SetupSampleAudioMixer -> _addr_40
+[conv] 0x4073b0 SaveGame::CountLinkedList -> SaveGame
+[conv] 0x407420 InsertAfterDListNode -> _addr_40
+[conv] 0x407550 sub_407550 -> _addr_40
+[conv] 0x407680 StartAddress -> _addr_40
+[conv] 0x407860 AudioStream::Constructor -> AudioStream
+[conv] 0x407b60 ThreadAudioMixerMain -> _addr_40
+[conv] 0x408560 sub_408560 -> _addr_40
+[conv] 0x408970 ObjectClass::sub_408970 -> ObjectClass
+[conv] 0x408eb0 sub_408EB0 -> _addr_40
+[conv] 0x4091c0 ReadAudioStream -> _addr_40
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio                    rc=2
+[era] TechnoClass              rc=2
+[era] AudioFile                rc=2
+[era] Mixer                    rc=2
+[era] _addr_40                 rc=2
+[era] AudioSource              rc=2
+[era] VocClass                 rc=2
+[era] AudioMixer               rc=2
+[era] SaveGame                 rc=2
+[era] AudioStream              rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4054a0 Audio::UpdatePlaybackPosition -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4055c0 TechnoClass::UpdateVoicePlayback -> COMPILE_FAIL (attempt 6)
+[ledger] 0x405fd0 AudioFile::Stop -> COMPILE_FAIL (attempt 5)
+[ledger] 0x406060 Mixer::ReleaseChannel -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4060f0 SetAudioSource -> COMPILE_FAIL (attempt 5)
+[ledger] 0x406130 AudioSource::Get -> COMPILE_FAIL (attempt 6)
+[ledger] 0x406170 VocClass::Check -> COMPILE_FAIL (attempt 9)
+[ledger] 0x406820 sub_406820 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x406e80 AudioMixer::Shutdown -> COMPILE_FAIL (attempt 8)
+[ledger] 0x407100 SetupSampleAudioMixer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4073b0 SaveGame::CountLinkedList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x407420 InsertAfterDListNode -> COMPILE_FAIL (attempt 6)
+[ledger] 0x407550 sub_407550 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 10)
+[ledger] 0x407860 AudioStream::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x407b60 ThreadAudioMixerMain -> COMPILE_FAIL (attempt 8)
+[ledger] 0x408560 sub_408560 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x408970 ObjectClass::sub_408970 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x408eb0 sub_408EB0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4091c0 ReadAudioStream -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p01\batch_report.json
