@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x4ada30 ScenarioClass::GetScenarioData -> ScenarioClass
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x4adff0 HouseClass::RevealShroudForAllies -> HouseClass
+[conv] 0x4ae4f0 DisplayClass::Draw -> DisplayClass
+[conv] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> ObjectClass
+[conv] 0x4aed70 DrawToSurfaceSHP -> _addr_4A
+[conv] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> JumpjetLocomotionClass
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x4af780 DriveLocomotionClass::BeginMove -> DriveLocomotionClass
+[conv] 0x4af800 DriveLocomotionClass::LoadFromStream -> DriveLocomotionClass
+[conv] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> JumpjetLocomotionClass
+[conv] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> DriveLocomotionClass
+[conv] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> DriveLocomotionClass
+[conv] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> DriveLocomotionClass
+[conv] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> JumpjetLocomotionClass
+[conv] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> DriveLocomotionClass
+[conv] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> DriveLocomotionClass
+[conv] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> DriveLocomotionClass
+[conv] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> JumpjetLocomotion
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] DisplayClass             rc=2
+[era] ObjectClass              rc=2
+[era] _addr_4A                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] DriveLocomotionClass     rc=2
+[era] JumpjetLocomotion        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4ada30 ScenarioClass::GetScenarioData -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> COMPILE_FAIL (attempt 20)
+[ledger] 0x4adff0 HouseClass::RevealShroudForAllies -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4ae4f0 DisplayClass::Draw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ae750 ObjectClass::DispatchSelectionWaypointMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4aed70 DrawToSurfaceSHP -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4af610 JumpjetLocomotionClass::LoadLocomotionFromStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4af780 DriveLocomotionClass::BeginMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4af800 DriveLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4afc20 DriveLocomotionClass::StubReturnTrue_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4afd40 DriveLocomotionClass::ConvertCoordToCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4afe00 DriveLocomotionClass::CheckWindowsErrorWrapper -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4aff60 JumpjetLocomotionClass::ComputeVoxelTransform -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b0410 DriveLocomotionClass::ComputeAudio3DRotation -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4b04d0 DriveLocomotionClass::DispatchVirtualCall -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b0500 DriveLocomotionClass::ProcessJumpjetMotion -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b0f20 JumpjetLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p28\batch_report.json
