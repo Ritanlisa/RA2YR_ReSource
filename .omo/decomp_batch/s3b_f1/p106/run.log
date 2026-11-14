@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p106\part_00
+=== convert (20 addrs) ===
+[conv] 0x6941a0 ReceiveNetworkFile -> _addr_69
+[conv] 0x694760 SendNetworkFile -> _addr_69
+[conv] 0x6956d0 Network::sendGameEvent -> Network
+[conv] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> ObjectClass
+[conv] 0x696200 ObjectClass::InitializeModemPortSelect -> ObjectClass
+[conv] 0x6964c0 NetworkDialog::Dispatch -> NetworkDialog
+[conv] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> ObjectClass
+[conv] 0x6970a0 SessionClass::SessionClass_6970A0 -> SessionClass
+[conv] 0x6977c0 CSFClass::LoadMissingStrings -> CSFClass
+[conv] 0x697b70 SessionClass::CreateConnections -> SessionClass
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x697f10 ObjectClass::ReadGameSettingsINI -> ObjectClass
+[conv] 0x6980c0 ScenarioClass::LoadNetworkConfig -> ScenarioClass
+[conv] 0x698cb0 Game::DumpMultiplayerGameInfo -> Game
+[conv] 0x698f90 GameSetup::WriteINI -> GameSetup
+[conv] 0x6990a0 TechnoClass::SaveConfigWOL -> TechnoClass
+[conv] 0x6994f0 ParseMapFileHeader -> _addr_69
+[conv] 0x699980 SessionClass::LoadMissionList -> SessionClass
+[conv] 0x69a3b0 MapFile::LoadDescription -> MapFile
+[conv] 0x69a980 SessionClass::ParseGameInfo -> SessionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_69                 rc=2
+[era] Network                  rc=2
+[era] ObjectClass              rc=2
+[era] NetworkDialog            rc=2
+[era] SessionClass             rc=2
+[era] CSFClass                 rc=2
+[era] ScenarioClass            rc=2
+[era] Game                     rc=2
+[era] GameSetup                rc=2
+[era] TechnoClass              rc=2
+[era] MapFile                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6941a0 ReceiveNetworkFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x694760 SendNetworkFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6956d0 Network::sendGameEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x696200 ObjectClass::InitializeModemPortSelect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6964c0 NetworkDialog::Dispatch -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6970a0 SessionClass::SessionClass_6970A0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6977c0 CSFClass::LoadMissingStrings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x697b70 SessionClass::CreateConnections -> COMPILE_FAIL (attempt 3)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 18)
+[ledger] 0x697f10 ObjectClass::ReadGameSettingsINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6980c0 ScenarioClass::LoadNetworkConfig -> COMPILE_FAIL (attempt 6)
+[ledger] 0x698cb0 Game::DumpMultiplayerGameInfo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x698f90 GameSetup::WriteINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6990a0 TechnoClass::SaveConfigWOL -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6994f0 ParseMapFileHeader -> COMPILE_FAIL (attempt 3)
+[ledger] 0x699980 SessionClass::LoadMissionList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69a3b0 MapFile::LoadDescription -> COMPILE_FAIL (attempt 5)
+[ledger] 0x69a980 SessionClass::ParseGameInfo -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p106\batch_report.json
