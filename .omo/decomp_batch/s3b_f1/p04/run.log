@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x4144b0 AircraftClass::Draw -> AircraftClass
+[conv] 0x414bb0 TechnoClass::SmokeUpdate -> TechnoClass
+[conv] 0x4151e0 AircraftClass::ProcessLanding -> AircraftClass
+[conv] 0x415a50 AircraftClass::ProcessReturnToBase -> AircraftClass
+[conv] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> ObjectClass
+[conv] 0x415ee0 BulletClass::FlightUpdate -> BulletClass
+[conv] 0x4165c0 AircraftClass::DeployWithAnim -> AircraftClass
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x417cc0 AircraftClass::GetActionOnObject -> AircraftClass
+[conv] 0x417fe0 AircraftClass::Mission_Attack -> AircraftClass
+[conv] 0x418e20 InfantryClass::FindNearbyCell -> InfantryClass
+[conv] 0x4190b0 AircraftClass::ProcessInputKey -> AircraftClass
+[conv] 0x4196b0 AircraftClass::ValidateLandingCell -> AircraftClass
+[conv] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> TechnoClass
+[conv] 0x419b00 Cell::IsOccupied -> Cell
+[conv] 0x419c80 AircraftClass::Mission_Transport -> AircraftClass
+[conv] 0x41a160 TechnoClass::FindClosestPlacementCell -> TechnoClass
+[conv] 0x41a5c0 AircraftClass::GetMissionTimer -> AircraftClass
+[conv] 0x41a940 AircraftClass::EvaluateTargetingState -> AircraftClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AircraftClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] BulletClass              rc=2
+[era] FootClass                rc=2
+[era] Carryall                 rc=2
+[era] InfantryClass            rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4144b0 AircraftClass::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x414bb0 TechnoClass::SmokeUpdate -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4151e0 AircraftClass::ProcessLanding -> COMPILE_FAIL (attempt 7)
+[ledger] 0x415a50 AircraftClass::ProcessReturnToBase -> COMPILE_FAIL (attempt 4)
+[ledger] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x415ee0 BulletClass::FlightUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4165c0 AircraftClass::DeployWithAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 7)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 8)
+[ledger] 0x417cc0 AircraftClass::GetActionOnObject -> COMPILE_FAIL (attempt 4)
+[ledger] 0x417fe0 AircraftClass::Mission_Attack -> COMPILE_FAIL (attempt 4)
+[ledger] 0x418e20 InfantryClass::FindNearbyCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4190b0 AircraftClass::ProcessInputKey -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4196b0 AircraftClass::ValidateLandingCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x419b00 Cell::IsOccupied -> COMPILE_FAIL (attempt 5)
+[ledger] 0x419c80 AircraftClass::Mission_Transport -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41a160 TechnoClass::FindClosestPlacementCell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41a5c0 AircraftClass::GetMissionTimer -> COMPILE_FAIL (attempt 6)
+[ledger] 0x41a940 AircraftClass::EvaluateTargetingState -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p04\batch_report.json
