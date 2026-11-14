@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x538060 View4CommandClass::performAction_204 -> View4CommandClass
+[conv] 0x538080 SetView1CommandClass::performAction_205 -> SetView1CommandClass
+[conv] 0x5380a0 SetView2CommandClass::performAction_206 -> SetView2CommandClass
+[conv] 0x5380c0 SetView3CommandClass::performAction_207 -> SetView3CommandClass
+[conv] 0x5380e0 SetView4CommandClass::performAction_208 -> SetView4CommandClass
+[conv] 0x538100 OptionsCommandClass::performAction_209 -> OptionsCommandClass
+[conv] 0x538120 SidebarUpCommandClass::performAction_210 -> SidebarUpCommandClass
+[conv] 0x538140 SidebarDownCommandClass::performAction_211 -> SidebarDownCommandClass
+[conv] 0x538160 CenterREventCommandClass::performAction_212 -> CenterREventCommandClass
+[conv] 0x538180 BeaconPlacementCommandClass::performAction_213 -> BeaconPlacementCommandClass
+[conv] 0x5381a0 ToggleSellCommandClass::performAction_214 -> ToggleSellCommandClass
+[conv] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> ToggleRepairCommandClass
+[conv] 0x538240 ScatterCommandClass::performAction_219 -> ScatterCommandClass
+[conv] 0x538260 GuardCommandClass::performAction_220 -> GuardCommandClass
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+[conv] 0x5382c0 DeployCommandClass::performAction_223 -> DeployCommandClass
+[conv] 0x538440 ScreenCaptureCommandClass::performAction_235 -> ScreenCaptureCommandClass
+[conv] 0x538460 PageUserCommandClass::performAction_236 -> PageUserCommandClass
+[conv] 0x538480 CursorPositionCommandClass::performAction_237 -> CursorPositionCommandClass
+[conv] 0x5384a0 DeleteCommandClass::performAction_238 -> DeleteCommandClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] View4CommandClass        rc=2
+[era] SetView1CommandClass     rc=2
+[era] SetView2CommandClass     rc=2
+[era] SetView3CommandClass     rc=2
+[era] SetView4CommandClass     rc=2
+[era] OptionsCommandClass      rc=2
+[era] SidebarUpCommandClass    rc=2
+[era] SidebarDownCommandClass  rc=2
+[era] CenterREventCommandClass rc=2
+[era] BeaconPlacementCommandClass rc=2
+[era] ToggleSellCommandClass   rc=2
+[era] ToggleRepairCommandClass rc=2
+[era] ScatterCommandClass      rc=2
+[era] GuardCommandClass        rc=2
+[era] StopCommandClass         rc=2
+[era] DeployCommandClass       rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+=== diffasm byte-compare ===
+[ledger] 0x538060 View4CommandClass::performAction_204 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538080 SetView1CommandClass::performAction_205 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5380a0 SetView2CommandClass::performAction_206 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5380c0 SetView3CommandClass::performAction_207 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5380e0 SetView4CommandClass::performAction_208 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538100 OptionsCommandClass::performAction_209 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538120 SidebarUpCommandClass::performAction_210 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x538140 SidebarDownCommandClass::performAction_211 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538160 CenterREventCommandClass::performAction_212 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538180 BeaconPlacementCommandClass::performAction_213 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5381a0 ToggleSellCommandClass::performAction_214 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5381c0 ToggleRepairCommandClass::performAction_215 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x538240 ScatterCommandClass::performAction_219 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x538260 GuardCommandClass::performAction_220 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x538280 StopCommandClass::performAction_221 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5382c0 DeployCommandClass::performAction_223 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x538440 ScreenCaptureCommandClass::performAction_235 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538460 PageUserCommandClass::performAction_236 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x538480 CursorPositionCommandClass::performAction_237 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5384a0 DeleteCommandClass::performAction_238 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p51\batch_report.json
