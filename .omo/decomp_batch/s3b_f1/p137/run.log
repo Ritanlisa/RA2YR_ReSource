@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p137\part_00
+=== convert (20 addrs) ===
+[conv] 0x763690 String::To_Waypoint -> String
+[conv] 0x763c70 WaypointPathClass::LoadState -> WaypointPathClass
+[conv] 0x763ff0 DynamicVector::checkSWTarget -> DynamicVector
+[conv] 0x764050 VectorClass::getSWChargeState -> VectorClass
+[conv] 0x764a20 ObjectClass::sub_764A20 -> ObjectClass
+[conv] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> ReferenceCounted
+[conv] 0x764fa0 ObjectClass::Team_Start_764FA0 -> ObjectClass
+[conv] 0x765000 sub_765000 -> _addr_76
+[conv] 0x7651d0 ObjectClass::sub_7651D0 -> ObjectClass
+[conv] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> ObjectClass
+[conv] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x765f60 Team_Create_765F60 -> Team_Create
+[conv] 0x7660f0 InitWDTGameOptions -> _addr_76
+[conv] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> ObjectClass
+[conv] 0x766880 rc_ptr::System_Init_766880 -> rc_ptr
+[conv] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x766a10 GameOption@WorldDominationTour::System_Init_766A10 -> GameOption_WorldDominationTour
+[conv] 0x766aa0 _ValueGameOption_E_WorldDominationTour::adviseConnection -> _ValueGameOption_E_WorldDominationTour
+[conv] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x767460 rc_ptr::ConstructorWDTFlagOption -> rc_ptr
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] String                   rc=2
+[era] WaypointPathClass        rc=2
+[era] DynamicVector            rc=2
+[era] VectorClass              rc=2
+[era] ObjectClass              rc=2
+[era] ReferenceCounted         rc=2
+[era] _addr_76                 rc=2
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] Team_Create              rc=2
+[era] rc_ptr                   rc=2
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] GameOption_WorldDominationTour rc=2
+[era] _ValueGameOption_E_WorldDominationTour rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+=== diffasm byte-compare ===
+[diff] 0x7660f0   MISMATCH         InitWDTGameOptions
+[ledger] 0x763690 String::To_Waypoint -> COMPILE_FAIL (attempt 4)
+[ledger] 0x763c70 WaypointPathClass::LoadState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x763ff0 DynamicVector::checkSWTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x764050 VectorClass::getSWChargeState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x764a20 ObjectClass::sub_764A20 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x764b90 ReferenceCounted::CampaignConstructorWDT -> COMPILE_FAIL (attempt 12)
+[ledger] 0x764fa0 ObjectClass::Team_Start_764FA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x765000 sub_765000 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7651d0 ObjectClass::sub_7651D0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x765380 ObjectClass::FindWDTTerritoryClass_Find -> COMPILE_FAIL (attempt 4)
+[ledger] 0x765770 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x765f60 Team_Create_765F60 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7660f0 InitWDTGameOptions -> NG (attempt 2)
+[ledger] 0x7665d0 ObjectClass::TerritorySelectWDT_Create -> COMPILE_FAIL (attempt 6)
+[ledger] 0x766880 rc_ptr::System_Init_766880 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7669f0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::disconnectPoint -> COMPILE_FAIL (attempt 5)
+[ledger] 0x766a10 GameOption@WorldDominationTour::System_Init_766A10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x766aa0 _ValueGameOption_E_WorldDominationTour::adviseConnection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x766dc0 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Constructor_1 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x767460 rc_ptr::ConstructorWDTFlagOption -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p137\batch_report.json

@@ -186376,7 +186376,7 @@
   "this_as_id": false
  },
  "0x763690": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186520,7 +186520,7 @@
   "this_as_id": false
  },
  "0x763c70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186642,7 +186642,7 @@
   "this_as_id": false
  },
  "0x763ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -186654,7 +186654,7 @@
   "this_as_id": false
  },
  "0x764050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187019,7 +187019,7 @@
   "this_as_id": false
  },
  "0x764a20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -187043,7 +187043,7 @@
   "this_as_id": false
  },
  "0x764b90": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187055,7 +187055,7 @@
   "this_as_id": false
  },
  "0x764fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187091,7 +187091,7 @@
   "this_as_id": false
  },
  "0x765000": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "first_diff": null,
   "name": "sub_765000",
@@ -187102,7 +187102,7 @@
   "this_as_id": false
  },
  "0x7651d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -187114,7 +187114,7 @@
   "this_as_id": false
  },
  "0x765380": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187233,7 +187233,7 @@
   "this_as_id": false
  },
  "0x765770": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f6f9c",
@@ -187591,7 +187591,7 @@
   "this_as_id": false
  },
  "0x765f60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "Team_Create_765F60",
@@ -187636,18 +187636,18 @@
   "this_as_id": false
  },
  "0x7660f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "InitWDTGameOptions",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "InitWDTGameOptions",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7665d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -187726,7 +187726,7 @@
   "this_as_id": false
  },
  "0x766880": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187822,7 +187822,7 @@
   "this_as_id": false
  },
  "0x7669f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+9 mov dword ptr [esi], 0x7f702c",
@@ -187834,7 +187834,7 @@
   "this_as_id": false
  },
  "0x766a10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187870,7 +187870,7 @@
   "this_as_id": false
  },
  "0x766aa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -187954,7 +187954,7 @@
   "this_as_id": false
  },
  "0x766dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -188263,7 +188263,7 @@
   "this_as_id": false
  },
  "0x767460": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
