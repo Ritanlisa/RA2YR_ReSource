@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x54ac40 JumpjetLocomotionClass::Update -> JumpjetLocomotionClass
+[conv] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> JumpjetLocomotionClass
+[conv] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> JumpjetLocomotionClass
+[conv] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> JumpjetLocomotionClass
+[conv] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> JumpjetLocomotionClass
+[conv] 0x54b750 JumpjetLocomotionClass::InitClass -> JumpjetLocomotionClass
+[conv] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> JumpjetLocomotionClass
+[conv] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> JumpjetLocomotionClass
+[conv] 0x54b980 HouseClass::Set -> HouseClass
+[conv] 0x54ba30 TechnoClass::UpdateFootMovement -> TechnoClass
+[conv] 0x54bd30 TechnoClass::UpdateFootMoveToState -> TechnoClass
+[conv] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> BuildingPlacement
+[conv] 0x54ca90 JumpjetLocomotion::Land -> JumpjetLocomotion
+[conv] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> JumpjetLocomotion
+[conv] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> JumpjetLocomotionClass
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> JumpjetLocomotionClass
+[conv] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> JumpjetLocomotionClass
+[conv] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> JumpjetLocomotionClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] BuildingPlacement        rc=2
+[era] JumpjetLocomotion        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x54ac40 JumpjetLocomotionClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54b750 JumpjetLocomotionClass::InitClass -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> COMPILE_FAIL (attempt 17)
+[ledger] 0x54b980 HouseClass::Set -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54ba30 TechnoClass::UpdateFootMovement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54bd30 TechnoClass::UpdateFootMoveToState -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54ca90 JumpjetLocomotion::Land -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> COMPILE_FAIL (attempt 9)
+[ledger] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p54\batch_report.json
