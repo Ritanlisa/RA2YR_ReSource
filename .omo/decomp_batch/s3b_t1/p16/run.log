@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f1c30 ObjectTypeClass::CreateInstance -> ObjectTypeClass
+[conv] 0x5f1c60 NullModemClass::ReadPacket -> NullModemClass
+[conv] 0x5f1f20 ObjectClass::sub_5F1F20 -> ObjectClass
+[conv] 0x5f1fa0 NullModemClass::DetectModem -> NullModemClass
+[conv] 0x5f2ce0 ObjectClass::WaitModemConnection -> ObjectClass
+[conv] 0x5f3170 NullModemClass::Negotiate -> NullModemClass
+[conv] 0x5f34d0 sub_5F34D0 -> _addr_5F
+[conv] 0x5f3540 NullModemClass::Disconnect -> NullModemClass
+[conv] 0x5f3b80 ObjectClass::Dtor -> ObjectClass
+[conv] 0x5f3e70 TechnoClass::DetectCloaked -> TechnoClass
+[conv] 0x5f4160 IUnknown::DropAsBomb_Track -> IUnknown
+[conv] 0x5f44a0 IUnknown::Remove -> IUnknown
+[conv] 0x5f4520 ObjectClass::HandleSelection -> ObjectClass
+[conv] 0x5f4ec0 ObjectClass::Deploy -> ObjectClass
+[conv] 0x5f5390 TechnoClass::CreateDestructionEffect -> TechnoClass
+[conv] 0x5f5c60 BuildingClass::GetHealthRatio -> BuildingClass
+[conv] 0x5f5cd0 BuildingClass::IsHealthLow -> BuildingClass
+[conv] 0x5f5dd0 BuildingClass::GetSellPriority -> BuildingClass
+[conv] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> ObjectClass
+[conv] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectTypeClass          rc=2
+[era] NullModemClass           rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5F                 rc=2
+[era] TechnoClass              rc=2
+[era] IUnknown                 rc=2
+[era] BuildingClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5f1c30 ObjectTypeClass::CreateInstance -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f1c60 NullModemClass::ReadPacket -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f1f20 ObjectClass::sub_5F1F20 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f1fa0 NullModemClass::DetectModem -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5f2ce0 ObjectClass::WaitModemConnection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f3170 NullModemClass::Negotiate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f34d0 sub_5F34D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5f3540 NullModemClass::Disconnect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f3b80 ObjectClass::Dtor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5f3e70 TechnoClass::DetectCloaked -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f4160 IUnknown::DropAsBomb_Track -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f44a0 IUnknown::Remove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f4520 ObjectClass::HandleSelection -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5f4ec0 ObjectClass::Deploy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f5390 TechnoClass::CreateDestructionEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f5c60 BuildingClass::GetHealthRatio -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f5cd0 BuildingClass::IsHealthLow -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f5dd0 BuildingClass::GetSellPriority -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5f60a0 ObjectClass::SetCellOverlayFlag -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5f6120 ObjectClass::ClearCellOverlayFlag -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p16\batch_report.json
