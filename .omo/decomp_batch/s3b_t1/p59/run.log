@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> TechnoClass
+[conv] 0x705d70 TechnoClass::GetBuildAnim -> TechnoClass
+[conv] 0x706640 TechnoClass::UpdateState -> TechnoClass
+[conv] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> TechnoClass
+[conv] 0x706ed0 RenderTechnoClassVoxel -> _addr_70
+[conv] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> ObjectClass
+[conv] 0x707480 Surface::BlitTechnoTo -> Surface
+[conv] 0x7077c0 TechnoClass::NotifyExpired -> TechnoClass
+[conv] 0x707cb0 TechnoClass::CleanupAll -> TechnoClass
+[conv] 0x708080 TechnoClass::EvaluateMission -> TechnoClass
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x709550 TechnoClass::SelectTargetByWeight -> TechnoClass
+[conv] 0x709a90 TechnoClass::DrawPips -> TechnoClass
+[conv] 0x70a990 TechnoClass::DrawVeterancy -> TechnoClass
+[conv] 0x70aa60 TechnoClass::DrawPowerIndicator -> TechnoClass
+[conv] 0x70b280 TechnoClass::ComputeAimVector -> TechnoClass
+[conv] 0x70b570 TechnoClass::UpdateBodyTilt -> TechnoClass
+[conv] 0x70bcb0 TechnoClass::GetTargetCoords -> TechnoClass
+[conv] 0x70be80 TechnoClass::ShouldSelfHealOneStep -> TechnoClass
+[conv] 0x70c270 TechnoClass::PowerBeginUpdate -> TechnoClass
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] _addr_70                 rc=2
+[era] ObjectClass              rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x705ca0 TechnoClass::GetBridgeAwareCoords -> COMPILE_FAIL (attempt 6)
+[ledger] 0x705d70 TechnoClass::GetBuildAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x706640 TechnoClass::UpdateState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x706bd0 TechnoClass::QueueTechnoVoiceLine -> COMPILE_FAIL (attempt 2)
+[ledger] 0x706ed0 RenderTechnoClassVoxel -> COMPILE_FAIL (attempt 6)
+[ledger] 0x707280 ObjectClass::RenderTechnoOverlaySHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x707480 Surface::BlitTechnoTo -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7077c0 TechnoClass::NotifyExpired -> COMPILE_FAIL (attempt 2)
+[ledger] 0x707cb0 TechnoClass::CleanupAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x708080 TechnoClass::EvaluateMission -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 7)
+[ledger] 0x709550 TechnoClass::SelectTargetByWeight -> COMPILE_FAIL (attempt 2)
+[ledger] 0x709a90 TechnoClass::DrawPips -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70a990 TechnoClass::DrawVeterancy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x70aa60 TechnoClass::DrawPowerIndicator -> COMPILE_FAIL (attempt 4)
+[ledger] 0x70b280 TechnoClass::ComputeAimVector -> COMPILE_FAIL (attempt 7)
+[ledger] 0x70b570 TechnoClass::UpdateBodyTilt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70bcb0 TechnoClass::GetTargetCoords -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70be80 TechnoClass::ShouldSelfHealOneStep -> COMPILE_FAIL (attempt 3)
+[ledger] 0x70c270 TechnoClass::PowerBeginUpdate -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p59\batch_report.json
