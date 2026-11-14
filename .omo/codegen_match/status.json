@@ -134840,7 +134840,7 @@
   "this_as_id": false
  },
  "0x66d270": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134876,7 +134876,7 @@
   "this_as_id": false
  },
  "0x66d530": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134955,14 +134955,14 @@
   "this_as_id": false
  },
  "0x672440": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::ReadDataList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::ReadDataList",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135094,7 +135094,7 @@
   "this_as_id": false
  },
  "0x672ae0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135106,7 +135106,7 @@
   "this_as_id": false
  },
  "0x673e80": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135118,7 +135118,7 @@
   "this_as_id": false
  },
  "0x674000": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135142,7 +135142,7 @@
   "this_as_id": false
  },
  "0x6743d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135190,7 +135190,7 @@
   "this_as_id": false
  },
  "0x674730": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135202,31 +135202,31 @@
   "this_as_id": false
  },
  "0x675210": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::SaveLoad_Prefix_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::SaveLoad_Prefix_0",
-  "rule_violations": 54,
+  "rule_violations": 43,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x678850": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
   "name": "TechnoClass::InitInterfaceStubsCOM",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "InitInterfaceStubsCOM",
-  "rule_violations": 114,
+  "rule_violations": 101,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x679a10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -135354,14 +135354,14 @@
   "this_as_id": false
  },
  "0x67a030": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::InfantryCleanup",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::InfantryCleanup",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135378,26 +135378,26 @@
   "this_as_id": false
  },
  "0x67a090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::CopyFull",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::CopyFull",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x67a110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::CopyAircraft",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::CopyAircraft",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135426,14 +135426,14 @@
   "this_as_id": false
  },
  "0x67a290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "TypeList::CopyInfantry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList::CopyInfantry",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -135450,7 +135450,7 @@
   "this_as_id": false
  },
  "0x67a390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135529,7 +135529,7 @@
   "this_as_id": false
  },
  "0x67a4f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135553,19 +135553,19 @@
   "this_as_id": false
  },
  "0x67a570": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Rules::CopyDataArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Rules::CopyDataArray",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x67a600": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -135687,7 +135687,7 @@
   "this_as_id": false
  },
  "0x67a820": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
