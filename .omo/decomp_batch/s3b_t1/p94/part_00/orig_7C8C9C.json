@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8C9C",
+ "name": "_shortsort",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8C9C",
+ "bytes_hex": "558bec8b4508578b7d0c3bf8763d8b4d105303c15689450c8b5d088b750c3bf777125356ff55145985c0597e028bde037510ebeaff75105753e8100000002b7d1083c40c3b7d0877cf5e5b5f5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

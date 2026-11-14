@@ -207667,7 +207667,7 @@
   "this_as_id": false
  },
  "0x7c88d2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CoCreateInstance",
@@ -207678,7 +207678,7 @@
   "this_as_id": false
  },
  "0x7c88d8": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "OleLoadFromStream",
@@ -207689,7 +207689,7 @@
   "this_as_id": false
  },
  "0x7c88de": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "OleSaveToStream",
@@ -207711,7 +207711,7 @@
   "this_as_id": false
  },
  "0x7c88ea": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "StringFromCLSID",
@@ -207755,7 +207755,7 @@
   "this_as_id": false
  },
  "0x7c8902": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "StringFromGUID2",
@@ -207777,7 +207777,7 @@
   "this_as_id": false
  },
  "0x7c890e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CoRegisterClassObject",
@@ -207866,7 +207866,7 @@
   "this_as_id": false
  },
  "0x7c893e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RegisterActiveObject",
@@ -207910,7 +207910,7 @@
   "this_as_id": false
  },
  "0x7c8956": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "timeSetEvent",
@@ -208097,7 +208097,7 @@
   "this_as_id": false
  },
  "0x7c89bc": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WSAAsyncSelect",
@@ -208108,7 +208108,7 @@
   "this_as_id": false
  },
  "0x7c89c2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "EnumProtocolsA",
@@ -208119,7 +208119,7 @@
   "this_as_id": false
  },
  "0x7c89c8": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WSAStartup",
@@ -208152,7 +208152,7 @@
   "this_as_id": false
  },
  "0x7c89da": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DirectSoundCreate",
@@ -208163,7 +208163,7 @@
   "this_as_id": false
  },
  "0x7c89e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "VerQueryValueA",
@@ -208282,7 +208282,7 @@
   "this_as_id": false
  },
  "0x7c8a2e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ImmGetCandidateListA",
@@ -208478,7 +208478,7 @@
   "this_as_id": false
  },
  "0x7c8ad3": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_8type_info_QBEHABV0__Z",
@@ -208489,7 +208489,7 @@
   "this_as_id": false
  },
  "0x7c8aee": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_9type_info_QBEHABV0__Z",
@@ -208561,14 +208561,14 @@
   "this_as_id": false
  },
  "0x7c8c9c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "_shortsort",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "_shortsort",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c8cea": {
@@ -208584,7 +208584,7 @@
   "this_as_id": false
  },
  "0x7c8d20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__strcmpi",
@@ -208639,7 +208639,7 @@
   "this_as_id": false
  },
  "0x7c8ef4": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "_sprintf",
@@ -208672,7 +208672,7 @@
   "this_as_id": false
  },
  "0x7c8f5e": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "__cfltcvt_init_13",

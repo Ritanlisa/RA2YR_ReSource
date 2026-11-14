@@ -1,0 +1,15 @@
+{
+ "symbol": "?_shortsort@@YAIPAD0HPAX@Z",
+ "sym_key": "Unnamed::_shortsort",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "8b442404578b7c240c3bf87642538b5c24145556eb048b4424148d34188be83bf7771456ff54242483c40485c07e028bee03f33bf776ec535755e8000000008b4c24202bfb83c40c3bf977ca5e5d5b5fc3",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?swap@@YAHPAX0HZZ",
+   "sym_key": "swap"
+  }
+ ]
+}
