@@ -54076,7 +54076,7 @@
   "this_as_id": false
  },
  "0x4e14c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54160,7 +54160,7 @@
   "this_as_id": false
  },
  "0x4e1640": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -54448,7 +54448,7 @@
   "this_as_id": false
  },
  "0x4e1d00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54460,7 +54460,7 @@
   "this_as_id": false
  },
  "0x4e1de0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54472,7 +54472,7 @@
   "this_as_id": false
  },
  "0x4e1fe0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "GameOptionsDlgProc",
@@ -54568,7 +54568,7 @@
   "this_as_id": false
  },
  "0x4e2690": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54580,19 +54580,19 @@
   "this_as_id": false
  },
  "0x4e2830": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "GaugeClass::DrawDispatch",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CellClass::DrawDispatch",
-  "rule_violations": 5,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4e29a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54616,31 +54616,31 @@
   "this_as_id": false
  },
  "0x4e2af0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jl 0x4e2b0d",
   "name": "TriColorGaugeClass::Check",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "COMObject::Check",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e2b20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+6 jl 0x4e2b3d",
   "name": "TriColorGaugeClass::SetField",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "COMObject::SetField",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e2b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -54880,7 +54880,7 @@
   "this_as_id": false
  },
  "0x4e3560": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -54927,7 +54927,7 @@
   "this_as_id": false
  },
  "0x4e38a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55030,7 +55030,7 @@
   "this_as_id": false
  },
  "0x4e42a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55065,7 +55065,7 @@
   "this_as_id": false
  },
  "0x4e45a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FillComboBoxFactions",
@@ -55110,25 +55110,25 @@
   "this_as_id": false
  },
  "0x4e49a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+7 mov ebp, ecx",
   "name": "SetupSkirmishSpawnLocations",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SetupSkirmishSpawnLocations",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e4c20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "FillColorComboBoxUI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "FillColorComboBoxUI",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e4e20": {
@@ -55178,7 +55178,7 @@
   "this_as_id": false
  },
  "0x4e4f50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__cfltcvt_init",
@@ -55211,14 +55211,14 @@
   "this_as_id": false
  },
  "0x4e50c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+6 mov ebp, edx",
   "name": "FillComboBoxAllianceSlots",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FillComboBoxAllianceSlots",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e5260": {
@@ -55256,25 +55256,25 @@
   "this_as_id": false
  },
  "0x4e5480": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+7 mov ebp, ecx",
   "name": "SetupLobbyFactionSlots",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SetupLobbyFactionSlots",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e5700": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+4 mov ebx, ecx",
   "name": "FillComboBoxSides",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FillComboBoxSides",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e5900": {
@@ -55309,7 +55309,7 @@
   "this_as_id": false
  },
  "0x4e5ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -55366,14 +55366,14 @@
   "this_as_id": false
  },
  "0x4e5ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "SetupLobbyPlayerSlots",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "SetupLobbyPlayerSlots",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e6030": {
@@ -56882,14 +56882,14 @@
   "this_as_id": false
  },
  "0x4e8030": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, 0xa8b238",
   "name": "sub_4E8030",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_4E8030",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4e8050": {
@@ -57101,7 +57101,7 @@
   "this_as_id": false
  },
  "0x4e8270": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61900,7 +61900,7 @@
   "this_as_id": false
  },
  "0x4ef4e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -61912,7 +61912,7 @@
   "this_as_id": false
  },
  "0x4ef530": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63050,7 +63050,7 @@
   "this_as_id": false
  },
  "0x4f10e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "OpenGameUI",
@@ -63061,7 +63061,7 @@
   "this_as_id": false
  },
  "0x4f11b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -63095,7 +63095,7 @@
   "this_as_id": false
  },
  "0x4f1720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63107,7 +63107,7 @@
   "this_as_id": false
  },
  "0x4f1840": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "ShowGameDialog",
@@ -63129,7 +63129,7 @@
   "this_as_id": false
  },
  "0x4f1aa0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63187,7 +63187,7 @@
   "this_as_id": false
  },
  "0x4f1ca0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63211,7 +63211,7 @@
   "this_as_id": false
  },
  "0x4f2280": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63223,7 +63223,7 @@
   "this_as_id": false
  },
  "0x4f2300": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63247,7 +63247,7 @@
   "this_as_id": false
  },
  "0x4f26e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63259,7 +63259,7 @@
   "this_as_id": false
  },
  "0x4f2770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63465,7 +63465,7 @@
   "this_as_id": false
  },
  "0x4f2bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -63500,7 +63500,7 @@
   "this_as_id": false
  },
  "0x4f2c70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ParseINIAnimGadgetDefinition",
@@ -63511,7 +63511,7 @@
   "this_as_id": false
  },
  "0x4f2f10": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

@@ -1,0 +1,135 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p20\part_00
+=== convert (40 addrs) ===
+[conv] 0x4e14c0 GadgetClass::DestroyChain -> GadgetClass
+[conv] 0x4e1640 ShpButtonClass::ProcessEvents -> ShpButtonClass
+[conv] 0x4e1d00 Main::CreateDialog -> Main
+[conv] 0x4e1de0 GameOptions::GameSpeedChanged -> GameOptions
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x4e2690 GaugeClass::HandleClick -> GaugeClass
+[conv] 0x4e2830 GaugeClass::DrawDispatch -> GaugeClass
+[conv] 0x4e29a0 GaugeClass::SetRange -> GaugeClass
+[conv] 0x4e2af0 TriColorGaugeClass::Check -> TriColorGaugeClass
+[conv] 0x4e2b20 TriColorGaugeClass::SetField -> TriColorGaugeClass
+[conv] 0x4e2b50 TriColorGaugeClass::Draw -> TriColorGaugeClass
+[conv] 0x4e3560 BuildingType::FindDefault -> BuildingType
+[conv] 0x4e38a0 SideClass::GetName -> SideClass
+[conv] 0x4e42a0 GameSetup::GetColorTooltip -> GameSetup
+[conv] 0x4e45a0 FillComboBoxFactions -> _addr_4E
+[conv] 0x4e49a0 SetupSkirmishSpawnLocations -> _addr_4E
+[conv] 0x4e4c20 FillColorComboBoxUI -> _addr_4E
+[conv] 0x4e4f50 __cfltcvt_init -> _addr_4E
+[conv] 0x4e50c0 FillComboBoxAllianceSlots -> _addr_4E
+[conv] 0x4e5480 SetupLobbyFactionSlots -> _addr_4E
+[conv] 0x4e5700 FillComboBoxSides -> _addr_4E
+[conv] 0x4e5ac0 GDlg::LoadLetterStrings -> GDlg
+[conv] 0x4e5ed0 SetupLobbyPlayerSlots -> _addr_4E
+[conv] 0x4e8030 sub_4E8030 -> _addr_4E
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+[conv] 0x4ef4e0 VectorClass::vt_00 -> VectorClass
+[conv] 0x4ef530 DynamicVector::COMStub_0 -> DynamicVector
+[conv] 0x4f10e0 OpenGameUI -> _addr_4F
+[conv] 0x4f11b0 Options::DlgProc -> Options
+[conv] 0x4f1720 Options::InitDialogControls -> Options
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x4f2280 ObjectClass::sub_4F2280 -> ObjectClass
+[conv] 0x4f2300 ObjectClass::ProcessGraphicMenu -> ObjectClass
+[conv] 0x4f26e0 ObjectClass::sub_4F26E0 -> ObjectClass
+[conv] 0x4f2770 ObjectClass::sub_4F2770 -> ObjectClass
+[conv] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> DynamicVector
+[conv] 0x4f2c70 ParseINIAnimGadgetDefinition -> _addr_4F
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GadgetClass              rc=2
+[era] ShpButtonClass           rc=2
+[era] Main                     rc=2
+[era] GameOptions              rc=2
+[era] _addr_4E                 rc=2
+[era] GaugeClass               rc=2
+[era] TriColorGaugeClass       rc=2
+[era] BuildingType             rc=2
+[era] SideClass                rc=2
+[era] GameSetup                rc=2
+[era] GDlg                     rc=2
+[era] HouseClass               rc=2
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_4F                 rc=2
+[era] Options                  rc=2
+[era] OptionQueue              rc=2
+[era] ObjectClass              rc=2
+[era] GraphicMenuAnimItem      rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e49a0   MISMATCH         SetupSkirmishSpawnLocations
+[diff] 0x4e4c20   MISMATCH         FillColorComboBoxUI
+[diff] 0x4e50c0   MISMATCH         FillComboBoxAllianceSlots
+[diff] 0x4e5480   MISMATCH         SetupLobbyFactionSlots
+[diff] 0x4e5700   MISMATCH         FillComboBoxSides
+[diff] 0x4e5ed0   MISMATCH         SetupLobbyPlayerSlots
+[diff] 0x4e8030   MISMATCH         sub_4E8030
+[diff] 0x4e2af0   MISMATCH         TriColorGaugeClass::Check
+[diff] 0x4e2b20   MISMATCH         TriColorGaugeClass::SetField
+[ledger] 0x4e14c0 GadgetClass::DestroyChain -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4e1640 ShpButtonClass::ProcessEvents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e1d00 Main::CreateDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e1de0 GameOptions::GameSpeedChanged -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4e2690 GaugeClass::HandleClick -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e2830 GaugeClass::DrawDispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e29a0 GaugeClass::SetRange -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e2af0 TriColorGaugeClass::Check -> NG (attempt 5)
+[ledger] 0x4e2b20 TriColorGaugeClass::SetField -> NG (attempt 5)
+[ledger] 0x4e2b50 TriColorGaugeClass::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e3560 BuildingType::FindDefault -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e38a0 SideClass::GetName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e42a0 GameSetup::GetColorTooltip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e45a0 FillComboBoxFactions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e49a0 SetupSkirmishSpawnLocations -> NG (attempt 3)
+[ledger] 0x4e4c20 FillColorComboBoxUI -> NG (attempt 3)
+[ledger] 0x4e4f50 __cfltcvt_init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e50c0 FillComboBoxAllianceSlots -> NG (attempt 3)
+[ledger] 0x4e5480 SetupLobbyFactionSlots -> NG (attempt 3)
+[ledger] 0x4e5700 FillComboBoxSides -> NG (attempt 3)
+[ledger] 0x4e5ac0 GDlg::LoadLetterStrings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4e5ed0 SetupLobbyPlayerSlots -> NG (attempt 3)
+[ledger] 0x4e8030 sub_4E8030 -> NG (attempt 3)
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ef4e0 VectorClass::vt_00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4ef530 DynamicVector::COMStub_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f10e0 OpenGameUI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f11b0 Options::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f1720 Options::InitDialogControls -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4f2280 ObjectClass::sub_4F2280 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f2300 ObjectClass::ProcessGraphicMenu -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f26e0 ObjectClass::sub_4F26E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f2770 ObjectClass::sub_4F2770 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f2c70 ParseINIAnimGadgetDefinition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 31,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "branch_order": 2,
+  "codegen_shape": 4,
+  "regalloc": 1,
+  "frame_sched": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p20\batch_report.json

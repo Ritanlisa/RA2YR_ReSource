@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E2B20",
+ "name": "COMObject::SetField",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E2B20",
+ "bytes_hex": "8b44240485c07c153b41307d108941408b01ff5048b801000000c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

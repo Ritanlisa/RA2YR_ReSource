@@ -1,0 +1,117 @@
+{
+ "symbol": "?SetupSkirmishSpawnLocations@@YIHPAXHH@Z",
+ "sym_key": "Unnamed::SetupSkirmishSpawnLocations",
+ "size": 572,
+ "link_base": 0,
+ "bytes_hex": "83ec1055568bf2578be95655896c2418e8000000006a005089442420e80000000085c00f9444240f81fea20600007f42743c8d86defaffff83f8057735ff248500000000b901000000eb3ab902000000eb33b903000000eb2cb904000000eb25b905000000eb1eb906000000eb1733c9eb1333c981fe280500000f95c1f7d983e1f883c107a10000000033d23908741483c00c423d000000007d17390875f183faff740e8d0452c7048500000000ffffffff33ff53575768460100005655e80000000085c0894424180f8ead0000008b5c24246a005768500100005655e8000000008be83beb74138b442418473bf80f8d830000008b6c2414ebd88b4c24146a0057684e0100005651e80000000083fdfe746581fea20600007f42743c8d86defaffff83f8057735ff248500000000be01000000eb37be02000000eb30be03000000eb29be04000000eb22be05000000eb1bbe06000000eb1433f6eb1081ee28050000f7de1bf683e6f883c6078d546d00893495000000008b6c24148a4424135b84c0750c8b4424186a0550e80000000033f683cfff85f674508d46ff83f8057731ff248500000000ba22050000eb3fba23050000eb38ba24050000eb31ba25050000eb2aba26050000eb23ba27050000eb1c8bd683ea07f7da1bd281e2d7faffff81c228050000eb05baa2060000a10000000083f803740583f80475168b04b5000000008b0d000000003bc1741339786b740e8bcde80000000025ff000000eb078bcde8000000004683fe080f8c63ffffff5f5e5d83c410c20400",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "$L2030",
+   "sym_key": "$L2030"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B40AC@@3IA",
+   "sym_key": "DataGlobal_8B40AC"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJHHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 299,
+   "type": "DIR32",
+   "sym": "$L2031",
+   "sym_key": "$L2031"
+  },
+  {
+   "off": 372,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 397,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "$L2032",
+   "sym_key": "$L2032"
+  },
+  {
+   "off": 496,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 513,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 519,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 535,
+   "type": "REL32",
+   "sym": "?FillComboBoxFactions@@YI_NHH@Z",
+   "sym_key": "FillComboBoxFactions"
+  },
+  {
+   "off": 549,
+   "type": "REL32",
+   "sym": "?FillListBox@@YIJHH@Z",
+   "sym_key": "FillListBox"
+  }
+ ]
+}

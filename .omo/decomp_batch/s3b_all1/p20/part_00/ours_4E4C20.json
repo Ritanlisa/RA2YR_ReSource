@@ -1,0 +1,93 @@
+{
+ "symbol": "?FillColorComboBoxUI@@YIDPAXH@Z",
+ "sym_key": "Unnamed::FillColorComboBoxUI",
+ "size": 443,
+ "link_base": 0,
+ "bytes_hex": "568bf25781fea20600008bf97f42743c8d86defaffff83f8057735ff248500000000b901000000eb3ab902000000eb33b903000000eb2cb904000000eb25b905000000eb1eb906000000eb1733c9eb1333c981fe280500000f95c1f7d983e1f883c107a10000000033d23908741483c00c423d000000007d17390875f183faff740e8d0452c7048500000000ffffffff6a006a0068470100005657e8000000006a005068500100005657e80000000081fea20600007f42743c8d8edefaffff83f9057735ff248d00000000be01000000eb37be02000000eb30be03000000eb29be04000000eb22be05000000eb1bbe06000000eb1433f6eb1081ee28050000f7de1bf683e6f883c60783f8fe740a8d0c4089348d0000000033f685f674508d46ff83f8057731ff248500000000ba22050000eb3fba23050000eb38ba24050000eb31ba25050000eb2aba26050000eb23ba27050000eb1c8bd683ea07f7da1bd281e2d7faffff81c228050000eb05baa2060000a10000000083f803740583f80475178b04b5000000008b0d000000003bc1741483786bff740e8bcfe80000000025ff000000eb078bcfe8000000004683fe080f8c62ffffff5f5ec3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "$L1993",
+   "sym_key": "$L1993"
+  },
+  {
+   "off": 100,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B40AC@@3IA",
+   "sym_key": "DataGlobal_8B40AC"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 171,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "$L1994",
+   "sym_key": "$L1994"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B4040@@3IA",
+   "sym_key": "DataGlobal_8B4040"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "$L1995",
+   "sym_key": "$L1995"
+  },
+  {
+   "off": 372,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 389,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 395,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 412,
+   "type": "REL32",
+   "sym": "?FillComboBoxFactions@@YI_NPAXH@Z",
+   "sym_key": "FillComboBoxFactions"
+  },
+  {
+   "off": 426,
+   "type": "REL32",
+   "sym": "?FillListBox@@YIJPAXH@Z",
+   "sym_key": "FillListBox"
+  }
+ ]
+}

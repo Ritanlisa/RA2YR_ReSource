@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4E8030@@YAHXZ",
+ "sym_key": "Unnamed::sub_4E8030",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000e8000000006800000000e80000000083c404c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?SessionClass_6970A0@SessionClass@@QAEPADXZ",
+   "sym_key": "SessionClass::SessionClass_6970A0"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?unknown_libname_17@@YAHPBX0@Z",
+   "sym_key": "unknown_libname_17"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "_atexit",
+   "sym_key": "atexit"
+  }
+ ]
+}

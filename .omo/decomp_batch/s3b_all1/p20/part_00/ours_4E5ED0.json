@@ -1,0 +1,81 @@
+{
+ "symbol": "?SetupLobbyPlayerSlots@@YI_NPAX0HH@Z",
+ "sym_key": "Unnamed::SetupLobbyPlayerSlots",
+ "size": 276,
+ "link_base": 0,
+ "bytes_hex": "83ec085355568b742418578bda56894c241453e8000000006a00508944241ce8000000006a006a0068460100005653e80000000033ff85c08944241c0f8e910000006a005768500100005653e8000000008be83b6c2420740b8b44241c473bf87d71ebde6a0057684e0100005653e80000000083fdfe745b8d8693f8ffff83f8067735ff24850000000033f6eb3abe01000000eb33be02000000eb2cbe03000000eb25be04000000eb1ebe05000000eb17be06000000eb1081ee74070000f7de1bf683e6f883c6078d446d0089348500000000833d000000000475098b4c2410e8000000008b4c24146a0051e800000000689407000053e8000000006a0050e800000000f7d85f5e1bc05df7d85b83c408c20800",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?SendDlgItemMessageA@@YGJPAXHHHH@Z",
+   "sym_key": "SendDlgItemMessageA"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "$L2049",
+   "sym_key": "$L2049"
+  },
+  {
+   "off": 207,
+   "type": "DIR32",
+   "sym": "?dword_8B3FC8@@3IA",
+   "sym_key": "dword_8B3FC8"
+  },
+  {
+   "off": 213,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?IsLobbyFeature@Network@@QAEDXZ",
+   "sym_key": "Network::IsLobbyFeature"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?ShowWindow@@YGHHH@Z",
+   "sym_key": "ShowWindow"
+  }
+ ]
+}
