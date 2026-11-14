@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p97\part_00
+=== convert (20 addrs) ===
+[conv] 0x6635c0 RocketLocomotionClass::ProcessMove -> RocketLocomotionClass
+[conv] 0x6639d0 Network::SendMasterPlayerList -> Network
+[conv] 0x663b40 SessionClass::BuildLobbyPlayerList -> SessionClass
+[conv] 0x663db0 ObjectClass::LaunchMultiplayerHost -> ObjectClass
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x664610 Process::WaitForExit -> Process
+[conv] 0x664d20 HouseClass::InitTypeVectors -> HouseClass
+[conv] 0x665650 RulesClass::RulesClass_665650 -> RulesClass
+[conv] 0x667a30 RulesClass::DTOR -> RulesClass
+[conv] 0x6686c0 ObjectClass::ResetRules -> ObjectClass
+[conv] 0x6691e0 Rules::ReadMiscINI -> Rules
+[conv] 0x66b900 TechnoClass::ReadCrateRulesINI -> TechnoClass
+[conv] 0x66bbb0 Rules::ReadCombatINI -> Rules
+[conv] 0x66cf70 RulesClass::ReadCountryList -> RulesClass
+[conv] 0x66d150 RulesClass::readAudioVisual -> RulesClass
+[conv] 0x66d1f0 RulesClass::readSpecialWeapons -> RulesClass
+[conv] 0x66d270 INIClass::ReadDifficultyModifiers -> INIClass
+[conv] 0x66d530 RulesClass::LoadFromINI -> RulesClass
+[conv] 0x672440 RulesClass::ReadDataList -> RulesClass
+[conv] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> RulesClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RocketLocomotionClass    rc=2
+[era] Network                  rc=2
+[era] SessionClass             rc=2
+[era] ObjectClass              rc=2
+[era] EventClass               rc=2
+[era] Process                  rc=2
+[era] HouseClass               rc=2
+[era] RulesClass               rc=2
+[era] Rules                    rc=2
+[era] TechnoClass              rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6635c0 RocketLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6639d0 Network::SendMasterPlayerList -> COMPILE_FAIL (attempt 8)
+[ledger] 0x663b40 SessionClass::BuildLobbyPlayerList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x663db0 ObjectClass::LaunchMultiplayerHost -> COMPILE_FAIL (attempt 4)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 17)
+[ledger] 0x664610 Process::WaitForExit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x664d20 HouseClass::InitTypeVectors -> COMPILE_FAIL (attempt 8)
+[ledger] 0x665650 RulesClass::RulesClass_665650 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x667a30 RulesClass::DTOR -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6686c0 ObjectClass::ResetRules -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6691e0 Rules::ReadMiscINI -> COMPILE_FAIL (attempt 9)
+[ledger] 0x66b900 TechnoClass::ReadCrateRulesINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66bbb0 Rules::ReadCombatINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66cf70 RulesClass::ReadCountryList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x66d150 RulesClass::readAudioVisual -> COMPILE_FAIL (attempt 4)
+[ledger] 0x66d1f0 RulesClass::readSpecialWeapons -> COMPILE_FAIL (attempt 5)
+[ledger] 0x66d270 INIClass::ReadDifficultyModifiers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x66d530 RulesClass::LoadFromINI -> COMPILE_FAIL (attempt 9)
+[ledger] 0x672440 RulesClass::ReadDataList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x672ae0 RulesClass::ReadMultiplayerDefaults -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p97\batch_report.json

@@ -133994,7 +133994,7 @@
   "status": "OK"
  },
  "0x6635c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134218,7 +134218,7 @@
   "this_as_id": false
  },
  "0x6639d0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134230,7 +134230,7 @@
   "this_as_id": false
  },
  "0x663b40": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134261,7 +134261,7 @@
   "this_as_id": false
  },
  "0x663db0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134352,7 +134352,7 @@
   "this_as_id": false
  },
  "0x664440": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134376,7 +134376,7 @@
   "this_as_id": false
  },
  "0x664610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134696,43 +134696,43 @@
   "this_as_id": false
  },
  "0x664d20": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "HouseClass::InitTypeVectors",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseClass::InitTypeVectors",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x665650": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::RulesClass_665650",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::RulesClass",
-  "rule_violations": 9,
+  "rule_violations": 6,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x667a30": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RulesClass::DTOR",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::DTOR",
-  "rule_violations": 23,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6686c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134768,7 +134768,7 @@
   "this_as_id": false
  },
  "0x6691e0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134780,7 +134780,7 @@
   "this_as_id": false
  },
  "0x66b900": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -134792,7 +134792,7 @@
   "this_as_id": false
  },
  "0x66bbb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134804,31 +134804,31 @@
   "this_as_id": false
  },
  "0x66cf70": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RulesClass::ReadCountryList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::ReadCountryList",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x66d150": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RulesClass::readAudioVisual",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::readAudioVisual",
-  "rule_violations": 3,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x66d1f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -134840,7 +134840,7 @@
   "this_as_id": false
  },
  "0x66d270": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134876,7 +134876,7 @@
   "this_as_id": false
  },
  "0x66d530": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -134955,7 +134955,7 @@
   "this_as_id": false
  },
  "0x672440": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -135094,14 +135094,14 @@
   "this_as_id": false
  },
  "0x672ae0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "RulesClass::ReadMultiplayerDefaults",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RulesClass::ReadMultiplayerDefaults",
-  "rule_violations": 6,
+  "rule_violations": 14,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
