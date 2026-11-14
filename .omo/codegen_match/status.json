@@ -137930,7 +137930,7 @@
   "this_as_id": false
  },
  "0x684180": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137942,7 +137942,7 @@
   "this_as_id": false
  },
  "0x684240": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137954,7 +137954,7 @@
   "this_as_id": false
  },
  "0x684290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137966,7 +137966,7 @@
   "this_as_id": false
  },
  "0x6842f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ToggleDisplayMode",
@@ -137977,19 +137977,19 @@
   "this_as_id": false
  },
  "0x684370": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 and esp, 0xfffffff8",
   "name": "ObjectClass::WaitForMultiplayerLoadSync",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "WaitForMultiplayerLoadSync",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x684620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138001,7 +138001,7 @@
   "this_as_id": false
  },
  "0x684c30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -138025,7 +138025,7 @@
   "this_as_id": false
  },
  "0x6851f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138037,7 +138037,7 @@
   "this_as_id": false
  },
  "0x685670": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138049,7 +138049,7 @@
   "this_as_id": false
  },
  "0x685dc0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138061,7 +138061,7 @@
   "this_as_id": false
  },
  "0x6863e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GameFrameCheck_Check",
@@ -138072,7 +138072,7 @@
   "this_as_id": false
  },
  "0x686570": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138096,7 +138096,7 @@
   "this_as_id": false
  },
  "0x686730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -138108,7 +138108,7 @@
   "this_as_id": false
  },
  "0x686890": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138120,7 +138120,7 @@
   "this_as_id": false
  },
  "0x686b20": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138132,7 +138132,7 @@
   "this_as_id": false
  },
  "0x687ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveScenarioToINI",
@@ -138143,7 +138143,7 @@
   "this_as_id": false
  },
  "0x687f10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138155,7 +138155,7 @@
   "this_as_id": false
  },
  "0x688380": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138167,7 +138167,7 @@
   "this_as_id": false
  },
  "0x6886b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GenerateScenarioUnits",
@@ -138285,15 +138285,15 @@
   "this_as_id": false
  },
  "0x689910": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 jae 0x689952",
   "name": "ScenarioClass::SetLocalToByID",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "ScenarioClass::SetLocalToByID",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x689960": {

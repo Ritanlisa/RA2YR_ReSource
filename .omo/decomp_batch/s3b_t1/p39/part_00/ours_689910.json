@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetLocalToByID@ScenarioClass@@QAEDID@Z",
+ "sym_key": "ScenarioClass::SetLocalToByID",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "8b4424045783f8648bf9720632c05fc208008d0c808d140753568a9c4a972400008db44a972400008a4c24143ad97410880e8bc8c687aa34000001e8000000008ac35e5b5fc20800",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?ProcessAll@TriggerActionQueue@@QAEHXZ",
+   "sym_key": "TriggerActionQueue::ProcessAll"
+  }
+ ]
+}
