@@ -185502,7 +185502,7 @@
   "this_as_id": false
  },
  "0x75e2c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185526,7 +185526,7 @@
   "this_as_id": false
  },
  "0x75e440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185564,7 +185564,7 @@
   "status": "OK"
  },
  "0x75e510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185576,7 +185576,7 @@
   "this_as_id": false
  },
  "0x75e690": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185588,7 +185588,7 @@
   "this_as_id": false
  },
  "0x75e6a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185766,7 +185766,7 @@
   "this_as_id": false
  },
  "0x75e950": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185855,7 +185855,7 @@
   "this_as_id": false
  },
  "0x75f330": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185903,7 +185903,7 @@
   "this_as_id": false
  },
  "0x75f610": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185915,7 +185915,7 @@
   "this_as_id": false
  },
  "0x75f650": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185972,7 +185972,7 @@
   "status": "OK"
  },
  "0x75f8b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185996,7 +185996,7 @@
   "this_as_id": false
  },
  "0x75f9f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186008,14 +186008,14 @@
   "this_as_id": false
  },
  "0x75fa90": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::ShadowCalc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::ShadowCalc",
-  "rule_violations": 4,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186032,7 +186032,7 @@
   "this_as_id": false
  },
  "0x7602e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186044,7 +186044,7 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186056,7 +186056,7 @@
   "this_as_id": false
  },
  "0x760f50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186075,7 +186075,7 @@
   "status": "NG"
  },
  "0x7610f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186087,14 +186087,14 @@
   "this_as_id": false
  },
  "0x761640": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::SectionProject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::SectionProject",
-  "rule_violations": 6,
+  "rule_violations": 11,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186110,14 +186110,14 @@
   "this_as_id": false
  },
  "0x762070": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::LightRender",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::LightRender",
-  "rule_violations": 10,
+  "rule_violations": 15,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -186133,7 +186133,7 @@
   "this_as_id": false
  },
  "0x762af0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -186364,7 +186364,7 @@
   "this_as_id": false
  },
  "0x763610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
