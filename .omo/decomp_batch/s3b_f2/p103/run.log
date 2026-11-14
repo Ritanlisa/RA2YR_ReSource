@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p103\part_00
+=== convert (20 addrs) ===
+[conv] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> ScenarioClass
+[conv] 0x689960 ObjectClass::sub_689960 -> ObjectClass
+[conv] 0x689c60 ScenarioClass::ReadWaypoint -> ScenarioClass
+[conv] 0x689d30 PreviewClass::RenderMapPreview -> PreviewClass
+[conv] 0x689e90 ScenarioClass::ReadMapINI -> ScenarioClass
+[conv] 0x68ad70 ScenarioClass::SaveToINI -> ScenarioClass
+[conv] 0x68b940 Power::ComputeHousePowerChecksum -> Power
+[conv] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> ScenarioClass
+[conv] 0x68c050 ObjectClass::Map_Setup -> ObjectClass
+[conv] 0x68c3b0 FontClass::CreateGlyphColor -> FontClass
+[conv] 0x68c9c0 System_Read_68C9C0 -> System_Read
+[conv] 0x68ca50 FindBuildingAnimByName -> _addr_68
+[conv] 0x68cab0 Network_Assign -> Network
+[conv] 0x68cd20 ScoreScreen::Display -> ScoreScreen
+[conv] 0x68ed80 Render_Get -> Render
+[conv] 0x68f060 Screen::TransitionRender -> Screen
+[conv] 0x68f8a0 ObjectClass::sub_68F8A0 -> ObjectClass
+[conv] 0x68f9b0 ScoreScreen::DisplayTimeText -> ScoreScreen
+[conv] 0x690160 Screen::TransitionLoop -> Screen
+[conv] 0x6907a0 ScoreFontClass::Release -> ScoreFontClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] PreviewClass             rc=2
+[era] Power                    rc=2
+[era] FontClass                rc=2
+[era] System_Read              rc=2
+[era] _addr_68                 rc=2
+[era] Network                  rc=2
+[era] ScoreScreen              rc=2
+[era] Render                   rc=2
+[era] Screen                   rc=2
+[era] ScoreFontClass           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x689960 ObjectClass::sub_689960 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x689c60 ScenarioClass::ReadWaypoint -> COMPILE_FAIL (attempt 6)
+[ledger] 0x689d30 PreviewClass::RenderMapPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x689e90 ScenarioClass::ReadMapINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68ad70 ScenarioClass::SaveToINI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68b940 Power::ComputeHousePowerChecksum -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68c050 ObjectClass::Map_Setup -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68c3b0 FontClass::CreateGlyphColor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68c9c0 System_Read_68C9C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x68ca50 FindBuildingAnimByName -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68cab0 Network_Assign -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68cd20 ScoreScreen::Display -> COMPILE_FAIL (attempt 5)
+[ledger] 0x68ed80 Render_Get -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68f060 Screen::TransitionRender -> COMPILE_FAIL (attempt 7)
+[ledger] 0x68f8a0 ObjectClass::sub_68F8A0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x68f9b0 ScoreScreen::DisplayTimeText -> COMPILE_FAIL (attempt 7)
+[ledger] 0x690160 Screen::TransitionLoop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6907a0 ScoreFontClass::Release -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p103\batch_report.json
