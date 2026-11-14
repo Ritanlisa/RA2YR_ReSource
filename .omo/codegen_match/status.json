@@ -136175,7 +136175,7 @@
   "this_as_id": false
  },
  "0x67b550": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassBuildingTypeList",
@@ -136186,7 +136186,7 @@
   "this_as_id": false
  },
  "0x67b720": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136198,7 +136198,7 @@
   "this_as_id": false
  },
  "0x67b8f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136221,7 +136221,7 @@
   "this_as_id": false
  },
  "0x67bb10": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "ReadINIClassInfantryTypeList",
@@ -136265,7 +136265,7 @@
   "this_as_id": false
  },
  "0x67bdd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -136361,7 +136361,7 @@
   "this_as_id": false
  },
  "0x67c1f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -136607,14 +136607,14 @@
   "this_as_id": false
  },
  "0x67c6e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Power::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Power::UpdateAll",
-  "rule_violations": 1,
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -136630,7 +136630,7 @@
   "this_as_id": false
  },
  "0x67d300": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -136642,7 +136642,7 @@
   "this_as_id": false
  },
  "0x67e440": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -136654,7 +136654,7 @@
   "this_as_id": false
  },
  "0x67e730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -136690,7 +136690,7 @@
   "this_as_id": false
  },
  "0x67fd20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "LoadOptions_Load",
@@ -136731,7 +136731,7 @@
   "status": "OK"
  },
  "0x67fdf0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start",
@@ -136742,7 +136742,7 @@
   "this_as_id": false
  },
  "0x67fe70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FE70",
@@ -136753,7 +136753,7 @@
   "this_as_id": false
  },
  "0x67fef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FEF0",
@@ -136764,7 +136764,7 @@
   "this_as_id": false
  },
  "0x67ff70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FF70",
@@ -136775,7 +136775,7 @@
   "this_as_id": false
  },
  "0x67fff0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_67FFF0",
@@ -136786,7 +136786,7 @@
   "this_as_id": false
  },
  "0x680070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680070",
@@ -136797,7 +136797,7 @@
   "this_as_id": false
  },
  "0x6800f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6800F0",
@@ -136808,7 +136808,7 @@
   "this_as_id": false
  },
  "0x680170": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_680170",
@@ -136819,7 +136819,7 @@
   "this_as_id": false
  },
  "0x6801f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SaveGame_Start_6801F0",
