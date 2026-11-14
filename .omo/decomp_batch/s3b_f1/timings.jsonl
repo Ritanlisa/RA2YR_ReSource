@@ -148,3 +148,4 @@
 {"part": 147, "n": 20, "seconds": 47.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 148, "n": 20, "seconds": 54.4, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 149, "n": 20, "seconds": 39.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 150, "n": 20, "seconds": 63.4, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
