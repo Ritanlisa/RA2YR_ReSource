@@ -63,3 +63,4 @@
 {"part": 62, "n": 20, "seconds": 56.9, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"part": 63, "n": 20, "seconds": 64.0, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"part": 64, "n": 20, "seconds": 63.8, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"part": 65, "n": 20, "seconds": 53.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}

@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x59afa0 RandomMap::FillTerrainProgressively -> RandomMap
+[conv] 0x59b200 RandomMap::PlaceTerrainFeatures -> RandomMap
+[conv] 0x59bbc0 RandomMap::PlaceTerrain -> RandomMap
+[conv] 0x59c630 FindMapCell -> _addr_59
+[conv] 0x59c920 TiberiumClass::Grow -> TiberiumClass
+[conv] 0x59d510 Tiberium::ProcessGrowth -> Tiberium
+[conv] 0x59e740 Tiberium::CalculateSpread -> Tiberium
+[conv] 0x5a0410 MapClass::GrowLayer -> MapClass
+[conv] 0x5a0700 RandomMap::CellListAlloc -> RandomMap
+[conv] 0x5a08d0 RandomMap::SpreadArea -> RandomMap
+[conv] 0x5a1190 sub_5A1190 -> _addr_5A
+[conv] 0x5a1350 SelectTerrainTileVariant -> _addr_5A
+[conv] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> ObjectClass
+[conv] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> RandomMap
+[conv] 0x5a2f50 ObjectClass::SmoothTerrainMap -> ObjectClass
+[conv] 0x5a3ae0 RandomMap::PlaceResources -> RandomMap
+[conv] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> RandomMap
+[conv] 0x5a4b60 FloodFillPathfinding -> _addr_5A
+[conv] 0x5a5360 Pathfinding::ExpandNode -> Pathfinding
+[conv] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> MapSeedClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RandomMap                rc=2
+[era] _addr_59                 rc=2
+[era] TiberiumClass            rc=2
+[era] Tiberium                 rc=2
+[era] MapClass                 rc=2
+[era] _addr_5A                 rc=2
+[era] ObjectClass              rc=2
+[era] Pathfinding              rc=2
+[era] MapSeedClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x59afa0 RandomMap::FillTerrainProgressively -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59b200 RandomMap::PlaceTerrainFeatures -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59bbc0 RandomMap::PlaceTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59c630 FindMapCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x59c920 TiberiumClass::Grow -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59d510 Tiberium::ProcessGrowth -> COMPILE_FAIL (attempt 4)
+[ledger] 0x59e740 Tiberium::CalculateSpread -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a0410 MapClass::GrowLayer -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5a0700 RandomMap::CellListAlloc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5a08d0 RandomMap::SpreadArea -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a1190 sub_5A1190 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a1350 SelectTerrainTileVariant -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a1fb0 ObjectClass::SpreadMapSeedTerrainFromWaypoints -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a23a0 RandomMap::PlaceRandomMapTiberium -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a2f50 ObjectClass::SmoothTerrainMap -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5a3ae0 RandomMap::PlaceResources -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a4280 RandomMap::GenerateRandomMapTerrain -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a4b60 FloodFillPathfinding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5a5360 Pathfinding::ExpandNode -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5a5b50 MapSeedClass::PlaceBuildingClusters -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p65\batch_report.json
