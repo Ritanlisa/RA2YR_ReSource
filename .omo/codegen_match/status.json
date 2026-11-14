@@ -66022,7 +66022,7 @@
   "this_as_id": false
  },
  "0x5054b0": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66034,7 +66034,7 @@
   "this_as_id": false
  },
  "0x505f80": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_005F80",
@@ -66045,7 +66045,7 @@
   "this_as_id": false
  },
  "0x505fd0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "globalHelper_005FD0",
@@ -66056,7 +66056,7 @@
   "this_as_id": false
  },
  "0x5060b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66110,7 +66110,7 @@
   "this_as_id": false
  },
  "0x506ef0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66122,7 +66122,7 @@
   "this_as_id": false
  },
  "0x507b80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66158,7 +66158,7 @@
   "this_as_id": false
  },
  "0x508150": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66170,7 +66170,7 @@
   "this_as_id": false
  },
  "0x5082c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66182,7 +66182,7 @@
   "this_as_id": false
  },
  "0x508c30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66194,7 +66194,7 @@
   "this_as_id": false
  },
  "0x508df0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66206,15 +66206,15 @@
   "this_as_id": false
  },
  "0x508f60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 xor edx, edx",
   "name": "HouseClass::ToggleGapGeneratorReveal",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "HouseClass::ToggleGapGeneratorReveal",
   "rule_violations": 6,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5090a0": {
@@ -66266,7 +66266,7 @@
   "this_as_id": false
  },
  "0x5092f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -66302,7 +66302,7 @@
   "this_as_id": false
  },
  "0x5095d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66314,7 +66314,7 @@
   "this_as_id": false
  },
  "0x509610": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66338,7 +66338,7 @@
   "this_as_id": false
  },
  "0x5098f0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66375,7 +66375,7 @@
   "this_as_id": false
  },
  "0x509cd0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66423,7 +66423,7 @@
   "this_as_id": false
  },
  "0x50a350": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -66442,7 +66442,7 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66592,7 +66592,7 @@
   "this_as_id": false
  },
  "0x50bd30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -66635,7 +66635,7 @@
   "status": "NG"
  },
  "0x50c050": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

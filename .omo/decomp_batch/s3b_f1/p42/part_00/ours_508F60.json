@@ -1,0 +1,87 @@
+{
+ "symbol": "?ToggleGapGeneratorReveal@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::ToggleGapGeneratorReveal",
+ "size": 303,
+ "link_base": 0,
+ "bytes_hex": "55568bf15733c98b7e78888e7d57000085ff0f8e820000008b566c8b0285c074628ba82005000080bda516000000745380b88100000000754a8078740074448b2d0000000085ed74123b3500000000751d8baeec01000085ed741380b81b04000000750a8b2d0000000085ed7415bd1300000039a8ac000000740839a8b4000000750a4183c2043bcf7d0feb8e8b0850ff91d401000084c0744c8b867c570000c1f81084c00f848000000056b900000000e800000000c6867e57000000a1000000003bf07565a1000000006a00680000803fba002000008b8824020000e8000000005f5e5dc38b867c570000c1f81084c0753856b900000000e800000000c6867e57000001a1000000003bf0751d8b0d000000006a00680000803fba002000008b8920020000e8000000005f5e5dc3",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 75,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?Reset@ShroudClass@@QAEHH@Z",
+   "sym_key": "ShroudClass::Reset"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 245,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 250,
+   "type": "REL32",
+   "sym": "?Reveal@LayerClass@@QAEPAXH@Z",
+   "sym_key": "LayerClass::Reveal"
+  },
+  {
+   "off": 262,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 272,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  }
+ ]
+}

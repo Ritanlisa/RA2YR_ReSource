@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x505fd0 globalHelper_005FD0 -> _addr_50
+[conv] 0x5060b0 HouseClass::ScanBuildLocation -> HouseClass
+[conv] 0x506ef0 HouseClass::AutoBuildScanAndSort -> HouseClass
+[conv] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> ObjectClass
+[conv] 0x508150 HouseClass::ComputePowerDistribution -> HouseClass
+[conv] 0x5082c0 HouseClass::FindAutoBuildLocation -> HouseClass
+[conv] 0x508c30 HouseClass::UpdatePower -> HouseClass
+[conv] 0x508df0 HouseClass::CanTogglePower -> HouseClass
+[conv] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> HouseClass
+[conv] 0x5092f0 TechnoClass::sub_5092F0 -> TechnoClass
+[conv] 0x5095d0 TeamClass::CountActiveTeamsForType -> TeamClass
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x509cd0 HouseClass::Fire_ParaDrop -> HouseClass
+[conv] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> HouseClass
+[conv] 0x50a5c0 HouseClass::AIBuildBase -> HouseClass
+[conv] 0x50bd30 TechnoClass::GetDamageMultiplier -> TechnoClass
+[conv] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> TechnoClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] _addr_50                 rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] TeamClass                rc=2
+[era] TriggerClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x508f60   MISMATCH         HouseClass::ToggleGapGeneratorReveal
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 10)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x505fd0 globalHelper_005FD0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5060b0 HouseClass::ScanBuildLocation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x506ef0 HouseClass::AutoBuildScanAndSort -> COMPILE_FAIL (attempt 4)
+[ledger] 0x507b80 ObjectClass::CollectSuperWeaponBuildingTypes -> COMPILE_FAIL (attempt 4)
+[ledger] 0x508150 HouseClass::ComputePowerDistribution -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5082c0 HouseClass::FindAutoBuildLocation -> COMPILE_FAIL (attempt 7)
+[ledger] 0x508c30 HouseClass::UpdatePower -> COMPILE_FAIL (attempt 5)
+[ledger] 0x508df0 HouseClass::CanTogglePower -> COMPILE_FAIL (attempt 4)
+[ledger] 0x508f60 HouseClass::ToggleGapGeneratorReveal -> NG (attempt 4)
+[ledger] 0x5092f0 TechnoClass::sub_5092F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5095d0 TeamClass::CountActiveTeamsForType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> COMPILE_FAIL (attempt 17)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 9)
+[ledger] 0x509cd0 HouseClass::Fire_ParaDrop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50a350 HouseClass::FireSuperWeaponAtBestTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50a5c0 HouseClass::AIBuildBase -> COMPILE_FAIL (attempt 9)
+[ledger] 0x50bd30 TechnoClass::GetDamageMultiplier -> COMPILE_FAIL (attempt 4)
+[ledger] 0x50c050 TechnoClass::GetTargetSpeedMultiplier -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p42\batch_report.json
