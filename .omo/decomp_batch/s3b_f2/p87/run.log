@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p87\part_00
+=== convert (20 addrs) ===
+[conv] 0x627020 sub_627020 -> _addr_62
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x627590 MIXFile::Load -> MIXFile
+[conv] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> _VectorClass_VHSVClass
+[conv] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> _DynamicVectorClass_VHSVClass
+[conv] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x6295b0 ParasiteClass::LoadParasite -> ParasiteClass
+[conv] 0x6297f0 ParasiteClass::DeploySquad -> ParasiteClass
+[conv] 0x629e90 FootClass::CreateWakes -> FootClass
+[conv] 0x629fd0 ParasiteClass::TickDamage -> ParasiteClass
+[conv] 0x62a260 ParasiteClass::DeployUnit -> ParasiteClass
+[conv] 0x62a980 ParasiteClass::TryInfect -> ParasiteClass
+[conv] 0x62ab40 ParasiteClass::CanExistOnVictimCell -> ParasiteClass
+[conv] 0x62ac30 Object::CalculateObjectPlacementPosition -> Object
+[conv] 0x62b5e0 ParticleClass::Construct -> ParticleClass
+[conv] 0x62bd50 ParasiteClass::Update -> ParasiteClass
+[conv] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> ParticleClass
+[conv] 0x62c540 ParticleClass::UpdateAnimationDrift -> ParticleClass
+[conv] 0x62c6e0 TechnoClass::UpdateParticleSystem -> TechnoClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=2
+[era] FileSystem               rc=2
+[era] MIXFile                  rc=2
+[era] _VectorClass_VHSVClass   rc=2
+[era] _DynamicVectorClass_VHSVClass rc=2
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] ParasiteClass            rc=2
+[era] FootClass                rc=2
+[era] Object                   rc=2
+[era] ParticleClass            rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x627020 sub_627020 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 11)
+[ledger] 0x627590 MIXFile::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x628410 _VectorClass_VHSVClass::ScalarDeletingDestructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6285a0 _DynamicVectorClass_VHSVClass::ProcessAll -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6288f0 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::SetCapacity_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x628bb0 _DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode::Remove -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6295b0 ParasiteClass::LoadParasite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6297f0 ParasiteClass::DeploySquad -> COMPILE_FAIL (attempt 6)
+[ledger] 0x629e90 FootClass::CreateWakes -> COMPILE_FAIL (attempt 5)
+[ledger] 0x629fd0 ParasiteClass::TickDamage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62a260 ParasiteClass::DeployUnit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62a980 ParasiteClass::TryInfect -> COMPILE_FAIL (attempt 8)
+[ledger] 0x62ab40 ParasiteClass::CanExistOnVictimCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62ac30 Object::CalculateObjectPlacementPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62b5e0 ParticleClass::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x62bd50 ParasiteClass::Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62c3a0 ParticleClass::UpdateParticlePhysics -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62c540 ParticleClass::UpdateAnimationDrift -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62c6e0 TechnoClass::UpdateParticleSystem -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p87\batch_report.json
