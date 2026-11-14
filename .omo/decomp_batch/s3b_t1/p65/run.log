@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p65\part_00
+=== convert (20 addrs) ===
+[conv] 0x727240 TriggerTypeClass::LoadFromINI -> TriggerTypeClass
+[conv] 0x727fd0 TubeClass::Construct -> TubeClass
+[conv] 0x728280 InfantryClass::SetMission -> InfantryClass
+[conv] 0x7283c0 ScenarioClass::LoadWaypoints -> ScenarioClass
+[conv] 0x728540 ObjectClass::sub_728540 -> ObjectClass
+[conv] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> JumpjetLocomotionClass
+[conv] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> TunnelLocomotionClass
+[conv] 0x7291f0 InfantryClass::ProcessTunnelMovement -> InfantryClass
+[conv] 0x729370 AnimClass::ProcessSequence -> AnimClass
+[conv] 0x7294e0 ObjectClass::sub_7294E0 -> ObjectClass
+[conv] 0x729580 ObjectClass::FindUnitPlacementTarget -> ObjectClass
+[conv] 0x729aa0 FootClass::Process -> FootClass
+[conv] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> JumpjetLocomotionClass
+[conv] 0x72a4a0 TextLabelClass::DrawTypewriterText -> TextLabelClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x72b310 LoadingScreen::GetOverlayImage -> LoadingScreen
+[conv] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> CampaignScore
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x72d830 Game::shutdownGame -> Game
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TriggerTypeClass         rc=2
+[era] TubeClass                rc=0
+[era] InfantryClass            rc=2
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] TunnelLocomotionClass    rc=2
+[era] AnimClass                rc=2
+[era] FootClass                rc=2
+[era] TextLabelClass           rc=2
+[era] LoadingScreen            rc=2
+[era] CampaignScore            rc=2
+[era] Game                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x727fd0   MISMATCH         TubeClass::Construct
+[ledger] 0x727240 TriggerTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x727fd0 TubeClass::Construct -> NG (attempt 2)
+[ledger] 0x728280 InfantryClass::SetMission -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7283c0 ScenarioClass::LoadWaypoints -> COMPILE_FAIL (attempt 2)
+[ledger] 0x728540 ObjectClass::sub_728540 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x728a90 JumpjetLocomotionClass::GetCoordinateConditional_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x728c00 TunnelLocomotionClass::ProcessFormationPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7291f0 InfantryClass::ProcessTunnelMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x729370 AnimClass::ProcessSequence -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7294e0 ObjectClass::sub_7294E0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x729580 ObjectClass::FindUnitPlacementTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x729aa0 FootClass::Process -> COMPILE_FAIL (attempt 2)
+[ledger] 0x729b40 JumpjetLocomotionClass::ComputeTurretTransform -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72a4a0 TextLabelClass::DrawTypewriterText -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72b310 LoadingScreen::GetOverlayImage -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72d300 CampaignScore::LoadCampaignScoreAssetsGame -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 6)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 8)
+[ledger] 0x72d830 Game::shutdownGame -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p65\batch_report.json
