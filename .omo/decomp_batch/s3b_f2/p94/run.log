@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p94\part_00
+=== convert (20 addrs) ===
+[conv] 0x6579e0 Game::ManageGameSpeed -> Game
+[conv] 0x657da0 Diplomacy::DlgProc -> Diplomacy
+[conv] 0x658640 ObjectClass::DrawPowerBarForPlayers -> ObjectClass
+[conv] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> ObjectClass
+[conv] 0x6591b0 TechnoClass::UpdateProjectileTrails -> TechnoClass
+[conv] 0x6593f0 RadBeam::InitState -> RadBeam
+[conv] 0x659650 ObjectClass::RenderProjectileTrail -> ObjectClass
+[conv] 0x6599c0 ObjectClass::sub_6599C0 -> ObjectClass
+[conv] 0x659ac0 ProjectileTrail::ComputeRenderData -> ProjectileTrail
+[conv] 0x659e30 ObjectClass::Weapon_Update_Update -> ObjectClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+[conv] 0x65b580 Warhead::ProcessDamageArea -> Warhead
+[conv] 0x65bb50 RadSiteClass::Deactivate -> RadSiteClass
+[conv] 0x65c2e0 RAMFileClass::checkTeamMembership -> RAMFileClass
+[conv] 0x65c300 RAMFileClass::nullsub_0_1 -> RAMFileClass
+[conv] 0x65c340 RAMFileClass::dispatchTeamEvent -> RAMFileClass
+[conv] 0x65c350 RAMFileClass::nullsub_0_2 -> RAMFileClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Game                     rc=2
+[era] Diplomacy                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] RadBeam                  rc=2
+[era] ProjectileTrail          rc=2
+[era] RadioClass               rc=2
+[era] Array                    rc=2
+[era] RadSiteClass             rc=2
+[era] Warhead                  rc=2
+[era] RAMFileClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6579e0 Game::ManageGameSpeed -> COMPILE_FAIL (attempt 4)
+[ledger] 0x657da0 Diplomacy::DlgProc -> COMPILE_FAIL (attempt 8)
+[ledger] 0x658640 ObjectClass::DrawPowerBarForPlayers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6591b0 TechnoClass::UpdateProjectileTrails -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6593f0 RadBeam::InitState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x659650 ObjectClass::RenderProjectileTrail -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6599c0 ObjectClass::sub_6599C0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x659ac0 ProjectileTrail::ComputeRenderData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x659e30 ObjectClass::Weapon_Update_Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 10)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 9)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65b580 Warhead::ProcessDamageArea -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65bb50 RadSiteClass::Deactivate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x65c2e0 RAMFileClass::checkTeamMembership -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c300 RAMFileClass::nullsub_0_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c340 RAMFileClass::dispatchTeamEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65c350 RAMFileClass::nullsub_0_2 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p94\batch_report.json
