@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p88\part_00
+=== convert (20 addrs) ===
+[conv] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> ObjectClass
+[conv] 0x62ce40 ParticleClass::Dispatch -> ParticleClass
+[conv] 0x62cec0 ParticleClass::DrawParticle -> ParticleClass
+[conv] 0x62d2a0 BuildingClass::UpdateFloatPosition -> BuildingClass
+[conv] 0x62d3f0 ParticleClass::CheckWaterImpact -> ParticleClass
+[conv] 0x62d510 ObjectClass::sub_62D510 -> ObjectClass
+[conv] 0x62dc50 ParticleSystemClass::Constructor -> ParticleSystemClass
+[conv] 0x62e280 ParticleSystemClass::CreateBuildingLight -> ParticleSystemClass
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> ParticleSystemClass
+[conv] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> TechnoClass
+[conv] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> TechnoClass
+[conv] 0x62f230 ParticleSystemClass::SpawnParticle -> ParticleSystemClass
+[conv] 0x62fd60 ParticleSystemClass::Update -> ParticleSystemClass
+[conv] 0x62fe90 ParticleSystemClass::UpdateSystem -> ParticleSystemClass
+[conv] 0x62ff20 ParticleSystemClass::Write -> ParticleSystemClass
+[conv] 0x630090 ParticleSystemClass::vt_06 -> ParticleSystemClass
+[conv] 0x630310 DecodeFrameSHP -> _addr_63
+[conv] 0x630b90 Network::resetConnectionState -> Network
+[conv] 0x631060 PhoneEditor::PopulateList -> PhoneEditor
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] ParticleClass            rc=2
+[era] BuildingClass            rc=2
+[era] ParticleSystemClass      rc=2
+[era] TechnoClass              rc=2
+[era] _addr_63                 rc=2
+[era] Network                  rc=2
+[era] PhoneEditor              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62cb10 ObjectClass::UpdateAreaDamageEffect -> COMPILE_FAIL (attempt 8)
+[ledger] 0x62ce40 ParticleClass::Dispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62cec0 ParticleClass::DrawParticle -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62d2a0 BuildingClass::UpdateFloatPosition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62d3f0 ParticleClass::CheckWaterImpact -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62d510 ObjectClass::sub_62D510 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62dc50 ParticleSystemClass::Constructor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x62e280 ParticleSystemClass::CreateBuildingLight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> COMPILE_FAIL (attempt 17)
+[ledger] 0x62e6d0 ParticleSystemClass::UpdateAllParticles -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62e840 TechnoClass::UpdateProductionParticleSystem -> COMPILE_FAIL (attempt 6)
+[ledger] 0x62ed40 TechnoClass::UpdateBuildingParticleSystem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62f230 ParticleSystemClass::SpawnParticle -> COMPILE_FAIL (attempt 5)
+[ledger] 0x62fd60 ParticleSystemClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62fe90 ParticleSystemClass::UpdateSystem -> COMPILE_FAIL (attempt 4)
+[ledger] 0x62ff20 ParticleSystemClass::Write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x630090 ParticleSystemClass::vt_06 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x630310 DecodeFrameSHP -> COMPILE_FAIL (attempt 5)
+[ledger] 0x630b90 Network::resetConnectionState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x631060 PhoneEditor::PopulateList -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p88\batch_report.json
