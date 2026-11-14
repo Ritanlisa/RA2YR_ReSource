@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p129\part_00
+=== convert (20 addrs) ===
+[conv] 0x72dfb0 InitLoadingScreenResources -> _addr_72
+[conv] 0x72e450 RenderScoreScreen -> _addr_72
+[conv] 0x72e730 UI_Draw_72E730 -> UI_Draw
+[conv] 0x72f350 House_Load -> House
+[conv] 0x72fa10 LoadingScreen::LoadSHPs -> LoadingScreen
+[conv] 0x72fbc0 Sides::MixFileYuriFiles3 -> Sides
+[conv] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> ObjectClass
+[conv] 0x730af0 TechnoClass::ProcessSelectionExperience -> TechnoClass
+[conv] 0x730f30 ObjectClass::UI_Create_730F30 -> ObjectClass
+[conv] 0x7311c0 TacticalClass::SetObserverView -> TacticalClass
+[conv] 0x731840 SquadClass::ProcessMove -> SquadClass
+[conv] 0x7318f0 ObjectClass::UI_Create_7318F0 -> ObjectClass
+[conv] 0x731a90 j_FactoryClass_GetFlag -> _addr_73
+[conv] 0x731d00 Selection::SetCurrent -> Selection
+[conv] 0x731eb0 sub_731EB0 -> _addr_73
+[conv] 0x732110 sub_732110 -> _addr_73
+[conv] 0x732140 sub_732140 -> _addr_73
+[conv] 0x732190 sub_732190 -> _addr_73
+[conv] 0x7321d0 sub_7321D0 -> _addr_73
+[conv] 0x732210 SelectFactionThemeMusic_Helper -> SelectFactionThemeMusic
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=2
+[era] UI_Draw                  rc=2
+[era] House                    rc=2
+[era] LoadingScreen            rc=2
+[era] Sides                    rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] TacticalClass            rc=2
+[era] SquadClass               rc=2
+[era] _addr_73                 rc=2
+[era] Selection                rc=2
+[era] SelectFactionThemeMusic  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x72dfb0 InitLoadingScreenResources -> COMPILE_FAIL (attempt 7)
+[ledger] 0x72e450 RenderScoreScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72e730 UI_Draw_72E730 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 9)
+[ledger] 0x72fa10 LoadingScreen::LoadSHPs -> COMPILE_FAIL (attempt 5)
+[ledger] 0x72fbc0 Sides::MixFileYuriFiles3 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x730a10 ObjectClass::SidebarCountAvailableUnits -> COMPILE_FAIL (attempt 4)
+[ledger] 0x730af0 TechnoClass::ProcessSelectionExperience -> COMPILE_FAIL (attempt 3)
+[ledger] 0x730f30 ObjectClass::UI_Create_730F30 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7311c0 TacticalClass::SetObserverView -> COMPILE_FAIL (attempt 4)
+[ledger] 0x731840 SquadClass::ProcessMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7318f0 ObjectClass::UI_Create_7318F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x731a90 j_FactoryClass_GetFlag -> COMPILE_FAIL (attempt 2)
+[ledger] 0x731d00 Selection::SetCurrent -> COMPILE_FAIL (attempt 8)
+[ledger] 0x731eb0 sub_731EB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x732110 sub_732110 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x732140 sub_732140 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x732190 sub_732190 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7321d0 sub_7321D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x732210 SelectFactionThemeMusic_Helper -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p129\batch_report.json
