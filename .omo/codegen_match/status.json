@@ -214484,7 +214484,7 @@
   "this_as_id": false
  },
  "0x7dc4c9": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "___crtGetLocaleInfoW",
@@ -214495,7 +214495,7 @@
   "this_as_id": false
  },
  "0x7dc5dc": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "___crtGetLocaleInfoA",
@@ -214540,7 +214540,7 @@
   "this_as_id": false
  },
  "0x7dc7cb": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "HandleErrorCOM",
@@ -214562,7 +214562,7 @@
   "this_as_id": false
  },
  "0x7dcd9c": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "ThrowErrorCOM",
@@ -214597,7 +214597,7 @@
   "this_as_id": false
  },
  "0x7dce0e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -214639,7 +214639,7 @@
   "this_as_id": false
  },
  "0x7dce6e": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GetTimeZoneInformation",
@@ -214650,7 +214650,7 @@
   "this_as_id": false
  },
  "0x7dce74": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GetLocalTime",
@@ -214661,7 +214661,7 @@
   "this_as_id": false
  },
  "0x7dce7a": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RtlUnwind",
@@ -214848,7 +214848,7 @@
   "this_as_id": false
  },
  "0x7dcee0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -214911,7 +214911,7 @@
   "this_as_id": false
  },
  "0x7dcf04": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "GetCPInfo",
@@ -214944,7 +214944,7 @@
   "this_as_id": false
  },
  "0x7dcf16": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "SetConsoleCtrlHandler",
@@ -214966,7 +214966,7 @@
   "this_as_id": false
  },
  "0x7dcf22": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -214989,7 +214989,7 @@
   "this_as_id": false
  },
  "0x7dcf2e": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsA",
@@ -215000,7 +215000,7 @@
   "this_as_id": false
  },
  "0x7dcf34": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "FreeEnvironmentStringsW",
@@ -215011,7 +215011,7 @@
   "this_as_id": false
  },
  "0x7dcf3a": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "first_diff": null,
   "name": "GetEnvironmentStrings",
@@ -215022,7 +215022,7 @@
   "this_as_id": false
  },
  "0x7dcf40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "GetEnvironmentStringsW",
@@ -215066,7 +215066,7 @@
   "this_as_id": false
  },
  "0x7dcf58": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "EnumSystemLocalesA",
@@ -215110,7 +215110,7 @@
   "this_as_id": false
  },
  "0x7dcf70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "GetStringTypeW",
@@ -215121,7 +215121,7 @@
   "this_as_id": false
  },
  "0x7dcf76": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "CompareStringA",
@@ -215293,7 +215293,7 @@
   "this_as_id": false
  },
  "0x7dd20f": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__getch",
