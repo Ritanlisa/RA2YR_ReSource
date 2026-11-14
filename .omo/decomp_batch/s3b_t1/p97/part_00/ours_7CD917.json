@@ -1,0 +1,33 @@
+{
+ "symbol": "?__amsg_exit@@YAXK@Z",
+ "sym_key": "Unnamed::__amsg_exit",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "833d00000000017505e8000000008b44240450e80000000068ff000000ff150000000083c408c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78230@@3IA",
+   "sym_key": "CRTGlobal_B78230"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?_FF_MSGBANNER@@YAHXZ",
+   "sym_key": "_FF_MSGBANNER"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?_NMSG_WRITE@@YAHHZZ",
+   "sym_key": "_NMSG_WRITE"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C2A0@@3PAXA",
+   "sym_key": "DataGlobal_87C2A0"
+  }
+ ]
+}
