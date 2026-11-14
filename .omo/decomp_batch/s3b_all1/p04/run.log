@@ -1,0 +1,125 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p04\part_00
+=== convert (40 addrs) ===
+[conv] 0x427270 Animate::ScalarDtor -> Animate
+[conv] 0x427530 AnimTypeClass::Construct -> AnimTypeClass
+[conv] 0x427d00 AnimTypeClass::LoadFromINI -> AnimTypeClass
+[conv] 0x428800 AnimTypeClass::SaveLoad_Prefix -> AnimTypeClass
+[conv] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> AnimTypeClass
+[conv] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> AnimTypeClass
+[conv] 0x428c30 AnimTypeClass::GetDamage -> AnimTypeClass
+[conv] 0x429500 ApplicationClass::sub_429500 -> ApplicationClass
+[conv] 0x429a90 BuildingClass::UpdatePowerAnimation -> BuildingClass
+[conv] 0x42a460 BuildingClass::AddRectToDrawList -> BuildingClass
+[conv] 0x42b7f0 ObjectClass::SimplifyPathFilter -> ObjectClass
+[conv] 0x42be20 WalkLineOfSight -> _addr_42
+[conv] 0x42c1c0 MapClass::AllocArrays -> MapClass
+[conv] 0x42c290 Pathfinding::AStar -> Pathfinding
+[conv] 0x42c900 ObjectClass::FindPathWithRetry -> ObjectClass
+[conv] 0x42cf80 ObjectClass::sub_42CF80 -> ObjectClass
+[conv] 0x42d170 Pathfinding::CalcDistance -> Pathfinding
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x42e6f0 BaseClass::Constructor -> BaseClass
+[conv] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> BuildingPrerequisiteClass
+[conv] 0x42ee30 BaseClass::LoadBaseNodeClass -> BaseClass
+[conv] 0x42f1e0 BaseClass::Construct -> BaseClass
+[conv] 0x430ba0 ObjectClass::PlacePlayerBeacon -> ObjectClass
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x431090 Radar::FindNearestRadarTarget -> Radar
+[conv] 0x4311c0 Network::SendBeaconDelete -> Network
+[conv] 0x431450 Network::SendBeacon -> Network
+[conv] 0x431b80 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x431e80 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x431f50 BufferIOFileClass::Write -> BufferIOFileClass
+[conv] 0x431f70 CCFileClass::Open -> CCFileClass
+[conv] 0x432050 CCFileClass::BufferedWriter -> CCFileClass
+[conv] 0x4322a0 CCFileClass::BufferedReader -> CCFileClass
+[conv] 0x432750 BinkMovie::InitFromFile -> BinkMovie
+[conv] 0x432c10 WeaponTypeClass::COMStub_432C10 -> WeaponTypeClass
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x433560 sub_433560 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x433990 File::LoadFont -> File
+=== emit 21 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Animate                  rc=2
+[era] AnimTypeClass            rc=2
+[era] ApplicationClass         rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] _addr_42                 rc=2
+[era] MapClass                 rc=2
+[era] Pathfinding              rc=2
+[era] Base64Straw              rc=2
+[era] BaseClass                rc=2
+[era] BuildingPrerequisiteClass rc=2
+[era] PlayerClass              rc=2
+[era] Radar                    rc=2
+[era] Network                  rc=2
+[era] BufferIOFileClass        rc=2
+[era] CCFileClass              rc=2
+[era] BinkMovie                rc=2
+[era] WeaponTypeClass          rc=2
+[era] BinkMovieHandle          rc=2
+[era] _addr_43                 rc=2
+[era] File                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x42cf80   MISMATCH         ObjectClass::sub_42CF80
+[ledger] 0x427270 Animate::ScalarDtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x427530 AnimTypeClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x427d00 AnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x428800 AnimTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x428970 AnimTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4289d0 AnimTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x428c30 AnimTypeClass::GetDamage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x429500 ApplicationClass::sub_429500 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x429a90 BuildingClass::UpdatePowerAnimation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42a460 BuildingClass::AddRectToDrawList -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42b7f0 ObjectClass::SimplifyPathFilter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42be20 WalkLineOfSight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42c1c0 MapClass::AllocArrays -> COMPILE_FAIL (attempt 6)
+[ledger] 0x42c290 Pathfinding::AStar -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42c900 ObjectClass::FindPathWithRetry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42cf80 ObjectClass::sub_42CF80 -> NG (attempt 4)
+[ledger] 0x42d170 Pathfinding::CalcDistance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42df90 Base64Straw::ProcessFrame -> COMPILE_FAIL (attempt 15)
+[ledger] 0x42e6f0 BaseClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42ee30 BaseClass::LoadBaseNodeClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42f1e0 BaseClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x430ba0 ObjectClass::PlacePlayerBeacon -> COMPILE_FAIL (attempt 6)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 7)
+[ledger] 0x431090 Radar::FindNearestRadarTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4311c0 Network::SendBeaconDelete -> COMPILE_FAIL (attempt 3)
+[ledger] 0x431450 Network::SendBeacon -> COMPILE_FAIL (attempt 4)
+[ledger] 0x431b80 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x431e80 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 3)
+[ledger] 0x431f50 BufferIOFileClass::Write -> COMPILE_FAIL (attempt 3)
+[ledger] 0x431f70 CCFileClass::Open -> COMPILE_FAIL (attempt 3)
+[ledger] 0x432050 CCFileClass::BufferedWriter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4322a0 CCFileClass::BufferedReader -> COMPILE_FAIL (attempt 3)
+[ledger] 0x432750 BinkMovie::InitFromFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x432c10 WeaponTypeClass::COMStub_432C10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 6)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 7)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x433990 File::LoadFont -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 39,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 22,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p04\batch_report.json
