@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B6240",
+ "name": "DropPodLocomotionClass::BeginMove",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B6240",
+ "bytes_hex": "53568b74240c578b7c24145756e86e480a008bd885db7c5f85f6741bc7462c00000000c70644837e00c7460478827e00c7461854827e008b076a008d4c24186a015157ff500c8a44241484c074298b462c83c62c85c074068b1050ff5208566858d37e0057c70600000000ff15f8157e005f5e5bc208005f8bc35e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

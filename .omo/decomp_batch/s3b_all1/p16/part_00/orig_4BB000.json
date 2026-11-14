@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BB000",
+ "name": "DSurface::RestoreIfLost",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BB000",
+ "bytes_hex": "a078f989005684c0578bf1750ea080eda80084c075055f32c05ec38b461c85c0744d8b0850ff51603dc201768875408b461c508b10ff526c85c075da8b461c508b08ff516085c075cd8b7e0c85ff7e1f8b1633c951508bce89460cff525c8b460c8bce4089460c8b06ff5060897e0c5fb0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

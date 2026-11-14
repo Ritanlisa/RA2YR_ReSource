@@ -1,0 +1,123 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p16\part_00
+=== convert (40 addrs) ===
+[conv] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> DropPodLocomotionClass
+[conv] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> DropPodLocomotionClass
+[conv] 0x4b6240 DropPodLocomotionClass::BeginMove -> DropPodLocomotionClass
+[conv] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> DropPodLocomotionClass
+[conv] 0x4b6470 DropPodLocomotionClass::QueryInterface -> DropPodLocomotionClass
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> LocomotionClass
+[conv] 0x4b66a0 DropPodLocomotionClass::AddRef -> DropPodLocomotionClass
+[conv] 0x4b66b0 DropPodLocomotionClass::Release -> DropPodLocomotionClass
+[conv] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> DropPodLocomotionClass
+[conv] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> ObjectClass
+[conv] 0x4b6c30 LoadScreen::RenderLoop -> LoadScreen
+[conv] 0x4b96a0 TextRenderer::RenderCentered -> TextRenderer
+[conv] 0x4b9890 DisplayBuildingInfoPanel -> _addr_4B
+[conv] 0x4ba5a0 DSurface::Construct -> DSurface
+[conv] 0x4ba770 DSurface::CreatePrimary -> DSurface
+[conv] 0x4bac60 DSurface::CreateBackBuffer -> DSurface
+[conv] 0x4bad80 DSurface::Lock -> DSurface
+[conv] 0x4baec0 DSurface::CanLock -> DSurface
+[conv] 0x4baf20 DSurface::CheckBltStatus -> DSurface
+[conv] 0x4bb000 DSurface::RestoreIfLost -> DSurface
+[conv] 0x4bb0d0 DSurface::Blit -> DSurface
+[conv] 0x4bbca0 DSurface::DrawLineModulated -> DSurface
+[conv] 0x4bc750 DSurface::DrawLineFaded -> DSurface
+[conv] 0x4bdf00 DSurface::DrawLineZBufColored -> DSurface
+[conv] 0x4beac0 AudioStream::DrawWaveform -> AudioStream
+[conv] 0x4bf750 DSurface::DrawGradientLine -> DSurface
+[conv] 0x4bfd30 DSurface::DrawLineZBuf -> DSurface
+[conv] 0x4c1600 ObjectClass::sub_4C1600 -> ObjectClass
+[conv] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> ObjectClass
+[conv] 0x4c1f20 Lightning::Draw -> Lightning
+[conv] 0x4c2790 ObjectClass::sub_4C2790 -> ObjectClass
+[conv] 0x4c2fc0 EditClass::sub_4C2FC0 -> EditClass
+[conv] 0x4c3420 EditClass::SetItemText -> EditClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x4c3e30 CreditsPower::Display -> CreditsPower
+[conv] 0x4c4f90 TaskForceClass::Check -> TaskForceClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x4c6210 GameResult::CalcScore -> GameResult
+[conv] 0x4c65e0 EventClass::Add -> EventClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DropPodLocomotionClass   rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] LocomotionClass          rc=2
+[era] ObjectClass              rc=2
+[era] LoadScreen               rc=2
+[era] TextRenderer             rc=2
+[era] _addr_4B                 rc=2
+[era] DSurface                 rc=2
+[era] AudioStream              rc=2
+[era] Lightning                rc=2
+[era] EditClass                rc=2
+[era] CreditsPower             rc=2
+[era] TaskForceClass           rc=2
+[era] GameResult               rc=2
+[era] EventClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x4b6240   MISMATCH         DropPodLocomotionClass::BeginMove
+[diff] 0x4b6ab0   MISMATCH         ObjectClass::sub_4B6AB0
+[diff] 0x4bb000   MISMATCH         DSurface::RestoreIfLost
+[ledger] 0x4b5b70 DropPodLocomotionClass::ILoco_Process -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b6040 DropPodLocomotionClass::UpdateMovementPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b6240 DropPodLocomotionClass::BeginMove -> NG (attempt 6)
+[ledger] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4b6470 DropPodLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4b6610 LocomotionClass::Thunk_VtableDispatch4 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4b66a0 DropPodLocomotionClass::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b66b0 DropPodLocomotionClass::Release -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b66f0 DropPodLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b6ab0 ObjectClass::sub_4B6AB0 -> NG (attempt 3)
+[ledger] 0x4b6c30 LoadScreen::RenderLoop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b96a0 TextRenderer::RenderCentered -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b9890 DisplayBuildingInfoPanel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ba5a0 DSurface::Construct -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4ba770 DSurface::CreatePrimary -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bac60 DSurface::CreateBackBuffer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bad80 DSurface::Lock -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4baec0 DSurface::CanLock -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4baf20 DSurface::CheckBltStatus -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bb000 DSurface::RestoreIfLost -> NG (attempt 7)
+[ledger] 0x4bb0d0 DSurface::Blit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4bbca0 DSurface::DrawLineModulated -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bc750 DSurface::DrawLineFaded -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bdf00 DSurface::DrawLineZBufColored -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4beac0 AudioStream::DrawWaveform -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bf750 DSurface::DrawGradientLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4bfd30 DSurface::DrawLineZBuf -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c1600 ObjectClass::sub_4C1600 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c16a0 ObjectClass::InitializeRadialGradientTexture -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c1f20 Lightning::Draw -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4c2790 ObjectClass::sub_4C2790 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c2fc0 EditClass::sub_4C2FC0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4c3420 EditClass::SetItemText -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4c3e30 CreditsPower::Display -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c4f90 TaskForceClass::Check -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4c6210 GameResult::CalcScore -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c65e0 EventClass::Add -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 37,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p16\batch_report.json

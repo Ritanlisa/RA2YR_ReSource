@@ -1,0 +1,33 @@
+{
+ "symbol": "?BeginMove@DropPodLocomotionClass@@QAGJPAH@Z",
+ "sym_key": "DropPodLocomotionClass::BeginMove",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "8b44240853568b74240c578bd8508b0650e8000000008bf885ff7d065f5e5bc2080085f67414b800000000c7462c0000000089068946048946188b0b6a008d5424186a015253ff510c8a44241484c075088bc75f5e5bc208008b462c83c62c85c074068b0850ff510856680000000053c70600000000e8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?SwizzleManager__SaveLoad@@YGHPAXPAH@Z",
+   "sym_key": "SwizzleManager__SaveLoad"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?vt_DropPodLocomotionClass_2@@3PAXA",
+   "sym_key": "vt_DropPodLocomotionClass_2"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?IID_ILocomotion@@3U_GUID_era@@A",
+   "sym_key": "IID_ILocomotion"
+  },
+  {
+   "off": 119,
+   "type": "REL32",
+   "sym": "?OleLoadFromStream@@YGJPAX00@Z",
+   "sym_key": "OleLoadFromStream"
+  }
+ ]
+}
