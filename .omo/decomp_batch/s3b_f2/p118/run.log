@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p118\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ef9e0 TechnoClass::IsDeployed -> TechnoClass
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x6efc70 ObjectClass::ProcessAISuperWeaponSelection -> ObjectClass
+[conv] 0x6efe60 SuperWeapon::DispatchTeam -> SuperWeapon
+[conv] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> TeamClass
+[conv] 0x6f0ab0 AISelectTeamHouseClass -> _addr_6F
+[conv] 0x6f1090 TeamTypeClass::LoadFromINI -> TeamTypeClass
+[conv] 0x6f1550 TeamTypeClass::GetMaxCount -> TeamTypeClass
+[conv] 0x6f19b0 SmallFunc_6F19B0 -> SmallFunc
+[conv] 0x6f1ab0 TeamTypeClass::ReadScriptData -> TeamTypeClass
+[conv] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> TriggerClass
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x6f2b40 TechnoClass::TechnoClass_6F2B40 -> TechnoClass
+[conv] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> TechnoClass
+[conv] 0x6f3ad0 TechnoClass::ComputeTransform -> TechnoClass
+[conv] 0x6f3d60 TechnoClass::GetTurretOffset -> TechnoClass
+[conv] 0x6f3f40 TechnoClass::Update -> TechnoClass
+[conv] 0x6f4500 TechnoClass::DTOR -> TechnoClass
+[conv] 0x6f4960 TechnoClass::SetHouseFlag -> TechnoClass
+[conv] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] SuperWeapon              rc=2
+[era] _addr_6F                 rc=2
+[era] TeamTypeClass            rc=2
+[era] SmallFunc                rc=2
+[era] TriggerClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6ef9e0 TechnoClass::IsDeployed -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6efc70 ObjectClass::ProcessAISuperWeaponSelection -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6efe60 SuperWeapon::DispatchTeam -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f0130 TeamClass::CheckMemberSuperWeapon -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6f0ab0 AISelectTeamHouseClass -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6f1090 TeamTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f1550 TeamTypeClass::GetMaxCount -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6f1ab0 TeamTypeClass::ReadScriptData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6f1e20 TriggerClass::EvaluateObjectForTrigger -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6f2b40 TechnoClass::TechnoClass_6F2B40 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f3280 TechnoClass::IsNotAircraftOrBuilding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f3ad0 TechnoClass::ComputeTransform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f3d60 TechnoClass::GetTurretOffset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f3f40 TechnoClass::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f4500 TechnoClass::DTOR -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6f4960 TechnoClass::SetHouseFlag -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6f4ab0 TechnoClass::Mission_RepairDispatch -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p118\batch_report.json
