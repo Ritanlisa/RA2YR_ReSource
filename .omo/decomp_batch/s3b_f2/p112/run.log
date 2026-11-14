@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p112\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> _TClassFactory_VBulletClass
+[conv] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> _TClassFactory_VFactoryClass
+[conv] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> _TClassFactory_VParticleClass
+[conv] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> _TClassFactory_VNeuronClass
+[conv] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> _TClassFactory_VAlphaShapeClass
+[conv] 0x6c6640 StaticButtonClass::SetText -> StaticButtonClass
+[conv] 0x6c6740 StaticButtonClass::HitTest -> StaticButtonClass
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+[conv] 0x6c6f50 ProcessGameResults -> _addr_6C
+[conv] 0x6c8f10 sub_6C8F10 -> _addr_6C
+[conv] 0x6c8ff0 DlgProcScoreScreen -> _addr_6C
+[conv] 0x6c9650 Float4::Sum -> Float4
+[conv] 0x6c9780 ObjectClass::sub_6C9780 -> ObjectClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x6c9d40 BinkMovie::ProcessKeyframe -> BinkMovie
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VTeleportLocomotionClass rc=2
+[era] _TClassFactory_VShipLocomotionClass rc=2
+[era] _TClassFactory_VBulletClass rc=2
+[era] _TClassFactory_VFactoryClass rc=2
+[era] _TClassFactory_VWarheadTypeClass rc=2
+[era] _TClassFactory_VParticleClass rc=2
+[era] _TClassFactory_VParticleSystemClass rc=2
+[era] _TClassFactory_VNeuronClass rc=2
+[era] _TClassFactory_VAlphaShapeClass rc=2
+[era] StaticButtonClass        rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6C                 rc=2
+[era] Float4                   rc=2
+[era] BinkMovie                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6c4c10 _TClassFactory_VTeleportLocomotionClass::ddtor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6c4f10 _TClassFactory_VShipLocomotionClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c5090 _TClassFactory_VBulletClass::ddtor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6c5210 _TClassFactory_VFactoryClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c5390 _TClassFactory_VWarheadTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c5690 _TClassFactory_VParticleClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c5990 _TClassFactory_VParticleSystemClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c5e10 _TClassFactory_VNeuronClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c6110 _TClassFactory_VAlphaShapeClass::ddtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c6640 StaticButtonClass::SetText -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6c6740 StaticButtonClass::HitTest -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6c6f50 ProcessGameResults -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c8f10 sub_6C8F10 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6c9650 Float4::Sum -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c9780 ObjectClass::sub_6C9780 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> COMPILE_FAIL (attempt 17)
+[ledger] 0x6c9d40 BinkMovie::ProcessKeyframe -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p112\batch_report.json
