@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x680c70 SaveGame_Start_680C70 -> SaveGame_Start
+[conv] 0x680cf0 SaveGame_Start_680CF0 -> SaveGame_Start
+[conv] 0x680d70 SaveGame_Start_680D70 -> SaveGame_Start
+[conv] 0x680df0 SaveGame_Start_680DF0 -> SaveGame_Start
+[conv] 0x680e70 SaveGame_Start_680E70 -> SaveGame_Start
+[conv] 0x680ef0 SaveGame_Start_680EF0 -> SaveGame_Start
+[conv] 0x680f70 Game::validateScenario -> Game
+[conv] 0x6810a0 ObjectClass::Map_Save_6810A0 -> ObjectClass
+[conv] 0x6810d0 ObjectClass::Map_Save_6810D0 -> ObjectClass
+[conv] 0x681840 ObjectClass::ScenarioPropertyReadCOM -> ObjectClass
+[conv] 0x682240 Map_Read_682240 -> Map_Read
+[conv] 0x6822f0 Map_Read_6822F0 -> Map_Read
+[conv] 0x6824b0 Map_Read_6824B0 -> Map_Read
+[conv] 0x682780 GameOptions_Load -> GameOptions
+[conv] 0x682a90 PropertyReadBoolCOM -> _addr_68
+[conv] 0x682c70 sub_682C70 -> _addr_68
+[conv] 0x682e10 WriteIntCOM -> _addr_68
+[conv] 0x683610 ScenarioClass::InitTimer -> ScenarioClass
+[conv] 0x683ab0 ScenarioClass::LoadScenarioAndStart -> ScenarioClass
+[conv] 0x683fb0 TechnoClass::PostFrameCleanup -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SaveGame_Start           rc=2
+[era] Game                     rc=2
+[era] ObjectClass              rc=2
+[era] Map_Read                 rc=2
+[era] GameOptions              rc=2
+[era] _addr_68                 rc=2
+[era] ScenarioClass            rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x680c70 SaveGame_Start_680C70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680cf0 SaveGame_Start_680CF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680d70 SaveGame_Start_680D70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680df0 SaveGame_Start_680DF0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x680e70 SaveGame_Start_680E70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680ef0 SaveGame_Start_680EF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x680f70 Game::validateScenario -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6810a0 ObjectClass::Map_Save_6810A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6810d0 ObjectClass::Map_Save_6810D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x681840 ObjectClass::ScenarioPropertyReadCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x682240 Map_Read_682240 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6822f0 Map_Read_6822F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6824b0 Map_Read_6824B0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x682780 GameOptions_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x682a90 PropertyReadBoolCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x682c70 sub_682C70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x682e10 WriteIntCOM -> COMPILE_FAIL (attempt 2)
+[ledger] 0x683610 ScenarioClass::InitTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x683ab0 ScenarioClass::LoadScenarioAndStart -> COMPILE_FAIL (attempt 3)
+[ledger] 0x683fb0 TechnoClass::PostFrameCleanup -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p38\batch_report.json
