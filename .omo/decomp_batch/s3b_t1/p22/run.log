@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x60f760 Dialog::InitWindow -> Dialog
+[conv] 0x60f9a0 Dialog::InitializeControls -> Dialog
+[conv] 0x610570 DestroyDialogChildWindow -> _addr_61
+[conv] 0x610810 sub_610810 -> _addr_61
+[conv] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> ComboBoxOwnerDraw
+[conv] 0x612930 sub_612930 -> _addr_61
+[conv] 0x612a60 sub_612A60 -> _addr_61
+[conv] 0x612b70 TabControl::WndProc -> TabControl
+[conv] 0x6137d0 Dialog::TabControlPaint -> Dialog
+[conv] 0x614b30 EditControl::WndProc -> EditControl
+[conv] 0x6153e0 BinkMovie::WndProc -> BinkMovie
+[conv] 0x6163a0 Checkbox::WndProc -> Checkbox
+[conv] 0x616980 ButtonOwnerDraw::DlgProc -> ButtonOwnerDraw
+[conv] 0x617250 ComboBoxDropDown::WndProc -> ComboBoxDropDown
+[conv] 0x618d40 Options::DialogProc -> Options
+[conv] 0x61c690 Scrollbar::DlgProc -> Scrollbar
+[conv] 0x61d6d0 NetworkLobbyPaintProc -> _addr_61
+[conv] 0x61d950 TabControl::DlgProc -> TabControl
+[conv] 0x61e700 GroupLabel::WndProc -> GroupLabel
+[conv] 0x61eca0 RenderDialogSurface -> _addr_61
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Dialog                   rc=2
+[era] _addr_61                 rc=2
+[era] ComboBoxOwnerDraw        rc=2
+[era] TabControl               rc=2
+[era] EditControl              rc=2
+[era] BinkMovie                rc=2
+[era] Checkbox                 rc=2
+[era] ButtonOwnerDraw          rc=2
+[era] ComboBoxDropDown         rc=2
+[era] Options                  rc=2
+[era] Scrollbar                rc=2
+[era] GroupLabel               rc=2
+=== diffasm byte-compare ===
+[diff] 0x612930   MISMATCH         sub_612930
+[ledger] 0x60f760 Dialog::InitWindow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x60f9a0 Dialog::InitializeControls -> COMPILE_FAIL (attempt 2)
+[ledger] 0x610570 DestroyDialogChildWindow -> COMPILE_FAIL (attempt 6)
+[ledger] 0x610810 sub_610810 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x610ca0 ComboBoxOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x612930 sub_612930 -> NG (attempt 2)
+[ledger] 0x612a60 sub_612A60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x612b70 TabControl::WndProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6137d0 Dialog::TabControlPaint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x614b30 EditControl::WndProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6153e0 BinkMovie::WndProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6163a0 Checkbox::WndProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x616980 ButtonOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x617250 ComboBoxDropDown::WndProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x618d40 Options::DialogProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x61c690 Scrollbar::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x61d6d0 NetworkLobbyPaintProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x61d950 TabControl::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x61e700 GroupLabel::WndProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x61eca0 RenderDialogSurface -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p22\batch_report.json

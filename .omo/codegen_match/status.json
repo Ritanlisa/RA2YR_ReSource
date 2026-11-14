@@ -118425,7 +118425,7 @@
   "this_as_id": false
  },
  "0x60f760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118437,7 +118437,7 @@
   "this_as_id": false
  },
  "0x60f9a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118461,7 +118461,7 @@
   "this_as_id": false
  },
  "0x610570": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "DestroyDialogChildWindow",
@@ -118495,7 +118495,7 @@
   "this_as_id": false
  },
  "0x610810": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_610810",
@@ -118542,7 +118542,7 @@
   "this_as_id": false
  },
  "0x610ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118565,18 +118565,18 @@
   "this_as_id": false
  },
  "0x612930": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xac1860]",
   "name": "sub_612930",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_612930",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x612a60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_612A60",
@@ -118587,7 +118587,7 @@
   "this_as_id": false
  },
  "0x612b70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118599,7 +118599,7 @@
   "this_as_id": false
  },
  "0x6137d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118634,7 +118634,7 @@
   "this_as_id": false
  },
  "0x614b30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118646,7 +118646,7 @@
   "this_as_id": false
  },
  "0x6153e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118658,7 +118658,7 @@
   "this_as_id": false
  },
  "0x6163a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118670,7 +118670,7 @@
   "this_as_id": false
  },
  "0x616980": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118682,7 +118682,7 @@
   "this_as_id": false
  },
  "0x617250": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118694,42 +118694,42 @@
   "this_as_id": false
  },
  "0x618d40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Options::DialogProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Options::DialogProc",
-  "rule_violations": 65,
+  "rule_violations": 62,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x61c690": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Scrollbar::DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Scrollbar::DlgProc",
-  "rule_violations": 5,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x61d6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "NetworkLobbyPaintProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "NetworkLobbyPaintProc",
-  "rule_violations": 5,
+  "rule_violations": 3,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x61d950": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -118741,7 +118741,7 @@
   "this_as_id": false
  },
  "0x61e700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -118753,7 +118753,7 @@
   "this_as_id": false
  },
  "0x61eca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RenderDialogSurface",
