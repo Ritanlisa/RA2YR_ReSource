@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x641ee0 PreviewClass::ReadPreview -> PreviewClass
+[conv] 0x642130 Palette::Preview_Generate -> Palette
+[conv] 0x642b60 LoadingScreen::GetColorScheme -> LoadingScreen
+[conv] 0x643670 UI_Render_643670 -> UI_Render
+[conv] 0x643720 ObjectClass::RenderBuildingProductionButton -> ObjectClass
+[conv] 0x6440a0 OverlayTypeClass::Construct -> OverlayTypeClass
+[conv] 0x6442d0 ParticleSystemTypeClass::GetType -> ParticleSystemTypeClass
+[conv] 0x644700 ParticleSystemTypeClass::PowerDrainUpdate -> ParticleSystemTypeClass
+[conv] 0x644be0 BuildingTypeClass::Construct -> BuildingTypeClass
+[conv] 0x644f50 ParticleTypeClass::LoadFromINI -> ParticleTypeClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> ParticleTypeClass
+[conv] 0x645b10 DynamicVector::getTeamIndex -> DynamicVector
+[conv] 0x645ba0 sub_645BA0 -> _addr_64
+[conv] 0x645d60 ObjectClass::sub_645D60 -> ObjectClass
+[conv] 0x647040 ObjectClass::UI_Create -> ObjectClass
+[conv] 0x6470f0 ObjectClass::UI_Add -> ObjectClass
+[conv] 0x6471a0 Network::AddFrameEvent -> Network
+[conv] 0x647260 ObjectClass::ProcessNetworkEvents -> ObjectClass
+[conv] 0x6475f0 Network::QueueProcessingLoop -> Network
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PreviewClass             rc=2
+[era] Palette                  rc=2
+[era] LoadingScreen            rc=2
+[era] UI_Render                rc=2
+[era] ObjectClass              rc=2
+[era] OverlayTypeClass         rc=2
+[era] ParticleSystemTypeClass  rc=2
+[era] BuildingTypeClass        rc=2
+[era] ParticleTypeClass        rc=2
+[era] DynamicVector            rc=2
+[era] _addr_64                 rc=2
+[era] Network                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x644700   MISMATCH         ParticleSystemTypeClass::PowerDrainUpdate
+[ledger] 0x641ee0 PreviewClass::ReadPreview -> COMPILE_FAIL (attempt 2)
+[ledger] 0x642130 Palette::Preview_Generate -> COMPILE_FAIL (attempt 6)
+[ledger] 0x642b60 LoadingScreen::GetColorScheme -> COMPILE_FAIL (attempt 2)
+[ledger] 0x643670 UI_Render_643670 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x643720 ObjectClass::RenderBuildingProductionButton -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6440a0 OverlayTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6442d0 ParticleSystemTypeClass::GetType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x644700 ParticleSystemTypeClass::PowerDrainUpdate -> NG (attempt 2)
+[ledger] 0x644be0 BuildingTypeClass::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x644f50 ParticleTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x645b10 DynamicVector::getTeamIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x645ba0 sub_645BA0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x645d60 ObjectClass::sub_645D60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x647040 ObjectClass::UI_Create -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6470f0 ObjectClass::UI_Add -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6471a0 Network::AddFrameEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x647260 ObjectClass::ProcessNetworkEvents -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6475f0 Network::QueueProcessingLoop -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p29\batch_report.json

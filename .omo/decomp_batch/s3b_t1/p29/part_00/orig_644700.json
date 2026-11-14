@@ -1,0 +1,11 @@
+{
+ "addr": "0x644700",
+ "name": "ParticleSystemTypeClass::PowerDrainUpdate",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x644700",
+ "bytes_hex": "56578b7c240c8bf157e8d2c4dcff8b86940200008bcf50e834d6e5ff8a8e98020000518bcfe876d5e5ff8b969c0200008bcf52e818d6e5ff8b86a00200008bcf50e82ad6e5ff8b8ea4020000518bcfe8fcd5e5ff8b96a80200008bcf52e8eed5e5ff8b86ac0200008bcf50e800d6e5ff8b8eb0020000518bcfe8f2d5e5ff8b96b40200008bcf52e8c4d5e5ff8b86b80200008bcf50e8b6d5e5ff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
