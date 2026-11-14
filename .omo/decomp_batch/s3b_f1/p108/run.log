@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p108\part_00
+=== convert (20 addrs) ===
+[conv] 0x69ef10 ShipLocomotionClass::LoadFromStream -> ShipLocomotionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> ShipLocomotionClass
+[conv] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> ShipLocomotionClass
+[conv] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> ShipLocomotionClass
+[conv] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> JumpjetLocomotionClass
+[conv] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> ShipLocomotionClass
+[conv] 0x69fc10 ShipLocomotionClass::ProcessImpact -> ShipLocomotionClass
+[conv] 0x6a05f0 WalkLocomotion::ProcessCollision -> WalkLocomotion
+[conv] 0x6a1c80 WalkLocomotion::Update -> WalkLocomotion
+[conv] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> ShipLocomotionClass
+[conv] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> ShipLocomotionClass
+[conv] 0x6a42b0 ShipLocomotionClass::ProcessMove -> ShipLocomotionClass
+[conv] 0x6a4780 SideClass::SaveLoad_Prefix -> SideClass
+[conv] 0x6a4e60 SidebarClass::initTabData -> SidebarClass
+[conv] 0x6a4f20 RadarClass::UI_Init -> RadarClass
+[conv] 0x6a5310 SidebarClass::Init -> SidebarClass
+[conv] 0x6a5840 SidebarClass::LoadAssets -> SidebarClass
+[conv] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> SidebarClass
+[conv] 0x6a6300 SidebarClass::AddCameo -> SidebarClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ShipLocomotionClass      rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] WalkLocomotion           rc=2
+[era] SideClass                rc=2
+[era] SidebarClass             rc=2
+[era] RadarClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x69ef10 ShipLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> COMPILE_FAIL (attempt 15)
+[ledger] 0x69f330 ShipLocomotionClass::StubReturnTrue_6 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69f450 ShipLocomotionClass::ConvertCoordToCell_2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69f510 ShipLocomotionClass::CheckWindowsErrorWrapper_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69f670 JumpjetLocomotionClass::ComputeVoxelTransform2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69fbe0 ShipLocomotionClass::DispatchVirtualCall_6 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x69fc10 ShipLocomotionClass::ProcessImpact -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a05f0 WalkLocomotion::ProcessCollision -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a1c80 WalkLocomotion::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a3f50 ShipLocomotionClass::IsAtDestination -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> COMPILE_FAIL (attempt 17)
+[ledger] 0x6a42b0 ShipLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a4780 SideClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a4e60 SidebarClass::initTabData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a4f20 RadarClass::UI_Init -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6a5310 SidebarClass::Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a5840 SidebarClass::LoadAssets -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6a5f20 SidebarClass::UpdateCameoProductionState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6a6300 SidebarClass::AddCameo -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p108\batch_report.json
