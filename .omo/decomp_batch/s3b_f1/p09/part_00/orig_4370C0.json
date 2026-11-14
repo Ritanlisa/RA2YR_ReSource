@@ -1,0 +1,11 @@
+{
+ "addr": "0x4370C0",
+ "name": "BuildingLightClass::SDDTOR",
+ "size": 154,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4370C0",
+ "bytes_hex": "51568bf1c706d03a7e00c74604b43a7e00c74608ac3a7e00c7460ca43a7e00e84cdc1b0084c0740b56b978f78700e8ed4912008b1590418b008d44240450b990418b0089742408ff521083f8ff742d8b0da0418b003bc17d23493bc1890da0418b007d188b0d94418b00408b1481895481fc8b0da0418b003bc17ce88bcee83dca1b00f644240c01740956e8ed19390083c4048bc65e59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x432c10 WeaponTypeClass::COMStub_432C10 -> WeaponTypeClass
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x433560 sub_433560 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x433990 File::LoadFont -> File
+[conv] 0x433ca0 TextGroup::SetRect -> TextGroup
+[conv] 0x434700 ObjectClass::sub_434700 -> ObjectClass
+[conv] 0x434cd0 Font::Print -> Font
+[conv] 0x435820 BuildingLightClass::CTOR -> BuildingLightClass
+[conv] 0x435be0 BuildingLightClass::Draw_Start -> BuildingLightClass
+[conv] 0x4361d0 BuildingLightClass::SD_vt23 -> BuildingLightClass
+[conv] 0x436be0 BuildingLightClass::FindTarget -> BuildingLightClass
+[conv] 0x4370c0 BuildingLightClass::SDDTOR -> BuildingLightClass
+[conv] 0x4371d0 Helper::ProcessData -> Helper
+[conv] 0x437290 sub_437290 -> _addr_43
+[conv] 0x437a10 BlitterRLEBlitSHP -> _addr_43
+[conv] 0x437fd0 GameClass::initGameMode -> GameClass
+[conv] 0x438000 BlowPipe::Draw -> BlowPipe
+[conv] 0x438030 BlowPipe::DrawAlt -> BlowPipe
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WeaponTypeClass          rc=2
+[era] BinkMovie                rc=2
+[era] BinkMovieHandle          rc=2
+[era] _addr_43                 rc=2
+[era] File                     rc=2
+[era] TextGroup                rc=2
+[era] ObjectClass              rc=2
+[era] Font                     rc=2
+[era] BuildingLightClass       rc=2
+[era] Helper                   rc=2
+[era] GameClass                rc=2
+[era] BlowPipe                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4370c0   MISMATCH         BuildingLightClass::SDDTOR
+[ledger] 0x432c10 WeaponTypeClass::COMStub_432C10 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 7)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 8)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x433990 File::LoadFont -> COMPILE_FAIL (attempt 4)
+[ledger] 0x433ca0 TextGroup::SetRect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x434700 ObjectClass::sub_434700 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x434cd0 Font::Print -> COMPILE_FAIL (attempt 5)
+[ledger] 0x435820 BuildingLightClass::CTOR -> COMPILE_FAIL (attempt 9)
+[ledger] 0x435be0 BuildingLightClass::Draw_Start -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4361d0 BuildingLightClass::SD_vt23 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x436be0 BuildingLightClass::FindTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4370c0 BuildingLightClass::SDDTOR -> NG (attempt 4)
+[ledger] 0x4371d0 Helper::ProcessData -> COMPILE_FAIL (attempt 18)
+[ledger] 0x437290 sub_437290 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x437a10 BlitterRLEBlitSHP -> COMPILE_FAIL (attempt 5)
+[ledger] 0x437fd0 GameClass::initGameMode -> COMPILE_FAIL (attempt 4)
+[ledger] 0x438000 BlowPipe::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x438030 BlowPipe::DrawAlt -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p09\batch_report.json
