@@ -162381,7 +162381,7 @@
   "this_as_id": false
  },
  "0x6eaee0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162393,7 +162393,7 @@
   "this_as_id": false
  },
  "0x6eb380": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162405,7 +162405,7 @@
   "this_as_id": false
  },
  "0x6eb490": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162417,7 +162417,7 @@
   "this_as_id": false
  },
  "0x6eb870": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162429,7 +162429,7 @@
   "this_as_id": false
  },
  "0x6ebad0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162441,7 +162441,7 @@
   "this_as_id": false
  },
  "0x6ebf50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162476,7 +162476,7 @@
   "this_as_id": false
  },
  "0x6ec300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162500,7 +162500,7 @@
   "this_as_id": false
  },
  "0x6ec3a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162572,7 +162572,7 @@
   "this_as_id": false
  },
  "0x6ec7d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162632,7 +162632,7 @@
   "this_as_id": false
  },
  "0x6ecfb0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162656,7 +162656,7 @@
   "this_as_id": false
  },
  "0x6ed200": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162668,7 +162668,7 @@
   "this_as_id": false
  },
  "0x6ed4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162704,7 +162704,7 @@
   "this_as_id": false
  },
  "0x6edb50": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162819,7 +162819,7 @@
   "this_as_id": false
  },
  "0x6ee310": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162831,7 +162831,7 @@
   "this_as_id": false
  },
  "0x6ee3f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162843,7 +162843,7 @@
   "this_as_id": false
  },
  "0x6ee5c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162855,7 +162855,7 @@
   "this_as_id": false
  },
  "0x6ee800": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162878,15 +162878,15 @@
   "this_as_id": false
  },
  "0x6eeea0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 and esp, 0xfffffff8",
   "name": "TeamClass::ScoreMember",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TeamClass::ScoreMember",
   "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ef110": {
@@ -162940,7 +162940,7 @@
   "status": "OK"
  },
  "0x6ef610": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162952,7 +162952,7 @@
   "this_as_id": false
  },
  "0x6ef700": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

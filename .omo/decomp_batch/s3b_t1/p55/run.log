@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x6eaee0 TeamClass::FindClosestEnemy -> TeamClass
+[conv] 0x6eb380 FootClass::LinkToTransporter -> FootClass
+[conv] 0x6eb490 TeamClass::AttackCoordinator -> TeamClass
+[conv] 0x6eb870 HouseClass::EvaluateTarget -> HouseClass
+[conv] 0x6ebad0 TeamClass::UpdateMembers -> TeamClass
+[conv] 0x6ebf50 TeamClass::ProcessMemberPositions -> TeamClass
+[conv] 0x6ec300 TechnoClass::IsWaypointHidden -> TechnoClass
+[conv] 0x6ec3a0 TeamClass::WakeUpAllMembers -> TeamClass
+[conv] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> TeamClass
+[conv] 0x6ecfb0 TeamClass::Create -> TeamClass
+[conv] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> ObjectClass
+[conv] 0x6ed4d0 TechnoClass::ProcessBorderTower -> TechnoClass
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x6ee310 TeamClass::SelectAreaAttackTarget -> TeamClass
+[conv] 0x6ee3f0 TeamClass::ProcessTeamMovement -> TeamClass
+[conv] 0x6ee5c0 TeamClass::SelectBestMember -> TeamClass
+[conv] 0x6ee800 ObjectClass::SelectTeamMembers -> ObjectClass
+[conv] 0x6eeea0 TeamClass::ScoreMember -> TeamClass
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> ObjectClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] FootClass                rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x6eeea0   MISMATCH         TeamClass::ScoreMember
+[ledger] 0x6eaee0 TeamClass::FindClosestEnemy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6eb380 FootClass::LinkToTransporter -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6eb490 TeamClass::AttackCoordinator -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6eb870 HouseClass::EvaluateTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ebad0 TeamClass::UpdateMembers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ebf50 TeamClass::ProcessMemberPositions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ec300 TechnoClass::IsWaypointHidden -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ec3a0 TeamClass::WakeUpAllMembers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ec7d0 TeamClass::MoveTeamToWaypoint -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ecfb0 TeamClass::Create -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ed200 ObjectClass::AssignTeamProductionFacilities -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ed4d0 TechnoClass::ProcessBorderTower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6ee310 TeamClass::SelectAreaAttackTarget -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ee3f0 TeamClass::ProcessTeamMovement -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6ee5c0 TeamClass::SelectBestMember -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6ee800 ObjectClass::SelectTeamMembers -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6eeea0 TeamClass::ScoreMember -> NG (attempt 2)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> COMPILE_FAIL (attempt 17)
+[ledger] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p55\batch_report.json
