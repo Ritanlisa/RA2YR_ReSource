@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a2950 CStreamClass::Release -> CStreamClass
+[conv] 0x4a2990 CStreamClass::QueryInterface -> CStreamClass
+[conv] 0x4a2a20 CStreamClass::StubReturnNullPointer -> CStreamClass
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x4a33a0 AudioStream::ReadSamples -> AudioStream
+[conv] 0x4a3660 ObjectClass::RenderTactical3DScene -> ObjectClass
+[conv] 0x4a3890 CCFileClass::ReadEntireFile -> CCFileClass
+[conv] 0x4a3a10 sub_4A3A10 -> _addr_4A
+[conv] 0x4a3dd0 DDraw::LogError -> DDraw
+[conv] 0x4a3e40 DDraw::CapabilityCheck -> DDraw
+[conv] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> ObjectClass
+[conv] 0x4a40c0 ObjectClass::sub_4A40C0 -> ObjectClass
+[conv] 0x4a4130 ObjectClass::sub_4A4130 -> ObjectClass
+[conv] 0x4a42f0 InitializeDDraw -> _addr_4A
+[conv] 0x4a44f0 ObjectClass::sub_4A44F0 -> ObjectClass
+[conv] 0x4a45c0 ObjectClass::sub_4A45C0 -> ObjectClass
+[conv] 0x4a4620 DDraw::CheckCapabilities -> DDraw
+[conv] 0x4a4700 ObjectClass::sub_4A4700 -> ObjectClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4a4900 sub_4A4900 -> _addr_4A
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CStreamClass             rc=2
+[era] AudioStream              rc=2
+[era] ObjectClass              rc=2
+[era] CCFileClass              rc=2
+[era] _addr_4A                 rc=2
+[era] DDraw                    rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4a2950 CStreamClass::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a2990 CStreamClass::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a2a20 CStreamClass::StubReturnNullPointer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4a33a0 AudioStream::ReadSamples -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a3660 ObjectClass::RenderTactical3DScene -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a3890 CCFileClass::ReadEntireFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a3a10 sub_4A3A10 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a3dd0 DDraw::LogError -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a3e40 DDraw::CapabilityCheck -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a3fd0 ObjectClass::sub_4A3FD0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a40c0 ObjectClass::sub_4A40C0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a4130 ObjectClass::sub_4A4130 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4a42f0 InitializeDDraw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a44f0 ObjectClass::sub_4A44F0 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4a45c0 ObjectClass::sub_4A45C0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a4620 DDraw::CheckCapabilities -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a4700 ObjectClass::sub_4A4700 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4a4900 sub_4A4900 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p26\batch_report.json
