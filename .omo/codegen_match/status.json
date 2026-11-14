@@ -183143,7 +183143,7 @@
   "this_as_id": false
  },
  "0x7542f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "InitializeAudioOcclusion",
@@ -183452,7 +183452,7 @@
   "this_as_id": false
  },
  "0x754cb0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183611,7 +183611,7 @@
   "this_as_id": false
  },
  "0x755db0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183731,15 +183731,15 @@
   "this_as_id": false
  },
  "0x757120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "ObjectClass::RenderVoxels",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "RenderVoxels",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x757360": {
@@ -183803,7 +183803,7 @@
   "this_as_id": false
  },
  "0x757e70": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -183827,15 +183827,15 @@
   "this_as_id": false
  },
  "0x7581f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
   "name": "ObjectClass::ProcessVoxelColorSamples",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ProcessVoxelColorSamples",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x758430": {
@@ -183946,7 +183946,7 @@
   "this_as_id": false
  },
  "0x758b70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -184160,7 +184160,7 @@
   "this_as_id": false
  },
  "0x759260": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -184292,7 +184292,7 @@
   "this_as_id": false
  },
  "0x759940": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -184431,7 +184431,7 @@
   "this_as_id": false
  },
  "0x759fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -184476,7 +184476,7 @@
   "this_as_id": false
  },
  "0x75a2f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "sub_75A2F0",
@@ -184870,19 +184870,19 @@
   "this_as_id": false
  },
  "0x75ab30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+7 ret 4",
   "name": "JumpjetLocomotionClass::SmallStub_75AB30",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "orig_name": "JumpjetLocomotionClass::SmallStub_75AB30",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x75ab40": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -184894,7 +184894,7 @@
   "this_as_id": false
  },
  "0x75aba0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -184990,14 +184990,14 @@
   "this_as_id": false
  },
  "0x75c240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::DrawHelper",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Voxel::DrawHelper",
-  "rule_violations": 10,
+  "rule_violations": 7,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -185014,7 +185014,7 @@
   "this_as_id": false
  },
  "0x75c680": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185026,7 +185026,7 @@
   "this_as_id": false
  },
  "0x75c700": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185050,7 +185050,7 @@
   "this_as_id": false
  },
  "0x75c7f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -185098,7 +185098,7 @@
   "this_as_id": false
  },
  "0x75c920": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -185208,7 +185208,7 @@
   "status": "OK"
  },
  "0x75cbe0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
