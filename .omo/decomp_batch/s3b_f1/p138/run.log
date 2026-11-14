@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p138\part_00
+=== convert (20 addrs) ===
+[conv] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> FlagGameOption_WorldDominationTour
+[conv] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> MapSizeGameOption_WorldDominationTour
+[conv] 0x767820 GameOption@WorldDominationTour::ConstructorWDTFlagOption_Create -> GameOption_WorldDominationTour
+[conv] 0x767b00 Team_Create_767B00 -> Team_Create
+[conv] 0x767ec0 MSFrameAnim::sub_767EC0 -> MSFrameAnim
+[conv] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> ReferenceCounted
+[conv] 0x7681e0 ArtConfig::ReadLayout -> ArtConfig
+[conv] 0x768f50 ArtConfig::ParseLayoutEntry -> ArtConfig
+[conv] 0x769330 Surface::PixelToIndex -> Surface
+[conv] 0x769550 LoadWDTMapAsset -> _addr_76
+[conv] 0x769bd0 MSFrameAnim::QueryInterface -> MSFrameAnim
+[conv] 0x769d70 Map_Load_769D70 -> Map_Load
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76ac90 File::LoadWDT -> File
+[conv] 0x76afc0 WDTState::Constructor_WDTState -> WDTState
+[conv] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x76c290 ObjectClass::ConstructWDTSelection -> ObjectClass
+[conv] 0x76c6e0 Selection@WorldDominationTour::SelectionInitializeWOL -> Selection_WorldDominationTour
+[conv] 0x76ca60 TechnoClass::ConstructWDTSelection_Create_76CA60 -> TechnoClass
+[conv] 0x76cbf0 TechnoClass::ConstructWDTSelection_Create_76CBF0 -> TechnoClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FlagGameOption_WorldDominationTour rc=2
+[era] MapSizeGameOption_WorldDominationTour rc=2
+[era] GameOption_WorldDominationTour rc=2
+[era] Team_Create              rc=2
+[era] MSFrameAnim              rc=2
+[era] ReferenceCounted         rc=2
+[era] ArtConfig                rc=2
+[era] Surface                  rc=2
+[era] _addr_76                 rc=2
+[era] Map_Load                 rc=2
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] File                     rc=0
+[era] WDTState                 rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=2
+[era] ObjectClass              rc=2
+[era] Selection_WorldDominationTour rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x76ac90   MISMATCH         File::LoadWDT
+[ledger] 0x767500 FlagGameOption_WorldDominationTour::coInitialize -> COMPILE_FAIL (attempt 7)
+[ledger] 0x767740 MapSizeGameOption_WorldDominationTour::Read -> COMPILE_FAIL (attempt 6)
+[ledger] 0x767820 GameOption@WorldDominationTour::ConstructorWDTFlagOption_Create -> COMPILE_FAIL (attempt 2)
+[ledger] 0x767b00 Team_Create_767B00 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x767ec0 MSFrameAnim::sub_767EC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x768000 ReferenceCounted::ConstructWDTSelection_Create_767FB0_Create -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7681e0 ArtConfig::ReadLayout -> COMPILE_FAIL (attempt 7)
+[ledger] 0x768f50 ArtConfig::ParseLayoutEntry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x769330 Surface::PixelToIndex -> COMPILE_FAIL (attempt 7)
+[ledger] 0x769550 LoadWDTMapAsset -> COMPILE_FAIL (attempt 7)
+[ledger] 0x769bd0 MSFrameAnim::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x769d70 Map_Load_769D70 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> COMPILE_FAIL (attempt 9)
+[ledger] 0x76ac90 File::LoadWDT -> NG (attempt 2)
+[ledger] 0x76afc0 WDTState::Constructor_WDTState -> COMPILE_FAIL (attempt 7)
+[ledger] 0x76ba70 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Release -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76c290 ObjectClass::ConstructWDTSelection -> COMPILE_FAIL (attempt 5)
+[ledger] 0x76c6e0 Selection@WorldDominationTour::SelectionInitializeWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76ca60 TechnoClass::ConstructWDTSelection_Create_76CA60 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76cbf0 TechnoClass::ConstructWDTSelection_Create_76CBF0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p138\batch_report.json
