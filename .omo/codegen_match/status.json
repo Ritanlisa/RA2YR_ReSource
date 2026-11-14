@@ -83164,7 +83164,7 @@
   "this_as_id": false
  },
  "0x54dfa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83394,7 +83394,7 @@
   "this_as_id": false
  },
  "0x54e260": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83418,7 +83418,7 @@
   "this_as_id": false
  },
  "0x54e3b0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83430,7 +83430,7 @@
   "this_as_id": false
  },
  "0x54e4d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84215,7 +84215,7 @@
   "this_as_id": false
  },
  "0x550260": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84238,7 +84238,7 @@
   "this_as_id": false
  },
  "0x5509f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "PrepareTacticalClassCellTransform",
@@ -84399,7 +84399,7 @@
   "this_as_id": false
  },
  "0x551630": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -84627,7 +84627,7 @@
   "this_as_id": false
  },
  "0x551e50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "DecompressCoreLCW",
@@ -84662,7 +84662,7 @@
   "this_as_id": false
  },
  "0x5520a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84674,7 +84674,7 @@
   "this_as_id": false
  },
  "0x5522d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84722,7 +84722,7 @@
   "this_as_id": false
  },
  "0x552490": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84931,7 +84931,7 @@
   "this_as_id": false
  },
  "0x552b10": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84943,7 +84943,7 @@
   "this_as_id": false
  },
  "0x552be0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84975,7 +84975,7 @@
   "status": "PENDING"
  },
  "0x552d60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84987,7 +84987,7 @@
   "this_as_id": false
  },
  "0x554100": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84999,7 +84999,7 @@
   "this_as_id": false
  },
  "0x554150": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85339,7 +85339,7 @@
   "this_as_id": false
  },
  "0x554d50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "UpdateDeferredLightSurfaces",
@@ -85880,7 +85880,7 @@
   "this_as_id": false
  },
  "0x555da0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85892,7 +85892,7 @@
   "this_as_id": false
  },
  "0x556090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85928,14 +85928,14 @@
   "this_as_id": false
  },
  "0x5565a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "LinkClass::Destruct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "LinkClass::Destruct",
-  "rule_violations": 2,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

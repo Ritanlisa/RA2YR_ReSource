@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p55\part_00
+=== convert (20 addrs) ===
+[conv] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x54e4d0 ScenarioClass::UpdateScriptActions -> ScenarioClass
+[conv] 0x550260 TacticalClass::RenderCells -> TacticalClass
+[conv] 0x5509f0 PrepareTacticalClassCellTransform -> _addr_55
+[conv] 0x551630 WebBrowser::OpenURL -> WebBrowser
+[conv] 0x551e50 DecompressCoreLCW -> _addr_55
+[conv] 0x5520a0 LCWPipe::Compress -> LCWPipe
+[conv] 0x5522d0 LCWPipe::AddRef -> LCWPipe
+[conv] 0x552490 LCWStraw::DecompressReader -> LCWStraw
+[conv] 0x552b10 Scenario::ComputeDisplayPosition -> Scenario
+[conv] 0x552be0 Scenario::ComputeDialogPos -> Scenario
+[conv] 0x552d60 LoadingScreen::Render -> LoadingScreen
+[conv] 0x554100 LoadingScreen::AdjustForResolution -> LoadingScreen
+[conv] 0x554150 LoadingScreen::CalcProgressBarRect -> LoadingScreen
+[conv] 0x554d50 UpdateDeferredLightSurfaces -> _addr_55
+[conv] 0x555da0 LightConvertClass::Constructor -> LightConvertClass
+[conv] 0x556090 LightConvertClass::UpdateColors -> LightConvertClass
+[conv] 0x5565a0 LinkClass::Destruct -> LinkClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] ScenarioClass            rc=2
+[era] TacticalClass            rc=2
+[era] _addr_55                 rc=2
+[era] WebBrowser               rc=2
+[era] LCWPipe                  rc=2
+[era] LCWStraw                 rc=2
+[era] Scenario                 rc=2
+[era] LoadingScreen            rc=2
+[era] LightConvertClass        rc=2
+[era] LinkClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 7)
+[ledger] 0x54e4d0 ScenarioClass::UpdateScriptActions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x550260 TacticalClass::RenderCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5509f0 PrepareTacticalClassCellTransform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x551630 WebBrowser::OpenURL -> COMPILE_FAIL (attempt 4)
+[ledger] 0x551e50 DecompressCoreLCW -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5520a0 LCWPipe::Compress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5522d0 LCWPipe::AddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x552490 LCWStraw::DecompressReader -> COMPILE_FAIL (attempt 4)
+[ledger] 0x552b10 Scenario::ComputeDisplayPosition -> COMPILE_FAIL (attempt 13)
+[ledger] 0x552be0 Scenario::ComputeDialogPos -> COMPILE_FAIL (attempt 4)
+[ledger] 0x552d60 LoadingScreen::Render -> COMPILE_FAIL (attempt 6)
+[ledger] 0x554100 LoadingScreen::AdjustForResolution -> COMPILE_FAIL (attempt 5)
+[ledger] 0x554150 LoadingScreen::CalcProgressBarRect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x554d50 UpdateDeferredLightSurfaces -> COMPILE_FAIL (attempt 4)
+[ledger] 0x555da0 LightConvertClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x556090 LightConvertClass::UpdateColors -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5565a0 LinkClass::Destruct -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p55\batch_report.json
