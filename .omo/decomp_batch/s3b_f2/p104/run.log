@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p104\part_00
+=== convert (20 addrs) ===
+[conv] 0x6907e0 ScoreFontClass::AddRef -> ScoreFontClass
+[conv] 0x690910 ScoreFontClass::DrawFoundationChar -> ScoreFontClass
+[conv] 0x690d60 ScorePrintClass::AnimateText -> ScorePrintClass
+[conv] 0x6915b0 TeamClass::Check -> TeamClass
+[conv] 0x691970 ScoreScreenClass::ProcessFrame -> ScoreScreenClass
+[conv] 0x692300 Tactical::MouseOver -> Tactical
+[conv] 0x692610 Radar::ScanWaypoints -> Radar
+[conv] 0x692b60 Viewport::ProcessScroll -> Viewport
+[conv] 0x6930a0 Tactical::HandleTacticalMouseInput -> Tactical
+[conv] 0x693440 ObjectClass::ScrollMapEdge -> ObjectClass
+[conv] 0x693b70 RequestNetworkFile -> _addr_69
+[conv] 0x6941a0 ReceiveNetworkFile -> _addr_69
+[conv] 0x694760 SendNetworkFile -> _addr_69
+[conv] 0x6956d0 Network::sendGameEvent -> Network
+[conv] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> ObjectClass
+[conv] 0x696200 ObjectClass::InitializeModemPortSelect -> ObjectClass
+[conv] 0x6964c0 NetworkDialog::Dispatch -> NetworkDialog
+[conv] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> ObjectClass
+[conv] 0x6970a0 SessionClass::SessionClass_6970A0 -> SessionClass
+[conv] 0x6977c0 CSFClass::LoadMissingStrings -> CSFClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScoreFontClass           rc=2
+[era] ScorePrintClass          rc=2
+[era] TeamClass                rc=2
+[era] ScoreScreenClass         rc=2
+[era] Tactical                 rc=2
+[era] Radar                    rc=2
+[era] Viewport                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_69                 rc=2
+[era] Network                  rc=2
+[era] NetworkDialog            rc=2
+[era] SessionClass             rc=2
+[era] CSFClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6907e0 ScoreFontClass::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x690910 ScoreFontClass::DrawFoundationChar -> COMPILE_FAIL (attempt 4)
+[ledger] 0x690d60 ScorePrintClass::AnimateText -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6915b0 TeamClass::Check -> COMPILE_FAIL (attempt 6)
+[ledger] 0x691970 ScoreScreenClass::ProcessFrame -> COMPILE_FAIL (attempt 10)
+[ledger] 0x692300 Tactical::MouseOver -> COMPILE_FAIL (attempt 8)
+[ledger] 0x692610 Radar::ScanWaypoints -> COMPILE_FAIL (attempt 4)
+[ledger] 0x692b60 Viewport::ProcessScroll -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6930a0 Tactical::HandleTacticalMouseInput -> COMPILE_FAIL (attempt 5)
+[ledger] 0x693440 ObjectClass::ScrollMapEdge -> COMPILE_FAIL (attempt 3)
+[ledger] 0x693b70 RequestNetworkFile -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6941a0 ReceiveNetworkFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x694760 SendNetworkFile -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6956d0 Network::sendGameEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x695bc0 ObjectClass::ApplyModemConfigSettings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x696200 ObjectClass::InitializeModemPortSelect -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6964c0 NetworkDialog::Dispatch -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6967b0 ObjectClass::DlgProcLoadGame_Load -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6970a0 SessionClass::SessionClass_6970A0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6977c0 CSFClass::LoadMissingStrings -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p104\batch_report.json
