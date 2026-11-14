@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p100\part_00
+=== convert (20 addrs) ===
+[conv] 0x67a600 TypeList::ConstructSmudge -> TypeList
+[conv] 0x67a820 TypeList::InfantryConstructor -> TypeList
+[conv] 0x67b550 ReadINIClassBuildingTypeList -> _addr_67
+[conv] 0x67b720 BuildingClass::LoadBuildingTypes -> BuildingClass
+[conv] 0x67b8f0 HouseTypeClass::ReadCountryName -> HouseTypeClass
+[conv] 0x67bb10 ReadINIClassInfantryTypeList -> _addr_67
+[conv] 0x67bdd0 RulesClass::LoadTypeList -> RulesClass
+[conv] 0x67c1f0 TypeList::CopyVoxelAnim -> TypeList
+[conv] 0x67c6e0 Power::UpdateAll -> Power
+[conv] 0x67cef0 SaveScenarioClassGame_AdjustMPSaveFileName -> SaveScenarioClassGame
+[conv] 0x67d300 SaveGame::Start -> SaveGame
+[conv] 0x67e440 Game::LoadSaved -> Game
+[conv] 0x67e730 LoadGame::Start -> LoadGame
+[conv] 0x67f7e0 SaveGame::LoadMainGameState -> SaveGame
+[conv] 0x67f9c0 Game::SerializeGameSaveState -> Game
+[conv] 0x67fd20 LoadOptions_Load -> LoadOptions
+[conv] 0x67fdf0 SaveGame_Start -> SaveGame
+[conv] 0x67fe70 SaveGame_Start_67FE70 -> SaveGame_Start
+[conv] 0x67fef0 SaveGame_Start_67FEF0 -> SaveGame_Start
+[conv] 0x67ff70 SaveGame_Start_67FF70 -> SaveGame_Start
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TypeList                 rc=2
+[era] _addr_67                 rc=2
+[era] BuildingClass            rc=2
+[era] HouseTypeClass           rc=2
+[era] RulesClass               rc=2
+[era] Power                    rc=2
+[era] SaveScenarioClassGame    rc=2
+[era] SaveGame                 rc=2
+[era] Game                     rc=2
+[era] LoadGame                 rc=2
+[era] LoadOptions              rc=2
+[era] SaveGame_Start           rc=2
+=== diffasm byte-compare ===
+[ledger] 0x67a600 TypeList::ConstructSmudge -> COMPILE_FAIL (attempt 4)
+[ledger] 0x67a820 TypeList::InfantryConstructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x67b550 ReadINIClassBuildingTypeList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x67b720 BuildingClass::LoadBuildingTypes -> COMPILE_FAIL (attempt 5)
+[ledger] 0x67b8f0 HouseTypeClass::ReadCountryName -> COMPILE_FAIL (attempt 5)
+[ledger] 0x67bb10 ReadINIClassInfantryTypeList -> COMPILE_FAIL (attempt 9)
+[ledger] 0x67bdd0 RulesClass::LoadTypeList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x67c1f0 TypeList::CopyVoxelAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67c6e0 Power::UpdateAll -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67cef0 SaveScenarioClassGame_AdjustMPSaveFileName -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67d300 SaveGame::Start -> COMPILE_FAIL (attempt 8)
+[ledger] 0x67e440 Game::LoadSaved -> COMPILE_FAIL (attempt 5)
+[ledger] 0x67e730 LoadGame::Start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67f7e0 SaveGame::LoadMainGameState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67f9c0 Game::SerializeGameSaveState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67fd20 LoadOptions_Load -> COMPILE_FAIL (attempt 5)
+[ledger] 0x67fdf0 SaveGame_Start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67fe70 SaveGame_Start_67FE70 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67fef0 SaveGame_Start_67FEF0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x67ff70 SaveGame_Start_67FF70 -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p100\batch_report.json
