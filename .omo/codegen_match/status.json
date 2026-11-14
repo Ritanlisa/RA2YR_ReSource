@@ -94043,7 +94043,7 @@
   "this_as_id": false
  },
  "0x593af0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94055,7 +94055,7 @@
   "this_as_id": false
  },
  "0x594010": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94125,7 +94125,7 @@
   "this_as_id": false
  },
  "0x594870": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94137,7 +94137,7 @@
   "this_as_id": false
  },
  "0x594b50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94149,7 +94149,7 @@
   "this_as_id": false
  },
  "0x594f40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94161,7 +94161,7 @@
   "this_as_id": false
  },
  "0x595400": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -94185,7 +94185,7 @@
   "this_as_id": false
  },
  "0x595710": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94209,19 +94209,19 @@
   "this_as_id": false
  },
  "0x5958e0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::CleanupRandomMapData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::CleanupRandomMapData",
-  "rule_violations": 4,
+  "rule_violations": 15,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x595bc0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94233,7 +94233,7 @@
   "this_as_id": false
  },
  "0x595ce0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94245,7 +94245,7 @@
   "this_as_id": false
  },
  "0x595fb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GenerateRandomMapAndMinimap",
@@ -94256,7 +94256,7 @@
   "this_as_id": false
  },
  "0x596300": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -94280,7 +94280,7 @@
   "this_as_id": false
  },
  "0x596e50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94304,7 +94304,7 @@
   "this_as_id": false
  },
  "0x597430": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -94359,7 +94359,7 @@
   "this_as_id": false
  },
  "0x597a30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94390,7 +94390,7 @@
   "status": "NG"
  },
  "0x597d60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94484,7 +94484,7 @@
   "this_as_id": false
  },
  "0x5980c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94496,19 +94496,19 @@
   "this_as_id": false
  },
  "0x5981f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::LoadConfig",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::LoadConfig",
-  "rule_violations": 16,
+  "rule_violations": 20,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x598960": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -94532,7 +94532,7 @@
   "this_as_id": false
  },
  "0x599650": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
