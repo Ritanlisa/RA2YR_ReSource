@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitCellVector@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::InitCellVector",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8d86440100003bc37413895804895808c6400c0188580dc700000000008b96540100008b08535250ff51088b8e5401000033c03bcb76158b8e3c01000040895c81fc8b8e540100003bc172eb5e5bc3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?vt_VectorClass_CellClass@@3PAXA",
+   "sym_key": "vt_VectorClass_CellClass"
+  }
+ ]
+}

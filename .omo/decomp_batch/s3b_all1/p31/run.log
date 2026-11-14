@@ -1,0 +1,126 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p31\part_00
+=== convert (40 addrs) ===
+[conv] 0x559c20 LoadOptions::Check -> LoadOptions
+[conv] 0x55a6c0 LocomotionClass::Init -> LocomotionClass
+[conv] 0x55a6f0 LocomotionClass::Construct -> LocomotionClass
+[conv] 0x55a7d0 IUnknown::ComputeRotation -> IUnknown
+[conv] 0x55a8c0 IUnknown::ComputeScreenYOffset -> IUnknown
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x55a9b0 LocomotionClass::QueryInterface -> LocomotionClass
+[conv] 0x55aa60 LocomotionClass::LoadIPersistStream -> LocomotionClass
+[conv] 0x55ad10 IUnknown::GetSpecialValue -> IUnknown
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x55b720 ObjectClass::sub_55B720 -> ObjectClass
+[conv] 0x55c350 LZOPipe::Read -> LZOPipe
+[conv] 0x55c5e0 LZOPipe::AddRef -> LZOPipe
+[conv] 0x55c7c0 LZOStraw::Decompress -> LZOStraw
+[conv] 0x55cfd0 ObjectClass::GameFrameCheck -> ObjectClass
+[conv] 0x55d360 ObjectClass::GameFrameLoop -> ObjectClass
+[conv] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> SyncDelayClass
+[conv] 0x55e160 SyncDelay::Start -> SyncDelay
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x55faa0 Options::Screen_Save -> Options
+[conv] 0x55fdb0 ScreenDlgProcOptions -> _addr_55
+[conv] 0x560480 NetworkOptions::DlgProc -> NetworkOptions
+[conv] 0x560bf0 ChangeVideoMode -> _addr_56
+[conv] 0x561180 ObjectClass::Team_Start -> ObjectClass
+[conv] 0x565090 MapClass::RenderMapPreview -> MapClass
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x565aa0 MapClass::InitCellVector -> MapClass
+[conv] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> MapClass
+[conv] 0x567230 MapClass::UpdateVisibility -> MapClass
+[conv] 0x5673a0 MapClass::RevealArea0 -> MapClass
+[conv] 0x5678e0 MapClass::RevealArea1 -> MapClass
+[conv] 0x568300 LayerClass::CoordinatesLegal -> LayerClass
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x568e40 Terrain::PlaceCliffs -> Terrain
+[conv] 0x569760 TechnoClass::DestroyCliffMap -> TechnoClass
+[conv] 0x56a4c0 ObjectClass::FlattenCliffMap -> ObjectClass
+[conv] 0x56a980 ObjectClass::RepairMapCliff -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadOptions              rc=2
+[era] LocomotionClass          rc=2
+[era] IUnknown                 rc=2
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] LZOPipe                  rc=2
+[era] LZOStraw                 rc=2
+[era] SyncDelayClass           rc=2
+[era] SyncDelay                rc=2
+[era] Chat                     rc=2
+[era] Options                  rc=2
+[era] _addr_55                 rc=2
+[era] NetworkOptions           rc=2
+[era] _addr_56                 rc=2
+[era] MapClass                 rc=2
+[era] LayerClass               rc=2
+[era] Tactical                 rc=2
+[era] Terrain                  rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x565aa0   MISMATCH         MapClass::InitCellVector
+[diff] 0x5673a0   MISMATCH         MapClass::RevealArea0
+[diff] 0x5678e0   MISMATCH         MapClass::RevealArea1
+[ledger] 0x559c20 LoadOptions::Check -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55a6c0 LocomotionClass::Init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55a6f0 LocomotionClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55a7d0 IUnknown::ComputeRotation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55a8c0 IUnknown::ComputeScreenYOffset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55a970 LocomotionClass::ReleaseRef -> COMPILE_FAIL (attempt 7)
+[ledger] 0x55a9b0 LocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 13)
+[ledger] 0x55aa60 LocomotionClass::LoadIPersistStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55ad10 IUnknown::GetSpecialValue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55b720 ObjectClass::sub_55B720 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55c350 LZOPipe::Read -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55c5e0 LZOPipe::AddRef -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55c7c0 LZOStraw::Decompress -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55cfd0 ObjectClass::GameFrameCheck -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55d360 ObjectClass::GameFrameLoop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55e160 SyncDelay::Start -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55f1e0 ObjectClass::DrawHUD -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55faa0 Options::Screen_Save -> COMPILE_FAIL (attempt 3)
+[ledger] 0x55fdb0 ScreenDlgProcOptions -> COMPILE_FAIL (attempt 6)
+[ledger] 0x560480 NetworkOptions::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x560bf0 ChangeVideoMode -> COMPILE_FAIL (attempt 4)
+[ledger] 0x561180 ObjectClass::Team_Start -> COMPILE_FAIL (attempt 5)
+[ledger] 0x565090 MapClass::RenderMapPreview -> COMPILE_FAIL (attempt 3)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x565aa0 MapClass::InitCellVector -> NG (attempt 5)
+[ledger] 0x565c10 MapClass::UpdateTerrainAndWaypoints -> COMPILE_FAIL (attempt 6)
+[ledger] 0x567230 MapClass::UpdateVisibility -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5673a0 MapClass::RevealArea0 -> NG (attempt 3)
+[ledger] 0x5678e0 MapClass::RevealArea1 -> NG (attempt 3)
+[ledger] 0x568300 LayerClass::CoordinatesLegal -> COMPILE_FAIL (attempt 3)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 6)
+[ledger] 0x568e40 Terrain::PlaceCliffs -> COMPILE_FAIL (attempt 3)
+[ledger] 0x569760 TechnoClass::DestroyCliffMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56a4c0 ObjectClass::FlattenCliffMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x56a980 ObjectClass::RepairMapCliff -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 37,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 22,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p31\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x565AA0",
+ "name": "MapClass::InitCellVector",
+ "size": 94,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x565AA0",
+ "bytes_hex": "568bf18d8e3801000085c9741cc7410400000000c7410800000000c6410c01c6410d00c70180d47e008b96540100008b016a0052ff50088b8e5401000033c085c97e198b8e3c01000040c74481fc000000008b8e540100003bc17ce75ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
