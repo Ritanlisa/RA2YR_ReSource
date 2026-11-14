@@ -1,0 +1,11 @@
+{
+ "addr": "0x40AFD0",
+ "name": "Array::ForEachReverse",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40AFD0",
+ "bytes_hex": "8b44240c538b5c240c568bcb8b74240c0fafc803f1487814558b6c241c578d78012bf38bceffd54f75f75f5d5e5bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x409360 sub_409360 -> _addr_40
+[conv] 0x4093b0 Audio::Callback -> Audio
+[conv] 0x409470 ObjectClass::sub_409470 -> ObjectClass
+[conv] 0x409880 ProcessAudioStream -> _addr_40
+[conv] 0x409c40 AudioBuffer::InitializePlayback -> AudioBuffer
+[conv] 0x40a090 TechnoClass::sub_40A090 -> TechnoClass
+[conv] 0x40a7a0 Audio::GetDirectSound -> Audio
+[conv] 0x40afd0 Array::ForEachReverse -> Array
+[conv] 0x40b300 VectorClass::QueryInterface -> VectorClass
+[conv] 0x40bdd0 sub_40BDD0 -> _addr_40
+[conv] 0x40cc20 LogicClass::Constructor_VectorClass_ObjectClass___ -> LogicClass
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x40d8e0 sub_40D8E0 -> _addr_40
+[conv] 0x40e3e0 GenericList::sub_40E3E0 -> GenericList
+[conv] 0x40e4c0 List::sub_40E4C0 -> List
+[conv] 0x40ffff Math::InitDegToRad -> Math
+[conv] 0x4105e0 AbstractClass::QueryInterface -> AbstractClass
+[conv] 0x410800 AbstractTypeClass::Constructor -> AbstractTypeClass
+[conv] 0x410960 AbstractTypeClass::Init -> AbstractTypeClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] Audio                    rc=2
+[era] ObjectClass              rc=2
+[era] AudioBuffer              rc=2
+[era] TechnoClass              rc=2
+[era] Array                    rc=0
+[era] VectorClass              rc=2
+[era] LogicClass               rc=2
+[era] GenericList              rc=2
+[era] List                     rc=2
+[era] Math                     rc=2
+[era] AbstractClass            rc=2
+[era] AbstractTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x4093b0   MISMATCH         Audio::Callback
+[diff] 0x40afd0   MISMATCH         Array::ForEachReverse
+[ledger] 0x409360 sub_409360 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4093b0 Audio::Callback -> NG (attempt 6)
+[ledger] 0x409470 ObjectClass::sub_409470 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x409880 ProcessAudioStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x409c40 AudioBuffer::InitializePlayback -> COMPILE_FAIL (attempt 7)
+[ledger] 0x40a090 TechnoClass::sub_40A090 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x40a7a0 Audio::GetDirectSound -> COMPILE_FAIL (attempt 8)
+[ledger] 0x40afd0 Array::ForEachReverse -> NG (attempt 4)
+[ledger] 0x40b300 VectorClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40bdd0 sub_40BDD0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40cc20 LogicClass::Constructor_VectorClass_ObjectClass___ -> COMPILE_FAIL (attempt 5)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x40d8e0 sub_40D8E0 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x40e3e0 GenericList::sub_40E3E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40e4c0 List::sub_40E4C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40ffff Math::InitDegToRad -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4105e0 AbstractClass::QueryInterface -> COMPILE_FAIL (attempt 8)
+[ledger] 0x410800 AbstractTypeClass::Constructor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x410960 AbstractTypeClass::Init -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p02\batch_report.json

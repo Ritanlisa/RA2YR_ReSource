@@ -1,0 +1,15 @@
+{
+ "symbol": "?Callback@Audio@@QAEHXZ",
+ "sym_key": "Audio::Callback",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07402ffe033c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E848@@3IA",
+   "sym_key": "DataGlobal_87E848"
+  }
+ ]
+}
