@@ -1,0 +1,11 @@
+{
+ "addr": "0x693840",
+ "name": "MouseClass::GetButtonState",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x693840",
+ "bytes_hex": "568bf18a865855000084c0741b8a0d444d88008b06516a008bceff5048c68658550000005ec204008b5424088bce52e8bc74e1ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

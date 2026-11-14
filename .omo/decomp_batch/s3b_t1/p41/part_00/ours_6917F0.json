@@ -1,0 +1,51 @@
+{
+ "symbol": "?GetParameter@ScriptTypeClass@@QAEDPAD@Z",
+ "sym_key": "ScriptTypeClass::GetParameter",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "81ec90000000558bac2498000000578bf955e80000000084c0750b5f5d81c490000000c20400535633f68d5f4d568d442414680000000050e80000000083c40c8d4c2410e8000000003bb7a00000007c128d4c24108d572451528bcde800000000eb218d4424208bcb50e8000000008d4c24208d542410518d472452508bcde8000000004683c30883fe327ca05e5b5fb0015d81c490000000c20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?WriteINI@AbstractTypeClass@@QAEDPAX@Z",
+   "sym_key": "AbstractTypeClass::WriteINI"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?Trim@String@@QAEPADXZ",
+   "sym_key": "String::Trim"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?ClearSection@INIClass@@QAEDHPAX@Z",
+   "sym_key": "INIClass::ClearSection"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?FormatToString@ScriptTypeClass@@QAEIPAX@Z",
+   "sym_key": "ScriptTypeClass::FormatToString"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

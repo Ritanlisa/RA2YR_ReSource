@@ -1,0 +1,183 @@
+{
+ "symbol": "?CreateScriptType@TeamTypeClass@@QAEPAIXZ",
+ "sym_key": "TeamTypeClass::CreateScriptType",
+ "size": 377,
+ "link_base": 0,
+ "bytes_hex": "33c033c9a0000000008a0d0000000053565051e80000000083c40885c00f845101000033d233c08a1500000000a0000000005250e80000000083c40885c00f8430010000a10000000033db33f63bc376588b150000000033c98a0d000000008b025183c02450e80000000083c40885c0742ca100000000463bf0732d8b150000000033c98a0d000000008b04b25183c02450e80000000083c40885c075d4a1000000008b04b05e5bc36834020000e8000000008bf083c4043bf30f84b400000033c98a0d00000000518bcee800000000899e9c000000899ea0000000891e895e04895e08895e0c8b0d00000000a1000000003bc87232381d0000000075043bc3753d8b15000000003bd3763303d053528b15000000006800000000ff52088b0d000000003ac374178b15000000008d4101a30000000089348a8b0d0000000033c03bcb7e218b15000000003932741a4083c2043bc17d0f393275f48986980000008bc65e5bc383c8ff8986980000008bc65e5bc35e33c05bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?g_Str_none@@3EA",
+   "sym_key": "g_Str_none"
+  },
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerSyncState@@3PAXA",
+   "sym_key": "g_MultiplayerSyncState"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 126,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerSyncState@@3PAXA",
+   "sym_key": "g_MultiplayerSyncState"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerSyncState@@3PAXA",
+   "sym_key": "g_MultiplayerSyncState"
+  },
+  {
+   "off": 175,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?Source@@3EA",
+   "sym_key": "Source"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 233,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B41D0@@3IA",
+   "sym_key": "DataGlobal_8B41D0"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B41D5@@3EA",
+   "sym_key": "DataGlobal_8B41D5"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B41DC@@3IA",
+   "sym_key": "DataGlobal_8B41DC"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B41C8@@3IA",
+   "sym_key": "DataGlobal_8B41C8"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B41C8@@3IA",
+   "sym_key": "DataGlobal_8B41C8"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 298,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerSyncState@@3PAXA",
+   "sym_key": "g_MultiplayerSyncState"
+  },
+  {
+   "off": 306,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerDebugState@@3IA",
+   "sym_key": "g_MultiplayerDebugState"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerSyncState@@3PAXA",
+   "sym_key": "g_MultiplayerSyncState"
+  }
+ ]
+}

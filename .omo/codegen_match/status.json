@@ -139512,7 +139512,7 @@
   "this_as_id": false
  },
  "0x6915b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -139572,27 +139572,27 @@
   "this_as_id": false
  },
  "0x6916b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+13 mov dword ptr [esi + 0x9c], 0",
   "name": "ScriptTypeClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "ScriptTypeClass::Constructor",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6917f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+25 je 0x691884",
   "name": "ScriptTypeClass::GetParameter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "ScriptTypeClass::GetParameter",
-  "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6918a0": {
@@ -139608,7 +139608,7 @@
   "this_as_id": false
  },
  "0x691970": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -139631,15 +139631,15 @@
   "this_as_id": false
  },
  "0x691c00": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "TeamTypeClass::CreateScriptType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TeamTypeClass::CreateScriptType",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x691d50": {
@@ -139691,15 +139691,15 @@
   "this_as_id": false
  },
  "0x691e30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov ebp, dword ptr [esp + 0xc]",
   "name": "ScriptTypeClass::GetAction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ScriptTypeClass::GetAction",
-  "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x691ec0": {
@@ -139962,7 +139962,7 @@
   "this_as_id": false
  },
  "0x692300": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -139974,19 +139974,19 @@
   "this_as_id": false
  },
  "0x692610": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Radar::ScanWaypoints",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "Radar::ScanWaypoints",
-  "rule_violations": 5,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x692b60": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140033,7 +140033,7 @@
   "this_as_id": false
  },
  "0x6930a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140057,15 +140057,15 @@
   "this_as_id": false
  },
  "0x693840": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 je 0x693868",
   "name": "ScrollClass::GetButtonState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "MouseClass::GetButtonState",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x693880": {
@@ -140251,7 +140251,7 @@
   "this_as_id": false
  },
  "0x693b70": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "RequestNetworkFile",
@@ -140262,7 +140262,7 @@
   "this_as_id": false
  },
  "0x6941a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReceiveNetworkFile",
@@ -140273,7 +140273,7 @@
   "this_as_id": false
  },
  "0x694760": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SendNetworkFile",
@@ -140449,7 +140449,7 @@
   "this_as_id": false
  },
  "0x6956d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -140484,19 +140484,19 @@
   "this_as_id": false
  },
  "0x695fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "NetworkDialog::InitModemSettings",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "NetworkDialog::InitModemSettings",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 3,
+  "status": "NG",
   "this_as_id": false
  },
  "0x696200": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140508,7 +140508,7 @@
   "this_as_id": false
  },
  "0x6964c0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140544,7 +140544,7 @@
   "this_as_id": false
  },
  "0x6967b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -140873,7 +140873,7 @@
   "this_as_id": false
  },
  "0x6977c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

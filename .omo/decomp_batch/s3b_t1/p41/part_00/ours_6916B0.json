@@ -1,0 +1,87 @@
+{
+ "symbol": "?Constructor@ScriptTypeClass@@QAEPAV1@PAD@Z",
+ "sym_key": "ScriptTypeClass::Constructor",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf150e800000000b800000000c7869c00000000000000c786a000000000000000890689460489460889460c8b0d18040000a1100400003bc87c368b1514040000f6c6ff750485c0753e8b15e003000085d27e348b0d0804000003d06a00526808040000ff51088b0d1804000084c07417a10c0400008d51018915180400008934888b0d1804000033c085c97e228b150c0400003932741b4083c2043bc17d10393275f48986980000008bc65ec2040083c8ff8986980000008bc65ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?vt_ScriptTypeClass_4@@3PAXA",
+   "sym_key": "vt_ScriptTypeClass_4"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 128,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  }
+ ]
+}

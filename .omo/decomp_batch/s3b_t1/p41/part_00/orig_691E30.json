@@ -1,0 +1,11 @@
+{
+ "addr": "0x691E30",
+ "name": "ScriptTypeClass::GetAction",
+ "size": 144,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691E30",
+ "bytes_hex": "53558b6c240c5685ed578bd9747b8b45008bcdff502c83f823756e8b83a000000083c9ff33ff85c07e5f8b35b0eca8008d93a8000000837afc12753f83f9ff752133c085f67e428b0da4eca8003929740a4083c1043bc67d30ebf283f8ff8bc874278b023bc17e05488902eb08750cc702000000008b35b0eca8008b83a00000004783c2083bf87cad5f5e5d5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

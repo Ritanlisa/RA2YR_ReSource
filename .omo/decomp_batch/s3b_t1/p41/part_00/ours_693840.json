@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetButtonState@ScrollClass@@QAEHH@Z",
+ "sym_key": "ScrollClass::GetButtonState",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568bf18a865855000084c0750e8b44240850e8000000005ec204008b168bc633c924008a0d000000000bc1506a0056ff5248c6869423c701005ec20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?DispatchMode@TacticalClass@@QAEHH@Z",
+   "sym_key": "TacticalClass::DispatchMode"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_884D44@@3EA",
+   "sym_key": "DataGlobal_884D44"
+  }
+ ]
+}
