@@ -178793,7 +178793,7 @@
   "this_as_id": false
  },
  "0x7416a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178805,7 +178805,7 @@
   "this_as_id": false
  },
  "0x741970": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178829,27 +178829,27 @@
   "this_as_id": false
  },
  "0x743270": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xc0",
   "name": "ObjectClass::PlaceScenarioUnits",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "PlaceScenarioUnits",
   "rule_violations": 13,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7436e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0xa8",
   "name": "ObjectClass::ReadFootINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "ReadFootINI",
   "rule_violations": 12,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7438f0": {
@@ -178865,7 +178865,7 @@
   "this_as_id": false
  },
  "0x743a50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178889,7 +178889,7 @@
   "this_as_id": false
  },
  "0x744100": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178937,7 +178937,7 @@
   "this_as_id": false
  },
  "0x744270": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178985,7 +178985,7 @@
   "this_as_id": false
  },
  "0x7446e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -179016,7 +179016,7 @@
   "status": "NG"
  },
  "0x7447b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179040,7 +179040,7 @@
   "this_as_id": false
  },
  "0x746100": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179052,7 +179052,7 @@
   "this_as_id": false
  },
  "0x7463a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179148,7 +179148,7 @@
   "this_as_id": false
  },
  "0x746750": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179167,7 +179167,7 @@
   "status": "NG"
  },
  "0x7468c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179520,11 +179520,11 @@
   "this_as_id": false
  },
  "0x7470d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "UnitTypeClass::UnitTypeClass",
+  "name": "UnitTypeClass::UnitTypeClass_7470D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitTypeClass::UnitTypeClass",
   "rule_violations": 0,
@@ -179544,7 +179544,7 @@
   "this_as_id": false
  },
  "0x7473c0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -179634,7 +179634,7 @@
   "this_as_id": false
  },
  "0x747620": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -179682,7 +179682,7 @@
   "this_as_id": false
  },
  "0x747f70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -179714,15 +179714,15 @@
   "status": "PENDING"
  },
  "0x7480d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "BuildingTypeClass::FindOrCreateAlt",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "BuildingTypeClass::FindOrCreateAlt",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x748160": {
@@ -179752,7 +179752,7 @@
   "status": "OK"
  },
  "0x748190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180097,14 +180097,14 @@
   "this_as_id": false
  },
  "0x7493b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelAnimClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "DamageAnimClass::Constructor",
-  "rule_violations": 23,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },

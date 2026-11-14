@@ -1,0 +1,11 @@
+{
+ "addr": "0x7480D0",
+ "name": "BuildingTypeClass::FindOrCreateAlt",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7480D0",
+ "bytes_hex": "56578bf9576874748100e8410c080083c40885c07468576894768100e82f0c080083c40885c07456a1f03ca80033f685c07e23a1e43ca800578b0cb083c12451e80b0c080083c40885c07426a1f03ca800463bf07cdd68780e0000e8e70c080083c40485c07417578bc8e891efffff5f5ec38b15e43ca8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

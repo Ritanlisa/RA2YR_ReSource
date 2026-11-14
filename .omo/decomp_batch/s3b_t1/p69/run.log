@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p69\part_00
+=== convert (20 addrs) ===
+[conv] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> TechnoClass
+[conv] 0x741970 UnitClass::AssignDestination_SyncLog -> UnitClass
+[conv] 0x743270 ObjectClass::PlaceScenarioUnits -> ObjectClass
+[conv] 0x7436e0 ObjectClass::ReadFootINI -> ObjectClass
+[conv] 0x743a50 UnitClass::Scatter -> UnitClass
+[conv] 0x744100 TechnoClass::SelectAITarget -> TechnoClass
+[conv] 0x744270 TechnoClass::CanBeTargeted -> TechnoClass
+[conv] 0x7446e0 UnitClass::HandleTargetDestroyed -> UnitClass
+[conv] 0x7447b0 BuildingClass::FindPlacementCells -> BuildingClass
+[conv] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> TechnoClass
+[conv] 0x7463a0 TechnoClass::TransferSlavedUnit -> TechnoClass
+[conv] 0x746750 TechnoClass::IsGuardingTarget -> TechnoClass
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> UnitTypeClass
+[conv] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> UnitTypeClass
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x747f70 UnitTypeClass::PowerDrainUpdate -> UnitTypeClass
+[conv] 0x7480d0 BuildingTypeClass::FindOrCreateAlt -> BuildingTypeClass
+[conv] 0x748190 UnitTypeClass::ddtor -> UnitTypeClass
+[conv] 0x7493b0 VoxelAnimClass::Constructor -> VoxelAnimClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] UnitClass                rc=2
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=2
+[era] UnitTypeClass            rc=2
+[era] BuildingTypeClass        rc=0
+[era] VoxelAnimClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x743270   MISMATCH         ObjectClass::PlaceScenarioUnits
+[diff] 0x7436e0   MISMATCH         ObjectClass::ReadFootINI
+[diff] 0x7480d0   MISMATCH         BuildingTypeClass::FindOrCreateAlt
+[ledger] 0x7416a0 TechnoClass::ProcessSpecialUnitDeployCrush -> COMPILE_FAIL (attempt 3)
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 7)
+[ledger] 0x743270 ObjectClass::PlaceScenarioUnits -> NG (attempt 4)
+[ledger] 0x7436e0 ObjectClass::ReadFootINI -> NG (attempt 4)
+[ledger] 0x743a50 UnitClass::Scatter -> COMPILE_FAIL (attempt 2)
+[ledger] 0x744100 TechnoClass::SelectAITarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x744270 TechnoClass::CanBeTargeted -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7446e0 UnitClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7447b0 BuildingClass::FindPlacementCells -> COMPILE_FAIL (attempt 3)
+[ledger] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7463a0 TechnoClass::TransferSlavedUnit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x746750 TechnoClass::IsGuardingTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x747f70 UnitTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7480d0 BuildingTypeClass::FindOrCreateAlt -> NG (attempt 2)
+[ledger] 0x748190 UnitTypeClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7493b0 VoxelAnimClass::Constructor -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p69\batch_report.json
