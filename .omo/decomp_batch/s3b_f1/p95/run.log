@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p95\part_00
+=== convert (20 addrs) ===
+[conv] 0x655990 RadarClass::Process -> RadarClass
+[conv] 0x655a90 TacticalClass::FreeResources -> TacticalClass
+[conv] 0x655b20 RadarClass::InitializeHashTable -> RadarClass
+[conv] 0x656e50 RadarClass::IsActiveMode -> RadarClass
+[conv] 0x656ec0 Radar::RenderMinimap -> Radar
+[conv] 0x6578f0 TacticalClass::ProcessChronoEffect -> TacticalClass
+[conv] 0x6579e0 Game::ManageGameSpeed -> Game
+[conv] 0x657da0 Diplomacy::DlgProc -> Diplomacy
+[conv] 0x658640 ObjectClass::DrawPowerBarForPlayers -> ObjectClass
+[conv] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> ObjectClass
+[conv] 0x6591b0 TechnoClass::UpdateProjectileTrails -> TechnoClass
+[conv] 0x6593f0 RadBeam::InitState -> RadBeam
+[conv] 0x659650 ObjectClass::RenderProjectileTrail -> ObjectClass
+[conv] 0x6599c0 ObjectClass::sub_6599C0 -> ObjectClass
+[conv] 0x659ac0 ProjectileTrail::ComputeRenderData -> ProjectileTrail
+[conv] 0x659e30 ObjectClass::Weapon_Update_Update -> ObjectClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x65a970 RadioClass::RemoveElement -> RadioClass
+[conv] 0x65ad50 Array::Contains -> Array
+[conv] 0x65b530 RadSiteClass::Add -> RadSiteClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RadarClass               rc=2
+[era] TacticalClass            rc=2
+[era] Radar                    rc=2
+[era] Game                     rc=2
+[era] Diplomacy                rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] RadBeam                  rc=2
+[era] ProjectileTrail          rc=2
+[era] RadioClass               rc=2
+[era] Array                    rc=2
+[era] RadSiteClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x655990 RadarClass::Process -> COMPILE_FAIL (attempt 3)
+[ledger] 0x655a90 TacticalClass::FreeResources -> COMPILE_FAIL (attempt 8)
+[ledger] 0x655b20 RadarClass::InitializeHashTable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x656e50 RadarClass::IsActiveMode -> COMPILE_FAIL (attempt 5)
+[ledger] 0x656ec0 Radar::RenderMinimap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6578f0 TacticalClass::ProcessChronoEffect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6579e0 Game::ManageGameSpeed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x657da0 Diplomacy::DlgProc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x658640 ObjectClass::DrawPowerBarForPlayers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6586d0 ObjectClass::ShowDiplomacyDialog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6591b0 TechnoClass::UpdateProjectileTrails -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6593f0 RadBeam::InitState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x659650 ObjectClass::RenderProjectileTrail -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6599c0 ObjectClass::sub_6599C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x659ac0 ProjectileTrail::ComputeRenderData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x659e30 ObjectClass::Weapon_Update_Update -> COMPILE_FAIL (attempt 4)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x65a970 RadioClass::RemoveElement -> COMPILE_FAIL (attempt 9)
+[ledger] 0x65ad50 Array::Contains -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65b530 RadSiteClass::Add -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p95\batch_report.json
