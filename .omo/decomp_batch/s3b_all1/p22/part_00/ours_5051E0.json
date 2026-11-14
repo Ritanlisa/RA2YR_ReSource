@@ -1,0 +1,27 @@
+{
+ "symbol": "?FirstBuildableFromArray@HouseClass@@QAEPAVBuildingTypeClass@@H@Z",
+ "sym_key": "HouseClass::FirstBuildableFromArray",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558be956578b4d3481c198000000e8000000008b54241cbb010000008ac8c7442410000000008b7210d3e385f6897424140f8ede0000008b42048d48048b00894c241c8598cc0600000f84ab0000008b90a00d000083faff74188b4d34bf010000008b89b8000000d3e785fa0f84880000008b90a40d000083faff74148b4d34bf010000008b89b8000000d3e785fa75698b88d006000083f9ff740b8b55343b8abc00000075538a0d1300000084c975668bb8f016000083ffff745b8b154002000033c98bb22c09000085f67e128b92200900003902743f4183c2043bce7cf48b8d580200008b14b98b4a288a91e700000084d274218b7424148b4c24108b44241c413bce894c24107d0a8bc883c104e928ffffff33c05f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?g_ScenarioFlags@@3EA",
+   "sym_key": "g_ScenarioFlags"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
