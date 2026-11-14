@@ -1,0 +1,11 @@
+{
+ "addr": "0x74AB50",
+ "name": "VoxelAnimClass::DrawVoxel",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74AB50",
+ "bytes_hex": "568bf1e898eefffff644240801740956e8d8df070083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

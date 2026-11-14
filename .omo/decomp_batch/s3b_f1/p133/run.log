@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p133\part_00
+=== convert (20 addrs) ===
+[conv] 0x74ab50 VoxelAnimClass::DrawVoxel -> VoxelAnimClass
+[conv] 0x74ad80 VoxelAnimTypeClass::Constructor -> VoxelAnimTypeClass
+[conv] 0x74b050 VoxelAnimTypeClass::LoadFromINI -> VoxelAnimTypeClass
+[conv] 0x74ba30 VoxelAnimTypeClass::ddtor -> VoxelAnimTypeClass
+[conv] 0x74bca0 ObjectClass::sub_74BCA0 -> ObjectClass
+[conv] 0x74bdc0 ObjectClass::sub_74BDC0 -> ObjectClass
+[conv] 0x74bf40 ObjectClass::sub_74BF40 -> ObjectClass
+[conv] 0x74c5b0 VeinholeMonsterClass::Constructor -> VeinholeMonsterClass
+[conv] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> VeinholeMonsterClass
+[conv] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> VeinholeMonsterClass
+[conv] 0x74d490 TacticalClass::Render -> TacticalClass
+[conv] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> ObjectClass
+[conv] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> ObjectClass
+[conv] 0x74e6b0 RulesClass::Reset -> RulesClass
+[conv] 0x74ea70 ObjectClass::LoadVeinholeMonsters -> ObjectClass
+[conv] 0x74ed60 SaveGame::LoadVeinholeData -> SaveGame
+[conv] 0x74ef10 RandomMap::RemoveMatching -> RandomMap
+[conv] 0x74f620 ObjectClass::DestroyVeinholeMonster_Destroy -> ObjectClass
+[conv] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x74fae0 ObjectClass::GetModuleInternalVersion -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VoxelAnimClass           rc=0
+[era] VoxelAnimTypeClass       rc=2
+[era] ObjectClass              rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] TacticalClass            rc=2
+[era] RulesClass               rc=2
+[era] SaveGame                 rc=2
+[era] RandomMap                rc=2
+[era] _VectorClass_PAVVeinholeMonsterClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x74ab50   MATCH            VoxelAnimClass::DrawVoxel
+[ledger] 0x74ab50 VoxelAnimClass::DrawVoxel -> OK (attempt 3)
+[ledger] 0x74ad80 VoxelAnimTypeClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74b050 VoxelAnimTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74ba30 VoxelAnimTypeClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74bca0 ObjectClass::sub_74BCA0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74bdc0 ObjectClass::sub_74BDC0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74bf40 ObjectClass::sub_74BF40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74c5b0 VeinholeMonsterClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74c9f0 VeinholeMonsterClass::DestroyVeinholeMonster -> COMPILE_FAIL (attempt 7)
+[ledger] 0x74ce50 VeinholeMonsterClass::UpdateGrowth -> COMPILE_FAIL (attempt 5)
+[ledger] 0x74d490 TacticalClass::Render -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74d7c0 ObjectClass::UpdateVeinholeMonster -> COMPILE_FAIL (attempt 5)
+[ledger] 0x74e1c0 ObjectClass::ProcessVeinholeMonster -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74e6b0 RulesClass::Reset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74ea70 ObjectClass::LoadVeinholeMonsters -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74ed60 SaveGame::LoadVeinholeData -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74ef10 RandomMap::RemoveMatching -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74f620 ObjectClass::DestroyVeinholeMonster_Destroy -> COMPILE_FAIL (attempt 4)
+[ledger] 0x74f650 _VectorClass_PAVVeinholeMonsterClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74fae0 ObjectClass::GetModuleInternalVersion -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p133\batch_report.json
