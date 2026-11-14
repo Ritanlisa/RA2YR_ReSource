@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x46b5c0 BulletClass::CheckActionStatus -> BulletClass
+[conv] 0x46b960 BulletClass::AddVector3 -> BulletClass
+[conv] 0x46bbc0 BulletTypeClass::Construct -> BulletTypeClass
+[conv] 0x46bee0 BulletTypeClass::LoadFromINI -> BulletTypeClass
+[conv] 0x46ccd0 CampaignClass::GetMapData -> CampaignClass
+[conv] 0x46ce10 CampaignClass::LoadFromINIList -> CampaignClass
+[conv] 0x46d4a0 Game::SendCampaignOptions -> Game
+[conv] 0x46d810 ObjectClass::sub_46D810 -> ObjectClass
+[conv] 0x46d8b0 ObjectClass::sub_46D8B0 -> ObjectClass
+[conv] 0x46dfd0 CampaignScore::DialogProc -> CampaignScore
+[conv] 0x46f6d0 Count::SetupAllCountriesLobby -> Count
+[conv] 0x46f810 GetLobbyPlayerColor -> _addr_46
+[conv] 0x46f880 GetHouseClassSideIndex -> _addr_46
+[conv] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> Skirmish
+[conv] 0x46fc00 CampaignScore::ProcessScreen -> CampaignScore
+[conv] 0x471420 CampaignScore::InitScoreScreenData -> CampaignScore
+[conv] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> CampaignScore
+[conv] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> CampaignScore
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x471d40 CaptureManagerClass::CaptureUnit -> CaptureManagerClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=2
+[era] BulletTypeClass          rc=2
+[era] CampaignClass            rc=2
+[era] Game                     rc=2
+[era] ObjectClass              rc=2
+[era] CampaignScore            rc=2
+[era] Count                    rc=2
+[era] _addr_46                 rc=2
+[era] Skirmish                 rc=2
+[era] CaptureManagerClass      rc=2
+=== diffasm byte-compare ===
+[diff] 0x46b5c0   MATCH            BulletClass::CheckActionStatus
+[ledger] 0x46b5c0 BulletClass::CheckActionStatus -> OK (attempt 4)
+[ledger] 0x46b960 BulletClass::AddVector3 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x46bbc0 BulletTypeClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46bee0 BulletTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46ccd0 CampaignClass::GetMapData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46ce10 CampaignClass::LoadFromINIList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x46d4a0 Game::SendCampaignOptions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46d810 ObjectClass::sub_46D810 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46d8b0 ObjectClass::sub_46D8B0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x46dfd0 CampaignScore::DialogProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46f6d0 Count::SetupAllCountriesLobby -> COMPILE_FAIL (attempt 7)
+[ledger] 0x46f810 GetLobbyPlayerColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46f880 GetHouseClassSideIndex -> COMPILE_FAIL (attempt 5)
+[ledger] 0x46f8f0 Skirmish::SetupAllSpawnLocations -> COMPILE_FAIL (attempt 4)
+[ledger] 0x46fc00 CampaignScore::ProcessScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x471420 CampaignScore::InitScoreScreenData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x471500 CampaignScore::Constructor_CampaignScoreClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x471520 CampaignScore::Constructor_CampaignEndScoreClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 9)
+[ledger] 0x471d40 CaptureManagerClass::CaptureUnit -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p17\batch_report.json

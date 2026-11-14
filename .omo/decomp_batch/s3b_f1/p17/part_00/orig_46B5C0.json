@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B5C0",
+ "name": "BulletClass::CheckActionStatus",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B5C0",
+ "bytes_hex": "568bf1e898affffff644240801740956e868d5350083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
