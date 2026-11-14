@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ef4e0 VectorClass::vt_00 -> VectorClass
+[conv] 0x4ef530 DynamicVector::COMStub_0 -> DynamicVector
+[conv] 0x4f10e0 OpenGameUI -> _addr_4F
+[conv] 0x4f11b0 Options::DlgProc -> Options
+[conv] 0x4f1720 Options::InitDialogControls -> Options
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x4f1aa0 OptionQueue::PushEntry -> OptionQueue
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x4f2280 ObjectClass::sub_4F2280 -> ObjectClass
+[conv] 0x4f2300 ObjectClass::ProcessGraphicMenu -> ObjectClass
+[conv] 0x4f26e0 ObjectClass::sub_4F26E0 -> ObjectClass
+[conv] 0x4f2770 ObjectClass::sub_4F2770 -> ObjectClass
+[conv] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> DynamicVector
+[conv] 0x4f2c70 ParseINIAnimGadgetDefinition -> _addr_4F
+[conv] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> GraphicMenuAnimItem
+[conv] 0x4f3140 ParseINIGadgetDefinition -> _addr_4F
+[conv] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> GraphicMenuImageItem
+[conv] 0x4f3b80 sub_4F3B80 -> _addr_4F
+[conv] 0x4f3c40 ObjectClass::sub_4F3C40 -> ObjectClass
+[conv] 0x4f3d40 ObjectClass::sub_4F3D40 -> ObjectClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+[era] DynamicVector            rc=2
+[era] _addr_4F                 rc=2
+[era] Options                  rc=2
+[era] OptionQueue              rc=2
+[era] ObjectClass              rc=2
+[era] GraphicMenuAnimItem      rc=2
+[era] GraphicMenuImageItem     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ef4e0 VectorClass::vt_00 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ef530 DynamicVector::COMStub_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f10e0 OpenGameUI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f11b0 Options::DlgProc -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f1720 Options::InitDialogControls -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f1aa0 OptionQueue::PushEntry -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f2280 ObjectClass::sub_4F2280 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2300 ObjectClass::ProcessGraphicMenu -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f26e0 ObjectClass::sub_4F26E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2770 ObjectClass::sub_4F2770 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2bb0 DynamicVector::vt_placeholder_11 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2c70 ParseINIAnimGadgetDefinition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f2f10 GraphicMenuAnimItem::sub_4F2F10 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f3140 ParseINIGadgetDefinition -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4f3460 GraphicMenuImageItem::sub_4F3460 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f3b80 sub_4F3B80 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4f3c40 ObjectClass::sub_4F3C40 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4f3d40 ObjectClass::sub_4F3D40 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p38\batch_report.json
