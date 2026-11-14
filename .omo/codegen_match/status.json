@@ -162964,7 +162964,7 @@
   "this_as_id": false
  },
  "0x6ef9e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -162976,7 +162976,7 @@
   "this_as_id": false
  },
  "0x6efa10": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -162988,7 +162988,7 @@
   "this_as_id": false
  },
  "0x6efc70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163000,7 +163000,7 @@
   "this_as_id": false
  },
  "0x6efe60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163012,7 +163012,7 @@
   "this_as_id": false
  },
  "0x6f0130": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163219,15 +163219,15 @@
   "status": "OK"
  },
  "0x6f06e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+23 mov dword ptr [esi + 0x98], edi",
   "name": "TeamTypeClass::LoadBase",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TechnoTypeClass::LoadBase",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 8,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6f09c0": {
@@ -163255,7 +163255,7 @@
   "this_as_id": false
  },
  "0x6f0ab0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "AISelectTeamHouseClass",
@@ -163290,7 +163290,7 @@
   "this_as_id": false
  },
  "0x6f1090": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163302,7 +163302,7 @@
   "this_as_id": false
  },
  "0x6f1550": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -163352,7 +163352,7 @@
   "status": "NG"
  },
  "0x6f19b0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "SmallFunc_6F19B0",
@@ -163363,7 +163363,7 @@
   "this_as_id": false
  },
  "0x6f1ab0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -163423,7 +163423,7 @@
   "this_as_id": false
  },
  "0x6f1e20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -163447,7 +163447,7 @@
   "this_as_id": false
  },
  "0x6f1f70": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -163941,14 +163941,14 @@
   "this_as_id": false
  },
  "0x6f2b40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "TechnoClass::TechnoClass",
+  "name": "TechnoClass::TechnoClass_6F2B40",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TechnoClass::TechnoClass",
-  "rule_violations": 5,
+  "rule_violations": 9,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -163965,7 +163965,7 @@
   "this_as_id": false
  },
  "0x6f3280": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164037,7 +164037,7 @@
   "this_as_id": false
  },
  "0x6f3ad0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164049,7 +164049,7 @@
   "this_as_id": false
  },
  "0x6f3d60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -164061,7 +164061,7 @@
   "this_as_id": false
  },
  "0x6f3f40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -164073,19 +164073,19 @@
   "this_as_id": false
  },
  "0x6f4300": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+11 call 0x65a7e0",
   "name": "TechnoClass::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TechnoClass::Constructor",
-  "rule_violations": 2,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 5,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6f4500": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

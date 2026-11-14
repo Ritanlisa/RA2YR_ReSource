@@ -1,0 +1,135 @@
+{
+ "symbol": "?LoadBase@TeamTypeClass@@QAEPAIPAD@Z",
+ "sym_key": "TeamTypeClass::LoadBase",
+ "size": 409,
+ "link_base": 0,
+ "bytes_hex": "8b4424045356578bf150e80000000083cfffb80100000033db89be9800000089be9c0000008986a0000000899ea4000000899ea8000000899eac000000899eb0000000c786b40000000700000089beb8000000899ebc000000899ec0000000899ec400000089bec8000000899ecc000000899ed000000089bed400000089bed8000000899edc000000899ee0000000899ee4000000899ee8000000c786ec000000090000008986f0000000c786f400000000010000891e895e04895e08895e0c8b0d00000000a1000000003bc87232381d0000000075043bc3753d8b15000000003bd376338b0d0000000003d053526800000000ff51088b0d000000003ac37417a1000000008d51018915000000008934888b0d0000000033c03bcb7e188b1500000000393274104083c2043bc17d06393275f4eb028bc7898698000000a1000000008b0d000000003bc8722c381d0000000075043bc375388b0d000000003bcb762e03c853518b0d000000006800000000ff510884c074188b0d000000008b15000000008bc141890d000000008934828bc65f5e5bc20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ECA8@@3IA",
+   "sym_key": "DataGlobal_A8ECA8"
+  },
+  {
+   "off": 209,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ECAD@@3EA",
+   "sym_key": "DataGlobal_A8ECAD"
+  },
+  {
+   "off": 221,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ECB4@@3IA",
+   "sym_key": "DataGlobal_A8ECB4"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3IA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3IA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 249,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_TeamTypePool@@3PAXA",
+   "sym_key": "g_TeamTypePool"
+  },
+  {
+   "off": 267,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  },
+  {
+   "off": 276,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  },
+  {
+   "off": 288,
+   "type": "DIR32",
+   "sym": "?g_TeamTypePool@@3PAXA",
+   "sym_key": "g_TeamTypePool"
+  },
+  {
+   "off": 319,
+   "type": "DIR32",
+   "sym": "?g_AnimTypePool@@3IA",
+   "sym_key": "g_AnimTypePool"
+  },
+  {
+   "off": 325,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 335,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolLocked@@3EA",
+   "sym_key": "g_AnimPoolLocked"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?g_AnimManagerConfig@@3IA",
+   "sym_key": "g_AnimManagerConfig"
+  },
+  {
+   "off": 361,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolManager@@3IA",
+   "sym_key": "g_AnimPoolManager"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  },
+  {
+   "off": 385,
+   "type": "DIR32",
+   "sym": "?g_AnimPoolCount@@3PAXA",
+   "sym_key": "g_AnimPoolCount"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?g_AnimManager@@3IA",
+   "sym_key": "g_AnimManager"
+  }
+ ]
+}
