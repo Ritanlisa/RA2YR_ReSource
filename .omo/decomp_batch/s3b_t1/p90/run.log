@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p90\part_00
+=== convert (20 addrs) ===
+[conv] 0x7baf10 XSurface::GetPixelAtCoords -> XSurface
+[conv] 0x7baf90 XSurface::PutPixel -> XSurface
+[conv] 0x7bb020 XSurface::FillRect -> XSurface
+[conv] 0x7bb050 XSurface::FillRectEx -> XSurface
+[conv] 0x7bb350 XSurface::DrawEllipseOutline -> XSurface
+[conv] 0x7bbab0 XSurface::Fill -> XSurface
+[conv] 0x7bbaf0 XSurface::BlitWhole -> XSurface
+[conv] 0x7bbb90 XSurface::BlitPart -> XSurface
+[conv] 0x7bc040 CalcSurfaceBlitRects -> _addr_7B
+[conv] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> _BlitPlain_E
+[conv] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> _BlitPlain_G
+[conv] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> _BlitTrans_E
+[conv] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> _BlitTrans_G
+[conv] 0x7bc780 _BlitPlain_E::sub_7BC780 -> _BlitPlain_E
+[conv] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> _BlitPlain_E
+[conv] 0x7bc820 _BlitPlain_G::sub_7BC820 -> _BlitPlain_G
+[conv] 0x7bc870 _BlitPlain_G::sub_7BC870 -> _BlitPlain_G
+[conv] 0x7bc970 BSurface::ConstructEx -> BSurface
+[conv] 0x7bd170 UnitClass::Audio_Render_7BD170 -> UnitClass
+[conv] 0x7bdf80 DSurface::CommitBuffers -> DSurface
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] XSurface                 rc=2
+[era] _addr_7B                 rc=2
+[era] _BlitPlain_E             rc=2
+[era] _BlitPlain_G             rc=2
+[era] _BlitTrans_E             rc=2
+[era] _BlitTrans_G             rc=2
+[era] BSurface                 rc=2
+[era] UnitClass                rc=2
+[era] DSurface                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x7bdf80   MISMATCH         DSurface::CommitBuffers
+[ledger] 0x7baf10 XSurface::GetPixelAtCoords -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7baf90 XSurface::PutPixel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bb020 XSurface::FillRect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bb050 XSurface::FillRectEx -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bb350 XSurface::DrawEllipseOutline -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bbab0 XSurface::Fill -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7bbaf0 XSurface::BlitWhole -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bbb90 XSurface::BlitPart -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc040 CalcSurfaceBlitRects -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc640 _BlitPlain_E::_Gfacet_locale_std__UAEPAXI_Z_148 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc660 _BlitPlain_G::_Gfacet_locale_std__UAEPAXI_Z_149 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc680 _BlitTrans_E::_Gfacet_locale_std__UAEPAXI_Z_150 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc6a0 _BlitTrans_G::_Gfacet_locale_std__UAEPAXI_Z_151 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bc780 _BlitPlain_E::sub_7BC780 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc7d0 _BlitPlain_E::sub_7BC7D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc820 _BlitPlain_G::sub_7BC820 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc870 _BlitPlain_G::sub_7BC870 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bc970 BSurface::ConstructEx -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7bd170 UnitClass::Audio_Render_7BD170 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7bdf80 DSurface::CommitBuffers -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p90\batch_report.json
