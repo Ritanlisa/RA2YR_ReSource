@@ -151448,7 +151448,7 @@
   "this_as_id": false
  },
  "0x6c2c90": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -151664,15 +151664,15 @@
   "this_as_id": false
  },
  "0x6c3110": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
   "name": "_TClassFactory_VOverlayTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TClassFactory_OverlayTypeClass::GetClassIdentifier",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3190": {
@@ -151736,15 +151736,15 @@
   "this_as_id": false
  },
  "0x6c3290": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
   "name": "_TClassFactory_VSmudgeTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "TClassFactory_SmudgeTypeClass::GetClassIdentifier",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3310": {
@@ -151808,7 +151808,7 @@
   "this_as_id": false
  },
  "0x6c3410": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -151880,7 +151880,7 @@
   "this_as_id": false
  },
  "0x6c3590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -151952,7 +151952,7 @@
   "this_as_id": false
  },
  "0x6c3710": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152024,7 +152024,7 @@
   "this_as_id": false
  },
  "0x6c3890": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152091,7 +152091,7 @@
   "this_as_id": false
  },
  "0x6c3a10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152307,7 +152307,7 @@
   "this_as_id": false
  },
  "0x6c3e90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152379,7 +152379,7 @@
   "this_as_id": false
  },
  "0x6c4010": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152451,7 +152451,7 @@
   "this_as_id": false
  },
  "0x6c4190": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152523,7 +152523,7 @@
   "this_as_id": false
  },
  "0x6c4310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152595,7 +152595,7 @@
   "this_as_id": false
  },
  "0x6c4490": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152739,7 +152739,7 @@
   "this_as_id": false
  },
  "0x6c4790": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152878,7 +152878,7 @@
   "this_as_id": false
  },
  "0x6c4a90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -152950,7 +152950,7 @@
   "this_as_id": false
  },
  "0x6c4c10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -153094,7 +153094,7 @@
   "this_as_id": false
  },
  "0x6c4f10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -153166,7 +153166,7 @@
   "this_as_id": false
  },
  "0x6c5090": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -153238,7 +153238,7 @@
   "this_as_id": false
  },
  "0x6c5210": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -153310,7 +153310,7 @@
   "this_as_id": false
  },
  "0x6c5390": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
