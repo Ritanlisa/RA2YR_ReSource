@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetDamage@OverlayTypeClass@@QAEPAXH@Z",
+ "sym_key": "OverlayTypeClass::GetDamage",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "568bf168b0000000e80000000083c40485c074136aff6800000000568bc8e8000000005ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC1608@@3GA",
+   "sym_key": "DataGlobal_AC1608"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?SpawnAtCell@Object@@QAEPAV1@HPAXH@Z",
+   "sym_key": "Object::SpawnAtCell"
+  }
+ ]
+}

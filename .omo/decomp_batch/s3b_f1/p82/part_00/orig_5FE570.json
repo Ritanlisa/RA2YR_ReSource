@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FE570",
+ "name": "OverlayTypeClass::GetDamage",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FE570",
+ "bytes_hex": "568bf168b0000000e89aa81c0083c40485c074136aff680816ac00568bc8e8edddffff5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

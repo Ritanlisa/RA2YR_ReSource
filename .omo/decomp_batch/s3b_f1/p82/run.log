@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p82\part_00
+=== convert (20 addrs) ===
+[conv] 0x5fc000 GameOptionsClass::PopulateMovieList -> GameOptionsClass
+[conv] 0x5fc570 TechnoClass::FinalizeCellPlacement -> TechnoClass
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x5fdd20 FindBuildingByTiberiumType -> _addr_5F
+[conv] 0x5fe250 OverlayTypeClass::OverlayTypeClass_5FE250 -> OverlayTypeClass
+[conv] 0x5fe570 OverlayTypeClass::GetDamage -> OverlayTypeClass
+[conv] 0x5fe770 OverlayTypeClass::LoadFromINI -> OverlayTypeClass
+[conv] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> OverlayTypeClass
+[conv] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> OverlayTypeClass
+[conv] 0x5fec10 OverlayTypeClass::SaveLoad_Prefix_0 -> OverlayTypeClass
+[conv] 0x5fede0 OverlayTypeClass::GetCategory -> OverlayTypeClass
+[conv] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> ObjectClass
+[conv] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x600750 sub_600750 -> _addr_60
+[conv] 0x600880 sub_600880 -> _addr_60
+[conv] 0x600af0 sub_600AF0 -> _addr_60
+[conv] 0x600c70 NavigateDialogTab -> _addr_60
+[conv] 0x600ca0 ValidateDialogEvent -> _addr_60
+[conv] 0x601360 Event::IsValidActionType -> Event
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameOptionsClass         rc=2
+[era] TechnoClass              rc=2
+[era] OverlayClass             rc=2
+[era] _addr_5F                 rc=2
+[era] OverlayTypeClass         rc=2
+[era] ObjectClass              rc=2
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _addr_60                 rc=2
+[era] Event                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x5fe570   MATCH            OverlayTypeClass::GetDamage
+[ledger] 0x5fc000 GameOptionsClass::PopulateMovieList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5fc570 TechnoClass::FinalizeCellPlacement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5fdd20 FindBuildingByTiberiumType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fe250 OverlayTypeClass::OverlayTypeClass_5FE250 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fe570 OverlayTypeClass::GetDamage -> OK (attempt 3)
+[ledger] 0x5fe770 OverlayTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fea50 OverlayTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5feaf0 OverlayTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fec10 OverlayTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5fede0 OverlayTypeClass::GetCategory -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ff420 ObjectClass::GenerateRangeRingTextures -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6001a0 _DynamicVectorClass_PAVSpotLightClass::SetCapacity -> COMPILE_FAIL (attempt 5)
+[ledger] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> COMPILE_FAIL (attempt 5)
+[ledger] 0x600750 sub_600750 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x600880 sub_600880 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x600af0 sub_600AF0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x600c70 NavigateDialogTab -> COMPILE_FAIL (attempt 3)
+[ledger] 0x600ca0 ValidateDialogEvent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x601360 Event::IsValidActionType -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MATCH": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p82\batch_report.json

@@ -115981,7 +115981,7 @@
   "this_as_id": false
  },
  "0x5fc000": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116170,7 +116170,7 @@
   "this_as_id": false
  },
  "0x5fc570": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -116286,7 +116286,7 @@
   "this_as_id": false
  },
  "0x5fd970": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116309,7 +116309,7 @@
   "this_as_id": false
  },
  "0x5fdd20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "FindBuildingByTiberiumType",
@@ -116570,7 +116570,7 @@
   "this_as_id": false
  },
  "0x5fe250": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116617,15 +116617,15 @@
   "this_as_id": false
  },
  "0x5fe570": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "OverlayTypeClass::GetDamage",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "OverlayTypeClass::GetDamage",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x5fe5a0": {
@@ -116652,7 +116652,7 @@
   "this_as_id": false
  },
  "0x5fe770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116676,7 +116676,7 @@
   "this_as_id": false
  },
  "0x5fea50": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -116688,7 +116688,7 @@
   "this_as_id": false
  },
  "0x5feaf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116700,7 +116700,7 @@
   "this_as_id": false
  },
  "0x5fec10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -116743,7 +116743,7 @@
   "status": "NG"
  },
  "0x5fede0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -116996,7 +116996,7 @@
   "this_as_id": false
  },
  "0x5ff420": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -117140,7 +117140,7 @@
   "this_as_id": false
  },
  "0x6001a0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -117152,7 +117152,7 @@
   "this_as_id": false
  },
  "0x600250": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -117413,7 +117413,7 @@
   "this_as_id": false
  },
  "0x600750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_600750",
@@ -117424,7 +117424,7 @@
   "this_as_id": false
  },
  "0x600880": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_600880",
@@ -117457,7 +117457,7 @@
   "this_as_id": false
  },
  "0x600af0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_600AF0",
@@ -117468,7 +117468,7 @@
   "this_as_id": false
  },
  "0x600c70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "NavigateDialogTab",
@@ -117479,7 +117479,7 @@
   "this_as_id": false
  },
  "0x600ca0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ValidateDialogEvent",
@@ -117490,7 +117490,7 @@
   "this_as_id": false
  },
  "0x601360": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
