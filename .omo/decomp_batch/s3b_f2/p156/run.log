@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p156\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c89bc WSAAsyncSelect -> _addr_7C
+[conv] 0x7c89c2 EnumProtocolsA -> _addr_7C
+[conv] 0x7c89c8 WSAStartup -> _addr_7C
+[conv] 0x7c89da DirectSoundCreate -> _addr_7C
+[conv] 0x7c89e0 VerQueryValueA -> _addr_7C
+[conv] 0x7c8a2e ImmGetCandidateListA -> _addr_7C
+[conv] 0x7c8ad3 _8type_info_QBEHABV0__Z -> _addr_7C
+[conv] 0x7c8aee _9type_info_QBEHABV0__Z -> _addr_7C
+[conv] 0x7c8b48 _qsort -> _addr_7C
+[conv] 0x7c8d20 __strcmpi -> _addr_7C
+[conv] 0x7c8ef4 _sprintf -> _addr_7C
+[conv] 0x7c8f5e __cfltcvt_init_13 -> _addr_7C
+[conv] 0x7c8fb0 __CIpow -> _addr_7C
+[conv] 0x7c8fd2 ObjectClass::CIpow_Helper -> ObjectClass
+[conv] 0x7c91a5 CIpow_Helper_Helper -> CIpow_Helper
+[conv] 0x7c91d0 _strncpy -> _addr_7C
+[conv] 0x7c92d0 __alldiv -> _addr_7C
+[conv] 0x7c9602 _fwrite -> _addr_7C
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x7c978a _atexit -> _addr_7C
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] CIpow_Helper             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c89bc WSAAsyncSelect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c89c2 EnumProtocolsA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c89c8 WSAStartup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c89da DirectSoundCreate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c89e0 VerQueryValueA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8a2e ImmGetCandidateListA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8ad3 _8type_info_QBEHABV0__Z -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8aee _9type_info_QBEHABV0__Z -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7c8b48 _qsort -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c8d20 __strcmpi -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c8ef4 _sprintf -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8f5e __cfltcvt_init_13 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c8fb0 __CIpow -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c8fd2 ObjectClass::CIpow_Helper -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c91a5 CIpow_Helper_Helper -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c91d0 _strncpy -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7c92d0 __alldiv -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7c9602 _fwrite -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7c978a _atexit -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p156\batch_report.json

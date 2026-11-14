@@ -208097,7 +208097,7 @@
   "this_as_id": false
  },
  "0x7c89bc": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WSAAsyncSelect",
@@ -208108,7 +208108,7 @@
   "this_as_id": false
  },
  "0x7c89c2": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "EnumProtocolsA",
@@ -208119,7 +208119,7 @@
   "this_as_id": false
  },
  "0x7c89c8": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WSAStartup",
@@ -208152,7 +208152,7 @@
   "this_as_id": false
  },
  "0x7c89da": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "DirectSoundCreate",
@@ -208163,7 +208163,7 @@
   "this_as_id": false
  },
  "0x7c89e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "VerQueryValueA",
@@ -208282,7 +208282,7 @@
   "this_as_id": false
  },
  "0x7c8a2e": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "ImmGetCandidateListA",
@@ -208478,7 +208478,7 @@
   "this_as_id": false
  },
  "0x7c8ad3": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_8type_info_QBEHABV0__Z",
@@ -208489,7 +208489,7 @@
   "this_as_id": false
  },
  "0x7c8aee": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_9type_info_QBEHABV0__Z",
@@ -208550,7 +208550,7 @@
   "status": "NG"
  },
  "0x7c8b48": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_qsort",
@@ -208584,7 +208584,7 @@
   "this_as_id": false
  },
  "0x7c8d20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__strcmpi",
@@ -208639,7 +208639,7 @@
   "this_as_id": false
  },
  "0x7c8ef4": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_sprintf",
@@ -208672,7 +208672,7 @@
   "this_as_id": false
  },
  "0x7c8f5e": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "__cfltcvt_init_13",
@@ -208690,7 +208690,7 @@
   "status": "NG"
  },
  "0x7c8fb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "__CIpow",
@@ -208712,7 +208712,7 @@
   "this_as_id": false
  },
  "0x7c8fd2": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -208724,7 +208724,7 @@
   "this_as_id": false
  },
  "0x7c91a5": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "CIpow_Helper_Helper",
@@ -208735,7 +208735,7 @@
   "this_as_id": false
  },
  "0x7c91d0": {
-  "attempts": 9,
+  "attempts": 10,
   "clean": false,
   "first_diff": null,
   "name": "_strncpy",
@@ -208746,7 +208746,7 @@
   "this_as_id": false
  },
  "0x7c92d0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "__alldiv",
@@ -208841,7 +208841,7 @@
   "this_as_id": false
  },
  "0x7c9602": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "_fwrite",
@@ -208852,7 +208852,7 @@
   "this_as_id": false
  },
  "0x7c970c": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "__onexit",
@@ -208863,7 +208863,7 @@
   "this_as_id": false
  },
  "0x7c978a": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "_atexit",
