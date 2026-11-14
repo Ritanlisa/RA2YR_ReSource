@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a51f0 RateScaler::Init -> RateScaler
+[conv] 0x4a5660 Dial8Class::SetValue -> Dial8Class
+[conv] 0x4a57b0 Dial8Class::GetValue -> Dial8Class
+[conv] 0x4a61c0 TextRenderer::DrawText -> TextRenderer
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x4a7340 DiskLaserClass::Update -> DiskLaserClass
+[conv] 0x4a88c0 DisplayClass::SetSize -> DisplayClass
+[conv] 0x4a8960 DisplayClass::SetViewDimensions -> DisplayClass
+[conv] 0x4a91b0 Tactical::MouseMove -> Tactical
+[conv] 0x4a9ca0 DisplayClass::vt_entry_94 -> DisplayClass
+[conv] 0x4aa440 CellClass::FindOpenNeighbor -> CellClass
+[conv] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> TacticalClass_DisplayClass
+[conv] 0x4aae90 DisplayClass::HandlePlayerAction -> DisplayClass
+[conv] 0x4ab9b0 DisplayClass::ExecuteCommand -> DisplayClass
+[conv] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> PlayerClass
+[conv] 0x4ac380 DisplayClass::ProcessScroll -> DisplayClass
+[conv] 0x4ac4f0 TechnoClass::GetHouseData -> TechnoClass
+[conv] 0x4ac700 TacticalClass::SetDisplayMode -> TacticalClass
+[conv] 0x4acc50 CellClass::ProcessVisibility -> CellClass
+[conv] 0x4ace70 DisplayClass::LoadMapData -> DisplayClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RateScaler               rc=2
+[era] Dial8Class               rc=2
+[era] TextRenderer             rc=2
+[era] DiskLaserClass           rc=2
+[era] DisplayClass             rc=2
+[era] Tactical                 rc=2
+[era] CellClass                rc=2
+[era] TacticalClass_DisplayClass rc=2
+[era] PlayerClass              rc=2
+[era] TechnoClass              rc=2
+[era] TacticalClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4a51f0 RateScaler::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a5660 Dial8Class::SetValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a57b0 Dial8Class::GetValue -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a61c0 TextRenderer::DrawText -> COMPILE_FAIL (attempt 17)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 11)
+[ledger] 0x4a7340 DiskLaserClass::Update -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4a88c0 DisplayClass::SetSize -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4a8960 DisplayClass::SetViewDimensions -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4a91b0 Tactical::MouseMove -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4a9ca0 DisplayClass::vt_entry_94 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4aa440 CellClass::FindOpenNeighbor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4aac10 TacticalClass_DisplayClass::ProcessTacticalMouseInput -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4aae90 DisplayClass::HandlePlayerAction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ab9b0 DisplayClass::ExecuteCommand -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4ac2b0 PlayerClass::CheckHumanPlayer -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4ac380 DisplayClass::ProcessScroll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ac4f0 TechnoClass::GetHouseData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ac700 TacticalClass::SetDisplayMode -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4acc50 CellClass::ProcessVisibility -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ace70 DisplayClass::LoadMapData -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p27\batch_report.json
