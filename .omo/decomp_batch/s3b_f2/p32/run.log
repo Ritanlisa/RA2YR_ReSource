@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ca430 FactoryClass::Stat -> FactoryClass
+[conv] 0x4caba0 DynamicVector::resetScriptState -> DynamicVector
+[conv] 0x4caf20 VoxelAnimClass::ProcessFrame -> VoxelAnimClass
+[conv] 0x4cb4c0 sub_4CB4C0 -> _addr_4C
+[conv] 0x4cb920 File::Dispatch -> File
+[conv] 0x4cbba0 FootClass::FindPathWithRetry -> FootClass
+[conv] 0x4cc360 TrajectoryHelper::GetObstacle -> TrajectoryHelper
+[conv] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> FlyLocomotionClass
+[conv] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> JumpjetLocomotionClass
+[conv] 0x4ccae0 JumpjetLocomotionClass::GetMovementCoordinate -> JumpjetLocomotionClass
+[conv] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> FlyLocomotionClass
+[conv] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> FlyLocomotionClass
+[conv] 0x4cd2a0 FootClass::ProcessDeployMission -> FootClass
+[conv] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> JumpjetLocomotionClass
+[conv] 0x4cd600 DamageArea::ApplyScatter -> DamageArea
+[conv] 0x4ce4b0 ObjectClass::ProcessDataHelper -> ObjectClass
+[conv] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> JumpjetLocomotionClass
+[conv] 0x4ce680 FootClass::UpdateDeployMovement -> FootClass
+[conv] 0x4ce840 DropPod::ProcessLanding -> DropPod
+[conv] 0x4cefb0 LandFootClassAtPosition -> _addr_4C
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FactoryClass             rc=2
+[era] DynamicVector            rc=2
+[era] VoxelAnimClass           rc=2
+[era] _addr_4C                 rc=2
+[era] File                     rc=2
+[era] FootClass                rc=2
+[era] TrajectoryHelper         rc=2
+[era] FlyLocomotionClass       rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] DamageArea               rc=2
+[era] ObjectClass              rc=2
+[era] DropPod                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4ca430 FactoryClass::Stat -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4caba0 DynamicVector::resetScriptState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4caf20 VoxelAnimClass::ProcessFrame -> COMPILE_FAIL (attempt 15)
+[ledger] 0x4cb4c0 sub_4CB4C0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cb920 File::Dispatch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cbba0 FootClass::FindPathWithRetry -> COMPILE_FAIL (attempt 18)
+[ledger] 0x4cc360 TrajectoryHelper::GetObstacle -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cc9a0 FlyLocomotionClass::LocomotionClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ccae0 JumpjetLocomotionClass::GetMovementCoordinate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ccc80 FlyLocomotionClass::UpdateFootLocomotion -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ccfd0 FlyLocomotionClass::ComputeMoveToPosition -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cd2a0 FootClass::ProcessDeployMission -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4cd600 DamageArea::ApplyScatter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce4b0 ObjectClass::ProcessDataHelper -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce5a0 JumpjetLocomotionClass::ProcessRotation -> COMPILE_FAIL (attempt 8)
+[ledger] 0x4ce680 FootClass::UpdateDeployMovement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4ce840 DropPod::ProcessLanding -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4cefb0 LandFootClassAtPosition -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p32\batch_report.json
