@@ -1,0 +1,71 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x5596a0 LoadSaveDialog::FillList -> LoadSaveDialog
+[conv] 0x559c20 LoadOptions::Check -> LoadOptions
+[conv] 0x55a6c0 LocomotionClass::Init -> LocomotionClass
+[conv] 0x55a6f0 LocomotionClass::Construct -> LocomotionClass
+[conv] 0x55a7d0 IUnknown::ComputeRotation -> IUnknown
+[conv] 0x55a8c0 IUnknown::ComputeScreenYOffset -> IUnknown
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x55a9b0 LocomotionClass::QueryInterface -> LocomotionClass
+[conv] 0x55aa60 LocomotionClass::LoadIPersistStream -> LocomotionClass
+[conv] 0x55ad10 IUnknown::GetSpecialValue -> IUnknown
+[conv] 0x55afb0 Scenario::Update -> Scenario
+[conv] 0x55b720 ObjectClass::sub_55B720 -> ObjectClass
+[conv] 0x55c350 LZOPipe::Read -> LZOPipe
+[conv] 0x55c5e0 LZOPipe::AddRef -> LZOPipe
+[conv] 0x55c7c0 LZOStraw::Decompress -> LZOStraw
+[conv] 0x55cfd0 ObjectClass::GameFrameCheck -> ObjectClass
+[conv] 0x55d360 ObjectClass::GameFrameLoop -> ObjectClass
+[conv] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> SyncDelayClass
+[conv] 0x55e160 SyncDelay::Start -> SyncDelay
+[conv] 0x55e420 Chat::ProcessMessages -> Chat
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LoadSaveDialog           rc=2
+[era] LoadOptions              rc=2
+[era] LocomotionClass          rc=2
+[era] IUnknown                 rc=2
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] LZOPipe                  rc=2
+[era] LZOStraw                 rc=2
+[era] SyncDelayClass           rc=2
+[era] SyncDelay                rc=2
+[era] Chat                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5596a0 LoadSaveDialog::FillList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x559c20 LoadOptions::Check -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55a6c0 LocomotionClass::Init -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a6f0 LocomotionClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a7d0 IUnknown::ComputeRotation -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a8c0 IUnknown::ComputeScreenYOffset -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55a970 LocomotionClass::ReleaseRef -> COMPILE_FAIL (attempt 8)
+[ledger] 0x55a9b0 LocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 14)
+[ledger] 0x55aa60 LocomotionClass::LoadIPersistStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55ad10 IUnknown::GetSpecialValue -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55afb0 Scenario::Update -> COMPILE_FAIL (attempt 5)
+[ledger] 0x55b720 ObjectClass::sub_55B720 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55c350 LZOPipe::Read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55c5e0 LZOPipe::AddRef -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55c7c0 LZOStraw::Decompress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55cfd0 ObjectClass::GameFrameCheck -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55d360 ObjectClass::GameFrameLoop -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55dee0 SyncDelayClass::ProcessNetworkSync -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55e160 SyncDelay::Start -> COMPILE_FAIL (attempt 4)
+[ledger] 0x55e420 Chat::ProcessMessages -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p57\batch_report.json
