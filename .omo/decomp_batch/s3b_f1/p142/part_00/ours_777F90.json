@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_777F90@ObjectClass@@QAEFH@Z",
+ "sym_key": "ObjectClass::sub_777F90",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "a10000000081ec0804000085c055578be9747f8d4c2408680002000051680008000050e80000000085c07e66c6440408008d7c240883c9ff33c0f2aef7d18d94240c020000680001000049528d44241051506a006a00e80000000085c07d0233c085c066c784440c02000000007e23568db424100200008bf833c0668b06505068d904000055e80000000083c6024f75e85e5f5d81c408040000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7355C@@3IA",
+   "sym_key": "DataGlobal_B7355C"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?ImmGetCompositionStringA@@YGJHHPAXH@Z",
+   "sym_key": "ImmGetCompositionStringA"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAXH0H@Z",
+   "sym_key": "MultiByteToWideChar"
+  },
+  {
+   "off": 135,
+   "type": "REL32",
+   "sym": "?SendMessageA@@YGJPAXIIJ@Z",
+   "sym_key": "SendMessageA"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p142\part_00
+=== convert (20 addrs) ===
+[conv] 0x777f90 ObjectClass::sub_777F90 -> ObjectClass
+[conv] 0x778180 Network_Append -> Network
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x778a20 LoadPlayerProfile -> _addr_77
+[conv] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> ReferenceCounted
+[conv] 0x779b50 ObjectClass::ReadAutoLoginWOL -> ObjectClass
+[conv] 0x779c90 ObjectClass::ReadSettingsWOL -> ObjectClass
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x77a080 ObjectClass::SaveProfileWOL -> ObjectClass
+[conv] 0x77a4d0 WOLPersona::FormatDateTime -> WOLPersona
+[conv] 0x77a9f0 ObjectClass::FillPersonaInfoWOL -> ObjectClass
+[conv] 0x77b030 PlayerProfile::QueryInterface -> PlayerProfile
+[conv] 0x77ba40 sub_77BA40 -> _addr_77
+[conv] 0x77bc10 sub_77BC10 -> _addr_77
+[conv] 0x77bde0 sub_77BDE0 -> _addr_77
+[conv] 0x77bfb0 sub_77BFB0 -> _addr_77
+[conv] 0x77c180 sub_77C180 -> _addr_77
+[conv] 0x77c3b0 sub_77C3B0 -> _addr_77
+[conv] 0x77ca60 sub_77CA60 -> _addr_77
+[conv] 0x77cc30 sub_77CC30 -> _addr_77
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Network                  rc=2
+[era] _addr_77                 rc=2
+[era] ReferenceCounted         rc=2
+[era] WOLPersona               rc=2
+[era] PlayerProfile            rc=2
+=== diffasm byte-compare ===
+[diff] 0x777f90   MISMATCH         ObjectClass::sub_777F90
+[ledger] 0x777f90 ObjectClass::sub_777F90 -> NG (attempt 2)
+[ledger] 0x778180 Network_Append -> COMPILE_FAIL (attempt 7)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 11)
+[ledger] 0x778a20 LoadPlayerProfile -> COMPILE_FAIL (attempt 7)
+[ledger] 0x779690 ReferenceCounted::LoadAccountInfoWOL_Load -> COMPILE_FAIL (attempt 7)
+[ledger] 0x779b50 ObjectClass::ReadAutoLoginWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x779c90 ObjectClass::ReadSettingsWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x779f10 ObjectClass::SavePersonaConfigWOL -> COMPILE_FAIL (attempt 9)
+[ledger] 0x77a080 ObjectClass::SaveProfileWOL -> COMPILE_FAIL (attempt 7)
+[ledger] 0x77a4d0 WOLPersona::FormatDateTime -> COMPILE_FAIL (attempt 4)
+[ledger] 0x77a9f0 ObjectClass::FillPersonaInfoWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77b030 PlayerProfile::QueryInterface -> COMPILE_FAIL (attempt 7)
+[ledger] 0x77ba40 sub_77BA40 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77bc10 sub_77BC10 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77bde0 sub_77BDE0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77bfb0 sub_77BFB0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77c180 sub_77C180 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77c3b0 sub_77C3B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77ca60 sub_77CA60 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x77cc30 sub_77CC30 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p142\batch_report.json

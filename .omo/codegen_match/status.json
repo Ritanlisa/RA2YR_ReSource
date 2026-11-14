@@ -193764,15 +193764,15 @@
   "this_as_id": false
  },
  "0x777f90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 push ebx",
   "name": "ObjectClass::sub_777F90",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_777F90",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x778030": {
@@ -193809,7 +193809,7 @@
   "this_as_id": false
  },
  "0x778180": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "Network_Append",
@@ -194042,7 +194042,7 @@
   "this_as_id": false
  },
  "0x778710": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -194054,7 +194054,7 @@
   "this_as_id": false
  },
  "0x778a20": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "LoadPlayerProfile",
@@ -194087,7 +194087,7 @@
   "this_as_id": false
  },
  "0x779690": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -194143,7 +194143,7 @@
   "this_as_id": false
  },
  "0x779b50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194155,7 +194155,7 @@
   "this_as_id": false
  },
  "0x779c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194179,7 +194179,7 @@
   "this_as_id": false
  },
  "0x779f10": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194191,7 +194191,7 @@
   "this_as_id": false
  },
  "0x77a080": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194215,7 +194215,7 @@
   "this_as_id": false
  },
  "0x77a4d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194341,7 +194341,7 @@
   "this_as_id": false
  },
  "0x77a9f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194353,7 +194353,7 @@
   "this_as_id": false
  },
  "0x77b030": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -194838,7 +194838,7 @@
   "this_as_id": false
  },
  "0x77ba40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BA40",
@@ -194860,7 +194860,7 @@
   "this_as_id": false
  },
  "0x77bc10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BC10",
@@ -194882,7 +194882,7 @@
   "this_as_id": false
  },
  "0x77bde0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BDE0",
@@ -194904,7 +194904,7 @@
   "this_as_id": false
  },
  "0x77bfb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77BFB0",
@@ -194926,7 +194926,7 @@
   "this_as_id": false
  },
  "0x77c180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C180",
@@ -194970,7 +194970,7 @@
   "this_as_id": false
  },
  "0x77c3b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C3B0",
@@ -195300,7 +195300,7 @@
   "this_as_id": false
  },
  "0x77ca60": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CA60",
@@ -195322,7 +195322,7 @@
   "this_as_id": false
  },
  "0x77cc30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CC30",
