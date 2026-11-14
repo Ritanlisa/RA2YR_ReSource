@@ -1,0 +1,27 @@
+{
+ "symbol": "?Constructor@BaseClass@@QAEPAIXZ",
+ "sym_key": "BaseClass::Constructor",
+ "size": 125,
+ "link_base": 0,
+ "bytes_hex": "53568bf15733ff8d5e0457578bcbe800000000893bc743140a000000897b108d5e2057578bcb897e1ce800000000893b8d5e3857578bcbc746340a000000897e30e800000000893b897e4866897e5066897e52897e54897e58897e5c897e60897e64897e68897e6c897e70897e74893ec7464c0a0000008bc65f5e5bc3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "REL32",
+   "sym": "?Vector_Constructor@BaseNodeClass@@QAEPAV1@HH@Z",
+   "sym_key": "BaseNodeClass::Vector_Constructor"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::CellConstructor"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?CellConstructor@VectorClass@@QAEPAV1@HH@Z",
+   "sym_key": "VectorClass::CellConstructor"
+  }
+ ]
+}

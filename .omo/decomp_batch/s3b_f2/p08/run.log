@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x42e6f0 BaseClass::Constructor -> BaseClass
+[conv] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> BuildingPrerequisiteClass
+[conv] 0x42ee30 BaseClass::LoadBaseNodeClass -> BaseClass
+[conv] 0x42f1e0 BaseClass::Construct -> BaseClass
+[conv] 0x430ba0 ObjectClass::PlacePlayerBeacon -> ObjectClass
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x431090 Radar::FindNearestRadarTarget -> Radar
+[conv] 0x4311c0 Network::SendBeaconDelete -> Network
+[conv] 0x431450 Network::SendBeacon -> Network
+[conv] 0x431b80 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x431e80 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x431f50 BufferIOFileClass::Write -> BufferIOFileClass
+[conv] 0x431f70 CCFileClass::Open -> CCFileClass
+[conv] 0x432050 CCFileClass::BufferedWriter -> CCFileClass
+[conv] 0x4322a0 CCFileClass::BufferedReader -> CCFileClass
+[conv] 0x432750 BinkMovie::InitFromFile -> BinkMovie
+[conv] 0x432c10 WeaponTypeClass::COMStub_432C10 -> WeaponTypeClass
+[conv] 0x432c70 BinkMovie::Play -> BinkMovie
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Base64Straw              rc=2
+[era] BaseClass                rc=2
+[era] BuildingPrerequisiteClass rc=2
+[era] ObjectClass              rc=2
+[era] PlayerClass              rc=2
+[era] Radar                    rc=2
+[era] Network                  rc=2
+[era] BufferIOFileClass        rc=2
+[era] CCFileClass              rc=2
+[era] BinkMovie                rc=2
+[era] WeaponTypeClass          rc=2
+[era] BinkMovieHandle          rc=2
+=== diffasm byte-compare ===
+[diff] 0x42e6f0   MISMATCH         BaseClass::Constructor
+[diff] 0x42ee30   MISMATCH         BaseClass::LoadBaseNodeClass
+[diff] 0x42f1e0   MISMATCH         BaseClass::Construct
+[ledger] 0x42df90 Base64Straw::ProcessFrame -> COMPILE_FAIL (attempt 17)
+[ledger] 0x42e6f0 BaseClass::Constructor -> NG (attempt 5)
+[ledger] 0x42ebe0 BuildingPrerequisiteClass::ReadNodeGraph -> COMPILE_FAIL (attempt 5)
+[ledger] 0x42ee30 BaseClass::LoadBaseNodeClass -> NG (attempt 5)
+[ledger] 0x42f1e0 BaseClass::Construct -> NG (attempt 5)
+[ledger] 0x430ba0 ObjectClass::PlacePlayerBeacon -> COMPILE_FAIL (attempt 8)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 9)
+[ledger] 0x431090 Radar::FindNearestRadarTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4311c0 Network::SendBeaconDelete -> COMPILE_FAIL (attempt 5)
+[ledger] 0x431450 Network::SendBeacon -> COMPILE_FAIL (attempt 6)
+[ledger] 0x431b80 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x431e80 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 5)
+[ledger] 0x431f50 BufferIOFileClass::Write -> COMPILE_FAIL (attempt 5)
+[ledger] 0x431f70 CCFileClass::Open -> COMPILE_FAIL (attempt 5)
+[ledger] 0x432050 CCFileClass::BufferedWriter -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4322a0 CCFileClass::BufferedReader -> COMPILE_FAIL (attempt 5)
+[ledger] 0x432750 BinkMovie::InitFromFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x432c10 WeaponTypeClass::COMStub_432C10 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x432c70 BinkMovie::Play -> COMPILE_FAIL (attempt 8)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 9)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p08\batch_report.json
