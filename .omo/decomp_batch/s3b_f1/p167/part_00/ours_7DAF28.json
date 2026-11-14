@@ -1,0 +1,99 @@
+{
+ "symbol": "?___getlocaleinfo@@YAHHKIPAPAD@Z",
+ "sym_key": "Unnamed::___getlocaleinfo",
+ "size": 494,
+ "link_base": 0,
+ "bytes_hex": "8b44240481ec840000005355bd01000000563bc5570f851b0100008bac24a00000008b8c249c00000033db8d4424145368800000005055518d7c2428e8000000008bf083c41485f60f8580000000e80000000083f87a740e5f5e5d83c8ff5b81c484000000c38b94249c0000006a006a006a005552e8000000008bf083c41485f6750e5f5e5d83c8ff5b81c484000000c356e8000000008bf883c40485ff750e5f5e5d83c8ff5b81c484000000c38b84249c0000006a0056575550bb01000000e8000000008bf083c41485f6742856e8000000008b8c24a800000083c40485c08901752985db750e5f5e5d83c8ff5b81c484000000c357e80000000083c40483c8ff5f5e5d5b81c484000000c3565750e80000000083c40c85db0f84c100000057e80000000083c40433c05f5e5d5b81c484000000c385c0740e5f5e5d83c8ff5b81c484000000c38b9424a00000008b84249c000000be000000006a006a04565250e80000000083c41485c0750e5f5e5d83c8ff5b81c484000000c38bbc24a4000000c60700a1000000008a1e3bc5885c24107f188b4c24108b150000000081e1ff0000008a044a83e004eb148b4424106a0425ff00000050e80000000083c40885c0741c8a07b10af6e902c333d22c3083c6028807668b15000000003bf27ca55f5e5d33c05b81c484000000c3",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?__crtGetLocaleInfoA@@YAHHHPAXHHZZ",
+   "sym_key": "__crtGetLocaleInfoA"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?GetLastError@@YGKXZ",
+   "sym_key": "GetLastError"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?__crtGetLocaleInfoA@@YAHHHPAXHHZZ",
+   "sym_key": "__crtGetLocaleInfoA"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 193,
+   "type": "REL32",
+   "sym": "?__crtGetLocaleInfoA@@YAHHHPAXHHZZ",
+   "sym_key": "__crtGetLocaleInfoA"
+  },
+  {
+   "off": 208,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 273,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "_free",
+   "sym_key": "free"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?LCData@@3GA",
+   "sym_key": "LCData"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?__crtGetLocaleInfoW@@YAHHHPAXHHZZ",
+   "sym_key": "__crtGetLocaleInfoW"
+  },
+  {
+   "off": 391,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 411,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3PAXA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 442,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  },
+  {
+   "off": 473,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78594@@3GA",
+   "sym_key": "CRTGlobal_B78594"
+  }
+ ]
+}
