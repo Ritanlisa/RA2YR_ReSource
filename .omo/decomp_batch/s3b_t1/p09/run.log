@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x5cc8a0 MSBinkAnim::Load -> MSBinkAnim
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> MSVQAnim
+[conv] 0x5cce90 MSVQAnim::Load -> MSVQAnim
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x5cd850 WrapWideStringText -> _addr_5C
+[conv] 0x5cdee0 MSPrintAnim::Draw -> MSPrintAnim
+[conv] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> ObjectClass
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> ObjectClass
+[conv] 0x5ce4a0 MSAnim::UI_Load -> MSAnim
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5ceef0 SessionClass::LoadMapSelection -> SessionClass
+[conv] 0x5cf5f0 SessionClass::Destruct -> SessionClass
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x5cf840 ObjectClass::sub_5CF840 -> ObjectClass
+[conv] 0x5cf8e0 MSChoiceClass::LoadFromINI -> MSChoiceClass
+[conv] 0x5d0070 SessionClass::loadSettings -> SessionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSOverlayAnim            rc=2
+[era] MSBinkAnim               rc=2
+[era] MSVQAnim                 rc=2
+[era] _addr_5C                 rc=2
+[era] MSPrintAnim              rc=2
+[era] ObjectClass              rc=2
+[era] MSAnim                   rc=2
+[era] MSPCXAnim                rc=2
+[era] SessionClass             rc=2
+[era] CampaignClass            rc=2
+[era] MSChoiceClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5cf5f0   MISMATCH         SessionClass::Destruct
+[ledger] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> COMPILE_FAIL (attempt 15)
+[ledger] 0x5cc8a0 MSBinkAnim::Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cce90 MSVQAnim::Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 15)
+[ledger] 0x5cd850 WrapWideStringText -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cdee0 MSPrintAnim::Draw -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ce0c0 ObjectClass::sub_5CE0C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ce330 ObjectClass::sub_5CE330 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ce3a0 ObjectClass::sub_5CE3A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ce4a0 MSAnim::UI_Load -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ceef0 SessionClass::LoadMapSelection -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5cf5f0 SessionClass::Destruct -> NG (attempt 5)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5cf840 ObjectClass::sub_5CF840 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5cf8e0 MSChoiceClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5d0070 SessionClass::loadSettings -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p09\batch_report.json

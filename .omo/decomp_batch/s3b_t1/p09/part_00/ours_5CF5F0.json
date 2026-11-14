@@ -1,0 +1,45 @@
+{
+ "symbol": "?Destruct@SessionClass@@QAEHXZ",
+ "sym_key": "SessionClass::Destruct",
+ "size": 190,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db578b465885c076218b464c8b3c9885ff740f57e80000000057e80000000083c4088b4658433bd872df8b4e488d464850ff510c8b464033db85c0c7461800000000c7461c00000000c7462080020000c74624900100007e218b46308b3c9885ff740f57e80000000057e80000000083c4088b4640433bd87cdf8b562c8d462c50ff520c8b461833db85c07e228b46048b3c9885ff74108bcfe80000000057e80000000083c4048b4618433bd87cde8b0656ff500c5f5e5bc3",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?DeleteAndZero@@YAXPAX@Z",
+   "sym_key": "DeleteAndZero"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 159,
+   "type": "REL32",
+   "sym": "?loadSettings@SessionClass@@QAEXXZ",
+   "sym_key": "SessionClass::loadSettings"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
