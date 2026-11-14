@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p58\part_00
+=== convert (20 addrs) ===
+[conv] 0x567230 MapClass::UpdateVisibility -> MapClass
+[conv] 0x568300 LayerClass::CoordinatesLegal -> LayerClass
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x5683c0 MapClass::FillRevealBuffer -> MapClass
+[conv] 0x5687f0 MapClass::ApplyOverlayReveal -> MapClass
+[conv] 0x568e40 Terrain::PlaceCliffs -> Terrain
+[conv] 0x569760 TechnoClass::DestroyCliffMap -> TechnoClass
+[conv] 0x56b5a0 CellClass::LoadTerrainTiles -> CellClass
+[conv] 0x56b780 CellClass::CreateOverlay -> CellClass
+[conv] 0x56b8a0 CellClass::DecompressRawCellData -> CellClass
+[conv] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> CellClass
+[conv] 0x56bac0 CellClass::DecompressTerrainData -> CellClass
+[conv] 0x56bec0 BuildingClass::SearchPlacement -> BuildingClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x56d6e0 MapClass::ProcessRegion -> MapClass
+[conv] 0x56dc20 LayerClass::Pathfinding_Find -> LayerClass
+[conv] 0x56e990 Cell::UpdateTileType -> Cell
+[conv] 0x56eb80 Cell::SetTileType -> Cell
+[conv] 0x56ef50 CellClass::UpdateVariant3 -> CellClass
+[conv] 0x56f2f0 CellClass::UpdateVariant4 -> CellClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=2
+[era] LayerClass               rc=2
+[era] Tactical                 rc=2
+[era] Terrain                  rc=2
+[era] TechnoClass              rc=2
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x567230 MapClass::UpdateVisibility -> COMPILE_FAIL (attempt 5)
+[ledger] 0x568300 LayerClass::CoordinatesLegal -> COMPILE_FAIL (attempt 5)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5683c0 MapClass::FillRevealBuffer -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5687f0 MapClass::ApplyOverlayReveal -> COMPILE_FAIL (attempt 8)
+[ledger] 0x568e40 Terrain::PlaceCliffs -> COMPILE_FAIL (attempt 5)
+[ledger] 0x569760 TechnoClass::DestroyCliffMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56b5a0 CellClass::LoadTerrainTiles -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56b780 CellClass::CreateOverlay -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56b8a0 CellClass::DecompressRawCellData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56bac0 CellClass::DecompressTerrainData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56bec0 BuildingClass::SearchPlacement -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 7)
+[ledger] 0x56d6e0 MapClass::ProcessRegion -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56dc20 LayerClass::Pathfinding_Find -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56e990 Cell::UpdateTileType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56eb80 Cell::SetTileType -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56ef50 CellClass::UpdateVariant3 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x56f2f0 CellClass::UpdateVariant4 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p58\batch_report.json
