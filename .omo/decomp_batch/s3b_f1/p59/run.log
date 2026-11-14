@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p59\part_00
+=== convert (20 addrs) ===
+[conv] 0x56b780 CellClass::CreateOverlay -> CellClass
+[conv] 0x56b8a0 CellClass::DecompressRawCellData -> CellClass
+[conv] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> CellClass
+[conv] 0x56bac0 CellClass::DecompressTerrainData -> CellClass
+[conv] 0x56bec0 BuildingClass::SearchPlacement -> BuildingClass
+[conv] 0x56c510 Terrain::ConnectivityGraph -> Terrain
+[conv] 0x56d6e0 MapClass::ProcessRegion -> MapClass
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+[conv] 0x56dc20 LayerClass::Pathfinding_Find -> LayerClass
+[conv] 0x56e990 Cell::UpdateTileType -> Cell
+[conv] 0x56eb80 Cell::SetTileType -> Cell
+[conv] 0x56ef50 CellClass::UpdateVariant3 -> CellClass
+[conv] 0x56f2f0 CellClass::UpdateVariant4 -> CellClass
+[conv] 0x56f8b0 CellClass::UpdateTerrain -> CellClass
+[conv] 0x570050 Terrain::ProcessCellModification -> Terrain
+[conv] 0x570ae0 CellClass::RecursiveTileUpdate -> CellClass
+[conv] 0x571050 CellClass::ProcessTileChange -> CellClass
+[conv] 0x571490 CellClass::PropagateTerrainVariant2 -> CellClass
+[conv] 0x572440 CellClass::UpdateVariant7 -> CellClass
+[conv] 0x5727e0 CellClass::UpdateVariant8 -> CellClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=2
+[era] BuildingClass            rc=2
+[era] Terrain                  rc=2
+[era] MapClass                 rc=2
+[era] ObjectClass              rc=0
+[era] LayerClass               rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x571050   MISMATCH         CellClass::ProcessTileChange
+[diff] 0x56da10   MISMATCH         ObjectClass::GetRegionMap
+[ledger] 0x56b780 CellClass::CreateOverlay -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56b8a0 CellClass::DecompressRawCellData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56b9a0 CellClass::DecompressTerrainDataSimple -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56bac0 CellClass::DecompressTerrainData -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56bec0 BuildingClass::SearchPlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56c510 Terrain::ConnectivityGraph -> COMPILE_FAIL (attempt 6)
+[ledger] 0x56d6e0 MapClass::ProcessRegion -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> NG (attempt 6)
+[ledger] 0x56dc20 LayerClass::Pathfinding_Find -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56e990 Cell::UpdateTileType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56eb80 Cell::SetTileType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56ef50 CellClass::UpdateVariant3 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56f2f0 CellClass::UpdateVariant4 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x56f8b0 CellClass::UpdateTerrain -> COMPILE_FAIL (attempt 4)
+[ledger] 0x570050 Terrain::ProcessCellModification -> COMPILE_FAIL (attempt 4)
+[ledger] 0x570ae0 CellClass::RecursiveTileUpdate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x571050 CellClass::ProcessTileChange -> NG (attempt 4)
+[ledger] 0x571490 CellClass::PropagateTerrainVariant2 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x572440 CellClass::UpdateVariant7 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5727e0 CellClass::UpdateVariant8 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p59\batch_report.json
