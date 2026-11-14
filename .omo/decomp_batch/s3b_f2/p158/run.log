@@ -1,0 +1,61 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p158\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cb44b __unlock_file -> _addr_7C
+[conv] 0x7cb49d _srand -> _addr_7C
+[conv] 0x7cb80b _fgetc -> _addr_7C
+[conv] 0x7cb9cf _wcstoxl -> _addr_7C
+[conv] 0x7cbb8d __mbsnccnt -> _addr_7C
+[conv] 0x7cbbdb _swscanf -> _addr_7C
+[conv] 0x7cbc32 _getenv -> _addr_7C
+[conv] 0x7cbe1c _doexit -> _addr_7C
+[conv] 0x7cbed3 __initterm -> _addr_7C
+[conv] 0x7cbf5f __fpreset -> _addr_7C
+[conv] 0x7cc0dc __global_unwind2 -> _addr_7C
+[conv] 0x7cc11e __local_unwind2 -> _addr_7C
+[conv] 0x7cc186 __abnormal_termination -> _addr_7C
+[conv] 0x7cc1b2 __NLG_Notify -> _addr_7C
+[conv] 0x7cc1d4 __except_handler3 -> _addr_7C
+[conv] 0x7cc309 __mbstowcs_lk -> _addr_7C
+[conv] 0x7cc4a4 __wcstombs_lk -> _addr_7C
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+[conv] 0x7cc752 __Getmonths -> _addr_7C
+[conv] 0x7cc7e7 __Gettnames -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7cb44b __unlock_file -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7cb49d _srand -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cb80b _fgetc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cb9cf _wcstoxl -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cbb8d __mbsnccnt -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cbbdb _swscanf -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cbc32 _getenv -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7cbe1c _doexit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cbed3 __initterm -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cbf5f __fpreset -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cc0dc __global_unwind2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc11e __local_unwind2 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc186 __abnormal_termination -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7cc1b2 __NLG_Notify -> COMPILE_FAIL (attempt 5)
+[ledger] 0x7cc1d4 __except_handler3 -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7cc309 __mbstowcs_lk -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7cc4a4 __wcstombs_lk -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 9)
+[ledger] 0x7cc752 __Getmonths -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7cc7e7 __Gettnames -> COMPILE_FAIL (attempt 8)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p158\batch_report.json
