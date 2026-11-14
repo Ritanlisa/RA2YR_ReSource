@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f6b60 IUnknown::IsBelowScreen -> IUnknown
+[conv] 0x5f6b90 IUnknown::IsHeightAboveThreshold -> IUnknown
+[conv] 0x5f7090 ObjectTypeClass::ConstructFull -> ObjectTypeClass
+[conv] 0x5f8110 VoxelAnimType::LoadAnim -> VoxelAnimType
+[conv] 0x5f9070 ObjectTypeClass::Load2DArt -> ObjectTypeClass
+[conv] 0x5f92d0 ObjectTypeClass::LoadFromINI -> ObjectTypeClass
+[conv] 0x5f9e80 Checksummer::HashString -> Checksummer
+[conv] 0x5fa4a0 Audio::SetScoreVolume -> Audio
+[conv] 0x5fa510 Audio::SetSoundVolume -> Audio
+[conv] 0x5fa590 Audio::SetVoiceVolume -> Audio
+[conv] 0x5fa620 GameSettings::Read -> GameSettings
+[conv] 0x5fad10 ScenarioClass::SaveGameOptions -> ScenarioClass
+[conv] 0x5fb160 AudioOptionsClass::ApplySettings -> AudioOptionsClass
+[conv] 0x5fb320 HotkeyOptions::DlgProc -> HotkeyOptions
+[conv] 0x5fbef0 ShowHotkeyOptionsDialog -> _addr_5F
+[conv] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> GameOptionsClass
+[conv] 0x5fc000 GameOptionsClass::PopulateMovieList -> GameOptionsClass
+[conv] 0x5fc570 TechnoClass::FinalizeCellPlacement -> TechnoClass
+[conv] 0x5fd970 OverlayClass::HandleAction -> OverlayClass
+[conv] 0x5fdd20 FindBuildingByTiberiumType -> _addr_5F
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IUnknown                 rc=2
+[era] ObjectTypeClass          rc=2
+[era] VoxelAnimType            rc=2
+[era] Checksummer              rc=0
+[era] Audio                    rc=2
+[era] GameSettings             rc=2
+[era] ScenarioClass            rc=2
+[era] AudioOptionsClass        rc=2
+[era] HotkeyOptions            rc=2
+[era] _addr_5F                 rc=2
+[era] GameOptionsClass         rc=2
+[era] TechnoClass              rc=2
+[era] OverlayClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x5f9e80   MISMATCH         Checksummer::HashString
+[ledger] 0x5f6b60 IUnknown::IsBelowScreen -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f6b90 IUnknown::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f7090 ObjectTypeClass::ConstructFull -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5f8110 VoxelAnimType::LoadAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f9070 ObjectTypeClass::Load2DArt -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f92d0 ObjectTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5f9e80 Checksummer::HashString -> NG (attempt 5)
+[ledger] 0x5fa4a0 Audio::SetScoreVolume -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fa510 Audio::SetSoundVolume -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fa590 Audio::SetVoiceVolume -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fa620 GameSettings::Read -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fad10 ScenarioClass::SaveGameOptions -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5fb160 AudioOptionsClass::ApplySettings -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fb320 HotkeyOptions::DlgProc -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5fbef0 ShowHotkeyOptionsDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5fbf80 GameOptionsClass::UnlockMovieIfNeeded_MoviesList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fc000 GameOptionsClass::PopulateMovieList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5fc570 TechnoClass::FinalizeCellPlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5fd970 OverlayClass::HandleAction -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5fdd20 FindBuildingByTiberiumType -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p17\batch_report.json

@@ -1,0 +1,69 @@
+{
+ "symbol": "?HashString@Checksummer@@QAEEPAD@Z",
+ "sym_key": "Checksummer::HashString",
+ "size": 571,
+ "link_base": 0,
+ "bytes_hex": "8b54240481ec8c00000085d2750b32c081c48c000000c2040053555657b920000000b8a5a5a5a58d7c241c6880000000f3ab8d4424205250e8000000008d7c242883c9ff33c0c68424a700000000f2aef7d18d59ff8d4c2428518bebe80000000033ff83c41033f63bdf7e2933d28a54341c52e80000000083c40485c075118bc6b91a00000099f7f980c2418854341c463bf37cd783fb107c05f6c303744b8ad3be1000000083c2038bc225fc0000003bc676028bf03bde8bcb7d258bc133d22bc3bd1a0000008a54041c8bc283f03f03c199f7fd80c24188540c1c413bce7cdb8bd9c6440c1c008be98d44241c53508d4c241c897c241ce8000000008d4c241c51e80000000083c4048d54241c8d4c2414897c24145352e800000000894424188d44241c50e80000000083c40433f63bdf7e298b4c241833c08a44341c884c341c33c1468bc881e1ff000000c1e118c1f8080bc83bf3894c24187cd785db7e248a443c1c8bf783e6078a96000000000ad08a8600000000f6d022d088543c1c473bfb7cdc33f685db0f8e88000000896c24148a44341f8a4c341cf6e8660fb654341e884424128ac1f6e96689542418884c24118a4c24188ad8d0e18ac18a54341d32c3885c2413f66c24118a5c241288442411d0e28ac283c60432c38a5c241102c38a5c2413f66c241832d832c8885c3418884c34198a4c241102c88ac132c28a54241232ca8844341a3bf5884c341b7c808b5c24148d4c241c53518d4c241cc744241c00000000e8000000005f5e5d5b81c48c000000c20400",
+ "relocs": [
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "_strncpy",
+   "sym_key": "strncpy"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?_strupr@@YAHPAXZZ",
+   "sym_key": "_strupr"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?isgraph@@YAHHZZ",
+   "sym_key": "isgraph"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 259,
+   "type": "REL32",
+   "sym": "__strrev",
+   "sym_key": "_strrev"
+  },
+  {
+   "off": 281,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 295,
+   "type": "REL32",
+   "sym": "__strrev",
+   "sym_key": "_strrev"
+  },
+  {
+   "off": 364,
+   "type": "DIR32",
+   "sym": "?byte_832C14@@3EA",
+   "sym_key": "byte_832C14"
+  },
+  {
+   "off": 372,
+   "type": "DIR32",
+   "sym": "?byte_832C0C@@3EA",
+   "sym_key": "byte_832C0C"
+  },
+  {
+   "off": 554,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  }
+ ]
+}
