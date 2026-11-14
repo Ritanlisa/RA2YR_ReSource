@@ -1,0 +1,124 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p11\part_00
+=== convert (40 addrs) ===
+[conv] 0x47b0c0 FileFind::Next -> FileFind
+[conv] 0x47b260 sub_47B260 -> _addr_47
+[conv] 0x47bdb0 ObjectClass::GetBridgeCellColor -> ObjectClass
+[conv] 0x47c060 ObjectClass::GetCellRadarColors -> ObjectClass
+[conv] 0x47c550 CellClass::FindInfantry -> CellClass
+[conv] 0x47c620 CellClass::IsPassable -> CellClass
+[conv] 0x47ca80 CellClass::DetermineTileType -> CellClass
+[conv] 0x47d2b0 House::AnnounceUpgrade -> House
+[conv] 0x47dd70 CellClass::UpdateAnimations -> CellClass
+[conv] 0x47e8a0 CellClass::AddContent -> CellClass
+[conv] 0x47eba0 CellClass::FindBuilding -> CellClass
+[conv] 0x47f6a0 BuildingClass::Draw_0 -> BuildingClass
+[conv] 0x480630 BuildingClass::ValidatePlacement -> BuildingClass
+[conv] 0x4810a0 Input::OffsetToDirection -> Input
+[conv] 0x481180 ObjectPlacement::CalcPosition -> ObjectPlacement
+[conv] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> ObjectClass
+[conv] 0x481a00 CrateClass::ProcessPickup -> CrateClass
+[conv] 0x483480 CellClass::DamageAllObjects -> CellClass
+[conv] 0x4834a0 Cell::IsBuildable -> Cell
+[conv] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> BuildingClass
+[conv] 0x483710 ObjectClass::sub_483710 -> ObjectClass
+[conv] 0x4839f0 CellClass::SaveLoad_Prefix -> CellClass
+[conv] 0x483c80 BuildingClass::DetermineVisualState -> BuildingClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x484180 Tactical::CalculateTacticalLighting -> Tactical
+[conv] 0x484680 TacticalMap::ComputeScreenTint -> TacticalMap
+[conv] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> JumpjetLocomotionClass
+[conv] 0x485460 BuildingClass::CheckAdjacentCells -> BuildingClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x4865d0 Cell::IsGroundTypeRange -> Cell
+[conv] 0x486750 Cell::IsInRange -> Cell
+[conv] 0x486770 Cell::IsInRange2 -> Cell
+[conv] 0x486a70 CellClass::CreateFoggedObjects -> CellClass
+[conv] 0x486c50 CellClass::ClearCellContents -> CellClass
+[conv] 0x487190 Crate::FindPlacement -> Crate
+[conv] 0x488380 CheckListClass::GetSelected -> CheckListClass
+[conv] 0x4883f0 CheckListClass::SetItemData -> CheckListClass
+[conv] 0x488520 CheckListClass::OnClick -> CheckListClass
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FileFind                 rc=2
+[era] _addr_47                 rc=0
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] House                    rc=2
+[era] BuildingClass            rc=2
+[era] Input                    rc=0
+[era] ObjectPlacement          rc=2
+[era] CrateClass               rc=2
+[era] Cell                     rc=2
+[era] Tactical                 rc=2
+[era] TacticalMap              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Crate                    rc=2
+[era] CheckListClass           rc=2
+[era] ColorListClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x47b260   MISMATCH         sub_47B260
+[diff] 0x47bdb0   MISMATCH         ObjectClass::GetBridgeCellColor
+[diff] 0x47ca80   MISMATCH         CellClass::DetermineTileType
+[diff] 0x4810a0   MISMATCH         Input::OffsetToDirection
+[ledger] 0x47b0c0 FileFind::Next -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47b260 sub_47B260 -> NG (attempt 3)
+[ledger] 0x47bdb0 ObjectClass::GetBridgeCellColor -> NG (attempt 5)
+[ledger] 0x47c060 ObjectClass::GetCellRadarColors -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47c550 CellClass::FindInfantry -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47c620 CellClass::IsPassable -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47ca80 CellClass::DetermineTileType -> NG (attempt 7)
+[ledger] 0x47d2b0 House::AnnounceUpgrade -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47dd70 CellClass::UpdateAnimations -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47e8a0 CellClass::AddContent -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47eba0 CellClass::FindBuilding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x47f6a0 BuildingClass::Draw_0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x480630 BuildingClass::ValidatePlacement -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4810a0 Input::OffsetToDirection -> NG (attempt 3)
+[ledger] 0x481180 ObjectPlacement::CalcPosition -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4818e0 ObjectClass::UpdateTiberiumGrowth -> COMPILE_FAIL (attempt 4)
+[ledger] 0x481a00 CrateClass::ProcessPickup -> COMPILE_FAIL (attempt 5)
+[ledger] 0x483480 CellClass::DamageAllObjects -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4834a0 Cell::IsBuildable -> COMPILE_FAIL (attempt 3)
+[ledger] 0x483620 BuildingClass::IsTiberiumCollectorEligible -> COMPILE_FAIL (attempt 3)
+[ledger] 0x483710 ObjectClass::sub_483710 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4839f0 CellClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 7)
+[ledger] 0x483c80 BuildingClass::DetermineVisualState -> COMPILE_FAIL (attempt 4)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 17)
+[ledger] 0x484180 Tactical::CalculateTacticalLighting -> COMPILE_FAIL (attempt 7)
+[ledger] 0x484680 TacticalMap::ComputeScreenTint -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4848b0 JumpjetLocomotionClass::AdjustClimbFacing -> COMPILE_FAIL (attempt 4)
+[ledger] 0x485460 BuildingClass::CheckAdjacentCells -> COMPILE_FAIL (attempt 6)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 7)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 9)
+[ledger] 0x4865d0 Cell::IsGroundTypeRange -> COMPILE_FAIL (attempt 3)
+[ledger] 0x486750 Cell::IsInRange -> COMPILE_FAIL (attempt 3)
+[ledger] 0x486770 Cell::IsInRange2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x486a70 CellClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 7)
+[ledger] 0x486c50 CellClass::ClearCellContents -> COMPILE_FAIL (attempt 3)
+[ledger] 0x487190 Crate::FindPlacement -> COMPILE_FAIL (attempt 6)
+[ledger] 0x488380 CheckListClass::GetSelected -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4883f0 CheckListClass::SetItemData -> COMPILE_FAIL (attempt 3)
+[ledger] 0x488520 CheckListClass::OnClick -> COMPILE_FAIL (attempt 6)
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 36,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 26,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p11\batch_report.json

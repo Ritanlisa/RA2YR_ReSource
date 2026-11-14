@@ -28949,7 +28949,7 @@
   "this_as_id": false
  },
  "0x47b0c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29050,14 +29050,14 @@
   "this_as_id": false
  },
  "0x47b260": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 fild dword ptr [0x89e7c0]",
   "name": "sub_47B260",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_47B260",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47b290": {
@@ -29159,19 +29159,19 @@
   "this_as_id": false
  },
  "0x47bdb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "ObjectClass::GetBridgeCellColor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GetBridgeCellColor",
   "rule_violations": 10,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47c060": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29219,7 +29219,7 @@
   "this_as_id": false
  },
  "0x47c550": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29243,7 +29243,7 @@
   "this_as_id": false
  },
  "0x47c620": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29255,15 +29255,15 @@
   "this_as_id": false
  },
  "0x47ca80": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x68",
   "name": "CellClass::DetermineTileType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "CellClass::DetermineTileType",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x47d210": {
@@ -29279,7 +29279,7 @@
   "this_as_id": false
  },
  "0x47d2b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29291,7 +29291,7 @@
   "this_as_id": false
  },
  "0x47dd70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29325,7 +29325,7 @@
   "this_as_id": false
  },
  "0x47e8a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29349,7 +29349,7 @@
   "this_as_id": false
  },
  "0x47eba0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29431,7 +29431,7 @@
   "this_as_id": false
  },
  "0x47f6a0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29541,7 +29541,7 @@
   "status": "NG"
  },
  "0x480630": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29589,15 +29589,15 @@
   "this_as_id": false
  },
  "0x4810a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+3 push esi",
   "name": "Input::OffsetToDirection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "Input::OffsetToDirection",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x481130": {
@@ -29613,7 +29613,7 @@
   "this_as_id": false
  },
  "0x481180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29673,7 +29673,7 @@
   "this_as_id": false
  },
  "0x4818e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29685,14 +29685,14 @@
   "this_as_id": false
  },
  "0x481a00": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CrateClass::ProcessPickup",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CrateClass::ProcessPickup",
-  "rule_violations": 77,
+  "rule_violations": 75,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -29721,7 +29721,7 @@
   "this_as_id": false
  },
  "0x483480": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29733,7 +29733,7 @@
   "this_as_id": false
  },
  "0x4834a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29757,7 +29757,7 @@
   "this_as_id": false
  },
  "0x483620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29781,7 +29781,7 @@
   "this_as_id": false
  },
  "0x483710": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -29817,7 +29817,7 @@
   "this_as_id": false
  },
  "0x4839f0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29841,7 +29841,7 @@
   "this_as_id": false
  },
  "0x483c80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29865,7 +29865,7 @@
   "this_as_id": false
  },
  "0x484050": {
-  "attempts": 16,
+  "attempts": 17,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29877,7 +29877,7 @@
   "this_as_id": false
  },
  "0x484180": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29889,7 +29889,7 @@
   "this_as_id": false
  },
  "0x484680": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29901,7 +29901,7 @@
   "this_as_id": false
  },
  "0x4848b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30117,19 +30117,19 @@
   "this_as_id": false
  },
  "0x485460": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "BuildingClass::CheckAdjacentCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "BuildingClass::CheckAdjacentCells",
-  "rule_violations": 9,
+  "rule_violations": 8,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x485590": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30141,7 +30141,7 @@
   "this_as_id": false
  },
  "0x485af0": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30191,7 +30191,7 @@
   "this_as_id": false
  },
  "0x4865d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30263,7 +30263,7 @@
   "this_as_id": false
  },
  "0x486750": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30275,7 +30275,7 @@
   "this_as_id": false
  },
  "0x486770": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30356,7 +30356,7 @@
   "this_as_id": false
  },
  "0x486a70": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -30380,7 +30380,7 @@
   "this_as_id": false
  },
  "0x486c50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -30533,7 +30533,7 @@
   "status": "OK"
  },
  "0x487190": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -30927,19 +30927,19 @@
   "status": "OK"
  },
  "0x488380": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CheckListClass::GetSelected",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "CheckListClass::GetSelected",
-  "rule_violations": 1,
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4883f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -30963,7 +30963,7 @@
   "this_as_id": false
  },
  "0x488520": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -31121,7 +31121,7 @@
   "this_as_id": false
  },
  "0x488980": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

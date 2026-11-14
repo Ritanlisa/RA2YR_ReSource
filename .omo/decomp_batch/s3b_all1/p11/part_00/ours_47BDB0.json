@@ -1,0 +1,141 @@
+{
+ "symbol": "?GetBridgeCellColor@ObjectClass@@QAEHPAED@Z",
+ "sym_key": "ObjectClass::GetBridgeCellColor",
+ "size": 566,
+ "link_base": 0,
+ "bytes_hex": "518b44240856578bf16a006a0689742410c60000e8000000008bf88a44241484c00f858300000085ff747f8b87200500008a889a0c000084c9756f8a880117000084c975658b0f6a006a0057ff516883f80574568b971c0200008b0d000000008b82546001008b04818b88140300008b800c0300008b500483fa018b9074010000750933c08a040a8bf8eb0633ff668b3c4a85ff75078bcee8000000008bc7c1e0100bc75f5e59c208008b8640010000f6c4010f85a30000008b1500000000a1f408000033c98a4e3881f9ffff000075058b3c90eb038b3c8833c081f9ffff0000743083bff0020000017e3633c98a8e1a010000518bcfe80000000084c0740e8b8640010000c1f80d83e001eb1433d28a56388b87f00200008bce5052e8000000005057e80000000033d233c98a961b0100008a8e1a010000525150e8000000008bc833c083c41433d2668b01668b5102c1e0105f0bc25e59c208008b0dab00000053558d44241c8b49606a0050e8000000008a1d000000008bf08b3d0000000033c0668b168acb8ac68b2d00000000d3f88bcf81e2ff000000d3e033c98a4e028bf18a0d00000000d3ee8bcdd3e68a0d00000000d3ea8b0d000000000bc6d3e20bc28bf075608b15ab0000008acb8b426033d28a90b702000081e2ff000000d3ea8bcfd3e233c98a88b80200008bf18a0d00000000d3ee8bcdd3e633c98a88b60200008bc18a0d00000000d3e88b0d000000000bd6d3e00bd08bf275098b4c2410e8000000008bc65dc1e0105b0bc65f5e59c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?FindByID@PlacementList@@QAEPAVBuildingClass@@HD@Z",
+   "sym_key": "PlacementList::FindByID"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 187,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10B0@@3IA",
+   "sym_key": "DataGlobal_AA10B0"
+  },
+  {
+   "off": 192,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 248,
+   "type": "REL32",
+   "sym": "?GetTerrainFlag@CellClass@@QAEDPAX@Z",
+   "sym_key": "CellClass::GetTerrainFlag"
+  },
+  {
+   "off": 286,
+   "type": "REL32",
+   "sym": "?InitRandomOffsets@CellClass@@QAEHHH@Z",
+   "sym_key": "CellClass::InitRandomOffsets"
+  },
+  {
+   "off": 293,
+   "type": "REL32",
+   "sym": "?Map_Get@@YAPAIPAXH@Z",
+   "sym_key": "Map_Get"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?Map_Get_549E50@@YAHHPAX0@Z",
+   "sym_key": "Map_Get_549E50"
+  },
+  {
+   "off": 350,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?GetRadarColor@OverlayTypeClass@@QAEHHI@Z",
+   "sym_key": "OverlayTypeClass::GetRadarColor"
+  },
+  {
+   "off": 373,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 381,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 396,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 421,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 433,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 441,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 457,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83CD9@@3IA",
+   "sym_key": "DataGlobal_A83CD9"
+  },
+  {
+   "off": 498,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 520,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 528,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 547,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

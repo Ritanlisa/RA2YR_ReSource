@@ -1,0 +1,21 @@
+{
+ "symbol": "?OffsetToDirection@Input@@QAEDXZ",
+ "sym_key": "Input::OffsetToDirection",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "83ec0833c08a410433d28a118b4c2400568bf08b4424085750518bfae8000000008b5424148b4424105250ddd8e8000000008bc88b44241833c883c41081e1ff00000033c883f93c7d085f32c05e83c408c333c081ff800000000f9fc081fe800000007e020c0285c07401405f5e83c408c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  },
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  }
+ ]
+}

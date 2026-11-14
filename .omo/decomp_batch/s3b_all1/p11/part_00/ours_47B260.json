@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_47B260@@YAXXZ",
+ "sym_key": "Unnamed::sub_47B260",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424fc8b4c24f883ec085051e800000000ddd883c410c3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?Math__ArcTan@@YANN@Z",
+   "sym_key": "Math__ArcTan"
+  }
+ ]
+}

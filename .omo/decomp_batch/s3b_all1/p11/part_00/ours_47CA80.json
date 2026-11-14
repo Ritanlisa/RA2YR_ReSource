@@ -1,0 +1,405 @@
+{
+ "symbol": "?DetermineTileType@CellClass@@QAEEXZ",
+ "sym_key": "CellClass::DetermineTileType",
+ "size": 1893,
+ "link_base": 0,
+ "bytes_hex": "83ec70a100000000535556578bf183cfff8d48013bc789442478894c24387504897c2438a1000000003bc7894424588d5029895424347504897c24348b1d000000003bdf895c24308d6b0f896c242c75068bef896c242ca1000000003bc7894424148d480f894c24207504897c2420a1000000003bc7894424188d500f895424247504897c2424a1000000003bc78944241c8d480f894c24287504897c2428a1000000003bc78944245c8d500d8954243c7504897c243ca1000000003bc7894424108d4814894c24447504897c2444a1000000003bc7894424608d500d895424407504897c2440a1000000003bc7894424508d480b894c244c7504897c244ca1000000003bc7894424648d5013895424487504897c2448a1000000008b4e383bc88bd0894c246874103bcb0f82940000003bcd0f8f8c00000033ed33db33ff83fb0873400fbf46248bcb8944245483e1078d44246c8d148d88f689008d4c24545250e8000000008b088d542470894c247052b900000000e8000000008b1500000000eb028bc68b40383bc274173b4424307c063b44242c7e0bb8010000008bcfd3e00be883c30283e3074783ff047c8f85ed740b8b4c243003e9896e38eb0389563883cfff397c24140f84bf0000008b46388b15000000003bc274143b4424140f8ca80000003b4424200f8f9e00000033ed33db33ff83fb0873510fbf4e248bc3894c247083e007668b1485000000008b0485000000006603d18b4c2472c1f81003c1668954243066894424328d5424708b4c243052894c2474b900000000e8000000008b1500000000eb028bc68b40383bc274173b4424147c063b4424207e0bb8010000008bcfd3e00be883c30283e3074783ff040f8c7affffff85ed740b8b4c241403e9896e38eb03895638837c2418ff0f84d90000008b46388b0d000000003bc18bd174143b4424180f8cc00000003b4424240f8fb600000033ed33db33ff83fb0873510fbf4e248bc3894c247083e007668b1485000000008b0485000000006603d18b4c2472c1f81003c1668954243066894424328d5424708b4c243052894c2474b900000000e8000000008b1500000000eb028bc68b40383bc2742f3b4424187c063b4424247e233b4424587c063b4424347e173b4424787c063b4424387e0bb8010000008bcfd3e00be883c30283e3074783ff040f8c62ffffff85ed740b8b4c241803e9896e38eb03895638837c241cff0f84e20000008b46388b0d000000003bc18bd174143b44241c0f8cc90000003b4424280f8fbf00000033ed33db33ff83fb08734e0fbf4e248bc3894c247883e00766030c85000000008b148500000000c1fa1066894c24388b4c247a03d18d4c2478668954243a518b44243cb9000000008944247ce8000000008b1500000000eb028bc68b40383bc2743b3b44241c7c063b4424287e2f3b44245c7c063b44243c7e233b4424607c063b4424407e173b4424107c063b4424447e0bb8010000008bcfd3e00be883c30283e3074783ff040f8c59ffffff85ed740b8b4c241c03e9896e38eb038956388b46388b6c24643bc57c063b4424487e188b5c24503bc30f8caf0200003b44244c0f8fa5020000eb048b5c24508b861c01000033ff83f8010f85980000000fbf46248b15000000008d0c1066894c24148b0d04000000c1f81003c1b90000000066894424168d4424108b5424145089542414e8000000008a901c01000033c90fbf462484d28b15000000000f94c18bf98b0d0400000003d0c1f81003c1668954241466894424168d4c24108b44241451b90000000089442414e8000000008a881c01000084c9750383cf0285ff74078d541fff89563883be1c010000020f85930000000fbf46248b0d000000008d1401c1f810c1f91003c1668954245066894424528d4c24108b44245051b90000000089442414e8000000008a881c01000084c9750383cf010fbf46248b15000000008b0d0400000003d0c1f81003c1668954245066894424528d4c24108b44245051b90000000089442414e8000000008a881c01000084c9750383cf0285ff74078d541f0289563883be1c010000030f85960000000fbf46248b0d0000000003c866894c24508b0d04000000c1f81003c1b90000000066894424528d4424108b5424505089542414e8000000008a881c01000084c9750383cf010fbf46248b0d000000008d14088b0d04000000c1f81003c1668954245066894424528d4c24108b44245051b90000000089442414e8000000008a881c01000084c9750383cf0285ff74078d541f0589563883be1c010000040f85930000000fbf46248b0d0000000003c866894c24508b0d04000000c1f81003c1b90000000066894424528d4424108b5424505089542414e8000000008a881c01000084c9750383cf010fbf46248b0d000000008d1401c1f810c1f91003c1668954245066894424528d4c24108b44245051b90000000089442414e8000000008a881c01000084c9750383cf0285ff740b8d541f0889563885ff750f33c08a861c0100008d4c28ff894e388b46388b5c24683bd8741d8b15f40800008b3c82578b07ff909c00000085c075078bcfe8000000008b4e3833c05f3bd95e5d0f95c05b83c470c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?dword_AA1090@@3IA",
+   "sym_key": "dword_AA1090"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABAD28@@3HA",
+   "sym_key": "DataGlobal_ABAD28"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?dword_AA1134@@3IA",
+   "sym_key": "dword_AA1134"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E24@@3IA",
+   "sym_key": "DataGlobal_AA0E24"
+  },
+  {
+   "off": 112,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0748@@3IA",
+   "sym_key": "DataGlobal_AA0748"
+  },
+  {
+   "off": 136,
+   "type": "DIR32",
+   "sym": "?dword_AA10A8@@3IA",
+   "sym_key": "dword_AA10A8"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10A4@@3HA",
+   "sym_key": "DataGlobal_AA10A4"
+  },
+  {
+   "off": 184,
+   "type": "DIR32",
+   "sym": "?g_CellTileTypeCache@@3IA",
+   "sym_key": "g_CellTileTypeCache"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E20@@3IA",
+   "sym_key": "DataGlobal_AA0E20"
+  },
+  {
+   "off": 232,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1058@@3IA",
+   "sym_key": "DataGlobal_AA1058"
+  },
+  {
+   "off": 256,
+   "type": "DIR32",
+   "sym": "?g_CellTileLookup@@3IA",
+   "sym_key": "g_CellTileLookup"
+  },
+  {
+   "off": 280,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B8@@3IA",
+   "sym_key": "DataGlobal_ABC2B8"
+  },
+  {
+   "off": 355,
+   "type": "REL32",
+   "sym": "?Add@CellStruct@@QAEPAIPAX0@Z",
+   "sym_key": "CellStruct::Add"
+  },
+  {
+   "off": 371,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 376,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 382,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B8@@3IA",
+   "sym_key": "DataGlobal_ABC2B8"
+  },
+  {
+   "off": 468,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB104@@3IA",
+   "sym_key": "DataGlobal_ABB104"
+  },
+  {
+   "off": 524,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 531,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 571,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 576,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 582,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB104@@3IA",
+   "sym_key": "DataGlobal_ABB104"
+  },
+  {
+   "off": 670,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E18@@3IA",
+   "sym_key": "DataGlobal_AA0E18"
+  },
+  {
+   "off": 728,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 735,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 775,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 780,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 786,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E18@@3IA",
+   "sym_key": "DataGlobal_AA0E18"
+  },
+  {
+   "off": 898,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B0@@3HA",
+   "sym_key": "DataGlobal_ABC2B0"
+  },
+  {
+   "off": 956,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 963,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 996,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1005,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1011,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2B0@@3HA",
+   "sym_key": "DataGlobal_ABC2B0"
+  },
+  {
+   "off": 1187,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 1201,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 1211,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1234,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1254,
+   "type": "DIR32",
+   "sym": "?g_CellDirectionOffsets@@3IA",
+   "sym_key": "g_CellDirectionOffsets"
+  },
+  {
+   "off": 1265,
+   "type": "DIR32",
+   "sym": "?g_CellDirectionOffsets@@3IA",
+   "sym_key": "g_CellDirectionOffsets"
+  },
+  {
+   "off": 1296,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1305,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1352,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 1387,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1396,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1419,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 1425,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 1456,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1465,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1512,
+   "type": "DIR32",
+   "sym": "?g_CellDirectionOffsets@@3IA",
+   "sym_key": "g_CellDirectionOffsets"
+  },
+  {
+   "off": 1525,
+   "type": "DIR32",
+   "sym": "?g_CellDirectionOffsets@@3IA",
+   "sym_key": "g_CellDirectionOffsets"
+  },
+  {
+   "off": 1535,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1558,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1581,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 1590,
+   "type": "DIR32",
+   "sym": "?Direction_Y_Offsets@@3IA",
+   "sym_key": "Direction_Y_Offsets"
+  },
+  {
+   "off": 1619,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1628,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1675,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 1688,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 1698,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1721,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1744,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 1779,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 1788,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 1848,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 1871,
+   "type": "REL32",
+   "sym": "?EnsureFileLoaded@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::EnsureFileLoaded"
+  }
+ ]
+}
