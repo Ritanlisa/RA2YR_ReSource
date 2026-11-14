@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p22\part_00
+=== convert (20 addrs) ===
+[conv] 0x488980 ColorListClass::DrawColorRect -> ColorListClass
+[conv] 0x488ee0 ColorListClass::GetColor -> ColorListClass
+[conv] 0x489180 ComputeTechnoClassDamageFalloff -> _addr_48
+[conv] 0x489280 PlaySoundEffectAt -> _addr_48
+[conv] 0x48b0e0 CommBufferClass::sub_48B0E0 -> CommBufferClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x48c040 ModemConnectionClass::receivePacket -> ModemConnectionClass
+[conv] 0x48c320 ModemConnectionClass::processTileUpdate -> ModemConnectionClass
+[conv] 0x48c3b0 ConnectionClass::IsValid -> ConnectionClass
+[conv] 0x48c5a0 ModemConnectionClass::connect -> ModemConnectionClass
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+[conv] 0x48ccc0 ObjectClass::MainGame -> ObjectClass
+[conv] 0x48d080 Event::Dispatch -> Event
+[conv] 0x48d1e0 Network::Dispatch -> Network
+[conv] 0x48dfd0 sub_48DFD0 -> _addr_48
+[conv] 0x48e030 sub_48E030 -> _addr_48
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x48e0b0 ObjectClass::DumpNetworkStats -> ObjectClass
+[conv] 0x48e740 ConvertClass::Construct -> ConvertClass
+[conv] 0x48ebf0 ConvertClass::InitTables -> ConvertClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ColorListClass           rc=2
+[era] _addr_48                 rc=2
+[era] CommBufferClass          rc=2
+[era] ConnectionClass          rc=2
+[era] ModemConnectionClass     rc=2
+[era] ObjectClass              rc=2
+[era] Event                    rc=2
+[era] Network                  rc=2
+[era] ConvertClass             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x488980 ColorListClass::DrawColorRect -> COMPILE_FAIL (attempt 8)
+[ledger] 0x488ee0 ColorListClass::GetColor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x489180 ComputeTechnoClassDamageFalloff -> COMPILE_FAIL (attempt 5)
+[ledger] 0x489280 PlaySoundEffectAt -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48b0e0 CommBufferClass::sub_48B0E0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 21)
+[ledger] 0x48c040 ModemConnectionClass::receivePacket -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48c320 ModemConnectionClass::processTileUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48c3b0 ConnectionClass::IsValid -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48c5a0 ModemConnectionClass::connect -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48c8b0 ObjectClass::MainGameFrame -> COMPILE_FAIL (attempt 9)
+[ledger] 0x48ccc0 ObjectClass::MainGame -> COMPILE_FAIL (attempt 7)
+[ledger] 0x48d080 Event::Dispatch -> COMPILE_FAIL (attempt 6)
+[ledger] 0x48d1e0 Network::Dispatch -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48dfd0 sub_48DFD0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x48e030 sub_48E030 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x48e0b0 ObjectClass::DumpNetworkStats -> COMPILE_FAIL (attempt 5)
+[ledger] 0x48e740 ConvertClass::Construct -> COMPILE_FAIL (attempt 8)
+[ledger] 0x48ebf0 ConvertClass::InitTables -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p22\batch_report.json
