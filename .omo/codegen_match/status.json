@@ -111668,7 +111668,7 @@
   "this_as_id": false
  },
  "0x5e8bf0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111738,7 +111738,7 @@
   "this_as_id": false
  },
  "0x5e8ea0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -111750,19 +111750,19 @@
   "this_as_id": false
  },
  "0x5e9240": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "NetworkLobby::AssignPlayerSlot",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "NetworkLobby::AssignPlayerSlot",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e9290": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -111833,15 +111833,15 @@
   "this_as_id": false
  },
  "0x5e9510": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 mov eax, dword ptr [0xa8b548]",
   "name": "NetworkLobby::CheckMinPlayers",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "NetworkLobby::CheckMinPlayers",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x5e9560": {
@@ -111869,7 +111869,7 @@
   "this_as_id": false
  },
  "0x5e95e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -111975,7 +111975,7 @@
   "this_as_id": false
  },
  "0x5e9b60": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "SelectLobbyCountry",
@@ -111986,7 +111986,7 @@
   "this_as_id": false
  },
  "0x5e9c00": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "first_diff": null,
   "name": "AssignPlayerColor",
@@ -111997,7 +111997,7 @@
   "this_as_id": false
  },
  "0x5e9ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "AssignPlayerSide",
@@ -112008,7 +112008,7 @@
   "this_as_id": false
  },
  "0x5e9db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ProcessNetworkLobbyOption",
@@ -112019,7 +112019,7 @@
   "this_as_id": false
  },
  "0x5e9e00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -112031,7 +112031,7 @@
   "this_as_id": false
  },
  "0x5e9e70": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "SetupSkirmishPlayerSlots",
@@ -112042,7 +112042,7 @@
   "this_as_id": false
  },
  "0x5ea0d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_5EA0D0",
@@ -112053,7 +112053,7 @@
   "this_as_id": false
  },
  "0x5ea180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameLobby_Setup",
@@ -112076,7 +112076,7 @@
   "this_as_id": false
  },
  "0x5ea3e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll",
@@ -112094,7 +112094,7 @@
   "status": "NG"
  },
  "0x5ea920": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GetPlayerSide",
@@ -112105,7 +112105,7 @@
   "this_as_id": false
  },
  "0x5ea9b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Play",
@@ -112116,7 +112116,7 @@
   "this_as_id": false
  },
  "0x5eaa10": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Get",
@@ -112127,7 +112127,7 @@
   "this_as_id": false
  },
  "0x5eaa70": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "RefreshLobbyAll_Get_5EAA70",
@@ -112150,7 +112150,7 @@
   "this_as_id": false
  },
  "0x5eab30": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

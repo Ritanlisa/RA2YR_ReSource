@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E9240",
+ "name": "NetworkLobby::AssignPlayerSlot",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E9240",
+ "bytes_hex": "53558b2db411ac0056578b3d9c11ac0033c0ba90daa80083cbff8b323bf7750539596b751c3bf5750539596b741383c2044081fab0daa8007ce05f5e8bc35d5bc35f5e5d890c8590daa8005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

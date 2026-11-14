@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p78\part_00
+=== convert (20 addrs) ===
+[conv] 0x5e8bf0 Player::FindByName -> Player
+[conv] 0x5e8ea0 NetworkLobby::SetupPlayers -> NetworkLobby
+[conv] 0x5e9240 NetworkLobby::AssignPlayerSlot -> NetworkLobby
+[conv] 0x5e9290 NetworkLobby::CheckLobbyConditions -> NetworkLobby
+[conv] 0x5e9510 NetworkLobby::CheckMinPlayers -> NetworkLobby
+[conv] 0x5e95e0 ObjectClass::Event_Helper -> ObjectClass
+[conv] 0x5e9b60 SelectLobbyCountry -> _addr_5E
+[conv] 0x5e9c00 AssignPlayerColor -> _addr_5E
+[conv] 0x5e9ce0 AssignPlayerSide -> _addr_5E
+[conv] 0x5e9db0 ProcessNetworkLobbyOption -> _addr_5E
+[conv] 0x5e9e00 NetworkLobby::InitLobbyDropdowns -> NetworkLobby
+[conv] 0x5e9e70 SetupSkirmishPlayerSlots -> _addr_5E
+[conv] 0x5ea0d0 sub_5EA0D0 -> _addr_5E
+[conv] 0x5ea180 GameLobby_Setup -> GameLobby
+[conv] 0x5ea3e0 RefreshLobbyAll -> _addr_5E
+[conv] 0x5ea920 GetPlayerSide -> _addr_5E
+[conv] 0x5ea9b0 RefreshLobbyAll_Play -> RefreshLobbyAll
+[conv] 0x5eaa10 RefreshLobbyAll_Get -> RefreshLobbyAll
+[conv] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> RefreshLobbyAll_Get
+[conv] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Player                   rc=2
+[era] NetworkLobby             rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5E                 rc=2
+[era] GameLobby                rc=2
+[era] RefreshLobbyAll          rc=2
+[era] RefreshLobbyAll_Get      rc=2
+=== diffasm byte-compare ===
+[diff] 0x5e9240   MISMATCH         NetworkLobby::AssignPlayerSlot
+[diff] 0x5e9510   MISMATCH         NetworkLobby::CheckMinPlayers
+[ledger] 0x5e8bf0 Player::FindByName -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e8ea0 NetworkLobby::SetupPlayers -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e9240 NetworkLobby::AssignPlayerSlot -> NG (attempt 4)
+[ledger] 0x5e9290 NetworkLobby::CheckLobbyConditions -> COMPILE_FAIL (attempt 13)
+[ledger] 0x5e9510 NetworkLobby::CheckMinPlayers -> NG (attempt 4)
+[ledger] 0x5e95e0 ObjectClass::Event_Helper -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9b60 SelectLobbyCountry -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5e9ce0 AssignPlayerSide -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9db0 ProcessNetworkLobbyOption -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9e00 NetworkLobby::InitLobbyDropdowns -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5e9e70 SetupSkirmishPlayerSlots -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5ea0d0 sub_5EA0D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ea180 GameLobby_Setup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ea3e0 RefreshLobbyAll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ea920 GetPlayerSide -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5ea9b0 RefreshLobbyAll_Play -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eaa10 RefreshLobbyAll_Get -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eaa70 RefreshLobbyAll_Get_5EAA70 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5eab30 ObjectClass::RefreshLobbyAll_Play_5EAB30 -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p78\batch_report.json

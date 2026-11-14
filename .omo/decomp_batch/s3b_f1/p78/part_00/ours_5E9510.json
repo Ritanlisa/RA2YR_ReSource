@@ -1,0 +1,63 @@
+{
+ "symbol": "?CheckMinPlayers@NetworkLobby@@QAE_NXZ",
+ "sym_key": "NetworkLobby::CheckMinPlayers",
+ "size": 132,
+ "link_base": 0,
+ "bytes_hex": "8b0d00000000a1000000003bc173028bc833d25685c9577e3fa1000000008b35000000003930740f423bd17d0f8b780483c0043bfe75f15f32c05ec3a10000000085c0753783f9087d3239348d0000000075295f33c05ec3a10000000085c0751b83f9087d168b048d000000008b0d000000003bc175055f33c05ec35fb8010000005ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8BB0C@@3IA",
+   "sym_key": "DataGlobal_A8BB0C"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B548@@3IA",
+   "sym_key": "DataGlobal_A8B548"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_MPCooperativeState@@3IA",
+   "sym_key": "g_MPCooperativeState"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_MPCooperativeState@@3IA",
+   "sym_key": "g_MPCooperativeState"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  }
+ ]
+}

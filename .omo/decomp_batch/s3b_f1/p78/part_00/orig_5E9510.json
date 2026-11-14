@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E9510",
+ "name": "NetworkLobby::CheckMinPlayers",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E9510",
+ "bytes_hex": "a148b5a8008b0d0cbba8003bc17d028bc833c0568b359c11ac0085c97e11ba90daa8003932741f4083c2043bc17cf4a1a416830085c0751283f9087d0d39348d90daa800750432c05ec3b0015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

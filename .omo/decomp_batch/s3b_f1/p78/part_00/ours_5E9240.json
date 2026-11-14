@@ -1,0 +1,39 @@
+{
+ "symbol": "?AssignPlayerSlot@NetworkLobby@@QAEHXZ",
+ "sym_key": "NetworkLobby::AssignPlayerSlot",
+ "size": 80,
+ "link_base": 0,
+ "bytes_hex": "8b150000000053558b2d0000000056578b3d0000000033c083cbff8b323bf7750539596c75173bf5750539596c740e83c2044081fa000000007d0eebde5f5e5d890c85000000005bc35f5e8bc35d5bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_HouseClass_ObserverFlags@@3HA",
+   "sym_key": "g_HouseClass_ObserverFlags"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  },
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  }
+ ]
+}
