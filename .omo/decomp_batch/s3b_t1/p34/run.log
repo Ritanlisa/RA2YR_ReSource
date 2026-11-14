@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x6622c0 RocketLocomotionClass::UpdateBullets -> RocketLocomotionClass
+[conv] 0x663030 TechnoClass::CalculateDamage -> TechnoClass
+[conv] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> JumpjetLocomotionClass
+[conv] 0x6635c0 RocketLocomotionClass::ProcessMove -> RocketLocomotionClass
+[conv] 0x6639d0 Network::SendMasterPlayerList -> Network
+[conv] 0x663b40 SessionClass::BuildLobbyPlayerList -> SessionClass
+[conv] 0x663db0 ObjectClass::LaunchMultiplayerHost -> ObjectClass
+[conv] 0x664240 NetworkManager::SetPlayerAddress -> NetworkManager
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x6646c0 NetworkManager::RemovePlayer -> NetworkManager
+[conv] 0x664d20 HouseClass::InitTypeVectors -> HouseClass
+[conv] 0x665650 RulesClass::RulesClass_665650 -> RulesClass
+[conv] 0x667a30 RulesClass::DTOR -> RulesClass
+[conv] 0x6686c0 ObjectClass::ResetRules -> ObjectClass
+[conv] 0x6691e0 Rules::ReadMiscINI -> Rules
+[conv] 0x66b900 TechnoClass::ReadCrateRulesINI -> TechnoClass
+[conv] 0x66bbb0 Rules::ReadCombatINI -> Rules
+[conv] 0x66cf70 RulesClass::ReadCountryList -> RulesClass
+[conv] 0x66d150 RulesClass::readAudioVisual -> RulesClass
+[conv] 0x66d1f0 RulesClass::readSpecialWeapons -> RulesClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RocketLocomotionClass    rc=2
+[era] TechnoClass              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Network                  rc=2
+[era] SessionClass             rc=2
+[era] ObjectClass              rc=2
+[era] NetworkManager           rc=0
+[era] EventClass               rc=2
+[era] HouseClass               rc=2
+[era] RulesClass               rc=2
+[era] Rules                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x664240   MISMATCH         NetworkManager::SetPlayerAddress
+[diff] 0x6646c0   MISMATCH         NetworkManager::RemovePlayer
+[ledger] 0x6622c0 RocketLocomotionClass::UpdateBullets -> COMPILE_FAIL (attempt 3)
+[ledger] 0x663030 TechnoClass::CalculateDamage -> COMPILE_FAIL (attempt 5)
+[ledger] 0x663470 JumpjetLocomotionClass::ComputePitchYaw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6635c0 RocketLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6639d0 Network::SendMasterPlayerList -> COMPILE_FAIL (attempt 6)
+[ledger] 0x663b40 SessionClass::BuildLobbyPlayerList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x663db0 ObjectClass::LaunchMultiplayerHost -> COMPILE_FAIL (attempt 2)
+[ledger] 0x664240 NetworkManager::SetPlayerAddress -> NG (attempt 2)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 15)
+[ledger] 0x6646c0 NetworkManager::RemovePlayer -> NG (attempt 2)
+[ledger] 0x664d20 HouseClass::InitTypeVectors -> COMPILE_FAIL (attempt 6)
+[ledger] 0x665650 RulesClass::RulesClass_665650 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x667a30 RulesClass::DTOR -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6686c0 ObjectClass::ResetRules -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6691e0 Rules::ReadMiscINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x66b900 TechnoClass::ReadCrateRulesINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x66bbb0 Rules::ReadCombatINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x66cf70 RulesClass::ReadCountryList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x66d150 RulesClass::readAudioVisual -> COMPILE_FAIL (attempt 2)
+[ledger] 0x66d1f0 RulesClass::readSpecialWeapons -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p34\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x664240",
+ "name": "NetworkManager::SetPlayerAddress",
+ "size": 90,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x664240",
+ "bytes_hex": "83ec088d44240053568bf1578d4c241c50518b4c2424e845abedff8b561033c085d27e2d8b76048b7c24188bce8b190fbe1b3bdf74114083c1043bc27cef5f5e5b83c408c208008b14868b44240c8942215f5e5b83c408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

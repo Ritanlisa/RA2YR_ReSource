@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetPlayerAddress@NetworkManager@@QAEHHPAH@Z",
+ "sym_key": "NetworkManager::SetPlayerAddress",
+ "size": 87,
+ "link_base": 0,
+ "bytes_hex": "5153568bf18d442408578d4c241850518b4c2420e8000000008b7e1033c085ff7e2e8b76048bce8b160fbe1a8b5424143bda7412403bc77d178b590483c1040fbe1b3bda75ee8b34868b44240c8946215f5e5b59c20800",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?CopyAddress@Network@@QAEPADPAXH@Z",
+   "sym_key": "Network::CopyAddress"
+  }
+ ]
+}
