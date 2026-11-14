@@ -1,0 +1,66 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p134\part_00
+=== convert (20 addrs) ===
+[conv] 0x75c700 WalkLocomotionClass::LoadFromStream -> WalkLocomotionClass
+[conv] 0x75c7f0 WalkLocomotionClass::QueryInterface -> WalkLocomotionClass
+[conv] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> JumpjetLocomotionClass
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x75d3a0 WarheadTypeClass::ReadINI -> WarheadTypeClass
+[conv] 0x75dec0 WarheadTypeClass::ProcessPower -> WarheadTypeClass
+[conv] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> WarheadTypeClass
+[conv] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> WarheadTypeClass
+[conv] 0x75e440 WarheadTypeClass::GetDamage -> WarheadTypeClass
+[conv] 0x75e510 WarheadTypeClass::Destructor -> WarheadTypeClass
+[conv] 0x75e690 WarheadTypeClass::checkImmunity -> WarheadTypeClass
+[conv] 0x75e6a0 WarheadTypeClass::calculateDamage -> WarheadTypeClass
+[conv] 0x75e950 WaveClass::Constructor -> WaveClass
+[conv] 0x75f330 WaveClass::DamageArea -> WaveClass
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+[conv] 0x75f650 WaveClass::LoadWaveData -> WaveClass
+[conv] 0x75f8b0 WaveClass::DrawWave -> WaveClass
+[conv] 0x75f9f0 WaveClass::ProcessWaveCollision -> WaveClass
+[conv] 0x75fa90 Voxel::ShadowCalc -> Voxel
+[conv] 0x7602e0 Surface::RenderToSurfaceVoxel -> Surface
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WalkLocomotionClass      rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] WarheadTypeClass         rc=2
+[era] WaveClass                rc=2
+[era] Voxel                    rc=2
+[era] Surface                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x75c700 WalkLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75c7f0 WalkLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75c920 JumpjetLocomotionClass::LoadLocomotionFromStream_4 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 9)
+[ledger] 0x75d3a0 WarheadTypeClass::ReadINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75dec0 WarheadTypeClass::ProcessPower -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e0c0 WarheadTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e2c0 WarheadTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x75e440 WarheadTypeClass::GetDamage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e510 WarheadTypeClass::Destructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75e690 WarheadTypeClass::checkImmunity -> COMPILE_FAIL (attempt 6)
+[ledger] 0x75e6a0 WarheadTypeClass::calculateDamage -> COMPILE_FAIL (attempt 6)
+[ledger] 0x75e950 WaveClass::Constructor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75f330 WaveClass::DamageArea -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 8)
+[ledger] 0x75f650 WaveClass::LoadWaveData -> COMPILE_FAIL (attempt 7)
+[ledger] 0x75f8b0 WaveClass::DrawWave -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75f9f0 WaveClass::ProcessWaveCollision -> COMPILE_FAIL (attempt 4)
+[ledger] 0x75fa90 Voxel::ShadowCalc -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7602e0 Surface::RenderToSurfaceVoxel -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p134\batch_report.json
