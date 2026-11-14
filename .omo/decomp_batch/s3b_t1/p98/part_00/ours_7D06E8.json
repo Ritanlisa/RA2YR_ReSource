@@ -1,0 +1,15 @@
+{
+ "symbol": "?__callnewh@@YAHI@Z",
+ "sym_key": "Unnamed::__callnewh",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c074148b4c240451ffd083c40485c07406b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782C8@@3IA",
+   "sym_key": "CRTGlobal_B782C8"
+  }
+ ]
+}
