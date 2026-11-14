@@ -117524,7 +117524,7 @@
   "this_as_id": false
  },
  "0x6023f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6023F0",
@@ -117535,7 +117535,7 @@
   "this_as_id": false
  },
  "0x602490": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "IsValidActionDialog",
@@ -117558,7 +117558,7 @@
   "this_as_id": true
  },
  "0x602b90": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "UI_Helper_602B90",
@@ -117569,7 +117569,7 @@
   "this_as_id": false
  },
  "0x602dd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "IsDialogControlHidden",
@@ -117580,7 +117580,7 @@
   "this_as_id": false
  },
  "0x603040": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "LoadCampaignMissionData",
@@ -117591,7 +117591,7 @@
   "this_as_id": false
  },
  "0x603240": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "UI_Helper_603240",
@@ -117602,7 +117602,7 @@
   "this_as_id": false
  },
  "0x6033f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -117614,7 +117614,7 @@
   "this_as_id": false
  },
  "0x6035f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DispatchDialogControlAction",
@@ -117625,7 +117625,7 @@
   "this_as_id": false
  },
  "0x603870": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "first_diff": null,
   "name": "GetDialogControlSHP",
@@ -117636,7 +117636,7 @@
   "this_as_id": false
  },
  "0x603aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "IsDialogWindowClass",
@@ -117647,7 +117647,7 @@
   "this_as_id": false
  },
  "0x603d30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CacheDialogInvalidate",
@@ -117680,7 +117680,7 @@
   "this_as_id": false
  },
  "0x603e40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_603E40",
@@ -117713,7 +117713,7 @@
   "this_as_id": false
  },
  "0x603fc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_603FC0",
@@ -117735,7 +117735,7 @@
   "this_as_id": false
  },
  "0x6040b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DlgSkirmishMenuProc",
@@ -117746,7 +117746,7 @@
   "this_as_id": false
  },
  "0x606740": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "first_diff": null,
   "name": "SetDialogActiveFlag",
@@ -117757,19 +117757,19 @@
   "this_as_id": false
  },
  "0x6067a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+12 je 0x6067e6",
   "name": "SkirmishMapGen::LookupDialogHash",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "SkirmishMapGen::LookupDialogHash",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x606800": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -117781,7 +117781,7 @@
   "this_as_id": false
  },
  "0x6071e0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "RenderGadgetClassAnimation",
@@ -117792,7 +117792,7 @@
   "this_as_id": false
  },
  "0x607fd0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -117804,7 +117804,7 @@
   "this_as_id": false
  },
  "0x608070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

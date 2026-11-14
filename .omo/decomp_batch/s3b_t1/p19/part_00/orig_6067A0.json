@@ -1,0 +1,11 @@
+{
+ "addr": "0x6067A0",
+ "name": "SkirmishMapGen::LookupDialogHash",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6067A0",
+ "bytes_hex": "51a1041bac00894c240085c074388d4c2400ff15181bac008b0d0c1bac00ba01000000d3e24a23d0a1001bac008b049085c074128b4c24003908740e8b800402000085c075f232c059c385c074f883c00485c074f18a80bc00000059c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
