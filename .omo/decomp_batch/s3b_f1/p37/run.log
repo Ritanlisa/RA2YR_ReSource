@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e0220 FoggedObjectClass::PointerToIndex -> FoggedObjectClass
+[conv] 0x4e0270 DynamicVector::processMissionQueue -> DynamicVector
+[conv] 0x4e0700 FoggedObjectClass::SetCapacity -> FoggedObjectClass
+[conv] 0x4e07b0 FoggedObjectClass::FindItem -> FoggedObjectClass
+[conv] 0x4e14c0 GadgetClass::DestroyChain -> GadgetClass
+[conv] 0x4e1640 ShpButtonClass::ProcessEvents -> ShpButtonClass
+[conv] 0x4e1d00 Main::CreateDialog -> Main
+[conv] 0x4e1de0 GameOptions::GameSpeedChanged -> GameOptions
+[conv] 0x4e1fe0 GameOptionsDlgProc -> _addr_4E
+[conv] 0x4e2690 GaugeClass::HandleClick -> GaugeClass
+[conv] 0x4e2830 GaugeClass::DrawDispatch -> GaugeClass
+[conv] 0x4e29a0 GaugeClass::SetRange -> GaugeClass
+[conv] 0x4e2b50 TriColorGaugeClass::Draw -> TriColorGaugeClass
+[conv] 0x4e3560 BuildingType::FindDefault -> BuildingType
+[conv] 0x4e38a0 SideClass::GetName -> SideClass
+[conv] 0x4e42a0 GameSetup::GetColorTooltip -> GameSetup
+[conv] 0x4e45a0 FillComboBoxFactions -> _addr_4E
+[conv] 0x4e4f50 __cfltcvt_init -> _addr_4E
+[conv] 0x4e5ac0 GDlg::LoadLetterStrings -> GDlg
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FoggedObjectClass        rc=2
+[era] DynamicVector            rc=2
+[era] GadgetClass              rc=2
+[era] ShpButtonClass           rc=2
+[era] Main                     rc=2
+[era] GameOptions              rc=2
+[era] _addr_4E                 rc=2
+[era] GaugeClass               rc=2
+[era] TriColorGaugeClass       rc=2
+[era] BuildingType             rc=2
+[era] SideClass                rc=2
+[era] GameSetup                rc=2
+[era] GDlg                     rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4e0220 FoggedObjectClass::PointerToIndex -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e0270 DynamicVector::processMissionQueue -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e0700 FoggedObjectClass::SetCapacity -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e07b0 FoggedObjectClass::FindItem -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4e14c0 GadgetClass::DestroyChain -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4e1640 ShpButtonClass::ProcessEvents -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1d00 Main::CreateDialog -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1de0 GameOptions::GameSpeedChanged -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e1fe0 GameOptionsDlgProc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4e2690 GaugeClass::HandleClick -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e2830 GaugeClass::DrawDispatch -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e29a0 GaugeClass::SetRange -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e2b50 TriColorGaugeClass::Draw -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e3560 BuildingType::FindDefault -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e38a0 SideClass::GetName -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e42a0 GameSetup::GetColorTooltip -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e45a0 FillComboBoxFactions -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e4f50 __cfltcvt_init -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e5ac0 GDlg::LoadLetterStrings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p37\batch_report.json
