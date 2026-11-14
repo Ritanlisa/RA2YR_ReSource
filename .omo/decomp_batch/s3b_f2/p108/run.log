@@ -1,0 +1,73 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p108\part_00
+=== convert (20 addrs) ===
+[conv] 0x6aa600 SidebarClass::UpdateProduction -> SidebarClass
+[conv] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> SelectClass_StripClass_SidebarClass
+[conv] 0x6abd30 SidebarClass::LoadResources -> SidebarClass
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+[conv] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> DialogSkirmishFunc
+[conv] 0x6adf00 Skirmish_Setup_6ADDF0_Setup -> Skirmish_Setup_6ADDF0
+[conv] 0x6ae080 HideSkirmishSpawnLocations -> _addr_6A
+[conv] 0x6ae2c0 ObjectClass::ShowSkirmishSetupScreen -> ObjectClass
+[conv] 0x6ae6e0 Skirmish::SetupGame -> Skirmish
+[conv] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> SlaveManagerClass
+[conv] 0x6afd60 ObjectClass::ProcessDeployAction -> ObjectClass
+[conv] 0x6b0300 BuildingClass::FindPlacementCells2 -> BuildingClass
+[conv] 0x6b04c0 FactoryClass::PlaceExitUnits -> FactoryClass
+[conv] 0x6b0690 BuildingClass::GetRallyPointCoord -> BuildingClass
+[conv] 0x6b0750 FactoryClass::GetBridgeCell -> FactoryClass
+[conv] 0x6b0880 BuildingClass::CheckBridge -> BuildingClass
+[conv] 0x6b0ae0 TechnoClass::MutateAll -> TechnoClass
+[conv] 0x6b0db0 BuildingClass::ProcessEnterUnit -> BuildingClass
+[conv] 0x6b1930 VectorClass::checkAIResources -> VectorClass
+[conv] 0x6b1f50 SliderClass::SetValue -> SliderClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SidebarClass             rc=2
+[era] SelectClass_StripClass_SidebarClass rc=2
+[era] Skirmish                 rc=2
+[era] DialogSkirmishFunc       rc=2
+[era] Skirmish_Setup_6ADDF0    rc=2
+[era] _addr_6A                 rc=2
+[era] ObjectClass              rc=2
+[era] SlaveManagerClass        rc=2
+[era] BuildingClass            rc=2
+[era] FactoryClass             rc=2
+[era] TechnoClass              rc=2
+[era] VectorClass              rc=2
+[era] SliderClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6aa600 SidebarClass::UpdateProduction -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6aad00 SelectClass_StripClass_SidebarClass::ProcessInput -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6abd30 SidebarClass::LoadResources -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6acee0 DialogSkirmishFunc_UpdateMultiEngineer -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6adf00 Skirmish_Setup_6ADDF0_Setup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ae080 HideSkirmishSpawnLocations -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ae2c0 ObjectClass::ShowSkirmishSetupScreen -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ae6e0 Skirmish::SetupGame -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6af6c0 SlaveManagerClass::ProcessSlaves -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6afd60 ObjectClass::ProcessDeployAction -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b0300 BuildingClass::FindPlacementCells2 -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6b04c0 FactoryClass::PlaceExitUnits -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b0690 BuildingClass::GetRallyPointCoord -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b0750 FactoryClass::GetBridgeCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6b0880 BuildingClass::CheckBridge -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6b0ae0 TechnoClass::MutateAll -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6b0db0 BuildingClass::ProcessEnterUnit -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6b1930 VectorClass::checkAIResources -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6b1f50 SliderClass::SetValue -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p108\batch_report.json
