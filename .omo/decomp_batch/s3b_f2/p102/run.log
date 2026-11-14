@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p102\part_00
+=== convert (20 addrs) ===
+[conv] 0x683fb0 TechnoClass::PostFrameCleanup -> TechnoClass
+[conv] 0x684180 ScenarioClass::ProcessIntroTimer -> ScenarioClass
+[conv] 0x684240 Scenario::ClearScreen -> Scenario
+[conv] 0x684290 ObjectClass::UpdateMouse -> ObjectClass
+[conv] 0x6842f0 ToggleDisplayMode -> _addr_68
+[conv] 0x684620 Scenario::LoadWithProgress -> Scenario
+[conv] 0x684c30 TechnoClass::PostLoadInitScenario -> TechnoClass
+[conv] 0x685120 ObjectClass::Game_Load -> ObjectClass
+[conv] 0x6851f0 ObjectClass::ResetScenario -> ObjectClass
+[conv] 0x685670 Scenario::EndGameFlow -> Scenario
+[conv] 0x685dc0 Scenario::EndGame -> Scenario
+[conv] 0x6863e0 GameFrameCheck_Check -> GameFrameCheck
+[conv] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> ObjectClass
+[conv] 0x686730 ScenarioClass::Construct -> ScenarioClass
+[conv] 0x686890 ScenarioClass::SetupAlliances -> ScenarioClass
+[conv] 0x686b20 ScenarioClass::LoadMap -> ScenarioClass
+[conv] 0x687ce0 SaveScenarioToINI -> _addr_68
+[conv] 0x687f10 ObjectClass::AssignSessionHouses -> ObjectClass
+[conv] 0x688380 Multiplayer::FindStartPositions -> Multiplayer
+[conv] 0x6886b0 GenerateScenarioUnits -> _addr_68
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] ScenarioClass            rc=2
+[era] Scenario                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_68                 rc=2
+[era] GameFrameCheck           rc=2
+[era] Multiplayer              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x683fb0 TechnoClass::PostFrameCleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x684180 ScenarioClass::ProcessIntroTimer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x684240 Scenario::ClearScreen -> COMPILE_FAIL (attempt 9)
+[ledger] 0x684290 ObjectClass::UpdateMouse -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6842f0 ToggleDisplayMode -> COMPILE_FAIL (attempt 4)
+[ledger] 0x684620 Scenario::LoadWithProgress -> COMPILE_FAIL (attempt 4)
+[ledger] 0x684c30 TechnoClass::PostLoadInitScenario -> COMPILE_FAIL (attempt 4)
+[ledger] 0x685120 ObjectClass::Game_Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6851f0 ObjectClass::ResetScenario -> COMPILE_FAIL (attempt 6)
+[ledger] 0x685670 Scenario::EndGameFlow -> COMPILE_FAIL (attempt 9)
+[ledger] 0x685dc0 Scenario::EndGame -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6863e0 GameFrameCheck_Check -> COMPILE_FAIL (attempt 4)
+[ledger] 0x686570 ObjectClass::GameFrameCheck_Check_686570 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x686730 ScenarioClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x686890 ScenarioClass::SetupAlliances -> COMPILE_FAIL (attempt 8)
+[ledger] 0x686b20 ScenarioClass::LoadMap -> COMPILE_FAIL (attempt 7)
+[ledger] 0x687ce0 SaveScenarioToINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x687f10 ObjectClass::AssignSessionHouses -> COMPILE_FAIL (attempt 6)
+[ledger] 0x688380 Multiplayer::FindStartPositions -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6886b0 GenerateScenarioUnits -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p102\batch_report.json
