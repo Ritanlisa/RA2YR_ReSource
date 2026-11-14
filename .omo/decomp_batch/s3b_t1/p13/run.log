@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x5e1ca0 GameLobby::DlgProc -> GameLobby
+[conv] 0x5e2700 Dialog::ShowMessage -> Dialog
+[conv] 0x5e2790 Dialog::ShowStatusText -> Dialog
+[conv] 0x5e2cd0 ShowDialogConfirm -> _addr_5E
+[conv] 0x5e35a0 ObjectClass::sub_5E35A0 -> ObjectClass
+[conv] 0x5e3630 ObjectClass::Network_Create -> ObjectClass
+[conv] 0x5e39c0 ValidateNetworkLobbyHostMap -> _addr_5E
+[conv] 0x5e3ab0 SendMultiplayerStartSignal -> _addr_5E
+[conv] 0x5e3d10 SetupNetworkLobbyDialog -> _addr_5E
+[conv] 0x5e6520 ReadPlayerCountMap -> _addr_5E
+[conv] 0x5e68a0 SkirmishDialog::Show -> SkirmishDialog
+[conv] 0x5e7160 ObjectClass::HandleMultiplayerMapSelection -> ObjectClass
+[conv] 0x5e7bf0 LoadScenarioClassByIndex -> _addr_5E
+[conv] 0x5e7eb0 MapPreview::Upload -> MapPreview
+[conv] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> ObjectClass
+[conv] 0x5e8740 Render_Setup -> Render
+[conv] 0x5e8760 Settings::CheckString -> Settings
+[conv] 0x5e8bf0 Player::FindByName -> Player
+[conv] 0x5e8ea0 NetworkLobby::SetupPlayers -> NetworkLobby
+[conv] 0x5e95e0 ObjectClass::Event_Helper -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GameLobby                rc=2
+[era] Dialog                   rc=2
+[era] _addr_5E                 rc=2
+[era] ObjectClass              rc=2
+[era] SkirmishDialog           rc=2
+[era] MapPreview               rc=2
+[era] Render                   rc=2
+[era] Settings                 rc=2
+[era] Player                   rc=2
+[era] NetworkLobby             rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5e1ca0 GameLobby::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e2700 Dialog::ShowMessage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e2790 Dialog::ShowStatusText -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e2cd0 ShowDialogConfirm -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e35a0 ObjectClass::sub_5E35A0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e3630 ObjectClass::Network_Create -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e39c0 ValidateNetworkLobbyHostMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e3ab0 SendMultiplayerStartSignal -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5e3d10 SetupNetworkLobbyDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e6520 ReadPlayerCountMap -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5e68a0 SkirmishDialog::Show -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5e7160 ObjectClass::HandleMultiplayerMapSelection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e7bf0 LoadScenarioClassByIndex -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e7eb0 MapPreview::Upload -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5e8740 Render_Setup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8760 Settings::CheckString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8bf0 Player::FindByName -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e8ea0 NetworkLobby::SetupPlayers -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5e95e0 ObjectClass::Event_Helper -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p13\batch_report.json
