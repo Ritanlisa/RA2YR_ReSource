@@ -1,0 +1,99 @@
+{
+ "symbol": "?ParasiteClass_6292B0@ParasiteClass@@QAEHH@Z",
+ "sym_key": "ParasiteClass::ParasiteClass_6292B0",
+ "size": 201,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000a1000000008b54240889462833c08946348b0d00000000894e38b900000000894628894640890e894e04894e08894e0c89562489462c8b0d00000000894640894e388b4c2408894e3c8b1500000000884654895628894e3089463489464c8946508946448946488b0d000000008b15000000003bd1722c38050000000075043bc875388b15000000003bd0762e03d150528b15000000006800000000ff520884c074188b0d000000008bc141890d000000008b0d000000008934818bc65ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractClass@@QAEPAV1@XZ",
+   "sym_key": "AbstractClass::Constructor"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?vt_ParasiteClass_4@@3PAXA",
+   "sym_key": "vt_ParasiteClass_4"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4918@@3IA",
+   "sym_key": "DataGlobal_AC4918"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC491D@@3EA",
+   "sym_key": "DataGlobal_AC491D"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4924@@3IA",
+   "sym_key": "DataGlobal_AC4924"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4910@@3IA",
+   "sym_key": "DataGlobal_AC4910"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4910@@3IA",
+   "sym_key": "DataGlobal_AC4910"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4920@@3IA",
+   "sym_key": "DataGlobal_AC4920"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4914@@3IA",
+   "sym_key": "DataGlobal_AC4914"
+  }
+ ]
+}
