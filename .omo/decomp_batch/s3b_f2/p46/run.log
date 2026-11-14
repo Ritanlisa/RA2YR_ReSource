@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p46\part_00
+=== convert (20 addrs) ===
+[conv] 0x5216d0 InfantryClass::CanMoveFreely -> InfantryClass
+[conv] 0x521b60 InfantryClass::CanInitiateDeploy -> InfantryClass
+[conv] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> InfantryClass
+[conv] 0x522340 InfantryClass::CalculateApproachPath -> InfantryClass
+[conv] 0x522600 InfantryClass::FireAtTargetPos -> InfantryClass
+[conv] 0x5226c0 InfantryClass::GetProductionHouse -> InfantryClass
+[conv] 0x5227f0 InfantryClass::CanAttackTarget -> InfantryClass
+[conv] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> InfantryClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+[conv] 0x5233d0 InfantryClass::updateOccupiedBuilding -> InfantryClass
+[conv] 0x5236a0 InfantryTypeClass::Constructor -> InfantryTypeClass
+[conv] 0x523d00 AnimSequence::Parse -> AnimSequence
+[conv] 0x5240a0 InfantryTypeClass::LoadFromINI -> InfantryTypeClass
+[conv] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> InfantryTypeClass
+[conv] 0x524960 InfantryTypeClass::LoadTypeData -> InfantryTypeClass
+[conv] 0x524fc0 TypeList::QueryInterface -> TypeList
+[conv] 0x525250 DynamicVectorClass::AnimTypeConstructor -> DynamicVectorClass
+[conv] 0x525430 GetINIClassIntList -> _addr_52
+[conv] 0x5255f0 TypeList::AnimTypeCopy -> TypeList
+[conv] 0x525a60 INIClass::LoadFile -> INIClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] InfantryTypeClass        rc=2
+[era] AnimSequence             rc=2
+[era] TypeList                 rc=2
+[era] DynamicVectorClass       rc=2
+[era] _addr_52                 rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5216d0 InfantryClass::CanMoveFreely -> COMPILE_FAIL (attempt 5)
+[ledger] 0x521b60 InfantryClass::CanInitiateDeploy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x521d80 InfantryClass::ComputeDeploySpeedFactor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x522340 InfantryClass::CalculateApproachPath -> COMPILE_FAIL (attempt 5)
+[ledger] 0x522600 InfantryClass::FireAtTargetPos -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5226c0 InfantryClass::GetProductionHouse -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5227f0 InfantryClass::CanAttackTarget -> COMPILE_FAIL (attempt 5)
+[ledger] 0x522d50 InfantryClass::SlaveGiveMoney_RecordBalanceBefore -> COMPILE_FAIL (attempt 8)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5233d0 InfantryClass::updateOccupiedBuilding -> COMPILE_FAIL (attempt 8)
+[ledger] 0x5236a0 InfantryTypeClass::Constructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x523d00 AnimSequence::Parse -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5240a0 InfantryTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5247b0 InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x524960 InfantryTypeClass::LoadTypeData -> COMPILE_FAIL (attempt 5)
+[ledger] 0x524fc0 TypeList::QueryInterface -> COMPILE_FAIL (attempt 5)
+[ledger] 0x525250 DynamicVectorClass::AnimTypeConstructor -> COMPILE_FAIL (attempt 5)
+[ledger] 0x525430 GetINIClassIntList -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5255f0 TypeList::AnimTypeCopy -> COMPILE_FAIL (attempt 5)
+[ledger] 0x525a60 INIClass::LoadFile -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p46\batch_report.json
