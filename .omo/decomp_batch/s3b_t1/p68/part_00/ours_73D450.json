@@ -1,0 +1,123 @@
+{
+ "symbol": "?ProcessResourceHarvesting@UnitClass@@QAEDXZ",
+ "sym_key": "UnitClass::ProcessResourceHarvesting",
+ "size": 516,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec1453568bf1578d4dfc8b869c0000008b9ea000000051b9000000008945fce8000000008bf88b86a405000033c9897df43bc174095f5eb0015b8be55dc38b96c40600008a820e0e000084c00f84820100008b0656ff90b4020000a100000000f6c4010f846901000083bfe8000000050f855c0100008b8ec40600008a810f0e000084c0746057e80000000083c4048d8e840200006a00680000803fe800000000c786b0010000000000008b1500000000ddd80fbe8220150000ddd88b0d540a00008d0440898eb8010000899ebc0100008986c00100008986c40100005f5eb0015b8be55dc38bcfe8000000008b96c40600008945f0891500000000db8200080000dd5c24108dbe840200008bcfe800000000ddd8dc6c24103ed81dc82a7e00dfe0a100000000f6c44174248b86c4060000a300000000db8000080000dd5c24108bcfe800000000ddd8dc6c2410eb073ed905c82a7e008b4df08b55ec5152e8000000008b4df4668945f88b45f883c40850e80000000085c07e7cdb442410dd1c248b4df08b55f051528bcfe800000000c786b001000000000000a1000000008b0d540a00000fbe8020150000ddd8898eb8010000ddd8899ebc0100008986c00100008986c40100005f5eb0015b8be55dc333c9898eb0010000a1540a0000898ec40100008986b8010000899ebc010000898ec00100005f5e32c05b8be55dc3",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?To_Cell@Coord@@QAEPAXPAX@Z",
+   "sym_key": "Coord::To_Cell"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Helper_486E30@@YAHPAX@Z",
+   "sym_key": "Helper_486E30"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?Accumulate@Float@@QAENMH@Z",
+   "sym_key": "Float::Accumulate"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 194,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?FindByCellHash@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::FindByCellHash"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?_EDX@@3IA",
+   "sym_key": "_EDX"
+  },
+  {
+   "off": 275,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 295,
+   "type": "DIR32",
+   "sym": "?_AX@@3GA",
+   "sym_key": "_AX"
+  },
+  {
+   "off": 311,
+   "type": "DIR32",
+   "sym": "?_EAX@@3IA",
+   "sym_key": "_EAX"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?Sum@Float4@@QAENXZ",
+   "sym_key": "Float4::Sum"
+  },
+  {
+   "off": 356,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 375,
+   "type": "REL32",
+   "sym": "?ReduceTiberium@CellClass@@QAEHH@Z",
+   "sym_key": "CellClass::ReduceTiberium"
+  },
+  {
+   "off": 401,
+   "type": "REL32",
+   "sym": "?Accumulate@Float@@QAENMH@Z",
+   "sym_key": "Float::Accumulate"
+  },
+  {
+   "off": 416,
+   "type": "DIR32",
+   "sym": "?g_RulesClass_Instance@@3PAXA",
+   "sym_key": "g_RulesClass_Instance"
+  },
+  {
+   "off": 422,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 479,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

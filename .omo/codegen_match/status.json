@@ -178336,7 +178336,7 @@
   "this_as_id": false
  },
  "0x737430": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178360,19 +178360,19 @@
   "this_as_id": false
  },
  "0x737c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
   "name": "UnitClass::OnUnderAttack",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::OnUnderAttack",
-  "rule_violations": 26,
+  "rule_violations": 25,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x738680": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178408,7 +178408,7 @@
   "this_as_id": false
  },
  "0x738970": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178420,14 +178420,14 @@
   "this_as_id": false
  },
  "0x738d30": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "UnitClass::DeployToBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UnitClass::DeployToBuilding",
-  "rule_violations": 0,
+  "rule_violations": 4,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -178443,7 +178443,7 @@
   "this_as_id": false
  },
  "0x7393c0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178479,7 +178479,7 @@
   "this_as_id": false
  },
  "0x739ec0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178503,7 +178503,7 @@
   "this_as_id": false
  },
  "0x73b140": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178515,7 +178515,7 @@
   "this_as_id": false
  },
  "0x73b470": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178527,7 +178527,7 @@
   "this_as_id": false
  },
  "0x73c5f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178539,7 +178539,7 @@
   "this_as_id": false
  },
  "0x73cec0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178551,19 +178551,19 @@
   "this_as_id": false
  },
  "0x73d450": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "UnitClass::ProcessResourceHarvesting",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "UnitClass::ProcessResourceHarvesting",
-  "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "rule_violations": 5,
+  "status": "NG",
   "this_as_id": false
  },
  "0x73d630": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178575,7 +178575,7 @@
   "this_as_id": false
  },
  "0x73e5e0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178587,7 +178587,7 @@
   "this_as_id": false
  },
  "0x73efc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -178599,7 +178599,7 @@
   "this_as_id": false
  },
  "0x73f0a0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -178611,7 +178611,7 @@
   "this_as_id": false
  },
  "0x7404b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -178623,7 +178623,7 @@
   "this_as_id": false
  },
  "0x740810": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -178654,15 +178654,15 @@
   "this_as_id": false
  },
  "0x740b60": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x38",
   "name": "TechnoClass::FindBestMovementDirection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TechnoClass::FindBestMovementDirection",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x740df0": {
@@ -178733,7 +178733,7 @@
   "this_as_id": false
  },
  "0x740fd0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

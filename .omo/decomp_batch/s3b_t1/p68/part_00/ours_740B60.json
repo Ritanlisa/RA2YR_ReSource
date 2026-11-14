@@ -1,0 +1,111 @@
+{
+ "symbol": "?FindBestMovementDirection@TechnoClass@@QAEIPAHPAPAH@Z",
+ "sym_key": "TechnoClass::FindBestMovementDirection",
+ "size": 666,
+ "link_base": 0,
+ "bytes_hex": "83ec3c8b4424405355565733ed8bf833db3bc58bf1897c241c74258b0850ff51488b16508d4424245056ff52488d4c243451508d4c2458e8000000008b00eb208b8e880300008d54245052e800000000668b006605ff7f66894424508b442450c1e80740896c2414d1e80fbec8c7442410ffffffff894c242ceb048b7c241c8b168d4424305056ff92b80100008bcb83e1078a897a000000660fbed1660310c0f910660fbec96603480266895424183bfd66894c241a8b4424188944245074598b3f8bcee8000000008d542450b9f8010000528be8e8000000006a016a00558b6c2428535055ff97ac01000085c0741d8b45008d4c24205155ff90b80100008b108b4424503bd00f8597000000b98000000033ede992000000894424248d44242450b9f8010000e8000000008bf88b8fec0000008b018d14c0d9049500000000d81d00000000dfe0f6c44075598a87cc010000a8e0754f241f3c1f7449558d44244455508bcf896c244c896c2450e80000000085c07426558d4c243855518bcf896c2440896c2444e8000000008b8e1c02000050e80000000084c07409b980000000eb0733edb980ffffff8b7c242881e700ffffff8bd7897c2428c1ea0742d1ea0fbec22b44242c9933c22bd003d183fb04750383ea648b44241083f8ff74043bd07e0889542410895c24144383fb080f8c85feffff8b5c24548b0d00000000b804000000890b8b4c24103bcd7e568b168d4424545056ff92b80100008b4c2414668b680283e107668b008a917a000000660fbefa0fbed2c1fa1003d533d181e2ff00000033ca8b5424146603c766894c245266894424508b4c2450890b8b0495000000008b8ec40600008a91940c000084d2741b8b8e880300008d54245052e8000000008b00c1e80c40d1e883e0075f5e5d5b83c43cc20800",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?GetHeight@Cell@@QAEPAV1@PAX0@Z",
+   "sym_key": "Cell::GetHeight"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 148,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?GetLandHeight@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetLandHeight"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 296,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 316,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89EA40@@3PAMA",
+   "sym_key": "DataGlobal_89EA40"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7E1748@@3MA",
+   "sym_key": "DataGlobal_7E1748"
+  },
+  {
+   "off": 367,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 393,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 405,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NH@Z",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 508,
+   "type": "DIR32",
+   "sym": "?g_UnitSelectionState@@3HA",
+   "sym_key": "g_UnitSelectionState"
+  },
+  {
+   "off": 557,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 609,
+   "type": "DIR32",
+   "sym": "?dword_8458D0@@3IA",
+   "sym_key": "dword_8458D0"
+  },
+  {
+   "off": 641,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  }
+ ]
+}

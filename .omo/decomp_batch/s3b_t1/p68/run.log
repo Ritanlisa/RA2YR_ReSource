@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p68\part_00
+=== convert (20 addrs) ===
+[conv] 0x737430 UnitClass::MissionDispatch -> UnitClass
+[conv] 0x737c90 UnitClass::OnUnderAttack -> UnitClass
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x738970 FootClass::RespondToDestruction -> FootClass
+[conv] 0x738d30 UnitClass::DeployToBuilding -> UnitClass
+[conv] 0x7393c0 TechnoClass::Deploy -> TechnoClass
+[conv] 0x739ec0 BuildingClass::ProcessSell -> BuildingClass
+[conv] 0x73b140 TechnoClass::RenderTechnoSHP -> TechnoClass
+[conv] 0x73b470 TechnoClass::DrawVoxel -> TechnoClass
+[conv] 0x73c5f0 VoxelClass::RenderObject -> VoxelClass
+[conv] 0x73cec0 TechnoClass::Draw -> TechnoClass
+[conv] 0x73d450 UnitClass::ProcessResourceHarvesting -> UnitClass
+[conv] 0x73d630 UnitClass::Mission_Harvest -> UnitClass
+[conv] 0x73e5e0 VoxelTypeClass::ReadINI -> VoxelTypeClass
+[conv] 0x73efc0 UnitClass::DeployIntoBuilding -> UnitClass
+[conv] 0x73f0a0 UnitClass::EvaluateTarget -> UnitClass
+[conv] 0x7404b0 TechnoClass::GetInfantryCursorAction -> TechnoClass
+[conv] 0x740810 UnitClass::ProcessAIDecision -> UnitClass
+[conv] 0x740b60 TechnoClass::FindBestMovementDirection -> TechnoClass
+[conv] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> TechnoClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] FootClass                rc=2
+[era] BuildingClass            rc=2
+[era] VoxelClass               rc=2
+[era] VoxelTypeClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x73d450   MISMATCH         UnitClass::ProcessResourceHarvesting
+[diff] 0x740b60   MISMATCH         TechnoClass::FindBestMovementDirection
+[ledger] 0x737430 UnitClass::MissionDispatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x737c90 UnitClass::OnUnderAttack -> COMPILE_FAIL (attempt 3)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 7)
+[ledger] 0x738970 FootClass::RespondToDestruction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x738d30 UnitClass::DeployToBuilding -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7393c0 TechnoClass::Deploy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x739ec0 BuildingClass::ProcessSell -> COMPILE_FAIL (attempt 5)
+[ledger] 0x73b140 TechnoClass::RenderTechnoSHP -> COMPILE_FAIL (attempt 3)
+[ledger] 0x73b470 TechnoClass::DrawVoxel -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73c5f0 VoxelClass::RenderObject -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73cec0 TechnoClass::Draw -> COMPILE_FAIL (attempt 5)
+[ledger] 0x73d450 UnitClass::ProcessResourceHarvesting -> NG (attempt 2)
+[ledger] 0x73d630 UnitClass::Mission_Harvest -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73e5e0 VoxelTypeClass::ReadINI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x73efc0 UnitClass::DeployIntoBuilding -> COMPILE_FAIL (attempt 3)
+[ledger] 0x73f0a0 UnitClass::EvaluateTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7404b0 TechnoClass::GetInfantryCursorAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x740810 UnitClass::ProcessAIDecision -> COMPILE_FAIL (attempt 6)
+[ledger] 0x740b60 TechnoClass::FindBestMovementDirection -> NG (attempt 2)
+[ledger] 0x740fd0 TechnoClass::CheckUnitFireConstraints -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p68\batch_report.json
