@@ -1,0 +1,132 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p29\part_00
+=== convert (40 addrs) ===
+[conv] 0x541820 IPXManagerClass::ReceiveLoop -> IPXManagerClass
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x542620 ScoreBoard::Render -> ScoreBoard
+[conv] 0x542f30 ObjectClass::sub_542F30 -> ObjectClass
+[conv] 0x543780 IsometricTileClass::IsometricTileClass_543780 -> IsometricTileClass
+[conv] 0x5447c0 TerrainTypeClass::Construct -> TerrainTypeClass
+[conv] 0x545150 LoadTerrainTypeClassTheatre -> _addr_54
+[conv] 0x547020 MapClass::LoadFileData -> MapClass
+[conv] 0x547230 TacticalClass::DrawCellOverlay -> TacticalClass
+[conv] 0x547cf0 TerrainClass::GenerateTexture -> TerrainClass
+[conv] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> IsometricTileTypeClass
+[conv] 0x549ae0 IsometricTileTypeClass::GetHeight -> IsometricTileTypeClass
+[conv] 0x54a990 ObjectClass::sub_54A990 -> ObjectClass
+[conv] 0x54a9e0 ObjectClass::sub_54A9E0 -> ObjectClass
+[conv] 0x54ac40 JumpjetLocomotionClass::Update -> JumpjetLocomotionClass
+[conv] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> JumpjetLocomotionClass
+[conv] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> JumpjetLocomotionClass
+[conv] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> JumpjetLocomotionClass
+[conv] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> JumpjetLocomotionClass
+[conv] 0x54b750 JumpjetLocomotionClass::InitClass -> JumpjetLocomotionClass
+[conv] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> JumpjetLocomotionClass
+[conv] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> JumpjetLocomotionClass
+[conv] 0x54b980 HouseClass::Set -> HouseClass
+[conv] 0x54ba30 TechnoClass::UpdateFootMovement -> TechnoClass
+[conv] 0x54bd30 TechnoClass::UpdateFootMoveToState -> TechnoClass
+[conv] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> BuildingPlacement
+[conv] 0x54ca90 JumpjetLocomotion::Land -> JumpjetLocomotion
+[conv] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> JumpjetLocomotion
+[conv] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> JumpjetLocomotionClass
+[conv] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> JumpjetLocomotionClass
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> JumpjetLocomotionClass
+[conv] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> JumpjetLocomotionClass
+[conv] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> JumpjetLocomotionClass
+[conv] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> JumpjetLocomotionClass
+[conv] 0x54e260 ObjectClass::sub_54E260 -> ObjectClass
+[conv] 0x54e3b0 UnitClass::GetExitCell -> UnitClass
+[conv] 0x54e4d0 ScenarioClass::UpdateScriptActions -> ScenarioClass
+[conv] 0x54f200 EventClass::Enqueue -> EventClass
+[conv] 0x550080 ObjectClass::sub_550080 -> ObjectClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXManagerClass          rc=2
+[era] ScoreBoard               rc=2
+[era] ObjectClass              rc=2
+[era] IsometricTileClass       rc=2
+[era] TerrainTypeClass         rc=2
+[era] _addr_54                 rc=2
+[era] MapClass                 rc=0
+[era] TacticalClass            rc=2
+[era] TerrainClass             rc=2
+[era] IsometricTileTypeClass   rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] BuildingPlacement        rc=2
+[era] JumpjetLocomotion        rc=2
+[era] UnitClass                rc=2
+[era] ScenarioClass            rc=2
+[era] EventClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x542520   MISMATCH         IPXManagerClass::ProcessQueue
+[diff] 0x542f30   MISMATCH         ObjectClass::sub_542F30
+[diff] 0x550080   MISMATCH         ObjectClass::sub_550080
+[diff] 0x547020   MISMATCH         MapClass::LoadFileData
+[diff] 0x549aa0   MISMATCH         IsometricTileTypeClass::GetTerrainType
+[diff] 0x549ae0   MISMATCH         IsometricTileTypeClass::GetHeight
+[diff] 0x54f200   MISMATCH         EventClass::Enqueue
+[ledger] 0x541820 IPXManagerClass::ReceiveLoop -> COMPILE_FAIL (attempt 3)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> NG (attempt 18)
+[ledger] 0x542620 ScoreBoard::Render -> COMPILE_FAIL (attempt 6)
+[ledger] 0x542f30 ObjectClass::sub_542F30 -> NG (attempt 5)
+[ledger] 0x543780 IsometricTileClass::IsometricTileClass_543780 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5447c0 TerrainTypeClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x545150 LoadTerrainTypeClassTheatre -> COMPILE_FAIL (attempt 3)
+[ledger] 0x547020 MapClass::LoadFileData -> NG (attempt 8)
+[ledger] 0x547230 TacticalClass::DrawCellOverlay -> COMPILE_FAIL (attempt 14)
+[ledger] 0x547cf0 TerrainClass::GenerateTexture -> COMPILE_FAIL (attempt 6)
+[ledger] 0x549aa0 IsometricTileTypeClass::GetTerrainType -> NG (attempt 3)
+[ledger] 0x549ae0 IsometricTileTypeClass::GetHeight -> NG (attempt 3)
+[ledger] 0x54a990 ObjectClass::sub_54A990 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54a9e0 ObjectClass::sub_54A9E0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54ac40 JumpjetLocomotionClass::Update -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54ad30 JumpjetLocomotionClass::InitMovementParams -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54aec0 JumpjetLocomotionClass::DispatchLocomotion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54b1c0 JumpjetLocomotionClass::SmoothObjectPlacement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54b4d0 JumpjetLocomotionClass::MoveToDestination -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54b750 JumpjetLocomotionClass::InitClass -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54b7e0 JumpjetLocomotionClass::LoadFromStream -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> COMPILE_FAIL (attempt 16)
+[ledger] 0x54b980 HouseClass::Set -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54ba30 TechnoClass::UpdateFootMovement -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54bd30 TechnoClass::UpdateFootMoveToState -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54c550 BuildingPlacement::ProcessBuildingPlacementAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54ca90 JumpjetLocomotion::Land -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54d0f0 JumpjetLocomotion::UpdateFacing -> COMPILE_FAIL (attempt 8)
+[ledger] 0x54d6d0 JumpjetLocomotionClass::ProcessLanding -> COMPILE_FAIL (attempt 4)
+[ledger] 0x54d820 JumpjetLocomotionClass::GetFloorZSetContext -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x54db50 JumpjetLocomotionClass::LoadLocomotionFromStream_1 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54dc60 JumpjetLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54dcc0 JumpjetLocomotionClass::ComputeMovementTransform -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54dfa0 JumpjetLocomotionClass::ProcessAttach -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54e260 ObjectClass::sub_54E260 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54e3b0 UnitClass::GetExitCell -> COMPILE_FAIL (attempt 6)
+[ledger] 0x54e4d0 ScenarioClass::UpdateScriptActions -> COMPILE_FAIL (attempt 3)
+[ledger] 0x54f200 EventClass::Enqueue -> NG (attempt 5)
+[ledger] 0x550080 ObjectClass::sub_550080 -> NG (attempt 5)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "COMPILE_FAIL": 33,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 3,
+  "frame_sched": 1,
+  "branch_polarity": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p29\batch_report.json

@@ -80958,7 +80958,7 @@
   "this_as_id": false
  },
  "0x541820": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81126,19 +81126,19 @@
   "this_as_id": false
  },
  "0x542520": {
-  "attempts": 17,
+  "attempts": 18,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ebx",
   "name": "IPXManagerClass::ProcessQueue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "IPXManagerClass::ProcessQueue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x542620": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81162,15 +81162,15 @@
   "this_as_id": false
  },
  "0x542f30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+3 mov edx, dword ptr [ecx + 0x44]",
   "name": "ObjectClass::sub_542F30",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_542F30",
   "rule_violations": 8,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x542fc0": {
@@ -81448,11 +81448,11 @@
   "this_as_id": false
  },
  "0x543780": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "IsometricTileClass::IsometricTileClass",
+  "name": "IsometricTileClass::IsometricTileClass_543780",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "IsometricTileClass::IsometricTileClass",
   "rule_violations": 2,
@@ -81769,7 +81769,7 @@
   "status": "NG"
  },
  "0x5447c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -81917,7 +81917,7 @@
   "this_as_id": false
  },
  "0x545150": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "LoadTerrainTypeClassTheatre",
@@ -81939,15 +81939,15 @@
   "this_as_id": false
  },
  "0x547020": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x6c",
   "name": "MapClass::LoadFileData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "MapClass::LoadFileData",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x547110": {
@@ -81993,7 +81993,7 @@
   "this_as_id": false
  },
  "0x547230": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82027,7 +82027,7 @@
   "this_as_id": false
  },
  "0x547cf0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82062,27 +82062,27 @@
   "this_as_id": false
  },
  "0x549aa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+18 je 0x549ad1",
   "name": "IsometricTileTypeClass::GetTerrainType",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "orig_name": "IsometricTileTypeClass::GetTerrainType",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x549ae0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+43 je 0x549b24",
   "name": "IsometricTileTypeClass::GetHeight",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "IsometricTileTypeClass::GetHeight",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x549b30": {
@@ -82572,7 +82572,7 @@
   "this_as_id": false
  },
  "0x54a990": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82584,7 +82584,7 @@
   "this_as_id": false
  },
  "0x54a9e0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82750,7 +82750,7 @@
   "this_as_id": false
  },
  "0x54ac40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82762,7 +82762,7 @@
   "this_as_id": false
  },
  "0x54ad30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82798,7 +82798,7 @@
   "this_as_id": false
  },
  "0x54aec0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82810,7 +82810,7 @@
   "this_as_id": false
  },
  "0x54b1c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82822,7 +82822,7 @@
   "this_as_id": false
  },
  "0x54b4d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82858,7 +82858,7 @@
   "this_as_id": false
  },
  "0x54b750": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82870,7 +82870,7 @@
   "this_as_id": false
  },
  "0x54b7e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82882,7 +82882,7 @@
   "this_as_id": false
  },
  "0x54b8d0": {
-  "attempts": 15,
+  "attempts": 16,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82894,7 +82894,7 @@
   "this_as_id": false
  },
  "0x54b980": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82906,7 +82906,7 @@
   "this_as_id": false
  },
  "0x54ba30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -82918,7 +82918,7 @@
   "this_as_id": false
  },
  "0x54bd30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -82942,7 +82942,7 @@
   "this_as_id": false
  },
  "0x54c550": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82954,7 +82954,7 @@
   "this_as_id": false
  },
  "0x54ca90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82984,7 +82984,7 @@
   "status": "NG"
  },
  "0x54d0f0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -82996,7 +82996,7 @@
   "this_as_id": false
  },
  "0x54d6d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83008,7 +83008,7 @@
   "this_as_id": false
  },
  "0x54d820": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83032,7 +83032,7 @@
   "this_as_id": false
  },
  "0x54d9b0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83080,7 +83080,7 @@
   "this_as_id": false
  },
  "0x54db50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83092,7 +83092,7 @@
   "this_as_id": false
  },
  "0x54dc60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83104,7 +83104,7 @@
   "this_as_id": false
  },
  "0x54dcc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83164,7 +83164,7 @@
   "this_as_id": false
  },
  "0x54dfa0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83394,7 +83394,7 @@
   "this_as_id": false
  },
  "0x54e260": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -83418,7 +83418,7 @@
   "this_as_id": false
  },
  "0x54e3b0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83430,7 +83430,7 @@
   "this_as_id": false
  },
  "0x54e4d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83861,15 +83861,15 @@
   "this_as_id": false
  },
  "0x54f200": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+2 push edi",
   "name": "EventClass::Enqueue",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "EventClass::Enqueue",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x54f2f0": {
@@ -84179,15 +84179,15 @@
   "this_as_id": false
  },
  "0x550080": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "resolve:proto_this",
-  "first_diff": null,
+  "first_diff": "+6 mov edx, dword ptr [esi + 8]",
   "name": "ObjectClass::sub_550080",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_550080",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x550150": {

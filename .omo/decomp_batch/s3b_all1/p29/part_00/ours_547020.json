@@ -1,0 +1,69 @@
+{
+ "symbol": "?LoadFileData@MapClass@@QAEHXZ",
+ "sym_key": "MapClass::LoadFileData",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "83ec6053568bf1578d4c24188d86bc02000050e8000000008d4c2418e8000000008bd88b86a400000085c0740950e80000000083c40453e80000000083c4048d4c24188986a40000005350e8000000008b86a400000033c9c7868c0100000100000033ff8a08898ee40200008b96e402000033c98a48040fafd185d2898ee80200007e2c8d48108b0185c0740e8b96a40000003bc2730403d089118b86e4020000470faf86e802000083c1043bf872d78bcee8000000008b4c2418c701000000008d4c240ce8000000008b5424188d4c2418c70200000000e8000000005f8bc35e5b83c460c3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?Construct@CCFileClass@@QAEPAIPAX@Z",
+   "sym_key": "CCFileClass::Construct"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?GetSize@CCFileClass@@QAEHXZ",
+   "sym_key": "CCFileClass::GetSize"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Read@CCFileClass@@QAEIPAXH@Z",
+   "sym_key": "CCFileClass::Read"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?InitTheatre@TerrainClass@@QAEHXZ",
+   "sym_key": "TerrainClass::InitTheatre"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?vt_CCFileClass@@3PAXA",
+   "sym_key": "vt_CCFileClass"
+  },
+  {
+   "off": 198,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?vt_CDFileClass@@3PAXA",
+   "sym_key": "vt_CDFileClass"
+  },
+  {
+   "off": 217,
+   "type": "REL32",
+   "sym": "?Dtor@BufferIOFileClass@@QAEHXZ",
+   "sym_key": "BufferIOFileClass::Dtor"
+  }
+ ]
+}

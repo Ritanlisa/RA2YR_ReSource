@@ -1,0 +1,11 @@
+{
+ "addr": "0x549AE0",
+ "name": "IsometricTileTypeClass::GetHeight",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x549AE0",
+ "bytes_hex": "568bf18b86a400000085c0750f8a86f402000084c07405e824d5ffff68b0000000e811f3270083c40485c074178b8e94020000685c10aa00518bc8e8609cffff5ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

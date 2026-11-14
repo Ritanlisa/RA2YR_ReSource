@@ -1,0 +1,11 @@
+{
+ "addr": "0x549AA0",
+ "name": "IsometricTileTypeClass::GetTerrainType",
+ "size": 55,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x549AA0",
+ "bytes_hex": "568bf168b0000000e86af3270083c40485c0741d8b4c24088b969402000051528bc8e8b99cffff85c07406b0015ec2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

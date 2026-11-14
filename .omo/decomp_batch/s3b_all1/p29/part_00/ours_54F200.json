@@ -1,0 +1,45 @@
+{
+ "symbol": "?Enqueue@EventClass@@QAEDGD@Z",
+ "sym_key": "EventClass::Enqueue",
+ "size": 188,
+ "link_base": 0,
+ "bytes_hex": "53568bf1e80000000084c00f859d000000a1b40a00008b5c240c85c0740a6683fb1b0f85860000008a5424108acbe80000000080fb01744b80fb04744680fb02744180fb0a743cb910000000e800000000f6c480740380cf01b911000000e800000000f6c480740380cf02b912000000e800000000f6c48074096683fb09742e80cf048a44241084c0740380cf088b4e188d410125ff0000807907480d00ffffff403bc1740f66895c4e188946185eb0015bc208005e32c05bc20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?IsActive@ChronoScreen@@QAEHXZ",
+   "sym_key": "ChronoScreen::IsActive"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Memory_Helper@@YIHED@Z",
+   "sym_key": "Memory_Helper"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?GetKeyStateSafe@EventClass@@QAEFXZ",
+   "sym_key": "EventClass::GetKeyStateSafe"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetKeyStateSafe@EventClass@@QAEFXZ",
+   "sym_key": "EventClass::GetKeyStateSafe"
+  },
+  {
+   "off": 113,
+   "type": "REL32",
+   "sym": "?GetKeyStateSafe@EventClass@@QAEFXZ",
+   "sym_key": "EventClass::GetKeyStateSafe"
+  }
+ ]
+}

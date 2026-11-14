@@ -1,0 +1,45 @@
+{
+ "symbol": "?ProcessQueue@IPXManagerClass@@QAEHXZ",
+ "sym_key": "IPXManagerClass::ProcessQueue",
+ "size": 257,
+ "link_base": 0,
+ "bytes_hex": "518bd15533ed895424048b424485c00f8ee90000005356be00000000578d7a1483ee408b078b1d0c0000008b48648b0c8b85c90f84b00000003b0d000000000f84a4000000803e0075226aff8d50688bcee8000000008b0783c04c8b1089565c8b4804894e608b50088956648b078b4804e8000000008d04808b5e408d0c80b8898888888d0c89c1e103f7e903d1c1fa058bcac1e91f03d13bda7f028bda895e408b178b4a04e8000000008d04808b5e508d0c80b8898888888d0c89c1e103f7e1c1ea053bd37e028bda895e508b078b4808894e448b178b420c8946488b0f8b511089564c8b5424108b42444583c70483c6683be80f8c28ffffff5f5e5b5d59c3",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?unk_A8B5B4@@3EA",
+   "sym_key": "unk_A8B5B4"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?CopyWideToChar@@YIXPAX0H@Z",
+   "sym_key": "CopyWideToChar"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?init@IPXManagerClass@@QAEHXZ",
+   "sym_key": "IPXManagerClass::init"
+  },
+  {
+   "off": 167,
+   "type": "REL32",
+   "sym": "?GetBridgeIndex@CellClass@@QAEHXZ",
+   "sym_key": "CellClass::GetBridgeIndex"
+  }
+ ]
+}

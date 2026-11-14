@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetTerrainType@IsometricTileTypeClass@@QAE_NPAGH@Z",
+ "sym_key": "IsometricTileTypeClass::GetTerrainType",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "568bf168b0000000e80000000083c40485c074208b4c24088b969402000051528bc8e80000000085c07409b8010000005ec2080033c05ec20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?IsometricTileClass_543780@IsometricTileClass@@QAEPAV1@HPAX@Z",
+   "sym_key": "IsometricTileClass::IsometricTileClass_543780"
+  }
+ ]
+}
