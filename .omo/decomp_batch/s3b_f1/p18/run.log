@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x471f90 ObjectClass::RemoveFromPointerList -> ObjectClass
+[conv] 0x471ff0 CaptureManagerClass::FreeUnit -> CaptureManagerClass
+[conv] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> CaptureManagerClass
+[conv] 0x4723b0 CaptureManagerClass::DecideUnitFate -> CaptureManagerClass
+[conv] 0x472720 CaptureManagerClass::LoadFromStream -> CaptureManagerClass
+[conv] 0x4728e0 CaptureManagerClass::SaveToINI -> CaptureManagerClass
+[conv] 0x473750 CarryoverClass::sub_473750 -> CarryoverClass
+[conv] 0x4737f0 ReinforcementClass::CreateObject -> ReinforcementClass
+[conv] 0x473960 sub_473960 -> _addr_47
+[conv] 0x473ab0 CCFileClass::Destru_vt16 -> CCFileClass
+[conv] 0x473ae0 CCFileClass::Write -> CCFileClass
+[conv] 0x473b10 CCFileClass::Read -> CCFileClass
+[conv] 0x473c50 CCFileClass::Open -> CCFileClass
+[conv] 0x473d10 CCFileClass::Load -> CCFileClass
+[conv] 0x473e50 CCFileClass::Destru_vt14 -> CCFileClass
+[conv] 0x473f00 CCFileClass::Destru_vt15 -> CCFileClass
+[conv] 0x4741f0 CCINIClass::Load -> CCINIClass
+[conv] 0x474620 INIClass::ReadCoord -> INIClass
+[conv] 0x474740 ObjectTypeClass::ReadSoundList -> ObjectTypeClass
+[conv] 0x4748a0 INIClass::GetPipIdx -> INIClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] CaptureManagerClass      rc=2
+[era] CarryoverClass           rc=2
+[era] ReinforcementClass       rc=2
+[era] _addr_47                 rc=2
+[era] CCFileClass              rc=2
+[era] CCINIClass               rc=2
+[era] INIClass                 rc=2
+[era] ObjectTypeClass          rc=2
+=== diffasm byte-compare ===
+[ledger] 0x471f90 ObjectClass::RemoveFromPointerList -> COMPILE_FAIL (attempt 4)
+[ledger] 0x471ff0 CaptureManagerClass::FreeUnit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4722f0 CaptureManagerClass::GetOriginalOwner -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4723b0 CaptureManagerClass::DecideUnitFate -> COMPILE_FAIL (attempt 4)
+[ledger] 0x472720 CaptureManagerClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4728e0 CaptureManagerClass::SaveToINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x473750 CarryoverClass::sub_473750 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4737f0 ReinforcementClass::CreateObject -> COMPILE_FAIL (attempt 4)
+[ledger] 0x473960 sub_473960 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x473ab0 CCFileClass::Destru_vt16 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x473ae0 CCFileClass::Write -> COMPILE_FAIL (attempt 7)
+[ledger] 0x473b10 CCFileClass::Read -> COMPILE_FAIL (attempt 4)
+[ledger] 0x473c50 CCFileClass::Open -> COMPILE_FAIL (attempt 7)
+[ledger] 0x473d10 CCFileClass::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x473e50 CCFileClass::Destru_vt14 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x473f00 CCFileClass::Destru_vt15 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x4741f0 CCINIClass::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x474620 INIClass::ReadCoord -> COMPILE_FAIL (attempt 7)
+[ledger] 0x474740 ObjectTypeClass::ReadSoundList -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4748a0 INIClass::GetPipIdx -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p18\batch_report.json
