@@ -1,0 +1,64 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p151\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+[conv] 0x7b9d80 WWMouseClass::checkVisible -> WWMouseClass
+[conv] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> WWMouseClass
+[conv] 0x7ba090 WWMouseClass::UpdateCursorMovement -> WWMouseClass
+[conv] 0x7ba450 FilePipe::Release -> FilePipe
+[conv] 0x7ba530 FileStraw::Release -> FileStraw
+[conv] 0x7ba5e0 XSurface::DrawLine -> XSurface
+[conv] 0x7ba610 XSurface::DrawLineEx -> XSurface
+[conv] 0x7ba8c0 XSurface::DrawDashedLine -> XSurface
+[conv] 0x7bad90 XSurface::DrawRect -> XSurface
+[conv] 0x7badc0 XSurface::DrawRectEx -> XSurface
+[conv] 0x7bae60 XSurface::GetPixel -> XSurface
+[conv] 0x7baeb0 XSurface::SetPixel -> XSurface
+[conv] 0x7baf10 XSurface::GetPixelAtCoords -> XSurface
+[conv] 0x7baf90 XSurface::PutPixel -> XSurface
+[conv] 0x7bb020 XSurface::FillRect -> XSurface
+[conv] 0x7bb050 XSurface::FillRectEx -> XSurface
+[conv] 0x7bb350 XSurface::DrawEllipseOutline -> XSurface
+[conv] 0x7bbab0 XSurface::Fill -> XSurface
+[conv] 0x7bbaf0 XSurface::BlitWhole -> XSurface
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WWMouseClass             rc=2
+[era] FilePipe                 rc=2
+[era] FileStraw                rc=2
+[era] XSurface                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b9d80 WWMouseClass::checkVisible -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7b9e30 WWMouseClass::FlipCursorBuffer -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ba090 WWMouseClass::UpdateCursorMovement -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ba450 FilePipe::Release -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7ba530 FileStraw::Release -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7ba5e0 XSurface::DrawLine -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ba610 XSurface::DrawLineEx -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ba8c0 XSurface::DrawDashedLine -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7bad90 XSurface::DrawRect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7badc0 XSurface::DrawRectEx -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bae60 XSurface::GetPixel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7baeb0 XSurface::SetPixel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7baf10 XSurface::GetPixelAtCoords -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7baf90 XSurface::PutPixel -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bb020 XSurface::FillRect -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bb050 XSurface::FillRectEx -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bb350 XSurface::DrawEllipseOutline -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7bbab0 XSurface::Fill -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7bbaf0 XSurface::BlitWhole -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p151\batch_report.json

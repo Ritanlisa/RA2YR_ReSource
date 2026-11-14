@@ -203077,19 +203077,19 @@
   "this_as_id": false
  },
  "0x7b9d70": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "WWMouseClass::checkStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "WWMouseClass::checkStatus",
-  "rule_violations": 0,
+  "rule_violations": 1,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7b9d80": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203125,7 +203125,7 @@
   "this_as_id": false
  },
  "0x7b9e30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203137,7 +203137,7 @@
   "this_as_id": false
  },
  "0x7ba090": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203276,7 +203276,7 @@
   "this_as_id": false
  },
  "0x7ba450": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203312,7 +203312,7 @@
   "this_as_id": false
  },
  "0x7ba530": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203347,7 +203347,7 @@
   "this_as_id": false
  },
  "0x7ba5e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203359,7 +203359,7 @@
   "this_as_id": false
  },
  "0x7ba610": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203371,7 +203371,7 @@
   "this_as_id": false
  },
  "0x7ba8c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203442,7 +203442,7 @@
   "this_as_id": false
  },
  "0x7bad90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203454,7 +203454,7 @@
   "this_as_id": false
  },
  "0x7badc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -203466,7 +203466,7 @@
   "this_as_id": false
  },
  "0x7bae60": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203478,7 +203478,7 @@
   "this_as_id": false
  },
  "0x7baeb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203490,7 +203490,7 @@
   "this_as_id": false
  },
  "0x7baf10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203502,7 +203502,7 @@
   "this_as_id": false
  },
  "0x7baf90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203514,7 +203514,7 @@
   "this_as_id": false
  },
  "0x7bb020": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203526,7 +203526,7 @@
   "this_as_id": false
  },
  "0x7bb050": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203545,7 +203545,7 @@
   "status": "OK"
  },
  "0x7bb350": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203569,7 +203569,7 @@
   "this_as_id": false
  },
  "0x7bbab0": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -203581,7 +203581,7 @@
   "this_as_id": false
  },
  "0x7bbaf0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
