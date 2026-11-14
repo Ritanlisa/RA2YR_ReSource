@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C9430",
+ "name": "Megawealth::ProcessTick",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C9430",
+ "bytes_hex": "6a00b9e8f78700e8f4eafaffb001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

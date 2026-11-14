@@ -1,0 +1,21 @@
+{
+ "symbol": "?ProcessTick@Megawealth@@QAEDXZ",
+ "sym_key": "Megawealth::ProcessTick",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "6a00b9f8010000e800000000b001c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?ClearShroud@MapClass@@QAEPAXH@Z",
+   "sym_key": "MapClass::ClearShroud"
+  }
+ ]
+}

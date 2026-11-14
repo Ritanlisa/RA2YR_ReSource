@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p72\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c8ab0 ValidateRSAKey -> _addr_5C
+[conv] 0x5c9020 ModCryptoExp -> _addr_5C
+[conv] 0x5c9430 Megawealth::ProcessTick -> Megawealth
+[conv] 0x5c9b10 MPScore::DlgProc -> MPScore
+[conv] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> Game
+[conv] 0x5ca800 MultiplayerSiege::ProcessTurn -> MultiplayerSiege
+[conv] 0x5caac0 MultiplayerSiege::GetResult -> MultiplayerSiege
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> MultiplayerSiegeAttackerTeam
+[conv] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> MultiplayerSiegeAttackerTeam
+[conv] 0x5cb440 UnholyAlliance::GetResult -> UnholyAlliance
+[conv] 0x5cb590 PaletteClass::Load -> PaletteClass
+[conv] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> MSOverlayAnim
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x5cc8a0 MSBinkAnim::Load -> MSBinkAnim
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> MSVQAnim
+[conv] 0x5cce90 MSVQAnim::Load -> MSVQAnim
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x5cd240 MSVQAnim::Stop -> MSVQAnim
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=2
+[era] Megawealth               rc=0
+[era] MPScore                  rc=2
+[era] Game                     rc=2
+[era] MultiplayerSiege         rc=2
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] MultiplayerSiegeAttackerTeam rc=2
+[era] UnholyAlliance           rc=2
+[era] PaletteClass             rc=2
+[era] MSOverlayAnim            rc=2
+[era] MSBinkAnim               rc=2
+[era] MSVQAnim                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c9430   MATCH            Megawealth::ProcessTick
+[ledger] 0x5c8ab0 ValidateRSAKey -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c9020 ModCryptoExp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c9430 Megawealth::ProcessTick -> OK (attempt 3)
+[ledger] 0x5c9b10 MPScore::DlgProc -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ca110 Game::GetMultiplayerScoreScreenBar -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5ca800 MultiplayerSiege::ProcessTurn -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5caac0 MultiplayerSiege::GetResult -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 9)
+[ledger] 0x5caf00 MultiplayerSiegeAttackerTeam::sub_5CAF00 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5caf40 MultiplayerSiegeAttackerTeam::QueryInterface -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5cb440 UnholyAlliance::GetResult -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cb590 PaletteClass::Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5cc330 MSOverlayAnim::AnimateConstructionStage -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> COMPILE_FAIL (attempt 16)
+[ledger] 0x5cc8a0 MSBinkAnim::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5ccc30 MSVQAnim::ConstructMSVQAnimHidden -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cce90 MSVQAnim::Load -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 16)
+[ledger] 0x5cd240 MSVQAnim::Stop -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MATCH": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p72\batch_report.json
