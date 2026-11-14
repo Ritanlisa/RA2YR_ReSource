@@ -1,0 +1,39 @@
+{
+ "symbol": "?GatherTechnoClassFiltered@@YIPAIPAXH@Z",
+ "sym_key": "Unnamed::GatherTechnoClassFiltered",
+ "size": 208,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568954240c894c24106a18e80000000033db83c4043bc37421895804895808c6400c0188580dc70000000000c740140a0000008958108bf0eb0233f6a10000000033ed50e80000000083c4043bc3894424147f098bc65e5d5b83c40cc35755e8000000008bf83bfb744ef647140174488b4c24105157ff54241c83c40885c074378b4e088b46103bc1721e385e0d75043bcb75248b46143bc37e1d8b1603c1535056ff520884c0740f8b46108b56048d4801894e10893c828b442418453be87c9d8bc65f5e5d5b83c40cc3",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?vt_DynamicVectorClass_TechnoClass@@3PAXA",
+   "sym_key": "vt_DynamicVectorClass_TechnoClass"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?GetHeightMap@@YAHH@Z",
+   "sym_key": "GetHeightMap"
+  },
+  {
+   "off": 101,
+   "type": "REL32",
+   "sym": "?GetCoordDataMap@@YGHH@Z",
+   "sym_key": "GetCoordDataMap"
+  }
+ ]
+}
