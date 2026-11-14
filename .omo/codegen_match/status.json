@@ -137524,7 +137524,7 @@
   "this_as_id": false
  },
  "0x682780": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameOptions_Load",
@@ -137535,14 +137535,14 @@
   "this_as_id": false
  },
  "0x682880": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x11c",
   "name": "ReadStringCOM",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "ReadStringCOM",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6829a0": {
@@ -137557,7 +137557,7 @@
   "this_as_id": false
  },
  "0x682a90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "PropertyReadBoolCOM",
@@ -137579,7 +137579,7 @@
   "this_as_id": false
  },
  "0x682c70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_682C70",
@@ -137601,7 +137601,7 @@
   "this_as_id": false
  },
  "0x682e10": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "WriteIntCOM",
@@ -137871,7 +137871,7 @@
   "this_as_id": false
  },
  "0x683610": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -137883,7 +137883,7 @@
   "this_as_id": false
  },
  "0x683ab0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -137907,7 +137907,7 @@
   "this_as_id": false
  },
  "0x683fb0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -137930,7 +137930,7 @@
   "this_as_id": false
  },
  "0x684180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137942,7 +137942,7 @@
   "this_as_id": false
  },
  "0x684240": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137954,7 +137954,7 @@
   "this_as_id": false
  },
  "0x684290": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -137966,7 +137966,7 @@
   "this_as_id": false
  },
  "0x6842f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ToggleDisplayMode",
@@ -137989,7 +137989,7 @@
   "this_as_id": false
  },
  "0x684620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138001,7 +138001,7 @@
   "this_as_id": false
  },
  "0x684c30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -138013,7 +138013,7 @@
   "this_as_id": false
  },
  "0x685120": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138025,7 +138025,7 @@
   "this_as_id": false
  },
  "0x6851f0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138037,7 +138037,7 @@
   "this_as_id": false
  },
  "0x685670": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138049,7 +138049,7 @@
   "this_as_id": false
  },
  "0x685dc0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -138061,7 +138061,7 @@
   "this_as_id": false
  },
  "0x6863e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameFrameCheck_Check",
@@ -138072,7 +138072,7 @@
   "this_as_id": false
  },
  "0x686570": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,

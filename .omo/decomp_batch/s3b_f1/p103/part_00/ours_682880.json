@@ -1,0 +1,33 @@
+{
+ "symbol": "?ReadStringCOM@@YGHPAHHPBD@Z",
+ "sym_key": "Unnamed::ReadStringCOM",
+ "size": 259,
+ "link_base": 0,
+ "bytes_hex": "81ec14010000568d4424186880000000508d8c242c0100006aff516a006a00e8000000008d542404c7442404000000008bb4241c010000526a1268000000008b0656ff501085c07d358b44240485c074068b0850ff51088b068d5424045268121000006a006a00680000000056c744241c00000000ff500c8bf085f67c798b842420010000c7442408010000008944240c8b44240485c066c74424101f0075116803400080e8000000008b44240883c4048b088d5424106a02528d542410526a0150ff51108bf08b44240485f67c1e85c074248b0850ff51088b44240485c075108bc65e81c414010000c20c0085c074068b1050ff52088bc65e81c414010000c20c00",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?MultiByteToWideChar@@YGHHHPAXH0H@Z",
+   "sym_key": "MultiByteToWideChar"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7D10@@3EA",
+   "sym_key": "DataGlobal_7F7D10"
+  },
+  {
+   "off": 104,
+   "type": "DIR32",
+   "sym": "?DataGlobal_7F7D10@@3EA",
+   "sym_key": "DataGlobal_7F7D10"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHH@Z",
+   "sym_key": "sub_7DC720"
+  }
+ ]
+}
