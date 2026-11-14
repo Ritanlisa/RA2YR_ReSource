@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5C5E90@@YAXN_K@Z",
+ "sym_key": "Unnamed::sub_5C5E90",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "dd442404e800000000508b44241050e8000000008b4c24108b54240c5152e800000000ddd883c410c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?_CIpow@@YAHHHZZ",
+   "sym_key": "_CIpow"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?Math__Sqrt@@YANN@Z",
+   "sym_key": "Math__Sqrt"
+  }
+ ]
+}

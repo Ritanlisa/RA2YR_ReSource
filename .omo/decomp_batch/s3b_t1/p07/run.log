@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x5c2ef0 MPCooperative::GetPlayerCount -> MPCooperative
+[conv] 0x5c30c0 MPCooperative::BroadcastMessage -> MPCooperative
+[conv] 0x5c34f0 MPCooperative::ReceiveMessage -> MPCooperative
+[conv] 0x5c35f0 MPCooperative::HandleEvent -> MPCooperative
+[conv] 0x5c3b10 MPCooperative::LoadSettings -> MPCooperative
+[conv] 0x5c3ec0 MovieClass::Create -> MovieClass
+[conv] 0x5c3f30 MPCooperative::Cleanup -> MPCooperative
+[conv] 0x5c4110 MPCooperative::ProcessChat -> MPCooperative
+[conv] 0x5c42d0 MPCooperative::UpdateMovieScore -> MPCooperative
+[conv] 0x5c46e0 MPCooperative::SetupRematch -> MPCooperative
+[conv] 0x5c4fc0 DynamicVector::saveGameState -> DynamicVector
+[conv] 0x5c5850 VectorClass::verifyGameIntegrity -> VectorClass
+[conv] 0x5c58a0 VectorClass::processVote -> VectorClass
+[conv] 0x5c5990 DynamicVector::tallyVotes -> DynamicVector
+[conv] 0x5c5d90 FreeForAll::Write -> FreeForAll
+[conv] 0x5c5e90 sub_5C5E90 -> _addr_5C
+[conv] 0x5c5fa0 sub_5C5FA0 -> _addr_5C
+[conv] 0x5c6bc0 FillArrayPattern -> _addr_5C
+[conv] 0x5c6dd0 MultiplyAddBigInteger -> _addr_5C
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPCooperative            rc=2
+[era] MovieClass               rc=2
+[era] DynamicVector            rc=2
+[era] VectorClass              rc=2
+[era] FreeForAll               rc=2
+[era] _addr_5C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c5e90   MISMATCH         sub_5C5E90
+[diff] 0x5c5fa0   MISMATCH         sub_5C5FA0
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 19)
+[ledger] 0x5c2ef0 MPCooperative::GetPlayerCount -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c30c0 MPCooperative::BroadcastMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c34f0 MPCooperative::ReceiveMessage -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c35f0 MPCooperative::HandleEvent -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c3b10 MPCooperative::LoadSettings -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c3ec0 MovieClass::Create -> COMPILE_FAIL (attempt 5)
+[ledger] 0x5c3f30 MPCooperative::Cleanup -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c4110 MPCooperative::ProcessChat -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c42d0 MPCooperative::UpdateMovieScore -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5c46e0 MPCooperative::SetupRematch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c4fc0 DynamicVector::saveGameState -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5850 VectorClass::verifyGameIntegrity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c58a0 VectorClass::processVote -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5990 DynamicVector::tallyVotes -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c5d90 FreeForAll::Write -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5c5e90 sub_5C5E90 -> NG (attempt 3)
+[ledger] 0x5c5fa0 sub_5C5FA0 -> NG (attempt 2)
+[ledger] 0x5c6bc0 FillArrayPattern -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c6dd0 MultiplyAddBigInteger -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p07\batch_report.json
