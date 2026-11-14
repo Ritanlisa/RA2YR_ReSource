@@ -1,0 +1,69 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p169\part_00
+=== convert (20 addrs) ===
+[conv] 0x7dcf40 GetEnvironmentStringsW -> _addr_7D
+[conv] 0x7dcf58 EnumSystemLocalesA -> _addr_7D
+[conv] 0x7dcf70 GetStringTypeW -> _addr_7D
+[conv] 0x7dcf76 CompareStringA -> _addr_7D
+[conv] 0x7dd20f __getch -> _addr_7D
+[conv] 0x7dd334 __kbhit -> _addr_7D
+[conv] 0x7dd4f4 __cwprintf -> _addr_7D
+[conv] 0x7dd505 ObjectClass::_output -> ObjectClass
+[conv] 0x7ddcd6 __wcsupr -> _addr_7D
+[conv] 0x7ddf78 __filelength -> _addr_7D
+[conv] 0x7de1c2 ReadConsoleInputA -> _addr_7D
+[conv] 0x7de1d4 PeekConsoleInputA -> _addr_7D
+[conv] 0x7df280 Object_Calc_7DF280 -> Object_Calc
+[conv] 0x7df3c2 Object_Calc_7DF3C2 -> Object_Calc
+[conv] 0x7df500 Object_Calc_7DF500 -> Object_Calc
+[conv] 0x7df640 Object_Calc_7DF640 -> Object_Calc
+[conv] 0x7df7c0 Audio_Process_7DF7C0 -> Audio_Process
+[conv] 0x7df8c0 Audio_Process_7DF8C0 -> Audio_Process
+[conv] 0x7df9c0 Voxel::FacePixelBuffer -> Voxel
+[conv] 0x7dfae0 Voxel::FacePixelBufferEx -> Voxel
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=2
+[era] Object_Calc              rc=2
+[era] Audio_Process            rc=2
+[era] Voxel                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x7ddcd6   MISMATCH         __wcsupr
+[ledger] 0x7dcf40 GetEnvironmentStringsW -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcf58 EnumSystemLocalesA -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcf70 GetStringTypeW -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dcf76 CompareStringA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dd20f __getch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dd334 __kbhit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dd4f4 __cwprintf -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7dd505 ObjectClass::_output -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ddcd6 __wcsupr -> NG (attempt 2)
+[ledger] 0x7ddf78 __filelength -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7de1c2 ReadConsoleInputA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7de1d4 PeekConsoleInputA -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7df280 Object_Calc_7DF280 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7df3c2 Object_Calc_7DF3C2 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7df500 Object_Calc_7DF500 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7df640 Object_Calc_7DF640 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7df7c0 Audio_Process_7DF7C0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df8c0 Audio_Process_7DF8C0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7df9c0 Voxel::FacePixelBuffer -> COMPILE_FAIL (attempt 14)
+[ledger] 0x7dfae0 Voxel::FacePixelBufferEx -> COMPILE_FAIL (attempt 14)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p169\batch_report.json
