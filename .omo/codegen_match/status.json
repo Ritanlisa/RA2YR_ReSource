@@ -8947,15 +8947,15 @@
   "status": "NG"
  },
  "0x4135d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 8",
   "name": "GadgetGrid::RemoveItem",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "GadgetGrid::RemoveItem",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x4136c0": {
@@ -9199,7 +9199,7 @@
   "this_as_id": false
  },
  "0x413d20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9211,19 +9211,19 @@
   "this_as_id": false
  },
  "0x413f80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "AircraftClass::Update",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "AircraftClass::Update",
   "rule_violations": 5,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x414080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9271,7 +9271,7 @@
   "this_as_id": false
  },
  "0x414310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9283,7 +9283,7 @@
   "this_as_id": false
  },
  "0x4144b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9314,7 +9314,7 @@
   "this_as_id": false
  },
  "0x414bb0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9326,7 +9326,7 @@
   "this_as_id": false
  },
  "0x4151e0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9386,7 +9386,7 @@
   "this_as_id": false
  },
  "0x415a50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9410,7 +9410,7 @@
   "this_as_id": false
  },
  "0x415c60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9422,7 +9422,7 @@
   "this_as_id": false
  },
  "0x415ee0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -9434,7 +9434,7 @@
   "this_as_id": false
  },
  "0x4165c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9458,7 +9458,7 @@
   "this_as_id": false
  },
  "0x416af0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9470,7 +9470,7 @@
   "this_as_id": false
  },
  "0x416d50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9518,7 +9518,7 @@
   "this_as_id": false
  },
  "0x417cc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -9554,7 +9554,7 @@
   "this_as_id": false
  },
  "0x417fe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9566,7 +9566,7 @@
   "this_as_id": false
  },
  "0x418e20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9578,7 +9578,7 @@
   "this_as_id": false
  },
  "0x4190b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9602,7 +9602,7 @@
   "this_as_id": false
  },
  "0x4196b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9614,7 +9614,7 @@
   "this_as_id": false
  },
  "0x4197c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -9626,7 +9626,7 @@
   "this_as_id": false
  },
  "0x419b00": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9638,7 +9638,7 @@
   "this_as_id": false
  },
  "0x419c80": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9650,7 +9650,7 @@
   "this_as_id": false
  },
  "0x41a160": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9686,7 +9686,7 @@
   "this_as_id": false
  },
  "0x41a5c0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9698,7 +9698,7 @@
   "this_as_id": false
  },
  "0x41a940": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9717,7 +9717,7 @@
   "status": "NG"
  },
  "0x41aa80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -9729,7 +9729,7 @@
   "this_as_id": false
  },
  "0x41adc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9765,7 +9765,7 @@
   "this_as_id": false
  },
  "0x41b110": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9777,7 +9777,7 @@
   "this_as_id": false
  },
  "0x41b430": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9789,15 +9789,15 @@
   "this_as_id": false
  },
  "0x41b5c0": {
-  "attempts": 2,
-  "clean": false,
+  "attempts": 3,
+  "clean": true,
   "cls_src": "backfill",
   "first_diff": null,
   "name": "AircraftClass::CheckPassengerCount",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MATCH",
   "orig_name": "AircraftClass::CheckPassengerCount",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "OK",
   "this_as_id": false
  },
  "0x41b5e0": {
@@ -9825,7 +9825,7 @@
   "this_as_id": false
  },
  "0x41b660": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9849,7 +9849,7 @@
   "this_as_id": false
  },
  "0x41b760": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9904,7 +9904,7 @@
   "this_as_id": false
  },
  "0x41b870": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9935,7 +9935,7 @@
   "status": "NG"
  },
  "0x41b920": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9947,7 +9947,7 @@
   "this_as_id": false
  },
  "0x41b980": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -9971,7 +9971,7 @@
   "this_as_id": false
  },
  "0x41b9f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9983,7 +9983,7 @@
   "this_as_id": false
  },
  "0x41ba90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -9995,7 +9995,7 @@
   "this_as_id": false
  },
  "0x41bb30": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -10007,7 +10007,7 @@
   "this_as_id": false
  },
  "0x41bc30": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -10572,7 +10572,7 @@
   "this_as_id": false
  },
  "0x41c250": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,

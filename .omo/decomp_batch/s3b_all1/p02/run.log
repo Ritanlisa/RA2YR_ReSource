@@ -1,0 +1,116 @@
+======================================================================
+PART 1/1  (40 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p02\part_00
+=== convert (40 addrs) ===
+[conv] 0x4135d0 GadgetGrid::RemoveItem -> GadgetGrid
+[conv] 0x413d20 AircraftClass::Construct -> AircraftClass
+[conv] 0x413f80 AircraftClass::Update -> AircraftClass
+[conv] 0x414080 AircraftClass::Destruct -> AircraftClass
+[conv] 0x414310 AircraftClass::MoveTo -> AircraftClass
+[conv] 0x4144b0 AircraftClass::Draw -> AircraftClass
+[conv] 0x414bb0 TechnoClass::SmokeUpdate -> TechnoClass
+[conv] 0x4151e0 AircraftClass::ProcessLanding -> AircraftClass
+[conv] 0x415a50 AircraftClass::ProcessReturnToBase -> AircraftClass
+[conv] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> ObjectClass
+[conv] 0x415ee0 BulletClass::FlightUpdate -> BulletClass
+[conv] 0x4165c0 AircraftClass::DeployWithAnim -> AircraftClass
+[conv] 0x416af0 FootClass::MissionMoveCarryallLand -> FootClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+[conv] 0x417cc0 AircraftClass::GetActionOnObject -> AircraftClass
+[conv] 0x417fe0 AircraftClass::Mission_Attack -> AircraftClass
+[conv] 0x418e20 InfantryClass::FindNearbyCell -> InfantryClass
+[conv] 0x4190b0 AircraftClass::ProcessInputKey -> AircraftClass
+[conv] 0x4196b0 AircraftClass::ValidateLandingCell -> AircraftClass
+[conv] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> TechnoClass
+[conv] 0x419b00 Cell::IsOccupied -> Cell
+[conv] 0x419c80 AircraftClass::Mission_Transport -> AircraftClass
+[conv] 0x41a160 TechnoClass::FindClosestPlacementCell -> TechnoClass
+[conv] 0x41a5c0 AircraftClass::GetMissionTimer -> AircraftClass
+[conv] 0x41a940 AircraftClass::EvaluateTargetingState -> AircraftClass
+[conv] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> AircraftClass
+[conv] 0x41adc0 AircraftClass::ProcessDockCheck -> AircraftClass
+[conv] 0x41b110 ObjectClass::PlaceAircraftFromINI -> ObjectClass
+[conv] 0x41b430 AircraftClass::LoadFromStream -> AircraftClass
+[conv] 0x41b5c0 AircraftClass::CheckPassengerCount -> AircraftClass
+[conv] 0x41b660 AircraftClass::HandleTargetDestroyed -> AircraftClass
+[conv] 0x41b760 TechnoClass::GetAutoFireDirection -> TechnoClass
+[conv] 0x41b870 AircraftClass::ProcessPassengerEjection -> AircraftClass
+[conv] 0x41b920 AircraftClass::IsHeightAboveThreshold -> AircraftClass
+[conv] 0x41b980 AircraftClass::IsBelowScreen -> AircraftClass
+[conv] 0x41b9f0 AircraftClass::UpdateDocking -> AircraftClass
+[conv] 0x41ba90 AircraftClass::MissionDispatch -> AircraftClass
+[conv] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> AircraftClass
+[conv] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> TechnoClass
+[conv] 0x41c250 ObjectClass::CreateInstanceCOM -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GadgetGrid               rc=0
+[era] AircraftClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] BulletClass              rc=2
+[era] FootClass                rc=2
+[era] Carryall                 rc=2
+[era] InfantryClass            rc=2
+[era] Cell                     rc=2
+=== diffasm byte-compare ===
+[diff] 0x4135d0   MISMATCH         GadgetGrid::RemoveItem
+[diff] 0x413f80   MISMATCH         AircraftClass::Update
+[diff] 0x41b5c0   MATCH            AircraftClass::CheckPassengerCount
+[ledger] 0x4135d0 GadgetGrid::RemoveItem -> NG (attempt 3)
+[ledger] 0x413d20 AircraftClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x413f80 AircraftClass::Update -> NG (attempt 3)
+[ledger] 0x414080 AircraftClass::Destruct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x414310 AircraftClass::MoveTo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4144b0 AircraftClass::Draw -> COMPILE_FAIL (attempt 3)
+[ledger] 0x414bb0 TechnoClass::SmokeUpdate -> COMPILE_FAIL (attempt 5)
+[ledger] 0x4151e0 AircraftClass::ProcessLanding -> COMPILE_FAIL (attempt 6)
+[ledger] 0x415a50 AircraftClass::ProcessReturnToBase -> COMPILE_FAIL (attempt 3)
+[ledger] 0x415c60 ObjectClass::ProcessTechnoMovementAction -> COMPILE_FAIL (attempt 3)
+[ledger] 0x415ee0 BulletClass::FlightUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4165c0 AircraftClass::DeployWithAnim -> COMPILE_FAIL (attempt 3)
+[ledger] 0x416af0 FootClass::MissionMoveCarryallLand -> COMPILE_FAIL (attempt 6)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 7)
+[ledger] 0x417cc0 AircraftClass::GetActionOnObject -> COMPILE_FAIL (attempt 3)
+[ledger] 0x417fe0 AircraftClass::Mission_Attack -> COMPILE_FAIL (attempt 3)
+[ledger] 0x418e20 InfantryClass::FindNearbyCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4190b0 AircraftClass::ProcessInputKey -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4196b0 AircraftClass::ValidateLandingCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4197c0 TechnoClass::FindSpiralMoveTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x419b00 Cell::IsOccupied -> COMPILE_FAIL (attempt 4)
+[ledger] 0x419c80 AircraftClass::Mission_Transport -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41a160 TechnoClass::FindClosestPlacementCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41a5c0 AircraftClass::GetMissionTimer -> COMPILE_FAIL (attempt 5)
+[ledger] 0x41a940 AircraftClass::EvaluateTargetingState -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41aa80 AircraftClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41adc0 AircraftClass::ProcessDockCheck -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b110 ObjectClass::PlaceAircraftFromINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b430 AircraftClass::LoadFromStream -> COMPILE_FAIL (attempt 4)
+[ledger] 0x41b5c0 AircraftClass::CheckPassengerCount -> OK (attempt 3)
+[ledger] 0x41b660 AircraftClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b760 TechnoClass::GetAutoFireDirection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b870 AircraftClass::ProcessPassengerEjection -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b920 AircraftClass::IsHeightAboveThreshold -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b980 AircraftClass::IsBelowScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41b9f0 AircraftClass::UpdateDocking -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41ba90 AircraftClass::MissionDispatch -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41bb30 AircraftClass::OverrideMission_SyncLog -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41bc30 TechnoClass::CreateWarheadDamageEffect -> COMPILE_FAIL (attempt 6)
+[ledger] 0x41c250 ObjectClass::CreateInstanceCOM -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 40,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 37,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 2.5,
+ "rule_violation_fns": 28,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_all1\p02\batch_report.json

@@ -1,0 +1,51 @@
+{
+ "symbol": "?Update@AircraftClass@@QAEPAIH@Z",
+ "sym_key": "AircraftClass::Update",
+ "size": 251,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c2404565750e8000000008b74240c8bbec406000085ff0f84c40000008b861c02000085c0742e8b403433c905840100008b501085d27e1d8b40043938740c4183c0043bca7d0e393875f46a018d4e54e8000000008b8ec40600008dbe880300008b911c0700008bcf52e8000000008b86c40600008b881c070000518d8ea0030000e8000000008d54240c8bcf52e800000000508d8e800e0000e8000000008b86c40600008b3e508b08ff91bc0000005056ff97cc0100008b8ec40600008b818006000083f8ff75068b81840600008986fc0200008b81a000000089466c8946708b8e1c02000085c9740656e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Update@TechnoClass@@QAEPAIH@Z",
+   "sym_key": "TechnoClass::Update"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?GetPowerOutput@BuildingTypeClass@@QAEHH@Z",
+   "sym_key": "BuildingTypeClass::GetPowerOutput"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?GetPowerOutput@BuildingTypeClass@@QAEHH@Z",
+   "sym_key": "BuildingTypeClass::GetPowerOutput"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?Set_SyncLog@FacingClass@@QAEDPAX@Z",
+   "sym_key": "FacingClass::Set_SyncLog"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?PowerUpdate@BuildingClass@@QAEHPAX@Z",
+   "sym_key": "BuildingClass::PowerUpdate"
+  }
+ ]
+}

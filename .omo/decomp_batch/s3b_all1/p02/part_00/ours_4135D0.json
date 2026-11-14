@@ -1,0 +1,27 @@
+{
+ "symbol": "?RemoveItem@GadgetGrid@@QAEHH@Z",
+ "sym_key": "GadgetGrid::RemoveItem",
+ "size": 248,
+ "link_base": 0,
+ "bytes_hex": "518b44240853568bd98b088d542408575250ff91f40200008b308b4424148b15000000008bfe8b085250c1ff10ff91f8020000f7c60080000075050fbff6eb0233f66685ff7c050fbfffeb0233ff0fbe0d24030000b867666666f7e98bcac1f9038bc1c1e81f03c88bc699f7f9be130000003bc67f028bf00fbe0d28030000b867666666f7e98bca8bc7c1f9038bd1c1ea1f03ca99f7f983f8137e05b8130000008d0c808d0480c1e0048d0c8e03c68d14498b0cd38d144303c28bf08d4424145056ff511083f8ff74278b4e208b113bc27d1e4a89118b4e203b0173148b5604408d0c828b14828951fc8b4e203b0172ec5f5e5b59c20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887850@@3IA",
+   "sym_key": "DataGlobal_887850"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  }
+ ]
+}
