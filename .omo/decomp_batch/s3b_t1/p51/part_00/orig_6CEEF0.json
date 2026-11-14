@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CEEF0",
+ "name": "WeaponTypeClass::Process",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CEEF0",
+ "bytes_hex": "56578bf9576874748100e8219e0f0083c40885c07468576894768100e80f9e0f0083c40885c07456a140e3a80033f685c07e23a134e3a800578b0cb083c12451e8eb9d0f0083c40885c07426a140e3a800463bf07cdd6800010000e8c79e0f0083c40485c07417578bc8e851f6ffff5f5ec38b1534e3a8005f8b04b25ec35f33c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

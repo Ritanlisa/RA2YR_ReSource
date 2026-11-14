@@ -1,0 +1,87 @@
+{
+ "symbol": "?SuperWeaponTypeClass_6CE5B0@SuperWeaponTypeClass@@QAEHPAD@Z",
+ "sym_key": "SuperWeaponTypeClass::SuperWeaponTypeClass_6CE5B0",
+ "size": 320,
+ "link_base": 0,
+ "bytes_hex": "8b442404535556578be950e80000000083c8ff8dbdcc0000008985a00000008985a40000008985a80000008985ac0000008985b40000008985c00000008985c40000008985e80000008985f00000008d450433dbb90000000050899d9c000000c785b000000094110000899db8000000899dbc000000899dc8000000891f889de5000000c685e600000001889de7000000889dec000000889ded000000889dee000000889df4000000889df5000000899df8000000899dfc000000894d008908894d08894d0ce8000000008a0d00000000888d98000000a100000000390500000000722c381d0000000075043bc375388b0d000000003bcb762e8b150000000003c853516800000000ff520884c074188b0d000000008bc141890d000000008b0d00000000892c818d75243bf77408b906000000f3a5a45f8bc55e5d5bc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Constructor@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::Constructor"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?vt_SuperWeaponTypeClass_4@@3PAXA",
+   "sym_key": "vt_SuperWeaponTypeClass_4"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?AbstractClass__GenerateUniqueID@@YGHPAX@Z",
+   "sym_key": "AbstractClass__GenerateUniqueID"
+  },
+  {
+   "off": 205,
+   "type": "DIR32",
+   "sym": "?g_HouseClassInitState@@3IA",
+   "sym_key": "g_HouseClassInitState"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E338@@3IA",
+   "sym_key": "DataGlobal_A8E338"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?g_HouseClassInitState@@3IA",
+   "sym_key": "g_HouseClassInitState"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E33D@@3EA",
+   "sym_key": "DataGlobal_A8E33D"
+  },
+  {
+   "off": 242,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E344@@3IA",
+   "sym_key": "DataGlobal_A8E344"
+  },
+  {
+   "off": 252,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E330@@3IA",
+   "sym_key": "DataGlobal_A8E330"
+  },
+  {
+   "off": 261,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8E330@@3IA",
+   "sym_key": "DataGlobal_A8E330"
+  },
+  {
+   "off": 274,
+   "type": "DIR32",
+   "sym": "?g_HouseClassInitState@@3IA",
+   "sym_key": "g_HouseClassInitState"
+  },
+  {
+   "off": 283,
+   "type": "DIR32",
+   "sym": "?g_HouseClassInitState@@3IA",
+   "sym_key": "g_HouseClassInitState"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponPool@@3PAXA",
+   "sym_key": "g_SuperWeaponPool"
+  }
+ ]
+}

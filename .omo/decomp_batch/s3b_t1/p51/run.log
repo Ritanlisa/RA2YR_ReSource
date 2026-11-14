@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cc390 SuperClass::Launch -> SuperClass
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x6ce380 sub_6CE380 -> _addr_6C
+[conv] 0x6ce5b0 SuperWeaponTypeClass::SuperWeaponTypeClass_6CE5B0 -> SuperWeaponTypeClass
+[conv] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> SuperWeaponTypeClass
+[conv] 0x6ceef0 WeaponTypeClass::Process -> WeaponTypeClass
+[conv] 0x6cf070 sub_6CF070 -> _addr_6C
+[conv] 0x6cfe20 TabClass::Constructor -> TabClass
+[conv] 0x6d04d0 ObjectClass::SidebarUpdateAll -> ObjectClass
+[conv] 0x6d04f0 TabClass::BuildCommandBar -> TabClass
+[conv] 0x6d0680 TabClass::Seek -> TabClass
+[conv] 0x6d0a20 TabClass::DrawTabs -> TabClass
+[conv] 0x6d0fb0 sub_6D0FB0 -> _addr_6D
+[conv] 0x6d1660 ObjectClass::House_Play_6D1660 -> ObjectClass
+[conv] 0x6d2280 TacticalClass::TransformPixel -> TacticalClass
+[conv] 0x6d4b50 PrintTimerOnTactical::Start -> PrintTimerOnTactical
+[conv] 0x6d5730 TechnoClass::RenderBridgeRadarBlips -> TechnoClass
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x6d6410 Terrain::ClimbCheck -> Terrain
+[conv] 0x6d6590 Tactical::PixelToCell -> Tactical
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperClass               rc=2
+[era] _addr_6C                 rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] WeaponTypeClass          rc=0
+[era] TabClass                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_6D                 rc=2
+[era] TacticalClass            rc=0
+[era] PrintTimerOnTactical     rc=2
+[era] TechnoClass              rc=2
+[era] Terrain                  rc=0
+[era] Tactical                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6ce380   MISMATCH         sub_6CE380
+[diff] 0x6ce5b0   MISMATCH         SuperWeaponTypeClass::SuperWeaponTypeClass_6CE5B0
+[diff] 0x6ceef0   MISMATCH         WeaponTypeClass::Process
+[diff] 0x6d0a20   MISMATCH         TabClass::DrawTabs
+[diff] 0x6d2280   MISMATCH         TacticalClass::TransformPixel
+[diff] 0x6d5730   MISMATCH         TechnoClass::RenderBridgeRadarBlips
+[diff] 0x6d6410   MISMATCH         Terrain::ClimbCheck
+[ledger] 0x6cc390 SuperClass::Launch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6ce380 sub_6CE380 -> NG (attempt 3)
+[ledger] 0x6ce5b0 SuperWeaponTypeClass::SuperWeaponTypeClass_6CE5B0 -> NG (attempt 2)
+[ledger] 0x6cea20 SuperWeaponTypeClass::SD_vt25 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ceef0 WeaponTypeClass::Process -> NG (attempt 2)
+[ledger] 0x6cf070 sub_6CF070 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6cfe20 TabClass::Constructor -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6d04d0 ObjectClass::SidebarUpdateAll -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d04f0 TabClass::BuildCommandBar -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d0680 TabClass::Seek -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d0a20 TabClass::DrawTabs -> NG (attempt 7)
+[ledger] 0x6d0fb0 sub_6D0FB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6d1660 ObjectClass::House_Play_6D1660 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x6d2280 TacticalClass::TransformPixel -> NG (attempt 2)
+[ledger] 0x6d4b50 PrintTimerOnTactical::Start -> COMPILE_FAIL (attempt 5)
+[ledger] 0x6d5730 TechnoClass::RenderBridgeRadarBlips -> NG (attempt 2)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6d6410 Terrain::ClimbCheck -> NG (attempt 14)
+[ledger] 0x6d6590 Tactical::PixelToCell -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "eval_order": 1,
+  "codegen_shape": 3,
+  "frame_sched": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p51\batch_report.json

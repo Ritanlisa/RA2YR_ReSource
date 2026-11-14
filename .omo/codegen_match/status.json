@@ -155912,7 +155912,7 @@
   "this_as_id": false
  },
  "0x6cc390": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -155983,7 +155983,7 @@
   "this_as_id": false
  },
  "0x6cdff0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -156147,14 +156147,14 @@
   "this_as_id": false
  },
  "0x6ce380": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_6CE380",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "orig_name": "sub_6CE380",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ce3b0": {
@@ -156302,15 +156302,15 @@
   "this_as_id": false
  },
  "0x6ce5b0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
-  "name": "SuperWeaponTypeClass::SuperWeaponTypeClass",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "first_diff": "+16 xor ebx, ebx",
+  "name": "SuperWeaponTypeClass::SuperWeaponTypeClass_6CE5B0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "SuperWeaponTypeClass::SuperWeaponTypeClass",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ce7c0": {
@@ -156393,7 +156393,7 @@
   "this_as_id": false
  },
  "0x6cea20": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -156424,15 +156424,15 @@
   "this_as_id": false
  },
  "0x6ceef0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 push esi",
   "name": "WeaponTypeClass::Process",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "WeaponTypeClass::Process",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6cef80": {
@@ -156460,7 +156460,7 @@
   "this_as_id": false
  },
  "0x6cf070": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "sub_6CF070",
@@ -157073,7 +157073,7 @@
   "this_as_id": false
  },
  "0x6cfe20": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157133,7 +157133,7 @@
   "this_as_id": false
  },
  "0x6d04d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -157145,7 +157145,7 @@
   "this_as_id": false
  },
  "0x6d04f0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157157,7 +157157,7 @@
   "this_as_id": false
  },
  "0x6d0680": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157181,15 +157181,15 @@
   "this_as_id": false
  },
  "0x6d0a20": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x3c",
   "name": "TabClass::DrawTabs",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "SidebarClass::DrawTabs",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d0e50": {
@@ -157251,7 +157251,7 @@
   "this_as_id": false
  },
  "0x6d0fb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_6D0FB0",
@@ -157321,7 +157321,7 @@
   "this_as_id": false
  },
  "0x6d1660": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -157727,15 +157727,15 @@
   "this_as_id": false
  },
  "0x6d2280": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+10 sub esp, 0x18",
   "name": "TacticalClass::TransformPixel",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "TacticalClass::TransformPixel",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d2360": {
@@ -157902,7 +157902,7 @@
   "status": "PENDING"
  },
  "0x6d4b50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -157962,15 +157962,15 @@
   "this_as_id": false
  },
  "0x6d5730": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "proto_this",
-  "first_diff": null,
+  "first_diff": "+3 push ebx",
   "name": "TechnoClass::RenderBridgeRadarBlips",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "RenderBridgeRadarBlips",
   "rule_violations": 3,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d59d0": {
@@ -157986,7 +157986,7 @@
   "this_as_id": false
  },
  "0x6d5c50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -158066,19 +158066,19 @@
   "this_as_id": false
  },
  "0x6d6410": {
-  "attempts": 13,
+  "attempts": 14,
   "clean": false,
   "cls_src": "name_prefix",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "Terrain::ClimbCheck",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "orig_name": "Terrain::ClimbCheck",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6d6590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
