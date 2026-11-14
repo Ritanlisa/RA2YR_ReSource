@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p104\part_00
+=== convert (20 addrs) ===
+[conv] 0x686730 ScenarioClass::Construct -> ScenarioClass
+[conv] 0x686890 ScenarioClass::SetupAlliances -> ScenarioClass
+[conv] 0x686b20 ScenarioClass::LoadMap -> ScenarioClass
+[conv] 0x687ce0 SaveScenarioToINI -> _addr_68
+[conv] 0x687f10 ObjectClass::AssignSessionHouses -> ObjectClass
+[conv] 0x688380 Multiplayer::FindStartPositions -> Multiplayer
+[conv] 0x6886b0 GenerateScenarioUnits -> _addr_68
+[conv] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> ScenarioClass
+[conv] 0x689960 ObjectClass::sub_689960 -> ObjectClass
+[conv] 0x689a00 ScenarioClass::GetLocalStateByID -> ScenarioClass
+[conv] 0x689c60 ScenarioClass::ReadWaypoint -> ScenarioClass
+[conv] 0x689d30 PreviewClass::RenderMapPreview -> PreviewClass
+[conv] 0x689e90 ScenarioClass::ReadMapINI -> ScenarioClass
+[conv] 0x68ad70 ScenarioClass::SaveToINI -> ScenarioClass
+[conv] 0x68b940 Power::ComputeHousePowerChecksum -> Power
+[conv] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> ScenarioClass
+[conv] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> ScenarioClass
+[conv] 0x68c050 ObjectClass::Map_Setup -> ObjectClass
+[conv] 0x68c3b0 FontClass::CreateGlyphColor -> FontClass
+[conv] 0x68c9c0 System_Read_68C9C0 -> System_Read
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScenarioClass            rc=2
+[era] _addr_68                 rc=2
+[era] ObjectClass              rc=2
+[era] Multiplayer              rc=2
+[era] PreviewClass             rc=2
+[era] Power                    rc=2
+[era] FontClass                rc=2
+[era] System_Read              rc=2
+=== diffasm byte-compare ===
+[diff] 0x689a00   MISMATCH         ScenarioClass::GetLocalStateByID
+[diff] 0x68bf30   MATCH            ScenarioClass::Set_Default_Waypoint
+[ledger] 0x686730 ScenarioClass::Construct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x686890 ScenarioClass::SetupAlliances -> COMPILE_FAIL (attempt 7)
+[ledger] 0x686b20 ScenarioClass::LoadMap -> COMPILE_FAIL (attempt 6)
+[ledger] 0x687ce0 SaveScenarioToINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x687f10 ObjectClass::AssignSessionHouses -> COMPILE_FAIL (attempt 5)
+[ledger] 0x688380 Multiplayer::FindStartPositions -> COMPILE_FAIL (attempt 7)
+[ledger] 0x6886b0 GenerateScenarioUnits -> COMPILE_FAIL (attempt 4)
+[ledger] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x689960 ObjectClass::sub_689960 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x689a00 ScenarioClass::GetLocalStateByID -> NG (attempt 4)
+[ledger] 0x689c60 ScenarioClass::ReadWaypoint -> COMPILE_FAIL (attempt 5)
+[ledger] 0x689d30 PreviewClass::RenderMapPreview -> COMPILE_FAIL (attempt 3)
+[ledger] 0x689e90 ScenarioClass::ReadMapINI -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68ad70 ScenarioClass::SaveToINI -> COMPILE_FAIL (attempt 7)
+[ledger] 0x68b940 Power::ComputeHousePowerChecksum -> COMPILE_FAIL (attempt 2)
+[ledger] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> OK (attempt 4)
+[ledger] 0x68c050 ObjectClass::Map_Setup -> COMPILE_FAIL (attempt 7)
+[ledger] 0x68c3b0 FontClass::CreateGlyphColor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x68c9c0 System_Read_68C9C0 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 1,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 50.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p104\batch_report.json

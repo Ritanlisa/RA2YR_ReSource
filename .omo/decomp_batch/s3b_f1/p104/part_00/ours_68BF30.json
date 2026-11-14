@@ -1,0 +1,15 @@
+{
+ "symbol": "?Set_Default_Waypoint@ScenarioClass@@QAEHH@Z",
+ "sym_key": "ScenarioClass::Set_Default_Waypoint",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b150000000089948132060000c20400",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B05458@@3IA",
+   "sym_key": "DataGlobal_B05458"
+  }
+ ]
+}

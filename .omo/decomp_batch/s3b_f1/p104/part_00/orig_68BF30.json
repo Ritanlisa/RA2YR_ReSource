@@ -1,0 +1,11 @@
+{
+ "addr": "0x68BF30",
+ "name": "ScenarioClass::Set_Default_Waypoint",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68BF30",
+ "bytes_hex": "8b4424048b155854b00089948132060000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

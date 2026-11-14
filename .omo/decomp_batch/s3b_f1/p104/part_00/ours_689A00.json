@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetLocalStateByID@ScenarioClass@@QAEDIPAE@Z",
+ "sym_key": "ScenarioClass::GetLocalStateByID",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f864720532c0c208008d148003c88a8451972400008b4c24088801b001c20800",
+ "relocs": []
+}
