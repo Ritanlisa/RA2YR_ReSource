@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p92\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c6620 sub_7C6620 -> _addr_7C
+[conv] 0x7c8368 FindNextFileA -> _addr_7C
+[conv] 0x7c836e FindFirstFileA -> _addr_7C
+[conv] 0x7c8386 CreateThread -> _addr_7C
+[conv] 0x7c83da SetFilePointer -> _addr_7C
+[conv] 0x7c83e6 DeviceIoControl -> _addr_7C
+[conv] 0x7c83f2 WideCharToMultiByte -> _addr_7C
+[conv] 0x7c8410 MapViewOfFileEx -> _addr_7C
+[conv] 0x7c8482 WriteFile -> _addr_7C
+[conv] 0x7c8488 FlushInstructionCache -> _addr_7C
+[conv] 0x7c848e VirtualProtect -> _addr_7C
+[conv] 0x7c8494 VirtualQuery -> _addr_7C
+[conv] 0x7c84a0 GetSystemTime -> _addr_7C
+[conv] 0x7c84a6 GlobalMemoryStatus -> _addr_7C
+[conv] 0x7c84ac CreateProcessA -> _addr_7C
+[conv] 0x7c84d0 FileTimeToSystemTime -> _addr_7C
+[conv] 0x7c84d6 FileTimeToLocalFileTime -> _addr_7C
+[conv] 0x7c84dc SystemTimeToFileTime -> _addr_7C
+[conv] 0x7c850c ReadFile -> _addr_7C
+[conv] 0x7c851e GetFileInformationByHandle -> _addr_7C
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c6620   MISMATCH         sub_7C6620
+[diff] 0x7c8410   MISMATCH         MapViewOfFileEx
+[diff] 0x7c8488   MISMATCH         FlushInstructionCache
+[ledger] 0x7c6620 sub_7C6620 -> NG (attempt 2)
+[ledger] 0x7c8368 FindNextFileA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c836e FindFirstFileA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8386 CreateThread -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c83da SetFilePointer -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c83e6 DeviceIoControl -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c83f2 WideCharToMultiByte -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8410 MapViewOfFileEx -> NG (attempt 2)
+[ledger] 0x7c8482 WriteFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8488 FlushInstructionCache -> NG (attempt 2)
+[ledger] 0x7c848e VirtualProtect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8494 VirtualQuery -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c84a0 GetSystemTime -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84a6 GlobalMemoryStatus -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c84ac CreateProcessA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c84d0 FileTimeToSystemTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c84d6 FileTimeToLocalFileTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c84dc SystemTimeToFileTime -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c850c ReadFile -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c851e GetFileInformationByHandle -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_t1\p92\batch_report.json

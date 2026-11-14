@@ -205032,14 +205032,14 @@
   "this_as_id": false
  },
  "0x7c6620": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ebp",
   "name": "sub_7C6620",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_7C6620",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c6b70": {
@@ -205157,7 +205157,7 @@
   "status": "NG"
  },
  "0x7c8368": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindNextFileA",
@@ -205168,7 +205168,7 @@
   "this_as_id": false
  },
  "0x7c836e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FindFirstFileA",
@@ -205212,7 +205212,7 @@
   "this_as_id": false
  },
  "0x7c8386": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateThread",
@@ -205362,7 +205362,7 @@
   "this_as_id": false
  },
  "0x7c83da": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SetFilePointer",
@@ -205384,7 +205384,7 @@
   "this_as_id": false
  },
  "0x7c83e6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "DeviceIoControl",
@@ -205406,7 +205406,7 @@
   "this_as_id": false
  },
  "0x7c83f2": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WideCharToMultiByte",
@@ -205461,14 +205461,14 @@
   "this_as_id": false
  },
  "0x7c8410": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e1244]",
   "name": "MapViewOfFileEx",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "MapViewOfFileEx",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c8416": {
@@ -205670,7 +205670,7 @@
   "this_as_id": false
  },
  "0x7c8482": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "WriteFile",
@@ -205681,18 +205681,18 @@
   "this_as_id": false
  },
  "0x7c8488": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 jmp dword ptr [0x7e119c]",
   "name": "FlushInstructionCache",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "FlushInstructionCache",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7c848e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "VirtualProtect",
@@ -205703,7 +205703,7 @@
   "this_as_id": false
  },
  "0x7c8494": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "VirtualQuery",
@@ -205725,7 +205725,7 @@
   "this_as_id": false
  },
  "0x7c84a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GetSystemTime",
@@ -205736,7 +205736,7 @@
   "this_as_id": false
  },
  "0x7c84a6": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GlobalMemoryStatus",
@@ -205747,7 +205747,7 @@
   "this_as_id": false
  },
  "0x7c84ac": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "CreateProcessA",
@@ -205813,7 +205813,7 @@
   "this_as_id": false
  },
  "0x7c84d0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FileTimeToSystemTime",
@@ -205824,7 +205824,7 @@
   "this_as_id": false
  },
  "0x7c84d6": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "FileTimeToLocalFileTime",
@@ -205835,7 +205835,7 @@
   "this_as_id": false
  },
  "0x7c84dc": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "SystemTimeToFileTime",
@@ -205919,7 +205919,7 @@
   "this_as_id": false
  },
  "0x7c850c": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "ReadFile",
@@ -205952,7 +205952,7 @@
   "this_as_id": false
  },
  "0x7c851e": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "first_diff": null,
   "name": "GetFileInformationByHandle",

@@ -1,0 +1,51 @@
+{
+ "symbol": "?sub_7C6620@@YAHHHHH@Z",
+ "sym_key": "Unnamed::sub_7C6620",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "51a1000000008b0d000000000faf44240c538b5c240c03c35556578b14c183c8ff895424188944241083cdff8bcd0bc80f84b50000008b54241c8d3c108b15000000008bcf0faf0d0000000003cd03cb8d34ca8a4cca04f6c1010f848b0000008b44242485c0751a8b068b5424182bc250e80000000083c40483f80c0f8f820000008b0e8b5424182bca51e80000000083c40483f80c7e4f8b4c242083f901752b8b4424188b163bd073128d50f489168b560483ca028956048b163bd0760d83c00c89068b46040c028946048b7424248d042b56515750e80000000083c41085c0750485f6741d8b4424104583fd020f8c37ffffff4083f802894424107d0de925ffffff5f5e5d33c05b59c35f5e5db8010000005b59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?g_SlaveManagerPool@@3PAXA",
+   "sym_key": "g_SlaveManagerPool"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8759A4@@3IA",
+   "sym_key": "DataGlobal_8759A4"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 216,
+   "type": "REL32",
+   "sym": "?sub_7C6620@@YAHHHHH@Z",
+   "sym_key": "sub_7C6620"
+  }
+ ]
+}
