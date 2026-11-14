@@ -1,0 +1,76 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p91\part_00
+=== convert (20 addrs) ===
+[conv] 0x63d910 DrawTacticalFillScanline -> _addr_63
+[conv] 0x63dfd0 FactoryClass::RemoveItemAt -> FactoryClass
+[conv] 0x63f2e0 Audio_Process -> Audio
+[conv] 0x63f7c0 PowerClass::checkBlackout -> PowerClass
+[conv] 0x640710 Skirmish::RenderPreview -> Skirmish
+[conv] 0x640a40 Tactical::Radar_Render -> Tactical
+[conv] 0x641140 MiniMap::Render -> MiniMap
+[conv] 0x6418b0 MiniMap::SavePreviewToINI -> MiniMap
+[conv] 0x641b00 ObjectClass::LoadMapPreviewImage -> ObjectClass
+[conv] 0x641ee0 PreviewClass::ReadPreview -> PreviewClass
+[conv] 0x642130 Palette::Preview_Generate -> Palette
+[conv] 0x642b60 LoadingScreen::GetColorScheme -> LoadingScreen
+[conv] 0x643670 UI_Render_643670 -> UI_Render
+[conv] 0x643720 ObjectClass::RenderBuildingProductionButton -> ObjectClass
+[conv] 0x6440a0 OverlayTypeClass::Construct -> OverlayTypeClass
+[conv] 0x6442d0 ParticleSystemTypeClass::GetType -> ParticleSystemTypeClass
+[conv] 0x644be0 BuildingTypeClass::Construct -> BuildingTypeClass
+[conv] 0x644f50 ParticleTypeClass::LoadFromINI -> ParticleTypeClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> ParticleTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_63                 rc=2
+[era] FactoryClass             rc=2
+[era] Audio                    rc=2
+[era] PowerClass               rc=2
+[era] Skirmish                 rc=2
+[era] Tactical                 rc=2
+[era] MiniMap                  rc=2
+[era] ObjectClass              rc=2
+[era] PreviewClass             rc=2
+[era] Palette                  rc=2
+[era] LoadingScreen            rc=2
+[era] UI_Render                rc=2
+[era] OverlayTypeClass         rc=2
+[era] ParticleSystemTypeClass  rc=2
+[era] BuildingTypeClass        rc=2
+[era] ParticleTypeClass        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x63d910 DrawTacticalFillScanline -> COMPILE_FAIL (attempt 5)
+[ledger] 0x63dfd0 FactoryClass::RemoveItemAt -> COMPILE_FAIL (attempt 8)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 11)
+[ledger] 0x63f7c0 PowerClass::checkBlackout -> COMPILE_FAIL (attempt 8)
+[ledger] 0x640710 Skirmish::RenderPreview -> COMPILE_FAIL (attempt 8)
+[ledger] 0x640a40 Tactical::Radar_Render -> COMPILE_FAIL (attempt 4)
+[ledger] 0x641140 MiniMap::Render -> COMPILE_FAIL (attempt 8)
+[ledger] 0x6418b0 MiniMap::SavePreviewToINI -> COMPILE_FAIL (attempt 4)
+[ledger] 0x641b00 ObjectClass::LoadMapPreviewImage -> COMPILE_FAIL (attempt 8)
+[ledger] 0x641ee0 PreviewClass::ReadPreview -> COMPILE_FAIL (attempt 4)
+[ledger] 0x642130 Palette::Preview_Generate -> COMPILE_FAIL (attempt 8)
+[ledger] 0x642b60 LoadingScreen::GetColorScheme -> COMPILE_FAIL (attempt 4)
+[ledger] 0x643670 UI_Render_643670 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x643720 ObjectClass::RenderBuildingProductionButton -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6440a0 OverlayTypeClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6442d0 ParticleSystemTypeClass::GetType -> COMPILE_FAIL (attempt 4)
+[ledger] 0x644be0 BuildingTypeClass::Construct -> COMPILE_FAIL (attempt 4)
+[ledger] 0x644f50 ParticleTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 8)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 9)
+[ledger] 0x6457a0 ParticleTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p91\batch_report.json
