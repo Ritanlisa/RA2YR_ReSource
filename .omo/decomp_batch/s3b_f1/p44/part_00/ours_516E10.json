@@ -1,0 +1,69 @@
+{
+ "symbol": "?TryMoveToAdjacentCell@HoverLocomotionClass@@QAGDI@Z",
+ "sym_key": "HoverLocomotionClass::TryMoveToAdjacentCell",
+ "size": 422,
+ "link_base": 0,
+ "bytes_hex": "5153568b7424105789742414568b06ff506084c075075f5e5b59c208008a466c84c074095f5e32c05b59c208008b46088d54240c55528b0850ff91b80100008bf88b6e088b54241c8bca8a07c1e90c4180e200d1e983e1078a1c8d000000008b0c8d0000000002c325ff0000000bc2668b5702c1f91003d1b90000000033d081e2ff00000033d0895424188b7d008d54241852e8000000006a016a006aff6aff5055ff97ac01000085c05d74095f5e32c05b59c208008b0656c6466c01ff501084c00f84ab0000008b4e088d7e20c781e0050000ffffffff8b173b15ea0d000075198b46248b0dfa0d00003bc1750c8b4e28a10a0e00003bc8740d8b460857508b10ff92f40000008b4c2414578bc1c7462800000000c1e8100fbfc00fbfc9c1e008c1e10881c1800000000580000000890f894624e8000000008b56088946288b0dea0e00008d1c4803cb8b9aa40000003bd97c0b8b0dba0e000003c8894e288b025752ff90f00000005f5eb0015b59c208008b4424148b0e8bd06a00c1ea100fbfd20fbfc0c1e208c1e00881c2800000000580000000525056ff51445f5eb0015b59c20800",
+ "relocs": [
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 98,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 243,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 310,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 322,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  },
+  {
+   "off": 343,
+   "type": "DIR32",
+   "sym": "?g_IntroMovieObject@@3HA",
+   "sym_key": "g_IntroMovieObject"
+  }
+ ]
+}

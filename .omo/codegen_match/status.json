@@ -70070,7 +70070,7 @@
   "this_as_id": false
  },
  "0x513d20": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70082,7 +70082,7 @@
   "this_as_id": false
  },
  "0x513f40": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -70094,7 +70094,7 @@
   "this_as_id": false
  },
  "0x5142a0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70106,7 +70106,7 @@
   "this_as_id": false
  },
  "0x514310": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70118,7 +70118,7 @@
   "this_as_id": false
  },
  "0x514c30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70142,7 +70142,7 @@
   "this_as_id": false
  },
  "0x514cb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70166,7 +70166,7 @@
   "this_as_id": false
  },
  "0x514d90": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70178,7 +70178,7 @@
   "this_as_id": false
  },
  "0x514f70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70190,7 +70190,7 @@
   "this_as_id": false
  },
  "0x515ed0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -70226,7 +70226,7 @@
   "this_as_id": false
  },
  "0x5163b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70238,7 +70238,7 @@
   "this_as_id": false
  },
  "0x5164d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70274,7 +70274,7 @@
   "this_as_id": false
  },
  "0x516ca0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70286,15 +70286,15 @@
   "this_as_id": false
  },
  "0x516e10": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "HoverLocomotionClass::TryMoveToAdjacentCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "JumpjetLocomotionClass::TryMoveToAdjacentCell",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x516fc0": {
@@ -70346,7 +70346,7 @@
   "this_as_id": false
  },
  "0x517110": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70396,7 +70396,7 @@
   "this_as_id": false
  },
  "0x5172f0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70524,7 +70524,7 @@
   "status": "NG"
  },
  "0x5176d0": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -70686,7 +70686,7 @@
   "this_as_id": false
  },
  "0x517a50": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70705,7 +70705,7 @@
   "status": "NG"
  },
  "0x517d90": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70717,7 +70717,7 @@
   "this_as_id": false
  },
  "0x517fa0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70729,7 +70729,7 @@
   "this_as_id": false
  },
  "0x518d80": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,

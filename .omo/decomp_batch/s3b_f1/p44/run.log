@@ -1,0 +1,72 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x513d20 BuildingLightClass::UpdateOscillation -> BuildingLightClass
+[conv] 0x513f40 TechnoClass::BuildTransform -> TechnoClass
+[conv] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> HoverLocomotionClass
+[conv] 0x514310 HoverLocomotionClass::DeployAnimation -> HoverLocomotionClass
+[conv] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> JumpjetLocomotionClass
+[conv] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> JumpjetLocomotionClass
+[conv] 0x514d90 HoverLocomotionClass::SetMovementTarget -> HoverLocomotionClass
+[conv] 0x514f70 MovementAI::MainFootClass -> MovementAI
+[conv] 0x515ed0 TechnoClass::UpdateFootFacing -> TechnoClass
+[conv] 0x5163b0 MovementAI::MarkOccupiedPathCell -> MovementAI
+[conv] 0x5164d0 MovementAI::StepFootClass -> MovementAI
+[conv] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> HoverLocomotionClass
+[conv] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> HoverLocomotionClass
+[conv] 0x517110 ObjectClass::sub_517110 -> ObjectClass
+[conv] 0x5172f0 LocomotionClass::ProcessMove -> LocomotionClass
+[conv] 0x5176d0 ObjectClass::sub_5176D0 -> ObjectClass
+[conv] 0x517a50 InfantryClass::Construct -> InfantryClass
+[conv] 0x517d90 InfantryClass::Destruct -> InfantryClass
+[conv] 0x517fa0 InfantryClass::ProcessDeployment -> InfantryClass
+[conv] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingLightClass       rc=2
+[era] TechnoClass              rc=2
+[era] HoverLocomotionClass     rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] MovementAI               rc=2
+[era] ObjectClass              rc=2
+[era] LocomotionClass          rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x516e10   MISMATCH         HoverLocomotionClass::TryMoveToAdjacentCell
+[ledger] 0x513d20 BuildingLightClass::UpdateOscillation -> COMPILE_FAIL (attempt 6)
+[ledger] 0x513f40 TechnoClass::BuildTransform -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5142a0 HoverLocomotionClass::ComputeAudio3DRotation_0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514310 HoverLocomotionClass::DeployAnimation -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514c30 JumpjetLocomotionClass::HasScoreDisplayChanged -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514cb0 JumpjetLocomotionClass::HasScoreDisplayChanged_514CB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514d90 HoverLocomotionClass::SetMovementTarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x514f70 MovementAI::MainFootClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x515ed0 TechnoClass::UpdateFootFacing -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5163b0 MovementAI::MarkOccupiedPathCell -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5164d0 MovementAI::StepFootClass -> COMPILE_FAIL (attempt 4)
+[ledger] 0x516ca0 HoverLocomotionClass::IsBridgeBlocking -> COMPILE_FAIL (attempt 4)
+[ledger] 0x516e10 HoverLocomotionClass::TryMoveToAdjacentCell -> NG (attempt 4)
+[ledger] 0x517110 ObjectClass::sub_517110 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5172f0 LocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5176d0 ObjectClass::sub_5176D0 -> COMPILE_FAIL (attempt 5)
+[ledger] 0x517a50 InfantryClass::Construct -> COMPILE_FAIL (attempt 5)
+[ledger] 0x517d90 InfantryClass::Destruct -> COMPILE_FAIL (attempt 7)
+[ledger] 0x517fa0 InfantryClass::ProcessDeployment -> COMPILE_FAIL (attempt 4)
+[ledger] 0x518d80 TechnoClass::CalculateLocomotionFrameIndex -> COMPILE_FAIL (attempt 7)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p44\batch_report.json
