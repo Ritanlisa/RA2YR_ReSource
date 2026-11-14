@@ -1,0 +1,21 @@
+{
+ "symbol": "?Write@UnitClass@@QAGJPAXPAUIPersistStreamVtbl@@@Z",
+ "sym_key": "UnitClass::Write",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b8edc06000085c9740fe800000000c786dc060000000000008b4424108b4c240c505156e8000000005ec20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?updateHarvesting@UnitClass@@QAEHXZ",
+   "sym_key": "UnitClass::updateHarvesting"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?ObjectClass__SaveToStream_Common@@YGJPAX0PAUIPersistStreamVtbl@@@Z",
+   "sym_key": "ObjectClass__SaveToStream_Common"
+  }
+ ]
+}

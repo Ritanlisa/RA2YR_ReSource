@@ -1,0 +1,11 @@
+{
+ "addr": "0x744600",
+ "name": "C07F5C70::Write",
+ "size": 50,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x744600",
+ "bytes_hex": "568b7424088b8edc06000085c9740fe8fce5d7ffc786dc060000000000008b4424108b4c240c505156e86270d9ff5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

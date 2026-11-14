@@ -1,0 +1,67 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p132\part_00
+=== convert (20 addrs) ===
+[conv] 0x741970 UnitClass::AssignDestination_SyncLog -> UnitClass
+[conv] 0x743a50 UnitClass::Scatter -> UnitClass
+[conv] 0x744100 TechnoClass::SelectAITarget -> TechnoClass
+[conv] 0x744270 TechnoClass::CanBeTargeted -> TechnoClass
+[conv] 0x744600 UnitClass::Write -> UnitClass
+[conv] 0x7446e0 UnitClass::HandleTargetDestroyed -> UnitClass
+[conv] 0x7447b0 BuildingClass::FindPlacementCells -> BuildingClass
+[conv] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> TechnoClass
+[conv] 0x7463a0 TechnoClass::TransferSlavedUnit -> TechnoClass
+[conv] 0x746750 TechnoClass::IsGuardingTarget -> TechnoClass
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> UnitTypeClass
+[conv] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> UnitTypeClass
+[conv] 0x747620 UnitTypeClass::LoadFromINI -> UnitTypeClass
+[conv] 0x747f70 UnitTypeClass::PowerDrainUpdate -> UnitTypeClass
+[conv] 0x748190 UnitTypeClass::ddtor -> UnitTypeClass
+[conv] 0x7493b0 VoxelAnimClass::Constructor -> VoxelAnimClass
+[conv] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> VoxelAnimClass
+[conv] 0x749b70 VoxelAnimClass::ProcessAnim -> VoxelAnimClass
+[conv] 0x749f30 VoxelAnimClass::Update -> VoxelAnimClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=2
+[era] UnitTypeClass            rc=2
+[era] VoxelAnimClass           rc=2
+=== diffasm byte-compare ===
+[diff] 0x744600   MATCH            UnitClass::Write
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 8)
+[ledger] 0x743a50 UnitClass::Scatter -> COMPILE_FAIL (attempt 3)
+[ledger] 0x744100 TechnoClass::SelectAITarget -> COMPILE_FAIL (attempt 4)
+[ledger] 0x744270 TechnoClass::CanBeTargeted -> COMPILE_FAIL (attempt 3)
+[ledger] 0x744600 UnitClass::Write -> OK (attempt 2)
+[ledger] 0x7446e0 UnitClass::HandleTargetDestroyed -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7447b0 BuildingClass::FindPlacementCells -> COMPILE_FAIL (attempt 4)
+[ledger] 0x746100 TechnoClass::ProcessUnitSelfDestruct -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7463a0 TechnoClass::TransferSlavedUnit -> COMPILE_FAIL (attempt 3)
+[ledger] 0x746750 TechnoClass::IsGuardingTarget -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7470d0 UnitTypeClass::UnitTypeClass_7470D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7473c0 UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x747620 UnitTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 6)
+[ledger] 0x747f70 UnitTypeClass::PowerDrainUpdate -> COMPILE_FAIL (attempt 3)
+[ledger] 0x748190 UnitTypeClass::ddtor -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7493b0 VoxelAnimClass::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> COMPILE_FAIL (attempt 8)
+[ledger] 0x749b70 VoxelAnimClass::ProcessAnim -> COMPILE_FAIL (attempt 4)
+[ledger] 0x749f30 VoxelAnimClass::Update -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MATCH": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p132\batch_report.json
