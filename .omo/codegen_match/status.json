@@ -131824,7 +131824,7 @@
   "this_as_id": false
  },
  "0x65c3a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131836,7 +131836,7 @@
   "this_as_id": false
  },
  "0x65c420": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131860,7 +131860,7 @@
   "this_as_id": false
  },
  "0x65c4b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131896,7 +131896,7 @@
   "this_as_id": false
  },
  "0x65c560": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -131975,7 +131975,7 @@
   "status": "OK"
  },
  "0x65c610": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -132061,7 +132061,7 @@
   "this_as_id": false
  },
  "0x65ca00": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -132097,7 +132097,7 @@
   "this_as_id": false
  },
  "0x65cac0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -132109,7 +132109,7 @@
   "this_as_id": false
  },
  "0x65cb30": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -132121,7 +132121,7 @@
   "this_as_id": false
  },
  "0x65cb50": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132133,7 +132133,7 @@
   "this_as_id": false
  },
  "0x65cbf0": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132145,7 +132145,7 @@
   "this_as_id": false
  },
  "0x65cca0": {
-  "attempts": 7,
+  "attempts": 8,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132157,7 +132157,7 @@
   "this_as_id": false
  },
  "0x65cce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132169,7 +132169,7 @@
   "this_as_id": false
  },
  "0x65cdd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132181,7 +132181,7 @@
   "this_as_id": false
  },
  "0x65cf00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132193,7 +132193,7 @@
   "this_as_id": false
  },
  "0x65d0d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132205,19 +132205,19 @@
   "this_as_id": false
  },
  "0x65d150": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RawFileClass::Close",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "name": "0x65d150",
+  "note": "decomp_batch r2: DUP_SKIP",
   "orig_name": "FileClass::Close",
   "rule_violations": 4,
-  "status": "COMPILE_FAIL",
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x65d190": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -132248,7 +132248,7 @@
   "status": "NG"
  },
  "0x65d2b0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -132332,7 +132332,7 @@
   "this_as_id": false
  },
  "0x65d510": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_65D510",
@@ -132343,7 +132343,7 @@
   "this_as_id": false
  },
  "0x65d5c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ReadStreamLine",

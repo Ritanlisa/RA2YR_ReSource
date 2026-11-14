@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p95\part_00
+=== convert (20 addrs) ===
+[conv] 0x65c3a0 RAMFileClass::nullsub_0_3 -> RAMFileClass
+[conv] 0x65c420 RAMFileClass::nullsub_0_4 -> RAMFileClass
+[conv] 0x65c4b0 RAMFileClass::validateTeamConfig -> RAMFileClass
+[conv] 0x65c560 RAMFileClass::nullsub_0_6 -> RAMFileClass
+[conv] 0x65c610 FileClass::processAITrigger -> FileClass
+[conv] 0x65ca00 BufferIOFileClass::Dtor -> BufferIOFileClass
+[conv] 0x65cac0 BufferIOFileClass::SetName -> BufferIOFileClass
+[conv] 0x65cb30 RawFileClass::Close -> RawFileClass
+[conv] 0x65cb50 RawFileClass::Open2 -> RawFileClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x65cca0 RawFileClass::CloseHandle -> RawFileClass
+[conv] 0x65cce0 RawFileClass::Read -> RawFileClass
+[conv] 0x65cdd0 RawFileClass::Write2 -> RawFileClass
+[conv] 0x65cf00 RawFileClass::Seek -> RawFileClass
+[conv] 0x65d0d0 RawFileClass::GetFileSize -> RawFileClass
+[conv] 0x65d190 RawFileClass::Delete -> RawFileClass
+[conv] 0x65d2b0 RawFileClass::GetFileSizeOp -> RawFileClass
+[conv] 0x65d510 sub_65D510 -> _addr_65
+[conv] 0x65d5c0 ReadStreamLine -> _addr_65
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] RAMFileClass             rc=2
+[era] FileClass                rc=2
+[era] BufferIOFileClass        rc=2
+[era] RawFileClass             rc=2
+[era] _addr_65                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x65c3a0 RAMFileClass::nullsub_0_3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c420 RAMFileClass::nullsub_0_4 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c4b0 RAMFileClass::validateTeamConfig -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65c560 RAMFileClass::nullsub_0_6 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65c610 FileClass::processAITrigger -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65ca00 BufferIOFileClass::Dtor -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65cac0 BufferIOFileClass::SetName -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65cb30 RawFileClass::Close -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65cb50 RawFileClass::Open2 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x65cbf0 RawFileClass::Open -> COMPILE_FAIL (attempt 11)
+[ledger] 0x65cca0 RawFileClass::CloseHandle -> COMPILE_FAIL (attempt 8)
+[ledger] 0x65cce0 RawFileClass::Read -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65cdd0 RawFileClass::Write2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65cf00 RawFileClass::Seek -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65d0d0 RawFileClass::GetFileSize -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65d150 0x65d150 -> PENDING (attempt 4)
+[ledger] 0x65d190 RawFileClass::Delete -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d2b0 RawFileClass::GetFileSizeOp -> COMPILE_FAIL (attempt 4)
+[ledger] 0x65d510 sub_65D510 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65d5c0 ReadStreamLine -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p95\batch_report.json
