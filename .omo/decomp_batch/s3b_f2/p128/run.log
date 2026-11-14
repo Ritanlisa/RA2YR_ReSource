@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p128\part_00
+=== convert (20 addrs) ===
+[conv] 0x7318f0 ObjectClass::UI_Create_7318F0 -> ObjectClass
+[conv] 0x731a90 j_FactoryClass_GetFlag -> _addr_73
+[conv] 0x731d00 Selection::SetCurrent -> Selection
+[conv] 0x731eb0 sub_731EB0 -> _addr_73
+[conv] 0x732110 sub_732110 -> _addr_73
+[conv] 0x732140 sub_732140 -> _addr_73
+[conv] 0x732190 sub_732190 -> _addr_73
+[conv] 0x7321d0 sub_7321D0 -> _addr_73
+[conv] 0x732210 SelectFactionThemeMusic_Helper -> SelectFactionThemeMusic
+[conv] 0x7327d0 MoveFeedback::ProcessCommand -> MoveFeedback
+[conv] 0x732d10 TacticalClass::CollectSelectedIDs -> TacticalClass
+[conv] 0x732ff0 sub_732FF0 -> _addr_73
+[conv] 0x7331b0 ObjectClass::sub_7331B0 -> ObjectClass
+[conv] 0x733380 UpdateUnitHealthTooltip -> _addr_73
+[conv] 0x7336c0 DrawUnitExperiencePopup -> _addr_73
+[conv] 0x7339b0 SelectUnitsByTheme -> _addr_73
+[conv] 0x733cd0 ObjectClass::sub_733CD0 -> ObjectClass
+[conv] 0x733e10 SelectFactionThemeMusic -> _addr_73
+[conv] 0x7346a0 CSFClass::LoadFile -> CSFClass
+[conv] 0x734990 File::ParseCSFString -> File
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _addr_73                 rc=2
+[era] Selection                rc=2
+[era] SelectFactionThemeMusic  rc=2
+[era] MoveFeedback             rc=2
+[era] TacticalClass            rc=2
+[era] CSFClass                 rc=2
+[era] File                     rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7318f0 ObjectClass::UI_Create_7318F0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x731a90 j_FactoryClass_GetFlag -> COMPILE_FAIL (attempt 3)
+[ledger] 0x731d00 Selection::SetCurrent -> COMPILE_FAIL (attempt 9)
+[ledger] 0x731eb0 sub_731EB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x732110 sub_732110 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x732140 sub_732140 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x732190 sub_732190 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7321d0 sub_7321D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x732210 SelectFactionThemeMusic_Helper -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7327d0 MoveFeedback::ProcessCommand -> COMPILE_FAIL (attempt 6)
+[ledger] 0x732d10 TacticalClass::CollectSelectedIDs -> COMPILE_FAIL (attempt 8)
+[ledger] 0x732ff0 sub_732FF0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7331b0 ObjectClass::sub_7331B0 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x733380 UpdateUnitHealthTooltip -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7336c0 DrawUnitExperiencePopup -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7339b0 SelectUnitsByTheme -> COMPILE_FAIL (attempt 6)
+[ledger] 0x733cd0 ObjectClass::sub_733CD0 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x733e10 SelectFactionThemeMusic -> COMPILE_FAIL (attempt 8)
+[ledger] 0x7346a0 CSFClass::LoadFile -> COMPILE_FAIL (attempt 5)
+[ledger] 0x734990 File::ParseCSFString -> COMPILE_FAIL (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f2\p128\batch_report.json
