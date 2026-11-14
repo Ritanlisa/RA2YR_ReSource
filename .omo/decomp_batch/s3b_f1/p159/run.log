@@ -1,0 +1,63 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p159\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c9602 _fwrite -> _addr_7C
+[conv] 0x7c970c __onexit -> _addr_7C
+[conv] 0x7c978a _atexit -> _addr_7C
+[conv] 0x7c979c ___onexitinit -> _addr_7C
+[conv] 0x7c9dd4 ObjectClass::_strtoxl -> ObjectClass
+[conv] 0x7c9fd9 _strtoul -> _addr_7C
+[conv] 0x7c9ff0 __makepath -> _addr_7C
+[conv] 0x7ca090 _memcpy -> _addr_7C
+[conv] 0x7ca530 _sscanf -> _addr_7C
+[conv] 0x7ca67f _time -> _addr_7C
+[conv] 0x7ca75b _fclose -> _addr_7C
+[conv] 0x7ca7d8 _fprintf -> _addr_7C
+[conv] 0x7ca971 __non_rtti_object::_0__non_rtti_object_QAE_PBD_Z -> __non_rtti_object
+[conv] 0x7caa05 ___RTtypeid -> _addr_7C
+[conv] 0x7caae4 ___RTDynamicCast -> _addr_7C
+[conv] 0x7cac66 FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x7cacc0 FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x7cadb9 FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> _addr_7C
+[conv] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> _addr_7C
+[conv] 0x7cb1f9 __flush -> _addr_7C
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] ObjectClass              rc=2
+[era] __non_rtti_object        rc=2
+=== diffasm byte-compare ===
+[ledger] 0x7c9602 _fwrite -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c970c __onexit -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c978a _atexit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7c979c ___onexitinit -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7c9dd4 ObjectClass::_strtoxl -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c9fd9 _strtoul -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c9ff0 __makepath -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca090 _memcpy -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7ca530 _sscanf -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca67f _time -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca75b _fclose -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7ca7d8 _fprintf -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ca971 __non_rtti_object::_0__non_rtti_object_QAE_PBD_Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7caa05 ___RTtypeid -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7caae4 ___RTDynamicCast -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7cac66 FindSITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cacc0 FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cadb9 FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> COMPILE_FAIL (attempt 6)
+[ledger] 0x7cb1f9 __flush -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\s3b_f1\p159\batch_report.json
