@@ -180133,7 +180133,7 @@
   "this_as_id": false
  },
  "0x749b20": {
-  "attempts": 6,
+  "attempts": 7,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180145,7 +180145,7 @@
   "this_as_id": false
  },
  "0x749b70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180157,14 +180157,14 @@
   "this_as_id": false
  },
  "0x749f30": {
-  "attempts": 4,
+  "attempts": 5,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelAnimClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VoxelAnimClass::Update",
-  "rule_violations": 17,
+  "rule_violations": 16,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -180252,7 +180252,7 @@
   "status": "OK"
  },
  "0x74ab50": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180418,7 +180418,7 @@
   "this_as_id": false
  },
  "0x74ad80": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180430,7 +180430,7 @@
   "this_as_id": false
  },
  "0x74b050": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180537,7 +180537,7 @@
   "status": "OK"
  },
  "0x74ba30": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180584,7 +180584,7 @@
   "this_as_id": false
  },
  "0x74bca0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -180596,7 +180596,7 @@
   "this_as_id": false
  },
  "0x74bdc0": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "resolve:proto_this",
   "first_diff": null,
@@ -180608,7 +180608,7 @@
   "this_as_id": false
  },
  "0x74bf40": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180883,7 +180883,7 @@
   "this_as_id": false
  },
  "0x74c5b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180895,7 +180895,7 @@
   "this_as_id": false
  },
  "0x74c9f0": {
-  "attempts": 5,
+  "attempts": 6,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -180931,7 +180931,7 @@
   "this_as_id": false
  },
  "0x74ce50": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -180954,7 +180954,7 @@
   "this_as_id": false
  },
  "0x74d490": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -181002,14 +181002,14 @@
   "this_as_id": false
  },
  "0x74d7c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::UpdateVeinholeMonster",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "UpdateVeinholeMonster",
-  "rule_violations": 28,
+  "rule_violations": 33,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -181037,7 +181037,7 @@
   "this_as_id": false
  },
  "0x74e1c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -181049,7 +181049,7 @@
   "this_as_id": false
  },
  "0x74e6b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -181091,7 +181091,7 @@
   "this_as_id": false
  },
  "0x74ea70": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -181139,14 +181139,14 @@
   "this_as_id": false
  },
  "0x74ef10": {
-  "attempts": 1,
+  "attempts": 2,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RandomMap::RemoveMatching",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "RandomMap::RemoveMatching",
-  "rule_violations": 14,
+  "rule_violations": 13,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -181316,7 +181316,7 @@
   "this_as_id": false
  },
  "0x74f620": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
