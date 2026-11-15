@@ -8728,3 +8728,42 @@ def pass_r8j_void_literal(ctx):
     out = _R8J_VOIDLIT.sub(rep, text)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ----------------------------- R8k: bare `Class::Method` references ---------
+# High-Rays renders a method-address install as
+#   `*(_DWORD *)(v + 348) = AudioController::AdvanceQueue;`
+# The shell hpp declares only pilot methods, so the qualified name is C2039.
+# Resolve the method in the function registry and emit its address as an
+# unsigned-int constant (same 32-bit store size).
+_R8K_QREF = re.compile(
+    r"(?<![\w:.>])(?P<cls>[A-Za-z_]\w*)::(?P<meth>[A-Za-z_]\w*)(?![\w(])")
+
+
+def pass_r8k_member_cref(ctx):
+    """R8k: bare `Class::Method` (method-address install) -> address const."""
+    text = "\n".join(ctx.lines)
+    if "::" not in text:
+        return
+    n = 0
+
+    def rep(m):
+        nonlocal n
+        cls, meth = m.group("cls"), m.group("meth")
+        rec = None
+        try:
+            rec = ctx.reg.function_by_name("%s::%s" % (cls, meth))
+        except Exception:
+            rec = None
+        if not rec:
+            return m.group(0)
+        try:
+            addr = int(rec[0], 16) if isinstance(rec[0], str) else int(rec[0])
+        except Exception:
+            return m.group(0)
+        n += 1
+        return "(unsigned int)0x%08X" % addr
+
+    out = _R8K_QREF.sub(rep, text)
+    if n:
+        ctx.lines = out.split("\n")
