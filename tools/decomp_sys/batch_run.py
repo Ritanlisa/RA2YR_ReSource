@@ -583,7 +583,15 @@ def run_part(addrs, batch_src, out, reg, idx):
             ok, first = dmod.compare(sa, sb, verbose=False)
             r["orig_size"] = orig_art["size"]
             r["ours_size"] = ours_art["size"]
-            if ok:
+            # R2 (rule-hunt): a 6-byte `FF 25 <IAT>` body is a LINKER import
+            # thunk -- no C++ source can reproduce it; classify, don't chase.
+            _r2_thunk = (orig_art["size"] == 6
+                         and (orig_art.get("bytes_hex") or "")[:4].lower()
+                         == "ff25")
+            if _r2_thunk:
+                r.update(verdict="EXTERNAL_THUNK",
+                         note="R2: linker import thunk (FF25, 6B)")
+            elif ok:
                 r.update(verdict="MATCH", note="%dB" % orig_art["size"])
             else:
                 fd = None
@@ -781,7 +789,9 @@ def record_ledger(results):
         # terminal verdict for a run, not "still pending" -- recording it
         # as PENDING is what inflated the pending pool (511 entries).
         status = {"MATCH": "OK", "MISMATCH": "NG",
-                  "COMPILE_FAIL": "COMPILE_FAIL"}.get(r["verdict"], "PENDING")
+                  "COMPILE_FAIL": "COMPILE_FAIL",
+                  "EXTERNAL_THUNK": "EXTERNAL_THUNK"}.get(
+                      r["verdict"], "PENDING")
         # Audit-rem ③: the ledger records the EFFECTIVE (emitted) identity,
         # not the stale signals display name.  orig_name/cls_src keep the
         # provenance so identity drift is auditable instead of invisible.
