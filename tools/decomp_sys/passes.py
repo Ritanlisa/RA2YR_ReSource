@@ -1608,6 +1608,22 @@ _CMP_CASTSUB = re.compile(
     r"(?:\s*[+\-]\s*\d+)?\s*\)\s*\[[^\[\]]*\])")
 
 
+_CMP_PTRIM = re.compile(
+    r"(?<![\w.>])(?P<a>&?[A-Za-z_]\w*)\s*"
+    r"(?P<op>==|!=|<=|>=|<|>)\s*"
+    r"(?P<b>\(\s*[A-Za-z_][\w ]*\*+\s*\)\s*"
+    r"(?:&?\s*(?:this->)?[A-Za-z_]\w*(?:\[[^\]]*\])?"
+    r"|\(\s*(?:this->)?[A-Za-z_]\w*(?:\[[^\]]*\])?\s*\)"
+    r"|-?\s*(?:\d+|0[xX][0-9A-Fa-f]+)))")
+# (R8e-2: RHS may also be a cast of an IDENTIFIER -- `p0 != (unsigned int *)this_`.)
+
+
+_CMP_AMP = re.compile(
+    r"(?<![\w.>])(?P<a>[A-Za-z_]\w*)\s*"
+    r"(?P<op>==|!=|<=|>=|<|>)\s*"
+    r"(?P<b>&\s*[A-Za-z_]\w*(?!\s*[\[(.>]))")
+
+
 def pass_compare_harmonize(ctx):
     text = "\n".join(ctx.lines)
     env = _TypeEnv(ctx, text)
@@ -1665,8 +1681,35 @@ def pass_compare_harmonize(ctx):
             "side re-spelled `(unsigned int)` (C2446/C2227)", True))
         return "((unsigned int)(%s)) %s %s" % (a, op, b)
 
+    def sub_ptrim(m):
+        nonlocal n
+        a, op, b = m.group("a"), m.group("op"), m.group("b")
+        tm = re.match(r"^\(\s*([A-Za-z_][\w ]*\*+)\s*\)", b)
+        if not tm:
+            return m.group(0)
+        ty = re.sub(r"\s+", " ", tm.group(1)).strip()
+        n += 1
+        ctx.sites.append(Site(
+            "compare", "%s %s %s" % (a, op, b),
+            "pointer-cast-immediate compare -> ident side cast `%s` (C2446)"
+            % ty, True))
+        return "((%s)(%s)) %s %s" % (ty, a, op, b)
+
     out = _CMP_SIMPLE.sub(sub_simple, text)
     out = _CMP_CASTSUB.sub(sub_castsub, out)
+    out = _CMP_PTRIM.sub(sub_ptrim, out)
+
+    def sub_amp(m):
+        nonlocal n
+        a, op, b = m.group("a"), m.group("op"), m.group("b")
+        n += 1
+        ctx.sites.append(Site(
+            "compare", "%s %s %s" % (a, op, b),
+            "ident vs &global compare -> both sides re-spelled "
+            "`(unsigned int)` (same 32-bit cmp; C2446)", True))
+        return "((unsigned int)(%s)) %s ((unsigned int)(%s))" % (a, op, b)
+
+    out = _CMP_AMP.sub(sub_amp, out)
     out = _CMP_EXTB.sub(sub_extb, out)
     if n:
         ctx.lines = out.split("\n")
@@ -6197,6 +6240,21 @@ def _rhs_ptr_head(rhs, env):
     # string literal -> char*
     if s[0] == '"':
         return "ptr", "char *"
+    # R8e: deref heads  *((T **)expr)  -> ptr T* ;  *((T *)expr) -> T-kind
+    m = re.match(r"^\*\s*\(\s*\(\s*([A-Za-z_][\w ]*?)\s*"
+                 r"\*\s*\*\s*\)", s)
+    if m:
+        return "ptr", re.sub(r"\s+", " ", m.group(1)).strip() + " *"
+    m = re.match(r"^\*\s*\(\s*\(\s*([A-Za-z_][\w ]*?)\s*\*\s*\)", s)
+    if m:
+        base = re.sub(r"\s+", " ", m.group(1)).strip()
+        if base in _INT_FAMILY:
+            return "int", base
+        if base in ("float", "double", "long double"):
+            return "float", base
+        if base in ("char", "unsigned char", "_BYTE", "BYTE"):
+            return "int", base
+        return "cls", base
     # cast head
     m = re.match(r"^\(\s*([A-Za-z_][\w]*(?:\s+\w+)?)\s*(\**)\s*\)\s*(.+)$",
                  s, re.S)
