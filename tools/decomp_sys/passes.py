@@ -5485,6 +5485,28 @@ _PTR_LOCAL_DECL = re.compile(
 
 def pass_assign_harmonize(ctx):
     text = "\n".join(ctx.lines)
+    _INT_DEREF_HEAD = re.compile(
+        r"^\(?\s*\*?\s*\(\s*(?:int|unsigned int|_DWORD|DWORD|"
+        r"unsigned __int32|long|unsigned long)\s*\*\s*\)")
+
+    def _int_shaped(rhs):
+        return bool(_INT_DEREF_HEAD.match(rhs.lstrip()))
+
+    def _r8b_ptr_init(ln):
+        """R8b: `T *v = <int-shaped>;` -> cast the init to the pointer type."""
+        m = re.match(
+            r"^(\s*)((?:const\s+|unsigned\s+|signed\s+)*"
+            r"[A-Za-z_][\w:<>,\s]*?\s*\*+)\s*([A-Za-z_]\w*)\s*"
+            r"=\s*(.+?);\s*$", ln)
+        if not m:
+            return ln, 0
+        ty = re.sub(r"\s+", " ", m.group(2)).strip()
+        rhs = m.group(4).strip()
+        if not _int_shaped(rhs):
+            return ln, 0
+        return ("%s%s %s = (%s)(%s);"
+                % (m.group(1), ty, m.group(3), ty, rhs)), 1
+
     ptr_ty = {}
     for m in _PTR_LOCAL_DECL.finditer(text):
         ty = re.sub(r"\s+", " ", m.group(1)).strip()
@@ -5496,8 +5518,18 @@ def pass_assign_harmonize(ctx):
     for ln in text.split("\n"):
         st = ln.strip()
         # 1/2: ptr-local = RHS;   (scalar-typed global or differing pointee)
+        _ln2, _c8 = _r8b_ptr_init(ln)
+        if _c8:
+            ln = _ln2
+            st = ln.strip()
+            changed += 1
         m = re.match(r"^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$", st)
-        if m and m.group(1) in ptr_ty and \
+        if m and m.group(1) in ptr_ty and _int_shaped(m.group(2)):
+            ln = ln.replace(st, "%s = (%s)(%s);"
+                            % (m.group(1), ptr_ty[m.group(1)],
+                               m.group(2).strip()))
+            changed += 1
+        elif m and m.group(1) in ptr_ty and \
                 not m.group(2).lstrip().startswith("("):
             rhs = m.group(2).strip()
             rm = re.match(r"^([A-Za-z_]\w*)\s*(?:([+-])\s*(\d+))?$", rhs)
