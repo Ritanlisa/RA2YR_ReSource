@@ -2572,6 +2572,15 @@ def pass_thislike_param(ctx):
         return
     p0 = ctx.sig["params"][0][1]
     cls = ctx.sig["cls"]
+    # R8i: a FREE function has no class shell -- binding the receiver and
+    # synthesizing `this->mNNN` views leaves `void *this_` receivers with
+    # undeclared members (C2227/C2228).  Keep the param + offset form
+    # (`*(unsigned int *)(p0 + N)`), which compiles as a plain access.
+    if not cls:
+        ctx.note("thislike_free_skip",
+                 "%s validates as receiver but the function has NO class; "
+                 "offset form kept (C2227 family)" % p0)
+        return
     dis_offsets = set(int(m, 16) for m in re.findall(
         r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]", "\n".join(ctx.ex.disasm_lines)))
     hits = [m for m in _THISLIKE_CAST.finditer(text)
@@ -8628,3 +8637,61 @@ def pass_fnptr_assign(ctx):
         out.append(ln)
     if n:
         ctx.lines = out
+
+
+# --------------------------- R8h: non-class receiver member views ----------
+# `void *this_` (or int-typed receivers) carrying `this_->m02C` views after
+# member-shape rewriting -- C2227/C2228.  Re-spell the access as the offset
+# load it came from: `(*(int *)((char *)this_ + 0x2C))`.
+_R8H_MEM = re.compile(
+    r"\b(?P<recv>[A-Za-z_]\w*)\s*(?P<op>->|\.)\s*"
+    r"(?P<mem>(?:[A-Za-z_]\w*_)?field_[0-9A-Fa-fx]+|m[0-9A-F]{2,}|"
+    r"__pad_[0-9A-Fa-fx]+|lpVtbl|vfptr)\b(?!\s*\()")
+
+
+def _r8h_member_off(name):
+    if name in ("lpVtbl", "vfptr", "vfptr0"):
+        return 0
+    tail = name.rsplit("_", 1)[-1] if "_" in name else name[1:]
+    if not tail:
+        return None
+    try:
+        if tail.lower().startswith("0x"):
+            return int(tail, 16)
+        return int(tail, 16)
+    except ValueError:
+        return None
+
+
+def pass_r8h_nonclass_receiver(ctx):
+    """R8h: member view on a NON-class receiver -> offset load/store."""
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    scalar_recv = set()
+    for nm, ty in env.map.items():
+        t = re.sub(r"\s+", "", ty or "")
+        if t in ("void*", "int", "unsignedint", "int*", "unsignedint*",
+                 "char*", "unsignedchar*", "_DWORD*", "long", "unsignedlong"):
+            scalar_recv.add(nm)
+    if re.search(r"\b(?:void|int|unsigned int|char|unsigned char|long|"
+                 r"unsigned long)\s*\*+\s*this_\b", text) or \
+            re.search(r"\(\s*(?:void|int|unsigned int)\s+this_\s*,", text):
+        scalar_recv.add("this_")
+    if not scalar_recv:
+        return
+    n = 0
+
+    def rep(m):
+        nonlocal n
+        recv, op, mem = m.group("recv"), m.group("op"), m.group("mem")
+        if recv not in scalar_recv:
+            return m.group(0)
+        off = _r8h_member_off(mem)
+        if off is None:
+            return m.group(0)
+        n += 1
+        return "(*(int *)((char *)(%s) + %d))" % (recv, off)
+
+    out = _R8H_MEM.sub(rep, text)
+    if n:
+        ctx.lines = out.split("\n")

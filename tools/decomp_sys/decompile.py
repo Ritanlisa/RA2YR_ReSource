@@ -1120,6 +1120,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_pair64(ctx)
     passes.pass_vt_dispatch(ctx)
     passes.pass_member_shapes(ctx)
+    passes.pass_r8h_nonclass_receiver(ctx)
     widen_byref_for_dispatch(ctx)
     # audit-rem ②: `(T*)&this->m` member-address puns -> offset-true
     # char-array view (checker R3 contract; codegen-neutral `lea`)
