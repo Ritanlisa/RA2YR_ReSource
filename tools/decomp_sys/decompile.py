@@ -1215,6 +1215,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_scalar_subscript(ctx)
     passes.pass_r8j_void_literal(ctx)
     passes.pass_r8k_member_cref(ctx)
+    passes.pass_r8l_ownerfield(ctx)
 
     # CW7/W6: a free function whose FINAL body still says `this` -- the
     # member-call pass bound a qualified callee (`AudioStream::X();`) to the

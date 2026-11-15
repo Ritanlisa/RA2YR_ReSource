@@ -8767,3 +8767,89 @@ def pass_r8k_member_cref(ctx):
     out = _R8K_QREF.sub(rep, text)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ------------------------- R8l: `<Owner>_field_<off>` offset-true views -----
+# IDA types the receiver as a small shard struct (`AudioController` = 20B)
+# and indexes it as an array to express byte offsets:
+#   `a1[12].AudioController_field_00[0]`  ==  `[esi+0F0h]`
+# Our shell keeps ONE flat class; the member name is not declared there and
+# the int* receiver stride is wrong.  Rewrite to the byte-offset form:
+#   `(*(unsigned int *)((char *)(a1) + 12*20 + 0x00 + 0))`
+_R8L_IDX = re.compile(
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*\[\s*(?P<idx>\d+)\s*\]\s*\.\s*"
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)"
+    r"(?:\s*\[\s*(?P<idx2>\d+)\s*\])?")
+_R8L_VAL = re.compile(
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*\s*\[\s*\d+\s*\])\s*\.\s*"
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)")
+_R8L_PTR = re.compile(
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*->\s*"
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)")
+
+
+def _r8l_off(tok):
+    t = tok.strip()
+    try:
+        if t.lower().startswith("0x"):
+            return int(t, 16)
+        return int(t, 16)
+    except ValueError:
+        return None
+
+
+def _r8l_class_size(reg, owner):
+    try:
+        rec = (getattr(reg, "classes", None) or {}).get(owner)
+        if rec and rec.get("size"):
+            return int(rec["size"])
+    except Exception:
+        pass
+    return 4
+
+
+def _r8l_width(reg, owner, off):
+    try:
+        rec = (getattr(reg, "classes", None) or {}).get(owner) or {}
+        m = (rec.get("members") or {}).get(str(off)) or {}
+        ty = (m.get("type") or "").strip()
+        if ty in ("char", "unsigned char", "_BYTE", "BYTE", "bool"):
+            return 1
+        if ty in ("short", "unsigned short", "_WORD", "WORD"):
+            return 2
+    except Exception:
+        pass
+    return 4
+
+
+def pass_r8l_ownerfield(ctx):
+    """R8l: `<Owner>_field_<off>` on a non-Owner receiver -> offset-true."""
+    text = "\n".join(ctx.lines)
+    if "_field_" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    reg = ctx.reg
+    n = 0
+
+    def rep_idx(m):
+        nonlocal n
+        recv, idx, owner = m.group("recv"), int(m.group("idx")), m.group("owner")
+        off = _r8l_off(m.group("off"))
+        if off is None:
+            return m.group(0)
+        ty = env.of(recv) or ""
+        if _is_ptr_spelling(ty) and _ptr_base(ty) == owner:
+            return m.group(0)          # legit Owner receiver
+        sz = _r8l_class_size(reg, owner)
+        w = _r8l_width(reg, owner, off)
+        idx2 = int(m.group("idx2") or 0)
+        total = idx * sz + off + idx2 * w
+        n += 1
+        return "(*(%s *)((char *)(%s) + %d))" % (
+            {1: "unsigned char", 2: "short", 4: "unsigned int"}.get(w, "int"),
+            recv, total)
+
+    out = _R8L_IDX.sub(rep_idx, text)
+    if n:
+        text = out
+        ctx.lines = text.split("\n")
