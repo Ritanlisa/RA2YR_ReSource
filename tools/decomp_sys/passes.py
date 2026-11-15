@@ -8695,3 +8695,36 @@ def pass_r8h_nonclass_receiver(ctx):
     out = _R8H_MEM.sub(rep, text)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ----------------------------- R8j: `(void *)<int-literal>` stores ---------
+# Hex-Rays typed some members `void *` and emits `m = (void *)10;` -- our
+# shell declares the member as a scalar (registry width), so the store is
+# C2440 ('void *' -> int/short/uchar).  Strip the cast around pure integer
+# literals; `m = 10;` compiles for every scalar and reproduces the original
+# immediate store.  Known void*-typed LOCALS keep the cast.
+_R8J_VOIDLIT = re.compile(
+    r"(?P<lhs>[A-Za-z_][\w]*(?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\[\]]*\])*)"
+    r"\s*=\s*\(\s*void\s*\*+\s*\)\s*"
+    r"\(?\s*(?P<num>-?\s*(?:0[xX][0-9A-Fa-f]+|\d+))\s*\)?\s*;")
+
+
+def pass_r8j_void_literal(ctx):
+    """R8j: `lhs = (void *)N;` -> `lhs = N;` (scalar-shell members)."""
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    void_lhs = set(n for n, t in env.map.items()
+                   if re.sub(r"\s+", "", t or "") in ("void*", "constvoid*"))
+    n = 0
+
+    def rep(m):
+        nonlocal n
+        lhs = m.group("lhs").strip()
+        if lhs in void_lhs:
+            return m.group(0)
+        n += 1
+        return "%s = %s;" % (lhs, re.sub(r"\s+", "", m.group("num")))
+
+    out = _R8J_VOIDLIT.sub(rep, text)
+    if n:
+        ctx.lines = out.split("\n")

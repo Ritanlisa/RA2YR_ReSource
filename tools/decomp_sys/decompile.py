@@ -1213,6 +1213,7 @@ def run_function(addr, reg, views, idx):
     # index expressions cast to unsigned int.  Runs after the FINAL residual
     # ident declaration pass so late-declared names are known.
     passes.pass_scalar_subscript(ctx)
+    passes.pass_r8j_void_literal(ctx)
 
     # CW7/W6: a free function whose FINAL body still says `this` -- the
     # member-call pass bound a qualified callee (`AudioStream::X();`) to the
