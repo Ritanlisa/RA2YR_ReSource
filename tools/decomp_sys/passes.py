@@ -621,7 +621,7 @@ def pass_globals(ctx):
             False))
         return m.group(0)
 
-    body = re.sub(r"\*\(\s*(_?\w+)\s*\*\s*\)\s*&\s*(\w+)\b", grepl, body)
+    body = re.sub(r"\*\(\s*(_?\w+)\s*\*\s*\)\s*&\s*(\w+)\b(?!\s*[.\[])", grepl, body)
     ctx.lines = body.split("\n")
 
     # named globals already present in the pseudocode (IDA had them typed):
@@ -1199,7 +1199,18 @@ def pass_struct_globals(ctx):
                 # carrier in the til (`__pad_38[24]`, `m_3[1]`) -- the
                 # element scale is 1, not sizeof(int).
                 return "((char *)(%s + 0x%X))[%s]" % (addr, off, idx_expr)
-            return "((%s *)(%s + 0x%X))[%s]" % (sp, addr, off, idx_expr)
+            # P1 (specimen-driven): a SCALAR member followed by a constant
+            # index is IDA's rendering of a raw byte displacement
+            # (`mov edx, dword ptr stru_X.random+0C0h` -> `.random[192]`):
+            # the index is a BYTE count, so scale 1 -- array scaling is only
+            # valid when the member's declared type is itself an array.
+            if "[" not in str(ty):
+                return "((char *)(%s + 0x%X))[%s]" % (addr, off, idx_expr)
+            _elem = str(ty).split("[")[0].strip()
+            _sp2 = spell_type(_elem) if _elem else sp
+            if _sp2 not in WIDTH_OF and not _sp2.endswith("*"):
+                _sp2 = "int"
+            return "((%s *)(%s + 0x%X))[%s]" % (_sp2, addr, off, idx_expr)
         ctx.sites.append(Site(
             "global", "%s.%s" % (base, mem),
             "named member view -> *(%s *)(%s + 0x%X) (reverse index/owner "
