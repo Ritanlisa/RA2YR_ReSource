@@ -104,7 +104,7 @@ _VT_TOKEN_ONLY = re.compile(r"&\s*%s::\s*`vftable'" % _VT_CLS)
 _VT_INT_CAST_LHS = re.compile(
     r"\*\s*\(\s*(?:_DWORD|unsigned int|int|unsigned long|long|DWORD|"
     r"unsigned __int32|unsigned __int64|__int64|unsigned short|short|"
-    r"unsigned char|char)\s*\*+\s*\)\s*$")
+    r"unsigned char|char)\s*\*+\s*\)")
 
 
 def _rewrite_vftables(text, ctx):
