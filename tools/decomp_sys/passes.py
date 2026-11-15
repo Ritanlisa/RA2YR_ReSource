@@ -8593,3 +8593,38 @@ def pass_r8c_void_compare(ctx):
         n += k
     if n:
         ctx.lines = text.split("\n")
+
+
+_R8F_FNPTR_DECL = re.compile(
+    r"(?P<ty>[A-Za-z_][\w ]*?\(\s*__(?:stdcall|cdecl|thiscall|fastcall)"
+    r"\s*\*+\s*(?P<nm>[A-Za-z_]\w*)\s*\)\s*\([^()]*\))\s*;")
+
+
+def pass_fnptr_assign(ctx):
+    """R8f: assignments into FUNCTION-POINTER locals whose RHS is a bare
+    address (`v11 = &XSurface_Vtable;` with `int (__stdcall **)(...) v11`)
+    -- VC6 C2440 'void **' -> fnptr**.  Cast the RHS to the declared type.
+    Codegen-neutral (same 32-bit store)."""
+    text = "\n".join(ctx.lines)
+    types = {}
+    for m in _R8F_FNPTR_DECL.finditer(text):
+        _t = re.sub(r"\s+", " ", m.group("ty")).strip()
+        _nm = m.group("nm")
+        _t = _t.replace(_nm, "", 1)
+        types[_nm] = re.sub(r"\s+", " ", _t).strip()
+    if not types:
+        return
+    out = []
+    n = 0
+    for ln in text.split("\n"):
+        st = ln.strip()
+        m = re.match(r"^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$", st)
+        if m and m.group(1) in types:
+            rhs = m.group(2).strip()
+            if not rhs.startswith("("):
+                ln = ln.replace(
+                    st, "%s = (%s)(%s);" % (m.group(1), types[m.group(1)], rhs))
+                n += 1
+        out.append(ln)
+    if n:
+        ctx.lines = out
