@@ -8407,3 +8407,131 @@ def pass_residual_idents(ctx):
             "F8 residual spellings normalized (MEMORY/GUID/IDA-data/"
             "templated-vftable/usercall/undeclared global)", True))
 
+
+
+# ==== R8d / R8c (C2109 scalar subscript, C2106 byte-macro lvalue, C2446) ====
+_R8D_SUB = re.compile(
+    r"\(\*\s*\(\s*(?P<ty>int|unsigned int|_DWORD|DWORD|unsigned __int32|"
+    r"long|unsigned long)\s*\*?\s*\*\s*\)\s*\((?P<expr>(?:[^()]|\([^()]*\))*)\)"
+    r"\)\s*\[\s*(?P<n>\d+)\s*\]")
+_R8D_BYTE = re.compile(
+    r"\(\*\s*\(\s*(?P<ty>char|unsigned char|_BYTE|BYTE|bool)\s*\*?\s*\*\s*\)"
+    r"\s*\((?P<expr>(?:[^()]|\([^()]*\))*)\)\)\s*\[\s*(?P<n>\d+)\s*\]")
+
+
+def _r8d_collapse(s):
+    def rep_i(m):
+        ty, expr, n = m.group('ty'), m.group('expr'), int(m.group('n'))
+        if n == 0:
+            return "(*(%s *)(%s))" % (ty, expr)
+        return "(*(%s *)((%s) + %d))" % (ty, expr, n * 4)
+
+    def rep_b(m):
+        ty, expr, n = m.group('ty'), m.group('expr'), int(m.group('n'))
+        if n == 0:
+            return "(*(%s *)(%s))" % (ty, expr)
+        return "(*(%s *)((%s) + %d))" % (ty, expr, n)
+
+    prev = None
+    while prev != s:
+        prev = s
+        s = _R8D_SUB.sub(rep_i, s)
+        s = _R8D_BYTE.sub(rep_b, s)
+    return s
+
+
+def pass_r8d_scalar_subscript(ctx):
+    """R8d: collapse `(*(T *)(EXPR))[N]` scalar-deref subscripts (C2109) and
+    turn byte-macro assignments into byte-view stores (C2106/C2102)."""
+    text = "\n".join(ctx.lines)
+    n0 = text
+    text = _r8d_collapse(text)
+
+    def _balanced(s, i):
+        """s[i] == '(' ; return index just past the matching ')'."""
+        depth = 0
+        while i < len(s):
+            ch = s[i]
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+            i += 1
+        return -1
+
+    def _byte_macro_stores(text):
+        out = []
+        i = 0
+        for nm, d in (("LOBYTE", 0), ("BYTE1", 1), ("HIBYTE", -2)):
+            pass
+        scan = 0
+        res = text
+        for nm, d in (("LOBYTE", 0), ("BYTE1", 1), ("HIBYTE", -2)):
+            parts = []
+            i = 0
+            n = len(res)
+            while i < n:
+                j = res.find(nm + "(", i)
+                if j < 0:
+                    parts.append(res[i:])
+                    break
+                # word boundary
+                if j > 0 and (res[j - 1].isalnum() or res[j - 1] == "_"):
+                    parts.append(res[i:j + len(nm)])
+                    i = j + len(nm)
+                    continue
+                k = _balanced(res, j + len(nm))
+                if k < 0:
+                    parts.append(res[i:])
+                    break
+                expr = res[j + len(nm) + 1:k - 1]
+                m = re.match(r"\s*=(?!=)", res[k:])
+                if not m:
+                    parts.append(res[i:k])
+                    i = k
+                    continue
+                if d == 0:
+                    store = "(*(unsigned char *)(&(%s))) = " % expr
+                else:
+                    store = ("(*(unsigned char *)((char *)(&(%s)) + %d)) = "
+                             % (expr, d))
+                parts.append(res[i:j])
+                parts.append(store)
+                i = k + m.end()
+            res = "".join(parts)
+        return res
+
+    text = _byte_macro_stores(text)
+
+    if text != n0:
+        ctx.lines = text.split("\n")
+
+
+_INT_SIDE = (r"(\(\*\s*\(\s*(?:int|unsigned int|_DWORD|DWORD)\s*\*\)"
+             r"(?:[^()]|\([^()]*\))*\))")
+
+
+def pass_r8c_void_compare(ctx):
+    """R8c: `(int-deref) == void*_local` (C2446)."""
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    void_vars = [n for n, ty in env.map.items()
+                 if re.sub(r"\s+", "", ty or "") in ("void*", "constvoid*")]
+    if not void_vars:
+        return
+    n = 0
+    for v in void_vars:
+        pat = re.compile(_INT_SIDE + r"\s*(==|!=)\s*" + re.escape(v)
+                         + r"(?![\w(])")
+        text, k = pat.subn(lambda m: "%s %s ((int)(%s))"
+                           % (m.group(1), m.group(2), v), text)
+        n += k
+        pat2 = re.compile(r"(?<![\w.>])" + re.escape(v)
+                          + r"\s*(==|!=)\s*" + _INT_SIDE)
+        text, k = pat2.subn(lambda m: "((int)(%s)) %s %s"
+                            % (v, m.group(1), m.group(2)), text)
+        n += k
+    if n:
+        ctx.lines = text.split("\n")

@@ -1114,6 +1114,8 @@ def run_function(addr, reg, views, idx):
     passes.pass_intrinsics_lobyte(ctx)
     passes.pass_narrow_macro_reads(ctx)
     passes.pass_macro_residual_sweep(ctx)
+    passes.pass_r8d_scalar_subscript(ctx)
+    passes.pass_r8c_void_compare(ctx)
     passes.pass_pair64(ctx)
     passes.pass_vt_dispatch(ctx)
     passes.pass_member_shapes(ctx)
