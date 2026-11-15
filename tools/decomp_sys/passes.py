@@ -8853,3 +8853,108 @@ def pass_r8l_ownerfield(ctx):
     if n:
         text = out
         ctx.lines = text.split("\n")
+
+
+# ----------------------------- R8m: typed LHS harmonizer (void*/ptr <-> scalar)
+# `int v = (void *)q;` / `char *s = (void *)q;` / `unsigned int v = call()->..`
+# -- the value-type mismatch family (C2440 'void *' -> int/uint/char* and
+# the reverse uint -> void*).  Re-spell the RHS cast to the LHS's DECLARED
+# type (same 32-bit value; explicit cast makes the store legal).
+_SCALAR_TYS = frozenset((
+    "int", "unsigned int", "short", "unsigned short", "char",
+    "unsigned char", "long", "unsigned long", "bool", "_DWORD", "_WORD",
+    "_BYTE", "DWORD", "WORD", "BYTE",
+))
+
+
+def pass_r8m_typed_lhs(ctx):
+    """R8m: scalar/pointer LHS receiving a differently-typed RHS gets the
+    explicit cast to the declared LHS type."""
+    text = "\n".join(ctx.lines)
+    env = _TypeEnv(ctx, text)
+    out = []
+    n = 0
+    for ln in text.split("\n"):
+        st = ln.strip()
+        m = re.match(r"^(?P<lhs>[A-Za-z_]\w*)\s*=\s*(?P<rhs>.+?);\s*$", st)
+        if not m:
+            out.append(ln)
+            continue
+        lhs, rhs = m.group("lhs"), m.group("rhs").strip()
+        ty = env.of(lhs)
+        if not ty:
+            out.append(ln)
+            continue
+        t = re.sub(r"\s+", " ", ty).strip()
+        vm = re.match(r"^\(\s*void\s*\*+\s*\)\s*(?P<inner>.+)$", rhs, re.S)
+        if vm:
+            inner = vm.group("inner").strip()
+            if t.endswith("*") or t in _SCALAR_TYS:
+                ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, inner))
+                n += 1
+            out.append(ln)
+            continue
+        if rhs.startswith("("):
+            k2, rt2 = _rhs_ptr_head(rhs, env)
+            if k2 == "ptr" and t.endswith("*") and \
+                    re.sub(r"\s+", "", t) != re.sub(r"\s+", "", rt2 or ""):
+                ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, rhs))
+                n += 1
+            out.append(ln)
+            continue
+        k, rt = _rhs_ptr_head(rhs, env)
+        if k == "ptr" and (t in _SCALAR_TYS or
+                           (t.endswith("*") and
+                            re.sub(r"\s+", "", t) !=
+                            re.sub(r"\s+", "", rt or ""))):
+            ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, rhs))
+            n += 1
+        out.append(ln)
+    if n:
+        ctx.lines = out
+
+
+# ------------------------- R8n: unknown namespace-qualified types -----------
+# IDA renders CRT-internal types in casts/decls: `(std::locale::facet *)this`,
+# `Concurrency::details::ContextBase *v8;` -- C2653 ('std'/'Concurrency' is
+# not a class or namespace).  The binary only ever uses these as opaque
+# pointers, so re-spell to void / void *.
+_R8N_QUAL = r"(?P<q>[A-Za-z_]\w*(?:::[A-Za-z_]\w*)+)"
+_R8N_CAST = re.compile(r"\(\s*" + _R8N_QUAL + r"\s*(?P<stars>\*+)\s*\)")
+_R8N_DECL = re.compile(r"\b" + _R8N_QUAL + r"\s+(?P<stars>\*+)\s*(?P<nm>[A-Za-z_]\w*)\s*(?=[;,=)])")
+
+
+def pass_r8n_unknown_ns(ctx):
+    """R8n: unknown-namespace type spellings (CRT internals) -> void(void *)."""
+    text = "\n".join(ctx.lines)
+    if "::" not in text:
+        return
+    try:
+        known = set((getattr(ctx.reg, "classes", None) or {}).keys())
+    except Exception:
+        known = set()
+    if not known:
+        return
+    n = 0
+
+    def head_unknown(q):
+        return q.split("::", 1)[0] not in known
+
+    def rep_cast(m):
+        nonlocal n
+        if not head_unknown(m.group("q")):
+            return m.group(0)
+        n += 1
+        return "(void %s)" % m.group("stars")
+
+    def rep_decl(m):
+        nonlocal n
+        if not head_unknown(m.group("q")):
+            return m.group(0)
+        n += 1
+        return "void %s%s" % (m.group("stars"), m.group("nm"))
+
+    out = _R8N_CAST.sub(rep_cast, text)
+    out = _R8N_DECL.sub(rep_decl, out)
+    if n:
+        ctx.lines = out.split("\n")
