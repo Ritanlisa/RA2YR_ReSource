@@ -9265,3 +9265,174 @@ def pass_r8q_void_across_ctx(ctx):
 
     if n:
         ctx.lines = out
+
+
+# ---------------------- R8s: call-argument harmonization (C2664) ------------
+# `f(intExpr)` where the registry declares `f(char *)` -- VC6 C2664.  The
+# binary passed the same 32-bit register/stack slot, so an explicit cast to
+# the DECLARED parameter type is codegen-neutral and compiles.
+_R8S_CALL = re.compile(r"(?<![\w:.>])(?P<name>[A-Za-z_]\w*(?:::[A-Za-z_]\w*)?)\s*\(")
+# R8s CRT prototypes: VC6 standard-library signatures (the emitted args
+# mismatch them; the declarations themselves come from the CRT headers the
+# shells already include -- these entries only drive the argument CASTS).
+_R8S_CRT = {
+    "wcslen": [("const wchar_t *",)],
+    "wcsncpy": [("wchar_t *",), ("const wchar_t *",), ("unsigned int",)],
+    "wcscmp": [("const wchar_t *",), ("const wchar_t *",)],
+    "wcscpy": [("wchar_t *",), ("const wchar_t *",)],
+    "wcsstr": [("const wchar_t *",), ("const wchar_t *",)],
+    "sprintf": [("char *",), ("const char *",)],
+    "_strcmpi": [("const char *",), ("const char *",)],
+    "strcmpi": [("const char *",), ("const char *",)],
+    "strcmp": [("const char *",), ("const char *",)],
+    "strcpy": [("char *",), ("const char *",)],
+    "memcmp": [("const void *",), ("const void *",), ("unsigned int",)],
+    "memcpy": [("void *",), ("const void *",), ("unsigned int",)],
+    "memset": [("void *",), ("int",), ("unsigned int",)],
+    "strlen": [("const char *",)],
+    "atoi": [("const char *",)],
+    "atof": [("const char *",)],
+    "atexit": [("void (__cdecl *)(void)",)],
+    "abs": [("int",)],
+}
+
+_R8S_SKIP = frozenset((
+    "if", "for", "while", "switch", "return", "sizeof", "case", "do",
+    "else", "defined", "throw", "new", "delete", "static_cast",
+))
+
+
+def _r8s_split_args(s):
+    args, depth, cur, i = [], 0, [], 0
+    while i < len(s):
+        ch = s[i]
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+        if ch == ',' and depth == 0:
+            args.append(''.join(cur).strip())
+            cur = []
+            i += 1
+            continue
+        cur.append(ch)
+        i += 1
+    tail = ''.join(cur).strip()
+    if tail or args:
+        args.append(tail)
+    return args
+
+
+def pass_r8s_call_args(ctx):
+    """R8s: cast call arguments to the callee's DECLARED parameter types."""
+    text = "\n".join(ctx.lines)
+    if "(" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    sig_cls = ctx.sig.get("cls")
+    n = 0
+    out_lines = []
+    for ln in text.split("\n"):
+        st = ln.strip()
+        if not st or st.startswith("//") or st.startswith("#"):
+            out_lines.append(ln)
+            continue
+        if re.match(r"^(?:extern|typedef|class|struct)\b", st):
+            out_lines.append(ln)
+            continue
+        new = ln
+        pos = 0
+        while True:
+            m = _R8S_CALL.search(new, pos)
+            if not m:
+                break
+            name = m.group("name")
+            head = name.split("::")[-1]
+            if head in _R8S_SKIP or name in _R8S_SKIP:
+                pos = m.end()
+                continue
+            # balanced close
+            depth, j = 1, m.end()
+            while j < len(new) and depth:
+                if new[j] == '(':
+                    depth += 1
+                elif new[j] == ')':
+                    depth -= 1
+                j += 1
+            if depth:
+                pos = m.end()
+                continue
+            argstr = new[m.end():j - 1]
+            rec = None
+            try:
+                rec = ctx.reg.function_by_name(name)
+                if not rec and sig_cls:
+                    rec = ctx.reg.function_by_name("%s::%s" % (sig_cls, name))
+            except Exception:
+                rec = None
+            params = []
+            if rec and len(rec) > 1 and rec[1]:
+                params = rec[1].get("params") or []
+            if not params:
+                crt = _R8S_CRT.get(head)
+                if crt:
+                    params = [{"type": t[0]} for t in crt]
+            if not params:
+                pos = j
+                continue
+            args = _r8s_split_args(argstr)
+            if not params or not args:
+                pos = j
+                continue
+            # method receiver passed as arg0 -> align
+            off = 0
+            cc = (rec[1] or {}).get("cc") or ""
+            if "this" in cc and args and re.match(
+                    r"^\([^()]*\*\)\s*\(", args[0]):
+                off = 1
+            changed = False
+            for ai in range(len(params)):
+                bi = ai + off
+                if bi >= len(args):
+                    break
+                pty = (params[ai].get("type") or "").strip()
+                if not pty:
+                    continue
+                arg = args[bi].strip()
+                if not arg:
+                    continue
+                # R8s-2: an EXISTING wrong cast (`(int)x` for a `char *`
+                # param) is re-wrapped -- `(T)((int)x)` compiles and keeps
+                # the 32-bit value.
+                if arg.startswith("("):
+                    km, tm = _rhs_ptr_head(arg, env)
+                    p_is_ptr_m = pty.endswith("*")
+                    if (p_is_ptr_m and km in ("int", "float")) or \
+                            ((not p_is_ptr_m) and km == "ptr"):
+                        args[bi] = "(%s)(%s)" % (pty, arg)
+                        changed = True
+                    continue
+                k, t = _rhs_ptr_head(arg, env)
+                p_is_ptr = pty.endswith("*")
+                if p_is_ptr and k in ("int", "float", None):
+                    # R8s-3: `k is None` covers forms the classifier does
+                    # not know (`*v4`, member chains) -- the wrap is still
+                    # a legal explicit cast of a 32-bit value.
+                    args[bi] = "(%s)(%s)" % (pty, arg)
+                    changed = True
+                elif (not p_is_ptr) and k == "ptr":
+                    args[bi] = "(%s)(%s)" % (pty, arg)
+                    changed = True
+                elif p_is_ptr and k == "ptr" and \
+                        re.sub(r"\s+", "", t or "") != re.sub(r"\s+", "", pty):
+                    args[bi] = "(%s)(%s)" % (pty, arg)
+                    changed = True
+            if changed:
+                new = (new[:m.end()] + ", ".join(args) + ")" + new[j:])
+                n += 1
+                pos = m.end()
+            else:
+                pos = j
+        out_lines.append(new)
+    if n:
+        ctx.lines = out_lines
