@@ -9436,3 +9436,144 @@ def pass_r8s_call_args(ctx):
         out_lines.append(new)
     if n:
         ctx.lines = out_lines
+
+
+# ------------------ R8u: hybrid deref-then-member fold (C2227/C2228)--------
+# `(*(unsigned int *)((char *)(BASE) + K)).uniqueId` -- a dword load then a
+# member access.  Two arms:
+#  A. DATA member: resolve BASE's class through the type env / registry
+#     members; fold to the byte access `(*(W *)((char *)(BASE) + K + OFF))`.
+#  B. METHOD call: `(*(T *)(EXPR))->M(` -- resolve M to its UNIQUE owning
+#     class (registry functions) and cast the loaded pointer.
+_R8U_DATA = re.compile(
+    r"\(\*\s*\(\s*(?:unsigned int|int|_DWORD)\s*\*?\s*\*\s*\)\s*"
+    r"\(\s*\(\s*char\s*\*\s*\)\s*\(\s*(?P<base>[A-Za-z_]\w*)\s*\)"
+    r"(?:\s*\+\s*\(?\s*(?P<k>\d+)\s*\)?)?\s*\)\s*\)\s*\.\s*(?P<mem>[A-Za-z_]\w*)")
+_R8U_CALL = re.compile(
+    r"\(\*\s*\(\s*(?:unsigned int|int|_DWORD)\s*\*?\s*\*\s*\)\s*"
+    r"\((?P<expr>(?:[^()]|\([^()]*\))*)\)\s*\)\s*->\s*(?P<meth>[A-Za-z_]\w*)\s*\(")
+_R8U_METH_CACHE = {}
+
+
+def _r8u_method_owner(reg, meth):
+    if _R8U_METH_CACHE.get('id') is reg:
+        idx = _R8U_METH_CACHE['idx']
+    else:
+        idx = {}
+        for v in (getattr(reg, "functions", None) or {}).values():
+            rec = v[1] if isinstance(v, tuple) and len(v) > 1 else v
+            if not isinstance(rec, dict):
+                continue
+            m = rec.get("method")
+            c = rec.get("cls")
+            if m and c:
+                idx.setdefault(m, set()).add(c)
+        _R8U_METH_CACHE['id'] = reg
+        _R8U_METH_CACHE['idx'] = idx
+        idx = idx
+    owners = idx.get(meth)
+    if owners and len(owners) == 1:
+        return next(iter(owners))
+    return None
+
+
+def pass_r8u_hybrid_fold(ctx):
+    """R8u: fold `(*(T *)((char *)(BASE) + K)).M` into a byte access; cast
+    `(*(T *)(EXPR))->M(` to M's unique owning class."""
+    text = "\n".join(ctx.lines)
+    if "char *)(" not in text and ")->" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    reg = ctx.reg
+    n = 0
+
+    _CONS_CACHE = {}
+
+    def _member_off(cls, name):
+        # A1: the member name embeds its offset (`__tail_1A`, `field_0`,
+        # `m0A4`, `<Owner>_field_08`) -- class-independent.
+        import re as _re2
+        mm = _re2.search(r"(?:^|_)(?:tail_|field_|pad_)?(m[0-9A-Fa-f]+|"
+                        r"(?:tail|field|pad)_[0-9A-Fa-fx]+)$", name)
+        if mm:
+            tok = mm.group(1)
+            if tok.startswith("m") and len(tok) > 1:
+                raw = tok[1:]
+            else:
+                raw = tok.rsplit("_", 1)[-1]
+            try:
+                return int(raw, 16), ""
+            except ValueError:
+                pass
+        # A2: offset CONSENSUS across every owner class of this member name
+        # (`uniqueId` is at 0x10 in all 61 owners).
+        if name not in _CONS_CACHE:
+            offs = set()
+            for c, rec2 in (getattr(reg, "classes", None) or {}).items():
+                for off, mem in (rec2.get("members") or {}).items():
+                    if (mem or {}).get("name") == name:
+                        try:
+                            offs.add(int(off))
+                        except (TypeError, ValueError):
+                            pass
+            if len(offs) == 1:
+                _CONS_CACHE[name] = next(iter(offs))
+            elif offs:
+                # 众数偏移（uniqueId: 60 类在 0x10，1 类在 0x210）
+                import collections as _c2
+                cnt = _c2.Counter()
+                for c3, rec3 in (getattr(reg, 'classes', None) or {}).items():
+                    for off3, mem3 in (rec3.get('members') or {}).items():
+                        if (mem3 or {}).get('name') == name:
+                            try:
+                                cnt[int(off3)] += 1
+                            except (TypeError, ValueError):
+                                pass
+                _CONS_CACHE[name] = cnt.most_common(1)[0][0] if cnt else None
+            else:
+                _CONS_CACHE[name] = None
+        cons = _CONS_CACHE[name]
+        if cons is not None:
+            return cons, ""
+        # A3: the enclosing class declares it
+        if cls:
+            rec = (getattr(reg, "classes", None) or {}).get(cls) or {}
+            for off, mem in (rec.get("members") or {}).items():
+                if (mem or {}).get("name") == name:
+                    try:
+                        return int(off), (mem or {}).get("type") or ""
+                    except (TypeError, ValueError):
+                        return None, ""
+        return None, ""
+
+    def rep_data(m):
+        nonlocal n
+        base, mem = m.group("base"), m.group("mem")
+        ty = env.of(base) or ""
+        cls = _ptr_base(ty) if _is_ptr_spelling(ty) else None
+        if cls in ("void", ""):
+            cls = None
+        off, mty = _member_off(cls, mem)
+        if off is None:
+            return m.group(0)
+        k = int(m.group("k") or 0)
+        total = k + off
+        w = 1 if mty.strip() in ("char", "unsigned char", "_BYTE", "bool") else \
+            2 if mty.strip() in ("short", "unsigned short", "_WORD") else 4
+        wt = {1: "unsigned char", 2: "short", 4: "unsigned int"}[w]
+        n += 1
+        return "(*(%s *)((char *)(%s) + %d))" % (wt, base, total)
+
+    def rep_call(m):
+        nonlocal n
+        meth, expr = m.group("meth"), m.group("expr")
+        owner = _r8u_method_owner(reg, meth)
+        if not owner:
+            return m.group(0)
+        n += 1
+        return "((%s *)(*(unsigned int *)(%s)))->%s(" % (owner, expr, meth)
+
+    out = _R8U_DATA.sub(rep_data, text)
+    out = _R8U_CALL.sub(rep_call, out)
+    if n:
+        ctx.lines = out.split("\n")
