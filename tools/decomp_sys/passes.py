@@ -9183,13 +9183,18 @@ def pass_r8p_void_subscript(ctx):
         x = m.group("x")
         if x not in scal or x in arrays:
             return m.group(0)
-        _pre = text[max(0, m.start() - 36):m.start()]
+        _pre = _r8p_src[max(0, m.start() - 36):m.start()]
         if _OPERAND_TAIL.search(_pre):
             return m.group(0)
         n += 1
         return "(*(unsigned int *)(%s))" % x
 
     out = _R8P_SUB.sub(rep_sub, text)
+    # R8y: rep_deref's left-context guard must read from the SAME string it
+    # matches -- offsets in `out` drift from `text` when _R8P_SUB changed
+    # lengths earlier in the body (the guard then missed multiplications
+    # like `v10 * v9` and ate the operator -> C2064 mass regression).
+    _r8p_src = out
     out = _R8P_DEREF.sub(rep_deref, out)
     if n:
         ctx.lines = out.split("\n")
