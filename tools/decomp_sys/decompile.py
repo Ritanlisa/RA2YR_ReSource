@@ -1219,6 +1219,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_r8m_typed_lhs(ctx)
     passes.pass_r8n_unknown_ns(ctx)
     passes.pass_r8o_shell_mismatch(ctx)
+    passes.pass_r8p_void_subscript(ctx)
 
     # CW7/W6: a free function whose FINAL body still says `this` -- the
     # member-call pass bound a qualified callee (`AudioStream::X();`) to the

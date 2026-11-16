@@ -9027,3 +9027,88 @@ def pass_r8o_shell_mismatch(ctx):
     out = _R8O_VAL.sub(rep_val, out)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ---------------- R8p: subscript / indirection on void*/scalar receivers -----
+# C2036 ('void *' : unknown size) / C2109 (subscript requires array or
+# pointer) / C2100 (illegal indirection): IDA dword-slots indexed through
+# void* or scalar locals.  Re-spell as the dword access the binary performed:
+#   V[i]          -> (*(unsigned int *)((char *)(V) + (i) * 4))
+#   V[i].m<hex>   -> (*(unsigned int *)((char *)(V) + (i) * 4 + 0x<hex>))
+#   *X            -> (*(unsigned int *)(X))
+_R8P_SUB = re.compile(
+    r"(?<![\w:.>])(?P<v>[A-Za-z_]\w*)\s*\[\s*(?P<i>[^\[\]]+?)\s*\]"
+    r"(?:\s*\.\s*(?P<mem>(?:[A-Za-z_]\w*_)?(?:m[0-9A-Fa-f]{2,}"
+    r"|field_[0-9A-Fa-fx]+|__pad_[0-9A-Fa-fx]+)))?")
+_R8P_DEREF = re.compile(r"(?<![\w:.>*)&(])\*\s*(?P<x>[A-Za-z_]\w*)(?![\w(\[\]).]|->|\s*=(?!=))")
+_ARRAY_DECL = re.compile(
+    r"^\s*[A-Za-z_][\w \*]*?\b(?P<nm>[A-Za-z_]\w*)\s*\[[^\]]*\]\s*(?:;|=)",
+    re.M)
+
+
+def _r8p_off(mem):
+    if not mem:
+        return None
+    tail = mem.rsplit("_", 1)[-1] if "_" in mem else mem
+    if mem.startswith("m") and not mem.startswith("m_"):
+        tail = mem[1:]
+    try:
+        return int(tail, 16)
+    except ValueError:
+        return None
+
+
+def pass_r8p_void_subscript(ctx):
+    """R8p: subscript/indirection on void*- or scalar-typed receivers."""
+    text = "\n".join(ctx.lines)
+    if "[" not in text and "*" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    arrays = set(m.group("nm") for m in _ARRAY_DECL.finditer(text))
+    scal = set()
+    for nm, ty in env.map.items():
+        t = re.sub(r"\s+", "", ty or "")
+        if t in ("void*", "int", "unsignedint", "int*", "unsignedint*",
+                 "_DWORD", "_DWORD*", "long", "unsignedlong"):
+            scal.add(nm)
+    if not scal:
+        return
+    n = 0
+
+    def rep_sub(m):
+        nonlocal n
+        v, idx = m.group("v"), m.group("i").strip()
+        if v not in scal or v in arrays:
+            return m.group(0)
+        off = _r8p_off(m.group("mem"))
+        if m.group("mem") and off is None:
+            return m.group(0)          # member without an embedded offset
+        try:
+            iv = int(idx)
+            base = "(%d)" % (iv * 4)
+        except ValueError:
+            base = "((%s) * 4)" % idx
+        if off:
+            base = "%s + %d" % (base, off)
+        n += 1
+        return "(*(unsigned int *)((char *)(%s) + %s))" % (v, base)
+
+    # A `*` whose left neighbour is an OPERAND (identifier, literal, `)`,
+    # `]`) is a MULTIPLICATION (`1000LL * p1`, `f() * x`), not a deref.
+    _OPERAND_TAIL = re.compile(r"[A-Za-z0-9_\)\]]\s*$")
+
+    def rep_deref(m):
+        nonlocal n
+        x = m.group("x")
+        if x not in scal or x in arrays:
+            return m.group(0)
+        _pre = text[max(0, m.start() - 36):m.start()]
+        if _OPERAND_TAIL.search(_pre):
+            return m.group(0)
+        n += 1
+        return "(*(unsigned int *)(%s))" % x
+
+    out = _R8P_SUB.sub(rep_sub, text)
+    out = _R8P_DEREF.sub(rep_deref, out)
+    if n:
+        ctx.lines = out.split("\n")

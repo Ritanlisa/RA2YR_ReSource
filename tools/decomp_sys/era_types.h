@@ -224,8 +224,10 @@ struct DLGTEMPLATE_era {
 };
 typedef struct DLGTEMPLATE_era DLGTEMPLATE;
 typedef const DLGTEMPLATE * LPCDLGTEMPLATEA;
-struct _WIN32_FIND_DATAA_era { unsigned char __pad[320]; };
-typedef struct _WIN32_FIND_DATAA_era _WIN32_FIND_DATAA;
+struct _WIN32_FIND_DATAA { unsigned char __pad[320]; };
+struct _WIN32_FIND_DATAW { unsigned char __pad[320]; };
+typedef struct _WIN32_FIND_DATAA _WIN32_FIND_DATAA_era;
+typedef struct _WIN32_FIND_DATAW _WIN32_FIND_DATAW_era;
 struct IStream;
 typedef struct IStream * LPSTREAM;
 struct IDirectDraw_era;
@@ -379,5 +381,24 @@ typedef int                 unknown;
 
 // `min`/`max` are macros in VC6 <windef.h>; emitted bodies may spell member
 // functions with those names, so keep them out of the namespace entirely.
+
+// ---- Win32/CRT struct TAGS referenced by emitted bodies as `struct X ...`
+// (C2079 family: a typedef alone does not satisfy the `struct X` tag form).
+struct sockaddr { unsigned char __pad[16]; };
+struct in_addr { unsigned char __pad[4]; };
+struct _STARTUPINFOA { unsigned char __pad[68]; };
+struct _STARTUPINFOW { unsigned char __pad[68]; };
+struct _COMSTAT { unsigned char __pad[12]; };
+struct _cpinfo { unsigned char __pad[20]; };
+struct _PROCESS_INFORMATION { unsigned char __pad[16]; };
+struct _DCB { unsigned char __pad[28]; };
+struct _MEMORY_BASIC_INFORMATION { unsigned char __pad[28]; };
+struct _MEMORYSTATUS { unsigned char __pad[32]; };
+struct _COMMTIMEOUTS { unsigned char __pad[20]; };
+struct _TIME_ZONE_INFORMATION { unsigned char __pad[172]; };
+struct _SECURITY_ATTRIBUTES { unsigned char __pad[12]; };
+struct _INPUT_RECORD { unsigned char __pad[20]; };
+typedef struct sockaddr sockaddr;
+typedef struct in_addr in_addr;
 
 #endif  // DECOMP_ERA_TYPES_H
