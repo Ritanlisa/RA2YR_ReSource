@@ -1624,6 +1624,15 @@ _CMP_AMP = re.compile(
     r"(?P<b>&\s*[A-Za-z_]\w*(?!\s*[\[(.>]))")
 
 
+# R8x: cast-deref / &global mixed comparisons (`*(DListNode **)(x) != &g`,
+# `*((int **)this->m) == &DataGlobal_...`).  Both sides are 32-bit values;
+# re-spell them as `unsigned int` -- same `cmp`.
+_CMP_DEREF_AMP = re.compile(
+    r"(?P<a>\*\s*\(\s*\(?[A-Za-z_][^()]*\*+\s*\)"
+    r"[^;]*?)"
+    r"\s*(?P<op>==|!=)\s*(?P<b>&\s*[A-Za-z_]\w*)")
+
+
 def pass_compare_harmonize(ctx):
     text = "\n".join(ctx.lines)
     env = _TypeEnv(ctx, text)
@@ -1710,6 +1719,18 @@ def pass_compare_harmonize(ctx):
         return "((unsigned int)(%s)) %s ((unsigned int)(%s))" % (a, op, b)
 
     out = _CMP_AMP.sub(sub_amp, out)
+
+    def sub_deref_amp(m):
+        nonlocal n
+        a, op, b = m.group("a").strip(), m.group("op"), m.group("b").strip()
+        n += 1
+        ctx.sites.append(Site(
+            "compare", "%s %s %s" % (a, op, b),
+            "cast-deref vs &global compare -> both sides `(unsigned int)` "
+            "(same 32-bit cmp; C2446)", True))
+        return "((unsigned int)(%s)) %s ((unsigned int)(%s))" % (a, op, b)
+
+    out = _CMP_DEREF_AMP.sub(sub_deref_amp, out)
     out = _CMP_EXTB.sub(sub_extb, out)
     if n:
         ctx.lines = out.split("\n")
