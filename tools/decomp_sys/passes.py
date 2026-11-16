@@ -8922,8 +8922,12 @@ def pass_r8m_typed_lhs(ctx):
             continue
         if rhs.startswith("("):
             k2, rt2 = _rhs_ptr_head(rhs, env)
-            if k2 == "ptr" and t.endswith("*") and \
-                    re.sub(r"\s+", "", t) != re.sub(r"\s+", "", rt2 or ""):
+            # R8v: LHS type is DECLARED (local / global / param) -- wrap the
+            # cast-headed RHS whenever its spelling differs or is unknown.
+            # Covers fnptr-cast -> uint global, uint-subscript -> char*,
+            # char** -> const char**.
+            if re.sub(r"\s+", "", t) != re.sub(r"\s+", "", rt2 or "") or \
+                    k2 is None:
                 ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, rhs))
                 n += 1
             out.append(ln)
@@ -8933,6 +8937,11 @@ def pass_r8m_typed_lhs(ctx):
                            (t.endswith("*") and
                             re.sub(r"\s+", "", t) !=
                             re.sub(r"\s+", "", rt or ""))):
+            ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, rhs))
+            n += 1
+        elif k in ("int", "float") and t.endswith("*"):
+            # R8v-2: pointer LHS receiving an integer-VALUED RHS (dword
+            # subscript / deref chain) -> explicit cast to the LHS type.
             ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, rhs))
             n += 1
         out.append(ln)
