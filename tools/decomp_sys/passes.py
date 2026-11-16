@@ -9241,8 +9241,12 @@ def pass_r8q_void_across_ctx(ctx):
             continue
 
         # 2) declaration initializer:  TYPE v = (void *)E;
-        m = re.match(r"^(?P<ind>\s*)(?P<ty>[A-Za-z_][\w ]*?)\s*(?P<stars>\**)\s*"
-                     r"(?P<nm>[A-Za-z_]\w*)\s*=\s*(?P<rhs>" + _VOID_RHS + r".+?);\s*$",
+        # R8w: the type/name boundary MUST contain whitespace -- the lazy
+        # type group used to split identifiers (`hFindFile` -> `h FindFile`),
+        # which then surfaced as bogus C2065 single-letter identifiers.
+        m = re.match(r"^(?P<ind>\s*)(?P<ty>[A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)"
+                     r"\s+(?P<stars>\**)\s*(?P<nm>[A-Za-z_]\w*)"
+                     r"\s*=\s*(?P<rhs>" + _VOID_RHS + r".+?);\s*$",
                      ln)
         if m and m.group("ty").strip() not in (
                 "return", "if", "else", "while", "for", "switch", "case", "do"):
