@@ -6417,6 +6417,32 @@ def _rhs_ptr_head(rhs, env):
                 if base in ("float", "double"):
                     return "float", base
         return None, None
+    # R8r: `IDENT[IDX].MEMBER` / `IDENT.MEMBER` head -- resolve the base
+    # class through the type env and the member type through ctx.views.
+    m = re.match(r"^([A-Za-z_]\w*)\s*(?:\[[^\[\]]*\]|\.)\s*"
+                 r"([A-Za-z_]\w*)\s*$", s)
+    if m:
+        bty = env.of(m.group(1)) or ""
+        base_cls = _ptr_base(bty) if _is_ptr_spelling(bty) else None
+        if not base_cls and env.member(m.group(1)):
+            base_cls = env.ctx.sig.get("cls")
+        if base_cls:
+            mty = None
+            for _off, roles in (env.ctx.views.scalars.get(base_cls)
+                                or {}).items():
+                for v in roles.values():
+                    if v.get("name") == m.group(2):
+                        mty = v.get("type")
+                        break
+                if mty:
+                    break
+            if mty:
+                if _is_ptr_spelling(mty):
+                    return "ptr", mty
+                if mty in _INT_FAMILY:
+                    return "int", mty
+                if mty in ("float", "double"):
+                    return "float", mty
     # bare identifier head (with optional callee args / arithmetic tail)
     m = re.match(r"^([A-Za-z_]\w*)\s*(?:\([^()]*\))?\s*(?:[+\-][^=].*)?$",
                  s)
@@ -8645,8 +8671,8 @@ def pass_fnptr_assign(ctx):
 # load it came from: `(*(int *)((char *)this_ + 0x2C))`.
 _R8H_MEM = re.compile(
     r"\b(?P<recv>[A-Za-z_]\w*)\s*(?P<op>->|\.)\s*"
-    r"(?P<mem>(?:[A-Za-z_]\w*_)?field_[0-9A-Fa-fx]+|m[0-9A-F]{2,}|"
-    r"__pad_[0-9A-Fa-fx]+|lpVtbl|vfptr)\b(?!\s*\()")
+    r"(?P<mem>(?:[A-Za-z_]\w*_)?field_[0-9A-Fa-fx]+(?![\w])|m[0-9A-F]{2,}(?![\w])|"
+    r"__pad_[0-9A-Fa-fx]+(?![\w])|lpVtbl|vfptr)\b(?!\s*\()")
 
 
 def _r8h_member_off(name):
@@ -8778,14 +8804,14 @@ def pass_r8k_member_cref(ctx):
 #   `(*(unsigned int *)((char *)(a1) + 12*20 + 0x00 + 0))`
 _R8L_IDX = re.compile(
     r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*\[\s*(?P<idx>\d+)\s*\]\s*\.\s*"
-    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)"
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)(?![\w])"
     r"(?:\s*\[\s*(?P<idx2>\d+)\s*\])?")
 _R8L_VAL = re.compile(
     r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*\s*\[\s*\d+\s*\])\s*\.\s*"
-    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)")
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)(?![\w])")
 _R8L_PTR = re.compile(
     r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*->\s*"
-    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)")
+    r"(?P<owner>[A-Za-z_]\w*)_field_(?P<off>[0-9A-Fa-fx]+)(?![\w])")
 
 
 def _r8l_off(tok):
@@ -8962,32 +8988,54 @@ def pass_r8n_unknown_ns(ctx):
 
 # ------------------- R8o: shell-declaration mismatch names -> offset form ---
 # Shell hpps declare ONLY `__pad_<hex>` and `m<hex>` members.  Bodies that
-# still carry `__tail_<hex>`, bare `field_<hex>`, or `<Owner>_field_<hex>`
-# views are guaranteed C2039 -- re-spell to the offset-true access (same
-# byte offset, same width; identical codegen).
+# still carry `__tail_*` / `tail_*` / `field_*` / `<Owner>_field_[<ty>_]<hex>`
+# views are guaranteed C2039 -- re-spell to the offset-true access.  The
+# whole member identifier is captured and parsed here (type word + offset),
+# because a hex-only regex mis-splits names like `field_bool_6DD` (b is hex).
+_R8O_MEM = (r"(?:__tail_|tail_|field_|[A-Za-z_]\w*_field_)"
+            r"[A-Za-z0-9_]*")
 _R8O_PTR = re.compile(
-    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*->\s*"
-    r"(?P<mem>__tail_[0-9A-Fa-fx]+|tail_[0-9A-Fa-fx]+|field_[0-9A-Fa-fx]+|"
-    r"[A-Za-z_]\w*_field_[0-9A-Fa-fx]+)")
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*->\s*(?P<mem>" + _R8O_MEM + r")"
+    r"(?:\s*\[\s*0\s*\])?")
 _R8O_VAL = re.compile(
-    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*(?:\s*\[\s*[^\[\]]+\s*\])?)\s*\.\s*"
-    r"(?P<mem>__tail_[0-9A-Fa-fx]+|tail_[0-9A-Fa-fx]+|field_[0-9A-Fa-fx]+|"
-    r"[A-Za-z_]\w*_field_[0-9A-Fa-fx]+)")
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*(?:\s*\[\s*[^\[\]]+\s*\])?)\s*"
+    r"\.\s*(?P<mem>" + _R8O_MEM + r")(?:\s*\[\s*0\s*\])?")
+
+_R8O_W = {"bool": 1, "char": 1, "uchar": 1, "byte": 1,
+          "short": 2, "ushort": 2, "word": 2,
+          "int": 4, "uint": 4, "unsigned": 4, "signed": 4, "long": 4,
+          "float": 4, "dword": 4, "double": 8}
 
 
-def _r8o_off(mem):
-    tail = mem.rsplit("_", 1)[-1]
+def _r8o_parse(mem):
+    """`__tail_10` / `field_C74` / `BuildingClass_field_bool_6DD` ->
+    (offset, width) or (None, None)."""
+    body = mem
+    for pref in ("__tail_", "tail_"):
+        if body.startswith(pref):
+            body = body[len(pref):]
+            break
+    else:
+        cut = body.find("field_")
+        if cut < 0:
+            return None, None
+        body = body[cut + len("field_"):]
+    toks = [t for t in body.split("_") if t]
+    if not toks:
+        return None, None
     try:
-        if tail.lower().startswith("0x"):
-            return int(tail, 16)
-        return int(tail, 16)
+        off = int(toks[-1], 16)
     except ValueError:
-        return None
+        return None, None
+    w = 4
+    for t in toks[:-1]:
+        if t in _R8O_W:
+            w = _R8O_W[t]
+    return off, w
 
 
 def pass_r8o_shell_mismatch(ctx):
-    """R8o: non-shell member names (`__tail_*`, `field_*`, `<Owner>_field_*`)
-    -> offset-true accesses."""
+    """R8o: non-shell member names -> offset-true accesses (type-aware)."""
     text = "\n".join(ctx.lines)
     if "__tail_" not in text and "field_" not in text:
         return
@@ -8995,7 +9043,6 @@ def pass_r8o_shell_mismatch(ctx):
     n = 0
 
     def known_owner_ok(recv, mem):
-        # keep legit Owner-typed receiver chains (R8l handles indexed ones)
         if "_field_" in mem and not mem.startswith("field_"):
             owner = mem.split("_field_", 1)[0]
             ty = env.of(recv) or ""
@@ -9003,25 +9050,29 @@ def pass_r8o_shell_mismatch(ctx):
                 return True
         return False
 
+    def _ty(w):
+        return {1: "unsigned char", 2: "short", 4: "unsigned int",
+                8: "double"}.get(w, "int")
+
     def rep_ptr(m):
         nonlocal n
         recv, mem = m.group("recv"), m.group("mem")
         if known_owner_ok(recv, mem):
             return m.group(0)
-        off = _r8o_off(mem)
+        off, w = _r8o_parse(mem)
         if off is None:
             return m.group(0)
         n += 1
-        return "(*(unsigned int *)((char *)(%s) + %d))" % (recv, off)
+        return "(*(%s *)((char *)(%s) + 0x%X))" % (_ty(w), recv, off)
 
     def rep_val(m):
         nonlocal n
         recv, mem = m.group("recv"), m.group("mem")
-        off = _r8o_off(mem)
+        off, w = _r8o_parse(mem)
         if off is None:
             return m.group(0)
         n += 1
-        return "(*(unsigned int *)((char *)(&(%s)) + %d))" % (recv, off)
+        return "(*(%s *)((char *)(&(%s)) + 0x%X))" % (_ty(w), recv, off)
 
     out = _R8O_PTR.sub(rep_ptr, text)
     out = _R8O_VAL.sub(rep_val, out)
@@ -9112,3 +9163,105 @@ def pass_r8p_void_subscript(ctx):
     out = _R8P_DEREF.sub(rep_deref, out)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ------------------- R8q: void*-RHS re-spelled across LHS contexts -----------
+# The C2440 'void *' -> uint/int/char* family beyond plain local assignment:
+#   this->M = (void *)E;      (member view type lives in ctx.views)
+#   v->M = (void *)E;         (v's class from the type env)
+#   TYPE v = (void *)E;       (declaration initializer)
+#   return (void *)E;         (non-void return type)
+_VOID_RHS = r"\(\s*void\s*\*+\s*\)\s*"
+
+
+def _r8q_member_type(views, cls, name):
+    if not cls:
+        return None
+    for _off, roles in (views.scalars.get(cls) or {}).items():
+        for v in roles.values():
+            if v.get("name") == name:
+                return v.get("type")
+    return None
+
+
+def pass_r8q_void_across_ctx(ctx):
+    """R8q: `(void *)E` RHS in member / member-chain / decl-init / return
+    contexts is re-spelled to the declared target type."""
+    text = "\n".join(ctx.lines)
+    if "(void *)" not in text and "(void*)" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    views = ctx.views
+    cls = ctx.sig.get("cls")
+    n = 0
+    out = []
+
+    for ln in text.split("\n"):
+        st = ln.strip()
+        if not st or "void" not in st:
+            out.append(ln)
+            continue
+
+        # 1) this->M / v->M / v.M / v[i].M   =  (void *)E;
+        m = re.match(r"^(?P<lhs>(?:this->[A-Za-z_]\w*"
+                     r"|[A-Za-z_]\w*(?:\[[^\[\]]*\])?(?:->|\.)"
+                     r"[A-Za-z_]\w*))"
+                     r"\s*=\s*(?P<rhs>" + _VOID_RHS + r".+?);\s*$", st)
+        if m:
+            lhs, rhs = m.group("lhs"), m.group("rhs")
+            inner = re.sub(r"^" + _VOID_RHS, "", rhs).strip()
+            if lhs.startswith("this->"):
+                ty = _r8q_member_type(views, cls, lhs[6:])
+            else:
+                base_m = re.match(
+                    r"^([A-Za-z_]\w*)\s*(?:\[[^\[\]]*\])?\s*(?:->|\.)\s*"
+                    r"([A-Za-z_]\w*)$", lhs)
+                ty = None
+                if base_m:
+                    bty = env.of(base_m.group(1)) or ""
+                    if _is_ptr_spelling(bty):
+                        ty = _r8q_member_type(views, _ptr_base(bty),
+                                              base_m.group(2))
+            if ty:
+                n += 1
+                ln = ln.replace(st, "%s = (%s)(%s);"
+                                % (lhs, re.sub(r"\s+", " ", ty).strip(), inner))
+                out.append(ln)
+                continue
+            out.append(ln)
+            continue
+
+        # 2) declaration initializer:  TYPE v = (void *)E;
+        m = re.match(r"^(?P<ind>\s*)(?P<ty>[A-Za-z_][\w ]*?)\s*(?P<stars>\**)\s*"
+                     r"(?P<nm>[A-Za-z_]\w*)\s*=\s*(?P<rhs>" + _VOID_RHS + r".+?);\s*$",
+                     ln)
+        if m and m.group("ty").strip() not in (
+                "return", "if", "else", "while", "for", "switch", "case", "do"):
+            ty = (re.sub(r"\s+", " ", m.group("ty")).strip() + " " +
+                  m.group("stars")).strip()
+            inner = re.sub(r"^" + _VOID_RHS, "", m.group("rhs")).strip()
+            n += 1
+            ln = ("%s%s %s = (%s)(%s);"
+                  % (m.group("ind"), ty, m.group("nm"), ty, inner))
+            out.append(ln)
+            continue
+
+        # 3) return (void *)E;  in a non-void function
+        m = re.match(r"^(?P<ind>\s*)return\s+(?P<rhs>" + _VOID_RHS + r".+?);\s*$",
+                     ln)
+        if m:
+            ret = (ctx.sig.get("ret") or "").strip()
+            inner = re.sub(r"^" + _VOID_RHS, "", m.group("rhs")).strip()
+            if ret and ret not in ("void", "") and ret != "int":
+                n += 1
+                ln = "%sreturn (%s)(%s);" % (m.group("ind"), ret, inner)
+            elif ret == "int":
+                n += 1
+                ln = "%sreturn (int)(%s);" % (m.group("ind"), inner)
+            out.append(ln)
+            continue
+
+        out.append(ln)
+
+    if n:
+        ctx.lines = out
