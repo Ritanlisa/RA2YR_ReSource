@@ -8958,3 +8958,72 @@ def pass_r8n_unknown_ns(ctx):
     out = _R8N_DECL.sub(rep_decl, out)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ------------------- R8o: shell-declaration mismatch names -> offset form ---
+# Shell hpps declare ONLY `__pad_<hex>` and `m<hex>` members.  Bodies that
+# still carry `__tail_<hex>`, bare `field_<hex>`, or `<Owner>_field_<hex>`
+# views are guaranteed C2039 -- re-spell to the offset-true access (same
+# byte offset, same width; identical codegen).
+_R8O_PTR = re.compile(
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*)\s*->\s*"
+    r"(?P<mem>__tail_[0-9A-Fa-fx]+|tail_[0-9A-Fa-fx]+|field_[0-9A-Fa-fx]+|"
+    r"[A-Za-z_]\w*_field_[0-9A-Fa-fx]+)")
+_R8O_VAL = re.compile(
+    r"(?<![\w:.>])(?P<recv>[A-Za-z_]\w*(?:\s*\[\s*[^\[\]]+\s*\])?)\s*\.\s*"
+    r"(?P<mem>__tail_[0-9A-Fa-fx]+|tail_[0-9A-Fa-fx]+|field_[0-9A-Fa-fx]+|"
+    r"[A-Za-z_]\w*_field_[0-9A-Fa-fx]+)")
+
+
+def _r8o_off(mem):
+    tail = mem.rsplit("_", 1)[-1]
+    try:
+        if tail.lower().startswith("0x"):
+            return int(tail, 16)
+        return int(tail, 16)
+    except ValueError:
+        return None
+
+
+def pass_r8o_shell_mismatch(ctx):
+    """R8o: non-shell member names (`__tail_*`, `field_*`, `<Owner>_field_*`)
+    -> offset-true accesses."""
+    text = "\n".join(ctx.lines)
+    if "__tail_" not in text and "field_" not in text:
+        return
+    env = _TypeEnv(ctx, text)
+    n = 0
+
+    def known_owner_ok(recv, mem):
+        # keep legit Owner-typed receiver chains (R8l handles indexed ones)
+        if "_field_" in mem and not mem.startswith("field_"):
+            owner = mem.split("_field_", 1)[0]
+            ty = env.of(recv) or ""
+            if _is_ptr_spelling(ty) and _ptr_base(ty) == owner:
+                return True
+        return False
+
+    def rep_ptr(m):
+        nonlocal n
+        recv, mem = m.group("recv"), m.group("mem")
+        if known_owner_ok(recv, mem):
+            return m.group(0)
+        off = _r8o_off(mem)
+        if off is None:
+            return m.group(0)
+        n += 1
+        return "(*(unsigned int *)((char *)(%s) + %d))" % (recv, off)
+
+    def rep_val(m):
+        nonlocal n
+        recv, mem = m.group("recv"), m.group("mem")
+        off = _r8o_off(mem)
+        if off is None:
+            return m.group(0)
+        n += 1
+        return "(*(unsigned int *)((char *)(&(%s)) + %d))" % (recv, off)
+
+    out = _R8O_PTR.sub(rep_ptr, text)
+    out = _R8O_VAL.sub(rep_val, out)
+    if n:
+        ctx.lines = out.split("\n")
