@@ -7834,6 +7834,28 @@ def _arg_is_pointerish(s, ptr_names=None):
     return False
 
 
+# ------------- R9e: Math::RoundToInt = the game's CRT __ftol override ------
+_R9E_FTOL_ADDR = 0x7C5F00
+
+
+def _r9e_ftol_override_site(qual, addr):
+    """True when the callee is the __ftol override at 0x7C5F00.
+
+    Keyed on the registry ADDRESS (rename-stable).  Evidence: body is the
+    classic __ftol fast path (sub esp,0xc; fnstcw; cmp [0x822D80];
+    fistp qword; mov edx,[+4]; mov eax,[..]; ret) -- round-to-nearest
+    instead of the CRT truncate; 2029 direct call sites, zero stack-arg
+    sites (r9f census 2026-11-17); 0x7C5EE4 is its FPU-control-word
+    initializer (single call site).
+    """
+    if isinstance(addr, int):
+        return addr == _R9E_FTOL_ADDR
+    try:
+        return bool(addr) and int(str(addr), 16) == _R9E_FTOL_ADDR
+    except (TypeError, ValueError):
+        return False
+
+
 def pass_callees(ctx):
     """Declare + rewrite qualified call sites (R3 non-leaf support).
 
@@ -7905,6 +7927,26 @@ def pass_callees(ctx):
         segs.append((full_span, qual, args))
     for (s, e), qual, args in reversed(segs):
         addr, rec = ctx.reg.function_by_name(qual)
+        # R9e: the game's Math::RoundToInt (0x7C5F00) is the CRT __ftol
+        # OVERRIDE (round-to-nearest), not a C function: fnstcw/cmp/fistp
+        # -qword fast path returning edx:eax, 2029 direct call sites in the
+        # orig binary and ZERO stack-argument sites (r9f census).  The
+        # original source never spelled a call -- every binary site is a
+        # compiler-generated FP->int conversion (`call _ftol`), which also
+        # reproduces the deferred `add esp,8` cleanup sandwiched between
+        # the fmuls (0x403DB0 verified byte-exact).  Rewrite the call to a
+        # cast of the same ret spelling the free-stub path would have
+        # emitted; declare no prototype -- the obj reloc becomes the
+        # compiler spelling `_ftol`, resolved back to 0x7C5F00 by diffasm's
+        # crt_helper_alias table.
+        if _r9e_ftol_override_site(qual, addr) and len(args) == 1:
+            rret9 = spell_type(rec.get("ret")) if rec else "__int64"
+            text = text[:s] + "(%s)(%s)" % (rret9, args[0]) + text[e:]
+            ctx.sites.append(Site(
+                "callee", ("%s(...)" % qual)[:60],
+                "R9e: ftol-override callee -> FP->int conversion cast "
+                "(no prototype; orig site = compiler `call _ftol`)", True))
+            continue
         owner = qual.rsplit("::", 1)[0] if "::" in qual else None
         method = qual.rsplit("::", 1)[-1]
         # CW3-5 (F3): `Class::Method(args)` was ALWAYS rendered as a member
@@ -10014,3 +10056,370 @@ def pass_r9d_fp_chain_order(ctx):
         n += 1
     if n:
         ctx.lines = lines
+
+
+# ------------------- R10a: unit-level assignment harmonization --------------
+#
+# Root cause (probed, f1 census): the assignment harmonizers (R8m/R8q) run
+# per-function with (a) only the PARTIAL per-function ClassView -- the TU
+# hpp declares the UNION surface, so a member another unit function typed
+# as a pointer compiles as a pointer while this function's env still says
+# `unsigned int` (BuildingClass `Type = this->Type;` C2440
+# BuildingTypeClass*->int); (b) no knowledge of the era register pseudos
+# (`_ECX` declared in era_types.h, so `_ECX = g_RulesClass_Instance;` has
+# LHS ty=None); (c) whole-line `lhs = rhs;` matchers only -- assignments
+# embedded in if/while/for conditions and comma chains are invisible.
+#
+# R10a runs once per part AFTER every context is built (full accumulated
+# views) and wraps assignment RHS spellings to the declared LHS type at
+# SUBSITE granularity.  Fires only on 32-bit kind pairs (ptr<->int,
+# ptr<->ptr-different); float/cls/unknown sides never fire.
+
+_R10A_REG_PSEUDOS = {
+    "_EAX": "unsigned int", "_EBX": "unsigned int", "_ECX": "unsigned int",
+    "_EDX": "unsigned int", "_ESI": "unsigned int", "_EDI": "unsigned int",
+    "_EBP": "unsigned int", "_ESP": "unsigned int",
+    "_AH": "unsigned char", "_AL": "unsigned char", "_BH": "unsigned char",
+    "_BL": "unsigned char", "_CH": "unsigned char", "_CL": "unsigned char",
+    "_DH": "unsigned char", "_DL": "unsigned char",
+}
+
+_R10A_I32 = frozenset((
+    "int", "unsigned int", "long", "unsigned long", "__int32",
+    "unsigned __int32", "_DWORD", "DWORD", "UINT",
+))
+
+# LHS spellings this pass resolves:
+#   IDENT / IDENT[idx]
+#   this->M / this->M[idx] / v->M / v->M[idx] / v[i]->M
+#   ((T *)E)[idx] / ((T **)E)[idx]  cast-store
+#   (*(T *)E) / (*(T **)E)          deref-store
+_R10A_CAST_DEREF = re.compile(
+    r"^\(?\*[\(\s]*([A-Za-z_][\w ]*?)\s*(\*+)\s*\)\s*(.+?)\s*\)?\)?$")
+_R10A_CAST_STORE = re.compile(
+    r"^\(\s*\(?\s*([A-Za-z_][\w ]*?)\s*(\*+)\s*\)?\s*\)\s*"
+    r"(.+?)\s*(?:\[[^\[\]]*\])?\s*$")
+_R10A_CHAIN = re.compile(
+    r"^(?P<head>this|[A-Za-z_]\w*)\s*(?P<hidx>\[[^\[\]]*\])?\s*"
+    r"(?P<arrow>->|\.)\s*(?P<mem>[A-Za-z_]\w*)\s*(?P<midx>\[[^\[\]]*\])?$")
+
+
+def _r10a_cls_members(reg, views, cls, _cache={}):
+    """name -> type for the class member surface as the TU hpp declares it:
+    view roles win (a pointer role dominates a multi-role offset); registry
+    pointer-typed members along the parent chain fill names the views lack.
+    """
+    key = (id(reg), id(views), cls)
+    if key in _cache:
+        return _cache[key]
+    out = {}
+
+    def walk(c, guard):
+        if not c or c in guard:
+            return
+        guard.add(c)
+        rec = reg.classes.get(c) or {}
+        for _o, m in (rec.get("members") or {}).items():
+            nm = (m or {}).get("name")
+            ty = ((m or {}).get("type") or "").strip()
+            if nm and ty.endswith("*") and not reg._is_placeholder(nm):
+                out.setdefault(nm, ty)
+        try:
+            parent = ((getattr(reg, "_cl", None) or {}).get(c) or
+                      {}).get("parent")
+        except Exception:                                  # noqa: BLE001
+            parent = None
+        walk(parent, guard)
+
+    walk(cls, set())
+    for _off, roles in (views.scalars.get(cls) or {}).items():
+        best = None
+        for v in roles.values():
+            ty = (v.get("type") or "").strip()
+            if not ty:
+                continue
+            if best is None or (ty.endswith("*") and not best.endswith("*")):
+                best = ty
+        for v in roles.values():
+            nm = v.get("name")
+            if nm and best:
+                cur = out.get(nm)
+                if cur is None or (best.endswith("*") and
+                                   not (cur or "").endswith("*")):
+                    out[nm] = best
+                elif cur == best:
+                    pass
+                else:
+                    out[nm] = cur   # keep the first (pointer) spelling
+    for _off, arr in (views.arrays.get(cls) or {}).items():
+        nm = arr.get("name")
+        elem = arr.get("elem") or "int"
+        if nm:
+            out[nm] = elem + " *" if not elem.endswith("*") else elem
+    if len(_cache) > 4000:
+        _cache.clear()
+    _cache[key] = out
+    return out
+
+
+def _r10a_lhs_ty(lhs, env, members_of, cls):
+    s = lhs.strip()
+    if not s:
+        return None
+    # deref-store (*(T *)E)
+    m = _R10A_CAST_DEREF.match(s)
+    if m:
+        base, stars = m.group(1).strip(), m.group(2)
+        if len(stars) >= 2:
+            return base + " " + "*" * (len(stars) - 1)
+        if base in _R10A_I32:
+            return "int"
+        if base in ("unsigned char", "char", "short", "unsigned short"):
+            return None                      # narrow store -- never wrap
+        return base if len(stars) == 1 else base + " *"
+    # cast-store ((T *)E)[idx] / ((T *)E)
+    m = _R10A_CAST_STORE.match(s)
+    if m:
+        base, stars = m.group(1).strip(), m.group(2)
+        if s.rstrip().endswith("]"):
+            # element store: T** -> T*
+            if len(stars) >= 2:
+                return base + " " + "*" * (len(stars) - 1)
+            if base in _R10A_I32:
+                return "int"
+            return None if base in ("char", "unsigned char", "short",
+                                    "unsigned short") else base
+        return base + " " + stars
+    # member chain
+    m = _R10A_CHAIN.match(s)
+    if m:
+        head = m.group("head")
+        if head == "this":
+            hty = (cls or "C") + " *"
+        else:
+            hty = env.of(head) or ""
+        if not hty.endswith("*"):
+            return None
+        base = hty[:-1].strip()
+        mty = members_of(base).get(m.group("mem"))
+        if not mty:
+            return None
+        if m.group("midx"):                 # v->M[i] : element of ptr view
+            if mty.endswith("**"):
+                return mty[:-1].strip()
+            if mty in _R10A_I32:
+                return mty
+            return None
+        return mty
+    # plain IDENT (with optional single subscript)
+    mm = re.match(r"^([A-Za-z_]\w*)\s*(\[[^\[\]]*\])?$", s)
+    if mm:
+        ty = env.of(mm.group(1)) or _R10A_REG_PSEUDOS.get(mm.group(1))
+        if ty and mm.group(2):
+            # R10b: v[i] is an ELEMENT store -- one deref of the declared
+            # type (`T *p` -> element T; `T **p` -> element T *).  The
+            # subscript-blind spelling returned `T *` for `p[i] = x`,
+            # so R10a wrapped the scalar element store RHS as `(T *)(x)`.
+            if ty.endswith("*"):
+                return ty[:-1].strip()
+        return ty
+    return None
+
+
+def _r10a_rhs_kind(rhs, env, members_of, cls):
+    """(kind, type) for RHS: 'ptr' / 'int'(4B only) / None."""
+    s = rhs.strip()
+    m = _R10A_CHAIN.match(s)
+    if m:
+        head = m.group("head")
+        if head == "this":
+            hty = (cls or "C") + " *"
+        else:
+            hty = env.of(head) or ""
+        if hty.endswith("*"):
+            base = hty[:-1].strip()
+            mty = members_of(base).get(m.group("mem"))
+            if mty:
+                if m.group("midx"):
+                    if mty.endswith("**"):
+                        return "ptr", mty[:-1].strip()
+                    if mty in _R10A_I32:
+                        return "int", mty
+                    return None, None
+                if mty.endswith("*"):
+                    return "ptr", mty
+                if mty in _R10A_I32:
+                    return "int", mty
+                return None, None
+    k, rt = _rhs_ptr_head(s, env)
+    if k == "int" and rt in _R10A_I32:
+        return "int", rt
+    if k == "ptr":
+        return "ptr", rt
+    return None, None
+
+
+def _r10a_scan_sites(text):
+    """Yield (lhs_start, lhs_end, eq_idx, rhs_start, rhs_end) for assignments
+    (subsite granularity: embedded in if/for conditions, comma chains)."""
+    n = len(text)
+    i = 0
+    depth = 0
+    while i < n:
+        c = text[i]
+        if c == '"':
+            i = _r10a_skip_str(text, i)
+            continue
+        if c == "'":
+            i = _r10a_skip_str(text, i)
+            continue
+        if c == '/' and text[i:i + 2] == "//":
+            j = text.find("\n", i)
+            i = n if j < 0 else j + 1
+            continue
+        if c == '/' and text[i:i + 2] == "/*":
+            j = text.find("*/", i)
+            i = n if j < 0 else j + 2
+            continue
+        if c in "([{":
+            depth += 1
+        elif c in ")]}":
+            depth -= 1
+        elif c == "=" and (i + 1 >= n or text[i + 1] != "=") and \
+                (i == 0 or text[i - 1] not in "=!<>+-*/%&|^"):
+            base_depth = depth
+            # ---- LHS extent (walk back)
+            j = i - 1
+            d = 0
+            while j >= 0:
+                ch = text[j]
+                if ch in ")]":
+                    d += 1
+                    j -= 1
+                    continue
+                if ch in "([":
+                    if d == 0:
+                        break               # enclosing group opens here
+                    d -= 1
+                    j -= 1
+                    continue
+                # R10b: bracket chars must not fall through to the
+                # allowed-char check -- after `(` decremented d to 0 the
+                # `(` itself (never in the allowed set) broke the walk,
+                # silently dropping a leading deref star from the LHS
+                # (`*(unsigned int *)v12 = ...` was sliced as
+                # `(unsigned int *)v12`, so lhs_ty judged a POINTER LHS
+                # and R10a wrapped the scalar-store RHS as `(T *)(x)`,
+                # C2440 family).
+                if d == 0 and (ch in ";,{}" or
+                               not (ch.isalnum() or
+                                    ch in " \t_*.->&[]")):
+                    break
+                j -= 1
+            ls = j + 1
+            # balance: a cast-store LHS may have lost outer '('s when the
+            # walk broke at the enclosing cast paren
+            while ls > 0 and \
+                    text[ls:i].count(")") > text[ls:i].count("("):
+                ls -= 1
+            # ---- RHS extent (walk forward)
+            k = i + 1
+            d2 = 0
+            while k < n:
+                ch = text[k]
+                if ch == '"':
+                    k = _r10a_skip_str(text, k)
+                    continue
+                if ch == "'":
+                    k = _r10a_skip_str(text, k)
+                    continue
+                if ch == '/' and text[k:k + 2] == "//":
+                    m2 = text.find("\n", k)
+                    k = n if m2 < 0 else m2 + 1
+                    continue
+                if ch in "([{":
+                    d2 += 1
+                elif ch in ")]}":
+                    if d2 == 0:
+                        break               # enclosing group closes
+                    d2 -= 1
+                elif d2 == 0 and ch in ";,":
+                    break
+                k += 1
+            yield ls, i, i + 1, k
+            i = k
+            continue
+        i += 1
+
+
+def _r10a_skip_str(text, i):
+    q = text[i]
+    i += 1
+    n = len(text)
+    while i < n:
+        if text[i] == "\\":
+            i += 2
+            continue
+        if text[i] == q:
+            return i + 1
+        i += 1
+    return n
+
+
+def pass_r10a_unit_assign(ctx, views):
+    """R10a: wrap assignment RHS to the declared LHS type (unit-level env:
+    full accumulated views + registry pointer overlay + register pseudos)."""
+    text = "\n".join(ctx.lines)
+    if "=" not in text:
+        return
+    cls = ctx.sig.get("cls")
+    reg = getattr(ctx, "reg", None)
+    if reg is None:
+        return
+    env = _TypeEnv(ctx, text)
+    for nm, ty in _R10A_REG_PSEUDOS.items():
+        env.map.setdefault(nm, ty)
+    members_of = (lambda c: _r10a_cls_members(reg, views, c)) \
+        if reg is not None else (lambda c: {})
+    # only this class's member surface for env.member (rhs_ptr_head uses it)
+    env.members = dict(members_of(cls) or {})
+    env.arrays = {}          # force the member() path (full unit surface)
+
+    edits = []
+    for ls, eq, rs, re_ in _r10a_scan_sites(text):
+        lhs = text[ls:eq].strip()
+        rhs = text[rs:re_].strip()
+        if not lhs or not rhs or "\n" in lhs:
+            continue
+        t = _r10a_lhs_ty(lhs, env, members_of, cls)
+        if not t:
+            continue
+        t = re.sub(r"\s+", " ", t).strip()
+        lt_ptr = t.endswith("*")
+        lt_i32 = t in _R10A_I32
+        if not (lt_ptr or lt_i32):
+            continue
+        k, rt = _r10a_rhs_kind(rhs, env, members_of, cls)
+        if k is None or k == "float":
+            continue
+        rt = re.sub(r"\s+", " ", (rt or "")).strip()
+        fire = False
+        if lt_ptr and k == "int":
+            fire = True
+        elif lt_i32 and k == "ptr":
+            fire = True
+        elif lt_ptr and k == "ptr" and \
+                re.sub(r"\s+", "", t) != re.sub(r"\s+", "", rt):
+            fire = True
+        if not fire:
+            continue
+        new = "%s = (%s)(%s)" % (lhs, t, rhs)
+        edits.append((ls, re_, new))
+    if edits:
+        for ls, re_, new in reversed(edits):
+            text = text[:ls] + new + text[re_:]
+        ctx.lines = text.split("\n")
+        ctx.sites.append(Site(
+            "assign", "%d site(s)" % len(edits),
+            "R10a unit-level RHS wrap to declared LHS type "
+            "(full views + registry overlay + reg pseudos)", True))
