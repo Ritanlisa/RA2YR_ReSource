@@ -9879,3 +9879,138 @@ def pass_r8u_hybrid_fold(ctx):
     out = _R8U_CALL.sub(rep_call, out)
     if n:
         ctx.lines = out.split("\n")
+
+
+# ---------------- R9c: single-use FP temp inlining (fmul/fld family) --------
+# Orig binaries chain `call -> fmul [C] -> fmul [C]` (result stays in st0);
+# our emission kept Hex-Rays' `double v0 = Call(...);` temp, and VC6 then
+# juggles the x87 stack (`fld [C]; fmul [C]; fmul st(1); fstp; fstp st(0)`).
+# Inline the single-use FP temp so the source spells the original chain.
+_R9C_DECL = re.compile(
+    r"^(?P<ind>\s*)(?P<ty>double|float)\s+(?P<nm>[A-Za-z_]\w*)\s*=\s*"
+    r"(?P<expr>[A-Za-z_]\w*(?:::[A-Za-z_]\w*)?\s*\([^;]*\))\s*;\s*$")
+
+
+def pass_r9c_fp_temp_inline(ctx):
+    """R9c: `double v = Call(...);` used exactly once -> inline the call."""
+    text = "\n".join(ctx.lines)
+    n = 0
+    lines = text.split("\n")
+    # R9c v3: hoisted-decl merge REMOVED -- rewriting `v = Call(...);` into
+    # `double v = Call(...);` mid-body was scope-blind: goto-over-init (C2362)
+    # and nested-block decl vs outer use (C2065) each regressed functions.
+    # The inline-decl form below covers the FP family (chain-tail text already
+    # carries `double v = Call(...);`).
+    cands = []
+    for i, ln in enumerate(lines):
+        m = _R9C_DECL.match(ln)
+        if m:
+            cands.append((i, m))
+    if not cands:
+        return
+    body_all = "\n".join(lines)
+    for i, m in cands:
+        nm = m.group("nm")
+        expr = re.sub(r"\s+", " ", m.group("expr")).strip()
+        # 出现次数：声明行 1 次 + 使用点必须恰好 1 次
+        uses = len(re.findall(r"\b%s\b" % re.escape(nm), body_all))
+        if uses != 2:
+            continue
+        # 使用点行（非声明行）
+        use_idx = None
+        for j, ln in enumerate(lines):
+            if j == i:
+                continue
+            if re.search(r"\b%s\b" % re.escape(nm), ln):
+                use_idx = j
+                break
+        if use_idx is None:
+            continue
+        # 保守：使用点必须在声明行之后
+        if use_idx < i:
+            continue
+        # 代入
+        new_use = re.sub(r"\b%s\b" % re.escape(nm),
+                         lambda _m: expr, lines[use_idx], count=1)
+        if new_use == lines[use_idx]:
+            continue
+        lines[use_idx] = new_use
+        lines[i] = m.group("ind") + "; /* R9c: inlined %s */" % nm
+        n += 1
+    if n:
+        ctx.lines = lines
+
+
+# ------------- R9d: FP multiply-chain constant order (VC6 rightmost-first) ---
+# VC6 applies `X * A * B` as fmul(B) then fmul(A) (0x403db0 reloc-verified);
+# to reproduce the orig binary's fmul sequence [P1, P2, ...] the SOURCE must
+# spell the trailing constants in REVERSE: `X * P2 * P1`.  Hex-Rays prints
+# the chain in its own normalized order -- reorder from the disasm.
+_R9D_SYM_ADDR = re.compile(r"^DataGlobal_([0-9A-Fa-f]{6})$")
+
+
+def _r9d_disasm_fmul_seq(disasm_lines):
+    seq = []
+    for ln in disasm_lines or []:
+        m = re.search(r"\b(fmul|fadd)\b[^;]*(?:ds:)?(?:dbl_|flt_|DataGlobal_)"
+                      r"([0-9A-Fa-f]{6,})", ln)
+        if m:
+            seq.append((m.group(1), int(m.group(2), 16)))
+        else:
+            m2 = re.search(r"\b(fmul|fadd)\b[^;]*?\[?(?:0x)?([0-9A-Fa-f]{6,})"
+                           r"[\]\s]", ln)
+            if m2:
+                seq.append((m2.group(1), int(m2.group(2), 16)))
+    return seq
+
+
+def pass_r9d_fp_chain_order(ctx):
+    """R9d: trailing FP-symbol run in a `*` chain -> reverse(disasm order)."""
+    text = "\n".join(ctx.lines)
+    seq = _r9d_disasm_fmul_seq(getattr(getattr(ctx, "ex", None),
+                                       "disasm_lines", None) or [])
+    if len(seq) < 2:
+        return
+    ug = getattr(ctx, "used_globals", None) or {}
+    fp_syms = {}
+    for nm, ty in ug.items():
+        if (ty or "").strip() in ("double", "float"):
+            m = _R9D_SYM_ADDR.match(nm or "")
+            if m:
+                fp_syms[nm] = int(m.group(1), 16)
+    if len(fp_syms) < 2:
+        return
+    n = 0
+    lines = text.split("\n")
+    for i, ln in enumerate(lines):
+        if "*" not in ln or ";" not in ln:
+            continue
+        st = ln.strip()
+        # 尾部常量run：`BASE * S1 * S2 [* S3 ...]`（S 全部是 FP DataGlobal 符号）
+        m = re.match(
+            r"^(?P<head>.+?\*)\s*(?P<s1>[A-Za-z_]\w*)"
+            r"(?P<rest>(?:\s*\*\s*[A-Za-z_]\w*)+)(?P<tail>[^*]*)$", st)
+        if not m:
+            continue
+        syms = [m.group("s1")] + re.findall(r"\*\s*([A-Za-z_]\w*)",
+                                            m.group("rest"))
+        if len(syms) < 2:
+            continue
+        if not all(x in fp_syms for x in syms):
+            continue
+        addrs = [fp_syms[x] for x in syms]
+        # disasm 中这些地址的 fmul 应用序（按出现顺序）
+        order = [a for (_op, a) in seq if a in set(addrs)]
+        if sorted(order) != sorted(addrs) or len(order) != len(addrs):
+            continue          # disasm 未恰好覆盖本链 -> 保守跳过
+        want = list(reversed(order))          # 源码序 = 应用序反序
+        if addrs == want:
+            continue          # 已一致
+        new_syms = [nm for nm in fp_syms if fp_syms[nm] in want]
+        new_syms.sort(key=lambda nm: want.index(fp_syms[nm]))
+        new = "%s %s%s" % (m.group("head").rstrip(), " * ".join(new_syms),
+                           m.group("tail"))
+        lines[i] = ln.replace(st, new)
+        n += 1
+    if n:
+        ctx.lines = lines
