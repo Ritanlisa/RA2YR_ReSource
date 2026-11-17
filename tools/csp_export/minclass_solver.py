@@ -3020,6 +3020,34 @@ def main():
         _name_ix2 = {}
         for _i2 in range(n):
             _name_ix2.setdefault(str(names[_i2]).lower(), _i2)
+        # ---- B1（bm4）：类名/原语类型小写键碰撞修复 ----
+        # 宇宙含类 Char/Float（CamelCase）与原语 char/float（type vocab 小写）。
+        # 旧 _name_ix2 全小写键 + setdefault 首个命中 ⇒ 类下标更小恒胜，token
+        # 'char'/'float' 被错绑到类 Char/Float 的原子位（实测 11,464 行证据
+        # 受染：char 10,187 + float 1,325；BM3 §4 六簇宽化即其表现形态）。
+        # 修复规则（跨命名空间精确优先）：
+        #   1) token 精确匹配全名（类 CamelCase / 原语小写天然分域）；
+        #   2) 精确命中者与小写回退者**跨**类/原语域 → 精确者胜（本修复）；
+        #   3) 同域（类-类拼写变体，如 Exception/exception、ToolTipClass/
+        #      TooltipClass）→ 保持旧 winner-first 行为（保守，不动已裁定变体）；
+        #   4) 无精确命中 → 旧小写回退（兼容既有大小写漂移 token）。
+        _exact_ix2 = {}
+        for _i2 in range(n):
+            _exact_ix2.setdefault(str(names[_i2]), _i2)
+        _N_CLS_ONLY = _CLASSMASK.bit_length()   # names[0:k]=类, names[k:]=类型词汇
+
+        def _tok_ix(tok):
+            if not isinstance(tok, str):
+                return None
+            _e = _exact_ix2.get(tok)
+            if _e is None:
+                return _name_ix2.get(tok.lower())
+            _w = _name_ix2.get(tok.lower())
+            if _w is None or _e == _w:
+                return _e
+            if (_e >= _N_CLS_ONLY) != (_w >= _N_CLS_ONLY):
+                return _e
+            return _w
         for _rec in (jload("anchors/member_type_installs.json", {}) or {}).get("evidence") or []:
             _e = _rec.get("ent")
             _clss = _rec.get("classes") or []
@@ -3027,7 +3055,7 @@ def main():
                 continue
             m2 = 0
             for _c2 in _clss:
-                _ix = _name_ix2.get(str(_c2).lower())
+                _ix = _tok_ix(str(_c2))
                 if _ix is not None:
                     m2 |= (1 << _ix)
             if not m2:
@@ -3053,7 +3081,7 @@ def main():
                 continue
             m2b = 0
             for _c2b in (_rec.get("classes") or []):
-                _ix2b = _name_ix2.get(str(_c2b).lower())
+                _ix2b = _tok_ix(str(_c2b))
                 if _ix2b is not None:
                     m2b |= (1 << _ix2b)
             if not m2b:
@@ -3069,7 +3097,7 @@ def main():
 
     # ---------------- MR：成员类型经接收者域（dom(M) = member_type(dom(T:fn), off)）----------------
     try:
-        _name_ix3 = _name_ix2
+        _name_ix3 = _name_ix2   # B1: 旧别名保留；token 解析统一走 _tok_ix
         for _rec in (jload("anchors/member_by_receiver.json", {}) or {}).get("evidence") or []:
             _e = _rec.get("ent")
             _clss = _rec.get("classes") or []
@@ -3077,7 +3105,7 @@ def main():
                 continue
             m3 = 0
             for _c3 in _clss:
-                _ix3 = _name_ix3.get(str(_c3).lower())
+                _ix3 = _tok_ix(str(_c3))
                 if _ix3 is not None:
                     m3 |= (1 << _ix3)
             if not m3:
@@ -3104,7 +3132,7 @@ def main():
                 continue
             m9b = 0
             for _c9b in (_rec.get("classes") or []):
-                _ix9b = _name_ix3.get(str(_c9b).lower())
+                _ix9b = _tok_ix(str(_c9b))
                 if _ix9b is not None:
                     m9b |= (1 << _ix9b)
             if not m9b:
@@ -3127,7 +3155,7 @@ def main():
                 continue
             m7 = 0
             for _c7 in (_rec.get("classes") or []):
-                _ix8 = _name_ix2.get(str(_c7).lower())
+                _ix8 = _tok_ix(str(_c7))
                 if _ix8 is not None:
                     m7 |= (1 << _ix8)
             if not m7:
@@ -3156,7 +3184,7 @@ def main():
                 continue
             m9 = 0
             for _t9 in (_rec.get("types") or []):
-                _ixa = _name_ix2.get(_norm_ty(_t9).lower())
+                _ixa = _tok_ix(_norm_ty(_t9))
                 if _ixa is not None:
                     m9 |= (1 << _ixa)
             if not m9:
@@ -3177,7 +3205,7 @@ def main():
                 continue
             m8 = 0
             for _t8 in (_rec.get("types") or []):
-                _ix9 = _name_ix2.get(_norm_ty(_t8).lower())
+                _ix9 = _tok_ix(_norm_ty(_t8))
                 if _ix9 is not None:
                     m8 |= (1 << _ix9)
             if not m8:
@@ -3212,7 +3240,7 @@ def main():
                 continue
             m_pu = 0
             for _tpu in (_rec.get("types") or []):
-                _ixpu = _name_ix2.get(_norm_ty(_tpu).lower())
+                _ixpu = _tok_ix(_norm_ty(_tpu))
                 if _ixpu is not None:
                     m_pu |= (1 << _ixpu)
             if not m_pu:
@@ -3238,7 +3266,7 @@ def main():
                 continue
             m_p3 = 0
             for _tp3 in (_rec.get("types") or []):
-                _ixp3 = _name_ix2.get(_norm_ty(_tp3).lower())
+                _ixp3 = _tok_ix(_norm_ty(_tp3))
                 if _ixp3 is not None:
                     m_p3 |= (1 << _ixp3)
             if not m_p3:
@@ -3459,7 +3487,7 @@ def main():
                 continue
             m_ss = 0
             for _c_ss in (_rec_ss.get("match_classes") or []):
-                _ix_ss = _name_ix2.get(str(_c_ss).lower())
+                _ix_ss = _tok_ix(str(_c_ss))
                 if _ix_ss is not None:
                     m_ss |= (1 << _ix_ss)
             if not m_ss or m_ss == FULL:
@@ -3496,7 +3524,7 @@ def main():
                 _e_pp = "P:%X:%d" % (_ca_pp, _j_pp)
                 if _e_pp not in ents:
                     touch(_e_pp, "0x%08X::param%d" % (_ca_pp, _j_pp))
-                _m_pp = _name_ix2.get("char*")
+                _m_pp = _tok_ix("char*")
                 if _m_pp is None:
                     continue
                 fam["PP"][_e_pp] = fam["PP"].get(_e_pp, FULL) & (1 << _m_pp)
@@ -3637,8 +3665,12 @@ def main():
     # s35_bm2.py 增量（W-A 收割 1,252 新 OK 地址，同比复检 MATCH+clean，追加 49 条，
     # 1 dedupe + 3 conflict 剔除；实测 empty_clusters 不变、conflicts=0、无簇损失）。
     try:
-        census["BM"] = _load_type_family("anchors/byte_match_types.json", "BM")
-        print("[BM] byte-match closing-witness types: %d" % census["BM"], flush=True)
+        # bm4: 测试性证据通道（repro/对照实验用）。默认值不变 = 生产文件；
+        # 仅当 MINCLASS_BM_EVID 显式指向替换文件时才读它（cache key 随输入
+        # 指纹变化，不会污染生产缓存）。
+        _bm_evid_path = os.environ.get("MINCLASS_BM_EVID", "anchors/byte_match_types.json")
+        census["BM"] = _load_type_family(_bm_evid_path, "BM")
+        print("[BM] byte-match closing-witness types: %d (evid=%s)" % (census["BM"], _bm_evid_path), flush=True)
     except Exception as _e_bm:
         census["BM"] = census.get("BM", 0)
         print("[BM] skipped: %r" % _e_bm, flush=True)
@@ -3926,7 +3958,7 @@ def main():
             _irf = (jload("anchors/int_returns.json", {}) or {}).get("fns") or []
             _irm = 0
             for _tn in ("int", "unsigned int", "bool", "char", "unsigned char"):
-                _ix4 = _name_ix2.get(_tn)
+                _ix4 = _tok_ix(_tn)
                 if _ix4 is not None:
                     _irm |= (1 << _ix4)
             _n_ir = 0
@@ -3955,7 +3987,7 @@ def main():
                     continue
                 m5 = 0
                 for _c5 in (_rec.get("classes") or []):
-                    _ix5 = _name_ix2.get(str(_c5).lower())
+                    _ix5 = _tok_ix(str(_c5))
                     if _ix5 is not None:
                         m5 |= (1 << _ix5)
                 if not m5:
@@ -3974,7 +4006,7 @@ def main():
         try:
             _cpm = 0
             for _tn2 in ("int", "unsigned int", "bool", "char", "unsigned char"):
-                _ix6 = _name_ix2.get(_tn2)
+                _ix6 = _tok_ix(_tn2)
                 if _ix6 is not None:
                     _cpm |= (1 << _ix6)
             _n_cp = 0
@@ -3984,7 +4016,7 @@ def main():
                     continue
                 m6 = 0
                 for _t6 in (_rec.get("types") or []):
-                    _ix7 = _name_ix2.get(str(_t6).lower())
+                    _ix7 = _tok_ix(str(_t6))
                     if _ix7 is not None:
                         m6 |= (1 << _ix7)
                 if not m6:

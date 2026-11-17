@@ -1,0 +1,240 @@
+[
+ {
+  "fn": "0x0043AE10",
+  "size": 51,
+  "src": "bm3",
+  "ent": "T:43AE10",
+  "types": [
+   "StaticButtonClass"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "signals_cls",
+  "proof": "ledger-attribution"
+ },
+ {
+  "fn": "0x0043AE10",
+  "size": 51,
+  "src": "bm3",
+  "ent": "P:43AE10:0",
+  "types": [
+   "int*"
+  ],
+  "via": "bm-sig",
+  "tier": "strict",
+  "cc": null,
+  "param": "p0",
+  "proof": "codegen-consistent"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "T:49E3B0",
+  "types": [
+   "Movie"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "signals_cls",
+  "proof": "ledger-attribution"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "RET:49E3B0",
+  "types": [
+   "char"
+  ],
+  "via": "bm-sig",
+  "tier": "strict",
+  "cc": null,
+  "proof": "codegen-consistent"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "P:49E3B0:1",
+  "types": [
+   "int*"
+  ],
+  "via": "bm-sig",
+  "tier": "strict",
+  "cc": null,
+  "param": "p1",
+  "proof": "codegen-consistent"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "M:49E3B0:this:0x5C",
+  "types": [
+   "int",
+   "unsigned int"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "__pad_05C",
+  "decl_ty": "int",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "M:49E3B0:this:0x58",
+  "types": [
+   "int",
+   "unsigned int"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "ptr_58",
+  "decl_ty": "unsigned int",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x0049E3B0",
+  "size": 68,
+  "src": "bm3",
+  "ent": "M:49E3B0:this:0x60",
+  "types": [
+   "char",
+   "unsigned char"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "u32_60",
+  "decl_ty": "unsigned char",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x0049E4F0",
+  "size": 31,
+  "src": "bm3",
+  "ent": "T:49E4F0",
+  "types": [
+   "CampaignClass"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "backfill",
+  "proof": "ledger-attribution"
+ },
+ {
+  "fn": "0x0049E4F0",
+  "size": 31,
+  "src": "bm3",
+  "ent": "P:49E4F0:0",
+  "types": [
+   "int*"
+  ],
+  "via": "bm-sig",
+  "tier": "strict",
+  "cc": null,
+  "param": "p0",
+  "proof": "codegen-consistent"
+ },
+ {
+  "fn": "0x0049E4F0",
+  "size": 31,
+  "src": "bm3",
+  "ent": "M:49E4F0:this:0x60",
+  "types": [
+   "char",
+   "unsigned char"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "m060",
+  "decl_ty": "unsigned char",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x0049E4F0",
+  "size": 31,
+  "src": "bm3",
+  "ent": "M:49E4F0:this:0x5C",
+  "types": [
+   "int",
+   "unsigned int"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "q05C",
+  "decl_ty": "unsigned int",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x004F3A90",
+  "size": 23,
+  "src": "bm3",
+  "ent": "T:4F3A90",
+  "types": [
+   "State"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "backfill",
+  "proof": "ledger-attribution"
+ },
+ {
+  "fn": "0x004F3A90",
+  "size": 23,
+  "src": "bm3",
+  "ent": "M:4F3A90:this:0x8",
+  "types": [
+   "char",
+   "unsigned char"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "AIPlayers",
+  "decl_ty": "unsigned char",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x00544C80",
+  "size": 43,
+  "src": "bm3",
+  "ent": "T:544C80",
+  "types": [
+   "CellClass"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "signals_cls",
+  "proof": "ledger-attribution"
+ },
+ {
+  "fn": "0x00544C80",
+  "size": 43,
+  "src": "bm3",
+  "ent": "M:544C80:this:0x2F4",
+  "types": [
+   "char",
+   "unsigned char"
+  ],
+  "via": "bm-member",
+  "tier": "strict",
+  "member": "m2F4",
+  "decl_ty": "unsigned char",
+  "proof": "width-pinned"
+ },
+ {
+  "fn": "0x0069E9F0",
+  "size": 63,
+  "src": "bm3",
+  "ent": "T:69E9F0",
+  "types": [
+   "ObjectClass"
+  ],
+  "via": "bm-owner",
+  "tier": "strict",
+  "cls_src": "backfill",
+  "proof": "ledger-attribution"
+ }
+]
