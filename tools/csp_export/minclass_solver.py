@@ -8683,6 +8683,42 @@ def main():
                     _cls_a.append(_cc_a)
                     _conf_a.append(0 if _pop_a == 1 else (1 if _pop_a <= 8 else 2))
                 _off_a += _nb_a
+            # ---- MR>IG 仲裁变现（bm5）：恢复簇在 res["assign"] 有单答案但
+            # 不在 stash/dom_sizes（rust solve 输出未含被清空又恢复的簇），
+            # assignments 写盘从 stash 取根集 → 恢复簇永远缺失。此处从仲裁
+            # 台账 + assign 合成 candidates=[cls] 条目注入（gated 同旗标）。
+            if _arb_mr_ig:
+                _arb_ent = {e["cluster"]: e for e in _res_ledger
+                            if e.get("status") == "arbitrated_mr_over_ig"}
+                _have_a = set(_roots_a)
+                _assign_ix = res.get("assign") or {}
+                _cls_ix_by_root = {}
+                for _kk, _ci in _assign_ix.items():
+                    try:
+                        _ii = int(_kk)
+                    except (TypeError, ValueError):
+                        continue
+                    if 0 <= _ii < len(_roots_aw) and _ci is not None \
+                            and 0 <= _ci < n:
+                        _cls_ix_by_root[_roots_aw[_ii]] = _ci
+                import struct as _st_arb
+                for _rk in sorted(_arb_ent):
+                    if _rk in _have_a:
+                        continue
+                    _ci = _cls_ix_by_root.get(_rk)
+                    if _ci is None:
+                        continue
+                    _roots_a.append(_rk)
+                    _counts_a.append(1)
+                    _blob_a += _st_arb.pack("<H", _ci)
+                    _cls_a.append(names[_ci])
+                    _conf_a.append(0)      # forced（仲裁单答案）
+                    _ent_map_a.setdefault(
+                        _rk, list(_arb_ent[_rk].get("ents") or [])[:12])
+                _n_arb_mat = sum(1 for r in _roots_a if r in _arb_ent)
+                print("[arbitrate] assignments materialized +%d recovered "
+                      "(of %d arbitrated)" % (_n_arb_mat, len(_arb_ent)),
+                      flush=True)
             _rs_mod_cell[0].dump_assignments(
                 apath, _roots_a, _counts_a, bytes(_blob_a), list(names),
                 [_ent_map_a.get(_r, []) for _r in _roots_a],
