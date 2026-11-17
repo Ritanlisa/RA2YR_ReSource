@@ -148,12 +148,40 @@ def _external_name(key):
     return s.lstrip("_")
 
 
+# R9e/W1: compiler-generated CRT helper spellings the original binary
+# overrides in-house.  Keyed on the decoration-stripped spelling, mapped to
+# the signals function NAME (resolved through func_by_name -- identity, not
+# an address guess).  Data-driven from crt_helper_alias.json.
+_CRT_HELPER_ALIAS_CACHE = None
+
+
+def _crt_helper_aliases():
+    global _CRT_HELPER_ALIAS_CACHE
+    if _CRT_HELPER_ALIAS_CACHE is None:
+        _CRT_HELPER_ALIAS_CACHE = {}
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         "crt_helper_alias.json")
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+        except Exception:
+            raw = {}
+        for k, v in (raw.get("aliases") or {}).items():
+            if isinstance(k, str) and isinstance(v, str):
+                _CRT_HELPER_ALIAS_CACHE[_external_name(k)] = v
+    return _CRT_HELPER_ALIAS_CACHE
+
+
 def resolve_func_name(key):
     """Resolve a COFF reloc symbol key to a signals function address.
 
     Direct hit, then `Class__Method` -> `Class::Method` (the generator's
     identifier sanitisation), then the decoration-stripped external alias
-    (identity map built from signals; ambiguous spellings excluded).
+    (identity map built from signals; ambiguous spellings excluded), then
+    the CRT-helper alias table (compiler-generated helper spellings that
+    the original binary overrides in-house -- e.g. `_ftol`, whose game
+    implementation is Math::RoundToInt at 0x7C5F00; see
+    crt_helper_alias.json).
     """
     if _func_name_map_cache is None:
         _load_maps()
@@ -167,6 +195,9 @@ def resolve_func_name(key):
             return nf[alt]
     if key.startswith("_") and key != "_" and key[1:] in nf:
         return nf[key[1:]]
+    _crt = _crt_helper_aliases().get(_external_name(key))
+    if _crt and _crt in nf:
+        return nf[_crt]
     return (_ext_alias_cache or {}).get(_external_name(key))
 
 

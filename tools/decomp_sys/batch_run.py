@@ -46,6 +46,7 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools", "codegen_match"))
 
 import decompile                                     # noqa: E402
+import passes                                        # noqa: E402
 import pseudo                                        # noqa: E402
 import checker                                       # noqa: E402
 import hpp_pilot                                     # noqa: E402
@@ -326,6 +327,17 @@ def run_part(addrs, batch_src, out, reg, idx):
         views = ClassView()
         for ctx in ctxs:
             merge_views(views, ctx.views)
+        # R10a: unit-level final assignment harmonization -- the per-fn
+        # harmonizers ran with PARTIAL views; the TU hpp below declares the
+        # union surface, so re-judge assignments against the full views
+        # (+ registry pointer overlay + era register pseudos).
+        for ctx in ctxs:
+            try:
+                passes.pass_r10a_unit_assign(ctx, views)
+            except Exception:                              # noqa: BLE001
+                import traceback as _tb
+                print("[R10A-ERR] %s %s" % (ctx.sig.get("addr"),
+                                            _tb.format_exc(limit=3)))
         by_cls = OrderedDict()
         for ctx in ctxs:
             if ctx.sig["cls"] is None:
