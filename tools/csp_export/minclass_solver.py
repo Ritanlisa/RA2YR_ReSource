@@ -1055,6 +1055,10 @@ def _compute_cache_key(args, input_parts=None):
         "v": 1,
         "solver_sha256": src_hash,
         "args": {k: v for k, v in sorted(vars(args).items())},
+        # MR>IG 仲裁有效态进缓存键：env 门控（MINCLASS_ARBITRATE_MR_OVER_IG）
+        # 不在 vars(args) 里——不进键会让 env 开启静默命中 gate-off 缓存。
+        "arb_mr_ig": (bool(getattr(args, "arbitrate_mr_over_ig", False))
+                      or os.environ.get("MINCLASS_ARBITRATE_MR_OVER_IG") == "1"),
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -1310,6 +1314,10 @@ def main():
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--no-c26-locality", action="store_true", help="disable C26 link-order locality")
+    ap.add_argument("--arbitrate-mr-over-ig", action="store_true",
+                    help="MR>IG 宽度矛盾仲裁（默认关闭）：MR∩IG 簇交域为空时丢弃该簇实体的 IG 掩码"
+                         "（member_types 溯源压过粒度推断；校准见 .omo/agents/bm/report_mr_ig.md）。"
+                         "环境变量 MINCLASS_ARBITRATE_MR_OVER_IG=1 同效。")
     ap.add_argument("--allow-heuristics", action="store_true",
                     help="allow heuristic families (C18/C18b/C18c/C26) to produce exact identities (off by default: they are not necessary conditions)")
     ap.add_argument("--audit-layout", default=None, help="report a class layout coverage against its identified functions")
@@ -7785,6 +7793,19 @@ def main():
     # 台账（可审计、可回滚）。只动本簇的实体掩码——簇按并查集划分实体，互不泄漏。
     # 消解后仍有冲突 → 求解未定义，硬失败退出。
     _PROV_RANK = ("C4", "C9", "C8", "C5", "C6", "C3", "C1", "C11", "C10", "C2", "C7", "C15")
+    # ---- MR>IG 宽度矛盾仲裁（--arbitrate-mr-over-ig / MINCLASS_ARBITRATE_MR_OVER_IG=1，
+    # 默认关闭）---------------------------------------------------------------
+    # 校准（.omo/agents/bm/report_mr_ig.md，2026-11-17）：drop 台账 7,235 中 MR∩IG
+    # 矛盾 4,162 为最大可仲裁族对。可 join 接收者钉定 + member_types 真值的 3,870 簇：
+    # 真值 ∈ MR 域 3,818 / ∈ IG 域 2（真名成员 3,285:0 一边倒）。IG 两病理实证：
+    # ①类型词汇缺 bool/char[N]（宽度一致仅 token 缺席，bool 1,779 + char[1] 1,295）；
+    # ②指针链偏移折叠——[this->m + k] 记成 this+(m+k)（0x4143AE: 0x6C4+0x230=0x8F4
+    # 实证）+ 逐字节序列化访问（0x431A5A-0x63 byte-store 串）。规则确定性：矛盾
+    # 双方同时含 MR 与 IG 时丢该簇实体的 IG 掩码（member_types 溯源 > 粒度推断）；
+    # 不引入计数/投票。剩余族交仍空 → 照旧走 unknown（保守失败）。
+    _arb_mr_ig = bool(getattr(args, "arbitrate_mr_over_ig", False)) or \
+        (os.environ.get("MINCLASS_ARBITRATE_MR_OVER_IG") == "1")
+    _n_arb = 0
     _res_ledger = []
     _res_rounds = 0
     _cl_idx_by_id = [None]               # verify 用：clusters 对象 id -> 下标
@@ -7864,6 +7885,42 @@ def main():
             # _pfm 感知：族掩码交非空但经 proven-universe 过滤后为空（C10 钉到幽灵类）
             # 时，solve 视角同样是空域 —— 必须同样标记未知，否则永远不可消解。
             if not _inter or not _pfm(_inter):
+                # MR>IG 宽度矛盾仲裁（gated）：仅纯空交（not _inter）触发；
+                # _pfm 失败（C10 幽灵钉定）是另一病理，不在此裁。
+                if _arb_mr_ig and not _inter:
+                    _fams_part = (set(_fams_rr) if _rs_rr is not None
+                                  else {_f for _f in all_fams if _fmasks[_f] != FULL})
+                    if "MR" in _fams_part and "IG" in _fams_part:
+                        for _eid in (_cl.get("ents") or ()):
+                            fam["IG"].pop(_eid, None)
+                        if _rs_cell[0] is not None:
+                            # rust 侧同步：add_family_entries 为覆写语义（HashMap::
+                            # insert），注入 FULL 掩码 = 移除该实体的 IG 约束。
+                            _nbA = (n + 7) // 8
+                            _ae = list(_cl.get("ents") or ())
+                            _rs_cell[0].add_family_entries(
+                                "IG", _ae, [FULL.to_bytes(_nbA, "little")] * len(_ae))
+                        _res_ledger.append({
+                            "cluster": _cl.get("root"),
+                            "status": "arbitrated_mr_over_ig",
+                            "dropped_family": "IG",
+                            "families": sorted(_fams_part),
+                            # 键序确定性：sorted（set 迭代序受 hash 随机化影响）
+                            "family_sizes": {_f: (_fams_rr[_f] if _rs_rr is not None
+                                                  else _fmasks[_f].bit_count())
+                                             for _f in sorted(_fams_part)},
+                            "ents": list(_cl.get("ents") or ())[:12],
+                            "obs": ["%d:%d" % (o, w if w else 0)
+                                    for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                            "family_domains": (_doms_rr if _rs_rr is not None
+                                               else {f: [names[i] for i in range(len(names))
+                                                         if (_fmasks[f] >> i) & 1][:12]
+                                                     for f in sorted(_fams_part)}),
+                            "exact": {k: [names[c] for c, _s in v]
+                                      for k, v in (_cl.get("exact") or {}).items()},
+                        })
+                        _n_arb += 1
+                        continue
                 # 不仲裁：记录矛盾族集合，该簇答案记为未知（从 constrained 移出）。
                 _unknown_roots.add(_cl.get("root"))
                 if _rs_rr is not None:
@@ -7897,10 +7954,10 @@ def main():
                                   for k, v in (_cl.get("exact") or {}).items()},
                     })
                 _n_drops += 1
-        print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
-              % (_res_rounds, len(_empt), _n_drops), flush=True)
-        if _n_drops == 0:
-            break                      # 零丢弃 = 无法再靠"丢最弱族"消解，直接退出
+        print("[conflict-resolve] round=%d empty_clusters=%d drops=%d arbitrated=%d"
+              % (_res_rounds, len(_empt), _n_drops, _n_arb), flush=True)
+        if _n_drops == 0 and _n_arb == 0:
+            break                      # 零丢弃零仲裁 = 无法再靠"丢最弱族"消解，直接退出
 
     if _rs_cell[0] is not None and not res_probe.get("__dom_bits_stash__"):
         # 循环退出：以 need_dom_bits=True 重解一次（确定性，与末次探针全解等价），
