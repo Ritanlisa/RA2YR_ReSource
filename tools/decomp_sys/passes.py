@@ -922,6 +922,22 @@ def _cw5_elem_class(reg, base):
 
 
 
+# SP2: memoized pattern factory -- per-NAME patterns (globals/members) were
+# re-formatted as strings on every call, driving 190K re._compile dispatches.
+_PAT_MEMO = {}
+
+
+_SP2_VF_SUB = re.compile(r"\b(stru_[0-9A-Fa-f]{6,})\.vfptr(\d*)\b")
+
+
+def _pat(fmt, esc):
+    key = (fmt, esc)
+    p = _PAT_MEMO.get(key)
+    if p is None:
+        p = _PAT_MEMO[key] = re.compile(fmt % re.escape(esc))
+    return p
+
+
 def pass_struct_globals(ctx):
     text = "\n".join(ctx.lines)
     if not hasattr(ctx, "used_globals"):
@@ -976,7 +992,7 @@ def pass_struct_globals(ctx):
         ctx.used_globals.setdefault(m.group(1), "char[]")
         k = int(m.group(2) or 0)
         return "((char **)%s)[%d]" % (m.group(1), k)
-    text = re.sub(r"\b(stru_[0-9A-Fa-f]{6,})\.vfptr(\d*)\b", vf, text)
+    text = _SP2_VF_SUB.sub(vf, text)
 
     # 2. stru_X.__pad_H[M] -- register the extern for every stru_ pad name
     #    present (sub_indexed rewrites the text)
@@ -1266,7 +1282,7 @@ def pass_struct_globals(ctx):
         gty = ctx.used_globals[gname]
         if gty.endswith("[]") or gty.endswith("*"):
             continue
-        occ = list(re.finditer(r"(?<![\w.>])%s\b" % re.escape(gname), text))
+        occ = list(_pat(r"(?<![\w.>])%s\b", gname).finditer(text))
         if not occ:
             continue
         indexed = False
@@ -1632,6 +1648,32 @@ _CMP_DEREF_AMP = re.compile(
     r"[^;]*?)"
     r"\s*(?P<op>==|!=)\s*(?P<b>&\s*[A-Za-z_]\w*)")
 
+# R9a: deref-vs-deref comparisons (`(*(int *)((char *)(this) + 0x0)) ==
+# *(void **)(v2 + 36)` -- dword-load receivers compare against a loaded
+# pointer; C2446 'no conversion from void * to int').  Both sides are
+# cast-deref heads; classification goes through _rhs_ptr_head so the
+# pointer side gets the `(unsigned int)` re-spell (same 32-bit cmp).
+_CMP_VDD = re.compile(
+    r"(?P<a>\(?\s*\*\s*\(\s*(?P<at>[A-Za-z_][\w ]*?)\s*(?P<as>\*+)\s*\)\s*"
+    r"\((?:[^()]|\([^()]*\))*\)\s*\)?)\s*"
+    r"(?P<op>==|!=)\s*"
+    r"(?P<b>\(?\s*\*\s*\(\s*(?P<bt>[A-Za-z_][\w ]*?)\s*(?P<bs>\*+)\s*\)\s*"
+    r"\((?:[^()]|\([^()]*\))*\)\s*\)?)")
+
+
+def _vdd_kind(base, stars):
+    """`int *` deref -> int value; `void **` / class-typed deref -> ptr."""
+    b = re.sub(r"\s+", " ", base or "").strip()
+    if b == "void":
+        return "ptr"
+    if len(stars or "") > 1:
+        return "ptr"
+    if b in ("int", "unsigned int", "long", "unsigned long", "short",
+             "unsigned short", "_DWORD", "DWORD", "char", "unsigned char",
+             "_BYTE", "BYTE", "bool", "float", "double"):
+        return "int"
+    return "ptr"      # class-typed single-star deref yields the object
+
 
 def pass_compare_harmonize(ctx):
     text = "\n".join(ctx.lines)
@@ -1731,6 +1773,32 @@ def pass_compare_harmonize(ctx):
         return "((unsigned int)(%s)) %s ((unsigned int)(%s))" % (a, op, b)
 
     out = _CMP_DEREF_AMP.sub(sub_deref_amp, out)
+
+    def sub_vdd(m):
+        nonlocal n
+        # classification by the captured cast heads (the deref forms
+        # `*(T *)(E)` with a SINGLE cast paren are not covered by
+        # _rhs_ptr_head's `*((T **)(E))` patterns)
+        a, op, b = m.group("a").strip(), m.group("op"), m.group("b").strip()
+        ka = _vdd_kind(m.group("at"), m.group("as"))
+        kb = _vdd_kind(m.group("bt"), m.group("bs"))
+        if ka == "int" and kb == "ptr":
+            n += 1
+            ctx.sites.append(Site(
+                "compare", "%s %s %s" % (a, op, b),
+                "deref-vs-deref pointer compare -> pointer side re-spelled "
+                "`(unsigned int)` (same 32-bit cmp; C2446)", True))
+            return "%s %s ((unsigned int)(%s))" % (a, op, b)
+        if ka == "ptr" and kb == "int":
+            n += 1
+            ctx.sites.append(Site(
+                "compare", "%s %s %s" % (a, op, b),
+                "deref-vs-deref pointer compare -> pointer side re-spelled "
+                "`(unsigned int)` (same 32-bit cmp; C2446)", True))
+            return "((unsigned int)(%s)) %s %s" % (a, op, b)
+        return m.group(0)
+
+    out = _CMP_VDD.sub(sub_vdd, out)
     out = _CMP_EXTB.sub(sub_extb, out)
     if n:
         ctx.lines = out.split("\n")
@@ -7704,9 +7772,16 @@ def _arg_is_pointerish(s, ptr_names=None):
     # subscript (`&this->m134[4]` -- MapClass::FreeAllCells fncast slot)
     if s.startswith("&") and not s.startswith("&&"):
         return True
+    # R9a: count the stars -- `*(T **)x` LOADS A POINTER (always
+    # pointer-ish, whatever the base spelling: `*(unsigned __int8 **)(p4+168)`
+    # was misjudged scalar by the old BASE-only check because the rich
+    # _SCALAR_TYS dict carries the `unsigned __intN` spellings), while
+    # `*(T *)x` loads a T value (scalar iff T is a scalar spelling).
     m = re.match(r"^\*\s*\(\s*((?:unsigned\s+|signed\s+)?[A-Za-z_]\w*)"
-                 r"\s*\*+\s*\)", s)
+                 r"\s*(\*+)\s*\)", s)
     if m:
+        if len(m.group(2)) > 1:
+            return True
         return m.group(1).strip() not in _SCALAR_TYS
     # CW5: a bare DEREF (`*(&g + 1)`, `*p`) yields a VALUE of unknown
     # pointee type -- do not claim pointer-ness (the R7 `&` fallback below
@@ -8907,7 +8982,13 @@ def pass_r8l_ownerfield(ctx):
 # -- the value-type mismatch family (C2440 'void *' -> int/uint/char* and
 # the reverse uint -> void*).  Re-spell the RHS cast to the LHS's DECLARED
 # type (same 32-bit value; explicit cast makes the store legal).
-_SCALAR_TYS = frozenset((
+# R9a: this frozenset used to shadow the dict at `_SCALAR_TYS` (7640, which
+# HAS float/double) via Python late name lookup -- `_arg_is_pointerish` then
+# classified `*(double *)x` deref heads as POINTER-ish and callee slots
+# flipped to `void *` (C2664 'double' -> 'void *': Math__Sqrt family).
+# R8m keeps its own INT-only set: wrapping a pointer RHS into a float LHS
+# cast (`(float)(p)`) is not a legal C-style conversion.
+_R8M_INT_TYS = frozenset((
     "int", "unsigned int", "short", "unsigned short", "char",
     "unsigned char", "long", "unsigned long", "bool", "_DWORD", "_WORD",
     "_BYTE", "DWORD", "WORD", "BYTE",
@@ -8923,6 +9004,46 @@ def pass_r8m_typed_lhs(ctx):
     n = 0
     for ln in text.split("\n"):
         st = ln.strip()
+
+        # R9a member-LHS arm (C2440 'const int' -> 'void *': Tactical
+        # `this->vfptr2 = 1;` -- shell members typed as pointer slots
+        # receiving int/float-valued RHS).  `this->M` resolves through the
+        # registry views (R8q's member table); `recv->M` / `recv.M` /
+        # `recv[i].M` through the type env.  Only the ptr-member + scalar-
+        # RHS direction fires (the reverse is a semantic error, not a
+        # spelling one).
+        mm = re.match(
+            r"^(?P<lhs>this->[A-Za-z_]\w*"
+            r"|[A-Za-z_]\w*(?:\[[^\[\]]*\])?(?:->|\.)[A-Za-z_]\w*)"
+            r"\s*=\s*(?P<rhs>.+?);\s*$", st)
+        if mm:
+            lhs_m, rhs_m = mm.group("lhs"), mm.group("rhs").strip()
+            mty = None
+            if lhs_m.startswith("this->"):
+                mty = _r9a_member_ptr_type(ctx.views, ctx.sig.get("cls"),
+                                           lhs_m[6:])
+            else:
+                bm = re.match(
+                    r"^([A-Za-z_]\w*)\s*(?:\[[^\[\]]*\])?\s*(?:->|\.)\s*"
+                    r"([A-Za-z_]\w*)$", lhs_m)
+                if bm:
+                    bty = env.of(bm.group(1)) or ""
+                    if _is_ptr_spelling(bty):
+                        mty = _r9a_member_ptr_type(ctx.views,
+                                                   _ptr_base(bty),
+                                                   bm.group(2))
+            mty = (re.sub(r"\s+", " ", mty or "").strip())
+            if mty.endswith("*"):
+                km, _tm = _rhs_ptr_head(rhs_m, env)
+                if km in ("int", "float") or \
+                        re.match(r"^-?(?:\d+|0[xX][0-9A-Fa-f]+)$", rhs_m):
+                    # explicit int->ptr cast is legal C++ (same 32-bit store)
+                    ln = ln.replace(
+                        st, "%s = (%s)(%s);" % (lhs_m, mty, rhs_m))
+                    n += 1
+            out.append(ln)
+            continue
+
         m = re.match(r"^(?P<lhs>[A-Za-z_]\w*)\s*=\s*(?P<rhs>.+?);\s*$", st)
         if not m:
             out.append(ln)
@@ -8936,7 +9057,7 @@ def pass_r8m_typed_lhs(ctx):
         vm = re.match(r"^\(\s*void\s*\*+\s*\)\s*(?P<inner>.+)$", rhs, re.S)
         if vm:
             inner = vm.group("inner").strip()
-            if t.endswith("*") or t in _SCALAR_TYS:
+            if t.endswith("*") or t in _R8M_INT_TYS:
                 ln = ln.replace(st, "%s = (%s)(%s);" % (lhs, t, inner))
                 n += 1
             out.append(ln)
@@ -8954,7 +9075,7 @@ def pass_r8m_typed_lhs(ctx):
             out.append(ln)
             continue
         k, rt = _rhs_ptr_head(rhs, env)
-        if k == "ptr" and (t in _SCALAR_TYS or
+        if k == "ptr" and (t in _R8M_INT_TYS or
                            (t.endswith("*") and
                             re.sub(r"\s+", "", t) !=
                             re.sub(r"\s+", "", rt or ""))):
@@ -9106,6 +9227,11 @@ def pass_r8o_shell_mismatch(ctx):
 
     out = _R8O_PTR.sub(rep_ptr, text)
     out = _R8O_VAL.sub(rep_val, out)
+    # R9a: R8o's member->offset rewrites can CREATE scalar-deref value
+    # subscripts (`(*(unsigned int *)((char *)(this) + 0xB))[2]`,
+    # HouseClass::ReshroudMap 0x50BD10 -- BYTE2(this->field_timer_B[2]))
+    # long after pass_r8d_scalar_subscript ran.  Collapse them here.
+    out = _r8d_collapse(out)
     if n:
         ctx.lines = out.split("\n")
 
@@ -9122,6 +9248,14 @@ _R8P_SUB = re.compile(
     r"(?:\s*\.\s*(?P<mem>(?:[A-Za-z_]\w*_)?(?:m[0-9A-Fa-f]{2,}"
     r"|field_[0-9A-Fa-fx]+|__pad_[0-9A-Fa-fx]+)))?")
 _R8P_DEREF = re.compile(r"(?<![\w:.>*)&(])\*\s*(?P<x>[A-Za-z_]\w*)(?![\w(\[\]).]|->|\s*=(?!=))")
+# R9a: `*X++ = V;` (pointer post-increment store, RadarClass 0x565190
+# `*v8++ = 0`) -- the plain DEREF regex matched only `*X` and left the
+# `++` OUTSIDE the re-spelled deref, producing `(*(T *)(X))++ = V` --
+# a non-lvalue (C2106) AND a semantic change (the ++ moved from the
+# pointer to the pointed-to value).  This variant keeps the increment
+# on the POINTER inside the address expression.
+_R8P_DEREF_POST = re.compile(
+    r"(?<![\w:.>*)&(])\*\s*(?P<x>[A-Za-z_]\w*)\s*\+\+(?![\w(\[\]).]|->)")
 _ARRAY_DECL = re.compile(
     r"^\s*[A-Za-z_][\w \*]*?\b(?P<nm>[A-Za-z_]\w*)\s*\[[^\]]*\]\s*(?:;|=)",
     re.M)
@@ -9189,7 +9323,22 @@ def pass_r8p_void_subscript(ctx):
         n += 1
         return "(*(unsigned int *)(%s))" % x
 
+    def rep_deref_post(m):
+        nonlocal n
+        x = m.group("x")
+        if x not in scal or x in arrays:
+            return m.group(0)
+        _pre = _r8p_src[max(0, m.start() - 36):m.start()]
+        if _OPERAND_TAIL.search(_pre):
+            return m.group(0)
+        n += 1
+        return "(*(unsigned int *)(%s++))" % x
+
     out = _R8P_SUB.sub(rep_sub, text)
+    # R9a: the post-increment deref FIRST (more specific -- `*X++`); after
+    # its replacement the plain DEREF regex no longer sees the bare `*X`.
+    _r8p_src = out
+    out = _R8P_DEREF_POST.sub(rep_deref_post, out)
     # R8y: rep_deref's left-context guard must read from the SAME string it
     # matches -- offsets in `out` drift from `text` when _R8P_SUB changed
     # lengths earlier in the body (the guard then missed multiplications
@@ -9216,6 +9365,25 @@ def _r8q_member_type(views, cls, name):
         for v in roles.values():
             if v.get("name") == name:
                 return v.get("type")
+    return None
+
+
+def _r9a_member_ptr_type(views, cls, name):
+    """R9a: the POINTER type of a member ONLY when every view of that name
+    agrees it is a pointer (a byte-role `ptr_1` + dword-role `ptr_1`
+    ObjectClass* pair is ambiguous -- the arm must not pick the dword
+    role and wrap a uchar store with `ObjectClass *`, C2440)."""
+    if not cls:
+        return None
+    tys = set()
+    hit = False
+    for _off, roles in (views.scalars.get(cls) or {}).items():
+        for v in roles.values():
+            if v.get("name") == name:
+                hit = True
+                tys.add(re.sub(r"\s+", " ", (v.get("type") or "")).strip())
+    if hit and tys and all(t.endswith("*") for t in tys):
+        return next(iter(tys))
     return None
 
 
@@ -9300,6 +9468,24 @@ def pass_r8q_void_across_ctx(ctx):
             out.append(ln)
             continue
 
+        # 4) R9a dword-deref store: `(*(unsigned int *)E) = (void *)R;`
+        # (vtable installs after R8o re-spelled the member LHS -- the
+        # RHS keeps its IDA `(void *)` cast and the uint store rejects
+        # it: C2440 'void *' -> 'unsigned int', CCFileClass::Destru_vt00
+        # 0x4019A0 family).  Re-spell the RHS to the LHS load type.
+        m = re.match(
+            r"^(?P<ind>\s*)(?P<lhs>\(\*\s*\(\s*(?:unsigned\s+int|int|_DWORD"
+            r"|DWORD|unsigned\s+long|long|unsigned\s+__int32)\s*\*\s*\)\s*"
+            r"\((?:[^()]|\([^()]*\))*\)\s*\))"
+            r"\s*=\s*(?P<rhs>" + _VOID_RHS + r".+?);\s*$", ln)
+        if m:
+            inner = re.sub(r"^" + _VOID_RHS, "", m.group("rhs")).strip()
+            n += 1
+            ln = "%s%s = (unsigned int)(%s);" % (
+                m.group("ind"), m.group("lhs"), inner)
+            out.append(ln)
+            continue
+
         out.append(ln)
 
     if n:
@@ -9345,6 +9531,25 @@ def _r8s_split_args(s):
     args, depth, cur, i = [], 0, [], 0
     while i < len(s):
         ch = s[i]
+        # R9a: string/char literals are opaque -- a ',' or ')' inside
+        # `"%d, %d"` must not split/close (HouseClass::AddParam 42ed60
+        # C2143 family).
+        if ch in ('"', "'"):
+            q = ch
+            cur.append(ch)
+            i += 1
+            while i < len(s):
+                if s[i] == "\\" and i + 1 < len(s):
+                    cur.append(s[i])
+                    cur.append(s[i + 1])
+                    i += 2
+                    continue
+                cur.append(s[i])
+                if s[i] == q:
+                    break
+                i += 1
+            i += 1
+            continue
         if ch == '(':
             depth += 1
         elif ch == ')':
@@ -9362,6 +9567,39 @@ def _r8s_split_args(s):
     return args
 
 
+def _r8s_balanced(s, i):
+    """s[i] == '(' -> index just past the matching ')', or -1.
+
+    R9a: quotes are opaque (a ')' inside a string literal must not close
+    the argument list -- the old plain depth scan truncated args at
+    `"%d), %d, %d"` and the reconstructed call was a syntax error)."""
+    depth = 0
+    j = i
+    n = len(s)
+    while j < n:
+        c = s[j]
+        if c in ('"', "'"):
+            q = c
+            j += 1
+            while j < n:
+                if s[j] == "\\":
+                    j += 2
+                    continue
+                if s[j] == q:
+                    break
+                j += 1
+            if j >= n:
+                return -1
+        elif c == '(':
+            depth += 1
+        elif c == ')':
+            depth -= 1
+            if depth == 0:
+                return j + 1
+        j += 1
+    return -1
+
+
 def pass_r8s_call_args(ctx):
     """R8s: cast call arguments to the callee's DECLARED parameter types."""
     text = "\n".join(ctx.lines)
@@ -9369,6 +9607,20 @@ def pass_r8s_call_args(ctx):
         return
     env = _TypeEnv(ctx, text)
     sig_cls = ctx.sig.get("cls")
+    # R9a: the DECLARED slot types are authoritative -- the registry record
+    # and the emitted extern can disagree (arg-form relaxation in
+    # pass_unknown_symbols flips int slots to `void *` for pointer-ish
+    # arguments).  R8s used to cast to the REGISTRY spelling
+    # (`sub_401580((int)(g_AudioFileData))` against an emitted
+    # `extern void sub_401580(void *)`) -- the C2664 int->void* mass
+    # regression family.
+    slot_types = {}
+    for _nm, _tys in (getattr(ctx, "_callee_arg_types", None) or {}).items():
+        slot_types[_nm] = list(_tys)
+    for _d in (getattr(ctx, "used_callee_exts", None) or []):
+        _nm2, _tys2 = _cw5_parse_decl(_d)
+        if _nm2 and _tys2 is not None and _nm2 not in slot_types:
+            slot_types[_nm2] = _tys2
     n = 0
     out_lines = []
     for ln in text.split("\n"):
@@ -9390,15 +9642,9 @@ def pass_r8s_call_args(ctx):
             if head in _R8S_SKIP or name in _R8S_SKIP:
                 pos = m.end()
                 continue
-            # balanced close
-            depth, j = 1, m.end()
-            while j < len(new) and depth:
-                if new[j] == '(':
-                    depth += 1
-                elif new[j] == ')':
-                    depth -= 1
-                j += 1
-            if depth:
+            # balanced close (R9a: quote-aware)
+            j = _r8s_balanced(new, m.end() - 1)
+            if j < 0:
                 pos = m.end()
                 continue
             argstr = new[m.end():j - 1]
@@ -9410,7 +9656,14 @@ def pass_r8s_call_args(ctx):
             except Exception:
                 rec = None
             params = []
-            if rec and len(rec) > 1 and rec[1]:
+            from_slots = False
+            if name in slot_types:
+                # declared extern / callee table first (what the compiler
+                # actually sees)
+                params = [{"type": _t} for _t in slot_types[name]
+                          if _t != "..."]
+                from_slots = bool(params)
+            if not params and rec and len(rec) > 1 and rec[1]:
                 params = rec[1].get("params") or []
             if not params:
                 crt = _R8S_CRT.get(head)
@@ -9424,10 +9677,18 @@ def pass_r8s_call_args(ctx):
                 pos = j
                 continue
             # method receiver passed as arg0 -> align
+            # R9a: (1) only for a real REGISTRY MEMBER (cls set) -- a
+            # thiscall record without a class is a free function here;
+            # (2) NEVER when the params came from the emitted extern --
+            # the declared free prototype already counts every argument
+            # (slot-driven shift mis-cast arg1 with param0's type: C2664
+            # 'void *' -> int, ObjectClass 0x68FBB0 regression).
             off = 0
-            cc = (rec[1] or {}).get("cc") or ""
-            if "this" in cc and args and re.match(
-                    r"^\([^()]*\*\)\s*\(", args[0]):
+            cc = ((rec[1] if rec and len(rec) > 1 else {}) or {}).get("cc") or ""
+            if (not from_slots and rec is not None
+                    and (rec[1] or {}).get("cls")
+                    and "this" in cc and args and re.match(
+                        r"^\([^()]*\*\)\s*\(", args[0])):
                 off = 1
             changed = False
             for ai in range(len(params)):
@@ -9478,6 +9739,10 @@ def pass_r8s_call_args(ctx):
 
 
 # ------------------ R8u: hybrid deref-then-member fold (C2227/C2228)--------
+# SP2: owner-offset consensus cache is process-lifetime (3,134 classes x
+# members iterated per name -- was rebuilt for EVERY function).
+_R8U_R8U_CONS_CACHE = {}
+
 # `(*(unsigned int *)((char *)(BASE) + K)).uniqueId` -- a dword load then a
 # member access.  Two arms:
 #  A. DATA member: resolve BASE's class through the type env / registry
@@ -9526,8 +9791,6 @@ def pass_r8u_hybrid_fold(ctx):
     reg = ctx.reg
     n = 0
 
-    _CONS_CACHE = {}
-
     def _member_off(cls, name):
         # A1: the member name embeds its offset (`__tail_1A`, `field_0`,
         # `m0A4`, `<Owner>_field_08`) -- class-independent.
@@ -9546,7 +9809,7 @@ def pass_r8u_hybrid_fold(ctx):
                 pass
         # A2: offset CONSENSUS across every owner class of this member name
         # (`uniqueId` is at 0x10 in all 61 owners).
-        if name not in _CONS_CACHE:
+        if name not in _R8U_R8U_CONS_CACHE:
             offs = set()
             for c, rec2 in (getattr(reg, "classes", None) or {}).items():
                 for off, mem in (rec2.get("members") or {}).items():
@@ -9556,7 +9819,7 @@ def pass_r8u_hybrid_fold(ctx):
                         except (TypeError, ValueError):
                             pass
             if len(offs) == 1:
-                _CONS_CACHE[name] = next(iter(offs))
+                _R8U_R8U_CONS_CACHE[name] = next(iter(offs))
             elif offs:
                 # 众数偏移（uniqueId: 60 类在 0x10，1 类在 0x210）
                 import collections as _c2
@@ -9568,10 +9831,10 @@ def pass_r8u_hybrid_fold(ctx):
                                 cnt[int(off3)] += 1
                             except (TypeError, ValueError):
                                 pass
-                _CONS_CACHE[name] = cnt.most_common(1)[0][0] if cnt else None
+                _R8U_R8U_CONS_CACHE[name] = cnt.most_common(1)[0][0] if cnt else None
             else:
-                _CONS_CACHE[name] = None
-        cons = _CONS_CACHE[name]
+                _R8U_R8U_CONS_CACHE[name] = None
+        cons = _R8U_R8U_CONS_CACHE[name]
         if cons is not None:
             return cons, ""
         # A3: the enclosing class declares it
