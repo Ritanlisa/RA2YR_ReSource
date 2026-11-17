@@ -1136,6 +1136,16 @@ python tools/type_infer/auto_name.py
     0 变宽、0 丢失，历史已判定（domain=1）簇类赋值 **0 改动**，77 个类代表变化全部是宽域→唯一域；双跑产物 sha256 一致。
     收益结构性稀疏（W-A 池 = median 19B 常数叶子，1,217/1,252 自由函数、无 `this->`、签名几乎全 void/裸 int 族），与 W-A 报告预登记上限一致；
     任务书 43,595/50.4% 同属旧快照口径。生成器 = `.omo/agents/bm/s35_bm2.py`；报告 = `.omo/agents/speed/report_bm2.md`。
+  - **第三轮（post-BM2 收割增量回填，2026-11-17）**：范围 = 账本 clean 池 3,191→5,067 的增量 1,876 个新 OK 地址
+    （cw8/csweep/r1harvest/ng_*/cf_r8* 等 C/D 层转化；median 33B、**类作用域占比 40%**，非 W-A 式常数叶）∩ clean 门 −
+    已收录（交集 0），全程读冻结快照 `status_snapshot_bm3.json` → **+839 strict 证据**（owner 349 / member 128 / sig 362；
+    135 dedupe + 75 conflict（台账入 meta.round3，全部保守弃 BM 行）+ 13 repair 剔除）。实测（同命令同 anchors before/after）：
+    **`43,201/90,501 = 47.7%` → `44,114/91,233 = 48.4%`**（unique **+913**、wide 19,990→19,698、K_min 875→894、
+    `empty_clusters` 7,206→7,235（+29 = 22 基线宽簇 BuildingClass/CreditsScreen + 7 新簇；recovered 0）、conflicts 0）。
+    **零回归**：same-root 簇域变宽 **0**（repair 轮剔除 6 个 receiver 宽化宿主函数的 13 条行，全部回退 domain=1 且 unique +1）；
+    基线 7,206 dropped root 全保留；43,188/43,201 基线 forced 赋值不变（5 个代表类变更 = BM 类钉对弱原语默认的修正）；
+    双跑 8 产物 sha256 一致。未达 48.5% 目标 34 个 unique——归因：33 行被求解器候选索引过滤 + 75 冲突 + 13 repair（见报告 §0）。
+    生成器 = `.omo/agents/bm/s41_bm3.py` + `s41_bm3_repair.py`；报告 = `.omo/agents/bm/report_bm3.md`。
 
 - **2026-11-12 (CW4)**: 形态层自动试错引擎 + if/else 方向规则回填（A 层 2,608 NG 普查）
   - **引擎**：`tools/decomp_sys/cw4_variants.py`（变体库）+ `run_cw4.py`（选择/试错/逐 part 提交/报告）。

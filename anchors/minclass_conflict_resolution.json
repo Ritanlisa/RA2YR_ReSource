@@ -2364,6 +2364,67 @@
   "exact": {}
  },
  {
+  "cluster": "R:7B54B0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C10",
+   "C2"
+  ],
+  "family_sizes": {
+   "C1": 2228,
+   "C2": 1141,
+   "C10": 2,
+   "BM": 1
+  },
+  "ents": [
+   "T:7B54B0",
+   "RET:7B54B0"
+  ],
+  "obs": [
+   "0:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "C10": [
+    "int",
+    "unsigned int"
+   ],
+   "BM": [
+    "String"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "R:5CE640:ecx",
   "status": "inconsistent",
   "families": [
@@ -3392,6 +3453,106 @@
   "exact": {}
  },
  {
+  "cluster": "R:759E10:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C2",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 786,
+   "C2": 1255,
+   "SS": 4,
+   "BM": 1
+  },
+  "ents": [
+   "T:759E10"
+  ],
+  "obs": [
+   "512:4",
+   "1300:1",
+   "1360:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "SS": [
+    "BuildingClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "UnitTypeClass"
+   ],
+   "BM": [
+    "AbstractClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5F8080:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C2"
+  ],
+  "family_sizes": {
+   "C2": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "T:5F8080"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "ObjectTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "R:62D2A0:ecx",
   "status": "inconsistent",
   "families": [
@@ -4229,6 +4390,64 @@
     "?$DynamicVectorClass@H"
    ],
    "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:6E3B40:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C11",
+   "C2"
+  ],
+  "family_sizes": {
+   "C1": 950,
+   "C2": 1142,
+   "C11": 1,
+   "BM": 0
+  },
+  "ents": [
+   "T:6E3B40",
+   "RET:6E3B40"
+  ],
+  "obs": [
+   "144:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "C11": [
+    "TActionClass"
+   ],
+   "BM": []
   },
   "exact": {}
  },
@@ -6234,6 +6453,59 @@
   "exact": {}
  },
  {
+  "cluster": "R:7B5E30:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C2"
+  ],
+  "family_sizes": {
+   "C1": 2228,
+   "C2": 1141,
+   "BM": 0
+  },
+  "ents": [
+   "T:7B5E30",
+   "RET:7B5E30"
+  ],
+  "obs": [
+   "0:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "GS:0:0:0x42EE30",
   "status": "inconsistent",
   "families": [
@@ -8037,6 +8309,42 @@
     "IPublicHouse"
    ],
    "YVP": [
+    "void*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:540650:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:540650:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
     "void*"
    ]
   },
@@ -17057,6 +17365,42 @@
   "exact": {}
  },
  {
+  "cluster": "P:69C580:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:69C580:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char**"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:7A3B30:3",
   "status": "inconsistent",
   "families": [
@@ -21310,6 +21654,66 @@
     "?$DynamicVectorClass@H"
    ],
    "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:769490:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C11",
+   "C2"
+  ],
+  "family_sizes": {
+   "C1": 1774,
+   "C2": 1173,
+   "C11": 1,
+   "BM": 0
+  },
+  "ents": [
+   "T:769490",
+   "RET:769490"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "C11": [
+    "ObjectClass"
+   ],
+   "BM": []
   },
   "exact": {}
  },
@@ -32627,12 +33031,14 @@
   "cluster": "M:5C0550:this:0x10",
   "status": "inconsistent",
   "families": [
+   "BM",
    "C2",
    "MR"
   ],
   "family_sizes": {
    "C2": 1140,
-   "MR": 1
+   "MR": 1,
+   "BM": 2
   },
   "ents": [
    "M:5C0550:this:0x10"
@@ -32655,6 +33061,10 @@
    ],
    "MR": [
     "int"
+   ],
+   "BM": [
+    "int",
+    "unsigned int"
    ]
   },
   "exact": {}
@@ -32663,12 +33073,14 @@
   "cluster": "M:5C05A0:this:0x10",
   "status": "inconsistent",
   "families": [
+   "BM",
    "C2",
    "MR"
   ],
   "family_sizes": {
    "C2": 1141,
-   "MR": 1
+   "MR": 1,
+   "BM": 2
   },
   "ents": [
    "M:5C05A0:this:0x10"
@@ -32691,6 +33103,10 @@
    ],
    "MR": [
     "int"
+   ],
+   "BM": [
+    "int",
+    "unsigned int"
    ]
   },
   "exact": {}
@@ -32699,12 +33115,14 @@
   "cluster": "M:5C05D0:this:0x10",
   "status": "inconsistent",
   "families": [
+   "BM",
    "C2",
    "MR"
   ],
   "family_sizes": {
    "C2": 1141,
-   "MR": 1
+   "MR": 1,
+   "BM": 2
   },
   "ents": [
    "M:5C05D0:this:0x10"
@@ -32727,6 +33145,10 @@
    ],
    "MR": [
     "int"
+   ],
+   "BM": [
+    "int",
+    "unsigned int"
    ]
   },
   "exact": {}
@@ -41575,6 +41997,72 @@
   "exact": {}
  },
  {
+  "cluster": "R:759BC0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C1",
+   "C2",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 790,
+   "C2": 1148,
+   "SS": 6,
+   "BM": 1
+  },
+  "ents": [
+   "T:759BC0"
+  ],
+  "obs": [
+   "512:4",
+   "1284:4",
+   "1288:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "SS": [
+    "AircraftClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "FootClass",
+    "InfantryTypeClass",
+    "UnitTypeClass"
+   ],
+   "BM": [
+    "TechnoClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:4FAF00:this:0x5494",
   "status": "inconsistent",
   "families": [
@@ -44175,6 +44663,82 @@
   "exact": {}
  },
  {
+  "cluster": "P:7B4A10:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B4A10:0"
+  ],
+  "obs": [
+   "0:1"
+  ],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7B4DA0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B4DA0:0"
+  ],
+  "obs": [
+   "0:1"
+  ],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char**"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:7B57A0:0",
   "status": "inconsistent",
   "families": [
@@ -46093,6 +46657,114 @@
   "exact": {}
  },
  {
+  "cluster": "P:69E9E0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:69E9E0:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:474660:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1140,
+   "BM": 1
+  },
+  "ents": [
+   "P:474660:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "unsigned char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:474660:1",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:474660:1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:5285B0:0",
   "status": "inconsistent",
   "families": [
@@ -46201,6 +46873,42 @@
   "exact": {}
  },
  {
+  "cluster": "P:7B48D0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B48D0:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:4A7C10:1",
   "status": "inconsistent",
   "families": [
@@ -46272,6 +46980,42 @@
    ],
    "YVP": [
     "GadgetClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:556600:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:556600:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "void*"
    ]
   },
   "exact": {}
@@ -46759,6 +47503,78 @@
   "exact": {}
  },
  {
+  "cluster": "P:7B4630:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B4630:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7B4DA0:1",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B4DA0:1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:7B5F10:2",
   "status": "inconsistent",
   "families": [
@@ -46789,6 +47605,42 @@
     "IPublicHouse"
    ],
    "CR": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:4F4D30:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:4F4D30:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
     "char*"
    ]
   },
@@ -47163,6 +48015,150 @@
    "LS": [
     "short",
     "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:53F020:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:53F020:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:53F050:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:53F050:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:53F080:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:53F080:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:53F0B0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:53F0B0:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
    ]
   },
   "exact": {}
@@ -47646,6 +48642,78 @@
   "exact": {}
  },
  {
+  "cluster": "P:626250:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:626250:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:628DD0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:628DD0:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:6296B0:1",
   "status": "inconsistent",
   "families": [
@@ -47829,6 +48897,42 @@
    "C10": [],
    "YVP": [
     "bool"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:6329C0:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:6329C0:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "void*"
    ]
   },
   "exact": {}
@@ -48178,6 +49282,42 @@
    "C10": [],
    "YVP": [
     "bool"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:6C9960:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:6C9960:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "wchar_t*"
    ]
   },
   "exact": {}
@@ -49845,6 +50985,78 @@
    ],
    "GI": [
     "char[7]"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7B69F0:1",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1141,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B69F0:1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "wchar_t*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7B8250:0",
+  "status": "inconsistent",
+  "families": [
+   "BM",
+   "C7"
+  ],
+  "family_sizes": {
+   "C7": 1140,
+   "BM": 1
+  },
+  "ents": [
+   "P:7B8250:0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "BM": [
+    "wchar_t*"
    ]
   },
   "exact": {}
