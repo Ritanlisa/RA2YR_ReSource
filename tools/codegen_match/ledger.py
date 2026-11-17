@@ -29,8 +29,12 @@ def load():
 
 def save(d):
     os.makedirs(os.path.dirname(LEDGER), exist_ok=True)
-    with open(LEDGER, "w", encoding="utf-8") as f:
+    # SP1: atomic write (tmp + os.replace) -- a kill mid-save used to leave
+    # a truncated status.json that no reader could parse.
+    tmp = LEDGER + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(d, f, indent=1, sort_keys=True)
+    os.replace(tmp, LEDGER)
 
 
 def record(addr, name=None, status=None, first_diff=None, note=None,
@@ -57,6 +61,40 @@ def record(addr, name=None, status=None, first_diff=None, note=None,
     save(d)
     print("[ledger] %s %s -> %s (attempt %d)" % (a, e["name"], e["status"], e["attempts"]))
     return e
+
+
+def record_many(rows):
+    """SP1: apply N records with ONE load+save (record() re-read and
+    re-wrote the whole 19K-entry ledger per address -- 20x per part)."""
+    if not rows:
+        return
+    d = load()
+    for addr, kw in rows:
+        a = addr.lower()
+        if not a.startswith("0x"):
+            a = "0x" + a
+        name = kw.get("name")
+        status = kw.get("status")
+        first_diff = kw.get("first_diff")
+        note = kw.get("note")
+        extra = kw.get("extra")
+        e = d.get(a, {"name": name or "?", "status": "PENDING",
+                      "first_diff": None, "attempts": 0})
+        if name:
+            e["name"] = name
+        if status:
+            e["status"] = status
+        if first_diff is not None:
+            e["first_diff"] = first_diff
+        if note:
+            e["note"] = note
+        if extra:
+            for k, v in extra.items():
+                if v is not None:
+                    e[k] = v
+        e["attempts"] = int(e.get("attempts", 0)) + 1
+        d[a] = e
+    save(d)
 
 
 def stats():

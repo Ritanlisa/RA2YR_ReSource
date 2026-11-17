@@ -782,6 +782,7 @@ def load_done():
 
 
 def record_ledger(results):
+    rows = []
     for addr, r in results.items():
         if not r["verdict"]:
             continue
@@ -796,17 +797,21 @@ def record_ledger(results):
         # not the stale signals display name.  orig_name/cls_src keep the
         # provenance so identity drift is auditable instead of invisible.
         emitted = r.get("emitted") or r.get("name") or addr
-        lmod.record(addr, name=emitted,
-                    status=status,
-                    first_diff=(r.get("first_diff") or {}).get("orig"),
-                    note="decomp_batch r2: %s%s" % (
-                        r["verdict"],
-                        "/" + r["pathology"] if r.get("pathology") else ""),
-                    extra={"orig_name": r.get("name"),
-                           "cls_src": r.get("cls_src"),
-                           "rule_violations": r.get("rule_violations"),
-                           "clean": r.get("clean"),
-                           "this_as_id": r.get("this_as_id")})
+        rows.append((addr, {
+            "name": emitted,
+            "status": status,
+            "first_diff": (r.get("first_diff") or {}).get("orig"),
+            "note": "decomp_batch r2: %s%s" % (
+                r["verdict"],
+                "/" + r["pathology"] if r.get("pathology") else ""),
+            "extra": {"orig_name": r.get("name"),
+                      "cls_src": r.get("cls_src"),
+                      "rule_violations": r.get("rule_violations"),
+                      "clean": r.get("clean"),
+                      "this_as_id": r.get("this_as_id")}}))
+    # SP1: ONE ledger load+save per part (record() re-serialized the whole
+    # 19K-entry json PER ADDRESS -- 20x per part, serial in the parent).
+    lmod.record_many(rows)
 
 
 # ---------------------------------------------------------------- driver
