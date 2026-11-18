@@ -7400,7 +7400,10 @@ def pass_return_this_artifact(ctx):
     dis = getattr(ctx.ex, "disasm_lines", None) or []
     if not dis:
         return
-    insns = [re.sub(r"^\s*[0-9A-Fa-f]+:\s*", "", dl).strip() for dl in dis]
+    # IDA renders receiver/comment suffixes on some lines
+    # (`mov ecx, esi; this  ; this`); strip them before instruction match.
+    insns = [re.sub(r"^\s*[0-9A-Fa-f]+:\s*", "", dl).split(";")[0].strip()
+             for dl in dis]
     alias = {"ecx"}
     for ins in insns:
         m = _ECX_MOV_ALIAS.match(ins)
@@ -7424,6 +7427,44 @@ def pass_return_this_artifact(ctx):
             run = []
             continue
         run.append(ins)
+    # Receiver position: `((T *)(this->m0))->Method(...)` -- the same
+    # fidelity artifact (pseudo renders `this` as the offset-0 member).
+    # Binary evidence per call: the receiver setup is `mov ecx, <registry
+    # alias>` (the address), never a load from that register.
+    text = "\n".join(ctx.lines)
+    before = text
+    n_sites = 0
+    for nm in names:
+        pat = re.compile(
+            r"\(\s*\(\s*([A-Za-z_]\w*)\s*\*\s*\)\s*\(\s*this->"
+            + re.escape(nm) + r"\s*\)\s*\)(?=\s*->\s*\w+\s*\()")
+        n_sites += len(pat.findall(text))
+    if n_sites:
+        n_movs = 0
+        bad = False
+        for ins in insns:
+            m = re.match(r"^mov\s+ecx\s*,\s*(?P<r>[a-z]{2,3})\s*$", ins,
+                         re.I)
+            if m:
+                if m.group("r").lower() in alias:
+                    n_movs += 1
+                continue
+            if re.match(r"^mov\s+ecx\s*,\s*\[\s*(?:%s)\b"
+                        % "|".join(re.escape(a) for a in sorted(alias)),
+                        ins, re.I):
+                bad = True
+        if not bad and n_movs >= n_sites:
+            for nm in names:
+                pat = re.compile(
+                    r"\(\s*\(\s*([A-Za-z_]\w*)\s*\*\s*\)\s*\(\s*this->"
+                    + re.escape(nm) + r"\s*\)\s*\)(?=\s*->\s*\w+\s*\()")
+                text = pat.sub(lambda m: "((%s *)this)" % m.group(1), text)
+            if text != before:
+                ctx.lines = text.split("\n")
+                ctx.note(
+                    "receiver_this_artifact",
+                    "%d receiver site(s) -> `this` (binary passes the "
+                    "address)" % n_sites)
     if not ok_paths or bad_paths:
         return
     text = "\n".join(ctx.lines)
@@ -9304,6 +9345,28 @@ def pass_r8o_shell_mismatch(ctx):
         return
     env = _TypeEnv(ctx, text)
     n = 0
+    _cls = ctx.sig.get("cls")
+    _arrs = (ctx.views.arrays.get(_cls) or {})
+    _scals = (ctx.views.scalars.get(_cls) or {})
+
+    def _view_off(mem, name_off):
+        """Prefer the RECORDED view offset over the offset encoded in the
+        member NAME.
+
+        The name (`CenterTeamCommand_field_00`) encodes a registry offset,
+        but the hpp declares the member at the VIEW offset (0x4 here --
+        `&m_1[3]` resolved to +4 via the byte-carrier path).  Emitting the
+        name-encoded offset made the body read [ecx] while the declared
+        member and the binary are at [ecx+4].
+        """
+        for _off, _a in _arrs.items():
+            if _a.get("name") == mem:
+                return _off
+        for _off, _roles in _scals.items():
+            for _v in _roles.values():
+                if _v.get("name") == mem:
+                    return _off
+        return name_off
 
     def known_owner_ok(recv, mem):
         if "_field_" in mem and not mem.startswith("field_"):
@@ -9325,6 +9388,7 @@ def pass_r8o_shell_mismatch(ctx):
         off, w = _r8o_parse(mem)
         if off is None:
             return m.group(0)
+        off = _view_off(mem, off)
         n += 1
         return "(*(%s *)((char *)(%s) + 0x%X))" % (_ty(w), recv, off)
 
@@ -9334,6 +9398,7 @@ def pass_r8o_shell_mismatch(ctx):
         off, w = _r8o_parse(mem)
         if off is None:
             return m.group(0)
+        off = _view_off(mem, off)
         n += 1
         return "(*(%s *)((char *)(&(%s)) + 0x%X))" % (_ty(w), recv, off)
 

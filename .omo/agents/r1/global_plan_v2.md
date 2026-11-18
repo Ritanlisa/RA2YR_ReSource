@@ -258,3 +258,65 @@ NG 9,167→8,915；CF 3,042→**3,293**（+251 NG→CF 回归）
 ### 工件
 报告 = `.omo/agents/r1/report_return_this.md`；A/B 产出 = `.omo/agents/r1/ab_hpp/{full_ruleOFF,full_ruleON_v2}`；
 账本快照 = `ab_hpp/status_rule{OFF_canonical,ON_v1}.json`。
+
+---
+
+## §16 byte-carrier (m_N[K]) 负结果（已回退，勿重跑）
+
+日期 2026-11-18（§15 之后）。目标族：`&this->m_1[3]`（IDA til 名字内编码字节偏移）。
+
+**实证**：`0x5ae6f0 Matrix3D::Constructor` 伪码 `*(_DWORD *)&this->m_1[3]` → 反汇编
+`mov [esi+4]`；`&m_5[3]`→`[esi+8]`；`&m_9[3]`→`[esi+0xC]`。⇒ `m_N[K]` = BYTE N+K；
+member_lookup 的 `size` 默认 4 被误当真实跨度 → union 吞并（`[ecx]` vs `[ecx+4]`）
++ 常量索引折叠（`this->m_1[0]`）+ this_ptr_math 丢 +3。
+
+**尝试**：`ClassView.byte_carriers` 使用证据标记 + `pass_member_shapes` `_bc` 分支
+（1B 载体 + abs_off `elem-restore` 视图）+ `hpp_pilot._view_span` span=1 + `merge_views`
+传递 + receiver 位置 this-artifact 扩展 + disasm `; this` 注释剥离。
+
+**实测（canonical full pool 955 parts，同批单同序）**：OK 6,544 → **6,541**
+（**gained 0 / LOST 3**：0x7b48d0 String::Assign_Alt、0x7b4da0 String::Concat2、
+0x7b5360 ObjectClass::sub_7B5360）→ **净负，全部回退**（账本快照恢复，冒烟 0x720210 MATCH）。
+
+**残余**：Matrix3D 布局已对但仍有常量 hoist 调度差（orig `mov ecx,0x3f800000` 提前）=
+codegen_shape，非本族可解。重启该族前置：this_ptr_math 与 member_shapes 共享同一
+字节载体判定；3 个损失先做改写存在性探针归因再拆规则。
+
+**当前账本（不变）**：OK **6,544** / NG 9,114 / CF 3,038 / PENDING 95 / THUNK 303。
+
+---
+
+## §17 Set B：receiver 伪影修正 + r8o 视图偏移权威（+3 OK / 0 损失）
+
+日期 2026-11-18（§16 之后）。
+
+### 归因探针（3 个 §16 回退损失）
+对 0x7b48d0 / 0x7b4da0 / 0x7b5360 做 attempt-vs-baseline 生成体 diff：
+差异全部是 `__3_YAXPAX_Z((void *)(this->m000))` → `(void *)this` —— 即 receiver 正则
+把**调用的右括号**误当 receiver 外层括号（`__3_YAXPAX_Z((void*)(this->m000))` 整段匹配）。
+与 byte-carrier 无关。修正 = receiver 正则追加 `(?=\s*->\s*\w+\s*\()` 前瞻（必须真是方法调用）。
+
+### 第二处真凶：r8o 名称编码偏移 vs 视图偏移
+0x536260 `CenterTeamCommand::Do`：`pass_r8o_shell_mismatch` 用**名字内编码偏移**
+（`CenterTeamCommand_field_00` → 0x00）发射 `(char*)(this) + 0x0`，而 hpp 实际把该
+数组成员声明在 **0x4**（`&this->m_1[3]` 解析到 +4）。二进制读 `[ecx+4]`，我们读 `[ecx]`。
+修正 = r8o 发射前查 `ctx.views.arrays/scalars`，同名视图存在时**用视图偏移**。
+
+### 规则集（单提交）
+1. `pass_return_this_artifact` 扩展 receiver 位置（带 `->` 前瞻）
+2. disasm 行 `; this` 注释剥离（`insns` 解析）
+3. `pass_r8o_shell_mismatch` 视图偏移权威（`_view_off`）
+
+### 门禁与实测
+| 门 | 结果 |
+|---|---|
+| 单点 | 0x536080/0x536170/0x536260 + 3 个前损失 全部 MATCH |
+| OK 对照 20 | 20/20 MATCH |
+| NG 回归 40 | 40/40 可编译，CF=0 |
+| **canonical 全池 A/B（同批单同序 955 parts）** | OK 6,544 → **6,547：gained 3 / LOST 0** |
+
+收益：`0x536080 SelectTeamCommand::Do`、`0x536170 AddTeamCommand::Do`、
+`0x536260 CenterTeamCommand::Do`（同族：命令类 Do 方法的 receiver 偏移）。
+
+### 账本终态
+OK **6,547** / NG 9,111 / COMPILE_FAIL 3,038 / PENDING 95 / THUNK 303（OK 34.33%）。
