@@ -202,3 +202,59 @@ NG 9,167→8,915；CF 3,042→**3,293**（+251 NG→CF 回归）
 | CF | 3,111 | 3,293（−20 编译增益 + 251 R10a 债 + 20 复判收敛）|
 - OK 净增 +1，未达 ≥30 目标线——归因：①R10b 的 20 个新编译全部 MISMATCH（形态层后续）；②陈旧回收井干（+1）；③R10a 债暴露 −251 NG（不伤 OK）。
 - commits：0efb1a6ea（前任 WIP 固化 diffasm/batch_run）、0fa4a5123（R10b + 前任 passes.py WIP 固化 R9e/R10a）、8d459d139（phase-B 账本）——全部已 push。
+
+---
+
+## §15 规则轮：`pass_return_this_artifact`（offset-0 返回 artifact，+114 OK / 0 损失）
+
+日期 2026-11-18（接 §14 之后，HEAD `9601d3ae5`）
+
+### 发现链
+1. `0x720210`（`checkAmmunition`）隔离 A/B 证实与 hpp 对齐 fix 无关：orig `mov eax, esi`（返回 `this`）
+   vs ours `mov eax,[esi]`（载入 `this->vtable1`）。
+2. 伪码快照真值：`return this->__pad_0;` —— Hex-Rays 把 `return this` **保真性失真**成
+   offset-0（vtable 槽）成员载入。
+3. NG 池形态扫描：`return ...this->vtable1` 共 **42 文件 / 61 核心形态 + 12 双 cast 变体**
+   （QueryInterface / ScalarDtor / Constructor / checkAmmunition / Construct / DestroyPipe 族）——
+   族级根因，非个例。
+
+### 实现（规则级）
+- `passes.pass_return_this_artifact`：cls + `views.scalars[cls][0]` 成员名 + 函数自身 disasm
+  三重证据。**严格门**：每一条返回路径的最后一条 EAX 写指令必须是
+  `mov eax, <receiver 别名>`（别名 = `{ecx} ∪ {R | mov R, ecx}`），任一不合格（载入/常数）
+  → 整函数跳过（真返回 vptr 的函数不触发）。
+- 接线：`decompile.py` `pass_era_normalize` 之后（最终文本权威位）。
+
+### 门禁与实测
+| 门 | 结果 |
+|---|---|
+| 单点 0x720210 | MISMATCH → MATCH |
+| OK 对照 20 | 20/20 MATCH |
+| NG 回归 40 | 40/40 可编译、0 CF |
+| **规范全池 A/B（同批单同序 955 parts）** | OFF OK 6,430 → ON **6,544：+114 / lost 0** |
+| 确定性 | ON v1/v2 两次全池账本逐项一致 |
+
+### 方法论事故（本轮最大教训）
+- 首轮以工作区账本（OK 6,476，来自 `ng_hpp` **NG 池重判**口径）为基线，全池 ON 跑出
+  "45 OK 损失 + 1 OK→PENDING" 假警报。
+- 8 样本探针：6-7 个损失地址的生成体**无本规则改写**（差异为偏移/shape/全局指针），
+  证明与规则无关。
+- 真因：**part 组成不同 → iso hpp 视图合并不同 → 同一函数判定漂移**；跨口径账本不可相减。
+- 修正：规则 OFF 跑规范全池作基线（955 parts 同序），再 ON 复现 → 真效果 +114/0。
+- **纪律**：①任何规则 A/B 必须同批单同序两侧各跑规范全池；②用工作区账本当基线前先核对
+  产出目录/part 数是否规范全池；③损失归因先做"改写存在性"探针再谈因果。
+
+### 账本终态（规则 ON，规范全池）
+| OK | NG | COMPILE_FAIL | PENDING | THUNK |
+|---|---|---|---|---|
+| **6,544** | 9,114 | 3,038 | 95 | 303 |
+
+### 未处理残余（记录不扩面）
+1. `((INIClass *)(this->vtable1))->SetString(...)` 8+4 处 —— 经 vptr 成员调方法的 MI artifact 族，另立规则。
+2. `0x7656d0` `[ecx+4]` vs `[ecx]` 偏移 artifact —— 成员偏移解析族，另立规则。
+3. 本规则别名追踪为文本级（不处理寄存器覆盖/call clobber）——本池 0 误触发；未来若触发面
+   变化，升级为保守失效追踪。
+
+### 工件
+报告 = `.omo/agents/r1/report_return_this.md`；A/B 产出 = `.omo/agents/r1/ab_hpp/{full_ruleOFF,full_ruleON_v2}`；
+账本快照 = `ab_hpp/status_rule{OFF_canonical,ON_v1}.json`。

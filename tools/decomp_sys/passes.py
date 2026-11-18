@@ -7372,6 +7372,76 @@ def pass_ret_view_align(ctx):
                          "context)" % mem)
 
 
+_RET_THIS_INSN = re.compile(r"^mov\s+e?ax\s*,\s*(?P<r>[a-z]{2,3})\s*$", re.I)
+_RET_ANY_AX = re.compile(
+    r"^(?:mov|xor|and|or|add|sub|imul|lea|set\w+|inc|dec|pop)\s+"
+    r"(?:e?ax|al|ah)\b", re.I)
+_ECX_MOV_ALIAS = re.compile(r"^mov\s+(?P<r>[a-z]{2,3})\s*,\s*ecx\s*$", re.I)
+_RETN_ANY = re.compile(r"^retn?\b", re.I)
+
+
+def pass_return_this_artifact(ctx):
+    """`return (T *)(this->m0);` -- Hex-Rays renders `return this;` as a load
+    of the offset-0 (vtable) member (`this->__pad_0`).  Binary truth decides:
+    when EVERY return path's last EAX writer is `mov eax, <receiver alias>`
+    (no memory load), the member expression is a decompiler fidelity artifact
+    and the honest C++ is `return (T *)this;` -- the address, not the vptr
+    load (orig `8B C6` vs ours `8B 06`; ngcf/NG pool family: 61 core-form
+    sites across QueryInterface/ScalarDtor/Constructor/checkAmmunition).
+    """
+    cls = ctx.sig.get("cls")
+    if not cls:
+        return
+    off0 = (ctx.views.scalars.get(cls) or {}).get(0) or {}
+    names = sorted({v.get("name") for v in off0.values()
+                    if v and v.get("name")})
+    if not names:
+        return
+    dis = getattr(ctx.ex, "disasm_lines", None) or []
+    if not dis:
+        return
+    insns = [re.sub(r"^\s*[0-9A-Fa-f]+:\s*", "", dl).strip() for dl in dis]
+    alias = {"ecx"}
+    for ins in insns:
+        m = _ECX_MOV_ALIAS.match(ins)
+        if m:
+            alias.add(m.group("r").lower())
+    ok_paths = 0
+    bad_paths = 0
+    run = []
+    for ins in insns + ["retn"]:
+        if _RETN_ANY.match(ins):
+            last = None
+            for r in run:
+                if _RET_ANY_AX.match(r):
+                    last = r
+            if last is not None:
+                m = _RET_THIS_INSN.match(last)
+                if m and m.group("r").lower() in alias:
+                    ok_paths += 1
+                else:
+                    bad_paths += 1
+            run = []
+            continue
+        run.append(ins)
+    if not ok_paths or bad_paths:
+        return
+    text = "\n".join(ctx.lines)
+    before = text
+    for nm in names:
+        t = re.escape(nm)
+        text = re.sub(
+            r"return\s+(\([^()\n]*\))\s*\(\s*\([^()\n]*\)\s*this->" + t
+            + r"\s*\)\s*;", r"return \1this;", text)
+        text = re.sub(
+            r"return\s+(\([^()\n]*\))\s*\(\s*this->" + t + r"\s*\)\s*;",
+            r"return \1this;", text)
+    if text != before:
+        ctx.lines = text.split("\n")
+        ctx.note("return_this_artifact",
+                 "offset-0 member return -> `this` (binary returns receiver)")
+
+
 _LS1 = re.compile(
     r"(?P<ind>[ \t]*)for\s*\(\s*(?P<it>[A-Za-z_]\w*)\s*=\s*"
     r"(?P<base>[^;]+?)\s*;\s*\*\s*(?P=it)\s*!=\s*(?P<want>[^;]+?)\s*;\s*"
@@ -10089,6 +10159,15 @@ _R10A_I32 = frozenset((
     "unsigned __int32", "_DWORD", "DWORD", "UINT",
 ))
 
+# ngcf_251 subshape (b): narrow scalar members (hpp word/byte views,
+# width-carrier elements) receiving pointer-typed RHS -- a bare store is
+# C2440 (ptr -> short/char), the wrap `(narrow)(ptr)` is a legal
+# reinterpret and codegen-identical.
+_R10A_NARROW = frozenset((
+    "short", "unsigned short", "char", "unsigned char", "signed char",
+    "bool", "wchar_t",
+))
+
 # LHS spellings this pass resolves:
 #   IDENT / IDENT[idx]
 #   this->M / this->M[idx] / v->M / v->M[idx] / v[i]->M
@@ -10104,61 +10183,133 @@ _R10A_CHAIN = re.compile(
     r"(?P<arrow>->|\.)\s*(?P<mem>[A-Za-z_]\w*)\s*(?P<midx>\[[^\[\]]*\])?$")
 
 
-def _r10a_cls_members(reg, views, cls, _cache={}):
-    """name -> type for the class member surface as the TU hpp declares it:
-    view roles win (a pointer role dominates a multi-role offset); registry
-    pointer-typed members along the parent chain fill names the views lack.
+def _r10a_reg_decl_type(off, m):
+    """Type spelling exactly as hpp_pilot._reg_member_decl declares this
+    registry member (ngcf_251 lockstep authority -- update BOTH when
+    either changes).  Width carriers (`char name[N];`) return their decay
+    spelling `char *`.
     """
-    key = (id(reg), id(views), cls)
-    if key in _cache:
-        return _cache[key]
-    out = {}
+    w = max(1, int(m.get("width") or 4))
+    ty = (m.get("type") or "").strip()
+    sp = spell_type(ty) if ty else ""
+    if sp.endswith("*"):
+        return sp
+    if sp in WIDTH_OF:
+        sz = WIDTH_OF[sp]
+        if sz <= 4 or (sz == 8 and off % 8 == 0):
+            return sp
+        return "char *"                     # char name[max(w,sz)] carrier
+    if w == 4:
+        return "int"
+    if w == 8:
+        return "__int64" if off % 8 == 0 else "char *"
+    if w == 2:
+        return "unsigned short"
+    if w == 1:
+        return "unsigned char"
+    return "char *"                         # char name[w] carrier
 
-    def walk(c, guard):
+
+def _r10a_cls_members(reg, views, cls):
+    """name -> type EXACTLY as the unit hpp declares it (ngcf_251).
+
+    The compiler sees the hpp, not this table, so the table must mirror
+    hpp_pilot's emission semantics declaration-for-declaration
+    (gen_class_hpp / entries_of / _reg_member_decl):
+      * offsets ascend; per offset: array view first, then scalar roles in
+        the fixed byte->word->dword->qword->ptr order (hpp_pilot
+        entries_of); the FIRST declaration takes the bare name, a later
+        same-name role carries the `_<role>` suffix;
+      * registry supply (own region + class_layouts parent chain,
+        placeholder-filtered, names the views already own anywhere
+        skipped) declares per _reg_member_decl spelling: pointers /
+        <=4B scalars verbatim, everything else degrades to the width
+        carrier (see _r10a_reg_decl_type).  The unit-side body-name
+        intersection (_cw5_unit_extra_members) is NOT replayed here: R10a
+        only ever queries names the body spells, which the hpp side then
+        intersects in -- same effective surface, no unit-level pass
+        dependency.
+    Array views keep their decay spelling `T *` (hpp `T name[N];` decays
+    to `T *` in every expression; `name[i]` is one deref of it).
+    MUST stay in lockstep with hpp_pilot.entries_of/_reg_member_decl.
+
+    NO cross-call cache: per-fn views (ngcf_251) are short-lived objects
+    and a long-lived worker recycles their id()s -- an id()-keyed cache
+    then returns a sibling function's stale table (gate4 0x755cb0 miss).
+    Each call rebuilds; the surface is per-class small.
+    """
+    out = {}
+    scal = views.scalars.get(cls) or {}
+    arrs = views.arrays.get(cls) or {}
+
+    # names the ClassView owns anywhere in the class (hpp CW5-8 filter)
+    view_names = set()
+    for roles in scal.values():
+        for v in roles.values():
+            if v.get("name"):
+                view_names.add(v["name"])
+    for a in arrs.values():
+        if a.get("name"):
+            view_names.add(a["name"])
+
+    # registry supply: own region + class_layouts parent chain
+    extra = {}
+    extra_names = set()
+
+    def supply(c, guard):
         if not c or c in guard:
             return
         guard.add(c)
-        rec = reg.classes.get(c) or {}
-        for _o, m in (rec.get("members") or {}).items():
+        for o_s, m in ((reg.classes.get(c) or {}).get("members")
+                       or {}).items():
             nm = (m or {}).get("name")
-            ty = ((m or {}).get("type") or "").strip()
-            if nm and ty.endswith("*") and not reg._is_placeholder(nm):
-                out.setdefault(nm, ty)
+            if not nm or nm in extra_names or nm in view_names:
+                continue
+            if reg._is_placeholder(nm):
+                continue
+            try:
+                off = int(o_s)
+            except (TypeError, ValueError):
+                continue
+            extra_names.add(nm)
+            extra[off] = m
         try:
             parent = ((getattr(reg, "_cl", None) or {}).get(c) or
                       {}).get("parent")
-        except Exception:                                  # noqa: BLE001
+        except Exception:                                      # noqa: BLE001
             parent = None
-        walk(parent, guard)
+        supply(parent, guard)
 
-    walk(cls, set())
-    for _off, roles in (views.scalars.get(cls) or {}).items():
-        best = None
-        for v in roles.values():
-            ty = (v.get("type") or "").strip()
-            if not ty:
+    supply(cls, set())
+
+    for off in sorted(set(list(scal.keys()) + list(arrs.keys()) +
+                          list(extra.keys()))):
+        arr = arrs.get(off)
+        if arr and arr.get("name") and arr["name"] not in out:
+            # hpp emits `T name[count];` (or `T name[1];` element view) --
+            # decay spelling in every expression is T*
+            elem = spell_type(arr.get("elem") or "int")
+            out[arr["name"]] = elem if elem.endswith("*") else elem + " *"
+        roles = scal.get(off) or {}
+        for role in ("byte", "word", "dword", "qword", "ptr"):
+            v = roles.get(role)
+            if not v:
                 continue
-            if best is None or (ty.endswith("*") and not best.endswith("*")):
-                best = ty
-        for v in roles.values():
             nm = v.get("name")
-            if nm and best:
-                cur = out.get(nm)
-                if cur is None or (best.endswith("*") and
-                                   not (cur or "").endswith("*")):
-                    out[nm] = best
-                elif cur == best:
-                    pass
-                else:
-                    out[nm] = cur   # keep the first (pointer) spelling
-    for _off, arr in (views.arrays.get(cls) or {}).items():
-        nm = arr.get("name")
-        elem = arr.get("elem") or "int"
-        if nm:
-            out[nm] = elem + " *" if not elem.endswith("*") else elem
-    if len(_cache) > 4000:
-        _cache.clear()
-    _cache[key] = out
+            if not nm:
+                continue
+            if nm in out:
+                nm = nm + "_" + role         # hpp suffix rule (later role)
+                if nm in out:
+                    continue
+            ty = spell_type((v.get("type") or "").strip())
+            if ty:
+                out[nm] = ty
+        m = extra.get(off)
+        if m and m.get("name") and m["name"] not in out:
+            t = _r10a_reg_decl_type(off, m)
+            if t:
+                out[m["name"]] = t
     return out
 
 
@@ -10204,8 +10355,12 @@ def _r10a_lhs_ty(lhs, env, members_of, cls):
         mty = members_of(base).get(m.group("mem"))
         if not mty:
             return None
-        if m.group("midx"):                 # v->M[i] : element of ptr view
-            if mty.endswith("**"):
+        if m.group("midx"):                 # v->M[i] : one deref deeper
+            # ngcf_251: `T name[N]` members decay to T* and `T *p` members
+            # are one deref -- BOTH spell their element as mty minus one
+            # star (the old **-only rule left every single-star element
+            # store unwrapped -> C2440 ptr-into-scalar family).
+            if mty.endswith("*"):
                 return mty[:-1].strip()
             if mty in _R10A_I32:
                 return mty
@@ -10241,8 +10396,15 @@ def _r10a_rhs_kind(rhs, env, members_of, cls):
             mty = members_of(base).get(m.group("mem"))
             if mty:
                 if m.group("midx"):
-                    if mty.endswith("**"):
-                        return "ptr", mty[:-1].strip()
+                    # ngcf_251: one deref deeper (array decay T* / pointer
+                    # T* alike) -- element may be ptr or an int-family scalar
+                    if mty.endswith("*"):
+                        el = mty[:-1].strip()
+                        if el.endswith("*"):
+                            return "ptr", el
+                        if el in _R10A_I32:
+                            return "int", el
+                        return None, None
                     if mty in _R10A_I32:
                         return "int", mty
                     return None, None
@@ -10368,7 +10530,19 @@ def _r10a_skip_str(text, i):
 
 def pass_r10a_unit_assign(ctx, views):
     """R10a: wrap assignment RHS to the declared LHS type (unit-level env:
-    full accumulated views + registry pointer overlay + register pseudos)."""
+    full accumulated views + registry pointer overlay + register pseudos).
+
+    ngcf_251: the VERDICT compile surface is the per-function isolation
+    hpp -- batch_run's iso fallback emits `<unit>_<addr>.hpp` from
+    ctx.views (the function's OWN view surface) whenever the unit TU
+    fails.  A merged-view table disagrees with that hpp exactly when
+    sibling functions contribute extra roles at the same offset (dword
+    role at 0x0 takes `vfptr` while the iso hpp declares `void *`) -- so
+    harmonize against ctx.views, not the unit-merged surface.  Unit-TU
+    compiles may fall back to iso more often, but the verdict (iso rc=0
+    == good) and the byte-compare are untouched.
+    """
+    views = getattr(ctx, "views", None) or views
     text = "\n".join(ctx.lines)
     if "=" not in text:
         return
@@ -10397,7 +10571,8 @@ def pass_r10a_unit_assign(ctx, views):
         t = re.sub(r"\s+", " ", t).strip()
         lt_ptr = t.endswith("*")
         lt_i32 = t in _R10A_I32
-        if not (lt_ptr or lt_i32):
+        lt_narrow = t in _R10A_NARROW
+        if not (lt_ptr or lt_i32 or lt_narrow):
             continue
         k, rt = _r10a_rhs_kind(rhs, env, members_of, cls)
         if k is None or k == "float":
@@ -10410,6 +10585,9 @@ def pass_r10a_unit_assign(ctx, views):
             fire = True
         elif lt_ptr and k == "ptr" and \
                 re.sub(r"\s+", "", t) != re.sub(r"\s+", "", rt):
+            fire = True
+        elif lt_narrow and k == "ptr":
+            # ngcf_251 subshape (b): `this->narrow = (T *)x` bare store
             fire = True
         if not fire:
             continue

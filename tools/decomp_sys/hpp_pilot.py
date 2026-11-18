@@ -212,7 +212,20 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             nm = v["name"]
             if nm in emitted_names:
                 nm = nm + "_" + role
-            entries.append("%s %s;" % (spell_type(v["type"]), nm))
+            sty = spell_type(v["type"])
+            # per-fn hpp 类型对齐（ngcf_251 残余根治）：views 的标量角色在
+            # iso 单元上下文可能观察为整数读取（DWORD），而 registry 同偏移
+            # 有精确指针类型（TechnoClass* 等）。两者同为 4B（无布局变化），
+            # 指针拼写语义更准且与主单元 hpp 一致。仅在 role != "ptr" 时
+            # 检查（ptr 角色已是指针）。
+            if role != "ptr" and not sty.endswith("*"):
+                m_extra = extra.get(off)
+                if m_extra and m_extra.get("name") == nm:
+                    rty = (m_extra.get("type") or "").strip()
+                    rsp = spell_type(rty) if rty else ""
+                    if rsp.endswith("*"):
+                        sty = rsp
+            entries.append("%s %s;" % (sty, nm))
             emitted_names.add(nm)
         m = extra.get(off)
         if m and m["name"] not in emitted_names:

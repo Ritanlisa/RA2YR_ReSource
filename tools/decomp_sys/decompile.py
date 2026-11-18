@@ -1166,6 +1166,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
     passes.pass_era_normalize(ctx)
+    passes.pass_return_this_artifact(ctx)
     # Stage 3a: array-view member assignment LHS (`this->m004 = RHS`) is
     # C2440 (`char * -> char [1]`); store through the scalar sibling view
     # the hpp already emits at that offset (same 4-byte storage).
