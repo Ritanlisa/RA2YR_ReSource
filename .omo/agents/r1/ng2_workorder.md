@@ -107,3 +107,10 @@
 
 **裁决：extern_reloc 不是测量侧假阴性族，W1（diffasm reloc 符号键映射）ROI 不成立，勿立项。**
 该族并入长尾（真实差异），后续需逐件 IDA 取证。
+
+## 附：vtable 符号解析假说 —— 已证伪（勿立项）
+
+W1b 后自然延伸假说：const_fold 里 `mov dword ptr [...], 0` vs orig `, 0x7Exxxx` 是
+obj 侧 `??_7...` vtable reloc 未解析所致。
+实测（122 件候选中随机 120 件查 ours relocs）：**0 件**含 `??_7` 符号——机制不成立。
+该子族为其他符号/真实差异，勿按 vtable 方向投入。
