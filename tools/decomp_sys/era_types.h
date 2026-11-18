@@ -224,7 +224,19 @@ struct DLGTEMPLATE_era {
 };
 typedef struct DLGTEMPLATE_era DLGTEMPLATE;
 typedef const DLGTEMPLATE * LPCDLGTEMPLATEA;
-struct _WIN32_FIND_DATAA { unsigned char __pad[320]; };
+struct _WIN32_FIND_DATAA {
+    unsigned long dwFileAttributes;
+    FILETIME      ftCreationTime;
+    FILETIME      ftLastAccessTime;
+    FILETIME      ftLastWriteTime;
+    unsigned long nFileSizeHigh;
+    unsigned long nFileSizeLow;
+    unsigned long dwReserved0;
+    unsigned long dwReserved1;
+    char          cFileName[260];
+    char          cAlternateFileName[14];
+    char          __tail_pad[2];   /* sizeof == 320, same as the old __pad */
+};
 struct _WIN32_FIND_DATAW { unsigned char __pad[320]; };
 typedef struct _WIN32_FIND_DATAA _WIN32_FIND_DATAA_era;
 typedef struct _WIN32_FIND_DATAW _WIN32_FIND_DATAW_era;
@@ -384,7 +396,10 @@ typedef int                 unknown;
 
 // ---- Win32/CRT struct TAGS referenced by emitted bodies as `struct X ...`
 // (C2079 family: a typedef alone does not satisfy the `struct X` tag form).
-struct sockaddr { unsigned char __pad[16]; };
+struct sockaddr {
+    unsigned short sa_family;
+    char           sa_data[14];    /* sizeof == 16, same as the old __pad */
+};
 struct in_addr { unsigned char __pad[4]; };
 struct _STARTUPINFOA { unsigned char __pad[68]; };
 struct _STARTUPINFOW { unsigned char __pad[68]; };

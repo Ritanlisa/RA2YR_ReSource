@@ -411,3 +411,18 @@ DIR32 reloc（canon `DATA:...`），orig 侧因 `_in_data` 不含 code 地址而
 
 验证：单点 reloc 站点双侧一致；OK 20/20；NG 40/40 可编译；**canonical 全池
 OK 6,547 → 6,550（gained 3 / LOST 0）**。报告 = `.omo/agents/r1/ng2/report_w1b.md`。
+
+---
+
+## §21 Win32 ABI 结构补全（era_types.h，CF −6 / 0 损失）
+
+根因：`era_types.h` 的 `_WIN32_FIND_DATAA` / `sockaddr` 是无字段占位块 → body 访问
+`.dwFileAttributes`/`.sa_family`/`.sa_data` 触发 C2039（CF 族谱 180 件中的一组）。
+
+修复（size-preserving，平台 ABI 真值）：
+- `_WIN32_FIND_DATAA` 补全真实布局（**sizeof 320 不变**）
+- `sockaddr` 补 `sa_family`/`sa_data`（**sizeof 16 不变**）
+
+实测（canonical 全池，同批单同序）：**COMPILE_FAIL 3,038 → 3,032（−6）**、
+CF 新增 0、OK 6,550 不变（0 得 0 失）。门禁 OK 20/20、NG 40/40。
+报告 = `.omo/agents/r1/cf2/report_win32.md`。
