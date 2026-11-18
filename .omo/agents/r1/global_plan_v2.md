@@ -320,3 +320,37 @@ codegen_shape，非本族可解。重启该族前置：this_ptr_math 与 member_
 
 ### 账本终态
 OK **6,547** / NG 9,111 / COMPILE_FAIL 3,038 / PENDING 95 / THUNK 303（OK 34.33%）。
+
+---
+
+## §18 CSP-BM5 + 三线并行（2026-11-18 夜）
+
+### CSP 轨（独立车道，commit 3a0b2fe25，已提交待推）
+- BM 证据 2,092 → **2,680**（+588：bm-owner 1,282 / bm-member 801 / bm-sig 597 总量口径；
+  本轮增量 owner 379 / member 117 / sig 98 = 588，meta.round5 台账）
+- 覆盖率 gate-off 50.0959% → **50.3859%**；gate-on 50.4014% → **50.6896%**（unique +265）
+- K_min 897 → **906**；conflicts **0**；确定性 9/9 sha256 全等（assignments `2e60b9b1…`）
+- 独立复核：assignments 文件 unique = **47,855**（与 gate-on 声明逐字一致）；repair 4 函数
+  （0x474B20/0x4A2350/0x4739F0/0x473A30）0 行残留 ✓
+- 诚实代价：79 个既有 unique 簇因全局 cover/C10 再平衡失去唯一性（0/79 可归因 BM5 实体）
+  + 6 个答案改变；repair 剔除 6 行后 conflicts 归零、unique 零损失
+- 池口径：clean 池 5,573 → 6,103（OK 6,547 − clean!=true 443 − this_as_id 1）；
+  新 scope 559，G2 溯源 559/559，1.06 行/地址（15.9× BM4）
+
+### DECOMP 轨（本夜已推送）
+- c46665666：receiver-this 伪影修正（`->` 前瞻）+ r8o 视图偏移权威 + insns 注释剥离
+  → canonical A/B **+3 / 0**（OK 6,544 → 6,547）
+- CF 族谱：3,038 全量 68 族（`cf2_workorder.md` / `cf2_families.json`）
+  Top：C2440 425 / C2664 296 / C2065 270 / C2446 265 / C2039 180 / C2660 154
+
+### 在途（并行 Agent）
+- **C2440 实现**（bg_cc73bb8d）：passes.py +164/−12、decompile.py +7 在途——
+  `pass_void_call_retype(late=True)`、`_INT_FAMILY`/`_R10A_I32` 扩 4B 别名、
+  `_TypeEnv` const/array_decl、`_strip_outer_parens`/`_has_top_level_value_cmp`、
+  `_rhs_ptr_head` 星号计数、`_r10a_cls_members` 数组衰减、`_r10a_lhs_ty` 解引用臂。
+  回收后：审读 diff → 单点复验 → canonical 全池 A/B → 净正才提交。
+- **NG 族谱**（bg_7ff2bd6d）：`ng2/` 下已产出 classify_all.json(4.4MB)/classify_fam.json(4.6MB)
+  + 四族 census（branch_order/branch_polarity/cc_mismatch/const_fold）；work order 待落盘。
+
+### 推送
+- 网络间歇中断：`master` ahead 1（3a0b2fe25），恢复后 `git push` 即可。
