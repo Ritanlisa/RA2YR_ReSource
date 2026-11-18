@@ -354,3 +354,45 @@ OK **6,547** / NG 9,111 / COMPILE_FAIL 3,038 / PENDING 95 / THUNK 303（OK 34.33
 
 ### 推送
 - 网络间歇中断：`master` ahead 1（3a0b2fe25），恢复后 `git push` 即可。
+
+---
+
+## §19 重启恢复记录（2026-11-18 深夜，所有子 Agent 死亡）
+
+用户报告电脑重启，全部后台 Agent 终止。恢复处置与产出：
+
+### 状态核对
+- HEAD `eddfa2fff`（§18）+ `3a0b2fe25`（CSP-BM5）—— **2 个提交待推**（网络中断）。
+- 在途改动：C2440 Agent 的 `passes.py +164 / decompile.py +7`（R11 六项）完整保留在磁盘。
+
+### C2440 在途处置：**整体回退（红线回归）**
+- 语法自检 OK；NG 门 40/40 可编译；
+- **OK 对照 19/20 —— `0x4035b0 sub_4035B0` 被打成 COMPILE_FAIL**：
+  `int result = ((AudioQueue *)((p0 + 248)))->GetNext();` 缺失 `(int)` 包装（C2440 initializing）。
+- 该改动 30 件样本实测仍 22 件 CF（转化弱）、无报告、多部分耦合 → 按纪律回退；
+  回退后 `0x4035b0`/`0x536260` 复验 MATCH（红线恢复）。
+
+### NG Agent 工件收割（9,111 全量分类 → work order）
+- `.omo/agents/r1/ng2/` 保留：`classify_fam.json`（9,111 条，含 orig/ours 首差）、
+  4 个专项 census（branch_order 150 / branch_polarity 150 / cc_mismatch 120 / const_fold 180）、
+  cmp_gap / regalias / hpp_off / vtbl 样本。
+- 产出：`.omo/agents/r1/ng2_workorder.md` + `ng2_families.json`。
+- 分布：codegen_shape 3,311（36.3%）/ regalloc 1,731（19.0%）/ branch_polarity 989（10.9%）/
+  frame_sched 942（10.3%）/ const_fold 650（7.1%）/ extern_reloc 427（4.7%）/ branch_order 405 /
+  ret_norm 175 / width_mismatch 147 / cc_mismatch 144 / eval_order 99 / signedness 91。
+- **extern_reloc 50 件核对 = 负结果**（45/50 真实长度差；W1 tooling 不成立，勿立项）。
+
+### CF Agent 工件收割（3,038 全量 68 族 → work order）
+- `.omo/agents/r1/cf2/cf_census.json`（3,038 条含真实 cl 首错）+ `errors/` 逐地址 dump。
+- 产出：`.omo/agents/r1/cf2_workorder.md` + `cf2_families.json`。
+- 分布：C2440 425 / C2664 296 / C2065 270 / C2446 265 / C2039 180 / C2660 154 /
+  C2227 152 / C2228 136 / C2100 126 / C2296 120 / C2059 100 / …
+
+### CSP-BM5（已在重启前完成并提交）
+- `3a0b2fe25`：BM 2,092→2,680（+588）、coverage gate-off 50.39%/gate-on **50.69%**
+  （unique 47,855 已独立复核）、conflicts 0、K_min 906、9/9 确定性。
+
+### 下一步（恢复后）
+1. 网络恢复后推送 2 个提交。
+2. CF 主线：按 `cf2_workorder.md` 选族（注意 C2440 宽改已证伪；需拆分为窄规则并逐项门禁）。
+3. NG 主线：按 `ng2_workorder.md`，extern_reloc 已排除；branch_polarity 989 需 jcc 目标聚类。

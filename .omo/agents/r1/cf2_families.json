@@ -1,0 +1,3648 @@
+[
+ {
+  "family": "C2440",
+  "count": 425,
+  "top_messages": [
+   {
+    "msg": "'type cast' : cannot convert from 'void' to 'int'",
+    "count": 14
+   },
+   {
+    "msg": "'=' : cannot convert from 'void *' to 'unsigned int'",
+    "count": 10
+   },
+   {
+    "msg": "'=' : cannot convert from 'char ** ' to 'const char ** '",
+    "count": 7
+   },
+   {
+    "msg": "'=' : cannot convert from 'void ** ' to 'int'",
+    "count": 6
+   },
+   {
+    "msg": "'=' : cannot convert from 'const int' to 'int [1]'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_7",
+    "count": 6
+   },
+   {
+    "msg": "'=' : cannot convert from 'void *' to 'unsigned char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 6
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4054a0",
+    "name": "Audio::UpdatePlaybackPosition",
+    "msg": "'=' : cannot convert from 'unsigned int' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x4055c0",
+    "name": "UpdateVoicePlayback",
+    "msg": "'=' : cannot convert from 'unsigned int *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_"
+   },
+   {
+    "addr": "0x406170",
+    "name": "VocClass::Check",
+    "msg": "'type cast' : cannot convert from 'double' to 'int *'"
+   },
+   {
+    "addr": "0x406e80",
+    "name": "AudioMixer::Shutdown",
+    "msg": "'type cast' : cannot convert from 'void' to 'int'"
+   },
+   {
+    "addr": "0x407b60",
+    "name": "ThreadAudioMixerMain",
+    "msg": "'=' : cannot convert from 'class RawFileClass *' to 'unsigned int *'"
+   },
+   {
+    "addr": "0x409c40",
+    "name": "AudioBuffer::InitializePlayback",
+    "msg": "'initializing' : cannot convert from 'unsigned int' to 'class AudioBuffer'; D:\\RA2YR_ReSource\\.omo\\agents\\r1"
+   },
+   {
+    "addr": "0x40d1b0",
+    "name": "SmallFunc_40D1B0",
+    "msg": "'=' : cannot convert from 'void *' to 'char'"
+   },
+   {
+    "addr": "0x40d8e0",
+    "name": "sub_40D8E0",
+    "msg": "'initializing' : cannot convert from 'unsigned char' to 'char *'"
+   }
+  ]
+ },
+ {
+  "family": "C2664",
+  "count": 296,
+  "top_messages": [
+   {
+    "msg": "'atexit' : cannot convert parameter 1 from 'unsigned int' to 'void (__cdecl *)(void)'",
+    "count": 4
+   },
+   {
+    "msg": "'CreateDialog' : cannot convert parameter 2 from 'int (__stdcall *)(void *,unsigned int,unsigned int,l",
+    "count": 4
+   },
+   {
+    "msg": "'CreateDialog' : cannot convert parameter 2 from 'int (__stdcall *)(void *,unsigned int,unsigned int,long)'",
+    "count": 4
+   },
+   {
+    "msg": "'CreateDialog' : cannot convert parameter 2 from 'int (__stdcall *)(void *,unsigned int,unsigned int,lo",
+    "count": 4
+   },
+   {
+    "msg": "'ResetEvent' : cannot convert parameter 1 from 'void *' to 'int'",
+    "count": 4
+   },
+   {
+    "msg": "'wcscat' : cannot convert parameter 2 from 'int *' to 'const unsigned short *'",
+    "count": 4
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4011c0",
+    "name": "LoadAudioFile",
+    "msg": "'qsort' : cannot convert parameter 4 from 'int (const char *,const char *)' to 'int (__cdecl *)(const"
+   },
+   {
+    "addr": "0x403a80",
+    "name": "DumpAudioDeviceDebug",
+    "msg": "'int (int)' : cannot convert parameter 1 from 'char [200]' to 'int'"
+   },
+   {
+    "addr": "0x409470",
+    "name": "sub_409470",
+    "msg": "'CreateThread' : cannot convert parameter 3 from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\agents\\r1"
+   },
+   {
+    "addr": "0x40bdd0",
+    "name": "sub_40BDD0",
+    "msg": "'atexit' : cannot convert parameter 1 from 'unsigned int' to 'void (__cdecl *)(void)'"
+   },
+   {
+    "addr": "0x412b40",
+    "name": "AircraftTrackerClass::FillCurrentVector",
+    "msg": "'int (int,int)' : cannot convert parameter 1 from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\agents"
+   },
+   {
+    "addr": "0x41aa80",
+    "name": "AircraftClass::AssignDestination_SyncLog",
+    "msg": "'SetFocus' : cannot convert parameter 1 from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\a"
+   },
+   {
+    "addr": "0x41f580",
+    "name": "AITriggerTypeClass::LoadFromINI",
+    "msg": "'GetString' : cannot convert parameter 4 from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents"
+   },
+   {
+    "addr": "0x423ac0",
+    "name": "TechnoClass::CreateUnit",
+    "msg": "'int (class AnimClass *,void *)' : cannot convert parameter 1 from 'unsigned int' to 'class AnimClass"
+   }
+  ]
+ },
+ {
+  "family": "C2065",
+  "count": 270,
+  "top_messages": [
+   {
+    "msg": "'_ET1' : undeclared identifier",
+    "count": 7
+   },
+   {
+    "msg": "'_RT1' : undeclared identifier",
+    "count": 6
+   },
+   {
+    "msg": "'NAN' : undeclared identifier",
+    "count": 5
+   },
+   {
+    "msg": "'abs16' : undeclared identifier",
+    "count": 4
+   },
+   {
+    "msg": "'_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem' : undeclared identifier;",
+    "count": 4
+   },
+   {
+    "msg": "'__0Iostream_init_QAE_XZ_2' : undeclared identifier",
+    "count": 3
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x40d3c0",
+    "name": "sub_40D3C0",
+    "msg": "'MixFileClass_Array_Alt' : undeclared identifier"
+   },
+   {
+    "addr": "0x40d400",
+    "name": "sub_40D400",
+    "msg": "'MixFileClass_Array_Alt' : undeclared identifier"
+   },
+   {
+    "addr": "0x41a160",
+    "name": "TechnoClass::FindClosestPlacementCell",
+    "msg": "'v42' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_43\\TechnoClass"
+   },
+   {
+    "addr": "0x41a9e0",
+    "name": "TechnoClass::CanFireAtTarget",
+    "msg": "'abs16' : undeclared identifier"
+   },
+   {
+    "addr": "0x427d00",
+    "name": "AnimTypeClass::LoadFromINI",
+    "msg": "'_RT1' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_63\\AnimType"
+   },
+   {
+    "addr": "0x42a460",
+    "name": "BuildingClass::AddRectToDrawList",
+    "msg": "'_ET1' : undeclared identifier"
+   },
+   {
+    "addr": "0x42b7f0",
+    "name": "SimplifyPathFilter",
+    "msg": "'abs16' : undeclared identifier"
+   },
+   {
+    "addr": "0x4397e0",
+    "name": "AnimClass::InitRotation",
+    "msg": "'_ET1' : undeclared identifier"
+   }
+  ]
+ },
+ {
+  "family": "C2446",
+  "count": 265,
+  "top_messages": [
+   {
+    "msg": "'!=' : no conversion from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set",
+    "count": 5
+   },
+   {
+    "msg": "'!=' : no conversion from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_",
+    "count": 4
+   },
+   {
+    "msg": "'!=' : no conversion from 'unsigned int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\",
+    "count": 3
+   },
+   {
+    "msg": "'!=' : no conversion from 'const int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set",
+    "count": 3
+   },
+   {
+    "msg": "'==' : no conversion from 'const int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set",
+    "count": 3
+   },
+   {
+    "msg": "'==' : no conversion from 'unsigned int' to 'class ObjectClass *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab",
+    "count": 3
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x403fa0",
+    "name": "sub_403FA0",
+    "msg": "'!=' : no conversion from 'unsigned int' to 'class DListNode *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hp"
+   },
+   {
+    "addr": "0x4041d0",
+    "name": "ProcessAudioFrame",
+    "msg": "'!=' : no conversion from 'unsigned int' to 'class DListNode *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\a"
+   },
+   {
+    "addr": "0x410a60",
+    "name": "AbstractTypeClass::LoadFromINI",
+    "msg": "'!=' : no conversion from 'unsigned int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\"
+   },
+   {
+    "addr": "0x415a50",
+    "name": "AircraftClass::ProcessReturnToBase",
+    "msg": "'==' : no conversion from 'class AbstractClass *' to 'int'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hp"
+   },
+   {
+    "addr": "0x419b00",
+    "name": "Cell::IsOccupied",
+    "msg": "'>=' : no conversion from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_43\\Cell.cp"
+   },
+   {
+    "addr": "0x41b660",
+    "name": "AircraftClass::HandleTargetDestroyed",
+    "msg": "'==' : no conversion from 'class AircraftTypeClass *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1"
+   },
+   {
+    "addr": "0x41b870",
+    "name": "AircraftClass::ProcessPassengerEjection",
+    "msg": "'!=' : no conversion from 'const int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x41c3f0",
+    "name": "BulletClass::NormalizeZeroVector",
+    "msg": "'==' : no conversion from 'double' to 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_47\\Bu"
+   }
+  ]
+ },
+ {
+  "family": "C2039",
+  "count": 180,
+  "top_messages": [
+   {
+    "msg": "'TurnRate' : is not a member of 'JumpjetLocomotionClass'",
+    "count": 7
+   },
+   {
+    "msg": "'TurnRate' : is not a member of 'JumpjetLocomotionClass'; D:\\RA2YR_ReSource\\.omo\\agents\\",
+    "count": 4
+   },
+   {
+    "msg": "'u32_3F33C' : is not a member of 'UDPInterfaceClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp",
+    "count": 3
+   },
+   {
+    "msg": "'XSurface' : is not a member of 'BSurface'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_38\\BS",
+    "count": 2
+   },
+   {
+    "msg": "'m064' : is not a member of 'Pathfinding'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_67\\Pathf",
+    "count": 2
+   },
+   {
+    "msg": "'TurnRate' : is not a member of 'JumpjetLocomotionClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4073b0",
+    "name": "SaveGame::CountLinkedList",
+    "msg": "'m000' : is not a member of 'SaveGame'"
+   },
+   {
+    "addr": "0x40e3e0",
+    "name": "sub_40E3E0",
+    "msg": "'vtable' : is not a member of 'GenericList'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_27\\Gener"
+   },
+   {
+    "addr": "0x40e4c0",
+    "name": "sub_40E4C0",
+    "msg": "'vtable' : is not a member of 'List'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_27\\List.cpp(49) :"
+   },
+   {
+    "addr": "0x4115f0",
+    "name": "BSurface::Lock",
+    "msg": "'XSurface' : is not a member of 'BSurface'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_38\\BS"
+   },
+   {
+    "addr": "0x411650",
+    "name": "BSurface::ScalarDtor",
+    "msg": "'XSurface' : is not a member of 'BSurface'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_38\\BS"
+   },
+   {
+    "addr": "0x4289d0",
+    "name": "AnimTypeClass::PowerDrainUpdate",
+    "msg": "'Flat_flag' : is not a member of 'AnimTypeClass'"
+   },
+   {
+    "addr": "0x42c290",
+    "name": "Pathfinding::AStar",
+    "msg": "'m064' : is not a member of 'Pathfinding'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_67\\Pathf"
+   },
+   {
+    "addr": "0x42d170",
+    "name": "Pathfinding::CalcDistance",
+    "msg": "'m064' : is not a member of 'Pathfinding'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_67\\Pathf"
+   }
+  ]
+ },
+ {
+  "family": "C2660",
+  "count": 154,
+  "top_messages": [
+   {
+    "msg": "'GetRect' : function does not take 1 parameters",
+    "count": 6
+   },
+   {
+    "msg": "'vswprintf' : function does not take 4 parameters",
+    "count": 5
+   },
+   {
+    "msg": "'IsClean' : function does not take 1 parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set",
+    "count": 3
+   },
+   {
+    "msg": "'AddRef' : function does not take 1 parameters",
+    "count": 3
+   },
+   {
+    "msg": "'CheckHeightDiff' : function does not take 1 parameters",
+    "count": 2
+   },
+   {
+    "msg": "'GetCursorOverObject' : function does not take 1 parameters",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x401980",
+    "name": "CCFileClass::Destru_vt08",
+    "msg": "'SetFileName' : function does not take 1 parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x4091c0",
+    "name": "ReadAudioStream",
+    "msg": "'sub_409100' : function does not take 0 parameters"
+   },
+   {
+    "addr": "0x4105e0",
+    "name": "IRTTITypeInfo::QueryInterface",
+    "msg": "'QueryInterface' : function does not take 1 parameters"
+   },
+   {
+    "addr": "0x4151e0",
+    "name": "AircraftClass::ProcessLanding",
+    "msg": "'CheckHeightDiff' : function does not take 1 parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\f"
+   },
+   {
+    "addr": "0x417fe0",
+    "name": "AircraftClass::Mission_Attack",
+    "msg": "'CheckPassengerCount' : function does not take 1 parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_"
+   },
+   {
+    "addr": "0x41a5c0",
+    "name": "AircraftClass::GetMissionTimer",
+    "msg": "'CheckHeightDiff' : function does not take 1 parameters"
+   },
+   {
+    "addr": "0x41a940",
+    "name": "AircraftClass::EvaluateTargetingState",
+    "msg": "'CheckHeightDiff' : function does not take 1 parameters"
+   },
+   {
+    "addr": "0x41adc0",
+    "name": "AircraftClass::ProcessDockCheck",
+    "msg": "'GetCursorOverObject' : function does not take 1 parameters"
+   }
+  ]
+ },
+ {
+  "family": "C2227",
+  "count": 152,
+  "top_messages": [
+   {
+    "msg": "left of '->flags' must point to class/struct/union",
+    "count": 11
+   },
+   {
+    "msg": "left of '->Construct' must point to class/struct/union",
+    "count": 10
+   },
+   {
+    "msg": "left of '->Constructor' must point to class/struct/union",
+    "count": 9
+   },
+   {
+    "msg": "left of '->location' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\",
+    "count": 3
+   },
+   {
+    "msg": "left of '->flags' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se",
+    "count": 3
+   },
+   {
+    "msg": "left of '->vfptr2' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 3
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x40a090",
+    "name": "sub_40A090",
+    "msg": "left of '->CreateSoundBuffer' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x416d50",
+    "name": "Carryall::MissionStateMachine",
+    "msg": "left of '->flags' must point to class/struct/union"
+   },
+   {
+    "addr": "0x423930",
+    "name": "AnimClass::UpdateProjectileTrajectory",
+    "msg": "left of '->firstObject' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full"
+   },
+   {
+    "addr": "0x425670",
+    "name": "ConstructionPositionTracker",
+    "msg": "left of '->landType' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full"
+   },
+   {
+    "addr": "0x42a5b0",
+    "name": "CellClass::ClearOccupancyGrid",
+    "msg": "left of '->vfptr1' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x4415f0",
+    "name": "FootClass::ProcessDemolish",
+    "msg": "left of '->__pad_28' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x447f10",
+    "name": "BuildingClass::GetFireError",
+    "msg": "left of '->EMPulseCannon' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hp"
+   },
+   {
+    "addr": "0x4496b0",
+    "name": "BuildingClass::CheckState1",
+    "msg": "left of '->SuperWeapon' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\"
+   }
+  ]
+ },
+ {
+  "family": "C2228",
+  "count": 136,
+  "top_messages": [
+   {
+    "msg": "left of '.m_3' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\pa",
+    "count": 6
+   },
+   {
+    "msg": "left of '.m_3' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 6
+   },
+   {
+    "msg": "left of '.m_3' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8",
+    "count": 5
+   },
+   {
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s",
+    "count": 4
+   },
+   {
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_",
+    "count": 3
+   },
+   {
+    "msg": "left of '.__pad_0' must have class/struct/union type",
+    "count": 3
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x409360",
+    "name": "sub_409360",
+    "msg": "left of '.QuadPart' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x410ce0",
+    "name": "BSurface::Construct",
+    "msg": "left of '.field_0' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_3"
+   },
+   {
+    "addr": "0x411820",
+    "name": "ManageMultimediaTimer",
+    "msg": "left of '.RecursionCount' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x414310",
+    "name": "AircraftClass::MoveTo",
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   },
+   {
+    "addr": "0x4165c0",
+    "name": "AircraftClass::DeployWithAnim",
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   },
+   {
+    "addr": "0x417cc0",
+    "name": "AircraftClass::GetActionOnObject",
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   },
+   {
+    "addr": "0x424ce0",
+    "name": "ProductionCompletionCallback",
+    "msg": "left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x431b80",
+    "name": "BufferIOFileClass::Dtor",
+    "msg": "left of '.__tail_0' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se"
+   }
+  ]
+ },
+ {
+  "family": "C2100",
+  "count": 126,
+  "top_messages": [
+   {
+    "msg": "illegal indirection",
+    "count": 27
+   },
+   {
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_629\\ShipLocomotionClas",
+    "count": 3
+   },
+   {
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_74\\Network.cpp(113) : error C2109:",
+    "count": 2
+   },
+   {
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_101\\StreamClass.cpp(28) : erro",
+    "count": 2
+   },
+   {
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_169\\CampaignClass.cpp(169)",
+    "count": 2
+   },
+   {
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_452\\MPCooperative_5c4",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x40b300",
+    "name": "VectorClass::QueryInterface",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_16\\VectorClass_40b300.cpp"
+   },
+   {
+    "addr": "0x415ee0",
+    "name": "BulletClass::FlightUpdate",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_42\\BulletClass.cpp(89) : error"
+   },
+   {
+    "addr": "0x41d860",
+    "name": "AirstrikeClass::SpawnAircraft",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_51\\AirstrikeClass_41d"
+   },
+   {
+    "addr": "0x4267f0",
+    "name": "sub_4267F0",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_61\\UnitClass.cpp(27) : error C210"
+   },
+   {
+    "addr": "0x426ed0",
+    "name": "sub_426ED0",
+    "msg": "illegal indirection"
+   },
+   {
+    "addr": "0x426fd0",
+    "name": "sub_426FD0",
+    "msg": "illegal indirection"
+   },
+   {
+    "addr": "0x4311c0",
+    "name": "Network::SendBeaconDelete",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_74\\Network.cpp(113) : error C2109:"
+   },
+   {
+    "addr": "0x431450",
+    "name": "Network::SendBeacon",
+    "msg": "illegal indirection; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_74\\Network.cpp(113) : error C2109:"
+   }
+  ]
+ },
+ {
+  "family": "C2296",
+  "count": 120,
+  "top_messages": [
+   {
+    "msg": "'&' : illegal, left operand has type 'void *'",
+    "count": 14
+   },
+   {
+    "msg": "'>>' : illegal, left operand has type 'void *'",
+    "count": 8
+   },
+   {
+    "msg": "'&' : illegal, left operand has type 'char *'",
+    "count": 7
+   },
+   {
+    "msg": "'>>' : illegal, left operand has type 'double'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part",
+    "count": 6
+   },
+   {
+    "msg": "'&' : illegal, left operand has type 'void ** '; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 5
+   },
+   {
+    "msg": "'&' : illegal, left operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 5
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x414080",
+    "name": "AircraftClass::Destruct",
+    "msg": "'&' : illegal, left operand has type 'char *'"
+   },
+   {
+    "addr": "0x4144b0",
+    "name": "AircraftClass::Draw",
+    "msg": "'&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x415c60",
+    "name": "ProcessTechnoMovementAction",
+    "msg": "'&' : illegal, left operand has type 'double'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   },
+   {
+    "addr": "0x431e80",
+    "name": "BufferIOFileClass::SetName",
+    "msg": "'&&' : illegal, left operand has type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x432c10",
+    "name": "COMStub_432C10",
+    "msg": "'*' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_75"
+   },
+   {
+    "addr": "0x435be0",
+    "name": "BuildingLightClass::Draw_Start",
+    "msg": "'&' : illegal, left operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_"
+   },
+   {
+    "addr": "0x43ae50",
+    "name": "Vector::Clear",
+    "msg": "'&' : illegal, left operand has type 'void *'"
+   },
+   {
+    "addr": "0x43c2d0",
+    "name": "BuildingClass::MissionController",
+    "msg": "'&' : illegal, left operand has type 'void ** '; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   }
+  ]
+ },
+ {
+  "family": "C2059",
+  "count": 100,
+  "top_messages": [
+   {
+    "msg": "syntax error : ')'",
+    "count": 33
+   },
+   {
+    "msg": "syntax error : '('",
+    "count": 6
+   },
+   {
+    "msg": "syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_597\\TypeList.cpp(9) : error C2039:",
+    "count": 5
+   },
+   {
+    "msg": "syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_36\\AbstractTypeClass.cpp(23",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_108\\BulletTypeClass.cpp(108",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_125\\TypeList.cpp(15) : error C2039",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x410800",
+    "name": "AbstractTypeClass::Constructor",
+    "msg": "syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_36\\AbstractTypeClass.cpp(23"
+   },
+   {
+    "addr": "0x410960",
+    "name": "AbstractTypeClass::Init",
+    "msg": "syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_36\\AbstractTypeClass.cpp(23"
+   },
+   {
+    "addr": "0x4109c0",
+    "name": "AbstractTypeClass::Dtor",
+    "msg": "syntax error : ')'"
+   },
+   {
+    "addr": "0x410be0",
+    "name": "AbstractTypeClass::ProcessPower",
+    "msg": "syntax error : ')'"
+   },
+   {
+    "addr": "0x410c30",
+    "name": "AbstractTypeClass::ddtor",
+    "msg": "syntax error : ')'"
+   },
+   {
+    "addr": "0x4196b0",
+    "name": "AircraftClass::ValidateLandingCell",
+    "msg": "syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_43\\AircraftClass_4196b0"
+   },
+   {
+    "addr": "0x41f180",
+    "name": "AITriggerTypeClass::ChronoSphereCharged",
+    "msg": "syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_53\\AITriggerTypeCl"
+   },
+   {
+    "addr": "0x425410",
+    "name": "AnimClass::ProcessPower",
+    "msg": "syntax error : '('; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_59\\AnimClass_425410.cpp(20)"
+   }
+  ]
+ },
+ {
+  "family": "C2036",
+  "count": 79,
+  "top_messages": [
+   {
+    "msg": "'void *' : unknown size",
+    "count": 16
+   },
+   {
+    "msg": "'class LineTrail *' : unknown size",
+    "count": 6
+   },
+   {
+    "msg": "'class BuildingTypeClass *' : unknown size",
+    "count": 3
+   },
+   {
+    "msg": "'class BuildingTypeClass *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part",
+    "count": 2
+   },
+   {
+    "msg": "'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_366\\Jump",
+    "count": 2
+   },
+   {
+    "msg": "'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x419c80",
+    "name": "AircraftClass::Mission_Transport",
+    "msg": "'class LinkedList *' : unknown size"
+   },
+   {
+    "addr": "0x41b430",
+    "name": "AircraftClass::LoadFromStream",
+    "msg": "'class ILocomotion *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_43\\Ai"
+   },
+   {
+    "addr": "0x425d10",
+    "name": "Building::ComputePosition",
+    "msg": "'class ObjectClass *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_59\\Building.cpp(8"
+   },
+   {
+    "addr": "0x4260f0",
+    "name": "BuildingClass::IsCellPlaceable",
+    "msg": "'void *' : unknown size"
+   },
+   {
+    "addr": "0x42df90",
+    "name": "BitmapClass::ProcessFrame",
+    "msg": "'void *' : unknown size"
+   },
+   {
+    "addr": "0x42f4f0",
+    "name": "BaseClass::Release",
+    "msg": "'void *' : unknown size"
+   },
+   {
+    "addr": "0x42f9c0",
+    "name": "BaseNodeClass_Vector::Release",
+    "msg": "'void *' : unknown size"
+   },
+   {
+    "addr": "0x43b150",
+    "name": "DetectNearbyAlliedThreat",
+    "msg": "'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_86\\TechnoClass.cpp(121) :"
+   }
+  ]
+ },
+ {
+  "family": "C2109",
+  "count": 76,
+  "top_messages": [
+   {
+    "msg": "subscript requires array or pointer type",
+    "count": 21
+   },
+   {
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_9",
+    "count": 4
+   },
+   {
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_585\\_",
+    "count": 3
+   },
+   {
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_02\\",
+    "count": 2
+   },
+   {
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 2
+   },
+   {
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_494\\R",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x402990",
+    "name": "sub_402990",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_02\\"
+   },
+   {
+    "addr": "0x403210",
+    "name": "sub_403210",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_02\\"
+   },
+   {
+    "addr": "0x405190",
+    "name": "AudioPool::ProcessQueue",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_05\\AudioPool"
+   },
+   {
+    "addr": "0x41e720",
+    "name": "TriggerClass::EvaluateCondition",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_53\\Trigg"
+   },
+   {
+    "addr": "0x427530",
+    "name": "AnimTypeClass::Construct",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_6"
+   },
+   {
+    "addr": "0x44f5c0",
+    "name": "BuildingClass::CanBeSoldCheck",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_9"
+   },
+   {
+    "addr": "0x451750",
+    "name": "BuildingClass::PlayUpgradeAnim",
+    "msg": "subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_9"
+   },
+   {
+    "addr": "0x452480",
+    "name": "BuildingClass::Deactivate",
+    "msg": "subscript requires array or pointer type"
+   }
+  ]
+ },
+ {
+  "family": "C2143",
+  "count": 61,
+  "top_messages": [
+   {
+    "msg": "syntax error : missing ';' before '&&'",
+    "count": 15
+   },
+   {
+    "msg": "syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 11
+   },
+   {
+    "msg": "syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se",
+    "count": 7
+   },
+   {
+    "msg": "syntax error : missing ';' before '||'",
+    "count": 4
+   },
+   {
+    "msg": "syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : missing ')' before '{'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_42\\Te",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x414bb0",
+    "name": "TechnoClass::SmokeUpdate",
+    "msg": "syntax error : missing ')' before '{'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_42\\Te"
+   },
+   {
+    "addr": "0x418e20",
+    "name": "InfantryClass::FindNearbyCell",
+    "msg": "syntax error : missing ')' before ';'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_43\\Infantry"
+   },
+   {
+    "addr": "0x44acf0",
+    "name": "BuildingClass::ProcessActiveUpdate",
+    "msg": "syntax error : missing ')' before ';'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_89\\"
+   },
+   {
+    "addr": "0x4525f0",
+    "name": "BuildingClass::IsPoweredOn",
+    "msg": "syntax error : missing ';' before '&&'"
+   },
+   {
+    "addr": "0x4865d0",
+    "name": "Cell::IsGroundTypeRange",
+    "msg": "syntax error : missing ';' before '||'"
+   },
+   {
+    "addr": "0x486750",
+    "name": "Cell::IsInRange",
+    "msg": "syntax error : missing ';' before '&&'"
+   },
+   {
+    "addr": "0x486770",
+    "name": "Cell::IsInRange2",
+    "msg": "syntax error : missing ';' before '&&'"
+   },
+   {
+    "addr": "0x499d20",
+    "name": "AbstractClass::setOverlayFlags",
+    "msg": "syntax error : missing ';' before '?'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_1"
+   }
+  ]
+ },
+ {
+  "family": "C2027",
+  "count": 58,
+  "top_messages": [
+   {
+    "msg": "use of undefined type 'IStream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_604\\SaveGame_Sta",
+    "count": 20
+   },
+   {
+    "msg": "use of undefined type 'AnimClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_872\\ObjectClass.",
+    "count": 10
+   },
+   {
+    "msg": "use of undefined type 'IStream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_603\\SaveGame_Sta",
+    "count": 8
+   },
+   {
+    "msg": "use of undefined type 'IStream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_605\\SaveGame_Sta",
+    "count": 6
+   },
+   {
+    "msg": "use of undefined type 'ObjectClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_866\\_addr",
+    "count": 2
+   },
+   {
+    "msg": "use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_58\\AnimClass_4",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x422ca0",
+    "name": "AnimClass::Render",
+    "msg": "use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_58\\AnimClass_4"
+   },
+   {
+    "addr": "0x4251f0",
+    "name": "sub_4251F0",
+    "msg": "use of undefined type 'RulesClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_59\\_addr_42.cpp(14)"
+   },
+   {
+    "addr": "0x44e880",
+    "name": "BuildingClass::GetPowerDrain",
+    "msg": "use of undefined type 'BuildingTypeClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x452d40",
+    "name": "ProcessDataBuildingClass",
+    "msg": "use of undefined type 'BuildingTypeClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_92\\Object"
+   },
+   {
+    "addr": "0x494d90",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+    "msg": "use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   },
+   {
+    "addr": "0x4958d0",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
+    "msg": "use of undefined type 'Stream'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se"
+   },
+   {
+    "addr": "0x4fdd10",
+    "name": "HouseClass::ManageProduction",
+    "msg": "use of undefined type 'BuildingTypeClass'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_2"
+   },
+   {
+    "addr": "0x5d9410",
+    "name": "Network::ResolveAndConnect",
+    "msg": "use of undefined type 'hostent'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_486\\Network_5d9"
+   }
+  ]
+ },
+ {
+  "family": "C2146",
+  "count": 57,
+  "top_messages": [
+   {
+    "msg": "syntax error : missing ';' before identifier 'p2'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful",
+    "count": 5
+   },
+   {
+    "msg": "syntax error : missing ',' before identifier 'p0'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful",
+    "count": 5
+   },
+   {
+    "msg": "syntax error : missing ';' before identifier 'TimeZoneInformation'; D:\\RA2YR_ReSource\\.omo\\age",
+    "count": 3
+   },
+   {
+    "msg": "syntax error : missing ';' before identifier 'v119'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : missing ';' before identifier 'v58'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : missing ';' before identifier 'g_GameNetworkObject'; D:\\RA2YR_ReSource\\.omo",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x407550",
+    "name": "sub_407550",
+    "msg": "syntax error : missing ';' before identifier 'DataGlobal_87E810'; D:\\RA2YR_ReSource\\.omo\\agents"
+   },
+   {
+    "addr": "0x40a7a0",
+    "name": "Audio::GetDirectSound",
+    "msg": "syntax error : missing ';' before identifier 'GetDirectSound'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab"
+   },
+   {
+    "addr": "0x411b20",
+    "name": "sub_411B20",
+    "msg": "syntax error : missing ';' before identifier 'GetDirectSound'; D:\\RA2YR_ReSource\\.omo\\agents\\r1"
+   },
+   {
+    "addr": "0x411df0",
+    "name": "InitializeSoundBufferPlayback",
+    "msg": "syntax error : missing ';' before identifier 'GetDirectSound'; D:\\RA2YR_ReSource\\.omo\\agents\\r"
+   },
+   {
+    "addr": "0x432750",
+    "name": "BinkMovie::InitFromFile",
+    "msg": "syntax error : missing ';' before identifier 'GetDirectSound'; D:\\RA2YR_ReSource\\.omo\\agents\\"
+   },
+   {
+    "addr": "0x443c60",
+    "name": "BuildingClass::UpdateConstruction",
+    "msg": "syntax error : missing ';' before identifier 'DataGlobal_87F8E4'; D:\\RA2YR_ReSource\\.omo\\a"
+   },
+   {
+    "addr": "0x46dfd0",
+    "name": "CampaignScore::DialogProc",
+    "msg": "syntax error : missing ';' before identifier 'v119'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x46fc00",
+    "name": "CampaignScore::ProcessScreen",
+    "msg": "syntax error : missing ';' before identifier 'v119'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   }
+  ]
+ },
+ {
+  "family": "C2064",
+  "count": 57,
+  "top_messages": [
+   {
+    "msg": "term does not evaluate to a function",
+    "count": 32
+   },
+   {
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_520\\_addr",
+    "count": 4
+   },
+   {
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_519\\_addr",
+    "count": 2
+   },
+   {
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\_addr",
+    "count": 2
+   },
+   {
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\TabControl",
+    "count": 2
+   },
+   {
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_524\\_addr",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4a3dd0",
+    "name": "DDraw::LogError",
+    "msg": "term does not evaluate to a function"
+   },
+   {
+    "addr": "0x4a3fd0",
+    "name": "sub_4A3FD0",
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_181\\Ob"
+   },
+   {
+    "addr": "0x4a42f0",
+    "name": "InitializeDDraw",
+    "msg": "term does not evaluate to a function; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_181\\_addr"
+   },
+   {
+    "addr": "0x600750",
+    "name": "sub_600750",
+    "msg": "term does not evaluate to a function"
+   },
+   {
+    "addr": "0x600af0",
+    "name": "sub_600AF0",
+    "msg": "term does not evaluate to a function"
+   },
+   {
+    "addr": "0x600ca0",
+    "name": "ValidateDialogEvent",
+    "msg": "term does not evaluate to a function"
+   },
+   {
+    "addr": "0x6015e0",
+    "name": "CtlDialogColorHandler",
+    "msg": "term does not evaluate to a function"
+   },
+   {
+    "addr": "0x601d20",
+    "name": "ValidateDialogControl",
+    "msg": "term does not evaluate to a function"
+   }
+  ]
+ },
+ {
+  "family": "C2679",
+  "count": 36,
+  "top_messages": [
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'struct IUnknown' (or ther",
+    "count": 4
+   },
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'struct IUnknown' (or there",
+    "count": 4
+   },
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class ScalarDtor' (or",
+    "count": 2
+   },
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class AudioBuffer' (or ther",
+    "count": 1
+   },
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class TextGroup' (or there is no a",
+    "count": 1
+   },
+   {
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class ScriptActionQueue",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x409880",
+    "name": "ProcessAudioStream",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class AudioBuffer' (or ther"
+   },
+   {
+    "addr": "0x433ca0",
+    "name": "TextGroup::SetRect",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class TextGroup' (or there is no a"
+   },
+   {
+    "addr": "0x44d760",
+    "name": "BuildingClass::PushScriptAction",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class ScriptActionQueue"
+   },
+   {
+    "addr": "0x452820",
+    "name": "Warhead::RemoveFromDamageList",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class Warhead' (or there is no acce"
+   },
+   {
+    "addr": "0x458a80",
+    "name": "TechnoClass::EvacuateFootprintCells",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'struct IUnknown' (or there is n"
+   },
+   {
+    "addr": "0x4737f0",
+    "name": "ReinforcementClass::CreateObject",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'int' (or there is no acc"
+   },
+   {
+    "addr": "0x49e8e0",
+    "name": "INISectionList::Constructor",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'int' (or there is no accepta"
+   },
+   {
+    "addr": "0x4b53e0",
+    "name": "sub_4B53E0",
+    "msg": "binary '=' : no operator defined which takes a right-hand operand of type 'class EditClass' (or there"
+   }
+  ]
+ },
+ {
+  "family": "C2061",
+  "count": 35,
+  "top_messages": [
+   {
+    "msg": "syntax error : identifier 'DeleteAndZero'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 3
+   },
+   {
+    "msg": "syntax error : identifier 'LPWIN32_FIND_DATAA'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : identifier 'LPDCB'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_909\\",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : identifier 'PINPUT_RECORD'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : identifier 'v12'",
+    "count": 1
+   },
+   {
+    "msg": "syntax error : identifier 'v20'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_418\\_addr_5A_5",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x59c630",
+    "name": "FindMapCell",
+    "msg": "syntax error : identifier 'v12'"
+   },
+   {
+    "addr": "0x5a1350",
+    "name": "SelectTerrainTileVariant",
+    "msg": "syntax error : identifier 'v20'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_418\\_addr_5A_5"
+   },
+   {
+    "addr": "0x5ddbd0",
+    "name": "NetworkSettings::DlgProc",
+    "msg": "syntax error : identifier 'DeleteAndZero'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x603fc0",
+    "name": "sub_603FC0",
+    "msg": "syntax error : identifier 'DeleteAndZero'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x622b50",
+    "name": "BaseDialogProc",
+    "msg": "syntax error : identifier 'DeleteAndZero'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x7ab350",
+    "name": "CComObject_CChatEventSink___ATL::DispatchStub_29",
+    "msg": "syntax error : identifier '__time32_t'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x7c8368",
+    "name": "FindNextFileA",
+    "msg": "syntax error : identifier 'LPWIN32_FIND_DATAA'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   },
+   {
+    "addr": "0x7c836e",
+    "name": "FindFirstFileA",
+    "msg": "syntax error : identifier 'LPWIN32_FIND_DATAA'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   }
+  ]
+ },
+ {
+  "family": "C2198",
+  "count": 31,
+  "top_messages": [
+   {
+    "msg": "'unsigned int *(__stdcall *)(class MovementAI *,int,unsigned char *)' : too few actual parameters; D:\\RA2YR",
+    "count": 2
+   },
+   {
+    "msg": "'int (__stdcall *)(struct IUnknown *,int)' : too few actual parameters",
+    "count": 2
+   },
+   {
+    "msg": "'int (__stdcall *)(class ParasiteClass *,int)' : too few actual parameters; D:\\RA2YR_ReSource\\.om",
+    "count": 2
+   },
+   {
+    "msg": "'int (__stdcall *)(class FactoryClass *,int,int *)' : too few actual parameters; D:\\RA2YR_ReSource\\.omo\\a",
+    "count": 2
+   },
+   {
+    "msg": "'int (__stdcall *)(class TacticalClass *,int,int,int)' : too few actual parameters; D:\\RA2YR_ReSource\\.omo",
+    "count": 1
+   },
+   {
+    "msg": "'int (__stdcall *)(class StreamClass *,unsigned int,int,int)' : too few actual parameters; D:\\RA2YR_R",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x411330",
+    "name": "TacticalClass::FillScanlinesTransparent",
+    "msg": "'int (__stdcall *)(class TacticalClass *,int,int,int)' : too few actual parameters; D:\\RA2YR_ReSource\\.omo"
+   },
+   {
+    "addr": "0x4114b0",
+    "name": "StreamClass::ReadAndSeek",
+    "msg": "'int (__stdcall *)(class StreamClass *,unsigned int,int,int)' : too few actual parameters; D:\\RA2YR_R"
+   },
+   {
+    "addr": "0x437290",
+    "name": "sub_437290",
+    "msg": "'int (__stdcall *)(int *,int,int (__stdcall *** )(void *,char),unsigned int *,unsigned int,int)' : too"
+   },
+   {
+    "addr": "0x456980",
+    "name": "DrawTechnoDeployCircle",
+    "msg": "'int (__stdcall *)(int,int *,double *,unsigned int *,int *,int,int,unsigned int,int,int,int,unsigned i"
+   },
+   {
+    "addr": "0x4b0500",
+    "name": "ProcessJumpjetMotion",
+    "msg": "'int (__stdcall *)(class DriveLocomotionClass *,int)' : too few actual parameters; D:\\RA2Y"
+   },
+   {
+    "addr": "0x514f70",
+    "name": "MovementAI::MainFootClass",
+    "msg": "'void (__stdcall *)(class MovementAI *,int,unsigned int *)' : too few actual parameters; D:\\RA2YR_ReSource\\"
+   },
+   {
+    "addr": "0x5163b0",
+    "name": "MovementAI::MarkOccupiedPathCell",
+    "msg": "'unsigned int *(__stdcall *)(class MovementAI *,int,unsigned char *)' : too few actual parameters; D:\\RA2YR"
+   },
+   {
+    "addr": "0x5164d0",
+    "name": "MovementAI::StepFootClass",
+    "msg": "'unsigned int *(__stdcall *)(class MovementAI *,int,unsigned char *)' : too few actual parameters; D:\\RA2YR"
+   }
+  ]
+ },
+ {
+  "family": "C2653",
+  "count": 27,
+  "top_messages": [
+   {
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_326\\Objec",
+    "count": 2
+   },
+   {
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_6",
+    "count": 2
+   },
+   {
+    "msg": "'VtableStub' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 2
+   },
+   {
+    "msg": "'Concurrency' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_62\\",
+    "count": 1
+   },
+   {
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_118",
+    "count": 1
+   },
+   {
+    "msg": "'ToggleClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x426a73",
+    "name": "?UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ",
+    "msg": "'Concurrency' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_62\\"
+   },
+   {
+    "addr": "0x473ab0",
+    "name": "CCFileClass::Destru_vt16",
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_118"
+   },
+   {
+    "addr": "0x4caf20",
+    "name": "VoxelAnimClass::ProcessFrame",
+    "msg": "'ToggleClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   },
+   {
+    "addr": "0x52ba60",
+    "name": "InitGame",
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_326\\Objec"
+   },
+   {
+    "addr": "0x52cd70",
+    "name": "InitRules",
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_326\\Objec"
+   },
+   {
+    "addr": "0x5e1ca0",
+    "name": "GameLobby::DlgProc",
+    "msg": "'VtableStub' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_489\\"
+   },
+   {
+    "addr": "0x5e7bf0",
+    "name": "LoadScenarioClassByIndex",
+    "msg": "'CD' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_492\\_a"
+   },
+   {
+    "addr": "0x5f1bf0",
+    "name": "Stream::WriteBlock",
+    "msg": "'Stream' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_500\\Stream"
+   }
+  ]
+ },
+ {
+  "family": "C2102",
+  "count": 23,
+  "top_messages": [
+   {
+    "msg": "'&' requires l-value",
+    "count": 7
+   },
+   {
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_12\\ObjectClass_408970.c",
+    "count": 1
+   },
+   {
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_44\\TechnoClass_41b760.c",
+    "count": 1
+   },
+   {
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_84\\Coord.cpp(10) : error C2102: '&' r",
+    "count": 1
+   },
+   {
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_224\\Jumpjet",
+    "count": 1
+   },
+   {
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_232\\ObjectClass_4db690",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x408970",
+    "name": "sub_408970",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_12\\ObjectClass_408970.c"
+   },
+   {
+    "addr": "0x41b760",
+    "name": "TechnoClass::GetAutoFireDirection",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_44\\TechnoClass_41b760.c"
+   },
+   {
+    "addr": "0x43a0d0",
+    "name": "Coord::Scale",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_84\\Coord.cpp(10) : error C2102: '"
+   },
+   {
+    "addr": "0x4cf610",
+    "name": "JumpjetLocomotionClass::ComputeRotationMatrix",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_224\\Jumpjet"
+   },
+   {
+    "addr": "0x4db690",
+    "name": "ObjectClass::SaveToStream_Common",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_232\\ObjectClass_4db690"
+   },
+   {
+    "addr": "0x4dbed0",
+    "name": "FootClass::LiberateMember",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_233\\FootClass_4dbed0.cpp"
+   },
+   {
+    "addr": "0x50a5c0",
+    "name": "HouseClass::AIBuildBase",
+    "msg": "'&' requires l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_294\\HouseClass_50a5c0.c"
+   },
+   {
+    "addr": "0x514d90",
+    "name": "JumpjetLocomotionClass::SetMovementTarget",
+    "msg": "'&' requires l-value"
+   }
+  ]
+ },
+ {
+  "family": "C2105",
+  "count": 23,
+  "top_messages": [
+   {
+    "msg": "'++' needs l-value",
+    "count": 7
+   },
+   {
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_400\\CellClass.cpp(30) : error C21",
+    "count": 3
+   },
+   {
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Audio_Process.cpp(97) : e",
+    "count": 2
+   },
+   {
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Voxel.cpp(99) : error C2105: '--'",
+    "count": 2
+   },
+   {
+    "msg": "'++' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_205\\DSurface_4c0750.cpp(15",
+    "count": 1
+   },
+   {
+    "msg": "'++' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_205\\DSurface_4c0e30.cpp(10",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x420f40",
+    "name": "UpdateSpotlightsFoo",
+    "msg": "'++' needs l-value"
+   },
+   {
+    "addr": "0x47f250",
+    "name": "RenderFogOfWarOverlay",
+    "msg": "'++' needs l-value"
+   },
+   {
+    "addr": "0x4c0750",
+    "name": "DSurface::DrawDashedLineStipple",
+    "msg": "'++' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_205\\DSurface_4c0750.cpp(15"
+   },
+   {
+    "addr": "0x4c0e30",
+    "name": "DSurface::DrawStippledRect",
+    "msg": "'++' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_205\\DSurface_4c0e30.cpp(10"
+   },
+   {
+    "addr": "0x575540",
+    "name": "CellClass::ApplyCliffMod",
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_399\\CellClass_575540.cpp(2"
+   },
+   {
+    "addr": "0x575ba0",
+    "name": "CellClass::ApplyTerrainMod",
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_400\\CellClass.cpp(30) : error C21"
+   },
+   {
+    "addr": "0x575ee0",
+    "name": "UpdateTeamsInAreaMap",
+    "msg": "'++' needs l-value"
+   },
+   {
+    "addr": "0x576200",
+    "name": "CellClass::RecursiveCraterUpdate",
+    "msg": "'--' needs l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_400\\CellClass.cpp(30) : error C21"
+   }
+  ]
+ },
+ {
+  "family": "C2665",
+  "count": 18,
+  "top_messages": [
+   {
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'",
+    "count": 7
+   },
+   {
+    "msg": "'_splitpath' : none of the 2 overloads can convert parameter 4 from type 'void *'",
+    "count": 2
+   },
+   {
+    "msg": "'bsearch' : none of the 2 overloads can convert parameter 5 from type 'int (const char *,const char *)'",
+    "count": 1
+   },
+   {
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'; D:\\RA2YR_ReSource\\.omo\\age",
+    "count": 1
+   },
+   {
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 2 from type 'int'",
+    "count": 1
+   },
+   {
+    "msg": "'fprintf' : none of the 2 overloads can convert parameter 1 from type 'void *'; D:\\RA2YR_ReSource\\",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4015c0",
+    "name": "sub_4015C0",
+    "msg": "'bsearch' : none of the 2 overloads can convert parameter 5 from type 'int (const char *,const char *)'"
+   },
+   {
+    "addr": "0x474740",
+    "name": "ObjectTypeClass::ReadSoundList",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'"
+   },
+   {
+    "addr": "0x474c70",
+    "name": "INIEntry::ReadColor",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'"
+   },
+   {
+    "addr": "0x4c4ef0",
+    "name": "TaskForceClass::ParseUnitCountAndType",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'"
+   },
+   {
+    "addr": "0x523d00",
+    "name": "AnimSequence::Parse",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'; D:\\RA2YR_ReSource\\.omo\\age"
+   },
+   {
+    "addr": "0x5283d0",
+    "name": "INIClass::ReadDouble_Overwrite",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 2 from type 'int'"
+   },
+   {
+    "addr": "0x529a30",
+    "name": "INIClass::GetCoordPair",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'"
+   },
+   {
+    "addr": "0x529e70",
+    "name": "sub_529E70",
+    "msg": "'sscanf' : none of the 2 overloads can convert parameter 1 from type 'void *'"
+   }
+  ]
+ },
+ {
+  "family": "C2297",
+  "count": 18,
+  "top_messages": [
+   {
+    "msg": "'*' : illegal, right operand has type 'void *'",
+    "count": 3
+   },
+   {
+    "msg": "'+=' : illegal, right operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 2
+   },
+   {
+    "msg": "'/' : illegal, right operand has type 'void *'",
+    "count": 2
+   },
+   {
+    "msg": "'*' : illegal, right operand has type 'void'",
+    "count": 1
+   },
+   {
+    "msg": "'+=' : illegal, right operand has type 'class TechnoClass *'",
+    "count": 1
+   },
+   {
+    "msg": "'%' : illegal, right operand has type 'float'",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x411640",
+    "name": "BSurface::GetPitch",
+    "msg": "'*' : illegal, right operand has type 'void'"
+   },
+   {
+    "addr": "0x4c9b20",
+    "name": "FactoryClass::UpdateProduction",
+    "msg": "'+=' : illegal, right operand has type 'class TechnoClass *'"
+   },
+   {
+    "addr": "0x53a6c0",
+    "name": "UpdateSuperWeapons",
+    "msg": "'%' : illegal, right operand has type 'float'"
+   },
+   {
+    "addr": "0x555da0",
+    "name": "LightConvertClass::Constructor",
+    "msg": "'*' : illegal, right operand has type 'void *'"
+   },
+   {
+    "addr": "0x5ae890",
+    "name": "Vector::MatrixMulVectorMath",
+    "msg": "'*' : illegal, right operand has type 'char *'"
+   },
+   {
+    "addr": "0x5cd690",
+    "name": "sub_5CD690",
+    "msg": "'+=' : illegal, right operand has type 'unsigned int *'"
+   },
+   {
+    "addr": "0x62d2a0",
+    "name": "BuildingClass::UpdateFloatPosition",
+    "msg": "'+=' : illegal, right operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x62d5e0",
+    "name": "ParticleClass::AdjustHeight",
+    "msg": "'+=' : illegal, right operand has type 'void *'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   }
+  ]
+ },
+ {
+  "family": "C2403",
+  "count": 16,
+  "top_messages": [
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'",
+    "count": 4
+   },
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full",
+    "count": 3
+   },
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful",
+    "count": 2
+   },
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 2
+   },
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 1
+   },
+   {
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x430f70",
+    "name": "PlayerClass::FindNearestWaypoint",
+    "msg": "'Ch' : register must be base/index in 'first operand'"
+   },
+   {
+    "addr": "0x431090",
+    "name": "Radar::FindNearestRadarTarget",
+    "msg": "'Ch' : register must be base/index in 'first operand'"
+   },
+   {
+    "addr": "0x468670",
+    "name": "BulletClass::ProcessObstacle",
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x4ac380",
+    "name": "TacticalClass::ProcessScroll",
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x4f9670",
+    "name": "sub_4F9670",
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   },
+   {
+    "addr": "0x505fd0",
+    "name": "globalHelper_005FD0",
+    "msg": "'Ch' : register must be base/index in 'first operand'"
+   },
+   {
+    "addr": "0x522d50",
+    "name": "InfantryClass::SlaveGiveMoney_RecordBalanceBefore",
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x57b790",
+    "name": "MapClass::TriggerEVA",
+    "msg": "'Ch' : register must be base/index in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part"
+   }
+  ]
+ },
+ {
+  "family": "C2371",
+  "count": 16,
+  "top_messages": [
+   {
+    "msg": "'GUID' : redefinition; different basic types",
+    "count": 2
+   },
+   {
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_h",
+    "count": 2
+   },
+   {
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 2
+   },
+   {
+    "msg": "'LARGE_INTEGER' : redefinition; different basic types",
+    "count": 2
+   },
+   {
+    "msg": "'wint_t' : redefinition; different basic types; D:\\RA2YR_ReSource\\.vc6-8447\\INCLUDE\\stdio.h(370) : error C2526: 'fgetwc' : C linkage func",
+    "count": 2
+   },
+   {
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x48d1e0",
+    "name": "Network::Dispatch",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x4f6540",
+    "name": "SuperWeaponTypeClass::IsAvailable",
+    "msg": "'SidebarImageFile_0x18' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\age"
+   },
+   {
+    "addr": "0x53ee70",
+    "name": "GUID::Compare",
+    "msg": "'GUID' : redefinition; different basic types"
+   },
+   {
+    "addr": "0x53f650",
+    "name": "IPXConnClass::receive",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x53fcb0",
+    "name": "IPXGlobalConnClass::GetQueueSize",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_h"
+   },
+   {
+    "addr": "0x5403f0",
+    "name": "IPXGlobalConnClass::SetAddress",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_h"
+   },
+   {
+    "addr": "0x541820",
+    "name": "Network::ReceiveLoop",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\"
+   },
+   {
+    "addr": "0x5dc350",
+    "name": "NetworkLobby::CreateGame",
+    "msg": "'GUID' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   }
+  ]
+ },
+ {
+  "family": "C2040",
+  "count": 14,
+  "top_messages": [
+   {
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc",
+    "count": 5
+   },
+   {
+    "msg": "'GetRelatedObject' : 'void (void)' differs in levels of indirection from 'int'",
+    "count": 1
+   },
+   {
+    "msg": "'GetIndex' : 'void (void)' differs in levels of indirection from 'int'",
+    "count": 1
+   },
+   {
+    "msg": "'dispatchEvents' : 'void (void)' differs in levels of indirection from 'int'",
+    "count": 1
+   },
+   {
+    "msg": "'Connect' : 'void (void)' differs in levels of indirection from 'int'",
+    "count": 1
+   },
+   {
+    "msg": "'RelinkNode' : 'void (void)' differs in levels of indirection from 'int'",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x477740",
+    "name": "VtableStub::Method_477740",
+    "msg": "'GetRelatedObject' : 'void (void)' differs in levels of indirection from 'int'"
+   },
+   {
+    "addr": "0x488ee0",
+    "name": "ColorListClass::GetColor",
+    "msg": "'GetIndex' : 'void (void)' differs in levels of indirection from 'int'"
+   },
+   {
+    "addr": "0x5b3c20",
+    "name": "MixFileClass::FromFile",
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc"
+   },
+   {
+    "addr": "0x5b3f50",
+    "name": "sub_5B3F50",
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc"
+   },
+   {
+    "addr": "0x5b4590",
+    "name": "MixFileClass::LinkIntoPool",
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc"
+   },
+   {
+    "addr": "0x5b4610",
+    "name": "MixFileClass::UnlinkFromPool",
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc"
+   },
+   {
+    "addr": "0x5b4630",
+    "name": "BlowStraw::Constructor_MixFileClass",
+    "msg": "'FileStartOffset' : 'void *[1]' differs in levels of indirection from 'int [1]'; D:\\RA2YR_ReSourc"
+   },
+   {
+    "addr": "0x5d6440",
+    "name": "ScenarioClass::MissionStubReturnZero3",
+    "msg": "'dispatchEvents' : 'void (void)' differs in levels of indirection from 'int'"
+   }
+  ]
+ },
+ {
+  "family": "C2086",
+  "count": 12,
+  "top_messages": [
+   {
+    "msg": "'HalfDamageSmokeLocation1_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_",
+    "count": 1
+   },
+   {
+    "msg": "'nextScenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_215\\",
+    "count": 1
+   },
+   {
+    "msg": "'GetProductionState_ph_dword' : redefinition",
+    "count": 1
+   },
+   {
+    "msg": "'customSound_controller_dword' : redefinition",
+    "count": 1
+   },
+   {
+    "msg": "'MovementZones_dword' : redefinition",
+    "count": 1
+   },
+   {
+    "msg": "'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_4",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x45dd90",
+    "name": "BuildingTypeClass::ConstructFull",
+    "msg": "'HalfDamageSmokeLocation1_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_"
+   },
+   {
+    "addr": "0x4c6780",
+    "name": "ScenarioClass::SetEvent",
+    "msg": "'nextScenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_215\\"
+   },
+   {
+    "addr": "0x4c6b60",
+    "name": "SidebarClass::SetFlashEntry",
+    "msg": "'GetProductionState_ph_dword' : redefinition"
+   },
+   {
+    "addr": "0x4c9ff0",
+    "name": "FactoryClass::AbandonProduction",
+    "msg": "'customSound_controller_dword' : redefinition"
+   },
+   {
+    "addr": "0x565090",
+    "name": "RadarClass::RenderMapPreview",
+    "msg": "'MovementZones_dword' : redefinition"
+   },
+   {
+    "addr": "0x5ae220",
+    "name": "CampaignClass::LoadMovieDisplay",
+    "msg": "'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_4"
+   },
+   {
+    "addr": "0x5d4430",
+    "name": "SyncFrameCounter",
+    "msg": "'nextArrayIndex_dword' : redefinition"
+   },
+   {
+    "addr": "0x68b940",
+    "name": "Power::ComputeHousePowerChecksum",
+    "msg": "'q028_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_610\\include\\Power.hp"
+   }
+  ]
+ },
+ {
+  "family": "C2110",
+  "count": 9,
+  "top_messages": [
+   {
+    "msg": "cannot add two pointers",
+    "count": 4
+   },
+   {
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_113\\CampaignScore",
+    "count": 1
+   },
+   {
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_293\\TriggerClass.cpp(46)",
+    "count": 1
+   },
+   {
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_391\\LZOStraw_55c7c0.cp",
+    "count": 1
+   },
+   {
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_457\\_addr_5C_5c6dd0.c",
+    "count": 1
+   },
+   {
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_566\\Math.cpp(41) : error C2110: c",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x471420",
+    "name": "CampaignScore::InitScoreScreenData",
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_113\\CampaignScore"
+   },
+   {
+    "addr": "0x509610",
+    "name": "TriggerClass::ValidateTeamTriggerConditions",
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_293\\TriggerClass.cpp(46)"
+   },
+   {
+    "addr": "0x55c7c0",
+    "name": "LCW::Decompress",
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_391\\LZOStraw_55c7c0.cp"
+   },
+   {
+    "addr": "0x5c6bc0",
+    "name": "FillArrayPattern",
+    "msg": "cannot add two pointers"
+   },
+   {
+    "addr": "0x5c6dd0",
+    "name": "MultiplyAddBigInteger",
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_457\\_addr_5C_5c6dd0.c"
+   },
+   {
+    "addr": "0x5c7310",
+    "name": "SubtractBigInteger",
+    "msg": "cannot add two pointers"
+   },
+   {
+    "addr": "0x646590",
+    "name": "Math::QuaternionSlerp",
+    "msg": "cannot add two pointers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_566\\Math.cpp(41) : error C2110"
+   },
+   {
+    "addr": "0x69db30",
+    "name": "SHA1::Transform",
+    "msg": "cannot add two pointers"
+   }
+  ]
+ },
+ {
+  "family": "C2144",
+  "count": 9,
+  "top_messages": [
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_209",
+    "count": 2
+   },
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se",
+    "count": 1
+   },
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_",
+    "count": 1
+   },
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s",
+    "count": 1
+   },
+   {
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4b0f20",
+    "name": "JumpjetLocomotion::ProcessCollision",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se"
+   },
+   {
+    "addr": "0x4b9890",
+    "name": "DisplayBuildingInfoPanel",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x4c3d00",
+    "name": "CreditsPower::DrawCreditsTextLine",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_209"
+   },
+   {
+    "addr": "0x4c3e30",
+    "name": "CreditsPower::Display",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_209"
+   },
+   {
+    "addr": "0x4cf830",
+    "name": "JumpjetLocomotionClass::CalculateBobOffset",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_"
+   },
+   {
+    "addr": "0x4cfda0",
+    "name": "JumpjetLocomotionClass::DispatchVirtualCall_1",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_s"
+   },
+   {
+    "addr": "0x51e3b0",
+    "name": "InfantryClass::GetActionOnObject_EMP",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x5bf950",
+    "name": "sub_5BF950",
+    "msg": "syntax error : missing ')' before type 'char'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\pa"
+   }
+  ]
+ },
+ {
+  "family": "C2451",
+  "count": 9,
+  "top_messages": [
+   {
+    "msg": "conditional expression of type 'void' is illegal",
+    "count": 4
+   },
+   {
+    "msg": "conditional expression of type 'void' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set",
+    "count": 4
+   },
+   {
+    "msg": "conditional expression of type 'class Heap' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x65c2e0",
+    "name": "AbstractClass::checkTeamMembership",
+    "msg": "conditional expression of type 'void' is illegal"
+   },
+   {
+    "addr": "0x65c300",
+    "name": "nullsub_0_1",
+    "msg": "conditional expression of type 'void' is illegal"
+   },
+   {
+    "addr": "0x65c3a0",
+    "name": "nullsub_0_3",
+    "msg": "conditional expression of type 'void' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x65c4b0",
+    "name": "AbstractClass::validateTeamConfig",
+    "msg": "conditional expression of type 'void' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x65cf00",
+    "name": "FileClass::Seek",
+    "msg": "conditional expression of type 'void' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x722440",
+    "name": "PropagateCellOccupancy",
+    "msg": "conditional expression of type 'class Heap' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x7b8a00",
+    "name": "WWMouseClass::AddRef",
+    "msg": "conditional expression of type 'void' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_set"
+   },
+   {
+    "addr": "0x7b9750",
+    "name": "WWMouseClass::showCursor",
+    "msg": "conditional expression of type 'void' is illegal"
+   }
+  ]
+ },
+ {
+  "family": "C2197",
+  "count": 8,
+  "top_messages": [
+   {
+    "msg": "'int (__thiscall SaveGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu",
+    "count": 3
+   },
+   {
+    "msg": "'int (__stdcall *)(class _BlitTransLucent25Alpha_G *)' : too many actual parameters",
+    "count": 1
+   },
+   {
+    "msg": "'int (__thiscall SuperWeaponClass::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agen",
+    "count": 1
+   },
+   {
+    "msg": "'int (__thiscall LoadGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab",
+    "count": 1
+   },
+   {
+    "msg": "'int (__thiscall Game::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful",
+    "count": 1
+   },
+   {
+    "msg": "'int (__thiscall LoadGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x494430",
+    "name": "BlitTransLucent25Alpha_ushort::BlitRect",
+    "msg": "'int (__stdcall *)(class _BlitTransLucent25Alpha_G *)' : too many actual parameters"
+   },
+   {
+    "addr": "0x539890",
+    "name": "SuperWeaponClass::LoadFromSaveStream",
+    "msg": "'int (__thiscall SuperWeaponClass::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agen"
+   },
+   {
+    "addr": "0x6607d0",
+    "name": "SaveGame::SaveTriggerEvents",
+    "msg": "'int (__thiscall SaveGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x660840",
+    "name": "LoadGame::LoadTriggerEvents",
+    "msg": "'int (__thiscall LoadGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab"
+   },
+   {
+    "addr": "0x67f9c0",
+    "name": "Game::SerializeGameSaveState",
+    "msg": "'int (__thiscall Game::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\ful"
+   },
+   {
+    "addr": "0x74ed60",
+    "name": "SaveGame::LoadVeinholeData",
+    "msg": "'int (__thiscall SaveGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x751620",
+    "name": "SaveGame::SaveAudioQueueItems",
+    "msg": "'int (__thiscall SaveGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   },
+   {
+    "addr": "0x7533f0",
+    "name": "LoadGame::LoadMagicAndAudio",
+    "msg": "'int (__thiscall LoadGame::*)(void)' : too many actual parameters; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\fu"
+   }
+  ]
+ },
+ {
+  "family": "C2171",
+  "count": 7,
+  "top_messages": [
+   {
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8",
+    "count": 3
+   },
+   {
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_5",
+    "count": 2
+   },
+   {
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_118",
+    "count": 1
+   },
+   {
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_58",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x473b10",
+    "name": "CCFileClass::Read",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_118"
+   },
+   {
+    "addr": "0x65c420",
+    "name": "nullsub_0_4",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_58"
+   },
+   {
+    "addr": "0x65cce0",
+    "name": "FileClass::Read",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_5"
+   },
+   {
+    "addr": "0x65cdd0",
+    "name": "FileClass::Write2",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_5"
+   },
+   {
+    "addr": "0x7b9a60",
+    "name": "WWMouseClass::captureMouse",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8"
+   },
+   {
+    "addr": "0x7b9e30",
+    "name": "WWMouseClass::FlipCursorBuffer",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8"
+   },
+   {
+    "addr": "0x7ba090",
+    "name": "WWMouseClass::UpdateCursorMovement",
+    "msg": "'!' : illegal on operands of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8"
+   }
+  ]
+ },
+ {
+  "family": "C2659",
+  "count": 6,
+  "top_messages": [
+   {
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8",
+    "count": 2
+   },
+   {
+    "msg": "'=' : overloaded function as left operand",
+    "count": 2
+   },
+   {
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 1
+   },
+   {
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x413d20",
+    "name": "AircraftClass::Construct",
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x517a50",
+    "name": "InfantryClass::Construct",
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part"
+   },
+   {
+    "addr": "0x785370",
+    "name": "InitializeWestwoodOnline",
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8"
+   },
+   {
+    "addr": "0x786080",
+    "name": "HandleLogoutWOL",
+    "msg": "'=' : overloaded function as left operand; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_8"
+   },
+   {
+    "addr": "0x7cf77f",
+    "name": "___sbh_heap_init",
+    "msg": "'=' : overloaded function as left operand"
+   },
+   {
+    "addr": "0x7cfe1c",
+    "name": "___sbh_alloc_new_region",
+    "msg": "'=' : overloaded function as left operand"
+   }
+  ]
+ },
+ {
+  "family": "C2120",
+  "count": 6,
+  "top_messages": [
+   {
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_315\\Mission.cpp(116) :",
+    "count": 2
+   },
+   {
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_137\\CheckL",
+    "count": 1
+   },
+   {
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_197\\DropLis",
+    "count": 1
+   },
+   {
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_728\\Surface.cpp(117) : e",
+    "count": 1
+   },
+   {
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_898\\XSurface_7bb",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x488380",
+    "name": "CheckListClass::GetSelected",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_137\\CheckL"
+   },
+   {
+    "addr": "0x4b5530",
+    "name": "DropListClass::OnKeyDown",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_197\\DropLis"
+   },
+   {
+    "addr": "0x520ae0",
+    "name": "Mission::ExecuteTechnoMissionAction",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_315\\Mission.cpp(116) :"
+   },
+   {
+    "addr": "0x520f40",
+    "name": "Mission::ProcessUnitMissionAI",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_315\\Mission.cpp(116) :"
+   },
+   {
+    "addr": "0x707480",
+    "name": "Surface::BlitTechnoTo",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_728\\Surface.cpp(117) : e"
+   },
+   {
+    "addr": "0x7bbcf0",
+    "name": "XSurface::Blit",
+    "msg": "'void' illegal with all types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_898\\XSurface_7bb"
+   }
+  ]
+ },
+ {
+  "family": "C2106",
+  "count": 6,
+  "top_messages": [
+   {
+    "msg": "'=' : left operand must be l-value",
+    "count": 3
+   },
+   {
+    "msg": "'>>=' : left operand must be l-value",
+    "count": 1
+   },
+   {
+    "msg": "'<<=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_522\\Dialog_",
+    "count": 1
+   },
+   {
+    "msg": "'+=' : left operand must be l-value",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4a3a10",
+    "name": "sub_4A3A10",
+    "msg": "'=' : left operand must be l-value"
+   },
+   {
+    "addr": "0x5509f0",
+    "name": "PrepareTacticalClassCellTransform",
+    "msg": "'>>=' : left operand must be l-value"
+   },
+   {
+    "addr": "0x5c67a0",
+    "name": "RotateBitBufferLeft",
+    "msg": "'=' : left operand must be l-value"
+   },
+   {
+    "addr": "0x60f9a0",
+    "name": "Dialog::InitializeControls",
+    "msg": "'<<=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_522\\Dialog_"
+   },
+   {
+    "addr": "0x626200",
+    "name": "Palette::FindClosestColor",
+    "msg": "'+=' : left operand must be l-value"
+   },
+   {
+    "addr": "0x70fee0",
+    "name": "TechnoClass::EjectPassengers",
+    "msg": "'=' : left operand must be l-value"
+   }
+  ]
+ },
+ {
+  "family": "C2425",
+  "count": 6,
+  "top_messages": [
+   {
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_418\\",
+    "count": 2
+   },
+   {
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 1
+   },
+   {
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se",
+    "count": 1
+   },
+   {
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\f",
+    "count": 1
+   },
+   {
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_731\\We",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4c16a0",
+    "name": "InitializeRadialGradientTexture",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x517fa0",
+    "name": "InfantryClass::ProcessDeployment",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_se"
+   },
+   {
+    "addr": "0x59d510",
+    "name": "Tiberium::ProcessGrowth",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_418\\"
+   },
+   {
+    "addr": "0x59e740",
+    "name": "Tiberium::CalculateSpread",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_418\\"
+   },
+   {
+    "addr": "0x62f230",
+    "name": "ParticleSystemClass::SpawnParticle",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\f"
+   },
+   {
+    "addr": "0x70c690",
+    "name": "Weapon::DestroyTerrain",
+    "msg": "'-' : non-constant expression in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_731\\W"
+   }
+  ]
+ },
+ {
+  "family": "C2018",
+  "count": 6,
+  "top_messages": [
+   {
+    "msg": "unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_288\\AbstractClass.cpp(5",
+    "count": 1
+   },
+   {
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_324\\INIEntry_INIClas",
+    "count": 1
+   },
+   {
+    "msg": "unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_481\\Multi",
+    "count": 1
+   },
+   {
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 1
+   },
+   {
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_831\\Gam",
+    "count": 1
+   },
+   {
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_839\\Sele",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4fb9b0",
+    "name": "AbstractClass::RemoveObjectFromHouse",
+    "msg": "unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_288\\AbstractClass.cpp(5"
+   },
+   {
+    "addr": "0x52aaf0",
+    "name": "sub_52AAF0",
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_324\\INIEntry_INIClas"
+   },
+   {
+    "addr": "0x5d70f0",
+    "name": "HouseClass::AIDecision",
+    "msg": "unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_481\\Multi"
+   },
+   {
+    "addr": "0x766a10",
+    "name": "System_Init_766A10",
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x767820",
+    "name": "GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create",
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_831\\Gam"
+   },
+   {
+    "addr": "0x76c6e0",
+    "name": "SelectionInitializeWOL",
+    "msg": "unknown character '0x40'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_839\\Sele"
+   }
+  ]
+ },
+ {
+  "family": "C2520",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64",
+    "count": 4
+   },
+   {
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64; D:\\RA2YR_ReSource\\.o",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x402f60",
+    "name": "ProcessAudioMixerFrame",
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64; D:\\RA2YR_ReSource\\.o"
+   },
+   {
+    "addr": "0x403920",
+    "name": "AudioThread::UpdateStats",
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64"
+   },
+   {
+    "addr": "0x6d2120",
+    "name": "Coord::ScaleToScreenY",
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64"
+   },
+   {
+    "addr": "0x723b60",
+    "name": "sub_723B60",
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64"
+   },
+   {
+    "addr": "0x725190",
+    "name": "sub_725190",
+    "msg": "conversion from unsigned __int64 to double not implemented, use signed __int64"
+   }
+  ]
+ },
+ {
+  "family": "C2450",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "switch expression of type 'void *' is illegal",
+    "count": 3
+   },
+   {
+    "msg": "switch expression of type 'void *' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p",
+    "count": 1
+   },
+   {
+    "msg": "switch expression of type 'class AbstractClass *' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_h",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4190b0",
+    "name": "AircraftClass::ProcessInputKey",
+    "msg": "switch expression of type 'void *' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\p"
+   },
+   {
+    "addr": "0x41b9f0",
+    "name": "AircraftClass::UpdateDocking",
+    "msg": "switch expression of type 'void *' is illegal"
+   },
+   {
+    "addr": "0x41ba90",
+    "name": "AircraftClass::MissionDispatch",
+    "msg": "switch expression of type 'void *' is illegal"
+   },
+   {
+    "addr": "0x41bb30",
+    "name": "AircraftClass::OverrideMission_SyncLog",
+    "msg": "switch expression of type 'void *' is illegal"
+   },
+   {
+    "addr": "0x6fb740",
+    "name": "FootClass::UpdateLocomotion",
+    "msg": "switch expression of type 'class AbstractClass *' is illegal; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_h"
+   }
+  ]
+ },
+ {
+  "family": "C2046",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_78\\Font.cpp(81) : error C2046: illegal case;",
+    "count": 1
+   },
+   {
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_379\\LightConvertClass_5",
+    "count": 1
+   },
+   {
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_571\\RTacticalClass_Rad",
+    "count": 1
+   },
+   {
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_591\\RocketLocomotion",
+    "count": 1
+   },
+   {
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_635\\SidebarClass_6a6300.cpp(3",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x434cd0",
+    "name": "Font::Print",
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_78\\Font.cpp(81) : error C2046: illegal ca"
+   },
+   {
+    "addr": "0x556090",
+    "name": "LightConvertClass::UpdateColors",
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_379\\LightConvertClass_5"
+   },
+   {
+    "addr": "0x6539d0",
+    "name": "TacticalClass::ProcessMouseClick",
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_571\\RTacticalClass_Rad"
+   },
+   {
+    "addr": "0x6622c0",
+    "name": "UpdateBullets",
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_591\\RocketLocomotion"
+   },
+   {
+    "addr": "0x6a6300",
+    "name": "SidebarClass::AddCameo",
+    "msg": "illegal case; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_635\\SidebarClass_6a6300.cpp(3"
+   }
+  ]
+ },
+ {
+  "family": "C2561",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "'UnloadUnits' : function must return a value",
+    "count": 1
+   },
+   {
+    "msg": "'Draw' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_313",
+    "count": 1
+   },
+   {
+    "msg": "'RepairBridge' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\",
+    "count": 1
+   },
+   {
+    "msg": "'ProcessGameResults' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 1
+   },
+   {
+    "msg": "'TransformMatrix' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x457de0",
+    "name": "BuildingClass::UnloadUnits",
+    "msg": "'UnloadUnits' : function must return a value"
+   },
+   {
+    "addr": "0x518f90",
+    "name": "InfantryClass::Draw",
+    "msg": "'Draw' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_313"
+   },
+   {
+    "addr": "0x519630",
+    "name": "InfantryClass::RepairBridge",
+    "msg": "'RepairBridge' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\"
+   },
+   {
+    "addr": "0x6c6f50",
+    "name": "ProcessGameResults",
+    "msg": "'ProcessGameResults' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x762af0",
+    "name": "Voxel::TransformMatrix",
+    "msg": "'TransformMatrix' : function must return a value; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part"
+   }
+  ]
+ },
+ {
+  "family": "C2676",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "binary '+' : 'class SequenceStruct' does not define this operator or a conversion to a type accep",
+    "count": 2
+   },
+   {
+    "msg": "binary '+' : 'class TacticalClass' does not define this operator or a conversion to a type accepta",
+    "count": 1
+   },
+   {
+    "msg": "binary '==' : 'class ObjectClass' does not define this operator or a conversion to a type acceptable to t",
+    "count": 1
+   },
+   {
+    "msg": "binary '<' : 'const class __time32_t' does not define this operator or a conversion to a type acceptab",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x51f660",
+    "name": "InfantryClass::ProcessIvanBombResult",
+    "msg": "binary '+' : 'class SequenceStruct' does not define this operator or a conversion to a type accep"
+   },
+   {
+    "addr": "0x51f6e0",
+    "name": "InfantryClass::ProcessIvanBomb",
+    "msg": "binary '+' : 'class SequenceStruct' does not define this operator or a conversion to a type accep"
+   },
+   {
+    "addr": "0x6d71e0",
+    "name": "TacticalClass::CalcBuildingDrawPos",
+    "msg": "binary '+' : 'class TacticalClass' does not define this operator or a conversion to a type accepta"
+   },
+   {
+    "addr": "0x78f000",
+    "name": "SessionClass::BuildLaunchString",
+    "msg": "binary '==' : 'class ObjectClass' does not define this operator or a conversion to a type acceptable to t"
+   },
+   {
+    "addr": "0x7cd2cb",
+    "name": "_localtime",
+    "msg": "binary '<' : 'const class __time32_t' does not define this operator or a conversion to a type acceptab"
+   }
+  ]
+ },
+ {
+  "family": "C2044",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_435\\_addr_5B_5b4430.cpp(62) :",
+    "count": 1
+   },
+   {
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df280.cpp",
+    "count": 1
+   },
+   {
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df3c2.cpp",
+    "count": 1
+   },
+   {
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df500.cpp",
+    "count": 1
+   },
+   {
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df640.cpp",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x5b4430",
+    "name": "LookupFileInfoCache",
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_435\\_addr_5B_5b4430.cpp(62) :"
+   },
+   {
+    "addr": "0x7df280",
+    "name": "Object_Calc_7DF280",
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df280.cpp"
+   },
+   {
+    "addr": "0x7df3c2",
+    "name": "Object_Calc_7DF3C2",
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df3c2.cpp"
+   },
+   {
+    "addr": "0x7df500",
+    "name": "Object_Calc_7DF500",
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df500.cpp"
+   },
+   {
+    "addr": "0x7df640",
+    "name": "Object_Calc_7DF640",
+    "msg": "illegal continue; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_953\\Object_Calc_7df640.cpp"
+   }
+  ]
+ },
+ {
+  "family": "C2079",
+  "count": 5,
+  "top_messages": [
+   {
+    "msg": "'v5' uses undefined class 'WNDPROC'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\Combo",
+    "count": 1
+   },
+   {
+    "msg": "'lpPrevWndFunc' uses undefined class 'WNDPROC'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\Opt",
+    "count": 1
+   },
+   {
+    "msg": "'q0F4' uses undefined class 'BuildingLightQueue'",
+    "count": 1
+   },
+   {
+    "msg": "'v1' uses undefined class '__time32_t'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_939\\_add",
+    "count": 1
+   },
+   {
+    "msg": "'pvarg' uses undefined class 'VARIANTARG'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_948",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x617250",
+    "name": "ComboBoxDropDown::WndProc",
+    "msg": "'v5' uses undefined class 'WNDPROC'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\Combo"
+   },
+   {
+    "addr": "0x618d40",
+    "name": "Options::DialogProc",
+    "msg": "'lpPrevWndFunc' uses undefined class 'WNDPROC'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_523\\Opt"
+   },
+   {
+    "addr": "0x62e280",
+    "name": "ParticleSystemClass::CreateBuildingLight",
+    "msg": "'q0F4' uses undefined class 'BuildingLightQueue'"
+   },
+   {
+    "addr": "0x7d52b8",
+    "name": "_gmtime",
+    "msg": "'v1' uses undefined class '__time32_t'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_939\\_add"
+   },
+   {
+    "addr": "0x7dc7cb",
+    "name": "HandleErrorCOM",
+    "msg": "'pvarg' uses undefined class 'VARIANTARG'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_948"
+   }
+  ]
+ },
+ {
+  "family": "C2043",
+  "count": 4,
+  "top_messages": [
+   {
+    "msg": "illegal break",
+    "count": 3
+   },
+   {
+    "msg": "illegal break; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_931\\_addr_7C_7cda90.cpp(31) : er",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x479d60",
+    "name": "sub_479D60",
+    "msg": "illegal break"
+   },
+   {
+    "addr": "0x479ef0",
+    "name": "sub_479EF0",
+    "msg": "illegal break"
+   },
+   {
+    "addr": "0x7c91d0",
+    "name": "_strncpy",
+    "msg": "illegal break"
+   },
+   {
+    "addr": "0x7cda90",
+    "name": "_strcmp",
+    "msg": "illegal break; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_931\\_addr_7C_7cda90.cpp(31) : er"
+   }
+  ]
+ },
+ {
+  "family": "C2556",
+  "count": 4,
+  "top_messages": [
+   {
+    "msg": "'struct IUnknown *__fastcall __fastcall LayerClass__Pathfinding_Find(void *,int,void *,void *",
+    "count": 1
+   },
+   {
+    "msg": "'int __thiscall RawFileClass::GetFileSize(void)' : overloaded function differs only by ret",
+    "count": 1
+   },
+   {
+    "msg": "'unsigned long __cdecl Timer__GetTicks(void)' : overloaded function differs only by retur",
+    "count": 1
+   },
+   {
+    "msg": "'unsigned long __cdecl Timer__GetTicks(void)' : overloaded function differs only by return",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4d3920",
+    "name": "FootClass::MovementStep",
+    "msg": "'struct IUnknown *__fastcall __fastcall LayerClass__Pathfinding_Find(void *,int,void *,void *"
+   },
+   {
+    "addr": "0x65d0d0",
+    "name": "CCFileClass::GetFileSize",
+    "msg": "'int __thiscall RawFileClass::GetFileSize(void)' : overloaded function differs only by ret"
+   },
+   {
+    "addr": "0x689470",
+    "name": "ScenarioClass::SaveLoad_Prefix_0",
+    "msg": "'unsigned long __cdecl Timer__GetTicks(void)' : overloaded function differs only by retur"
+   },
+   {
+    "addr": "0x793bb0",
+    "name": "Network_Connect_793BB0",
+    "msg": "'unsigned long __cdecl Timer__GetTicks(void)' : overloaded function differs only by return"
+   }
+  ]
+ },
+ {
+  "family": "C2230",
+  "count": 4,
+  "top_messages": [
+   {
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_374\\_addr",
+    "count": 1
+   },
+   {
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_458\\_addr",
+    "count": 1
+   },
+   {
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_921\\_addr",
+    "count": 1
+   },
+   {
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_945\\_addr",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x551e50",
+    "name": "DecompressCoreLCW",
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_374\\_addr"
+   },
+   {
+    "addr": "0x5c8ab0",
+    "name": "ValidateRSAKey",
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_458\\_addr"
+   },
+   {
+    "addr": "0x7c8b48",
+    "name": "_qsort",
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_921\\_addr"
+   },
+   {
+    "addr": "0x7dab54",
+    "name": "_findenv",
+    "msg": "'-' : indirection to different types; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_945\\_addr"
+   }
+  ]
+ },
+ {
+  "family": "C2166",
+  "count": 4,
+  "top_messages": [
+   {
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_584\\_addr_65_65",
+    "count": 2
+   },
+   {
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_501\\String.cpp(35) : err",
+    "count": 1
+   },
+   {
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_593\\Process.cpp(25) : e",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x5f3350",
+    "name": "String::NormalizeNewlines",
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_501\\String.cpp(35) : er"
+   },
+   {
+    "addr": "0x65d510",
+    "name": "sub_65D510",
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_584\\_addr_65_65"
+   },
+   {
+    "addr": "0x65d5c0",
+    "name": "ReadStreamLine",
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_584\\_addr_65_65"
+   },
+   {
+    "addr": "0x664610",
+    "name": "Process::WaitForExit",
+    "msg": "l-value specifies const object; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_593\\Process.cpp(25) : e"
+   }
+  ]
+ },
+ {
+  "family": "C2373",
+  "count": 3,
+  "top_messages": [
+   {
+    "msg": "'dword_887770' : redefinition; different type modifiers",
+    "count": 1
+   },
+   {
+    "msg": "'dword_8B3A98' : redefinition; different type modifiers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_",
+    "count": 1
+   },
+   {
+    "msg": "'dword_B77AC0' : redefinition; different type modifiers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\a",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4123a0",
+    "name": "fptc",
+    "msg": "'dword_887770' : redefinition; different type modifiers"
+   },
+   {
+    "addr": "0x4c85e0",
+    "name": "ExceptionHandler::GenerateReport",
+    "msg": "'dword_8B3A98' : redefinition; different type modifiers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_"
+   },
+   {
+    "addr": "0x795650",
+    "name": "QueryNATPortWOL",
+    "msg": "'dword_B77AC0' : redefinition; different type modifiers; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\a"
+   }
+  ]
+ },
+ {
+  "family": "C2113",
+  "count": 3,
+  "top_messages": [
+   {
+    "msg": "pointer can only be subtracted from another pointer",
+    "count": 2
+   },
+   {
+    "msg": "pointer can only be subtracted from another pointer; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x550260",
+    "name": "TacticalClass::RenderCells",
+    "msg": "pointer can only be subtracted from another pointer"
+   },
+   {
+    "addr": "0x62c540",
+    "name": "ParticleClass::UpdateAnimationDrift",
+    "msg": "pointer can only be subtracted from another pointer"
+   },
+   {
+    "addr": "0x693440",
+    "name": "ScrollMapEdge",
+    "msg": "pointer can only be subtracted from another pointer; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   }
+  ]
+ },
+ {
+  "family": "C2628",
+  "count": 3,
+  "top_messages": [
+   {
+    "msg": "'$S1' followed by '__int8' is illegal (did you forget a ';'?)",
+    "count": 2
+   },
+   {
+    "msg": "'$S1' followed by '__int8' is illegal (did you forget a ';'?); D:\\RA2YR_ReSource\\.omo\\agents\\r1",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7cbb8d",
+    "name": "__mbsnccnt",
+    "msg": "'$S1' followed by '__int8' is illegal (did you forget a ';'?)"
+   },
+   {
+    "addr": "0x7d3886",
+    "name": "__mbsnbcpy",
+    "msg": "'$S1' followed by '__int8' is illegal (did you forget a ';'?)"
+   },
+   {
+    "addr": "0x7d45df",
+    "name": "__mbsnbicoll",
+    "msg": "'$S1' followed by '__int8' is illegal (did you forget a ';'?); D:\\RA2YR_ReSource\\.omo\\agents\\r1"
+   }
+  ]
+ },
+ {
+  "family": "C2677",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "binary '*' : no global operator defined which takes type 'class Function' (or there is no acceptable conversion",
+    "count": 1
+   },
+   {
+    "msg": "binary '*' : no global operator defined which takes type 'class JumpjetLocomotionClass' (or there",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x41c430",
+    "name": "Function::Method_41C430",
+    "msg": "binary '*' : no global operator defined which takes type 'class Function' (or there is no acceptable conversio"
+   },
+   {
+    "addr": "0x43a130",
+    "name": "JumpjetLocomotionClass::ComputeVectorLengthMetric_0",
+    "msg": "binary '*' : no global operator defined which takes type 'class JumpjetLocomotionClass' (or there"
+   }
+  ]
+ },
+ {
+  "family": "C2196",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "case value '2' already used; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_143\\ObjectClass.cpp(90",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x48c8b0",
+    "name": "MainGameFrame",
+    "msg": "case value '2' already used; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_143\\ObjectClass.cpp(90"
+   },
+   {
+    "addr": "0x48ccc0",
+    "name": "MainGame",
+    "msg": "case value '2' already used; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_143\\ObjectClass.cpp(90"
+   }
+  ]
+ },
+ {
+  "family": "C2108",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "subscript is not of integral type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_",
+    "count": 1
+   },
+   {
+    "msg": "subscript is not of integral type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_6",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4b4b00",
+    "name": "JumpjetLocomotionClass::StubReturnZero_2",
+    "msg": "subscript is not of integral type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_"
+   },
+   {
+    "addr": "0x6a4130",
+    "name": "JumpjetLocomotionClass::StubReturnZero_15",
+    "msg": "subscript is not of integral type; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_6"
+   }
+  ]
+ },
+ {
+  "family": "C2582",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "'NetworkID' : 'operator =' function is unavailable; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB",
+    "count": 1
+   },
+   {
+    "msg": "'HWND__' : 'operator =' function is unavailable; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\pa",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x648710",
+    "name": "QueueNetworkProcessor",
+    "msg": "'NetworkID' : 'operator =' function is unavailable; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB"
+   },
+   {
+    "addr": "0x6ae6e0",
+    "name": "Skirmish::SetupGame",
+    "msg": "'HWND__' : 'operator =' function is unavailable; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\pa"
+   }
+  ]
+ },
+ {
+  "family": "C2675",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "unary '++' : 'class TeamClass' does not define this operator or a conversion to a type acceptable to",
+    "count": 1
+   },
+   {
+    "msg": "unary '!' : 'class ILocomotion' does not define this operator or a conversion to a type acceptable to",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x6ea500",
+    "name": "TeamClass::AddMember",
+    "msg": "unary '++' : 'class TeamClass' does not define this operator or a conversion to a type acceptable to"
+   },
+   {
+    "addr": "0x6edb50",
+    "name": "TeamClass::AssignAttackTarget",
+    "msg": "unary '!' : 'class ILocomotion' does not define this operator or a conversion to a type acceptable to"
+   }
+  ]
+ },
+ {
+  "family": "OTHER",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_828\\_VectorCursor_V_rc_pt",
+    "count": 1
+   },
+   {
+    "msg": "D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_841\\_VectorCursor_V_rc_pt",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7669f0",
+    "name": "COMClass::disconnectPoint",
+    "msg": "D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_828\\_VectorCursor_V_rc_pt"
+   },
+   {
+    "addr": "0x76f120",
+    "name": "VectorCursor::updateCursor",
+    "msg": "D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_841\\_VectorCursor_V_rc_pt"
+   }
+  ]
+ },
+ {
+  "family": "C2275",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "'VectorCursor' : illegal use of this type as an expression; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_",
+    "count": 1
+   },
+   {
+    "msg": "'p0' : illegal use of this type as an expression",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x76f0c0",
+    "name": "VectorCursor::Construct",
+    "msg": "'VectorCursor' : illegal use of this type as an expression; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_"
+   },
+   {
+    "addr": "0x7c8986",
+    "name": "ntoainet",
+    "msg": "'p0' : illegal use of this type as an expression"
+   }
+  ]
+ },
+ {
+  "family": "C2535",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "'void __thiscall XSurface::vt_entry_68(void)' : member function already defined or declared; D",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7ba610",
+    "name": "XSurface::DrawLineEx",
+    "msg": "'void __thiscall XSurface::vt_entry_68(void)' : member function already defined or declared; D"
+   },
+   {
+    "addr": "0x7ba8c0",
+    "name": "XSurface::DrawDashedLine",
+    "msg": "'void __thiscall XSurface::vt_entry_68(void)' : member function already defined or declared; D"
+   }
+  ]
+ },
+ {
+  "family": "C2408",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "illegal type on PTR operator in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7ca090",
+    "name": "_memcpy",
+    "msg": "illegal type on PTR operator in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   },
+   {
+    "addr": "0x7d0a20",
+    "name": "_memcpy_0",
+    "msg": "illegal type on PTR operator in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\par"
+   }
+  ]
+ },
+ {
+  "family": "C1001",
+  "count": 2,
+  "top_messages": [
+   {
+    "msg": "INTERNAL COMPILER ERROR",
+    "count": 2
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7cb25e",
+    "name": "_flsall",
+    "msg": "INTERNAL COMPILER ERROR"
+   },
+   {
+    "addr": "0x7d5791",
+    "name": "__rmtmp",
+    "msg": "INTERNAL COMPILER ERROR"
+   }
+  ]
+ },
+ {
+  "family": "C2411",
+  "count": 1,
+  "top_messages": [
+   {
+    "msg": "'__pad_C' : illegal struct/union member in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\f",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x4bbca0",
+    "name": "DSurface::DrawLineModulated",
+    "msg": "'__pad_C' : illegal struct/union member in 'first operand'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\f"
+   }
+  ]
+ },
+ {
+  "family": "C2094",
+  "count": 1,
+  "top_messages": [
+   {
+    "msg": "label 'A9FF80h' was undefined; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_350\\ObjectCl",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x53d330",
+    "name": "GenerateLightningStormGlow",
+    "msg": "label 'A9FF80h' was undefined; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_350\\ObjectCl"
+   }
+  ]
+ },
+ {
+  "family": "C4235",
+  "count": 1,
+  "top_messages": [
+   {
+    "msg": "nonstandard extension used : '__int128' keyword not supported in this product; D:\\RA2YR_ReSource\\.omo\\age",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x610950",
+    "name": "TriggerClass::FindByEventType",
+    "msg": "nonstandard extension used : '__int128' keyword not supported in this product; D:\\RA2YR_ReSource\\.omo\\age"
+   }
+  ]
+ },
+ {
+  "family": "C2182",
+  "count": 1,
+  "top_messages": [
+   {
+    "msg": "'p0' : illegal use of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_781\\",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x731a90",
+    "name": "j_FactoryClass_GetFlag",
+    "msg": "'p0' : illegal use of type 'void'; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_781\\"
+   }
+  ]
+ },
+ {
+  "family": "C2133",
+  "count": 1,
+  "top_messages": [
+   {
+    "msg": "'v22' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_874\\CNetUtilEven",
+    "count": 1
+   }
+  ],
+  "samples": [
+   {
+    "addr": "0x7a3d90",
+    "name": "ComStreamClass::Write",
+    "msg": "'v22' : unknown size; D:\\RA2YR_ReSource\\.omo\\agents\\r1\\ab_hpp\\full_setB\\part_874\\CNetUtilEven"
+   }
+  ]
+ }
+]

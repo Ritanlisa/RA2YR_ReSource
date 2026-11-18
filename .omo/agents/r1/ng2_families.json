@@ -1,0 +1,446 @@
+[
+ {
+  "pathology": "codegen_shape",
+  "count": 3311,
+  "addressability": "long-tail",
+  "samples": [
+   {
+    "addr": "0x401080",
+    "name": "Audio::InitChannels",
+    "orig": "+3 call 0x4071c0",
+    "ours": "+3 mov eax, 0x4071c0"
+   },
+   {
+    "addr": "0x4010c0",
+    "name": "EndFrameAudioMixer",
+    "orig": "+60 imul ecx",
+    "ours": "+60 mul ecx"
+   },
+   {
+    "addr": "0x4016f0",
+    "name": "IDXContainer::LoadSample",
+    "orig": "+6 push ebx",
+    "ours": "+6 mov eax, dword ptr [esp + 0x130]"
+   },
+   {
+    "addr": "0x401f90",
+    "name": "RefCount::Decrement",
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov dword ptr [ecx + 0xc], eax"
+   },
+   {
+    "addr": "0x402040",
+    "name": "AudioController::Constructor",
+    "orig": "+46 mov dword ptr [ebx + 0xa8], ebp",
+    "ours": "+46 lea ecx, [ebx + 0xd8]"
+   }
+  ]
+ },
+ {
+  "pathology": "regalloc",
+  "count": 1731,
+  "addressability": "long-tail",
+  "samples": [
+   {
+    "addr": "0x401190",
+    "name": "sub_401190",
+    "orig": "+3 mov eax, 0x51eb851f",
+    "ours": "+3 mov eax, edx"
+   },
+   {
+    "addr": "0x401580",
+    "name": "sub_401580",
+    "orig": "+3 mov ecx, dword ptr [esi + 0x10c]",
+    "ours": "+3 mov eax, dword ptr [esi + 0x10c]"
+   },
+   {
+    "addr": "0x4018c0",
+    "name": "sub_4018C0",
+    "orig": "+0 push edi",
+    "ours": "+0 push esi"
+   },
+   {
+    "addr": "0x401910",
+    "name": "AudioStream::ReleaseSubsystem",
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   {
+    "addr": "0x4019e0",
+    "name": "sub_4019E0",
+    "orig": "+77 lea esi, [ebx + 0xc]",
+    "ours": "+77 lea ecx, [ebx + 0xc]"
+   }
+  ]
+ },
+ {
+  "pathology": "branch_polarity",
+  "count": 989,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x402330",
+    "name": "AudioController::UpdatePlayback",
+    "orig": "+12 je 0x4023b0",
+    "ours": "+12 je 0x68"
+   },
+   {
+    "addr": "0x402600",
+    "name": "AudioChannel::DeactivatePlay",
+    "orig": "+19 je 0x40263d",
+    "ours": "+19 je 0x3b"
+   },
+   {
+    "addr": "0x402650",
+    "name": "AudioChannel::ActivatePlay",
+    "orig": "+19 je 0x40268d",
+    "ours": "+19 je 0x31"
+   },
+   {
+    "addr": "0x404e70",
+    "name": "AudioStream::CleanupChannels",
+    "orig": "+12 je 0x404fbe",
+    "ours": "+12 je 0x15c"
+   },
+   {
+    "addr": "0x405c00",
+    "name": "AudioFileClass::Release",
+    "orig": "+19 je 0x405d31",
+    "ours": "+19 je 0x136"
+   }
+  ]
+ },
+ {
+  "pathology": "frame_sched",
+  "count": 942,
+  "addressability": "long-tail",
+  "samples": [
+   {
+    "addr": "0x401c00",
+    "name": "LoadSampleAudioMixer",
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 sub esp, 0x10"
+   },
+   {
+    "addr": "0x4035f0",
+    "name": "AudioQueue::FindBestChannel",
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 sub esp, 8"
+   },
+   {
+    "addr": "0x403870",
+    "name": "CoordBounds::Constructor",
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 sub esp, 8"
+   },
+   {
+    "addr": "0x406b10",
+    "name": "InitializeAudioSubsystem",
+    "orig": "+0 sub esp, 0x8c",
+    "ours": "+0 sub esp, 0xbc"
+   },
+   {
+    "addr": "0x4071c0",
+    "name": "AudioMixer::PlaySample",
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 sub esp, 0xc"
+   }
+  ]
+ },
+ {
+  "pathology": "const_fold",
+  "count": 650,
+  "addressability": "rule+tooling",
+  "samples": [
+   {
+    "addr": "0x401000",
+    "name": "AudioMixer::Init",
+    "orig": "+30 lea ebx, [esi + 0x50]",
+    "ours": "+30 lea ebx, [esi + 0x4d]"
+   },
+   {
+    "addr": "0x4019a0",
+    "name": "CCFileClass::Destru_vt00",
+    "orig": "+3 lea ecx, [esi + 0x58]",
+    "ours": "+3 lea ecx, [esi + 0x160]"
+   },
+   {
+    "addr": "0x402220",
+    "name": "ObjectClass::Cleanup",
+    "orig": "+6 mov ebp, dword ptr [esi + 0xac]",
+    "ours": "+6 mov ebp, dword ptr [esi + 0xa8]"
+   },
+   {
+    "addr": "0x402720",
+    "name": "Audio::GetChannelStatus",
+    "orig": "+3 test byte ptr [esi + 0xa4], 5",
+    "ours": "+3 test byte ptr [esi + 0x1a0], 5"
+   },
+   {
+    "addr": "0x402c70",
+    "name": "CreateAudioChannel",
+    "orig": "+16 mov dword ptr [esp + 0x14], ecx",
+    "ours": "+16 mov dword ptr [esp + 0x18], ecx"
+   }
+  ]
+ },
+ {
+  "pathology": "extern_reloc",
+  "count": 427,
+  "addressability": "tooling-first",
+  "samples": [
+   {
+    "addr": "0x403ed0",
+    "name": "sub_403ED0",
+    "orig": "+16 mov ecx, 0x87e250",
+    "ours": "+16 mov ecx, dword ptr [0]"
+   },
+   {
+    "addr": "0x405140",
+    "name": "sub_405140",
+    "orig": "+9 fld dword ptr [0x7e1748]",
+    "ours": "+9 fld qword ptr [0]"
+   },
+   {
+    "addr": "0x405d40",
+    "name": "AudioController::Stop",
+    "orig": "+1 mov eax, ecx",
+    "ours": "+1 mov edx, dword ptr [0]"
+   },
+   {
+    "addr": "0x405e80",
+    "name": "sub_405E80",
+    "orig": "+1 mov eax, ecx",
+    "ours": "+1 mov eax, dword ptr [0]"
+   },
+   {
+    "addr": "0x407000",
+    "name": "Audio::IsSoundEnabled",
+    "orig": "+0 mov ecx, dword ptr [0x87e728]",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   }
+  ]
+ },
+ {
+  "pathology": "branch_order",
+  "count": 405,
+  "addressability": "?",
+  "samples": [
+   {
+    "addr": "0x4047b0",
+    "name": "AudioStream::SelectRandom",
+    "orig": "+21 je 0x4048a7",
+    "ours": "+21 jne 0x1b"
+   },
+   {
+    "addr": "0x404d80",
+    "name": "Audio::ReleaseChannelRefs",
+    "orig": "+14 jle 0x404dbd",
+    "ours": "+14 jg 0x19"
+   },
+   {
+    "addr": "0x404e20",
+    "name": "PollNextAudioQueue",
+    "orig": "+18 jle 0x404e58",
+    "ours": "+18 jle 0x45"
+   },
+   {
+    "addr": "0x405ac0",
+    "name": "sub_405AC0",
+    "orig": "+27 jae 0x405aec",
+    "ours": "+27 jb 0x54"
+   },
+   {
+    "addr": "0x407520",
+    "name": "LinkedList_flat::Next",
+    "orig": "+4 jne 0x407527",
+    "ours": "+4 je 0xd"
+   }
+  ]
+ },
+ {
+  "pathology": "ret_norm",
+  "count": 175,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x407780",
+    "name": "sub_407780",
+    "orig": "+0 mov eax, dword ptr [0x87e81c]",
+    "ours": "+0 mov al, byte ptr [0x8c]"
+   },
+   {
+    "addr": "0x408410",
+    "name": "sub_408410",
+    "orig": "+0 mov eax, dword ptr [0x87e81c]",
+    "ours": "+0 mov al, byte ptr [0x8c]"
+   },
+   {
+    "addr": "0x40cca0",
+    "name": "VectorClass_ptr_IsometricTileClass::GetPtrOffset",
+    "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+   },
+   {
+    "addr": "0x40da20",
+    "name": "sub_40DA20",
+    "orig": "+17 mov dword ptr [0x886fa4], eax",
+    "ours": "+17 mov byte ptr [0], al"
+   },
+   {
+    "addr": "0x4105a0",
+    "name": "AbstractClass::COMStub_8",
+    "orig": "+0 mov al, byte ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   }
+  ]
+ },
+ {
+  "pathology": "width_mismatch",
+  "count": 147,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x4081a0",
+    "name": "AudioQueue::HaltVoices",
+    "orig": "+0 mov eax, dword ptr [0x87e81c]",
+    "ours": "+0 mov cl, byte ptr [0x8c]"
+   },
+   {
+    "addr": "0x408270",
+    "name": "AudioQueue::ReleaseBuffers",
+    "orig": "+0 mov eax, dword ptr [0x87e81c]",
+    "ours": "+0 mov cl, byte ptr [0x8c]"
+   },
+   {
+    "addr": "0x4082f0",
+    "name": "ProcessAudioTimer",
+    "orig": "+0 mov eax, dword ptr [0x87e81c]",
+    "ours": "+0 mov cl, byte ptr [0x8c]"
+   },
+   {
+    "addr": "0x40b270",
+    "name": "VectorClass::Cleanup5",
+    "orig": "+6 mov eax, dword ptr [esi + 4]",
+    "ours": "+6 cmp word ptr [esi + 4], bx"
+   },
+   {
+    "addr": "0x40b2e0",
+    "name": "VectorClass::GetCapacity",
+    "orig": "+12 mov eax, dword ptr [esp + 4]",
+    "ours": "+12 movsx ecx, word ptr [ecx + 4]"
+   }
+  ]
+ },
+ {
+  "pathology": "cc_mismatch",
+  "count": 144,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x40afd0",
+    "name": "Array::ForEachReverse",
+    "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+    "ours": "+0 mov edx, dword ptr [esp + 8]"
+   },
+   {
+    "addr": "0x410220",
+    "name": "AbstractClass::GetVtable3",
+    "orig": "+7 ret 4",
+    "ours": "+7 ret 8"
+   },
+   {
+    "addr": "0x412a40",
+    "name": "Slider::CalcPosition",
+    "orig": "+0 mov ecx, dword ptr [esp + 4]",
+    "ours": "+0 mov ecx, dword ptr [esp + 8]"
+   },
+   {
+    "addr": "0x413490",
+    "name": "nullsub_3",
+    "orig": "+0 ret 4",
+    "ours": "+0 ret "
+   },
+   {
+    "addr": "0x414a10",
+    "name": "nullsub_71",
+    "orig": "+0 ret 8",
+    "ours": "+0 ret "
+   }
+  ]
+ },
+ {
+  "pathology": "eval_order",
+  "count": 99,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x401640",
+    "name": "AudioIndex::GetSampleInformation",
+    "orig": "+0 mov ecx, dword ptr [ecx]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   {
+    "addr": "0x4038a0",
+    "name": "AudioStream::ResetChannel",
+    "orig": "+4 mov dword ptr [ecx + 8], eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   {
+    "addr": "0x4038c0",
+    "name": "AudioStream::ResetChannel2",
+    "orig": "+4 mov dword ptr [ecx + 0x20], eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   {
+    "addr": "0x4061d0",
+    "name": "AudioMixer::PlayBuffer",
+    "orig": "+0 mov eax, dword ptr [ecx + 0x1c]",
+    "ours": "+0 mov ecx, dword ptr [esp + 4]"
+   },
+   {
+    "addr": "0x408ee0",
+    "name": "BufferedAudioStreamRead",
+    "orig": "+9 mov ebp, ecx",
+    "ours": "+9 mov dword ptr [esp + 0x14], edx"
+   }
+  ]
+ },
+ {
+  "pathology": "signedness",
+  "count": 91,
+  "addressability": "rule-candidate",
+  "samples": [
+   {
+    "addr": "0x420140",
+    "name": "CreateFractalNoise",
+    "orig": "+18 jle 0x42016e",
+    "ours": "+18 jbe 0x58"
+   },
+   {
+    "addr": "0x422b80",
+    "name": "TerrainClass::ClearAnimationLinkFlags",
+    "orig": "+13 jle 0x422bb0",
+    "ours": "+13 jbe 0x30"
+   },
+   {
+    "addr": "0x465cc0",
+    "name": "BulletTypeClass::ReadTrailerAnim",
+    "orig": "+13 jle 0x465d29",
+    "ours": "+13 jbe 0x73"
+   },
+   {
+    "addr": "0x46b280",
+    "name": "BulletClass::InitScalable",
+    "orig": "+14 jl 0x46b2be",
+    "ours": "+14 jb 0x3e"
+   },
+   {
+    "addr": "0x46cc90",
+    "name": "CampaignSelect::LookupByName",
+    "orig": "+13 jle 0x46ccc2",
+    "ours": "+13 ja 0x15"
+   }
+  ]
+ }
+]
