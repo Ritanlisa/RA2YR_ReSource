@@ -3157,9 +3157,9 @@
 ]
 },
 "LayerClass": {
-"member_count": 5,
+"member_count": 4,
 "extent": 14,
-"clusters": 5,
+"clusters": 4,
 "members": [
 [
 0,
@@ -3172,10 +3172,6 @@
 [
 8,
 4
-],
-[
-12,
-1
 ],
 [
 13,
