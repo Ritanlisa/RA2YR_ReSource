@@ -426,3 +426,27 @@ OK 6,547 → 6,550（gained 3 / LOST 0）**。报告 = `.omo/agents/r1/ng2/repor
 实测（canonical 全池，同批单同序）：**COMPILE_FAIL 3,038 → 3,032（−6）**、
 CF 新增 0、OK 6,550 不变（0 得 0 失）。门禁 OK 20/20、NG 40/40。
 报告 = `.omo/agents/r1/cf2/report_win32.md`。
+
+---
+
+## §22 C2039 残余族谱核查（成员供给已耗尽，勿重复投入）
+
+C2039 共 180 件。核查结论：
+
+1. **注册表成员供给机制已存在且已跑**：`_cw5_unit_extra_members` 用"unit body 名字 ∩ 注册表成员
+   （含 class_layouts 父链继承）"供给；`gen_class_hpp` 的 `extra` 通道接收。因此**注册表已知的
+   成员名不会漏供**。
+2. **残余 180 件的构成**（实测）：
+   - `TurnRate` ×15（JumpjetLocomotionClass）—— member_lookup **无此名**（仅伪码/til 有），
+     注册表供给无法覆盖；需按 disasm 偏移逐类考古（非机械规则）。
+   - `Piggybackee` ×7 —— 注册表**有**（JumpjetLocomotionClass @148），漏供疑为"通过基类指针
+     访问、derived shell 未含该成员"的类上下文缺口（`shell_augment` 覆盖范围问题）。
+   - `XSurface` ×?（BSurface）—— 基类名被当作成员访问（`this->XSurface::...` 类形态），
+     属基类/限定名解析 bug，另一族。
+   - `m000`/`m064`/`q010`/`__pad_0`/`m_4` —— offset-encoded 名，视图未记录该偏移（需视图合成）。
+   - `dwFileAttributes`/`sa_*` —— **已修复**（§21，CF −6）。
+3. **裁决**：C2039 不是单根因族；注册表供给路径已饱和。剩余按子类分别立项
+   （TurnRate = 逐类二进制考古；Piggybackee = shell 覆盖；XSurface = 限定名解析），
+   不建议作为下一轮批量规则。
+
+**当前账本**：OK 6,550 / NG 9,114 / CF 3,032 / PENDING 95 / THUNK 303。
