@@ -450,3 +450,9 @@ C2039 共 180 件。核查结论：
    不建议作为下一轮批量规则。
 
 **当前账本**：OK 6,550 / NG 9,114 / CF 3,032 / PENDING 95 / THUNK 303。
+
+### §21 补记：终态确定性验证（2026-11-18 末）
+canonical 全池**双跑**（同批单同序 955 parts）逐地址比对：
+**0 differences**；status 计数逐项相同（OK 6,550 / NG 9,114 / CF 3,032 / PENDING 95 / THUNK 303），
+status sha（排序后）= `9316fb04cb419a0f`。所有已落规则（return-this / receiver+r8o / diffasm W1b /
+era_types Win32）组合后**确定性成立**。
