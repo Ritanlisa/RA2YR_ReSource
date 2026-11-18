@@ -177,3 +177,35 @@ extended-RHS、pointer-cast-immediate、ident vs &global、cast-deref vs &global
 - `'==' : no conversion from 'class AircraftTypeClass *' to 'int *'`（不相容 ptr/ptr）
 修复方向（若重启）：扩展 `_rhs_ptr_head`/`rewrite` 处理 `cls` kind 与复杂操作数；
 注意全部为 32-bit cmp 恒等重拼（codegen-neutral），可安全门禁。
+
+## 附：C2660/C2227/C2228/C2664 形状配方（供下一轮直接开工）
+
+### C2660（154）— call 实参多于声明 arity
+| 形态 | 数量 | 样例 |
+|---|---|---|
+| 声明 0 参、调用传 1 | 80 | `SetFileName` / `sub_409100` |
+| 传 2 / 传 0 / 传 4 / 传 3 | 34/11/11/8 | `QueryInterface` / `CheckHeightDiff` |
+修复方向：以 call 点为二进制真值，给被调**声明**补齐 int 形参到调用 arity
+（`pass_callees` 的 csigs 通道）；注意同 unit 内被调定义需同步（decl/def 一致，防 C2511）。
+
+### C2227（152）— `X->field` 的 X 非类类型
+151/151 同一形态。样例：`->CreateSoundBuffer`（X=void*/int）、`->flags`、`->firstObject`、`->landType`。
+修复方向：由成员名反查 owner 类（`member_lookup` 名字唯一时）或由 disasm 元素类
+（`_cw5_elem_class`）确定，再把接收者 cast/retype 为该类。已有 `pass_global_arrow_members`
+对 `void*` 全局覆盖；残余为**局部/参数**接收者。
+
+### C2228（137）— `X.field` 的 X 非类类型
+136/137 同一形态。样例：`.QuadPart`（LARGE_INTEGER）、`.RecursionCount`（CRITICAL_SECTION）、
+`.vfptr`（未声明为类对象的局部）、`.field_0`。
+修复方向：按成员证据（`_TypeEnv` + member_lookup 反查）**retype 局部/参数**为 owner 类。
+
+### C2664（296）— 参数转换
+| 位置 | 数量 |
+|---|---|
+| parameter 1 | 159 |
+| parameter 2 | 45 |
+| parameter 3 | 33 |
+| parameter 4 | 5 |
+CRT 回调子族仅 ~50（qsort/bsearch/atexit/CreateDialog/ResetEvent/CreateThread/ShowDialogConfirm，
+已量化）；其余为**被调声明原型 vs 实参**形状，需 `pass_arg_harmonize` 向声明侧收敛或
+签名权威化（属签名层，非单点规则）。
