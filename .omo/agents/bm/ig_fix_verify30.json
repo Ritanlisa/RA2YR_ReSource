@@ -1,0 +1,242 @@
+[
+ [
+  "P1a bool",
+  "M:40B640:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40B670:this:0xC",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40B6A0:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40B6D0:this:0xC",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40B880:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40BAE0:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40BE50:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40BE80:this:0xC",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40C030:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1a bool",
+  "M:40C230:this:0xD",
+  "bool",
+  "char|unsigned char",
+  "IG[446] contains bool",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B180:this:0xC",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B180:this:0xD",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B270:this:0xD",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B2A0:this:0xC",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B2E0:this:0xC",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B300:this:0xD",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B740:this:0xD",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B7F0:this:0xD",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B820:this:0xC",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P1b char[N]",
+  "M:40B860:this:0xC",
+  "char[1]",
+  "char|unsigned char",
+  "IG[446] contains char[1]",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:414310:this:0x14CE",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:414310:this:0x8F4",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:414BB0:this:0x2C8",
+  "int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:4267F0:this:0x10C",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:4267F0:this:0x10E",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:42EB50:this:0x10",
+  "CellStruct",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:42F3F0:this:0xC",
+  "bool|char[1]",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:42F490:this:0x8",
+  "AbstractClass|unsigned int",
+  "short|unsigned short",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:43B740:this:0x1C30",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ],
+ [
+  "P2 fold",
+  "M:43BCF0:this:0x679",
+  "unsigned int",
+  "char|unsigned char",
+  "entity removed (was fold M+1 events)",
+  "PASS"
+ ]
+]
