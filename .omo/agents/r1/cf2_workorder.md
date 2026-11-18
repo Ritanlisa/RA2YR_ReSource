@@ -164,3 +164,16 @@
 - 门禁：单点 ≥10 样本编译 + OK 对照 20 全 MATCH + NG 回归 40 全可编译 + canonical 全池 A/B 同批单同序（lead 执行）。
 - 已证伪勿重跑：批量 ScalarDtor 改名、uintN_t 拼写、__usercall strip、语句/常量/循环等价改写（0 命中）。
 - CRT EH 内部件（_ET1/_RT1 等）按 AGENTS.md 裁决移出形态战场。
+
+## 附：C2446（265）现状评估 —— 现有 harmonizer 覆盖已广，残余属形状缺口
+
+`pass_compare_harmonize` 已覆盖：ptr vs int（`(unsigned int)` 重拼）、ptr vs ptr（不相容→RHS cast）、
+extended-RHS、pointer-cast-immediate、ident vs &global、cast-deref vs &global、vdd 形态。
+残余 265 件的样本分布：
+- `'!=' : no conversion from 'unsigned int' to 'class DListNode *'`（ptr/int 但操作数形状未被
+  `_CMP_SIMPLE`/`_CMP_CASTSUB` 捕获）
+- `'==' : no conversion from 'class AbstractClass *' to 'int'`（cls 类对象 vs int；
+  `_rhs_ptr_head` 的 `cls` kind 不在 `rewrite()` 分支内）
+- `'==' : no conversion from 'class AircraftTypeClass *' to 'int *'`（不相容 ptr/ptr）
+修复方向（若重启）：扩展 `_rhs_ptr_head`/`rewrite` 处理 `cls` kind 与复杂操作数；
+注意全部为 32-bit cmp 恒等重拼（codegen-neutral），可安全门禁。
