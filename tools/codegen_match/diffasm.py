@@ -88,7 +88,7 @@ def _load_maps():
 # that do not resolve (local statics, float-constant pools) keep their
 # spelling, so a genuinely different location still mismatches.
 _IDA_PLATE_KEY = re.compile(
-    r"^(?:stru|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{6,8})$")
+    r"^(?:stru|sub|loc|dword|word|byte|qword|flt|dbl|unk|off)_([0-9A-Fa-f]{6,8})$")
 # `DataGlobal_<VA>` is the registry's by-address identity convention: the
 # trailing hex IS the address.  Parse it so a generator-supplied identity
 # symbol compares equal to the original absolute address.
@@ -431,6 +431,17 @@ class Side:
                                 self._in_data(val):
                             nm = self.glob_map.get(val)
                             key = data_ref_canon(nm if nm else "0x%X" % val)
+                            fpos = self._field_pos(ins, "imm")
+                        elif key is None and self.mode == "orig" and \
+                                val in (_func_map_cache or {}):
+                            # W1b: a CODE address used as a VALUE (push/store
+                            # of a function pointer) is not a call/jump, so it
+                            # never hit func_ref_canon.  The obj side's DIR32
+                            # reloc key resolves into the DATA: address
+                            # namespace; canonicalize the orig side identically
+                            # (identity by VA) or the two sides can never meet
+                            # (`push offset sub_40BDA0` vs `push 0`).
+                            key = "DATA:0x%X" % val
                             fpos = self._field_pos(ins, "imm")
                         if key is not None:
                             changed[idx] = key

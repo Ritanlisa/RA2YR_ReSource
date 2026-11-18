@@ -396,3 +396,18 @@ OK **6,547** / NG 9,111 / COMPILE_FAIL 3,038 / PENDING 95 / THUNK 303（OK 34.33
 1. 网络恢复后推送 2 个提交。
 2. CF 主线：按 `cf2_workorder.md` 选族（注意 C2440 宽改已证伪；需拆分为窄规则并逐项门禁）。
 3. NG 主线：按 `ng2_workorder.md`，extern_reloc 已排除；branch_polarity 989 需 jcc 目标聚类。
+
+---
+
+## §20 W1b：diffasm reloc 归一对称性修复（+3 OK / 0 损失）
+
+重启恢复后 continuation。根因：`0x40bd70` 的 `push offset sub_40BDA0` 在 obj 侧是
+DIR32 reloc（canon `DATA:...`），orig 侧因 `_in_data` 不含 code 地址而**不归一**
+（canon `push 0x40bda0`）→ 命名空间不对称 → 假 MISMATCH。
+
+修复（measurement 侧，零 codegen）：
+1. `Side.normalize()` orig 侧补 code 地址归一（`val in _func_map_cache` → `DATA:0x%X`）。
+2. `_IDA_PLATE_KEY` 扩展 `sub_`/`loc_`（obj 侧键 `sub_40BDA0` → `0x40BDA0`）。
+
+验证：单点 reloc 站点双侧一致；OK 20/20；NG 40/40 可编译；**canonical 全池
+OK 6,547 → 6,550（gained 3 / LOST 0）**。报告 = `.omo/agents/r1/ng2/report_w1b.md`。
