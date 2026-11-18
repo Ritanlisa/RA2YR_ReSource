@@ -209,3 +209,12 @@ extended-RHS、pointer-cast-immediate、ident vs &global、cast-deref vs &global
 CRT 回调子族仅 ~50（qsort/bsearch/atexit/CreateDialog/ResetEvent/CreateThread/ShowDialogConfirm，
 已量化）；其余为**被调声明原型 vs 实参**形状，需 `pass_arg_harmonize` 向声明侧收敛或
 签名权威化（属签名层，非单点规则）。
+
+## 附：C2228 的 Win32 结构供给假说 —— 已核查（结构已完整，假说部分证伪）
+
+`era_types.h` 实际已含 `LARGE_INTEGER`（union + QuadPart，第 259-262 行）与
+`CRITICAL_SECTION`（struct + RecursionCount，第 205-213 行）→ **结构供给不是缺口**。
+C2228 中 `.QuadPart`/`.RecursionCount` 仅 2 件，根因是**接收者类型**（局部被声明为
+`__int64`/`int*` 等标量而非 LARGE_INTEGER/CRITICAL_SECTION）。该族 137 件分布在
+`.vfptr`/`.field_0`/`.m_N` 等成员名上，属接收者类型推断（`_TypeEnv`/member 反查），
+非类型供给补全。
