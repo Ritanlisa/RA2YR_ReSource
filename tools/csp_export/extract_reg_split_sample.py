@@ -40,11 +40,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "tools" / "type_infer" / "constraints" / "raw_constraints.json"
 PROTOS = ROOT / "anchors" / "ida_function_protos.json"
-OUT = ROOT / "tools" / "type_infer" / "constraints" / "raw_constraints_split_sample.json"
 WORKER = ROOT / "tools" / "csp_export" / "ida_regsplit_sample.py"
+
+# Default (tag-less) paths are the frozen 71-function M14 prototype artifacts.
+# --tag 500 (or any tag) switches every artifact to a *_<tag> sibling so the
+# original sample is never overwritten.
+OUT = ROOT / "tools" / "type_infer" / "constraints" / "raw_constraints_split_sample.json"
 SPEC = ROOT / ".omo" / "agents" / "csp" / "m14_ida_spec.json"
 IDA_OUT = ROOT / ".omo" / "agents" / "csp" / "m14_ida_regsplit_out.json"
 WRAPPER = ROOT / ".omo" / "agents" / "csp" / "m14_ida_run.py"
+
+
+def set_paths(tag):
+    """Derive artifact paths from an optional tag (idempotent; no side effects)."""
+    global OUT, SPEC, IDA_OUT, WRAPPER
+    if not tag:
+        return
+    OUT = (ROOT / "tools" / "type_infer" / "constraints"
+           / ("raw_constraints_split_%s.json" % tag))
+    SPEC = ROOT / ".omo" / "agents" / "csp" / ("m14_ida_spec_%s.json" % tag)
+    IDA_OUT = ROOT / ".omo" / "agents" / "csp" / ("m14_ida_regsplit_out_%s.json" % tag)
+    WRAPPER = ROOT / ".omo" / "agents" / "csp" / ("m14_ida_run_%s.py" % tag)
 
 MCP_URL = "http://127.0.0.1:13337/mcp"
 PROBE_TIMEOUT = 10
@@ -81,9 +97,19 @@ def mcp_call(url, name, args, timeout):
     return d, (d.get("structuredContent") or {})
 
 
-def select_sample(raw, faddrs):
-    """Deterministic sample: top-20 most-referenced R entities' functions plus a
-    uniform spread over functions with >=8 register references."""
+def select_sample(raw, faddrs, target_count=0):
+    """Deterministic sample.
+
+    Legacy mode (target_count == 0): top-20 most-referenced R entities' functions
+    plus a uniform spread of TARGET_SPREAD over functions with >=8 register refs
+    (the frozen 71-function M14 prototype rule).
+
+    Exact-count mode (target_count > 0): top-20 entities' functions plus a
+    uniform spread over the *remaining* pool (functions with >=8 register refs,
+    top functions excluded) so that the union is exactly `target_count` long.
+    Selection depends only on raw_constraints.json + ida_function_protos.json
+    (no RNG, no timestamps).
+    """
     fn_at = lambda a: (faddrs[bisect.bisect_right(faddrs, a) - 1]
                        if faddrs and a is not None else None)
     ent_refs = collections.Counter()
@@ -104,21 +130,42 @@ def select_sample(raw, faddrs):
     if not pool:
         pool = sorted(fn_refs)
     extras = []
-    if pool:
-        k = min(TARGET_SPREAD, len(pool))
+    if target_count > 0:
+        need = max(0, target_count - len(top_fns))
+        cand = [fn for fn in pool if fn not in set(top_fns)]
+        if len(cand) < need:
+            cand = [fn for fn in sorted(fn_refs) if fn not in set(top_fns)]
+        k = min(need, len(cand))
         if k == 1:
-            extras = [pool[0]]
-        else:
-            idxs = sorted({int(round(i * (len(pool) - 1) / (k - 1))) for i in range(k)})
-            extras = [pool[i] for i in idxs]
-    sample = sorted(set(top_fns) | set(extras))[:MAX_SAMPLE]
+            extras = [cand[0]]
+        elif k > 1:
+            idxs = sorted({int(round(i * (len(cand) - 1) / (k - 1))) for i in range(k)})
+            extras = [cand[i] for i in idxs]
+        sample = sorted(set(top_fns) | set(extras))[:target_count]
+        rule = ("top-20 most-referenced R entities' functions + uniform spread over "
+                "the remaining pool (functions with >=8 register refs) to reach "
+                "exactly %d functions" % target_count)
+    else:
+        if pool:
+            k = min(TARGET_SPREAD, len(pool))
+            if k == 1:
+                extras = [pool[0]]
+            else:
+                idxs = sorted({int(round(i * (len(pool) - 1) / (k - 1))) for i in range(k)})
+                extras = [pool[i] for i in idxs]
+        sample = sorted(set(top_fns) | set(extras))[:MAX_SAMPLE]
+        rule = ("top-20 most-referenced R entities' functions + uniform spread "
+                "over functions with >=8 register refs")
     return sample, {
-        "rule": ("top-20 most-referenced R entities' functions + uniform spread "
-                 "over functions with >=8 register refs"),
+        "rule": rule,
+        "mode": "exact-count" if target_count > 0 else "legacy-spread",
+        "target_count": target_count or None,
         "top_entities": top_ents,
         "top_entities_refs": [ent_refs[e] for e in top_ents],
+        "top_functions": len(top_fns),
         "pool_size": len(pool),
-        "spread_target": TARGET_SPREAD,
+        "spread_target": (max(0, target_count - len(top_fns)) if target_count > 0
+                          else TARGET_SPREAD),
         "sample_size": len(sample),
     }
 
@@ -533,8 +580,16 @@ def main():
     ap.add_argument("--mcp-url", default=MCP_URL)
     ap.add_argument("--dry-run", action="store_true",
                     help="select + write spec/wrapper only, no IDA call")
+    ap.add_argument("--functions", type=int, default=0,
+                    help="exact sample size (>0 switches to exact-count selection); "
+                         "0 = frozen 71-function legacy rule")
+    ap.add_argument("--tag", default="",
+                    help="artifact suffix (e.g. 500 -> raw_constraints_split_500.json); "
+                         "empty = legacy 71-function artifact paths")
     args = ap.parse_args()
     MCP_URL = args.mcp_url
+    set_paths(args.tag)
+    print("[m14] artifacts: out=%s spec=%s" % (OUT.name, SPEC.name))
 
     if not RAW.exists():
         print("[m14] missing:", RAW, file=sys.stderr)
@@ -548,13 +603,14 @@ def main():
     protos = json.loads(PROTOS.read_text(encoding="utf-8"))
     faddrs = sorted(int(a, 16) for a in protos)
 
-    sample, selection = select_sample(raw, faddrs)
+    sample, selection = select_sample(raw, faddrs, target_count=args.functions)
     SELECTION = selection
     spec_bytes = write_spec(sample)
     wrapper_sha = write_wrapper()
-    print("[m14] sample functions=%d (top=%d spread=%d) spec_sha=%s"
-          % (len(sample), len(selection["top_entities"]),
-             selection["sample_size"] - len({int(e.split(":")[1], 16) for e in selection["top_entities"]}),
+    print("[m14] sample functions=%d (top_fns=%d spread=%d pool=%d) spec_sha=%s"
+          % (len(sample), selection["top_functions"],
+             selection["sample_size"] - selection["top_functions"],
+             selection["pool_size"],
              hashlib.sha256(spec_bytes).hexdigest()[:16]))
     if args.dry_run:
         print("[m14] dry-run: wrote spec/wrapper only")
