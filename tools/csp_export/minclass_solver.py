@@ -195,7 +195,12 @@ def _canon_prim_ty(t):
         return "char*"
     t = t.replace(" *", "*").replace("* ", "*")
     base = t.replace("const ", "").strip()
-    return _PRIM_CANON.get(base, t)
+    if base.endswith("[1]"):
+        # `T[1]` and `T` are the same 1-element layout (same load/store
+        # codegen); keeping them as distinct universe atoms produced false
+        # class/type contradictions (MR char[1] vs CPI char).
+        base = base[:-3].strip()
+    return _PRIM_CANON.get(base, base)
 
 
 FACTS_PATH = "anchors/minclass_binary_facts.json"
@@ -3765,7 +3770,14 @@ def main():
     # char/unsigned char/short/unsigned short/signed short/__int16，全部在
     # type_universe 词汇表）。224 条 eq 边另走 EF 同款双向通道（见 [CPI] eq 行）。
     try:
-        census["CPI"] = _load_type_family("anchors/ctor_param_inits.json", "CPI")
+        # 2026-11-19: cpi-const 不健全 —— "成员用常量 C 初始化" 只能说明写入的值，
+        # 不能说明成员类型（0 可以是 null 指针/0.0/false；1 可以存进任何 >=1B 成员）。
+        # 与 MR 的指针/更宽成员类型 AND 必空（1,072 条伪矛盾中的 751）。只保留
+        # cpi-m8/cpi-m16（按 store 宽度实测的真值）。
+        _cpi_ev = [e for e in (jload("anchors/ctor_param_inits.json", {}) or {}).get("evidence") or []
+                   if str(e.get("via") or "") != "cpi-const"]
+        census["CPI"] = _load_type_family_dict(_cpi_ev, "CPI")
+        print("[CPI] cpi-const dropped (unsound); width-typed evidence kept=%d" % census["CPI"], flush=True)
         print("[CPI] ctor-param-init types: %d" % census["CPI"], flush=True)
     except Exception as _e_cpi:
         census["CPI"] = census.get("CPI", 0)
