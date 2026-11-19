@@ -3746,8 +3746,14 @@ def main():
     # 与 v2 十条池零重叠。类型全基元（int/unsigned int/bool/char*——
     # 'const char *'/'char *' 经 _norm_ty 归一 char*）。文件 edges=0，无边通道。
     try:
-        census["G3"] = _load_type_family("anchors/gs_site_args_v3.json", "G3")
-        print("[G3] gs-site-arg v3 types: %d" % census["G3"], flush=True)
+        # 2026-11-19: gs-const01 / gs-const-wide 只说明"压入了一个常量"（0/1/小整数），
+        # 对类型（尤其类指针槽）零信息 —— 常量 0 与任何 4B 指针/类兼容（null），
+        # 1 也不是类型证据。与 YVP 的类参数 AND 出 307 条伪矛盾。只保留 gs-str（char*）。
+        _g3_ev = [e for e in (jload("anchors/gs_site_args_v3.json", {}) or {}).get("evidence") or []
+                  if str(e.get("kind") or "") not in ("gs-const01", "gs-const-wide")]
+        census["G3"] = _load_type_family_dict(_g3_ev, "G3")
+        print("[G3] const-origin rules dropped (no type info); gs-str/other kept=%d"
+              % census["G3"], flush=True)
     except Exception as _e_g3:
         census["G3"] = census.get("G3", 0)
         print("[G3] skipped: %r" % _e_g3, flush=True)
