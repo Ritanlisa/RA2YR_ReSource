@@ -15837,7 +15837,7 @@
 ]
 },
 "R:472B40:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@PAUControlNode@@",
 "obs": [
 [
 4,
@@ -15848,7 +15848,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:472B40"
+]
 },
 "R:556620:ecx": {
 "class": "LinkClass",
@@ -17609,7 +17611,7 @@
 "ents": []
 },
 "R:4D29B0:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
 "obs": [
 [
 4,
@@ -17620,7 +17622,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4D29B0"
+]
 },
 "R:4E0580:ecx": {
 "class": "DynamicVector",
@@ -17639,7 +17643,7 @@
 ]
 },
 "R:4E0320:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@PAVAbstractClass@@",
 "obs": [
 [
 4,
@@ -17650,7 +17654,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4E0320"
+]
 },
 "R:4E07E0:ecx": {
 "class": "DynamicVector",
@@ -19309,7 +19315,7 @@
 ]
 },
 "R:589CA0:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@PAVCellClass@@",
 "obs": [
 [
 4,
@@ -19320,7 +19326,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:589CA0"
+]
 },
 "R:5896F0:ecx": {
 "class": "DynamicVector",
@@ -19969,7 +19977,7 @@
 ]
 },
 "R:624140:ecx": {
-"class": "FlagSystem",
+"class": "SimpleDialogControl@OwnerDraw",
 "obs": [
 [
 4,
@@ -19980,7 +19988,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:624140"
+]
 },
 "R:6281F0:ecx": {
 "class": "DynamicVector",
@@ -20344,7 +20354,7 @@
 ]
 },
 "R:69CFA0:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@PAUGlobalPacketType@@",
 "obs": [
 [
 4,
@@ -20355,7 +20365,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69CFA0"
+]
 },
 "R:69CD40:ecx": {
 "class": "?$VectorClass@PAVMultiMission@@",
@@ -21390,7 +21402,7 @@
 ]
 },
 "R:7640B0:ecx": {
-"class": "CSFClass",
+"class": "?$VectorClass@VWaypointClass@@",
 "obs": [
 [
 4,
@@ -21401,7 +21413,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7640B0"
+]
 },
 "R:7657F0:ecx": {
 "class": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
@@ -23222,7 +23236,7 @@
 ]
 },
 "R:477E10:ecx": {
-"class": "CounterClass",
+"class": "?$TypeList@H",
 "obs": [
 [
 0,
@@ -23249,7 +23263,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:477E10"
+]
 },
 "R:478000:ecx": {
 "class": "VectorClass",
@@ -30676,14 +30692,16 @@
 ]
 },
 "R:6241C0:ecx": {
-"class": "WOLPersona",
+"class": "SimpleDialogControl@OwnerDraw",
 "obs": [
 [
 8,
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6241C0"
+]
 },
 "R:6284A0:ecx": {
 "class": "DynamicVector",
@@ -35527,7 +35545,7 @@
 ]
 },
 "R:477840:ecx": {
-"class": "DynamicVectorClass_PAD",
+"class": "?$TypeList@H",
 "obs": [
 [
 4,
@@ -35546,7 +35564,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:477840"
+]
 },
 "R:4780B0:ecx": {
 "class": "VectorClass",
@@ -42144,14 +42164,16 @@
 ]
 },
 "R:6241D0:ecx": {
-"class": "ArmorType",
+"class": "SimpleDialogControl@OwnerDraw",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6241D0"
+]
 },
 "R:627D80:ecx": {
 "class": "DynamicVector",
@@ -47128,7 +47150,7 @@
 ]
 },
 "R:477F10:ecx": {
-"class": "SaveLoad",
+"class": "?$TypeList@H",
 "obs": [
 [
 4,
@@ -47139,7 +47161,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:477F10"
+]
 },
 "R:4780E0:ecx": {
 "class": "VectorClass",
@@ -57220,7 +57244,7 @@
 ]
 },
 "R:477870:ecx": {
-"class": "Tooltip",
+"class": "?$TypeList@H",
 "obs": [
 [
 4,
@@ -57231,7 +57255,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:477870"
+]
 },
 "R:478120:ecx": {
 "class": "VectorClass",
@@ -64693,14 +64719,16 @@
 ]
 },
 "R:472AD0:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@PAUControlNode@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:472AD0"
+]
 },
 "R:556640:ecx": {
 "class": "LinkClass",
@@ -65060,14 +65088,16 @@
 ]
 },
 "R:4E01E0:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@PAVAbstractClass@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4E01E0"
+]
 },
 "R:4E0250:ecx": {
 "class": "DynamicVector",
@@ -66033,14 +66063,16 @@
 ]
 },
 "R:588EF0:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@PAVCellClass@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:588EF0"
+]
 },
 "R:588E10:ecx": {
 "class": "DynamicVector",
@@ -66856,14 +66888,16 @@
 ]
 },
 "R:69C650:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@PAUGlobalPacketType@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69C650"
+]
 },
 "R:69C5F0:ecx": {
 "class": "?$VectorClass@PAVMultiMission@@",
@@ -67465,34 +67499,40 @@
 ]
 },
 "R:763F60:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@VWaypointClass@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:763F60"
+]
 },
 "R:7656D0:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7656D0"
+]
 },
 "R:766850:ecx": {
-"class": "ArmorType",
+"class": "DynamicVector",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:766850"
+]
 },
 "R:767F80:ecx": {
 "class": "MSFrameAnim",
@@ -67514,14 +67554,16 @@
 ]
 },
 "R:769CA0:ecx": {
-"class": "ArmorType",
+"class": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:769CA0"
+]
 },
 "R:769D30:ecx": {
 "class": "VectorClass",
@@ -67536,14 +67578,16 @@
 ]
 },
 "R:76B760:ecx": {
-"class": "ArmorType",
+"class": "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:76B760"
+]
 },
 "R:771990:ecx": {
 "class": "Anim@Voices@WorldDominationTour",
@@ -105972,7 +106016,7 @@
 ]
 },
 "R:409C40:ecx": {
-"class": "AudioBuffer",
+"class": "HouseTypeClass",
 "obs": [
 [
 0,
@@ -106039,7 +106083,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:409C40"
+]
 },
 "T:402800": {
 "class": "IsometricTileClass",
@@ -113425,7 +113471,7 @@
 ]
 },
 "R:4500F0:ecx": {
-"class": "SequenceStruct",
+"class": "UnitTypeClass",
 "obs": [
 [
 0,
@@ -113456,7 +113502,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4500F0"
+]
 },
 "R:453240:ecx": {
 "class": "AI",
@@ -114623,7 +114671,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FD150"
+]
 },
 "R:4A8BF0:ecx": {
 "class": "DisplayClass",
@@ -117774,7 +117824,7 @@
 ]
 },
 "R:468BB0:ecx": {
-"class": "AudioBuffer",
+"class": "WaveClass",
 "obs": [
 [
 172,
@@ -117785,7 +117835,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:468BB0"
+]
 },
 "R:410A40:ecx": {
 "class": "IsometricTileClass",
@@ -144304,7 +144356,7 @@
 ]
 },
 "R:567110:ecx": {
-"class": "ParticleSystemClass",
+"class": "WaveClass",
 "obs": [
 [
 104,
@@ -144327,7 +144379,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:567110"
+]
 },
 "R:42AC00:ecx": {
 "class": "BlitTransLucent25Alpha_ushort",
@@ -145813,6 +145867,60 @@
 "RET:589BD0"
 ]
 },
+"P:595680:1": {
+"class": "AircraftClass",
+"obs": [
+[
+376,
+4
+],
+[
+380,
+4
+],
+[
+384,
+4
+],
+[
+388,
+4
+],
+[
+700,
+4
+],
+[
+704,
+4
+],
+[
+764,
+4
+],
+[
+768,
+1
+],
+[
+772,
+4
+],
+[
+780,
+4
+],
+[
+784,
+1
+]
+],
+"ents": [
+"T:595740",
+"RET:595740",
+"P:595680:1"
+]
+},
 "T:6D62E0": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -146247,7 +146355,7 @@
 ]
 },
 "R:5981F0:ecx": {
-"class": "BytePalette",
+"class": "UnitClass",
 "obs": [
 [
 392,
@@ -146290,7 +146398,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5981F0"
+]
 },
 "T:7B05C0": {
 "class": "IsometricTileClass",
@@ -146618,7 +146728,7 @@
 ]
 },
 "R:643AE0:ecx": {
-"class": "LocomotionClass",
+"class": "WaveClass",
 "obs": [],
 "ents": [
 "T:643AE0"
@@ -146759,7 +146869,7 @@
 "ents": []
 },
 "R:599650:ecx": {
-"class": "RandomMap",
+"class": "AircraftClass",
 "obs": [
 [
 56,
@@ -146798,7 +146908,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:599650"
+]
 },
 "R:59A6C0:ecx": {
 "class": "TextGroup",
@@ -149026,6 +149138,31 @@
 ],
 "ents": []
 },
+"P:7DD0F8:3": {
+"class": "Network",
+"obs": [
+[
+0,
+4
+],
+[
+9,
+1
+],
+[
+76,
+4
+],
+[
+80,
+4
+]
+],
+"ents": [
+"T:5B9550",
+"P:7DD0F8:3"
+]
+},
 "R:5BB290:ecx": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -149637,7 +149774,7 @@
 ]
 },
 "R:759E10:ecx": {
-"class": "MovieClass",
+"class": "AbstractClass",
 "obs": [
 [
 512,
@@ -149652,7 +149789,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:759E10"
+]
 },
 "R:759E50:ecx": {
 "class": "AbstractClass",
@@ -185019,7 +185158,7 @@
 "ents": []
 },
 "R:75A120:ecx": {
-"class": "VoxelRenderer",
+"class": "VocClass",
 "obs": [
 [
 4,
@@ -185030,7 +185169,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:75A120"
+]
 },
 "T:748380": {
 "class": "IsometricTileClass",
@@ -185331,7 +185472,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:75FA90"
+]
 },
 "R:7602E0:ecx": {
 "class": "WaveClass",
@@ -185365,7 +185508,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7602E0"
+]
 },
 "R:7609E0:ecx": {
 "class": "WaveClass",
@@ -185399,7 +185544,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7609E0"
+]
 },
 "T:63F080": {
 "class": "int",
@@ -185409,7 +185556,7 @@
 ]
 },
 "R:75F140:ecx": {
-"class": "WaypointClass",
+"class": "UnitClass",
 "obs": [
 [
 428,
@@ -185500,7 +185647,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:75F140"
+]
 },
 "R:75EDF0:ecx": {
 "class": "COMClass",
@@ -274693,6 +274842,28 @@
 "RET:6A4E60",
 "P:63F6B0:0",
 "P:63F6B0:4"
+]
+},
+"P:6AC840:1": {
+"class": "RadarClass",
+"obs": [
+[
+0,
+4
+],
+[
+5408,
+4
+],
+[
+5416,
+4
+]
+],
+"ents": [
+"T:6A4F20",
+"RET:6A4F20",
+"P:6AC840:1"
 ]
 },
 "S:6A8B30:var_80": {
@@ -486540,7 +486711,7 @@
 "ents": []
 },
 "R:759BC0:ecx": {
-"class": "MovieClass",
+"class": "TechnoClass",
 "obs": [
 [
 512,
@@ -486555,7 +486726,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:759BC0"
+]
 },
 "P:762AF0:1": {
 "class": "WaveClass",
@@ -487761,6 +487934,13 @@
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x16C"
+]
+},
+"M:4F54A0:this:0x254": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"M:4F54A0:this:0x254"
 ]
 },
 "M:4F54A0:this:0x16064": {
@@ -492886,7 +493066,7 @@
 "ents": []
 },
 "R:403A80:ecx": {
-"class": "WaypointClass",
+"class": "AircraftClass",
 "obs": [
 [
 24,
@@ -492909,7 +493089,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:403A80"
+]
 },
 "M:404140:this:0xb0": {
 "class": "ConvertClass",
@@ -495821,7 +496003,7 @@
 "ents": []
 },
 "R:42F260:ecx": {
-"class": "BuildingQueue",
+"class": "UnitClass",
 "obs": [
 [
 8,
@@ -495836,7 +496018,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:42F260"
+]
 },
 "P:42F380:0": {
 "class": "short",
@@ -496241,7 +496425,7 @@
 "ents": []
 },
 "R:4349F0:ecx": {
-"class": "BuildingAnimStruct",
+"class": "CaptureManagerClass",
 "obs": [
 [
 4,
@@ -496292,7 +496476,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4349F0"
+]
 },
 "M:434A40:this:0x4": {
 "class": "int",
@@ -500470,7 +500656,7 @@
 ]
 },
 "R:458750:ecx": {
-"class": "BulletClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -500485,7 +500671,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:458750"
+]
 },
 "P:458A80:0": {
 "class": "CoordStruct",
@@ -505078,7 +505266,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FAF00"
+]
 },
 "R:4FB920:ecx": {
 "class": "HouseClass",
@@ -505871,7 +506061,7 @@
 ]
 },
 "R:513D20:ecx": {
-"class": "IPXConnClass",
+"class": "FoggedObjectClass",
 "obs": [
 [
 12,
@@ -505886,7 +506076,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:513D20"
+]
 },
 "M:514310:p0:0x8": {
 "class": "FootClass",
@@ -507503,6 +507695,18 @@
 "M:522600:this:0x6c0"
 ]
 },
+"P:522700:0": {
+"class": "AbstractClass",
+"obs": [
+[
+0,
+4
+]
+],
+"ents": [
+"P:522700:0"
+]
+},
 "M:522780:this:0x6c0": {
 "class": "InfantryTypeClass",
 "obs": [
@@ -507926,7 +508130,7 @@
 "ents": []
 },
 "R:52AB80:ecx": {
-"class": "BuildingAnimStruct",
+"class": "INISection@INIClass",
 "obs": [
 [
 0,
@@ -507977,7 +508181,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:52AB80"
+]
 },
 "M:52AE20:this:0x8": {
 "class": "int",
@@ -513752,7 +513958,7 @@
 "ents": []
 },
 "R:6599C0:ecx": {
-"class": "TunnelLocomotionClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 36,
@@ -513787,10 +513993,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6599C0"
+]
 },
 "R:659A30:ecx": {
-"class": "IPXManagerClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 92,
@@ -513809,7 +514017,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:659A30"
+]
 },
 "R:659E30:ecx": {
 "class": "ConvertClass",
@@ -517644,7 +517854,7 @@
 ]
 },
 "R:6EA080:ecx": {
-"class": "NodeNameType",
+"class": "TeamClass",
 "obs": [
 [
 40,
@@ -517679,7 +517889,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6EA080"
+]
 },
 "M:6EA0D0:this:0x2c": {
 "class": "OverlayClass",
@@ -523375,6 +523587,22 @@
 "M:746400:this:0x6c4"
 ]
 },
+"P:746670:0": {
+"class": "AbstractClass",
+"obs": [
+[
+0,
+4
+],
+[
+68,
+4
+]
+],
+"ents": [
+"P:746670:0"
+]
+},
 "M:746810:this:0x6c4": {
 "class": "TechnoTypeClass",
 "obs": [
@@ -524004,7 +524232,7 @@
 ]
 },
 "R:759540:ecx": {
-"class": "VoxelRenderer",
+"class": "Stream",
 "obs": [
 [
 4,
@@ -524015,7 +524243,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:759540"
+]
 },
 "R:759670:ecx": {
 "class": "IsometricTileClass",
@@ -527344,6 +527574,13 @@
 "obs": [],
 "ents": [
 "P:4D8FB0:2"
+]
+},
+"P:4195A0:0": {
+"class": "int",
+"obs": [],
+"ents": [
+"P:4195A0:0"
 ]
 },
 "P:4195A0:1": {
@@ -587872,6 +588109,13 @@
 "obs": [],
 "ents": [
 "M:62B380:this:0x8"
+]
+},
+"M:62E280:this:0x2A4": {
+"class": "int",
+"obs": [],
+"ents": [
+"M:62E280:this:0x2A4"
 ]
 },
 "M:63EC50:this:0x8": {

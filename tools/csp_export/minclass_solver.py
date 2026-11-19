@@ -459,6 +459,60 @@ def build_universe(use_evidence=True, prune_dead=False):
                 w = rec.get("size") if isinstance(rec, dict) else None
                 members[i][off] = int(w) if isinstance(w, int) and w > 0 else None
 
+    # ---- 模板实例布局合成（mangled ?$Template@... -> class_layouts 模板 + parent 链）----
+    # derived_layouts.json 是求解输出（members derived from the solution），回灌即循环；
+    # 这里只从 class_layouts.json 的真值模板继承 —— VectorClass<T>/DynamicVectorClass<T>
+    # 等容器模板存 T*，布局与 T 无关（parent 链已给出扁平化真值）。
+    _lay_cache = {}
+
+    def _canon_layout(name):
+        if name in _lay_cache:
+            return _lay_cache[name]
+        rec = lay.get(name) if isinstance(lay, dict) else None
+        if not isinstance(rec, dict):
+            _lay_cache[name] = None
+            return None
+        offs = {}
+        for k, v in (rec.get("offsets") or {}).items():
+            try:
+                off = int(str(k), 10)
+            except ValueError:
+                continue
+            w = v.get("size") if isinstance(v, dict) else None
+            offs[off] = int(w) if isinstance(w, int) and w > 0 else None
+        sz = rec.get("size") if isinstance(rec.get("size"), int) else None
+        par = rec.get("parent")
+        if par and par != name:
+            p = _canon_layout(par)
+            if p:
+                for o, w in p[0].items():
+                    if o not in offs:
+                        offs[o] = w
+                if p[1] is not None:
+                    sz = p[1] if sz is None else max(sz, p[1])
+        _lay_cache[name] = (offs, sz)
+        return _lay_cache[name]
+
+    n_tmpl_full = 0
+    for i, c in enumerate(names):
+        # has_layout 可能已为 True 但 members 为空（r2c 解析到无偏移的规范类）——
+        # 判据用"成员是否为空"，不用 has_layout。
+        if not c.startswith("?$") or members[i]:
+            continue
+        base = c[2:].split("@", 1)[0]
+        cl = _canon_layout(base)
+        if not cl or not cl[0]:
+            continue
+        offs, sz = cl
+        for o, w in offs.items():
+            members[i][o] = w
+        if sz is not None:
+            layout_size[i] = sz
+        has_layout[i] = True
+        n_tmpl_full += 1
+    print("[layout] template instances synthesized from canonical templates: %d"
+          % n_tmpl_full, flush=True)
+
     # ---- 模板实例继承基模板的 offset 0（vfptr）----
     # 实测：全部 125 个 VectorClass_* 实例的布局缺 offset 0，而其基模板 VectorClass
     # 有 (0,4)；于是 C2 唯一钉到的类被 C1 以"缺 offset 0"排除，制造 290 个假冲突。
@@ -688,6 +742,13 @@ def build_universe(use_evidence=True, prune_dead=False):
         slot_set[i] = ss
         slot_count[i] = ext
 
+    _n_nosize = sum(1 for _i in range(n) if size[_i] is None)
+    _n_extonly = sum(1 for _i in range(n)
+                     if size[_i] is None and eff_size[_i] is not None)
+    print("[size-diag] declared=None: %d/%d | extent-only: %d | sample: %s"
+          % (_n_nosize, n, _n_extonly,
+             [names[_i] for _i in range(n)
+              if size[_i] is None and eff_size[_i] is not None][:5]), flush=True)
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
         "alias": alias,
@@ -2508,16 +2569,22 @@ def main():
     _exact_member_cache = {}
 
     def c1_size_mask(need):
-        """对象尺寸硬下界：类的 effective_size 必须 >= 已观测到的最大访问末端。
-        手工逆向时这是第一条排除规则（访问到 +0x500 的对象不可能是 40 字节的类），
-        而基线 C1 对稀疏布局类无条件放行，让任意小类都能"覆盖"任意大的偏移。"""
+        """对象尺寸硬下界：类的**声明尺寸**必须 >= 已观测到的最大访问末端。
+
+        2026-11-19 修正（错解根因）：原实现用 effective_size（= max(声明尺寸,
+        观测 extent)）当作类尺寸 —— 错误。observed_extent 是对象尺寸的**下界**，
+        不是尺寸本身；无声明布局的类（模板实例等）eff_size 只有观测 extent，
+        会被 "extent(8) < need(12)" 误判为"装不下"而排除真解（58 空簇实测：
+        C15/OT 的二进制铁证 = VectorClass<T> 模板实例，C1 域 1,771 类整族不含它）。
+        正确语义：只有**已知声明尺寸**且 < need 才排除；尺寸未知 = 无意见 = 放行。
+        """
         m = _size_ok_cache.get(need)
         if m is None:
             m = 0
             for _i in range(n):
-                _sz = U["eff_size"][_i]
-                if not _sz or int(_sz) >= need:
-                    m |= (1 << _i)      # 尺寸未知的类不排除
+                _decl = U["size"][_i]     # 声明/布局尺寸（真值）；observed extent 只是下界
+                if not _decl or int(_decl) >= need:
+                    m |= (1 << _i)        # 尺寸未知的类不排除
             _size_ok_cache[need] = m
         return m
 
@@ -7498,7 +7565,10 @@ def main():
                          for _cl in clusters],
             cluster_exact=[[(_ci, list(_ss)) for _ci, _ss in _cl["exact"].items()]
                            for _cl in clusters],
-            eff_size=[-1 if _s is None else int(_s) for _s in U["eff_size"]],
+            # 2026-11-19: 声明尺寸缺失 => -1（未知）。observed extent 只是访问下界、
+            # 不是 sizeof；把 extent 当尺寸会让 C1 按"类太小"排除正确类（58 空簇主因）。
+            eff_size=[(-1 if U["size"][_i] is None else int(U["eff_size"][_i]))
+                      for _i in range(len(U["eff_size"]))],
             intervals=[list(_iv) for _iv in intervals],
             dense=list(dense),
             all_exact_classes=sorted(ALL_EXACT_CLASSES),
@@ -8206,11 +8276,18 @@ def main():
                 elif "MW" in _fams_prec and "SS" in _fams_prec:
                     _drop_f = "SS"
                 else:
-                    _drop_f = None
+                    # 通用最低优先级丢弃（确定性：rank 升序 + 名字序；跳过内生 C1）
+                    _ranked = sorted((_f for _f in _fams_prec
+                                      if _f != "C1" and _f in fam),
+                                     key=lambda _f: (_FAM_RANK.get(_f, 50), _f))
+                    _drop_f = _ranked[0] if _ranked else None
                 if _drop_f == "C1" or (_drop_f is not None and _drop_f not in fam):
-                    # C1 是内生族（由簇观测实时计算，不在 fam 中）——"丢 C1" 是空操作，
-                    # 会导致无限循环。改为记录 unknown（解保持无矛盾），交给逐例 IDA。
-                    _drop_f = None
+                    # C1 是内生族（由簇观测实时计算，不在 fam 中），"丢 C1" 是空操作；
+                    # 具体规则选中 C1 时改走通用后备（下一个最弱可丢族），而不是直接放弃。
+                    _ranked = sorted((_f for _f in _fams_prec
+                                      if _f != "C1" and _f in fam),
+                                     key=lambda _f: (_FAM_RANK.get(_f, 50), _f))
+                    _drop_f = _ranked[0] if _ranked else None
                 if _drop_f is not None:
                     # 族条目可能挂在簇根 id（R:...）而非 ents（T:...）——两者都要丢
                     _ae_d = list(dict.fromkeys(
@@ -8277,6 +8354,35 @@ def main():
                         continue
                 # 不仲裁：记录矛盾族集合，该簇答案记为未知（从 constrained 移出）。
                 _unknown_roots.add(_cl.get("root"))
+                if os.environ.get("MINCLASS_DEBUG_CLUSTER") and len(_res_ledger) < 3:
+                    try:
+                        _obs_dbg = sorted(_cl.get("obs") or set())
+                        _c1m = c1_mask(_obs_dbg) if _obs_dbg else FULL
+                        _fdbg = sorted(_fams_rr) if _rs_rr is not None else sorted(_fams_part)
+                        print("[dbg-cluster] root=%s fams=%s obs=%s"
+                              % (_cl.get("root"), _fdbg,
+                                 ["%d:%d" % (o, w if w else 0) for (o, w) in _obs_dbg]), flush=True)
+                        _dd = _doms_rr if _rs_rr is not None else None
+                        if _dd:
+                            _nonc1 = [f for f in _dd if f != "C1"]
+                            _cand = None
+                            for _f in _nonc1:
+                                _st = set(_dd[_f])
+                                _cand = _st if _cand is None else (_cand & _st)
+                            print("  inter(%s)=%s" % ("&".join(_nonc1), sorted(_cand or [])[:6]), flush=True)
+                            for _cn in sorted(_cand or [])[:4]:
+                                _ci = U["idx"].get(_cn)
+                                if _ci is None:
+                                    _ci = U["resolve"](_cn)
+                                if _ci is None:
+                                    print("   %s -> idx NOT FOUND" % _cn, flush=True)
+                                    continue
+                                print("   %s ci=%d dense=%s members=%d size=%s eff=%s inC1=%s"
+                                      % (_cn, _ci, bool(dense[_ci]), len(U["members"][_ci]),
+                                         U["size"][_ci], U["eff_size"][_ci],
+                                         bool((_c1m >> _ci) & 1)), flush=True)
+                    except Exception as _e_dbg:
+                        print("[dbg-cluster] error: %r" % (_e_dbg,), flush=True)
                 if _rs_rr is not None:
                     _res_ledger.append({
                         "cluster": _cl.get("root"),
