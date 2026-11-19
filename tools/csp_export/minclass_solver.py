@@ -162,6 +162,41 @@ FAMILY_DESC = {
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
+# 用户约定（2026-11-19）：同宽基元统一拼写（uint/int -> int 等）。
+# 同宽标量在 32-bit codegen 上不可区分；把它们当成不同的 universe 原子
+# 会让两个都正确的证据族 AND 出空域（伪矛盾）。只作用于非指针拼写。
+_PRIM_CANON = {
+    # 4B integer family -> int
+    "unsigned int": "int", "long": "int", "unsigned long": "int",
+    "int32_t": "int", "uint32_t": "int", "DWORD": "int", "UINT": "int",
+    "__int32": "int", "unsigned __int32": "int", "LONG": "int",
+    "ULONG": "int", "BOOL": "int", "INT32": "int", "UINT32": "int",
+    # 2B -> short
+    "unsigned short": "short", "int16_t": "short", "uint16_t": "short",
+    "WORD": "short", "__int16": "short", "unsigned __int16": "short",
+    "SHORT": "short", "USHORT": "short", "INT16": "short", "UINT16": "short",
+    # 1B -> char
+    "bool": "char", "unsigned char": "char", "signed char": "char",
+    "int8_t": "char", "uint8_t": "char", "BYTE": "char", "__int8": "char",
+    "unsigned __int8": "char", "CHAR": "char", "UCHAR": "char",
+    "INT8": "char", "UINT8": "char", "boolean": "char",
+    # 8B -> __int64
+    "unsigned __int64": "__int64", "int64_t": "__int64",
+    "uint64_t": "__int64", "long long": "__int64",
+    "unsigned long long": "__int64", "ULONGLONG": "__int64",
+    "LONGLONG": "__int64",
+}
+
+
+def _canon_prim_ty(t):
+    """Same-width primitive spelling canonicalization (user convention)."""
+    t = str(t).strip()
+    if t == "const char *" or t == "const char*":
+        return "char*"
+    t = t.replace(" *", "*").replace("* ", "*")
+    base = t.replace("const ", "").strip()
+    return _PRIM_CANON.get(base, t)
+
 
 FACTS_PATH = "anchors/minclass_binary_facts.json"
 FACTS_SRC = "decompile-results/full_export/src/*.cpp"
@@ -3047,6 +3082,7 @@ def main():
         def _tok_ix(tok):
             if not isinstance(tok, str):
                 return None
+            tok = _canon_prim_ty(tok)
             _e = _exact_ix2.get(tok)
             if _e is None:
                 return _name_ix2.get(tok.lower())
@@ -3178,39 +3214,8 @@ def main():
         print("[MD] skipped: %r" % _e_md, flush=True)
 
     # ---------------- 通用类型证据族加载器（SP/IT/FS）----------------
-    # 用户约定（2026-11-19）：同宽基元的多解统一拼写（uint/int -> int 等）。
-    # 这些类型在 32-bit 代码生成上不可区分（同宽标量），把它们当成不同的
-    # universe 原子会让两个都正确的证据族 AND 出空域（伪矛盾）。约定只作用于
-    # 非指针拼写；指针（int* vs char*）元素宽度不同，不做合并。
-    _PRIM_CANON = {
-        # 4B integer family -> int
-        "unsigned int": "int", "long": "int", "unsigned long": "int",
-        "int32_t": "int", "uint32_t": "int", "DWORD": "int", "UINT": "int",
-        "__int32": "int", "unsigned __int32": "int", "LONG": "int",
-        "ULONG": "int", "BOOL": "int", "INT32": "int", "UINT32": "int",
-        # 2B -> short
-        "unsigned short": "short", "int16_t": "short", "uint16_t": "short",
-        "WORD": "short", "__int16": "short", "unsigned __int16": "short",
-        "SHORT": "short", "USHORT": "short", "INT16": "short", "UINT16": "short",
-        # 1B -> char
-        "bool": "char", "unsigned char": "char", "signed char": "char",
-        "int8_t": "char", "uint8_t": "char", "BYTE": "char", "__int8": "char",
-        "unsigned __int8": "char", "CHAR": "char", "UCHAR": "char",
-        "INT8": "char", "UINT8": "char", "boolean": "char",
-        # 8B -> __int64
-        "unsigned __int64": "__int64", "int64_t": "__int64",
-        "uint64_t": "__int64", "long long": "__int64",
-        "unsigned long long": "__int64", "ULONGLONG": "__int64",
-        "LONGLONG": "__int64",
-    }
-
     def _norm_ty(t):
-        t = str(t).strip()
-        if t == "const char *" or t == "const char*":
-            return "char*"
-        t = t.replace(" *", "*").replace("* ", "*")
-        base = t.replace("const ", "").strip()
-        return _PRIM_CANON.get(base, t)
+        return _canon_prim_ty(t)
 
     def _load_type_family_dict(evid_list, famname):
         n = 0

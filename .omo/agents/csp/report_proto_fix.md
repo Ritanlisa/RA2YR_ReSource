@@ -46,3 +46,9 @@ IG（`insn_granularity_types.json`）把 `mov al,[ecx+off]`（字节访问）编
 - 改动：`tools/csp_export/minclass_solver.py`（_norm_ty 基元规范化 + IG 停用）
 - 锚：`anchors/ida_function_protos.json`（live 版）、`_live` / `.pre_live_backup` 保留
 - 求解器产物：`anchors/minclass_*.json` 全量再生
+
+## 补记（同日第二轮）：基元规范化下沉 `_tok_ix`
+发现 MR/MT/MD 加载器直接 `_tok_ix(str(...))`、且在其定义之前执行 → 基元规范化未覆盖它们。
+修复：`_PRIM_CANON` + `_canon_prim_ty` 提升到模块级，`_tok_ix` 入口统一规范化；`_norm_ty` 委托。
+实测：覆盖 **67,748/92,568 (73.2%) → 69,226/93,839 (73.8%)**；空簇 **3,609 → 3,192**；K_min 905→**892**。
+剩余 3,192 分解：CPI+MR 1,072（prim 751 宽度差待核）/ AV+MR 401 / C2+MR 327 / G3+YVP 307（常量 null 兼容问题）/ IT+IV+MR 247 / G3+TC 77 / C7+YVP 93。
