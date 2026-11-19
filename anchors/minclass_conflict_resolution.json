@@ -451,7 +451,7 @@
   ],
   "family_sizes": {
    "C1": 1450,
-   "C2": 1214,
+   "C2": 1219,
    "C3": 2109,
    "C15": 2,
    "OT": 3,
@@ -807,45 +807,23 @@
  },
  {
   "cluster": "R:6241E0:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C2",
   "families": [
    "C15",
    "C2",
    "OT"
   ],
   "family_sizes": {
-   "C2": 1140,
    "C15": 2,
+   "C2": 1140,
    "OT": 2
   },
   "ents": [
-   "T:6241E0"
+   "T:6241E0",
+   "R:6241E0:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C15": [
-    "FactionSelectDialogControl@WorldDominationTour",
-    "SimpleDialogControl@OwnerDraw"
-   ],
-   "OT": [
-    "FactionSelectDialogControl@WorldDominationTour",
-    "SimpleDialogControl@OwnerDraw"
-   ]
-  },
   "exact": {}
  },
  {
@@ -1744,7 +1722,8 @@
  },
  {
   "cluster": "R:7B54B0:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "BM",
    "C1",
@@ -1752,54 +1731,19 @@
    "C2"
   ],
   "family_sizes": {
+   "BM": 1,
    "C1": 2225,
-   "C2": 1141,
    "C10": 1,
-   "BM": 1
+   "C2": 1141
   },
   "ents": [
    "T:7B54B0",
-   "RET:7B54B0"
+   "RET:7B54B0",
+   "R:7B54B0:ecx"
   ],
   "obs": [
    "0:4"
   ],
-  "family_domains": {
-   "C1": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C10": [
-    "int"
-   ],
-   "BM": [
-    "String"
-   ]
-  },
   "exact": {}
  },
  {
@@ -2029,7 +1973,8 @@
  },
  {
   "cluster": "R:643AE0:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C2",
   "families": [
    "C2",
    "SS"
@@ -2039,30 +1984,10 @@
    "SS": 3
   },
   "ents": [
-   "T:643AE0"
+   "T:643AE0",
+   "R:643AE0:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "SS": [
-    "LocomotionClass",
-    "TiberiumClass",
-    "WaveClass"
-   ]
-  },
   "exact": {}
  },
  {
@@ -2298,70 +2223,40 @@
  },
  {
   "cluster": "R:5F8080:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C2",
   "families": [
    "BM",
    "C2"
   ],
   "family_sizes": {
-   "C2": 1141,
-   "BM": 1
+   "BM": 1,
+   "C2": 1141
   },
   "ents": [
-   "T:5F8080"
+   "T:5F8080",
+   "R:5F8080:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "BM": [
-    "ObjectTypeClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "RET:525430",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "SS",
   "families": [
    "MW",
    "SS"
   ],
   "family_sizes": {
-   "SS": 7,
-   "MW": 1
+   "MW": 1,
+   "SS": 7
   },
   "ents": [
    "T:525430",
    "RET:525430"
   ],
   "obs": [],
-  "family_domains": {
-   "SS": [
-    "CampaignClass",
-    "ObjectTypeClass",
-    "AbilitiesStruct",
-    "GameModeOptionsClass",
-    "SomeVoxelCache",
-    "TacticalClass",
-    "Trigger"
-   ],
-   "MW": [
-    "?$TypeList@H"
-   ]
-  },
   "exact": {}
  },
  {
@@ -2832,39 +2727,22 @@
  },
  {
   "cluster": "R:777B30:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "C2"
   ],
   "family_sizes": {
-   "C2": 1141,
-   "C10": 1
+   "C10": 1,
+   "C2": 1141
   },
   "ents": [
    "T:777B30",
-   "RET:777B30"
+   "RET:777B30",
+   "R:777B30:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C10": [
-    "char*"
-   ]
-  },
   "exact": {}
  },
  {
@@ -2921,138 +2799,9 @@
   "exact": {}
  },
  {
-  "cluster": "GS:2:1:0x40B180",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x40B180"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "SubzoneConnectionStruct"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:2:1:0x40BAE0",
-  "status": "inconsistent",
-  "families": [
-   "G2",
-   "YVP"
-  ],
-  "family_sizes": {
-   "G2": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x40BAE0"
-  ],
-  "obs": [],
-  "family_domains": {
-   "G2": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "TechnoClass"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:2:1:0x40CE50",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x40CE50"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "ObjectClass"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:2:1:0x45A560",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x45A560"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "InfantryClass"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:2:1:0x4E0360",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x4E0360"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "AbstractClass"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "P:589A60:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -3066,19 +2815,12 @@
    "S:589A60:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "int"
-   ],
-   "YVP": [
-    "SubzoneTrackingStruct"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:6DC850:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3090,116 +2832,12 @@
    "S:6DC850:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": []
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:2:1:0x765840",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:2:1:0x765840"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "rc_ptr"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:124:0:0x468670",
-  "status": "inconsistent",
-  "families": [
-   "G2",
-   "YVP"
-  ],
-  "family_sizes": {
-   "G2": 1,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:124:0:0x468670"
-  ],
-  "obs": [],
-  "family_domains": {
-   "G2": [
-    "int"
-   ],
-   "YVP": [
-    "CoordStruct"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:337:0:0x4D3710",
-  "status": "inconsistent",
-  "families": [
-   "G2",
-   "YVP"
-  ],
-  "family_sizes": {
-   "G2": 2,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:337:0:0x4D3710"
-  ],
-  "obs": [],
-  "family_domains": {
-   "G2": [
-    "char",
-    "int"
-   ],
-   "YVP": [
-    "double"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "GS:342:0:0x51D6F0",
-  "status": "inconsistent",
-  "families": [
-   "GX",
-   "YVP"
-  ],
-  "family_sizes": {
-   "GX": 1,
-   "YVP": 1
-  },
-  "ents": [
-   "GS:342:0:0x51D6F0"
-  ],
-  "obs": [],
-  "family_domains": {
-   "GX": [
-    "int"
-   ],
-   "YVP": [
-    "Sequence"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B570:this:0x328",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "FP",
    "IT",
@@ -3207,34 +2845,21 @@
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
+   "FP": 1,
    "IT": 1,
    "IV": 1,
-   "FP": 1
+   "MR": 1
   },
   "ents": [
    "M:70B570:this:0x328"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ],
-   "FP": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B570:this:0x32C",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "FP",
    "IT",
@@ -3242,59 +2867,39 @@
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
+   "FP": 1,
    "IT": 1,
    "IV": 1,
-   "FP": 1
+   "MR": 1
   },
   "ents": [
    "M:70B570:this:0x32C"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ],
-   "FP": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:76C6E0:this:0x494",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:76C6E0:this:0x494"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "?$VectorClass@PAVMSSfxEntry@@"
-   ],
-   "MR": [
-    "VectorClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "S:4CC100:var_4",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3305,16 +2910,12 @@
    "S:4CC100:var_4"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TrajectoryHelper"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "S:4CC100:var_c",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3325,11 +2926,6 @@
    "S:4CC100:var_c"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TrajectoryHelper"
-   ]
-  },
   "exact": {}
  },
  {
@@ -3457,7 +3053,8 @@
  },
  {
   "cluster": "S:4C6860:+0x0",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3468,16 +3065,12 @@
    "S:4C6860:+0x0"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:4C6860:this:0x13",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3488,16 +3081,12 @@
    "M:4C6860:this:0x13"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:4C6860:this:0x18",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3508,16 +3097,12 @@
    "M:4C6860:this:0x18"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:4C6860:this:0xE",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -3528,106 +3113,60 @@
    "M:4C6860:this:0xE"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:458A80:458B30",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "EP",
   "families": [
    "EP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "EP": 10
+   "EP": 10,
+   "RA": 1
   },
   "ents": [
    "EAX:458A80:458B30"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "EP": [
-    "AnimClass",
-    "BulletClass",
-    "CellClass",
-    "ParticleSystemClass",
-    "TechnoClass",
-    "WaveClass",
-    "CrateClass",
-    "House",
-    "TacticalClass",
-    "short"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:6E4F60:6E509B",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "EP",
   "families": [
    "EP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "EP": 28
+   "EP": 28,
+   "RA": 1
   },
   "ents": [
    "EAX:6E4F60:6E509B"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "EP": [
-    "AircraftClass",
-    "BuildingClass",
-    "FootClass",
-    "HouseClass",
-    "IUnknown",
-    "InfantryClass",
-    "IsometricTileTypeClass",
-    "ObjectClass",
-    "ObjectTypeClass",
-    "ParticleClass",
-    "ParticleSystemTypeClass",
-    "ParticleTypeClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:7D4A10:7D4A7B",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "EP",
   "families": [
    "EP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "EP": 1
+   "EP": 1,
+   "RA": 1
   },
   "ents": [
    "EAX:7D4A10:7D4A7B"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "EP": [
-    "uint64_t*"
-   ]
-  },
   "exact": {}
  },
  {
@@ -3698,168 +3237,112 @@
  },
  {
   "cluster": "M:4F54A0:this:0x254",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT",
    "SA"
   ],
   "family_sizes": {
-   "MT": 1,
    "MR": 1,
+   "MT": 1,
    "SA": 230
   },
   "ents": [
    "M:4F54A0:this:0x254"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "DynamicVector"
-   ],
-   "MR": [
-    "SuperClass"
-   ],
-   "SA": [
-    "?$CComObject@VCChatEventSink@@@ATL",
-    "?$CComObject@VCDownloadEventSink@@@ATL",
-    "?$CComObject@VCNetUtilEventSink@@@ATL",
-    "?$TClassFactory@VAITriggerTypeClass@@",
-    "?$TClassFactory@VAircraftClass@@",
-    "?$TClassFactory@VAircraftTypeClass@@",
-    "?$TClassFactory@VAirstrikeClass@@",
-    "?$TClassFactory@VAlphaShapeClass@@",
-    "?$TClassFactory@VAnimClass@@",
-    "?$TClassFactory@VAnimTypeClass@@",
-    "?$TClassFactory@VBombClass@@",
-    "?$TClassFactory@VBuildingClass@@"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:665650:this:0xAA4",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:665650:this:0xAA4"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "?$TypeList@PBVBuildingTypeClass@@"
-   ],
-   "MR": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:665650:this:0xAC0",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:665650:this:0xAC0"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "?$TypeList@PBVBuildingTypeClass@@"
-   ],
-   "MR": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:76C290:this:0x464",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:76C290:this:0x464"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "rc_ptr"
-   ],
-   "MR": [
-    "rc_ptr_base"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:76C290:this:0x494",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:76C290:this:0x494"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "?$DynamicVectorClass@PAVMSSfxEntry@@"
-   ],
-   "MR": [
-    "VectorClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:76C6E0:this:0x464",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 1
+   "MR": 1,
+   "MT": 1
   },
   "ents": [
    "M:76C6E0:this:0x464"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "rc_ptr"
-   ],
-   "MR": [
-    "rc_ptr_base"
-   ]
-  },
   "exact": {}
  },
  {
@@ -4755,7 +4238,8 @@
  },
  {
   "cluster": "P:41B5C0:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -4769,25 +4253,12 @@
    "S:41B5C0:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "?$TClassFactory@VAircraftClass@@",
-    "?$TClassFactory@VInfantryClass@@",
-    "?$TClassFactory@VUnitClass@@",
-    "AircraftClass",
-    "FootClass",
-    "InfantryClass",
-    "UnitClass"
-   ],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:41CE90:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -4801,17 +4272,12 @@
    "S:41CE90:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:477050:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -4823,14 +4289,12 @@
    "S:477050:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": []
-  },
   "exact": {}
  },
  {
   "cluster": "P:428970:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -4842,14 +4306,12 @@
    "S:428970:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": []
-  },
   "exact": {}
  },
  {
   "cluster": "P:70C250:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -4863,29 +4325,12 @@
    "S:70C250:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "?$TClassFactory@VAircraftClass@@",
-    "?$TClassFactory@VBuildingClass@@",
-    "?$TClassFactory@VInfantryClass@@",
-    "?$TClassFactory@VUnitClass@@",
-    "AircraftClass",
-    "BuildingClass",
-    "FootClass",
-    "InfantryClass",
-    "RadioClass",
-    "TechnoClass",
-    "UnitClass"
-   ],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:46C730:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -4899,17 +4344,12 @@
    "S:46C730:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:4C6860:6",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -4920,16 +4360,12 @@
    "P:4C6860:6"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:4C6860:8",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -4940,16 +4376,12 @@
    "P:4C6860:8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "TargetClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "R:4FF980:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C2",
   "families": [
    "C2",
    "C2X"
@@ -4959,33 +4391,16 @@
    "C2X": 1
   },
   "ents": [
-   "T:4FF980"
+   "T:4FF980",
+   "R:4FF980:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C2X": [
-    "HouseClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "R:4FFA50:ecx",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C2",
   "families": [
    "C2",
    "C2X"
@@ -4995,33 +4410,16 @@
    "C2X": 1
   },
   "ents": [
-   "T:4FFA50"
+   "T:4FFA50",
+   "R:4FFA50:ecx"
   ],
   "obs": [],
-  "family_domains": {
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C2X": [
-    "HouseClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:521B00:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5035,25 +4433,12 @@
    "S:521B00:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "?$TClassFactory@VAircraftClass@@",
-    "?$TClassFactory@VInfantryClass@@",
-    "?$TClassFactory@VUnitClass@@",
-    "AircraftClass",
-    "FootClass",
-    "InfantryClass",
-    "UnitClass"
-   ],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:549D70:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -5065,14 +4450,12 @@
    "S:549D70:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": []
-  },
   "exact": {}
  },
  {
   "cluster": "P:5FEC10:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5086,17 +4469,12 @@
    "S:5FEC10:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:644830:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5110,17 +4488,12 @@
    "S:644830:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:6B58B0:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5134,17 +4507,12 @@
    "S:6B58B0:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:753D00:3",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -5155,16 +4523,12 @@
    "P:753D00:3"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "Vector3D"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:71E240:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5178,17 +4542,12 @@
    "S:71E240:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:7480B0:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5202,17 +4561,12 @@
    "S:7480B0:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:753F90:3",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10"
   ],
@@ -5223,16 +4577,12 @@
    "P:753F90:3"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [
-    "Vector3D"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "P:74B8D0:1",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "C10",
   "families": [
    "C10",
    "YVP"
@@ -5246,17 +4596,12 @@
    "S:74B8D0:+0x8"
   ],
   "obs": [],
-  "family_domains": {
-   "C10": [],
-   "YVP": [
-    "char"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:457BE4",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5269,30 +4614,12 @@
    "N:457BE4"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:49DEFC",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5305,30 +4632,12 @@
    "N:49DEFC"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "?$DynamicVectorClass@PAD"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:486AD9",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5341,30 +4650,12 @@
    "N:486AD9"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:7676F8",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5377,30 +4668,12 @@
    "N:7676F8"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "AddTeamCommandClass",
-    "SelectTeamCommandClass",
-    "DeleteCommandClass",
-    "GenericList",
-    "GenericNode",
-    "MultiplayerBattleTeam",
-    "MultiplayerTeam",
-    "PageUserCommandClass",
-    "TauntCommandClass",
-    "AddTeamCommand",
-    "BlitTransXlatAlpha_ushort",
-    "BuildingAnimFrameStruct"
-   ],
-   "NI": [
-    "MapSizeGameOption@WorldDominationTour"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:732058",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5413,30 +4686,12 @@
    "N:732058"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:731EC0",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5449,30 +4704,12 @@
    "N:731EC0"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "N:731F80",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "NI",
   "families": [
    "C5",
    "NI"
@@ -5485,529 +4722,346 @@
    "N:731F80"
   ],
   "obs": [],
-  "family_domains": {
-   "C5": [
-    "BrainClass",
-    "ScoreFontClass",
-    "VQMovieHandle",
-    "AnimTypeList",
-    "AudioEventHandle",
-    "AudioNode",
-    "AudioOcclusion",
-    "BuildingLight",
-    "Conflict",
-    "DynamicVectorClass",
-    "FacingClass",
-    "FoggedObject_DrawVector"
-   ],
-   "NI": [
-    "DynamicVector"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:5D0070:this:0x24",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 3
+   "MR": 3,
+   "MT": 1
   },
   "ents": [
    "M:5D0070:this:0x24"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "VectorClass_Point2D"
-   ],
-   "MR": [
-    "RateTimer",
-    "char[16]",
-    "int"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:5D0070:this:0x3C",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "MR",
    "MT"
   ],
   "family_sizes": {
-   "MT": 1,
-   "MR": 3
+   "MR": 3,
+   "MT": 1
   },
   "ents": [
    "M:5D0070:this:0x3C"
   ],
   "obs": [],
-  "family_domains": {
-   "MT": [
-    "?$VectorClass@PAVMSTextEntry@@"
-   ],
-   "MR": [
-    "IUnknown",
-    "char[4]",
-    "int[5]"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:4D7170:this:0x530",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:4D7170:this:0x530"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ILocomotion"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:4DEBB0:this:0x330",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:4DEBB0:this:0x330"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "TeamClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:6442D0:this:0x2D0",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:6442D0:this:0x2D0"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "IUnknown"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:6442D0:this:0x2E8",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:6442D0:this:0x2E8"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "IUnknown"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66CF70:this:0x1820",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66CF70:this:0x1820"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "IUnknown"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66D530:this:0x78",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66D530:this:0x78"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "AnimTypeClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66D530:this:0x780",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66D530:this:0x780"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "BuildingTypeClass"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66D530:this:0x790",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66D530:this:0x790"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "BuildingTypeClass"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66D530:this:0x80",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66D530:this:0x80"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "AnimTypeClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:66D530:this:0x84",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:66D530:this:0x84"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "AnimTypeClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B280:this:0x330",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:70B280:this:0x330"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B280:this:0x334",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:70B280:this:0x334"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B570:this:0x330",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:70B570:this:0x330"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:70B570:this:0x334",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IT",
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:70B570:this:0x334"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "ParticleSystemClass"
-   ],
-   "IT": [
-    "float"
-   ],
-   "IV": [
-    "float"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:7493B0:this:0x3BC",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "IV",
    "MR"
   ],
   "family_sizes": {
-   "MR": 1,
-   "IV": 1
+   "IV": 1,
+   "MR": 1
   },
   "ents": [
    "M:7493B0:this:0x3BC"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "TimerStruct"
-   ],
-   "IV": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "M:515ED0:this:0x48",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "MR",
   "families": [
    "FP",
    "IT",
@@ -6015,30 +5069,15 @@
    "MR"
   ],
   "family_sizes": {
-   "MR": 2,
+   "FP": 1,
    "IT": 1,
    "IV": 1,
-   "FP": 1
+   "MR": 2
   },
   "ents": [
    "M:515ED0:this:0x48"
   ],
   "obs": [],
-  "family_domains": {
-   "MR": [
-    "RandomStruct",
-    "int"
-   ],
-   "IT": [
-    "double"
-   ],
-   "IV": [
-    "double"
-   ],
-   "FP": [
-    "double"
-   ]
-  },
   "exact": {}
  },
  {
@@ -6068,141 +5107,128 @@
  },
  {
   "cluster": "EAX:551630:551716",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "IMP",
   "families": [
    "IMP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "IMP": 1
+   "IMP": 1,
+   "RA": 1
   },
   "ents": [
    "EAX:551630:551716"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "IMP": [
-    "void*"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:614B30:614C4A",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "IMP",
   "families": [
    "IMP",
    "RA",
    "SGN"
   ],
   "family_sizes": {
+   "IMP": 1,
    "RA": 1,
-   "SGN": 1,
-   "IMP": 1
+   "SGN": 1
   },
   "ents": [
    "EAX:614B30:614C4A"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "SGN": [
-    "int"
-   ],
-   "IMP": [
-    "short"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:6E4B00:6E509B",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "EP",
   "families": [
    "EP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "EP": 28
+   "EP": 28,
+   "RA": 1
   },
   "ents": [
    "EAX:6E4B00:6E509B"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "EP": [
-    "AircraftClass",
-    "BuildingClass",
-    "FootClass",
-    "HouseClass",
-    "IUnknown",
-    "InfantryClass",
-    "IsometricTileTypeClass",
-    "ObjectClass",
-    "ObjectTypeClass",
-    "ParticleClass",
-    "ParticleSystemTypeClass",
-    "ParticleTypeClass"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:77DC90:77DD0A",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "IMP",
   "families": [
    "IMP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "IMP": 1
+   "IMP": 1,
+   "RA": 1
   },
   "ents": [
    "EAX:77DC90:77DD0A"
   ],
   "obs": [],
-  "family_domains": {
-   "RA": [
-    "int"
-   ],
-   "IMP": [
-    "void*"
-   ]
-  },
   "exact": {}
  },
  {
   "cluster": "EAX:7CFECD:7CFF1E",
-  "status": "inconsistent",
+  "status": "precedence_drop",
+  "dropped_family": "IMP",
   "families": [
    "IMP",
    "RA"
   ],
   "family_sizes": {
-   "RA": 1,
-   "IMP": 1
+   "IMP": 1,
+   "RA": 1
   },
   "ents": [
    "EAX:7CFECD:7CFF1E"
   ],
   "obs": [],
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F54A0:this:0x254",
+  "status": "inconsistent",
+  "families": [
+   "MT",
+   "SA"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "SA": 230
+  },
+  "ents": [
+   "M:4F54A0:this:0x254"
+  ],
+  "obs": [],
   "family_domains": {
-   "RA": [
-    "int"
+   "MT": [
+    "DynamicVector"
    ],
-   "IMP": [
-    "void*"
+   "SA": [
+    "?$CComObject@VCChatEventSink@@@ATL",
+    "?$CComObject@VCDownloadEventSink@@@ATL",
+    "?$CComObject@VCNetUtilEventSink@@@ATL",
+    "?$TClassFactory@VAITriggerTypeClass@@",
+    "?$TClassFactory@VAircraftClass@@",
+    "?$TClassFactory@VAircraftTypeClass@@",
+    "?$TClassFactory@VAirstrikeClass@@",
+    "?$TClassFactory@VAlphaShapeClass@@",
+    "?$TClassFactory@VAnimClass@@",
+    "?$TClassFactory@VAnimTypeClass@@",
+    "?$TClassFactory@VBombClass@@",
+    "?$TClassFactory@VBuildingClass@@"
    ]
   },
   "exact": {}

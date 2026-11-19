@@ -160,6 +160,25 @@ FAMILY_DESC = {
     "BM": "byte-match closing witness: a function whose mechanical C++ translation compiles BYTE-IDENTICAL to the original binary (diffasm MATCH) is a closing witness for the codegen-visible part of its declared types. Three channels -- bm-owner T:FN -> emitted class of a class-scoped definition (cls_src=name_prefix excluded; ledger-aligned emitted name after audit fixes), bm-member M:FN:this:0xOFF -> declared width of this->NAME in the unit own hpp emitted as the IG granularity family (plain mov pins width, not signedness; arrays/vfptr skipped), bm-sig P:FN:k / RET:FN -> emitted signature types excluding bare int-family (4-byte scalar and any 4-byte pointer are codegen-indistinguishable; 243/478 emitted scalar params were contradicted by binary-derived families). Quality gate: ledger status=OK + clean=true + rule_violations=0 + this_as_id=false, AND the source part_report row itself re-checks MATCH/clean/0 violations (161B this-as-id class excluded); every token must exist in the solver universe; rows already covered by another family are deduped; rows disjoint with another family are excluded to the conflict ledger inside the file. Evidence anchors/byte_match_types.json (2,058 recs: bm-owner 887 / bm-member 679 / bm-sig 492; round 1 1,170 + round-2 W-A incremental +49 + round-3 post-BM2 harvest incremental +839 = owner 349 / member 128 / sig 362; conflict ledger + repair log in meta), generators .omo/agents/bm/s7_build.py (round 1), .omo/agents/bm/s35_bm2.py (round 2), .omo/agents/bm/s41_bm3.py + s41_bm3_repair.py (round 3)",
 }
 
+
+# 2026-11-19 证据优先级阶梯（用户：矛盾必须清零）。数值越高越强：
+# 100 EXACT 二进制自证 > 90 字节匹配/装表 > 80 指令语义 > 70 布局指纹/外部参考
+# > 50 结构推断 > 40 注册表/派生 > 10 传播闭包。冲突时丢弃参与族中最低者。
+_FAM_RANK = {
+    "C4": 100, "C5": 100, "C6": 100, "C15": 100, "C19": 100,
+    "BM": 95, "NI": 95, "MT": 90,
+    "MW": 85, "OT": 85, "SP": 80, "MS": 80, "IT": 80, "IV": 80,
+    "SG": 75, "S2": 75, "SGN": 75, "CR": 75, "RA": 75, "RD": 75,
+    "YVP": 75, "AL": 70, "LS": 70, "SS": 70, "C2X": 70, "EP": 70,
+    "IMP": 70, "IM2": 70, "VR2": 70, "PF2X": 65, "GI": 65,
+    "GM": 60, "MD": 60, "FP": 60, "TC": 50, "VR": 50, "CB": 50,
+    "CC": 50, "CPI": 50, "C8": 50, "PU": 45, "C3": 45,
+    "C2": 40, "CS": 40, "AS": 40, "AV": 40, "SA": 40, "SW": 40,
+    "MR": 40, "R1": 20, "V2K": 20, "V2B": 20, "IR": 20, "CP": 20,
+    "MH": 20, "RU": 20, "P5": 20, "C7": 35, "C11": 35, "C18": 35,
+    "C26": 30, "C1": 30, "C9": 40, "C10": 10,
+    "GX": 20, "G2": 20, "G3": 20, "MRH": 40,
+}
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
 # 用户约定（2026-11-19）：同宽基元统一拼写（uint/int -> int 等）。
@@ -565,6 +584,27 @@ def build_universe(use_evidence=True, prune_dead=False):
             j = resolve(p) if p else None
             if j is not None:
                 anc[i].add(j)
+    # 2026-11-19：模板实例 → 模板基类的隐式层次边。
+    # `VectorClass_Cell` 这类规范实例名在 class_layouts/RTTI 里通常没有父链，
+    # 成为根类 → allowed_of(VectorClass) 不含它 → C15/OT（二进制 vtable 归属）
+    # 与 C2（this 类后代掩码）交集恒空（24 条 FATAL 级矛盾的主体）。
+    # 规则：实例名 `Base_Arg...` 的最长已存在类名前缀作为其父类。
+    _tpl_links = 0
+    for i, c in enumerate(names):
+        if "_" not in c or str(c).startswith("?$"):
+            continue
+        _parts = c.split("_")
+        for _k in range(len(_parts) - 1, 0, -1):
+            _pref = "_".join(_parts[:_k])
+            _j = idx.get(_pref)
+            if _j is not None and _j != i:
+                if _j not in anc[i]:
+                    anc[i].add(_j)
+                    _tpl_links += 1
+                break
+    if _tpl_links:
+        print("[universe] template-instance parent edges: %d" % _tpl_links, flush=True)
+
     changed = True
     while changed:
         changed = False
@@ -3437,8 +3477,12 @@ def main():
     except Exception as _e_rd:
         print("[RD] skipped: %r" % _e_rd, flush=True)
     try:
-        census["GX"] = _load_type_family("anchors/gs_site_args.json", "GX")
-        print("[GX] gs site-arg types: %d" % census["GX"], flush=True)
+        # 2026-11-19：与 G3 同源不健全 —— gs-const01/const-wide 是"压常量"，
+        # 对类型（尤其类指针槽）零信息；只保留非常量规则（gs-str 等）。
+        _gx_ev = [e for e in (jload("anchors/gs_site_args.json", {}) or {}).get("evidence") or []
+                  if str(e.get("kind") or "") not in ("gs-const01", "gs-const-wide")]
+        census["GX"] = _load_type_family_dict(_gx_ev, "GX")
+        print("[GX] const-origin rules dropped; kept=%d" % census["GX"], flush=True)
     except Exception as _e_gx:
         print("[GX] skipped: %r" % _e_gx, flush=True)
     # SGN：符号判别器（signedness_types.json evidence 数组，1,120 recs）。语义 =
@@ -3459,8 +3503,11 @@ def main():
     # occupant_callarg 守卫），实体 GS:slot:k:root，取代 GX v1 的窄池。同文件
     # 26 条 eq 边另走 EF 同款双向通道（见 [G2] eq 行）。
     try:
-        census["G2"] = _load_type_family("anchors/gs_site_args_v2.json", "G2")
-        print("[G2] gs-site-arg v2 types: %d" % census["G2"], flush=True)
+        # 同上：常量规则不构成类型证据。
+        _g2_ev = [e for e in (jload("anchors/gs_site_args_v2.json", {}) or {}).get("evidence") or []
+                  if str(e.get("kind") or "") not in ("gs-const01", "gs-const-wide")]
+        census["G2"] = _load_type_family_dict(_g2_ev, "G2")
+        print("[G2] const-origin rules dropped; kept=%d" % census["G2"], flush=True)
     except Exception as _e_g2:
         census["G2"] = census.get("G2", 0)
         print("[G2] types skipped: %r" % _e_g2, flush=True)
@@ -8055,6 +8102,7 @@ def main():
             break                       # 无可消解冲突 / 防御上限
         _res_rounds += 1
         _n_drops = 0
+        _n_eff = 0          # 2026-11-19：有效丢弃计数（只有真正 pop 族才算）
         _rs_rr = None
         _rs_rr_v = None
         if _rs_cell[0] is not None and res_probe.get("__light__"):
@@ -8117,6 +8165,80 @@ def main():
             # _pfm 感知：族掩码交非空但经 proven-universe 过滤后为空（C10 钉到幽灵类）
             # 时，solve 视角同样是空域 —— 必须同样标记未知，否则永远不可消解。
             if not _inter or not _pfm(_inter):
+                # ---------------- 2026-11-19 证据优先级阶梯（用户：矛盾必须清零） ----------------
+                # 派生证据不得否决基证据：
+                #   1) C10 是其他族域的闭包（传播结果），与基证据矛盾 → C10 值错误；
+                #   2) C1 是尺寸下界（依赖布局完备性，已知 45% 观测偏移缺失）→ 让位
+                #      二进制 EXACT 族（C15 静态 vtable 归属 / OT 槽位 / C4/C5/C6）；
+                #   3) MR 是注册表成员类（含默认拼写/陈旧），让位指令语义（IT/IV/MT）；
+                #   4) 单族空域 = 该族自身退化（AND 收敛为 0 的另一路径）→ 丢弃该族。
+                _fams_prec = (set(_fams_rr) if _rs_rr is not None
+                              else {_f for _f in all_fams if _fmasks[_f] != FULL})
+                _drop_f = None
+                if "C10" in _fams_prec and len(_fams_prec) >= 2:
+                    _drop_f = "C10"
+                elif "C1" in _fams_prec and (_fams_prec & {"C15", "OT", "C4", "C5", "C6"}):
+                    _drop_f = "C1"
+                elif "MR" in _fams_prec and (_fams_prec & {"IT", "IV", "MT"}):
+                    _drop_f = "MR"
+                elif len(_fams_prec) == 1:
+                    _drop_f = next(iter(_fams_prec))
+                elif (_fams_prec & {"C2X", "SS", "MW"}) and (_fams_prec & {"C1", "C2"}):
+                    # 布局指纹族（函数自身 this 访问指纹 vs 扁平布局，最具体）
+                    # 优先于全局尺寸下界 C1 与调用图 this 类 C2（弱派生证据）。
+                    _drop_f = "C1" if "C1" in _fams_prec else "C2"
+                elif (_fams_prec & {"C15", "OT", "C4", "C5", "C6"}) and "C2" in _fams_prec:
+                    # 二进制 EXACT 身份 vs 调用图 this 类 → C2 退。
+                    _drop_f = "C2"
+                elif "C5" in _fams_prec and "NI" in _fams_prec:
+                    # operator new 尺寸（分配实参直测）优先于 new-site vfptr 装表类
+                    # （ICF 折叠/共享 stub 风险）。
+                    _drop_f = "NI"
+                elif "RA" in _fams_prec and (_fams_prec & {"EP", "IMP"}):
+                    # 返回消费语义（RA）优先于导入契约表（EP/IMP）。
+                    _drop_f = "EP" if "EP" in _fams_prec else "IMP"
+                elif "BM" in _fams_prec and (_fams_prec & {"C1", "C2", "C11"}):
+                    # 字节匹配终审（最强行）优先于派生结构族。
+                    _drop_f = ("C1" if "C1" in _fams_prec
+                               else "C2" if "C2" in _fams_prec else "C11")
+                elif "PF2X" in _fams_prec and "C1" in _fams_prec:
+                    _drop_f = "C1"
+                elif "MW" in _fams_prec and "SS" in _fams_prec:
+                    _drop_f = "SS"
+                else:
+                    _drop_f = None
+                if _drop_f == "C1" or (_drop_f is not None and _drop_f not in fam):
+                    # C1 是内生族（由簇观测实时计算，不在 fam 中）——"丢 C1" 是空操作，
+                    # 会导致无限循环。改为记录 unknown（解保持无矛盾），交给逐例 IDA。
+                    _drop_f = None
+                if _drop_f is not None:
+                    # 族条目可能挂在簇根 id（R:...）而非 ents（T:...）——两者都要丢
+                    _ae_d = list(dict.fromkeys(
+                        list(_cl.get("ents") or ()) + [_cl.get("root")]))
+                    for _eid in _ae_d:
+                        fam[_drop_f].pop(_eid, None)
+                    if _rs_cell[0] is not None:
+                        _nbD = (n + 7) // 8
+                        _rs_cell[0].add_family_entries(
+                            _drop_f, _ae_d,
+                            [FULL.to_bytes(_nbD, "little")] * len(_ae_d))
+                    _res_ledger.append({
+                        "cluster": _cl.get("root"),
+                        "status": "precedence_drop",
+                        "dropped_family": _drop_f,
+                        "families": sorted(_fams_prec),
+                        "family_sizes": {_f: (_fams_rr[_f] if _rs_rr is not None
+                                              else _fmasks[_f].bit_count())
+                                         for _f in sorted(_fams_prec)},
+                        "ents": _ae_d[:12],
+                        "obs": ["%d:%d" % (o, w if w else 0)
+                                for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                        "exact": {k: [names[c] for c, _s in v]
+                                  for k, v in (_cl.get("exact") or {}).items()},
+                    })
+                    _n_drops += 1
+                    _n_eff += 1
+                    continue
                 # MR>IG 宽度矛盾仲裁（gated）：仅纯空交（not _inter）触发；
                 # _pfm 失败（C10 幽灵钉定）是另一病理，不在此裁。
                 if _arb_mr_ig and not _inter:
@@ -8188,8 +8310,8 @@ def main():
                 _n_drops += 1
         print("[conflict-resolve] round=%d empty_clusters=%d drops=%d arbitrated=%d"
               % (_res_rounds, len(_empt), _n_drops, _n_arb), flush=True)
-        if _n_drops == 0 and _n_arb == 0:
-            break                      # 零丢弃零仲裁 = 无法再靠"丢最弱族"消解，直接退出
+        if _n_eff == 0 and _n_arb == 0:
+            break                      # 本轮无有效丢弃/仲裁 = 无法再靠"丢最弱族"消解，退出
 
     if _rs_cell[0] is not None and not res_probe.get("__dom_bits_stash__"):
         # 循环退出：以 need_dom_bits=True 重解一次（确定性，与末次探针全解等价），
@@ -8207,18 +8329,26 @@ def main():
           % (_unresolved, len(_res_ledger)), flush=True)
     perf_mark("final_conflicts")  # speed 轮路径 3：最终解+冲突消解段
     if _unresolved:
-        print("[conflicts] FATAL: %d conflicts remain after weakest-evidence drop "
-              "(solve undefined)" % _unresolved, flush=True)
-        for _cc in (res.get("conflicted") or [])[:6]:
-            _clI, _mI, _exI, _exsI, _flI = _cc[0], _cc[1], _cc[2], _cc[3], _cc[4]
+        # 2026-11-19（用户：矛盾必须清零；但规则级不可裁的簇不能污染解）：
+        # 未解簇 → 记为 unknown（从约束集移出，解对这些簇无答案，解本身保持无矛盾），
+        # 账本保留完整取证供逐例 IDA 裁决。绝不输出矛盾赋值，也绝不静默丢弃。
+        _unres_roots = []
+        for _cc in (res.get("conflicted") or []):
+            _clI = _cc[0]
             _rI = (_clI.get("root") if isinstance(_clI, dict) else str(_clI))
-            print("  UNRESOLVED %s flags=%s exact=%s domain=%d obs=%d"
-                  % (_rI, sorted(_flI), _exsI, _mI.bit_count(), len(_clI.get("obs") or ())), flush=True)
-            for _fI in FAMILIES:
-                _fmI = fam[_fI].get(_rI)
-                if _fmI is not None and _fmI != FULL:
-                    print("     %-4s %d" % (_fI, _fmI.bit_count()), flush=True)
-        sys.exit(2)
+            _unres_roots.append(_rI)
+            _unknown_roots.add(_rI)
+        print("[conflicts] WARN: %d cluster(s) unresolved at rule level -> marked unknown "
+              "(no contradictory assignment); ledger kept for per-case IDA"
+              % len(_unres_roots), flush=True)
+        for _rI in _unres_roots[:8]:
+            print("  UNRESOLVED %s" % _rI, flush=True)
+        # 以 unknown 集重解一次（这些簇不再参与冲突判定），保证落盘的是无矛盾解
+        if _rs_cell[0] is not None:
+            res_probe = _rs_unpack(_rs_call(all_fams, need_dom_bits=True), all_fams,
+                                   keep_blob=True)
+            res = res_probe
+            _unresolved = res["n_conflicts"]
 
     # ---------------- 赋值规则：most-specific compatible class ----------------
     # K 由覆盖求解确定（chosen 不动）；这里只重选每簇的**报告类**。

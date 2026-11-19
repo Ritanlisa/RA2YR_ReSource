@@ -50,9 +50,9 @@
 ]
 },
 "VectorClass": {
-"member_count": 21,
+"member_count": 22,
 "extent": 180,
-"clusters": 336,
+"clusters": 337,
 "members": [
 [
 0,
@@ -76,6 +76,10 @@
 ],
 [
 16,
+4
+],
+[
+20,
 4
 ],
 [
@@ -2154,10 +2158,10 @@
 ]
 ]
 },
-"?$VectorClass@VCell@@": {
+"VectorClass_Cell": {
 "member_count": 5,
 "extent": 14,
-"clusters": 7,
+"clusters": 3,
 "members": [
 [
 0,
@@ -7005,10 +7009,10 @@
 ]
 ]
 },
-"?$VectorClass@VPoint2D@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 10,
+"VectorClass_Point2D": {
+"member_count": 5,
+"extent": 14,
+"clusters": 3,
 "members": [
 [
 0,
@@ -7029,14 +7033,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -7483,9 +7479,9 @@
 ]
 },
 "?$VectorClass@PAVPlanningBranchClass@@": {
-"member_count": 7,
-"extent": 24,
-"clusters": 9,
+"member_count": 5,
+"extent": 14,
+"clusters": 8,
 "members": [
 [
 0,
@@ -7506,14 +7502,6 @@
 [
 13,
 1
-],
-[
-16,
-4
-],
-[
-20,
-4
 ]
 ]
 },
@@ -7851,10 +7839,10 @@
 ]
 ]
 },
-"?$VectorClass@VWstring@@": {
-"member_count": 5,
+"VectorClass_Wstring": {
+"member_count": 4,
 "extent": 14,
-"clusters": 7,
+"clusters": 3,
 "members": [
 [
 0,
@@ -7867,10 +7855,6 @@
 [
 8,
 4
-],
-[
-12,
-1
 ],
 [
 13,
@@ -9417,7 +9401,7 @@
 "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 7,
 "members": [
 [
 0,
@@ -12532,7 +12516,7 @@
 "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@": {
 "member_count": 6,
 "extent": 20,
-"clusters": 6,
+"clusters": 5,
 "members": [
 [
 0,
@@ -23824,6 +23808,25 @@
 ]
 ]
 },
+"SimpleDialogControl@OwnerDraw": {
+"member_count": 3,
+"extent": 9,
+"clusters": 2,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+1
+]
+]
+},
 "PowerClass": {
 "member_count": 1,
 "extent": 4,
@@ -25367,25 +25370,6 @@
 [
 8,
 4
-]
-]
-},
-"SimpleDialogControl@OwnerDraw": {
-"member_count": 3,
-"extent": 9,
-"clusters": 1,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-1
 ]
 ]
 },
