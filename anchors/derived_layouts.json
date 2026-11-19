@@ -50,9 +50,9 @@
 ]
 },
 "VectorClass": {
-"member_count": 22,
+"member_count": 21,
 "extent": 180,
-"clusters": 337,
+"clusters": 336,
 "members": [
 [
 0,
@@ -76,10 +76,6 @@
 ],
 [
 16,
-4
-],
-[
-20,
 4
 ],
 [
@@ -4552,7 +4548,7 @@
 "?$VectorClass@UScoutStruct@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 8,
 "members": [
 [
 0,
@@ -5149,7 +5145,7 @@
 "IPXManagerClass": {
 "member_count": 28,
 "extent": 172,
-"clusters": 26,
+"clusters": 27,
 "members": [
 [
 0,
@@ -10264,7 +10260,7 @@
 "WWMouseClass": {
 "member_count": 23,
 "extent": 112,
-"clusters": 18,
+"clusters": 19,
 "members": [
 [
 0,
@@ -11819,6 +11815,37 @@
 "member_count": 6,
 "extent": 20,
 "clusters": 6,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@UScoutStruct@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 5,
 "members": [
 [
 0,
@@ -14391,37 +14418,6 @@
 ]
 },
 "?$DynamicVectorClass@PAVAbstractClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 4,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@UScoutStruct@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
@@ -23557,7 +23553,7 @@
 ]
 },
 "MouseClass": {
-"member_count": 26,
+"member_count": 22,
 "extent": 332,
 "clusters": 12,
 "members": [
@@ -23623,22 +23619,6 @@
 ],
 [
 256,
-4
-],
-[
-268,
-4
-],
-[
-272,
-4
-],
-[
-276,
-4
-],
-[
-280,
 4
 ],
 [
@@ -24327,7 +24307,7 @@
 "MixFileClass": {
 "member_count": 12,
 "extent": 40,
-"clusters": 2,
+"clusters": 3,
 "members": [
 [
 0,

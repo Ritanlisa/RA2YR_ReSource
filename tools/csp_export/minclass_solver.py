@@ -7529,6 +7529,34 @@ def main():
         print("[axis] cross-axis masks dropped: %s"
               % dict(sorted(_axis_drop.items())), flush=True)
 
+    # ---------------- 2026-11-19（用户裁决）：多解 uint/int -> int ----------------
+    # 同宽有符号/无符号基元在同一族掩码内成对出现时，去掉无符号原子；只有无符号时
+    # 归一到有符号（报告口径统一）。域收缩不会引入矛盾（子集仍非空）。
+    _prim_twin = {}
+    for _un, _sg in (("unsigned int", "int"), ("unsigned long", "int"),
+                     ("long", "int"), ("unsigned short", "short"),
+                     ("unsigned char", "char")):
+        _iu = U["idx"].get(_un)
+        _is = U["idx"].get(_sg)
+        if _iu is not None and _is is not None and _iu != _is:
+            _prim_twin[_iu] = _is
+    if _prim_twin:
+        _n_prim = 0
+        for _fp in list(fam.keys()):
+            _dp = fam.get(_fp)
+            if not _dp:
+                continue
+            for _ep, _mp in list(_dp.items()):
+                _nm = _mp
+                for _u, _sgn in _prim_twin.items():
+                    if (_nm >> _u) & 1:
+                        _nm = (_nm & ~(1 << _u)) | (1 << _sgn)
+                if _nm != _mp:
+                    _dp[_ep] = _nm
+                    _n_prim += 1
+        print("[prim] signed/unsigned twin masks canonicalized (int convention): %d"
+              % _n_prim, flush=True)
+
     # ---------------- [rs-build] --use-rs：构建 Rust 求解器对象 ----------------
     # 此处 fam 除 C10 外全部冻结（C10 在下方不动点写回后经 add_family_entries
     # 增量注入——C10 内核自身跳过 C10 族，不受影响）；clusters/exact/ents/
@@ -8603,6 +8631,46 @@ def main():
           "constrained clusters)  forced=%d narrow=%d wide=%d"
           % (_uniq, _tot, (100.0 * _uniq / _tot) if _tot else 0.0,
              _cov["forced"], _cov["narrow"], _cov["wide"]), flush=True)
+
+    # ---- 最终域直方图 + 窄域明细（分析用；口径 = 最终 constrain 掩码）----
+    _narrow_dump = {}
+    _size_hist = {}
+    for (_cl, _m) in constrain:
+        _s = _m.bit_count()
+        if _s <= 10:
+            _size_hist[_s] = _size_hist.get(_s, 0) + 1
+        elif _s <= 32:
+            _size_hist["11-32"] = _size_hist.get("11-32", 0) + 1
+        elif _s <= 128:
+            _size_hist["33-128"] = _size_hist.get("33-128", 0) + 1
+        else:
+            _size_hist[">128"] = _size_hist.get(">128", 0) + 1
+        if 1 < _s <= 8:
+            _r = _cl.get("root") if isinstance(_cl, dict) else str(_cl)
+            _narrow_dump[_r] = {
+                "candidates": [names[_i] for _i in range(len(names)) if (_m >> _i) & 1],
+                "obs": ["%d:%d" % (o, w if w else 0)
+                        for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                "ents": list(_cl.get("ents") or [])[:12],
+            }
+    print("[dom-hist] " + " ".join("%s:%d" % (k, v)
+          for k, v in sorted(_size_hist.items(), key=lambda x: (isinstance(x[0], str), x[0]))),
+          flush=True)
+    _pfx_tab = collections.defaultdict(lambda: collections.Counter())
+    for (_cl, _m) in constrain:
+        _sz = _m.bit_count()
+        _rt = _cl.get("root") if isinstance(_cl, dict) else str(_cl)
+        _pf = str(_rt).split(":")[0] + ":"
+        _b = "1" if _sz == 1 else ("2-8" if _sz <= 8 else ("9-128" if _sz <= 128 else ">128"))
+        _pfx_tab[_pf][_b] += 1
+    print("[dom-pfx] " + " | ".join(
+        "%s 1:%d 2-8:%d 9-128:%d >128:%d" % (k, v["1"], v["2-8"], v["9-128"], v[">128"])
+        for k, v in sorted(_pfx_tab.items())), flush=True)
+    with io.open(os.path.join(ROOT, "anchors/minclass_narrow_final.json"), "w",
+                 encoding="utf-8") as _fh:
+        json.dump(_narrow_dump, _fh, ensure_ascii=False, indent=0)
+    print("[out] anchors/minclass_narrow_final.json (%d narrow clusters)" % len(_narrow_dump),
+          flush=True)
 
     # 赋值释义：K 由覆盖求解确定；每簇报告类 = most-specific compatible class
     #（见上方 most-specific 规则），域内最特异布局胜出，EXACT 身份恒保留。

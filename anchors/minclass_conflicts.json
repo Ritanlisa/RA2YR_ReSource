@@ -90,8 +90,22 @@
    "junction_unions": 0
   },
   "ruleS2": {
-   "c2_drops": 3,
+   "c2_drops": 4,
    "records": [
+    {
+     "entity": "T:4FD500",
+     "pin_classes": [
+      "FlasherClass",
+      "IApplication",
+      "IConnectionPoint",
+      "IConnectionPointContainer",
+      "IEnumConnectionPoints",
+      "IEnumConnections",
+      "IFlyControl",
+      "IGameMap"
+     ],
+     "c3_classes": 1
+    },
     {
      "entity": "T:4FD9A0",
      "pin_classes": [
@@ -153,15 +167,15 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 868,
-  "K_upper": 868,
-  "lower_bound": 868,
-  "constrained_clusters": 74161,
-  "free_clusters": 124583,
+  "K": 886,
+  "K_upper": 886,
+  "lower_bound": 886,
+  "constrained_clusters": 96320,
+  "free_clusters": 107860,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 2231,
-  "entities": 205412
+  "entities": 208630
  },
  "family_table": [],
  "conflicts": [],
@@ -460,10 +474,10 @@
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7277,
-   "matched_strict": 6312,
-   "no_match": 965,
+   "matched_strict": 6317,
+   "no_match": 960,
    "by_cause": {
-    "width_mismatch_only": 820,
+    "width_mismatch_only": 815,
     "suspicious_large_offset": 86,
     "no_class_has_all_offsets_sparse_layout": 2,
     "param_unknown_class": 48,
@@ -8168,8 +8182,8 @@
   "c7_variance_violation_count": 10461,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 73,
-    "exact_conflicts": 12,
+    "unions": 68,
+    "exact_conflicts": 17,
     "examples": [
      {
       "a": "G:87F7E8",
@@ -8189,6 +8203,16 @@
       ],
       "b_classes": [
        "MapClass"
+      ]
+     },
+     {
+      "a": "G:87F7E8",
+      "b": "T:6D0EC0",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "TabClass"
       ]
      },
      {
@@ -8220,16 +8244,6 @@
       "b_classes": [
        "SidebarClass"
       ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:4AA2B0",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "MapClass"
-      ]
      }
     ]
    },
@@ -8244,8 +8258,8 @@
     "examples": []
    },
    "reg_def": {
-    "unions": 341,
-    "exact_conflicts": 8,
+    "unions": 340,
+    "exact_conflicts": 9,
     "examples": [
      {
       "a": "T:41B920",
@@ -8288,6 +8302,16 @@
       ]
      },
      {
+      "a": "T:62D5E0",
+      "b": "T:62D2A0",
+      "a_classes": [
+       "ConvertClass"
+      ],
+      "b_classes": [
+       "TerrainClass"
+      ]
+     },
+     {
       "a": "T:6B1B20",
       "b": "T:4E2500",
       "a_classes": [
@@ -8295,16 +8319,6 @@
       ],
       "b_classes": [
        "GaugeClass"
-      ]
-     },
-     {
-      "a": "T:6D03A0",
-      "b": "P:6A5310:0",
-      "a_classes": [
-       "TabClass"
-      ],
-      "b_classes": [
-       "ConvertClass"
       ]
      }
     ]
