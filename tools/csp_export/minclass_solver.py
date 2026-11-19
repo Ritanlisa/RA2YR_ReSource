@@ -7557,6 +7557,180 @@ def main():
         print("[prim] signed/unsigned twin masks canonicalized (int convention): %d"
               % _n_prim, flush=True)
 
+    # ---------------- M15：COMDAT/ICF 折叠簇按调用点槽位派发拆分 ----------------
+    # 规则（单条、确定性；只改簇结构，不新造证据通道）：
+    #   函数地址 F 在 vtable_slot_authority(+_ext) 中拥有 ≥2 个**互不为祖先**的
+    #   最小 owner 类 → 同一实现在多个无关类的 vtable 槽位上被共享（COMDAT/ICF
+    #   折叠）。C15 对这种地址只能给出 minimal-owner 交集（歧义掩码），C9 给出
+    #   全部 owner 子树的并集。本规则把**含唯一 T:F** 的簇按 owner 拆成子簇：
+    #     C15 := {owner}（该实现最早声明类，与 C15 单 owner EXACT 同语义）
+    #     C9  := allowed_of(owner)（该 owner 槽位 k 的派发接收者类域）
+    #   仅当 owner 的槽位 k 在 CALL_VTABLE 站点被实际派发（observed dispatch
+    #   slots）且子域预演非空时才拆；存活 owner < 2 的簇保持原样（unsplit）。
+    # 入口条件：簇内恰有一个 T: 实体、无 EXACT（EXACT 已唯一确定，无歧义）。
+    # 预演域镜像 cluster_domains（C1 尺寸门/_pfm/接收者类域纪律），避免制造
+    # 预知为空的子簇；真实域仍由内核按同一 fam 掩码计算。
+    _m15_insts = collections.defaultdict(lambda: collections.defaultdict(set))
+    for _src15 in ((jload("anchors/vtable_slot_authority.json", {}) or {}),
+                   (jload("anchors/vtable_slot_authority_ext.json", {}) or {})):
+        for _cn15, _rec15 in _src15.items():
+            _ci15 = resolve(_cn15)
+            if _ci15 is None:
+                continue
+            for _k15, _sv15 in ((_rec15 or {}).get("slots") or {}).items():
+                _a15 = hx((_sv15 or {}).get("addr"))
+                if _a15 is None:
+                    continue
+                try:
+                    _ki15 = int(_k15)
+                except (TypeError, ValueError):
+                    continue
+                if 0 <= _ki15 <= 400:
+                    _m15_insts[_a15][_ci15].add(_ki15)
+    _m15_obs_slots = set()
+    for _e15 in raw:
+        if _e15.get("type") != "CALL_VTABLE":
+            continue
+        try:
+            _ks15 = int(_e15.get("vtable_slot"))
+        except (TypeError, ValueError):
+            continue
+        if 0 <= _ks15 <= 400:
+            _m15_obs_slots.add(_ks15)
+    _m15_folded = {}
+    for _a15, _om15 in _m15_insts.items():
+        _cs15 = sorted(_om15)
+        if len(_cs15) < 2:
+            continue
+        _mins15 = [c for c in _cs15
+                   if not any(d in _c15_ancestors(c) for d in _cs15 if d != c)]
+        if len(_mins15) > 1:
+            _m15_folded[_a15] = _mins15
+    print("[m15] folded addrs=%d (>=2 unrelated vtable owners); observed dispatch "
+          "slots=%d" % (len(_m15_folded), len(_m15_obs_slots)), flush=True)
+
+    def _m15_domain(cl, t_eid, owner_ci, as_t_root=True):
+        """拆分子簇的预演域：镜像 cluster_domains。
+
+        owner_ci=None -> 原簇（不作 owner 覆盖，用于"当前是否已唯一"守卫）；
+        as_t_root=True -> 合成根（T: 类实体）；False -> 原簇根前缀语义。
+        """
+        _pfx15 = "T:" if as_t_root else str(cl.get("root") or "")[:2]
+        _c1_ok15 = (_pfx15 == "T:")
+        m = _pfm(c1_mask(cl["obs"])) if (cl["obs"] and _c1_ok15) else FULL
+        if cl.get("root") in _c1_exempt:
+            m = FULL
+        _unk15 = cl.get("root") in _unknown_roots
+        for _f15 in FAMILIES:
+            if _f15 == "C1":
+                continue
+            _mf15, _hit15 = FULL, False
+            for _e15 in cl["ents"]:
+                if _e15 == t_eid:
+                    continue
+                _fm15 = fam[_f15].get(_e15)
+                if _fm15 is not None:
+                    _mf15 &= _fm15
+                    _hit15 = True
+            if _f15 == "C9":
+                if owner_ci is None:
+                    _fm15 = fam[_f15].get(t_eid)
+                    _hit15 = _fm15 is not None
+                else:
+                    _fm15 = allowed_of(owner_ci)
+                    _hit15 = True
+            elif _f15 == "C15":
+                if owner_ci is None:
+                    _fm15 = fam[_f15].get(t_eid)
+                    _hit15 = _fm15 is not None
+                else:
+                    _fm15 = 1 << owner_ci
+                    _hit15 = True
+            else:
+                _fm15 = fam[_f15].get(t_eid)
+                if _fm15 is not None:
+                    _hit15 = True
+            if _fm15 is not None:
+                _mf15 &= _fm15
+            _mf15 = _pfm(_mf15) if _hit15 else FULL
+            if _unk15:
+                _mf15 = FULL
+            # T:/R:/GS: 接收者类域纪律：基元-only 证据不适用 -> FULL
+            if _pfx15 in ("T:", "R:", "GS"):
+                if _mf15 & _CLASSMASK:
+                    _mf15 &= _CLASSMASK
+                else:
+                    _mf15 = FULL
+            m &= _mf15
+        if _pfx15 in ("T:", "R:", "GS") and (m & _CLASSMASK):
+            m &= _CLASSMASK
+        return m
+
+    _m15_split = _m15_owners = _m15_res = _m15_buds = _m15_cand = _m15_uniq = 0
+    _m15_new = []
+    for _cl15 in clusters:
+        _t15s = [e for e in (_cl15.get("ents") or []) if e.startswith("T:")]
+        if len(_t15s) != 1 or _cl15.get("exact"):
+            _m15_new.append(_cl15)
+            continue
+        _te15 = _t15s[0]
+        try:
+            _fa15 = int(_te15[2:], 16)
+        except ValueError:
+            _m15_new.append(_cl15)
+            continue
+        _ow15 = _m15_folded.get(_fa15)
+        if not _ow15:
+            _m15_new.append(_cl15)
+            continue
+        _m15_cand += 1
+        # 只拆"歧义/空域来自该折叠地址"的簇：原簇在自身根语义下已唯一则不拆。
+        if _m15_domain(_cl15, _te15, None, as_t_root=False).bit_count() == 1:
+            _m15_uniq += 1
+            _m15_new.append(_cl15)
+            continue
+        _keep15 = []
+        for _ci15 in _ow15:
+            if not ((_m15_insts[_fa15].get(_ci15) or set()) & _m15_obs_slots):
+                continue
+            if not _m15_domain(_cl15, _te15, _ci15):
+                _m15_buds += 1
+                continue
+            _keep15.append(_ci15)
+        if len(_keep15) < 2:
+            _m15_new.append(_cl15)
+            continue
+        _m15_split += 1
+        _m15_owners += len(_keep15)
+        _rest15 = [e for e in _cl15["ents"] if e != _te15]
+        for _ci15 in _keep15:
+            _syn15 = "T:%X@%d" % (_fa15, _ci15)
+            ents[_syn15] = {"obs": set(), "raw": set()}
+            for _f15 in FAMILIES:
+                if _f15 == "C1":
+                    continue
+                if _f15 == "C9":
+                    _fm15 = allowed_of(_ci15)
+                elif _f15 == "C15":
+                    _fm15 = 1 << _ci15
+                else:
+                    _fm15 = fam[_f15].get(_te15)
+                if _fm15 is not None:
+                    fam[_f15][_syn15] = _fm15
+            if _m15_domain(_cl15, _te15, _ci15).bit_count() == 1:
+                _m15_res += 1
+            _m15_new.append({"root": _syn15,
+                             "ents": _rest15 + [_syn15],
+                             "obs": _cl15["obs"],
+                             "exact": dict(_cl15["exact"])})
+    if _m15_split:
+        clusters[:] = _m15_new
+    print("[m15] ambiguous clusters split=%d resolved=%d (candidates=%d, "
+          "already-unique skipped=%d, owner-subclusters=%d, "
+          "empty-owner buds dropped=%d)"
+          % (_m15_split, _m15_res, _m15_cand, _m15_uniq, _m15_owners,
+             _m15_buds), flush=True)
+
     # ---------------- [rs-build] --use-rs：构建 Rust 求解器对象 ----------------
     # 此处 fam 除 C10 外全部冻结（C10 在下方不动点写回后经 add_family_entries
     # 增量注入——C10 内核自身跳过 C10 族，不受影响）；clusters/exact/ents/
