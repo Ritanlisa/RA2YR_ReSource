@@ -7286,9 +7286,10 @@ def main():
     # 是不同语义轴。对值类型实体（P/M/G/RET/EAX/S/GS）直接 AND 两者会产生必然为空的
     # 伪矛盾（IDVP：0x4361D0+0x4 成员被当类指针虚调用而 MR=void*；YVP=void* 而 C2 给类域）。
     # 求解器每个实体只有一个域，无法同时表达两轴 → pointee 轴证据在值实体上不适用，丢弃。
-    _POINTEE_FAMS = ("C2", "C3", "C9", "C10", "OT", "AV",
-                     # RD: consumer-side EAX vptr-chain/member-read -> 对象类轴
-                     # VR2: vdret EAX 物化（vptr 链/成员读）-> 对象类轴
+    # 2026-11-19：C10 例外 —— 它是 call-graph 传播族，其类域对值实体可读作
+    # "指向该类"的合法指针类型（universe 用类原子表示类指针）；过滤它会丢失
+    # 27.8k constrained（实测 73,877→46,038）。保留 C10，其余 pointee 轴族照旧。
+    _POINTEE_FAMS = ("C2", "C3", "C9", "OT", "AV",
                      "RD", "VR2")
     _VALUE_PFX = ("P:", "M:", "G:", "RET:", "EAX:", "S:", "GS:")
     # 反向：type-axis 族（约束"值/元素的类型"）不适用于对象类实体 T:/R:。
