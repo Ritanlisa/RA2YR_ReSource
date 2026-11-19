@@ -99,3 +99,20 @@ IDA 核对：`0x4361D0 +0x4`（FollowingObject，虚调用/对象方法使用）
 剩余 601 条分布（无单一主导族）：C7+YVP 93 / C10+C2+YVP 49 / RA+RD 44 / IV+SG 37 /
 C1+C2+LS 27 / C2+MR 25 / BM+C7 23 / C1+C15+C2+OT 19 / C10 19 / RD+VR2 19。
 确定性：4 个求解器产物双跑 sha256 全等。
+
+## 补记（同日第六轮）：C7 循环掩码停用 + 两向轴分离 + 空掩码守卫
+
+- **C7 参数类掩码停用**：来自 ida_function_protos（我们自己写进 IDB 的类型，循环证据），
+  与 YVP（YRpp 外部真值）冲突 93 条。停用后覆盖 69.2→70.6%、空簇 548→412。
+- **空掩码守卫**（[rs-build] + C10 注入）：EP 5 / IM2 3 / MW 88 / SS 88 个退化掩码丢弃，
+  空簇 601→548。
+- **两向轴分离**：
+  - pointee 轴族（C2/C3/C9/C10/OT/AV/RD/VR2）不适用于值类型实体（P/M/G/RET/EAX/S/GS）：
+    丢 AV 807 / C2 4,871 / C3 1,671 / RD 1,227 / VR2 234 → 空簇 412→182
+  - type 轴族（LS/AL/SG/IT/IV/CPI/CR/SP/MS/YVP/IMP/IM2/S2/SGN/RU/MH/G3/FP）不适用于
+    T:/R: 对象类实体：丢 LS 33 / IV 17 / CR 1
+- 实测（gate-off）：unique 56,617 / constrained 73,877 = 76.6%；空簇 **182**；K_min 866；
+  conflicts 0；4 产物双跑 sha256 全等。
+- **口径警示**：轴分离会让只有单一（错轴）证据的实体变为 free（无约束），constrained 从
+  80,208 降到 73,877；百分比上升部分来自分母缩小，绝对 unique 56,617。这是"宁缺勿错"的
+  诚实代价。

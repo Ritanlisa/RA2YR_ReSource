@@ -4180,6 +4180,10 @@ def main():
     print("[C2] pins refuted by binary vtable install: %d" % c2_refuted_by_install, flush=True)
 
     # ---------------- C7：参数/返回方差 ----------------
+    # 2026-11-19（IDA/YRpp 核对）：C7 的参数类掩码来自 ida_function_protos.json
+    # ——那是**我们自己写进 IDB 的类型**（t14/mass_type 的应用结果），是循环证据
+    # （与 YVP 的 YRpp 外部真值冲突 93 条：YVP 说 void*/unsigned char*/CCINIClass，
+    # C7 给出 1,141 类的大域且不含 YVP 的类）。停用该掩码通道，保留 C7b 方差诊断。
     for a, v in protos.items():
         pr = parse_proto((v or {}).get("proto"))
         if not pr:
@@ -4195,8 +4199,8 @@ def main():
             eid = "P:%X:%d" % (aa, k)
             if eid not in ents:
                 continue
-            fam["C7"][eid] = fam["C7"].get(eid, FULL) & allowed_of(ci)
-            census["C7"] += 1
+            # DISABLED (circular IDB-derived evidence): fam["C7"][eid] = ...
+            census["C7"] += 0
 
     callargs = jload("anchors/ida_call_args.json", {}) or {}
     viol = []
@@ -7277,6 +7281,46 @@ def main():
     _edges_pre_incr = []
     _dom_fix = {}
 
+    # ---------------- 2026-11-19 轴分离（用户裁决：只保留健全约束） ----------------
+    # pointee-axis 族（约束"值所指向对象的类"）与 value-type 族（约束"值本身的类型"）
+    # 是不同语义轴。对值类型实体（P/M/G/RET/EAX/S/GS）直接 AND 两者会产生必然为空的
+    # 伪矛盾（IDVP：0x4361D0+0x4 成员被当类指针虚调用而 MR=void*；YVP=void* 而 C2 给类域）。
+    # 求解器每个实体只有一个域，无法同时表达两轴 → pointee 轴证据在值实体上不适用，丢弃。
+    _POINTEE_FAMS = ("C2", "C3", "C9", "C10", "OT", "AV",
+                     # RD: consumer-side EAX vptr-chain/member-read -> 对象类轴
+                     # VR2: vdret EAX 物化（vptr 链/成员读）-> 对象类轴
+                     "RD", "VR2")
+    _VALUE_PFX = ("P:", "M:", "G:", "RET:", "EAX:", "S:", "GS:")
+    # 反向：type-axis 族（约束"值/元素的类型"）不适用于对象类实体 T:/R:。
+    # LS 例：lea SIB-scale stride -> 元素类型（short/float/int），被错误 AND 到
+    # R 实体的"类"域（C1+C2+LS 27 条）。BM 例外：bm-owner 通道本身是 T 实体的
+    # 类证据（bm-member/bm-sig 若落在 T 上则由内核按实体同形处理）。
+    _TYPE_FAMS = ("LS", "AL", "SG", "IT", "IV", "CPI", "CR", "SP", "MS",
+                  "YVP", "IMP", "IM2", "S2", "SGN", "RU", "MH", "G3", "FP")
+    _CLASS_PFX = ("T:", "R:")
+    _axis_drop = {}
+    for _f in _POINTEE_FAMS:
+        _d = fam.get(_f)
+        if not _d:
+            continue
+        _rm = [e for e in _d if str(e).startswith(_VALUE_PFX)]
+        for _e in _rm:
+            _d.pop(_e, None)
+        if _rm:
+            _axis_drop[_f] = len(_rm)
+    for _f in _TYPE_FAMS:
+        _d = fam.get(_f)
+        if not _d:
+            continue
+        _rm = [e for e in _d if str(e).startswith(_CLASS_PFX)]
+        for _e in _rm:
+            _d.pop(_e, None)
+        if _rm:
+            _axis_drop[_f + "(class-ent)"] = len(_rm)
+    if _axis_drop:
+        print("[axis] cross-axis masks dropped: %s"
+              % dict(sorted(_axis_drop.items())), flush=True)
+
     # ---------------- [rs-build] --use-rs：构建 Rust 求解器对象 ----------------
     # 此处 fam 除 C10 外全部冻结（C10 在下方不动点写回后经 add_family_entries
     # 增量注入——C10 内核自身跳过 C10 族，不受影响）；clusters/exact/ents/
@@ -7285,10 +7329,22 @@ def main():
         _t_rs0 = time.time()
         _nb = (n + 7) // 8
         _fam_eids, _fam_masks = [], []
+        # 2026-11-19：空掩码守卫。族掩码是多次观测的 AND；若收敛为 0（自相矛盾的
+        # 证据或生成器 bug），它是**退化结果而非证据** —— 传给内核会把该实体的域
+        # 直接清空（601 条冲突中 C10/EP/IM2/MW/BM 的域大小中位数为 0 即此）。
+        # 丢弃空掩码（该族对该实体无约束），计数入日志。
+        _zero_drop = {}
         for _fr in FAMILIES:
-            _ek = list(fam[_fr].keys())
+            _ek_all = fam[_fr]
+            _ek = [e for e, m in _ek_all.items() if m]
+            _zd = len(_ek_all) - len(_ek)
+            if _zd:
+                _zero_drop[_fr] = _zd
             _fam_eids.append(_ek)
-            _fam_masks.append([fam[_fr][_e].to_bytes(_nb, "little") for _e in _ek])
+            _fam_masks.append([_ek_all[_e].to_bytes(_nb, "little") for _e in _ek])
+        if _zero_drop:
+            print("[rs-build] zero masks dropped (degenerate evidence): %s"
+                  % dict(sorted(_zero_drop.items())), flush=True)
         _rs_cell[0] = _rs_mod_cell[0].PySolver(
             n_bits=n,
             classmask=_CLASSMASK.to_bytes(_nb, "little"),
@@ -7676,7 +7732,12 @@ def main():
             # --use-rs：C10 写回完成后把最终 fam["C10"] 掩码增量注入 Rust 求解器
             #（构建时 C10 族为空——内核 base_dom 本就跳过 C10，两不相扰）。
             _nb10 = (n + 7) // 8
-            _c10k = list(fam["C10"].keys())
+            # 2026-11-19：空掩码守卫（同 [rs-build]）——C10 写回的 0 掩码是退化
+            # 证据（48 条冲突的域大小=0 即此），注入会让实体域直接清空。
+            _c10k = [e for e, m in fam["C10"].items() if m]
+            _c10z = len(fam["C10"]) - len(_c10k)
+            if _c10z:
+                print("[C10] zero masks dropped (degenerate): %d" % _c10z, flush=True)
             _rs_cell[0].add_family_entries(
                 "C10", _c10k,
                 [fam["C10"][_e].to_bytes(_nb10, "little") for _e in _c10k])

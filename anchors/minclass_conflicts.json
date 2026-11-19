@@ -153,11 +153,11 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 867,
-  "K_upper": 867,
-  "lower_bound": 867,
-  "constrained_clusters": 82428,
-  "free_clusters": 116281,
+  "K": 866,
+  "K_upper": 866,
+  "lower_bound": 866,
+  "constrained_clusters": 73877,
+  "free_clusters": 124832,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 2234,
