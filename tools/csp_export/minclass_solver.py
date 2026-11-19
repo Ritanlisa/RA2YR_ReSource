@@ -3145,9 +3145,27 @@ def main():
         print("[MT2] skipped: %r" % _e_mt2, flush=True)
 
     # ---------------- MR：成员类型经接收者域（dom(M) = member_type(dom(T:fn), off)）----------------
+    # 2026-11-19（IDA 核对）：MR 的单基元行（void*/int/unsigned int/bool/char[1]…）是注册表
+    # 对"未定型成员"的默认拼写，不是证据（实证：0x4361D0 +0x4 成员被当类指针虚调用，
+    # MR 却给 void*；0x48BE60 +0x4 存 operator new 结果，MR 给 int）。只保留含类名的行。
+    _MR_PRIM = re.compile(
+        r"^(?:void|bool|char|signed char|unsigned char|short|unsigned short|"
+        r"int|unsigned int|long|unsigned long|__int8|__int16|__int32|__int64|"
+        r"unsigned __int64|float|double|wchar_t|int8_t|uint8_t|int16_t|uint16_t|"
+        r"int32_t|uint32_t|DWORD|BOOL|BYTE|WORD|UINT|HANDLE|LPSTR|LPCSTR)"
+        r"(?:\s*\[[^\]]*\])?(?:\s*\*+)?$")
+
+    def _mr_has_class(cs):
+        for _c in (cs or []):
+            if not _MR_PRIM.match(str(_c).strip()):
+                return True
+        return False
+
     try:
         _name_ix3 = _name_ix2   # B1: 旧别名保留；token 解析统一走 _tok_ix
         for _rec in (jload("anchors/member_by_receiver.json", {}) or {}).get("evidence") or []:
+            if not _mr_has_class(_rec.get("classes") or []):
+                continue
             _e = _rec.get("ent")
             _clss = _rec.get("classes") or []
             if not isinstance(_e, str):
@@ -3176,6 +3194,8 @@ def main():
     try:
         _n_mr9 = 0
         for _rec in (jload("anchors/mr9_member_by_receiver.json", {}) or {}).get("evidence") or []:
+            if not _mr_has_class(_rec.get("classes") or []):
+                continue
             _e9b = _rec.get("ent")
             if not isinstance(_e9b, str):
                 continue
