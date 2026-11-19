@@ -1025,7 +1025,7 @@
 ]
 },
 "R:42FBF0:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 0,
@@ -1075,7 +1075,7 @@
 ]
 },
 "R:42FBA0:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 0,
@@ -10310,7 +10310,7 @@
 ]
 },
 "R:5D1710:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 0,
@@ -10335,7 +10335,7 @@
 ]
 },
 "R:5D16C0:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 0,
@@ -12292,7 +12292,7 @@
 ]
 },
 "R:69D4B0:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 0,
@@ -12317,7 +12317,7 @@
 ]
 },
 "R:69D520:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 0,
@@ -15662,7 +15662,7 @@
 ]
 },
 "R:42F620:ecx": {
-"class": "CSFClass",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
@@ -15673,7 +15673,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:42F620"
+]
 },
 "R:42F490:ecx": {
 "class": "DynamicVector",
@@ -19788,7 +19790,7 @@
 ]
 },
 "R:5D07F0:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -20388,7 +20390,7 @@
 ]
 },
 "R:69C970:ecx": {
-"class": "DynamicVector",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 4,
@@ -22746,7 +22748,7 @@
 ]
 },
 "R:42F6F0:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 12,
@@ -30211,7 +30213,7 @@
 ]
 },
 "R:5D0850:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 12,
@@ -31692,7 +31694,7 @@
 ]
 },
 "R:69C9C0:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 12,
@@ -35001,7 +35003,7 @@
 ]
 },
 "R:42F7C0:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
@@ -41632,7 +41634,7 @@
 ]
 },
 "R:5D0920:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -43261,7 +43263,7 @@
 ]
 },
 "R:69CB00:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 4,
@@ -46719,7 +46721,7 @@
 ]
 },
 "R:42F7F0:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
@@ -52707,7 +52709,7 @@
 ]
 },
 "R:5D0950:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -54001,7 +54003,7 @@
 ]
 },
 "R:69CB50:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 12,
@@ -56812,7 +56814,7 @@
 ]
 },
 "R:42F840:ecx": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
@@ -61380,7 +61382,7 @@
 ]
 },
 "R:5D09A0:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -62550,7 +62552,7 @@
 ]
 },
 "R:69CBA0:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 4,
@@ -64499,14 +64501,16 @@
 ]
 },
 "R:42F470:ecx": {
-"class": "ArmorType",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:42F470"
+]
 },
 "R:42F3F0:ecx": {
 "class": "DynamicVector",
@@ -66399,7 +66403,7 @@
 ]
 },
 "R:5D05F0:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -66884,7 +66888,7 @@
 ]
 },
 "R:69C580:ecx": {
-"class": "DynamicVector",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 4,
@@ -67469,28 +67473,24 @@
 "ents": []
 },
 "R:7656D0:ecx": {
-"class": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+"class": "ArmorType",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": [
-"T:7656D0"
-]
+"ents": []
 },
 "R:766850:ecx": {
-"class": "DynamicVector",
+"class": "ArmorType",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": [
-"T:766850"
-]
+"ents": []
 },
 "R:767F80:ecx": {
 "class": "MSFrameAnim",
@@ -67512,16 +67512,14 @@
 ]
 },
 "R:769CA0:ecx": {
-"class": "DynamicVector",
+"class": "ArmorType",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": [
-"T:769CA0"
-]
+"ents": []
 },
 "R:769D30:ecx": {
 "class": "VectorClass",
@@ -67536,16 +67534,14 @@
 ]
 },
 "R:76B760:ecx": {
-"class": "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+"class": "ArmorType",
 "obs": [
 [
 4,
 4
 ]
 ],
-"ents": [
-"T:76B760"
-]
+"ents": []
 },
 "R:771990:ecx": {
 "class": "Anim@Voices@WorldDominationTour",
@@ -111296,7 +111292,7 @@
 ]
 },
 "N:58D259": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 0,
@@ -112618,7 +112614,7 @@
 ]
 },
 "R:45AE10:ecx": {
-"class": "VectorClass",
+"class": "VectorClass_ushort",
 "obs": [
 [
 4,
@@ -133399,7 +133395,7 @@
 ]
 },
 "R:512DC0:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -133461,7 +133457,7 @@
 ]
 },
 "R:513190:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -134655,7 +134651,7 @@
 ]
 },
 "R:525250:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -146210,7 +146206,7 @@
 "ents": []
 },
 "R:5AC900:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -150767,7 +150763,7 @@
 ]
 },
 "R:5C4F30:ecx": {
-"class": "CampaignClass",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -156158,7 +156154,7 @@
 ]
 },
 "R:6349B0:ecx": {
-"class": "RadBeam",
+"class": "VectorClass",
 "obs": [
 [
 4,
@@ -157932,7 +157928,7 @@
 ]
 },
 "R:645A70:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -158396,7 +158392,7 @@
 ]
 },
 "R:658D60:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 0,
@@ -160120,7 +160116,7 @@
 "ents": []
 },
 "R:67AC70:ecx": {
-"class": "AnimTypeList",
+"class": "?$TypeList@PBVAircraftTypeClass@@",
 "obs": [
 [
 0,
@@ -160154,7 +160150,7 @@
 "ents": []
 },
 "R:67AFF0:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -160188,7 +160184,7 @@
 "ents": []
 },
 "R:513560:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -162873,12 +162869,9 @@
 "ents": []
 },
 "RET:67BDD0": {
-"class": "?$TypeList@PBVTerrainTypeClass@@",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"T:67BDD0",
-"RET:67BDD0"
-]
+"ents": []
 },
 "R:67A310:ecx": {
 "class": "StringVector",
@@ -165530,7 +165523,7 @@
 ]
 },
 "R:68C200:ecx": {
-"class": "VectorCursor",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -165561,7 +165554,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:68C200",
+"RET:68C200"
+]
 },
 "T:5BF260": {
 "class": "AbstractClass",
@@ -167442,7 +167438,7 @@
 ]
 },
 "R:69D7C0:ecx": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [],
 "ents": [
 "T:69D7C0",
@@ -167852,7 +167848,7 @@
 ]
 },
 "R:6AC8D0:ecx": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -167883,10 +167879,7 @@
 4
 ]
 ],
-"ents": [
-"T:6AC8D0",
-"RET:6AC8D0"
-]
+"ents": []
 },
 "R:6A81B0:ecx": {
 "class": "TabDataStruct",
@@ -183503,7 +183496,7 @@
 ]
 },
 "R:7342D0:ecx": {
-"class": "AnimTypeList",
+"class": "?$TypeList@PBVAircraftTypeClass@@",
 "obs": [
 [
 0,
@@ -188239,7 +188232,7 @@
 "ents": []
 },
 "P:7B4780:2": {
-"class": "rc_ptr_base",
+"class": "rc_ptr",
 "obs": [
 [
 8,
@@ -191898,7 +191891,7 @@
 "ents": []
 },
 "R:50E830:ecx": {
-"class": "CampaignClass",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -192069,7 +192062,7 @@
 ]
 },
 "R:513860:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -192100,7 +192093,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:513860",
+"RET:513860"
+]
 },
 "R:513740:ecx": {
 "class": "DynamicVectorClass_uint",
@@ -193169,7 +193165,7 @@
 "ents": []
 },
 "R:589100:ecx": {
-"class": "MSFont",
+"class": "VectorClass",
 "obs": [
 [
 0,
@@ -193200,7 +193196,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:589100",
+"RET:589100"
+]
 },
 "R:571490:ecx": {
 "class": "IsometricTileClass",
@@ -194412,7 +194411,7 @@
 ]
 },
 "R:67C280:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -194443,7 +194442,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:67C280",
+"RET:67C280"
+]
 },
 "R:67C1F0:ecx": {
 "class": "DynamicVectorClass_uint",
@@ -195563,7 +195565,7 @@
 ]
 },
 "R:717D20:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -195594,7 +195596,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:717D20",
+"RET:717D20"
+]
 },
 "R:7179C0:ecx": {
 "class": "ObjectClass",
@@ -195796,7 +195801,7 @@
 "ents": []
 },
 "R:75E6B0:ecx": {
-"class": "AnimTypeList",
+"class": "DynamicVectorClass_uint",
 "obs": [
 [
 0,
@@ -195827,7 +195832,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:75E6B0",
+"RET:75E6B0"
+]
 },
 "R:5AC370:ecx": {
 "class": "Coord",
@@ -195860,6 +195868,14 @@
 "ents": [
 "T:47A9D0",
 "RET:47A9D0"
+]
+},
+"RET:765F60": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"T:765F60",
+"RET:765F60"
 ]
 },
 "R:527640:ecx": {
@@ -203522,9 +203538,18 @@
 "ents": []
 },
 "GS:1:0:0x40B140": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40B140"
+]
+},
+"P:40B140:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40B140:0"
+]
 },
 "GS:1:0:0x40B960": {
 "class": "?$VectorClass@PAVTechnoClass@@",
@@ -203541,69 +203566,186 @@
 ]
 },
 "GS:1:0:0x40B700": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40B700"
+]
+},
+"P:40B700:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40B700:0"
+]
 },
 "GS:1:0:0x40BEB0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40BEB0"
+]
+},
+"P:40BEB0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40BEB0:0"
+]
 },
 "GS:1:0:0x40C290": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40C290"
+]
+},
+"P:40C290:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40C290:0"
+]
 },
 "GS:1:0:0x40C880": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40C880"
+]
+},
+"P:40C880:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40C880:0"
+]
 },
 "GS:1:0:0x40CCD0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40CCD0"
+]
+},
+"P:40CCD0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40CCD0:0"
+]
 },
 "GS:1:0:0x40D5A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40D5A0"
+]
+},
+"P:40D5A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40D5A0:0"
+]
 },
 "GS:1:0:0x40E850": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40E850"
+]
+},
+"P:40E850:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40E850:0"
+]
 },
 "GS:1:0:0x40EF20": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40EF20"
+]
+},
+"P:40EF20:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40EF20:0"
+]
 },
 "GS:1:0:0x40F640": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40F640"
+]
+},
+"P:40F640:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40F640:0"
+]
 },
 "GS:1:0:0x40FC10": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x40FC10"
+]
+},
+"P:40FC10:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:40FC10:0"
+]
 },
 "GS:1:0:0x41DE40": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x41DE40"
+]
+},
+"P:41DE40:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:41DE40:0"
+]
 },
 "GS:1:0:0x4203D0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4203D0"
+]
+},
+"P:4203D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4203D0:0"
+]
 },
 "GS:1:0:0x421860": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x421860"
+]
+},
+"P:421860:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:421860:0"
+]
 },
 "GS:1:0:0x42D600": {
 "class": "?$VectorClass@I",
@@ -203620,9 +203762,18 @@
 ]
 },
 "GS:1:0:0x42D8B0": {
-"class": "IsometricTileClass",
+"class": "VectorClass_ushort",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x42D8B0"
+]
+},
+"P:42D8B0:0": {
+"class": "VectorClass_ushort",
+"obs": [],
+"ents": [
+"P:42D8B0:0"
+]
 },
 "GS:1:0:0x42F070": {
 "class": "IStream",
@@ -203639,14 +203790,14 @@
 ]
 },
 "GS:1:0:0x42F620": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "GS:1:0:0x42F620"
 ]
 },
 "P:42F620:0": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [
 [
 4,
@@ -203662,34 +203813,97 @@
 ]
 },
 "GS:1:0:0x42F490": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x42F490"
+]
+},
+"P:42F490:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:42F490:0"
+]
 },
 "GS:1:0:0x43AB30": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x43AB30"
+]
+},
+"P:43AB30:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:43AB30:0"
+]
 },
 "GS:1:0:0x45A3E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x45A3E0"
+]
+},
+"P:45A3E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:45A3E0:0"
+]
 },
 "GS:1:0:0x45A180": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x45A180"
+]
+},
+"P:45A180:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:45A180:0"
+]
 },
 "GS:1:0:0x45A760": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x45A760"
+]
+},
+"P:45A760:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:45A760:0"
+]
 },
 "GS:1:0:0x45A640": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x45A640"
+]
+},
+"P:45A640:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:45A640:0"
+]
 },
 "GS:1:0:0x465E10": {
 "class": "?$VectorClass@V?$TPoint3D@H@@",
@@ -203715,9 +203929,18 @@
 ]
 },
 "GS:1:0:0x46B660": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x46B660"
+]
+},
+"P:46B660:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:46B660:0"
+]
 },
 "GS:1:0:0x46FC00": {
 "class": "IsometricTileClass",
@@ -203825,9 +204048,18 @@
 "ents": []
 },
 "GS:1:0:0x472DA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x472DA0"
+]
+},
+"P:472DA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:472DA0:0"
+]
 },
 "GS:1:0:0x472B40": {
 "class": "?$VectorClass@PAUControlNode@@",
@@ -203882,9 +204114,18 @@
 ]
 },
 "GS:1:0:0x477FC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x477FC0"
+]
+},
+"P:477FC0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:477FC0:0"
+]
 },
 "GS:1:0:0x4782E0": {
 "class": "?$VectorClass@VRGBClass@@",
@@ -203910,14 +204151,32 @@
 ]
 },
 "GS:1:0:0x48AD70": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x48AD70"
+]
+},
+"P:48AD70:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:48AD70:0"
+]
 },
 "GS:1:0:0x49AE80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x49AE80"
+]
+},
+"P:49AE80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:49AE80:0"
+]
 },
 "GS:1:0:0x49EA30": {
 "class": "?$VectorClass@PAD",
@@ -203948,49 +204207,139 @@
 ]
 },
 "GS:1:0:0x4A0F80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4A0F80"
+]
+},
+"P:4A0F80:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:4A0F80:0"
+]
 },
 "GS:1:0:0x4A1240": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4A1240"
+]
+},
+"P:4A1240:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4A1240:0"
+]
 },
 "GS:1:0:0x4A4B30": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4A4B30"
+]
+},
+"P:4A4B30:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4A4B30:0"
+]
 },
 "GS:1:0:0x4A7D80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4A7D80"
+]
+},
+"P:4A7D80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4A7D80:0"
+]
 },
 "GS:1:0:0x4B9CA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4B9CA0"
+]
+},
+"P:4B9CA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4B9CA0:0"
+]
 },
 "GS:1:0:0x4B9F00": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4B9F00"
+]
+},
+"P:4B9F00:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4B9F00:0"
+]
 },
 "GS:1:0:0x4C2CA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4C2CA0"
+]
+},
+"P:4C2CA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4C2CA0:0"
+]
 },
 "GS:1:0:0x4C4A00": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4C4A00"
+]
+},
+"P:4C4A00:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4C4A00:0"
+]
 },
 "GS:1:0:0x4C5BC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4C5BC0"
+]
+},
+"P:4C5BC0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4C5BC0:0"
+]
 },
 "GS:1:0:0x4CA8F0": {
 "class": "?$VectorClass@PBVTechnoTypeClass@@",
@@ -204030,9 +204379,18 @@
 ]
 },
 "GS:1:0:0x4E0580": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4E0580"
+]
+},
+"P:4E0580:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4E0580:0"
+]
 },
 "GS:1:0:0x4E0320": {
 "class": "?$VectorClass@PAVAbstractClass@@",
@@ -204049,49 +204407,139 @@
 ]
 },
 "GS:1:0:0x4E07E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4E07E0"
+]
+},
+"P:4E07E0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:4E07E0:0"
+]
 },
 "GS:1:0:0x4E9920": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4E9920"
+]
+},
+"P:4E9920:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4E9920:0"
+]
 },
 "GS:1:0:0x4EA680": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EA680"
+]
+},
+"P:4EA680:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EA680:0"
+]
 },
 "GS:1:0:0x4EA420": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EA420"
+]
+},
+"P:4EA420:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EA420:0"
+]
 },
 "GS:1:0:0x4E9B80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4E9B80"
+]
+},
+"P:4E9B80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4E9B80:0"
+]
 },
 "GS:1:0:0x4EAB40": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EAB40"
+]
+},
+"P:4EAB40:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EAB40:0"
+]
 },
 "GS:1:0:0x4EA8E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EA8E0"
+]
+},
+"P:4EA8E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EA8E0:0"
+]
 },
 "GS:1:0:0x4EADA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EADA0"
+]
+},
+"P:4EADA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EADA0:0"
+]
 },
 "GS:1:0:0x4EB000": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EB000"
+]
+},
+"P:4EB000:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EB000:0"
+]
 },
 "GS:1:0:0x4E9DE0": {
 "class": "?$VectorClass@PAVParticleClass@@",
@@ -204108,14 +204556,32 @@
 ]
 },
 "GS:1:0:0x4EB260": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EB260"
+]
+},
+"P:4EB260:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EB260:0"
+]
 },
 "GS:1:0:0x4EB4C0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EB4C0"
+]
+},
+"P:4EB4C0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EB4C0:0"
+]
 },
 "GS:1:0:0x4E9460": {
 "class": "?$VectorClass@PAVBuildingClass@@",
@@ -204132,134 +204598,368 @@
 ]
 },
 "GS:1:0:0x4EB720": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EB720"
+]
+},
+"P:4EB720:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EB720:0"
+]
 },
 "GS:1:0:0x4EB980": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EB980"
+]
+},
+"P:4EB980:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EB980:0"
+]
 },
 "GS:1:0:0x4EBBE0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EBBE0"
+]
+},
+"P:4EBBE0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EBBE0:0"
+]
 },
 "GS:1:0:0x4EBE40": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EBE40"
+]
+},
+"P:4EBE40:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EBE40:0"
+]
 },
 "GS:1:0:0x4EA040": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EA040"
+]
+},
+"P:4EA040:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EA040:0"
+]
 },
 "GS:1:0:0x4EC0A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EC0A0"
+]
+},
+"P:4EC0A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EC0A0:0"
+]
 },
 "GS:1:0:0x4EC300": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EC300"
+]
+},
+"P:4EC300:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EC300:0"
+]
 },
 "GS:1:0:0x4EC560": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EC560"
+]
+},
+"P:4EC560:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EC560:0"
+]
 },
 "GS:1:0:0x4EC7C0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EC7C0"
+]
+},
+"P:4EC7C0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EC7C0:0"
+]
 },
 "GS:1:0:0x4ECA20": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ECA20"
+]
+},
+"P:4ECA20:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ECA20:0"
+]
 },
 "GS:1:0:0x4ECC80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ECC80"
+]
+},
+"P:4ECC80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ECC80:0"
+]
 },
 "GS:1:0:0x4ECEE0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ECEE0"
+]
+},
+"P:4ECEE0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ECEE0:0"
+]
 },
 "GS:1:0:0x4ED140": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ED140"
+]
+},
+"P:4ED140:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ED140:0"
+]
 },
 "GS:1:0:0x4ED3A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ED3A0"
+]
+},
+"P:4ED3A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ED3A0:0"
+]
 },
 "GS:1:0:0x4ED600": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ED600"
+]
+},
+"P:4ED600:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ED600:0"
+]
 },
 "GS:1:0:0x4ED860": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4ED860"
+]
+},
+"P:4ED860:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4ED860:0"
+]
 },
 "GS:1:0:0x4EDAC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EDAC0"
+]
+},
+"P:4EDAC0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EDAC0:0"
+]
 },
 "GS:1:0:0x4EDD20": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EDD20"
+]
+},
+"P:4EDD20:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EDD20:0"
+]
 },
 "GS:1:0:0x4EDF80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EDF80"
+]
+},
+"P:4EDF80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EDF80:0"
+]
 },
 "GS:1:0:0x4EE1E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EE1E0"
+]
+},
+"P:4EE1E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EE1E0:0"
+]
 },
 "GS:1:0:0x4EE440": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EE440"
+]
+},
+"P:4EE440:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EE440:0"
+]
 },
 "GS:1:0:0x4EE6A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EE6A0"
+]
+},
+"P:4EE6A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EE6A0:0"
+]
 },
 "GS:1:0:0x4EE900": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EE900"
+]
+},
+"P:4EE900:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EE900:0"
+]
 },
 "GS:1:0:0x4EEB60": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EEB60"
+]
+},
+"P:4EEB60:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EEB60:0"
+]
 },
 "GS:1:0:0x4EEDC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EEDC0"
+]
+},
+"P:4EEDC0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EEDC0:0"
+]
 },
 "GS:1:0:0x4EF020": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EF020"
+]
+},
+"P:4EF020:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EF020:0"
+]
 },
 "GS:1:0:0x4E96C0": {
 "class": "?$VectorClass@PAVSuperClass@@",
@@ -204276,14 +204976,32 @@
 ]
 },
 "GS:1:0:0x4EF280": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EF280"
+]
+},
+"P:4EF280:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EF280:0"
+]
 },
 "GS:1:0:0x4EA2A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4EA2A0"
+]
+},
+"P:4EA2A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4EA2A0:0"
+]
 },
 "GS:1:0:0x4E9200": {
 "class": "?$VectorClass@PAVTagClass@@",
@@ -204300,14 +205018,32 @@
 ]
 },
 "GS:1:0:0x4F28E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x4F28E0"
+]
+},
+"P:4F28E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:4F28E0:0"
+]
 },
 "GS:1:0:0x50F4E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x50F4E0"
+]
+},
+"P:50F4E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:50F4E0:0"
+]
 },
 "GS:1:0:0x50F1B0": {
 "class": "?$VectorClass@UScoutStruct@@",
@@ -204370,9 +205106,18 @@
 ]
 },
 "GS:1:0:0x50F740": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x50F740"
+]
+},
+"P:50F740:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:50F740:0"
+]
 },
 "GS:1:0:0x50E910": {
 "class": "?$VectorClass@PBVBuildingTypeClass@@",
@@ -204389,14 +205134,50 @@
 ]
 },
 "GS:1:0:0x50F9A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x50F9A0"
+]
+},
+"P:50F9A0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:50F9A0:0"
+]
 },
 "GS:1:0:0x50FC00": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x50FC00"
+]
+},
+"P:50FC00:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:50FC00:0"
+]
 },
 "GS:1:0:0x5133E0": {
 "class": "?$VectorClass@PBVAircraftTypeClass@@",
@@ -204455,24 +205236,60 @@
 ]
 },
 "GS:1:0:0x538520": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x538520"
+]
+},
+"P:538520:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:538520:0"
+]
 },
 "GS:1:0:0x53C520": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x53C520"
+]
+},
+"P:53C520:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:53C520:0"
+]
 },
 "GS:1:0:0x53DAA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x53DAA0"
+]
+},
+"P:53DAA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:53DAA0:0"
+]
 },
 "GS:1:0:0x54A4B0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x54A4B0"
+]
+},
+"P:54A4B0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:54A4B0:0"
+]
 },
 "GS:1:0:0x54A250": {
 "class": "?$VectorClass@PAG",
@@ -204489,24 +205306,60 @@
 ]
 },
 "GS:1:0:0x54E8F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x54E8F0"
+]
+},
+"P:54E8F0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:54E8F0:0"
+]
 },
 "GS:1:0:0x551330": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x551330"
+]
+},
+"P:551330:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:551330:0"
+]
 },
 "GS:1:0:0x5552C0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5552C0"
+]
+},
+"P:5552C0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5552C0:0"
+]
 },
 "GS:1:0:0x555520": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x555520"
+]
+},
+"P:555520:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:555520:0"
+]
 },
 "GS:1:0:0x556090": {
 "class": "int",
@@ -204575,9 +205428,18 @@
 "ents": []
 },
 "GS:1:0:0x556F10": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x556F10"
+]
+},
+"P:556F10:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:556F10:0"
+]
 },
 "GS:1:0:0x558240": {
 "class": "?$VectorClass@PBG",
@@ -204594,9 +205456,18 @@
 ]
 },
 "GS:1:0:0x55A1B0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x55A1B0"
+]
+},
+"P:55A1B0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:55A1B0:0"
+]
 },
 "GS:1:0:0x589CA0": {
 "class": "?$VectorClass@PAVCellClass@@",
@@ -204613,9 +205484,31 @@
 ]
 },
 "GS:1:0:0x5896F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5896F0"
+]
+},
+"P:5896F0:0": {
+"class": "VectorClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:5896F0:0"
+]
 },
 "GS:1:0:0x589300": {
 "class": "?$VectorClass@UZoneConnectionClass@@",
@@ -204641,49 +205534,148 @@
 ]
 },
 "GS:1:0:0x58A260": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x58A260"
+]
+},
+"P:58A260:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:58A260:0"
+]
 },
 "GS:1:0:0x58A110": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x58A110"
+]
+},
+"P:58A110:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:58A110:0"
+]
 },
 "GS:1:0:0x589EB0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x589EB0"
+]
+},
+"P:589EB0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:589EB0:0"
+]
 },
 "GS:1:0:0x5AC6A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5AC6A0"
+]
+},
+"P:5AC6A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5AC6A0:0"
+]
 },
 "GS:1:0:0x5ACA60": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5ACA60"
+]
+},
+"P:5ACA60:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5ACA60:0"
+]
 },
 "GS:1:0:0x5ACCC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5ACCC0"
+]
+},
+"P:5ACCC0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:5ACCC0:0"
+]
 },
 "GS:1:0:0x5AD0F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5AD0F0"
+]
+},
+"P:5AD0F0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:5AD0F0:0"
+]
 },
 "GS:1:0:0x5C0AD0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5C0AD0"
+]
+},
+"P:5C0AD0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5C0AD0:0"
+]
 },
 "GS:1:0:0x5C55F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5C55F0"
+]
+},
+"P:5C55F0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5C55F0:0"
+]
 },
 "GS:1:0:0x5C5390": {
 "class": "?$VectorClass@PAUNodeNameType@@",
@@ -204700,9 +205692,18 @@
 ]
 },
 "GS:1:0:0x5C5130": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5C5130"
+]
+},
+"P:5C5130:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5C5130:0"
+]
 },
 "GS:1:0:0x5CEAC0": {
 "class": "char",
@@ -204754,9 +205755,18 @@
 ]
 },
 "GS:1:0:0x5D0FA0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D0FA0"
+]
+},
+"P:5D0FA0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D0FA0:0"
+]
 },
 "GS:1:0:0x5D0D40": {
 "class": "?$VectorClass@PAVMapSelection@@",
@@ -204787,14 +205797,14 @@
 ]
 },
 "GS:1:0:0x5D07F0": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "GS:1:0:0x5D07F0"
 ]
 },
 "P:5D07F0:0": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [
 [
 4,
@@ -204810,49 +205820,139 @@
 ]
 },
 "GS:1:0:0x5D2A40": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D2A40"
+]
+},
+"P:5D2A40:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D2A40:0"
+]
 },
 "GS:1:0:0x5D27E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D27E0"
+]
+},
+"P:5D27E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D27E0:0"
+]
 },
 "GS:1:0:0x5D5150": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D5150"
+]
+},
+"P:5D5150:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D5150:0"
+]
 },
 "GS:1:0:0x5D53B0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D53B0"
+]
+},
+"P:5D53B0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:5D53B0:0"
+]
 },
 "GS:1:0:0x5D8550": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D8550"
+]
+},
+"P:5D8550:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D8550:0"
+]
 },
 "GS:1:0:0x5D82F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5D82F0"
+]
+},
+"P:5D82F0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5D82F0:0"
+]
 },
 "GS:1:0:0x5EEC10": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5EEC10"
+]
+},
+"P:5EEC10:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5EEC10:0"
+]
 },
 "GS:1:0:0x5F9B80": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x5F9B80"
+]
+},
+"P:5F9B80:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:5F9B80:0"
+]
 },
 "GS:1:0:0x600020": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x600020"
+]
+},
+"P:600020:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:600020:0"
+]
 },
 "GS:1:0:0x624140": {
 "class": "IsometricTileClass",
@@ -204865,39 +205965,102 @@
 "ents": []
 },
 "GS:1:0:0x6281F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6281F0"
+]
+},
+"P:6281F0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6281F0:0"
+]
 },
 "GS:1:0:0x6288A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6288A0"
+]
+},
+"P:6288A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6288A0:0"
+]
 },
 "GS:1:0:0x627E10": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x627E10"
+]
+},
+"P:627E10:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:627E10:0"
+]
 },
 "GS:1:0:0x62B0D0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x62B0D0"
+]
+},
+"P:62B0D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:62B0D0:0"
+]
 },
 "GS:1:0:0x63E650": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x63E650"
+]
+},
+"P:63E650:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:63E650:0"
+]
 },
 "GS:1:0:0x63E310": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x63E310"
+]
+},
+"P:63E310:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:63E310:0"
+]
 },
 "GS:1:0:0x63E950": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x63E950"
+]
+},
+"P:63E950:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:63E950:0"
+]
 },
 "GS:1:0:0x63E050": {
 "class": "?$VectorClass@PAVPlanningBranchClass@@",
@@ -204914,39 +206077,111 @@
 ]
 },
 "GS:1:0:0x63DD40": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x63DD40"
+]
+},
+"P:63DD40:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:63DD40:0"
+]
 },
 "GS:1:0:0x658910": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x658910"
+]
+},
+"P:658910:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:658910:0"
+]
 },
 "GS:1:0:0x65A240": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x65A240"
+]
+},
+"P:65A240:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:65A240:0"
+]
 },
 "GS:1:0:0x65BF50": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x65BF50"
+]
+},
+"P:65BF50:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:65BF50:0"
+]
 },
 "GS:1:0:0x660CE0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x660CE0"
+]
+},
+"P:660CE0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:660CE0:0"
+]
 },
 "GS:1:0:0x664810": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x664810"
+]
+},
+"P:664810:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:664810:0"
+]
 },
 "GS:1:0:0x67B1F0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x67B1F0"
+]
+},
+"P:67B1F0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:67B1F0:0"
+]
 },
 "GS:1:0:0x67AE70": {
 "class": "?$VectorClass@PBVSmudgeTypeClass@@",
@@ -205019,19 +206254,28 @@
 ]
 },
 "GS:1:0:0x69C710": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x69C710"
+]
+},
+"P:69C710:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:69C710:0"
+]
 },
 "GS:1:0:0x69C970": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [],
 "ents": [
 "GS:1:0:0x69C970"
 ]
 },
 "P:69C970:0": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [
 [
 4,
@@ -205047,39 +206291,111 @@
 ]
 },
 "GS:1:0:0x6B16D0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6B16D0"
+]
+},
+"P:6B16D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6B16D0:0"
+]
 },
 "GS:1:0:0x6B1470": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6B1470"
+]
+},
+"P:6B1470:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6B1470:0"
+]
 },
 "GS:1:0:0x6B4440": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6B4440"
+]
+},
+"P:6B4440:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:6B4440:0"
+]
 },
 "GS:1:0:0x6B84E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6B84E0"
+]
+},
+"P:6B84E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6B84E0:0"
+]
 },
 "GS:1:0:0x6B8220": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6B8220"
+]
+},
+"P:6B8220:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6B8220:0"
+]
 },
 "GS:1:0:0x6C61D0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6C61D0"
+]
+},
+"P:6C61D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6C61D0:0"
+]
 },
 "GS:1:0:0x6CA820": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6CA820"
+]
+},
+"P:6CA820:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6CA820:0"
+]
 },
 "GS:1:0:0x6CF560": {
 "class": "?$VectorClass@VSwizzlePointerClass@@",
@@ -205096,79 +206412,241 @@
 ]
 },
 "GS:1:0:0x6DC5E0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6DC5E0"
+]
+},
+"P:6DC5E0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:6DC5E0:0"
+]
 },
 "GS:1:0:0x6DC9D0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6DC9D0"
+]
+},
+"P:6DC9D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6DC9D0:0"
+]
 },
 "GS:1:0:0x6E4850": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6E4850"
+]
+},
+"P:6E4850:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6E4850:0"
+]
 },
 "GS:1:0:0x6E6540": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6E6540"
+]
+},
+"P:6E6540:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:6E6540:0"
+]
 },
 "GS:1:0:0x6F2290": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x6F2290"
+]
+},
+"P:6F2290:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:6F2290:0"
+]
 },
 "GS:1:0:0x71B2A0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x71B2A0"
+]
+},
+"P:71B2A0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:71B2A0:0"
+]
 },
 "GS:1:0:0x71FC00": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x71FC00"
+]
+},
+"P:71FC00:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:71FC00:0"
+]
 },
 "GS:1:0:0x723790": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x723790"
+]
+},
+"P:723790:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:723790:0"
+]
 },
 "GS:1:0:0x724C90": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x724C90"
+]
+},
+"P:724C90:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:724C90:0"
+]
 },
 "GS:1:0:0x74BFF0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x74BFF0"
+]
+},
+"P:74BFF0:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:74BFF0:0"
+]
 },
 "GS:1:0:0x74F3C0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x74F3C0"
+]
+},
+"P:74F3C0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:74F3C0:0"
+]
 },
 "GS:1:0:0x751930": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x751930"
+]
+},
+"P:751930:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:751930:0"
+]
 },
 "GS:1:0:0x7536B0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x7536B0"
+]
+},
+"P:7536B0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:7536B0:0"
+]
 },
 "GS:1:0:0x75A490": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x75A490"
+]
+},
+"P:75A490:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:75A490:0"
+]
 },
 "GS:1:0:0x764460": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x764460"
+]
+},
+"P:764460:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:764460:0"
+]
 },
 "GS:1:0:0x7640B0": {
 "class": "?$VectorClass@VWaypointClass@@",
@@ -205221,9 +206699,31 @@
 ]
 },
 "GS:1:0:0x766BC0": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x766BC0"
+]
+},
+"P:766BC0:0": {
+"class": "VectorClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:766BC0:0"
+]
 },
 "GS:1:0:0x76A130": {
 "class": "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
@@ -205267,14 +206767,54 @@
 ]
 },
 "GS:1:0:0x76A390": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x76A390"
+]
+},
+"P:76A390:0": {
+"class": "VectorClass",
+"obs": [
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:76A390:0"
+]
 },
 "GS:1:0:0x76B870": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x76B870"
+]
+},
+"P:76B870:0": {
+"class": "VectorClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:76B870:0"
+]
 },
 "GS:1:0:0x774410": {
 "class": "IsometricTileClass",
@@ -205302,9 +206842,18 @@
 "ents": []
 },
 "GS:1:0:0x7AD090": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:1:0:0x7AD090"
+]
+},
+"P:7AD090:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:7AD090:0"
+]
 },
 "GS:1:0:0x7B28A0": {
 "class": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
@@ -215081,9 +216630,18 @@
 ]
 },
 "GS:2:1:0x7659F0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x7659F0"
+]
+},
+"P:7659F0:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:7659F0:1"
+]
 },
 "GS:2:0:0x765840": {
 "class": "int",
@@ -215100,14 +216658,12 @@
 ]
 },
 "GS:2:1:0x765840": {
-"class": "int",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"GS:2:1:0x765840"
-]
+"ents": []
 },
 "P:765840:1": {
-"class": "int",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "P:765840:1"
@@ -215128,9 +216684,18 @@
 ]
 },
 "GS:2:1:0x766DC0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x766DC0"
+]
+},
+"P:766DC0:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766DC0:1"
+]
 },
 "GS:2:0:0x766C10": {
 "class": "int",
@@ -215147,9 +216712,18 @@
 ]
 },
 "GS:2:1:0x766C10": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x766C10"
+]
+},
+"P:766C10:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766C10:1"
+]
 },
 "GS:2:0:0x76A2B0": {
 "class": "int",
@@ -215185,9 +216759,18 @@
 ]
 },
 "GS:2:1:0x769FE0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x769FE0"
+]
+},
+"P:769FE0:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:769FE0:1"
+]
 },
 "GS:2:0:0x769E30": {
 "class": "int",
@@ -215204,9 +216787,18 @@
 ]
 },
 "GS:2:1:0x769E30": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x769E30"
+]
+},
+"P:769E30:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:769E30:1"
+]
 },
 "GS:2:0:0x76A170": {
 "class": "int",
@@ -215261,9 +216853,18 @@
 ]
 },
 "GS:2:1:0x76B8C0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x76B8C0"
+]
+},
+"P:76B8C0:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76B8C0:1"
+]
 },
 "GS:2:0:0x76BA70": {
 "class": "int",
@@ -215280,9 +216881,18 @@
 ]
 },
 "GS:2:1:0x76BA70": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x76BA70"
+]
+},
+"P:76BA70:1": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76BA70:1"
+]
 },
 "GS:2:0:0x7748A0": {
 "class": "IsometricTileClass",
@@ -224991,24 +226601,60 @@
 ]
 },
 "GS:4:0:0x765B10": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x765B10"
+]
+},
+"P:765B10:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:765B10:0"
+]
 },
 "GS:4:0:0x765990": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x765990"
+]
+},
+"P:765990:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:765990:0"
+]
 },
 "GS:4:0:0x766F40": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x766F40"
+]
+},
+"P:766F40:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766F40:0"
+]
 },
 "GS:4:0:0x766D60": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x766D60"
+]
+},
+"P:766D60:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766D60:0"
+]
 },
 "GS:4:0:0x766AA0": {
 "class": "IsometricTileClass",
@@ -225056,14 +226702,32 @@
 "ents": []
 },
 "GS:4:0:0x76A100": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x76A100"
+]
+},
+"P:76A100:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76A100:0"
+]
 },
 "GS:4:0:0x769F80": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x769F80"
+]
+},
+"P:769F80:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:769F80:0"
+]
 },
 "GS:4:0:0x76A250": {
 "class": "IsometricTileClass",
@@ -225076,14 +226740,32 @@
 "ents": []
 },
 "GS:4:0:0x76BA10": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x76BA10"
+]
+},
+"P:76BA10:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76BA10:0"
+]
 },
 "GS:4:0:0x76BB90": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:4:0:0x76BB90"
+]
+},
+"P:76BB90:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76BB90:0"
+]
 },
 "GS:4:0:0x774900": {
 "class": "int",
@@ -229430,24 +231112,60 @@
 ]
 },
 "GS:5:0:0x7656B0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x7656B0"
+]
+},
+"P:7656B0:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:7656B0:0"
+]
 },
 "GS:5:0:0x7659D0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x7659D0"
+]
+},
+"P:7659D0:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:7659D0:0"
+]
 },
 "GS:5:0:0x766830": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x766830"
+]
+},
+"P:766830:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766830:0"
+]
 },
 "GS:5:0:0x766DA0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x766DA0"
+]
+},
+"P:766DA0:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:766DA0:0"
+]
 },
 "GS:5:0:0x769D00": {
 "class": "IsometricTileClass",
@@ -229455,14 +231173,32 @@
 "ents": []
 },
 "GS:5:0:0x769C80": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x769C80"
+]
+},
+"P:769C80:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:769C80:0"
+]
 },
 "GS:5:0:0x769FC0": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x769FC0"
+]
+},
+"P:769FC0:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:769FC0:0"
+]
 },
 "GS:5:0:0x76A290": {
 "class": "IsometricTileClass",
@@ -229475,14 +231211,32 @@
 "ents": []
 },
 "GS:5:0:0x76BA50": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x76BA50"
+]
+},
+"P:76BA50:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76BA50:0"
+]
 },
 "GS:5:0:0x76B740": {
-"class": "IsometricTileClass",
+"class": "rc_ptr",
 "obs": [],
-"ents": []
+"ents": [
+"GS:5:0:0x76B740"
+]
+},
+"P:76B740:0": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"P:76B740:0"
+]
 },
 "GS:5:0:0x774CD0": {
 "class": "IsometricTileClass",
@@ -236718,7 +238472,7 @@
 ]
 },
 "P:556640:1": {
-"class": "LinkClass",
+"class": "MapClass",
 "obs": [],
 "ents": [
 "P:556640:1"
@@ -238731,6 +240485,13 @@
 "S:422CA0:var_f4"
 ]
 },
+"S:422CA0:var_fc": {
+"class": "int",
+"obs": [],
+"ents": [
+"S:422CA0:var_fc"
+]
+},
 "M:422CA0:this:0xD4": {
 "class": "IUnknown",
 "obs": [],
@@ -240480,14 +242241,14 @@
 ]
 },
 "M:483460:this:0x140": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:483460:this:0x140"
 ]
 },
 "RET:483460": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "RET:483460"
@@ -242984,6 +244745,20 @@
 "RET:4F1B20"
 ]
 },
+"M:4F21A0:this:0x58": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:4F21A0:this:0x58"
+]
+},
+"S:4F21A0:var_c.m_1": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"S:4F21A0:var_c.m_1"
+]
+},
 "M:4F2300:this:0x58": {
 "class": "int",
 "obs": [],
@@ -244445,9 +246220,11 @@
 ]
 },
 "M:54C550:this:0x2C": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:54C550:this:0x2C"
+]
 },
 "M:54C550:this:0x80": {
 "class": "DynamicVector",
@@ -245143,14 +246920,14 @@
 ]
 },
 "M:587180:this:0xD4": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:587180:this:0xD4"
 ]
 },
 "S:587180:var_4": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:587180:var_4"
@@ -245817,16 +247594,12 @@
 "M:5AF980:this:0x18": {
 "class": "int",
 "obs": [],
-"ents": [
-"M:5AF980:this:0x18"
-]
+"ents": []
 },
 "S:5AF980:var_44": {
 "class": "int",
 "obs": [],
-"ents": [
-"S:5AF980:var_44"
-]
+"ents": []
 },
 "M:5AF980:this:0x1C": {
 "class": "int",
@@ -251182,18 +252955,14 @@
 ]
 },
 "M:70ED10:this:0x18": {
-"class": "double",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:70ED10:this:0x18"
-]
+"ents": []
 },
 "RET:70ED10": {
-"class": "double",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"RET:70ED10"
-]
+"ents": []
 },
 "M:70ED10:this:0x8": {
 "class": "int",
@@ -253892,6 +255661,13 @@
 "P:43C2D0:0"
 ]
 },
+"S:4666E0:var_198": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4666E0:var_198"
+]
+},
 "P:46B310:42": {
 "class": "short",
 "obs": [],
@@ -254140,6 +255916,13 @@
 "obs": [],
 "ents": [
 "P:552D60:22"
+]
+},
+"S:552D60:var_1258": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:552D60:var_1258"
 ]
 },
 "P:56C510:22": {
@@ -256496,6 +258279,20 @@
 "S:43D290:var_28"
 ]
 },
+"S:43DA80:var_114": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:43DA80:var_114"
+]
+},
+"S:43DA80:var_118": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:43DA80:var_118"
+]
+},
 "S:43F180:var_74": {
 "class": "short",
 "obs": [],
@@ -258632,6 +260429,27 @@
 "obs": [],
 "ents": [
 "S:4D74E0:var_f0"
+]
+},
+"S:4D85D0:var_30": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4D85D0:var_30"
+]
+},
+"M:4D85D0:this:0x524": {
+"class": "short",
+"obs": [],
+"ents": [
+"M:4D85D0:this:0x524"
+]
+},
+"M:4D85D0:this:0x528": {
+"class": "short",
+"obs": [],
+"ents": [
+"M:4D85D0:this:0x528"
 ]
 },
 "S:4D85D0:var_2c": {
@@ -263165,11 +264983,25 @@
 "S:6D2420:var_4"
 ]
 },
+"S:6D5030:var_2c": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:6D5030:var_2c"
+]
+},
 "S:6D5030:var_30": {
 "class": "short",
 "obs": [],
 "ents": [
 "S:6D5030:var_30"
+]
+},
+"S:6D5030:var_3c": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:6D5030:var_3c"
 ]
 },
 "S:6D5030:var_40": {
@@ -266885,7 +268717,7 @@
 ]
 },
 "R:49ECD0:ecx": {
-"class": "AnimTypeList",
+"class": "VectorCursor",
 "obs": [
 [
 0,
@@ -270010,6 +271842,13 @@
 "obs": [],
 "ents": []
 },
+"S:58AE60:var_4": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"S:58AE60:var_4"
+]
+},
 "R:58BE20:ecx": {
 "class": "AI",
 "obs": [
@@ -271967,9 +273806,7 @@
 "S:6349B0:var_108": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:6349B0:var_108"
-]
+"ents": []
 },
 "R:634CC0:ecx": {
 "class": "NeuronClass",
@@ -271996,6 +273833,13 @@
 "obs": [],
 "ents": [
 "M:6357D0:this:0x0"
+]
+},
+"S:635830:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:635830:var_8"
 ]
 },
 "S:635A40:var_c": {
@@ -272114,7 +273958,7 @@
 "ents": []
 },
 "R:63E1D0:ecx": {
-"class": "?$VectorClass@PAVPlanningBranchClass@@",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -272145,10 +273989,7 @@
 4
 ]
 ],
-"ents": [
-"T:63E1D0",
-"RET:63E1D0"
-]
+"ents": []
 },
 "P:652960:0": {
 "class": "PowerClass",
@@ -278460,7 +280301,7 @@
 "ents": []
 },
 "M:483410:this:0x140": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:483410:this:0x140"
@@ -279129,17 +280970,23 @@
 "S:42DD60:+0x0": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"S:42DD60:+0x0"
+]
 },
 "M:42DD60:this:0x4": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:42DD60:this:0x4"
+]
 },
 "M:42DD60:this:0x8": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:42DD60:this:0x8"
+]
 },
 "M:42DDB0:this:0x10": {
 "class": "int",
@@ -279200,11 +281047,9 @@
 ]
 },
 "M:42FC40:this:0x4": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:42FC40:this:0x4"
-]
+"ents": []
 },
 "M:42FC40:this:0x8": {
 "class": "AbstractClass",
@@ -279459,9 +281304,7 @@
 "M:45AD80:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:45AD80:this:0x4"
-]
+"ents": []
 },
 "M:45AD80:this:0x8": {
 "class": "AbstractClass",
@@ -279473,9 +281316,7 @@
 "M:45AE50:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:45AE50:this:0x4"
-]
+"ents": []
 },
 "M:45AE50:this:0x8": {
 "class": "AbstractClass",
@@ -279661,9 +281502,7 @@
 "M:478790:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:478790:this:0x4"
-]
+"ents": []
 },
 "M:478790:this:0x8": {
 "class": "AbstractClass",
@@ -279781,9 +281620,7 @@
 "M:488080:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:488080:this:0x4"
-]
+"ents": []
 },
 "M:488080:this:0x8": {
 "class": "AbstractClass",
@@ -279802,9 +281639,7 @@
 "M:48B070:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:48B070:this:0x4"
-]
+"ents": []
 },
 "M:48B070:this:0x8": {
 "class": "AbstractClass",
@@ -280050,9 +281885,7 @@
 "M:4A4E30:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:4A4E30:this:0x4"
-]
+"ents": []
 },
 "M:4A4E30:this:0x8": {
 "class": "AbstractClass",
@@ -280168,9 +282001,7 @@
 "M:4BA2F0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:4BA2F0:this:0x4"
-]
+"ents": []
 },
 "M:4BA2F0:this:0x8": {
 "class": "AbstractClass",
@@ -280182,9 +282013,7 @@
 "M:4BA340:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:4BA340:this:0x4"
-]
+"ents": []
 },
 "M:4BA340:this:0x8": {
 "class": "AbstractClass",
@@ -280460,9 +282289,7 @@
 "M:4D0440:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:4D0440:this:0x4"
-]
+"ents": []
 },
 "M:4D0440:this:0x8": {
 "class": "AbstractClass",
@@ -280499,6 +282326,13 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
+},
+"S:4D85D0:+0x0": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4D85D0:+0x0"
+]
 },
 "M:4D94B0:this:0x5A4": {
 "class": "IsometricTileClass",
@@ -280553,16 +282387,6 @@
 "ents": [
 "M:4E0840:this:0x8"
 ]
-},
-"S:4E0A00:+0x0": {
-"class": "int",
-"obs": [],
-"ents": []
-},
-"M:4E0A00:this:0x8": {
-"class": "int",
-"obs": [],
-"ents": []
 },
 "S:4E0B10:+0x0": {
 "class": "int",
@@ -280991,9 +282815,7 @@
 "M:4F2C00:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:4F2C00:this:0x4"
-]
+"ents": []
 },
 "M:4F2C00:this:0x8": {
 "class": "AbstractClass",
@@ -281231,9 +283053,7 @@
 "M:5105F0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5105F0:this:0x4"
-]
+"ents": []
 },
 "M:5105F0:this:0x8": {
 "class": "AbstractClass",
@@ -281302,15 +283122,8 @@
 "obs": [],
 "ents": []
 },
-"S:510920:+0x0": {
-"class": "AbstractClass",
-"obs": [],
-"ents": [
-"S:510920:+0x0"
-]
-},
 "M:510920:this:0x4": {
-"class": "AbstractClass",
+"class": "int",
 "obs": [],
 "ents": [
 "M:510920:this:0x4"
@@ -281693,11 +283506,9 @@
 ]
 },
 "M:52AF00:this:0x18": {
-"class": "double",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:52AF00:this:0x18"
-]
+"ents": []
 },
 "M:52AF00:this:0x20": {
 "class": "short",
@@ -281770,9 +283581,7 @@
 "M:538B30:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:538B30:this:0x4"
-]
+"ents": []
 },
 "M:538B30:this:0x8": {
 "class": "AbstractClass",
@@ -281899,9 +283708,7 @@
 "M:54EBF0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:54EBF0:this:0x4"
-]
+"ents": []
 },
 "M:54EBF0:this:0x8": {
 "class": "AbstractClass",
@@ -282084,9 +283891,7 @@
 "M:55BB40:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:55BB40:this:0x4"
-]
+"ents": []
 },
 "M:55BB40:this:0x8": {
 "class": "AbstractClass",
@@ -282119,9 +283924,7 @@
 "M:589100:this:0x4": {
 "class": "GenericNode",
 "obs": [],
-"ents": [
-"M:589100:this:0x4"
-]
+"ents": []
 },
 "M:589100:this:0x8": {
 "class": "AbstractClass",
@@ -282262,9 +284065,7 @@
 "M:58AC70:this:0x4": {
 "class": "GenericNode",
 "obs": [],
-"ents": [
-"M:58AC70:this:0x4"
-]
+"ents": []
 },
 "M:58AC70:this:0x8": {
 "class": "AbstractClass",
@@ -282307,9 +284108,7 @@
 "M:58AFF0:this:0x4": {
 "class": "GenericNode",
 "obs": [],
-"ents": [
-"M:58AFF0:this:0x4"
-]
+"ents": []
 },
 "M:58AFF0:this:0x8": {
 "class": "AbstractClass",
@@ -282321,9 +284120,7 @@
 "M:58B070:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:58B070:this:0x4"
-]
+"ents": []
 },
 "M:58B070:this:0x8": {
 "class": "AbstractClass",
@@ -282428,9 +284225,7 @@
 "M:5AD740:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5AD740:this:0x4"
-]
+"ents": []
 },
 "M:5AD740:this:0x8": {
 "class": "AbstractClass",
@@ -282457,9 +284252,7 @@
 "M:5AD9F0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5AD9F0:this:0x4"
-]
+"ents": []
 },
 "M:5AD9F0:this:0x8": {
 "class": "AbstractClass",
@@ -282469,11 +284262,9 @@
 ]
 },
 "M:5ADA40:this:0x4": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:5ADA40:this:0x4"
-]
+"ents": []
 },
 "M:5ADA40:this:0x8": {
 "class": "AbstractClass",
@@ -282485,9 +284276,7 @@
 "M:5ADAB0:this:0x4": {
 "class": "GenericNode",
 "obs": [],
-"ents": [
-"M:5ADAB0:this:0x4"
-]
+"ents": []
 },
 "M:5ADAB0:this:0x8": {
 "class": "AbstractClass",
@@ -282588,25 +284377,19 @@
 ]
 },
 "S:5BEA30:+0x0": {
-"class": "ToggleClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"S:5BEA30:+0x0"
-]
+"ents": []
 },
 "M:5BEA30:this:0x4": {
-"class": "ToggleClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"M:5BEA30:this:0x4"
-]
+"ents": []
 },
 "M:5BEA30:this:0x8": {
-"class": "ToggleClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"M:5BEA30:this:0x8"
-]
+"ents": []
 },
 "M:5C0B10:this:0x8": {
 "class": "AbstractClass",
@@ -282660,9 +284443,7 @@
 "M:5C59E0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5C59E0:this:0x4"
-]
+"ents": []
 },
 "M:5C59E0:this:0x8": {
 "class": "AbstractClass",
@@ -282689,9 +284470,7 @@
 "M:5C5A80:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5C5A80:this:0x4"
-]
+"ents": []
 },
 "M:5C5A80:this:0x8": {
 "class": "AbstractClass",
@@ -282982,32 +284761,24 @@
 ]
 },
 "S:5D86D0:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:5D86D0:+0x0"
-]
+"ents": []
 },
 "M:5D86D0:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5D86D0:this:0x4"
-]
+"ents": []
 },
 "M:5D86D0:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5D86D0:this:0x8"
-]
+"ents": []
 },
 "M:5D8950:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5D8950:this:0x4"
-]
+"ents": []
 },
 "M:5D8950:this:0x8": {
 "class": "AbstractClass",
@@ -283019,9 +284790,7 @@
 "M:5D89A0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5D89A0:this:0x4"
-]
+"ents": []
 },
 "M:5D89A0:this:0x8": {
 "class": "AbstractClass",
@@ -283033,9 +284802,7 @@
 "M:5D89F0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5D89F0:this:0x4"
-]
+"ents": []
 },
 "M:5D89F0:this:0x8": {
 "class": "AbstractClass",
@@ -283071,9 +284838,7 @@
 "M:5EF0B0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:5EF0B0:this:0x4"
-]
+"ents": []
 },
 "M:5EF0B0:this:0x8": {
 "class": "AbstractClass",
@@ -283259,21 +285024,6 @@
 "M:628070:this:0xC"
 ]
 },
-"S:628240:+0x0": {
-"class": "int",
-"obs": [],
-"ents": []
-},
-"M:628240:this:0x4": {
-"class": "int",
-"obs": [],
-"ents": []
-},
-"M:628240:this:0x8": {
-"class": "int",
-"obs": [],
-"ents": []
-},
 "M:6282E0:this:0x8": {
 "class": "AbstractClass",
 "obs": [],
@@ -283308,16 +285058,7 @@
 "M:628B00:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:628B00:this:0x4"
-]
-},
-"M:628B00:this:0x8": {
-"class": "int",
-"obs": [],
-"ents": [
-"M:628B00:this:0x8"
-]
+"ents": []
 },
 "S:628BB0:+0x0": {
 "class": "int",
@@ -283347,15 +285088,8 @@
 "M:628BB0:this:0x10"
 ]
 },
-"S:628DF0:+0x0": {
-"class": "AbstractClass",
-"obs": [],
-"ents": [
-"S:628DF0:+0x0"
-]
-},
 "M:628DF0:this:0x4": {
-"class": "AbstractClass",
+"class": "int",
 "obs": [],
 "ents": [
 "M:628DF0:this:0x4"
@@ -283371,9 +285105,7 @@
 "M:628ED0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:628ED0:this:0x4"
-]
+"ents": []
 },
 "M:628ED0:this:0x8": {
 "class": "AbstractClass",
@@ -283502,7 +285234,7 @@
 "ents": []
 },
 "M:632D10:this:0x18": {
-"class": "GameModeOptionsClass",
+"class": "LogicClass",
 "obs": [
 [
 8,
@@ -283522,7 +285254,7 @@
 "ents": []
 },
 "M:6330C0:this:0x18": {
-"class": "GameModeOptionsClass",
+"class": "LogicClass",
 "obs": [
 [
 8,
@@ -283539,25 +285271,19 @@
 ]
 },
 "S:63DEC0:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:63DEC0:+0x0"
-]
+"ents": []
 },
 "M:63DEC0:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:63DEC0:this:0x4"
-]
+"ents": []
 },
 "M:63DEC0:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:63DEC0:this:0x8"
-]
+"ents": []
 },
 "S:63E090:+0x0": {
 "class": "int",
@@ -283612,9 +285338,7 @@
 "M:63EFB0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:63EFB0:this:0x4"
-]
+"ents": []
 },
 "M:63EFB0:this:0x8": {
 "class": "AbstractClass",
@@ -283724,25 +285448,19 @@
 "ents": []
 },
 "S:658DE0:+0x0": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:658DE0:+0x0"
-]
+"ents": []
 },
 "M:658DE0:this:0x4": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:658DE0:this:0x4"
-]
+"ents": []
 },
 "M:658DE0:this:0x8": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:658DE0:this:0x8"
-]
+"ents": []
 },
 "M:6593F0:this:0x10": {
 "class": "int",
@@ -283790,9 +285508,7 @@
 "M:65CA80:this:0x18": {
 "class": "int",
 "obs": [],
-"ents": [
-"M:65CA80:this:0x18"
-]
+"ents": []
 },
 "S:65CB50:+0x0": {
 "class": "?$DynamicVectorClass@PAVMultiplayerTeam@@",
@@ -283949,25 +285665,19 @@
 ]
 },
 "S:67B370:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:67B370:+0x0"
-]
+"ents": []
 },
 "M:67B370:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:67B370:this:0x4"
-]
+"ents": []
 },
 "M:67B370:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:67B370:this:0x8"
-]
+"ents": []
 },
 "S:67B3D0:+0x0": {
 "class": "int",
@@ -284009,9 +285719,7 @@
 "M:67C430:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:67C430:this:0x4"
-]
+"ents": []
 },
 "M:67C430:this:0x8": {
 "class": "AbstractClass",
@@ -284042,9 +285750,7 @@
 "M:68C200:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:68C200:this:0x4"
-]
+"ents": []
 },
 "M:68C200:this:0x8": {
 "class": "int",
@@ -284191,9 +285897,7 @@
 "M:69D770:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:69D770:this:0x4"
-]
+"ents": []
 },
 "M:69D770:this:0x8": {
 "class": "AbstractClass",
@@ -284205,9 +285909,7 @@
 "M:69D870:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:69D870:this:0x4"
-]
+"ents": []
 },
 "M:69D870:this:0x8": {
 "class": "AbstractClass",
@@ -284324,9 +286026,7 @@
 "M:6B1AB0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6B1AB0:this:0x4"
-]
+"ents": []
 },
 "M:6B1AB0:this:0x8": {
 "class": "AbstractClass",
@@ -284406,25 +286106,19 @@
 ]
 },
 "S:6B83A0:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:6B83A0:+0x0"
-]
+"ents": []
 },
 "M:6B83A0:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6B83A0:this:0x4"
-]
+"ents": []
 },
 "M:6B83A0:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6B83A0:this:0x8"
-]
+"ents": []
 },
 "M:6B8520:this:0x8": {
 "class": "AbstractClass",
@@ -284436,9 +286130,7 @@
 "M:6B8880:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6B8880:this:0x4"
-]
+"ents": []
 },
 "M:6B8880:this:0x8": {
 "class": "AbstractClass",
@@ -284484,9 +286176,7 @@
 "M:6CABA0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6CABA0:this:0x4"
-]
+"ents": []
 },
 "M:6CABA0:this:0x8": {
 "class": "AbstractClass",
@@ -284732,25 +286422,19 @@
 ]
 },
 "S:6F2230:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:6F2230:+0x0"
-]
+"ents": []
 },
 "M:6F2230:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6F2230:this:0x4"
-]
+"ents": []
 },
 "M:6F2230:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6F2230:this:0x8"
-]
+"ents": []
 },
 "M:6F22F0:this:0x8": {
 "class": "AbstractClass",
@@ -284826,25 +286510,19 @@
 "ents": []
 },
 "S:717C70:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:717C70:+0x0"
-]
+"ents": []
 },
 "M:717C70:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:717C70:this:0x4"
-]
+"ents": []
 },
 "M:717C70:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:717C70:this:0x8"
-]
+"ents": []
 },
 "M:71AF20:this:0x28": {
 "class": "TechnoClass",
@@ -284999,32 +286677,24 @@
 "ents": []
 },
 "S:734330:+0x0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"S:734330:+0x0"
-]
+"ents": []
 },
 "M:734330:this:0x4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:734330:this:0x4"
-]
+"ents": []
 },
 "M:734330:this:0x8": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:734330:this:0x8"
-]
+"ents": []
 },
 "M:7343E0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:7343E0:this:0x4"
-]
+"ents": []
 },
 "M:7343E0:this:0x8": {
 "class": "AbstractClass",
@@ -285427,24 +287097,28 @@
 "S:76F0C0:+0x0": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"S:76F0C0:+0x0"
+]
 },
 "M:76F0C0:this:0x4": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:76F0C0:this:0x4"
+]
 },
 "M:76F0C0:this:0x8": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"M:76F0C0:this:0x8"
+]
 },
 "M:76F1C0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:76F1C0:this:0x4"
-]
+"ents": []
 },
 "M:76F1C0:this:0x8": {
 "class": "AbstractClass",
@@ -285645,9 +287319,7 @@
 "M:7AECD0:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:7AECD0:this:0x4"
-]
+"ents": []
 },
 "M:7AECD0:this:0x8": {
 "class": "AbstractClass",
@@ -292548,7 +294220,7 @@
 ]
 },
 "EAX:439B00:439BC0": {
-"class": "SHPStruct",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:439B00:439BC0"
@@ -293261,6 +294933,13 @@
 "obs": [],
 "ents": []
 },
+"EAX:4415F0:441D6F": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4415F0:441D6F"
+]
+},
 "EAX:4415F0:441F49": {
 "class": "int",
 "obs": [],
@@ -293666,6 +295345,13 @@
 "obs": [],
 "ents": [
 "EAX:448260:44843A"
+]
+},
+"EAX:448260:448561": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:448260:448561"
 ]
 },
 "EAX:448260:448593": {
@@ -294825,6 +296511,13 @@
 "obs": [],
 "ents": [
 "EAX:457690:4576CD"
+]
+},
+"EAX:457AA0:457BE4": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:457AA0:457BE4"
 ]
 },
 "EAX:4581F0:4581F6": {
@@ -297076,11 +298769,6 @@
 "EAX:4764F0:47663D"
 ]
 },
-"EAX:4764F0:476695": {
-"class": "int",
-"obs": [],
-"ents": []
-},
 "EAX:4764F0:4766D0": {
 "class": "int",
 "obs": [],
@@ -297107,13 +298795,6 @@
 "obs": [],
 "ents": [
 "EAX:476A20:476B07"
-]
-},
-"EAX:476B20:476B5A": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:476B20:476B5A"
 ]
 },
 "EAX:476B20:476CCD": {
@@ -298678,6 +300359,20 @@
 "EAX:483780:4838A1"
 ]
 },
+"EAX:4839F0:483A4A": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:4839F0:483A4A"
+]
+},
+"EAX:4839F0:483A5C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4839F0:483A5C"
+]
+},
 "EAX:483C10:483C22": {
 "class": "int",
 "obs": [],
@@ -298781,6 +300476,13 @@
 "obs": [],
 "ents": [
 "EAX:485AF0:4862A8"
+]
+},
+"EAX:486A70:486AD9": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:486A70:486AD9"
 ]
 },
 "EAX:486BF0:486C08": {
@@ -298989,6 +300691,13 @@
 "obs": [],
 "ents": [
 "EAX:489180:489220"
+]
+},
+"EAX:489280:4892A3": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:489280:4892A3"
 ]
 },
 "EAX:489280:489470": {
@@ -299810,6 +301519,20 @@
 "EAX:48E740:48EB1C"
 ]
 },
+"EAX:48EBF0:48EC00": {
+"class": "BlitPlainXlat",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48EC00"
+]
+},
+"EAX:48EBF0:48EC26": {
+"class": "BlitTransXlat",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48EC26"
+]
+},
 "EAX:48EBF0:48EC4A": {
 "class": "?$BlitTransZRemapXlat@E",
 "obs": [],
@@ -299845,6 +301568,13 @@
 "EAX:48EBF0:48ECF5"
 ]
 },
+"EAX:48EBF0:48ED22": {
+"class": "RLEBlitTransXlat",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48ED22"
+]
+},
 "EAX:48EBF0:48ED49": {
 "class": "?$RLEBlitTransZRemapXlat@E",
 "obs": [],
@@ -299878,6 +301608,13 @@
 "obs": [],
 "ents": [
 "EAX:48EBF0:48EE00"
+]
+},
+"EAX:48EBF0:48EE30": {
+"class": "RLEBlitTransXlatZRead",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48EE30"
 ]
 },
 "EAX:48EBF0:48EE57": {
@@ -299957,11 +301694,46 @@
 "EAX:48EBF0:48F01C"
 ]
 },
+"EAX:48EBF0:48F054": {
+"class": "BlitPlainXlat",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48F054"
+]
+},
+"EAX:48EBF0:48F07A": {
+"class": "BlitTransXlat",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48F07A"
+]
+},
 "EAX:48EBF0:48F09E": {
 "class": "?$BlitTransZRemapXlat@G",
 "obs": [],
 "ents": [
 "EAX:48EBF0:48F09E"
+]
+},
+"EAX:48EBF0:48F0CB": {
+"class": "BlitTransDarken",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48F0CB"
+]
+},
+"EAX:48EBF0:48F0F1": {
+"class": "BlitTransLucent75",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48F0F1"
+]
+},
+"EAX:48EBF0:48F120": {
+"class": "BlitTransLucent50",
+"obs": [],
+"ents": [
+"EAX:48EBF0:48F120"
 ]
 },
 "EAX:490400:490416": {
@@ -301284,6 +303056,11 @@
 "EAX:49DB00:49DBBE"
 ]
 },
+"EAX:49DB00:49DBDE": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "EAX:49DB00:49DEFC": {
 "class": "?$DynamicVectorClass@PAD",
 "obs": [],
@@ -302165,6 +303942,13 @@
 "obs": [],
 "ents": [
 "EAX:4A42F0:4A44D7"
+]
+},
+"EAX:4A4900:4A4923": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4A4900:4A4923"
 ]
 },
 "EAX:4A4900:4A4A03": {
@@ -303391,6 +305175,20 @@
 "obs": [],
 "ents": [
 "EAX:4B6C30:4B6E3B"
+]
+},
+"EAX:4B6C30:4B7504": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4B6C30:4B7504"
+]
+},
+"EAX:4B6C30:4B757B": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4B6C30:4B757B"
 ]
 },
 "EAX:4B6C30:4B7621": {
@@ -310088,6 +311886,13 @@
 "EAX:4F1CA0:4F1CC6"
 ]
 },
+"EAX:4F1CA0:4F1D22": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4F1CA0:4F1D22"
+]
+},
 "EAX:4F1CA0:4F1D7B": {
 "class": "int",
 "obs": [],
@@ -311054,20 +312859,6 @@
 "EAX:4F5130:4F5164"
 ]
 },
-"EAX:4F5190:4F51AA": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:4F5190:4F51AA"
-]
-},
-"EAX:4F5190:4F52F9": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:4F5190:4F52F9"
-]
-},
 "EAX:4F5190:4F533F": {
 "class": "VectorClass",
 "obs": [],
@@ -311171,20 +312962,6 @@
 "obs": [],
 "ents": [
 "EAX:4F54A0:4F54A9"
-]
-},
-"EAX:4F54A0:4F54C5": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:4F54A0:4F54C5"
-]
-},
-"EAX:4F54A0:4F5626": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:4F54A0:4F5626"
 ]
 },
 "EAX:4F54A0:4F58CD": {
@@ -311356,6 +313133,13 @@
 "obs": [],
 "ents": [
 "EAX:4F54A0:4F5C0F"
+]
+},
+"EAX:4F54A0:4F5D63": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:4F54A0:4F5D63"
 ]
 },
 "EAX:4F54A0:4F5E18": {
@@ -311804,7 +313588,7 @@
 "ents": []
 },
 "EAX:4F8440:4F8A78": {
-"class": "AbstractClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:4F8440:4F8A78"
@@ -313791,6 +315575,25 @@
 "EAX:511850:511ABE"
 ]
 },
+"EAX:511850:511D42": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:511850:511DA4": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:511850:511DA4"
+]
+},
+"EAX:511850:511DCB": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:511850:511DCB"
+]
+},
 "EAX:511850:511E18": {
 "class": "int",
 "obs": [],
@@ -313812,6 +315615,11 @@
 "EAX:511850:511F4E"
 ]
 },
+"EAX:511850:511F85": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "EAX:511850:512084": {
 "class": "int",
 "obs": [],
@@ -313825,6 +315633,11 @@
 "ents": [
 "EAX:512290:5122E8"
 ]
+},
+"EAX:512290:5122F7": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
 },
 "EAX:512480:512491": {
 "class": "int",
@@ -316892,6 +318705,13 @@
 "obs": [],
 "ents": [
 "EAX:52CB90:52CD5A"
+]
+},
+"EAX:52CD70:52CD82": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:52CD70:52CD82"
 ]
 },
 "EAX:52CD70:52CDF3": {
@@ -321327,6 +323147,13 @@
 "EAX:54DFA0:54DFD6"
 ]
 },
+"EAX:54E260:54E280": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:54E260:54E280"
+]
+},
 "EAX:54E260:54E2EA": {
 "class": "int",
 "obs": [],
@@ -322624,6 +324451,13 @@
 "obs": [],
 "ents": []
 },
+"EAX:55AFB0:55B4FD": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:55AFB0:55B4FD"
+]
+},
 "EAX:55AFB0:55B711": {
 "class": "int",
 "obs": [],
@@ -323453,6 +325287,20 @@
 "EAX:565090:565096"
 ]
 },
+"EAX:565090:5650C8": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:565090:5650C8"
+]
+},
+"EAX:565190:5651D0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:565190:5651D0"
+]
+},
 "EAX:5652C0:5652E9": {
 "class": "int",
 "obs": [],
@@ -323512,6 +325360,20 @@
 "obs": [],
 "ents": [
 "EAX:5652C0:565452"
+]
+},
+"EAX:565800:565891": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:565800:565891"
+]
+},
+"EAX:565800:565962": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:565800:565962"
 ]
 },
 "EAX:5659F0:5659FA": {
@@ -325182,6 +327044,13 @@
 "EAX:581090:581107"
 ]
 },
+"EAX:581F90:58203C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:581F90:58203C"
+]
+},
 "EAX:581F90:58209D": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -326382,6 +328251,13 @@
 "EAX:58D620:58DC39"
 ]
 },
+"EAX:58D620:58DC4C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:58D620:58DC4C"
+]
+},
 "EAX:58D620:58E348": {
 "class": "int",
 "obs": [],
@@ -327189,6 +329065,13 @@
 "EAX:594B50:594C73"
 ]
 },
+"EAX:594B50:594C89": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:594B50:594C89"
+]
+},
 "EAX:594B50:594D06": {
 "class": "int",
 "obs": [],
@@ -327344,6 +329227,13 @@
 "obs": [],
 "ents": [
 "EAX:595BC0:595CA4"
+]
+},
+"EAX:595CE0:595CEF": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:595CE0:595CEF"
 ]
 },
 "EAX:595CE0:595DFA": {
@@ -328036,6 +329926,13 @@
 "obs": [],
 "ents": [
 "EAX:59A8F0:59ACFD"
+]
+},
+"EAX:59AD10:59AD31": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:59AD10:59AD31"
 ]
 },
 "EAX:59AD10:59AD73": {
@@ -329048,6 +330945,13 @@
 "obs": [],
 "ents": [
 "EAX:5A23A0:5A259E"
+]
+},
+"EAX:5A23A0:5A2643": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5A23A0:5A2643"
 ]
 },
 "EAX:5A23A0:5A2801": {
@@ -333239,6 +335143,13 @@
 "EAX:5BDF70:5BE2BC"
 ]
 },
+"EAX:5BDF70:5BE2E2": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5BDF70:5BE2E2"
+]
+},
 "EAX:5BE940:5BE953": {
 "class": "int",
 "obs": [],
@@ -333685,6 +335596,13 @@
 "obs": [],
 "ents": [
 "EAX:5C1470:5C14A0"
+]
+},
+"EAX:5C1470:5C152B": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5C1470:5C152B"
 ]
 },
 "EAX:5C1470:5C1589": {
@@ -334235,6 +336153,13 @@
 "EAX:5C4110:5C4203"
 ]
 },
+"EAX:5C42D0:5C4311": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5C42D0:5C4311"
+]
+},
 "EAX:5C42D0:5C4348": {
 "class": "int",
 "obs": [],
@@ -334276,7 +336201,7 @@
 ]
 },
 "EAX:5C42D0:5C4441": {
-"class": "AbstractClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:5C42D0:5C4441"
@@ -334310,13 +336235,20 @@
 "EAX:5C44E0:5C4504"
 ]
 },
+"EAX:5C44E0:5C4550": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5C44E0:5C4550"
+]
+},
 "EAX:5C44E0:5C45B1": {
 "class": "int",
 "obs": [],
 "ents": []
 },
 "EAX:5C44E0:5C45DC": {
-"class": "AbstractClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:5C44E0:5C45DC"
@@ -337266,6 +339198,20 @@
 "EAX:5D6D80:5D7009"
 ]
 },
+"EAX:5D70F0:5D7111": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5D70F0:5D7111"
+]
+},
+"EAX:5D70F0:5D7130": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5D70F0:5D7130"
+]
+},
 "EAX:5D70F0:5D72D4": {
 "class": "int",
 "obs": [],
@@ -339826,11 +341772,25 @@
 "EAX:5E68A0:5E690F"
 ]
 },
+"EAX:5E6920:5E6A67": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5E6920:5E6A67"
+]
+},
 "EAX:5E6920:5E6B3A": {
 "class": "int",
 "obs": [],
 "ents": [
 "EAX:5E6920:5E6B3A"
+]
+},
+"EAX:5E6920:5E6C2C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5E6920:5E6C2C"
 ]
 },
 "EAX:5E6920:5E6DDD": {
@@ -339856,6 +341816,13 @@
 "class": "IsometricTileClass",
 "obs": [],
 "ents": []
+},
+"EAX:5E6920:5E6EF1": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:5E6920:5E6EF1"
+]
 },
 "EAX:5E7460:5E748B": {
 "class": "int",
@@ -347213,6 +349180,13 @@
 "EAX:6267A0:6267F3"
 ]
 },
+"EAX:6267A0:62680D": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:6267A0:62680D"
+]
+},
 "EAX:6267A0:62681F": {
 "class": "VectorClass",
 "obs": [],
@@ -347232,6 +349206,13 @@
 "obs": [],
 "ents": [
 "EAX:6269A0:6269DF"
+]
+},
+"EAX:6269A0:626A01": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:6269A0:626A01"
 ]
 },
 "EAX:6269A0:626A15": {
@@ -347262,6 +349243,13 @@
 "EAX:626AB0:626B01"
 ]
 },
+"EAX:626AB0:626B1F": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:626AB0:626B1F"
+]
+},
 "EAX:626AB0:626B33": {
 "class": "VectorClass",
 "obs": [],
@@ -347281,6 +349269,13 @@
 "obs": [],
 "ents": [
 "EAX:626C60:626CA0"
+]
+},
+"EAX:626C60:626CC8": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:626C60:626CC8"
 ]
 },
 "EAX:626C60:626CDC": {
@@ -347323,6 +349318,13 @@
 "EAX:627020:627054"
 ]
 },
+"EAX:627020:627086": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:627020:627086"
+]
+},
 "EAX:627020:6270E7": {
 "class": "int",
 "obs": [],
@@ -347342,11 +349344,25 @@
 "EAX:627170:627184"
 ]
 },
+"EAX:627170:6271B8": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:627170:6271B8"
+]
+},
 "EAX:627170:627218": {
 "class": "int",
 "obs": [],
 "ents": [
 "EAX:627170:627218"
+]
+},
+"EAX:627170:627233": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:627170:627233"
 ]
 },
 "EAX:6272A0:6272F5": {
@@ -347385,6 +349401,13 @@
 "obs": [],
 "ents": [
 "EAX:627590:62768E"
+]
+},
+"EAX:627590:627720": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:627590:627720"
 ]
 },
 "EAX:6278C0:627962": {
@@ -347925,7 +349948,7 @@
 ]
 },
 "EAX:62BD50:62BEEC": {
-"class": "SHPStruct",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:62BD50:62BEEC"
@@ -347981,7 +350004,7 @@
 ]
 },
 "EAX:62C6E0:62C79E": {
-"class": "SHPStruct",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "EAX:62C6E0:62C79E"
@@ -348619,9 +350642,7 @@
 "EAX:633FA0:63409C": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:633FA0:63409C"
-]
+"ents": []
 },
 "EAX:6340B0:634172": {
 "class": "int",
@@ -348683,9 +350704,7 @@
 "EAX:634970:63498C": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:634970:63498C"
-]
+"ents": []
 },
 "EAX:634B20:634B7D": {
 "class": "int",
@@ -348991,9 +351010,7 @@
 "EAX:6367B0:63694F": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:6367B0:63694F"
-]
+"ents": []
 },
 "EAX:636980:636AC2": {
 "class": "char*",
@@ -349005,9 +351022,7 @@
 "EAX:636980:636B1D": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:636980:636B1D"
-]
+"ents": []
 },
 "EAX:636B50:636C22": {
 "class": "IsometricTileClass",
@@ -349115,9 +351130,7 @@
 "EAX:637270:63741C": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:637270:63741C"
-]
+"ents": []
 },
 "EAX:637550:63759E": {
 "class": "int",
@@ -349129,9 +351142,7 @@
 "EAX:637920:637959": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:637920:637959"
-]
+"ents": []
 },
 "EAX:637920:637995": {
 "class": "int",
@@ -349182,11 +351193,9 @@
 "ents": []
 },
 "EAX:638120:6384BA": {
-"class": "VectorClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:638120:6384BA"
-]
+"ents": []
 },
 "EAX:638120:6384C2": {
 "class": "int",
@@ -349379,16 +351388,12 @@
 "EAX:639A50:639B8E": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:639A50:639B8E"
-]
+"ents": []
 },
 "EAX:639BC0:639C93": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:639BC0:639C93"
-]
+"ents": []
 },
 "EAX:63A5A0:63A61F": {
 "class": "IsometricTileClass",
@@ -350473,19 +352478,17 @@
 "EAX:644960:6449DE"
 ]
 },
-"EAX:644BE0:644C37": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:644BE0:644C37"
-]
-},
 "EAX:644F50:644F65": {
 "class": "int",
 "obs": [],
 "ents": [
 "EAX:644F50:644F65"
 ]
+},
+"EAX:644F50:644F85": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
 },
 "EAX:644F50:64513C": {
 "class": "int",
@@ -350540,6 +352543,11 @@
 "ents": [
 "EAX:645430:64545E"
 ]
+},
+"EAX:645660:645698": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
 },
 "EAX:645820:64582A": {
 "class": "int",
@@ -352231,20 +354239,6 @@
 "EAX:6525A0:6525FB"
 ]
 },
-"EAX:652960:652A2F": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:652960:652A2F"
-]
-},
-"EAX:652960:652A55": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:652960:652A55"
-]
-},
 "EAX:652960:652B99": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -352464,13 +354458,6 @@
 "obs": [],
 "ents": [
 "EAX:6568A0:6568E1"
-]
-},
-"EAX:6568A0:6568F4": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:6568A0:6568F4"
 ]
 },
 "EAX:6568A0:656AAC": {
@@ -353777,6 +355764,41 @@
 "EAX:664AC0:664AFB"
 ]
 },
+"EAX:664D20:6651C2": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:66521E": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:66524C": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:66527A": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:6652A8": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:6652D6": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"EAX:664D20:6652ED": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "EAX:664D20:665474": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -353789,39 +355811,11 @@
 "EAX:664D20:665629"
 ]
 },
-"EAX:665650:666187": {
+"EAX:665650:666BE8": {
 "class": "VectorClass",
 "obs": [],
 "ents": [
-"EAX:665650:666187"
-]
-},
-"EAX:665650:6661A3": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:665650:6661A3"
-]
-},
-"EAX:665650:6661BF": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:665650:6661BF"
-]
-},
-"EAX:665650:6661DB": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:665650:6661DB"
-]
-},
-"EAX:665650:6661F7": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:665650:6661F7"
+"EAX:665650:666BE8"
 ]
 },
 "EAX:667A30:667D9F": {
@@ -354930,6 +356924,11 @@
 "EAX:66D530:6716FF"
 ]
 },
+"EAX:66D530:671D5D": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "EAX:66D530:671D65": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -356002,6 +358001,18 @@
 "EAX:67BB10:67BC38"
 ]
 },
+"EAX:67BDD0:67BE11": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:67BDD0:67BE11"
+]
+},
+"EAX:67BDD0:67BEC0": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "EAX:67BDD0:67BEF8": {
 "class": "int",
 "obs": [],
@@ -356242,6 +358253,13 @@
 "class": "IsometricTileClass",
 "obs": [],
 "ents": []
+},
+"EAX:683560:683598": {
+"class": "AbstractClass",
+"obs": [],
+"ents": [
+"EAX:683560:683598"
+]
 },
 "EAX:683610:683670": {
 "class": "int",
@@ -357408,6 +359426,20 @@
 "EAX:6886B0:68884D"
 ]
 },
+"EAX:6886B0:68885B": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:6886B0:68885B"
+]
+},
+"EAX:6886B0:68887B": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:6886B0:68887B"
+]
+},
 "EAX:6886B0:688AB9": {
 "class": "int",
 "obs": [],
@@ -357518,6 +359550,13 @@
 "obs": [],
 "ents": [
 "EAX:689470:6894C5"
+]
+},
+"EAX:689470:6894DA": {
+"class": "AbstractClass",
+"obs": [],
+"ents": [
+"EAX:689470:6894DA"
 ]
 },
 "EAX:689470:68965D": {
@@ -360056,13 +362095,6 @@
 "EAX:69A1F0:69A2CC"
 ]
 },
-"EAX:69A3B0:69A3EF": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:69A3B0:69A3EF"
-]
-},
 "EAX:69A3B0:69A4D2": {
 "class": "int",
 "obs": [],
@@ -360176,13 +362208,6 @@
 "obs": [],
 "ents": [
 "EAX:69A3B0:69A967"
-]
-},
-"EAX:69A980:69A9BD": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:69A980:69A9BD"
 ]
 },
 "EAX:69A980:69A9E5": {
@@ -360317,6 +362342,20 @@
 "obs": [],
 "ents": [
 "EAX:69B170:69B1AF"
+]
+},
+"EAX:69B170:69B1EA": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:69B170:69B1EA"
+]
+},
+"EAX:69B170:69B20B": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:69B170:69B20B"
 ]
 },
 "EAX:69B170:69B2CB": {
@@ -361261,18 +363300,14 @@
 "ents": []
 },
 "EAX:6A4F20:6A4F47": {
-"class": "VectorClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:6A4F20:6A4F47"
-]
+"ents": []
 },
 "EAX:6A4F20:6A4F5B": {
-"class": "VectorClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"EAX:6A4F20:6A4F5B"
-]
+"ents": []
 },
 "EAX:6A4F20:6A4F7E": {
 "class": "int",
@@ -362676,20 +364711,6 @@
 "EAX:6B5910:6B5950"
 ]
 },
-"EAX:6B59A0:6B59F4": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:6B59A0:6B59F4"
-]
-},
-"EAX:6B59A0:6B5ACC": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:6B59A0:6B5ACC"
-]
-},
 "EAX:6B59A0:6B5C49": {
 "class": "int",
 "obs": [],
@@ -362702,20 +364723,6 @@
 "obs": [],
 "ents": [
 "EAX:6B59A0:6B5C70"
-]
-},
-"EAX:6B5C90:6B5CE4": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:6B5C90:6B5CE4"
-]
-},
-"EAX:6B5C90:6B5DBC": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:6B5C90:6B5DBC"
 ]
 },
 "EAX:6B5C90:6B5F39": {
@@ -366450,6 +368457,20 @@
 "EAX:6C9F10:6C9FD1"
 ]
 },
+"EAX:6C9F10:6C9FD8": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:6C9F10:6C9FD8"
+]
+},
+"EAX:6C9F10:6C9FF4": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:6C9F10:6C9FF4"
+]
+},
 "EAX:6C9F10:6CA176": {
 "class": "int",
 "obs": [],
@@ -369961,18 +371982,14 @@
 ]
 },
 "EAX:6F9E50:6FA4EB": {
-"class": "double",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"EAX:6F9E50:6FA4EB"
-]
+"ents": []
 },
 "EAX:6F9E50:6FA4F6": {
-"class": "double",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"EAX:6F9E50:6FA4F6"
-]
+"ents": []
 },
 "EAX:6F9E50:6FA730": {
 "class": "IsometricTileClass",
@@ -371399,6 +373416,20 @@
 "obs": [],
 "ents": []
 },
+"EAX:710AF0:7112A1": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:710AF0:7112A1"
+]
+},
+"EAX:710AF0:7112C4": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:710AF0:7112C4"
+]
+},
 "EAX:711AE0:711B17": {
 "class": "int",
 "obs": [],
@@ -371687,6 +373718,20 @@
 "obs": [],
 "ents": []
 },
+"EAX:712170:713CAD": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:712170:713CAD"
+]
+},
+"EAX:712170:713CD0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:712170:713CD0"
+]
+},
 "EAX:712170:713CE2": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -371697,6 +373742,20 @@
 "obs": [],
 "ents": [
 "EAX:712170:713D15"
+]
+},
+"EAX:712170:713DAA": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:712170:713DAA"
+]
+},
+"EAX:712170:713DCD": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:712170:713DCD"
 ]
 },
 "EAX:712170:713DDF": {
@@ -376147,6 +378206,20 @@
 "EAX:731A10:731A2E"
 ]
 },
+"EAX:731EB0:731EC0": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:731EB0:731EC0"
+]
+},
+"EAX:731F70:731F80": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:731F70:731F80"
+]
+},
 "EAX:731F70:731FB7": {
 "class": "int",
 "obs": [],
@@ -376159,11 +378232,32 @@
 "obs": [],
 "ents": []
 },
+"EAX:732050:732058": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732050:732058"
+]
+},
 "EAX:732580:7325AB": {
 "class": "int",
 "obs": [],
 "ents": [
 "EAX:732580:7325AB"
+]
+},
+"EAX:732600:732619": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732600:732619"
+]
+},
+"EAX:732600:7326AE": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732600:7326AE"
 ]
 },
 "EAX:732600:7326E5": {
@@ -376185,6 +378279,20 @@
 "EAX:732770:7327A1"
 ]
 },
+"EAX:7327D0:7327FB": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:7327D0:7327FB"
+]
+},
+"EAX:7327D0:73288F": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:7327D0:73288F"
+]
+},
 "EAX:7327D0:7328C2": {
 "class": "int",
 "obs": [],
@@ -376202,6 +378310,13 @@
 "obs": [],
 "ents": []
 },
+"EAX:732950:732998": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732950:732998"
+]
+},
 "EAX:732950:732A2E": {
 "class": "int",
 "obs": [],
@@ -376214,6 +378329,34 @@
 "obs": [],
 "ents": []
 },
+"EAX:732D10:732D18": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732D10:732D18"
+]
+},
+"EAX:732D10:732D2C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:732D10:732D2C"
+]
+},
+"EAX:732FF0:73300E": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732FF0:73300E"
+]
+},
+"EAX:732FF0:7330A5": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:732FF0:7330A5"
+]
+},
 "EAX:732FF0:7330DC": {
 "class": "int",
 "obs": [],
@@ -376225,6 +378368,20 @@
 "class": "IsometricTileClass",
 "obs": [],
 "ents": []
+},
+"EAX:7331B0:7331CF": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:7331B0:7331CF"
+]
+},
+"EAX:7331B0:733284": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:7331B0:733284"
+]
 },
 "EAX:7331B0:7332B5": {
 "class": "int",
@@ -376285,6 +378442,13 @@
 "obs": [],
 "ents": [
 "EAX:7339B0:733C19"
+]
+},
+"EAX:733CD0:733CDE": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"EAX:733CD0:733CDE"
 ]
 },
 "EAX:733E10:733E85": {
@@ -380779,13 +382943,6 @@
 "EAX:764A20:764B17"
 ]
 },
-"EAX:764B90:764BE9": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:764B90:764BE9"
-]
-},
 "EAX:764B90:764C3A": {
 "class": "int",
 "obs": [],
@@ -381403,13 +383560,6 @@
 "obs": [],
 "ents": [
 "EAX:767C50:767C66"
-]
-},
-"EAX:768000:768048": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:768000:768048"
 ]
 },
 "EAX:7680C0:768110": {
@@ -382977,6 +385127,20 @@
 "EAX:76D4D0:76D519"
 ]
 },
+"EAX:76D4D0:76D54C": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:76D4D0:76D54C"
+]
+},
+"EAX:76D4D0:76D56D": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:76D4D0:76D56D"
+]
+},
 "EAX:76D4D0:76D58D": {
 "class": "VectorCursor",
 "obs": [],
@@ -383523,13 +385687,6 @@
 "obs": [],
 "ents": [
 "EAX:770270:7702C9"
-]
-},
-"EAX:770270:770312": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"EAX:770270:770312"
 ]
 },
 "EAX:770270:77032D": {
@@ -391553,6 +393710,13 @@
 "obs": [],
 "ents": [
 "EAX:794BA0:79560C"
+]
+},
+"EAX:795650:795666": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"EAX:795650:795666"
 ]
 },
 "EAX:795650:7956A2": {
@@ -439553,13 +441717,6 @@
 "obs": [],
 "ents": []
 },
-"EAX:6395B0:639605": {
-"class": "int",
-"obs": [],
-"ents": [
-"EAX:6395B0:639605"
-]
-},
 "EAX:6395B0:63968C": {
 "class": "int",
 "obs": [],
@@ -472853,13 +475010,6 @@
 "obs": [],
 "ents": []
 },
-"P:510920:4": {
-"class": "AbstractClass",
-"obs": [],
-"ents": [
-"P:510920:4"
-]
-},
 "P:47AE10:0": {
 "class": "char*",
 "obs": [
@@ -472923,11 +475073,9 @@
 "ents": []
 },
 "P:63DEC0:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:63DEC0:4"
-]
+"ents": []
 },
 "P:63E1D0:4": {
 "class": "IsometricTileClass",
@@ -472935,11 +475083,9 @@
 "ents": []
 },
 "P:5D86D0:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:5D86D0:4"
-]
+"ents": []
 },
 "P:513560:4": {
 "class": "IsometricTileClass",
@@ -473039,11 +475185,9 @@
 ]
 },
 "P:5BEA30:4": {
-"class": "ToggleClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"P:5BEA30:4"
-]
+"ents": []
 },
 "P:62DC50:14": {
 "class": "AbstractClass",
@@ -473063,11 +475207,9 @@
 "ents": []
 },
 "P:734330:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:734330:4"
-]
+"ents": []
 },
 "P:67AFF0:4": {
 "class": "IsometricTileClass",
@@ -473075,11 +475217,9 @@
 "ents": []
 },
 "P:6B83A0:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6B83A0:4"
-]
+"ents": []
 },
 "P:510690:4": {
 "class": "IsometricTileClass",
@@ -473114,18 +475254,14 @@
 "ents": []
 },
 "P:6F2230:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6F2230:4"
-]
+"ents": []
 },
 "P:67B370:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:67B370:4"
-]
+"ents": []
 },
 "P:76F090:4": {
 "class": "int",
@@ -473135,11 +475271,9 @@
 ]
 },
 "P:717C70:4": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:717C70:4"
-]
+"ents": []
 },
 "P:513190:4": {
 "class": "IsometricTileClass",
@@ -473174,7 +475308,9 @@
 "P:76F0C0:4": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"P:76F0C0:4"
+]
 },
 "P:67C310:4": {
 "class": "IsometricTileClass",
@@ -473189,7 +475325,9 @@
 "P:42DD60:4": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"P:42DD60:4"
+]
 },
 "P:5CD570:8": {
 "class": "int",
@@ -473270,7 +475408,7 @@
 ]
 },
 "M:402C70:this:0x110": {
-"class": "float",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:402C70:this:0x110"
@@ -476802,7 +478940,7 @@
 "ents": []
 },
 "M:550260:this:0x38": {
-"class": "ILocomotion",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:550260:this:0x38"
@@ -478029,7 +480167,7 @@
 "ents": []
 },
 "M:617250:this:0xC8": {
-"class": "AnimTypeClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:617250:this:0xC8"
@@ -479041,9 +481179,7 @@
 "M:672AE0:this:0x18": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:672AE0:this:0x18"
-]
+"ents": []
 },
 "M:674730:this:0xEF8": {
 "class": "SHPStruct",
@@ -480943,7 +483079,7 @@
 ]
 },
 "M:7220D0:this:0xD4": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:7220D0:this:0xD4"
@@ -482657,11 +484793,9 @@
 "ents": []
 },
 "M:6A4F20:this:0x125c": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:6A4F20:this:0x125c"
-]
+"ents": []
 },
 "M:6C6540:this:0x24": {
 "class": "IsometricTileClass",
@@ -486050,84 +488184,84 @@
 ]
 },
 "M:4F5190:this:0x38": {
-"class": "?$VectorClass@PAVTagClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x38"
 ]
 },
 "M:4F5190:this:0x50": {
-"class": "BuildingClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x50"
 ]
 },
 "M:4F5190:this:0x68": {
-"class": "BuildingClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x68"
 ]
 },
 "M:4F5190:this:0x80": {
-"class": "BuildingClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x80"
 ]
 },
 "M:4F5190:this:0x98": {
-"class": "BuildingClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x98"
 ]
 },
 "M:4F5190:this:0xB0": {
-"class": "BuildingClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0xB0"
 ]
 },
 "M:4F5190:this:0xC8": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0xC8"
 ]
 },
 "M:4F5190:this:0xE0": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0xE0"
 ]
 },
 "M:4F5190:this:0xF8": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0xF8"
 ]
 },
 "M:4F5190:this:0x110": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x110"
 ]
 },
 "M:4F5190:this:0x128": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x128"
 ]
 },
 "M:4F5190:this:0x140": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F5190:this:0x140"
@@ -486162,23 +488296,25 @@
 ]
 },
 "M:4F54A0:this:0x38": {
-"class": "?$VectorClass@PAVTagClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x38"
 ]
 },
 "M:4F54A0:this:0x50": {
-"class": "char",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x50"
 ]
 },
 "M:4F54A0:this:0x68": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:4F54A0:this:0x68"
+]
 },
 "M:4F54A0:this:0x80": {
 "class": "DynamicVector",
@@ -486188,62 +488324,66 @@
 ]
 },
 "M:4F54A0:this:0x98": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x98"
 ]
 },
 "M:4F54A0:this:0xB0": {
-"class": "IsometricTileClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0xB0"
 ]
 },
 "M:4F54A0:this:0xC8": {
-"class": "double",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0xC8"
 ]
 },
 "M:4F54A0:this:0xE0": {
-"class": "VectorClass",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:4F54A0:this:0xE0"
+]
 },
 "M:4F54A0:this:0xF8": {
-"class": "short",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:4F54A0:this:0xF8"
+]
+},
+"M:4F54A0:this:0x110": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"M:4F54A0:this:0x110"
+]
 },
 "M:4F54A0:this:0x128": {
-"class": "AudioController",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x128"
 ]
 },
 "M:4F54A0:this:0x140": {
-"class": "Coord",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x140"
 ]
 },
 "M:4F54A0:this:0x16C": {
-"class": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4F54A0:this:0x16C"
-]
-},
-"M:4F54A0:this:0x254": {
-"class": "SuperClass",
-"obs": [],
-"ents": [
-"M:4F54A0:this:0x254"
 ]
 },
 "M:4F54A0:this:0x16064": {
@@ -486278,14 +488418,14 @@
 ]
 },
 "M:4FB9B0:this:0x98": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4FB9B0:this:0x98"
 ]
 },
 "M:4FB9B0:this:0xC8": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4FB9B0:this:0xC8"
@@ -486297,14 +488437,14 @@
 "ents": []
 },
 "M:4FB9B0:this:0x110": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4FB9B0:this:0x110"
 ]
 },
 "M:4FB9B0:this:0x140": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4FB9B0:this:0x140"
@@ -486722,7 +488862,7 @@
 ]
 },
 "M:5C1470:this:0x324": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -486856,14 +488996,14 @@
 "ents": []
 },
 "M:63C690:this:0x38": {
-"class": "ILocomotion",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:63C690:this:0x38"
 ]
 },
 "M:63CAE0:this:0x38": {
-"class": "ILocomotion",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:63CAE0:this:0x38"
@@ -486882,28 +489022,28 @@
 "ents": []
 },
 "M:652960:this:0x1224": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:652960:this:0x1224"
 ]
 },
 "M:652960:this:0x125C": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "M:652960:this:0x125C"
 ]
 },
 "M:6568A0:this:0x125C": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "M:6568A0:this:0x125C"
 ]
 },
 "M:6568A0:this:0x1224": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:6568A0:this:0x1224"
@@ -487171,6 +489311,41 @@
 "M:664D20:this:0xAC0"
 ]
 },
+"M:664D20:this:0xB58": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xC04": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xC3C": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xC74": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xCAC": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xCE4": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
+"M:664D20:this:0xD00": {
+"class": "IsometricTileClass",
+"obs": [],
+"ents": []
+},
 "M:664D20:this:0xD1C": {
 "class": "float",
 "obs": [],
@@ -487323,35 +489498,35 @@
 ]
 },
 "M:665650:this:0x7C4": {
-"class": "?$VectorClass@PBVSmudgeTypeClass@@",
+"class": "TypeList",
 "obs": [],
 "ents": [
 "M:665650:this:0x7C4"
 ]
 },
 "M:665650:this:0x7E0": {
-"class": "?$VectorClass@PBVSmudgeTypeClass@@",
+"class": "TypeList",
 "obs": [],
 "ents": [
 "M:665650:this:0x7E0"
 ]
 },
 "M:665650:this:0x7FC": {
-"class": "?$VectorClass@PBVSmudgeTypeClass@@",
+"class": "TypeList",
 "obs": [],
 "ents": [
 "M:665650:this:0x7FC"
 ]
 },
 "M:665650:this:0x818": {
-"class": "?$VectorClass@PBVSmudgeTypeClass@@",
+"class": "TypeList",
 "obs": [],
 "ents": [
 "M:665650:this:0x818"
 ]
 },
 "M:665650:this:0x834": {
-"class": "?$VectorClass@PBVSmudgeTypeClass@@",
+"class": "TypeList",
 "obs": [],
 "ents": [
 "M:665650:this:0x834"
@@ -488422,24 +490597,28 @@
 ]
 },
 "M:69A3B0:this:0x188": {
-"class": "int",
+"class": "TypeList",
 "obs": [],
-"ents": []
+"ents": [
+"M:69A3B0:this:0x188"
+]
 },
 "M:69A3B0:this:0x1A4": {
-"class": "?$VectorClass@VWstring@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:69A3B0:this:0x1A4"
 ]
 },
 "M:69A980:this:0x188": {
-"class": "int",
+"class": "TypeList",
 "obs": [],
-"ents": []
+"ents": [
+"M:69A980:this:0x188"
+]
 },
 "M:69A980:this:0x1A4": {
-"class": "?$VectorClass@VWstring@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:69A980:this:0x1A4"
@@ -488467,9 +490646,18 @@
 ]
 },
 "M:6B6C90:this:0x38": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:6B6C90:this:0x38"
+]
+},
+"M:6B6EA0:this:0x38": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"M:6B6EA0:this:0x38"
+]
 },
 "M:6C6740:this:0x24": {
 "class": "CCINIClass",
@@ -489034,15 +491222,22 @@
 "M:7610F0:this:0x1F0"
 ]
 },
+"M:764B90:this:0x8": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"M:764B90:this:0x8"
+]
+},
 "M:764B90:this:0x18": {
-"class": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:764B90:this:0x18"
 ]
 },
 "M:768000:this:0x2C": {
-"class": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:768000:this:0x2C"
@@ -489069,18 +491264,18 @@
 "M:76ABE0:this:0x2C"
 ]
 },
-"M:76C290:this:0x464": {
-"class": "rc_ptr_base",
+"M:76C290:this:0x48": {
+"class": "rc_ptr",
 "obs": [],
 "ents": [
-"M:76C290:this:0x464"
+"M:76C290:this:0x48"
 ]
 },
-"M:76C6E0:this:0x464": {
-"class": "rc_ptr_base",
+"M:76C290:this:0x50": {
+"class": "rc_ptr",
 "obs": [],
 "ents": [
-"M:76C6E0:this:0x464"
+"M:76C290:this:0x50"
 ]
 },
 "M:76C6E0:this:0x470": {
@@ -489121,13 +491316,6 @@
 "obs": [],
 "ents": [
 "M:76E750:this:0x58"
-]
-},
-"M:770270:this:0x3C0": {
-"class": "?$VectorClass@VWstring@@",
-"obs": [],
-"ents": [
-"M:770270:this:0x3C0"
 ]
 },
 "M:771C70:this:0xBC": {
@@ -489444,25 +491632,19 @@
 ]
 },
 "M:452820:this:0x66C": {
-"class": "DynamicVector",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:452820:this:0x66C"
-]
+"ents": []
 },
 "M:457DE0:this:0x684": {
-"class": "?$TypeList@PBVBuildingTypeClass@@",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:457DE0:this:0x684"
-]
+"ents": []
 },
 "M:4585C0:this:0x684": {
-"class": "?$DynamicVectorClass@PAVInfantryClass@@",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:4585C0:this:0x684"
-]
+"ents": []
 },
 "M:4593A0:this:0x2E4": {
 "class": "int",
@@ -489868,12 +492050,12 @@
 "ents": []
 },
 "M:4FE3E0:this:0x5704": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "M:50A5C0:this:0x5704": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -490143,12 +492325,12 @@
 "ents": []
 },
 "M:5C18A0:this:0x324": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "M:5C3B10:this:0x324": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -490160,29 +492342,33 @@
 ]
 },
 "M:5CEDD0:this:0x2C": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:5CEDD0:this:0x2C"
+]
 },
 "M:5CF8E0:this:0x3C": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:5CF8E0:this:0x3C"
 ]
 },
 "M:5CF8E0:this:0x24": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:5CF8E0:this:0x24"
+]
 },
 "M:5D1AA0:this:0x18": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "M:5D1AA0:this:0x30": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -490246,9 +492432,11 @@
 "ents": []
 },
 "M:62DC50:this:0xBC": {
-"class": "int",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"M:62DC50:this:0xBC"
+]
 },
 "M:62E4C0:this:0xBC": {
 "class": "int",
@@ -490401,7 +492589,7 @@
 ]
 },
 "M:6B7010:this:0x38": {
-"class": "DynamicVector",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:6B7010:this:0x38"
@@ -494288,6 +496476,18 @@
 ],
 "ents": []
 },
+"M:42F620:this:0x4": {
+"class": "int",
+"obs": [
+[
+2,
+2
+]
+],
+"ents": [
+"M:42F620:this:0x4"
+]
+},
 "M:42F930:this:0x4": {
 "class": "Node",
 "obs": [
@@ -495043,7 +497243,7 @@
 ]
 },
 "M:438A90:this:0x2c": {
-"class": "?$VectorClass@PAVMSAnimEntry@@",
+"class": "LogicClass",
 "obs": [
 [
 4,
@@ -519430,7 +521630,7 @@
 "ents": []
 },
 "M:71F820:this:0x30": {
-"class": "FacingClass",
+"class": "LogicClass",
 "obs": [
 [
 4,
@@ -522869,7 +525069,7 @@
 "ents": []
 },
 "M:763A50:this:0x2c": {
-"class": "?$VectorClass@PAVMSAnimEntry@@",
+"class": "LogicClass",
 "obs": [
 [
 4,
@@ -524912,7 +527112,7 @@
 ]
 },
 "M:402040:this:0xD4": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:402040:this:0xD4"
@@ -533395,11 +535595,6 @@
 "P:4E0170:0"
 ]
 },
-"P:4E0A00:0": {
-"class": "int",
-"obs": [],
-"ents": []
-},
 "R:4E0C30:ecx": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -534094,14 +536289,18 @@
 ]
 },
 "M:4F7140:this:0x16064": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:4F7140:this:0x16064"
+]
 },
 "M:4F7140:this:0x5704": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:4F7140:this:0x5704"
+]
 },
 "R:4F83C0:ecx": {
 "class": "HouseClass",
@@ -534214,9 +536413,11 @@
 ]
 },
 "R:4FA210:ecx": {
-"class": "IsometricTileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"T:4FA210"
+]
 },
 "P:4FA210:0": {
 "class": "VectorClass",
@@ -534276,7 +536477,7 @@
 "ents": []
 },
 "M:4FB9B0:this:0x128": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:4FB9B0:this:0x128"
@@ -534589,7 +536790,7 @@
 ]
 },
 "M:503040:this:0xC8": {
-"class": "double",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:503040:this:0xC8"
@@ -534606,35 +536807,33 @@
 "ents": []
 },
 "M:503040:this:0x110": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:503040:this:0x110"
 ]
 },
 "M:503040:this:0x128": {
-"class": "AudioController",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:503040:this:0x128"
 ]
 },
 "M:503040:this:0x140": {
-"class": "?$VectorClass@PAVBuildingClass@@",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "M:503040:this:0x140"
 ]
 },
 "M:503040:this:0x16064": {
-"class": "?$DynamicVectorClass@PAUIConnectionPoint@@",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:503040:this:0x16064"
-]
+"ents": []
 },
 "M:5054B0:this:0x5704": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -540373,7 +542572,7 @@
 "ents": []
 },
 "S:58D620:+0x8c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:58D620:+0x8c"
@@ -541701,18 +543900,14 @@
 ]
 },
 "P:5BEA30:0": {
-"class": "ShapeButtonClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"P:5BEA30:0"
-]
+"ents": []
 },
 "P:5BEA30:1": {
-"class": "ShapeButtonClass",
+"class": "GenericNode",
 "obs": [],
-"ents": [
-"P:5BEA30:1"
-]
+"ents": []
 },
 "R:5BECC0:ecx": {
 "class": "IsometricTileClass",
@@ -541818,9 +544013,11 @@
 ]
 },
 "M:5C1640:this:0x324": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:5C1640:this:0x324"
+]
 },
 "M:5C1640:this:0x58": {
 "class": "?$VectorClass@PAUNodeNameType@@",
@@ -542276,14 +544473,18 @@
 ]
 },
 "M:5D1B30:this:0x30": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:5D1B30:this:0x30"
+]
 },
 "M:5D1B30:this:0x18": {
-"class": "int",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:5D1B30:this:0x18"
+]
 },
 "M:5D1B30:this:0x8": {
 "class": "int",
@@ -542520,18 +544721,14 @@
 ]
 },
 "P:5D86D0:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:5D86D0:0"
-]
+"ents": []
 },
 "P:5D86D0:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:5D86D0:1"
-]
+"ents": []
 },
 "G:830CC0": {
 "class": "char[17]",
@@ -546251,16 +548448,6 @@
 "P:628D10:0"
 ]
 },
-"P:628DF0:0": {
-"class": "IsometricTileClass",
-"obs": [],
-"ents": []
-},
-"P:628DF0:1": {
-"class": "IsometricTileClass",
-"obs": [],
-"ents": []
-},
 "R:6269A0:ecx": {
 "class": "IsometricTileClass",
 "obs": [],
@@ -546282,16 +548469,6 @@
 },
 "R:626DA0:ecx": {
 "class": "IsometricTileClass",
-"obs": [],
-"ents": []
-},
-"P:628240:0": {
-"class": "int",
-"obs": [],
-"ents": []
-},
-"P:628240:1": {
-"class": "int",
 "obs": [],
 "ents": []
 },
@@ -546962,18 +549139,14 @@
 "ents": []
 },
 "P:63DEC0:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:63DEC0:0"
-]
+"ents": []
 },
 "P:63DEC0:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:63DEC0:1"
-]
+"ents": []
 },
 "P:63E1D0:0": {
 "class": "IsometricTileClass",
@@ -548424,18 +550597,14 @@
 ]
 },
 "P:658DE0:0": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:658DE0:0"
-]
+"ents": []
 },
 "P:658DE0:1": {
-"class": "LinkClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:658DE0:1"
-]
+"ents": []
 },
 "P:652E50:0": {
 "class": "MapClass",
@@ -548793,6 +550962,11 @@
 "ents": [
 "G:839B84"
 ]
+},
+"P:67AC70:2": {
+"class": "int",
+"obs": [],
+"ents": []
 },
 "G:B054D0": {
 "class": "DynamicVector",
@@ -554282,18 +556456,14 @@
 "ents": []
 },
 "P:67B370:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:67B370:0"
-]
+"ents": []
 },
 "P:67B370:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:67B370:1"
-]
+"ents": []
 },
 "P:6811C0:0": {
 "class": "char[8]",
@@ -556713,18 +558883,14 @@
 ]
 },
 "P:6B83A0:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6B83A0:0"
-]
+"ents": []
 },
 "P:6B83A0:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6B83A0:1"
-]
+"ents": []
 },
 "P:6B80B0:1": {
 "class": "char",
@@ -557149,7 +559315,7 @@
 ]
 },
 "S:6C6F50:+0x28": {
-"class": "rc_ptr_base",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "S:6C6F50:+0x28"
@@ -558396,18 +560562,14 @@
 ]
 },
 "P:6F2230:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6F2230:0"
-]
+"ents": []
 },
 "P:6F2230:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:6F2230:1"
-]
+"ents": []
 },
 "P:6F1030:0": {
 "class": "AbstractClass",
@@ -560734,18 +562896,14 @@
 "ents": []
 },
 "P:734330:0": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:734330:0"
-]
+"ents": []
 },
 "P:734330:1": {
-"class": "CarryoverClass",
+"class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"P:734330:1"
-]
+"ents": []
 },
 "G:B13EB0": {
 "class": "StringTable",
@@ -563853,7 +566011,9 @@
 "P:76F0C0:1": {
 "class": "int",
 "obs": [],
-"ents": []
+"ents": [
+"P:76F0C0:1"
+]
 },
 "G:849058": {
 "class": "char[11]",
@@ -564049,7 +566209,7 @@
 ]
 },
 "M:770430:this:0x3C0": {
-"class": "?$VectorClass@VWstring@@",
+"class": "VectorClass_Wstring",
 "obs": [],
 "ents": [
 "M:770430:this:0x3C0"
@@ -565422,7 +567582,7 @@
 ]
 },
 "S:7864C0:+0x20": {
-"class": "rc_ptr_base",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "S:7864C0:+0x20"
@@ -566662,7 +568822,7 @@
 ]
 },
 "S:7A3D90:+0x1c": {
-"class": "rc_ptr_base",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "S:7A3D90:+0x1c"
@@ -568736,7 +570896,7 @@
 ]
 },
 "S:4AA440:+0x4c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:4AA440:+0x4c"
@@ -569408,10 +571568,17 @@
 ]
 },
 "S:5060B0:+0x44": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:5060B0:+0x44"
+]
+},
+"S:5060B0:+0x40": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:5060B0:+0x40"
 ]
 },
 "S:5060B0:+0x2c": {
@@ -569448,7 +571615,7 @@
 ]
 },
 "S:506EF0:+0x48": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:506EF0:+0x48"
@@ -569477,6 +571644,13 @@
 "class": "IsometricTileClass",
 "obs": [],
 "ents": []
+},
+"S:511850:+0x14": {
+"class": "CampaignClass",
+"obs": [],
+"ents": [
+"S:511850:+0x14"
+]
 },
 "S:51B350:+0x40": {
 "class": "IsometricTileClass",
@@ -570192,17 +572366,31 @@
 ]
 },
 "S:568E40:+0x60": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:568E40:+0x60"
 ]
 },
+"S:568E40:+0x5c": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:568E40:+0x5c"
+]
+},
 "S:569760:+0x60": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:569760:+0x60"
+]
+},
+"S:569760:+0x5c": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:569760:+0x5c"
 ]
 },
 "S:56AE40:+0x10": {
@@ -570318,49 +572506,56 @@
 ]
 },
 "S:570050:+0x4c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:570050:+0x4c"
 ]
 },
 "S:571490:+0x4c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:571490:+0x4c"
 ]
 },
+"S:571490:+0x50": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:571490:+0x50"
+]
+},
 "S:573540:+0x48": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:573540:+0x48"
 ]
 },
 "S:574000:+0x34": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:574000:+0x34"
 ]
 },
 "S:574C20:+0x34": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:574C20:+0x34"
 ]
 },
 "S:576BA0:+0x50": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:576BA0:+0x50"
 ]
 },
 "S:576BA0:+0x4c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:576BA0:+0x4c"
@@ -570436,17 +572631,38 @@
 ]
 },
 "S:585930:+0x40": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:585930:+0x40"
 ]
 },
+"S:585930:+0x3c": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:585930:+0x3c"
+]
+},
 "S:585930:+0x28": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:585930:+0x28"
+]
+},
+"S:585930:+0x2c": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:585930:+0x2c"
+]
+},
+"S:585930:+0x24": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:585930:+0x24"
 ]
 },
 "S:587180:+0x14": {
@@ -570455,14 +572671,21 @@
 "ents": []
 },
 "S:58C800:+0x40": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:58C800:+0x40"
 ]
 },
+"S:58C800:+0x3c": {
+"class": "VectorClass_Cell",
+"obs": [],
+"ents": [
+"S:58C800:+0x3c"
+]
+},
 "S:58D620:+0x9c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:58D620:+0x9c"
@@ -570488,14 +572711,14 @@
 "ents": []
 },
 "S:58E9B0:+0x1c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:58E9B0:+0x1c"
 ]
 },
 "S:594420:+0x28": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:594420:+0x28"
@@ -572069,7 +574292,7 @@
 ]
 },
 "S:64CDA0:+0x84": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:64CDA0:+0x84"
@@ -572507,7 +574730,7 @@
 ]
 },
 "S:688380:+0x2c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:688380:+0x2c"
@@ -573306,7 +575529,7 @@
 "ents": []
 },
 "S:74E1C0:+0x2c": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "S:74E1C0:+0x2c"
@@ -574956,12 +577179,12 @@
 ]
 },
 "N:751346": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:75259A": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:75259A"
@@ -575017,28 +577240,28 @@
 ]
 },
 "N:7B8D3A": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:7B8D3A"
 ]
 },
 "N:7B8D98": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:7B8D98"
 ]
 },
 "N:7B8DF6": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:7B8DF6"
 ]
 },
 "N:615601": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:615601"
@@ -575052,7 +577275,7 @@
 ]
 },
 "N:6C9A49": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:6C9A49"
@@ -575085,13 +577308,6 @@
 "obs": [],
 "ents": [
 "N:457ACC"
-]
-},
-"N:457BE4": {
-"class": "ProgressTimer",
-"obs": [],
-"ents": [
-"N:457BE4"
 ]
 },
 "N:459973": {
@@ -575142,7 +577358,7 @@
 ]
 },
 "N:45EB60": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:45EB60"
@@ -575218,7 +577434,7 @@
 "ents": []
 },
 "N:465495": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:465495"
@@ -575230,7 +577446,7 @@
 "ents": []
 },
 "N:616B2C": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:616B2C"
@@ -575291,7 +577507,7 @@
 "ents": []
 },
 "N:5AE329": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:5AE329"
@@ -575317,13 +577533,6 @@
 "obs": [],
 "ents": []
 },
-"N:486AD9": {
-"class": "ProgressTimer",
-"obs": [],
-"ents": [
-"N:486AD9"
-]
-},
 "N:6B9BAC": {
 "class": "TerrainTypeClass",
 "obs": [],
@@ -575344,7 +577553,7 @@
 ]
 },
 "N:6175AD": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:6175AD"
@@ -575409,7 +577618,7 @@
 "ents": []
 },
 "N:771807": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:771807"
@@ -575465,7 +577674,7 @@
 ]
 },
 "N:621F56": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:621F56"
@@ -575609,12 +577818,12 @@
 ]
 },
 "N:4381DC": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:43830C": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -575940,7 +578149,7 @@
 "ents": []
 },
 "N:4B6D8B": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:4B6D8B"
@@ -576041,7 +578250,7 @@
 "ents": []
 },
 "N:5C4527": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576262,7 +578471,7 @@
 ]
 },
 "N:5B7554": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576479,7 +578688,7 @@
 "ents": []
 },
 "N:599B36": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576506,7 +578715,7 @@
 "ents": []
 },
 "N:5B9EC6": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576612,7 +578821,7 @@
 ]
 },
 "N:55CD88": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:55CD88"
@@ -576629,19 +578838,19 @@
 "ents": []
 },
 "N:61CBC4": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:61CBC4"
 ]
 },
 "N:5E7892": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:5ED3A7": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576736,12 +578945,12 @@
 ]
 },
 "N:5B9B39": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:5B9C19": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -576751,7 +578960,7 @@
 "ents": []
 },
 "N:5E8603": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -577427,14 +579636,14 @@
 ]
 },
 "N:612DC8": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:612DC8"
 ]
 },
 "N:61DD45": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:61DD45"
@@ -577638,13 +579847,6 @@
 "obs": [],
 "ents": []
 },
-"N:732058": {
-"class": "ProgressTimer",
-"obs": [],
-"ents": [
-"N:732058"
-]
-},
 "N:738708": {
 "class": "int",
 "obs": [],
@@ -577802,12 +580004,12 @@
 "ents": []
 },
 "N:7B2FF9": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:7B358E": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -578182,7 +580384,7 @@
 ]
 },
 "N:408467": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:408467"
@@ -578227,7 +580429,7 @@
 "ents": []
 },
 "N:426906": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:426906"
@@ -578429,7 +580631,7 @@
 "ents": []
 },
 "N:52BB97": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -578670,7 +580872,7 @@
 ]
 },
 "N:53D386": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:53D386"
@@ -578724,7 +580926,7 @@
 ]
 },
 "N:5960AF": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -578817,7 +581019,7 @@
 "ents": []
 },
 "N:5E679F": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -578832,7 +581034,7 @@
 "ents": []
 },
 "N:5E7B53": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -578879,14 +581081,14 @@
 ]
 },
 "N:5FF44B": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:5FF44B"
 ]
 },
 "N:5FF5BE": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:5FF5BE"
@@ -579019,21 +581221,21 @@
 "ents": []
 },
 "N:61D7E2": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:61D7E2"
 ]
 },
 "N:61EE27": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:61EE27"
 ]
 },
 "N:621535": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:621535"
@@ -579067,14 +581269,14 @@
 "ents": []
 },
 "N:63040F": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:63040F"
 ]
 },
 "N:630473": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:630473"
@@ -579285,20 +581487,6 @@
 "obs": [],
 "ents": []
 },
-"N:731EC0": {
-"class": "ProgressTimer",
-"obs": [],
-"ents": [
-"N:731EC0"
-]
-},
-"N:731F80": {
-"class": "ProgressTimer",
-"obs": [],
-"ents": [
-"N:731F80"
-]
-},
 "N:732ACE": {
 "class": "ProgressTimer",
 "obs": [],
@@ -579340,7 +581528,7 @@
 "ents": []
 },
 "N:7473EC": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:7473EC"
@@ -579497,7 +581685,7 @@
 ]
 },
 "N:7855A8": {
-"class": "CarryoverClass",
+"class": "Anim@Voices@WorldDominationTour",
 "obs": [],
 "ents": [
 "N:7855A8"
@@ -579692,12 +581880,12 @@
 ]
 },
 "N:7DAA43": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
 "N:7DAA5E": {
-"class": "ILocomotion",
+"class": "rc_ptr",
 "obs": [],
 "ents": []
 },
@@ -579988,7 +582176,7 @@
 ]
 },
 "M:652DE0:this:0x125C": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "M:652DE0:this:0x125C"
@@ -580663,7 +582851,7 @@
 ]
 },
 "M:5652C0:this:0xD4": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:5652C0:this:0xD4"
@@ -580677,7 +582865,7 @@
 ]
 },
 "M:58C070:this:0x28": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:58C070:this:0x28"
@@ -580747,7 +582935,7 @@
 ]
 },
 "M:5AC290:this:0x28": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:5AC290:this:0x28"
@@ -580817,28 +583005,28 @@
 ]
 },
 "M:652C00:this:0x1224": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:652C00:this:0x1224"
 ]
 },
 "M:652C00:this:0x125C": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "M:652C00:this:0x125C"
 ]
 },
 "M:6587A0:this:0x1224": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:6587A0:this:0x1224"
 ]
 },
 "M:6587A0:this:0x125C": {
-"class": "?$VectorClass@VPoint2D@@",
+"class": "VectorClass_Point2D",
 "obs": [],
 "ents": [
 "M:6587A0:this:0x125C"
@@ -582378,14 +584566,14 @@
 ]
 },
 "M:4F7140:this:0x5720": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:4F7140:this:0x5720"
 ]
 },
 "M:4F7140:this:0x5738": {
-"class": "?$VectorClass@VCell@@",
+"class": "VectorClass_Cell",
 "obs": [],
 "ents": [
 "M:4F7140:this:0x5738"
@@ -582438,6 +584626,13 @@
 "obs": [],
 "ents": [
 "M:52AF50:this:0x4"
+]
+},
+"M:62DF20:this:0xBC": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"M:62DF20:this:0xBC"
 ]
 },
 "M:667A30:this:0x1158": {
@@ -582804,6 +584999,13 @@
 "M:667A30:this:0xF20"
 ]
 },
+"M:667A30:this:0xFF8": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:667A30:this:0xFF8"
+]
+},
 "M:6F4500:this:0x470": {
 "class": "?$VectorClass@PAVAbstractClass@@",
 "obs": [],
@@ -582860,6 +585062,20 @@
 "M:711AE0:this:0x748"
 ]
 },
+"M:711AE0:this:0x778": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:711AE0:this:0x778"
+]
+},
+"M:711AE0:this:0x794": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:711AE0:this:0x794"
+]
+},
 "M:765600:this:0x10": {
 "class": "?$rc_ptr@VHistory@WorldDominationTour@@",
 "obs": [],
@@ -582867,11 +585083,39 @@
 "M:765600:this:0x10"
 ]
 },
+"M:765600:this:0x8": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"M:765600:this:0x8"
+]
+},
+"M:76C6E0:this:0x458": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"M:76C6E0:this:0x458"
+]
+},
+"M:76C6E0:this:0x48": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"M:76C6E0:this:0x48"
+]
+},
 "M:76C6E0:this:0x488": {
 "class": "?$rc_ptr@VState@WorldDominationTour@@",
 "obs": [],
 "ents": [
 "M:76C6E0:this:0x488"
+]
+},
+"M:76C6E0:this:0x50": {
+"class": "rc_ptr",
+"obs": [],
+"ents": [
+"M:76C6E0:this:0x50"
 ]
 },
 "M:410410:this:0x10": {
@@ -598127,6 +600371,13 @@
 "S:42FE50:var_4"
 ]
 },
+"S:430250:var_158": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:430250:var_158"
+]
+},
 "S:430BA0:var_18c": {
 "class": "char",
 "obs": [],
@@ -598244,6 +600495,20 @@
 "obs": [],
 "ents": [
 "S:433770:var_4"
+]
+},
+"S:434CD0:var_10": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:434CD0:var_10"
+]
+},
+"S:434CD0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:434CD0:var_8"
 ]
 },
 "S:435820:var_40": {
@@ -598701,6 +600966,13 @@
 "S:4561F0:var_c"
 ]
 },
+"S:456980:var_68": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:456980:var_68"
+]
+},
 "S:4571E0:var_1": {
 "class": "char",
 "obs": [],
@@ -598904,6 +601176,13 @@
 "S:46D4A0:var_199"
 ]
 },
+"S:46DFD0:var_3f8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:46DFD0:var_3f8"
+]
+},
 "S:46DFD0:var_3f9": {
 "class": "char",
 "obs": [],
@@ -598916,6 +601195,13 @@
 "obs": [],
 "ents": [
 "S:46FC00:var_901"
+]
+},
+"S:470D30:var_14c": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:470D30:var_14c"
 ]
 },
 "S:472160:var_1d": {
@@ -599070,6 +601356,13 @@
 "obs": [],
 "ents": [
 "S:47AB10:var_105"
+]
+},
+"S:47BDB0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:47BDB0:var_8"
 ]
 },
 "S:47C3D0:var_2d": {
@@ -599364,6 +601657,41 @@
 "obs": [],
 "ents": [
 "S:4A4780:var_4"
+]
+},
+"S:4A6010:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4A6010:var_8"
+]
+},
+"S:4A61C0:var_40c": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4A61C0:var_40c"
+]
+},
+"S:4A6500:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4A6500:var_8"
+]
+},
+"S:4A65C0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4A65C0:var_8"
+]
+},
+"S:4A66D0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4A66D0:var_8"
 ]
 },
 "S:4A7340:var_3c": {
@@ -600050,6 +602378,13 @@
 "obs": [],
 "ents": [
 "S:4DC060:e3E"
+]
+},
+"S:4DC340:var_90": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:4DC340:var_90"
 ]
 },
 "S:4DC810:e12": {
@@ -601333,6 +603668,13 @@
 "S:53D330:var_20"
 ]
 },
+"S:53F0E0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:53F0E0:var_8"
+]
+},
 "S:53F430:var_4": {
 "class": "short",
 "obs": [],
@@ -601527,6 +603869,13 @@
 "obs": [],
 "ents": [
 "S:550260:var_3c"
+]
+},
+"S:5509F0:var_128": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:5509F0:var_128"
 ]
 },
 "S:5509F0:var_131": {
@@ -604623,6 +606972,13 @@
 "S:5C8E40:var_114"
 ]
 },
+"S:5C9B10:var_180": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:5C9B10:var_180"
+]
+},
 "S:5CA800:var_b": {
 "class": "char",
 "obs": [],
@@ -605421,6 +607777,13 @@
 "S:62C6E0:var_122"
 ]
 },
+"S:62CEC0:var_24": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:62CEC0:var_24"
+]
+},
 "S:62D710:var_4": {
 "class": "short",
 "obs": [],
@@ -605489,6 +607852,13 @@
 "obs": [],
 "ents": [
 "S:631B20:var_1"
+]
+},
+"S:635C10:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:635C10:var_8"
 ]
 },
 "S:636120:var_d": {
@@ -605624,6 +607994,27 @@
 "S:63BE60:var_164"
 ]
 },
+"S:63CF10:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:63CF10:var_8"
+]
+},
+"S:63CFC0:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:63CFC0:var_8"
+]
+},
+"S:63D070:var_8": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:63D070:var_8"
+]
+},
 "S:63D0F0:var_4": {
 "class": "char",
 "obs": [],
@@ -605664,6 +608055,13 @@
 "obs": [],
 "ents": [
 "S:6403A0:var_4"
+]
+},
+"S:641140:var_7c": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:641140:var_7c"
 ]
 },
 "S:641140:var_99": {
@@ -605727,6 +608125,13 @@
 "obs": [],
 "ents": [
 "S:642130:var_44"
+]
+},
+"S:643400:var_48": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:643400:var_48"
 ]
 },
 "S:643670:var_2": {
@@ -606765,6 +609170,13 @@
 "S:6A8B30:var_85"
 ]
 },
+"S:6A9540:var_470": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:6A9540:var_470"
+]
+},
 "S:6A9540:var_478": {
 "class": "char",
 "obs": [],
@@ -606807,6 +609219,13 @@
 "S:6AAD00:var_8f"
 ]
 },
+"S:6AAD00:var_94": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:6AAD00:var_94"
+]
+},
 "S:6AAD00:var_99": {
 "class": "char",
 "obs": [],
@@ -606819,6 +609238,13 @@
 "obs": [],
 "ents": [
 "S:6ABD30:var_4"
+]
+},
+"S:6AC480:var_20": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:6AC480:var_20"
 ]
 },
 "S:6ACD60:var_1": {
@@ -607892,6 +610318,20 @@
 "S:704E40:var_74"
 ]
 },
+"S:704E40:var_90": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:704E40:var_90"
+]
+},
+"S:705270:eCC": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:705270:eCC"
+]
+},
 "S:705860:var_60": {
 "class": "char",
 "obs": [],
@@ -608002,6 +610442,13 @@
 "obs": [],
 "ents": [
 "S:70CD10:var_8"
+]
+},
+"S:70F1D0:var_c4": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:70F1D0:var_c4"
 ]
 },
 "S:70F8F0:var_18": {
@@ -608170,6 +610617,13 @@
 "obs": [],
 "ents": [
 "S:72A090:var_4"
+]
+},
+"S:72A4A0:var_18": {
+"class": "short",
+"obs": [],
+"ents": [
+"S:72A4A0:var_18"
 ]
 },
 "S:72EC70:var_11": {
@@ -619868,6 +622322,20 @@
 "G:87D628"
 ]
 },
+"N:48EC00": {
+"class": "BlitPlainXlat",
+"obs": [],
+"ents": [
+"N:48EC00"
+]
+},
+"N:48EC26": {
+"class": "BlitTransXlat",
+"obs": [],
+"ents": [
+"N:48EC26"
+]
+},
 "N:48EC4A": {
 "class": "?$BlitTransZRemapXlat@E",
 "obs": [],
@@ -619903,6 +622371,13 @@
 "N:48ECF5"
 ]
 },
+"N:48ED22": {
+"class": "RLEBlitTransXlat",
+"obs": [],
+"ents": [
+"N:48ED22"
+]
+},
 "N:48ED49": {
 "class": "?$RLEBlitTransZRemapXlat@E",
 "obs": [],
@@ -619936,6 +622411,13 @@
 "obs": [],
 "ents": [
 "N:48EE00"
+]
+},
+"N:48EE30": {
+"class": "RLEBlitTransXlatZRead",
+"obs": [],
+"ents": [
+"N:48EE30"
 ]
 },
 "N:48EE57": {
@@ -620015,11 +622497,46 @@
 "N:48F01C"
 ]
 },
+"N:48F054": {
+"class": "BlitPlainXlat",
+"obs": [],
+"ents": [
+"N:48F054"
+]
+},
+"N:48F07A": {
+"class": "BlitTransXlat",
+"obs": [],
+"ents": [
+"N:48F07A"
+]
+},
 "N:48F09E": {
 "class": "?$BlitTransZRemapXlat@G",
 "obs": [],
 "ents": [
 "N:48F09E"
+]
+},
+"N:48F0CB": {
+"class": "BlitTransDarken",
+"obs": [],
+"ents": [
+"N:48F0CB"
+]
+},
+"N:48F0F1": {
+"class": "BlitTransLucent75",
+"obs": [],
+"ents": [
+"N:48F0F1"
+]
+},
+"N:48F120": {
+"class": "BlitTransLucent50",
+"obs": [],
+"ents": [
+"N:48F120"
 ]
 },
 "N:58E5DE": {
@@ -620057,11 +622574,25 @@
 "N:6267DA"
 ]
 },
+"N:62680D": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:62680D"
+]
+},
 "N:6269CB": {
 "class": "?$DynamicVectorClass@PAD",
 "obs": [],
 "ents": [
 "N:6269CB"
+]
+},
+"N:626A01": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:626A01"
 ]
 },
 "N:626AE8": {
@@ -620071,11 +622602,25 @@
 "N:626AE8"
 ]
 },
+"N:626B1F": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:626B1F"
+]
+},
 "N:626C8C": {
 "class": "?$DynamicVectorClass@PAD",
 "obs": [],
 "ents": [
 "N:626C8C"
+]
+},
+"N:626CC8": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:626CC8"
 ]
 },
 "N:626DCF": {
@@ -620092,11 +622637,109 @@
 "N:627054"
 ]
 },
+"N:627086": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:627086"
+]
+},
 "N:627184": {
 "class": "?$DynamicVectorClass@PAD",
 "obs": [],
 "ents": [
 "N:627184"
+]
+},
+"N:6271B8": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:6271B8"
+]
+},
+"N:627218": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:627218"
+]
+},
+"N:627720": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"N:627720"
+]
+},
+"N:732619": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:732619"
+]
+},
+"N:7326AE": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:7326AE"
+]
+},
+"N:7327FB": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:7327FB"
+]
+},
+"N:73288F": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:73288F"
+]
+},
+"N:732998": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:732998"
+]
+},
+"N:7329FC": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:7329FC"
+]
+},
+"N:73300E": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:73300E"
+]
+},
+"N:7330A5": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:7330A5"
+]
+},
+"N:733284": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:733284"
+]
+},
+"N:733CDE": {
+"class": "DynamicVector",
+"obs": [],
+"ents": [
+"N:733CDE"
 ]
 },
 "N:773F5C": {
@@ -626863,9 +629506,7 @@
 "M:477F40:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:477F40:this:0x4"
-]
+"ents": []
 },
 "M:478000:this:0x4": {
 "class": "IsometricTileClass",
@@ -628076,9 +630717,7 @@
 "M:58AE60:this:0x4": {
 "class": "IsometricTileClass",
 "obs": [],
-"ents": [
-"M:58AE60:this:0x4"
-]
+"ents": []
 },
 "M:58F0C0:this:0x4": {
 "class": "IsometricTileClass",

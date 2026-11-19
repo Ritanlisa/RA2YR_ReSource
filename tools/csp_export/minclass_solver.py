@@ -314,10 +314,37 @@ def build_universe(use_evidence=True, prune_dead=False):
             if _nm not in db and _nm in _full_db:
                 db[_nm] = _full_db[_nm]
                 _restored += 1
+        # 2026-11-19：mangled 模板名与规范实例名是同一类的两个原子
+        # （?$VectorClass@VCell@@ vs VectorClass_Cell）——C15/OT 用 mangled 拼写、
+        # C1/C2 用规范拼写，同一类在两者间永不交集（19 条伪矛盾）。规范实例名
+        # 已存在时只记别名，不再新增原子（共 71 对）。
+        _malias_bin = []
+
+        def _naive_canon(_m):
+            if not str(_m).startswith("?$"):
+                return None
+            _parts = [x for x in str(_m)[2:].split("@") if x]
+            if len(_parts) < 2:
+                return None
+            _args = []
+            for _a in _parts[1:]:
+                if _a[:1] in ("V", "U") and len(_a) > 1:
+                    _args.append(_a[1:])
+                elif _a[:1] == "P" and len(_a) > 1:
+                    _args.append("ptr_" + _a[1:])
+                else:
+                    _args.append(_a)
+            return _parts[0] + "_" + "_".join(_args)
+
         for _nm in (_bin_uni.get("add_new") or []):
-            if _nm not in db:
-                db[_nm] = _full_db.get(_nm) or {}
-                _added += 1
+            if _nm in db:
+                continue
+            _canon = _naive_canon(_nm)
+            if _canon and _canon in _full_db:
+                _malias_bin.append((_nm, _canon))
+                continue
+            db[_nm] = _full_db.get(_nm) or {}
+            _added += 1
         _ver = [c for c in (_bin_uni.get("verified_alive") or []) if c in db]
         _front = [c for c in ((_bin_uni.get("add_new") or []) + (_bin_uni.get("restore_from_dead") or []))
                   if c in db]
@@ -359,6 +386,9 @@ def build_universe(use_evidence=True, prune_dead=False):
                 if v.get(cand) in idx and k not in alias:
                     alias[k] = v[cand]
                     break
+    for _mn, _mc in _malias_bin:
+        if _mc in idx:
+            alias[_mn] = _mc      # 实例级（覆盖 rtti→基类 的粗映射）
 
     def resolve(name):
         if not isinstance(name, str):
@@ -620,6 +650,7 @@ def build_universe(use_evidence=True, prune_dead=False):
 
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
+        "alias": alias,
         "classmask": _CLASSMASK,
         "members": members, "has_layout": has_layout, "size": size,
         "eff_size": eff_size, "n_evidence": n_ev,
@@ -3090,6 +3121,11 @@ def main():
             tok = _canon_prim_ty(tok)
             _e = _exact_ix2.get(tok)
             if _e is None:
+                _al = (U.get("alias") or {}).get(tok)
+                if _al is not None:
+                    _ia = (U.get("idx") or {}).get(_al)
+                    if _ia is not None:
+                        return _ia
                 return _name_ix2.get(tok.lower())
             _w = _name_ix2.get(tok.lower())
             if _w is None or _e == _w:
@@ -7280,6 +7316,63 @@ def main():
     _edges_fix = []
     _edges_pre_incr = []
     _dom_fix = {}
+
+    # ---------------- 2026-11-19 IV+SG 宽度下界合并 ----------------
+    # 指令语义宽度族（IV/SG）把"观察到的访问宽度"当成等式，但窄访问是宽变量的
+    # 合法视图（word 读 int 成员的低半）。两条宽度证据冲突时保留**最宽**的族：
+    # 最宽访问只给出下界，窄访问不构成反证。37 条 IV+SG 冲突即此。
+    _UNAMES = U.get("names") or []
+
+    def _bits_to_names(mask):
+        out = []
+        m = mask
+        while m:
+            b = m & -m
+            i = b.bit_length() - 1
+            if 0 <= i < len(_UNAMES):
+                out.append(_UNAMES[i])
+            m ^= b
+        return out
+
+    def _atom_width(a):
+        t = str(a).strip()
+        m = re.match(r"^(.*?)\[(\d+)\]$", t)
+        if m:
+            base, n = m.group(1).strip(), int(m.group(2))
+            wb = _atom_width(base)
+            return (wb or 1) * n
+        low = (t.replace("const ", "").replace("unsigned ", "")
+                .replace("signed ", "").strip().lower())
+        if low in ("int", "float", "long", "dword", "uint", "bool32",
+                   "int32_t", "uint32_t", "long32"):
+            return 4
+        if low in ("short", "word", "int16_t", "uint16_t"):
+            return 2
+        if low in ("char", "byte", "int8_t", "uint8_t", "bool"):
+            return 1
+        if low in ("__int64", "double", "int64_t", "uint64_t", "long long"):
+            return 8
+        ix = _tok_ix(t)
+        if ix is not None and ix < _N_CLS_ONLY:
+            return 4          # class atom == pointer-to-class storage
+        return None
+
+    _ivSG = 0
+    _iv = fam.get("IV")
+    _sg = fam.get("SG")
+    if _iv and _sg:
+        for _e in list(set(_iv.keys()) & set(_sg.keys())):
+            _wi = max((_atom_width(a) or 0) for a in _bits_to_names(_iv[_e])) if _iv.get(_e) else 0
+            _ws = max((_atom_width(a) or 0) for a in _bits_to_names(_sg[_e])) if _sg.get(_e) else 0
+            if _wi > _ws:
+                _sg.pop(_e, None)
+                _ivSG += 1
+            elif _ws > _wi:
+                _iv.pop(_e, None)
+                _ivSG += 1
+    if _ivSG:
+        print("[width] IV/SG narrower-side dropped (lower-bound semantics): %d" % _ivSG,
+              flush=True)
 
     # ---------------- 2026-11-19 轴分离（用户裁决：只保留健全约束） ----------------
     # pointee-axis 族（约束"值所指向对象的类"）与 value-type 族（约束"值本身的类型"）

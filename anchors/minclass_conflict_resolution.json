@@ -1,67 +1,5 @@
 [
  {
-  "cluster": "R:42F620:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C15",
-   "C2",
-   "OT"
-  ],
-  "family_sizes": {
-   "C1": 1774,
-   "C2": 1140,
-   "C15": 2,
-   "OT": 2
-  },
-  "ents": [
-   "T:42F620"
-  ],
-  "obs": [
-   "4:4",
-   "8:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C15": [
-    "?$DynamicVectorClass@VCell@@",
-    "?$VectorClass@VCell@@"
-   ],
-   "OT": [
-    "?$DynamicVectorClass@VCell@@",
-    "?$VectorClass@VCell@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "R:472B40:ecx",
   "status": "inconsistent",
   "families": [
@@ -71,7 +9,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1142,
    "C15": 2,
    "OT": 2
@@ -133,7 +71,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1141,
    "C15": 2,
    "OT": 2
@@ -195,7 +133,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1140,
    "C15": 2,
    "OT": 2
@@ -257,7 +195,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1147,
    "C15": 2,
    "OT": 2
@@ -319,7 +257,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1778,
+   "C1": 1775,
    "C2": 1140,
    "C15": 3,
    "OT": 5
@@ -385,7 +323,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1140,
    "C15": 2,
    "OT": 2
@@ -447,7 +385,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1255,
    "C15": 2,
    "OT": 2
@@ -513,8 +451,8 @@
   ],
   "family_sizes": {
    "C1": 1450,
-   "C2": 1217,
-   "C3": 2112,
+   "C2": 1214,
+   "C3": 2109,
    "C15": 2,
    "OT": 3,
    "SS": 7,
@@ -619,7 +557,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1778,
+   "C1": 1775,
    "C2": 1173,
    "C15": 3,
    "OT": 5
@@ -749,7 +687,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1173,
    "C15": 3,
    "OT": 5
@@ -920,7 +858,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1701,
+   "C1": 1698,
    "C2": 1149,
    "C15": 2,
    "OT": 3
@@ -974,67 +912,6 @@
   "exact": {}
  },
  {
-  "cluster": "R:42F470:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C15",
-   "C2",
-   "OT"
-  ],
-  "family_sizes": {
-   "C1": 1950,
-   "C2": 1140,
-   "C15": 2,
-   "OT": 2
-  },
-  "ents": [
-   "T:42F470"
-  ],
-  "obs": [
-   "4:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C15": [
-    "?$DynamicVectorClass@VCell@@",
-    "?$VectorClass@VCell@@"
-   ],
-   "OT": [
-    "?$DynamicVectorClass@VCell@@",
-    "?$VectorClass@VCell@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "R:472AD0:ecx",
   "status": "inconsistent",
   "families": [
@@ -1044,7 +921,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1142,
    "C15": 2,
    "OT": 2
@@ -1105,7 +982,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1140,
    "C15": 2,
    "OT": 2
@@ -1166,7 +1043,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1147,
    "C15": 2,
    "OT": 2
@@ -1227,7 +1104,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1140,
    "C15": 2,
    "OT": 2
@@ -1288,7 +1165,7 @@
    "OT"
   ],
   "family_sizes": {
-   "C1": 1950,
+   "C1": 1947,
    "C2": 1255,
    "C15": 2,
    "OT": 2
@@ -1335,6 +1212,222 @@
    "OT": [
     "?$DynamicVectorClass@VWaypointClass@@",
     "?$VectorClass@VWaypointClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:7656D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C15",
+   "MW",
+   "OT"
+  ],
+  "family_sizes": {
+   "C1": 1947,
+   "C15": 2,
+   "OT": 2,
+   "MW": 1
+  },
+  "ents": [
+   "T:7656D0"
+  ],
+  "obs": [
+   "4:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C15": [
+    "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+    "DynamicVector"
+   ],
+   "OT": [
+    "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+    "DynamicVector"
+   ],
+   "MW": [
+    "rc_ptr"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:766850:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C15",
+   "MW",
+   "OT"
+  ],
+  "family_sizes": {
+   "C1": 1947,
+   "C15": 2,
+   "OT": 2,
+   "MW": 1
+  },
+  "ents": [
+   "T:766850"
+  ],
+  "obs": [
+   "4:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C15": [
+    "DynamicVector",
+    "VectorClass"
+   ],
+   "OT": [
+    "DynamicVector",
+    "VectorClass"
+   ],
+   "MW": [
+    "rc_ptr"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:769CA0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C15",
+   "C2",
+   "MW",
+   "OT"
+  ],
+  "family_sizes": {
+   "C1": 1947,
+   "C2": 1140,
+   "C15": 2,
+   "OT": 2,
+   "MW": 1
+  },
+  "ents": [
+   "T:769CA0"
+  ],
+  "obs": [
+   "4:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C2": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "C15": [
+    "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+    "DynamicVector"
+   ],
+   "OT": [
+    "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+    "DynamicVector"
+   ],
+   "MW": [
+    "rc_ptr"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:76B760:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C15",
+   "MW",
+   "OT"
+  ],
+  "family_sizes": {
+   "C1": 1947,
+   "C15": 2,
+   "OT": 2,
+   "MW": 1
+  },
+  "ents": [
+   "T:76B760"
+  ],
+  "obs": [
+   "4:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C15": [
+    "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+    "VectorClass"
+   ],
+   "OT": [
+    "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+    "VectorClass"
+   ],
+   "MW": [
+    "rc_ptr"
    ]
   },
   "exact": {}
@@ -1432,7 +1525,7 @@
   "family_sizes": {
    "C1": 784,
    "C2": 1148,
-   "C3": 1643,
+   "C3": 1640,
    "SS": 3
   },
   "ents": [
@@ -1577,7 +1670,7 @@
   "family_sizes": {
    "C1": 937,
    "C2": 1142,
-   "C3": 1643,
+   "C3": 1640,
    "SS": 9,
    "C2X": 2
   },
@@ -1659,7 +1752,7 @@
    "C2"
   ],
   "family_sizes": {
-   "C1": 2228,
+   "C1": 2225,
    "C2": 1141,
    "C10": 1,
    "BM": 1
@@ -1705,237 +1798,6 @@
    ],
    "BM": [
     "String"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:512DC0:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1140,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:512DC0",
-   "RET:512DC0"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVInfantryTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:513190:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1140,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:513190",
-   "RET:513190"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVUnitTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:525250:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1175,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:525250",
-   "RET:525250"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
-    "?$DynamicVectorClass@PAUControlNode@@",
-    "?$DynamicVectorClass@PAUGlobalPacketType@@",
-    "?$DynamicVectorClass@PAUIConnectionPoint@@",
-    "?$DynamicVectorClass@PAUKamikazeControl@@",
-    "?$DynamicVectorClass@PAUNodeNameType@@",
-    "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
-    "?$DynamicVectorClass@PAUThemeControl@@",
-    "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
-    "?$DynamicVectorClass@PAVAbstractClass@@",
-    "?$DynamicVectorClass@PAVCellClass@@",
-    "?$DynamicVectorClass@PAVInfantryClass@@"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVAnimTypeClass@@"
    ]
   },
   "exact": {}
@@ -2093,83 +1955,6 @@
   "exact": {}
  },
  {
-  "cluster": "R:5AC900:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1175,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:5AC900",
-   "RET:5AC900"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
-    "?$DynamicVectorClass@PAUControlNode@@",
-    "?$DynamicVectorClass@PAUGlobalPacketType@@",
-    "?$DynamicVectorClass@PAUIConnectionPoint@@",
-    "?$DynamicVectorClass@PAUKamikazeControl@@",
-    "?$DynamicVectorClass@PAUNodeNameType@@",
-    "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
-    "?$DynamicVectorClass@PAUThemeControl@@",
-    "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
-    "?$DynamicVectorClass@PAVAbstractClass@@",
-    "?$DynamicVectorClass@PAVCellClass@@",
-    "?$DynamicVectorClass@PAVInfantryClass@@"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVBuildingTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "R:5981F0:ecx",
   "status": "inconsistent",
   "families": [
@@ -2294,7 +2079,7 @@
   "family_sizes": {
    "C1": 819,
    "C2": 1140,
-   "C3": 1847,
+   "C3": 1844,
    "SS": 2,
    "C2X": 6,
    "MW": 7
@@ -2548,314 +2333,6 @@
   "exact": {}
  },
  {
-  "cluster": "R:645A70:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1141,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:645A70",
-   "RET:645A70"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@VRGBClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:67AC70:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1150,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:67AC70",
-   "RET:67AC70"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "?$TypeList@PBVAircraftTypeClass@@",
-    "?$TypeList@PBVAnimTypeClass@@",
-    "?$TypeList@PBVBuildingTypeClass@@",
-    "?$TypeList@PBVInfantryTypeClass@@",
-    "?$TypeList@PBVParticleSystemTypeClass@@",
-    "?$TypeList@PBVTerrainTypeClass@@",
-    "?$TypeList@PBVUnitTypeClass@@",
-    "?$TypeList@PBVVoxelAnimTypeClass@@",
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVVoxelAnimTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:67AFF0:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1140,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:67AFF0",
-   "RET:67AFF0"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVSmudgeTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:513560:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1142,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:513560",
-   "RET:513560"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PBVAircraftTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "RET:525430",
   "status": "inconsistent",
   "families": [
@@ -2946,83 +2423,6 @@
   "exact": {}
  },
  {
-  "cluster": "R:7342D0:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1150,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:7342D0",
-   "RET:7342D0"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "?$TypeList@PBVAircraftTypeClass@@",
-    "?$TypeList@PBVAnimTypeClass@@",
-    "?$TypeList@PBVBuildingTypeClass@@",
-    "?$TypeList@PBVInfantryTypeClass@@",
-    "?$TypeList@PBVParticleSystemTypeClass@@",
-    "?$TypeList@PBVTerrainTypeClass@@",
-    "?$TypeList@PBVUnitTypeClass@@",
-    "?$TypeList@PBVVoxelAnimTypeClass@@",
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PAVTechnoClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "R:75A120:ecx",
   "status": "inconsistent",
   "families": [
@@ -3093,7 +2493,7 @@
   "family_sizes": {
    "C1": 854,
    "C2": 1140,
-   "C3": 1711,
+   "C3": 1708,
    "SS": 2,
    "C2X": 5
   },
@@ -3179,7 +2579,7 @@
   "family_sizes": {
    "C1": 854,
    "C2": 1142,
-   "C3": 1711,
+   "C3": 1708,
    "SS": 2,
    "C2X": 5
   },
@@ -3265,7 +2665,7 @@
   "family_sizes": {
    "C1": 854,
    "C2": 1140,
-   "C3": 1713,
+   "C3": 1710,
    "SS": 4,
    "C2X": 7
   },
@@ -3468,338 +2868,6 @@
   "exact": {}
  },
  {
-  "cluster": "R:513860:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW",
-   "SS"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1142,
-   "C6": 618,
-   "SS": 6,
-   "MW": 1
-  },
-  "ents": [
-   "T:513860",
-   "RET:513860"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "SS": [
-    "CampaignClass",
-    "DynamicVectorClass_uint",
-    "GameModeOptionsClass",
-    "TacticalClass",
-    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
-    "VectorClass_ptr_ConvertClass"
-   ],
-   "MW": [
-    "?$VectorClass@PBVInfantryTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:67C280:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C6",
-   "MW",
-   "SS"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C6": 618,
-   "SS": 6,
-   "MW": 1
-  },
-  "ents": [
-   "T:67C280",
-   "RET:67C280"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "SS": [
-    "CampaignClass",
-    "DynamicVectorClass_uint",
-    "GameModeOptionsClass",
-    "TacticalClass",
-    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
-    "VectorClass_ptr_ConvertClass"
-   ],
-   "MW": [
-    "?$VectorClass@PBVSmudgeTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:717D20:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW",
-   "SS"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1175,
-   "C6": 618,
-   "SS": 6,
-   "MW": 1
-  },
-  "ents": [
-   "T:717D20",
-   "RET:717D20"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
-    "?$DynamicVectorClass@PAUControlNode@@",
-    "?$DynamicVectorClass@PAUGlobalPacketType@@",
-    "?$DynamicVectorClass@PAUIConnectionPoint@@",
-    "?$DynamicVectorClass@PAUKamikazeControl@@",
-    "?$DynamicVectorClass@PAUNodeNameType@@",
-    "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
-    "?$DynamicVectorClass@PAUThemeControl@@",
-    "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
-    "?$DynamicVectorClass@PAVAbstractClass@@",
-    "?$DynamicVectorClass@PAVCellClass@@",
-    "?$DynamicVectorClass@PAVInfantryClass@@"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "SS": [
-    "CampaignClass",
-    "DynamicVectorClass_uint",
-    "GameModeOptionsClass",
-    "TacticalClass",
-    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
-    "VectorClass_ptr_ConvertClass"
-   ],
-   "MW": [
-    "?$TypeList@PBVParticleSystemTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:75E6B0:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW",
-   "SS"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1140,
-   "C6": 618,
-   "SS": 6,
-   "MW": 1
-  },
-  "ents": [
-   "T:75E6B0",
-   "RET:75E6B0"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "SS": [
-    "CampaignClass",
-    "DynamicVectorClass_uint",
-    "GameModeOptionsClass",
-    "TacticalClass",
-    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
-    "VectorClass_ptr_ConvertClass"
-   ],
-   "MW": [
-    "?$VectorClass@PBVVoxelAnimTypeClass@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "R:7B5E30:ecx",
   "status": "inconsistent",
   "families": [
@@ -3808,7 +2876,7 @@
    "C2"
   ],
   "family_sizes": {
-   "C1": 2228,
+   "C1": 2225,
    "C2": 1141,
    "BM": 0
   },
@@ -4028,6 +3096,32 @@
   "exact": {}
  },
  {
+  "cluster": "GS:2:1:0x765840",
+  "status": "inconsistent",
+  "families": [
+   "GX",
+   "YVP"
+  ],
+  "family_sizes": {
+   "GX": 2,
+   "YVP": 1
+  },
+  "ents": [
+   "GS:2:1:0x765840"
+  ],
+  "obs": [],
+  "family_domains": {
+   "GX": [
+    "char",
+    "int"
+   ],
+   "YVP": [
+    "rc_ptr"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "GS:124:0:0x468670",
   "status": "inconsistent",
   "families": [
@@ -4099,31 +3193,6 @@
    ],
    "YVP": [
     "Sequence"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:422CA0:var_fc",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:422CA0:var_fc"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "int"
-   ],
-   "SG": [
-    "short"
    ]
   },
   "exact": {}
@@ -4224,208 +3293,6 @@
   "exact": {}
  },
  {
-  "cluster": "S:4666E0:var_198",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4666E0:var_198"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:552D60:var_1258",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:552D60:var_1258"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:43DA80:var_114",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:43DA80:var_114"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4D85D0:var_30",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4D85D0:var_30"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:6D5030:var_2c",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:6D5030:var_2c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "R:49ECD0:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C2",
-   "C6",
-   "MW"
-  ],
-  "family_sizes": {
-   "C1": 1300,
-   "C2": 1141,
-   "C6": 618,
-   "MW": 1
-  },
-  "ents": [
-   "T:49ECD0",
-   "RET:49ECD0"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "8:4",
-   "12:1",
-   "13:1",
-   "16:4",
-   "20:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CampaignScoreClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-   ],
-   "C2": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C6": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "SelectTeamCommandClass",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H"
-   ],
-   "MW": [
-    "?$VectorClass@PAV?$DynamicVectorClass@PAD@@"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "S:4CC100:var_4",
   "status": "inconsistent",
   "families": [
@@ -4461,31 +3328,6 @@
   "family_domains": {
    "C10": [
     "TrajectoryHelper"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:635830:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:635830:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
    ]
   },
   "exact": {}
@@ -4563,7 +3405,7 @@
    "C2"
   ],
   "family_sizes": {
-   "C1": 1774,
+   "C1": 1771,
    "C2": 1173,
    "C11": 1,
    "BM": 0
@@ -4855,6 +3697,47 @@
   "exact": {}
  },
  {
+  "cluster": "M:4F54A0:this:0x254",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT",
+   "SA"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1,
+   "SA": 230
+  },
+  "ents": [
+   "M:4F54A0:this:0x254"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "DynamicVector"
+   ],
+   "MR": [
+    "SuperClass"
+   ],
+   "SA": [
+    "?$CComObject@VCChatEventSink@@@ATL",
+    "?$CComObject@VCDownloadEventSink@@@ATL",
+    "?$CComObject@VCNetUtilEventSink@@@ATL",
+    "?$TClassFactory@VAITriggerTypeClass@@",
+    "?$TClassFactory@VAircraftClass@@",
+    "?$TClassFactory@VAircraftTypeClass@@",
+    "?$TClassFactory@VAirstrikeClass@@",
+    "?$TClassFactory@VAlphaShapeClass@@",
+    "?$TClassFactory@VAnimClass@@",
+    "?$TClassFactory@VAnimTypeClass@@",
+    "?$TClassFactory@VBombClass@@",
+    "?$TClassFactory@VBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:665650:this:0xAA4",
   "status": "inconsistent",
   "families": [
@@ -4905,6 +3788,31 @@
   "exact": {}
  },
  {
+  "cluster": "M:76C290:this:0x464",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:76C290:this:0x464"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "rc_ptr"
+   ],
+   "MR": [
+    "rc_ptr_base"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:76C290:this:0x494",
   "status": "inconsistent",
   "families": [
@@ -4925,6 +3833,31 @@
    ],
    "MR": [
     "VectorClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:76C6E0:this:0x464",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:76C6E0:this:0x464"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "rc_ptr"
+   ],
+   "MR": [
+    "rc_ptr_base"
    ]
   },
   "exact": {}
@@ -5133,7 +4066,7 @@
   ],
   "family_sizes": {
    "C1": 789,
-   "C3": 1628,
+   "C3": 1625,
    "SS": 1,
    "C2X": 8
   },
@@ -5344,7 +4277,7 @@
    "YVP"
   ],
   "family_sizes": {
-   "C1": 2228,
+   "C1": 2225,
    "PF2X": 28,
    "YVP": 1
   },
@@ -6322,6 +5255,42 @@
   "exact": {}
  },
  {
+  "cluster": "N:457BE4",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 37,
+   "NI": 1
+  },
+  "ents": [
+   "N:457BE4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioEventHandle",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector"
+   ],
+   "NI": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "N:49DEFC",
   "status": "inconsistent",
   "families": [
@@ -6353,6 +5322,42 @@
    ],
    "NI": [
     "?$DynamicVectorClass@PAD"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "N:486AD9",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 37,
+   "NI": 1
+  },
+  "ents": [
+   "N:486AD9"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioEventHandle",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector"
+   ],
+   "NI": [
+    "DynamicVector"
    ]
   },
   "exact": {}
@@ -6394,6 +5399,114 @@
   "exact": {}
  },
  {
+  "cluster": "N:732058",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 37,
+   "NI": 1
+  },
+  "ents": [
+   "N:732058"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioEventHandle",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector"
+   ],
+   "NI": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "N:731EC0",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 37,
+   "NI": 1
+  },
+  "ents": [
+   "N:731EC0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioEventHandle",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector"
+   ],
+   "NI": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "N:731F80",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 37,
+   "NI": 1
+  },
+  "ents": [
+   "N:731F80"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioEventHandle",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector"
+   ],
+   "NI": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:5D0070:this:0x24",
   "status": "inconsistent",
   "families": [
@@ -6410,7 +5523,7 @@
   "obs": [],
   "family_domains": {
    "MT": [
-    "?$VectorClass@VPoint2D@@"
+    "VectorClass_Point2D"
    ],
    "MR": [
     "RateTimer",
@@ -6949,756 +6062,6 @@
    ],
    "FP": [
     "int"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:430250:var_158",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:430250:var_158"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:434CD0:var_10",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:434CD0:var_10"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:434CD0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:434CD0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:456980:var_68",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:456980:var_68"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:46DFD0:var_3f8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:46DFD0:var_3f8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:470D30:var_14c",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:470D30:var_14c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:47BDB0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:47BDB0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4A6010:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4A6010:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4A61C0:var_40c",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4A61C0:var_40c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4A6500:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4A6500:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4A65C0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4A65C0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4A66D0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4A66D0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4DC340:var_90",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:4DC340:var_90"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:53F0E0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:53F0E0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:5509F0:var_128",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:5509F0:var_128"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:5C9B10:var_180",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:5C9B10:var_180"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:62CEC0:var_24",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:62CEC0:var_24"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:635C10:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:635C10:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:63CF10:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:63CF10:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:63CFC0:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:63CFC0:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:63D070:var_8",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:63D070:var_8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:641140:var_7c",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:641140:var_7c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:643400:var_48",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:643400:var_48"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:6A9540:var_470",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:6A9540:var_470"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:6AAD00:var_94",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:6AAD00:var_94"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:6AC480:var_20",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:6AC480:var_20"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:704E40:var_90",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:704E40:var_90"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:705270:eCC",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:705270:eCC"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:70F1D0:var_c4",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:70F1D0:var_c4"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:72A4A0:var_18",
-  "status": "inconsistent",
-  "families": [
-   "IV",
-   "SG"
-  ],
-  "family_sizes": {
-   "IV": 1,
-   "SG": 1
-  },
-  "ents": [
-   "S:72A4A0:var_18"
-  ],
-  "obs": [],
-  "family_domains": {
-   "IV": [
-    "char"
-   ],
-   "SG": [
-    "short"
    ]
   },
   "exact": {}

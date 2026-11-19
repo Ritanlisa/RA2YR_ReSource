@@ -156,12 +156,12 @@
   "K": 866,
   "K_upper": 866,
   "lower_bound": 866,
-  "constrained_clusters": 73877,
-  "free_clusters": 124832,
+  "constrained_clusters": 74210,
+  "free_clusters": 124534,
   "conflicts": 0,
   "c1_gaps": 0,
-  "universe": 2234,
-  "entities": 205377
+  "universe": 2231,
+  "entities": 205412
  },
  "family_table": [],
  "conflicts": [],
@@ -1487,11 +1487,11 @@
     "func": "0x0042F670",
     "export": [
      "?$DynamicVectorClass@VCell@@",
-     "?$VectorClass@VCell@@"
+     "VectorClass_Cell"
     ],
     "committed": [
-     "?$VectorClass@VCell@@",
-     "VectorClass"
+     "VectorClass",
+     "VectorClass_Cell"
     ]
    },
    {
@@ -2617,12 +2617,12 @@
    {
     "func": "0x006AC8D0",
     "export": [
-     "?$VectorClass@VPoint2D@@",
-     "DynamicVector"
+     "DynamicVector",
+     "VectorClass_Point2D"
     ],
     "committed": [
-     "?$VectorClass@VPoint2D@@",
-     "VectorClass"
+     "VectorClass",
+     "VectorClass_Point2D"
     ]
    },
    {
