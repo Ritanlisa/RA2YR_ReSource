@@ -3178,11 +3178,39 @@ def main():
         print("[MD] skipped: %r" % _e_md, flush=True)
 
     # ---------------- 通用类型证据族加载器（SP/IT/FS）----------------
+    # 用户约定（2026-11-19）：同宽基元的多解统一拼写（uint/int -> int 等）。
+    # 这些类型在 32-bit 代码生成上不可区分（同宽标量），把它们当成不同的
+    # universe 原子会让两个都正确的证据族 AND 出空域（伪矛盾）。约定只作用于
+    # 非指针拼写；指针（int* vs char*）元素宽度不同，不做合并。
+    _PRIM_CANON = {
+        # 4B integer family -> int
+        "unsigned int": "int", "long": "int", "unsigned long": "int",
+        "int32_t": "int", "uint32_t": "int", "DWORD": "int", "UINT": "int",
+        "__int32": "int", "unsigned __int32": "int", "LONG": "int",
+        "ULONG": "int", "BOOL": "int", "INT32": "int", "UINT32": "int",
+        # 2B -> short
+        "unsigned short": "short", "int16_t": "short", "uint16_t": "short",
+        "WORD": "short", "__int16": "short", "unsigned __int16": "short",
+        "SHORT": "short", "USHORT": "short", "INT16": "short", "UINT16": "short",
+        # 1B -> char
+        "bool": "char", "unsigned char": "char", "signed char": "char",
+        "int8_t": "char", "uint8_t": "char", "BYTE": "char", "__int8": "char",
+        "unsigned __int8": "char", "CHAR": "char", "UCHAR": "char",
+        "INT8": "char", "UINT8": "char", "boolean": "char",
+        # 8B -> __int64
+        "unsigned __int64": "__int64", "int64_t": "__int64",
+        "uint64_t": "__int64", "long long": "__int64",
+        "unsigned long long": "__int64", "ULONGLONG": "__int64",
+        "LONGLONG": "__int64",
+    }
+
     def _norm_ty(t):
         t = str(t).strip()
         if t == "const char *" or t == "const char*":
             return "char*"
-        return t.replace(" *", "*").replace("* ", "*")
+        t = t.replace(" *", "*").replace("* ", "*")
+        base = t.replace("const ", "").strip()
+        return _PRIM_CANON.get(base, t)
 
     def _load_type_family_dict(evid_list, famname):
         n = 0
@@ -3450,7 +3478,13 @@ def main():
         census["RU"] = 0
         census["AS"] = 0
     try:
-        census["IG"] = _load_type_family("anchors/insn_granularity_types.json", "IG")
+        # 2026-11-19（用户裁决 + IDA 核对）：IG 族停用。
+        # 生成器语义错误：`mov al, [ecx+off]`（字节访问）被编码成"成员类型
+        # ∈ {bool, char, char[N]...}" 的等式掩码，但字节访问只是宽度的
+        # **下界**（成员可以是 int/dword，按字节视图读取）——与 MR 的 `int`
+        # AND 必出空域（3,579 条伪矛盾）。等式约束不健全，故不加载。
+        # 若要恢复，必须改成"宽度下界掩码"（>=W）或只用全宽访问证据。
+        census["IG"] = 0
         print("[IG] granularity types: %d" % census["IG"], flush=True)
     except Exception as _e_ig:
         print("[IG] skipped: %r" % _e_ig, flush=True)
