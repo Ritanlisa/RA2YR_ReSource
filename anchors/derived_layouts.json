@@ -143,7 +143,7 @@
 "?$VectorClass@PAVTechnoClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -1976,7 +1976,7 @@
 "AnimFile": {
 "member_count": 9,
 "extent": 3604,
-"clusters": 9,
+"clusters": 8,
 "members": [
 [
 0,
@@ -2292,61 +2292,6 @@
 ]
 ]
 },
-"SideClass": {
-"member_count": 12,
-"extent": 176,
-"clusters": 9,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-61,
-1
-],
-[
-152,
-4
-],
-[
-156,
-4
-],
-[
-160,
-4
-],
-[
-164,
-1
-],
-[
-165,
-1
-],
-[
-168,
-4
-],
-[
-172,
-4
-]
-]
-},
 "?$VectorClass@V?$TPoint3D@H@@": {
 "member_count": 5,
 "extent": 14,
@@ -2533,7 +2478,7 @@
 "?$VectorClass@VRGBClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -2770,7 +2715,7 @@
 "?$VectorClass@PAD": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -2797,7 +2742,7 @@
 "?$VectorClass@PAV?$DynamicVectorClass@PAD@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -3539,7 +3484,7 @@
 "?$VectorClass@PBVTechnoTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -3566,7 +3511,7 @@
 "?$VectorClass@UDrawRecord@FoggedObjectClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 8,
 "members": [
 [
 0,
@@ -3823,7 +3768,7 @@
 "?$VectorClass@PAVBuildingClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -3850,7 +3795,7 @@
 "?$VectorClass@PAVSuperClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -4548,7 +4493,7 @@
 "?$VectorClass@UScoutStruct@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 7,
 "members": [
 [
 0,
@@ -4575,7 +4520,7 @@
 "?$VectorClass@UAngerStruct@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -4602,7 +4547,7 @@
 "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -4629,7 +4574,7 @@
 "?$VectorClass@PBVBuildingTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -4903,7 +4848,7 @@
 "?$VectorClass@PBVAircraftTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -4930,7 +4875,7 @@
 "?$VectorClass@PBVUnitTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -4957,7 +4902,7 @@
 "?$VectorClass@PBVInfantryTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -5064,7 +5009,7 @@
 "CommandClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 52,
+"clusters": 51,
 "members": [
 [
 0,
@@ -5145,7 +5090,7 @@
 "IPXManagerClass": {
 "member_count": 28,
 "extent": 172,
-"clusters": 27,
+"clusters": 26,
 "members": [
 [
 0,
@@ -5478,7 +5423,7 @@
 "?$VectorClass@PAG": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -5750,7 +5695,7 @@
 "?$VectorClass@PBG": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -6016,7 +5961,7 @@
 "?$VectorClass@UZoneConnectionClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -6358,7 +6303,7 @@
 "?$VectorClass@PAUNodeNameType@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -6900,7 +6845,7 @@
 "?$VectorClass@PAVMSSfxEntry@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -6927,7 +6872,7 @@
 "?$VectorClass@PAVMSAnimEntry@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -6954,7 +6899,7 @@
 "?$VectorClass@PAVMapSelection@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -6981,7 +6926,7 @@
 "?$VectorClass@PAVMSTextEntry@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -7477,7 +7422,7 @@
 "?$VectorClass@PAVPlanningBranchClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -7613,16 +7558,12 @@
 ]
 },
 "ReferenceCounted": {
-"member_count": 2,
-"extent": 8,
-"clusters": 4,
+"member_count": 1,
+"extent": 4,
+"clusters": 3,
 "members": [
 [
 0,
-4
-],
-[
-4,
 4
 ]
 ]
@@ -7676,7 +7617,7 @@
 "?$VectorClass@PBVVoxelAnimTypeClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 10,
+"clusters": 8,
 "members": [
 [
 0,
@@ -7784,7 +7725,7 @@
 "?$VectorClass@PAVMultiMission@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -7811,7 +7752,7 @@
 "?$VectorClass@PAVPhoneEntryClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 7,
+"clusters": 5,
 "members": [
 [
 0,
@@ -9119,7 +9060,7 @@
 "?$VectorClass@VSwizzlePointerClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 9,
+"clusters": 7,
 "members": [
 [
 0,
@@ -9397,7 +9338,7 @@
 "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 7,
 "members": [
 [
 0,
@@ -9562,7 +9503,7 @@
 "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -10171,7 +10112,7 @@
 "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -10196,12 +10137,16 @@
 ]
 },
 "UDPInterfaceClass": {
-"member_count": 7,
+"member_count": 8,
 "extent": 76,
 "clusters": 23,
 "members": [
 [
 0,
+4
+],
+[
+4,
 4
 ],
 [
@@ -10233,7 +10178,7 @@
 "?$VectorClass@PAE": {
 "member_count": 5,
 "extent": 14,
-"clusters": 8,
+"clusters": 6,
 "members": [
 [
 0,
@@ -10260,7 +10205,7 @@
 "WWMouseClass": {
 "member_count": 23,
 "extent": 112,
-"clusters": 19,
+"clusters": 18,
 "members": [
 [
 0,
@@ -10378,37 +10323,6 @@
 ],
 [
 12,
-4
-]
-]
-},
-"?$TypeList@PBVParticleSystemTypeClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
 4
 ]
 ]
@@ -11749,130 +11663,6 @@
 ]
 ]
 },
-"?$DynamicVectorClass@UtagCONNECTDATA@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@PAUIConnectionPoint@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@PAUThemeControl@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@UScoutStruct@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 5,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
 "CreateTeamCommandClass": {
 "member_count": 2,
 "extent": 8,
@@ -12218,68 +12008,6 @@
 ]
 ]
 },
-"?$DynamicVectorClass@PAUKamikazeControl@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@PAVMultiplayerTeam@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
 "SimpleDialogControl@OwnerDraw": {
 "member_count": 3,
 "extent": 9,
@@ -12296,99 +12024,6 @@
 [
 8,
 1
-]
-]
-},
-"?$DynamicVectorClass@PAVPlanningNodeClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$TypeList@PBVTerrainTypeClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
 ]
 ]
 },
@@ -12559,37 +12194,6 @@
 ]
 ]
 },
-"?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@": {
-"member_count": 6,
-"extent": 20,
-"clusters": 6,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
 "MissionClass": {
 "member_count": 15,
 "extent": 212,
@@ -12692,6 +12296,37 @@
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVParticleSystemTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14355,6 +13990,68 @@
 ]
 ]
 },
+"?$DynamicVectorClass@UtagCONNECTDATA@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@PAUIConnectionPoint@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
 "?$DynamicVectorClass@PBVTechnoTypeClass@@": {
 "member_count": 6,
 "extent": 20,
@@ -14448,6 +14145,37 @@
 ]
 ]
 },
+"?$DynamicVectorClass@UScoutStruct@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
 "?$DynamicVectorClass@UAngerStruct@@": {
 "member_count": 6,
 "extent": 20,
@@ -14482,7 +14210,7 @@
 "?$TypeList@PBVBuildingTypeClass@@": {
 "member_count": 6,
 "extent": 20,
-"clusters": 4,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14513,7 +14241,7 @@
 "?$TypeList@PBVAircraftTypeClass@@": {
 "member_count": 6,
 "extent": 20,
-"clusters": 4,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14544,7 +14272,7 @@
 "?$TypeList@PBVUnitTypeClass@@": {
 "member_count": 6,
 "extent": 20,
-"clusters": 4,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14575,7 +14303,7 @@
 "?$TypeList@PBVInfantryTypeClass@@": {
 "member_count": 6,
 "extent": 20,
-"clusters": 4,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14753,6 +14481,37 @@
 ]
 ]
 },
+"?$DynamicVectorClass@PAUKamikazeControl@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
 "?$DynamicVectorClass@PBG": {
 "member_count": 6,
 "extent": 20,
@@ -14877,10 +14636,103 @@
 ]
 ]
 },
-"?$TypeList@PBVVoxelAnimTypeClass@@": {
+"?$DynamicVectorClass@PAVMultiplayerTeam@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@PAVPlanningNodeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVTerrainTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 1,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVVoxelAnimTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 1,
 "members": [
 [
 0,
@@ -14940,6 +14792,68 @@
 ]
 },
 "?$DynamicVectorClass@PAVMultiMission@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@PAUThemeControl@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
@@ -15408,6 +15322,37 @@
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 5,
 "members": [
 [
 0,
@@ -17480,7 +17425,7 @@
 "CampaignClass": {
 "member_count": 7,
 "extent": 672,
-"clusters": 10,
+"clusters": 9,
 "members": [
 [
 0,
@@ -20162,6 +20107,57 @@
 ],
 [
 160,
+4
+]
+]
+},
+"SideClass": {
+"member_count": 11,
+"extent": 176,
+"clusters": 8,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+152,
+4
+],
+[
+156,
+4
+],
+[
+160,
+4
+],
+[
+164,
+1
+],
+[
+165,
+1
+],
+[
+168,
+4
+],
+[
+172,
 4
 ]
 ]
@@ -23553,7 +23549,7 @@
 ]
 },
 "MouseClass": {
-"member_count": 22,
+"member_count": 27,
 "extent": 332,
 "clusters": 12,
 "members": [
@@ -23619,6 +23615,26 @@
 ],
 [
 256,
+4
+],
+[
+260,
+4
+],
+[
+268,
+4
+],
+[
+272,
+4
+],
+[
+276,
+4
+],
+[
+280,
 4
 ],
 [
@@ -23828,12 +23844,32 @@
 ]
 },
 "TabClass": {
-"member_count": 1,
-"extent": 4,
+"member_count": 6,
+"extent": 220,
 "clusters": 11,
 "members": [
 [
 0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+24,
+4
+],
+[
+216,
 4
 ]
 ]
@@ -23852,7 +23888,7 @@
 "RadarClass": {
 "member_count": 5,
 "extent": 264,
-"clusters": 21,
+"clusters": 20,
 "members": [
 [
 0,
@@ -24253,7 +24289,7 @@
 "AbstractTypeClass": {
 "member_count": 6,
 "extent": 100,
-"clusters": 5,
+"clusters": 4,
 "members": [
 [
 0,
@@ -24307,7 +24343,7 @@
 "MixFileClass": {
 "member_count": 12,
 "extent": 40,
-"clusters": 3,
+"clusters": 2,
 "members": [
 [
 0,
@@ -25459,59 +25495,10 @@
 ]
 },
 "INISection@INIClass": {
-"member_count": 12,
-"extent": 68,
-"clusters": 2,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-24,
-4
-],
-[
-44,
-4
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-56,
-1
-],
-[
-60,
-4
-],
-[
-64,
-4
-]
-]
+"member_count": 0,
+"extent": 0,
+"clusters": 1,
+"members": []
 },
 "LoadProgressMgr": {
 "member_count": 1,

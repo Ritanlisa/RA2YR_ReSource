@@ -153,25 +153,59 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 869,
-  "K_upper": 869,
-  "lower_bound": 869,
-  "constrained_clusters": 74597,
-  "free_clusters": 124582,
+  "K": 871,
+  "K_upper": 871,
+  "lower_bound": 871,
+  "constrained_clusters": 75391,
+  "free_clusters": 123779,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 2231,
-  "entities": 206247
+  "entities": 207735
  },
  "family_table": [],
  "conflicts": [],
  "diagnostics": {
   "no_layout_match": {
-   "count": 13,
+   "count": 14,
    "by_cause": {
-    "suspicious_large_offset": 13
+    "suspicious_large_offset": 14
    },
    "samples": [
+    {
+     "cluster": "P:7B1DE0:0",
+     "entities": [
+      "T:7B3430",
+      "P:7B1DE0:0",
+      "R:7B3430:esi"
+     ],
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       258152,
+       1
+      ],
+      [
+       258156,
+       4
+      ],
+      [
+       258864,
+       4
+      ]
+     ],
+     "exact": [
+      "UDPInterfaceClass"
+     ],
+     "cause": "suspicious_large_offset"
+    },
     {
      "cluster": "R:4A3840:ecx",
      "entities": [
@@ -460,13 +494,13 @@
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7277,
-   "matched_strict": 6312,
-   "no_match": 965,
+   "matched_strict": 6310,
+   "no_match": 967,
    "by_cause": {
-    "width_mismatch_only": 820,
-    "suspicious_large_offset": 86,
-    "no_class_has_all_offsets_sparse_layout": 2,
-    "param_unknown_class": 48,
+    "width_mismatch_only": 815,
+    "suspicious_large_offset": 87,
+    "no_class_has_all_offsets_sparse_layout": 3,
+    "param_unknown_class": 53,
     "member_chain_unknown_class": 9
    },
    "samples": [
@@ -8168,19 +8202,9 @@
   "c7_variance_violation_count": 10461,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 73,
-    "exact_conflicts": 12,
+    "unions": 80,
+    "exact_conflicts": 5,
     "examples": [
-     {
-      "a": "G:87F7E8",
-      "b": "T:6A60E0",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "SidebarClass"
-      ]
-     },
      {
       "a": "G:87F7E8",
       "b": "T:5880A0",
@@ -8189,26 +8213,6 @@
       ],
       "b_classes": [
        "MapClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:6A7D20",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "SidebarClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:6D1610",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "TabClass"
       ]
      },
      {
@@ -8230,6 +8234,26 @@
       "b_classes": [
        "MapClass"
       ]
+     },
+     {
+      "a": "G:87F7E8",
+      "b": "T:56D5A0",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "MapClass"
+      ]
+     },
+     {
+      "a": "G:87F7E8",
+      "b": "T:6AC430",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "SidebarClass"
+      ]
      }
     ]
    },
@@ -8244,8 +8268,8 @@
     "examples": []
    },
    "reg_def": {
-    "unions": 341,
-    "exact_conflicts": 8,
+    "unions": 343,
+    "exact_conflicts": 6,
     "examples": [
      {
       "a": "T:41B920",
@@ -8298,16 +8322,21 @@
       ]
      },
      {
-      "a": "T:6D03A0",
-      "b": "P:6A5310:0",
+      "a": "T:755CD0",
+      "b": "P:755DB0:0",
       "a_classes": [
-       "TabClass"
+       "VoxLib"
       ],
       "b_classes": [
-       "ConvertClass"
+       "CCFileClass"
       ]
      }
     ]
+   },
+   "reg_same_object": {
+    "unions": 1340,
+    "exact_conflicts": 0,
+    "examples": []
    },
    "return_this": {
     "unions": 1916,

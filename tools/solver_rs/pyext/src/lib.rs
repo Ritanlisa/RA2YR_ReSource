@@ -34,8 +34,8 @@ impl PySolver {
     #[new]
     #[pyo3(signature = (
         n_bits, classmask, families, fam_eids, fam_masks,
-        roots, cluster_ents, cluster_obs, cluster_exact,
-        eff_size, intervals, dense, all_exact_classes,
+        roots, cluster_pfx, cluster_ents, cluster_obs, cluster_exact,
+        decl_size, intervals, dense, all_exact_classes,
         anc, desc, exact_eids, exact_cis, ent_ids
     ))]
     #[allow(clippy::too_many_arguments)]
@@ -46,10 +46,14 @@ impl PySolver {
         fam_eids: Vec<Vec<String>>,
         fam_masks: Vec<Vec<Vec<u8>>>,
         roots: Vec<String>,
+        // effective C1 root prefix per cluster (root[..2] with the C17 / M14c
+        // baseline-prefix restoration applied Python-side — single source of
+        // truth for the root-prefix discipline).
+        cluster_pfx: Vec<String>,
         cluster_ents: Vec<Vec<String>>,
         cluster_obs: Vec<Vec<(i64, i64)>>,
         cluster_exact: Vec<Vec<(usize, Vec<String>)>>,
-        eff_size: Vec<i64>,
+        decl_size: Vec<i64>,
         intervals: Vec<Vec<(i64, i64)>>,
         dense: Vec<bool>,
         all_exact_classes: Vec<usize>,
@@ -113,6 +117,11 @@ impl PySolver {
         }
 
         // clusters
+        if cluster_pfx.len() != roots.len() {
+            return Err(pyo3::exceptions::PyValueError::new_err(
+                "cluster_pfx/roots length mismatch",
+            ));
+        }
         let mut clusters = Vec::with_capacity(roots.len());
         for (ci, root) in roots.iter().enumerate() {
             let root_id = iget(root);
@@ -121,6 +130,7 @@ impl PySolver {
             clusters.push(solver::Cluster {
                 root: root.clone(),
                 root_id,
+                pfx: cluster_pfx[ci].clone(),
                 ents,
                 obs: cluster_obs[ci].clone(),
                 exact_raw,
@@ -181,7 +191,7 @@ impl PySolver {
             intern,
             intern_rev,
             clusters,
-            eff_size,
+            decl_size,
             intervals: ivs,
             starts,
             dense,

@@ -4889,6 +4889,11 @@ def main():
                 _e18x = _ents18_list[_i18x]
                 fam["C18"][_e18x] = (fam["C18"].get(_e18x, FULL)
                                      & int.from_bytes(_mb18, "little"))
+            # B1 防线：exact 只能由 allow 通道写入。C18/C18b 内核已按 allow
+            # 收敛，但任何内核泄漏（P3 实证 C18c 曾无视 allow）都必须在这里
+            # 被截断——sound 模式下 exact 是求解种子，误写会污染整条 C10。
+            if not _allow18:
+                return 0
             for _i18x, _c18x in _r18["pins"]:
                 exact[_ents18_list[_i18x]].append((_c18x, _tag18))
                 exact_count["C18"] = exact_count.get("C18", 0) + 1
@@ -8049,22 +8054,63 @@ def main():
         _t_rs0 = time.time()
         _nb = (n + 7) // 8
         _fam_eids, _fam_masks = [], []
-        # 2026-11-19：空掩码守卫。族掩码是多次观测的 AND；若收敛为 0（自相矛盾的
-        # 证据或生成器 bug），它是**退化结果而非证据** —— 传给内核会把该实体的域
-        # 直接清空（601 条冲突中 C10/EP/IM2/MW/BM 的域大小中位数为 0 即此）。
-        # 丢弃空掩码（该族对该实体无约束），计数入日志。
-        _zero_drop = {}
+        # 2026-11-20 (P4-B/B2): zero masks are **preserved**. A family mask of 0
+        # means that family's evidence about this entity is self-contradictory
+        # (the per-entity AND over its observations is empty). In CSP semantics
+        # that is a contradiction — the sound treatment is the same as pure
+        # Python: the entity's base domain becomes empty and the C10 neutralizer
+        # removes it (recorded in anchors/c10_contradicted_entities.json).
+        # Dropping the mask instead silently widens the domain to "no evidence"
+        # and changes the fixpoint: 254 entries changed C10 from
+        # edges=214,486/constrained=42,838 (python) to 219,350/41,604 (rust).
+        _zero_kept = {}
         for _fr in FAMILIES:
             _ek_all = fam[_fr]
-            _ek = [e for e, m in _ek_all.items() if m]
-            _zd = len(_ek_all) - len(_ek)
-            if _zd:
-                _zero_drop[_fr] = _zd
+            _ek = list(_ek_all.keys())
+            _zc = sum(1 for _e in _ek if not _ek_all[_e])
+            if _zc:
+                _zero_kept[_fr] = _zc
             _fam_eids.append(_ek)
             _fam_masks.append([_ek_all[_e].to_bytes(_nb, "little") for _e in _ek])
-        if _zero_drop:
-            print("[rs-build] zero masks dropped (degenerate evidence): %s"
-                  % dict(sorted(_zero_drop.items())), flush=True)
+        if _zero_kept:
+            print("[rs-build] zero masks preserved (contradiction semantics, "
+                  "parity with pure Python): %s"
+                  % dict(sorted(_zero_kept.items())), flush=True)
+
+        def _eff_root_pfx(_cl):
+            """Effective C1 root prefix — verbatim copy of cluster_domains()'s
+            discipline (C17 baseline-root restoration / M14c iso rule).
+
+            2026-11-20 (P4-B): C17 (commit cad2625f2) added the restoration
+            branch to the Python path only; the Rust kernel used the literal
+            root prefix, so 750 restored clusters silently lost C1 in
+            `--use-rs` (20 observable domain diffs, 25 flag diffs). The prefix
+            is static per cluster (computed after M15, before any solve), so it
+            is precomputed here and handed to the kernel as the single source
+            of truth.
+            """
+            _pfx = str(_cl.get("root") or "")[:2]
+            if _RSPLIT_ISO:
+                _ib = [str(_m) for _m in (_cl.get("ents") or ())
+                       if not (str(_m).startswith("R:")
+                               and (str(_m).count(":") >= 3
+                                    or str(_m) in _c17_added))]
+                if _ib:
+                    _pfx = min(_ib)[:2]
+            elif str(_cl.get("root") or "") in _c17_added:
+                _ib = [str(_m) for _m in (_cl.get("ents") or ())
+                       if not str(_m).startswith("R:")]
+                if _ib:
+                    _pfx = min(_ib)[:2]
+            return _pfx
+
+        _pfx_list, _pfx_restored = [], 0
+        for _cl in clusters:
+            _p4p = _eff_root_pfx(_cl)
+            if _p4p != str(_cl.get("root") or "")[:2]:
+                _pfx_restored += 1
+            _pfx_list.append(_p4p)
+
         _rs_cell[0] = _rs_mod_cell[0].PySolver(
             n_bits=n,
             classmask=_CLASSMASK.to_bytes(_nb, "little"),
@@ -8072,15 +8118,18 @@ def main():
             fam_eids=_fam_eids,
             fam_masks=_fam_masks,
             roots=[_cl["root"] for _cl in clusters],
+            cluster_pfx=_pfx_list,
             cluster_ents=[list(_cl["ents"]) for _cl in clusters],
             cluster_obs=[[(_o, -1 if _w is None else _w) for (_o, _w) in _cl["obs"]]
                          for _cl in clusters],
             cluster_exact=[[(_ci, list(_ss)) for _ci, _ss in _cl["exact"].items()]
                            for _cl in clusters],
-            # 2026-11-19: 声明尺寸缺失 => -1（未知）。observed extent 只是访问下界、
-            # 不是 sizeof；把 extent 当尺寸会让 C1 按"类太小"排除正确类（58 空簇主因）。
-            eff_size=[(-1 if U["size"][_i] is None else int(U["eff_size"][_i]))
-                      for _i in range(len(U["eff_size"]))],
+            # C1 尺寸硬下界 = **声明尺寸**（U["size"]），不是 observed extent：
+            # extent 只是 sizeof 的下界；拿 extent 当尺寸会让 C1 排除装得下的
+            # 真解（2026-11-19 修复，见 c1_size_mask 注释）。此处必须传
+            # U["size"]，与 Python 参考逐位一致。
+            decl_size=[(-1 if not U["size"][_i] else int(U["size"][_i]))
+                       for _i in range(n)],
             intervals=[list(_iv) for _iv in intervals],
             dense=list(dense),
             all_exact_classes=sorted(ALL_EXACT_CLASSES),
@@ -8093,6 +8142,8 @@ def main():
         print("[rs] PySolver built: %d classes %d clusters %d fam-entries %.1fs"
               % (n, len(clusters), sum(len(_x) for _x in _fam_eids),
                  time.time() - _t_rs0), flush=True)
+        print("[C17] effective root prefix differs from literal root: %d clusters"
+              % _pfx_restored, flush=True)
 
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
@@ -8580,7 +8631,9 @@ def main():
             json.dump({"meta": {"semantics": "contradicted call-edge sets at the strict fixpoint; "
                                           "C10 evidence deemed unreliable for these entities (mask stays FULL); "
                                           "investigation backlog"},
-                       "by_prefix": dict(_empty_pfx),
+                       # 确定性：Counter 的插入序来自 set 迭代（PYTHONHASHSEED
+                       # 随进程变化）→ 必须排序后落盘，否则双跑 sha256 不稳。
+                       "by_prefix": dict(sorted(_empty_pfx.items())),
                        "entities": sorted(_empty_ids)},
                       open(os.path.join(ROOT, "anchors/c10_contradicted_entities.json"), "w"),
                       indent=1)

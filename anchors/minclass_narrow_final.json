@@ -105,7 +105,8 @@
 "16:4"
 ],
 "ents": [
-"T:477E10"
+"T:477E10",
+"R:477E10:esi"
 ]
 },
 "R:6241C0:ecx": {
@@ -326,10 +327,6 @@
 },
 "R:402040:ecx": {
 "candidates": [
-"INoticeSink",
-"INoticeSource",
-"IPersistStream",
-"IRTTITypeInfo",
 "SuperWeaponTypeClass",
 "RulesClass"
 ],
@@ -337,7 +334,29 @@
 "464:4"
 ],
 "ents": [
-"T:402040"
+"T:402040",
+"R:402040:ecx",
+"R:402040:esi"
+]
+},
+"R:4055C0:ecx": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"UnitClass"
+],
+"obs": [
+"24:1",
+"28:4",
+"32:4",
+"320:4",
+"324:4",
+"344:4"
+],
+"ents": [
+"T:4055C0"
 ]
 },
 "R:404700:ecx": {
@@ -355,6 +374,25 @@
 ],
 "ents": [
 "T:404700"
+]
+},
+"R:4052F0:ecx": {
+"candidates": [
+"InfantryClass",
+"TechnoClass",
+"UnitClass"
+],
+"obs": [
+"24:1",
+"24:4",
+"28:4",
+"168:4",
+"176:4",
+"312:4",
+"632:4"
+],
+"ents": [
+"T:4052F0"
 ]
 },
 "R:404BB0:ecx": {
@@ -384,6 +422,21 @@
 "T:402790"
 ]
 },
+"R:4047B0:ecx": {
+"candidates": [
+"BuildingClass",
+"FootClass"
+],
+"obs": [
+"24:1",
+"36:4",
+"172:4",
+"480:4"
+],
+"ents": [
+"T:4047B0"
+]
+},
 "T:403530": {
 "candidates": [
 "CellClass",
@@ -395,21 +448,6 @@
 "obs": [],
 "ents": [
 "T:403530"
-]
-},
-"R:409310:ecx": {
-"candidates": [
-"INoticeSink",
-"INoticeSource",
-"IPersistStream",
-"IRTTITypeInfo",
-"ParticleTypeClass"
-],
-"obs": [
-"8:4"
-],
-"ents": [
-"T:409310"
 ]
 },
 "R:409C40:ecx": {
@@ -564,6 +602,34 @@
 "T:425670"
 ]
 },
+"R:429A90:ecx": {
+"candidates": [
+"FoggedObjectClass",
+"JumpjetLocomotionClass",
+"TeamTypeClass",
+"AudioStream",
+"VoxLib"
+],
+"obs": [
+"8:1",
+"20:4",
+"24:4",
+"28:4",
+"32:4",
+"36:4",
+"40:4",
+"44:4",
+"48:4",
+"52:4",
+"60:4",
+"64:4",
+"108:4",
+"112:4"
+],
+"ents": [
+"T:429A90"
+]
+},
 "R:42D830:ecx": {
 "candidates": [
 "CampaignClass",
@@ -603,7 +669,8 @@
 "ents": [
 "T:432750",
 "T:4326C0",
-"RET:4326C0"
+"RET:4326C0",
+"R:4326C0:esi"
 ]
 },
 "R:6C9AE0:ecx": {
@@ -636,26 +703,6 @@
 ],
 "ents": [
 "T:54F050"
-]
-},
-"T:4373B0": {
-"candidates": [
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:4373B0"
-]
-},
-"T:437A10": {
-"candidates": [
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:437A10"
 ]
 },
 "R:43A130:ecx": {
@@ -692,42 +739,6 @@
 ],
 "ents": [
 "T:45AE10"
-]
-},
-"R:6F4500:ecx": {
-"candidates": [
-"InfantryClass",
-"TechnoClass",
-"UnitClass"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:4",
-"224:4",
-"228:4",
-"232:4",
-"237:1",
-"300:4",
-"304:4",
-"540:4",
-"628:4",
-"660:4",
-"700:4",
-"720:4",
-"728:4",
-"1050:1",
-"1088:4",
-"1092:4",
-"1096:4",
-"1101:1",
-"1112:4",
-"1116:4",
-"1120:4"
-],
-"ents": [
-"T:6F4500"
 ]
 },
 "R:6D2360:ecx": {
@@ -891,7 +902,25 @@
 "0:4"
 ],
 "ents": [
-"T:44E3A0"
+"T:44E3A0",
+"R:44E3A0:ecx"
+]
+},
+"R:4FAA10:ecx": {
+"candidates": [
+"HouseClass",
+"Sidebar"
+],
+"obs": [
+"21420:4",
+"21424:4",
+"21428:4",
+"21432:4",
+"21436:4",
+"21452:4"
+],
+"ents": [
+"T:4FAA10"
 ]
 },
 "R:4545D0:ecx": {
@@ -938,18 +967,6 @@
 "T:46B0C0"
 ]
 },
-"T:4AF2A0": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:4AF2A0"
-]
-},
 "R:541370:ecx": {
 "candidates": [
 "IPXManagerClass",
@@ -962,44 +979,6 @@
 ],
 "ents": [
 "T:541370"
-]
-},
-"R:4779E0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:4779E0",
-"RET:4779E0"
-]
-},
-"R:4777B0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:4777B0",
-"RET:4777B0"
 ]
 },
 "R:5FED00:ecx": {
@@ -1018,7 +997,8 @@
 "668:4"
 ],
 "ents": [
-"T:5FED00"
+"T:5FED00",
+"R:5FED00:esi"
 ]
 },
 "R:5471B0:ecx": {
@@ -1071,7 +1051,8 @@
 "8129:1"
 ],
 "ents": [
-"T:699450"
+"T:699450",
+"R:699450:esi"
 ]
 },
 "R:4A7FE0:ecx": {
@@ -1153,6 +1134,42 @@
 ],
 "ents": [
 "T:4A8D50"
+]
+},
+"R:6DA080:ecx": {
+"candidates": [
+"TacticalClass",
+"TacticalMap"
+],
+"obs": [
+"176:4",
+"180:4",
+"3472:4",
+"3476:4",
+"3480:4",
+"3484:4",
+"3504:4"
+],
+"ents": [
+"T:6DA080"
+]
+},
+"R:6D9F80:ecx": {
+"candidates": [
+"BuildingTypeClass",
+"InfantryTypeClass",
+"UnitTypeClass",
+"RulesClass",
+"TacticalMap"
+],
+"obs": [
+"3472:4",
+"3476:4",
+"3480:4",
+"3484:4"
+],
+"ents": [
+"T:6D9F80"
 ]
 },
 "R:578290:ecx": {
@@ -1318,7 +1335,8 @@
 "140:1"
 ],
 "ents": [
-"T:704000"
+"T:704000",
+"R:704000:esi"
 ]
 },
 "R:704240:ecx": {
@@ -1388,6 +1406,24 @@
 "T:749060"
 ]
 },
+"R:4F6540:ecx": {
+"candidates": [
+"HouseTypeClass",
+"SuperWeaponTypeClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [
+"52:4",
+"96:4",
+"344:4",
+"348:4",
+"352:4"
+],
+"ents": [
+"T:4F6540"
+]
+},
 "R:5060B0:ecx": {
 "candidates": [
 "?$TClassFactory@VHouseClass@@",
@@ -1436,22 +1472,6 @@
 ],
 "ents": [
 "T:50EB70"
-]
-},
-"R:512FA0:ecx": {
-"candidates": [
-"?$TypeList@PBVUnitTypeClass@@",
-"DynamicVectorClass"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"13:1"
-],
-"ents": [
-"T:512FA0",
-"RET:512FA0"
 ]
 },
 "R:512F20:ecx": {
@@ -1514,6 +1534,30 @@
 "T:5136C0"
 ]
 },
+"R:515ED0:ecx": {
+"candidates": [
+"FoggedObjectClass",
+"InfantryTypeClass"
+],
+"obs": [
+"4:4",
+"12:4",
+"24:4",
+"28:4",
+"32:4",
+"36:4",
+"72:4",
+"76:4",
+"80:4",
+"84:4",
+"88:4",
+"92:4",
+"112:1"
+],
+"ents": [
+"T:515ED0"
+]
+},
 "R:518D80:ecx": {
 "candidates": [
 "AircraftClass",
@@ -1533,6 +1577,23 @@
 ],
 "ents": [
 "T:518D80"
+]
+},
+"R:522910:ecx": {
+"candidates": [
+"AircraftClass",
+"FootClass",
+"TeamClass"
+],
+"obs": [
+"0:4",
+"540:4",
+"1680:1",
+"1681:1",
+"1728:4"
+],
+"ents": [
+"T:522910"
 ]
 },
 "R:6B0880:ecx": {
@@ -1631,6 +1692,17 @@
 "T:5253B0"
 ]
 },
+"T:5B43F0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"T:5B43F0"
+]
+},
 "R:538780:ecx": {
 "candidates": [
 "CampaignClass",
@@ -1649,6 +1721,24 @@
 ],
 "ents": [
 "T:538780"
+]
+},
+"R:6D6190:ecx": {
+"candidates": [
+"BuildingTypeClass",
+"InfantryTypeClass",
+"Tactical",
+"UnitTypeClass",
+"TacticalMap"
+],
+"obs": [
+"176:4",
+"180:4",
+"3428:4",
+"3432:4"
+],
+"ents": [
+"T:6D6190"
 ]
 },
 "R:4AEB30:ecx": {
@@ -1680,6 +1770,25 @@
 "T:541680"
 ]
 },
+"R:549E90:ecx": {
+"candidates": [
+"AircraftTypeClass",
+"AnimTypeClass",
+"BuildingTypeClass",
+"BulletTypeClass",
+"InfantryTypeClass",
+"UnitTypeClass"
+],
+"obs": [
+"164:4",
+"676:4",
+"680:4",
+"692:4"
+],
+"ents": [
+"T:549E90"
+]
+},
 "R:54D820:ecx": {
 "candidates": [
 "AudioStream",
@@ -1689,7 +1798,8 @@
 "12:4"
 ],
 "ents": [
-"T:54D820"
+"T:54D820",
+"R:54D820:esi"
 ]
 },
 "R:554AF0:ecx": {
@@ -1724,6 +1834,24 @@
 ],
 "ents": [
 "T:578100"
+]
+},
+"P:6D8640:2": {
+"candidates": [
+"BuildingTypeClass",
+"InfantryTypeClass",
+"UnitTypeClass"
+],
+"obs": [
+"3428:4",
+"3432:4",
+"3444:4",
+"3448:4",
+"3453:1"
+],
+"ents": [
+"T:6D6000",
+"P:6D8640:2"
 ]
 },
 "T:47E470": {
@@ -1780,16 +1908,6 @@
 ],
 "ents": [
 "T:584E50"
-]
-},
-"T:574780": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"T:574780"
 ]
 },
 "R:578710:ecx": {
@@ -1875,7 +1993,8 @@
 "ents": [
 "T:595740",
 "RET:595740",
-"P:595680:1"
+"P:595680:1",
+"R:595740:esi"
 ]
 },
 "R:5981F0:ecx": {
@@ -1922,7 +2041,8 @@
 "116:4"
 ],
 "ents": [
-"T:597260"
+"T:597260",
+"R:597260:edi"
 ]
 },
 "R:643AE0:ecx": {
@@ -1998,6 +2118,19 @@
 "T:5B17B0"
 ]
 },
+"R:5B4590:ecx": {
+"candidates": [
+"GenericNode",
+"MixFileClass"
+],
+"obs": [
+"4:4",
+"8:4"
+],
+"ents": [
+"T:5B4590"
+]
+},
 "P:7DD0F8:3": {
 "candidates": [
 "UnitTypeClass",
@@ -2011,7 +2144,8 @@
 ],
 "ents": [
 "T:5B9550",
-"P:7DD0F8:3"
+"P:7DD0F8:3",
+"R:5B9550:esi"
 ]
 },
 "R:759940:ecx": {
@@ -2034,6 +2168,40 @@
 ],
 "ents": [
 "T:759940"
+]
+},
+"R:49B610:ecx": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [
+"0:1",
+"20:4",
+"24:4",
+"28:1",
+"48:4",
+"52:4",
+"56:4",
+"60:4",
+"64:4",
+"68:4",
+"72:4",
+"76:4",
+"80:4",
+"84:4",
+"88:4",
+"92:4",
+"96:4",
+"100:4",
+"104:4",
+"108:1"
+],
+"ents": [
+"T:49B610",
+"RET:49B610"
 ]
 },
 "R:49CAF0:ecx": {
@@ -2063,25 +2231,6 @@
 ],
 "ents": [
 "T:49CAF0"
-]
-},
-"R:5C4F30:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:5C4F30",
-"RET:5C4F30"
 ]
 },
 "R:5D0070:ecx": {
@@ -2137,33 +2286,49 @@
 "T:5413F0"
 ]
 },
-"R:5F1960:ecx": {
+"R:69B760:ecx": {
 "candidates": [
-"ConnectionClass",
-"NullModemClass"
+"RulesClass",
+"SessionClass"
+],
+"obs": [
+"372:4",
+"376:4",
+"388:4",
+"392:4"
+],
+"ents": [
+"T:69B760"
+]
+},
+"R:5F16E0:ecx": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"RulesClass"
 ],
 "obs": [
 "4:4",
+"8:4",
 "12:4",
+"16:4",
+"20:4",
+"52:4",
 "56:4",
-"60:4",
-"80:4"
+"64:4",
+"68:4",
+"72:4",
+"76:2",
+"80:4",
+"84:4",
+"88:4",
+"92:4",
+"96:4",
+"100:4"
 ],
 "ents": [
-"T:5F1960"
-]
-},
-"R:5F1B70:ecx": {
-"candidates": [
-"ConnectionClass",
-"NullModemClass",
-"ModemConnectionClass"
-],
-"obs": [
-"64:4"
-],
-"ents": [
-"T:5F1B70"
+"T:5F16E0",
+"R:5F16E0:edi"
 ]
 },
 "R:774670:ecx": {
@@ -2269,29 +2434,29 @@
 "T:628D10"
 ]
 },
-"R:62D2A0:ecx": {
+"R:62BD50:ecx": {
 "candidates": [
 "BuildingClass",
 "FootClass",
-"TacticalMap"
+"IsometricTileClass",
+"VeinholeMonsterClass"
 ],
 "obs": [
 "0:4",
+"4:4",
 "156:4",
 "172:4",
 "192:4",
 "196:4",
 "200:4",
-"256:4",
-"260:4",
-"264:4",
-"301:1",
+"292:4",
+"296:2",
+"298:2",
+"302:1",
 "305:1"
 ],
 "ents": [
-"T:62D3F0",
-"T:62D2A0",
-"T:62D5E0"
+"T:62BD50"
 ]
 },
 "R:62E4C0:ecx": {
@@ -2331,6 +2496,26 @@
 ],
 "ents": [
 "T:62ED40"
+]
+},
+"R:62F9A0:ecx": {
+"candidates": [
+"ParticleSystemClass",
+"WaveClass"
+],
+"obs": [
+"0:4",
+"172:4",
+"192:4",
+"204:4",
+"212:4",
+"216:4",
+"220:4",
+"224:4",
+"248:1"
+],
+"ents": [
+"T:62F9A0"
 ]
 },
 "R:63E540:ecx": {
@@ -2385,7 +2570,80 @@
 "16:4"
 ],
 "ents": [
-"T:63EBD0"
+"T:63EBD0",
+"R:63EBD0:ecx",
+"R:63EBD0:esi"
+]
+},
+"R:636120:ecx": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar"
+],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"20:4",
+"140:4",
+"144:4",
+"148:4",
+"152:1",
+"153:1"
+],
+"ents": [
+"T:636120"
+]
+},
+"R:636B50:ecx": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar"
+],
+"obs": [
+"0:4",
+"8:4",
+"20:4",
+"140:4",
+"144:4",
+"148:4"
+],
+"ents": [
+"T:636B50"
+]
+},
+"R:635F20:ecx": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar",
+"VocClass"
+],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"12:4",
+"16:1",
+"17:1",
+"20:4",
+"24:4",
+"28:1",
+"29:1",
+"140:4",
+"144:4",
+"148:4",
+"152:1",
+"153:1"
+],
+"ents": [
+"T:635F20",
+"RET:635F20"
 ]
 },
 "R:63EB80:ecx": {
@@ -2408,16 +2666,6 @@
 "T:63EB80"
 ]
 },
-"T:638CE0": {
-"candidates": [
-"?$TClassFactory@VBuildingClass@@",
-"BuildingClass"
-],
-"obs": [],
-"ents": [
-"T:638CE0"
-]
-},
 "R:635830:ecx": {
 "candidates": [
 "AircraftTypeClass",
@@ -2435,6 +2683,81 @@
 ],
 "ents": [
 "T:635830"
+]
+},
+"R:635C10:ecx": {
+"candidates": [
+"AITriggerTypeClass",
+"BuildingClass",
+"FootClass",
+"TeamClass",
+"TechnoTypeClass",
+"AudioStream",
+"Buffer",
+"TacticalClass"
+],
+"obs": [
+"4:4",
+"16:4",
+"172:4"
+],
+"ents": [
+"T:635C10"
+]
+},
+"R:655250:ecx": {
+"candidates": [
+"SidebarClass",
+"RulesClass"
+],
+"obs": [
+"260:4",
+"4644:4",
+"4648:4",
+"4660:4",
+"4668:4",
+"4672:4",
+"4676:4",
+"5264:4",
+"5272:4"
+],
+"ents": [
+"T:655250"
+]
+},
+"R:655C50:ecx": {
+"candidates": [
+"Radar",
+"TacticalClass"
+],
+"obs": [
+"4636:4",
+"4640:4",
+"4696:4",
+"5276:4",
+"5280:4"
+],
+"ents": [
+"T:655C50"
+]
+},
+"R:656150:ecx": {
+"candidates": [
+"PowerClass",
+"RadarClass",
+"SidebarClass",
+"Radar",
+"RulesClass",
+"TacticalClass"
+],
+"obs": [
+"4636:4",
+"4696:4",
+"4724:4"
+],
+"ents": [
+"T:656150",
+"R:656150:ebp"
 ]
 },
 "R:659EE0:ecx": {
@@ -2485,7 +2808,8 @@
 "ents": [
 "T:65FB80",
 "RET:65FB80",
-"P:6550C0:3"
+"P:6550C0:3",
+"R:65FB80:esi"
 ]
 },
 "R:541410:ecx": {
@@ -2611,6 +2935,23 @@
 "T:67B480"
 ]
 },
+"R:6D5F60:ecx": {
+"candidates": [
+"BuildingTypeClass",
+"InfantryTypeClass",
+"UnitTypeClass"
+],
+"obs": [
+"3428:4",
+"3432:4",
+"3444:4",
+"3448:4",
+"3453:1"
+],
+"ents": [
+"T:6D5F60"
+]
+},
 "R:68C260:ecx": {
 "candidates": [
 "CampaignClass",
@@ -2651,6 +2992,21 @@
 "T:691160"
 ]
 },
+"R:6DA380:ecx": {
+"candidates": [
+"AircraftTypeClass",
+"TechnoTypeClass",
+"RulesClass"
+],
+"obs": [
+"176:4",
+"180:4",
+"3504:4"
+],
+"ents": [
+"T:6DA380"
+]
+},
 "R:695BC0:ecx": {
 "candidates": [
 "ConvertClass",
@@ -2672,7 +3028,8 @@
 "184:1"
 ],
 "ents": [
-"T:695BC0"
+"T:695BC0",
+"R:695BC0:ebp"
 ]
 },
 "R:6A3DB0:ecx": {
@@ -2924,6 +3281,20 @@
 "T:6D6D10"
 ]
 },
+"R:6D9CE0:ecx": {
+"candidates": [
+"Tactical",
+"TacticalMap"
+],
+"obs": [
+"176:4",
+"180:4",
+"3504:4"
+],
+"ents": [
+"T:6D9CE0"
+]
+},
 "R:6D8DB0:ecx": {
 "candidates": [
 "AircraftTypeClass",
@@ -2941,6 +3312,24 @@
 "T:6D8DB0"
 ]
 },
+"R:4DC340:ecx": {
+"candidates": [
+"JumpjetLocomotion",
+"RulesClass"
+],
+"obs": [
+"0:4",
+"156:4",
+"540:4",
+"692:4",
+"1420:4",
+"1432:4",
+"1444:4"
+],
+"ents": [
+"T:4DC340"
+]
+},
 "R:6D7840:ecx": {
 "candidates": [
 "AircraftTypeClass",
@@ -2956,6 +3345,21 @@
 ],
 "ents": [
 "T:6D7840"
+]
+},
+"R:6DA5C0:ecx": {
+"candidates": [
+"AircraftTypeClass",
+"TechnoTypeClass",
+"RulesClass"
+],
+"obs": [
+"176:4",
+"180:4",
+"3504:4"
+],
+"ents": [
+"T:6DA5C0"
 ]
 },
 "T:763610": {
@@ -3036,16 +3440,6 @@
 "T:6EF9E0"
 ]
 },
-"R:638A80:ecx": {
-"candidates": [
-"?$TClassFactory@VBuildingClass@@",
-"BuildingClass"
-],
-"obs": [],
-"ents": [
-"T:638A80"
-]
-},
 "T:70E920": {
 "candidates": [
 "AircraftClass",
@@ -3075,6 +3469,37 @@
 "obs": [],
 "ents": [
 "T:637840"
+]
+},
+"R:70FD70:ecx": {
+"candidates": [
+"InfantryClass",
+"UnitClass",
+"RulesClass"
+],
+"obs": [
+"0:4",
+"20:1",
+"460:4",
+"468:4",
+"1492:4"
+],
+"ents": [
+"T:70FD70"
+]
+},
+"R:6FD570:ecx": {
+"candidates": [
+"UnitClass",
+"RulesClass"
+],
+"obs": [
+"0:4",
+"144:1",
+"1756:4"
+],
+"ents": [
+"T:6FD570"
 ]
 },
 "R:5224F0:ecx": {
@@ -3192,6 +3617,21 @@
 "T:717CD0"
 ]
 },
+"R:720480:ecx": {
+"candidates": [
+"SpawnConfig",
+"ThemeClass"
+],
+"obs": [
+"640:4",
+"648:1",
+"649:1",
+"652:4"
+],
+"ents": [
+"T:720480"
+]
+},
 "R:7228B0:ecx": {
 "candidates": [
 "SuperWeaponTypeClass",
@@ -3284,6 +3724,48 @@
 "T:405140"
 ]
 },
+"R:4053E0:ecx": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [
+"28:4",
+"320:4",
+"324:4",
+"344:4"
+],
+"ents": [
+"T:4053E0"
+]
+},
+"R:405430:ecx": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [
+"28:4",
+"320:4",
+"324:4",
+"344:4"
+],
+"ents": [
+"T:405430"
+]
+},
 "T:7C3430": {
 "candidates": [
 "BuildingClass",
@@ -3338,9 +3820,13 @@
 },
 "R:75F140:ecx": {
 "candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
 "InfantryClass",
 "TechnoClass",
-"UnitClass"
+"UnitClass",
+"Voxel"
 ],
 "obs": [
 "428:4",
@@ -3367,7 +3853,8 @@
 "568:4"
 ],
 "ents": [
-"T:75F140"
+"T:75F140",
+"R:75F140:esi"
 ]
 },
 "R:763330:ecx": {
@@ -3493,7 +3980,37 @@
 "ents": [
 "T:76C970",
 "P:770550:3",
-"S:770550:+0x10"
+"S:770550:+0x10",
+"R:76C970:esi"
+]
+},
+"R:7681E0:ecx": {
+"candidates": [
+"AnimTypeClass",
+"ScriptAction",
+"VocClass"
+],
+"obs": [
+"8:4",
+"16:4",
+"20:4",
+"24:4",
+"28:4",
+"32:4",
+"36:4",
+"48:4",
+"52:4",
+"60:4",
+"72:4",
+"76:4",
+"80:4",
+"100:4",
+"108:4",
+"112:4",
+"120:4"
+],
+"ents": [
+"T:7681E0"
 ]
 },
 "R:769440:ecx": {
@@ -3581,7 +4098,8 @@
 ],
 "obs": [],
 "ents": [
-"T:798F50"
+"T:798F50",
+"R:798F50:edi"
 ]
 },
 "R:6B9740:ecx": {
@@ -3630,7 +4148,8 @@
 "116:4"
 ],
 "ents": [
-"T:597430"
+"T:597430",
+"R:597430:esi"
 ]
 },
 "P:7C899E:4": {
@@ -3643,20 +4162,8 @@
 ],
 "ents": [
 "T:7B0DD0",
-"P:7C899E:4"
-]
-},
-"R:7B1B50:ecx": {
-"candidates": [
-"UDPInterfaceClass",
-"WinsockInterfaceClass"
-],
-"obs": [
-"0:4",
-"258152:1"
-],
-"ents": [
-"T:7B1B50"
+"P:7C899E:4",
+"R:7B0DD0:ebp"
 ]
 },
 "R:7B20E0:ecx": {
@@ -3713,16 +4220,6 @@
 ],
 "ents": [
 "T:7B9040"
-]
-},
-"T:437350": {
-"candidates": [
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:437350"
 ]
 },
 "T:7BF470": {
@@ -3785,6 +4282,27 @@
 "T:7C3860"
 ]
 },
+"R:7BE4A0:ecx": {
+"candidates": [
+"WaveClass",
+"RulesClass"
+],
+"obs": [
+"68:4",
+"92:4",
+"96:4",
+"100:4",
+"128:1",
+"238:2",
+"240:2",
+"250:2",
+"252:2",
+"264:1"
+],
+"ents": [
+"T:7BE4A0"
+]
+},
 "T:4039C0": {
 "candidates": [
 "ParticleTypeClass",
@@ -3798,6 +4316,42 @@
 "obs": [],
 "ents": [
 "T:4039C0"
+]
+},
+"R:4B56E0:ecx": {
+"candidates": [
+"RAMFileClass",
+"Map",
+"TabDataStruct"
+],
+"obs": [
+"12:4",
+"16:4",
+"20:4",
+"24:4",
+"28:1",
+"29:1",
+"30:1",
+"32:4",
+"36:4",
+"40:4",
+"44:1",
+"45:1",
+"46:1",
+"48:4",
+"52:4",
+"56:4",
+"60:4",
+"64:4",
+"68:1",
+"72:4",
+"76:4",
+"80:4"
+],
+"ents": [
+"T:4B56E0",
+"RET:4B56E0",
+"R:4B56E0:esi"
 ]
 },
 "T:500200": {
@@ -3823,26 +4377,8 @@
 ],
 "obs": [],
 "ents": [
-"T:50C050"
-]
-},
-"R:50E830:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:50E830",
-"RET:50E830"
+"T:50C050",
+"R:50C050:esi"
 ]
 },
 "R:50FF50:ecx": {
@@ -3863,82 +4399,6 @@
 ],
 "ents": [
 "T:50FF50"
-]
-},
-"R:513860:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:513860",
-"RET:513860"
-]
-},
-"R:513740:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:513740",
-"RET:513740"
-]
-},
-"R:5137D0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:5137D0",
-"RET:5137D0"
-]
-},
-"R:5255F0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:5255F0",
-"RET:5255F0"
 ]
 },
 "R:680FF0:ecx": {
@@ -3970,25 +4430,6 @@
 "RET:680FF0"
 ]
 },
-"R:5AD660:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:5AD660",
-"RET:5AD660"
-]
-},
 "R:432690:ecx": {
 "candidates": [
 "IPXInterfaceClass",
@@ -4006,7 +4447,8 @@
 ],
 "ents": [
 "T:432690",
-"RET:432690"
+"RET:432690",
+"R:432690:esi"
 ]
 },
 "R:5EEE40:ecx": {
@@ -4043,44 +4485,6 @@
 "T:5F6790"
 ]
 },
-"R:67C280:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:67C280",
-"RET:67C280"
-]
-},
-"R:67C1F0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:67C1F0",
-"RET:67C1F0"
-]
-},
 "R:697F10:ecx": {
 "candidates": [
 "CampaignClass",
@@ -4102,7 +4506,8 @@
 "24:1"
 ],
 "ents": [
-"T:697F10"
+"T:697F10",
+"R:697F10:edi"
 ]
 },
 "R:6C9F10:ecx": {
@@ -4146,45 +4551,8 @@
 "52:4"
 ],
 "ents": [
-"T:50C0A0"
-]
-},
-"R:717D20:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:717D20",
-"RET:717D20"
-]
-},
-"R:75E6B0:ecx": {
-"candidates": [
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [
-"0:4",
-"4:4",
-"8:4",
-"12:1",
-"13:1",
-"16:4",
-"20:4"
-],
-"ents": [
-"T:75E6B0",
-"RET:75E6B0"
+"T:50C0A0",
+"R:50C0A0:esi"
 ]
 },
 "R:76E750:ecx": {
@@ -6140,6 +6508,21 @@
 "RET:6281F0"
 ]
 },
+"M:62A4A0:this:0x24": {
+"candidates": [
+"Game",
+"LinkedList"
+],
+"obs": [
+"108:4",
+"540:4",
+"1074:1",
+"1076:4"
+],
+"ents": [
+"M:62A4A0:this:0x24"
+]
+},
 "M:62A980:this:0x24": {
 "candidates": [
 "AircraftClass",
@@ -6807,6 +7190,62 @@
 "obs": [],
 "ents": [
 "RET:6E85B0"
+]
+},
+"M:6EA0D0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EA0D0:this:0x54"
+]
+},
+"S:6EA0D0:var_58": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass"
+],
+"obs": [],
+"ents": [
+"S:6EA0D0:var_58"
+]
+},
+"M:6EC3D0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EC3D0:this:0x54"
+]
+},
+"RET:6EC3D0": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [],
+"ents": [
+"RET:6EC3D0"
 ]
 },
 "M:6EEEA0:this:0x78": {
@@ -8012,6 +8451,17 @@
 "M:7C0530:this:0x184"
 ]
 },
+"S:7C0530:var_c": {
+"candidates": [
+"?$TypeList@PBVAircraftTypeClass@@",
+"?$VectorClass@PBVAircraftTypeClass@@",
+"TimerStruct"
+],
+"obs": [],
+"ents": [
+"S:7C0530:var_c"
+]
+},
 "M:7C0530:this:0x168": {
 "candidates": [
 "?$TypeList@PBVUnitTypeClass@@",
@@ -8181,17 +8631,6 @@
 "obs": [],
 "ents": [
 "RET:780110"
-]
-},
-"S:44F820:var_b4": {
-"candidates": [
-"?$TClassFactory@VHouseClass@@",
-"HouseClass",
-"HouseClass_24"
-],
-"obs": [],
-"ents": [
-"S:44F820:var_b4"
 ]
 },
 "S:4348F0:var_8": {
@@ -8483,16 +8922,6 @@
 "RET:4A50F0"
 ]
 },
-"S:4AED70:var_50": {
-"candidates": [
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"S:4AED70:var_50"
-]
-},
 "R:4CB580:ecx": {
 "candidates": [
 "WinsockInterfaceClass",
@@ -8509,7 +8938,8 @@
 ],
 "ents": [
 "T:4CB580",
-"RET:4CB580"
+"RET:4CB580",
+"R:4CB580:ebx"
 ]
 },
 "S:5060B0:var_d4": {
@@ -8676,6 +9106,27 @@
 "S:5F6790:var_4"
 ]
 },
+"R:6107E0:ecx": {
+"candidates": [
+"WaveClass",
+"RulesClass"
+],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"12:4",
+"16:4",
+"20:2",
+"276:4",
+"280:4",
+"284:4"
+],
+"ents": [
+"T:6107E0",
+"RET:6107E0"
+]
+},
 "S:6214B0:var_6c": {
 "candidates": [
 "GenericNode",
@@ -8685,17 +9136,6 @@
 "obs": [],
 "ents": [
 "S:6214B0:var_6c"
-]
-},
-"S:62D3F0:var_18": {
-"candidates": [
-"BuildingClass",
-"FootClass",
-"TacticalMap"
-],
-"obs": [],
-"ents": [
-"S:62D3F0:var_18"
 ]
 },
 "M:6330C0:this:0x1C": {
@@ -8712,16 +9152,52 @@
 "M:6330C0:this:0x1C"
 ]
 },
-"S:6F4500:var_4": {
+"R:636310:ecx": {
 "candidates": [
+"BuildingClass",
 "FootClass",
-"InfantryClass",
-"TechnoClass",
-"UnitClass"
+"RulesClass",
+"Sidebar"
 ],
-"obs": [],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"20:4",
+"140:4",
+"144:4",
+"148:4",
+"152:1",
+"153:1"
+],
 "ents": [
-"S:6F4500:var_4"
+"T:636310"
+]
+},
+"R:6E8000:ecx": {
+"candidates": [
+"HouseTypeClass",
+"TriggerTypeClass",
+"WeaponTypeClass"
+],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"12:4",
+"16:4",
+"20:1",
+"24:4",
+"28:4",
+"32:1",
+"96:4",
+"152:4",
+"156:4",
+"160:4"
+],
+"ents": [
+"T:6E8000",
+"RET:6E8000"
 ]
 },
 "G:7BEA40": {
@@ -9254,6 +9730,39 @@
 "M:5C2040:this:0x33C"
 ]
 },
+"S:5CC760:+0x0": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"S:5CC760:+0x0"
+]
+},
+"M:5CC760:this:0x20": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"M:5CC760:this:0x20"
+]
+},
+"M:5CC760:this:0x34": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"M:5CC760:this:0x34"
+]
+},
 "S:5EF170:+0x0": {
 "candidates": [
 "ConnManClass",
@@ -9731,6 +10240,28 @@
 "EAX:406B10:406C13"
 ]
 },
+"EAX:406B10:406CAB": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:406B10:406CAB"
+]
+},
+"EAX:406B10:406CCF": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:406B10:406CCF"
+]
+},
 "EAX:406DE0:406E2C": {
 "candidates": [
 "CellClass",
@@ -10060,6 +10591,22 @@
 "EAX:4666E0:46771C"
 ]
 },
+"EAX:4690B0:4691C3": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"RadSiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:4690B0:4691C3"
+]
+},
 "EAX:46B0C0:46B234": {
 "candidates": [
 "BSurface",
@@ -10145,6 +10692,118 @@
 "EAX:472720:472757"
 ]
 },
+"EAX:478720:478743": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:478720:478743"
+]
+},
+"EAX:4787E0:478803": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:4787E0:478803"
+]
+},
+"EAX:4791F0:4793B8": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4793B8"
+]
+},
+"EAX:4791F0:479415": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:479415"
+]
+},
+"EAX:4791F0:479460": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:479460"
+]
+},
+"EAX:4791F0:4794B5": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4794B5"
+]
+},
+"EAX:4791F0:4794EB": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4794EB"
+]
+},
+"EAX:4791F0:47958B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:47958B"
+]
+},
+"EAX:4791F0:4795B6": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4795B6"
+]
+},
+"EAX:4791F0:479656": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:479656"
+]
+},
 "EAX:47A9D0:47A9D3": {
 "candidates": [
 "BufferIOFileClass",
@@ -10213,6 +10872,19 @@
 "obs": [],
 "ents": [
 "EAX:483410:48342A"
+]
+},
+"EAX:49B610:49B657": {
+"candidates": [
+"?$TClassFactory@VParticleTypeClass@@",
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:49B610:49B657"
 ]
 },
 "EAX:49BE40:49C006": {
@@ -10378,6 +11050,18 @@
 "EAX:4AF540:4AF543"
 ]
 },
+"EAX:4B5210:4B5314": {
+"candidates": [
+"FileClass",
+"RAMFileClass",
+"Map",
+"TabDataStruct"
+],
+"obs": [],
+"ents": [
+"EAX:4B5210:4B5314"
+]
+},
 "EAX:4B5AB0:4B5AB3": {
 "candidates": [
 "IPersist",
@@ -10399,6 +11083,19 @@
 "obs": [],
 "ents": [
 "EAX:4CA270:4CA2B2"
+]
+},
+"EAX:4CB700:4CB720": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"SHPStruct",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:4CB700:4CB720"
 ]
 },
 "EAX:4CC9A0:4CC9A3": {
@@ -10556,6 +11253,36 @@
 "EAX:4DDC60:4DDD85"
 ]
 },
+"EAX:4F2C70:4F2EE8": {
+"candidates": [
+"GraphicMenuAnimItem",
+"GraphicMenuItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F2C70:4F2EE8"
+]
+},
+"EAX:4F2F10:4F2FF2": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:4F2F10:4F2FF2"
+]
+},
+"EAX:4F3140:4F341E": {
+"candidates": [
+"GraphicMenuImageItem",
+"GraphicMenuItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F3140:4F341E"
+]
+},
 "EAX:4F3A50:4F3A6B": {
 "candidates": [
 "GraphicMenuAnimItem",
@@ -10567,6 +11294,16 @@
 "obs": [],
 "ents": [
 "EAX:4F3A50:4F3A6B"
+]
+},
+"EAX:4F3B80:4F3C20": {
+"candidates": [
+"GraphicMenuItem",
+"GraphicMenuShortcutItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F3B80:4F3C20"
 ]
 },
 "EAX:4F5190:4F533F": {
@@ -10933,18 +11670,40 @@
 "EAX:511650:511658"
 ]
 },
-"EAX:511850:511F1B": {
+"EAX:512BD0:512BF3": {
 "candidates": [
-"?$TypeList@PBVUnitTypeClass@@",
-"DynamicVector",
-"DynamicVectorClass",
-"TypeList",
-"VectorClass",
-"VectorClass_ushort"
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
 ],
 "obs": [],
 "ents": [
-"EAX:511850:511F1B"
+"EAX:512BD0:512BF3"
+]
+},
+"EAX:512FA0:512FC3": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:512FA0:512FC3"
+]
+},
+"EAX:513370:513393": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:513370:513393"
 ]
 },
 "EAX:513C20:513C24": {
@@ -10989,6 +11748,30 @@
 "EAX:51BF90:51C200"
 ]
 },
+"EAX:524F20:524F43": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:524F20:524F43"
+]
+},
+"EAX:525060:525083": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:525060:525083"
+]
+},
 "EAX:528660:52892B": {
 "candidates": [
 "GenericNode",
@@ -11025,6 +11808,367 @@
 "obs": [],
 "ents": [
 "EAX:52D9A0:52E1AC"
+]
+},
+"EAX:52D9A0:52E3F1": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass"
+],
+"obs": [],
+"ents": [
+"EAX:52D9A0:52E3F1"
+]
+},
+"EAX:52F3F0:52F456": {
+"candidates": [
+"UDPInterfaceClass",
+"WinsockInterfaceClass"
+],
+"obs": [],
+"ents": [
+"EAX:52F3F0:52F456"
+]
+},
+"EAX:530000:530055": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530000:530055"
+]
+},
+"EAX:530000:530111": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530000:530111"
+]
+},
+"EAX:5301A0:530217": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:530217"
+]
+},
+"EAX:5301A0:5302AA": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5302AA"
+]
+},
+"EAX:5301A0:5302D2": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5302D2"
+]
+},
+"EAX:5301A0:530326": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:530326"
+]
+},
+"EAX:5301A0:530368": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:530368"
+]
+},
+"EAX:5301A0:5303D4": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5303D4"
+]
+},
+"EAX:5301A0:530400": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:530400"
+]
+},
+"EAX:530460:5304CA": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5304CA"
+]
+},
+"EAX:530460:530529": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530529"
+]
+},
+"EAX:530460:530569": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530569"
+]
+},
+"EAX:530460:5305A9": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5305A9"
+]
+},
+"EAX:530460:5305E5": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5305E5"
+]
+},
+"EAX:530460:53064B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:53064B"
+]
+},
+"EAX:530460:5306D4": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5306D4"
+]
+},
+"EAX:530460:53075D": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:53075D"
+]
+},
+"EAX:530460:53081C": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:53081C"
+]
+},
+"EAX:530460:530871": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530871"
+]
+},
+"EAX:530460:53095B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:53095B"
+]
+},
+"EAX:530460:5309B0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5309B0"
+]
+},
+"EAX:530460:530AA2": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530AA2"
+]
+},
+"EAX:530460:530B3A": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530B3A"
+]
+},
+"EAX:530460:530BD4": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530BD4"
+]
+},
+"EAX:530460:530C6B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530C6B"
+]
+},
+"EAX:530460:530CD5": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530CD5"
+]
+},
+"EAX:530460:530F76": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530F76"
+]
+},
+"EAX:530460:530FCB": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530FCB"
+]
+},
+"EAX:530460:5310A1": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5310A1"
+]
+},
+"EAX:530460:5310F6": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5310F6"
+]
+},
+"EAX:530460:531257": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:531257"
 ]
 },
 "EAX:532150:533478": {
@@ -11447,6 +12591,116 @@
 "EAX:532150:533C20"
 ]
 },
+"EAX:5349C0:534AC0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534AC0"
+]
+},
+"EAX:5349C0:534B00": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534B00"
+]
+},
+"EAX:5349C0:534B3C": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534B3C"
+]
+},
+"EAX:5349C0:534B94": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534B94"
+]
+},
+"EAX:5349C0:534BD0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534BD0"
+]
+},
+"EAX:534E50:534F2D": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534E50:534F2D"
+]
+},
+"EAX:534E50:534F6D": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534E50:534F6D"
+]
+},
+"EAX:534FA0:53515B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:53515B"
+]
+},
+"EAX:534FA0:5351F9": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:5351F9"
+]
+},
+"EAX:534FA0:5352D1": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:5352D1"
+]
+},
 "EAX:535FC0:535FCF": {
 "candidates": [
 "SelectTeamCommandClass",
@@ -11485,6 +12739,16 @@
 "obs": [],
 "ents": [
 "EAX:537F10:537F18"
+]
+},
+"EAX:5408F0:540926": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass"
+],
+"obs": [],
+"ents": [
+"EAX:5408F0:540926"
 ]
 },
 "EAX:540D60:540D7F": {
@@ -11541,6 +12805,28 @@
 "EAX:54CA90:54CE8F"
 ]
 },
+"EAX:552CC0:552CEE": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:552CC0:552CEE"
+]
+},
+"EAX:552CC0:552D1F": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:552CC0:552D1F"
+]
+},
 "EAX:558DD0:5592A7": {
 "candidates": [
 "BufferIOFileClass",
@@ -11591,6 +12877,32 @@
 "EAX:5596A0:5598B7"
 ]
 },
+"EAX:560480:560533": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass"
+],
+"obs": [],
+"ents": [
+"EAX:560480:560533"
+]
+},
+"EAX:565060:565065": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565060:565065"
+]
+},
 "EAX:565090:565096": {
 "candidates": [
 "IGameMap",
@@ -11603,6 +12915,70 @@
 "obs": [],
 "ents": [
 "EAX:565090:565096"
+]
+},
+"EAX:565BC0:565BEA": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565BC0:565BEA"
+]
+},
+"EAX:565C10:5663D6": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:5663D6"
+]
+},
+"EAX:565C10:5663FC": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:5663FC"
+]
+},
+"EAX:565C10:566BA9": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:566BA9"
 ]
 },
 "EAX:565C10:566C9C": {
@@ -11635,6 +13011,22 @@
 "obs": [],
 "ents": [
 "EAX:565C10:566CA9"
+]
+},
+"EAX:565C10:5670F2": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:5670F2"
 ]
 },
 "EAX:56AE40:56AE54": {
@@ -11687,6 +13079,22 @@
 "EAX:56B5A0:56B5B3"
 ]
 },
+"EAX:56B5A0:56B760": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:56B5A0:56B760"
+]
+},
 "EAX:56B780:56B793": {
 "candidates": [
 "LCWStraw",
@@ -11695,6 +13103,38 @@
 "obs": [],
 "ents": [
 "EAX:56B780:56B793"
+]
+},
+"EAX:56B780:56B87E": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:56B780:56B87E"
+]
+},
+"EAX:56B8A0:56B98D": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:56B8A0:56B98D"
 ]
 },
 "EAX:56B9A0:56B9B3": {
@@ -11707,6 +13147,22 @@
 "EAX:56B9A0:56B9B3"
 ]
 },
+"EAX:56B9A0:56BA9E": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:56B9A0:56BA9E"
+]
+},
 "EAX:56BAC0:56BAD3": {
 "candidates": [
 "LZOStraw",
@@ -11715,6 +13171,22 @@
 "obs": [],
 "ents": [
 "EAX:56BAC0:56BAD3"
+]
+},
+"EAX:56BAC0:56BBCA": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:56BAC0:56BBCA"
 ]
 },
 "EAX:56E7C0:56E859": {
@@ -11794,6 +13266,18 @@
 "EAX:59B740:59B74F"
 ]
 },
+"EAX:5AC430:5AC453": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:5AC430:5AC453"
+]
+},
 "EAX:5AFEF0:5AFEF3": {
 "candidates": [
 "IPersist",
@@ -11861,6 +13345,41 @@
 "EAX:5BC180:5BC1AE"
 ]
 },
+"EAX:5BED40:5BEDEC": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5BED40:5BEDEC"
+]
+},
+"EAX:5C07D0:5C0864": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5C07D0:5C0864"
+]
+},
+"EAX:5C07D0:5C0878": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5C07D0:5C0878"
+]
+},
 "EAX:5C1470:5C14A0": {
 "candidates": [
 "?$VectorClass@PAUNodeNameType@@",
@@ -11869,6 +13388,102 @@
 "obs": [],
 "ents": [
 "EAX:5C1470:5C14A0"
+]
+},
+"EAX:5C1470:5C15C6": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1470:5C15C6"
+]
+},
+"EAX:5C18A0:5C190B": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C18A0:5C190B"
+]
+},
+"EAX:5C1A10:5C1AE2": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1A10:5C1AE2"
+]
+},
+"EAX:5C1CC0:5C1CEF": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1CC0:5C1CEF"
+]
+},
+"EAX:5C1DC0:5C1E5B": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1DC0:5C1E5B"
+]
+},
+"EAX:5C3B10:5C3BE4": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C3B10:5C3BE4"
+]
+},
+"EAX:5C3EC0:5C3EE4": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C3EC0:5C3EE4"
+]
+},
+"EAX:5C4110:5C4129": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C4110:5C4129"
 ]
 },
 "EAX:5C42D0:5C43A5": {
@@ -11904,6 +13519,48 @@
 "EAX:5C4670:5C468D"
 ]
 },
+"EAX:5CA9B0:5CA9C2": {
+"candidates": [
+"MultiplayerObserverTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CA9C2"
+]
+},
+"EAX:5CA9B0:5CAA1C": {
+"candidates": [
+"MultiplayerSiegeDefenderTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CAA1C"
+]
+},
+"EAX:5CA9B0:5CAA72": {
+"candidates": [
+"MultiplayerSiegeAttackerTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CAA72"
+]
+},
+"EAX:5CC760:5CC7F6": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5CC760:5CC7F6"
+]
+},
 "EAX:5CEEF0:5CEF04": {
 "candidates": [
 "BufferIOFileClass",
@@ -11928,6 +13585,16 @@
 "obs": [],
 "ents": [
 "EAX:5D2E90:5D2E9C"
+]
+},
+"EAX:5D6690:5D66A3": {
+"candidates": [
+"MultiplayerObserverTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5D6690:5D66A3"
 ]
 },
 "EAX:5D7580:5D7588": {
@@ -12015,6 +13682,18 @@
 "obs": [],
 "ents": [
 "EAX:5F4EC0:5F5100"
+]
+},
+"EAX:5F4EC0:5F5168": {
+"candidates": [
+"ParticleSystemTypeClass",
+"ParticleTypeClass",
+"Struct",
+"TacticalClass"
+],
+"obs": [],
+"ents": [
+"EAX:5F4EC0:5F5168"
 ]
 },
 "EAX:5F5940:5F5A26": {
@@ -12164,6 +13843,17 @@
 "EAX:5FE020:5FE03D"
 ]
 },
+"EAX:6107E0:610808": {
+"candidates": [
+"?$TClassFactory@VWaveClass@@",
+"WaveClass",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:6107E0:610808"
+]
+},
 "EAX:624080:624088": {
 "candidates": [
 "CreateGameDialogControl",
@@ -12266,6 +13956,19 @@
 "EAX:636980:636AC2"
 ]
 },
+"EAX:637E00:637F93": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar",
+"VocClass"
+],
+"obs": [],
+"ents": [
+"EAX:637E00:637F93"
+]
+},
 "EAX:637E00:6380AF": {
 "candidates": [
 "byte*",
@@ -12278,6 +13981,19 @@
 "obs": [],
 "ents": [
 "EAX:637E00:6380AF"
+]
+},
+"EAX:638120:638337": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar",
+"VocClass"
+],
+"obs": [],
+"ents": [
+"EAX:638120:638337"
 ]
 },
 "EAX:639740:63974F": {
@@ -12387,6 +14103,32 @@
 "EAX:65F520:65F53F"
 ]
 },
+"EAX:65FA70:65FB2A": {
+"candidates": [
+"AircraftTypeClass",
+"BuildingTypeClass",
+"MSEngine",
+"TechnoTypeClass",
+"MSEngine_Destru"
+],
+"obs": [],
+"ents": [
+"EAX:65FA70:65FB2A"
+]
+},
+"EAX:660840:6608F5": {
+"candidates": [
+"AircraftTypeClass",
+"BuildingTypeClass",
+"MSEngine",
+"TechnoTypeClass",
+"MSEngine_Destru"
+],
+"obs": [],
+"ents": [
+"EAX:660840:6608F5"
+]
+},
 "EAX:661EC0:661EC3": {
 "candidates": [
 "IPersist",
@@ -12400,32 +14142,88 @@
 "EAX:661EC0:661EC3"
 ]
 },
-"EAX:66D530:66F88D": {
+"EAX:67A090:67A0B3": {
 "candidates": [
-"?$TypeList@PBVUnitTypeClass@@",
-"DynamicVector",
-"DynamicVectorClass",
-"TypeList",
-"VectorClass",
-"VectorClass_ushort"
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
 ],
 "obs": [],
 "ents": [
-"EAX:66D530:66F88D"
+"EAX:67A090:67A0B3"
 ]
 },
-"EAX:66D530:66F990": {
+"EAX:67A110:67A133": {
 "candidates": [
-"?$TypeList@PBVUnitTypeClass@@",
-"DynamicVector",
-"DynamicVectorClass",
-"TypeList",
-"VectorClass",
-"VectorClass_ushort"
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
 ],
 "obs": [],
 "ents": [
-"EAX:66D530:66F990"
+"EAX:67A110:67A133"
+]
+},
+"EAX:67A190:67A1B3": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A190:67A1B3"
+]
+},
+"EAX:67A210:67A233": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A210:67A233"
+]
+},
+"EAX:67A290:67A2B3": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A290:67A2B3"
+]
+},
+"EAX:67A310:67A333": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A310:67A333"
+]
+},
+"EAX:67A570:67A593": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A570:67A593"
 ]
 },
 "EAX:67A730:67A733": {
@@ -12458,18 +14256,40 @@
 "EAX:67A8A0:67A8A3"
 ]
 },
-"EAX:67B720:67B810": {
+"EAX:67AA80:67AAA3": {
 "candidates": [
-"?$TypeList@PBVUnitTypeClass@@",
-"DynamicVector",
-"DynamicVectorClass",
-"TypeList",
-"VectorClass",
-"VectorClass_ushort"
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
 ],
 "obs": [],
 "ents": [
-"EAX:67B720:67B810"
+"EAX:67AA80:67AAA3"
+]
+},
+"EAX:67AE00:67AE23": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67AE00:67AE23"
+]
+},
+"EAX:67B180:67B1A3": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67B180:67B1A3"
 ]
 },
 "EAX:681140:681146": {
@@ -12593,6 +14413,17 @@
 "EAX:6970A0:69726C"
 ]
 },
+"EAX:699980:699CE8": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:699980:699CE8"
+]
+},
 "EAX:69BD60:69BD77": {
 "candidates": [
 "?$VectorClass@PAUNodeNameType@@",
@@ -12656,18 +14487,6 @@
 "obs": [],
 "ents": [
 "EAX:6A4E60:6A4E67"
-]
-},
-"EAX:6AC840:6AC848": {
-"candidates": [
-"IGameMap",
-"GScreenClass",
-"IUnknown",
-"MapClass"
-],
-"obs": [],
-"ents": [
-"EAX:6AC840:6AC848"
 ]
 },
 "EAX:6BB9A0:6BC468": {
@@ -12763,6 +14582,323 @@
 "obs": [],
 "ents": [
 "EAX:6BB9A0:6BD36B"
+]
+},
+"EAX:6BB9A0:6BD7EF": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:6BB9A0:6BD7EF"
+]
+},
+"EAX:6BB9A0:6BD81F": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:6BB9A0:6BD81F"
+]
+},
+"EAX:6BF990:6BF9CF": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6BF990:6BF9CF"
+]
+},
+"EAX:6BFB10:6BFB4C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"EMPulseClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6BFB10:6BFB4C"
+]
+},
+"EAX:6BFC90:6BFCCC": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"LightSourceClass"
+],
+"obs": [],
+"ents": [
+"EAX:6BFC90:6BFCCC"
+]
+},
+"EAX:6C0710:6C074C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TemporalClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C0710:6C074C"
+]
+},
+"EAX:6C0890:6C08CC": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"AirstrikeClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C0890:6C08CC"
+]
+},
+"EAX:6C0E90:6C0ECC": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"DiskLaserClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C0E90:6C0ECC"
+]
+},
+"EAX:6C1010:6C104C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ParasiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1010:6C104C"
+]
+},
+"EAX:6C1310:6C134C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"RadSiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1310:6C134C"
+]
+},
+"EAX:6C1490:6C14CC": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TEventClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1490:6C14CC"
+]
+},
+"EAX:6C1D90:6C1DCE": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1D90:6C1DCE"
+]
+},
+"EAX:6C2090:6C20CE": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TagClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C2090:6C20CE"
+]
+},
+"EAX:6C4610:6C464C": {
+"candidates": [
+"IPersist",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"TunnelLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4610:6C464C"
+]
+},
+"EAX:6C4790:6C47CC": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"WalkLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4790:6C47CC"
+]
+},
+"EAX:6C4910:6C494C": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"DropPodLocomotionClass",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4910:6C494C"
+]
+},
+"EAX:6C4A90:6C4ACC": {
+"candidates": [
+"IPersist",
+"FlyLocomotionClass",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4A90:6C4ACC"
+]
+},
+"EAX:6C4C10:6C4C4C": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"TeleportLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4C10:6C4C4C"
+]
+},
+"EAX:6C4D90:6C4DCC": {
+"candidates": [
+"IPersist",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"MechLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4D90:6C4DCC"
+]
+},
+"EAX:6C5E10:6C5E4C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"NeuronClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C5E10:6C5E4C"
+]
+},
+"EAX:6C6110:6C614C": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"AlphaShapeClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C6110:6C614C"
 ]
 },
 "EAX:6C6F50:6C7BC2": {
@@ -13229,22 +15365,6 @@
 "EAX:6CE800:6CE82C"
 ]
 },
-"EAX:6CFE20:6CFE2B": {
-"candidates": [
-"IGameMap",
-"DisplayClass",
-"GScreenClass",
-"IUnknown",
-"MapClass",
-"PowerClass",
-"RadarClass",
-"SidebarClass"
-],
-"obs": [],
-"ents": [
-"EAX:6CFE20:6CFE2B"
-]
-},
 "EAX:6CFE20:6CFE42": {
 "candidates": [
 "AbilitiesStruct",
@@ -13266,6 +15386,22 @@
 "obs": [],
 "ents": [
 "EAX:6D0680:6D088A"
+]
+},
+"EAX:6E52A0:6E52D6": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TagClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E52A0:6E52D6"
 ]
 },
 "EAX:6E6410:6E642F": {
@@ -13313,6 +15449,38 @@
 "EAX:6E86A0:6E86BF"
 ]
 },
+"EAX:6E8A90:6E8D90": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TagClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E8A90:6E8D90"
+]
+},
+"EAX:6E8A90:6E8DB6": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E8A90:6E8DB6"
+]
+},
 "EAX:6E8DE0:6E8EA6": {
 "candidates": [
 "IPersist",
@@ -13327,6 +15495,22 @@
 "obs": [],
 "ents": [
 "EAX:6E8DE0:6E8EA6"
+]
+},
+"EAX:6E9140:6E9758": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E9140:6E9758"
 ]
 },
 "EAX:6F1BB0:6F1BCF": {
@@ -13372,6 +15556,54 @@
 "obs": [],
 "ents": [
 "EAX:6F2B40:6F2BE8"
+]
+},
+"EAX:6F3F40:6F4145": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ParasiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:6F3F40:6F4145"
+]
+},
+"EAX:6F3F40:6F4194": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TemporalClass"
+],
+"obs": [],
+"ents": [
+"EAX:6F3F40:6F4194"
+]
+},
+"EAX:6F3F40:6F41E5": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"AirstrikeClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6F3F40:6F41E5"
 ]
 },
 "EAX:6F5090:6F50B4": {
@@ -13427,6 +15659,22 @@
 "obs": [],
 "ents": [
 "EAX:6FBFA0:6FBFC7"
+]
+},
+"EAX:6FDD50:6FE47E": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"DiskLaserClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6FDD50:6FE47E"
 ]
 },
 "EAX:6FDD50:6FE4E2": {
@@ -13717,6 +15965,18 @@
 "EAX:7162F0:716AA9"
 ]
 },
+"EAX:717C00:717C23": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:717C00:717C23"
+]
+},
 "EAX:718000:718003": {
 "candidates": [
 "IPersist",
@@ -13867,6 +16127,22 @@
 "EAX:726910:726913"
 ]
 },
+"EAX:727240:7274F2": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TEventClass"
+],
+"obs": [],
+"ents": [
+"EAX:727240:7274F2"
+]
+},
 "EAX:727BF0:727C0F": {
 "candidates": [
 "IPersist",
@@ -13966,6 +16242,38 @@
 "EAX:749B70:749ED6"
 ]
 },
+"EAX:751040:75105B": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:751040:75105B"
+]
+},
+"EAX:751080:7510AD": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:751080:7510AD"
+]
+},
 "EAX:759260:75926A": {
 "candidates": [
 "BufferIOFileClass",
@@ -14032,6 +16340,52 @@
 "EAX:763C70:763CE3"
 ]
 },
+"EAX:764A20:764A33": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:764A20:764A33"
+]
+},
+"EAX:764B90:764DAA": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:764B90:764DAA"
+]
+},
+"EAX:768F50:769146": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:768F50:769146"
+]
+},
+"EAX:769550:7695E7": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:769550:7695E7"
+]
+},
 "EAX:76C290:76C327": {
 "candidates": [
 "IPersist",
@@ -14046,6 +16400,16 @@
 "obs": [],
 "ents": [
 "EAX:76C290:76C327"
+]
+},
+"EAX:76D4D0:76D7B3": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:76D4D0:76D7B3"
 ]
 },
 "EAX:76F090:76F0A6": {
@@ -14100,6 +16464,138 @@
 "EAX:7754C0:7754C3"
 ]
 },
+"EAX:778710:778756": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:778710:778756"
+]
+},
+"EAX:778A20:778A3D": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:778A20:778A3D"
+]
+},
+"EAX:779730:779740": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779730:779740"
+]
+},
+"EAX:779830:779843": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779830:779843"
+]
+},
+"EAX:779940:779950": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779940:779950"
+]
+},
+"EAX:779A40:779A53": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779A40:779A53"
+]
+},
+"EAX:779B50:779B63": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779B50:779B63"
+]
+},
+"EAX:779C90:779CA3": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779C90:779CA3"
+]
+},
+"EAX:779DD0:779DE3": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779DD0:779DE3"
+]
+},
+"EAX:779F10:779F23": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:779F10:779F23"
+]
+},
+"EAX:77A080:77A0F7": {
+"candidates": [
+"BufferIOFileClass",
+"CDFileClass",
+"FileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"EAX:77A080:77A0F7"
+]
+},
 "EAX:780110:7806A7": {
 "candidates": [
 "GenericNode",
@@ -14140,6 +16636,21 @@
 "EAX:785370:7854E8"
 ]
 },
+"EAX:785370:7855B7": {
+"candidates": [
+"?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+"CComObjectRootBase@ATL",
+"CDownloadEventSink",
+"IDownloadEvent@WOL",
+"?$CComObject@VCDownloadEventSink@@@ATL",
+"IUnknown",
+"WOL"
+],
+"obs": [],
+"ents": [
+"EAX:785370:7855B7"
+]
+},
 "EAX:786390:78647A": {
 "candidates": [
 "GenericNode",
@@ -14152,16 +16663,60 @@
 "EAX:786390:78647A"
 ]
 },
-"EAX:789B60:789BA3": {
+"EAX:788180:788215": {
 "candidates": [
-"DialogControl@OwnerDraw",
-"SimpleDialogControl@OwnerDraw",
-"SimpleWonlineDialogControl",
-"WonlineStringDialogControl"
+"GenericNode",
+"MixFileClass",
+"Node"
 ],
 "obs": [],
 "ents": [
-"EAX:789B60:789BA3"
+"EAX:788180:788215"
+]
+},
+"EAX:7AFB90:7AFCC3": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFCC3"
+]
+},
+"EAX:7AFB90:7AFD30": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFD30"
+]
+},
+"EAX:7AFB90:7AFD9D": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFD9D"
+]
+},
+"EAX:7AFB90:7AFE05": {
+"candidates": [
+"DialogControl@OwnerDraw",
+"FactionSelectDialogControl@WorldDominationTour",
+"SimpleDialogControl@OwnerDraw",
+"WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFE05"
 ]
 },
 "EAX:7C970C:7C9745": {
@@ -14273,6 +16828,28 @@
 "obs": [],
 "ents": [
 "EAX:406B10:406C18"
+]
+},
+"EAX:406B10:406CB0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:406B10:406CB0"
+]
+},
+"EAX:406B10:406CD4": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:406B10:406CD4"
 ]
 },
 "EAX:406DE0:406E31": {
@@ -14579,6 +17156,22 @@
 "EAX:459CA0:459D59"
 ]
 },
+"EAX:4690B0:4691C8": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"RadSiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:4690B0:4691C8"
+]
+},
 "EAX:46B0C0:46B23B": {
 "candidates": [
 "BSurface",
@@ -14588,6 +17181,107 @@
 "obs": [],
 "ents": [
 "EAX:46B0C0:46B23B"
+]
+},
+"EAX:478720:47874B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:478720:47874B"
+]
+},
+"EAX:4787E0:47880B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:4787E0:47880B"
+]
+},
+"EAX:4791F0:47941A": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:47941A"
+]
+},
+"EAX:4791F0:479465": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:479465"
+]
+},
+"EAX:4791F0:4794BA": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4794BA"
+]
+},
+"EAX:4791F0:4794F0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4794F0"
+]
+},
+"EAX:4791F0:479590": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:479590"
+]
+},
+"EAX:4791F0:4795BB": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:4795BB"
+]
+},
+"EAX:4791F0:47965B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:4791F0:47965B"
 ]
 },
 "EAX:480630:4809DD": {
@@ -14655,6 +17349,19 @@
 "obs": [],
 "ents": [
 "EAX:4AAB30:4AABA3"
+]
+},
+"EAX:4CB700:4CB72F": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"SHPStruct",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:4CB700:4CB72F"
 ]
 },
 "EAX:4D5690:4D6379": {
@@ -14776,6 +17483,46 @@
 "EAX:4DDC60:4DDD8A"
 ]
 },
+"EAX:4F2C70:4F2EED": {
+"candidates": [
+"GraphicMenuAnimItem",
+"GraphicMenuItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F2C70:4F2EED"
+]
+},
+"EAX:4F2F10:4F2FF7": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:4F2F10:4F2FF7"
+]
+},
+"EAX:4F3140:4F3423": {
+"candidates": [
+"GraphicMenuImageItem",
+"GraphicMenuItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F3140:4F3423"
+]
+},
+"EAX:4F3B80:4F3C25": {
+"candidates": [
+"GraphicMenuItem",
+"GraphicMenuShortcutItem"
+],
+"obs": [],
+"ents": [
+"EAX:4F3B80:4F3C25"
+]
+},
 "EAX:5024F0:502524": {
 "candidates": [
 "IEnumConnectionPoints",
@@ -14785,6 +17532,42 @@
 "obs": [],
 "ents": [
 "EAX:5024F0:502524"
+]
+},
+"EAX:512BD0:512BFB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:512BD0:512BFB"
+]
+},
+"EAX:512FA0:512FCB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:512FA0:512FCB"
+]
+},
+"EAX:513370:51339B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:513370:51339B"
 ]
 },
 "EAX:51AA40:51ABA7": {
@@ -14900,6 +17683,30 @@
 "EAX:522C00:522C13"
 ]
 },
+"EAX:524F20:524F4B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:524F20:524F4B"
+]
+},
+"EAX:525060:52508B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:525060:52508B"
+]
+},
 "EAX:528660:528930": {
 "candidates": [
 "GenericNode",
@@ -14924,6 +17731,335 @@
 "obs": [],
 "ents": [
 "EAX:52D9A0:52E1B1"
+]
+},
+"EAX:52F3F0:52F45B": {
+"candidates": [
+"UDPInterfaceClass",
+"WinsockInterfaceClass"
+],
+"obs": [],
+"ents": [
+"EAX:52F3F0:52F45B"
+]
+},
+"EAX:530000:53005A": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530000:53005A"
+]
+},
+"EAX:530000:530116": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530000:530116"
+]
+},
+"EAX:5301A0:53021C": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:53021C"
+]
+},
+"EAX:5301A0:5302AF": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5302AF"
+]
+},
+"EAX:5301A0:5302D7": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5302D7"
+]
+},
+"EAX:5301A0:53032B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:53032B"
+]
+},
+"EAX:5301A0:53036D": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:53036D"
+]
+},
+"EAX:5301A0:5303D9": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:5303D9"
+]
+},
+"EAX:5301A0:530405": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5301A0:530405"
+]
+},
+"EAX:530460:5304CF": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5304CF"
+]
+},
+"EAX:530460:5305AE": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5305AE"
+]
+},
+"EAX:530460:5305EA": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5305EA"
+]
+},
+"EAX:530460:530650": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530650"
+]
+},
+"EAX:530460:5306D9": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5306D9"
+]
+},
+"EAX:530460:530762": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530762"
+]
+},
+"EAX:530460:530821": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530821"
+]
+},
+"EAX:530460:530876": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530876"
+]
+},
+"EAX:530460:530960": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530960"
+]
+},
+"EAX:530460:5309B5": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5309B5"
+]
+},
+"EAX:530460:530AA7": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530AA7"
+]
+},
+"EAX:530460:530B3F": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530B3F"
+]
+},
+"EAX:530460:530BD9": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530BD9"
+]
+},
+"EAX:530460:530C70": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530C70"
+]
+},
+"EAX:530460:530CDA": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530CDA"
+]
+},
+"EAX:530460:530F7B": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530F7B"
+]
+},
+"EAX:530460:530FD0": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:530FD0"
+]
+},
+"EAX:530460:5310A6": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5310A6"
+]
+},
+"EAX:530460:5310FB": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:5310FB"
+]
+},
+"EAX:530460:53125C": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:530460:53125C"
 ]
 },
 "EAX:532150:53347D": {
@@ -15346,6 +18482,94 @@
 "EAX:532150:533C25"
 ]
 },
+"EAX:5349C0:534B05": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534B05"
+]
+},
+"EAX:5349C0:534B99": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534B99"
+]
+},
+"EAX:5349C0:534BD5": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:5349C0:534BD5"
+]
+},
+"EAX:534E50:534F32": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534E50:534F32"
+]
+},
+"EAX:534E50:534F72": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534E50:534F72"
+]
+},
+"EAX:534FA0:535160": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:535160"
+]
+},
+"EAX:534FA0:5351FE": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:5351FE"
+]
+},
+"EAX:534FA0:5352D6": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:534FA0:5352D6"
+]
+},
 "EAX:544BE0:544BE2": {
 "candidates": [
 "byte*",
@@ -15572,6 +18796,62 @@
 "EAX:54CA90:54CE94"
 ]
 },
+"EAX:5596A0:5596FD": {
+"candidates": [
+"HouseClass",
+"TechnoClass",
+"WarheadTypeClass",
+"WaveClass"
+],
+"obs": [],
+"ents": [
+"EAX:5596A0:5596FD"
+]
+},
+"EAX:5596A0:5598BF": {
+"candidates": [
+"HouseClass",
+"TechnoClass",
+"WarheadTypeClass",
+"WaveClass"
+],
+"obs": [],
+"ents": [
+"EAX:5596A0:5598BF"
+]
+},
+"EAX:565C10:5663DB": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:5663DB"
+]
+},
+"EAX:565C10:566405": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:565C10:566405"
+]
+},
 "EAX:56E7C0:56E85E": {
 "candidates": [
 "IPersist",
@@ -15585,6 +18865,18 @@
 "obs": [],
 "ents": [
 "EAX:56E7C0:56E85E"
+]
+},
+"EAX:5AC430:5AC45B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:5AC430:5AC45B"
 ]
 },
 "EAX:5B49B0:5B4A86": {
@@ -15611,6 +18903,179 @@
 "EAX:5B77E0:5B78C5"
 ]
 },
+"EAX:5BC180:5BC1B3": {
+"candidates": [
+"FootClass",
+"MissionClass",
+"ObjectClass",
+"RadioClass",
+"TechnoClass",
+"UnitClass"
+],
+"obs": [],
+"ents": [
+"EAX:5BC180:5BC1B3"
+]
+},
+"EAX:5C07D0:5C086C": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5C07D0:5C086C"
+]
+},
+"EAX:5C07D0:5C087D": {
+"candidates": [
+"IPXInterfaceClass",
+"WinsockInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"EAX:5C07D0:5C087D"
+]
+},
+"EAX:5C1470:5C15CE": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1470:5C15CE"
+]
+},
+"EAX:5C18A0:5C1913": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C18A0:5C1913"
+]
+},
+"EAX:5C1A10:5C1AEA": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1A10:5C1AEA"
+]
+},
+"EAX:5C1CC0:5C1CF7": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1CC0:5C1CF7"
+]
+},
+"EAX:5C1DC0:5C1E63": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C1DC0:5C1E63"
+]
+},
+"EAX:5C3B10:5C3BEC": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C3B10:5C3BEC"
+]
+},
+"EAX:5C3EC0:5C3EEC": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C3EC0:5C3EEC"
+]
+},
+"EAX:5C4110:5C4131": {
+"candidates": [
+"ParticleTypeClass",
+"WinModemClass",
+"GenericMixFiles",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:5C4110:5C4131"
+]
+},
+"EAX:5CA9B0:5CA9C7": {
+"candidates": [
+"MultiplayerObserverTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CA9C7"
+]
+},
+"EAX:5CA9B0:5CAA21": {
+"candidates": [
+"MultiplayerSiegeDefenderTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CAA21"
+]
+},
+"EAX:5CA9B0:5CAA77": {
+"candidates": [
+"MultiplayerSiegeAttackerTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5CA9B0:5CAA77"
+]
+},
+"EAX:5D6690:5D66A8": {
+"candidates": [
+"MultiplayerObserverTeam",
+"MultiplayerTeam"
+],
+"obs": [],
+"ents": [
+"EAX:5D6690:5D66A8"
+]
+},
 "EAX:5DC350:5DC37D": {
 "candidates": [
 "GenericNode",
@@ -15633,6 +19098,18 @@
 "obs": [],
 "ents": [
 "EAX:5E00B0:5E1727"
+]
+},
+"EAX:5F4EC0:5F5170": {
+"candidates": [
+"ParticleSystemTypeClass",
+"ParticleTypeClass",
+"Struct",
+"TacticalClass"
+],
+"obs": [],
+"ents": [
+"EAX:5F4EC0:5F5170"
 ]
 },
 "EAX:5F5940:5F5A2B": {
@@ -15680,6 +19157,32 @@
 "EAX:62A4A0:62A624"
 ]
 },
+"EAX:637E00:637F9B": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar",
+"VocClass"
+],
+"obs": [],
+"ents": [
+"EAX:637E00:637F9B"
+]
+},
+"EAX:638120:63833F": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar",
+"VocClass"
+],
+"obs": [],
+"ents": [
+"EAX:638120:63833F"
+]
+},
 "EAX:64CDA0:64CF03": {
 "candidates": [
 "LinkClass",
@@ -15692,6 +19195,152 @@
 "obs": [],
 "ents": [
 "EAX:64CDA0:64CF03"
+]
+},
+"EAX:65FA70:65FB32": {
+"candidates": [
+"AircraftTypeClass",
+"BuildingTypeClass",
+"MSEngine",
+"TechnoTypeClass",
+"MSEngine_Destru"
+],
+"obs": [],
+"ents": [
+"EAX:65FA70:65FB32"
+]
+},
+"EAX:660840:6608FD": {
+"candidates": [
+"AircraftTypeClass",
+"BuildingTypeClass",
+"MSEngine",
+"TechnoTypeClass",
+"MSEngine_Destru"
+],
+"obs": [],
+"ents": [
+"EAX:660840:6608FD"
+]
+},
+"EAX:67A090:67A0BB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A090:67A0BB"
+]
+},
+"EAX:67A110:67A13B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A110:67A13B"
+]
+},
+"EAX:67A190:67A1BB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A190:67A1BB"
+]
+},
+"EAX:67A210:67A23B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A210:67A23B"
+]
+},
+"EAX:67A290:67A2BB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A290:67A2BB"
+]
+},
+"EAX:67A310:67A33B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A310:67A33B"
+]
+},
+"EAX:67A570:67A59B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67A570:67A59B"
+]
+},
+"EAX:67AA80:67AAAB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67AA80:67AAAB"
+]
+},
+"EAX:67AE00:67AE2B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67AE00:67AE2B"
+]
+},
+"EAX:67B180:67B1AB": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:67B180:67B1AB"
 ]
 },
 "EAX:685670:68595E": {
@@ -15708,6 +19357,334 @@
 "obs": [],
 "ents": [
 "EAX:685670:68595E"
+]
+},
+"EAX:699980:699CED": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:699980:699CED"
+]
+},
+"EAX:6BB9A0:6BD7F4": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:6BB9A0:6BD7F4"
+]
+},
+"EAX:6BB9A0:6BD824": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:6BB9A0:6BD824"
+]
+},
+"EAX:6BF990:6BF9D4": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"CellClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6BF990:6BF9D4"
+]
+},
+"EAX:6BFB10:6BFB51": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"EMPulseClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6BFB10:6BFB51"
+]
+},
+"EAX:6BFC90:6BFCD1": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"LightSourceClass"
+],
+"obs": [],
+"ents": [
+"EAX:6BFC90:6BFCD1"
+]
+},
+"EAX:6C0710:6C0751": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TemporalClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C0710:6C0751"
+]
+},
+"EAX:6C0890:6C08D1": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"AirstrikeClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C0890:6C08D1"
+]
+},
+"EAX:6C0E90:6C0ED1": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"DiskLaserClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C0E90:6C0ED1"
+]
+},
+"EAX:6C1010:6C1051": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ParasiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1010:6C1051"
+]
+},
+"EAX:6C1310:6C1351": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"RadSiteClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1310:6C1351"
+]
+},
+"EAX:6C1490:6C14D1": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TEventClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1490:6C14D1"
+]
+},
+"EAX:6C1D90:6C1DD3": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C1D90:6C1DD3"
+]
+},
+"EAX:6C2090:6C20D3": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TagClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C2090:6C20D3"
+]
+},
+"EAX:6C4610:6C4651": {
+"candidates": [
+"IPersist",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"TunnelLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4610:6C4651"
+]
+},
+"EAX:6C4790:6C47D1": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"WalkLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4790:6C47D1"
+]
+},
+"EAX:6C4910:6C4951": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"DropPodLocomotionClass",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4910:6C4951"
+]
+},
+"EAX:6C4A90:6C4AD1": {
+"candidates": [
+"IPersist",
+"FlyLocomotionClass",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4A90:6C4AD1"
+]
+},
+"EAX:6C4C10:6C4C51": {
+"candidates": [
+"IPersist",
+"IPiggyback",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"TeleportLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4C10:6C4C51"
+]
+},
+"EAX:6C4D90:6C4DD1": {
+"candidates": [
+"IPersist",
+"ILocomotion",
+"IPersistStream",
+"IUnknown",
+"LocomotionClass",
+"MechLocomotionClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C4D90:6C4DD1"
+]
+},
+"EAX:6C5E10:6C5E51": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"NeuronClass"
+],
+"obs": [],
+"ents": [
+"EAX:6C5E10:6C5E51"
+]
+},
+"EAX:6C6110:6C6151": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"AlphaShapeClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6C6110:6C6151"
 ]
 },
 "EAX:6C6F50:6C7BC7": {
@@ -16199,6 +20176,38 @@
 "EAX:6D7F20:6D8119"
 ]
 },
+"EAX:6E8A90:6E8DBB": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E8A90:6E8DBB"
+]
+},
+"EAX:6E9140:6E975D": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"ScriptClass"
+],
+"obs": [],
+"ents": [
+"EAX:6E9140:6E975D"
+]
+},
 "EAX:6F3AD0:6F3B04": {
 "candidates": [
 "byte*",
@@ -16271,6 +20280,22 @@
 "obs": [],
 "ents": [
 "EAX:6FBFA0:6FBFCC"
+]
+},
+"EAX:6FDD50:6FE483": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"DiskLaserClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"EAX:6FDD50:6FE483"
 ]
 },
 "EAX:6FFEC0:6FFF3B": {
@@ -16865,6 +20890,18 @@
 "EAX:716150:716242"
 ]
 },
+"EAX:717C00:717C2B": {
+"candidates": [
+"CarryoverClass",
+"EditClass",
+"IsometricTileClass",
+"Territory_WorldDominationTour"
+],
+"obs": [],
+"ents": [
+"EAX:717C00:717C2B"
+]
+},
 "EAX:71C930:71C9A6": {
 "candidates": [
 "CellClass",
@@ -16885,6 +20922,22 @@
 "obs": [],
 "ents": [
 "EAX:71D000:71D085"
+]
+},
+"EAX:727240:7274F7": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown",
+"TEventClass"
+],
+"obs": [],
+"ents": [
+"EAX:727240:7274F7"
 ]
 },
 "EAX:7283C0:728519": {
@@ -16960,6 +21013,48 @@
 "EAX:749B70:749EE1"
 ]
 },
+"EAX:751040:751060": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:751040:751060"
+]
+},
+"EAX:751080:7510B2": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"InfantryClass",
+"TechnoClass",
+"UnitClass",
+"WaveClass",
+"RulesClass"
+],
+"obs": [],
+"ents": [
+"EAX:751080:7510B2"
+]
+},
+"EAX:768F50:76914B": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:768F50:76914B"
+]
+},
 "EAX:76C290:76C32C": {
 "candidates": [
 "IPersist",
@@ -16976,6 +21071,16 @@
 "EAX:76C290:76C32C"
 ]
 },
+"EAX:76D4D0:76D7B8": {
+"candidates": [
+"MSAnim",
+"MSShapeAnim"
+],
+"obs": [],
+"ents": [
+"EAX:76D4D0:76D7B8"
+]
+},
 "EAX:780110:7806B2": {
 "candidates": [
 "GenericNode",
@@ -16986,6 +21091,50 @@
 "obs": [],
 "ents": [
 "EAX:780110:7806B2"
+]
+},
+"EAX:788180:78821A": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:788180:78821A"
+]
+},
+"EAX:7AFB90:7AFCC8": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFCC8"
+]
+},
+"EAX:7AFB90:7AFD35": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFD35"
+]
+},
+"EAX:7AFB90:7AFDA2": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"EAX:7AFB90:7AFDA2"
 ]
 },
 "EAX:7C970C:7C974D": {
@@ -17081,6 +21230,28 @@
 "obs": [],
 "ents": [
 "RET:41BF80"
+]
+},
+"P:5CC760:4": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"P:5CC760:4"
+]
+},
+"P:5CC760:8": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"P:5CC760:8"
 ]
 },
 "M:404140:this:0xB0": {
@@ -18076,6 +22247,23 @@
 "M:629FD0:this:0x24"
 ]
 },
+"M:62A260:this:0x24": {
+"candidates": [
+"Game",
+"LinkedList"
+],
+"obs": [
+"108:4",
+"156:4",
+"540:4",
+"608:4",
+"1074:1",
+"1076:4"
+],
+"ents": [
+"M:62A260:this:0x24"
+]
+},
 "M:62AC30:this:0x24": {
 "candidates": [
 "CCINIClass",
@@ -18249,6 +22437,20 @@
 "obs": [],
 "ents": [
 "M:6AF6C0:this:0x520"
+]
+},
+"M:6AFD60:this:0x24": {
+"candidates": [
+"Game",
+"LinkedList"
+],
+"obs": [
+"172:4",
+"1272:1",
+"1444:4"
+],
+"ents": [
+"M:6AFD60:this:0x24"
 ]
 },
 "M:6B0300:this:0x520": {
@@ -18696,6 +22898,20 @@
 "M:71AB10:this:0x24"
 ]
 },
+"M:71ABC0:this:0x28": {
+"candidates": [
+"?$TClassFactory@VBuildingClass@@",
+"BuildingClass"
+],
+"obs": [
+"540:4",
+"624:1",
+"632:4"
+],
+"ents": [
+"M:71ABC0:this:0x28"
+]
+},
 "M:73F0A0:this:0x50": {
 "candidates": [
 "?$TClassFactory@VHouseClass@@",
@@ -19065,18 +23281,6 @@
 "T:416D50"
 ]
 },
-"T:4379A0": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:4379A0"
-]
-},
 "R:52FF90:ecx": {
 "candidates": [
 "?$TClassFactory@VBuildingClass@@",
@@ -19108,16 +23312,6 @@
 ],
 "ents": [
 "T:54D0F0"
-]
-},
-"T:6395B0": {
-"candidates": [
-"?$TClassFactory@VBuildingClass@@",
-"BuildingClass"
-],
-"obs": [],
-"ents": [
-"T:6395B0"
 ]
 },
 "R:65FE00:ecx": {
@@ -19188,6 +23382,22 @@
 "T:723260"
 ]
 },
+"P:762AF0:1": {
+"candidates": [
+"BuildingClass",
+"FootClass"
+],
+"obs": [
+"0:4",
+"304:4",
+"500:4",
+"512:4"
+],
+"ents": [
+"T:761030",
+"P:762AF0:1"
+]
+},
 "R:7B9E30:ecx": {
 "candidates": [
 "FoggedObjectClass",
@@ -19215,28 +23425,14 @@
 "T:7B9E30"
 ]
 },
-"T:7BC1F0": {
+"M:405AC0:this:0xC0": {
 "candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
+"BuildingClass",
+"FootClass"
 ],
 "obs": [],
 "ents": [
-"T:7BC1F0"
-]
-},
-"T:7BC250": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"T:7BC250"
+"M:405AC0:this:0xC0"
 ]
 },
 "M:40A090:this:0x170": {
@@ -20044,6 +24240,24 @@
 "T:403A80"
 ]
 },
+"M:4052F0:this:0xb0": {
+"candidates": [
+"BuildingTypeClass",
+"void*"
+],
+"obs": [
+"144:4",
+"152:4",
+"156:4",
+"180:4",
+"184:4",
+"188:4",
+"192:4"
+],
+"ents": [
+"M:4052F0:this:0xb0"
+]
+},
 "M:4055C0:this:0x278": {
 "candidates": [
 "?$TClassFactory@VTemporalClass@@",
@@ -20056,6 +24270,23 @@
 ],
 "ents": [
 "M:4055C0:this:0x278"
+]
+},
+"R:4079C0:ecx": {
+"candidates": [
+"AudioStream",
+"RulesClass",
+"SessionClass"
+],
+"obs": [
+"192:4",
+"368:4",
+"372:4",
+"376:4"
+],
+"ents": [
+"T:4079C0",
+"R:4079C0:edi"
 ]
 },
 "R:407FB0:ecx": {
@@ -20355,7 +24586,8 @@
 "1408:4"
 ],
 "ents": [
-"T:43EE50"
+"T:43EE50",
+"R:43EE50:esi"
 ]
 },
 "M:43EEB0:this:0x520": {
@@ -21224,6 +25456,28 @@
 "M:543330:this:0xac"
 ]
 },
+"R:54B980:ecx": {
+"candidates": [
+"LocomotionClass",
+"TeamClass",
+"WaveClass"
+],
+"obs": [
+"4:4",
+"12:4",
+"44:4",
+"80:4",
+"112:4",
+"116:4",
+"120:4",
+"124:4",
+"128:4"
+],
+"ents": [
+"T:54B980",
+"R:54B980:esi"
+]
+},
 "M:54B980:this:0xc": {
 "candidates": [
 "FootClass",
@@ -21253,7 +25507,8 @@
 "128:4"
 ],
 "ents": [
-"T:54BD30"
+"T:54BD30",
+"R:54BD30:esi"
 ]
 },
 "M:54BD30:this:0xc": {
@@ -21271,6 +25526,25 @@
 ],
 "ents": [
 "M:54BD30:this:0xc"
+]
+},
+"M:54BFF0:this:0xc": {
+"candidates": [
+"FootClass",
+"char"
+],
+"obs": [
+"116:1",
+"156:4",
+"688:4",
+"692:4",
+"1376:2",
+"1376:4",
+"1378:2",
+"1709:1"
+],
+"ents": [
+"M:54BFF0:this:0xc"
 ]
 },
 "R:551A90:ecx": {
@@ -21620,6 +25894,28 @@
 "T:630250"
 ]
 },
+"R:635F80:ecx": {
+"candidates": [
+"BuildingClass",
+"FootClass",
+"RulesClass",
+"Sidebar"
+],
+"obs": [
+"0:4",
+"4:4",
+"8:4",
+"20:4",
+"140:4",
+"144:4",
+"148:4",
+"152:1",
+"153:1"
+],
+"ents": [
+"T:635F80"
+]
+},
 "R:652CD0:ecx": {
 "candidates": [
 "SidebarClass",
@@ -21631,6 +25927,43 @@
 ],
 "ents": [
 "T:652CD0"
+]
+},
+"R:655050:ecx": {
+"candidates": [
+"SidebarClass",
+"RulesClass"
+],
+"obs": [
+"260:4",
+"5264:4",
+"5272:4"
+],
+"ents": [
+"T:655050"
+]
+},
+"R:659E30:ecx": {
+"candidates": [
+"HouseClass",
+"LocomotionClass",
+"TiberiumClass",
+"WaveClass"
+],
+"obs": [
+"36:4",
+"40:4",
+"44:4",
+"48:4",
+"52:4",
+"56:4",
+"96:4",
+"100:4",
+"140:4"
+],
+"ents": [
+"T:659E30",
+"R:659E30:esi"
 ]
 },
 "M:6990A0:this:0x4": {
@@ -21687,6 +26020,24 @@
 ],
 "ents": [
 "M:6B7DE0:this:0x6c"
+]
+},
+"R:6DA160:ecx": {
+"candidates": [
+"BuildingTypeClass",
+"InfantryTypeClass",
+"UnitTypeClass",
+"RulesClass",
+"TacticalMap"
+],
+"obs": [
+"3472:4",
+"3476:4",
+"3480:4",
+"3484:4"
+],
+"ents": [
+"T:6DA160"
 ]
 },
 "R:6E1530:ecx": {
@@ -21771,6 +26122,22 @@
 "P:6E43A0:0"
 ]
 },
+"M:6E9050:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"692:4",
+"1444:4",
+"1496:4"
+],
+"ents": [
+"M:6E9050:this:0x54"
+]
+},
 "M:6EA870:this:0x54": {
 "candidates": [
 "?$TClassFactory@VAnimTypeClass@@",
@@ -21800,6 +26167,66 @@
 ],
 "ents": [
 "M:6EAE60:this:0x54"
+]
+},
+"M:6EB490:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EB490:this:0x54"
+]
+},
+"M:6EB870:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"692:4",
+"1444:4",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EB870:this:0x54"
+]
+},
+"M:6EBAD0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"20:1",
+"108:4",
+"129:1",
+"144:1",
+"180:4",
+"692:4",
+"1444:4",
+"1496:4",
+"1652:4",
+"1673:1",
+"1678:1"
+],
+"ents": [
+"M:6EBAD0:this:0x54"
 ]
 },
 "M:6EBF50:this:0x24": {
@@ -21834,6 +26261,24 @@
 "M:6EC370:this:0x54"
 ]
 },
+"M:6EC7D0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EC7D0:this:0x54"
+]
+},
 "M:6EC9A0:this:0x54": {
 "candidates": [
 "?$TClassFactory@VAnimTypeClass@@",
@@ -21864,6 +26309,42 @@
 "M:6ECA70:this:0x54"
 ]
 },
+"M:6ECCE0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6ECCE0:this:0x54"
+]
+},
+"M:6ED090:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"156:4",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6ED090:this:0x54"
+]
+},
 "M:6ED200:this:0x54": {
 "candidates": [
 "?$TClassFactory@VAnimTypeClass@@",
@@ -21877,6 +26358,46 @@
 ],
 "ents": [
 "M:6ED200:this:0x54"
+]
+},
+"M:6ED4D0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"540:4",
+"1444:4",
+"1496:4",
+"1673:1",
+"1732:4"
+],
+"ents": [
+"M:6ED4D0:this:0x54"
+]
+},
+"M:6ED7E0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"144:1",
+"692:4",
+"1444:4",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6ED7E0:this:0x54"
 ]
 },
 "M:6EDCA0:this:0x54": {
@@ -21920,6 +26441,24 @@
 ],
 "ents": [
 "M:6EDF10:this:0x54"
+]
+},
+"M:6EDFD0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"116:1",
+"129:1",
+"144:1",
+"1496:4"
+],
+"ents": [
+"M:6EDFD0:this:0x54"
 ]
 },
 "M:6EE050:this:0x54": {
@@ -21968,6 +26507,25 @@
 ],
 "ents": [
 "M:6EE3F0:this:0x24"
+]
+},
+"M:6EE5C0:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass",
+"int"
+],
+"obs": [
+"108:4",
+"129:1",
+"140:1",
+"144:1",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EE5C0:this:0x54"
 ]
 },
 "M:6EF110:this:0x54": {
@@ -22064,6 +26622,21 @@
 "M:6EF700:this:0x54"
 ]
 },
+"M:6EFA10:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"int"
+],
+"obs": [
+"540:4",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6EFA10:this:0x54"
+]
+},
 "M:6EFC70:this:0x54": {
 "candidates": [
 "?$TClassFactory@VAnimTypeClass@@",
@@ -22090,6 +26663,22 @@
 ],
 "ents": [
 "M:6EFE60:this:0x54"
+]
+},
+"M:6F0130:this:0x54": {
+"candidates": [
+"?$TClassFactory@VAnimTypeClass@@",
+"AnimTypeClass",
+"MixFileClass"
+],
+"obs": [
+"156:4",
+"540:4",
+"1496:4",
+"1673:1"
+],
+"ents": [
+"M:6F0130:this:0x54"
 ]
 },
 "M:6F03F0:this:0x54": {
@@ -22307,6 +26896,25 @@
 "M:709290:this:0x5d4"
 ]
 },
+"P:709290:0": {
+"candidates": [
+"AircraftClass",
+"BuildingClass",
+"FootClass",
+"TechnoClass"
+],
+"obs": [
+"0:4",
+"692:4",
+"1276:4",
+"1292:1",
+"1444:4"
+],
+"ents": [
+"P:709290:0",
+"T:709480"
+]
+},
 "M:709A90:this:0x520": {
 "candidates": [
 "?$TClassFactory@VBuildingTypeClass@@",
@@ -22330,6 +26938,28 @@
 ],
 "ents": [
 "M:70F1D0:this:0x12c"
+]
+},
+"M:70FEE0:this:0x2ac": {
+"candidates": [
+"?$TClassFactory@VAircraftClass@@",
+"?$TClassFactory@VInfantryClass@@",
+"?$TClassFactory@VUnitClass@@",
+"AircraftClass",
+"FootClass",
+"InfantryClass",
+"UnitClass"
+],
+"obs": [
+"20:1",
+"688:4",
+"1061:1",
+"1063:1",
+"1064:4",
+"1068:4"
+],
+"ents": [
+"M:70FEE0:this:0x2ac"
 ]
 },
 "M:712130:this:0x898": {
@@ -22636,17 +27266,8 @@
 "obs": [],
 "ents": [
 "T:4062C0",
-"P:4071A0:3"
-]
-},
-"S:40A340:+0x14": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"S:40A340:+0x14"
+"P:4071A0:3",
+"R:4062C0:esi"
 ]
 },
 "P:4138C0:0": {
@@ -22777,6 +27398,18 @@
 "P:452670:0"
 ]
 },
+"P:50E010:0": {
+"candidates": [
+"DynamicVector",
+"DynamicVectorClass",
+"VectorClass",
+"VectorClass_ushort"
+],
+"obs": [],
+"ents": [
+"P:50E010:0"
+]
+},
 "RET:4722F0": {
 "candidates": [
 "?$TClassFactory@VHouseClass@@",
@@ -22827,30 +27460,6 @@
 "obs": [],
 "ents": [
 "S:4ACC50:+0x14"
-]
-},
-"S:4AED70:+0x7c": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"S:4AED70:+0x7c"
-]
-},
-"S:4AED70:+0x74": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"S:4AED70:+0x74"
 ]
 },
 "M:4B4FB0:this:0xB0": {
@@ -23070,6 +27679,17 @@
 "P:5C63F0:1"
 ]
 },
+"S:5CC760:+0x28": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"S:5CC760:+0x28"
+]
+},
 "P:5E6920:3": {
 "candidates": [
 "?$TClassFactory@VCampaignClass@@",
@@ -23160,16 +27780,6 @@
 "P:652E50:0"
 ]
 },
-"S:6591B0:+0x14": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"S:6591B0:+0x14"
-]
-},
 "P:65C350:0": {
 "candidates": [
 "FileEntryClass",
@@ -23203,20 +27813,19 @@
 "M:684C30:this:0x24"
 ]
 },
-"P:6AA600:2": {
+"P:690640:0": {
 "candidates": [
-"IGameMap",
-"DisplayClass",
-"GScreenClass",
-"IUnknown",
-"MapClass",
-"PowerClass",
-"RadarClass",
-"SidebarClass"
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
 ],
 "obs": [],
 "ents": [
-"P:6AA600:2"
+"P:690640:0",
+"S:690640:+0x4"
 ]
 },
 "S:6AAD00:+0x18": {
@@ -23618,18 +28227,6 @@
 "G:B0FC08"
 ]
 },
-"S:73B140:+0x70": {
-"candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
-],
-"obs": [],
-"ents": [
-"S:73B140:+0x70"
-]
-},
 "S:73B470:+0x2d0": {
 "candidates": [
 "?$TClassFactory@VSpawnManagerClass@@",
@@ -23772,48 +28369,19 @@
 "P:7B24E0:2"
 ]
 },
-"S:7B93F0:+0x80": {
+"P:69E740:1": {
 "candidates": [
-"BSurface",
-"DSurface",
-"Surface",
-"XSurface"
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
 ],
 "obs": [],
 "ents": [
-"S:7B93F0:+0x80"
-]
-},
-"P:7CCB2E:3": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"P:7CCB2E:3",
-"S:7CCB2E:+0x14"
-]
-},
-"P:7CCF44:5": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"P:7CCF44:5"
-]
-},
-"P:7CCFFC:3": {
-"candidates": [
-"ConvertClass",
-"LightConvertClass"
-],
-"obs": [],
-"ents": [
-"P:7CCFFC:3",
-"S:7CCFFC:+0x14"
+"P:69E740:1",
+"S:69E740:+0x8"
 ]
 },
 "P:7D78B5:0": {
@@ -23836,15 +28404,46 @@
 "P:7D78FE:0"
 ]
 },
-"S:4371D0:+0x2c": {
+"S:428C30:+0x8": {
 "candidates": [
-"BSurface",
-"DSurface",
-"XSurface"
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
 ],
 "obs": [],
 "ents": [
-"S:4371D0:+0x2c"
+"S:428C30:+0x8"
+]
+},
+"S:428C30:+0x74": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:428C30:+0x74"
+]
+},
+"S:4309D0:+0x2c": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:4309D0:+0x2c"
 ]
 },
 "S:445F80:+0x224": {
@@ -23867,6 +28466,62 @@
 "obs": [],
 "ents": [
 "S:449C30:+0x218"
+]
+},
+"S:45F040:+0xc": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:45F040:+0xc"
+]
+},
+"S:45F040:+0x78": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:45F040:+0x78"
+]
+},
+"S:465960:+0x7c": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:465960:+0x7c"
+]
+},
+"S:465960:+0x10": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:465960:+0x10"
 ]
 },
 "S:4A3E40:+0x28": {
@@ -23902,6 +28557,21 @@
 "obs": [],
 "ents": [
 "S:4AED70:+0x78"
+]
+},
+"S:4B5210:+0x114": {
+"candidates": [
+"RAMFileClass",
+"Map",
+"Map_WorldDominationTour",
+"Map_WorldDominationTour_20",
+"Map_WorldDominationTour_28",
+"Map_WorldDominationTour_43",
+"TabDataStruct"
+],
+"obs": [],
+"ents": [
+"S:4B5210:+0x114"
 ]
 },
 "S:4D3920:+0x218": {
@@ -23965,17 +28635,6 @@
 "S:4F2300:+0x34"
 ]
 },
-"S:4F8440:+0x24": {
-"candidates": [
-"?$TClassFactory@VCampaignClass@@",
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [],
-"ents": [
-"S:4F8440:+0x24"
-]
-},
 "S:506EF0:+0x88": {
 "candidates": [
 "?$TClassFactory@VCampaignClass@@",
@@ -23991,17 +28650,6 @@
 "S:506EF0:+0x88"
 ]
 },
-"S:511850:+0x14": {
-"candidates": [
-"?$TClassFactory@VCampaignClass@@",
-"CampaignClass",
-"DynamicVectorClass_uint"
-],
-"obs": [],
-"ents": [
-"S:511850:+0x14"
-]
-},
 "S:525A60:+0x48": {
 "candidates": [
 "CCINIClass",
@@ -24012,6 +28660,116 @@
 "obs": [],
 "ents": [
 "S:525A60:+0x48"
+]
+},
+"S:552D60:+0xfc": {
+"candidates": [
+"CCFileClass",
+"CDFileClass"
+],
+"obs": [],
+"ents": [
+"S:552D60:+0xfc"
+]
+},
+"S:5BB290:+0x4c": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5BB290:+0x4c"
+]
+},
+"S:5BED40:+0x1c": {
+"candidates": [
+"IPXInterfaceClass",
+"BinkMovie",
+"BuildingPlacement"
+],
+"obs": [],
+"ents": [
+"S:5BED40:+0x1c"
+]
+},
+"S:5D2E90:+0x10": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5D2E90:+0x10"
+]
+},
+"S:5E3D10:+0x84": {
+"candidates": [
+"GenericNode",
+"INIEntry@INIClass",
+"INISection@INIClass",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"S:5E3D10:+0x84"
+]
+},
+"S:5E74E0:+0x20": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5E74E0:+0x20"
+]
+},
+"S:5E7EB0:+0x70": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5E7EB0:+0x70"
+]
+},
+"S:5E7EB0:+0x6c": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5E7EB0:+0x6c"
+]
+},
+"S:5F76B0:+0x4": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5F76B0:+0x4"
 ]
 },
 "S:5FD2E0:+0x40": {
@@ -24034,6 +28792,20 @@
 "obs": [],
 "ents": [
 "S:5FD2E0:+0x44"
+]
+},
+"S:5FEDE0:+0xc": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:5FEDE0:+0xc"
 ]
 },
 "S:5FF420:+0x48": {
@@ -24106,6 +28878,74 @@
 "S:65D510:+0x18"
 ]
 },
+"S:68CD20:+0x68": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:68CD20:+0x68"
+]
+},
+"S:690A10:+0xc": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:690A10:+0xc"
+]
+},
+"S:690AE0:+0xc": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:690AE0:+0xc"
+]
+},
+"S:6941A0:+0x60": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:6941A0:+0x60"
+]
+},
+"S:69E090:+0x8": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:69E090:+0x8"
+]
+},
 "S:6A9540:+0x18": {
 "candidates": [
 "?$TClassFactory@VFactoryClass@@",
@@ -24115,6 +28955,20 @@
 "obs": [],
 "ents": [
 "S:6A9540:+0x18"
+]
+},
+"S:6B5490:+0x10": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:6B5490:+0x10"
 ]
 },
 "S:707480:+0x44": {
@@ -24127,6 +28981,54 @@
 "obs": [],
 "ents": [
 "S:707480:+0x44"
+]
+},
+"S:71DCA0:+0x14": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:71DCA0:+0x14"
+]
+},
+"S:72ADE0:+0x18": {
+"candidates": [
+"BufferIOFileClass",
+"CCFileClass",
+"CDFileClass",
+"FileClass",
+"RAMFileClass",
+"RawFileClass"
+],
+"obs": [],
+"ents": [
+"S:72ADE0:+0x18"
+]
+},
+"S:764A20:+0x4c": {
+"candidates": [
+"CCFileClass",
+"CDFileClass"
+],
+"obs": [],
+"ents": [
+"S:764A20:+0x4c"
+]
+},
+"S:76D4D0:+0xe0": {
+"candidates": [
+"CCFileClass",
+"CDFileClass"
+],
+"obs": [],
+"ents": [
+"S:76D4D0:+0xe0"
 ]
 },
 "S:76D4D0:+0x38": {
@@ -26189,6 +31091,17 @@
 "N:7D771B"
 ]
 },
+"G:884E5C": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E5C"
+]
+},
 "M:50A350:this:0x254": {
 "candidates": [
 "?$VectorClass@PAVSuperClass@@",
@@ -26210,6 +31123,39 @@
 "M:54B980:this:0xC"
 ]
 },
+"G:884E74": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E74"
+]
+},
+"G:884E70": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E70"
+]
+},
+"G:884E78": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E78"
+]
+},
 "M:6CF350:this:0x1C": {
 "candidates": [
 "?$VectorClass@VSwizzlePointerClass@@",
@@ -26218,6 +31164,28 @@
 "obs": [],
 "ents": [
 "M:6CF350:this:0x1C"
+]
+},
+"G:884E20": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E20"
+]
+},
+"G:884E58": {
+"candidates": [
+"GenericNode",
+"MixFileClass",
+"Node"
+],
+"obs": [],
+"ents": [
+"G:884E58"
 ]
 },
 "M:70FE50:this:0x1D4": {

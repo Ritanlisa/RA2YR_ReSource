@@ -124,7 +124,7 @@ pub fn c18_phase(
     let out = match kind {
         0 => c18_main(nbits, &cls_big, &obs, &exact_flat, &eff_size, &members, allow),
         1 => c18b(&cls_big, &obs, &exact_flat, &eff_size, allow),
-        2 => c18c(&cls_big, &obs, &exact_flat),
+        2 => c18c(&cls_big, &obs, &exact_flat, allow),
         _ => return Err(pyo3::exceptions::PyValueError::new_err("bad kind")),
     };
     pyo3::Python::with_gil(|py| {
@@ -286,11 +286,18 @@ fn c18b(
 }
 
 /// C18c cascade round (lines ~4485-4497): unique coverage pins only.
+/// `allow` mirrors the Python sound-mode gate: C18c is a heuristic channel
+/// (cascade assumes signature-table completeness), so in sound mode it must
+/// produce no pins at all — the kernel scans only when `allow` is set.
 fn c18c(
     cls_big: &[(u32, Vec<(i64, i64)>)],
     obs: &[Vec<(i64, i64)>],
     exact_flat: &[(u32, u32)],
+    allow: bool,
 ) -> C18Out {
+    if !allow {
+        return C18Out { masks: Vec::new(), pins: Vec::new(), tried: 0, amb: 0 };
+    }
     let has_exact: HashSet<u32> = exact_flat.iter().map(|&(ei, _)| ei).collect();
     let mut pins = Vec::new();
     for (ei, obs) in obs.iter().enumerate() {

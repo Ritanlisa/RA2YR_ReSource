@@ -30,6 +30,9 @@ pub const CONTRA_C1_MISSING: u16 = u16::MAX;
 pub struct Cluster {
     pub root: String,
     pub root_id: u32,
+    /// effective C1 root prefix (root[..2] with the C17 / M14c baseline-prefix
+    /// restoration already applied Python-side)
+    pub pfx: String,
     pub ents: Vec<u32>,
     /// (offset, width) — width -1 encodes Python None; arbitrary order (set),
     /// only order-independent aggregates are derived from it.
@@ -74,7 +77,7 @@ pub struct Solver {
     pub intern_rev: Vec<String>,
     pub clusters: Vec<Cluster>,
 
-    pub eff_size: Vec<i64>, // -1 = None
+    pub decl_size: Vec<i64>, // declared/layout sizeof; -1/0 = unknown
     pub intervals: Vec<Vec<(i64, i64)>>,
     pub starts: Vec<Vec<i64>>,
     pub dense: Vec<bool>,
@@ -184,14 +187,16 @@ impl Solver {
         r
     }
 
-    /// c1_size_mask(need): classes with unknown/zero eff_size or eff_size >= need.
+    /// c1_size_mask(need): classes with unknown/zero DECLARED size or declared
+    /// size >= need. NOTE: declared size, not observed extent — Python's
+    /// 2026-11-19 fix (observed extent is only a lower bound of sizeof).
     pub fn size_ok(&mut self, need: i64) -> Domain {
         if let Some(&i) = self.size_ok_cache.get(&need) {
             return self.mask_pool[i as usize].clone();
         }
         let mut m = Domain::empty(self.nbits);
         for i in 0..self.nbits {
-            let sz = self.eff_size[i];
+            let sz = self.decl_size[i];
             if sz <= 0 || sz >= need {
                 m.set(i);
             }
@@ -260,7 +265,7 @@ impl Solver {
         }
         let mut m = Domain::empty(self.nbits);
         for i in 0..self.nbits {
-            let sz = self.eff_size[i];
+            let sz = self.decl_size[i];
             if sz <= 0 || sz >= need {
                 m.set(i);
             }
@@ -274,7 +279,7 @@ impl Solver {
 // ---------------------------------------------------------------------------
 pub fn compute_cluster(sv: &Solver, ctx: &CdCtx, cl: &Cluster) -> ClusterOut {
     let full = &sv.full;
-    let root_pfx: &str = &cl.root[..cl.root.len().min(2)];
+    let root_pfx: &str = &cl.pfx;
 
     let c1_applies = root_pfx == "T:";
     let mut m_c1 = if !cl.obs.is_empty() && c1_applies {

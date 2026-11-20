@@ -46,3 +46,15 @@ flags：`--json`（对拍输出）、`--threads N`（rayon 线程数）、`--pro
 同构复刻：ent_id 全规则、守卫并查集（EXACT 冲突 + 字典序最小根）、6 通道等值合并、
 C1 尺寸下界域、C4 EXACT 覆盖、接收者类域钳制、空域回退、greedy（含平局/迭代序语义）、
 lower_bound。省略（报告有差异表）：~58 其余族、G/M 证明、improve。
+
+## PyO3 扩展（minclass_rs）构建
+
+```powershell
+cd tools/solver_rs/pyext
+cargo build --release
+copy target\release\minclass_rs.dll minclass_rs.pyd
+# 验证
+python -c "import sys; sys.path.insert(0,'tools/solver_rs/pyext'); import minclass_rs; print('ok')"
+```
+
+`minclass_rs.pyd` 被 `tools/solver_rs/.gitignore` 忽略；修改 `pyext/src/*.rs` 后必须重建并复制，否则求解器仍加载旧内核。
