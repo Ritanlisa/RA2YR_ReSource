@@ -49,11 +49,15 @@ OUT = ROOT / "tools" / "type_infer" / "constraints" / "raw_constraints_split_sam
 SPEC = ROOT / ".omo" / "agents" / "csp" / "m14_ida_spec.json"
 IDA_OUT = ROOT / ".omo" / "agents" / "csp" / "m14_ida_regsplit_out.json"
 WRAPPER = ROOT / ".omo" / "agents" / "csp" / "m14_ida_run.py"
+CHUNK_DIR = ROOT / ".omo" / "agents" / "csp" / "m14_chunks"
+RUN_STATS = ROOT / ".omo" / "agents" / "csp" / "m14_run_stats.json"
 
 
 def set_paths(tag):
     """Derive artifact paths from an optional tag (idempotent; no side effects)."""
-    global OUT, SPEC, IDA_OUT, WRAPPER
+    global OUT, SPEC, IDA_OUT, WRAPPER, CHUNK_DIR, RUN_STATS
+    CHUNK_DIR = ROOT / ".omo" / "agents" / "csp" / ("m14_chunks_%s" % tag if tag else "m14_chunks")
+    RUN_STATS = ROOT / ".omo" / "agents" / "csp" / ("m14_run_stats_%s.json" % tag if tag else "m14_run_stats.json")
     if not tag:
         return
     OUT = (ROOT / "tools" / "type_infer" / "constraints"
@@ -179,8 +183,12 @@ def mcp_call(url, name, args, timeout):
     return d, (d.get("structuredContent") or {})
 
 
-def select_sample(raw, faddrs, target_count=0):
+def select_sample(raw, faddrs, target_count=0, full=False):
     """Deterministic sample.
+
+    Full mode (full=True): every function that owns at least one register
+    reference (any of var/from/to/receiver/base in the 8-GPR set), sorted by
+    start address -- the production M14 pool.
 
     Legacy mode (target_count == 0): top-20 most-referenced R entities' functions
     plus a uniform spread of TARGET_SPREAD over functions with >=8 register refs
@@ -208,6 +216,19 @@ def select_sample(raw, faddrs, target_count=0):
                 fn_refs[fn] += 1
     top_ents = [e for e, _n in sorted(ent_refs.items(), key=lambda kv: (-kv[1], kv[0]))[:20]]
     top_fns = sorted({int(e.split(":")[1], 16) for e in top_ents})
+    if full:
+        allfns = sorted(fn_refs)
+        return allfns, {
+            "rule": ("all functions with >=1 register reference in any of "
+                     "var/from/to/receiver/base (8 GPRs), sorted by start address"),
+            "mode": "full-pool",
+            "target_count": None,
+            "top_entities": top_ents,
+            "top_entities_refs": [ent_refs[e] for e in top_ents],
+            "top_functions": len(top_fns),
+            "pool_size": len(allfns),
+            "sample_size": len(allfns),
+        }
     pool = sorted(fn for fn, n in fn_refs.items() if n >= 8)
     if not pool:
         pool = sorted(fn_refs)
@@ -285,50 +306,137 @@ def write_wrapper():
     return write_wrapper_to(SPEC, WRAPPER)
 
 
-def run_ida_chunked(sample, spec_bytes, chunk):
+def _chunk_paths(ci):
+    stem = CHUNK_DIR / ("chunk_%04d" % ci)
+    return (Path(str(stem) + "_spec.json"),
+            Path(str(stem) + "_out.json"),
+            Path(str(stem) + "_run.py"))
+
+
+def run_ida_chunked(sample, spec_bytes, chunk, resume=True):
     """Run the IDA worker in <=chunk-sized calls and merge the outputs.
 
     The MCP tool call has a hard ~60 s budget that the in-IDA env var cannot
-    extend for the running call; 500 functions can exceed it.  Chunking is
+    extend for the running call; large pools exceed it.  Chunking is
     deterministic: per-chunk specs are generated from the sorted sample and the
     merged output is written with the same json settings as the worker.
+
+    Resume: a chunk whose out file exists, has status ok, echoes the current
+    chunk spec sha256 and covers every requested function is reused verbatim.
+    `resume=False` forces re-extraction of every chunk.
+
+    Failure: any MCP failure / truncated chunk output / worker error / missing
+    function aborts loudly with the chunk id; completed chunk files are kept so
+    a rerun resumes exactly there.
+
+    Merge order: chunks are merged in ascending chunk index (the sample is
+    sorted by start address); the final dump is sort_keys=True, so the merged
+    bytes are order independent (see .omo/agents/csp/m14_full/merge_order_check.py).
     """
+    nchunks = (len(sample) + chunk - 1) // chunk
+    CHUNK_DIR.mkdir(parents=True, exist_ok=True)
     merged = {"status": "ok", "spec_version": 1,
               "spec_sha256": hashlib.sha256(spec_bytes).hexdigest(),
               "idb_path": None, "module": None, "functions": {}, "errors": {}}
-    base = SPEC.with_suffix("")
-    for i in range(0, len(sample), chunk):
-        part = sample[i:i + chunk]
-        cspec = base.with_name(base.name + "_c%03d.json" % i)
-        cout = IDA_OUT.with_name(IDA_OUT.stem + "_c%03d.json" % i)
-        cwrap = WRAPPER.with_name(WRAPPER.stem + "_c%03d.py" % i)
+    chunk_metrics = []
+    for ci in range(nchunks):
+        part = sample[ci * chunk:(ci + 1) * chunk]
+        cspec, cout, cwrap = _chunk_paths(ci)
         write_spec_to(part, cspec, cout)
         write_wrapper_to(cspec, cwrap)
+        cspec_sha = hashlib.sha256(cspec.read_bytes()).hexdigest()
+        expected = ["0x%X" % a for a in part]
+        want = set(expected)
+        reused = False
+        if cout.exists() and resume:
+            prev = None
+            try:
+                prev = json.loads(cout.read_text(encoding="utf-8"))
+            except Exception:
+                prev = None
+            if (prev and prev.get("status") == "ok"
+                    and prev.get("spec_sha256") == cspec_sha
+                    and want <= set((prev.get("functions") or {}).keys())
+                    and not (prev.get("errors") or {})):
+                fns = prev.get("functions") or {}
+                merged["idb_path"] = merged["idb_path"] or prev.get("idb_path")
+                merged["module"] = merged["module"] or prev.get("module")
+                merged["functions"].update(fns)
+                chunk_metrics.append({
+                    "index": ci, "first": expected[0], "last": expected[-1],
+                    "functions": len(fns),
+                    "insns": sum(len(r.get("insns") or []) for r in fns.values()),
+                    "errors": 0, "reused": True, "wall_s": None,
+                    "spec_sha256": cspec_sha,
+                    "out_sha256": hashlib.sha256(cout.read_bytes()).hexdigest(),
+                })
+                print("[m14] chunk %d/%d reused (spec %s, fns %s..%s)"
+                      % (ci + 1, nchunks, cspec_sha[:16], expected[0], expected[-1]))
+                reused = True
+        if reused:
+            continue
         if cout.exists():
             cout.unlink()
         t0 = time.time()
         try:
             _d, sc = mcp_call(MCP_URL, "py_exec_file", {"file_path": str(cwrap)}, RUN_TIMEOUT)
         except Exception as e:
-            print("[m14] py_exec_file failed (chunk %d): %s: %s"
-                  % (i, type(e).__name__, e), file=sys.stderr)
-            return None, None
-        print("[m14] chunk %d/%d wall=%.1fs" % (i // chunk + 1,
-              (len(sample) + chunk - 1) // chunk, time.time() - t0))
+            print("[m14] IDA FAILURE at chunk %d/%d (fns %s..%s): %s: %s -- "
+                  "completed chunks preserved in %s"
+                  % (ci + 1, nchunks, expected[0], expected[-1],
+                     type(e).__name__, e, CHUNK_DIR), file=sys.stderr)
+            return None, None, chunk_metrics
+        wall = time.time() - t0
         if not cout.exists():
-            print("[m14] chunk produced no output:", cout, file=sys.stderr)
-            return None, None
-        part_doc = json.loads(cout.read_text(encoding="utf-8"))
+            print("[m14] chunk %d/%d produced no output (%s) -- aborting"
+                  % (ci + 1, nchunks, cout), file=sys.stderr)
+            return None, None, chunk_metrics
+        try:
+            part_doc = json.loads(cout.read_text(encoding="utf-8"))
+        except Exception as e:
+            print("[m14] chunk %d/%d corrupt JSON (%s): %r -- aborting"
+                  % (ci + 1, nchunks, cout, e), file=sys.stderr)
+            return None, None, chunk_metrics
         if part_doc.get("status") != "ok":
-            print("[m14] chunk status != ok:", part_doc.get("status"), file=sys.stderr)
-            return None, None
+            print("[m14] chunk %d/%d status=%r -- aborting"
+                  % (ci + 1, nchunks, part_doc.get("status")), file=sys.stderr)
+            return None, None, chunk_metrics
+        if part_doc.get("spec_sha256") != cspec_sha:
+            print("[m14] chunk %d/%d stale spec echo (%s != %s) -- aborting"
+                  % (ci + 1, nchunks, part_doc.get("spec_sha256"), cspec_sha),
+                  file=sys.stderr)
+            return None, None, chunk_metrics
+        fns = part_doc.get("functions") or {}
+        errs = part_doc.get("errors") or {}
+        missing = sorted(want - set(fns))
+        if errs or missing:
+            print("[m14] chunk %d/%d ERROR worker_errors=%d missing=%d "
+                  "(first missing: %s) -- aborting; fix and rerun (resume skips "
+                  "completed chunks)" % (ci + 1, nchunks, len(errs), len(missing),
+                                         missing[:3]), file=sys.stderr)
+            return None, None, chunk_metrics
         merged["idb_path"] = merged["idb_path"] or part_doc.get("idb_path")
         merged["module"] = merged["module"] or part_doc.get("module")
-        merged["functions"].update(part_doc.get("functions") or {})
-        merged["errors"].update(part_doc.get("errors") or {})
+        merged["functions"].update(fns)
+        merged["errors"].update(errs)
+        chunk_metrics.append({
+            "index": ci, "first": expected[0], "last": expected[-1],
+            "functions": len(fns),
+            "insns": sum(len(r.get("insns") or []) for r in fns.values()),
+            "errors": 0, "reused": False, "wall_s": round(wall, 1),
+            "spec_sha256": cspec_sha,
+            "out_sha256": hashlib.sha256(cout.read_bytes()).hexdigest(),
+        })
+        print("[m14] chunk %d/%d fns %d..%s wall=%.1fs"
+              % (ci + 1, nchunks, len(fns), expected[-1], wall))
     data = (json.dumps(merged, ensure_ascii=False, indent=1, sort_keys=True) + "\n").encode("utf-8")
+    new_sha = hashlib.sha256(data).hexdigest()
+    if IDA_OUT.exists():
+        old_sha = hashlib.sha256(IDA_OUT.read_bytes()).hexdigest()
+        print("[m14] merged worker output sha256=%s (existing %s)"
+              % (new_sha[:16], "IDENTICAL" if old_sha == new_sha else "DIFFERS"))
     IDA_OUT.write_bytes(data)
-    return merged, data
+    return merged, data, chunk_metrics
 
 
 
@@ -871,6 +979,7 @@ def join_and_measure(raw, faddrs, sample, ida_out):
 
 def main():
     global MCP_URL, SELECTION
+    t_all0 = time.time()
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--mcp-url", default=MCP_URL)
     ap.add_argument("--dry-run", action="store_true",
@@ -878,17 +987,27 @@ def main():
     ap.add_argument("--functions", type=int, default=0,
                     help="exact sample size (>0 switches to exact-count selection); "
                          "0 = frozen 71-function legacy rule")
+    ap.add_argument("--full", action="store_true",
+                    help="full pool: every function with >=1 register reference "
+                         "(production M14 run); implies --chunk 100 and resume")
     ap.add_argument("--tag", default="",
                     help="artifact suffix (e.g. 500 -> raw_constraints_split_500.json); "
                          "empty = legacy 71-function artifact paths")
     ap.add_argument("--chunk", type=int, default=0,
                     help="split the IDA worker call into N-function chunks and merge "
                          "(needed when the MCP tool call exceeds its ~60s budget); "
-                         "0 = one call")
+                         "0 = one call (default 100 with --full; resume-safe)")
+    ap.add_argument("--no-resume", action="store_true",
+                    help="re-extract every chunk instead of reusing completed ones")
     args = ap.parse_args()
+    if args.full and args.functions:
+        print("[m14] --full and --functions are mutually exclusive", file=sys.stderr)
+        return 1
     MCP_URL = args.mcp_url
     set_paths(args.tag)
-    print("[m14] artifacts: out=%s spec=%s" % (OUT.name, SPEC.name))
+    chunk = args.chunk or (100 if args.full else 0)
+    print("[m14] artifacts: out=%s spec=%s chunks=%s"
+          % (OUT.name, SPEC.name, CHUNK_DIR.name))
 
     if not RAW.exists():
         print("[m14] missing:", RAW, file=sys.stderr)
@@ -901,13 +1020,20 @@ def main():
     raw = raw_doc["constraints"]
     protos = json.loads(PROTOS.read_text(encoding="utf-8"))
     faddrs = sorted(int(a, 16) for a in protos)
+    src_meta = {
+        "raw_constraints_sha256": hashlib.sha256(RAW.read_bytes()).hexdigest(),
+        "raw_constraints_bytes": RAW.stat().st_size,
+        "ida_function_protos_sha256": hashlib.sha256(PROTOS.read_bytes()).hexdigest(),
+        "ida_function_protos_count": len(protos),
+    }
 
-    sample, selection = select_sample(raw, faddrs, target_count=args.functions)
+    sample, selection = select_sample(raw, faddrs, target_count=args.functions,
+                                      full=args.full)
     SELECTION = selection
     spec_bytes = write_spec(sample)
     wrapper_sha = write_wrapper()
-    print("[m14] sample functions=%d (top_fns=%d spread=%d pool=%d) spec_sha=%s"
-          % (len(sample), selection["top_functions"],
+    print("[m14] sample functions=%d mode=%s (top_fns=%d spread=%d pool=%d) spec_sha=%s"
+          % (len(sample), selection["mode"], selection["top_functions"],
              selection["sample_size"] - selection["top_functions"],
              selection["pool_size"],
              hashlib.sha256(spec_bytes).hexdigest()[:16]))
@@ -926,14 +1052,27 @@ def main():
     print("[m14] IDA online: idb=%s hexrays=%s" %
           (health.get("idb_path"), health.get("hexrays_ready")))
 
-    if IDA_OUT.exists():
-        IDA_OUT.unlink()
     t0 = time.time()
-    if args.chunk and len(sample) > args.chunk:
-        ida_out, _merged_bytes = run_ida_chunked(sample, spec_bytes, args.chunk)
+    chunk_metrics = None
+    if chunk and len(sample) > chunk:
+        ida_out, _merged_bytes, chunk_metrics = run_ida_chunked(
+            sample, spec_bytes, chunk, resume=not args.no_resume)
         if ida_out is None:
             return 1
+        got = set((ida_out.get("functions") or {}).keys())
+        want = {"0x%X" % a for a in sample}
+        if got != want:
+            print("[m14] MERGE COVERAGE FAILURE: missing=%d extra=%d (first missing: %s)"
+                  % (len(want - got), len(got - want), sorted(want - got)[:5]),
+                  file=sys.stderr)
+            return 1
+        if ida_out.get("errors"):
+            print("[m14] MERGE ERROR: worker errors present: %d"
+                  % len(ida_out["errors"]), file=sys.stderr)
+            return 1
     else:
+        if IDA_OUT.exists():
+            IDA_OUT.unlink()
         try:
             _d, sc = mcp_call(MCP_URL, "py_exec_file", {"file_path": str(WRAPPER)}, RUN_TIMEOUT)
             stdout = str(sc.get("stdout", ""))
@@ -958,13 +1097,34 @@ def main():
     if idb and idb.replace("\\", "/").lower() != str(ROOT / "decompile-results" / "gamemd.exe.i64").replace("\\", "/").lower():
         print("[m14][warn] worker idb differs from expected:", idb)
 
+    t_join0 = time.time()
     doc = join_and_measure(raw, faddrs, sample, ida_out)
+    join_wall = time.time() - t_join0
+    if args.full:
+        # deterministic full-pool provenance only (no wall times in the side file)
+        doc["meta"]["description"] = ("M14 reg-def split extraction, FULL POOL "
+                                      "(side file; not the production ledger)")
+        doc["meta"]["full_pool"] = {
+            "pool_definition": "all functions with >=1 register reference "
+                               "(var/from/to/receiver/base, 8 GPRs), sorted by start address",
+            **src_meta,
+            "functions": len(sample),
+            "chunk_size": chunk,
+            "chunk_count": len(chunk_metrics or []),
+            "chunk_boundaries": [
+                ["0x%X" % sample[i], "0x%X" % sample[min(i + chunk, len(sample)) - 1]]
+                for i in range(0, len(sample), chunk)
+            ],
+            "chunk_out_sha256": [c["out_sha256"] for c in (chunk_metrics or [])],
+        }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     data = (json.dumps(doc, ensure_ascii=False, indent=1, sort_keys=True) + "\n").encode("utf-8")
+    old_sha = hashlib.sha256(OUT.read_bytes()).hexdigest() if OUT.exists() else None
     OUT.write_bytes(data)
+    new_sha = hashlib.sha256(data).hexdigest()
     m = doc["measurements"]
     print("[m14] wrote %s (%d bytes, sha256=%s)" %
-          (OUT.relative_to(ROOT), len(data), hashlib.sha256(data).hexdigest()[:16]))
+          (OUT.relative_to(ROOT), len(data), new_sha[:16]))
     print("[m14] entities=%d refs=%d resolved=%d ambiguous=%d (entry=%d nonentry=%d)"
           % (m["r_entities"], m["refs_total"], m["refs_resolved"],
              m["refs_ambiguous"], m["refs_entry_def"], m["refs_nonentry_def"]))
@@ -972,7 +1132,46 @@ def main():
           % (m["entities_split_gt1"], m["subdefs_total"], m["entities_with_obs"],
              m["entities_2plus_obs_subdefs"], m["entities_disjoint_obs"],
              m["entities_differing_obs"]))
-    return 0
+    total_wall = time.time() - t_all0
+    rc = 0
+    if old_sha is not None:
+        print("[m14] side-file rerun determinism: old=%s new=%s %s"
+              % (old_sha[:16], new_sha[:16],
+                 "IDENTICAL" if old_sha == new_sha else "MISMATCH"))
+        if old_sha != new_sha:
+            rc = 3
+    # runtime stats live OUTSIDE the side file (wall times are not deterministic)
+    RUN_STATS.parent.mkdir(parents=True, exist_ok=True)
+    stats = {
+        "out": str(OUT.relative_to(ROOT)),
+        "out_sha256": new_sha,
+        **src_meta,
+        "mode": selection.get("mode"),
+        "tag": args.tag,
+        "functions": len(sample),
+        "chunk_size": chunk,
+        "chunk_count": len(chunk_metrics or []),
+        "chunks": chunk_metrics or [],
+        "chunk_errors_total": sum(c.get("errors", 0) for c in (chunk_metrics or [])),
+        "wall_worker_s": round(wall, 1),
+        "wall_join_s": round(join_wall, 1),
+        "wall_total_s": round(total_wall, 1),
+        "ida_health": {k: health.get(k) for k in
+                       ("status", "idb_path", "module", "hexrays_ready")},
+        "spec_sha256": hashlib.sha256(spec_bytes).hexdigest(),
+        "worker_merged_sha256": hashlib.sha256(IDA_OUT.read_bytes()).hexdigest()
+                                if IDA_OUT.exists() else None,
+        "wall_per_chunk_mean_s": (round(sum(c["wall_s"] for c in chunk_metrics
+                                           if c.get("wall_s") is not None)
+                                       / max(1, sum(1 for c in chunk_metrics
+                                                    if c.get("wall_s") is not None)), 1)
+                                  if chunk_metrics else None),
+    }
+    RUN_STATS.write_text(json.dumps(stats, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+                         encoding="utf-8")
+    print("[m14] wall: worker=%.1fs join=%.1fs total=%.1fs; stats=%s"
+          % (wall, join_wall, total_wall, RUN_STATS.name))
+    return rc
 
 
 if __name__ == "__main__":
