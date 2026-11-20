@@ -181,6 +181,138 @@ _FAM_RANK = {
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
+
+# ==========================================================================
+# M14b：寄存器定义点源实体并簇（def-site source union；默认关闭）
+# --------------------------------------------------------------------------
+# 用户规则：寄存器参数的有效范围保存在两次赋值之间；类型求解器直接和给值方一致
+# （共用）。side file 为每个 R:<fn>:<reg>:dd<site> 子实体给出 src_eid（与 ent_id
+# 精确同拼写）。flag ON 时：
+#   1) 加载 side file（MINCLASS_RSPLIT_FILE 可覆盖），按 raw 索引 c + (addr,
+#      field, reg) 逐条校验联接；
+#   2) 子实体物化为一等实体（use-side C10 掩码进入簇域）；
+#   3) un(subdef, src_eid, "reg_def") —— 别名/等式，共享域；
+#   4) C10 寄存器来源改路由到子实体；parent R:<fn>:<reg> 仍是 junction，
+#      子实体 R:<fn>:<reg>:dd<site> 不是。
+# flag OFF：所有助手函数退化为恒等/HEAD 语义（4 个主产物逐字节等价）。
+# ==========================================================================
+_RSPLIT_ON = os.environ.get("MINCLASS_RSPLIT") == "1"
+_RSPLIT_FILE = os.environ.get(
+    "MINCLASS_RSPLIT_FILE",
+    "tools/type_infer/constraints/raw_constraints_split_500.json")
+_RS = {"refs": {}, "sub_src": {}, "subdefs": set(), "stats": {}}
+
+
+def _rsplit_eid(eid, ci, field):
+    """Route a raw register-reference entity to its per-def subdef (flag ON).
+
+    Only subdefs that carry a def-site source are routed: those are the ones
+    that share a domain with the giving side (the user's rule).  A subdef with
+    no source stays on the parent aggregation node and is dropped by the strict
+    junction filter -- routing it would inject use-side evidence into a node
+    with no giving side to constrain (pure churn).
+    """
+    if not _RSPLIT_ON or eid is None:
+        return eid
+    sub = _RS["refs"].get((ci, field))
+    if sub and sub in _RS["sub_src"]:
+        return sub
+    return eid
+
+
+def _is_r_junction(eid):
+    """True for the parent aggregation node R:<fn>:<reg> (2 colons).
+
+    Subdefs R:<fn>:<reg>:dd<site> (3 colons) are real SSA value entities and
+    stay in the strict edge set; with the flag OFF every R: key is a junction
+    (HEAD semantics).
+    """
+    s = str(eid)
+    if not s.startswith("R:"):
+        return False
+    return not (_RSPLIT_ON and s.count(":") >= 3)
+
+
+def _rsplit_load(raw):
+    """Load + validate the side file; fail-closed (no routing) on any problem."""
+    path = _RSPLIT_FILE
+    if not os.path.isabs(path):
+        path = os.path.join(ROOT, path)
+    st = {"file": path, "refs_total": 0, "bad_idx": 0, "bad_addr": 0,
+          "bad_field": 0, "bad_sub": 0, "subdefs": 0, "sub_src": 0,
+          "entities": 0, "src_prefixes": {}}
+    try:
+        with io.open(path, "r", encoding="utf-8") as fh:
+            doc = json.load(fh)
+    except Exception as exc:
+        st["error"] = repr(exc)
+        _RS["stats"] = st
+        print("[rsplit] load FAILED (%s): %r -- routing disabled" % (path, exc),
+              flush=True)
+        return False
+    refs = {}
+    for rec in doc.get("ref_map") or []:
+        ci = rec.get("c")
+        a = hx(rec.get("addr"))
+        f = rec.get("field")
+        rg = rec.get("reg")
+        sub = rec.get("subdef")
+        if not isinstance(ci, int) or ci < 0 or ci >= len(raw):
+            st["bad_idx"] += 1
+            continue
+        e = raw[ci]
+        if hx(e.get("addr")) != a:
+            st["bad_addr"] += 1
+            continue
+        if f not in ("var", "from", "to", "receiver", "base") or e.get(f) != rg:
+            st["bad_field"] += 1
+            continue
+        if sub is None:
+            continue                  # ambiguous ref: stays on the parent
+        ss = str(sub)
+        if not (ss.startswith("R:") and ss.count(":") >= 3):
+            st["bad_sub"] += 1
+            continue
+        refs[(ci, f)] = ss
+    sub_src = {}
+    subdefs = set()
+    pref = collections.Counter()
+    for _parent, ent in (doc.get("entities") or {}).items():
+        for sub, sd in (ent.get("subdefs") or {}).items():
+            ss = str(sub)
+            if not (ss.startswith("R:") and ss.count(":") >= 3):
+                continue
+            subdefs.add(ss)
+            se = sd.get("src_eid")
+            if isinstance(se, str) and se:
+                if se.startswith("V:"):
+                    continue          # cross-class hub; never a value entity
+                if se.startswith("R:") and se.count(":") < 3:
+                    continue          # never union with a parent aggregation node
+                sub_src[ss] = se
+                pref[se.split(":")[0]] += 1
+    st.update({"refs_total": len(refs), "subdefs": len(subdefs),
+               "sub_src": len(sub_src), "src_prefixes": dict(sorted(pref.items())),
+               "entities": len(doc.get("entities") or {})})
+    _RS["stats"] = st
+    if st["bad_idx"] or st["bad_addr"] or st["bad_field"]:
+        print("[rsplit] JOIN VALIDATION FAILED (idx=%d addr=%d field=%d) -- "
+              "routing disabled" % (st["bad_idx"], st["bad_addr"], st["bad_field"]),
+              flush=True)
+        _RS.update({"refs": {}, "sub_src": {}, "subdefs": set()})
+        return False
+    _RS.update({"refs": refs, "sub_src": sub_src, "subdefs": subdefs})
+    print("[rsplit] file=%s entities=%d refs=%d subdefs=%d sub_src=%d "
+          "bad(idx=%d addr=%d field=%d sub=%d) src=%s"
+          % (os.path.basename(path), st["entities"], st["refs_total"],
+             st["subdefs"], st["sub_src"], st["bad_idx"], st["bad_addr"],
+             st["bad_field"], st["bad_sub"], st["src_prefixes"]), flush=True)
+    if st["sub_src"] == 0:
+        print("[rsplit] WARN: side file carries no src_eid entries -- flag ON is "
+              "inert (old schema?)", flush=True)
+    return True
+
+
 # 用户约定（2026-11-19）：同宽基元统一拼写（uint/int -> int 等）。
 # 同宽标量在 32-bit codegen 上不可区分；把它们当成不同的 universe 原子
 # 会让两个都正确的证据族 AND 出空域（伪矛盾）。只作用于非指针拼写。
@@ -1670,6 +1802,10 @@ def main():
             print("[extra] loaded=%d appended=%d duplicates=%d"
                   % (len(_xed), len(_append), len(_xed) - len(_append)), flush=True)
 
+    # ---- M14b：加载寄存器定义点 side file（严格 flag 门控）----
+    if _RSPLIT_ON:
+        _rsplit_load(raw)
+
     protos = jload("anchors/ida_function_protos.json", {})
     faddrs = sorted(int(a, 16) for a in protos)
     print("[data] raw edges=%d functions=%d" % (len(raw), len(protos)), flush=True)
@@ -1826,6 +1962,19 @@ def main():
     census = {f: 0 for f in FAMILIES}
     exact_count = {f: 0 for f in FAMILIES}
     ents = collections.defaultdict(lambda: {"obs": set(), "raw": set()})
+
+    # ---- M14b：子实体物化为一等实体（use-side 掩码进入簇域；flag 门控）----
+    # 只物化**有定义源**的子实体：它们会与给值方并簇，use-side C10 掩码经共用域
+    # 回流给源实体。无 src 的子实体没有给值方（无共用对象），保持 junction 语义
+    # （与 parent 一致），避免制造 2 万余个零证据独立簇淹没 constrained/wide 口径。
+    if _RSPLIT_ON:
+        _rsplit_mat = 0
+        for _sub in sorted(_RS["sub_src"]):
+            if _sub not in ents:
+                ents[_sub] = {"obs": set(), "raw": set()}
+                _rsplit_mat += 1
+        print("[rsplit] subdefs materialized (with src): %d (of %d subdefs)"
+              % (_rsplit_mat, len(_RS["subdefs"])), flush=True)
 
     def touch(eid, raw_id):
         # S:（栈槽/局部变量）升级为一等变量：局部对象指针的类是可求解的。
@@ -5499,6 +5648,28 @@ def main():
                 _c17_n += 1
     print("[C17] clean register == function this unions: %d" % _c17_n, flush=True)
 
+    # ---- M14b：定义源并簇（flag 门控）------------------------------------
+    # 用户规则：寄存器值在两次定义之间是给值方的别名，求解器直接与给值方共用
+    # 域（等式）。subdef 是 use 侧值实体；src_eid 是定义指令的给值实体。并簇
+    # 后 subdef 的 C10 use 掩码（callee 后代域）与源实体自身的族证据取交 ——
+    # 这正是「use → def → 源」的回流；parent R: 仍保持 junction 语义。
+    _rsplit_unions = _rsplit_src_mat = 0
+    if _RSPLIT_ON:
+        for _sub in sorted(_RS["sub_src"]):
+            _src = _RS["sub_src"][_sub]
+            if _sub not in ents:
+                continue
+            if _src not in ents:
+                # 源实体可能只出现在定义指令的 from 文本里（不被其它族 touch）：
+                # 物化为零观测实体，让并簇后的域真正共享（flag 门控、可审计）。
+                ents[_src] = {"obs": set(), "raw": set()}
+                _rsplit_src_mat += 1
+            if un(_sub, _src, "reg_def"):
+                _rsplit_unions += 1
+        print("[rsplit] source entities materialized: %d" % _rsplit_src_mat, flush=True)
+        print("[rsplit] reg_def unions formed: %d (subdefs with src=%d)"
+              % (_rsplit_unions, len(_RS["sub_src"])), flush=True)
+
     print("[merge-census] candidates=%d (callarg_direct=%d reg_def=%d) "
           "targets=%d multi_source_joins=%d"
           % (len(cands), sum(1 for c in cands if c[0] == "callarg_direct"),
@@ -6719,7 +6890,7 @@ def main():
     _call_edges = []
     _call_edges_p1 = []               # Phase 1：洁净寄存器边
     _call_edges_p2 = []               # Phase 2：dirty/global/stack 边（只增不减）
-    for _e in raw:
+    for _ci_e, _e in enumerate(raw):
         if _e.get("type") != "CALL_ARG":
             continue
         _fr, _to = _e.get("from"), _e.get("to")
@@ -6831,6 +7002,12 @@ def main():
             else:
                 _cc = ent_id(_fr, fn_at(_ea))
                 _kind = "dirty" if _clean_reg.get((_ea, _fr)) is False else "clean"
+                # M14b：寄存器来源改路由到 per-def 子实体（use 侧）。
+                # 仅改写 parent R:<fn>:<reg>（2 冒号）；facts.reg_links 的精确
+                # 来源实体（T:/M:/...）保留原通道。
+                if (_RSPLIT_ON and isinstance(_cc, str)
+                        and _cc.startswith("R:") and _cc.count(":") == 2):
+                    _cc = _rsplit_eid(_cc, _ci_e, "from")
         elif _fr.startswith(_GLOBAL_PREF):
             if _fr.startswith("offset "):
                 _cc = ent_id(_fr)                   # ent_id 内部走 global_addr(s[7:])
@@ -7885,7 +8062,7 @@ def main():
         if not getattr(args, "allow_heuristics", False):
             _n_before = len(_call_edges)
             _call_edges = [(a, b) for (a, b) in _call_edges
-                           if not str(a).startswith("R:") and not str(b).startswith("R:")]
+                           if not _is_r_junction(a) and not _is_r_junction(b)]
             print("[C10] R:-junction edges dropped (unsound aggregation): %d -> %d"
                   % (_n_before, len(_call_edges)), flush=True)
         _edges_fix = list(_call_edges)
