@@ -59,6 +59,7 @@ import bisect
 import collections
 import glob
 import hashlib
+import heapq
 import io
 import json
 import os
@@ -1327,6 +1328,7 @@ _CACHE_OUTPUT_BASENAMES = {
     "minclass_conflict_resolution.json",
     "c10_contradicted_entities.json",
     "derived_layouts.json",
+    "minclass_t2.json",
 }
 
 # 缓存里保存/恢复的全部输出产物（存在才复制）
@@ -1339,6 +1341,7 @@ _CACHE_ARTIFACTS = [
     "minclass_conflict_resolution.json",
     "c10_contradicted_entities.json",
     "derived_layouts.json",
+    "minclass_t2.json",
 ]
 
 
@@ -9466,6 +9469,118 @@ def main():
           % (_uniq, _tot, (100.0 * _uniq / _tot) if _tot else 0.0,
              _cov["forced"], _cov["narrow"], _cov["wide"]), flush=True)
     print("[C17] baseline-root prefix restorations applied: %d" % _c17_pfx_fix["n"],
+          flush=True)
+
+    # ---------------- T2 约定层：terminal coverage（report-only，与 T1 严格分离）----------------
+    # T1 = 域大小=1 的簇（证据强制唯一）；T2 = 每个受约束簇的**报告类**（终态口径）。
+    # T2 是约定层（convention tier），不是证据：除 forced 外，任何 basis 都不得
+    # 被当作 evidence-forced。规则（优先级由高到低，全确定性、无统计/投票/RNG）：
+    #   1) forced         域大小=1 → 该类；basis=forced（唯一 evidence-forced 层）；
+    #   2) most-specific  域内存在唯一"最特异"候选：该候选在域内的严格后代集为空
+    #                     （偏序唯一极大元；祖先关系取 U["desc"] 闭包，与 C2/C10
+    #                      的 allowed_of 同一偏序）。取它；
+    #   3) primitive-int  全部候选均为标量基元（_PRIM_CANON 规范化后属
+    #                     {int,short,char,__int64,float,double,void,wchar_t}）
+    #                     且 int 原子在域内 → 报 int（同宽基元拼写约定）；
+    #   4) tiebreak       其余：(成员数 desc, sizeof desc, 名字 asc) 取最小键；
+    #                     sizeof = 声明 size，缺省回退观测下界 eff_size，再缺省 -1。
+    # 输出 anchors/minclass_t2.json：每受限簇
+    #   {class, basis, domain_size, candidates_top(<=16)}，sort_keys=True 保证
+    #   逐字节确定性；domain>16 时 candidates_top = 报告类 + 其余 15 个名字升序
+    #   （保证报告类可在本行内自检 ∈ 域）。
+    # 本段只读 U/names/constrain，不触碰解、赋值、族、掩码、门与既有产物。
+    _T2_PRIM_CANON = frozenset(("int", "short", "char", "__int64", "float",
+                                "double", "void", "wchar_t"))
+    _t2_int_ci = idx.get("int")
+    _t2_desc_bits = {}
+
+    def _t2_desc_of(_ci):
+        _bm = _t2_desc_bits.get(_ci)
+        if _bm is None:
+            _bm = 0
+            for _d in U["desc"][_ci]:
+                if _d != _ci:
+                    _bm |= (1 << _d)
+            _t2_desc_bits[_ci] = _bm
+        return _bm
+
+    def _t2_size_of(_ci):
+        _sz = U["size"][_ci]
+        if isinstance(_sz, int):
+            return _sz
+        _sz = U["eff_size"][_ci]
+        return _sz if isinstance(_sz, int) else -1
+
+    _t2_rows = {}
+    _t2_basis = collections.Counter()
+    for (_cl2, _m2) in constrain:
+        _r2 = _cl2.get("root") if isinstance(_cl2, dict) else str(_cl2)
+        _pop2 = _m2.bit_count()
+        if _pop2 == 0:
+            # 防御性兜底：空域簇在 cluster_domains 已带 empty_domain → 必在 conflicted，
+            # 不会出现在 constrain（conflicts=0）。保留一行以免中断 T2 全覆盖。
+            _t2_rows[_r2] = {"class": "", "basis": "tiebreak",
+                             "domain_size": 0, "candidates_top": []}
+            _t2_basis["tiebreak"] += 1
+            continue
+        if _pop2 == 1:
+            _ci2 = _m2.bit_length() - 1
+            _basis2 = "forced"
+            _top2 = [names[_ci2]]
+        else:
+            _cands2 = []
+            _rest2 = _m2
+            while _rest2:
+                _b2 = _rest2 & -_rest2
+                _cands2.append(_b2.bit_length() - 1)
+                _rest2 ^= _b2
+            _max2 = []
+            for _c2 in _cands2:
+                if not (_t2_desc_of(_c2) & _m2):
+                    _max2.append(_c2)
+                    if len(_max2) > 1:
+                        break
+            if len(_max2) == 1:
+                _ci2, _basis2 = _max2[0], "most-specific"
+            else:
+                _all_prim2 = True
+                for _c2 in _cands2:
+                    if _canon_prim_ty(names[_c2]) not in _T2_PRIM_CANON:
+                        _all_prim2 = False
+                        break
+                if _all_prim2 and _t2_int_ci is not None \
+                        and ((_m2 >> _t2_int_ci) & 1):
+                    _ci2, _basis2 = _t2_int_ci, "primitive-int"
+                else:
+                    _ci2 = min(_cands2,
+                               key=lambda _c: (-len(U["members"][_c] or {}),
+                                               -_t2_size_of(_c),
+                                               names[_c]))
+                    _basis2 = "tiebreak"
+            if _pop2 <= 16:
+                _top2 = sorted(names[_c] for _c in _cands2)
+            else:
+                _top2 = [names[_ci2]] + heapq.nsmallest(
+                    15, (names[_c] for _c in _cands2 if _c != _ci2))
+        _t2_rows[_r2] = {"class": names[_ci2], "basis": _basis2,
+                         "domain_size": _pop2, "candidates_top": _top2}
+        _t2_basis[_basis2] += 1
+
+    _t2_path = os.path.join(ROOT, "anchors/minclass_t2.json")
+    with io.open(_t2_path, "w", encoding="utf-8") as _fh2:
+        json.dump(_t2_rows, _fh2, ensure_ascii=False, indent=0, sort_keys=True)
+    _t2_forced = _t2_basis.get("forced", 0)
+    _t2_conv = len(_t2_rows) - _t2_forced
+    print("[coverage-t2] reported=%s/%s = %.2f%% (forced=%s / convention=%s)"
+          % (format(len(_t2_rows), ","), format(_tot, ","),
+             (100.0 * len(_t2_rows) / _tot) if _tot else 0.0,
+             format(_t2_forced, ","), format(_t2_conv, ",")), flush=True)
+    print("[coverage-t2] basis: forced=%d most-specific=%d primitive-int=%d tiebreak=%d"
+          % (_t2_forced, _t2_basis.get("most-specific", 0),
+             _t2_basis.get("primitive-int", 0), _t2_basis.get("tiebreak", 0)),
+          flush=True)
+    print("[out] %s (%d rows, %.1f KB)" % (_t2_path, len(_t2_rows),
+                                           os.path.getsize(_t2_path) / 1024.0),
           flush=True)
 
     # ---- 最终域直方图 + 窄域明细（分析用；口径 = 最终 constrain 掩码）----
