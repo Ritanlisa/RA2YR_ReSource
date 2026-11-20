@@ -4687,6 +4687,20 @@
 "GS:4:0:0x6CF240"
 ]
 },
+"P:6CF240:0": {
+"candidates": [
+"ISwizzle",
+"IUnknown",
+"SwizzleManagerClass"
+],
+"obs": [
+"12:4",
+"20:4"
+],
+"ents": [
+"P:6CF240:0"
+]
+},
 "GS:6:0:0x6CF2C0": {
 "candidates": [
 "ISwizzle",
@@ -4696,6 +4710,19 @@
 "obs": [],
 "ents": [
 "GS:6:0:0x6CF2C0"
+]
+},
+"P:6CF2C0:0": {
+"candidates": [
+"ISwizzle",
+"IUnknown",
+"SwizzleManagerClass"
+],
+"obs": [
+"44:4"
+],
+"ents": [
+"P:6CF2C0:0"
 ]
 },
 "GS:19:0:0x541070": {
@@ -27204,6 +27231,21 @@
 "R:4062C0:esi"
 ]
 },
+"P:6CF240:1": {
+"candidates": [
+"IPersist",
+"AbstractClass",
+"INoticeSink",
+"INoticeSource",
+"IPersistStream",
+"IRTTITypeInfo",
+"IUnknown"
+],
+"obs": [],
+"ents": [
+"P:6CF240:1"
+]
+},
 "P:4138C0:0": {
 "candidates": [
 "AircraftClass",
@@ -27724,17 +27766,6 @@
 "P:65C350:0"
 ]
 },
-"P:6CF230:0": {
-"candidates": [
-"SwizzleManagerClass",
-"SwizzleManagerClass_19"
-],
-"obs": [],
-"ents": [
-"P:6CF230:0",
-"S:6CF230:+0x4"
-]
-},
 "M:684C30:this:0x24": {
 "candidates": [
 "Game",
@@ -27760,6 +27791,26 @@
 "ents": [
 "P:690640:0",
 "S:690640:+0x4"
+]
+},
+"P:697F10:0": {
+"candidates": [
+"CCINIClass",
+"INIClass"
+],
+"obs": [],
+"ents": [
+"P:697F10:0"
+]
+},
+"P:698F90:0": {
+"candidates": [
+"CCINIClass",
+"INIClass"
+],
+"obs": [],
+"ents": [
+"P:698F90:0"
 ]
 },
 "S:6AAD00:+0x18": {

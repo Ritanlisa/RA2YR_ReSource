@@ -97,6 +97,11 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
 # 关断时家族名不进入 FAMILIES —— 产物与规则落地前逐字节一致（OFF 门）。
 _T11_ON = os.environ.get("MINCLASS_T11", "1") != "0"
 _T12_ON = os.environ.get("MINCLASS_T12", "0") != "0"
+# T1-6 多调用点参数交集（P3 §7 T1-6）：C10 不动点后一次性后处理。多调用点参数
+# 在不动点里参与传播，但写回段（`_multi5` skip）不把其域施加到最终 C10 掩码；
+# 本规则用**来源簇域快照**重建 `allowed(P) = ∩ anc_union(domain(src))`，仅在非空
+# 且与目标簇域相交非空时施加（空交集记台账，禁止强行）。
+_T16_ON = os.environ.get("MINCLASS_T16", "1") != "0"
 if _T11_ON:
     FAMILIES.insert(FAMILIES.index("VR2") + 1, "VR2P")
 if _T12_ON:
@@ -1404,6 +1409,9 @@ def _compute_cache_key(args, input_parts=None):
         # P4-T1 规则门（env）：族集合与证据装载随之变化，必须进缓存键。
         "t11_vr2_split": _T11_ON,
         "t12_rp1": _T12_ON,
+        # T1-6 后处理门（env）：改 fam["C10"] 写入集，不进键会让 gate-off 缓存
+        # 静默命中 gate-on 产物。
+        "t16_multi_param": _T16_ON,
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -8562,6 +8570,129 @@ def main():
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
                 _c10_fx_constrained += 1
+        # ---- T1-6：多调用点参数交集（P3 §7 T1-6；rule-gated MINCLASS_T16）----
+        # 规则（确定性、无阈值/投票）：
+        #   allowed(P) = ∩_{src ∈ usable(P)} anc_union(domain(src))
+        # 其中 usable(P) = raw CALL_ARG 来源实体（ent_id 非空且落在 ents）——与
+        # `_multi5` 同一来源口径；domain(src) 取**来源簇域快照**（一次性
+        # cluster_domains 调用，包含全部非 C10 族 + C10 写回 + exact 钉定），
+        # 即写回段给单调用点实体的同一语义域。
+        # 施加条件（禁止强行）：
+        #   (a) allowed == 0            → 空交集（would_conflict），跳过 + 记账；
+        #   (b) domain(P) ∩ allowed == 0 → 与目标簇基线域矛盾（target_conflict）：
+        #       强行写入会触发冲突消解层「C10 优先级丢弃」，而该簇可能含其它
+        #       实体的基线 C10 掩码 → 有损失基线唯一解的风险；跳过 + 记账；
+        #   (c) allowed 未使簇域收窄     → 无需写入（no_change）。
+        # 只在真正收窄时写 fam["C10"][P]（= allowed），随后与其它族在
+        # cluster_domains 求交 —— 单调用点写回同款语义，不二次传播。
+        if _T16_ON and _multi5:
+            _t16_t0 = time.time()
+            # 快照用**未 memo 化**口径：增量模式下 _CLFAM_CACHE 以 (root, family)
+            # 为键，写入本 pass 之前计算 = 缺 T1-6 掩码；若让它留给最终 solve 会
+            # 读到陈旧 C10 条目。临时关闭 memo 仅影响本次快照的缓存填充。
+            _t16_memo = _incr_cell.get("on")
+            if _t16_memo:
+                _incr_cell["on"] = False
+            try:
+                _t16_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _t16_memo:
+                    _incr_cell["on"] = True
+            _t16_dom = {}
+            _t16_root = {}
+            for _cl16, _m16, _ex16, _exs16, _fl16 in _t16_snap:
+                _r16 = str(_cl16.get("root"))
+                _t16_dom[_r16] = _m16
+                for _e16 in _cl16["ents"]:
+                    _t16_root[_e16] = _r16
+            _t16_by_t = collections.defaultdict(list)
+            for _e16 in raw:
+                if _e16.get("type") != "CALL_ARG":
+                    continue
+                _to16 = _e16.get("to")
+                if not (isinstance(_to16, str) and "::param" in _to16):
+                    continue
+                _te16 = ent_id(_to16)
+                if _te16 is None:
+                    continue
+                _fe16 = (ent_id(_e16.get("from"))
+                         if _e16.get("from") else None)
+                _t16_by_t[_te16].append(_fe16)
+            _t16_st = {"multi_targets": len(_multi5), "in_ents": 0,
+                       "usable": 0, "applied": 0, "applied_unique": 0,
+                       "would_conflict": 0, "target_conflict": 0,
+                       "no_change": 0}
+            _t16_wc = []
+            _t16_tc = []
+            _t16_ap = []
+            for _te16 in sorted(_multi5):
+                if _te16 not in ents:
+                    continue
+                _t16_st["in_ents"] += 1
+                _r16 = _t16_root.get(_te16)
+                _dt16 = _t16_dom.get(_r16, FULL)
+                _src16 = sorted({s for s in _t16_by_t.get(_te16, ())
+                                 if s and s in _t16_root})
+                if not _src16:
+                    continue
+                _t16_st["usable"] += 1
+                _alw16 = FULL
+                for _s16 in _src16:
+                    _alw16 &= _anc_union(_t16_dom.get(_t16_root.get(_s16), FULL))
+                    if _alw16 == 0:
+                        break
+                if _alw16 == 0:
+                    _t16_st["would_conflict"] += 1
+                    _t16_wc.append({"P": _te16, "root": _r16,
+                                    "src": len(_src16),
+                                    "src_sample": _src16[:8]})
+                    continue
+                if _alw16 == FULL:
+                    _t16_st["no_change"] += 1
+                    continue
+                _new16 = _dt16 & _alw16
+                if _new16 == 0:
+                    _t16_st["target_conflict"] += 1
+                    _t16_tc.append({"P": _te16, "root": _r16,
+                                    "src": len(_src16),
+                                    "target_w": _dt16.bit_count(),
+                                    "allow_w": _alw16.bit_count()})
+                    continue
+                if _new16 == _dt16:
+                    _t16_st["no_change"] += 1
+                    continue
+                fam["C10"][_te16] = fam["C10"].get(_te16, FULL) & _alw16
+                _t16_st["applied"] += 1
+                if _new16.bit_count() == 1 and _dt16.bit_count() != 1:
+                    _t16_st["applied_unique"] += 1
+                _t16_ap.append({"P": _te16, "root": _r16,
+                                "src": len(_src16),
+                                "target_w": (None if _dt16 == FULL
+                                             else _dt16.bit_count()),
+                                "allow_w": _alw16.bit_count(),
+                                "new_w": _new16.bit_count()})
+            print("[T1-6] multi-call-site param intersection: usable=%d applied=%d "
+                  "(unique=%d) would_conflict=%d target_conflict=%d no_change=%d "
+                  "multi_targets=%d in_ents=%d %.1fs"
+                  % (_t16_st["usable"], _t16_st["applied"],
+                     _t16_st["applied_unique"], _t16_st["would_conflict"],
+                     _t16_st["target_conflict"], _t16_st["no_change"],
+                     _t16_st["multi_targets"], _t16_st["in_ents"],
+                     time.time() - _t16_t0), flush=True)
+            try:
+                _t16_out = os.path.join(ROOT, ".omo/agents/csp/t16_ledger.json")
+                os.makedirs(os.path.dirname(_t16_out), exist_ok=True)
+                with io.open(_t16_out, "w", encoding="utf-8") as _fh16:
+                    json.dump({"meta": dict(sorted(_t16_st.items())),
+                               "applied": _t16_ap,
+                               "would_conflict": _t16_wc,
+                               "target_conflict": _t16_tc},
+                              _fh16, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                print("[T1-6] ledger written: .omo/agents/csp/t16_ledger.json",
+                      flush=True)
+            except Exception as _e16:
+                print("[T1-6] ledger write FAILED: %r" % (_e16,), flush=True)
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
         # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
