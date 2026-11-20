@@ -85,6 +85,22 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
             "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X",
              "G3", "VR2", "CPI", "IMP", "IM2", "YVP", "V2B", "BM"]
+
+# ---- P4-T1 rule gates（T1-1 默认 ON；T1-2 默认 OFF = 已按零丢失门回退）----
+# T1-1 混合轴拆分：vdret-arith（值轴 int 族, VR2）与 vdret-mread（pointee 轴
+# class 候选, VR2P）分族。OFF = 还原旧混合单族（VR2 全 234 条，随即被
+# _POINTEE_FAMS 整体丢弃）。
+# T1-2 RP1：anchors/ret_propagated_types.json 严格 RET 传播层。实测（P4-T1，
+# 58,206 基线）：unique +114 但 constrained −289、**618 个基线 unique 丢失**
+# （605 个经 C10 中和级联变 free + 13 个变宽）→ 触发零丢失门，默认关闭。
+# 代码保留供复现/重设计（MINCLASS_T12=1 仅实验用），不得作为默认部署。
+# 关断时家族名不进入 FAMILIES —— 产物与规则落地前逐字节一致（OFF 门）。
+_T11_ON = os.environ.get("MINCLASS_T11", "1") != "0"
+_T12_ON = os.environ.get("MINCLASS_T12", "0") != "0"
+if _T11_ON:
+    FAMILIES.insert(FAMILIES.index("VR2") + 1, "VR2P")
+if _T12_ON:
+    FAMILIES.insert(FAMILIES.index("VR2") + (2 if _T11_ON else 1), "RP1")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -151,7 +167,9 @@ FAMILY_DESC = {
     "R1": "RA1 official source class evidence: strict-name bridge our Class::Method (or legacy Class_Method[_ADDR]) <-> RA1 class alias (case/underscore/'Class'-suffix tolerance) with unique owner (HEURISTIC tier per ra1 phase-1 pooled strata accuracy 0.859, hierarchy 91-94%; wide-domain filter: only T:FN with domain>8 emitted, 2 recs both in-domain; gate --allow-heuristics; evidence anchors/ra1_types.json; source CnC_Red_Alert EA official)",
     "V2K": "vera20k external oracle: 'Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR' mined from vera20k crossref example contexts (FUN_/sub_/nullsub/j_ excluded), STRICT attribution (pattern address == vera entry addr or our function start) + top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe (HEURISTIC tier per v20k pool accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types.json, 16 recs)",
     "G3": "GS site-args v3: v2 machinery with the attach gate RELAXED (every `call [vtreg+off]` site in the full_export snapshot, slot=off/4) -- push-argument ORIGIN type evidence (gs-const01 1,256 / gs-const-wide 226 / gs-str 1, occupant_callarg guard) for GS:slot:k:root entities, same spelling as G2 (root 0x-prefixed upper hex; strict; evidence array of anchors/gs_site_args_v3.json, 1,483 recs, zero overlap with the 10-rec v2 pool; all-primitive types int/unsigned int/bool/char* with 'const char *'/'char *' normalized by _norm_ty; the file carries 0 edges, no eq channel wired)",
-    "VR2": "VDRET virtual-dispatch return materialization: post-vcall EAX evidence (vdret-arith arithmetic-consumption int-family 164 / vdret-mread-0xOFF member-read class candidates via member_types lookup, ~70 recs) for EAX:FN:site entities (upper hex no 0x, EF/RA spelling; strict tier; evidence array of anchors/vdret_eax_edges.json, 234 recs; class tokens without a universe atom dropped per-token, MT/RD precedent); the 8,221 eq edges of the same file (EAX:FN:site == RET:FN via vdret-slot, RET spelling aligned with the RI family keys) wired separately via the EF-style bidirectional channel, see the [VR2] eq line",
+    "VR2": "VDRET virtual-dispatch return materialization, VALUE axis only (P4-T1 split): vdret-arith arithmetic-consumption int-family evidence (164 recs, types=[int,unsigned int]) on EAX:FN:site entities (upper hex no 0x, EF/RA spelling; strict tier; split by evidence `via` prefix vdret-arith, no threshold/vote; evidence array of anchors/vdret_eax_edges.json; class-token rows are the sibling VR2P family; the 8,221 eq edges of the same file (EAX:FN:site == RET:FN via vdret-slot, RET spelling aligned with the RI family keys) wired separately via the EF-style bidirectional channel, see the [VR2] eq line)",
+    "VR2P": "VDRET virtual-dispatch return materialization, POINTEE axis (P4-T1 split sibling of VR2): vdret-mread-0xOFF member-read class candidates via member_types lookup (~70 recs) on EAX:FN:site entities -- a member read through the returned pointer says what the pointee object is, not what the returned value is; kept in _POINTEE_FAMS so the value entities are axis-dropped (same discipline as C2/C3/C9/OT/AV/RD; no class-token is used as a value type)",
+    "RP1": "RET propagation, strict layer (P4-T1 wiring of anchors/ret_propagated_types.json, 224 assertions): RET:FN value type = intersection of ALL typed value-flow destination domains (member getter/consumer M via flow_stores eq, param P via flow_stores/callarg_origins, per-site EAX via flow_chains return_to); only emitted when the all-destination intersection is non-empty (inconsistent 13 / ret-identity 2 / partial-ret 235 / array-bound 8 discarded generator-side), no threshold/vote; RET is a value entity so no axis rule applies; generator meta+evidence in the anchor file",
     "CPI": "constructor-param init semantics over structural_truth vtable_install fns (1,398 scanned): cpi-const member-init constant typing (M:FN:this:0xOFF entities, 2,196 recs, types may carry [bool,int] dual values / [bool,char,unsigned char] etc.), cpi-m8/cpi-m16 width-typed inits (12 recs) -- strict binary facts; evidence array of anchors/ctor_param_inits.json, 2,208 recs; the 224 eq edges of the same file (cpi-minit P:FN:K == M:FN:this:0xOFF / cpi-base P:FN1:K == P:FN2:J base-ctor arg forwarding / cpi-gstore M == G:) wired separately via the EF-style bidirectional channel, see the [CPI] eq line",
     "IMP": "import return types: Win32/BINK SDK-contract return semantics of PROVEN import-call sites (form A `call ds:__imp_X` direct / form C `call reg` linear-basic-block back-scan <=6 caller-saved / <=24 callee-saved steps with IDA-annotation cross-check, disagreement dropped) -> EAX:FN:SITE ret entities typed (HANDLE/int/unsigned int/ptr words; RETX-style <=12-insn consumption window classifies first informative use: cdq=>{int}, ptr-deref=>{void*,char*,wchar_t*}, arith=>integer words, cmp/test null-check uninformative; void/uncertain APIs and universe-missing type words skipped) (strict, 100% deterministic contract, no guessing; evidence array of anchors/imp_ret_types.json, 3,170 recs via=imp-XXX; ent format matches RU/RA -- hex uppercase, no 0x)",
     "IM2": "import param types: parameter-side twin of IMP -- Win32/BINK SDK-contract PARAMETER semantics at proven import-call sites (form A `call ds:__imp_X` direct / form B IAT-range label / form C `call reg` linear back-scan with IDA-annotation agreement, machinery reused verbatim from .omo/agents/imp); pushed actual args collected backward (stdcall right-to-left, push nearest the call = param 0; walk stops at label/jump/ret/call, esp writes, `[esp]`-disp-0 rewrites) -> S:ADDR:NAME / P:FN:K / G:HEX / EAX:FN:SITE arg-origin entities typed (char*/wchar_t*/int/unsigned int per SDK signature; strict, 100% deterministic contract, no guessing; evidence array of anchors/imp2_param_types.json, 240 recs via=imp2-API-aK; ent S/G format aligned with C8/GI/CR, P/EAX aligned with RA/RU spelling)",
@@ -170,7 +188,7 @@ _FAM_RANK = {
     "MW": 85, "OT": 85, "SP": 80, "MS": 80, "IT": 80, "IV": 80,
     "SG": 75, "S2": 75, "SGN": 75, "CR": 75, "RA": 75, "RD": 75,
     "YVP": 75, "AL": 70, "LS": 70, "SS": 70, "C2X": 70, "EP": 70,
-    "IMP": 70, "IM2": 70, "VR2": 70, "PF2X": 65, "GI": 65,
+    "IMP": 70, "IM2": 70, "VR2": 70, "VR2P": 70, "PF2X": 65, "GI": 65,
     "GM": 60, "MD": 60, "FP": 60, "TC": 50, "VR": 50, "CB": 50,
     "CC": 50, "CPI": 50, "C8": 50, "PU": 45, "C3": 45,
     "C2": 40, "CS": 40, "AS": 40, "AV": 40, "SA": 40, "SW": 40,
@@ -1383,6 +1401,9 @@ def _compute_cache_key(args, input_parts=None):
         # 不在 vars(args) 里——不进键会让 env 开启静默命中 gate-off 缓存。
         "arb_mr_ig": (bool(getattr(args, "arbitrate_mr_over_ig", False))
                       or os.environ.get("MINCLASS_ARBITRATE_MR_OVER_IG") == "1"),
+        # P4-T1 规则门（env）：族集合与证据装载随之变化，必须进缓存键。
+        "t11_vr2_split": _T11_ON,
+        "t12_rp1": _T12_ON,
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -3573,7 +3594,7 @@ def main():
             n += 1
         return n
 
-    def _load_type_family(fname, famname, gate_heuristic=False):
+    def _load_type_family(fname, famname, gate_heuristic=False, via_prefix=None):
         if gate_heuristic and not getattr(args, "allow_heuristics", False):
             return 0
         n = 0
@@ -3581,6 +3602,12 @@ def main():
             _e8 = _rec.get("ent")
             if not isinstance(_e8, str):
                 continue
+            # P4-T1-1：按 evidence channel 前缀拆分混合轴文件（无阈值/投票：
+            # via 是生成器写出的规则名，前缀即规则归属）。
+            if via_prefix is not None:
+                _v8 = _rec.get("via")
+                if not isinstance(_v8, str) or not _v8.startswith(via_prefix):
+                    continue
             m8 = 0
             for _t8 in (_rec.get("types") or []):
                 _ix9 = _tok_ix(_norm_ty(_t8))
@@ -4097,17 +4124,47 @@ def main():
         census["G3"] = census.get("G3", 0)
         print("[G3] skipped: %r" % _e_g3, flush=True)
     # VR2：VDRET 虚分派返回（vdret_eax_edges.json，234 evidence + 8,221 edges）。
-    # evidence = 虚调用后 EAX 物化类型：vdret-arith（算术消费 => int 族，164）
-    # + vdret-mread-0xOFF（EAX 作基址的成员读 => member_types 类候选，~70），
-    # 实体 EAX:FN:site（大写 hex 无 0x，EF/RA 同拼写）。类名 token 走
-    # _name_ix2 直查（无 alias resolve）；无 universe 原子者按位丢弃（MT/RD
-    # 先例）。8,221 条 eq 边另走 EF 同款双向通道（见 [VR2] eq 行）。
+    # P4-T1-1 按 `via` 通道拆轴（无阈值/投票）：
+    #   · vdret-arith（164，types=[int,unsigned int]）=> VR2，值轴族（EAX 是值实体，
+    #     算术消费证明返回值本身是 int，不被 _POINTEE_FAMS 丢弃）；
+    #   · vdret-mread-0xOFF（70，class token 集）=> VR2P，pointee 轴族（"返回指针所
+    #     指对象的类"≠"返回值本身的类型"），保留在 _POINTEE_FAMS 中对值实体丢弃。
+    # 实体 EAX:FN:site（大写 hex 无 0x，EF/RA 同拼写）。类名 token 走 _name_ix2 直查
+    # （无 alias resolve）；无 universe 原子者按位丢弃（MT/RD 先例）。8,221 条 eq 边
+    # 另走 EF 同款双向通道（见 [VR2] eq 行），与本次拆分无关。
     try:
-        census["VR2"] = _load_type_family("anchors/vdret_eax_edges.json", "VR2")
+        census["VR2"] = _load_type_family(
+            "anchors/vdret_eax_edges.json", "VR2",
+            via_prefix="vdret-arith" if _T11_ON else None)
         print("[VR2] vdret eax types: %d" % census["VR2"], flush=True)
+        if _T11_ON:
+            census["VR2P"] = _load_type_family(
+                "anchors/vdret_eax_edges.json", "VR2P",
+                via_prefix="vdret-mread")
+            print("[VR2P] vdret pointee-axis types (axis-dropped on value "
+                  "entities): %d" % census["VR2P"], flush=True)
     except Exception as _e_vr2:
         census["VR2"] = census.get("VR2", 0)
         print("[VR2] skipped: %r" % _e_vr2, flush=True)
+    # RP1：RET 传播严格层（P4-T1-2，anchors/ret_propagated_types.json，224 断言）。
+    # 语义 = 所有已类型化值流目的地的交集非空才发出该 RET:FN 的类型集（生成器已剔除
+    # inconsistent / ret-identity / partial-ret / array-bound）。RET 是值实体，不受
+    # 轴规则影响；通用装载器（ent/types），无门控、无阈值。
+    # **默认关闭**：58,206 声基线实测该层把 RP1 mask 送进 C10 输入后，224 个 RET
+    # 实体里 79 个 base domain 变空（新增 44 个中和），C10 中和级联 35,401→40,528，
+    # 导致 618 个基线 unique 丢失（605 变 free + 13 变宽），违反零丢失门。保留代码
+    # 供复现与重设计；部署态不得置 MINCLASS_T12=1。
+    try:
+        if _T12_ON:
+            census["RP1"] = _load_type_family(
+                "anchors/ret_propagated_types.json", "RP1")
+            print("[RP1] ret-propagated strict types: %d" % census["RP1"],
+                  flush=True)
+        else:
+            census["RP1"] = census.get("RP1", 0)
+    except Exception as _e_rp1:
+        census["RP1"] = census.get("RP1", 0)
+        print("[RP1] skipped: %r" % _e_rp1, flush=True)
     # CPI：构造参数初始化（ctor_param_inits.json，2,208 evidence + 224 edges）。
     # evidence = ctor 形参初始化语义的 M:FN:this:0xOFF 成员常量定型：
     # cpi-const（2,196，types 可含 [bool,int] 双值 / [bool,char,unsigned char]
@@ -7811,8 +7868,11 @@ def main():
     # 2026-11-19：C10 例外 —— 它是 call-graph 传播族，其类域对值实体可读作
     # "指向该类"的合法指针类型（universe 用类原子表示类指针）；过滤它会丢失
     # 27.8k constrained（实测 73,877→46,038）。保留 C10，其余 pointee 轴族照旧。
+    # P4-T1-1：VR2 已按 via 拆轴 —— 值轴 vdret-arith 保留为 VR2，pointee 轴
+    # vdret-mread 拆到 VR2P 并继续在此对值实体丢弃（拆分前整族 234 条都被丢，
+    # 其中 164 条 arith 是误分类的值轴证据）。
     _POINTEE_FAMS = ("C2", "C3", "C9", "OT", "AV",
-                     "RD", "VR2")
+                     "RD", "VR2P" if _T11_ON else "VR2")
     _VALUE_PFX = ("P:", "M:", "G:", "RET:", "EAX:", "S:", "GS:")
     # 反向：type-axis 族（约束"值/元素的类型"）不适用于对象类实体 T:/R:。
     # LS 例：lea SIB-scale stride -> 元素类型（short/float/int），被错误 AND 到

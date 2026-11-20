@@ -7440,17 +7440,6 @@
 "M:716150:this:0xE58"
 ]
 },
-"RET:716150": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"RET:716150"
-]
-},
 "M:718260:this:0x9C": {
 "candidates": [
 "?$TClassFactory@VAnimTypeClass@@",
@@ -10537,28 +10526,6 @@
 "obs": [],
 "ents": [
 "EAX:45ECE0:45ED4B"
-]
-},
-"EAX:464AC0:464AD9": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"EAX:464AC0:464AD9"
-]
-},
-"EAX:464AC0:464ADE": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"EAX:464AC0:464ADE"
 ]
 },
 "EAX:465D40:465D6A": {
@@ -17097,28 +17064,6 @@
 "EAX:445880:445D11"
 ]
 },
-"EAX:449440:4494A3": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"EAX:449440:4494A3"
-]
-},
-"EAX:449440:4494A9": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"EAX:449440:4494A9"
-]
-},
 "EAX:4533A0:4534F4": {
 "candidates": [
 "GenericNode",
@@ -21199,17 +21144,6 @@
 "obs": [],
 "ents": [
 "RET:6F9DB0"
-]
-},
-"RET:464AC0": {
-"candidates": [
-"SHPFile",
-"SHPReference",
-"SHPStruct"
-],
-"obs": [],
-"ents": [
-"RET:464AC0"
 ]
 },
 "RET:7099E0": {

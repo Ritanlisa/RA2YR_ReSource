@@ -67,6 +67,7 @@
    "PF2X",
    "G3",
    "VR2",
+   "VR2P",
    "CPI",
    "IMP",
    "IM2",
@@ -88,8 +89,8 @@
   "K_min": 871,
   "K_upper": 871,
   "lower_bound": 871,
-  "constrained_clusters": 75391,
-  "free_clusters": 123779,
+  "constrained_clusters": 75687,
+  "free_clusters": 123483,
   "conflicts": 0,
   "c1_gaps": 0,
   "entities": 207735,
@@ -99,10 +100,10 @@
  "chosen_classes": [
   {
    "class": "int",
-   "clusters": 30799,
-   "entities": 30838,
+   "clusters": 31101,
+   "entities": 31140,
    "families": {
-    "C10": 24779,
+    "C10": 25064,
     "C3": 4,
     "C11": 2727,
     "YVP": 1159,
@@ -115,6 +116,7 @@
     "MR": 26,
     "RA": 3917,
     "S2": 3,
+    "VR2": 164,
     "IMP": 2442,
     "IM2": 25,
     "C5": 184
@@ -1209,19 +1211,6 @@
    }
   },
   {
-   "class": "SHPStruct",
-   "clusters": 83,
-   "entities": 87,
-   "families": {
-    "EXACT": 9,
-    "C2": 10,
-    "C10": 53,
-    "C11": 41,
-    "YVP": 3,
-    "MR": 15
-   }
-  },
-  {
    "class": "WaveClass",
    "clusters": 81,
    "entities": 100,
@@ -1259,6 +1248,19 @@
     "C9": 1,
     "GI": 1,
     "C5": 14
+   }
+  },
+  {
+   "class": "SHPStruct",
+   "clusters": 77,
+   "entities": 81,
+   "families": {
+    "EXACT": 9,
+    "C2": 10,
+    "C10": 46,
+    "C11": 41,
+    "YVP": 3,
+    "MR": 15
    }
   },
   {
