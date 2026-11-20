@@ -196,11 +196,29 @@ DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
 #      子实体 R:<fn>:<reg>:dd<site> 不是。
 # flag OFF：所有助手函数退化为恒等/HEAD 语义（4 个主产物逐字节等价）。
 # ==========================================================================
-_RSPLIT_ON = os.environ.get("MINCLASS_RSPLIT") == "1"
+def _rsplit_mode():
+    """MINCLASS_RSPLIT: 0/unset = OFF, 1 = M14b (global C10 routing), 2 = M14c (isolated)."""
+    _v = (os.environ.get("MINCLASS_RSPLIT") or "0").strip().lower()
+    if _v in ("", "0", "off", "false", "no"):
+        return 0
+    if _v == "2":
+        return 2
+    return 1 if _v in ("1", "on", "true", "yes") else 0
+
+
+_RSPLIT_MODE = _rsplit_mode()
+_RSPLIT_ON = _RSPLIT_MODE >= 1
+# M14c 变体 2：并簇与全局 C10 不动点隔离。全局不动点只跑基线边集（与 OFF 逐边一致），
+# 子实体 R:<fn>:<reg>:dd<site> 的 C10 use 侧掩码改为「对冻结的基线被调方域一次性本地求交」，
+# 只写回 fam["C10"][subdef]，不让子实体节点进入全局图/中性化级联。
+_RSPLIT_ISO = _RSPLIT_MODE == 2
+# 仅用于测量：变体 2 下是否物化「不在 ents 的给值实体」（默认不物化；=1 复现 M14b 口径）
+_RSPLIT_MAT_SRC = os.environ.get("MINCLASS_RSPLIT_MAT", "0") == "1"
 _RSPLIT_FILE = os.environ.get(
     "MINCLASS_RSPLIT_FILE",
     "tools/type_infer/constraints/raw_constraints_split_500.json")
-_RS = {"refs": {}, "sub_src": {}, "subdefs": set(), "stats": {}}
+_RS = {"refs": {}, "sub_src": {}, "subdefs": set(), "stats": {},
+       "sub_edges": [], "iso_stats": {}}
 
 
 def _rsplit_eid(eid, ci, field):
@@ -225,12 +243,13 @@ def _is_r_junction(eid):
 
     Subdefs R:<fn>:<reg>:dd<site> (3 colons) are real SSA value entities and
     stay in the strict edge set; with the flag OFF every R: key is a junction
-    (HEAD semantics).
+    (HEAD semantics).  M14c 变体 2 的全局边集不包含子实体（隔离层），因此退回
+    HEAD 判定（所有 R: 都是 junction），保证过滤后的基线边集与 OFF 逐边一致。
     """
     s = str(eid)
     if not s.startswith("R:"):
         return False
-    return not (_RSPLIT_ON and s.count(":") >= 3)
+    return not (_RSPLIT_ON and not _RSPLIT_ISO and s.count(":") >= 3)
 
 
 def _rsplit_load(raw):
@@ -299,9 +318,10 @@ def _rsplit_load(raw):
         print("[rsplit] JOIN VALIDATION FAILED (idx=%d addr=%d field=%d) -- "
               "routing disabled" % (st["bad_idx"], st["bad_addr"], st["bad_field"]),
               flush=True)
-        _RS.update({"refs": {}, "sub_src": {}, "subdefs": set()})
+        _RS.update({"refs": {}, "sub_src": {}, "subdefs": set(), "sub_edges": []})
         return False
-    _RS.update({"refs": refs, "sub_src": sub_src, "subdefs": subdefs})
+    _RS.update({"refs": refs, "sub_src": sub_src, "subdefs": subdefs,
+                "sub_edges": []})
     print("[rsplit] file=%s entities=%d refs=%d subdefs=%d sub_src=%d "
           "bad(idx=%d addr=%d field=%d sub=%d) src=%s"
           % (os.path.basename(path), st["entities"], st["refs_total"],
@@ -5400,7 +5420,14 @@ def main():
 
     _watch = set(x for x in (os.environ.get("MC_WATCH") or "").split(",") if x)
 
-    def un(a, b, channel):
+    def un(a, b, channel, keep_b=False):
+        """Union-find equality merge.
+
+        keep_b=True（仅 M14c 变体 2 的 reg_def 通道使用）：强制 b 侧当前根为
+        合并后根。b 是给值实体（基线实体），保持其根 ⇒ 基线簇的键/前缀语义
+        （C1 资格、接受者钳制、下游 assignments 键）与 OFF 完全一致；否则 UF 的
+        「字典序最小键为根」会让并入的子实体 R:...:dd... 改写基线根（T: → R:）。
+        """
         if _watch and (str(a) in _watch or str(b) in _watch):
             print("[union] %-22s %-22s via %s" % (a, b, channel), flush=True)
         if a is None or b is None:
@@ -5418,8 +5445,12 @@ def main():
                                        "b_classes": [names[c] for c in sorted(eb)]})
             return False          # EXACT 硬约束：不合并，记录矛盾证据
         _cra, _crb = root_self_cls.get(ra, set()), root_self_cls.get(rb, set())
-        uf.union(a, b)
-        nr = uf.find(a)
+        if keep_b:
+            uf.p[ra] = rb       # 根定向：保留 b（给值方）的根
+            nr = rb
+        else:
+            uf.union(a, b)
+            nr = uf.find(a)
         root_exact[nr] = ea | eb
         if _cra or _crb:
             root_self_cls[nr] = _cra | _crb
@@ -5662,11 +5693,20 @@ def main():
             if _src not in ents:
                 # 源实体可能只出现在定义指令的 from 文本里（不被其它族 touch）：
                 # 物化为零观测实体，让并簇后的域真正共享（flag 门控、可审计）。
-                ents[_src] = {"obs": set(), "raw": set()}
-                _rsplit_src_mat += 1
-            if un(_sub, _src, "reg_def"):
+                # M14c 变体 2：默认**不物化**缺席的给值实体（它们在基线里不是
+                # 实体，物化只会灌水 constrained 分母）；并簇照做（UF 键无需在
+                # ents 中）。MINCLASS_RSPLIT_MAT=1 可复现 M14b 口径做对照。
+                if _RSPLIT_ISO and not _RSPLIT_MAT_SRC:
+                    pass
+                else:
+                    ents[_src] = {"obs": set(), "raw": set()}
+                    _rsplit_src_mat += 1
+            if un(_sub, _src, "reg_def", keep_b=_RSPLIT_ISO):
                 _rsplit_unions += 1
-        print("[rsplit] source entities materialized: %d" % _rsplit_src_mat, flush=True)
+        print("[rsplit] source entities materialized: %d%s"
+              % (_rsplit_src_mat,
+                 " (skipped by variant 2; MINCLASS_RSPLIT_MAT=1 to materialize)"
+                 if (_RSPLIT_ISO and not _RSPLIT_MAT_SRC) else ""), flush=True)
         print("[rsplit] reg_def unions formed: %d (subdefs with src=%d)"
               % (_rsplit_unions, len(_RS["sub_src"])), flush=True)
 
@@ -5820,6 +5860,15 @@ def main():
             # 例 0x42A466 `mov edx,[eax+100000h]`（eax=this->member(0x10)，1MB 偏移，
             # 是堆分配器的计数器，不是成员）。
             _root_pfx = str(cl.get("root") or "")[:2]
+            if _RSPLIT_ISO:
+                # M14c：并簇不得改变**基线簇**的 C1 资格。UF 根取字典序最小键，
+                # 并入子实体（"R:" < "T:"）会把 T: 根改写为 R: 并静默关闭 C1。
+                # 按非子实体成员的最小结键复刻 OFF 的根前缀（子实体 = 3 冒号 R:）。
+                _iso_base_ms = [str(_m) for _m in (cl.get("ents") or ())
+                                if not (str(_m).startswith("R:")
+                                        and str(_m).count(":") >= 3)]
+                if _iso_base_ms:
+                    _root_pfx = min(_iso_base_ms)[:2]
             _c1_applies = (_root_pfx == "T:")
             m_c1 = (c1_mask(cl["obs"]) if (cl["obs"] and apply_c1 and _c1_applies)
                     else FULL)
@@ -7005,9 +7054,17 @@ def main():
                 # M14b：寄存器来源改路由到 per-def 子实体（use 侧）。
                 # 仅改写 parent R:<fn>:<reg>（2 冒号）；facts.reg_links 的精确
                 # 来源实体（T:/M:/...）保留原通道。
+                # M14c 变体 2：不改写 —— 全局图必须与 OFF 逐边一致（parent 边照
+                # HEAD 加入、随后被 junction 过滤摘除）；子实体边只记入本地掩码
+                # 通道 _RS["sub_edges"]，等全局不动点结束后一次性消费。
                 if (_RSPLIT_ON and isinstance(_cc, str)
                         and _cc.startswith("R:") and _cc.count(":") == 2):
-                    _cc = _rsplit_eid(_cc, _ci_e, "from")
+                    if _RSPLIT_ISO:
+                        _sub_iso_e = _RS["refs"].get((_ci_e, "from"))
+                        if _sub_iso_e and _sub_iso_e in _RS["sub_src"]:
+                            _RS["sub_edges"].append((_sub_iso_e, _ce))
+                    else:
+                        _cc = _rsplit_eid(_cc, _ci_e, "from")
         elif _fr.startswith(_GLOBAL_PREF):
             if _fr.startswith("offset "):
                 _cc = ent_id(_fr)                   # ent_id 内部走 global_addr(s[7:])
@@ -8318,6 +8375,112 @@ def main():
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
                 _c10_fx_constrained += 1
+        # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
+        # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
+        # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
+        # 其 use 侧证据在此按冻结的被调方域求交：
+        #     edge(sub -> callee)  ⇒  class(sub) ⊆ desc(class(callee))
+        # （与内核 _c10_propagate 的 caller 侧收窄方向一致；被调方域取不动点结果，
+        #   多调用点参数按其既有纪律退回非 C10 基线域，不把软约束当硬约束）。
+        # 只写回 fam["C10"][subdef]，不做二次全局传播 —— 中性化级联不可能发生。
+        if _RSPLIT_ISO:
+            _iso_t0 = time.time()
+            _iso_base = _c10_base_dom(_edges_fix)
+
+            def _iso_base_of(_eid):
+                """单实体基线域（非 C10 族 ∩ + exact 钉定）。
+
+                `_c10_base_dom` 只覆盖基线边端点；子实体的被调方可能只出现在子实体
+                的 use 侧边里（基线图无该端点）。其非 C10 证据仍是**冻结的基线
+                证据**，可以合法作为被调方域 —— 与内核 base_dom 的单实体公式相同。
+                """
+                _m_b = FULL
+                for _f_b in FAMILIES:
+                    if _f_b == "C10":
+                        continue
+                    _fm_b = fam[_f_b].get(_eid)
+                    if _fm_b is not None:
+                        _m_b &= _fm_b
+                _ex_b = exact.get(_eid)
+                if _ex_b:
+                    _m_ex_b = 0
+                    for _ci_b, _s_b in _ex_b:
+                        _m_ex_b |= (1 << _ci_b)
+                    _m_b &= _m_ex_b
+                return _m_b
+
+            _iso_acc = {}
+            _iso_sites = collections.Counter()
+            _iso_nodom = 0
+            for (_iso_sub, _iso_ce) in _RS.get("sub_edges") or ():
+                _iso_dc = _dom_fix.get(_iso_ce)
+                if _iso_ce in _multi5 or not _iso_dc:
+                    # 多调用点参数：只采信非 C10 基线域（同写回循环的硬约束纪律）；
+                    # 被中和/缺席的实体同样退回基线域。
+                    _iso_dc = _iso_base.get(_iso_ce)
+                    if _iso_dc is None:
+                        _iso_dc = _iso_base_of(_iso_ce)
+                    if _iso_dc == FULL:
+                        _iso_nodom += 1
+                _iso_alw = _desc_union(_iso_dc)
+                _iso_prev = _iso_acc.get(_iso_sub)
+                _iso_acc[_iso_sub] = (_iso_alw if _iso_prev is None
+                                      else (_iso_prev & _iso_alw))
+                _iso_sites[_iso_sub] += 1
+            _iso_app = _iso_full = _iso_emp = 0
+            _iso_hist = collections.Counter()
+            _iso_ledger = {}
+            for _iso_sub in sorted(_iso_acc):
+                _iso_m = _iso_acc[_iso_sub]
+                if _iso_m == 0:
+                    _iso_emp += 1      # 站点间互斥：退化证据，不写（同零掩码守卫）
+                    continue
+                if _iso_m == FULL:
+                    _iso_full += 1
+                    continue
+                fam["C10"][_iso_sub] = fam["C10"].get(_iso_sub, FULL) & _iso_m
+                _iso_app += 1
+                _iso_w = fam["C10"][_iso_sub].bit_count()
+                _iso_hist["1" if _iso_w == 1 else
+                          ("2-8" if _iso_w <= 8 else
+                           ("9-128" if _iso_w <= 128 else ">128"))] += 1
+                if os.environ.get("MINCLASS_M14C_DUMP") == "1":
+                    _iso_ledger[_iso_sub] = {
+                        "src": _RS["sub_src"].get(_iso_sub),
+                        "sites": _iso_sites[_iso_sub],
+                        "width": _iso_w,
+                    }
+            _iso_sub_n = len(set(s for s, _c in (_RS.get("sub_edges") or ())))
+            _RS["iso_stats"] = {
+                "subdefs_with_edges": _iso_sub_n,
+                "sites": len(_RS.get("sub_edges") or ()),
+                "subdefs_intersected": len(_iso_acc),
+                "applied": _iso_app,
+                "full": _iso_full,
+                "empty": _iso_emp,
+                "sites_no_frozen_domain": _iso_nodom,
+                "width_hist": dict(sorted(_iso_hist.items())),
+            }
+            print("[rsplit2] local C10 masks: subdefs_with_edges=%d sites=%d "
+                  "intersected=%d applied=%d full=%d empty=%d nodom=%d hist=%s %.1fs"
+                  % (_iso_sub_n, len(_RS.get("sub_edges") or ()), len(_iso_acc),
+                     _iso_app, _iso_full, _iso_emp, _iso_nodom,
+                     dict(sorted(_iso_hist.items())), time.time() - _iso_t0),
+                  flush=True)
+            if os.environ.get("MINCLASS_M14C_DUMP") == "1":
+                _iso_out = os.path.join(ROOT, ".omo/agents/csp/m14c")
+                try:
+                    os.makedirs(_iso_out, exist_ok=True)
+                    with io.open(os.path.join(_iso_out, "iso_stats.json"),
+                                 "w", encoding="utf-8") as _fh_iso:
+                        json.dump({"stats": _RS["iso_stats"],
+                                   "subdef_masks": _iso_ledger},
+                                  _fh_iso, ensure_ascii=False, indent=0,
+                                  sort_keys=True)
+                    print("[rsplit2] ledger written: .omo/agents/csp/m14c/iso_stats.json",
+                          flush=True)
+                except Exception as _e_iso:
+                    print("[rsplit2] ledger write FAILED: %r" % (_e_iso,), flush=True)
         if _rs_cell[0] is not None:
             # --use-rs：C10 写回完成后把最终 fam["C10"] 掩码增量注入 Rust 求解器
             #（构建时 C10 族为空——内核 base_dom 本就跳过 C10，两不相扰）。
