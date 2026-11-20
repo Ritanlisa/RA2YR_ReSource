@@ -5662,22 +5662,82 @@ def main():
 
     # ---- C17：洁净寄存器 = 函数 this（同一对象的等式）----
     # facts.reg_links = [site, reg, src, clean]；clean=True 表示该寄存器的到达定义
-    # 未经跨调用/控制流汇合，即在此点它装的就是 src 那个对象。当 src 正是本函数的
-    # this（T:<fn>）时，R:<fn>:<reg> 与 T:<fn> 是同一对象 -> 并入同簇。
+    # 未经跨调用/控制流汇合，即在此点它装的就是 src 那个对象。
+    #
+    # 键形状（2026-11-20 实测）：reg_links 的 src 一律是函数起始地址（"T:<fn>"），
+    # 与 fn_at(site) 逐条一致（9,364/9,364）；失配点不在这里。R:<fn>:<reg> 从未成为
+    # 实体 —— touch() 对 "R:"/"V:" 前缀直接 return None（寄存器是中间量）。于是
+    # 「_reid17 in ents」恒假，C17/同族 C20 长期 0 生效。修复 = 只为**已证明**的
+    # 连接点物化实体，再并簇（见下）。
+    #
+    # 证明式（不是聚合猜测）：R:<fn>:<reg> 是函数内该寄存器所有定义点的聚合连接点。
+    # 只有当该连接点的**全部**观测都证明是同一对象时才可断言 = this：
+    #   (a) 该 (fn,reg) 的每一行 reg_links 都 clean 且 src == T:<fn>（无脏/异源定义）；
+    #   (b) 该 (fn,reg) 的每一个 CALL_ARG 使用点都有上述行（无未证明的用途）；
+    #   (c) 至少有一个使用点（无用途 = 空真，并簇无意义，跳过）。
+    # 任一条件不满足 → 仍是 junction，不并（脏定义 6,502 行、覆盖缺口 177 对）。
+    # 方向 keep_b=True：保留给值方 T:<fn> 的根。UF 根取字典序最小键（R: < T:），
+    # 放任改根会静默关闭 C1 —— Rust 内核按**字面根前缀**判 C1（kernel.rs:665/707/
+    # 754），Python 侧改前缀救不了它；M14c 先例同样用根定向。
     _c17_n = 0
+    _c17_pairs = _c17_dirty = _c17_cov = _c17_nouse = _c17_pre = 0
+    _c17_byreg = collections.Counter()
+    _c17_added = set()
     if facts:
+        _rows17 = {}
         for _lk17 in (facts.get("reg_links") or ()):
             try:
                 _site17, _reg17, _src17, _clean17 = _lk17[0], _lk17[1], _lk17[2], _lk17[3]
             except (IndexError, TypeError):
                 continue
-            if not _clean17 or not isinstance(_src17, str) or not _src17.startswith("T:"):
+            if isinstance(_src17, str) and _src17.startswith("T:"):
+                _rows17.setdefault((_src17[2:], _reg17), []).append(
+                    (bool(_clean17), _src17, _site17))
+        _uses17 = {}
+        for _e17 in raw:
+            if _e17.get("type") != "CALL_ARG":
                 continue
-            _reid17 = "R:%s:%s" % (_src17[2:], _reg17)
-            if _reid17 in ents and _src17 in ents:
-                un(_reid17, _src17, "reg_same_object")
+            _fr17 = _e17.get("from")
+            if not (isinstance(_fr17, str) and _fr17 in REGS):
+                continue
+            _a17 = hx(_e17.get("addr"))
+            if _a17 is None:
+                continue
+            _fa17 = fn_at(_a17)
+            if _fa17 is None:
+                continue
+            _uses17.setdefault(("%X" % _fa17, _fr17), set()).add(_a17)
+        for (_f17, _reg17b), _obs17 in sorted(_rows17.items()):
+            _t17 = "T:%s" % _f17
+            if _t17 not in ents:
+                continue
+            _c17_pairs += 1
+            if any(not _c for _c, _s, _a in _obs17):
+                _c17_dirty += 1
+                continue
+            _us17 = _uses17.get((_f17, _reg17b))
+            if not _us17:
+                _c17_nouse += 1
+                continue
+            if not _us17 <= {_a for _c, _s, _a in _obs17}:
+                _c17_cov += 1
+                continue
+            _rid17 = "R:%s:%s" % (_f17, _reg17b)
+            if _rid17 not in ents:
+                ents[_rid17] = {"obs": set(), "raw": set()}
+                _c17_added.add(_rid17)
+            if un(_rid17, _t17, "reg_same_object", keep_b=True):
                 _c17_n += 1
-    print("[C17] clean register == function this unions: %d" % _c17_n, flush=True)
+                _c17_byreg[_reg17b] += 1
+            else:
+                _c17_pre += 1
+    print("[C17] clean register == function this unions: %d (pairs=%d skip_dirty=%d "
+          "skip_coverage=%d skip_no_use=%d materialized=%d pre_united=%d)"
+          % (_c17_n, _c17_pairs, _c17_dirty, _c17_cov, _c17_nouse, len(_c17_added),
+             _c17_pre), flush=True)
+    print("[C17] unions by register: %s"
+          % (", ".join("%s=%d" % kv for kv in sorted(_c17_byreg.items())) or "(none)"),
+          flush=True)
 
     # ---- M14b：定义源并簇（flag 门控）------------------------------------
     # 用户规则：寄存器值在两次定义之间是给值方的别名，求解器直接与给值方共用
@@ -5835,6 +5895,7 @@ def main():
     # 证据自相矛盾的簇：**不仲裁、不丢弃任何族**，答案记为「不知道」。
     # 用户裁定：冲突必须当 bug 追查，禁止按 provenance 强弱丢弃证据后采信结果。
     _unknown_roots = set()
+    _c17_pfx_fix = {"n": 0}   # C17 基线根前缀复刻命中数（should stay 0：keep_b 保住 T: 根）
 
     # 增量调度层：per-(root, family) 簇族掩码 memo（pre-_pfm；_pfm/_unknown_roots 活状态现算）。
     # fam/ents/exact/clusters 自 family 循环起冻结 → memo 在全部 solve() 调用间精确透明。
@@ -5863,12 +5924,25 @@ def main():
             if _RSPLIT_ISO:
                 # M14c：并簇不得改变**基线簇**的 C1 资格。UF 根取字典序最小键，
                 # 并入子实体（"R:" < "T:"）会把 T: 根改写为 R: 并静默关闭 C1。
-                # 按非子实体成员的最小结键复刻 OFF 的根前缀（子实体 = 3 冒号 R:）。
+                # 按非子实体成员的最小结键复刻 OFF 的根前缀（子实体 = 3 冒号 R:；
+                # C17 物化的 2 冒号 R: 父节点同理排除——HEAD 下它们不存在，若计入
+                # 会让 M14c 的基线键退化到 R: 并把 C1 关掉）。
                 _iso_base_ms = [str(_m) for _m in (cl.get("ents") or ())
                                 if not (str(_m).startswith("R:")
-                                        and str(_m).count(":") >= 3)]
+                                        and (str(_m).count(":") >= 3
+                                             or str(_m) in _c17_added))]
                 if _iso_base_ms:
                     _root_pfx = min(_iso_base_ms)[:2]
+            elif str(cl.get("root") or "") in _c17_added:
+                # C17 防御：C17 只并已证明单值的连接点，且 keep_b 保留 T: 根，
+                # 正常路径不会走到这里。若根落在本次新增的 R: 连接点上（根定向被
+                # 后续改动撤销等），按**基线根前缀** = 非 R 成员的最小键复刻 C1
+                # 资格（同 M14c 教训；Rust 内核按字面根前缀判 C1，必须根不动）。
+                _iso_base_ms = [str(_m) for _m in (cl.get("ents") or ())
+                                if not str(_m).startswith("R:")]
+                if _iso_base_ms:
+                    _root_pfx = min(_iso_base_ms)[:2]
+                    _c17_pfx_fix["n"] += 1
             _c1_applies = (_root_pfx == "T:")
             m_c1 = (c1_mask(cl["obs"]) if (cl["obs"] and apply_c1 and _c1_applies)
                     else FULL)
@@ -7007,9 +7081,11 @@ def main():
                 _ea_leg = None
             if _ea_leg is not None and _clean_reg.get((_ea_leg, _fr)) is not False:
                 _cc_leg = ent_id(_fr, fn_at(_ea_leg))
-        if _cc_leg and _cc_leg in ents and _cc_leg != _ce:
+        if _cc_leg and _cc_leg in ents and _cc_leg != _ce and _cc_leg not in _c17_added:
             # 基线边：改前 C10 本就保留（T:/M:/G:/P: 等落 ents 且非 dirty）→ Phase 1，
             # 语义照旧。此处先于新分类返回，保证 p1 集合与 HEAD 逐边一致。
+            # C17 物化的 R: 连接点在 HEAD 不在 ents，必须排除：否则这些边会以 R:
+            # 端点为键、被 junction 过滤整条摘除（实测 35 条 typed 边被换成空边）。
             _call_edges.append((_cc_leg, _ce))
             _call_edges_p1.append((_cc_leg, _ce))
             continue
@@ -9145,6 +9221,8 @@ def main():
           "constrained clusters)  forced=%d narrow=%d wide=%d"
           % (_uniq, _tot, (100.0 * _uniq / _tot) if _tot else 0.0,
              _cov["forced"], _cov["narrow"], _cov["wide"]), flush=True)
+    print("[C17] baseline-root prefix restorations applied: %d" % _c17_pfx_fix["n"],
+          flush=True)
 
     # ---- 最终域直方图 + 窄域明细（分析用；口径 = 最终 constrain 掩码）----
     _narrow_dump = {}
