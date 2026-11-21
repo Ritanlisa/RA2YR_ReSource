@@ -719,6 +719,12 @@ def build_universe(use_evidence=True, prune_dead=False):
         size[i] = int(s) if isinstance(s, int) else None
 
     # ---- 二进制访问证据（observed extent 是尺寸下界，非 sizeof）----
+    # 注意：类型词汇原子（int/char/void/...，i >= _n_cls_only）在这里仍会吸收
+    # layout_evidence —— 这些统计是 T1 求解环境的一部分（C21 布局表、C5
+    # size_mask、赋值排序都读过它们），本步不改 T1：实测移除会改变 C21
+    # exact 58→59 / layouts 788→781 与 C5 mask，最终改变 4 个 T1 dump 哈希。
+    # T2 tiebreak 键在读取侧改为**只看类原子**（见 T2 段），因此基元名不再
+    # 污染 guess 排序；universe 本身保持与 T1 基线逐字节一致。
     eff_size = list(size)
     n_ev = 0
     ev_root = ((jload("anchors/layout_evidence.json", {}) or {}).get("classes") or {}) \
@@ -927,6 +933,7 @@ def build_universe(use_evidence=True, prune_dead=False):
               if size[_i] is None and eff_size[_i] is not None][:5]), flush=True)
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
+        "n_cls_only": _n_cls_only,
         "alias": alias,
         "classmask": _CLASSMASK,
         "members": members, "has_layout": has_layout, "size": size,
@@ -9473,8 +9480,10 @@ def main():
 
     # ---------------- T2 约定层：terminal coverage（report-only，与 T1 严格分离）----------------
     # T1 = 域大小=1 的簇（证据强制唯一）；T2 = 每个受约束簇的**报告类**（终态口径）。
-    # T2 是约定层（convention tier），不是证据：除 forced 外，任何 basis 都不得
-    # 被当作 evidence-forced。规则（优先级由高到低，全确定性、无统计/投票/RNG）：
+    # T2 分层（tier）：evidence（forced，唯一证据强制层）/ convention（most-specific、
+    # primitive-int 约定规则）/ guess（tiebreak，低置信度猜名，明确**不计入 strong**）。
+    # 除 evidence 层外，任何 basis 都不得被当作 evidence-forced。
+    # 规则（优先级由高到低，全确定性、无统计/投票/RNG）：
     #   1) forced         域大小=1 → 该类；basis=forced（唯一 evidence-forced 层）；
     #   2) most-specific  域内存在唯一"最特异"候选：该候选在域内的严格后代集为空
     #                     （偏序唯一极大元；祖先关系取 U["desc"] 闭包，与 C2/C10
@@ -9484,14 +9493,24 @@ def main():
     #                     且 int 原子在域内 → 报 int（同宽基元拼写约定）；
     #   4) tiebreak       其余：(成员数 desc, sizeof desc, 名字 asc) 取最小键；
     #                     sizeof = 声明 size，缺省回退观测下界 eff_size，再缺省 -1。
+    #                     只读**类原子**的成员表/尺寸：类型词汇原子（i >= _n_cls_only，
+    #                     含 int/char/void/... 与值类型）不是类，layout_evidence 按
+    #                     名字聚合的访问统计若参与排序会让基元名（int 237 成员 /
+    #                     extent 3828）靠"成员最多"赢得 guess —— 实测 IDA 抽查
+    #                    6 行 0/6 类正确。故 tiebreak 对这些原子计 0 成员 / 尺寸 -1。
+    #                     tier=guess：成员数排序对稀疏布局无判别力，是确定性猜名，
+    #                     不是证据。T1 求解环境（C21/C5/赋值）保持不变。
     # 输出 anchors/minclass_t2.json：每受限簇
-    #   {class, basis, domain_size, candidates_top(<=16)}，sort_keys=True 保证
+    #   {class, basis, tier, domain_size, candidates_top(<=16)}，sort_keys=True 保证
     #   逐字节确定性；domain>16 时 candidates_top = 报告类 + 其余 15 个名字升序
     #   （保证报告类可在本行内自检 ∈ 域）。
     # 本段只读 U/names/constrain，不触碰解、赋值、族、掩码、门与既有产物。
+    _T2_TIER = {"forced": "evidence", "most-specific": "convention",
+                "primitive-int": "convention", "tiebreak": "guess"}
     _T2_PRIM_CANON = frozenset(("int", "short", "char", "__int64", "float",
                                 "double", "void", "wchar_t"))
     _t2_int_ci = idx.get("int")
+    _t2_n_cls = _CLASSMASK.bit_length()      # names[0:k]=类, names[k:]=类型词汇
     _t2_desc_bits = {}
 
     def _t2_desc_of(_ci):
@@ -9504,12 +9523,35 @@ def main():
             _t2_desc_bits[_ci] = _bm
         return _bm
 
+    def _t2_mem_count(_ci):
+        """T2 tiebreak 的成员数视图：类型词汇原子不是类，计 0。"""
+        if _ci >= _t2_n_cls:
+            return 0
+        return len(U["members"][_ci] or {})
+
     def _t2_size_of(_ci):
+        """T2 tiebreak 的尺寸视图：类型词汇原子无对象尺寸，回退 -1。"""
+        if _ci >= _t2_n_cls:
+            return -1
         _sz = U["size"][_ci]
         if isinstance(_sz, int):
             return _sz
         _sz = U["eff_size"][_ci]
         return _sz if isinstance(_sz, int) else -1
+
+    # 观测 census：layout_evidence 里落在类型词汇原子上的条目数（T2 键忽略它们）。
+    _t2_tv_ev = 0
+    for _cls_tv, _rec_tv in ((jload("anchors/layout_evidence.json", {}) or {})
+                             .get("classes") or {}).items():
+        _i_tv = resolve(_cls_tv)
+        if _i_tv is None or _i_tv < _t2_n_cls:
+            continue
+        _ext_tv = _rec_tv.get("observed_extent")
+        if isinstance(_ext_tv, int) and _ext_tv > 0:
+            _t2_tv_ev += 1
+    print("[layout] evidence entries on type vocab skipped: %d "
+          "(tiebreak key only; T1 universe/class masks unchanged)" % _t2_tv_ev,
+          flush=True)
 
     _t2_rows = {}
     _t2_basis = collections.Counter()
@@ -9519,7 +9561,7 @@ def main():
         if _pop2 == 0:
             # 防御性兜底：空域簇在 cluster_domains 已带 empty_domain → 必在 conflicted，
             # 不会出现在 constrain（conflicts=0）。保留一行以免中断 T2 全覆盖。
-            _t2_rows[_r2] = {"class": "", "basis": "tiebreak",
+            _t2_rows[_r2] = {"class": "", "basis": "tiebreak", "tier": "guess",
                              "domain_size": 0, "candidates_top": []}
             _t2_basis["tiebreak"] += 1
             continue
@@ -9553,7 +9595,7 @@ def main():
                     _ci2, _basis2 = _t2_int_ci, "primitive-int"
                 else:
                     _ci2 = min(_cands2,
-                               key=lambda _c: (-len(U["members"][_c] or {}),
+                               key=lambda _c: (-_t2_mem_count(_c),
                                                -_t2_size_of(_c),
                                                names[_c]))
                     _basis2 = "tiebreak"
@@ -9563,6 +9605,7 @@ def main():
                 _top2 = [names[_ci2]] + heapq.nsmallest(
                     15, (names[_c] for _c in _cands2 if _c != _ci2))
         _t2_rows[_r2] = {"class": names[_ci2], "basis": _basis2,
+                         "tier": _T2_TIER.get(_basis2, "guess"),
                          "domain_size": _pop2, "candidates_top": _top2}
         _t2_basis[_basis2] += 1
 
@@ -9570,15 +9613,20 @@ def main():
     with io.open(_t2_path, "w", encoding="utf-8") as _fh2:
         json.dump(_t2_rows, _fh2, ensure_ascii=False, indent=0, sort_keys=True)
     _t2_forced = _t2_basis.get("forced", 0)
-    _t2_conv = len(_t2_rows) - _t2_forced
-    print("[coverage-t2] reported=%s/%s = %.2f%% (forced=%s / convention=%s)"
-          % (format(len(_t2_rows), ","), format(_tot, ","),
-             (100.0 * len(_t2_rows) / _tot) if _tot else 0.0,
-             format(_t2_forced, ","), format(_t2_conv, ",")), flush=True)
-    print("[coverage-t2] basis: forced=%d most-specific=%d primitive-int=%d tiebreak=%d"
-          % (_t2_forced, _t2_basis.get("most-specific", 0),
-             _t2_basis.get("primitive-int", 0), _t2_basis.get("tiebreak", 0)),
-          flush=True)
+    _t2_ms = _t2_basis.get("most-specific", 0)
+    _t2_pi = _t2_basis.get("primitive-int", 0)
+    _t2_guess = _t2_basis.get("tiebreak", 0)
+    _t2_strong = _t2_forced + _t2_ms + _t2_pi
+    print("[coverage-t2] strong=%s/%s = %.2f%% (forced=%s / most-specific=%s / "
+          "primitive-int=%s) | guess=%s (not evidence-forced; not counted in strong)"
+          % (format(_t2_strong, ","), format(_tot, ","),
+             (100.0 * _t2_strong / _tot) if _tot else 0.0,
+             format(_t2_forced, ","), format(_t2_ms, ","),
+             format(_t2_pi, ","), format(_t2_guess, ",")), flush=True)
+    print("[coverage-t2] basis: forced=%d most-specific=%d primitive-int=%d tiebreak=%d "
+          "| tier: evidence=%d convention=%d guess=%d"
+          % (_t2_forced, _t2_ms, _t2_pi, _t2_guess,
+             _t2_forced, _t2_ms + _t2_pi, _t2_guess), flush=True)
     print("[out] %s (%d rows, %.1f KB)" % (_t2_path, len(_t2_rows),
                                            os.path.getsize(_t2_path) / 1024.0),
           flush=True)
