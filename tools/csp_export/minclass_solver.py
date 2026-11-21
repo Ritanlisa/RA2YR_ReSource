@@ -123,12 +123,25 @@ _IRA_ON = os.environ.get("MINCLASS_IRA", "1") != "0"
 #   不改变 C10 键集/中性化序列。已知命名缺陷（anchors/minclass_naming_defects.json）
 #   地址显式排除。关断时族名不进入 FAMILIES —— 产物与接线前逐字节一致。
 _FCLS_ON = os.environ.get("MINCLASS_FCLS", "1") != "0"
+# ---- P4-IDAT 类型族门（默认 ON；MINCLASS_IDATYPE=0 关闭做 A/B / 基线回归）----
+#   IDAT = decompile-results/full_export/src/*.cpp 的类型化 Hex-Rays 伪代码：
+#          this 类 / 参数类型 / 局部变量类型 / this->字段类型 / 调用结果类型。
+#          -> **已存在**实体（T:/R:/P:/M:/EAX:/S:）的 singleton 类掩码或基元/指针
+#             词汇掩码（非类行绝不使用类掩码）。
+#   隔离纪律同 RN/IRA/FCLS：C10 不动点前不写 fam（掩码只进临时字典），
+#   C10 写回后、RN/IRA/FCLS 之后按当前簇域兼容守卫一次性施加；不做二次传播。
+#   T: supply 是本族唯一的实体物化通道（typed this 函数缺 T: 实体时补建）。
+#   类供给（class supply）载入 full_export/include 的布局/base 与 class_db 的成员
+#   偏移，补全 class_layouts 缺失的 315+ 类（只补缺，不覆盖已有布局）。
+_IDAT_ON = os.environ.get("MINCLASS_IDATYPE", "1") != "0"
 if _RN_ON:
     FAMILIES.append("RN")
 if _IRA_ON:
     FAMILIES.append("IRA")
 if _FCLS_ON:
     FAMILIES.append("FCLS")
+if _IDAT_ON:
+    FAMILIES.append("IDAT")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -209,6 +222,8 @@ FAMILY_DESC = {
     "IRA": "strict integer-return set (proof, not heuristic): every arith ret site of the function is CFG-int-taint proven (forward join = AND over predecessors; pointer-arith guard: memory loads / call results / lea / params / cmov / xchg are not INT; sbb r,r / and r,0 / or r,-1 absorbing; partial writes preserve the whole-register INT flag; CFG-completeness required) -> RET:<fn> = int-family mask {int, unsigned int, bool, char, unsigned char} via _tok_ix canonicalization; unconditional (no --allow-heuristics gate; distinct from the heuristic IR family over anchors/int_returns.json); evidence anchors/int_returns_strict.json (636 fns), generator .omo/agents/csp/extract_int_returns_strict.py, report .omo/agents/csp/p4_t1f_expand_report.md",
     # ---- P4-FCLS：符号声明类（名字证据，后处理 + 二进制兼容守卫）----
     "FCLS": "explicit Class::Method symbol class (signals.json symbols[fn].cls; name evidence, NOT binary): singleton class mask {cls} on EXISTING T:<fn> / R:<fn>:ecx entities only -- no touch/materialization, no new entity keys; applied only POST-C10 and AFTER RN/IRA, guarded by the current cluster domain (skip no_cluster / unknown_root / target_conflict / already_forced / no_change; phantom-only masks no_effect); plain-identifier cls restricted to the solver class universe; the 'unknown' sentinel excluded (placeholder, not a class declaration); addresses in anchors/minclass_naming_defects.json excluded; rank 5 (below every binary family, first to drop on conflict); gate MINCLASS_FCLS (default ON); report .omo/agents/csp/p4_fcls_report.md",
+    # ---- P4-IDAT：类型化 Hex-Rays 伪代码（full_export，类型证据）----
+    "IDAT": "typed Hex-Rays pseudocode (decompile-results/full_export/src/*.cpp, typed snapshot): this class from the __thiscall/__fastcall this parameter; parameter types -> P:<fn>:k; this->field name resolved through class_layouts/member_types/include member tables -> M:<fn>:this:0xOFF; call-result locals (`vN = callee(...); /*0xSITE*/` with the site verified as a call instruction) -> EAX:<fn>:SITE; unambiguous stack locals ([esp+X] matching the function's stack_+0xX token, or [ebp-N]->existing S:<fn>:var_N) -> S:<fn>:slot. Class-typed rows = singleton class mask; primitive/pointer rows = exact type-vocabulary mask (NEVER a class mask); non-class rows on receiver-axis clusters are dropped by the existing receiver discipline. Applied only POST-C10 and AFTER RN/IRA/FCLS with the current-domain guard (no_cluster / unknown_root / target_conflict / already_forced / no_change / no_effect / unstable_domain), plus intra-family per-root accumulation so two rows on one cluster can never empty it; no second propagation. T: supply materializes T:<fn> for typed-this functions without one (the only materialization of this family). Class supply fills missing layouts/sizes from full_export/include + class_db members + template bases (additive; existing atoms untouched). rank 20 (below binary families, above names); gate MINCLASS_IDATYPE (default ON); report .omo/agents/csp/p4_idatype_report.md",
 }
 
 
@@ -235,6 +250,9 @@ _FAM_RANK = {
     # P4-FCLS: name evidence only (54.2% agreement on binary-forced rows) -- the
     # weakest admissible family; conflict resolution drops it first.
     "FCLS": 5,
+    # P4-IDAT: typed-snapshot evidence (IDA prototype/locals), rank 20 -- above
+    # name evidence, below every binary instruction-semantic family.
+    "IDAT": 20,
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
@@ -515,6 +533,212 @@ class UF:
 # ==========================================================================
 # 1. 类宇宙
 # ==========================================================================
+# ---- P4-IDAT 类供给（class supply，门控 MINCLASS_IDATYPE）------------------
+# 只补 class_layouts 缺失的类（additive；已有布局的原子一个都不改）：
+#   (1) full_export/include/*.hpp 的扁平参考布局（sizeof / bases / 成员偏移）；
+#   (2) anchors/class_db.json 的 members（member_types 观测偏移）；
+#   (3) 修饰模板实例（?$X@...）-> **精确规范实例**布局（MAL 别名或 naive canon；
+#       仅当规范实例自身在 layouts 中；裸模板基类只给 offsets/parent，不复制 size
+#       —— 实测 VectorClass/DynamicVectorClass 实例尺寸随 T 变化）。
+# 同时把 IDA/TYPE 拼写与 signals 声明类的 +Class/-Class、向量模板、_G 后缀等
+# 别名补进 resolve() 宇宙（只增 alias，不新增/改动词典原子）。
+_IDAT_SUPPLY_INC = None
+_MANGLED_CHAR_SUFFIX = {"D": "char", "E": "uchar", "F": "short", "G": "ushort",
+                        "H": "int", "I": "uint", "J": "long", "K": "ulong",
+                        "M": "float", "N": "double"}
+
+
+def _idat_parse_include_classes():
+    global _IDAT_SUPPLY_INC
+    if _IDAT_SUPPLY_INC is not None:
+        return _IDAT_SUPPLY_INC
+    out = {}
+    for _p in sorted(glob.glob(os.path.join(
+            ROOT, "decompile-results", "full_export", "include", "*.hpp"))):
+        _nm = os.path.basename(_p)[:-4]
+        try:
+            _txt = io.open(_p, encoding="utf-8", errors="ignore").read()
+        except OSError:
+            continue
+        _m = re.search(r"^// sizeof=(\S+) \| bases=\[(.*?)\]", _txt, re.M)
+        _size = None
+        _bases = []
+        if _m:
+            if _m.group(1).isdigit():
+                _size = int(_m.group(1))
+            if _m.group(2).strip():
+                _bases = [b.strip().strip("'\"") for b in _m.group(2).split(",")
+                          if b.strip()]
+        _members = {}
+        for _mm in re.finditer(
+                r"^\s+(\S.*?)\s+([A-Za-z_]\w*);\s*//\s*\+0x([0-9A-Fa-f]+)\s+size=0x([0-9A-Fa-f]+)",
+                _txt, re.M):
+            try:
+                _off = int(_mm.group(3), 16)
+                _sz = int(_mm.group(4), 16)
+            except ValueError:
+                continue
+            _members.setdefault(_off, {"ida_name": _mm.group(2),
+                                       "type": _mm.group(1).strip(),
+                                       "size": _sz})
+        out[_nm] = {"size": _size, "bases": _bases, "members": _members}
+    _IDAT_SUPPLY_INC = out
+    return out
+
+
+def _idat_naive_canon(_m):
+    _parts = [x for x in str(_m)[2:].split("@") if x]
+    if len(_parts) < 2:
+        return None
+    _args = []
+    for _a in _parts[1:]:
+        if _a[:1] in ("V", "U") and len(_a) > 1:
+            _args.append(_a[1:])
+        elif _a[:1] == "P" and len(_a) > 1:
+            _args.append("ptr_" + _a[1:])
+        else:
+            _args.append(_a)
+    return _parts[0] + "_" + "_".join(_args)
+
+
+def _idat_supply_class_layouts(lay, db):
+    """Return (new_lay, stats). Only keys absent from lay are added."""
+    inc = _idat_parse_include_classes()
+    mal = jload("anchors/mangled_alias.json", {}) or {}
+
+    def _mal_t(v):
+        if isinstance(v, str):
+            return v
+        if isinstance(v, dict):
+            for _k in ("canon", "canonical", "name"):
+                if isinstance(v.get(_k), str):
+                    return v[_k]
+        return None
+
+    mal_t = {k: _mal_t(v) for k, v in mal.items()}
+    supplied = {}
+    st = collections.Counter()
+    st["missing_before"] = sum(1 for _c in db if _c not in lay)
+    for _c in sorted(db):
+        if _c in lay:
+            continue
+        _rec = {}
+        _src = None
+        _irec = inc.get(_c)
+        if _irec and (_irec["members"] or _irec["bases"] or _irec["size"]):
+            if isinstance(_irec["size"], int):
+                _rec["size"] = _irec["size"]
+            if _irec["bases"]:
+                _b = _irec["bases"][0]
+                if _b in lay or _b in db:
+                    _rec["parent"] = _b
+            if _irec["members"]:
+                _rec["offsets"] = {str(_o): dict(_v)
+                                   for _o, _v in sorted(_irec["members"].items())}
+            _src = "include"
+        if not _rec.get("offsets"):
+            _mem = (db.get(_c) or {}).get("members") or {}
+            if _mem:
+                _offs = {}
+                for _k, _v in _mem.items():
+                    try:
+                        _o = int(str(_k), 10)
+                    except ValueError:
+                        try:
+                            _o = int(str(_k), 16)
+                        except ValueError:
+                            continue
+                    _offs[str(_o)] = {"ida_name": (_v or {}).get("name") or None,
+                                      "type": (_v or {}).get("type") or None}
+                if _offs:
+                    _rec["offsets"] = _offs
+                    _src = _src or "db-members"
+                    for _a in ((db.get(_c) or {}).get("full_ancestors") or [])[1:]:
+                        if _a in lay:
+                            _rec["parent"] = _a
+                            break
+        if _c.startswith("?$"):
+            _cands = [mal_t.get(_c), _idat_naive_canon(_c),
+                      _c[2:].split("@", 1)[0]]
+            for _cand in _cands:
+                if not _cand:
+                    continue
+                _alts = [_cand]
+                _mm = re.match(r"^(.*)_([DFGHIJKMN])$", _cand)
+                if _mm and _mm.group(2) in _MANGLED_CHAR_SUFFIX:
+                    _alts.append(_mm.group(1) + "_"
+                                 + _MANGLED_CHAR_SUFFIX[_mm.group(2)])
+                _hit = next((a for a in _alts if a in lay), None)
+                if _hit is None:
+                    continue
+                _base = lay.get(_hit)
+                if not isinstance(_base, dict):
+                    break
+                _is_bare_base = (_hit == _c[2:].split("@", 1)[0])
+                _rec2 = {"parent": _base.get("parent"),
+                         "offsets": dict(_base.get("offsets") or {})}
+                if not _is_bare_base and isinstance(_base.get("size"), int):
+                    _rec2["size"] = _base["size"]
+                if (not _rec.get("offsets")
+                        or len(_rec2["offsets"]) > len(_rec.get("offsets") or {})):
+                    _rec = _rec2
+                    _src = ("template-base" if _is_bare_base
+                            else "template:" + _hit)
+                break
+        if _rec and (_rec.get("offsets") or _rec.get("size")
+                     or _rec.get("parent")):
+            supplied[_c] = _rec
+            st["supplied_" + str(_src).split(":")[0]] += 1
+            if _rec.get("size"):
+                st["with_size"] += 1
+            if _rec.get("offsets"):
+                st["with_members"] += 1
+            if _rec.get("parent"):
+                st["with_parent"] += 1
+    st["supplied_total"] = len(supplied)
+    st["still_missing"] = st["missing_before"] - len(supplied)
+    return supplied, st
+
+
+# ---- 别名供给（只增 alias，不新增原子）----
+def _idat_alias_candidates(_c):
+    out = []
+    _m = re.match(r"^_(DynamicVectorClass|VectorClass)_(.+)$", str(_c))
+    if _m:
+        _base, _arg = _m.group(1), _m.group(2)
+        if _arg in _MANGLED_CHAR_SUFFIX:
+            out.append(_base + "_" + _MANGLED_CHAR_SUFFIX[_arg])
+        if _arg.startswith("PAV"):
+            out.append(_base + "_ptr_" + _arg[3:])
+        elif _arg.startswith("PBV"):
+            out.append(_base + "_ptr_" + _arg[3:])
+        elif _arg.startswith("PA"):
+            out.append(_base + "_" + _arg[2:])
+        elif _arg[:1] in ("V", "U"):
+            out.append(_base + "_" + _arg[1:])
+        else:
+            out.append(_base + "_" + _arg)
+    _m = re.match(r"^_(TClassFactory)_V(.+)$", str(_c))
+    if _m:
+        out.append(_m.group(1) + "_" + _m.group(2))
+    _m = re.match(r"^_(CComObject)_V(.+)_ATL$", str(_c))
+    if _m:
+        out.append(_m.group(1) + "_" + _m.group(2))
+    _mm = re.match(r"^(.*)_([DFGHIJKMN])$", str(_c))
+    if _mm and _mm.group(2) in _MANGLED_CHAR_SUFFIX:
+        _b = _mm.group(1)
+        out.append(_b + "_" + _MANGLED_CHAR_SUFFIX[_mm.group(2)])
+        out.append(_b.lstrip("_") + "_" + _MANGLED_CHAR_SUFFIX[_mm.group(2)])
+    if str(_c).endswith("Class"):
+        out.append(str(_c)[:-5])
+    out.append(str(_c) + "Class")
+    if str(_c).startswith("_"):
+        out.append(str(_c)[1:])
+    if str(_c).startswith("std::"):
+        out.append(str(_c).split("::")[-1])
+    return out
+
+
 def build_universe(use_evidence=True, prune_dead=False):
     db = jload("anchors/class_db.json")["classes"]
     if prune_dead:
@@ -581,6 +805,33 @@ def build_universe(use_evidence=True, prune_dead=False):
         print("[universe] binary-verified: restored=%d added=%d verified_first=%d unverifiable_last=%d"
               % (_restored, _added, len(_ver), len(_rest)), flush=True)
 
+    # ---- P4-IDAT 类供给：只补缺失布局（已有布局的原子零改动）----
+    # 关键纪律（2026-11-21 实测）：供给布局**不注入** tools/class_layouts 派生的
+    # U["members"]/has_layout/size —— 那会改变 C1/C18/C21/C5 的候选表（实测 26 个
+    # 基线 unique 丢失：?$VectorClass@H 等模板基拷贝令 C21 exact 失配）。这里把
+    # 298 条布局记录放进 U["supply_layouts"] 侧表供解析/报告；IDAT 的 singleton
+    # 类掩码只依赖解析后的类原子。别名表（post-C10）见下方。
+    _idat_sup = {}
+    _idat_sup_st = collections.Counter()
+    if _IDAT_ON:
+        try:
+            _idat_sup, _idat_sup_st = _idat_supply_class_layouts(lay, db)
+            print("[class-supply] missing=%d supplied=%d (include=%d db-members=%d "
+                  "template=%d template-base=%d) with_size=%d with_members=%d "
+                  "with_parent=%d still_missing=%d"
+                  % (_idat_sup_st.get("missing_before", 0),
+                     _idat_sup_st.get("supplied_total", 0),
+                     _idat_sup_st.get("supplied_include", 0),
+                     _idat_sup_st.get("supplied_db-members", 0),
+                     _idat_sup_st.get("supplied_template", 0),
+                     _idat_sup_st.get("supplied_template-base", 0),
+                     _idat_sup_st.get("with_size", 0),
+                     _idat_sup_st.get("with_members", 0),
+                     _idat_sup_st.get("with_parent", 0),
+                     _idat_sup_st.get("still_missing", 0)), flush=True)
+        except Exception as _idat_sup_ex:
+            print("[class-supply] skipped: %r" % (_idat_sup_ex,), flush=True)
+
     names = list(db.keys())
     # ---- 类型宇宙扩展（用户裁决：类+指针+数组+基元共同张成解空间）----
     _n_cls_only = len(names)
@@ -617,6 +868,44 @@ def build_universe(use_evidence=True, prune_dead=False):
     for _mn, _mc in _malias_bin:
         if _mc in idx:
             alias[_mn] = _mc      # 实例级（覆盖 rtti→基类 的粗映射）
+
+    # ---- P4-IDAT 别名供给：signals 声明类 + IDAT anchor 的 IDA 拼写 ----
+    # 只增**后处理别名表**（idat_alias），不新增/改动词典原子，也不进 build_universe
+    # 的全局 resolve() —— 后者被 C2/C9/C11 等 C10 前族使用，改它会破坏 C10 不动点
+    # 的逐位一致性（实测 239 条别名令 C2/C9/C11 计数漂移）。IDAT 本族与 FCLS/RN
+    # 在 C10 之后用 _idat_resolve() 查这张表。
+    _idat_alias_map = {}
+    if _IDAT_ON:
+        _idat_alias_n = 0
+        _alias_src = set()
+        try:
+            for _sa, _sr in ((jload("signals.json", {}) or {}).get("symbols") or {}).items():
+                if isinstance(_sr, dict) and _sr.get("kind") == "function":
+                    _scl = _sr.get("cls")
+                    if isinstance(_scl, str) and re.match(r"^[A-Za-z_]\w*$", _scl.strip()):
+                        _alias_src.add(_scl.strip())
+        except Exception:
+            pass
+        try:
+            for _rr in ((jload("anchors/ida_type_masks.json", {}) or {})
+                        .get("records") or []):
+                for _tt in (_rr.get("types") or []):
+                    if isinstance(_tt, str):
+                        _alias_src.add(_tt)
+                if isinstance(_rr.get("raw"), str):
+                    _alias_src.add(_rr["raw"])
+        except Exception:
+            pass
+        for _ac in sorted(_alias_src):
+            if _ac in idx or _ac in alias:
+                continue
+            for _acand in _idat_alias_candidates(_ac):
+                if _acand in idx:
+                    _idat_alias_map[_ac] = _acand
+                    _idat_alias_n += 1
+                    break
+        print("[class-supply] aliases added: %d (post-C10 resolve table; atoms unchanged)"
+              % _idat_alias_n, flush=True)
 
     def resolve(name):
         if not isinstance(name, str):
@@ -968,6 +1257,10 @@ def build_universe(use_evidence=True, prune_dead=False):
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
         "n_cls_only": _n_cls_only,
         "alias": alias,
+        # P4-IDAT: post-C10-only alias table (kept out of resolve() so C10 is untouched)
+        "idat_alias": _idat_alias_map,
+        # P4-IDAT: additive layout supply (side table; never injected into proof tables)
+        "supply_layouts": _idat_sup,
         "classmask": _CLASSMASK,
         "members": members, "has_layout": has_layout, "size": size,
         "eff_size": eff_size, "n_evidence": n_ev,
@@ -1434,6 +1727,16 @@ def _cache_input_parts(args):
              else os.path.join(ROOT, args.extra_callargs))
         if os.path.exists(p):
             parts.append(args.extra_callargs + ":" + _file_fingerprint(p))
+    if _IDAT_ON:
+        # P4-IDAT class supply reads decompile-results/full_export/include/*.hpp
+        # (not under anchors/), so its content must enter the cache key.
+        _h = hashlib.sha256()
+        for _p in sorted(glob.glob(os.path.join(
+                ROOT, "decompile-results", "full_export", "include", "*.hpp"))):
+            _st = os.stat(_p)
+            _h.update(("%s|%d|%d;" % (os.path.basename(_p), _st.st_size,
+                                      int(_st.st_mtime))).encode("ascii"))
+        parts.append("full_export_include:" + _h.hexdigest())
     return parts
 
 
@@ -1460,6 +1763,8 @@ def _compute_cache_key(args, input_parts=None):
         "ira_family": _IRA_ON,
         # P4-FCLS 族门（env）：signals.json 符号类掩码随之变化。
         "fcls_family": _FCLS_ON,
+        # P4-IDAT 族门（env）：anchor 掩码 + class supply 布局 + T: supply 随之变化。
+        "idat_family": _IDAT_ON,
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -1820,6 +2125,18 @@ def main():
     t_start = time.time()
     U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
+    _IDAT_ALIAS = U.get("idat_alias") or {}
+
+    def _idat_resolve(_name):
+        """P4-IDAT post-C10 resolver: base universe first, then the supply aliases."""
+        _ci_r = resolve(_name)
+        if _ci_r is not None:
+            return _ci_r
+        if isinstance(_name, str):
+            _t_r = _IDAT_ALIAS.get(_name)
+            if _t_r is not None:
+                return idx.get(_t_r)
+        return None
     _names_sha = hashlib.sha256("\n".join(names).encode("utf-8")).hexdigest()   # 检查点宇宙指纹
     _solver_sha = hashlib.sha256(io.open(os.path.abspath(__file__), "rb").read()).hexdigest()  # 检查点源码指纹
     FULL = (1 << n) - 1
@@ -2482,6 +2799,33 @@ def main():
     print("[entities] total=%d with_obs=%d obs>=2=%d"
           % (len(ents), sum(1 for r in ents.values() if r["obs"]),
              sum(1 for r in ents.values() if len(r["obs"]) >= 2)), flush=True)
+
+    # ---- P4-IDAT T: supply（本族唯一实体物化通道，门控 MINCLASS_IDATYPE）----
+    # 放在全部基线预创建/raw 实体化之后：只补真正缺失的 T:<fn>（typed this 函数），
+    # 不改变基线实体的创建顺序/键集，也不物化任何其它前缀。
+    if _IDAT_ON:
+        _idat_tsup = _idat_tseen = 0
+        _idat_tplat = 0
+        try:
+            _idat_anchor0 = jload("anchors/ida_type_masks.json", {}) or {}
+            _idat_tplat = int((_idat_anchor0.get("meta") or {}).get(
+                "typed_this_fns") or 0)
+            for _tr0 in (_idat_anchor0.get("records") or []):
+                _te0 = _tr0.get("ent") or ""
+                if not _te0.startswith("T:"):
+                    continue
+                _idat_tseen += 1
+                if _te0 in ents:
+                    continue
+                _tfn0 = hx(_tr0.get("fn"))
+                if _tfn0 is None:
+                    continue
+                touch(_te0, "0x%08X:this" % _tfn0)
+                _idat_tsup += 1
+        except Exception as _e_ts:
+            print("[IDAT] T supply skipped: %r" % (_e_ts,), flush=True)
+        print("[IDAT] T: supply typed-this rows=%d new T entities=%d (typed this fns=%d)"
+              % (_idat_tseen, _idat_tsup, _idat_tplat), flush=True)
 
     fam = {f: {} for f in FAMILIES}
     exact = collections.defaultdict(list)
@@ -5631,7 +5975,8 @@ def main():
         if _eid21 not in ents or exact.get(_eid21):
             continue
         _hits21 = [_ci for _ci, _mm in _lay21.items()
-                   if all(_mm.get(_o, 0) >= _w for (_o, _w) in _obs21)]
+                   if all(isinstance(_mm.get(_o), int) and _mm.get(_o) >= _w
+                          for (_o, _w) in _obs21)]
         if len(_hits21) == 1:
             exact[_eid21].append((_hits21[0], "C21:fn-layout"))
             exact_count["C21"] = exact_count.get("C21", 0) + 1
@@ -7231,7 +7576,8 @@ def main():
                 if not _fcls_plain.match(_fcls_cls):
                     _fcls_st["non_identifier"] += 1
                     continue
-                _fcls_ci = resolve(_fcls_cls)
+                _fcls_ci = (_idat_resolve(_fcls_cls) if _IDAT_ON
+                            else resolve(_fcls_cls))
                 if _fcls_ci is None or not (0 <= _fcls_ci < _fcls_n_cls):
                     _fcls_st["not_in_universe"] += 1
                     continue
@@ -7279,6 +7625,86 @@ def main():
             _fcls_masks = {}
             _fcls_meta = {}
             print("[FCLS] skipped: %r" % (_fcls_ex,), flush=True)
+
+    # ---------------- P4-IDAT：类型化 Hex-Rays 伪代码（后处理加性证据）----------------
+    # 语义（用户任务书 IDA_TYPE）：
+    #   * this 类（thiscall this / fastcall arg0） -> T:<fn> / R:<fn>:ecx singleton 类掩码；
+    #   * 参数类型 -> P:<fn>:k；this->字段名经 layout/member_types/include 解析到偏移
+    #     -> M:<fn>:this:0xOFF；调用结果局部（`vN = callee(...); /*0xSITE*/`，SITE 须是
+    #     call 指令）-> EAX:<fn>:SITE；无歧义栈局部 -> S:<fn>:slot。
+    #   * 类行 = singleton 类掩码；基元/指针行 = 精确类型词汇原子掩码（**绝不用类掩码**）。
+    #   * 接收者轴（T:/R:/GS:）的基元/指针行直接跳过（this 不可能是 int）。
+    # 掩码只进临时字典 _idat_masks；C10 不动点前不写 fam（同 RN/IRA/FCLS 隔离纪律）。
+    # 目标实体必须已存在（本族唯一的物化通道是上面的 T: supply）。
+    _idat_masks = {}
+    _idat_meta = {}
+    _idat_st = collections.Counter()
+    if _IDAT_ON:
+        try:
+            _idat_t_l = time.time()
+            _ida_anchor = jload("anchors/ida_type_masks.json", {}) or {}
+            _ida_recs = _ida_anchor.get("records") or []
+            _ida_n_cls = int(U.get("n_cls_only") or _CLASSMASK.bit_length())
+            for _ir in sorted(_ida_recs, key=lambda _r: str(_r.get("ent") or "")):
+                _ie = _ir.get("ent")
+                _ik = _ir.get("kind")
+                _itypes = _ir.get("types") or []
+                if not isinstance(_ie, str) or not _itypes:
+                    _idat_st["bad_row"] += 1
+                    continue
+                if _ik == "class":
+                    _ici_i = _idat_resolve(_itypes[0])
+                    if _ici_i is None or not (0 <= _ici_i < _ida_n_cls):
+                        _idat_st["class_not_in_universe"] += 1
+                        continue
+                    _im_i = 1 << _ici_i
+                    _idat_st["class_rows"] += 1
+                elif _ik in ("primitive", "pointer"):
+                    _ti_i = idx.get(_itypes[0])
+                    if _ti_i is None:
+                        _idat_st["nonclass_no_atom"] += 1
+                        continue
+                    _im_i = 1 << _ti_i
+                    _idat_st["nonclass_rows"] += 1
+                else:
+                    _idat_st["unknown_kind"] += 1
+                    continue
+                if _ie.startswith(("T:", "R:", "GS:")) and _ik != "class":
+                    _idat_st["receiver_nonclass_skipped"] += 1
+                    continue
+                if _ie not in ents:
+                    _idat_st["entity_absent"] += 1
+                    _idat_st["entity_absent_" + _ie.split(":")[0].lower()] += 1
+                    continue
+                _prev_i = _idat_masks.get(_ie)
+                if _prev_i is not None:
+                    if _prev_i != _im_i:
+                        _idat_st["row_conflict"] += 1
+                    continue
+                _idat_masks[_ie] = _im_i
+                _idat_meta[_ie] = {
+                    "kind": _ik, "type": _itypes[0], "via": _ir.get("via"),
+                    "fn": _ir.get("fn"),
+                }
+            census["IDAT"] = len(_idat_masks)
+            print("[IDAT] typed pseudocode: records=%d class_rows=%d nonclass_rows=%d "
+                  "not_in_universe=%d no_atom=%d entity_absent=%d "
+                  "(T=%d P=%d M=%d EAX=%d S=%d R=%d) row_conflict=%d -> masks=%d "
+                  "%.1fs"
+                  % (len(_ida_recs), _idat_st["class_rows"],
+                     _idat_st["nonclass_rows"],
+                     _idat_st["class_not_in_universe"],
+                     _idat_st["nonclass_no_atom"], _idat_st["entity_absent"],
+                     _idat_st["entity_absent_t"], _idat_st["entity_absent_p"],
+                     _idat_st["entity_absent_m"], _idat_st["entity_absent_eax"],
+                     _idat_st["entity_absent_s"], _idat_st["entity_absent_r"],
+                     _idat_st["row_conflict"], len(_idat_masks),
+                     time.time() - _idat_t_l), flush=True)
+        except Exception as _idat_load_ex:
+            census["IDAT"] = census.get("IDAT", 0)
+            _idat_masks = {}
+            _idat_meta = {}
+            print("[IDAT] load skipped: %r" % (_idat_load_ex,), flush=True)
 
     # ---------------- C10：调用图子类型约束（AC-3 传播到不动点）----------------
     # 用户裁定：函数名默认是错的，不能作为类身份锚。
@@ -9356,6 +9782,178 @@ def main():
                       flush=True)
             except Exception as _fcls_wex:
                 print("[P4-FCLS] ledger write FAILED: %r" % (_fcls_wex,), flush=True)
+        # ---- P4-IDAT：类型证据施加（FCLS 之后；当前域兼容守卫 + 同族累积）----
+        # 施加序（硬约束）：C10 写回 + RN/IRA + FCLS 之后，重新取簇域快照；
+        # 每条 (ent, mask)：
+        #   no_cluster / unknown_root / unstable_domain（空域/精确冲突簇）→ 不写；
+        #   有效掩码 0/FULL（非类证据落在接收者轴 / 幻影类）→ no_effect；
+        #   当前域唯一且含掩码 → already_forced；唯一但不含 → target_conflict；
+        #   当前域 ∩ 掩码 == 0 → target_conflict；不窄化 → no_change；
+        #   同簇多行累积后为空 → target_conflict(intra_family) —— 绝不写空域。
+        # 不做二次传播：掩码只进最终簇交。rank 20（高于名字证据，低于二进制族）。
+        if _IDAT_ON and _idat_masks:
+            _idat_t1 = time.time()
+            _idat_memo2 = _incr_cell.get("on")
+            if _idat_memo2:
+                _incr_cell["on"] = False
+            try:
+                _idat_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _idat_memo2:
+                    _incr_cell["on"] = True
+            _idat_dom = {}
+            _idat_root = {}
+            _idat_cl = {}
+            _idat_fl = {}
+            for _cl_i, _m_i, _ex_i, _exs_i, _fl_i in _idat_snap:
+                _r_i = str(_cl_i.get("root"))
+                _idat_dom[_r_i] = _m_i
+                _idat_cl[_r_i] = _cl_i
+                _idat_fl[_r_i] = _fl_i
+                for _e_i in _cl_i["ents"]:
+                    _idat_root[_e_i] = _r_i
+
+            def _idat_pfx(_cl_p):
+                _pfx_p = str(_cl_p.get("root") or "")[:2]
+                if _RSPLIT_ISO:
+                    _ms_p = [str(_mp) for _mp in (_cl_p.get("ents") or ())
+                             if not (str(_mp).startswith("R:")
+                                     and (str(_mp).count(":") >= 3
+                                          or str(_mp) in _c17_added))]
+                    if _ms_p:
+                        _pfx_p = min(_ms_p)[:2]
+                elif str(_cl_p.get("root") or "") in _c17_added:
+                    _ms_p = [str(_mp) for _mp in (_cl_p.get("ents") or ())
+                             if not str(_mp).startswith("R:")]
+                    if _ms_p:
+                        _pfx_p = min(_ms_p)[:2]
+                return _pfx_p
+
+            _idat_ap = collections.Counter()
+            _idat_led = {"meta": {}, "applied": [], "skipped": []}
+            _idat_acc = {}
+            _idat_ap_roots = set()
+            _idat_new_roots = set()
+
+            def _idat_rec_row(_e_r, _r_r, _reason, _extra):
+                _md_r = _idat_meta.get(_e_r, {})
+                _row_r = {"ent": _e_r, "root": _r_r, "reason": _reason,
+                          "kind": _md_r.get("kind"), "type": _md_r.get("type"),
+                          "via": _md_r.get("via"), "fn": _md_r.get("fn")}
+                _row_r.update(_extra or {})
+                return _row_r
+
+            for _e2 in sorted(_idat_masks):
+                _m2 = _idat_masks[_e2]
+                _r2 = _idat_root.get(_e2)
+                if _r2 is None:
+                    _idat_ap["no_cluster"] += 1
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, None, "no_cluster", None))
+                    continue
+                if _r2 in _unknown_roots:
+                    _idat_ap["unknown_root"] += 1
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, _r2, "unknown_root", None))
+                    continue
+                _cl2 = _idat_cl[_r2]
+                _pfx2 = _idat_pfx(_cl2)
+                _me2 = _pfm(_m2)
+                if _pfx2 in ("T:", "R:", "GS"):
+                    if _me2 & _CLASSMASK:
+                        _me2 &= _CLASSMASK
+                    else:
+                        _me2 = FULL
+                if _me2 == 0 or _me2 == FULL:
+                    _idat_ap["no_effect"] += 1
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, _r2, "no_effect", {"eff_w": 0}))
+                    continue
+                _fl2 = _idat_fl.get(_r2) or {}
+                if _fl2.get("empty_domain") or _fl2.get("c1_gap") \
+                        or _fl2.get("exact_conflict"):
+                    _idat_ap["unstable_domain"] += 1
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, _r2, "unstable_domain", None))
+                    continue
+                _bd2 = _idat_dom.get(_r2, FULL)
+                _md2 = _idat_meta.get(_e2, {})
+                _row_ex2 = {"base_w": (None if _bd2 == FULL else _bd2.bit_count()),
+                            "mask_w": _m2.bit_count(),
+                            "eff_w": _me2.bit_count(),
+                            "kind": _md2.get("kind"), "type": _md2.get("type")}
+                if _bd2 != FULL and _bd2.bit_count() == 1:
+                    if _bd2 & _me2:
+                        _idat_ap["already_forced"] += 1
+                        _idat_led["skipped"].append(
+                            _idat_rec_row(_e2, _r2, "already_forced", _row_ex2))
+                    else:
+                        _idat_ap["target_conflict"] += 1
+                        _idat_led["skipped"].append(
+                            _idat_rec_row(_e2, _r2, "target_conflict", _row_ex2))
+                    continue
+                _acc2 = _idat_acc.get(_r2, FULL)
+                _comb2 = _bd2 & _me2 & _acc2
+                if _comb2 == 0:
+                    _idat_ap["target_conflict"] += 1
+                    _why2 = ("intra_family_conflict" if _acc2 != FULL
+                             else "target_conflict")
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, _r2, _why2, _row_ex2))
+                    continue
+                if _bd2 != FULL and _comb2 == _bd2:
+                    _idat_ap["no_change"] += 1
+                    _idat_led["skipped"].append(
+                        _idat_rec_row(_e2, _r2, "no_change", _row_ex2))
+                    continue
+                fam["IDAT"][_e2] = _m2
+                _idat_acc[_r2] = _comb2
+                _idat_ap["applied"] += 1
+                _idat_ap["applied_" + str(_md2.get("kind") or "?")] += 1
+                if _bd2 == FULL:
+                    _idat_new_roots.add(_r2)
+                if _r2 not in _idat_ap_roots:
+                    _idat_ap_roots.add(_r2)
+                _row_ap2 = dict(_row_ex2)
+                _row_ap2["new_w"] = (_comb2.bit_count()
+                                     if _comb2 != FULL else None)
+                _idat_led["applied"].append(
+                    _idat_rec_row(_e2, _r2, "applied", _row_ap2))
+            _idat_ap["applied_clusters"] = len(_idat_ap_roots)
+            _idat_ap["new_constrained_clusters"] = len(_idat_new_roots)
+            _idat_by_kind = collections.defaultdict(collections.Counter)
+            for _bk2 in ("applied", "skipped"):
+                for _row2 in _idat_led[_bk2]:
+                    _idat_by_kind[_row2.get("kind")][_row2["reason"]] += 1
+            _idat_led["meta"] = dict(sorted(_idat_ap.items()))
+            _idat_led["meta"]["by_kind"] = {
+                str(_k2): dict(sorted(_v2.items()))
+                for _k2, _v2 in sorted(_idat_by_kind.items(),
+                                       key=lambda _kv: str(_kv[0]))}
+            print("[P4-IDAT] records=%d applied=%d (clusters=%d, new=%d) "
+                  "no_cluster=%d unknown_root=%d target_conflict=%d "
+                  "already_forced=%d no_change=%d no_effect=%d "
+                  "unstable_domain=%d class=%d nonclass=%d %.1fs"
+                  % (len(_idat_masks), _idat_ap["applied"],
+                     _idat_ap["applied_clusters"],
+                     _idat_ap["new_constrained_clusters"],
+                     _idat_ap["no_cluster"], _idat_ap["unknown_root"],
+                     _idat_ap["target_conflict"], _idat_ap["already_forced"],
+                     _idat_ap["no_change"], _idat_ap["no_effect"],
+                     _idat_ap["unstable_domain"],
+                     _idat_ap["applied_class"], _idat_ap["applied_primitive"]
+                     + _idat_ap["applied_pointer"],
+                     time.time() - _idat_t1), flush=True)
+            try:
+                _idat_out = os.path.join(ROOT, ".omo/agents/csp/idatype_ledger.json")
+                os.makedirs(os.path.dirname(_idat_out), exist_ok=True)
+                with io.open(_idat_out, "w", encoding="utf-8") as _fh_i:
+                    json.dump(_idat_led, _fh_i, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                print("[P4-IDAT] ledger written: .omo/agents/csp/idatype_ledger.json",
+                      flush=True)
+            except Exception as _idat_wex:
+                print("[P4-IDAT] ledger write FAILED: %r" % (_idat_wex,), flush=True)
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
         # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
@@ -9477,7 +10075,7 @@ def main():
                 [fam["C10"][_e].to_bytes(_nb10, "little") for _e in _c10k])
             # --use-rs：P4-T1F 隔离 pass 写入的 RN/IRA 掩码同步进 Rust
             #（构建时两族为空——C10 不动点内核从未见过它们；写回语义与 C10 同款）。
-            for _p4fam_rs in ("RN", "IRA", "FCLS"):
+            for _p4fam_rs in ("RN", "IRA", "FCLS", "IDAT"):
                 if _p4fam_rs not in fam:
                     continue
                 _p4k = sorted(fam[_p4fam_rs])
