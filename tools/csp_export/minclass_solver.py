@@ -107,6 +107,18 @@ if _T11_ON:
     FAMILIES.insert(FAMILIES.index("VR2") + 1, "VR2P")
 if _T12_ON:
     FAMILIES.insert(FAMILIES.index("VR2") + (2 if _T11_ON else 1), "RP1")
+# ---- P4-T1F 新族门（默认 ON；MINCLASS_RN=0 / MINCLASS_IRA=0 关闭以做 A/B 与基线回归）----
+# 关断时族名不进入 FAMILIES —— 掩码/实体/产物与接线前逐字节一致（4 哈希基线门）。
+#   RN  = anchors/ret_new_size.json（2,438 条 strict：分配调用点/分配返回函数的尺寸）
+#         -> 值实体 RET:/EAX: 的**类原子**尺寸掩码（C5 size_mask 同型语义）。
+#   IRA = anchors/int_returns_strict.json（636 函数，CFG 整数污点指针守卫）
+#         -> RET:<fn> 的 int 族掩码。证明而非启发式：不过 --allow-heuristics 门。
+_RN_ON = os.environ.get("MINCLASS_RN", "1") != "0"
+_IRA_ON = os.environ.get("MINCLASS_IRA", "1") != "0"
+if _RN_ON:
+    FAMILIES.append("RN")
+if _IRA_ON:
+    FAMILIES.append("IRA")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -182,6 +194,9 @@ FAMILY_DESC = {
     "YVP": "YRpp virtual-function param types: per-class full primary-vtable reconstruction from YRpp headers (225 files, 583 classes parsed / 501 resolved; primary base = first declared base, MSVC single-primary layout; secondary COM-iface virtuals excluded by name set; override matching by (name, arity); slot numbering = vtable_slot_authority primary table) -> GS:slot:k:addr entities (strict tier; 8 emission gates: authority alignment / slot_count==len(seq) / non-dtor / arity-mismatch exclusion / own-addr-mismatch exclusion / vocab mapping / entity-level agreement / P-channel authority-placement agreement killing ICF-folded shared stubs; n=20 layered validation 20/20 incl intfam symbol pairs, full pinned n=411 semantic agreement 96.4% -- dominant divergence = YRpp 'int' vs solver 'unsigned int' spelling; evidence anchors/yrpp_vparams.json, 4,172 recs via=yrpp-param, same YRpp-header source as C22/C25)",
     "V2B": "vera20k round-2 wide-domain receiver types: same strict mining as V2K ('Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR', FUN_/sub_/nullsub/j_ excluded, pattern addr == vera entry addr or our fn start, top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe) with attribution widened from T-only to R:<addr>:ecx receiver entities (primary) + T:<addr> wide residual, v1-covered T excluded; wide-domain filter R/T domain > 8, pinned (domain=1) and narrow entities untouched (HEURISTIC tier per full-pool 615 accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types_v2.json, 126 recs via=vera-rclass)",
     "BM": "byte-match closing witness: a function whose mechanical C++ translation compiles BYTE-IDENTICAL to the original binary (diffasm MATCH) is a closing witness for the codegen-visible part of its declared types. Three channels -- bm-owner T:FN -> emitted class of a class-scoped definition (cls_src=name_prefix excluded; ledger-aligned emitted name after audit fixes), bm-member M:FN:this:0xOFF -> declared width of this->NAME in the unit own hpp emitted as the IG granularity family (plain mov pins width, not signedness; arrays/vfptr skipped), bm-sig P:FN:k / RET:FN -> emitted signature types excluding bare int-family (4-byte scalar and any 4-byte pointer are codegen-indistinguishable; 243/478 emitted scalar params were contradicted by binary-derived families). Quality gate: ledger status=OK + clean=true + rule_violations=0 + this_as_id=false, AND the source part_report row itself re-checks MATCH/clean/0 violations (161B this-as-id class excluded); every token must exist in the solver universe; rows already covered by another family are deduped; rows disjoint with another family are excluded to the conflict ledger inside the file. Evidence anchors/byte_match_types.json (2,058 recs: bm-owner 887 / bm-member 679 / bm-sig 492; round 1 1,170 + round-2 W-A incremental +49 + round-3 post-BM2 harvest incremental +839 = owner 349 / member 128 / sig 362; conflict ledger + repair log in meta), generators .omo/agents/bm/s7_build.py (round 1), .omo/agents/bm/s35_bm2.py (round 2), .omo/agents/bm/s41_bm3.py + s41_bm3_repair.py (round 3)",
+    # ---- P4-T1F：二进制锚点接线（strict；用户裁决 P4-T1F）----
+    "RN": "allocation-return size (binary fact; value axis): prove a value is an allocation result of size N -- channels ret-call-alloc / ret-copy-chain / ret-slot-forward (every ret NEW|NULL, CFG-complete), derived EAX of a proven allocation-returning callee, and direct allocator call sites (operator new / _malloc / __nh_malloc with A-E size forms) -- then AND a class mask over CLASS atoms only with the C5 size_mask precedent (declared sizeof == N; both sem=total and sem=elem use equality, no AV divisor union); per-ent union over sizes, empty/FULL masks skipped, no FULL fallback; entities RET:/EAX: are pointer VALUES (EP precedent; NOT in _POINTEE_FAMS), strict, no --allow-heuristics gate; evidence anchors/ret_new_size.json (2,438 recs = RET 13 / derived EAX 29 / alloc-call-site 2,396), generator .omo/agents/csp/extract_ret_new_size.py, report .omo/agents/csp/p4_t1f_expand_report.md",
+    "IRA": "strict integer-return set (proof, not heuristic): every arith ret site of the function is CFG-int-taint proven (forward join = AND over predecessors; pointer-arith guard: memory loads / call results / lea / params / cmov / xchg are not INT; sbb r,r / and r,0 / or r,-1 absorbing; partial writes preserve the whole-register INT flag; CFG-completeness required) -> RET:<fn> = int-family mask {int, unsigned int, bool, char, unsigned char} via _tok_ix canonicalization; unconditional (no --allow-heuristics gate; distinct from the heuristic IR family over anchors/int_returns.json); evidence anchors/int_returns_strict.json (636 fns), generator .omo/agents/csp/extract_int_returns_strict.py, report .omo/agents/csp/p4_t1f_expand_report.md",
 }
 
 
@@ -192,6 +207,9 @@ _FAM_RANK = {
     "C4": 100, "C5": 100, "C6": 100, "C15": 100, "C19": 100,
     "BM": 95, "NI": 95, "MT": 90,
     "MW": 85, "OT": 85, "SP": 80, "MS": 80, "IT": 80, "IV": 80,
+    # P4-T1F: RN = instruction-operand binary fact (80 tier, same as IT/IV);
+    # IRA = strict derived propagation proof (50 tier, structural inference).
+    "RN": 80, "IRA": 50,
     "SG": 75, "S2": 75, "SGN": 75, "CR": 75, "RA": 75, "RD": 75,
     "YVP": 75, "AL": 70, "LS": 70, "SS": 70, "C2X": 70, "EP": 70,
     "IMP": 70, "IM2": 70, "VR2": 70, "VR2P": 70, "PF2X": 65, "GI": 65,
@@ -1422,6 +1440,9 @@ def _compute_cache_key(args, input_parts=None):
         # T1-6 后处理门（env）：改 fam["C10"] 写入集，不进键会让 gate-off 缓存
         # 静默命中 gate-on 产物。
         "t16_multi_param": _T16_ON,
+        # P4-T1F 族门（env）：RN/IRA 掩码与实体物化随之变化，必须进缓存键。
+        "rn_family": _RN_ON,
+        "ira_family": _IRA_ON,
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -2035,11 +2056,20 @@ def main():
         print("[rsplit] subdefs materialized (with src): %d (of %d subdefs)"
               % (_rsplit_mat, len(_RS["subdefs"])), flush=True)
 
+    # P4-T1F 隔离：RN/IRA 新物化实体集合（在基线中不存在）。它们在载入后从
+    # `ents` 摘除，后续所有基线证据阶段（C8/C18/C19/C17…/C10 中性化器）看到的
+    # 实体键集与基线逐位一致；簇构建前恢复，C10 前再摘除（rs-build 的 ent_ids
+    # 同步排除），C10 写回后恢复。touch 对隐藏实体直接返回（基线中它们不存在，
+    # 后续 touch 若创建它们会破坏 dead_j 基线语义）。
+    _p4iso_hide = set()
+
     def touch(eid, raw_id):
         # S:（栈槽/局部变量）升级为一等变量：局部对象指针的类是可求解的。
         # R:/V: 仍是连接点（寄存器值是中间量，vtable_slot 跨类共枢纽语义无效）。
         if eid is None or eid.startswith(("R:", "V:")):
             return None
+        if eid in _p4iso_hide:
+            return eid
         ents[eid]["raw"].add(raw_id)
         return eid
 
@@ -4261,6 +4291,70 @@ def main():
     except Exception as _e_av:
         census["AV"] = census.get("AV", 0)
         print("[AS] alloc v2 skipped: %r" % _e_av, flush=True)
+    # ---------------- P4-T1F RN：分配返回尺寸（anchors/ret_new_size.json）----------------
+    # 语义（用户裁决 = C5 size_mask 先例，**声明尺寸等值**）：
+    #   * 掩码只取**类原子**（i < _n_cls_only）的**声明尺寸** U["size"]；类型词汇
+    #     原子 size=None 不参与（T2 基元污染教训：不跨轴借尺寸）。
+    #   * 掩码 = {类原子 | declared size == N}；多个 sizes 记录内 OR 合并；
+    #     sem=total/elem 均按等值（C5 先例；不做 AV 的整除数组放宽）。
+    #   * 记录间同名实体 AND；空/满掩码跳过并计数（无 FULL 回退）。
+    #   * 实体 RET:/EAX: 是**指针值**（值轴族，EP 先例；不进 _POINTEE_FAMS）。
+    #   * 物化走 C5/EP 同款 touch（不发明实体拼写；锚点自带 ent）。
+    # 【P4-T1F 隔离接线】掩码只进临时字典 _rn_masks，**不写 fam["RN"]**：
+    # fam 在 C10 不动点前必须对 RN 不可见（否则进入 _c10_base_dom → 空交集中和
+    # 传播边 → 基线唯一解丢失，见 p4_t1f_wire_report.md §4）。C10 写回完成后由
+    # 下方「P4-T1F 隔离 pass」按基线簇域兼容守卫一次性写入。
+    # 新物化实体还要从 C10 内核的 ents 键集隐藏（见 `if _call_edges:` 首段）：
+    # 中性化器 `_dead_j = {e in _empt_all if e not in ents}` 对实体集敏感，
+    # 直接暴露 636 个新 RET 会改变中和序列（实测 +1,111 EAX empties → 105 个
+    # 基线 unique 被中和）。隐藏后 C10 输入与基线逐位一致。
+    _rn_masks = {}
+    if _RN_ON:
+        try:
+            _rn_n_cls = _CLASSMASK.bit_length()
+            _rn_sz = {}                  # declared class sizeof -> atom bitmask
+            for _i_rn in range(_rn_n_cls):
+                _s_rn = U["size"][_i_rn]
+                if isinstance(_s_rn, int) and _s_rn > 0:
+                    _rn_sz[_s_rn] = _rn_sz.get(_s_rn, 0) | (1 << _i_rn)
+
+            def _rn_mask(_sz_rn):
+                return _rn_sz.get(_sz_rn, 0)
+
+            _n_rn = _n_rn_skip = 0
+            for _rec_rn in (jload("anchors/ret_new_size.json", {}) or {}).get("evidence") or []:
+                _e_rn = _rec_rn.get("ent")
+                if not isinstance(_e_rn, str) \
+                        or str(_rec_rn.get("confidence") or "") != "strict":
+                    _n_rn_skip += 1
+                    continue
+                _sizes_rn = _rec_rn.get("sizes") or []
+                _m_rn = 0
+                for _k_rn, _sz_rn in enumerate(_sizes_rn):
+                    try:
+                        _sz_rn = int(_sz_rn)
+                    except (TypeError, ValueError):
+                        continue
+                    if _sz_rn <= 0:
+                        continue
+                    _m_rn |= _rn_mask(_sz_rn)
+                if not _m_rn or _m_rn == FULL:
+                    _n_rn_skip += 1
+                    continue
+                if _e_rn not in ents:
+                    touch(_e_rn, _e_rn)
+                    _p4iso_hide.add(_e_rn)
+                _rn_masks[_e_rn] = _rn_masks.get(_e_rn, FULL) & _m_rn
+                _n_rn += 1
+            census["RN"] = _n_rn
+            print("[RN] alloc-return size masks: evidence=%d entities=%d skipped=%d "
+                  "(class atoms=%d, declared sizes=%d, C5 equality; mask deferred to "
+                  "post-C10 isolation pass)"
+                  % (_n_rn, len(_rn_masks), _n_rn_skip, _rn_n_cls, len(_rn_sz)),
+                  flush=True)
+        except Exception as _e_rnex:
+            census["RN"] = census.get("RN", 0)
+            print("[RN] skipped: %r" % _e_rnex, flush=True)
     # SA：SP-arity 判别器（sparity_types.json evidence 数组，1,293 recs；ent = 本求解器
     # ent_id 形态 T:/P:/M:/S:/G:/RET:，R:/V: 生成器侧已剔除）。types = 站点实参数 ×
     # 权威槽原型（vtable_slot_authority[+_ext]）交叉排除后的 AND-mask 候选类集：
@@ -4455,6 +4549,53 @@ def main():
             print("[IR] int-return fns: %d" % _n_ir, flush=True)
         except Exception as _e_ir:
             print("[IR] skipped: %r" % _e_ir, flush=True)
+
+    # ---------------- P4-T1F IRA：严格整数返回（anchors/int_returns_strict.json）----------------
+    # 636 函数 = CFG 整数污点指针守卫**证明**每个 arith ret 站点的 eax 为整数
+    # （join = AND over predecessors；内存载入/call 结果/lea/参数/cmov/xchg 非 INT；
+    # sbb r,r / and r,0 / or r,-1 吸收；部分写保持整寄存器 INT；要求 CFG 完整）。
+    # 证明不是启发式 ⇒ 无条件加载（不过 --allow-heuristics 门）。token 集与 IR 相同；
+    # IR（int_returns.json，启发式层）保持原样不动。实体物化同 IR（touch）。
+    # 【P4-T1F 隔离接线】同 RN：掩码只进 _ira_masks，C10 不动点前不写 fam。
+    _ira_masks = {}
+    if _IRA_ON:
+        try:
+            _ira_fns = (jload("anchors/int_returns_strict.json", {}) or {}).get("fns") or []
+            _ira_mask = 0
+            for _tn_ira in ("int", "unsigned int", "bool", "char", "unsigned char"):
+                _ix_ira = _tok_ix(_tn_ira)
+                if _ix_ira is not None:
+                    _ira_mask |= (1 << _ix_ira)
+            _n_ira = _n_ira_skip = 0
+            for _fs_ira in _ira_fns:
+                _fa_ira = hx(_fs_ira)
+                if _fa_ira is None or not _ira_mask:
+                    _n_ira_skip += 1
+                    continue
+                _e_ira = "RET:%X" % _fa_ira
+                if _e_ira not in ents:
+                    touch(_e_ira, _e_ira)
+                    _p4iso_hide.add(_e_ira)
+                _ira_masks[_e_ira] = _ira_masks.get(_e_ira, FULL) & _ira_mask
+                _n_ira += 1
+            census["IRA"] = _n_ira
+            print("[IRA] strict int-return fns: %d (skipped=%d, mask_bits=%d; "
+                  "mask deferred to post-C10 isolation pass)"
+                  % (_n_ira, _n_ira_skip, _ira_mask.bit_count()), flush=True)
+        except Exception as _e_ira:
+            census["IRA"] = census.get("IRA", 0)
+            print("[IRA] skipped: %r" % _e_ira, flush=True)
+
+    # ---- P4-T1F 隔离：把新物化实体从基线证据阶段隐藏（簇构建前恢复）----
+    # 基线中这些实体不存在 ⇒ C8/C18/C19/C17/C21-25 的 ents 遍历、exact 钉定、
+    # 中性化器 dead_j 全部按基线键集运行。簇必须包含它们（最终 solve 与隔离
+    # pass 的载体），因此在 `# ---- 簇 ----` 前恢复、构建后再次摘除。
+    _p4iso_hidden = {}
+    if _p4iso_hide:
+        for _e4h in sorted(_p4iso_hide):
+            _p4iso_hidden[_e4h] = ents.pop(_e4h)
+        print("[P4-T1F iso] pre-evidence hide: %d newly materialized entities "
+              "(baseline ents key-set parity)" % len(_p4iso_hidden), flush=True)
 
     # ---------------- MRH：放宽成员类型（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
@@ -5862,6 +6003,11 @@ def main():
         for k, v in sorted(ch_stats.items())), flush=True)
 
     # ---------------- 簇 ----------------
+    # P4-T1F 隔离：簇必须包含 RN/IRA 新物化实体（掩码载体），先恢复。
+    if _p4iso_hidden:
+        ents.update(_p4iso_hidden)
+        _p4iso_hidden = {}
+        print("[P4-T1F iso] ents restored before cluster build", flush=True)
     groups = collections.defaultdict(list)
     for eid in ents:
         groups[uf.find(eid)].append(eid)
@@ -5876,6 +6022,14 @@ def main():
         clusters.append({"root": root, "ents": members, "obs": obs,
                          "exact": exs})
     print("[clusters] %d (entities %d)" % (len(clusters), len(ents)), flush=True)
+    # P4-T1F 隔离：簇已建好 —— 重新隐藏新物化实体，使 rs-build 的 ent_ids 与
+    # 纯 Python 的 C10 中性化器看到与基线完全相同的实体键集。C10 写回后恢复。
+    if _p4iso_hide:
+        for _e4h in sorted(_p4iso_hide):
+            if _e4h in ents:
+                _p4iso_hidden[_e4h] = ents.pop(_e4h)
+        print("[P4-T1F iso] post-cluster hide: %d (rs-build ent_ids + C10 "
+              "neutralizer baseline parity)" % len(_p4iso_hidden), flush=True)
 
     # ---- C26（可选，默认关闭）：链接序局部性，硬约束形态 ----
     if (not getattr(args, "no_c26_locality", False)) and (not not getattr(args, "allow_heuristics", False)):
@@ -8340,6 +8494,18 @@ def main():
         except Exception as _e_fx:
             print("[flowgraph-dump] FAILED: %r" % _e_fx, flush=True)
 
+        # ---- P4-T1F 隔离：新物化实体在 C10 内核中不可见 ----
+        # 已在簇构建后摘除（post-cluster hide），此处只做断言性复核：touch 对
+        # 隐藏实体直接返回，因此它们不应再出现在 ents。C10 写回循环后恢复。
+        _p4iso_leak = [e for e in _p4iso_hide if e in ents]
+        if _p4iso_leak:
+            for _e4h in _p4iso_leak:
+                _p4iso_hidden[_e4h] = ents.pop(_e4h)
+            print("[P4-T1F iso] C10 ent-visibility: re-hid %d leaked entities"
+                  % len(_p4iso_leak), flush=True)
+        print("[P4-T1F iso] C10 ent-visibility: %d entities hidden"
+              % len(_p4iso_hidden), flush=True)
+
         # ---- 增量 C10 不动点：checkpoint 热启动 + 工作列表传播（用户裁决架构） ----
         # 单调性：传播算子只收窄 → 混沌迭代收敛到唯一最大不动点（与边序无关）→ 从检查点
         # 不动点出发（D0 = ckpt_fix ∩ base_now，要求 base 只收窄、边只增）迭代所得 == 全量解。
@@ -8580,6 +8746,10 @@ def main():
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
                 _c10_fx_constrained += 1
+        if _p4iso_hidden:
+            ents.update(_p4iso_hidden)
+            print("[P4-T1F iso] C10 ent-visibility restored post-writeback: %d"
+                  % len(_p4iso_hidden), flush=True)
         # ---- T1-6：多调用点参数交集（P3 §7 T1-6；rule-gated MINCLASS_T16）----
         # 规则（确定性、无阈值/投票）：
         #   allowed(P) = ∩_{src ∈ usable(P)} anc_union(domain(src))
@@ -8703,6 +8873,154 @@ def main():
                       flush=True)
             except Exception as _e16:
                 print("[T1-6] ledger write FAILED: %r" % (_e16,), flush=True)
+        # ---- P4-T1F 隔离接线：RN / IRA 掩码在 C10 不动点**之后**一次性写入 ----
+        # 失败模式（p4_t1f_wire_report.md §4）：加载器直写 fam["RN"]/fam["IRA"]
+        # 会让掩码进入 _c10_base_dom → 端点基域空 → C10 边在归责前被中和 →
+        # 基线唯一解成批丢失（RN 427 / IRA 225）。隔离做法（M14c/T1-6 模式）：
+        #   1) 加载器只收集记录 + touch 物化实体（C5/EP 先例），fam 保持空 ——
+        #      C10 不动点输入与基线逐位一致；
+        #   2) C10 写回完成、_dom_fix 冻结后，取一次基线簇域快照
+        #      cluster_domains(list(FAMILIES))（RN/IRA 仍空），映射 entity→root；
+        #   3) 对每条聚合掩码 (E, M)：E 无簇 → skip；M 空/无效果 → skip；
+        #      (base_domain[root] & M_eff) == 0 → target_conflict skip（绝不丢 C10）；
+        #      否则 fam[FAM][E] = M 进最终簇交。
+        # M_eff = _pfm(M) + 接收者类域纪律，与 cluster_domains 对该族的实际消费
+        # 逐位一致（幻影类位在最终交里会被 _pfm 剔除；若按原始 M 放行，幻影-only
+        # 掩码会在最终交制造空域 → 又回到 C10 归责级联）。不做二次传播。
+        if _RN_ON or _IRA_ON:
+            _p4iso_t0 = time.time()
+            _p4iso_memo = _incr_cell.get("on")
+            if _p4iso_memo:
+                _incr_cell["on"] = False
+            try:
+                _p4iso_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _p4iso_memo:
+                    _incr_cell["on"] = True
+            _p4iso_dom = {}
+            _p4iso_root = {}
+            _p4iso_cl = {}
+            for _cl4, _m4, _ex4, _exs4, _fl4 in _p4iso_snap:
+                _r4 = str(_cl4.get("root"))
+                _p4iso_dom[_r4] = _m4
+                _p4iso_cl[_r4] = _cl4
+                for _e4 in _cl4["ents"]:
+                    _p4iso_root[_e4] = _r4
+
+            def _p4iso_pfx(_cl4):
+                """cluster_domains 的有效根前缀（C17 恢复 / M14c 隔离规则）。"""
+                _pfx4 = str(_cl4.get("root") or "")[:2]
+                if _RSPLIT_ISO:
+                    _ms4 = [str(_m4b) for _m4b in (_cl4.get("ents") or ())
+                            if not (str(_m4b).startswith("R:")
+                                    and (str(_m4b).count(":") >= 3
+                                         or str(_m4b) in _c17_added))]
+                    if _ms4:
+                        _pfx4 = min(_ms4)[:2]
+                elif str(_cl4.get("root") or "") in _c17_added:
+                    _ms4 = [str(_m4b) for _m4b in (_cl4.get("ents") or ())
+                            if not str(_m4b).startswith("R:")]
+                    if _ms4:
+                        _pfx4 = min(_ms4)[:2]
+                return _pfx4
+
+            def _p4iso_eff(_pfx4, _m4):
+                """与 cluster_domains 对该族掩码的实际消费逐位一致的 M_eff。"""
+                _me4 = _pfm(_m4)
+                if _pfx4 in ("T:", "R:", "GS"):
+                    if _me4 & _CLASSMASK:
+                        _me4 &= _CLASSMASK
+                    else:
+                        _me4 = FULL
+                return _me4
+
+            _p4iso_led = {"meta": {}, "applied": {}, "skipped": {}}
+            for _p4fam, _p4on, _p4tmp, _p4raw in (
+                    ("RN", _RN_ON, _rn_masks, census.get("RN", 0)),
+                    ("IRA", _IRA_ON, _ira_masks, census.get("IRA", 0))):
+                if not _p4on:
+                    continue
+                _st4 = {"records": len(_p4tmp), "evidence_rows": _p4raw,
+                        "applied": 0, "applied_narrow": 0, "no_cluster": 0,
+                        "empty_mask": 0, "no_effect": 0, "target_conflict": 0,
+                        "pfm_narrowed": 0, "receiver_dropped": 0,
+                        "unknown_root": 0}
+                _sk4 = []
+                _ap4 = []
+                for _e4 in sorted(_p4tmp):
+                    _m4 = _p4tmp[_e4]
+                    if not _m4 or _m4 == FULL:
+                        _st4["empty_mask"] += 1
+                        _sk4.append({"ent": _e4, "reason": "empty_or_full_mask"})
+                        continue
+                    _r4 = _p4iso_root.get(_e4)
+                    if _r4 is None:
+                        _st4["no_cluster"] += 1
+                        _sk4.append({"ent": _e4, "reason": "no_cluster"})
+                        continue
+                    _cl4 = _p4iso_cl[_r4]
+                    if _r4 in _unknown_roots:
+                        _st4["unknown_root"] += 1
+                        _st4["no_effect"] += 1
+                        _sk4.append({"ent": _e4, "root": _r4,
+                                     "reason": "unknown_root"})
+                        continue
+                    _pfx4 = _p4iso_pfx(_cl4)
+                    if _pfm(_m4) != _m4:
+                        _st4["pfm_narrowed"] += 1
+                    if (_pfx4 in ("T:", "R:", "GS")
+                            and not (_pfm(_m4) & _CLASSMASK)):
+                        _st4["receiver_dropped"] += 1
+                    _me4 = _p4iso_eff(_pfx4, _m4)
+                    if _me4 == FULL:
+                        _st4["no_effect"] += 1
+                        _sk4.append({"ent": _e4, "root": _r4,
+                                     "reason": "no_effect_receiver_axis"})
+                        continue
+                    _b4 = _p4iso_dom.get(_r4, FULL)
+                    if (_b4 & _me4) == 0:
+                        _st4["target_conflict"] += 1
+                        _sk4.append({"ent": _e4, "root": _r4,
+                                     "reason": "target_conflict",
+                                     "base_w": (None if _b4 == FULL
+                                                else _b4.bit_count()),
+                                     "mask_w": _m4.bit_count(),
+                                     "eff_w": _me4.bit_count()})
+                        continue
+                    fam[_p4fam][_e4] = _m4
+                    _st4["applied"] += 1
+                    _new4 = _b4 & _me4
+                    if _new4 != _b4:
+                        _st4["applied_narrow"] += 1
+                    _ap4.append({"ent": _e4, "root": _r4,
+                                 "base_w": (None if _b4 == FULL
+                                            else _b4.bit_count()),
+                                 "mask_w": _m4.bit_count(),
+                                 "eff_w": _me4.bit_count(),
+                                 "new_w": (None if _new4 == FULL
+                                           else _new4.bit_count())})
+                _p4iso_led["meta"][_p4fam] = dict(sorted(_st4.items()))
+                _p4iso_led["applied"][_p4fam] = _ap4
+                _p4iso_led["skipped"][_p4fam] = _sk4
+                print("[P4-T1F iso] %s: records=%d applied=%d (narrowing=%d) "
+                      "no_cluster=%d empty_mask=%d no_effect=%d(unknown-root=%d,"
+                      "receiver-axis=%d) target_conflict=%d pfm_narrowed=%d %.1fs"
+                      % (_p4fam, _st4["records"], _st4["applied"],
+                         _st4["applied_narrow"], _st4["no_cluster"],
+                         _st4["empty_mask"], _st4["no_effect"],
+                         _st4["unknown_root"], _st4["receiver_dropped"],
+                         _st4["target_conflict"], _st4["pfm_narrowed"],
+                         time.time() - _p4iso_t0), flush=True)
+            try:
+                _p4iso_out = os.path.join(ROOT, ".omo/agents/csp/t1f_iso_ledger.json")
+                os.makedirs(os.path.dirname(_p4iso_out), exist_ok=True)
+                with io.open(_p4iso_out, "w", encoding="utf-8") as _fh4:
+                    json.dump(_p4iso_led, _fh4, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                print("[P4-T1F iso] ledger written: .omo/agents/csp/t1f_iso_ledger.json",
+                      flush=True)
+            except Exception as _e4:
+                print("[P4-T1F iso] ledger write FAILED: %r" % (_e4,), flush=True)
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
         # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
@@ -8822,6 +9140,19 @@ def main():
             _rs_cell[0].add_family_entries(
                 "C10", _c10k,
                 [fam["C10"][_e].to_bytes(_nb10, "little") for _e in _c10k])
+            # --use-rs：P4-T1F 隔离 pass 写入的 RN/IRA 掩码同步进 Rust
+            #（构建时两族为空——C10 不动点内核从未见过它们；写回语义与 C10 同款）。
+            for _p4fam_rs in ("RN", "IRA"):
+                if _p4fam_rs not in fam:
+                    continue
+                _p4k = sorted(fam[_p4fam_rs])
+                if not _p4k:
+                    continue
+                _rs_cell[0].add_family_entries(
+                    _p4fam_rs, _p4k,
+                    [fam[_p4fam_rs][_e].to_bytes(_nb10, "little") for _e in _p4k])
+                print("[P4-T1F iso] %s masks injected into Rust: %d"
+                      % (_p4fam_rs, len(_p4k)), flush=True)
         print("[C10] fixpoint: edges=%d constrained=%d roots_neutralized=%d(ent) "
               "cascades_saved=%d"
               % (len(_edges_fix), _c10_fx_constrained, len(_empty_ids),
