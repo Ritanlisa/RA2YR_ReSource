@@ -1,0 +1,12 @@
+{
+ "_comment": "IDAT2 round-r2 additive type-vocabulary atoms. Every token below is produced by the typed full_export snapshot itself (extractor classify_ty: PRIM_MAP[base]+'*'), not invented. Loaded ONLY when MINCLASS_IDAT2=1; gate-off behavior is byte-identical to HEAD. Existing atoms are never modified.",
+ "provenance": ".omo/agents/csp/p4b_ptr_scan.py (extractor parse/classify over decompile-results/full_export/src/*.cpp): param pointer-family rows 1064 = int* 521, short* 184, None(multi-ptr) 197, unsigned short* 116, float* 30, double* 10, bool* 6; field pointer-family 8.",
+ "types": [
+  "int*",
+  "short*",
+  "unsigned short*",
+  "float*",
+  "double*",
+  "bool*"
+ ]
+}

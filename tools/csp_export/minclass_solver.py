@@ -134,6 +134,52 @@ _FCLS_ON = os.environ.get("MINCLASS_FCLS", "1") != "0"
 #   类供给（class supply）载入 full_export/include 的布局/base 与 class_db 的成员
 #   偏移，补全 class_layouts 缺失的 315+ 类（只补缺，不覆盖已有布局）。
 _IDAT_ON = os.environ.get("MINCLASS_IDATYPE", "1") != "0"
+# ---- P4-IDAT2 扩展轮门（默认 ON；MINCLASS_IDAT2=0 关闭 = 当前 IDAT 基线）----
+#   (A) expanded anchor anchors/ida_type_masks_r2.json (template-base/self-vtable
+#       aliases, pointer-family atoms from the typed source, EAX callee-return class);
+#   (B) M: entity supply (typed field rows) materialized with the hidden-entity
+#       isolation just before the cluster build (C10 key-set parity);
+#   (C) R: rows deduped onto their T: this entity (same typed this parameter;
+#       C17 junction identities are not independently assertable);
+#   (D) GS: unambiguous occupant param-K type -> virtual-dispatch site entity;
+#   (E) additive pointer-family vocabulary anchors/type_universe_idat.json.
+#   MINCLASS_IDAT2_LAYOUT=1|no_template_base additionally injects the 298 supplied
+#   class layouts into C1/C5/C18/C21 (measured separately; default off = side table).
+_IDAT2_ON = _IDAT_ON and os.environ.get("MINCLASS_IDAT2", "1") != "0"
+_IDAT2_LAYOUT = os.environ.get("MINCLASS_IDAT2_LAYOUT", "0")
+_IDAT2_ANCHOR_R2 = "anchors/ida_type_masks_r2.json"
+_IDAT2_ANCHOR_R1 = "anchors/ida_type_masks.json"
+_IDAT_ANCHOR_CACHE = [None]
+
+
+def _idat_anchor_load():
+    """Load the IDAT anchor selected by the IDAT2 gate (r2 when on, else r1)."""
+    if _IDAT_ANCHOR_CACHE[0] is None:
+        p = _IDAT2_ANCHOR_R2 if (_IDAT2_ON and os.path.exists(
+            os.path.join(ROOT, _IDAT2_ANCHOR_R2))) else _IDAT2_ANCHOR_R1
+        _IDAT_ANCHOR_CACHE[0] = (jload(p, {}) or {})
+        _IDAT_ANCHOR_CACHE[0]["_path"] = p
+    return _IDAT_ANCHOR_CACHE[0]
+
+
+def _idat_norm_ent(e):
+    """Canonicalize the IDAT entity spelling to the solver's own keys.
+
+    The r1 extractor formatted M: offsets with lowercase hex ('0x3c') while the
+    solver's ent_id emits uppercase ('0x3C'), so 181 r1 rows were 'absent' only
+    because of spelling.  Normalizing here is evidence-preserving (same entity).
+    """
+    if not isinstance(e, str) or not e.startswith("M:"):
+        return e
+    p = e.split(":")
+    if len(p) == 4 and p[3].startswith("0x"):
+        try:
+            return "%s:%s:%s:0x%X" % (p[0], p[1], p[2], int(p[3], 16))
+        except ValueError:
+            return e
+    return e
+
+
 if _RN_ON:
     FAMILIES.append("RN")
 if _IRA_ON:
@@ -687,6 +733,7 @@ def _idat_supply_class_layouts(lay, db):
                 break
         if _rec and (_rec.get("offsets") or _rec.get("size")
                      or _rec.get("parent")):
+            _rec["_src"] = str(_src).split(":")[0]
             supplied[_c] = _rec
             st["supplied_" + str(_src).split(":")[0]] += 1
             if _rec.get("size"):
@@ -729,6 +776,18 @@ def _idat_alias_candidates(_c):
         _b = _mm.group(1)
         out.append(_b + "_" + _MANGLED_CHAR_SUFFIX[_mm.group(2)])
         out.append(_b.lstrip("_") + "_" + _MANGLED_CHAR_SUFFIX[_mm.group(2)])
+    # P4-IDAT2: generic IDA-flat template spelling -> exact mangled atom, then
+    # template base (class_name_align rule=template_base).  Aliases only; no atom
+    # is added here and the target must already exist in the universe (caller
+    # checks `in idx`).
+    if _IDAT2_ON and str(_c).startswith("_") and not str(_c).startswith("_?"):
+        _p = str(_c)[1:].split("_")
+        if len(_p) > 1:
+            _rest = "@".join(_p[1:])
+            out.append("?$" + _p[0] + "@" + _rest + "@@")
+            out.append("?$" + _p[0] + "@" + _rest + "@")
+            out.append("?$" + _p[0] + "@" + _rest)
+        out.append(_p[0])
     if str(_c).endswith("Class"):
         out.append(str(_c)[:-5])
     out.append(str(_c) + "Class")
@@ -831,6 +890,21 @@ def build_universe(use_evidence=True, prune_dead=False):
                      _idat_sup_st.get("still_missing", 0)), flush=True)
         except Exception as _idat_sup_ex:
             print("[class-supply] skipped: %r" % (_idat_sup_ex,), flush=True)
+        # P4-IDAT2 (measured experiment, default off): inject the supplied layouts
+        # into the C1/C5/C18/C21 candidate tables.  mode no_template_base skips the
+        # bare-template copies that produced the 26 baseline unique losses.
+        if _IDAT2_LAYOUT not in ("", "0") and _idat_sup:
+            _inj = 0
+            for _ck, _cv in _idat_sup.items():
+                if _ck in lay:
+                    continue
+                if (_IDAT2_LAYOUT == "no_template_base"
+                        and _cv.get("_src") == "template-base"):
+                    continue
+                lay[_ck] = _cv
+                _inj += 1
+            print("[class-supply] IDAT2 layout injection mode=%s injected=%d"
+                  % (_IDAT2_LAYOUT, _inj), flush=True)
 
     names = list(db.keys())
     # ---- 类型宇宙扩展（用户裁决：类+指针+数组+基元共同张成解空间）----
@@ -846,6 +920,10 @@ def build_universe(use_evidence=True, prune_dead=False):
                   % len(_type_extra), flush=True)
     except Exception:
         pass
+    # P4-IDAT2 pointer-family atoms (int*, short*, ...) are NOT added here:
+    # adding bits to FULL changes the C10 neutralizer arithmetic (measured -570
+    # edges).  They are appended to the universe AFTER the C10 fixpoint, right
+    # before the IDAT application (see `_idat2_pending` / universe extension).
     _CLASSMASK = (1 << _n_cls_only) - 1
     idx = {nm: i for i, nm in enumerate(names)}
     n = len(names)
@@ -887,8 +965,7 @@ def build_universe(use_evidence=True, prune_dead=False):
         except Exception:
             pass
         try:
-            for _rr in ((jload("anchors/ida_type_masks.json", {}) or {})
-                        .get("records") or []):
+            for _rr in (_idat_anchor_load().get("records") or []):
                 for _tt in (_rr.get("types") or []):
                     if isinstance(_tt, str):
                         _alias_src.add(_tt)
@@ -1765,6 +1842,10 @@ def _compute_cache_key(args, input_parts=None):
         "fcls_family": _FCLS_ON,
         # P4-IDAT 族门（env）：anchor 掩码 + class supply 布局 + T: supply 随之变化。
         "idat_family": _IDAT_ON,
+        # P4-IDAT2 扩展门（env）：anchor 选择 / M supply / R redirect / GS /
+        # 指针词汇原子 / 可选布局注入 随之变化。
+        "idat2_family": _IDAT2_ON,
+        "idat2_layout": _IDAT2_LAYOUT if _IDAT2_ON else "0",
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -2126,6 +2207,16 @@ def main():
     U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
     _IDAT_ALIAS = U.get("idat_alias") or {}
+    # P4-IDAT2 pointer-family atoms are appended to the universe only after the
+    # C10 fixpoint (see the IDAT application block); this is the additive list.
+    _idat2_tokens = []
+    if _IDAT2_ON:
+        try:
+            _idat2_tokens = list((jload("anchors/type_universe_idat.json", {}) or {})
+                                 .get("types") or [])
+        except Exception as _idat2_tok_ex:
+            print("[universe] IDAT2 token list skipped: %r" % (_idat2_tok_ex,), flush=True)
+    _idat2_token_set = set(_idat2_tokens)
 
     def _idat_resolve(_name):
         """P4-IDAT post-C10 resolver: base universe first, then the supply aliases."""
@@ -2140,6 +2231,7 @@ def main():
     _names_sha = hashlib.sha256("\n".join(names).encode("utf-8")).hexdigest()   # 检查点宇宙指纹
     _solver_sha = hashlib.sha256(io.open(os.path.abspath(__file__), "rb").read()).hexdigest()  # 检查点源码指纹
     FULL = (1 << n) - 1
+    _idat2_old_full = FULL
     _CLASSMASK = U.get("classmask") or FULL
     print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "
           "evidence_classes=%d desc_edges=%d"
@@ -2396,7 +2488,6 @@ def main():
     # 同步排除），C10 写回后恢复。touch 对隐藏实体直接返回（基线中它们不存在，
     # 后续 touch 若创建它们会破坏 dead_j 基线语义）。
     _p4iso_hide = set()
-
     def touch(eid, raw_id):
         # S:（栈槽/局部变量）升级为一等变量：局部对象指针的类是可求解的。
         # R:/V: 仍是连接点（寄存器值是中间量，vtable_slot 跨类共枢纽语义无效）。
@@ -2807,7 +2898,7 @@ def main():
         _idat_tsup = _idat_tseen = 0
         _idat_tplat = 0
         try:
-            _idat_anchor0 = jload("anchors/ida_type_masks.json", {}) or {}
+            _idat_anchor0 = _idat_anchor_load()
             _idat_tplat = int((_idat_anchor0.get("meta") or {}).get(
                 "typed_this_fns") or 0)
             for _tr0 in (_idat_anchor0.get("records") or []):
@@ -6370,6 +6461,7 @@ def main():
         ents.update(_p4iso_hidden)
         _p4iso_hidden = {}
         print("[P4-T1F iso] ents restored before cluster build", flush=True)
+
     groups = collections.defaultdict(list)
     for eid in ents:
         groups[uf.find(eid)].append(eid)
@@ -7638,20 +7730,50 @@ def main():
     # 目标实体必须已存在（本族唯一的物化通道是上面的 T: supply）。
     _idat_masks = {}
     _idat_meta = {}
+    _idat_pending = []
+    _idat_pending_m = []
     _idat_st = collections.Counter()
     if _IDAT_ON:
         try:
             _idat_t_l = time.time()
-            _ida_anchor = jload("anchors/ida_type_masks.json", {}) or {}
+            _ida_anchor = _idat_anchor_load()
             _ida_recs = _ida_anchor.get("records") or []
             _ida_n_cls = int(U.get("n_cls_only") or _CLASSMASK.bit_length())
+            _idat_st["anchor_path"] = 1 if _ida_anchor.get("_path") == _IDAT2_ANCHOR_R2 else 0
             for _ir in sorted(_ida_recs, key=lambda _r: str(_r.get("ent") or "")):
                 _ie = _ir.get("ent")
+                if _IDAT2_ON and isinstance(_ie, str) and _ie.startswith("M:"):
+                    # Prefer the exact solver spelling when that entity exists;
+                    # fall back to the canonical uppercase offset only when the
+                    # exact key is absent (181 r1 case-mismatch rows) or for
+                    # deferred materialization.  Never re-home a row that the
+                    # solver already materialized under the exact key (that
+                    # would drop 74 previously-forced lowercase M roots).
+                    _ie_n = _idat_norm_ent(_ie)
+                    if (_ie_n != _ie and _ie not in ents
+                            and _ie not in _p4iso_hidden):
+                        _ie = _ie_n
+                if _ie != _ir.get("ent"):
+                    _idat_st["ent_normalized"] += 1
                 _ik = _ir.get("kind")
                 _itypes = _ir.get("types") or []
                 if not isinstance(_ie, str) or not _itypes:
                     _idat_st["bad_row"] += 1
                     continue
+                # P4-IDAT2 R: redirect: R:<fn>:reg is the same typed `this` object
+                # as T:<fn> (the typed-this parameter).  C17 only materializes the
+                # junction when every definition/use is clean; the IDAT row itself
+                # is not independent evidence about a dirty junction, so absent R
+                # rows are deduped onto the T: entity instead of being materialized
+                # as duplicate clusters.
+                if (_IDAT2_ON and _ie.startswith("R:")
+                        and _ie not in ents and _ie not in _p4iso_hidden):
+                    _rfn_i = hx(_ir.get("fn"))
+                    _te_i = ("T:%X" % _rfn_i) if _rfn_i is not None else None
+                    if _te_i and (_te_i in ents or _te_i in _p4iso_hidden):
+                        _ie = _te_i
+                        _idat_st["r_redirect_t"] += 1
+                _is_pending_i = False
                 if _ik == "class":
                     _ici_i = _idat_resolve(_itypes[0])
                     if _ici_i is None or not (0 <= _ici_i < _ida_n_cls):
@@ -7662,21 +7784,46 @@ def main():
                 elif _ik in ("primitive", "pointer"):
                     _ti_i = idx.get(_itypes[0])
                     if _ti_i is None:
-                        _idat_st["nonclass_no_atom"] += 1
-                        continue
-                    _im_i = 1 << _ti_i
-                    _idat_st["nonclass_rows"] += 1
+                        # IDAT2 pointer-family atom: universe bit appended after C10.
+                        if _IDAT2_ON and _itypes[0] in _idat2_token_set:
+                            _im_i = None
+                            _is_pending_i = True
+                            _idat_st["nonclass_pending"] += 1
+                        else:
+                            _idat_st["nonclass_no_atom"] += 1
+                            continue
+                    else:
+                        _im_i = 1 << _ti_i
+                        _idat_st["nonclass_rows"] += 1
                 else:
                     _idat_st["unknown_kind"] += 1
                     continue
                 if _ie.startswith(("T:", "R:", "GS:")) and _ik != "class":
                     _idat_st["receiver_nonclass_skipped"] += 1
                     continue
-                if _ie not in ents:
+                _ie_present = (_ie in ents
+                               or (_IDAT2_ON and _ie in _p4iso_hidden))
+                if not _ie_present:
                     _idat_st["entity_absent"] += 1
                     _idat_st["entity_absent_" + _ie.split(":")[0].lower()] += 1
+                    # P4-IDAT2: absent M rows are deferred to the post-C10 M supply
+                    # (materialize + singleton cluster right before the IDAT
+                    # application), so the C10 key set stays baseline-identical.
+                    if _IDAT2_ON and _ie.startswith("M:"):
+                        _idat_pending_m.append((_ie, _ik, _itypes[0], {
+                            "kind": _ik, "type": _itypes[0],
+                            "via": _ir.get("via"), "fn": _ir.get("fn")}))
+                        _idat_st["m_deferred"] += 1
                     continue
                 _prev_i = _idat_masks.get(_ie)
+                if _is_pending_i:
+                    if _prev_i is not None:
+                        _idat_st["row_conflict"] += 1
+                        continue
+                    _idat_pending.append((_ie, _itypes[0], {
+                        "kind": _ik, "type": _itypes[0], "via": _ir.get("via"),
+                        "fn": _ir.get("fn")}))
+                    continue
                 if _prev_i is not None:
                     if _prev_i != _im_i:
                         _idat_st["row_conflict"] += 1
@@ -7686,11 +7833,75 @@ def main():
                     "kind": _ik, "type": _itypes[0], "via": _ir.get("via"),
                     "fn": _ir.get("fn"),
                 }
+            # ---- P4-IDAT2 GS: virtual-dispatch site-arg entities ----
+            # slot_param_groups 的每个组 = 同一 override 家族里同槽同 k 的**同一逻辑
+            # 参数**；occ 是家族内全部 occupant 函数。若这些 occupant 的 IDAT P:<fn>:k
+            # 声明类型唯一（无歧义），该类型就是 GS:slot:k:root 的类型。类行才施加
+            # （GS 走接收者轴纪律，基元/指针行由 cluster_domains 保守丢弃）。
+            if _IDAT2_ON:
+                _gs_st = collections.Counter()
+                try:
+                    _gs_groups = (jload("anchors/slot_param_groups.json", {}) or {}) \
+                        .get("groups") or {}
+                    _gs_pt = {}
+                    for _gr in _ida_recs:
+                        _ge = _idat_norm_ent(_gr.get("ent"))
+                        if not isinstance(_ge, str) or not _ge.startswith("P:"):
+                            continue
+                        _gf = hx(_gr.get("fn"))
+                        _gp = _ge.split(":")
+                        if _gf is None or len(_gp) != 3:
+                            continue
+                        _gs_pt[(_gf, int(_gp[2]))] = (
+                            _gr.get("kind"), (_gr.get("types") or [""])[0])
+                    for _gk, _gv in _gs_groups.items():
+                        _gslot, _gk_k = _gk.split(":")[0], int(_gk.split(":")[1])
+                        _gt = set()
+                        for _go in (_gv.get("occ") or []):
+                            _goa = hx(str(_go))
+                            if _goa is None:
+                                continue
+                            _gtt = _gs_pt.get((_goa, _gk_k))
+                            if _gtt:
+                                _gt.add(_gtt)
+                        if not _gt:
+                            _gs_st["no_typed_occ"] += 1
+                            continue
+                        if len(_gt) > 1:
+                            _gs_st["ambiguous"] += 1
+                            continue
+                        _gkind, _gty = next(iter(_gt))
+                        if _gkind != "class":
+                            _gs_st["nonclass_skipped"] += 1
+                            continue
+                        _gci = _idat_resolve(_gty)
+                        if _gci is None or not (0 <= _gci < _ida_n_cls):
+                            _gs_st["class_unresolved"] += 1
+                            continue
+                        _gent = "GS:" + _gk
+                        if _gent not in ents and _gent not in _p4iso_hidden:
+                            _gs_st["entity_absent"] += 1
+                            continue
+                        if _gent in _idat_masks:
+                            _gs_st["already"] += 1
+                            continue
+                        _idat_masks[_gent] = 1 << _gci
+                        _idat_meta[_gent] = {"kind": "class", "type": _gty,
+                                             "via": "gs-arg", "fn": _gv.get("root")}
+                        _gs_st["added"] += 1
+                    _idat_st["gs_added"] = _gs_st["added"]
+                    print("[IDAT2] GS site-arg: groups=%d unambig_class_added=%d "
+                          "ambiguous=%d no_typed_occ=%d nonclass=%d unresolved=%d"
+                          % (len(_gs_groups), _gs_st["added"], _gs_st["ambiguous"],
+                             _gs_st["no_typed_occ"], _gs_st["nonclass_skipped"],
+                             _gs_st["class_unresolved"]), flush=True)
+                except Exception as _gs_ex:
+                    print("[IDAT2] GS skipped: %r" % (_gs_ex,), flush=True)
             census["IDAT"] = len(_idat_masks)
             print("[IDAT] typed pseudocode: records=%d class_rows=%d nonclass_rows=%d "
                   "not_in_universe=%d no_atom=%d entity_absent=%d "
                   "(T=%d P=%d M=%d EAX=%d S=%d R=%d) row_conflict=%d -> masks=%d "
-                  "%.1fs"
+                  "| anchor=%s norm_ent=%d r_redirect=%d gs_added=%d m_deferred=%d %.1fs"
                   % (len(_ida_recs), _idat_st["class_rows"],
                      _idat_st["nonclass_rows"],
                      _idat_st["class_not_in_universe"],
@@ -7699,6 +7910,10 @@ def main():
                      _idat_st["entity_absent_m"], _idat_st["entity_absent_eax"],
                      _idat_st["entity_absent_s"], _idat_st["entity_absent_r"],
                      _idat_st["row_conflict"], len(_idat_masks),
+                     ("r2" if _ida_anchor.get("_path") == _IDAT2_ANCHOR_R2
+                      else "r1"), _idat_st["ent_normalized"],
+                     _idat_st["r_redirect_t"], _idat_st["gs_added"],
+                     _idat_st["m_deferred"],
                      time.time() - _idat_t_l), flush=True)
         except Exception as _idat_load_ex:
             census["IDAT"] = census.get("IDAT", 0)
@@ -8836,7 +9051,7 @@ def main():
     # 此处 fam 除 C10 外全部冻结（C10 在下方不动点写回后经 add_family_entries
     # 增量注入——C10 内核自身跳过 C10 族，不受影响）；clusters/exact/ents/
     # intervals/eff_size 自簇构建后即冻结。
-    if _rs_mod_cell[0] is not None:
+    def _rs_build_now():
         _t_rs0 = time.time()
         _nb = (n + 7) // 8
         _fam_eids, _fam_masks = [], []
@@ -8928,8 +9143,41 @@ def main():
         print("[rs] PySolver built: %d classes %d clusters %d fam-entries %.1fs"
               % (n, len(clusters), sum(len(_x) for _x in _fam_eids),
                  time.time() - _t_rs0), flush=True)
+        if os.environ.get("MC_IDAT2_DBG"):
+            try:
+                with io.open(os.path.join(ROOT, ".omo/idat2_entids_build.txt"), "w",
+                             encoding="utf-8") as _dbg_eb:
+                    _dbg_eb.write("\n".join(sorted(ents.keys())))
+            except Exception:
+                pass
         print("[C17] effective root prefix differs from literal root: %d clusters"
               % _pfx_restored, flush=True)
+    if _rs_mod_cell[0] is not None:
+        if os.environ.get("MC_IDAT2_DBG"):
+            try:
+                _dbg_ent = set(ents.keys())
+                _dbg_fam = hashlib.sha256()
+                for _dbf in FAMILIES:
+                    for _dbe2 in sorted(fam[_dbf]):
+                        _dbg_fam.update(("%s|%s|%X;" % (
+                            _dbf, _dbe2, fam[_dbf][_dbe2])).encode("utf-8"))
+                _dbg_ex = hashlib.sha256()
+                for _dbe3 in sorted(exact):
+                    _dbg_ex.update(("%s|%s;" % (
+                        _dbe3, ",".join("%d:%s" % (_c3, _s3)
+                                        for _c3, _s3 in exact[_dbe3]))).encode("utf-8"))
+                with io.open(os.path.join(ROOT, ".omo/idat2_dbg.txt"), "w",
+                             encoding="utf-8") as _dbg_fh:
+                    _dbg_fh.write("ents=%d hidden=%d ent_ids=%d fam=%s ex=%s\n"
+                                  % (len(ents), len(_p4iso_hidden), len(_dbg_ent),
+                                     _dbg_fam.hexdigest()[:16],
+                                     _dbg_ex.hexdigest()[:16]))
+                    with io.open(os.path.join(ROOT, ".omo/idat2_entids.txt"), "w",
+                                 encoding="utf-8") as _dbg_ei:
+                        _dbg_ei.write("\n".join(sorted(_dbg_ent)))
+            except Exception:
+                pass
+        _rs_build_now()
 
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
@@ -9782,6 +10030,102 @@ def main():
                       flush=True)
             except Exception as _fcls_wex:
                 print("[P4-FCLS] ledger write FAILED: %r" % (_fcls_wex,), flush=True)
+        # ---- P4-IDAT2：pointer-family 词汇原子的 post-C10 扩展 ----
+        # 在 C10 之前加位会改变 FULL 与中和器算术（实测 -570 条边，fixpoint 漂移）。
+        # 六个 typed-source 指针原子在不动点**之后**追加：C10 输入逐位保持基线；
+        # 之后的 IDAT 施加/最终 solve 使用扩展后的宇宙（新位只被 IDAT 指针掩码使用）。
+        _idat2_added = []
+        _idat2_old_full = FULL
+        if _IDAT2_ON and _idat2_tokens:
+            for _t2 in _idat2_tokens:
+                if _t2 in idx:
+                    continue
+                _ni2 = len(names)
+                idx[_t2] = _ni2
+                names.append(_t2)
+                U["members"].append({})
+                U["has_layout"].append(False)
+                U["size"].append(None)
+                U["eff_size"].append(None)
+                intervals.append([])
+                U["anc"].append(set([_ni2]))
+                U["desc"].append(set())
+                U["vtables"].append(set())
+                U["slot_count"].append(None)
+                U["slot_set"].append(None)
+                _idat2_added.append(_t2)
+            if _idat2_added:
+                _old_n2 = n
+                n = len(names)
+                FULL = (1 << n) - 1
+                _proven_cell[0] |= (((1 << n) - 1) ^ ((1 << _old_n2) - 1))
+                U["n"] = n
+                print("[IDAT2] post-C10 type atoms: +%d (%s) n=%d"
+                      % (len(_idat2_added), ", ".join(_idat2_added), n), flush=True)
+                # C1 masks/FULL were cached at the pre-extension width; drop the
+                # caches so the final solve recomputes them in the extended
+                # universe (Rust kernel already does; keeps Rust<->Python parity).
+                c1_cache.clear()
+                c1_range_cache.clear()
+                _size_ok_cache.clear()
+        if _IDAT2_ON and _idat_pending:
+            _pnd_ok = 0
+            for _pe2, _pt2, _pm2 in _idat_pending:
+                _pbi = idx.get(_pt2)
+                if _pbi is None:
+                    _idat_st["pending_missing"] += 1
+                    continue
+                if _pe2 in _idat_masks:
+                    continue
+                _idat_masks[_pe2] = 1 << _pbi
+                _idat_meta[_pe2] = _pm2
+                _pnd_ok += 1
+            census["IDAT"] = len(_idat_masks)
+            print("[IDAT2] pointer rows activated post-C10: %d/%d"
+                  % (_pnd_ok, len(_idat_pending)), flush=True)
+        # ---- P4-IDAT2 M: supply（post-C10；typed field 行）----
+        # 缺席的 M:<fn>:this:0xOFF 在不动点**之后**才物化 + 追加 singleton 簇：
+        # C10 的实体键集/边集/中性化与基线逐位一致；追加的簇只用于 IDAT 施加与
+        # 最终 solve（singleton 掩码 → forced）。
+        if _IDAT2_ON and _idat_pending_m:
+            _m_roots2 = set()
+            _m_covered2 = set()
+            for _cl2m in clusters:
+                _m_roots2.add(str(_cl2m.get("root")))
+                for _cm2 in (_cl2m.get("ents") or ()):
+                    _m_covered2.add(str(_cm2))
+            _m_new2 = _m_cl2 = _m_skip2 = _m_already2 = 0
+            for _me2, _mk2, _mty2, _mm2 in _idat_pending_m:
+                if _mk2 == "class":
+                    _mci2 = _idat_resolve(_mty2)
+                    if _mci2 is None or not (0 <= _mci2 < _ida_n_cls):
+                        _m_skip2 += 1
+                        continue
+                    _mmask2 = 1 << _mci2
+                else:
+                    _mbi2 = idx.get(_mty2)
+                    if _mbi2 is None:
+                        _m_skip2 += 1
+                        continue
+                    _mmask2 = 1 << _mbi2
+                if _me2 not in ents:
+                    touch(_me2, _me2)
+                    _m_new2 += 1
+                if _me2 not in _m_covered2:
+                    clusters.append({"root": _me2, "ents": [_me2],
+                                     "obs": set(), "exact": {}})
+                    _m_covered2.add(_me2)
+                    _m_cl2 += 1
+                if _me2 in _idat_masks:
+                    _m_already2 += 1
+                    continue
+                _idat_masks[_me2] = _mmask2
+                _idat_meta[_me2] = _mm2
+            census["IDAT"] = len(_idat_masks)
+            print("[IDAT2] M supply post-C10: deferred=%d materialized=%d new_clusters=%d "
+                  "skipped=%d already=%d"
+                  % (len(_idat_pending_m), _m_new2, _m_cl2, _m_skip2, _m_already2),
+                  flush=True)
         # ---- P4-IDAT：类型证据施加（FCLS 之后；当前域兼容守卫 + 同族累积）----
         # 施加序（硬约束）：C10 写回 + RN/IRA + FCLS 之后，重新取簇域快照；
         # 每条 (ent, mask)：
@@ -9954,6 +10298,11 @@ def main():
                       flush=True)
             except Exception as _idat_wex:
                 print("[P4-IDAT] ledger write FAILED: %r" % (_idat_wex,), flush=True)
+        # P4-IDAT2: the pointer-family atoms were appended after C10; rebuild the
+        # Rust solver so the final solve sees the extended universe and every
+        # family mask (C10/RN/IRA/FCLS/IDAT) at the new width.
+        if _IDAT2_ON and _idat2_added and _rs_mod_cell[0] is not None:
+            _rs_build_now()
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
         # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
