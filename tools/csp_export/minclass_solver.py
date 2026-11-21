@@ -149,6 +149,26 @@ _IDAT2_ON = _IDAT_ON and os.environ.get("MINCLASS_IDAT2", "1") != "0"
 _IDAT2_LAYOUT = os.environ.get("MINCLASS_IDAT2_LAYOUT", "0")
 _IDAT2_ANCHOR_R2 = "anchors/ida_type_masks_r2.json"
 _IDAT2_ANCHOR_R1 = "anchors/ida_type_masks.json"
+# ---- P4-IDAT3 供给轮门（默认 ON；MINCLASS_IDAT3=0 关闭 = HEAD f30af91a5 语义）----
+#   (A) absent P:/EAX:/S: entity supply: the r2 rows whose target entity does not
+#       exist are materialized AFTER the C10 writeback with one singleton cluster
+#       each (same isolation as the IDAT2 M: supply; C10 key set stays baseline).
+#   (B) template real-class supply anchors/idat3_supply.json: typed-this names that
+#       the IDAT2 aliases could not resolve -> existing molecule atoms (aliases) or
+#       real struct atoms with a member source (promote existing value-vocabulary
+#       atoms / append new class atoms).  Atoms+layouts are applied POST-C10 so the
+#       C10 fixpoint is byte-identical; the T: rows then go through the normal IDAT
+#       application guard.
+#   (C) MINCLASS_IDAT3_LAYOUT=post_c10 (default) injects the 298 supplied class
+#       layouts into the FINAL solve candidate tables only (after C18/C21/C5 ran
+#       and after the IDAT application), so the pre-C10 candidate interaction
+#       cannot widen any baseline pin.  `0` = side table only (IDAT2 state).
+_IDAT3_ON = _IDAT2_ON and os.environ.get("MINCLASS_IDAT3", "1") != "0"
+_IDAT3_SUPPLY = "anchors/idat3_supply.json"
+# C: post-C10 layout merge is zero-loss (A/B: 81,419 kept / 0 changed / +856
+# new; C18/C21 candidate tables were frozen before the merge).  `0` restores
+# the IDAT2 side-table-only behavior for experiments.
+_IDAT3_LAYOUT = os.environ.get("MINCLASS_IDAT3_LAYOUT", "post_c10") if _IDAT3_ON else "0"
 _IDAT_ANCHOR_CACHE = [None]
 
 
@@ -1846,6 +1866,8 @@ def _compute_cache_key(args, input_parts=None):
         # 指针词汇原子 / 可选布局注入 随之变化。
         "idat2_family": _IDAT2_ON,
         "idat2_layout": _IDAT2_LAYOUT if _IDAT2_ON else "0",
+        "idat3_family": _IDAT3_ON,
+        "idat3_layout": _IDAT3_LAYOUT if _IDAT3_ON else "0",
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -2217,7 +2239,34 @@ def main():
         except Exception as _idat2_tok_ex:
             print("[universe] IDAT2 token list skipped: %r" % (_idat2_tok_ex,), flush=True)
     _idat2_token_set = set(_idat2_tokens)
-
+    # ---- P4-IDAT3 供给（A/B/C）：见门控注释。read-only anchor。----
+    _idat3_sup = {"aliases": {}, "classes": {}, "this_rows": [], "meta": {}}
+    if _IDAT3_ON:
+        try:
+            _idat3_sup = jload(_IDAT3_SUPPLY, {}) or {}
+            print("[IDAT3] supply: aliases=%d classes=%d this_rows=%d (anchor=%s)"
+                  % (len(_idat3_sup.get("aliases") or {}),
+                     len(_idat3_sup.get("classes") or {}),
+                     len(_idat3_sup.get("this_rows") or []), _IDAT3_SUPPLY),
+                  flush=True)
+        except Exception as _idat3_ld_ex:
+            _idat3_sup = {"aliases": {}, "classes": {}, "this_rows": [], "meta": {}}
+            print("[IDAT3] supply load skipped: %r" % (_idat3_ld_ex,), flush=True)
+    _idat3_alias = dict(_idat3_sup.get("aliases") or {}) if _IDAT3_ON else {}
+    _idat3_cls = dict(_idat3_sup.get("classes") or {}) if _IDAT3_ON else {}
+    _idat3_rows = list(_idat3_sup.get("this_rows") or []) if _IDAT3_ON else []
+    _idat3_alias_n = 0
+    if _IDAT3_ON and _idat3_alias:
+        # The IDAT3 aliases only extend the POST-C10 resolve table (never the global
+        # build_universe resolve(), so no C2/C9/C11 input changes).
+        for _na3, _aa3 in sorted(_idat3_alias.items()):
+            if _na3 in idx or resolve(_na3) is not None:
+                continue
+            if _aa3 in idx and _na3 not in _IDAT_ALIAS:
+                _IDAT_ALIAS[_na3] = _aa3
+                _idat3_alias_n += 1
+        print("[IDAT3] aliases wired post-C10: %d/%d"
+              % (_idat3_alias_n, len(_idat3_alias)), flush=True)
     def _idat_resolve(_name):
         """P4-IDAT post-C10 resolver: base universe first, then the supply aliases."""
         _ci_r = resolve(_name)
@@ -7732,6 +7781,8 @@ def main():
     _idat_meta = {}
     _idat_pending = []
     _idat_pending_m = []
+    _idat_pending_pes = []      # P4-IDAT3: absent P:/EAX:/S: rows (post-C10 supply)
+    _idat_pending_t3 = []       # P4-IDAT3: supply typed-this rows (post-C10 atoms)
     _idat_st = collections.Counter()
     if _IDAT_ON:
         try:
@@ -7814,6 +7865,15 @@ def main():
                             "kind": _ik, "type": _itypes[0],
                             "via": _ir.get("via"), "fn": _ir.get("fn")}))
                         _idat_st["m_deferred"] += 1
+                    # P4-IDAT3 (A): absent P:/EAX:/S: entities are materialized the
+                    # same way (touch + one singleton cluster post-C10; the IDAT
+                    # mask is then applied by the normal post-C10 guard).
+                    elif (_IDAT3_ON and _ie.startswith(("P:", "EAX:", "S:"))):
+                        _idat_pending_pes.append((_ie, _ik, _itypes[0], {
+                            "kind": _ik, "type": _itypes[0],
+                            "via": _ir.get("via"), "fn": _ir.get("fn")}))
+                        _idat_st["pes_deferred"] += 1
+                        _idat_st["pes_deferred_" + _ie.split(":")[0].lower()] += 1
                     continue
                 _prev_i = _idat_masks.get(_ie)
                 if _is_pending_i:
@@ -7833,6 +7893,26 @@ def main():
                     "kind": _ik, "type": _itypes[0], "via": _ir.get("via"),
                     "fn": _ir.get("fn"),
                 }
+            # ---- P4-IDAT3 (B): supply typed-this rows ----
+            # The class atoms/layouts for these names are added POST-C10, so the
+            # rows are deferred and resolved right before the IDAT application
+            # (same isolation discipline as the M/A supply: C10 key set parity).
+            if _IDAT3_ON and _idat3_rows:
+                _idat3_t_st = collections.Counter()
+                for _r3 in _idat3_rows:
+                    _fn3 = hx(_r3.get("fn"))
+                    if _fn3 is None:
+                        _idat3_t_st["bad_fn"] += 1
+                        continue
+                    _nm3 = _r3.get("name")
+                    _at3 = _r3.get("atom") or _nm3
+                    _te3 = "T:%X" % _fn3
+                    _idat_pending_t3.append((_te3, _nm3, _at3, {
+                        "kind": "class", "type": _nm3, "atom": _at3,
+                        "via": "typed-this-supply", "fn": _r3.get("fn")}))
+                    _idat3_t_st["deferred"] += 1
+                _idat_st["idat3_t_deferred"] = _idat3_t_st["deferred"]
+                _idat_st["idat3_t_bad"] = _idat3_t_st["bad_fn"]
             # ---- P4-IDAT2 GS: virtual-dispatch site-arg entities ----
             # slot_param_groups 的每个组 = 同一 override 家族里同槽同 k 的**同一逻辑
             # 参数**；occ 是家族内全部 occupant 函数。若这些 occupant 的 IDAT P:<fn>:k
@@ -7901,7 +7981,8 @@ def main():
             print("[IDAT] typed pseudocode: records=%d class_rows=%d nonclass_rows=%d "
                   "not_in_universe=%d no_atom=%d entity_absent=%d "
                   "(T=%d P=%d M=%d EAX=%d S=%d R=%d) row_conflict=%d -> masks=%d "
-                  "| anchor=%s norm_ent=%d r_redirect=%d gs_added=%d m_deferred=%d %.1fs"
+                  "| anchor=%s norm_ent=%d r_redirect=%d gs_added=%d m_deferred=%d "
+                  "pes_deferred=%d t3_deferred=%d %.1fs"
                   % (len(_ida_recs), _idat_st["class_rows"],
                      _idat_st["nonclass_rows"],
                      _idat_st["class_not_in_universe"],
@@ -7913,7 +7994,8 @@ def main():
                      ("r2" if _ida_anchor.get("_path") == _IDAT2_ANCHOR_R2
                       else "r1"), _idat_st["ent_normalized"],
                      _idat_st["r_redirect_t"], _idat_st["gs_added"],
-                     _idat_st["m_deferred"],
+                     _idat_st["m_deferred"], _idat_st["pes_deferred"],
+                     _idat_st["idat3_t_deferred"],
                      time.time() - _idat_t_l), flush=True)
         except Exception as _idat_load_ex:
             census["IDAT"] = census.get("IDAT", 0)
@@ -10030,12 +10112,84 @@ def main():
                       flush=True)
             except Exception as _fcls_wex:
                 print("[P4-FCLS] ledger write FAILED: %r" % (_fcls_wex,), flush=True)
-        # ---- P4-IDAT2：pointer-family 词汇原子的 post-C10 扩展 ----
+        # ---- P4-IDAT2/IDAT3：post-C10 原子扩展（pointer-family 词汇 + 真实类）----
         # 在 C10 之前加位会改变 FULL 与中和器算术（实测 -570 条边，fixpoint 漂移）。
-        # 六个 typed-source 指针原子在不动点**之后**追加：C10 输入逐位保持基线；
-        # 之后的 IDAT 施加/最终 solve 使用扩展后的宇宙（新位只被 IDAT 指针掩码使用）。
+        # 新原子在不动点**之后**追加：C10 输入逐位保持基线；之后的 IDAT 施加/最终
+        # solve 使用扩展后的宇宙（新位只被 IDAT 掩码使用）。
         _idat2_added = []
+        _idat3_cls_added = []
+        _idat3_promoted = []
+        _idat3_layout_changed = 0
         _idat2_old_full = FULL
+
+        def _idat3_set_layout(_ci, _members, _size):
+            """Set a member layout on atom ci (post-C10 only; candidate tables for
+            C1/C18/C21 were already frozen — only the final solve sees this)."""
+            _mm = {}
+            for _ok, _ov in (_members or {}).items():
+                try:
+                    _off = int(str(_ok), 10)
+                except ValueError:
+                    continue
+                _w = (_ov or {}).get("size") if isinstance(_ov, dict) else None
+                _mm[_off] = int(_w) if isinstance(_w, int) and _w > 0 else None
+            if not _mm:
+                return False
+            U["members"][_ci] = _mm
+            U["has_layout"][_ci] = True
+            if isinstance(_size, int) and _size > 0:
+                U["size"][_ci] = _size
+                _ee = U["eff_size"][_ci]
+                U["eff_size"][_ci] = _size if not isinstance(_ee, int) else max(_size, _ee)
+            _sz = U["eff_size"][_ci]
+            dense[_ci] = bool(_sz and _sz >= 8
+                              and (len(_mm) * 4) >= 0.7 * _sz)
+            _iv = []
+            for _off, _w in _mm.items():
+                _ww = _w if isinstance(_w, int) and _w > 0 else 4
+                _iv.append((_off, _off + _ww))
+            _iv.sort()
+            _merged = []
+            for _a, _b in _iv:
+                if _merged and _a <= _merged[-1][1]:
+                    if _b > _merged[-1][1]:
+                        _merged[-1] = (_merged[-1][0], _b)
+                else:
+                    _merged.append((_a, _b))
+            intervals[_ci] = _merged
+            return True
+
+        if _IDAT3_ON and _idat3_cls:
+            for _c3n, _c3r in sorted(_idat3_cls.items()):
+                _mem3 = _c3r.get("members") or {}
+                _sz3 = _c3r.get("size")
+                _ci3 = idx.get(_c3n)
+                if _ci3 is not None:
+                    # existing value-vocabulary atom -> promote to a class atom
+                    if not ((_CLASSMASK >> _ci3) & 1):
+                        _CLASSMASK |= (1 << _ci3)
+                        _idat3_promoted.append(_c3n)
+                    if _idat3_set_layout(_ci3, _mem3, _sz3):
+                        _idat3_layout_changed += 1
+                    continue
+                _ni3 = len(names)
+                idx[_c3n] = _ni3
+                names.append(_c3n)
+                U["members"].append({})
+                U["has_layout"].append(False)
+                U["size"].append(None)
+                U["eff_size"].append(None)
+                intervals.append([])
+                U["anc"].append(set([_ni3]))
+                U["desc"].append(set())
+                U["vtables"].append(set())
+                U["slot_count"].append(None)
+                U["slot_set"].append(None)
+                dense.append(False)
+                _CLASSMASK |= (1 << _ni3)
+                if _idat3_set_layout(_ni3, _mem3, _sz3):
+                    _idat3_layout_changed += 1
+                _idat3_cls_added.append(_c3n)
         if _IDAT2_ON and _idat2_tokens:
             for _t2 in _idat2_tokens:
                 if _t2 in idx:
@@ -10053,21 +10207,28 @@ def main():
                 U["vtables"].append(set())
                 U["slot_count"].append(None)
                 U["slot_set"].append(None)
+                dense.append(False)
                 _idat2_added.append(_t2)
             if _idat2_added:
-                _old_n2 = n
-                n = len(names)
-                FULL = (1 << n) - 1
-                _proven_cell[0] |= (((1 << n) - 1) ^ ((1 << _old_n2) - 1))
-                U["n"] = n
-                print("[IDAT2] post-C10 type atoms: +%d (%s) n=%d"
-                      % (len(_idat2_added), ", ".join(_idat2_added), n), flush=True)
-                # C1 masks/FULL were cached at the pre-extension width; drop the
-                # caches so the final solve recomputes them in the extended
-                # universe (Rust kernel already does; keeps Rust<->Python parity).
-                c1_cache.clear()
-                c1_range_cache.clear()
-                _size_ok_cache.clear()
+                print("[IDAT2] post-C10 type atoms: +%d (%s)"
+                      % (len(_idat2_added), ", ".join(_idat2_added)), flush=True)
+        if _idat2_added or _idat3_cls_added or _idat3_promoted:
+            _old_n2 = n
+            n = len(names)
+            FULL = (1 << n) - 1
+            _proven_cell[0] |= (((1 << n) - 1) ^ ((1 << _old_n2) - 1))
+            U["n"] = n
+            U["classmask"] = _CLASSMASK
+            print("[IDAT3] post-C10 class atoms: new=%d promoted=%d layouts=%d "
+                  "classmask_bits=%d n=%d"
+                  % (len(_idat3_cls_added), len(_idat3_promoted),
+                     _idat3_layout_changed, _CLASSMASK.bit_count(), n), flush=True)
+            # C1 masks/FULL were cached at the pre-extension width; drop the
+            # caches so the final solve recomputes them in the extended
+            # universe (Rust kernel already does; keeps Rust<->Python parity).
+            c1_cache.clear()
+            c1_range_cache.clear()
+            _size_ok_cache.clear()
         if _IDAT2_ON and _idat_pending:
             _pnd_ok = 0
             for _pe2, _pt2, _pm2 in _idat_pending:
@@ -10083,49 +10244,123 @@ def main():
             census["IDAT"] = len(_idat_masks)
             print("[IDAT2] pointer rows activated post-C10: %d/%d"
                   % (_pnd_ok, len(_idat_pending)), flush=True)
-        # ---- P4-IDAT2 M: supply（post-C10；typed field 行）----
+        # ---- P4-IDAT2/IDAT3 M: supply（post-C10；typed field 行）----
         # 缺席的 M:<fn>:this:0xOFF 在不动点**之后**才物化 + 追加 singleton 簇：
         # C10 的实体键集/边集/中性化与基线逐位一致；追加的簇只用于 IDAT 施加与
         # 最终 solve（singleton 掩码 → forced）。
-        if _IDAT2_ON and _idat_pending_m:
-            _m_roots2 = set()
-            _m_covered2 = set()
+        if (_IDAT2_ON and _idat_pending_m) or (_IDAT3_ON and
+                                              (_idat_pending_pes or _idat_pending_t3)):
+            _sup_covered = set()
             for _cl2m in clusters:
-                _m_roots2.add(str(_cl2m.get("root")))
                 for _cm2 in (_cl2m.get("ents") or ()):
-                    _m_covered2.add(str(_cm2))
-            _m_new2 = _m_cl2 = _m_skip2 = _m_already2 = 0
+                    _sup_covered.add(str(_cm2))
+            _sup_stat = collections.Counter()
+            if os.environ.get("MC_IDAT3_DBG"):
+                try:
+                    _dbg3 = {
+                        "pes": [{"ent": _e, "kind": _k, "type": _t}
+                                for (_e, _k, _t, _m) in _idat_pending_pes],
+                        "this_supply": [{"ent": _e, "name": _n, "atom": _a,
+                                         "meta": _m}
+                                        for (_e, _n, _a, _m) in _idat_pending_t3],
+                    }
+                    with io.open(os.path.join(
+                            ROOT, ".omo/agents/csp/idat3_supply_entities.json"),
+                            "w", encoding="utf-8") as _dbg3f:
+                        json.dump(_dbg3, _dbg3f, ensure_ascii=False,
+                                  indent=0, sort_keys=True)
+                except Exception:
+                    pass
+
+            def _idat_supply_ent(_e, _mask, _meta, _tag):
+                """touch + one singleton cluster + mask (M/A/B shared pattern)."""
+                if _e not in ents:
+                    touch(_e, _e)
+                    _sup_stat[_tag + "_materialized"] += 1
+                if _e not in _sup_covered:
+                    clusters.append({"root": _e, "ents": [_e],
+                                     "obs": set(), "exact": {}})
+                    _sup_covered.add(_e)
+                    _sup_stat[_tag + "_clusters"] += 1
+                if _e in _idat_masks:
+                    _sup_stat[_tag + "_already"] += 1
+                    return
+                _idat_masks[_e] = _mask
+                _idat_meta[_e] = _meta
+                _sup_stat[_tag + "_masks"] += 1
+
             for _me2, _mk2, _mty2, _mm2 in _idat_pending_m:
                 if _mk2 == "class":
                     _mci2 = _idat_resolve(_mty2)
                     if _mci2 is None or not (0 <= _mci2 < _ida_n_cls):
-                        _m_skip2 += 1
+                        _sup_stat["m_skip"] += 1
                         continue
                     _mmask2 = 1 << _mci2
                 else:
                     _mbi2 = idx.get(_mty2)
                     if _mbi2 is None:
-                        _m_skip2 += 1
+                        _sup_stat["m_skip"] += 1
                         continue
                     _mmask2 = 1 << _mbi2
-                if _me2 not in ents:
-                    touch(_me2, _me2)
-                    _m_new2 += 1
-                if _me2 not in _m_covered2:
-                    clusters.append({"root": _me2, "ents": [_me2],
-                                     "obs": set(), "exact": {}})
-                    _m_covered2.add(_me2)
-                    _m_cl2 += 1
-                if _me2 in _idat_masks:
-                    _m_already2 += 1
-                    continue
-                _idat_masks[_me2] = _mmask2
-                _idat_meta[_me2] = _mm2
+                _idat_supply_ent(_me2, _mmask2, _mm2, "m")
             census["IDAT"] = len(_idat_masks)
             print("[IDAT2] M supply post-C10: deferred=%d materialized=%d new_clusters=%d "
                   "skipped=%d already=%d"
-                  % (len(_idat_pending_m), _m_new2, _m_cl2, _m_skip2, _m_already2),
-                  flush=True)
+                  % (len(_idat_pending_m), _sup_stat["m_materialized"],
+                     _sup_stat["m_clusters"], _sup_stat["m_skip"],
+                     _sup_stat["m_already"]), flush=True)
+            # ---- P4-IDAT3 (A): P:/EAX:/S: entity supply ----
+            # Only the target entities (no other channel): each absent row gets the
+            # M-supply treatment; the r2 row set/masks are untouched.
+            if _IDAT3_ON and _idat_pending_pes:
+                for _pe3, _pk3, _pty3, _pm3 in _idat_pending_pes:
+                    if _pk3 == "class":
+                        _pci3 = _idat_resolve(_pty3)
+                        if _pci3 is None:
+                            _sup_stat["pes_skip"] += 1
+                            continue
+                        _pmask3 = 1 << _pci3
+                    else:
+                        _pbi3 = idx.get(_pty3)
+                        if _pbi3 is None:
+                            _sup_stat["pes_skip"] += 1
+                            continue
+                        _pmask3 = 1 << _pbi3
+                    _idat_supply_ent(_pe3, _pmask3, _pm3, "pes")
+                census["IDAT"] = len(_idat_masks)
+                print("[IDAT3] P/EAX/S supply post-C10: deferred=%d materialized=%d "
+                      "new_clusters=%d masks=%d skipped=%d already=%d"
+                      % (len(_idat_pending_pes), _sup_stat["pes_materialized"],
+                         _sup_stat["pes_clusters"], _sup_stat["pes_masks"],
+                         _sup_stat["pes_skip"], _sup_stat["pes_already"]),
+                      flush=True)
+            # ---- P4-IDAT3 (B): typed-this supply rows -> class masks ----
+            # Aliases resolve to existing class atoms; promote/new atoms were added
+            # to the universe just above (classmask extended).  T: entities without
+            # a cluster get the same singleton treatment.
+            if _IDAT3_ON and _idat_pending_t3:
+                _t3_missing = collections.Counter()
+                for _te3, _nm3, _at3, _tm3 in _idat_pending_t3:
+                    _tci3 = _idat_resolve(_at3)
+                    if _tci3 is None:
+                        _tci3 = idx.get(_at3)
+                    if _tci3 is None:
+                        _t3_missing[_at3] += 1
+                        _sup_stat["t_skip"] += 1
+                        continue
+                    _tmask3 = 1 << _tci3
+                    _idat_supply_ent(_te3, _tmask3, _tm3, "t")
+                census["IDAT"] = len(_idat_masks)
+                print("[IDAT3] typed-this supply post-C10: rows=%d materialized=%d "
+                      "new_clusters=%d masks=%d skipped=%d already=%d%s"
+                      % (len(_idat_pending_t3), _sup_stat["t_materialized"],
+                         _sup_stat["t_clusters"], _sup_stat["t_masks"],
+                         _sup_stat["t_skip"], _sup_stat["t_already"],
+                         (" missing=" + str(dict(_t3_missing))) if _t3_missing else ""),
+                      flush=True)
+                _idat_st["idat3_t_masks"] = _sup_stat["t_masks"]
+                _idat_st["idat3_t_already"] = _sup_stat["t_already"]
+                _idat_st["idat3_t_skip"] = _sup_stat["t_skip"]
         # ---- P4-IDAT：类型证据施加（FCLS 之后；当前域兼容守卫 + 同族累积）----
         # 施加序（硬约束）：C10 写回 + RN/IRA + FCLS 之后，重新取簇域快照；
         # 每条 (ent, mask)：
@@ -10298,10 +10533,45 @@ def main():
                       flush=True)
             except Exception as _idat_wex:
                 print("[P4-IDAT] ledger write FAILED: %r" % (_idat_wex,), flush=True)
-        # P4-IDAT2: the pointer-family atoms were appended after C10; rebuild the
-        # Rust solver so the final solve sees the extended universe and every
-        # family mask (C10/RN/IRA/FCLS/IDAT) at the new width.
-        if _IDAT2_ON and _idat2_added and _rs_mod_cell[0] is not None:
+        # P4-IDAT3 (C): zero-loss layout consumption.  Injecting the supplied
+        # layouts BEFORE C18/C21 lets their candidate tables see the new member
+        # sets; measured on IDAT2 that widened 7 baseline uniques (the
+        # `?$VectorClass@H` family, C21 exact pin lost to 4 TClassFactory
+        # candidates).  Fix: merge the layouts AFTER C18/C21/C5 ran and AFTER the
+        # IDAT application, so only the final solve's C1 size/coverage data sees
+        # them — the pre-C10 candidate interaction is structurally impossible.
+        if _IDAT3_ON and _IDAT3_LAYOUT == "post_c10":
+            _sup_lay3 = U.get("supply_layouts") or {}
+            _lay3_set = _lay3_skip = _lay3_tb = 0
+            for _ck3, _cv3 in sorted(_sup_lay3.items()):
+                _ci3 = idx.get(_ck3)
+                if _ci3 is None:
+                    _lay3_skip += 1
+                    continue
+                if _cv3.get("_src") == "template-base":
+                    _lay3_tb += 1
+                if _idat3_set_layout(_ci3, _cv3.get("offsets") or {},
+                                     _cv3.get("size")):
+                    _lay3_set += 1
+            if _lay3_set:
+                # the final solve reads these tables; cached C1 masks were built
+                # at the pre-merge member sets -> drop them.
+                c1_cache.clear()
+                c1_range_cache.clear()
+                _size_ok_cache.clear()
+            print("[IDAT3] post-C10 layout merge: supplied=%d set_members=%d "
+                  "template_base=%d parent_only=%d not_in_universe=%d"
+                  % (len(_sup_lay3), _lay3_set, _lay3_tb,
+                     len(_sup_lay3) - _lay3_set - _lay3_skip, _lay3_skip),
+                  flush=True)
+            _idat3_layout_changed += _lay3_set
+        # P4-IDAT2/IDAT3: the atoms/layouts were appended/merged after C10;
+        # rebuild the Rust solver so the final solve sees the extended universe,
+        # the merged layouts and every family mask at the new width.
+        if ((_IDAT2_ON and _idat2_added)
+                or (_IDAT3_ON and (_idat3_cls_added or _idat3_promoted
+                                   or _idat3_layout_changed))
+                ) and _rs_mod_cell[0] is not None:
             _rs_build_now()
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
@@ -11123,8 +11393,15 @@ def main():
     _T2_PRIM_CANON = frozenset(("int", "short", "char", "__int64", "float",
                                 "double", "void", "wchar_t"))
     _t2_int_ci = idx.get("int")
-    _t2_n_cls = _CLASSMASK.bit_length()      # names[0:k]=类, names[k:]=类型词汇
+    # `_CLASSMASK` is a bit mask (IDAT3 promotes value-vocabulary atoms to class
+    # atoms post-C10), so class membership is a bit test, not a prefix bound.
+    # For the baseline prefix atoms this is identical (< bit_length).
+    _t2_cls_mask = _CLASSMASK
+    _t2_n_cls = _CLASSMASK.bit_length()
     _t2_desc_bits = {}
+
+    def _t2_is_cls(_ci):
+        return bool((_t2_cls_mask >> _ci) & 1)
 
     def _t2_desc_of(_ci):
         _bm = _t2_desc_bits.get(_ci)
@@ -11138,13 +11415,13 @@ def main():
 
     def _t2_mem_count(_ci):
         """T2 tiebreak 的成员数视图：类型词汇原子不是类，计 0。"""
-        if _ci >= _t2_n_cls:
+        if not _t2_is_cls(_ci):
             return 0
         return len(U["members"][_ci] or {})
 
     def _t2_size_of(_ci):
         """T2 tiebreak 的尺寸视图：类型词汇原子无对象尺寸，回退 -1。"""
-        if _ci >= _t2_n_cls:
+        if not _t2_is_cls(_ci):
             return -1
         _sz = U["size"][_ci]
         if isinstance(_sz, int):
@@ -11157,7 +11434,7 @@ def main():
     for _cls_tv, _rec_tv in ((jload("anchors/layout_evidence.json", {}) or {})
                              .get("classes") or {}).items():
         _i_tv = resolve(_cls_tv)
-        if _i_tv is None or _i_tv < _t2_n_cls:
+        if _i_tv is None or _t2_is_cls(_i_tv):
             continue
         _ext_tv = _rec_tv.get("observed_extent")
         if isinstance(_ext_tv, int) and _ext_tv > 0:

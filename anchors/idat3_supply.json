@@ -1,0 +1,1455 @@
+{
+ "aliases": {
+  "Anim_Voices_WorldDominationTour": "Anim@Voices@WorldDominationTour",
+  "FactionSelectDialogControl_WorldDominationTour": "FactionSelectDialogControl@WorldDominationTour",
+  "FlagGameOption_WorldDominationTour": "FlagGameOption@WorldDominationTour",
+  "SelectClass_StripClass_SidebarClass": "SelectClass@StripClass@SidebarClass",
+  "Selection_WorldDominationTour": "Selection@WorldDominationTour",
+  "SimpleDialogControl_OwnerDraw": "SimpleDialogControl@OwnerDraw",
+  "TacticalClass_DisplayClass": "TacticalClass@DisplayClass",
+  "VectorClass_ReestablishPtr": "VectorClass"
+ },
+ "classes": {
+  "CoordStruct": {
+   "members": {
+    "0": {
+     "name": "X",
+     "size": 4,
+     "type": "void *"
+    }
+   },
+   "promote": true,
+   "size": 12,
+   "source": "member_lookup"
+  },
+  "Matrix3D": {
+   "members": {
+    "0": {
+     "name": "q000",
+     "size": 1,
+     "type": "char[1]"
+    },
+    "1": {
+     "name": "m_1",
+     "size": 4,
+     "type": "char[4]"
+    },
+    "13": {
+     "name": "tail_D",
+     "size": 3,
+     "type": "char[3]"
+    },
+    "5": {
+     "name": "m_5",
+     "size": 4,
+     "type": "char[4]"
+    },
+    "9": {
+     "name": "m_9",
+     "size": 4,
+     "type": "char[4]"
+    }
+   },
+   "promote": false,
+   "size": null,
+   "source": "member_lookup"
+  },
+  "String": {
+   "members": {
+    "0": {
+     "name": "q000",
+     "size": 3,
+     "type": "char[3]"
+    },
+    "1": {
+     "name": "u8_1",
+     "size": 1,
+     "type": "unsigned char"
+    },
+    "12": {
+     "name": "u32_C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "28": {
+     "name": "u32_1C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "3": {
+     "name": "m_3",
+     "size": 4,
+     "type": "char[4]"
+    },
+    "4": {
+     "name": "ptr_4",
+     "size": 2,
+     "type": "ObjectClass *"
+    },
+    "6": {
+     "name": "u32_6",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "7": {
+     "name": "tail_7",
+     "size": 1,
+     "type": "char[1]"
+    },
+    "8": {
+     "name": "ptr_8",
+     "size": 4,
+     "type": "void *"
+    }
+   },
+   "promote": true,
+   "size": null,
+   "source": "member_lookup"
+  },
+  "Timer": {
+   "members": {
+    "0": {
+     "name": "q000",
+     "size": 2,
+     "type": "char[2]"
+    },
+    "100": {
+     "name": "u32_64",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "12": {
+     "name": "u32_C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "13": {
+     "name": "u32_D",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "16": {
+     "name": "u32_10",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "197": {
+     "name": "m_C5",
+     "size": 4,
+     "type": "char[4]"
+    },
+    "2": {
+     "name": "m_2",
+     "size": 4,
+     "type": "char[4]"
+    },
+    "20": {
+     "name": "u32_14",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "201": {
+     "name": "tail_C9",
+     "size": 3,
+     "type": "char[3]"
+    },
+    "24": {
+     "name": "m_18",
+     "size": 4,
+     "type": "int"
+    },
+    "28": {
+     "name": "u32_1C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "36": {
+     "name": "u32_24",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "4": {
+     "name": "u32_4",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "40": {
+     "name": "u32_28",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "41": {
+     "name": "u32_29",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "44": {
+     "name": "u32_2C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "45": {
+     "name": "u32_2D",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "48": {
+     "name": "u32_30",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "52": {
+     "name": "u32_34",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "56": {
+     "name": "u32_38",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "57": {
+     "name": "u32_39",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "6": {
+     "name": "__pad_6",
+     "size": 18,
+     "type": "char[18]"
+    },
+    "60": {
+     "name": "u32_3C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "64": {
+     "name": "u32_40",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "68": {
+     "name": "u32_44",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "72": {
+     "name": "u32_48",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "73": {
+     "name": "u32_49",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "76": {
+     "name": "u32_4C",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "8": {
+     "name": "ptr_8",
+     "size": 4,
+     "type": "AbstractClass *"
+    },
+    "9": {
+     "name": "u32_9",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "96": {
+     "name": "u32_60",
+     "size": 4,
+     "type": "unsigned int"
+    }
+   },
+   "promote": true,
+   "size": null,
+   "source": "member_lookup"
+  },
+  "WideString": {
+   "members": {
+    "0": {
+     "name": "__pad_000",
+     "size": 1,
+     "type": "unsigned char"
+    },
+    "8": {
+     "name": "u32_8",
+     "size": 4,
+     "type": "unsigned int"
+    }
+   },
+   "promote": true,
+   "size": null,
+   "source": "member_lookup"
+  }
+ },
+ "excluded": {
+  "ida_anonymous": [
+   {
+    "n": 6,
+    "name": "Class_7F5C70"
+   },
+   {
+    "n": 4,
+    "name": "Class_7EA80C"
+   },
+   {
+    "n": 3,
+    "name": "Class_7E22A4"
+   },
+   {
+    "n": 2,
+    "name": "#377"
+   },
+   {
+    "n": 2,
+    "name": "Class_7EA834"
+   },
+   {
+    "n": 1,
+    "name": "#375"
+   },
+   {
+    "n": 1,
+    "name": "Class_7E8C94"
+   },
+   {
+    "n": 1,
+    "name": "Class_7ECCDC"
+   }
+  ],
+  "no_source": [
+   {
+    "ex": "std::locale::facet *__thiscall AbstractClass::setTileIndex(std::locale::facet *this, char a2)",
+    "n": 54,
+    "name": "facet"
+   },
+   {
+    "ex": "Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this)",
+    "n": 10,
+    "name": "Iostream_init"
+   },
+   {
+    "ex": "char __thiscall _do_always_noconv_codecvt_base_std__MBE_NXZ_3(std::codecvt_base *this)",
+    "n": 9,
+    "name": "codecvt_base"
+   },
+   {
+    "ex": "void __thiscall __Release__NonReentrantLock_details_Concurrency__QAEXXZ(Concurrency::details::_NonReentrantLock *this)",
+    "n": 1,
+    "name": "_NonReentrantLock"
+   }
+  ],
+  "non_class_primitive": [
+   {
+    "n": 420,
+    "name": "int"
+   },
+   {
+    "n": 384,
+    "name": "untyped"
+   },
+   {
+    "n": 102,
+    "name": "char"
+   },
+   {
+    "n": 73,
+    "name": "_DWORD"
+   },
+   {
+    "n": 28,
+    "name": "wchar_t"
+   },
+   {
+    "n": 21,
+    "name": "unsigned __int8"
+   },
+   {
+    "n": 17,
+    "name": "unsigned int"
+   },
+   {
+    "n": 16,
+    "name": "float"
+   },
+   {
+    "n": 16,
+    "name": "void"
+   },
+   {
+    "n": 9,
+    "name": "unsigned __int16"
+   },
+   {
+    "n": 8,
+    "name": "__int16"
+   },
+   {
+    "n": 7,
+    "name": "_BYTE"
+   },
+   {
+    "n": 3,
+    "name": "_WORD"
+   },
+   {
+    "n": 3,
+    "name": "untyped_ptr"
+   },
+   {
+    "n": 2,
+    "name": "fast_untyped"
+   },
+   {
+    "n": 1,
+    "name": "CHAR"
+   },
+   {
+    "n": 1,
+    "name": "double"
+   },
+   {
+    "n": 1,
+    "name": "signed int"
+   }
+  ],
+  "pointer_or_array": [
+   {
+    "n": 229,
+    "name": "char*"
+   },
+   {
+    "n": 111,
+    "name": "int*"
+   },
+   {
+    "n": 70,
+    "name": "unsigned int*"
+   },
+   {
+    "n": 38,
+    "name": "void*"
+   },
+   {
+    "n": 31,
+    "name": "float*"
+   },
+   {
+    "n": 10,
+    "name": "bool*"
+   },
+   {
+    "n": 9,
+    "name": "double*"
+   },
+   {
+    "n": 6,
+    "name": "unsigned char*"
+   },
+   {
+    "n": 1,
+    "name": "unsigned short*"
+   }
+  ],
+  "win32": [
+   {
+    "n": 58,
+    "name": "HWND hDlg"
+   },
+   {
+    "n": 35,
+    "name": "LPSTREAM pStm"
+   },
+   {
+    "n": 31,
+    "name": "HWND hWnd"
+   },
+   {
+    "n": 12,
+    "name": "HWND a1"
+   },
+   {
+    "n": 3,
+    "name": "LPCCH lpMultiByteStr"
+   },
+   {
+    "n": 2,
+    "name": "LPMSG lpMsg"
+   },
+   {
+    "n": 1,
+    "name": "BYTE"
+   },
+   {
+    "n": 1,
+    "name": "HDC a1"
+   },
+   {
+    "n": 1,
+    "name": "HDC hdc"
+   },
+   {
+    "n": 1,
+    "name": "HINSTANCE a1"
+   },
+   {
+    "n": 1,
+    "name": "HINSTANCE hInstance"
+   },
+   {
+    "n": 1,
+    "name": "HKEY a1"
+   },
+   {
+    "n": 1,
+    "name": "HKEY hKey"
+   },
+   {
+    "n": 1,
+    "name": "HWND hCtl"
+   },
+   {
+    "n": 1,
+    "name": "HWND hWndParent"
+   },
+   {
+    "n": 1,
+    "name": "LPARAM a1"
+   },
+   {
+    "n": 1,
+    "name": "LPARAM lParam"
+   },
+   {
+    "n": 1,
+    "name": "LPCSTR lpLibFileName"
+   },
+   {
+    "n": 1,
+    "name": "LPCSTR lpRootPathName"
+   },
+   {
+    "n": 1,
+    "name": "LPCSTR lpString2"
+   },
+   {
+    "n": 1,
+    "name": "UINT"
+   }
+  ]
+ },
+ "meta": {
+  "aliases": 8,
+  "classes": 5,
+  "excluded_anon": 20,
+  "excluded_no_source": 74,
+  "excluded_primitive": 1112,
+  "excluded_ptr": 505,
+  "excluded_win32": 156,
+  "extra_class": 1,
+  "generated_by": ".omo/agents/csp/p4_idat3_extract.py",
+  "rows_by_mode": {
+   "alias": 20,
+   "new": 1,
+   "non_this": 6,
+   "promote": 47
+  },
+  "sources": [
+   "anchors/class_db.json",
+   "decompile-results/full_export/include",
+   "tools/member_lookup.json",
+   "anchors/csp_canon_members.json",
+   "anchors/type_universe.json",
+   "anchors/class_name_align.json"
+  ],
+  "this_rows": 68,
+  "total_unresolved_fns": 1941,
+  "total_unresolved_names": 72
+ },
+ "non_this_rows": {
+  "String": [
+   {
+    "cc": "__fastcall",
+    "fn": "0x005EDEF0",
+    "fname": "GetPlayerTypeString",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "String *__fastcall GetPlayerTypeString(String *a1, wchar_t *a2)"
+   },
+   {
+    "cc": "__fastcall",
+    "fn": "0x00770D70",
+    "fname": "sub_770D70",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "void __fastcall sub_770D70(String *a1, _DWORD *a2)"
+   },
+   {
+    "cc": "__fastcall",
+    "fn": "0x00778F30",
+    "fname": "LocalizeWOLDateString",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "char __fastcall LocalizeWOLDateString(String *a1, WideString *a2)"
+   },
+   {
+    "cc": "__fastcall",
+    "fn": "0x0077E900",
+    "fname": "AssignWOLPlayerSide",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "void __fastcall AssignWOLPlayerSide(String *a1, int a2)"
+   },
+   {
+    "cc": "__fastcall",
+    "fn": "0x00789630",
+    "fname": "sub_789630",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "String *__fastcall sub_789630(String *a1, int a2)"
+   },
+   {
+    "cc": "__fastcall",
+    "fn": "0x0079DA90",
+    "fname": "ExtractChatCommand",
+    "raw": [
+     "String",
+     1
+    ],
+    "sig": "String *__fastcall ExtractChatCommand(String *a1, HWND a2)"
+   }
+  ]
+ },
+ "this_rows": [
+  {
+   "atom": "VectorClass",
+   "cc": "__thiscall",
+   "fn": "0x0045AE50",
+   "mode": "alias",
+   "name": "VectorClass_ReestablishPtr",
+   "raw": [
+    "VectorClass_ReestablishPtr",
+    1
+   ],
+   "why": "template_base"
+  },
+  {
+   "atom": "TacticalClass@DisplayClass",
+   "cc": "__thiscall",
+   "fn": "0x004AAC10",
+   "mode": "alias",
+   "name": "TacticalClass_DisplayClass",
+   "raw": [
+    "TacticalClass_DisplayClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "TacticalClass@DisplayClass",
+   "cc": "__thiscall",
+   "fn": "0x004AEBB0",
+   "mode": "alias",
+   "name": "TacticalClass_DisplayClass",
+   "raw": [
+    "TacticalClass_DisplayClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Matrix3D",
+   "cc": "__thiscall",
+   "fn": "0x005AE6F0",
+   "mode": "new",
+   "name": "Matrix3D",
+   "raw": [
+    "Matrix3D",
+    1
+   ],
+   "why": "new_class:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x005BD5A0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x005DAC00",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x005E2620",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "FactionSelectDialogControl@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00624140",
+   "mode": "alias",
+   "name": "FactionSelectDialogControl_WorldDominationTour",
+   "raw": [
+    "FactionSelectDialogControl_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "SimpleDialogControl@OwnerDraw",
+   "cc": "__thiscall",
+   "fn": "0x006241E0",
+   "mode": "alias",
+   "name": "SimpleDialogControl_OwnerDraw",
+   "raw": [
+    "SimpleDialogControl_OwnerDraw",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "CoordStruct",
+   "cc": "__thiscall",
+   "fn": "0x00642740",
+   "mode": "promote",
+   "name": "CoordStruct",
+   "raw": [
+    "CoordStruct",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "SelectClass@StripClass@SidebarClass",
+   "cc": "__thiscall",
+   "fn": "0x006AAD00",
+   "mode": "alias",
+   "name": "SelectClass_StripClass_SidebarClass",
+   "raw": [
+    "SelectClass_StripClass_SidebarClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "SelectClass@StripClass@SidebarClass",
+   "cc": "__thiscall",
+   "fn": "0x006AB990",
+   "mode": "alias",
+   "name": "SelectClass_StripClass_SidebarClass",
+   "raw": [
+    "SelectClass_StripClass_SidebarClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "SelectClass@StripClass@SidebarClass",
+   "cc": "__thiscall",
+   "fn": "0x006AB9E0",
+   "mode": "alias",
+   "name": "SelectClass_StripClass_SidebarClass",
+   "raw": [
+    "SelectClass_StripClass_SidebarClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "SelectClass@StripClass@SidebarClass",
+   "cc": "__thiscall",
+   "fn": "0x006AC780",
+   "mode": "alias",
+   "name": "SelectClass_StripClass_SidebarClass",
+   "raw": [
+    "SelectClass_StripClass_SidebarClass",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x00727D60",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "FlagGameOption@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x007674E0",
+   "mode": "alias",
+   "name": "FlagGameOption_WorldDominationTour",
+   "raw": [
+    "FlagGameOption_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "FlagGameOption@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00767880",
+   "mode": "alias",
+   "name": "FlagGameOption_WorldDominationTour",
+   "raw": [
+    "FlagGameOption_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Selection@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x0076EFE0",
+   "mode": "alias",
+   "name": "Selection_WorldDominationTour",
+   "raw": [
+    "Selection_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x007718A0",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00771900",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00771950",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00771970",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00771980",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x007719D0",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "Anim@Voices@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x00771A30",
+   "mode": "alias",
+   "name": "Anim_Voices_WorldDominationTour",
+   "raw": [
+    "Anim_Voices_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "FactionSelectDialogControl@WorldDominationTour",
+   "cc": "__thiscall",
+   "fn": "0x007B0440",
+   "mode": "alias",
+   "name": "FactionSelectDialogControl_WorldDominationTour",
+   "raw": [
+    "FactionSelectDialogControl_WorldDominationTour",
+    1
+   ],
+   "why": "molecule"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4630",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4690",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4710",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4780",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B47F0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B48D0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4940",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4C20",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4CD0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4DA0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B4ED0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5020",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B51D0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5230",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5400",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5440",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B54B0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B57A0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5A40",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5B30",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5B80",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5D70",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B5F10",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B66D0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6720",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6880",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B68E0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6AE0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6B60",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6BE0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6CB0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6D90",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B6E20",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B7100",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B7140",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B7180",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B71B0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B73F0",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B7600",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B78D0",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "String",
+   "cc": "__thiscall",
+   "fn": "0x007B7A60",
+   "mode": "promote",
+   "name": "String",
+   "raw": [
+    "String",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  },
+  {
+   "atom": "WideString",
+   "cc": "__thiscall",
+   "fn": "0x007B7D90",
+   "mode": "promote",
+   "name": "WideString",
+   "raw": [
+    "WideString",
+    1
+   ],
+   "why": "vocab_promote:member_lookup"
+  }
+ ]
+}

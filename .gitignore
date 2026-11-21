@@ -170,4 +170,5 @@ tools/vtable_inherit/*.obj
 # VC6 era toolchain (Microsoft binary content, do not commit)
 .vc6/
 .vc6-8447/
-anchors/minclass_assignments.json  # regenerable solver dump (262MB/run, was stalling LFS pushes)
+# regenerable solver dump (262MB/run, was stalling LFS pushes)
+anchors/minclass_assignments.json
