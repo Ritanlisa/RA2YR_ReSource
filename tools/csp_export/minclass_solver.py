@@ -115,10 +115,20 @@ if _T12_ON:
 #         -> RET:<fn> 的 int 族掩码。证明而非启发式：不过 --allow-heuristics 门。
 _RN_ON = os.environ.get("MINCLASS_RN", "1") != "0"
 _IRA_ON = os.environ.get("MINCLASS_IRA", "1") != "0"
+# ---- P4-FCLS 符号类族门（默认 ON；MINCLASS_FCLS=0 关闭做 A/B / 基线回归）----
+#   FCLS = signals.json symbols[fn].cls（显式 Class::Method 符号声明类，backfill 产物）
+#          -> **已存在**的 T:<fn> / R:<fn>:ecx 实体 singleton 类掩码。
+#   与 RN/IRA 的隔离纪律完全相同：C10 不动点前不写 fam（掩码只进临时字典），
+#   C10 写回后、RN/IRA 之后按**当前簇域**兼容守卫一次性施加；不 touch/不物化实体，
+#   不改变 C10 键集/中性化序列。已知命名缺陷（anchors/minclass_naming_defects.json）
+#   地址显式排除。关断时族名不进入 FAMILIES —— 产物与接线前逐字节一致。
+_FCLS_ON = os.environ.get("MINCLASS_FCLS", "1") != "0"
 if _RN_ON:
     FAMILIES.append("RN")
 if _IRA_ON:
     FAMILIES.append("IRA")
+if _FCLS_ON:
+    FAMILIES.append("FCLS")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -197,6 +207,8 @@ FAMILY_DESC = {
     # ---- P4-T1F：二进制锚点接线（strict；用户裁决 P4-T1F）----
     "RN": "allocation-return size (binary fact; value axis): prove a value is an allocation result of size N -- channels ret-call-alloc / ret-copy-chain / ret-slot-forward (every ret NEW|NULL, CFG-complete), derived EAX of a proven allocation-returning callee, and direct allocator call sites (operator new / _malloc / __nh_malloc with A-E size forms) -- then AND a class mask over CLASS atoms only with the C5 size_mask precedent (declared sizeof == N; both sem=total and sem=elem use equality, no AV divisor union); per-ent union over sizes, empty/FULL masks skipped, no FULL fallback; entities RET:/EAX: are pointer VALUES (EP precedent; NOT in _POINTEE_FAMS), strict, no --allow-heuristics gate; evidence anchors/ret_new_size.json (2,438 recs = RET 13 / derived EAX 29 / alloc-call-site 2,396), generator .omo/agents/csp/extract_ret_new_size.py, report .omo/agents/csp/p4_t1f_expand_report.md",
     "IRA": "strict integer-return set (proof, not heuristic): every arith ret site of the function is CFG-int-taint proven (forward join = AND over predecessors; pointer-arith guard: memory loads / call results / lea / params / cmov / xchg are not INT; sbb r,r / and r,0 / or r,-1 absorbing; partial writes preserve the whole-register INT flag; CFG-completeness required) -> RET:<fn> = int-family mask {int, unsigned int, bool, char, unsigned char} via _tok_ix canonicalization; unconditional (no --allow-heuristics gate; distinct from the heuristic IR family over anchors/int_returns.json); evidence anchors/int_returns_strict.json (636 fns), generator .omo/agents/csp/extract_int_returns_strict.py, report .omo/agents/csp/p4_t1f_expand_report.md",
+    # ---- P4-FCLS：符号声明类（名字证据，后处理 + 二进制兼容守卫）----
+    "FCLS": "explicit Class::Method symbol class (signals.json symbols[fn].cls; name evidence, NOT binary): singleton class mask {cls} on EXISTING T:<fn> / R:<fn>:ecx entities only -- no touch/materialization, no new entity keys; applied only POST-C10 and AFTER RN/IRA, guarded by the current cluster domain (skip no_cluster / unknown_root / target_conflict / already_forced / no_change; phantom-only masks no_effect); plain-identifier cls restricted to the solver class universe; the 'unknown' sentinel excluded (placeholder, not a class declaration); addresses in anchors/minclass_naming_defects.json excluded; rank 5 (below every binary family, first to drop on conflict); gate MINCLASS_FCLS (default ON); report .omo/agents/csp/p4_fcls_report.md",
 }
 
 
@@ -220,6 +232,9 @@ _FAM_RANK = {
     "MH": 20, "RU": 20, "P5": 20, "C7": 35, "C11": 35, "C18": 35,
     "C26": 30, "C1": 30, "C9": 40, "C10": 10,
     "GX": 20, "G2": 20, "G3": 20, "MRH": 40,
+    # P4-FCLS: name evidence only (54.2% agreement on binary-forced rows) -- the
+    # weakest admissible family; conflict resolution drops it first.
+    "FCLS": 5,
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
@@ -1443,6 +1458,8 @@ def _compute_cache_key(args, input_parts=None):
         # P4-T1F 族门（env）：RN/IRA 掩码与实体物化随之变化，必须进缓存键。
         "rn_family": _RN_ON,
         "ira_family": _IRA_ON,
+        # P4-FCLS 族门（env）：signals.json 符号类掩码随之变化。
+        "fcls_family": _FCLS_ON,
         "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
@@ -4584,7 +4601,7 @@ def main():
                   % (_n_ira, _n_ira_skip, _ira_mask.bit_count()), flush=True)
         except Exception as _e_ira:
             census["IRA"] = census.get("IRA", 0)
-            print("[IRA] skipped: %r" % _e_ira, flush=True)
+            print("[IRA] skipped: %r" % (_e_ira,), flush=True)
 
     # ---- P4-T1F 隔离：把新物化实体从基线证据阶段隐藏（簇构建前恢复）----
     # 基线中这些实体不存在 ⇒ C8/C18/C19/C17/C21-25 的 ents 遍历、exact 钉定、
@@ -7152,6 +7169,117 @@ def main():
         print("[C11] propagated (%d narrowing steps), entities constrained: %d, emptied: %d"
               % (_c11_steps, len(fam["C11"]), _c11_empty), flush=True)
 
+    # ---------------- P4-FCLS：显式 Class::Method 符号类（signals.json，后处理加性证据）----------------
+    # 语义（用户任务书 F1）：signals.symbols[fn].cls 是显式符号声明类（backfill 产物），
+    # 只在 **C10 不动点之后、RN/IRA 之后**作为兼容守卫约束施加；只写**已存在**的
+    # T:<fn> / R:<fn>:ecx 实体（不 touch、不物化、不发明实体、不改变 C10 键集）。
+    # 过滤器（全部确定性、无阈值/投票）：
+    #   * signals 条目 kind == "function" 且地址是求解器函数起点（faddrs 精确成员）；
+    #   * cls 是纯标识符且落在**类宇宙**（0 <= resolve(cls) < n_cls_only，类型词汇不算类）；
+    #   * 地址不在 anchors/minclass_naming_defects.json（237 条已知命名缺陷，fn 字段）；
+    #   * 实体必须已在 ents（T:/R: 行数计入 census 与台账；缺失的行只记账不物化）。
+    # 掩码先写临时字典 _fcls_masks（singleton {cls}），C10 前 fam["FCLS"] 保持空。
+    _fcls_masks = {}
+    _fcls_recs = []
+    _fcls_meta = {}
+    if _FCLS_ON:
+        try:
+            _fcls_t0 = time.time()
+            _fcls_defects = set()
+            try:
+                for _fd_rec in (jload("anchors/minclass_naming_defects.json", []) or []):
+                    if isinstance(_fd_rec, dict):
+                        _fd_a = hx(_fd_rec.get("fn"))
+                        if _fd_a is not None:
+                            _fcls_defects.add(_fd_a)
+            except Exception as _fd_ex:
+                _fcls_defects = set()
+                print("[FCLS] defects file skipped: %r" % (_fd_ex,), flush=True)
+            _fcls_fset = set(faddrs)
+            _fcls_plain = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+            _fcls_n_cls = int(U.get("n_cls_only") or _CLASSMASK.bit_length())
+            _fcls_st = {"symbols": 0, "kind_function": 0, "address_exact_fn": 0,
+                        "with_cls": 0, "defect_excluded": 0, "non_identifier": 0,
+                        "sentinel_cls": 0, "not_in_universe": 0, "entities": 0,
+                        "no_scope": 0,
+                        "t_rows": 0, "r_rows": 0, "no_entity": 0,
+                        "no_entity_t": 0, "no_entity_r": 0}
+            for _fcls_addr, _fcls_rec in sorted(
+                    (jload("signals.json", {}) or {}).get("symbols", {}).items()):
+                _fcls_st["symbols"] += 1
+                if not isinstance(_fcls_rec, dict) \
+                        or _fcls_rec.get("kind") != "function":
+                    continue
+                _fcls_st["kind_function"] += 1
+                _fcls_fn = hx(_fcls_addr)
+                if _fcls_fn is None or _fcls_fn not in _fcls_fset:
+                    continue
+                _fcls_st["address_exact_fn"] += 1
+                _fcls_cls = _fcls_rec.get("cls")
+                if not isinstance(_fcls_cls, str) or not _fcls_cls.strip():
+                    continue
+                _fcls_st["with_cls"] += 1
+                _fcls_cls = _fcls_cls.strip()
+                if _fcls_fn in _fcls_defects:
+                    _fcls_st["defect_excluded"] += 1
+                    continue
+                # signals.cls 的占位哨兵不是类声明（"unknown" 在 class_db 里恰好有同名
+                # 16B 工具结构，若不剔除会把 767 行"无类"证据当成类 unknown 施加）。
+                if _fcls_cls.lower() in ("unknown",):
+                    _fcls_st["sentinel_cls"] += 1
+                    continue
+                if not _fcls_plain.match(_fcls_cls):
+                    _fcls_st["non_identifier"] += 1
+                    continue
+                _fcls_ci = resolve(_fcls_cls)
+                if _fcls_ci is None or not (0 <= _fcls_ci < _fcls_n_cls):
+                    _fcls_st["not_in_universe"] += 1
+                    continue
+                _fcls_m = 1 << _fcls_ci
+                _fcls_status = (_fcls_rec.get("backfill") or {}).get("status")
+                _fcls_name = _fcls_rec.get("name") or ""
+                _fcls_scope = (_fcls_name.split("::")[0]
+                               if "::" in _fcls_name else "")
+                if _fcls_scope != _fcls_cls:
+                    _fcls_st["no_scope"] += 1
+                    continue
+                _fcls_recs.append((_fcls_fn, _fcls_cls, _fcls_m, _fcls_name,
+                                   _fcls_status))
+                for _fcls_px, _fcls_e in (("T", "T:%X" % _fcls_fn),
+                                          ("R", "R:%X:ecx" % _fcls_fn)):
+                    if _fcls_e not in ents:
+                        _fcls_st["no_entity"] += 1
+                        _fcls_st["no_entity_" + _fcls_px.lower()] += 1
+                        continue
+                    _fcls_masks[_fcls_e] = _fcls_m
+                    _fcls_meta[_fcls_e] = {
+                        "fn": "0x%08X" % _fcls_fn,
+                        "name": _fcls_name,
+                        "cls": _fcls_cls,
+                        "status": _fcls_status,
+                        "prefix": _fcls_px,
+                    }
+                    _fcls_st["entities"] += 1
+                    _fcls_st["t_rows" if _fcls_px == "T" else "r_rows"] += 1
+            census["FCLS"] = len(_fcls_masks)
+            print("[FCLS] explicit Class::Method evidence: symbols=%d funcs=%d "
+                  "with_cls=%d defect_excluded=%d non_identifier=%d "
+                  "sentinel=%d not_in_universe=%d no_scope=%d -> entities=%d "
+                  "(T=%d R=%d; missing entity T=%d R=%d) %.1fs"
+                  % (_fcls_st["symbols"], _fcls_st["kind_function"],
+                     _fcls_st["with_cls"], _fcls_st["defect_excluded"],
+                     _fcls_st["non_identifier"], _fcls_st["sentinel_cls"],
+                     _fcls_st["not_in_universe"], _fcls_st["no_scope"],
+                     _fcls_st["entities"], _fcls_st["t_rows"],
+                     _fcls_st["r_rows"], _fcls_st["no_entity_t"],
+                     _fcls_st["no_entity_r"], time.time() - _fcls_t0),
+                  flush=True)
+        except Exception as _fcls_ex:
+            census["FCLS"] = census.get("FCLS", 0)
+            _fcls_masks = {}
+            _fcls_meta = {}
+            print("[FCLS] skipped: %r" % (_fcls_ex,), flush=True)
+
     # ---------------- C10：调用图子类型约束（AC-3 传播到不动点）----------------
     # 用户裁定：函数名默认是错的，不能作为类身份锚。
     # 唯一可靠的调用语义是：若 caller 把自己的 this 传给 callee 作为 this，
@@ -9021,6 +9149,213 @@ def main():
                       flush=True)
             except Exception as _e4:
                 print("[P4-T1F iso] ledger write FAILED: %r" % (_e4,), flush=True)
+        # ---- P4-FCLS：显式 Class::Method 符号类（RN/IRA 之后，只写已存在实体）----
+        # 施加序（用户任务书，硬约束）：
+        #   1) C10 写回完成、RN/IRA 掩码已写入 fam 之后，**重新**取一次簇域快照
+        #      cluster_domains(list(FAMILIES))（此时 FCLS 仍为空）——守卫看到的是
+        #      RN/IRA 收窄后的当前域，RN/IRA 的 +137 unique / +621 forced 不可能被
+        #      FCLS 夺走（FCLS 只在当前域内选择，交集非空才写）；
+        #   2) 每条 (ent, {cls})：无簇 → no_cluster；root 未知 → unknown_root；
+        #      有效掩码为空（幻影类）→ no_effect；当前域已唯一且含 cls →
+        #      already_forced；当前域 ∩ 掩码 == 0 → target_conflict（绝不写空域）；
+        #      掩码不窄化当前域 → no_change；否则 fam["FCLS"][ent] = {cls}；
+        #   3) 不做二次传播 —— 掩码只进最终簇交；FCLS 是 rank-5 最低证据族，
+        #      即使在极端路径参与冲突归责也会被第一个丢弃。
+        # 不 touch / 不物化 / 不新增实体键：所有 ent 都来自 load 时已存在的 ents。
+        if _FCLS_ON and _fcls_masks:
+            _fcls_r_added = 0
+            for (_fcls_fn2, _fcls_cls2, _fcls_m2,
+                 _fcls_name2, _fcls_status2) in _fcls_recs:
+                _fcls_e2 = "R:%X:ecx" % _fcls_fn2
+                if _fcls_e2 in ents and _fcls_e2 not in _fcls_masks:
+                    _fcls_masks[_fcls_e2] = _fcls_m2
+                    _fcls_meta[_fcls_e2] = {
+                        "fn": "0x%08X" % _fcls_fn2,
+                        "name": _fcls_name2,
+                        "cls": _fcls_cls2,
+                        "status": _fcls_status2,
+                        "prefix": "R",
+                    }
+                    _fcls_r_added += 1
+            if _fcls_r_added:
+                census["FCLS"] = len(_fcls_masks)
+                print("[P4-FCLS] R: timing resolution added %d R entities "
+                      "(records=%d)" % (_fcls_r_added, len(_fcls_masks)),
+                      flush=True)
+            _fcls_t0 = time.time()
+            _fcls_memo = _incr_cell.get("on")
+            if _fcls_memo:
+                _incr_cell["on"] = False
+            try:
+                _fcls_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _fcls_memo:
+                    _incr_cell["on"] = True
+            _fcls_dom = {}
+            _fcls_root = {}
+            _fcls_cl = {}
+            _fcls_exact = {}
+            for _clfc, _mfc, _exfc, _exsfc, _flfc in _fcls_snap:
+                _rfc = str(_clfc.get("root"))
+                _fcls_dom[_rfc] = _mfc
+                _fcls_cl[_rfc] = (_clfc, _flfc)
+                _fcls_exact[_rfc] = _exfc
+                for _efc in _clfc["ents"]:
+                    _fcls_root[_efc] = _rfc
+
+            def _fcls_pfx(_clf2):
+                """cluster_domains 的有效根前缀（与 _p4iso_pfx 逐条一致）。"""
+                _pfx_f = str(_clf2.get("root") or "")[:2]
+                if _RSPLIT_ISO:
+                    _ms_f = [str(_mf2) for _mf2 in (_clf2.get("ents") or ())
+                             if not (str(_mf2).startswith("R:")
+                                     and (str(_mf2).count(":") >= 3
+                                          or str(_mf2) in _c17_added))]
+                    if _ms_f:
+                        _pfx_f = min(_ms_f)[:2]
+                elif str(_clf2.get("root") or "") in _c17_added:
+                    _ms_f = [str(_mf2) for _mf2 in (_clf2.get("ents") or ())
+                             if not str(_mf2).startswith("R:")]
+                    if _ms_f:
+                        _pfx_f = min(_ms_f)[:2]
+                return _pfx_f
+
+            _fcls_st = {"records": len(_fcls_masks), "applied": 0,
+                        "applied_clusters": 0, "no_cluster": 0,
+                        "unknown_root": 0, "target_conflict": 0,
+                        "already_forced": 0, "no_change": 0, "no_effect": 0,
+                        "unstable_domain": 0}
+            _fcls_led = {"meta": {}, "applied": [], "skipped": []}
+            _fcls_ap_roots = set()
+            _fcls_forced_rows = 0
+            _fcls_forced_agree = 0
+
+            def _fcls_rec(_ef, _rf, _reason, _extra):
+                _md = _fcls_meta.get(_ef, {})
+                _out = {"ent": _ef, "root": _rf, "reason": _reason,
+                        "fn": _md.get("fn"), "name": _md.get("name"),
+                        "cls": _md.get("cls"), "status": _md.get("status"),
+                        "prefix": _md.get("prefix")}
+                _out.update(_extra or {})
+                return _out
+
+            for _ef in sorted(_fcls_masks):
+                _mf = _fcls_masks[_ef]
+                _rf = _fcls_root.get(_ef)
+                if _rf is None:
+                    _fcls_st["no_cluster"] += 1
+                    _fcls_led["skipped"].append(_fcls_rec(_ef, None, "no_cluster", None))
+                    continue
+                if _rf in _unknown_roots:
+                    _fcls_st["unknown_root"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "unknown_root", None))
+                    continue
+                _clf, _flf = _fcls_cl[_rf]
+                _pfx_f = _fcls_pfx(_clf)
+                _me_f = _pfm(_mf)
+                if _pfx_f in ("T:", "R:", "GS"):
+                    if _me_f & _CLASSMASK:
+                        _me_f &= _CLASSMASK
+                    else:
+                        _me_f = FULL
+                if _me_f == 0 or _me_f == FULL:
+                    # 幻影类（proven-universe 剔除后无类位）：不能写空/无效果掩码。
+                    _fcls_st["no_effect"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "no_effect", {"eff_w": 0}))
+                    continue
+                _bf = _fcls_dom.get(_rf, FULL)
+                _exf2 = _fcls_exact.get(_rf)
+                _row_ex = {"base_w": (None if _bf == FULL else _bf.bit_count()),
+                           "mask_w": _mf.bit_count(), "eff_w": _me_f.bit_count(),
+                           "exact": _exf2 is not None,
+                           "exact_class": (names[_exf2] if _exf2 is not None else None),
+                           "flags": sorted(_flf)}
+                if _exf2 is not None:
+                    _fcls_forced_rows += 1
+                    if (_me_f >> _exf2) & 1:
+                        _fcls_forced_agree += 1
+                # 空交/精确冲突簇的"域"是 fallback 并集，不是真实交集：
+                # 这种簇的守卫前提不成立，不写（FCLS 甚至可能成为第一个被丢的族）。
+                if _flf.get("empty_domain") or _flf.get("c1_gap") \
+                        or _flf.get("exact_conflict"):
+                    _fcls_st["unstable_domain"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "unstable_domain", _row_ex))
+                    continue
+                if _bf != FULL and _bf.bit_count() == 1:
+                    if (_bf & _me_f):
+                        _fcls_st["already_forced"] += 1
+                        _fcls_led["skipped"].append(
+                            _fcls_rec(_ef, _rf, "already_forced", _row_ex))
+                        continue
+                    _fcls_st["target_conflict"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "target_conflict", _row_ex))
+                    continue
+                if (_bf & _me_f) == 0:
+                    _fcls_st["target_conflict"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "target_conflict", _row_ex))
+                    continue
+                if _bf != FULL and (_bf & _me_f) == _bf:
+                    _fcls_st["no_change"] += 1
+                    _fcls_led["skipped"].append(
+                        _fcls_rec(_ef, _rf, "no_change", _row_ex))
+                    continue
+                fam["FCLS"][_ef] = _mf
+                _fcls_st["applied"] += 1
+                if _rf not in _fcls_ap_roots:
+                    _fcls_ap_roots.add(_rf)
+                    _fcls_st["applied_clusters"] += 1
+                _row_ap = dict(_row_ex)
+                _row_ap["new_w"] = 1
+                _fcls_led["applied"].append(_fcls_rec(_ef, _rf, "applied", _row_ap))
+
+            _fcls_by_status = collections.defaultdict(collections.Counter)
+            _fcls_by_prefix = collections.defaultdict(collections.Counter)
+            _fcls_by_reason = collections.Counter()
+            for _fcls_bucket in ("applied", "skipped"):
+                for _fcls_r in _fcls_led[_fcls_bucket]:
+                    _fcls_by_reason[_fcls_r["reason"]] += 1
+                    _fcls_by_status[_fcls_r.get("status")][_fcls_r["reason"]] += 1
+                    _fcls_by_prefix[_fcls_r.get("prefix")][_fcls_r["reason"]] += 1
+            _fcls_led["meta"] = dict(sorted(_fcls_st.items()))
+            _fcls_led["meta"]["by_reason"] = dict(sorted(_fcls_by_reason.items()))
+            _fcls_led["meta"]["by_status"] = {
+                str(_k): dict(sorted(_v.items()))
+                for _k, _v in sorted(_fcls_by_status.items(),
+                                     key=lambda _kv: str(_kv[0]))}
+            _fcls_led["meta"]["by_prefix"] = {
+                str(_k): dict(sorted(_v.items()))
+                for _k, _v in sorted(_fcls_by_prefix.items(),
+                                     key=lambda _kv: str(_kv[0]))}
+            _fcls_led["meta"]["exact_rows"] = _fcls_forced_rows
+            _fcls_led["meta"]["exact_agree"] = _fcls_forced_agree
+            _fcls_led["meta"]["exact_disagree"] = (_fcls_forced_rows
+                                                   - _fcls_forced_agree)
+            print("[P4-FCLS] records=%d applied=%d (clusters=%d) no_cluster=%d "
+                  "unknown_root=%d target_conflict=%d already_forced=%d "
+                  "no_change=%d no_effect=%d unstable_domain=%d "
+                  "exact_rows=%d agree=%d %.1fs"
+                  % (_fcls_st["records"], _fcls_st["applied"],
+                     _fcls_st["applied_clusters"], _fcls_st["no_cluster"],
+                     _fcls_st["unknown_root"], _fcls_st["target_conflict"],
+                     _fcls_st["already_forced"], _fcls_st["no_change"],
+                     _fcls_st["no_effect"], _fcls_st["unstable_domain"],
+                     _fcls_forced_rows, _fcls_forced_agree,
+                     time.time() - _fcls_t0), flush=True)
+            try:
+                _fcls_out = os.path.join(ROOT, ".omo/agents/csp/fcls_ledger.json")
+                os.makedirs(os.path.dirname(_fcls_out), exist_ok=True)
+                with io.open(_fcls_out, "w", encoding="utf-8") as _fh_f:
+                    json.dump(_fcls_led, _fh_f, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                print("[P4-FCLS] ledger written: .omo/agents/csp/fcls_ledger.json",
+                      flush=True)
+            except Exception as _fcls_wex:
+                print("[P4-FCLS] ledger write FAILED: %r" % (_fcls_wex,), flush=True)
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
         # 到这里全局不动点已经**只在基线边集上**收敛（_edges_fix 与 OFF 逐边一致），
         # 因此所有基线实体的 fam["C10"] 与 OFF 逐位一致。子实体不在全局图中，
@@ -9142,7 +9477,7 @@ def main():
                 [fam["C10"][_e].to_bytes(_nb10, "little") for _e in _c10k])
             # --use-rs：P4-T1F 隔离 pass 写入的 RN/IRA 掩码同步进 Rust
             #（构建时两族为空——C10 不动点内核从未见过它们；写回语义与 C10 同款）。
-            for _p4fam_rs in ("RN", "IRA"):
+            for _p4fam_rs in ("RN", "IRA", "FCLS"):
                 if _p4fam_rs not in fam:
                     continue
                 _p4k = sorted(fam[_p4fam_rs])
