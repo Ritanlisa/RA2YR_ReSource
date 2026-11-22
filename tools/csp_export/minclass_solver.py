@@ -207,6 +207,18 @@ _IDAT7_CTOR_ON = _IDAT7_ON and os.environ.get(
     "MINCLASS_IDAT7_CTOR", "0") != "0"
 _IDAT7_DIAG = _IDAT7_ON and os.environ.get("MINCLASS_IDAT7_DIAG", "0") == "1"
 _IDAT7_SUPPLY = "anchors/idat7_supply.json"
+# ---- P4-ANCESTRY: ancestry-compatible class-row fallback (default ON) ----
+#   The post-C10 evidence guards compare the current cluster domain against the
+#   row's class mask as a *singleton* {C}.  A cluster whose domain already holds
+#   a *descendant* of the declared C (dynamic class: IDA proto `C *this` over a
+#   polymorphic receiver) therefore yields `domain & {C} == 0` and the row is
+#   dropped as `target_conflict`, although it is compatible under C++ inheritance.
+#   The fallback retries such rows with `allowed_of(C)` = {C} ∪ desc(C)
+#   (+ unknown-ancestry conservatism), intersected with the current domain, so
+#   the resulting domain is a SUBSET of the current one (never wider) and the
+#   row can only narrow or agree.  Class-kind rows only; primitive/pointer rows
+#   and RN/IRA masks are untouched.  MINCLASS_ANCESTRY_FALLBACK=0 == IDAT7.
+_ANCESTRY_ON = os.environ.get("MINCLASS_ANCESTRY_FALLBACK", "1") != "0"
 _IDAT_ANCHOR_CACHE = [None]
 
 
@@ -2564,6 +2576,25 @@ def main():
                     m |= (1 << _u)
             allowed_cache[ci] = m
         return m
+
+    # P4-ANCESTRY: union of allowed_of() over every set bit of a class mask.
+    # `allowed_of(C)` is exactly "C or a descendant", i.e. the semantic of a
+    # declared `C *this`; OR-ing over a multi-bit row mask keeps that reading
+    # for every declared alternative.  Cached by input mask (rows are mostly
+    # singletons -> a few thousand entries).
+    _anc_union_cache = {}
+
+    def _class_allowed_union(mask):
+        u = _anc_union_cache.get(mask)
+        if u is None:
+            u = 0
+            _r = mask
+            while _r:
+                _b = _r & -_r
+                u |= allowed_of(_b.bit_length() - 1)
+                _r ^= _b
+            _anc_union_cache[mask] = u
+        return u
 
     def parse_proto(proto):
         if not proto:
@@ -10058,6 +10089,14 @@ def main():
                       flush=True)
             except Exception as _e4:
                 print("[P4-T1F iso] ledger write FAILED: %r" % (_e4,), flush=True)
+        # ---- P4-ANCESTRY：补救作业队列（单一收尾 pass；见 X7 之后的执行段）----
+        # 每个后 C10 证据族的类行若被单例守卫判 target_conflict，就在这里入队，
+        # 真正的掩码写入/记账统一在**最后一个证据族 X7 之后**执行 —— 这样任何
+        # 补救都不可能改变其他族（或本族后续行）的基线 apply/skip 决策，
+        # 基线（IDAT7）逐位不变的前提才成立（同族 acc 与跨族快照都不被扰动）。
+        _anc_jobs = []
+        _anc_ledger_writes = []
+
         # ---- P4-FCLS：显式 Class::Method 符号类（RN/IRA 之后，只写已存在实体）----
         # 施加序（用户任务书，硬约束）：
         #   1) C10 写回完成、RN/IRA 掩码已写入 fam 之后，**重新**取一次簇域快照
@@ -10161,6 +10200,7 @@ def main():
                         _fcls_rec(_ef, _rf, "unknown_root", None))
                     continue
                 _clf, _flf = _fcls_cl[_rf]
+                _fcls_ents = list(_clf.get("ents") or [_ef])
                 _pfx_f = _fcls_pfx(_clf)
                 _me_f = _pfm(_mf)
                 if _pfx_f in ("T:", "R:", "GS"):
@@ -10193,17 +10233,41 @@ def main():
                     _fcls_led["skipped"].append(
                         _fcls_rec(_ef, _rf, "unstable_domain", _row_ex))
                     continue
+                # P4-ANCESTRY：FCLS 行全部是类行。单例快路径原样保留；仅当它
+                # 判 target_conflict 时，用 allowed_of(cls)（含后代 + 未知血统保守）
+                # 补救 —— 延迟到本族行循环之后，基线决策逐位不变。
+                _anq_f = None
+                if _ANCESTRY_ON:
+                    _anq_f = _class_allowed_union(_me_f)
+                    if _anq_f == _me_f:
+                        _anq_f = None
                 if _bf != FULL and _bf.bit_count() == 1:
                     if (_bf & _me_f):
                         _fcls_st["already_forced"] += 1
                         _fcls_led["skipped"].append(
                             _fcls_rec(_ef, _rf, "already_forced", _row_ex))
                         continue
+                    if _anq_f is not None:
+                        _anc_jobs.append(
+                            ("FCLS", _ef, _rf, _anq_f,
+                             _fcls_rec(_ef, _rf, "target_conflict",
+                                       dict(_row_ex)),
+                             _fcls_st, _fcls_led, _fcls_dom, _fcls_ents,
+                             _fcls_ap_roots))
+                        continue
                     _fcls_st["target_conflict"] += 1
                     _fcls_led["skipped"].append(
                         _fcls_rec(_ef, _rf, "target_conflict", _row_ex))
                     continue
                 if (_bf & _me_f) == 0:
+                    if _anq_f is not None:
+                        _anc_jobs.append(
+                            ("FCLS", _ef, _rf, _anq_f,
+                             _fcls_rec(_ef, _rf, "target_conflict",
+                                       dict(_row_ex)),
+                             _fcls_st, _fcls_led, _fcls_dom, _fcls_ents,
+                             _fcls_ap_roots))
+                        continue
                     _fcls_st["target_conflict"] += 1
                     _fcls_led["skipped"].append(
                         _fcls_rec(_ef, _rf, "target_conflict", _row_ex))
@@ -10255,16 +10319,11 @@ def main():
                      _fcls_st["no_effect"], _fcls_st["unstable_domain"],
                      _fcls_forced_rows, _fcls_forced_agree,
                      time.time() - _fcls_t0), flush=True)
-            try:
-                _fcls_out = os.path.join(ROOT, ".omo/agents/csp/fcls_ledger.json")
-                os.makedirs(os.path.dirname(_fcls_out), exist_ok=True)
-                with io.open(_fcls_out, "w", encoding="utf-8") as _fh_f:
-                    json.dump(_fcls_led, _fh_f, ensure_ascii=False, indent=0,
-                              sort_keys=True)
-                print("[P4-FCLS] ledger written: .omo/agents/csp/fcls_ledger.json",
-                      flush=True)
-            except Exception as _fcls_wex:
-                print("[P4-FCLS] ledger write FAILED: %r" % (_fcls_wex,), flush=True)
+            _anc_ledger_writes.append(
+                (os.path.join(ROOT, ".omo/agents/csp/fcls_ledger.json"),
+                 _fcls_led,
+                 "[P4-FCLS] ledger written: .omo/agents/csp/fcls_ledger.json",
+                 "FCLS"))
         # ---- P4-IDAT2/IDAT3：post-C10 原子扩展（pointer-family 词汇 + 真实类）----
         # 在 C10 之前加位会改变 FULL 与中和器算术（实测 -570 条边，fixpoint 漂移）。
         # 新原子在不动点**之后**追加：C10 输入逐位保持基线；之后的 IDAT 施加/最终
@@ -10693,6 +10752,7 @@ def main():
                         _idat_rec_row(_e2, _r2, "unknown_root", None))
                     continue
                 _cl2 = _idat_cl[_r2]
+                _idat_ents = list(_cl2.get("ents") or [_e2])
                 _pfx2 = _idat_pfx(_cl2)
                 _me2 = _pfm(_m2)
                 if _pfx2 in ("T:", "R:", "GS"):
@@ -10718,11 +10778,27 @@ def main():
                             "mask_w": _m2.bit_count(),
                             "eff_w": _me2.bit_count(),
                             "kind": _md2.get("kind"), "type": _md2.get("type")}
+                # P4-ANCESTRY：只对类行、且仅当单例快路径判 target_conflict 时
+                # 用 allowed_of(cls)（{cls} ∪ desc ∪ 未知血统保守）补救。
+                # 补救**延迟**到本族行循环之后（基线 apply/skip 决策逐位不变），
+                # 且结果 = 当前域 ∩ 本族累积 ∩ allowed_of ⊆ 基线域，只会收窄。
+                _anq2 = None
+                if _ANCESTRY_ON and _md2.get("kind") == "class":
+                    _anq2 = _class_allowed_union(_me2)
+                    if _anq2 == _me2:
+                        _anq2 = None
                 if _bd2 != FULL and _bd2.bit_count() == 1:
                     if _bd2 & _me2:
                         _idat_ap["already_forced"] += 1
                         _idat_led["skipped"].append(
                             _idat_rec_row(_e2, _r2, "already_forced", _row_ex2))
+                    elif _anq2 is not None:
+                        _anc_jobs.append(
+                            ("IDAT", _e2, _r2, _anq2,
+                             _idat_rec_row(_e2, _r2, "target_conflict",
+                                           dict(_row_ex2)),
+                             _idat_ap, _idat_led, _idat_dom, _idat_ents,
+                             _idat_ap_roots))
                     else:
                         _idat_ap["target_conflict"] += 1
                         _idat_led["skipped"].append(
@@ -10731,6 +10807,17 @@ def main():
                 _acc2 = _idat_acc.get(_r2, FULL)
                 _comb2 = _bd2 & _me2 & _acc2
                 if _comb2 == 0:
+                    if _anq2 is not None:
+                        _anc_jobs.append(
+                            ("IDAT", _e2, _r2, _anq2,
+                             _idat_rec_row(_e2, _r2,
+                                           "intra_family_conflict"
+                                           if _acc2 != FULL
+                                           else "target_conflict",
+                                           dict(_row_ex2)),
+                             _idat_ap, _idat_led, _idat_dom, _idat_ents,
+                             _idat_ap_roots))
+                        continue
                     _idat_ap["target_conflict"] += 1
                     _why2 = ("intra_family_conflict" if _acc2 != FULL
                              else "target_conflict")
@@ -10780,16 +10867,11 @@ def main():
                      _idat_ap["applied_class"], _idat_ap["applied_primitive"]
                      + _idat_ap["applied_pointer"],
                      time.time() - _idat_t1), flush=True)
-            try:
-                _idat_out = os.path.join(ROOT, ".omo/agents/csp/idatype_ledger.json")
-                os.makedirs(os.path.dirname(_idat_out), exist_ok=True)
-                with io.open(_idat_out, "w", encoding="utf-8") as _fh_i:
-                    json.dump(_idat_led, _fh_i, ensure_ascii=False, indent=0,
-                              sort_keys=True)
-                print("[P4-IDAT] ledger written: .omo/agents/csp/idatype_ledger.json",
-                      flush=True)
-            except Exception as _idat_wex:
-                print("[P4-IDAT] ledger write FAILED: %r" % (_idat_wex,), flush=True)
+            _anc_ledger_writes.append(
+                (os.path.join(ROOT, ".omo/agents/csp/idatype_ledger.json"),
+                 _idat_led,
+                 "[P4-IDAT] ledger written: .omo/agents/csp/idatype_ledger.json",
+                 "IDAT"))
         # ---- P4-IDAT5 (B): XREF 掩码施加（rank 25；IDAT 之后，同款当前域守卫）----
         # XREF 是外部证据（YRpp/Ares/VC6），rank 25 高于 IDAT 的 20；施加序放在
         # IDAT 之后是为了让 IDAT 的既有强制结果先进入当前域（agree→already_forced，
@@ -10851,6 +10933,7 @@ def main():
                             if not str(_mp5).startswith("R:")]
                     if _ms5:
                         _pfx5 = min(_ms5)[:2]
+                _x5_ents = list(_cl5m.get("ents") or [_e5m])
                 _me5 = _pfm(_m5m)
                 if _pfx5 in ("T:", "R:", "GS"):
                     if _me5 & _CLASSMASK:
@@ -10873,11 +10956,23 @@ def main():
                                    else _bd5.bit_count())
                 _row5["mask_w"] = _m5m.bit_count()
                 _row5["eff_w"] = _me5.bit_count()
+                # P4-ANCESTRY：类行 target_conflict 时用 allowed_of(cls) 延迟补救
+                # （延迟 = 基线 apply/skip 决策不变；补救只追加更窄掩码）。
+                _anq5 = None
+                if _ANCESTRY_ON and _md5.get("kind") == "class":
+                    _anq5 = _class_allowed_union(_me5)
+                    if _anq5 == _me5:
+                        _anq5 = None
                 if _bd5 != FULL and _bd5.bit_count() == 1:
                     if _bd5 & _me5:
                         _x5_ap["already_forced"] += 1
                         _x5_led["skipped"].append(
                             dict(_row5, reason="already_forced"))
+                    elif _anq5 is not None:
+                        _anc_jobs.append(
+                            ("XREF", _e5m, _r5m, _anq5,
+                             dict(_row5, reason="target_conflict"),
+                             _x5_ap, _x5_led, _x5_dom, _x5_ents, _x5_roots))
                     else:
                         _x5_ap["target_conflict"] += 1
                         _x5_led["skipped"].append(
@@ -10886,6 +10981,14 @@ def main():
                 _acc5 = _x5_acc.get(_r5m, FULL)
                 _comb5 = _bd5 & _me5 & _acc5
                 if _comb5 == 0:
+                    if _anq5 is not None:
+                        _anc_jobs.append(
+                            ("XREF", _e5m, _r5m, _anq5,
+                             dict(_row5, reason=("intra_family_conflict"
+                                                 if _acc5 != FULL
+                                                 else "target_conflict")),
+                             _x5_ap, _x5_led, _x5_dom, _x5_ents, _x5_roots))
+                        continue
                     _x5_ap["target_conflict"] += 1
                     _x5_led["skipped"].append(
                         dict(_row5, reason=("intra_family_conflict"
@@ -10922,17 +11025,11 @@ def main():
                      _x5_ap["no_change"], _x5_ap["no_effect"],
                      _x5_ap["unstable_domain"],
                      time.time() - _x5_t0), flush=True)
-            try:
-                _x5_out = os.path.join(ROOT, ".omo/agents/csp/idat5_ledger.json")
-                os.makedirs(os.path.dirname(_x5_out), exist_ok=True)
-                with io.open(_x5_out, "w", encoding="utf-8") as _fh_x5:
-                    json.dump(_x5_led, _fh_x5, ensure_ascii=False, indent=0,
-                              sort_keys=True)
-                print("[P4-IDAT5] ledger written: .omo/agents/csp/idat5_ledger.json",
-                      flush=True)
-            except Exception as _x5_wex:
-                print("[P4-IDAT5] ledger write FAILED: %r" % (_x5_wex,),
-                      flush=True)
+            _anc_ledger_writes.append(
+                (os.path.join(ROOT, ".omo/agents/csp/idat5_ledger.json"),
+                 _x5_led,
+                 "[P4-IDAT5] ledger written: .omo/agents/csp/idat5_ledger.json",
+                 "XREF"))
         # ---- P4-IDAT6 (X6): external layout/member-type/vtable rows ----
         # All rows are rank 25 (same tier as XREF), applied AFTER XREF so the
         # external class evidence is already in the current domain.  Static
@@ -11122,6 +11219,7 @@ def main():
                     _x6_ap["no_cluster"] += 1
                     _x6_led["skipped"].append(dict(_row6, reason="no_cluster"))
                     continue
+                _x6_ents = list(_cl6m.get("ents") or [_e6m])
                 _pfx6 = _x6_pfx(_cl6m)
                 _me6 = _pfm(_m6m)
                 if _pfx6 in ("T:", "R:", "GS"):
@@ -11145,11 +11243,23 @@ def main():
                                    else _bd6.bit_count())
                 _row6["mask_w"] = _m6m.bit_count()
                 _row6["eff_w"] = _me6.bit_count()
+                # P4-ANCESTRY：类行 target_conflict 时用 allowed_of(cls) 延迟补救
+                # （延迟 = 基线 apply/skip 决策不变；补救只追加更窄掩码）。
+                _anq6 = None
+                if _ANCESTRY_ON and _md6.get("kind") == "class":
+                    _anq6 = _class_allowed_union(_me6)
+                    if _anq6 == _me6:
+                        _anq6 = None
                 if _bd6 != FULL and _bd6.bit_count() == 1:
                     if _bd6 & _me6:
                         _x6_ap["already_forced"] += 1
                         _x6_led["skipped"].append(
                             dict(_row6, reason="already_forced"))
+                    elif _anq6 is not None:
+                        _anc_jobs.append(
+                            ("X6", _e6m, _r6m, _anq6,
+                             dict(_row6, reason="target_conflict"),
+                             _x6_ap, _x6_led, _x6_dom, _x6_ents, _x6_roots))
                     else:
                         _x6_ap["target_conflict"] += 1
                         _x6_led["skipped"].append(
@@ -11158,6 +11268,14 @@ def main():
                 _acc6 = _x6_acc.get(_r6m, FULL)
                 _comb6 = _bd6 & _me6 & _acc6
                 if _comb6 == 0:
+                    if _anq6 is not None:
+                        _anc_jobs.append(
+                            ("X6", _e6m, _r6m, _anq6,
+                             dict(_row6, reason=("intra_family_conflict"
+                                                 if _acc6 != FULL
+                                                 else "target_conflict")),
+                             _x6_ap, _x6_led, _x6_dom, _x6_ents, _x6_roots))
+                        continue
                     _x6_ap["target_conflict"] += 1
                     _x6_led["skipped"].append(
                         dict(_row6, reason=("intra_family_conflict"
@@ -11199,17 +11317,11 @@ def main():
                      _x6_ap["no_change"], _x6_ap["no_effect"],
                      _x6_ap["unstable_domain"],
                      time.time() - _x6_t0), flush=True)
-            try:
-                _x6_out = os.path.join(ROOT, ".omo/agents/csp/idat6_ledger.json")
-                os.makedirs(os.path.dirname(_x6_out), exist_ok=True)
-                with io.open(_x6_out, "w", encoding="utf-8") as _fh_x6:
-                    json.dump(_x6_led, _fh_x6, ensure_ascii=False, indent=0,
-                              sort_keys=True)
-                print("[P4-IDAT6] ledger written: .omo/agents/csp/idat6_ledger.json",
-                      flush=True)
-            except Exception as _x6_wex:
-                print("[P4-IDAT6] ledger write FAILED: %r" % (_x6_wex,),
-                      flush=True)
+            _anc_ledger_writes.append(
+                (os.path.join(ROOT, ".omo/agents/csp/idat6_ledger.json"),
+                 _x6_led,
+                 "[P4-IDAT6] ledger written: .omo/agents/csp/idat6_ledger.json",
+                 "X6"))
         # ---- P4-IDAT7 (X7): external-source re-examination ----
         # Copies the X6 discipline verbatim: rank 25, applied after X6 with a
         # fresh cluster_domains snapshot and the identical current-domain guard
@@ -11403,6 +11515,7 @@ def main():
                     _x7_ap["no_cluster"] += 1
                     _x7_led["skipped"].append(dict(_row7, reason="no_cluster"))
                     continue
+                _x7_ents = list(_cl7m.get("ents") or [_e7m])
                 _pfx7 = _x7_pfx(_cl7m)
                 _me7 = _pfm(_m7m)
                 if _pfx7 in ("T:", "R:", "GS"):
@@ -11426,11 +11539,23 @@ def main():
                                    else _bd7.bit_count())
                 _row7["mask_w"] = _m7m.bit_count()
                 _row7["eff_w"] = _me7.bit_count()
+                # P4-ANCESTRY：类行 target_conflict 时用 allowed_of(cls) 延迟补救
+                # （延迟 = 基线 apply/skip 决策不变；补救只追加更窄掩码）。
+                _anq7 = None
+                if _ANCESTRY_ON and _md7.get("kind") == "class":
+                    _anq7 = _class_allowed_union(_me7)
+                    if _anq7 == _me7:
+                        _anq7 = None
                 if _bd7 != FULL and _bd7.bit_count() == 1:
                     if _bd7 & _me7:
                         _x7_ap["already_forced"] += 1
                         _x7_led["skipped"].append(
                             dict(_row7, reason="already_forced"))
+                    elif _anq7 is not None:
+                        _anc_jobs.append(
+                            ("X7", _e7m, _r7m, _anq7,
+                             dict(_row7, reason="target_conflict"),
+                             _x7_ap, _x7_led, _x7_dom, _x7_ents, _x7_roots))
                     else:
                         _x7_ap["target_conflict"] += 1
                         _x7_led["skipped"].append(
@@ -11439,6 +11564,14 @@ def main():
                 _acc7 = _x7_acc.get(_r7m, FULL)
                 _comb7 = _bd7 & _me7 & _acc7
                 if _comb7 == 0:
+                    if _anq7 is not None:
+                        _anc_jobs.append(
+                            ("X7", _e7m, _r7m, _anq7,
+                             dict(_row7, reason=("intra_family_conflict"
+                                                 if _acc7 != FULL
+                                                 else "target_conflict")),
+                             _x7_ap, _x7_led, _x7_dom, _x7_ents, _x7_roots))
+                        continue
                     _x7_ap["target_conflict"] += 1
                     _x7_led["skipped"].append(
                         dict(_row7, reason=("intra_family_conflict"
@@ -11558,15 +11691,91 @@ def main():
                 except Exception as _x7dex:
                     print("[P4-IDAT7] attribution FAILED: %r" % (_x7dex,),
                           flush=True)
-        try:
-            _x7_out = os.path.join(ROOT, ".omo/agents/csp/idat7_ledger.json")
-            os.makedirs(os.path.dirname(_x7_out), exist_ok=True)
-            with io.open(_x7_out, "w", encoding="utf-8") as _fh_x7:
-                json.dump(_x7_led, _fh_x7, ensure_ascii=False, indent=0,
-                          sort_keys=True)
-        except Exception as _x7_wex:
-            print("[P4-IDAT7] ledger write FAILED: %r" % (_x7_wex,),
-                  flush=True)
+        _anc_ledger_writes.append(
+            (os.path.join(ROOT, ".omo/agents/csp/idat7_ledger.json"),
+             _x7_led, None, "X7"))
+        # ---- P4-ANCESTRY：单一收尾补救 pass（在最后一个证据族 X7 之后）----
+        # 每个后 C10 族的类行若被单例守卫判 target_conflict，就在此以
+        #   allowed_of(cls) = {cls} ∪ desc(cls)（+ 未知血统保守）
+        # 重试：new = 该族守卫快照域 ∩ 本族当前累积掩码 ∩ allowed_of。
+        #   new == 0      → 真冲突（保留基线 reason，不写）
+        #   new == 快照域 → ancestry_compatible（证据一致，不写）
+        #   其它          → 写更窄掩码，记 ancestry_narrowed(new_w)
+        # 补救在所有基线 apply/skip 决策之后执行，且 new ⊆ 快照域 ⇒ 任何簇都
+        # 不会变宽、任何基线唯一解都不会丢失（zero-loss 构造性保证）。
+        if _anc_jobs:
+            _anc_t0 = time.time()
+            _anc_fam_ord = {_fa: _fi for _fi, _fa in enumerate(FAMILIES)}
+            _anc_jobs.sort(key=lambda _jj: (_anc_fam_ord.get(_jj[0], 99), _jj[1]))
+            _anc_stat = collections.defaultdict(collections.Counter)
+            for (_jf, _je, _jr, _janc, _jrow, _jap, _jled,
+                 _jdom, _jents, _jroots) in _anc_jobs:
+                _jap.setdefault("ancestry_compatible", 0)
+                _jap.setdefault("ancestry_narrowed", 0)
+                _jbd = _jdom.get(_jr, FULL)
+                _jacc = FULL
+                for _jce in _jents:
+                    _jcm = fam[_jf].get(_jce)
+                    if _jcm is not None:
+                        _jacc &= _jcm
+                _jnew = _jbd & _jacc & _janc
+                _anc_stat[_jf]["rows"] += 1
+                if _jnew == 0:
+                    _jap["target_conflict"] += 1
+                    _anc_stat[_jf]["target_conflict"] += 1
+                    _jled["skipped"].append(_jrow)
+                    continue
+                if _jnew == _jbd:
+                    _jap["ancestry_compatible"] += 1
+                    _anc_stat[_jf]["ancestry_compatible"] += 1
+                    _jrow["reason"] = "ancestry_compatible"
+                    _jled["skipped"].append(_jrow)
+                    continue
+                fam[_jf][_je] = fam[_jf].get(_je, FULL) & _janc
+                _jap["ancestry_narrowed"] += 1
+                _anc_stat[_jf]["ancestry_narrowed"] += 1
+                if _jr not in _jroots:
+                    _jroots.add(_jr)
+                    _jap["applied_clusters"] += 1
+                _jrow["reason"] = "ancestry_narrowed"
+                _jrow["new_w"] = _jnew.bit_count()
+                _jled["applied"].append(_jrow)
+            for _jf in FAMILIES:
+                if _anc_stat.get(_jf):
+                    print("[P4-ANCESTRY] %-4s rows=%d ancestry_compatible=%d "
+                          "ancestry_narrowed=%d target_conflict=%d"
+                          % (_jf, _anc_stat[_jf]["rows"],
+                             _anc_stat[_jf]["ancestry_compatible"],
+                             _anc_stat[_jf]["ancestry_narrowed"],
+                             _anc_stat[_jf]["target_conflict"]), flush=True)
+            print("[P4-ANCESTRY] total rescues=%d (compatible=%d narrowed=%d "
+                  "real_conflict=%d) %.1fs"
+                  % (len(_anc_jobs),
+                     sum(_s["ancestry_compatible"]
+                         for _s in _anc_stat.values()),
+                     sum(_s["ancestry_narrowed"] for _s in _anc_stat.values()),
+                     sum(_s["target_conflict"] for _s in _anc_stat.values()),
+                     time.time() - _anc_t0), flush=True)
+        # 台账统一落盘（补救行已并入各自 applied / skipped 桶）
+        for (_lp, _ll, _lmsg, _lfam) in _anc_ledger_writes:
+            try:
+                _lst = _anc_stat.get(_lfam) if _anc_jobs else None
+                _lm = _ll.get("meta") or {}
+                if _ANCESTRY_ON:
+                    _lm["ancestry_compatible"] = (_lst or {}).get(
+                        "ancestry_compatible", 0)
+                    _lm["ancestry_narrowed"] = (_lst or {}).get(
+                        "ancestry_narrowed", 0)
+                _ll["meta"] = dict(sorted(_lm.items()))
+                os.makedirs(os.path.dirname(_lp), exist_ok=True)
+                with io.open(_lp, "w", encoding="utf-8") as _lh:
+                    json.dump(_ll, _lh, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                if _lmsg:
+                    print(_lmsg, flush=True)
+            except Exception as _lwex:
+                print("[P4-ANCESTRY] %s ledger write FAILED: %r"
+                      % (_lfam, _lwex), flush=True)
         # P4-IDAT3 (C): zero-loss layout consumption.  Injecting the supplied
         # layouts BEFORE C18/C21 lets their candidate tables see the new member
         # sets; measured on IDAT2 that widened 7 baseline uniques (the
@@ -12533,6 +12742,41 @@ def main():
                          "domain_size": _pop2, "candidates_top": _top2}
         _t2_basis[_basis2] += 1
 
+    # ---- P4-ANCESTRY (B): debug-only family dump（回答「除了 size，什么在约束 =2 域」）----
+    # 纯输出：对每个受限簇，逐族取 fam[F][ent] 在簇内实体上的交集（与 --explain
+    # 同一视图），只记录非 FULL 的族及其掩码宽度。不改任何产物、不改求解。
+    # 门控 = MINCLASS_T2_DUMP=<path>（默认不写）。
+    _t2_dump_path = os.environ.get("MINCLASS_T2_DUMP")
+    if _t2_dump_path:
+        _t2_fam_dump = {}
+        for (_cld, _md) in constrain:
+            _rd = _cld.get("root") if isinstance(_cld, dict) else str(_cld)
+            _rd_row = _t2_rows.get(_rd) or {}
+            _fams_d = {}
+            for _fd in FAMILIES:
+                _fm_d = None
+                for _ed in (_cld.get("ents") or ()):
+                    _mx_d = fam[_fd].get(_ed)
+                    if _mx_d is not None:
+                        _fm_d = _mx_d if _fm_d is None else (_fm_d & _mx_d)
+                if _fm_d is not None and _fm_d != FULL:
+                    _fams_d[_fd] = _fm_d.bit_count()
+            _t2_fam_dump[_rd] = {
+                "domain_size": _rd_row.get("domain_size",
+                                           _md.bit_count() if _md else 0),
+                "basis": _rd_row.get("basis"),
+                "tier": _rd_row.get("tier"),
+                "fams": dict(sorted(_fams_d.items())),
+            }
+        _t2_dump_dir = os.path.dirname(_t2_dump_path)
+        if _t2_dump_dir:
+            os.makedirs(_t2_dump_dir, exist_ok=True)
+        with io.open(_t2_dump_path, "w", encoding="utf-8") as _fh_d:
+            json.dump(_t2_fam_dump, _fh_d, ensure_ascii=False, indent=0,
+                      sort_keys=True)
+        print("[t2-dump] family dump -> %s (%d rows)"
+              % (_t2_dump_path, len(_t2_fam_dump)), flush=True)
+
     _t2_path = os.path.join(ROOT, "anchors/minclass_t2.json")
     with io.open(_t2_path, "w", encoding="utf-8") as _fh2:
         json.dump(_t2_rows, _fh2, ensure_ascii=False, indent=0, sort_keys=True)
@@ -12972,10 +13216,12 @@ def main():
         for _r, _cn, _d, _s4 in _excluded:
             print("   EXCLUDED %-22s YRpp=%-24s domain=%d src=%s" % (_r, _cn, _d, _s4))
     if getattr(args, "explain", None):
-        _want = str(args.explain).upper()
+        # 诊断模式：支持逗号分隔多根（仅打印，不改变求解/产物）。
+        _wants = {_x.strip().upper() for _x in str(args.explain).split(",")
+                  if _x.strip()}
         for _cl, _m in res.get("constrained") or ():
             _root = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
-            if _root.upper() != _want:
+            if _root.upper() not in _wants:
                 continue
             _cands = [names[i] for i in range(len(names)) if (_m >> i) & 1]
             print("[explain] %s" % _root)
