@@ -169,6 +169,23 @@ _IDAT3_SUPPLY = "anchors/idat3_supply.json"
 # new; C18/C21 candidate tables were frozen before the merge).  `0` restores
 # the IDAT2 side-table-only behavior for experiments.
 _IDAT3_LAYOUT = os.environ.get("MINCLASS_IDAT3_LAYOUT", "post_c10") if _IDAT3_ON else "0"
+# ---- P4-IDAT5 external-evidence gate (default ON; MINCLASS_IDAT5=0 = HEAD 7107e1373) ----
+#   anchors/idat5_supply.json carries rank-25 external evidence (below every
+#   binary family, above name evidence):
+#     * YRpp/*.h JMP_THIS(addr) instance-method bindings -> T:<fn> class mask;
+#     * Ares 0.A DEFINE_HOOK entry sites: GET(Class*,v,ECX) -> T:<fn>;
+#       GET_STACK(Class*,v,0x4+4k) at entry -> P:<fn>:k;
+#     * VC6 CRT typed-this rows (facet / codecvt_base / Iostream_init) -> T:<fn>
+#       with the VC6 header layouts supplied as class atoms.
+#   No entity/fam write happens before the C10 writeback; class atoms are
+#   appended at the same post-C10 point as IDAT3 (classmask/n/_proven extended).
+#   Rows are applied after the IDAT family with the identical current-domain
+#   guard (no_cluster/unknown_root/target_conflict/already_forced/no_change/
+#   no_effect/unstable_domain; intra-family accumulation never writes an empty
+#   domain).  Free entities (present in `ents`, absent from every cluster) get
+#   one singleton cluster each, mirroring the IDAT3 P/EAX/S supply.
+_IDAT5_ON = _IDAT3_ON and os.environ.get("MINCLASS_IDAT5", "1") != "0"
+_IDAT5_SUPPLY = "anchors/idat5_supply.json"
 _IDAT_ANCHOR_CACHE = [None]
 
 
@@ -208,6 +225,8 @@ if _FCLS_ON:
     FAMILIES.append("FCLS")
 if _IDAT_ON:
     FAMILIES.append("IDAT")
+if _IDAT5_ON:
+    FAMILIES.append("XREF")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -290,6 +309,8 @@ FAMILY_DESC = {
     "FCLS": "explicit Class::Method symbol class (signals.json symbols[fn].cls; name evidence, NOT binary): singleton class mask {cls} on EXISTING T:<fn> / R:<fn>:ecx entities only -- no touch/materialization, no new entity keys; applied only POST-C10 and AFTER RN/IRA, guarded by the current cluster domain (skip no_cluster / unknown_root / target_conflict / already_forced / no_change; phantom-only masks no_effect); plain-identifier cls restricted to the solver class universe; the 'unknown' sentinel excluded (placeholder, not a class declaration); addresses in anchors/minclass_naming_defects.json excluded; rank 5 (below every binary family, first to drop on conflict); gate MINCLASS_FCLS (default ON); report .omo/agents/csp/p4_fcls_report.md",
     # ---- P4-IDAT：类型化 Hex-Rays 伪代码（full_export，类型证据）----
     "IDAT": "typed Hex-Rays pseudocode (decompile-results/full_export/src/*.cpp, typed snapshot): this class from the __thiscall/__fastcall this parameter; parameter types -> P:<fn>:k; this->field name resolved through class_layouts/member_types/include member tables -> M:<fn>:this:0xOFF; call-result locals (`vN = callee(...); /*0xSITE*/` with the site verified as a call instruction) -> EAX:<fn>:SITE; unambiguous stack locals ([esp+X] matching the function's stack_+0xX token, or [ebp-N]->existing S:<fn>:var_N) -> S:<fn>:slot. Class-typed rows = singleton class mask; primitive/pointer rows = exact type-vocabulary mask (NEVER a class mask); non-class rows on receiver-axis clusters are dropped by the existing receiver discipline. Applied only POST-C10 and AFTER RN/IRA/FCLS with the current-domain guard (no_cluster / unknown_root / target_conflict / already_forced / no_change / no_effect / unstable_domain), plus intra-family per-root accumulation so two rows on one cluster can never empty it; no second propagation. T: supply materializes T:<fn> for typed-this functions without one (the only materialization of this family). Class supply fills missing layouts/sizes from full_export/include + class_db members + template bases (additive; existing atoms untouched). rank 20 (below binary families, above names); gate MINCLASS_IDATYPE (default ON); report .omo/agents/csp/p4_idatype_report.md",
+    # ---- P4-IDAT5 外部证据（rank 25，二进制族之下、名字证据之上）----
+    "XREF": "external-evidence class attribution (anchors/idat5_supply.json; rank 25): YRpp/*.h JMP_THIS(addr) instance-method bindings -> T:<fn> (a thiscall member of the innermost YRpp class; `static` declarations excluded); Ares 0.A DEFINE_HOOK entry sites -> GET(Class*,v,ECX) on __thiscall/__fastcall T entities and GET_STACK(Class*,v,0x4+4k) at function entry -> P:<fn>:k (this/ECX excluded); VC6 CRT typed-this rows (facet 54 / codecvt_base 9 / Iostream_init 10; _NonReentrantLock is VS2010+, excluded) -> T:<fn> with the VC6 header layouts supplied as class atoms. Source conflicts (two sources name different classes) are dropped at extraction. No entity/fam write before the C10 writeback; class atoms are appended post-C10 exactly like IDAT3 (classmask/n/_proven extended; C10 byte-identical); rows use the same current-domain guard as IDAT, applied after the IDAT family, and free entities get one singleton cluster each (IDAT3 P/EAX/S supply precedent).",
 }
 
 
@@ -319,6 +340,9 @@ _FAM_RANK = {
     # P4-IDAT: typed-snapshot evidence (IDA prototype/locals), rank 20 -- above
     # name evidence, below every binary instruction-semantic family.
     "IDAT": 20,
+    # P4-IDAT5: external hook/header evidence -- above typed-snapshot/name
+    # evidence, below every binary instruction-semantic family.
+    "XREF": 25,
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
@@ -2255,6 +2279,26 @@ def main():
     _idat3_alias = dict(_idat3_sup.get("aliases") or {}) if _IDAT3_ON else {}
     _idat3_cls = dict(_idat3_sup.get("classes") or {}) if _IDAT3_ON else {}
     _idat3_rows = list(_idat3_sup.get("this_rows") or []) if _IDAT3_ON else []
+    # ---- P4-IDAT5 外部证据供给（read-only anchor；rank 25）----
+    _idat5_sup = {"classes": {}, "t_rows": [], "p_rows": [], "meta": {}}
+    if _IDAT5_ON:
+        try:
+            _idat5_sup = jload(_IDAT5_SUPPLY, {}) or {}
+            print("[IDAT5] supply: classes=%d t_rows=%d p_rows=%d (anchor=%s)"
+                  % (len(_idat5_sup.get("classes") or {}),
+                     len(_idat5_sup.get("t_rows") or []),
+                     len(_idat5_sup.get("p_rows") or []), _IDAT5_SUPPLY),
+                  flush=True)
+        except Exception as _idat5_ld_ex:
+            _idat5_sup = {"classes": {}, "t_rows": [], "p_rows": [], "meta": {}}
+            print("[IDAT5] supply load skipped: %r" % (_idat5_ld_ex,), flush=True)
+    _idat5_cls = dict(_idat5_sup.get("classes") or {}) if _IDAT5_ON else {}
+    _idat5_trows = list(_idat5_sup.get("t_rows") or []) if _IDAT5_ON else []
+    _idat5_prows = list(_idat5_sup.get("p_rows") or []) if _IDAT5_ON else []
+    if _idat5_cls:
+        # same post-C10 atom append path as IDAT3 (classmask/n/_proven extended)
+        for _n5, _r5 in _idat5_cls.items():
+            _idat3_cls.setdefault(_n5, _r5)
     _idat3_alias_n = 0
     if _IDAT3_ON and _idat3_alias:
         # The IDAT3 aliases only extend the POST-C10 resolve table (never the global
@@ -10159,10 +10203,12 @@ def main():
             intervals[_ci] = _merged
             return True
 
+        _idat5_cls_added = []
         if _IDAT3_ON and _idat3_cls:
             for _c3n, _c3r in sorted(_idat3_cls.items()):
                 _mem3 = _c3r.get("members") or {}
                 _sz3 = _c3r.get("size")
+                _is5 = _c3n in _idat5_cls
                 _ci3 = idx.get(_c3n)
                 if _ci3 is not None:
                     # existing value-vocabulary atom -> promote to a class atom
@@ -10171,6 +10217,16 @@ def main():
                         _idat3_promoted.append(_c3n)
                     if _idat3_set_layout(_ci3, _mem3, _sz3):
                         _idat3_layout_changed += 1
+                    elif _is5 and isinstance(_sz3, int) and _sz3 > 0:
+                        # VC6 size-only layout (Iostream_init: no data members)
+                        U["size"][_ci3] = _sz3
+                        _ee5 = U["eff_size"][_ci3]
+                        U["eff_size"][_ci3] = (_sz3 if not isinstance(_ee5, int)
+                                               else max(_sz3, _ee5))
+                        U["has_layout"][_ci3] = True
+                        _idat3_layout_changed += 1
+                    if _is5:
+                        _idat5_cls_added.append(_c3n)
                     continue
                 _ni3 = len(names)
                 idx[_c3n] = _ni3
@@ -10189,7 +10245,14 @@ def main():
                 _CLASSMASK |= (1 << _ni3)
                 if _idat3_set_layout(_ni3, _mem3, _sz3):
                     _idat3_layout_changed += 1
+                elif _is5 and isinstance(_sz3, int) and _sz3 > 0:
+                    U["size"][_ni3] = _sz3
+                    U["eff_size"][_ni3] = _sz3
+                    U["has_layout"][_ni3] = True
+                    _idat3_layout_changed += 1
                 _idat3_cls_added.append(_c3n)
+                if _is5:
+                    _idat5_cls_added.append(_c3n)
         if _IDAT2_ON and _idat2_tokens:
             for _t2 in _idat2_tokens:
                 if _t2 in idx:
@@ -10223,6 +10286,10 @@ def main():
                   "classmask_bits=%d n=%d"
                   % (len(_idat3_cls_added), len(_idat3_promoted),
                      _idat3_layout_changed, _CLASSMASK.bit_count(), n), flush=True)
+            if _IDAT5_ON and _idat5_cls:
+                print("[IDAT5] class atoms supplied: %d (%s)"
+                      % (len(_idat5_cls_added),
+                         ", ".join(sorted(_idat5_cls_added))), flush=True)
             # C1 masks/FULL were cached at the pre-extension width; drop the
             # caches so the final solve recomputes them in the extended
             # universe (Rust kernel already does; keeps Rust<->Python parity).
@@ -10361,6 +10428,61 @@ def main():
                 _idat_st["idat3_t_masks"] = _sup_stat["t_masks"]
                 _idat_st["idat3_t_already"] = _sup_stat["t_already"]
                 _idat_st["idat3_t_skip"] = _sup_stat["t_skip"]
+        # ---- P4-IDAT5 (A): external-evidence T/P rows (XREF, rank 25) ----
+        # YRpp JMP_THIS / Ares entry GET rows / CRT typed-this.  Target entities
+        # may be absent from `ents` (materialize) or present but in no cluster
+        # (append one singleton cluster) -- same isolation as the IDAT3 P/EAX/S
+        # supply: C10 key set / edges / neutralizer stay baseline-identical.
+        _xref_masks = {}
+        _xref_meta = {}
+        _xref_st = collections.Counter()
+        if _IDAT5_ON and (_idat5_trows or _idat5_prows):
+            _x5_covered = set()
+            for _cl5 in clusters:
+                for _cm5 in (_cl5.get("ents") or ()):
+                    _x5_covered.add(str(_cm5))
+            for _r5 in _idat5_trows + _idat5_prows:
+                _e5 = str(_r5.get("ent") or "")
+                _c5 = str(_r5.get("cls") or "")
+                if not _e5 or not _c5:
+                    _xref_st["bad_row"] += 1
+                    continue
+                _ci5 = idx.get(_c5)
+                if _ci5 is None:
+                    _ci5 = _idat_resolve(_c5)
+                if _ci5 is None or not (0 <= _ci5 < n):
+                    _xref_st["skip_class"] += 1
+                    continue
+                # YRpp/Ares/VC6 头文件证据同时证明该类的存在性：把已存在但
+                # 因"无布局/无二进制证明"被 _pfm 剔除的幻影类补进 _proven
+                # （用户任务书 IDAT5：`_proven` 位扩展）。只对证据行引用到的
+                # 类生效，不是全量放宽。
+                if (_proven_cell[0] != FULL
+                        and not ((_proven_cell[0] >> _ci5) & 1)):
+                    _proven_cell[0] |= (1 << _ci5)
+                    _xref_st["proven_added"] += 1
+                if _e5 not in ents:
+                    touch(_e5, _e5)
+                    _xref_st["materialized"] += 1
+                if _e5 not in _x5_covered:
+                    clusters.append({"root": _e5, "ents": [_e5],
+                                     "obs": set(), "exact": {}})
+                    _x5_covered.add(_e5)
+                    _xref_st["new_clusters"] += 1
+                if _e5 in _xref_masks:
+                    _xref_st["dup"] += 1
+                    continue
+                _xref_masks[_e5] = 1 << _ci5
+                _xref_meta[_e5] = {"kind": "class", "type": _c5,
+                                   "via": _r5.get("src"),
+                                   "fn": _r5.get("fn"),
+                                   "detail": _r5.get("detail")}
+            print("[IDAT5] rows post-C10: rows=%d masks=%d materialized=%d "
+                  "new_clusters=%d proven_added=%d skipped=%d"
+                  % (len(_idat5_trows) + len(_idat5_prows), len(_xref_masks),
+                     _xref_st["materialized"], _xref_st["new_clusters"],
+                     _xref_st["proven_added"], _xref_st["skip_class"]),
+                  flush=True)
         # ---- P4-IDAT：类型证据施加（FCLS 之后；当前域兼容守卫 + 同族累积）----
         # 施加序（硬约束）：C10 写回 + RN/IRA + FCLS 之后，重新取簇域快照；
         # 每条 (ent, mask)：
@@ -10533,6 +10655,149 @@ def main():
                       flush=True)
             except Exception as _idat_wex:
                 print("[P4-IDAT] ledger write FAILED: %r" % (_idat_wex,), flush=True)
+        # ---- P4-IDAT5 (B): XREF 掩码施加（rank 25；IDAT 之后，同款当前域守卫）----
+        # XREF 是外部证据（YRpp/Ares/VC6），rank 25 高于 IDAT 的 20；施加序放在
+        # IDAT 之后是为了让 IDAT 的既有强制结果先进入当前域（agree→already_forced，
+        # disagree→target_conflict，绝不改写基线唯簇）。free 实体已在上面获得
+        # singleton 簇；这里只做与 IDAT 完全相同的域交与记账。
+        if _IDAT5_ON and _xref_masks:
+            _x5_t0 = time.time()
+            _x5_memo = _incr_cell.get("on")
+            if _x5_memo:
+                _incr_cell["on"] = False
+            try:
+                _x5_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _x5_memo:
+                    _incr_cell["on"] = True
+            _x5_dom = {}
+            _x5_root = {}
+            _x5_cl = {}
+            _x5_fl = {}
+            for _cl5, _m5, _ex5, _exs5, _fl5 in _x5_snap:
+                _r5s = str(_cl5.get("root"))
+                _x5_dom[_r5s] = _m5
+                _x5_cl[_r5s] = _cl5
+                _x5_fl[_r5s] = _fl5
+                for _e5s in _cl5["ents"]:
+                    _x5_root[_e5s] = _r5s
+            _x5_ap = collections.Counter()
+            _x5_led = {"meta": {}, "applied": [], "skipped": []}
+            _x5_acc = {}
+            _x5_roots = set()
+            _x5_new = set()
+            for _e5m in sorted(_xref_masks):
+                _m5m = _xref_masks[_e5m]
+                _r5m = _x5_root.get(_e5m)
+                _md5 = _xref_meta.get(_e5m, {})
+                _row5 = {"ent": _e5m, "root": _r5m,
+                         "kind": _md5.get("kind"), "type": _md5.get("type"),
+                         "via": _md5.get("via"), "fn": _md5.get("fn"),
+                         "detail": _md5.get("detail")}
+                if _r5m is None:
+                    _x5_ap["no_cluster"] += 1
+                    _x5_led["skipped"].append(dict(_row5, reason="no_cluster"))
+                    continue
+                if _r5m in _unknown_roots:
+                    _x5_ap["unknown_root"] += 1
+                    _x5_led["skipped"].append(dict(_row5, reason="unknown_root"))
+                    continue
+                _cl5m = _x5_cl[_r5m]
+                _pfx5 = str(_cl5m.get("root") or "")[:2]
+                if _RSPLIT_ISO:
+                    _ms5 = [str(_mp5) for _mp5 in (_cl5m.get("ents") or ())
+                            if not (str(_mp5).startswith("R:")
+                                    and (str(_mp5).count(":") >= 3
+                                         or str(_mp5) in _c17_added))]
+                    if _ms5:
+                        _pfx5 = min(_ms5)[:2]
+                elif str(_cl5m.get("root") or "") in _c17_added:
+                    _ms5 = [str(_mp5) for _mp5 in (_cl5m.get("ents") or ())
+                            if not str(_mp5).startswith("R:")]
+                    if _ms5:
+                        _pfx5 = min(_ms5)[:2]
+                _me5 = _pfm(_m5m)
+                if _pfx5 in ("T:", "R:", "GS"):
+                    if _me5 & _CLASSMASK:
+                        _me5 &= _CLASSMASK
+                    else:
+                        _me5 = FULL
+                if _me5 == 0 or _me5 == FULL:
+                    _x5_ap["no_effect"] += 1
+                    _x5_led["skipped"].append(dict(_row5, reason="no_effect"))
+                    continue
+                _fl5m = _x5_fl.get(_r5m) or {}
+                if (_fl5m.get("empty_domain") or _fl5m.get("c1_gap")
+                        or _fl5m.get("exact_conflict")):
+                    _x5_ap["unstable_domain"] += 1
+                    _x5_led["skipped"].append(dict(_row5,
+                                                   reason="unstable_domain"))
+                    continue
+                _bd5 = _x5_dom.get(_r5m, FULL)
+                _row5["base_w"] = (None if _bd5 == FULL
+                                   else _bd5.bit_count())
+                _row5["mask_w"] = _m5m.bit_count()
+                _row5["eff_w"] = _me5.bit_count()
+                if _bd5 != FULL and _bd5.bit_count() == 1:
+                    if _bd5 & _me5:
+                        _x5_ap["already_forced"] += 1
+                        _x5_led["skipped"].append(
+                            dict(_row5, reason="already_forced"))
+                    else:
+                        _x5_ap["target_conflict"] += 1
+                        _x5_led["skipped"].append(
+                            dict(_row5, reason="target_conflict"))
+                    continue
+                _acc5 = _x5_acc.get(_r5m, FULL)
+                _comb5 = _bd5 & _me5 & _acc5
+                if _comb5 == 0:
+                    _x5_ap["target_conflict"] += 1
+                    _x5_led["skipped"].append(
+                        dict(_row5, reason=("intra_family_conflict"
+                                            if _acc5 != FULL
+                                            else "target_conflict")))
+                    continue
+                if _bd5 != FULL and _comb5 == _bd5:
+                    _x5_ap["no_change"] += 1
+                    _x5_led["skipped"].append(
+                        dict(_row5, reason="no_change"))
+                    continue
+                fam["XREF"][_e5m] = _m5m
+                _x5_acc[_r5m] = _comb5
+                _x5_ap["applied"] += 1
+                if _bd5 == FULL:
+                    _x5_new.add(_r5m)
+                _x5_roots.add(_r5m)
+                _x5_led["applied"].append(
+                    dict(_row5, reason="applied",
+                         new_w=(_comb5.bit_count()
+                                if _comb5 != FULL else None)))
+            _x5_ap["applied_clusters"] = len(_x5_roots)
+            _x5_ap["new_constrained_clusters"] = len(_x5_new)
+            _x5_led["meta"] = dict(sorted(_x5_ap.items()))
+            print("[P4-IDAT5] records=%d applied=%d (clusters=%d, new=%d) "
+                  "no_cluster=%d unknown_root=%d target_conflict=%d "
+                  "already_forced=%d no_change=%d no_effect=%d "
+                  "unstable_domain=%d %.1fs"
+                  % (len(_xref_masks), _x5_ap["applied"],
+                     _x5_ap["applied_clusters"],
+                     _x5_ap["new_constrained_clusters"],
+                     _x5_ap["no_cluster"], _x5_ap["unknown_root"],
+                     _x5_ap["target_conflict"], _x5_ap["already_forced"],
+                     _x5_ap["no_change"], _x5_ap["no_effect"],
+                     _x5_ap["unstable_domain"],
+                     time.time() - _x5_t0), flush=True)
+            try:
+                _x5_out = os.path.join(ROOT, ".omo/agents/csp/idat5_ledger.json")
+                os.makedirs(os.path.dirname(_x5_out), exist_ok=True)
+                with io.open(_x5_out, "w", encoding="utf-8") as _fh_x5:
+                    json.dump(_x5_led, _fh_x5, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+                print("[P4-IDAT5] ledger written: .omo/agents/csp/idat5_ledger.json",
+                      flush=True)
+            except Exception as _x5_wex:
+                print("[P4-IDAT5] ledger write FAILED: %r" % (_x5_wex,),
+                      flush=True)
         # P4-IDAT3 (C): zero-loss layout consumption.  Injecting the supplied
         # layouts BEFORE C18/C21 lets their candidate tables see the new member
         # sets; measured on IDAT2 that widened 7 baseline uniques (the
