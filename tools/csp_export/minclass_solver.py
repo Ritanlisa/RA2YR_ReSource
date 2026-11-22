@@ -193,6 +193,20 @@ _IDAT5_SUPPLY = "anchors/idat5_supply.json"
 #   (T: rows); VC6 ATL layouts.  rank 25, post-C10 only; gate-off == IDAT5.
 _IDAT6_ON = _IDAT5_ON and os.environ.get("MINCLASS_IDAT6", "1") != "0"
 _IDAT6_SUPPLY = "anchors/idat6_supply.json"
+# ---- P4-IDAT7 external-source re-examination gate ----
+#   anchors/idat7_supply.json: (A) the 16 IDAT6-rejected YRpp layouts re-validated
+#   against binary evidence (ctor member-init writes / M-offset coverage / strong
+#   declared extents) -- 6 accepted, 10 kept rejected with measured reasons;
+#   (B) additive member types from the IDA til class headers + class_layouts +
+#   member_types (IDAT6 offsets keep precedence, so X6 behaviour is unchanged);
+#   (C) ctor-identity T rows for the 403 no-layout classes (ctor_types installer
+#   -> class, function address verified, unique per address) -- sub-gate
+#   MINCLASS_IDAT7_CTOR (default ON).  rank 25, post-C10 only; gate-off == IDAT6.
+_IDAT7_ON = _IDAT6_ON and os.environ.get("MINCLASS_IDAT7", "1") != "0"
+_IDAT7_CTOR_ON = _IDAT7_ON and os.environ.get(
+    "MINCLASS_IDAT7_CTOR", "0") != "0"
+_IDAT7_DIAG = _IDAT7_ON and os.environ.get("MINCLASS_IDAT7_DIAG", "0") == "1"
+_IDAT7_SUPPLY = "anchors/idat7_supply.json"
 _IDAT_ANCHOR_CACHE = [None]
 
 
@@ -236,6 +250,8 @@ if _IDAT5_ON:
     FAMILIES.append("XREF")
 if _IDAT6_ON:
     FAMILIES.append("X6")
+if _IDAT7_ON:
+    FAMILIES.append("X7")
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -322,6 +338,8 @@ FAMILY_DESC = {
     "XREF": "external-evidence class attribution (anchors/idat5_supply.json; rank 25): YRpp/*.h JMP_THIS(addr) instance-method bindings -> T:<fn> (a thiscall member of the innermost YRpp class; `static` declarations excluded); Ares 0.A DEFINE_HOOK entry sites -> GET(Class*,v,ECX) on __thiscall/__fastcall T entities and GET_STACK(Class*,v,0x4+4k) at function entry -> P:<fn>:k (this/ECX excluded); VC6 CRT typed-this rows (facet 54 / codecvt_base 9 / Iostream_init 10; _NonReentrantLock is VS2010+, excluded) -> T:<fn> with the VC6 header layouts supplied as class atoms. Source conflicts (two sources name different classes) are dropped at extraction. No entity/fam write before the C10 writeback; class atoms are appended post-C10 exactly like IDAT3 (classmask/n/_proven extended; C10 byte-identical); rows use the same current-domain guard as IDAT, applied after the IDAT family, and free entities get one singleton cluster each (IDAT3 P/EAX/S supply precedent).",
     # ---- P4-IDAT6 外部源布局/成员类型/vtable 供给（rank 25）----
     "X6": "P4-IDAT6 external-source supply (anchors/idat6_supply.json; rank 25): (A) YRpp declaration-order class layouts for classes that still have no binary layout (all member types resolved; in-source offset anchors validated; base members flattened; post-C10 atom/layout merge only -> C10 byte-identical); (B) member types: Ares entry-hook pThis->Member accesses with the YRpp declaration type + binary member offset -> M:<fn>:this:0xOFF rows, plus MEM6 (external function->class map x YRpp member type table over existing M entities); (C) vtable: YRpp virtual declaration order / binary vtable_slot_authority for YRpp classes, DirectX IDirectDrawSurface7 38-slot DSurface vtable, BINK BinkMovieHandle slots -> T:<fn> class rows where the slot address is unique and the slot proto/name owner agrees; (D) VC6 ATL CComObjectRootBase / CComObjectRootEx layouts.  All rows use the same current-domain guard as IDAT/XREF; free entities get one singleton cluster each; no pre-C10 write.  Report .omo/agents/csp/p4_idat6_report.md",
+    # ---- P4-IDAT7 外部源再审查（rank 25）----
+    "X7": "P4-IDAT7 external-source re-examination (anchors/idat7_supply.json; rank 25): (A) the 16 IDAT6-rejected YRpp layouts re-validated against binary evidence (ctor member-init writes / M:<fn>:this:<off> offset coverage / strong declared extent) -- accepted layouts are merged post-C10 only when every member type resolves, the base layout is not array-polluted and the extent is covered; (B) additive member types from the IDA til class headers + tools/class_layouts.json + anchors/member_types.json for classes in the external function->class map, restricted to offsets absent from the IDAT6 table (IDAT6 keeps precedence -> X6 unchanged), offsets inside the class's own size, and semantically distinguishing types only (class atom / float / double / wchar_t -- bare int-family, pointers and arrays are codegen-indistinguishable and dropped, BM precedent); (C) ctor-identity T rows for the 403 no-layout classes (ctor_types installer -> class, function start verified, unique per address; sub-gate MINCLASS_IDAT7_CTOR, default OFF: measured 0 new uniques -- 228/260 already_forced, 30 unstable_domain, 2 target_conflict). All rows use the identical current-domain guard as IDAT/XREF/X6; free entities get one singleton cluster each; no pre-C10 write.  Report .omo/agents/csp/p4_idat7_report.md",
 }
 
 
@@ -356,6 +374,8 @@ _FAM_RANK = {
     "XREF": 25,
     # P4-IDAT6: same external-evidence tier (below every binary family, above names)
     "X6": 25,
+    # P4-IDAT7: same external-evidence tier as X6 (re-examination round)
+    "X7": 25,
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
@@ -2335,6 +2355,31 @@ def main():
     _idat6_mrows = list(_idat6_sup.get("m_rows") or []) if _IDAT6_ON else []
     _idat6_mtypes = dict(_idat6_sup.get("member_types") or {}) \
         if _IDAT6_ON else {}
+    # ---- P4-IDAT7 外部源再审查（read-only anchor；rank 25）----
+    _idat7_sup = {"classes": {}, "t_rows": [], "m_rows": [],
+                  "member_types": {}, "meta": {}}
+    if _IDAT7_ON:
+        try:
+            _idat7_sup = jload(_IDAT7_SUPPLY, {}) or {}
+            print("[IDAT7] supply: classes=%d t_rows=%d m_rows=%d "
+                  "member_type_classes=%d member_type_rows=%d (anchor=%s)"
+                  % (len(_idat7_sup.get("classes") or {}),
+                     len(_idat7_sup.get("t_rows") or []),
+                     len(_idat7_sup.get("m_rows") or []),
+                     len(_idat7_sup.get("member_types") or {}),
+                     sum(len(v) for v in
+                         (_idat7_sup.get("member_types") or {}).values()),
+                     _IDAT7_SUPPLY), flush=True)
+        except Exception as _idat7_ld_ex:
+            _idat7_sup = {"classes": {}, "t_rows": [], "m_rows": [],
+                          "member_types": {}, "meta": {}}
+            print("[IDAT7] supply load skipped: %r" % (_idat7_ld_ex,),
+                  flush=True)
+    _idat7_cls = dict(_idat7_sup.get("classes") or {}) if _IDAT7_ON else {}
+    _idat7_trows = list(_idat7_sup.get("t_rows") or []) if _IDAT7_ON else []
+    _idat7_mrows = list(_idat7_sup.get("m_rows") or []) if _IDAT7_ON else []
+    _idat7_mtypes = dict(_idat7_sup.get("member_types") or {}) \
+        if _IDAT7_ON else {}
     if _idat6_cls:
         # additive merge: IDAT5 atoms have empty members/size, IDAT3 atoms are
         # untouched; only missing fields are filled.
@@ -2349,6 +2394,20 @@ def main():
                     and isinstance(_r6.get("size"), int):
                 _cur6["size"] = _r6["size"]
             _cur6["_idat6"] = True
+    if _idat7_cls:
+        # additive merge into the same post-C10 class dict (IDAT3/IDAT5/IDAT6
+        # fields keep precedence; only missing members/size are filled)
+        for _n7, _r7 in sorted(_idat7_cls.items()):
+            _cur7 = _idat3_cls.get(_n7)
+            if _cur7 is None:
+                _idat3_cls[_n7] = dict(_r7)
+                continue
+            if not _cur7.get("members") and _r7.get("members"):
+                _cur7["members"] = _r7["members"]
+            if not isinstance(_cur7.get("size"), int) \
+                    and isinstance(_r7.get("size"), int):
+                _cur7["size"] = _r7["size"]
+            _cur7["_idat7"] = True
     _idat3_alias_n = 0
     if _IDAT3_ON and _idat3_alias:
         # The IDAT3 aliases only extend the POST-C10 resolve table (never the global
@@ -10255,12 +10314,14 @@ def main():
 
         _idat5_cls_added = []
         _idat6_cls_added = []
+        _idat7_cls_added = []
         if _IDAT3_ON and _idat3_cls:
             for _c3n, _c3r in sorted(_idat3_cls.items()):
                 _mem3 = _c3r.get("members") or {}
                 _sz3 = _c3r.get("size")
                 _is5 = _c3n in _idat5_cls
                 _is6 = _c3n in _idat6_cls
+                _is7 = _c3n in _idat7_cls
                 _ci3 = idx.get(_c3n)
                 if _ci3 is not None:
                     # existing value-vocabulary atom -> promote to a class atom
@@ -10269,7 +10330,8 @@ def main():
                         _idat3_promoted.append(_c3n)
                     if _idat3_set_layout(_ci3, _mem3, _sz3):
                         _idat3_layout_changed += 1
-                    elif (_is5 or _is6) and isinstance(_sz3, int) and _sz3 > 0:
+                    elif (_is5 or _is6 or _is7) and isinstance(_sz3, int) \
+                            and _sz3 > 0:
                         # VC6 / YRpp size-only layout (no data members)
                         U["size"][_ci3] = _sz3
                         _ee5 = U["eff_size"][_ci3]
@@ -10281,6 +10343,8 @@ def main():
                         _idat5_cls_added.append(_c3n)
                     if _is6:
                         _idat6_cls_added.append(_c3n)
+                    if _is7:
+                        _idat7_cls_added.append(_c3n)
                     continue
                 _ni3 = len(names)
                 idx[_c3n] = _ni3
@@ -10299,7 +10363,8 @@ def main():
                 _CLASSMASK |= (1 << _ni3)
                 if _idat3_set_layout(_ni3, _mem3, _sz3):
                     _idat3_layout_changed += 1
-                elif (_is5 or _is6) and isinstance(_sz3, int) and _sz3 > 0:
+                elif (_is5 or _is6 or _is7) and isinstance(_sz3, int) \
+                        and _sz3 > 0:
                     U["size"][_ni3] = _sz3
                     U["eff_size"][_ni3] = _sz3
                     U["has_layout"][_ni3] = True
@@ -10309,6 +10374,8 @@ def main():
                     _idat5_cls_added.append(_c3n)
                 if _is6:
                     _idat6_cls_added.append(_c3n)
+                if _is7:
+                    _idat7_cls_added.append(_c3n)
         if _IDAT2_ON and _idat2_tokens:
             for _t2 in _idat2_tokens:
                 if _t2 in idx:
@@ -10346,6 +10413,10 @@ def main():
                 print("[IDAT5] class atoms supplied: %d (%s)"
                       % (len(_idat5_cls_added),
                          ", ".join(sorted(_idat5_cls_added))), flush=True)
+            if _IDAT7_ON and _idat7_cls:
+                print("[IDAT7] class atoms/layouts supplied: %d (%s)"
+                      % (len(_idat7_cls_added),
+                         ", ".join(sorted(_idat7_cls_added))), flush=True)
             if _IDAT6_ON and _idat6_cls:
                 print("[IDAT6] class atoms/layouts supplied: new=%d merged=%d "
                       "(%s)" % (len([c for c in _idat6_cls_added
@@ -10869,6 +10940,7 @@ def main():
         # one singleton cluster each (IDAT3 P/EAX/S precedent); MEM6 is a
         # dynamic member-type channel over EXISTING M entities, using the
         # external function->class map and the YRpp member type table.
+        _x6_led = {"meta": {}, "applied": [], "skipped": []}
         if _IDAT6_ON and (_idat6_trows or _idat6_mrows or _idat6_mtypes):
             _x6_t0 = time.time()
             _x6_memo = _incr_cell.get("on")
@@ -11138,6 +11210,363 @@ def main():
             except Exception as _x6_wex:
                 print("[P4-IDAT6] ledger write FAILED: %r" % (_x6_wex,),
                       flush=True)
+        # ---- P4-IDAT7 (X7): external-source re-examination ----
+        # Copies the X6 discipline verbatim: rank 25, applied after X6 with a
+        # fresh cluster_domains snapshot and the identical current-domain guard
+        # (no_cluster / unknown_root / target_conflict / already_forced /
+        # no_change / no_effect / unstable_domain + intra-family accumulation).
+        # Static T/M rows materialise free entities as one singleton cluster
+        # each; MEM7 is a dynamic additive member-type channel over EXISTING
+        # M:<fn>:this:<off> entities (IDAT6 offsets keep precedence).
+        _x7_t0 = time.time()
+        _x7_led = {"meta": {}, "applied": [], "skipped": []}
+        if _IDAT7_ON and (_idat7_trows or _idat7_mrows or _idat7_mtypes):
+            _x7_memo = _incr_cell.get("on")
+            if _x7_memo:
+                _incr_cell["on"] = False
+            try:
+                _x7_snap = cluster_domains(list(FAMILIES))
+            finally:
+                if _x7_memo:
+                    _incr_cell["on"] = True
+            _x7_dom = {}
+            _x7_root = {}
+            _x7_cl = {}
+            _x7_fl = {}
+            for _cl7, _m7, _ex7, _exs7, _fl7 in _x7_snap:
+                _r7s = str(_cl7.get("root"))
+                _x7_dom[_r7s] = _m7
+                _x7_cl[_r7s] = _cl7
+                _x7_fl[_r7s] = _fl7
+                for _e7s in _cl7["ents"]:
+                    _x7_root[_e7s] = _r7s
+            _x7_covered = set(_x7_root)
+            _x7_st = collections.Counter()
+            _x7_masks = {}
+            _x7_meta = {}
+
+            def _x7_cls_mask(_nm):
+                _ci = idx.get(_nm)
+                if _ci is None:
+                    _ci = _idat_resolve(_nm)
+                if _ci is None or not (0 <= _ci < n):
+                    return None
+                return 1 << _ci
+
+            def _x7_supply(_ent, _mask, _meta):
+                if _ent not in ents:
+                    touch(_ent, _ent)
+                    _x7_st["materialized"] += 1
+                if _ent not in _x7_covered:
+                    clusters.append({"root": _ent, "ents": [_ent],
+                                     "obs": set(), "exact": {}})
+                    _x7_covered.add(_ent)
+                    _x7_root[_ent] = _ent
+                    _x7_dom[_ent] = FULL
+                    _x7_fl[_ent] = {}
+                    _x7_st["new_clusters"] += 1
+                if _ent in _x7_masks:
+                    _x7_st["dup"] += 1
+                    return
+                _x7_masks[_ent] = _mask
+                _x7_meta[_ent] = _meta
+
+            for _r7 in _idat7_trows:
+                _ent = str(_r7.get("ent") or "")
+                _cn = str(_r7.get("cls") or "")
+                if not _ent or not _cn:
+                    _x7_st["bad_row"] += 1
+                    continue
+                if _r7.get("src") == "ctor-identity" and not _IDAT7_CTOR_ON:
+                    _x7_st["ctor_gate_off"] += 1
+                    continue
+                _mk = _x7_cls_mask(_cn)
+                if _mk is None:
+                    _x7_st["skip_class"] += 1
+                    continue
+                if (_proven_cell[0] != FULL
+                        and not ((_proven_cell[0] >> _mk.bit_length() - 1) & 1)):
+                    _proven_cell[0] |= _mk
+                    _x7_st["proven_added"] += 1
+                _x7_supply(_ent, _mk, {
+                    "kind": "class", "type": _cn,
+                    "via": _r7.get("src"), "fn": _r7.get("fn"),
+                    "detail": _r7.get("detail")})
+            for _r7 in _idat7_mrows:
+                _ent = str(_r7.get("ent") or "")
+                _kind = _r7.get("kind") or "type"
+                _ty = str(_r7.get("type") or "")
+                if not _ent or not _ty:
+                    _x7_st["bad_row"] += 1
+                    continue
+                if _kind == "class":
+                    _mk = _x7_cls_mask(_ty)
+                else:
+                    _bi = idx.get(_ty)
+                    _mk = (1 << _bi) if _bi is not None else None
+                if _mk is None:
+                    _x7_st["skip_type"] += 1
+                    continue
+                _x7_supply(_ent, _mk, {
+                    "kind": _kind, "type": _ty,
+                    "via": _r7.get("src"), "fn": _r7.get("fn"),
+                    "detail": _r7.get("detail")})
+            # ---- MEM7: external fn->class map x IDAT7 member types ----
+            # The IDAT7 member table only carries offsets that the IDAT6 table
+            # does not, so a MEM7 row can never overwrite an IDAT6 row.
+            _x7_ext = {}
+            for _r7 in _idat7_trows + _idat6_trows + (_idat5_sup.get("t_rows") or []):
+                _e7 = str(_r7.get("ent") or "")
+                _c7 = str(_r7.get("cls") or "")
+                if not _e7.startswith("T:") or not _c7:
+                    continue
+                _fn7 = _e7.split(":")[1].upper()
+                _x7_ext.setdefault(_fn7, set()).add(_c7)
+            _x7_ext = {k: next(iter(v)) for k, v in _x7_ext.items()
+                       if len(v) == 1}
+            _mem7 = 0
+            for _e7 in sorted(_x7_root):
+                if not _e7.startswith("M:") or _e7 in _x7_masks:
+                    continue
+                _p7 = _e7.split(":")
+                if len(_p7) != 4 or _p7[2] != "this":
+                    continue
+                _fn7 = _p7[1].upper()
+                _c7 = _x7_ext.get(_fn7)
+                if not _c7:
+                    continue
+                _mt7 = _idat7_mtypes.get(_c7) or {}
+                try:
+                    _off7 = int(_p7[3], 16)
+                except ValueError:
+                    continue
+                _rec7 = _mt7.get(str(_off7))
+                if not _rec7:
+                    continue
+                if re.search(r'^(__pad|ptr_|__union|__base)', str(_rec7.get("name") or "")):
+                    continue
+                if _rec7.get("kind") == "class":
+                    _mk7 = _x7_cls_mask(_rec7.get("atom"))
+                else:
+                    _bi7 = idx.get(_rec7.get("atom"))
+                    _mk7 = (1 << _bi7) if _bi7 is not None else None
+                if _mk7 is None:
+                    continue
+                _x7_masks[_e7] = _mk7
+                _x7_meta[_e7] = {"kind": _rec7.get("kind"),
+                                 "type": _rec7.get("atom"),
+                                 "via": "mem7", "fn": "0x" + _p7[1],
+                                 "detail": "%s|%s" % (_c7, _rec7.get("name"))}
+                _mem7 += 1
+            _x7_ap = collections.Counter()
+            _x7_acc = {}
+            _x7_roots = set()
+            _x7_new = set()
+
+            def _x7_pfx(_cl_p):
+                _pfx_p = str(_cl_p.get("root") or "")[:2]
+                if _RSPLIT_ISO:
+                    _ms_p = [str(_mp) for _mp in (_cl_p.get("ents") or ())
+                             if not (str(_mp).startswith("R:")
+                                     and (str(_mp).count(":") >= 3
+                                          or str(_mp) in _c17_added))]
+                    if _ms_p:
+                        _pfx_p = min(_ms_p)[:2]
+                elif str(_cl_p.get("root") or "") in _c17_added:
+                    _ms_p = [str(_mp) for _mp in (_cl_p.get("ents") or ())
+                             if not str(_mp).startswith("R:")]
+                    if _ms_p:
+                        _pfx_p = min(_ms_p)[:2]
+                return _pfx_p
+
+            for _e7m in sorted(_x7_masks):
+                _m7m = _x7_masks[_e7m]
+                _r7m = _x7_root.get(_e7m)
+                _md7 = _x7_meta.get(_e7m, {})
+                _row7 = {"ent": _e7m, "root": _r7m,
+                         "kind": _md7.get("kind"), "type": _md7.get("type"),
+                         "via": _md7.get("via"), "fn": _md7.get("fn"),
+                         "detail": _md7.get("detail")}
+                if _r7m is None:
+                    _x7_ap["no_cluster"] += 1
+                    _x7_led["skipped"].append(dict(_row7, reason="no_cluster"))
+                    continue
+                if _r7m in _unknown_roots:
+                    _x7_ap["unknown_root"] += 1
+                    _x7_led["skipped"].append(dict(_row7, reason="unknown_root"))
+                    continue
+                _cl7m = _x7_cl.get(_r7m)
+                if _cl7m is None:
+                    _cl7m = next((_c for _c in clusters
+                                  if str(_c.get("root")) == _r7m), None)
+                if _cl7m is None:
+                    _x7_ap["no_cluster"] += 1
+                    _x7_led["skipped"].append(dict(_row7, reason="no_cluster"))
+                    continue
+                _pfx7 = _x7_pfx(_cl7m)
+                _me7 = _pfm(_m7m)
+                if _pfx7 in ("T:", "R:", "GS"):
+                    if _me7 & _CLASSMASK:
+                        _me7 &= _CLASSMASK
+                    else:
+                        _me7 = FULL
+                if _me7 == 0 or _me7 == FULL:
+                    _x7_ap["no_effect"] += 1
+                    _x7_led["skipped"].append(dict(_row7, reason="no_effect"))
+                    continue
+                _fl7m = _x7_fl.get(_r7m) or {}
+                if (_fl7m.get("empty_domain") or _fl7m.get("c1_gap")
+                        or _fl7m.get("exact_conflict")):
+                    _x7_ap["unstable_domain"] += 1
+                    _x7_led["skipped"].append(
+                        dict(_row7, reason="unstable_domain"))
+                    continue
+                _bd7 = _x7_dom.get(_r7m, FULL)
+                _row7["base_w"] = (None if _bd7 == FULL
+                                   else _bd7.bit_count())
+                _row7["mask_w"] = _m7m.bit_count()
+                _row7["eff_w"] = _me7.bit_count()
+                if _bd7 != FULL and _bd7.bit_count() == 1:
+                    if _bd7 & _me7:
+                        _x7_ap["already_forced"] += 1
+                        _x7_led["skipped"].append(
+                            dict(_row7, reason="already_forced"))
+                    else:
+                        _x7_ap["target_conflict"] += 1
+                        _x7_led["skipped"].append(
+                            dict(_row7, reason="target_conflict"))
+                    continue
+                _acc7 = _x7_acc.get(_r7m, FULL)
+                _comb7 = _bd7 & _me7 & _acc7
+                if _comb7 == 0:
+                    _x7_ap["target_conflict"] += 1
+                    _x7_led["skipped"].append(
+                        dict(_row7, reason=("intra_family_conflict"
+                                            if _acc7 != FULL
+                                            else "target_conflict")))
+                    continue
+                if _bd7 != FULL and _comb7 == _bd7:
+                    _x7_ap["no_change"] += 1
+                    _x7_led["skipped"].append(
+                        dict(_row7, reason="no_change"))
+                    continue
+                fam["X7"][_e7m] = _m7m
+                _x7_acc[_r7m] = _comb7
+                _x7_ap["applied"] += 1
+                if _bd7 == FULL:
+                    _x7_new.add(_r7m)
+                _x7_roots.add(_r7m)
+                _x7_led["applied"].append(
+                    dict(_row7, reason="applied", new_w=_comb7.bit_count()))
+            _x7_ap["applied_clusters"] = len(_x7_roots)
+            _x7_ap["new_constrained_clusters"] = len(_x7_new)
+            _x7_ap["mem7_rows"] = _mem7
+            _x7_ap["supply_materialized"] = _x7_st["materialized"]
+            _x7_ap["supply_new_clusters"] = _x7_st["new_clusters"]
+            _x7_ap["ctor_gate_off_rows"] = _x7_st["ctor_gate_off"]
+            _x7_led["meta"] = dict(sorted(_x7_ap.items()))
+            print("[P4-IDAT7] records=%d applied=%d (clusters=%d, new=%d) "
+                  "mem7=%d supply(new_ent=%d,new_clusters=%d) "
+                  "no_cluster=%d unknown_root=%d target_conflict=%d "
+                  "already_forced=%d no_change=%d no_effect=%d "
+                  "unstable_domain=%d %.1fs"
+                  % (len(_x7_masks), _x7_ap["applied"],
+                     _x7_ap["applied_clusters"],
+                     _x7_ap["new_constrained_clusters"], _mem7,
+                     _x7_st["materialized"], _x7_st["new_clusters"],
+                     _x7_ap["no_cluster"], _x7_ap["unknown_root"],
+                     _x7_ap["target_conflict"], _x7_ap["already_forced"],
+                     _x7_ap["no_change"], _x7_ap["no_effect"],
+                     _x7_ap["unstable_domain"],
+                     time.time() - _x7_t0), flush=True)
+            # ---- IDAT7 diagnostic: attribute the IDAT6 target_conflict rows
+            # to the family that pins the baseline domain (leave-one-out over
+            # the family masks, X6/X7 excluded).  Read-only; env-gated.
+            if _IDAT7_DIAG and _x6_led:
+                _attr_out = []
+                for _r6c in _x6_led.get("skipped") or []:
+                    if _r6c.get("reason") != "target_conflict":
+                        continue
+                    _rt = _r6c.get("root")
+                    _clt = _x7_cl.get(_rt) if _rt else None
+                    if _clt is None:
+                        continue
+                    _bents = list(_clt.get("ents") or ())
+                    _fms = {}
+                    for _f in FAMILIES:
+                        if _f in ("X6", "X7"):
+                            continue
+                        _hit = False
+                        _mm = FULL
+                        for _e in _bents:
+                            _fm = fam[_f].get(_e)
+                            if _fm is not None:
+                                _mm &= _fm
+                                _hit = True
+                        if _hit:
+                            _fms[_f] = _mm
+                    _base = FULL
+                    for _mm in _fms.values():
+                        _base &= _mm
+                    _pin = []
+                    for _f, _mm in _fms.items():
+                        _o = FULL
+                        for _f2, _mm2 in _fms.items():
+                            if _f2 != _f:
+                                _o &= _mm2
+                        if _o != _base and _o != 0:
+                            _pin.append([_f, _FAM_RANK.get(_f, 0),
+                                         _mm.bit_count()])
+                    _pin.sort(key=lambda x: (-x[1], x[0]))
+                    _contrib = sorted(
+                        [[_f, _FAM_RANK.get(_f, 0), _mm.bit_count()]
+                         for _f, _mm in _fms.items()],
+                        key=lambda x: (-x[1], x[0]))
+                    _rank = max([p[1] for p in _pin], default=None)
+                    _crank = max([c[1] for c in _contrib], default=None)
+                    if _rank is None:
+                        if _crank is not None and _crank >= 40:
+                            _cls = "joint_with_binary"
+                        else:
+                            _cls = "joint_external_only"
+                    elif _rank >= 40:
+                        _cls = "binary_domain"
+                    else:
+                        _cls = "external_name_domain"
+                    _bd = _x7_dom.get(_rt, FULL)
+                    _attr_out.append({
+                        "ent": _r6c.get("ent"), "root": _rt,
+                        "detail": _r6c.get("detail"),
+                        "type": _r6c.get("type"),
+                        "base_w": _r6c.get("base_w"),
+                        "mask_w": _r6c.get("mask_w"),
+                        "domain": (None if _bd == FULL else sorted(
+                            names[_i] for _i in range(n) if (_bd >> _i) & 1)[:8]),
+                        "pinning": _pin,
+                        "contributing": _contrib,
+                        "class": _cls,
+                    })
+                _attr_path = os.path.join(
+                    ROOT, ".omo/agents/csp/idat7_x6_conflict_attr.json")
+                try:
+                    os.makedirs(os.path.dirname(_attr_path), exist_ok=True)
+                    with io.open(_attr_path, "w", encoding="utf-8") as _fha:
+                        json.dump(_attr_out, _fha, ensure_ascii=False,
+                                  indent=0, sort_keys=True)
+                    print("[P4-IDAT7] conflict attribution: %d rows -> %s"
+                          % (len(_attr_out), _attr_path), flush=True)
+                except Exception as _x7dex:
+                    print("[P4-IDAT7] attribution FAILED: %r" % (_x7dex,),
+                          flush=True)
+        try:
+            _x7_out = os.path.join(ROOT, ".omo/agents/csp/idat7_ledger.json")
+            os.makedirs(os.path.dirname(_x7_out), exist_ok=True)
+            with io.open(_x7_out, "w", encoding="utf-8") as _fh_x7:
+                json.dump(_x7_led, _fh_x7, ensure_ascii=False, indent=0,
+                          sort_keys=True)
+        except Exception as _x7_wex:
+            print("[P4-IDAT7] ledger write FAILED: %r" % (_x7_wex,),
+                  flush=True)
         # P4-IDAT3 (C): zero-loss layout consumption.  Injecting the supplied
         # layouts BEFORE C18/C21 lets their candidate tables see the new member
         # sets; measured on IDAT2 that widened 7 baseline uniques (the
@@ -12991,6 +13420,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

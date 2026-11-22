@@ -1,0 +1,7180 @@
+{
+ "class_audit": {
+  "AudioIDXData": {
+   "class": "AudioIDXData",
+   "decision": "accepted",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [
+    268,
+    272,
+    280,
+    284
+   ],
+   "m_uncovered": [],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": null,
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "4/4 binary member offsets on member spans"
+   ],
+   "yrpp_anchors": 1,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\Audio.h",
+   "yrpp_members": 9,
+   "yrpp_ok": true,
+   "yrpp_size": 292,
+   "yrpp_why": ""
+  },
+  "BounceClass": {
+   "class": "BounceClass",
+   "decision": "accepted",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    36
+   ],
+   "m_uncovered": [],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": null,
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "7/7 binary member offsets on member spans"
+   ],
+   "yrpp_anchors": 0,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\BounceClass.h",
+   "yrpp_members": 7,
+   "yrpp_ok": true,
+   "yrpp_size": 80,
+   "yrpp_why": ""
+  },
+  "BufferPipe": {
+   "class": "BufferPipe",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": 28,
+   "observed_offsets": [
+    12,
+    16,
+    24
+   ],
+   "reason": "observed offsets outside member spans: ['0xC']",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "weak_uncovered": [
+    12
+   ],
+   "yrpp_anchors": 0,
+   "yrpp_base": "Pipe",
+   "yrpp_base_size": 16,
+   "yrpp_file": "YRpp\\Pipes.h",
+   "yrpp_members": 2,
+   "yrpp_ok": true,
+   "yrpp_size": 32,
+   "yrpp_why": ""
+  },
+  "BufferStraw": {
+   "class": "BufferStraw",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": 28,
+   "observed_offsets": [
+    12,
+    16,
+    24
+   ],
+   "reason": "size 24 < observed extent 28",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "Straw",
+   "yrpp_base_size": 8,
+   "yrpp_file": "YRpp\\Straws.h",
+   "yrpp_members": 2,
+   "yrpp_ok": true,
+   "yrpp_size": 24,
+   "yrpp_why": ""
+  },
+  "GScreenClass": {
+   "class": "GScreenClass",
+   "decision": "rejected",
+   "extent_sources": [
+    "ctor_types"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": 316,
+   "observed_offsets": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    312
+   ],
+   "reason": "size 16 < strong observed extent 316",
+   "strong_extent": true,
+   "strong_offsets": [
+    0,
+    16,
+    20,
+    312
+   ],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "IGameMap",
+   "yrpp_base_size": 4,
+   "yrpp_file": "YRpp\\GScreenClass.h",
+   "yrpp_members": 3,
+   "yrpp_ok": true,
+   "yrpp_size": 16,
+   "yrpp_why": ""
+  },
+  "LightConvertClass": {
+   "class": "LightConvertClass",
+   "decision": "rejected",
+   "extent_sources": [
+    "ctor_types"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [
+    392,
+    396,
+    400,
+    408,
+    412,
+    416,
+    420,
+    424,
+    428
+   ],
+   "observed_extent": 433,
+   "observed_offsets": [
+    0,
+    8,
+    208,
+    212,
+    216,
+    220,
+    224,
+    228,
+    232,
+    236,
+    240,
+    244,
+    248,
+    252,
+    256,
+    260,
+    264,
+    268,
+    272,
+    276,
+    280,
+    284,
+    288,
+    292,
+    296,
+    300,
+    304,
+    308,
+    312,
+    316,
+    320,
+    324,
+    328,
+    332,
+    336,
+    340,
+    344,
+    348,
+    352,
+    356,
+    360,
+    364,
+    368,
+    392,
+    396,
+    400,
+    404,
+    408,
+    412,
+    416,
+    420,
+    424,
+    428,
+    432
+   ],
+   "reason": "size 424 < strong observed extent 433",
+   "strong_extent": true,
+   "strong_offsets": [
+    0,
+    364,
+    392,
+    396,
+    400,
+    404,
+    408,
+    412,
+    416,
+    420,
+    424,
+    428,
+    432
+   ],
+   "til_members": 8,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "ConvertClass",
+   "yrpp_base_size": 380,
+   "yrpp_file": "YRpp\\ConvertClass.h",
+   "yrpp_members": 7,
+   "yrpp_ok": true,
+   "yrpp_size": 424,
+   "yrpp_why": ""
+  },
+  "LoadOptionsClass": {
+   "class": "LoadOptionsClass",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [
+    32
+   ],
+   "m_uncovered": [
+    32
+   ],
+   "observed_extent": 52,
+   "observed_offsets": [
+    0,
+    32,
+    36,
+    48
+   ],
+   "reason": "binary member offsets outside member spans: ['0x20']",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 3,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\LoadOptionsClass.h",
+   "yrpp_members": 7,
+   "yrpp_ok": true,
+   "yrpp_size": 32,
+   "yrpp_why": ""
+  },
+  "MapSelectClass": {
+   "class": "MapSelectClass",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [
+    80
+   ],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": "empty declaration (no data members)",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\ScenarioClass.h",
+   "yrpp_members": 0,
+   "yrpp_ok": true,
+   "yrpp_size": 0,
+   "yrpp_why": ""
+  },
+  "OwnerDrawDialogElement": {
+   "class": "OwnerDrawDialogElement",
+   "decision": "accepted",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": null,
+   "static_assert_checked": 38,
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "38 static_assert(offsetof) offsets match"
+   ],
+   "yrpp_anchors": 7,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\OwnerDraw.h",
+   "yrpp_members": 71,
+   "yrpp_ok": true,
+   "yrpp_size": 512,
+   "yrpp_why": ""
+  },
+  "PCX": {
+   "class": "PCX",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [
+    4
+   ],
+   "m_uncovered": [
+    4
+   ],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": "binary member offsets outside member spans: ['0x4']",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\PCX.h",
+   "yrpp_members": 1,
+   "yrpp_ok": true,
+   "yrpp_size": 4,
+   "yrpp_why": ""
+  },
+  "PowerClass": {
+   "class": "PowerClass",
+   "decision": "rejected",
+   "extent_sources": [
+    "ctor_types"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [
+    36,
+    5396,
+    5412,
+    5428
+   ],
+   "observed_extent": 4,
+   "observed_offsets": [
+    0
+   ],
+   "reason": "base RadarClass layout 5819 > 0x1000 (array-polluted IDA extent)",
+   "strong_extent": true,
+   "strong_offsets": [
+    0
+   ],
+   "til_members": 6,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "RadarClass",
+   "yrpp_base_size": 5819,
+   "yrpp_file": "YRpp\\PowerClass.h",
+   "yrpp_members": 8,
+   "yrpp_ok": true,
+   "yrpp_size": 5856,
+   "yrpp_why": ""
+  },
+  "ProgressScreenClass": {
+   "class": "ProgressScreenClass",
+   "decision": "accepted",
+   "extent_sources": [
+    "vtable_install"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [
+    128
+   ],
+   "m_uncovered": [],
+   "observed_extent": 132,
+   "observed_offsets": [
+    0,
+    72,
+    76,
+    80,
+    84,
+    88,
+    92,
+    96,
+    97,
+    98,
+    100,
+    104,
+    108,
+    112,
+    120,
+    124,
+    128
+   ],
+   "reason": null,
+   "strong_extent": true,
+   "strong_offsets": [
+    0,
+    72,
+    76,
+    80,
+    84,
+    88,
+    92,
+    96,
+    97,
+    98,
+    100,
+    104,
+    108,
+    112,
+    120,
+    124,
+    128
+   ],
+   "strong_uncovered": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "strong extent 132 covered; 17/17 strong offsets on member spans"
+   ],
+   "yrpp_anchors": 19,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\ProgressScreenClass.h",
+   "yrpp_members": 27,
+   "yrpp_ok": true,
+   "yrpp_size": 136,
+   "yrpp_why": ""
+  },
+  "SavegameInformation": {
+   "class": "SavegameInformation",
+   "decision": "accepted",
+   "extent_sources": [],
+   "has_vtable": false,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": null,
+   "observed_offsets": [],
+   "reason": null,
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "ctor 0x680FF0 writes at 16 offsets, all on member spans"
+   ],
+   "yrpp_anchors": 1,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\LoadOptionsClass.h",
+   "yrpp_members": 13,
+   "yrpp_ok": true,
+   "yrpp_size": 1012,
+   "yrpp_why": ""
+  },
+  "TextLabelClass": {
+   "class": "TextLabelClass",
+   "decision": "rejected",
+   "extent_sources": [
+    "ctor_types"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [
+    44,
+    48,
+    52
+   ],
+   "observed_extent": 76,
+   "observed_offsets": [
+    0,
+    12,
+    16,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    65,
+    68,
+    72
+   ],
+   "reason": "size 68 < strong observed extent 76",
+   "strong_extent": true,
+   "strong_offsets": [
+    0,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    65,
+    68,
+    72
+   ],
+   "til_members": 5,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "GadgetClass",
+   "yrpp_base_size": 28,
+   "yrpp_file": "YRpp\\TextLabelClass.h",
+   "yrpp_members": 11,
+   "yrpp_ok": true,
+   "yrpp_size": 68,
+   "yrpp_why": ""
+  },
+  "TriColorGaugeClass": {
+   "class": "TriColorGaugeClass",
+   "decision": "rejected",
+   "extent_sources": [],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [],
+   "observed_extent": 68,
+   "observed_offsets": [
+    0,
+    12,
+    16,
+    20,
+    24,
+    30,
+    45,
+    46,
+    48,
+    52,
+    60,
+    64
+   ],
+   "reason": "size 40 < observed extent 68",
+   "strong_extent": false,
+   "strong_offsets": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [],
+   "yrpp_anchors": 0,
+   "yrpp_base": "GaugeClass",
+   "yrpp_base_size": 32,
+   "yrpp_file": "YRpp\\TriColorGaugeClass.h",
+   "yrpp_members": 2,
+   "yrpp_ok": true,
+   "yrpp_size": 40,
+   "yrpp_why": ""
+  },
+  "VersionClass": {
+   "class": "VersionClass",
+   "decision": "accepted",
+   "extent_sources": [
+    "ctor_types",
+    "vtable_install"
+   ],
+   "has_vtable": true,
+   "in_yrpp": true,
+   "m_offsets": [
+    4,
+    60,
+    64,
+    68
+   ],
+   "m_uncovered": [],
+   "observed_extent": 72,
+   "observed_offsets": [
+    0,
+    4,
+    8,
+    10,
+    12,
+    42,
+    60,
+    64,
+    68
+   ],
+   "reason": null,
+   "strong_extent": true,
+   "strong_offsets": [
+    0,
+    4,
+    8,
+    10,
+    12,
+    42,
+    60,
+    64,
+    68
+   ],
+   "strong_uncovered": [],
+   "til_members": 0,
+   "til_size": null,
+   "verified_by": [
+    "strong extent 72 covered; 9/9 strong offsets on member spans",
+    "4/4 binary member offsets on member spans"
+   ],
+   "yrpp_anchors": 0,
+   "yrpp_base": null,
+   "yrpp_base_size": null,
+   "yrpp_file": "YRpp\\VersionClass.h",
+   "yrpp_members": 8,
+   "yrpp_ok": true,
+   "yrpp_size": 72,
+   "yrpp_why": ""
+  }
+ },
+ "classes": {
+  "AudioIDXData": {
+   "anchors": 1,
+   "decl_file": "YRpp\\Audio.h",
+   "members": {
+    "0": {
+     "name": "Samples",
+     "size": 4,
+     "type": "AudioIDXEntry*"
+    },
+    "268": {
+     "name": "BagFile",
+     "size": 4,
+     "type": "CCFileClass*"
+    },
+    "272": {
+     "name": "ExternalFile",
+     "size": 4,
+     "type": "RawFileClass*"
+    },
+    "276": {
+     "name": "PathFound",
+     "size": 4,
+     "type": "BOOL"
+    },
+    "280": {
+     "name": "CurrentSampleFile",
+     "size": 4,
+     "type": "RawFileClass*"
+    },
+    "284": {
+     "name": "CurrentSampleSize",
+     "size": 4,
+     "type": "int"
+    },
+    "288": {
+     "name": "unknown_120",
+     "size": 4,
+     "type": "DWORD"
+    },
+    "4": {
+     "name": "SampleCount",
+     "size": 4,
+     "type": "int"
+    },
+    "8": {
+     "name": "Path",
+     "size": 260,
+     "type": "char[MAX_PATH]"
+    }
+   },
+   "parent": null,
+   "size": 292,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "4/4 binary member offsets on member spans"
+   ]
+  },
+  "BounceClass": {
+   "anchors": 0,
+   "decl_file": "YRpp\\BounceClass.h",
+   "members": {
+    "0": {
+     "name": "Elasticity",
+     "size": 8,
+     "type": "double"
+    },
+    "16": {
+     "name": "MaxVelocity",
+     "size": 8,
+     "type": "double"
+    },
+    "24": {
+     "name": "Coords",
+     "size": 12,
+     "type": "Vector3D<float>"
+    },
+    "36": {
+     "name": "Velocity",
+     "size": 12,
+     "type": "Vector3D<float>"
+    },
+    "48": {
+     "name": "CurrentAngle",
+     "size": 16,
+     "type": "Quaternion"
+    },
+    "64": {
+     "name": "AngularVelocity",
+     "size": 16,
+     "type": "Quaternion"
+    },
+    "8": {
+     "name": "Gravity",
+     "size": 8,
+     "type": "double"
+    }
+   },
+   "parent": null,
+   "size": 80,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "7/7 binary member offsets on member spans"
+   ]
+  },
+  "OwnerDrawDialogElement": {
+   "anchors": 7,
+   "decl_file": "YRpp\\OwnerDraw.h",
+   "members": {
+    "0": {
+     "name": "EnumParam",
+     "size": 4,
+     "type": "int"
+    },
+    "100": {
+     "name": "Font",
+     "size": 4,
+     "type": "void*"
+    },
+    "104": {
+     "name": "ControlType",
+     "size": 4,
+     "type": "WWControlType"
+    },
+    "108": {
+     "name": "DialogID",
+     "size": 4,
+     "type": "int"
+    },
+    "112": {
+     "name": "StaticDrawMode",
+     "size": 4,
+     "type": "WWUIStaticDrawMode"
+    },
+    "116": {
+     "name": "StaticShapeDrawer",
+     "size": 4,
+     "type": "ConvertClass*"
+    },
+    "120": {
+     "name": "StaticShape",
+     "size": 4,
+     "type": "SHPStruct*"
+    },
+    "124": {
+     "name": "StaticShapeFlags",
+     "size": 4,
+     "type": "int"
+    },
+    "128": {
+     "name": "StaticTextRevealCount",
+     "size": 4,
+     "type": "int"
+    },
+    "132": {
+     "name": "StaticTextRevealDelay",
+     "size": 4,
+     "type": "int"
+    },
+    "136": {
+     "name": "StaticTextRevealStep",
+     "size": 4,
+     "type": "int"
+    },
+    "140": {
+     "name": "StaticColorAdjust",
+     "size": 4,
+     "type": "int"
+    },
+    "144": {
+     "name": "StaticSoundIndex",
+     "size": 4,
+     "type": "int"
+    },
+    "148": {
+     "name": "StaticFrameCount",
+     "size": 4,
+     "type": "int"
+    },
+    "152": {
+     "name": "StaticCurrentFrame",
+     "size": 4,
+     "type": "int"
+    },
+    "156": {
+     "name": "StaticLastFrameTick",
+     "size": 4,
+     "type": "int"
+    },
+    "16": {
+     "name": "CacheSurface",
+     "size": 4,
+     "type": "Surface*"
+    },
+    "160": {
+     "name": "StaticFrameDelayMs",
+     "size": 4,
+     "type": "int"
+    },
+    "164": {
+     "name": "StaticFrameNotifyHwnd",
+     "size": 4,
+     "type": "HWND"
+    },
+    "168": {
+     "name": "StaticAnimationRunning",
+     "size": 1,
+     "type": "bool"
+    },
+    "169": {
+     "name": "Unknown_0A9",
+     "size": 3,
+     "type": "char[0x03]"
+    },
+    "172": {
+     "name": "StaticTextFlags",
+     "size": 4,
+     "type": "int"
+    },
+    "176": {
+     "name": "LayoutBand",
+     "size": 4,
+     "type": "int"
+    },
+    "180": {
+     "name": "StaticFillBackground",
+     "size": 1,
+     "type": "bool"
+    },
+    "181": {
+     "name": "Unknown_0B5",
+     "size": 3,
+     "type": "char[0x03]"
+    },
+    "184": {
+     "name": "StaticFillColor",
+     "size": 4,
+     "type": "COLORREF"
+    },
+    "188": {
+     "name": "SkipDraw",
+     "size": 1,
+     "type": "bool"
+    },
+    "189": {
+     "name": "HasOpenAnimation",
+     "size": 1,
+     "type": "bool"
+    },
+    "190": {
+     "name": "HasFadeAnimation",
+     "size": 1,
+     "type": "bool"
+    },
+    "191": {
+     "name": "Unknown_0BF",
+     "size": 1,
+     "type": "bool"
+    },
+    "192": {
+     "name": "TooltipVariant",
+     "size": 4,
+     "type": "int"
+    },
+    "196": {
+     "name": "ButtonTimerActive",
+     "size": 1,
+     "type": "bool"
+    },
+    "197": {
+     "name": "ButtonAlternateFrame",
+     "size": 1,
+     "type": "bool"
+    },
+    "198": {
+     "name": "Unknown_0C6",
+     "size": 2,
+     "type": "char[0x02]"
+    },
+    "20": {
+     "name": "ControlImage",
+     "size": 4,
+     "type": "Surface*"
+    },
+    "200": {
+     "name": "Alpha",
+     "size": 4,
+     "type": "int"
+    },
+    "204": {
+     "name": "TypeSpecific_0CC",
+     "size": 4,
+     "type": "char[0x04]"
+    },
+    "208": {
+     "name": "ComboBoxMaxVisibleDropItems",
+     "size": 4,
+     "type": "int"
+    },
+    "212": {
+     "name": "Unknown_0D4",
+     "size": 1,
+     "type": "bool"
+    },
+    "213": {
+     "name": "HasTopPanelAnimation",
+     "size": 1,
+     "type": "bool"
+    },
+    "214": {
+     "name": "HasButtonAnimation",
+     "size": 1,
+     "type": "bool"
+    },
+    "215": {
+     "name": "HasMainScreenAnimation",
+     "size": 1,
+     "type": "bool"
+    },
+    "216": {
+     "name": "FlagD8",
+     "size": 1,
+     "type": "bool"
+    },
+    "217": {
+     "name": "CheckboxUseExtendedArt",
+     "size": 1,
+     "type": "bool"
+    },
+    "218": {
+     "name": "CheckboxArtVariant",
+     "size": 1,
+     "type": "bool"
+    },
+    "219": {
+     "name": "Unknown_0DB",
+     "size": 1,
+     "type": "bool"
+    },
+    "220": {
+     "name": "ExtraWidth",
+     "size": 4,
+     "type": "int"
+    },
+    "224": {
+     "name": "DialogBackground",
+     "size": 4,
+     "type": "Surface*"
+    },
+    "228": {
+     "name": "DialogBackgroundEx",
+     "size": 4,
+     "type": "Surface*"
+    },
+    "232": {
+     "name": "TypeSpecific_0E8",
+     "size": 32,
+     "type": "char[0x20]"
+    },
+    "24": {
+     "name": "StateImageSurface",
+     "size": 4,
+     "type": "Surface*"
+    },
+    "264": {
+     "name": "Extra",
+     "size": 248,
+     "type": "int[62]"
+    },
+    "28": {
+     "name": "ComboBoxHeightInitialized",
+     "size": 4,
+     "type": "int"
+    },
+    "32": {
+     "name": "NeedsControlImage",
+     "size": 4,
+     "type": "int"
+    },
+    "36": {
+     "name": "Unknown_024",
+     "size": 4,
+     "type": "LPARAM"
+    },
+    "4": {
+     "name": "TypeSpecific_004",
+     "size": 12,
+     "type": "char[0x0C]"
+    },
+    "40": {
+     "name": "TextBuffer",
+     "size": 4,
+     "type": "wchar_t*"
+    },
+    "44": {
+     "name": "HasText",
+     "size": 4,
+     "type": "int"
+    },
+    "48": {
+     "name": "NewEditAsciiOnly",
+     "size": 4,
+     "type": "int"
+    },
+    "52": {
+     "name": "TypeSpecific_034",
+     "size": 4,
+     "type": "char[0x04]"
+    },
+    "56": {
+     "name": "HasFocus",
+     "size": 4,
+     "type": "int"
+    },
+    "60": {
+     "name": "NewEditText",
+     "size": 4,
+     "type": "WideWstring*"
+    },
+    "64": {
+     "name": "NewEditCaretIndex",
+     "size": 4,
+     "type": "int"
+    },
+    "68": {
+     "name": "EditTextScrollStart",
+     "size": 4,
+     "type": "int"
+    },
+    "72": {
+     "name": "NewEditTextLimit",
+     "size": 4,
+     "type": "int"
+    },
+    "76": {
+     "name": "NewEditCaretBlinkState",
+     "size": 4,
+     "type": "int"
+    },
+    "80": {
+     "name": "NewEditRejectChars",
+     "size": 4,
+     "type": "wchar_t*"
+    },
+    "84": {
+     "name": "NewEditStyleFlags",
+     "size": 4,
+     "type": "int"
+    },
+    "88": {
+     "name": "StaticMovieHandle",
+     "size": 4,
+     "type": "WWMovieHandle*"
+    },
+    "92": {
+     "name": "StaticLoopMovie",
+     "size": 4,
+     "type": "int"
+    },
+    "96": {
+     "name": "StaticMovieAuxHandle",
+     "size": 4,
+     "type": "void*"
+    }
+   },
+   "parent": null,
+   "size": 512,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "38 static_assert(offsetof) offsets match"
+   ]
+  },
+  "ProgressScreenClass": {
+   "anchors": 19,
+   "decl_file": "YRpp\\ProgressScreenClass.h",
+   "members": {
+    "0": {
+     "name": "field_0",
+     "size": 4,
+     "type": "int"
+    },
+    "100": {
+     "name": "hWnd",
+     "size": 4,
+     "type": "HWND"
+    },
+    "104": {
+     "name": "field_68",
+     "size": 4,
+     "type": "int"
+    },
+    "108": {
+     "name": "field_6C",
+     "size": 4,
+     "type": "int"
+    },
+    "112": {
+     "name": "field_70",
+     "size": 1,
+     "type": "char"
+    },
+    "113": {
+     "name": "field_71",
+     "size": 1,
+     "type": "char"
+    },
+    "114": {
+     "name": "field_72",
+     "size": 1,
+     "type": "char"
+    },
+    "115": {
+     "name": "field_73",
+     "size": 1,
+     "type": "char"
+    },
+    "116": {
+     "name": "field_74",
+     "size": 4,
+     "type": "int"
+    },
+    "120": {
+     "name": "field_78",
+     "size": 4,
+     "type": "int"
+    },
+    "124": {
+     "name": "field_7C",
+     "size": 4,
+     "type": "int"
+    },
+    "128": {
+     "name": "PlayerSide",
+     "size": 4,
+     "type": "int"
+    },
+    "4": {
+     "name": "LoadManager",
+     "size": 4,
+     "type": "LoadProgressManager*"
+    },
+    "72": {
+     "name": "MainProgress",
+     "size": 4,
+     "type": "int"
+    },
+    "76": {
+     "name": "field_4C",
+     "size": 4,
+     "type": "int"
+    },
+    "8": {
+     "name": "PlayerProgresses",
+     "size": 64,
+     "type": "double[8]"
+    },
+    "80": {
+     "name": "PlayerStartSpot",
+     "size": 4,
+     "type": "void*"
+    },
+    "84": {
+     "name": "someSHP",
+     "size": 4,
+     "type": "SHPStruct*"
+    },
+    "88": {
+     "name": "field_58",
+     "size": 1,
+     "type": "char"
+    },
+    "89": {
+     "name": "field_59",
+     "size": 1,
+     "type": "char"
+    },
+    "90": {
+     "name": "field_5A",
+     "size": 1,
+     "type": "char"
+    },
+    "91": {
+     "name": "field_5B",
+     "size": 1,
+     "type": "char"
+    },
+    "92": {
+     "name": "field_5C",
+     "size": 4,
+     "type": "int"
+    },
+    "96": {
+     "name": "field_60",
+     "size": 1,
+     "type": "char"
+    },
+    "97": {
+     "name": "TotalPlayers",
+     "size": 1,
+     "type": "byte"
+    },
+    "98": {
+     "name": "field_62",
+     "size": 1,
+     "type": "char"
+    },
+    "99": {
+     "name": "field_63",
+     "size": 1,
+     "type": "char"
+    }
+   },
+   "parent": null,
+   "size": 136,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "strong extent 132 covered; 17/17 strong offsets on member spans"
+   ]
+  },
+  "SavegameInformation": {
+   "anchors": 1,
+   "decl_file": "YRpp\\LoadOptionsClass.h",
+   "members": {
+    "0": {
+     "name": "InternalVersion",
+     "size": 4,
+     "type": "int"
+    },
+    "1000": {
+     "name": "LastSaveTime",
+     "size": 8,
+     "type": "FILETIME"
+    },
+    "1008": {
+     "name": "GameType",
+     "size": 4,
+     "type": "GameMode"
+    },
+    "264": {
+     "name": "PlayerHouse",
+     "size": 128,
+     "type": "FixedWString<0x40>"
+    },
+    "392": {
+     "name": "Campaign",
+     "size": 4,
+     "type": "int"
+    },
+    "396": {
+     "name": "ScenarioNumber",
+     "size": 4,
+     "type": "int"
+    },
+    "4": {
+     "name": "Version",
+     "size": 4,
+     "type": "int"
+    },
+    "400": {
+     "name": "unknown_190",
+     "size": 260,
+     "type": "FixedString<MAX_PATH>"
+    },
+    "660": {
+     "name": "PlayerName",
+     "size": 64,
+     "type": "FixedString<0x40>"
+    },
+    "724": {
+     "name": "ExecutableName",
+     "size": 260,
+     "type": "FixedString<MAX_PATH>"
+    },
+    "8": {
+     "name": "ScenarioDescription",
+     "size": 256,
+     "type": "FixedWString<0x80>"
+    },
+    "984": {
+     "name": "StartTime",
+     "size": 8,
+     "type": "FILETIME"
+    },
+    "992": {
+     "name": "PlayTime",
+     "size": 8,
+     "type": "FILETIME"
+    }
+   },
+   "parent": null,
+   "size": 1012,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "ctor 0x680FF0 writes at 16 offsets, all on member spans"
+   ]
+  },
+  "VersionClass": {
+   "anchors": 0,
+   "decl_file": "YRpp\\VersionClass.h",
+   "members": {
+    "10": {
+     "name": "MinorVer",
+     "size": 2,
+     "type": "unsigned short"
+    },
+    "12": {
+     "name": "VersionName",
+     "size": 30,
+     "type": "char[30]"
+    },
+    "4": {
+     "name": "Version",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "42": {
+     "name": "VersionText",
+     "size": 16,
+     "type": "char[16]"
+    },
+    "60": {
+     "name": "MinClipVer",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "64": {
+     "name": "MaxClipVer",
+     "size": 4,
+     "type": "unsigned int"
+    },
+    "68": {
+     "name": "VersionInit",
+     "size": 4,
+     "type": "unsigned"
+    },
+    "8": {
+     "name": "MajorVer",
+     "size": 2,
+     "type": "unsigned short"
+    }
+   },
+   "parent": null,
+   "size": 72,
+   "source": "yrpp-decl-order-idat7",
+   "verified_by": [
+    "strong extent 72 covered; 9/9 strong offsets on member spans",
+    "4/4 binary member offsets on member spans"
+   ]
+  }
+ },
+ "m_rows": [],
+ "member_types": {
+  "AircraftClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "344": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "432": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "548": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "cloakState",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "596": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "lastSightCoords",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "744": {
+    "atom": "float",
+    "kind": "type",
+    "name": "spawnOwner",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "836": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "AircraftTypeClass": {
+   "1544": {
+    "atom": "float",
+    "kind": "type",
+    "name": "BuildTimeMultiplier",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "1724": {
+    "atom": "AnimTypeClass",
+    "kind": "class",
+    "name": "DeployingAnim",
+    "size": 888,
+    "src": "ida-til",
+    "type": "AnimTypeClass"
+   },
+   "1776": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Cameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1808": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltCameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1892": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "NaturalParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1896": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "NaturalParticleSystemLocation",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1908": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "RefinerySmokeParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1968": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "DamageSmokeOffset",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1984": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "DestroySmokeOffset",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1996": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetOne",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2008": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetTwo",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2020": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetThree",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2032": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetFour",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3404": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetClimb",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3408": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetCrash",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3416": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetAccel",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3420": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetWobbles",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3460": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "SecondSpawnOffset",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3484": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "qD9C",
+    "size": 16,
+    "src": "member-types",
+    "type": "VectorClass"
+   },
+   "704": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "712": {
+    "atom": "double",
+    "kind": "type",
+    "name": "pipScale",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "720": {
+    "atom": "double",
+    "kind": "type",
+    "name": "speedType",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "728": {
+    "atom": "double",
+    "kind": "type",
+    "name": "threatAvoidValue",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "736": {
+    "atom": "double",
+    "kind": "type",
+    "name": "cloakRadius",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "744": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "768": {
+    "atom": "double",
+    "kind": "type",
+    "name": "unknown_double_300",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "776": {
+    "atom": "double",
+    "kind": "type",
+    "name": "AccelerationFactor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "844": {
+    "atom": "GUID",
+    "kind": "class",
+    "name": "Locomotor",
+    "size": 12,
+    "src": "ida-til",
+    "type": "GUID"
+   },
+   "864": {
+    "atom": "double",
+    "kind": "type",
+    "name": "unknown_double_360",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "872": {
+    "atom": "double",
+    "kind": "type",
+    "name": "unknown_double_368",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "880": {
+    "atom": "double",
+    "kind": "type",
+    "name": "Weight",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "888": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PhysicalSize",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "896": {
+    "atom": "double",
+    "kind": "type",
+    "name": "Size",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "904": {
+    "atom": "double",
+    "kind": "type",
+    "name": "SizeLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "928": {
+    "atom": "double",
+    "kind": "type",
+    "name": "RollAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "936": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "944": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "968": {
+    "atom": "double",
+    "kind": "type",
+    "name": "DeployTime",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "AnimTypeClass": {
+   "20": {
+    "atom": "double",
+    "kind": "type",
+    "name": "abstractFlags",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   },
+   "784": {
+    "atom": "double",
+    "kind": "type",
+    "name": "Elasticity",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "792": {
+    "atom": "double",
+    "kind": "type",
+    "name": "MinZVel",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "800": {
+    "atom": "double",
+    "kind": "type",
+    "name": "AnimTypeClass_field_double_320",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "AudioIDXData": {
+   "284": {
+    "atom": "int",
+    "kind": "type",
+    "name": "CurrentSampleSize",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "288": {
+    "atom": "DWORD",
+    "kind": "type",
+    "name": "unknown_120",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "DWORD"
+   },
+   "4": {
+    "atom": "int",
+    "kind": "type",
+    "name": "SampleCount",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   }
+  },
+  "BuildingClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1716": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "Audio8",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1844": {
+    "atom": "double",
+    "kind": "type",
+    "name": "CostAccumulator",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "1848": {
+    "atom": "double",
+    "kind": "type",
+    "name": "CostAccumulator",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "344": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "548": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "cloakState",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "596": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "lastSightCoords",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "744": {
+    "atom": "float",
+    "kind": "type",
+    "name": "spawnOwner",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "828": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "868": {
+    "atom": "TransitionTimer",
+    "kind": "class",
+    "name": "unloadTimer",
+    "size": 32,
+    "src": "ida-til",
+    "type": "TransitionTimer"
+   }
+  },
+  "BuildingTypeClass": {
+   "1032": {
+    "atom": "UnitTypeClass",
+    "kind": "class",
+    "name": "VoiceMove",
+    "size": 3704,
+    "src": "ida-til",
+    "type": "UnitTypeClass"
+   },
+   "1036": {
+    "atom": "UnitTypeClass",
+    "kind": "class",
+    "name": "VoiceAttack",
+    "size": 3704,
+    "src": "ida-til",
+    "type": "UnitTypeClass"
+   },
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "VoiceDeploy",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1544": {
+    "atom": "float",
+    "kind": "type",
+    "name": "BuildTimeMultiplier",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "1572": {
+    "atom": "AircraftTypeClass",
+    "kind": "class",
+    "name": "AirstrikeTeamType",
+    "size": 3600,
+    "src": "ida-til",
+    "type": "AircraftTypeClass"
+   },
+   "1576": {
+    "atom": "AircraftTypeClass",
+    "kind": "class",
+    "name": "EliteAirstrikeTeamType",
+    "size": 3600,
+    "src": "ida-til",
+    "type": "AircraftTypeClass"
+   },
+   "1720": {
+    "atom": "UnitTypeClass",
+    "kind": "class",
+    "name": "UnloadingClass",
+    "size": 3704,
+    "src": "ida-til",
+    "type": "UnitTypeClass"
+   },
+   "1724": {
+    "atom": "AnimTypeClass",
+    "kind": "class",
+    "name": "DeployingAnim",
+    "size": 888,
+    "src": "ida-til",
+    "type": "AnimTypeClass"
+   },
+   "1776": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Cameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1808": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltCameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1892": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "NaturalParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1896": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "NaturalParticleSystemLocation",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1908": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "RefinerySmokeParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1968": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "IsChargeTurret",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1984": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "CloakStop",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1996": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "DontScore",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2008": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetTwo",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2020": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetThree",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2032": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetFour",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3404": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetSpeed",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3408": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetClimb",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3416": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetHeight",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3420": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetAccel",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3460": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "UseBuffer",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3484": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "ZFudgeColumn",
+    "size": 16,
+    "src": "ida-til",
+    "type": "VectorClass"
+   },
+   "3580": {
+    "atom": "CellStruct",
+    "kind": "class",
+    "name": "FoundationData",
+    "size": 4,
+    "src": "ida-til",
+    "type": "CellStruct"
+   },
+   "3584": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Buildup",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "3668": {
+    "atom": "OverlayTypeClass",
+    "kind": "class",
+    "name": "ToOverlay",
+    "size": 784,
+    "src": "ida-til",
+    "type": "OverlayTypeClass"
+   },
+   "3796": {
+    "atom": "CellStruct",
+    "kind": "class",
+    "name": "FoundationOutside",
+    "size": 4,
+    "src": "ida-til",
+    "type": "CellStruct"
+   },
+   "704": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "712": {
+    "atom": "double",
+    "kind": "type",
+    "name": "pipScale",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "720": {
+    "atom": "double",
+    "kind": "type",
+    "name": "speedType",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "728": {
+    "atom": "double",
+    "kind": "type",
+    "name": "threatAvoidValue",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "736": {
+    "atom": "double",
+    "kind": "type",
+    "name": "cloakRadius",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "744": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "764": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "HalfDamageSmokeLocation1",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "776": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "HalfDamageSmokeLocation2",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "844": {
+    "atom": "GUID",
+    "kind": "class",
+    "name": "Locomotor",
+    "size": 12,
+    "src": "ida-til",
+    "type": "GUID"
+   },
+   "880": {
+    "atom": "double",
+    "kind": "type",
+    "name": "Weight",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "888": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PhysicalSize",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "904": {
+    "atom": "double",
+    "kind": "type",
+    "name": "SizeLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "928": {
+    "atom": "double",
+    "kind": "type",
+    "name": "RollAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "936": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "944": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "968": {
+    "atom": "double",
+    "kind": "type",
+    "name": "DeployTime",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "BulletTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   },
+   "712": {
+    "atom": "double",
+    "kind": "type",
+    "name": "elasticity",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "CCINIClass": {
+   "16": {
+    "atom": "INILinkNode",
+    "kind": "class",
+    "name": "sectionHead",
+    "size": 12,
+    "src": "ida-til",
+    "type": "INILinkNode"
+   },
+   "4": {
+    "atom": "INILinkNode",
+    "kind": "class",
+    "name": "headNode",
+    "size": 12,
+    "src": "ida-til",
+    "type": "INILinkNode"
+   }
+  },
+  "CampaignClass": {
+   "556": {
+    "atom": "wchar_t",
+    "kind": "type",
+    "name": "description",
+    "size": 2,
+    "src": "ida-til",
+    "type": "wchar_t"
+   }
+  },
+  "DisplayClass": {
+   "188": {
+    "atom": "DynamicVectorClass",
+    "kind": "class",
+    "name": "q0BC",
+    "size": 24,
+    "src": "member-types",
+    "type": "DynamicVectorClass"
+   }
+  },
+  "DriveLocomotionClass": {
+   "52": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "Dest",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "80": {
+    "atom": "double",
+    "kind": "type",
+    "name": "MovementSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "FootClass": {
+   "1036": {
+    "atom": "float",
+    "kind": "type",
+    "name": "u32_40C",
+    "size": 4,
+    "src": "member-types",
+    "type": "float"
+   },
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1368": {
+    "atom": "CellStruct",
+    "kind": "class",
+    "name": "currentMapCoords",
+    "size": 4,
+    "src": "ida-til",
+    "type": "CellStruct"
+   },
+   "1372": {
+    "atom": "CellStruct",
+    "kind": "class",
+    "name": "lastMapCoords",
+    "size": 4,
+    "src": "ida-til",
+    "type": "CellStruct"
+   },
+   "1400": {
+    "atom": "double",
+    "kind": "type",
+    "name": "currentSpeed_percentage",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "1408": {
+    "atom": "double",
+    "kind": "type",
+    "name": "currentSpeed_multiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "344": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "432": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "548": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "cloakState",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "596": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "lastSightCoords",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "744": {
+    "atom": "float",
+    "kind": "type",
+    "name": "spawnOwner",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "836": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "HouseClass": {
+   "1188": {
+    "atom": "CampaignClass",
+    "kind": "class",
+    "name": "q4A4",
+    "size": 812,
+    "src": "member-types",
+    "type": "CampaignClass"
+   },
+   "272": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildTimeMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "HouseTypeClass": {
+   "128": {
+    "atom": "float",
+    "kind": "type",
+    "name": "currentSpeed_infantry_mult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "132": {
+    "atom": "float",
+    "kind": "type",
+    "name": "currentSpeed_units_mult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "136": {
+    "atom": "float",
+    "kind": "type",
+    "name": "currentSpeed_aircraft_mult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "208": {
+    "atom": "double",
+    "kind": "type",
+    "name": "groundspeedMult",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "224": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMult",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "232": {
+    "atom": "double",
+    "kind": "type",
+    "name": "rofMult",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "240": {
+    "atom": "double",
+    "kind": "type",
+    "name": "costMult",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "248": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildtimeMult",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "256": {
+    "atom": "float",
+    "kind": "type",
+    "name": "armorInfantryMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "260": {
+    "atom": "float",
+    "kind": "type",
+    "name": "armorUnitsMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "272": {
+    "atom": "float",
+    "kind": "type",
+    "name": "armorDefensesMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "276": {
+    "atom": "float",
+    "kind": "type",
+    "name": "costInfantryMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "280": {
+    "atom": "float",
+    "kind": "type",
+    "name": "costUnitsMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "284": {
+    "atom": "float",
+    "kind": "type",
+    "name": "costAircraftMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "288": {
+    "atom": "float",
+    "kind": "type",
+    "name": "costBuildingsMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "292": {
+    "atom": "float",
+    "kind": "type",
+    "name": "costDefensesMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "308": {
+    "atom": "float",
+    "kind": "type",
+    "name": "buildtimeInfantryMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "312": {
+    "atom": "float",
+    "kind": "type",
+    "name": "buildtimeUnitsMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "316": {
+    "atom": "float",
+    "kind": "type",
+    "name": "buildtimeAircraftMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "32": {
+    "atom": "double",
+    "kind": "type",
+    "name": "NeedsSaveOrLink",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "320": {
+    "atom": "float",
+    "kind": "type",
+    "name": "buildtimeBuildingsMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "324": {
+    "atom": "float",
+    "kind": "type",
+    "name": "buildtimeDefensesMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "328": {
+    "atom": "float",
+    "kind": "type",
+    "name": "incomeMult",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "HoverLocomotionClass": {
+   "24": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "Dest",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   }
+  },
+  "INIClass": {
+   "16": {
+    "atom": "INILinkNode",
+    "kind": "class",
+    "name": "sectionHead",
+    "size": 12,
+    "src": "ida-til",
+    "type": "INILinkNode"
+   }
+  },
+  "InfantryClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1348": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController7",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "344": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "432": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "548": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "spawnManager",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "648": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "tiltForwardsAngle",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "744": {
+    "atom": "float",
+    "kind": "type",
+    "name": "spawnOwner",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "836": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "InfantryTypeClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "VoiceDeploy",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1544": {
+    "atom": "float",
+    "kind": "type",
+    "name": "BuildTimeMultiplier",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "1724": {
+    "atom": "AnimTypeClass",
+    "kind": "class",
+    "name": "DeployingAnim",
+    "size": 888,
+    "src": "ida-til",
+    "type": "AnimTypeClass"
+   },
+   "1776": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Cameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1808": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltCameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1892": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "NaturalParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1896": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "NaturalParticleSystemLocation",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1908": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "RefinerySmokeParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1968": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "IsChargeTurret",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1984": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "CloakStop",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1996": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "DontScore",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2008": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetTwo",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2020": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetThree",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2032": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetFour",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3404": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetSpeed",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3408": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetClimb",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3416": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetHeight",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3420": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetAccel",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3460": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "UseBuffer",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3484": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "ZFudgeColumn",
+    "size": 16,
+    "src": "ida-til",
+    "type": "VectorClass"
+   },
+   "704": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "712": {
+    "atom": "double",
+    "kind": "type",
+    "name": "pipScale",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "720": {
+    "atom": "double",
+    "kind": "type",
+    "name": "speedType",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "728": {
+    "atom": "double",
+    "kind": "type",
+    "name": "threatAvoidValue",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "736": {
+    "atom": "double",
+    "kind": "type",
+    "name": "cloakRadius",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "744": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "776": {
+    "atom": "double",
+    "kind": "type",
+    "name": "AccelerationFactor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "888": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PhysicalSize",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "904": {
+    "atom": "double",
+    "kind": "type",
+    "name": "SizeLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "928": {
+    "atom": "double",
+    "kind": "type",
+    "name": "RollAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "936": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "944": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "968": {
+    "atom": "double",
+    "kind": "type",
+    "name": "DeployTime",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "IsometricTileTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "member-types",
+    "type": "ColorStruct"
+   }
+  },
+  "LocomotionClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "q488",
+    "size": 20,
+    "src": "member-types",
+    "type": "AudioController"
+   }
+  },
+  "MouseClass": {
+   "188": {
+    "atom": "DynamicVectorClass",
+    "kind": "class",
+    "name": "q0BC",
+    "size": 24,
+    "src": "member-types",
+    "type": "DynamicVectorClass"
+   }
+  },
+  "ObjectClass": {
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "OverlayClass": {
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "OverlayTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  },
+  "OwnerDrawDialogElement": {
+   "0": {
+    "atom": "int",
+    "kind": "type",
+    "name": "EnumParam",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "100": {
+    "atom": "void*",
+    "kind": "type",
+    "name": "Font",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "void*"
+   },
+   "108": {
+    "atom": "int",
+    "kind": "type",
+    "name": "DialogID",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "124": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticShapeFlags",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "128": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticTextRevealCount",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "132": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticTextRevealDelay",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "136": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticTextRevealStep",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "140": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticColorAdjust",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "144": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticSoundIndex",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "148": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticFrameCount",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "152": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticCurrentFrame",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "156": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticLastFrameTick",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "160": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticFrameDelayMs",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "168": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "StaticAnimationRunning",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "172": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticTextFlags",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "176": {
+    "atom": "int",
+    "kind": "type",
+    "name": "LayoutBand",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "180": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "StaticFillBackground",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "188": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "SkipDraw",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "192": {
+    "atom": "int",
+    "kind": "type",
+    "name": "TooltipVariant",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "196": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "ButtonTimerActive",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "200": {
+    "atom": "int",
+    "kind": "type",
+    "name": "Alpha",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "208": {
+    "atom": "int",
+    "kind": "type",
+    "name": "ComboBoxMaxVisibleDropItems",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "212": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "Unknown_0D4",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "216": {
+    "atom": "bool",
+    "kind": "type",
+    "name": "FlagD8",
+    "size": 1,
+    "src": "yrpp-decl",
+    "type": "bool"
+   },
+   "220": {
+    "atom": "int",
+    "kind": "type",
+    "name": "ExtraWidth",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "28": {
+    "atom": "int",
+    "kind": "type",
+    "name": "ComboBoxHeightInitialized",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "32": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NeedsControlImage",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "40": {
+    "atom": "wchar_t*",
+    "kind": "type",
+    "name": "TextBuffer",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "wchar_t*"
+   },
+   "44": {
+    "atom": "int",
+    "kind": "type",
+    "name": "HasText",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "48": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NewEditAsciiOnly",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "56": {
+    "atom": "int",
+    "kind": "type",
+    "name": "HasFocus",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "64": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NewEditCaretIndex",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "68": {
+    "atom": "int",
+    "kind": "type",
+    "name": "EditTextScrollStart",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "72": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NewEditTextLimit",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "76": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NewEditCaretBlinkState",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "80": {
+    "atom": "wchar_t*",
+    "kind": "type",
+    "name": "NewEditRejectChars",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "wchar_t*"
+   },
+   "84": {
+    "atom": "int",
+    "kind": "type",
+    "name": "NewEditStyleFlags",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "92": {
+    "atom": "int",
+    "kind": "type",
+    "name": "StaticLoopMovie",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "96": {
+    "atom": "void*",
+    "kind": "type",
+    "name": "StaticMovieAuxHandle",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "void*"
+   }
+  },
+  "ParticleSystemTypeClass": {
+   "28": {
+    "atom": "float",
+    "kind": "type",
+    "name": "Velocity",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   },
+   "676": {
+    "atom": "float",
+    "kind": "type",
+    "name": "ParticleSystemTypeClass_field_0x2A4",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "ParticleTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  },
+  "ProgressScreenClass": {
+   "0": {
+    "atom": "int",
+    "kind": "type",
+    "name": "field_0",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "116": {
+    "atom": "int",
+    "kind": "type",
+    "name": "field_74",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "72": {
+    "atom": "int",
+    "kind": "type",
+    "name": "MainProgress",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   }
+  },
+  "RadSiteClass": {
+   "40": {
+    "atom": "CDTimerClass",
+    "kind": "class",
+    "name": "RadLevelTimer",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CDTimerClass"
+   },
+   "52": {
+    "atom": "CDTimerClass",
+    "kind": "class",
+    "name": "RadLightTimer",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CDTimerClass"
+   }
+  },
+  "RadioClass": {
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "RulesClass": {
+   "2468": {
+    "atom": "DynamicVector",
+    "kind": "class",
+    "name": "DynamicVector_9A4",
+    "size": 44,
+    "src": "member-types",
+    "type": "DynamicVector"
+   },
+   "2572": {
+    "atom": "DynamicVector",
+    "kind": "class",
+    "name": "DynamicVector_A0C",
+    "size": 44,
+    "src": "member-types",
+    "type": "DynamicVector"
+   },
+   "2936": {
+    "atom": "DynamicVector",
+    "kind": "class",
+    "name": "DynamicVector_B78",
+    "size": 44,
+    "src": "member-types",
+    "type": "DynamicVector"
+   },
+   "5736": {
+    "atom": "double",
+    "kind": "type",
+    "name": "u64_1668",
+    "size": 8,
+    "src": "member-types",
+    "type": "double"
+   },
+   "6164": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "ColorAdd",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   },
+   "6184": {
+    "atom": "double",
+    "kind": "type",
+    "name": "u64_1828",
+    "size": 8,
+    "src": "member-types",
+    "type": "double"
+   }
+  },
+  "SavegameInformation": {
+   "0": {
+    "atom": "int",
+    "kind": "type",
+    "name": "InternalVersion",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "1008": {
+    "atom": "GameMode",
+    "kind": "class",
+    "name": "GameType",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "GameMode"
+   },
+   "392": {
+    "atom": "int",
+    "kind": "type",
+    "name": "Campaign",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "396": {
+    "atom": "int",
+    "kind": "type",
+    "name": "ScenarioNumber",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   },
+   "4": {
+    "atom": "int",
+    "kind": "type",
+    "name": "Version",
+    "size": 4,
+    "src": "yrpp-decl",
+    "type": "int"
+   }
+  },
+  "ScenarioClass": {
+   "4960": {
+    "atom": "wchar_t",
+    "kind": "type",
+    "name": "name",
+    "size": 2,
+    "src": "ida-til",
+    "type": "wchar_t"
+   },
+   "5082": {
+    "atom": "wchar_t",
+    "kind": "type",
+    "name": "uiNameLoaded",
+    "size": 2,
+    "src": "ida-til",
+    "type": "wchar_t"
+   },
+   "5200": {
+    "atom": "wchar_t",
+    "kind": "type",
+    "name": "briefing",
+    "size": 2,
+    "src": "ida-til",
+    "type": "wchar_t"
+   }
+  },
+  "ShipLocomotionClass": {
+   "52": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "Dest",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "80": {
+    "atom": "double",
+    "kind": "type",
+    "name": "MovementSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "SidebarClass": {
+   "4644": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "q1224",
+    "size": 16,
+    "src": "member-types",
+    "type": "VectorClass"
+   },
+   "4700": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "q125C",
+    "size": 16,
+    "src": "member-types",
+    "type": "VectorClass"
+   }
+  },
+  "SmudgeClass": {
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "SmudgeTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  },
+  "SuperWeaponTypeClass": {
+   "248": {
+    "atom": "float",
+    "kind": "type",
+    "name": "Range",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "TacticalClass": {
+   "180": {
+    "atom": "Cell",
+    "kind": "class",
+    "name": "u32_B4",
+    "size": 1736,
+    "src": "member-types",
+    "type": "Cell"
+   }
+  },
+  "TechnoClass": {
+   "1120": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController3",
+    "size": 20,
+    "src": "member-types",
+    "type": "AudioController"
+   },
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1200": {
+    "atom": "String",
+    "kind": "class",
+    "name": "q4B0",
+    "size": 16,
+    "src": "member-types",
+    "type": "String"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "236": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "member-types",
+    "type": "ProgressTimer"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "348": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "member-types",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "548": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "cloakProgress",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "828": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "836": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "868": {
+    "atom": "TransitionTimer",
+    "kind": "class",
+    "name": "unloadTimer",
+    "size": 32,
+    "src": "ida-til",
+    "type": "TransitionTimer"
+   }
+  },
+  "TechnoTypeClass": {
+   "1724": {
+    "atom": "AnimTypeClass",
+    "kind": "class",
+    "name": "DeployingAnim",
+    "size": 888,
+    "src": "ida-til",
+    "type": "AnimTypeClass"
+   },
+   "1776": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Cameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1808": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltCameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1892": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "NaturalParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1908": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "RefinerySmokeParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   }
+  },
+  "TerrainTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  },
+  "TiberiumClass": {
+   "20": {
+    "atom": "double",
+    "kind": "type",
+    "name": "abstractFlags",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "24": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "nextArrayIndex",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "TubeClass": {
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "UnitClass": {
+   "1008": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController6",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "turretRotateSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1188": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "gattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1216": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "unusedGattlingSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1244": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "queuedVoiceSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1348": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController7",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "156": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "location",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1768": {
+    "atom": "wchar_t",
+    "kind": "type",
+    "name": "ToolTipText",
+    "size": 2,
+    "src": "ida-til",
+    "type": "wchar_t"
+   },
+   "248": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "344": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armorMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "352": {
+    "atom": "double",
+    "kind": "type",
+    "name": "firepowerMultiplier",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "432": {
+    "atom": "ProgressTimer",
+    "kind": "class",
+    "name": "animation",
+    "size": 24,
+    "src": "ida-til",
+    "type": "ProgressTimer"
+   },
+   "580": {
+    "atom": "float",
+    "kind": "type",
+    "name": "pitchAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "588": {
+    "atom": "float",
+    "kind": "type",
+    "name": "warpFactor",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "60": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "ambientSoundController",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "648": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "652": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "656": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "684": {
+    "atom": "TransitionTimer",
+    "kind": "class",
+    "name": "unloadTimer",
+    "size": 32,
+    "src": "ida-til",
+    "type": "TransitionTimer"
+   },
+   "744": {
+    "atom": "float",
+    "kind": "type",
+    "name": "spawnOwner",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "80": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "customSound_controller",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "832": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsAngle",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "836": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltSidewaysRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "840": {
+    "atom": "float",
+    "kind": "type",
+    "name": "tiltForwardsRate",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "900": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController3",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "936": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "audioController4",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   }
+  },
+  "UnitTypeClass": {
+   "1160": {
+    "atom": "AudioController",
+    "kind": "class",
+    "name": "VoiceDeploy",
+    "size": 20,
+    "src": "ida-til",
+    "type": "AudioController"
+   },
+   "1544": {
+    "atom": "float",
+    "kind": "type",
+    "name": "BuildTimeMultiplier",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "1724": {
+    "atom": "AnimTypeClass",
+    "kind": "class",
+    "name": "DeployingAnim",
+    "size": 888,
+    "src": "ida-til",
+    "type": "AnimTypeClass"
+   },
+   "1776": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "Cameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1808": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltCameo",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "1892": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "NaturalParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1896": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "NaturalParticleSystemLocation",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1908": {
+    "atom": "ParticleSystemTypeClass",
+    "kind": "class",
+    "name": "RefinerySmokeParticleSystem",
+    "size": 780,
+    "src": "ida-til",
+    "type": "ParticleSystemTypeClass"
+   },
+   "1968": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "IsChargeTurret",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1984": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "CloakStop",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "1996": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "DontScore",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2008": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetTwo",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2020": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetThree",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "2032": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "RefinerySmokeOffsetFour",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3404": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetSpeed",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3408": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetClimb",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3416": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetHeight",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3420": {
+    "atom": "float",
+    "kind": "type",
+    "name": "JumpjetAccel",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "3460": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "UseBuffer",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "3484": {
+    "atom": "VectorClass",
+    "kind": "class",
+    "name": "ZFudgeColumn",
+    "size": 16,
+    "src": "ida-til",
+    "type": "VectorClass"
+   },
+   "3672": {
+    "atom": "SHPStruct",
+    "kind": "class",
+    "name": "AltImage",
+    "size": 4,
+    "src": "ida-til",
+    "type": "SHPStruct"
+   },
+   "704": {
+    "atom": "double",
+    "kind": "type",
+    "name": "armor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "712": {
+    "atom": "double",
+    "kind": "type",
+    "name": "pipScale",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "720": {
+    "atom": "double",
+    "kind": "type",
+    "name": "speedType",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "728": {
+    "atom": "double",
+    "kind": "type",
+    "name": "threatAvoidValue",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "736": {
+    "atom": "double",
+    "kind": "type",
+    "name": "cloakRadius",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "744": {
+    "atom": "double",
+    "kind": "type",
+    "name": "buildLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "752": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "HalfDamageSmokeLocation",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   },
+   "776": {
+    "atom": "double",
+    "kind": "type",
+    "name": "AccelerationFactor",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "844": {
+    "atom": "GUID",
+    "kind": "class",
+    "name": "Locomotor",
+    "size": 12,
+    "src": "ida-til",
+    "type": "GUID"
+   },
+   "880": {
+    "atom": "double",
+    "kind": "type",
+    "name": "Weight",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "888": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PhysicalSize",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "904": {
+    "atom": "double",
+    "kind": "type",
+    "name": "SizeLimit",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "928": {
+    "atom": "double",
+    "kind": "type",
+    "name": "RollAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "936": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchSpeed",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "944": {
+    "atom": "double",
+    "kind": "type",
+    "name": "PitchAngle",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   },
+   "968": {
+    "atom": "double",
+    "kind": "type",
+    "name": "DeployTime",
+    "size": 8,
+    "src": "ida-til",
+    "type": "double"
+   }
+  },
+  "VoxLib": {
+   "108": {
+    "atom": "float",
+    "kind": "type",
+    "name": "XCompress",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "112": {
+    "atom": "float",
+    "kind": "type",
+    "name": "YCompress",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   },
+   "116": {
+    "atom": "float",
+    "kind": "type",
+    "name": "ZCompress",
+    "size": 4,
+    "src": "ida-til",
+    "type": "float"
+   }
+  },
+  "VoxelAnimTypeClass": {
+   "524": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LineTrailColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  },
+  "WalkLocomotionClass": {
+   "28": {
+    "atom": "CoordStruct",
+    "kind": "class",
+    "name": "Dest",
+    "size": 12,
+    "src": "ida-til",
+    "type": "CoordStruct"
+   }
+  },
+  "WeaponTypeClass": {
+   "288": {
+    "atom": "ColorStruct",
+    "kind": "class",
+    "name": "LaserInnerColor",
+    "size": 3,
+    "src": "ida-til",
+    "type": "ColorStruct"
+   }
+  }
+ },
+ "meta": {
+  "blockers": {
+   "ares_ext": "Ares Ext classes are Ares.dll-side types; 0 carry a gamemd member offset",
+   "finalalert2": "editor DTO / MFC dialog classes; 0 engine class names",
+   "ida_til": "no missing class has a til sizeof; member lists are partial observed structs",
+   "libcpmt": "facet/codecvt_base/Iostream_init already supplied by IDAT5",
+   "mfc": "no MFC class is a gamemd entity",
+   "non_yrpp_missing": "the remaining missing classes have no external declaration at all; not fabricated",
+   "strmbase": "no CBase*/DirectShow class exists in class_db"
+  },
+  "counts": {
+   "accepted": 6,
+   "class_atoms": 0,
+   "class_layouts": 6,
+   "classes": 6,
+   "m_rows": 0,
+   "member_type_classes": 50,
+   "member_type_rows": 420,
+   "rejected": 10,
+   "rejected_audited": 16,
+   "t_ctor_identity": 260,
+   "t_rows": 260
+  },
+  "generated_by": ".omo/agents/csp/p4_idat7_extract.py",
+  "policy": {
+   "ctor_identity": "anchors/ctor_types.json installer->class, restricted to the 403 missing classes, address verified as a function start; per-address class must be unique",
+   "layout_acceptance": "all member types resolved; base layout not array-polluted; strong extent covered or >=2 binary member offsets on spans or >=2 in-source anchors; no partial layout",
+   "member_types": "additive only (IDAT6 offsets keep precedence); declared types any; observed types class-atom or distinctive scalar only (int-family and pointers dropped as codegen-indistinguishable)"
+  },
+  "rank": 25,
+  "sources": [
+   "YRpp/**/*.h (IDAT6 parser, unchanged)",
+   "decompile-results/full_export/include/*.hpp (IDA til class headers)",
+   "tools/class_layouts.json",
+   "anchors/member_types.json",
+   "anchors/ctor_types.json",
+   "Ares/Ares0A_clean/src/** (survey)",
+   "CNC_TS_and_RA2_Mission_Editor/** (survey)",
+   ".vc6*/LIB + .vc6*/INCLUDE (survey)"
+  ],
+  "stats": {
+   "ext_class": 2390,
+   "ext_class_without_member_types": 238,
+   "member_type_skip_sample": {
+    "class-layout": [
+     "AITriggerTypeClass+0x0 q000 (unsigned char)",
+     "AITriggerTypeClass+0x1 q001 (unsigned char)",
+     "AITriggerTypeClass+0x94 u32_94 (unsigned char)",
+     "AITriggerTypeClass+0x98 q098 (unsigned int)",
+     "AITriggerTypeClass+0xA0 q0A0 (unsigned int)",
+     "AITriggerTypeClass+0xBC u32_BC (unsigned int)",
+     "AITriggerTypeClass+0xC4 q0C4 (unsigned int)",
+     "AITriggerTypeClass+0xCC q0CC (unsigned int)"
+    ],
+    "ida-til": [
+     "AITriggerTypeClass+0x4 AITriggerTypeClass_field_0x04 (uint8_t)",
+     "AITriggerTypeClass+0x8 AITriggerTypeClass_field_0x08 (uint8_t)",
+     "AITriggerTypeClass+0xC AITriggerTypeClass_field_0x0C (uint8_t)",
+     "AITriggerTypeClass+0x10 AITriggerTypeClass_field_0x10 (uint8_t)",
+     "AITriggerTypeClass+0x14 AITriggerTypeClass_field_0x14 (uint8_t)",
+     "AITriggerTypeClass+0x18 AITriggerTypeClass_field_0x18 (uint8_t)",
+     "AITriggerTypeClass+0x1C AITriggerTypeClass_field_0x1C (uint8_t)",
+     "AITriggerTypeClass+0x20 AITriggerTypeClass_field_0x20 (uint8_t)"
+    ],
+    "member-types": [
+     "AITriggerTypeClass+0x2 __pad_2 (char[2])",
+     "AITriggerTypeClass+0x5 __pad_5 (char[3])",
+     "AITriggerTypeClass+0xD __pad_D (char[3])",
+     "AITriggerTypeClass+0x11 q011 (unsigned int)",
+     "AITriggerTypeClass+0x1A q01A (unsigned int)",
+     "AITriggerTypeClass+0x1D q01D (bool)",
+     "AITriggerTypeClass+0x2B q02B (bool)",
+     "AITriggerTypeClass+0x31 q031 (unsigned char)"
+    ],
+    "outside": [
+     "AITriggerTypeClass+0x110 __pad_110 (bound 268)",
+     "AITriggerTypeClass+0x111 q111 (bound 268)",
+     "AITriggerTypeClass+0x11C q11C (bound 268)",
+     "AITriggerTypeClass+0x12C q12C (bound 268)",
+     "AITriggerTypeClass+0x13C q13C (bound 268)",
+     "AITriggerTypeClass+0x154 __pad_154 (bound 268)",
+     "AITriggerTypeClass+0x162 q162 (bound 268)",
+     "AITriggerTypeClass+0x166 __pad_166 (bound 268)",
+     "AITriggerTypeClass+0x16B q16B (bound 268)",
+     "AITriggerTypeClass+0x16C q16C (bound 268)",
+     "AITriggerTypeClass+0x16D q16D (bound 268)",
+     "AITriggerTypeClass+0x16F q16F (bound 268)"
+    ]
+   },
+   "member_type_skipped": {
+    "idat6_precedence": 4733,
+    "member_overruns_class_size": 28,
+    "no_size_bound": 422,
+    "non_distinguishing_observed_type": 14608,
+    "offset_misaligned": 33,
+    "offset_outside_class_size": 13779,
+    "self_class_member": 8,
+    "type_atom_unresolved": 1567
+   },
+   "missing_classes": 403,
+   "win32_typedef_sizes": {
+    "ATOM": 2,
+    "HANDLE": 4,
+    "HBITMAP": 4,
+    "HDC": 4,
+    "HICON": 4,
+    "HINSTANCE": 4,
+    "HMENU": 4,
+    "HWND": 4,
+    "LONG_PTR": 4,
+    "LPARAM": 4,
+    "LPCSTR": 4,
+    "LPSTR": 4,
+    "LPVOID": 4,
+    "MAX_PATH": 260,
+    "UINT_PTR": 4,
+    "WPARAM": 4
+   }
+  }
+ },
+ "sources_yield": {
+  "ares_ext": {
+   "classes": 212,
+   "files": 256,
+   "game_class_names": [
+    "TogglePowerCommandClass",
+    "Actions",
+    "Debug",
+    "Exception"
+   ],
+   "usable_rows": 0,
+   "with_members": 125
+  },
+  "ctor_identity": {
+   "dropped_fc_two_class_same_address": [],
+   "missing_classes_with_ctor": 95,
+   "rows": 260
+  },
+  "finalalert2": {
+   "classes": 245,
+   "engine_class_names": [],
+   "files": 269
+  },
+  "ida_til": {
+   "classes_with_members": [
+    "ArrayClass",
+    "Base64Pipe",
+    "BitFont",
+    "BuildingLight",
+    "CacheStraw",
+    "Campaign",
+    "CellStruct",
+    "ColorStruct",
+    "DialogClass",
+    "DroppodLocomotionClass",
+    "Factory",
+    "GameOption",
+    "IUnknown",
+    "LightConvertClass",
+    "MIXFile",
+    "MSFadeAnim",
+    "Math",
+    "NetworkClass",
+    "NullModemConnClass",
+    "Options",
+    "PKPipe",
+    "PowerClass",
+    "SaveGame",
+    "ScoreBigFontClass",
+    "ScoreFullFontClass",
+    "Session",
+    "Super",
+    "Team",
+    "TextButtonClass",
+    "TextLabelClass",
+    "Tiberium",
+    "VoxelClass",
+    "Waypoint",
+    "exception",
+    "type_info"
+   ],
+   "headers_scanned": 1379,
+   "member_rows": 168,
+   "missing_with_header": 101,
+   "note": "no til header in the missing set carries a sizeof; the flattened member lists are partial observed structs (pads + named fields), so they are used as member rows only -- never as complete layouts",
+   "with_members": 35,
+   "with_sizeof": 0
+  },
+  "libcpmt": {
+   "already_supplied_by_idat5": [
+    "Iostream_init",
+    "codecvt_base",
+    "facet"
+   ],
+   "game_class_identity": [
+    "AudioStream",
+    "Iostream_init",
+    "codecvt_base",
+    "facet"
+   ],
+   "reason": "facet/codecvt_base/Iostream_init layouts were supplied by IDAT5; no other libcpmt class has a game-side identity",
+   "rows": 0
+  },
+  "mfc": {
+   "engine_identity": [],
+   "reason": "gamemd dialogs are DialogClass/DialogControl, not MFC windows; no engine class is an MFC entity",
+   "rows": 0
+  },
+  "strmbase": {
+   "game_class_identity": [],
+   "reason": "no CBase*/DirectShow class exists in class_db",
+   "rows": 0
+  }
+ },
+ "t_rows": [
+  {
+   "cls": "?$VectorClass@PAVTechnoClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:40BC60",
+   "fn": "0x0040BC60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTechnoClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:40BCB0",
+   "fn": "0x0040BCB0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTechnoClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:40BD00",
+   "fn": "0x0040BD00",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Animate",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:427270",
+   "fn": "0x00427270",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@I",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42DB10",
+   "fn": "0x0042DB10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@I",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42DB60",
+   "fn": "0x0042DB60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@I",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42DC50",
+   "fn": "0x0042DC50",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VCell@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42F670",
+   "fn": "0x0042F670",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VCell@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42FBA0",
+   "fn": "0x0042FBA0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VCell@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42FBF0",
+   "fn": "0x0042FBF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VCell@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:42FCB0",
+   "fn": "0x0042FCB0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "BitFont",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:433880",
+   "fn": "0x00433880",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "BitFont",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:434A40",
+   "fn": "0x00434A40",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "BitText",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:434AD0",
+   "fn": "0x00434AD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "BitText",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:435560",
+   "fn": "0x00435560",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@V?$TPoint3D@H@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:466080",
+   "fn": "0x00466080",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CampaignScoreClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:46D350",
+   "fn": "0x0046D350",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CampaignEndScoreClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:470C30",
+   "fn": "0x00470C30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CampaignScoreClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:471500",
+   "fn": "0x00471500",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CampaignEndScoreClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:471520",
+   "fn": "0x00471520",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUControlNode@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:473000",
+   "fn": "0x00473000",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUControlNode@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:473050",
+   "fn": "0x00473050",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUControlNode@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:473140",
+   "fn": "0x00473140",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4777B0",
+   "fn": "0x004777B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477990",
+   "fn": "0x00477990",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4779E0",
+   "fn": "0x004779E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477AC0",
+   "fn": "0x00477AC0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477B10",
+   "fn": "0x00477B10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477B60",
+   "fn": "0x00477B60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477BE0",
+   "fn": "0x00477BE0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:477DB0",
+   "fn": "0x00477DB0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:478220",
+   "fn": "0x00478220",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:478630",
+   "fn": "0x00478630",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4786D0",
+   "fn": "0x004786D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:478850",
+   "fn": "0x00478850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49ECD0",
+   "fn": "0x0049ECD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAD",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49EE10",
+   "fn": "0x0049EE10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAD",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49EFA0",
+   "fn": "0x0049EFA0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49EFF0",
+   "fn": "0x0049EFF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49F040",
+   "fn": "0x0049F040",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49F090",
+   "fn": "0x0049F090",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49F9D0",
+   "fn": "0x0049F9D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:49FCE0",
+   "fn": "0x0049FCE0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVTechnoTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4CAB50",
+   "fn": "0x004CAB50",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVTechnoTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4CABA0",
+   "fn": "0x004CABA0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVTechnoTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4CABF0",
+   "fn": "0x004CABF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4D2D10",
+   "fn": "0x004D2D10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4D2D60",
+   "fn": "0x004D2D60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4D2DB0",
+   "fn": "0x004D2DB0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVAbstractClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4E0270",
+   "fn": "0x004E0270",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVAbstractClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4E02D0",
+   "fn": "0x004E02D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVAbstractClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4E0E80",
+   "fn": "0x004E0E80",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "VersionClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4E8270",
+   "fn": "0x004E8270",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTagClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF4E0",
+   "fn": "0x004EF4E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTagClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF530",
+   "fn": "0x004EF530",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVBuildingClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF580",
+   "fn": "0x004EF580",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVBuildingClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF5D0",
+   "fn": "0x004EF5D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVSuperClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF620",
+   "fn": "0x004EF620",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVSuperClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF670",
+   "fn": "0x004EF670",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVParticleClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF800",
+   "fn": "0x004EF800",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVParticleClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4EF850",
+   "fn": "0x004EF850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GraphicMenu",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4F21A0",
+   "fn": "0x004F21A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GScreenClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:4F4C00",
+   "fn": "0x004F4C00",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:50FFF0",
+   "fn": "0x0050FFF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510040",
+   "fn": "0x00510040",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510090",
+   "fn": "0x00510090",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5100E0",
+   "fn": "0x005100E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UAngerStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510130",
+   "fn": "0x00510130",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UAngerStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510180",
+   "fn": "0x00510180",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UScoutStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5101D0",
+   "fn": "0x005101D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UScoutStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510220",
+   "fn": "0x00510220",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVSuperClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510500",
+   "fn": "0x00510500",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVBuildingClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510550",
+   "fn": "0x00510550",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5105A0",
+   "fn": "0x005105A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTagClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510640",
+   "fn": "0x00510640",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510690",
+   "fn": "0x00510690",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UAngerStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5106E0",
+   "fn": "0x005106E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UScoutStruct@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:510780",
+   "fn": "0x00510780",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5129F0",
+   "fn": "0x005129F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512A40",
+   "fn": "0x00512A40",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512A90",
+   "fn": "0x00512A90",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512AE0",
+   "fn": "0x00512AE0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512B30",
+   "fn": "0x00512B30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512B80",
+   "fn": "0x00512B80",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512DC0",
+   "fn": "0x00512DC0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:512E20",
+   "fn": "0x00512E20",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513190",
+   "fn": "0x00513190",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5131F0",
+   "fn": "0x005131F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513560",
+   "fn": "0x00513560",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5135C0",
+   "fn": "0x005135C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513740",
+   "fn": "0x00513740",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5137D0",
+   "fn": "0x005137D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513860",
+   "fn": "0x00513860",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5138F0",
+   "fn": "0x005138F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513940",
+   "fn": "0x00513940",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:513990",
+   "fn": "0x00513990",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:524FC0",
+   "fn": "0x00524FC0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:525010",
+   "fn": "0x00525010",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:525250",
+   "fn": "0x00525250",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5252B0",
+   "fn": "0x005252B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5255F0",
+   "fn": "0x005255F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:525680",
+   "fn": "0x00525680",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "INIEntry@INIClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:52AAF0",
+   "fn": "0x0052AAF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "INISection@INIClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:52AB80",
+   "fn": "0x0052AB80",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "INIEntry@INIClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:52AD50",
+   "fn": "0x0052AD50",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "ConnManClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:543100",
+   "fn": "0x00543100",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAG",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:54A710",
+   "fn": "0x0054A710",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAG",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:54A760",
+   "fn": "0x0054A760",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAG",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:54A850",
+   "fn": "0x0054A850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LightConvertClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:555DA0",
+   "fn": "0x00555DA0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LightConvertClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:556510",
+   "fn": "0x00556510",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LightConvertClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:556520",
+   "fn": "0x00556520",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBG",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:558130",
+   "fn": "0x00558130",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBG",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5584A0",
+   "fn": "0x005584A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LoadOptionsClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:558740",
+   "fn": "0x00558740",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LoadOptionsClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:558790",
+   "fn": "0x00558790",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "LoadOptionsClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:55A0D0",
+   "fn": "0x0055A0D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GScreenClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:565190",
+   "fn": "0x00565190",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVCellClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:589060",
+   "fn": "0x00589060",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UZoneConnectionClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:58A3D0",
+   "fn": "0x0058A3D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UZoneConnectionClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:58A420",
+   "fn": "0x0058A420",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@UZoneConnectionClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:58ADB0",
+   "fn": "0x0058ADB0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AC650",
+   "fn": "0x005AC650",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AC900",
+   "fn": "0x005AC900",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVCellClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AD570",
+   "fn": "0x005AD570",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AD660",
+   "fn": "0x005AD660",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAD",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AD6F0",
+   "fn": "0x005AD6F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVCellClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5AD820",
+   "fn": "0x005AD820",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "MultiplayerBattle",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C0DD0",
+   "fn": "0x005C0DD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "MultiplayerBattle",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C0E10",
+   "fn": "0x005C0E10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "MultiplayerBattle",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C0FE0",
+   "fn": "0x005C0FE0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUNodeNameType@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C58A0",
+   "fn": "0x005C58A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUNodeNameType@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C58F0",
+   "fn": "0x005C58F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUNodeNameType@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C5A30",
+   "fn": "0x005C5A30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FreeForAll",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C5CE0",
+   "fn": "0x005C5CE0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FreeForAll",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C5D20",
+   "fn": "0x005C5D20",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FreeForAll",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5C5E40",
+   "fn": "0x005C5E40",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VPoint2D@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D16C0",
+   "fn": "0x005D16C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VPoint2D@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1710",
+   "fn": "0x005D1710",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSTextEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1760",
+   "fn": "0x005D1760",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSTextEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D17B0",
+   "fn": "0x005D17B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMapSelection@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1800",
+   "fn": "0x005D1800",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMapSelection@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1850",
+   "fn": "0x005D1850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSAnimEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1940",
+   "fn": "0x005D1940",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSAnimEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1990",
+   "fn": "0x005D1990",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSSfxEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D19E0",
+   "fn": "0x005D19E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSSfxEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D1A30",
+   "fn": "0x005D1A30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D7CD0",
+   "fn": "0x005D7CD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D7FD0",
+   "fn": "0x005D7FD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D7FF0",
+   "fn": "0x005D7FF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D8010",
+   "fn": "0x005D8010",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D8030",
+   "fn": "0x005D8030",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D8050",
+   "fn": "0x005D8050",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D8070",
+   "fn": "0x005D8070",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "InitializerBase@MultiplayerGameMode",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5D8090",
+   "fn": "0x005D8090",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "NullModemConnClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5EF100",
+   "fn": "0x005EF100",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "NullModemConnClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:5EF290",
+   "fn": "0x005EF290",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "DialogControl@OwnerDraw",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:624090",
+   "fn": "0x00624090",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "DialogControl@OwnerDraw",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:624130",
+   "fn": "0x00624130",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "DialogControl@OwnerDraw",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6244A0",
+   "fn": "0x006244A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "DialogControl@OwnerDraw",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6244C0",
+   "fn": "0x006244C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVParticleClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6302A0",
+   "fn": "0x006302A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "PixelFXClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:631E30",
+   "fn": "0x00631E30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "PixelFXClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:631F30",
+   "fn": "0x00631F30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "PixelFXClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:631F40",
+   "fn": "0x00631F40",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "PKStraw",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:633050",
+   "fn": "0x00633050",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVPlanningBranchClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:63E1D0",
+   "fn": "0x0063E1D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVPlanningBranchClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:63ECF0",
+   "fn": "0x0063ECF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVPlanningBranchClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:63ED40",
+   "fn": "0x0063ED40",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "PowerClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:63F6B0",
+   "fn": "0x0063F6B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:645A70",
+   "fn": "0x00645A70",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VRGBClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:645B10",
+   "fn": "0x00645B10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VPoint2D@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:658D60",
+   "fn": "0x00658D60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "rc_ptr_base",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:65D4D0",
+   "fn": "0x0065D4D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@H",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:679F70",
+   "fn": "0x00679F70",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVBuildingTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:679FA0",
+   "fn": "0x00679FA0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVUnitTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:679FD0",
+   "fn": "0x00679FD0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVAircraftTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67A000",
+   "fn": "0x0067A000",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVInfantryTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67A030",
+   "fn": "0x0067A030",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67A990",
+   "fn": "0x0067A990",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67A9E0",
+   "fn": "0x0067A9E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67AC70",
+   "fn": "0x0067AC70",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67AFF0",
+   "fn": "0x0067AFF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C010",
+   "fn": "0x0067C010",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C060",
+   "fn": "0x0067C060",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C0B0",
+   "fn": "0x0067C0B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C100",
+   "fn": "0x0067C100",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C1F0",
+   "fn": "0x0067C1F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C280",
+   "fn": "0x0067C280",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C310",
+   "fn": "0x0067C310",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVSmudgeTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:67C3A0",
+   "fn": "0x0067C3A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWstring@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D4B0",
+   "fn": "0x0069D4B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWstring@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D520",
+   "fn": "0x0069D520",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMultiMission@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D590",
+   "fn": "0x0069D590",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMultiMission@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D5E0",
+   "fn": "0x0069D5E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUGlobalPacketType@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D630",
+   "fn": "0x0069D630",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUGlobalPacketType@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D680",
+   "fn": "0x0069D680",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVPhoneEntryClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D6D0",
+   "fn": "0x0069D6D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWstring@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:69D7C0",
+   "fn": "0x0069D7C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VPoint2D@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6AC8D0",
+   "fn": "0x006AC8D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VSwizzlePointerClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6CF850",
+   "fn": "0x006CF850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VSwizzlePointerClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6CF8A0",
+   "fn": "0x006CF8A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VSwizzlePointerClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:6CF8F0",
+   "fn": "0x006CF8F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "TextButtonClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:71FF20",
+   "fn": "0x0071FF20",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "TextLabelClass",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:72A440",
+   "fn": "0x0072A440",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVTechnoClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7342D0",
+   "fn": "0x007342D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:75E6B0",
+   "fn": "0x0075E6B0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVCellClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7632D0",
+   "fn": "0x007632D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWaypointClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:763FF0",
+   "fn": "0x00763FF0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWaypointClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:764050",
+   "fn": "0x00764050",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@VWaypointClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:764760",
+   "fn": "0x00764760",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Campaign@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:765600",
+   "fn": "0x00765600",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$rc_ptr@VHistory@WorldDominationTour@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:765740",
+   "fn": "0x00765740",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$rc_ptr@VState@WorldDominationTour@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7657C0",
+   "fn": "0x007657C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:765B60",
+   "fn": "0x00765B60",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:765C20",
+   "fn": "0x00765C20",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Conflict@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7667A0",
+   "fn": "0x007667A0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GameOption@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:766A10",
+   "fn": "0x00766A10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GameOption@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:767300",
+   "fn": "0x00767300",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GameOption@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:767820",
+   "fn": "0x00767820",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GameOption@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:767880",
+   "fn": "0x00767880",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "GameOption@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7678C0",
+   "fn": "0x007678C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "History@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:767C10",
+   "fn": "0x00767C10",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Map@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7680C0",
+   "fn": "0x007680C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76A5C0",
+   "fn": "0x0076A5C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76A680",
+   "fn": "0x0076A680",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76A6D0",
+   "fn": "0x0076A6D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76A720",
+   "fn": "0x0076A720",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "WDTTerritory",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76AB90",
+   "fn": "0x0076AB90",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CampaignProperties@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76C030",
+   "fn": "0x0076C030",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Selection@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76C6E0",
+   "fn": "0x0076C6E0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAVMSSfxEntry@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76F210",
+   "fn": "0x0076F210",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$rc_ptr@VState@WorldDominationTour@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76F500",
+   "fn": "0x0076F500",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "State@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:76F6C0",
+   "fn": "0x0076F6C0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Territory@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:770020",
+   "fn": "0x00770020",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Anim@Voices@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:771850",
+   "fn": "0x00771850",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Anim@Voices@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:771890",
+   "fn": "0x00771890",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@I",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:771A00",
+   "fn": "0x00771A00",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Anim@Voices@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:771A30",
+   "fn": "0x00771A30",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "SimpleWonlineDialogControl",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:77D1F0",
+   "fn": "0x0077D1F0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "CNetUtilEventSink",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7A2FC0",
+   "fn": "0x007A2FC0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "SimpleWonlineDialogControl",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7AC610",
+   "fn": "0x007AC610",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$CComObject@VCDownloadEventSink@@@ATL",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7AD410",
+   "fn": "0x007AD410",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FactionSelectDialogControl@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7AF500",
+   "fn": "0x007AF500",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FactionSelectDialogControl@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B0440",
+   "fn": "0x007B0440",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "FactionSelectDialogControl@WorldDominationTour",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B0490",
+   "fn": "0x007B0490",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B2B00",
+   "fn": "0x007B2B00",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B2B50",
+   "fn": "0x007B2B50",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAE",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B4580",
+   "fn": "0x007B4580",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "?$VectorClass@PAE",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B45D0",
+   "fn": "0x007B45D0",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Mouse",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7B8730",
+   "fn": "0x007B8730",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "Mouse",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7BA300",
+   "fn": "0x007BA300",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "type_info",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7C8A8E",
+   "fn": "0x007C8A8E",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "__non_rtti_object",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7CA971",
+   "fn": "0x007CA971",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "__non_rtti_object",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7CA9B4",
+   "fn": "0x007CA9B4",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "bad_typeid",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7CA9CC",
+   "fn": "0x007CA9CC",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "bad_cast",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7CAC34",
+   "fn": "0x007CAC34",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "exception",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7D2E9B",
+   "fn": "0x007D2E9B",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "exception",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7D2ED8",
+   "fn": "0x007D2ED8",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  },
+  {
+   "cls": "exception",
+   "detail": "ctor_types installer -> class",
+   "ent": "T:7D2F41",
+   "fn": "0x007D2F41",
+   "src": "ctor-identity",
+   "tier": "vtable-install"
+  }
+ ]
+}
