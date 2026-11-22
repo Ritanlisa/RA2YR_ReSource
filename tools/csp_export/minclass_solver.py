@@ -219,6 +219,19 @@ _IDAT7_SUPPLY = "anchors/idat7_supply.json"
 #   row can only narrow or agree.  Class-kind rows only; primitive/pointer rows
 #   and RN/IRA masks are untouched.  MINCLASS_ANCESTRY_FALLBACK=0 == IDAT7.
 _ANCESTRY_ON = os.environ.get("MINCLASS_ANCESTRY_FALLBACK", "1") != "0"
+# ---- P4 ALL-CHANNELS (2026-11-23): post-C10 refined ancestry + SLOT + atoms + callarg ----
+#   P1 MINCLASS_ANCESTRY  (default 1): build the post-C10 vtable-capable ancestry view
+#       (allowed_post_vt).  NEVER mutates the pre-C10 U["desc"]/_anc_unknown; C10 is
+#       byte-identical.  Consumers: SLOT / ATOMS / CALLARG.
+#   P2 MINCLASS_SLOT      (default 1): materialize/narrow receiver T:<fn> from exact
+#       vtable-slot owners (allowed_post_vt).  OFF == P1-only (inert) == anc_on1.
+#   P4 MINCLASS_ATOMS     (default 1): vftable-only / local-decomp class atoms (post-C10).
+#   P5 MINCLASS_CALLARG   (default 1): caller-receiver rows from `(Class *)this` call-arg casts.
+#   If P1 is disabled every consumer is disabled (keeps the P1-OFF stage byte-identical).
+_ANC_POST_ON = os.environ.get("MINCLASS_ANCESTRY", "1") != "0"
+_SLOT_ON = _ANC_POST_ON and os.environ.get("MINCLASS_SLOT", "1") != "0"
+_ATOMS_ON = _ANC_POST_ON and os.environ.get("MINCLASS_ATOMS", "1") != "0"
+_CALLARG_ON = _ANC_POST_ON and os.environ.get("MINCLASS_CALLARG", "1") != "0"
 _IDAT_ANCHOR_CACHE = [None]
 
 
@@ -352,6 +365,10 @@ FAMILY_DESC = {
     "X6": "P4-IDAT6 external-source supply (anchors/idat6_supply.json; rank 25): (A) YRpp declaration-order class layouts for classes that still have no binary layout (all member types resolved; in-source offset anchors validated; base members flattened; post-C10 atom/layout merge only -> C10 byte-identical); (B) member types: Ares entry-hook pThis->Member accesses with the YRpp declaration type + binary member offset -> M:<fn>:this:0xOFF rows, plus MEM6 (external function->class map x YRpp member type table over existing M entities); (C) vtable: YRpp virtual declaration order / binary vtable_slot_authority for YRpp classes, DirectX IDirectDrawSurface7 38-slot DSurface vtable, BINK BinkMovieHandle slots -> T:<fn> class rows where the slot address is unique and the slot proto/name owner agrees; (D) VC6 ATL CComObjectRootBase / CComObjectRootEx layouts.  All rows use the same current-domain guard as IDAT/XREF; free entities get one singleton cluster each; no pre-C10 write.  Report .omo/agents/csp/p4_idat6_report.md",
     # ---- P4-IDAT7 外部源再审查（rank 25）----
     "X7": "P4-IDAT7 external-source re-examination (anchors/idat7_supply.json; rank 25): (A) the 16 IDAT6-rejected YRpp layouts re-validated against binary evidence (ctor member-init writes / M:<fn>:this:<off> offset coverage / strong declared extent) -- accepted layouts are merged post-C10 only when every member type resolves, the base layout is not array-polluted and the extent is covered; (B) additive member types from the IDA til class headers + tools/class_layouts.json + anchors/member_types.json for classes in the external function->class map, restricted to offsets absent from the IDAT6 table (IDAT6 keeps precedence -> X6 unchanged), offsets inside the class's own size, and semantically distinguishing types only (class atom / float / double / wchar_t -- bare int-family, pointers and arrays are codegen-indistinguishable and dropped, BM precedent); (C) ctor-identity T rows for the 403 no-layout classes (ctor_types installer -> class, function start verified, unique per address; sub-gate MINCLASS_IDAT7_CTOR, default OFF: measured 0 new uniques -- 228/260 already_forced, 30 unstable_domain, 2 target_conflict). All rows use the identical current-domain guard as IDAT/XREF/X6; free entities get one singleton cluster each; no pre-C10 write.  Report .omo/agents/csp/p4_idat7_report.md",
+    # ---- P4-SLOT: exact vtable-slot owners over the post-C10 vtable-capable ancestry ----
+    "SLOT": "post-C10 exact vtable-slot owners (anchors/vtable_slot_authority.json, 954 classes; rank 40): fn -> owner set from every slot address. Single owner O -> m = allowed_post_vt(O) (post-C10 ancestry view = {O} u proven descendants that own/instantiate a vtable or carry RTTI, WITHOUT the 1,140 blanket unknowns; the pre-C10 U['desc']/_anc_unknown are untouched and C10 is byte-identical). Multi owners (ICF/MI) -> m = union of allowed_post_vt(O_i). If m is a singleton the receiver T:<fn> is materialized (touch + singleton cluster) when absent, else the current-domain guard applies (unique&in m -> already_forced; disjoint -> target_conflict; narrower -> applied); a wide m is never materialized (slot_wide / icf_wide ledger) so the T1 denominator cannot inflate, but a wide m may still narrow an already-existing CONSTRAINED cluster. Gate MINCLASS_SLOT (default 1); OFF == previous stage. Report .omo/agents/csp/p4_all_channels_report.md",
+    # ---- P5-CALLARG: caller receiver from `(Class *)this` call-argument casts ----
+    "CALLARG": "post-C10 call-argument cast channel (decompile-results/full_export/src/*.cpp typed Hex-Rays; rank 41): a DIRECT call to a named `Class::Method(...)` whose argument is a C-style cast of the caller receiver `(CastClass *)this` / `(CastClass *)a1` proves the caller object is a CastClass (or a descendant) -> row on the caller T:<fn> and R:<fn>:ecx with allowed_post_vt(CastClass). Only existing entities are touched (no materialization), only class atoms, current-domain guard, no second propagation. `(Class *)&global` is excluded (it constrains a global, not the caller receiver) and reported. Gate MINCLASS_CALLARG (default 1); OFF == previous stage.",
 }
 
 
@@ -388,6 +405,11 @@ _FAM_RANK = {
     "X6": 25,
     # P4-IDAT7: same external-evidence tier as X6 (re-examination round)
     "X7": 25,
+    # P4-SLOT / P5-CALLARG: exact slot-owner and call-arg-cast receivers over the
+    # post-C10 refined ancestry. Binary slot ownership is strong (rank 40); the
+    # call-arg cast is a source-level cast witness (rank 41).
+    "SLOT": 40,
+    "CALLARG": 41,
 }
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
 DATA_LO, DATA_HI = 0x812000, 0xB7A000          # .data（AGENTS.md）
@@ -10490,6 +10512,130 @@ def main():
             c1_cache.clear()
             c1_range_cache.clear()
             _size_ok_cache.clear()
+        # ================= P4-ATOMS: post-C10 class-atom supply =================
+        # vftable-only / local-decomp classes.  Post-C10 only (the pre-C10 C1/C18/
+        # C21 candidate tables were already frozen); additive universe extension so
+        # the final solve and the Rust kernel see the new widths.  C10 untouched.
+        _p4_need_rs_rebuild = False
+        if _ANC_POST_ON and _ATOMS_ON:
+            _at_t0 = time.time()
+            _at_new = []
+            _at_led = {"meta": {}, "atoms": [], "dropped": []}
+
+            def _atom_ensure(_nm):
+                _ci = idx.get(_nm)
+                if _ci is not None:
+                    return _ci, False
+                _ni = len(names)
+                idx[_nm] = _ni
+                names.append(_nm)
+                U["members"].append({})
+                U["has_layout"].append(False)
+                U["size"].append(None)
+                U["eff_size"].append(None)
+                intervals.append([])
+                U["anc"].append(set([_ni]))
+                U["desc"].append(set())
+                U["vtables"].append(set())
+                U["slot_count"].append(None)
+                U["slot_set"].append(None)
+                dense.append(False)
+                _at_new.append(_nm)
+                return _ni, True
+
+            def _atom_set(_ci, _size, _offsets):
+                _mem = U["members"][_ci]
+                for _off, _w in _offsets:
+                    if _off not in _mem or _mem[_off] is None:
+                        _mem[_off] = _w
+                U["has_layout"][_ci] = True
+                if isinstance(_size, int) and _size > 0:
+                    U["size"][_ci] = _size
+                    _ee = U["eff_size"][_ci]
+                    U["eff_size"][_ci] = (_size if not isinstance(_ee, int)
+                                          else max(_size, _ee))
+                _sz = U["eff_size"][_ci]
+                dense[_ci] = bool(_sz and _sz >= 8
+                                  and (len(_mem) * 4) >= 0.7 * _sz)
+                _iv = []
+                for _off, _w in _mem.items():
+                    _ww = _w if isinstance(_w, int) and _w > 0 else 4
+                    _iv.append((_off, _off + _ww))
+                _iv.sort()
+                _mg = []
+                for _a, _b in _iv:
+                    if _mg and _a <= _mg[-1][1]:
+                        if _b > _mg[-1][1]:
+                            _mg[-1] = (_mg[-1][0], _b)
+                    else:
+                        _mg.append((_a, _b))
+                intervals[_ci] = _mg
+
+            # -- BitFont: ??_7BitFont@@6B@ exists; BitTextClass::ParseFontData
+            #    @0x433880 installs &BitFont::vftable at +0 on a new(0x44) object.
+            _ciB, _newB = _atom_ensure("BitFont")
+            _atom_set(_ciB, 0x44, [(0, 4)])
+            _at_led["atoms"].append({
+                "name": "BitFont", "ci": _ciB, "new": _newB, "size": 0x44,
+                "vfptr": 0, "source": "local-decomp",
+                "evidence": "BitTextClass::ParseFontData @0x433880 new(0x44) + vftable install"})
+            # -- ScorePrintClass: vftable exists in the snapshot; no allocation/size
+            #    evidence -> name+vfptr only (size stays None => neutral in C1 size).
+            _ciS, _newS = _atom_ensure("ScorePrintClass")
+            _atom_set(_ciS, None, [(0, 4)])
+            _at_led["atoms"].append({
+                "name": "ScorePrintClass", "ci": _ciS, "new": _newS, "size": None,
+                "vfptr": 0, "source": "vtable-snapshot",
+                "evidence": "vtable present in rtti_vtable_class/vtable_slot_authority; no allocation size witness"})
+            # -- AudioNode: real audio queue node = new(0x148), DListNode::InitEmpty
+            #    (no vfptr), fields from Audio::ProcessMixerOutput @0x4063B0.
+            _ciA, _newA = _atom_ensure("AudioNode")
+            _atom_set(_ciA, 0x148, [(0x0C, 4), (0x18, 4), (0x50, 4),
+                                    (0x6C, 4), (0x8B, 1)])
+            _at_led["atoms"].append({
+                "name": "AudioNode", "ci": _ciA, "new": _newA, "size": 0x148,
+                "vfptr": None, "source": "local-decomp",
+                "evidence": "Audio::ProcessMixerOutput @0x4063B0 new(0x148) DListNode::InitEmpty; fields +0x0C/+0x18/+0x50/+0x6C/+0x8B"})
+            # -- AudioIndexData: audio index struct new(0x124) in LoadAudioFile
+            #    @0x4011C0: +0x10C (CCFileClass*), +0x114 (int flag).
+            #    AudioIDXData does not resolve in the universe -> add AudioIndexData.
+            _ciI, _newI = _atom_ensure("AudioIndexData")
+            _atom_set(_ciI, 0x124, [(0x10C, 4), (0x114, 4)])
+            _at_led["atoms"].append({
+                "name": "AudioIndexData", "ci": _ciI, "new": _newI, "size": 0x124,
+                "vfptr": None, "source": "local-decomp",
+                "evidence": "LoadAudioFile @0x4011C0 new(0x124); fields +0x10C (CCFileClass*) / +0x114 (int)"})
+            if _at_new:
+                _oldn_at = n
+                n = len(names)
+                FULL = (1 << n) - 1
+                _proven_cell[0] |= (((1 << n) - 1) ^ ((1 << _oldn_at) - 1))
+                for _nm_at in _at_new:
+                    _CLASSMASK |= (1 << idx[_nm_at])
+                U["n"] = n
+                U["classmask"] = _CLASSMASK
+                c1_cache.clear()
+                c1_range_cache.clear()
+                _size_ok_cache.clear()
+                _p4_need_rs_rebuild = True
+                _at_led["meta"]["new_atoms"] = len(_at_new)
+            else:
+                _p4_need_rs_rebuild = True     # sizes/offsets merged => rebuild kernel
+            _at_led["meta"]["atoms"] = len(_at_led["atoms"])
+            _at_led["meta"]["classmask_bits"] = _CLASSMASK.bit_count()
+            _at_led["meta"]["universe_n"] = n
+            try:
+                os.makedirs(os.path.join(ROOT, ".omo/agents/csp"), exist_ok=True)
+                with io.open(os.path.join(
+                        ROOT, ".omo/agents/csp/atom_ledger.json"), "w",
+                        encoding="utf-8") as _atf:
+                    json.dump(_at_led, _atf, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+            except Exception:
+                pass
+            print("[P4-ATOMS] atoms=%d new=%d classmask_bits=%d n=%d %.1fs"
+                  % (len(_at_led["atoms"]), len(_at_new), _CLASSMASK.bit_count(),
+                     n, time.time() - _at_t0), flush=True)
         if _IDAT2_ON and _idat_pending:
             _pnd_ok = 0
             for _pe2, _pt2, _pm2 in _idat_pending:
@@ -11808,12 +11954,414 @@ def main():
                      len(_sup_lay3) - _lay3_set - _lay3_skip, _lay3_skip),
                   flush=True)
             _idat3_layout_changed += _lay3_set
+        # ================= P4 ALL-CHANNELS: P1 ancestry + P2/P3 SLOT + P5 CALLARG =================
+        if _ANC_POST_ON:
+            # ---- P1: post-C10 refined vtable-capable ancestry (allowed_post_vt) ----
+            # NEVER mutates U["desc"] / _anc_unknown / allowed_of: a parallel post view.
+            _p1_t0 = time.time()
+            _p1_auth = jload("anchors/vtable_slot_authority.json", {}) or {}
+            _p1_rvc = jload("anchors/rtti_vtable_class.json", {}) or {}
+            _p1_rba = jload("anchors/rtti_base_arrays.json", {}) or {}
+            _p1_pdom = jload("anchors/parent_domain.json", {}) or {}
+            _p1_cap = set()
+            for _k1 in _p1_auth:
+                _c1 = resolve(_k1)
+                if _c1 is not None:
+                    _p1_cap.add(_c1)
+            for _a1, _r1 in sorted((_p1_rvc.get("vtables") or {}).items()):
+                _c1 = resolve((_r1 or {}).get("class"))
+                if _c1 is not None:
+                    _p1_cap.add(_c1)
+            _p1_rtti = set()
+            for _k1 in _p1_rba:
+                _c1 = resolve(_k1)
+                if _c1 is not None:
+                    _p1_cap.add(_c1)
+                    _p1_rtti.add(_c1)
+            # missing parent edges by source (honest ledger): rtti all bases / class_db
+            _p1_miss_rtti = 0
+            for _k1, _bs1 in _p1_rba.items():
+                if not isinstance(_bs1, (list, tuple)):
+                    continue
+                _c1 = resolve(_k1)
+                if _c1 is None:
+                    continue
+                for _b1 in _bs1[1:]:
+                    _bi1 = resolve(_b1)
+                    if _bi1 is not None and _c1 not in U["desc"][_bi1]:
+                        _p1_miss_rtti += 1
+            _p1_miss_db = 0
+            for _c1n, _c1r in U["db"].items():
+                _c1 = resolve(_c1n)
+                if _c1 is None:
+                    continue
+                # full_ancestors are the ancestors of _c1; a true gap means _c1 is
+                # not in the descendant closure of that ancestor.
+                for _a1 in (_c1r.get("full_ancestors") or []):
+                    _ai1 = resolve(_a1)
+                    if _ai1 is not None and _ai1 != _c1 and _c1 not in U["desc"][_ai1]:
+                        _p1_miss_db += 1
+            # YRpp `class X : public Y` edges not already implied by desc
+            _p1_extra = []
+            for _p1fp in sorted(glob.glob(os.path.join(ROOT, "YRpp", "**", "*.h"),
+                                          recursive=True)):
+                try:
+                    _p1txt = io.open(_p1fp, encoding="utf-8", errors="ignore").read()
+                except Exception:
+                    continue
+                for _p1ln in _p1txt.splitlines():
+                    _m1 = re.match(r"^\s*class\s+(\w+)\s*:\s*(?:public\s+)?([\w:]+)", _p1ln)
+                    if not _m1:
+                        continue
+                    _ch1 = _m1.group(1)
+                    _pa1 = _m1.group(2)
+                    if "<" in _pa1:
+                        _pa1 = _pa1.split("<")[0]
+                    _cc1 = resolve(_ch1)
+                    _pp1 = resolve(_pa1)
+                    if _cc1 is None or _pp1 is None or _cc1 == _pp1:
+                        continue
+                    if _cc1 not in U["desc"][_pp1]:
+                        _p1_extra.append((_pp1, _cc1))
+            # post descendant closure = baseline desc + missing edges
+            _p1_desc = [set(U["desc"][_i]) for _i in range(n)]
+            for (_pp1, _cc1) in _p1_extra:
+                _p1_desc[_pp1] |= _p1_desc[_cc1] | {_cc1}
+            _p1_ch = True
+            while _p1_ch:
+                _p1_ch = False
+                for _i1 in range(n):
+                    _add1 = set()
+                    for _d1 in _p1_desc[_i1]:
+                        if _d1 != _i1:
+                            _add1 |= _p1_desc[_d1]
+                    if not _add1 <= _p1_desc[_i1]:
+                        _p1_desc[_i1] |= _add1
+                        _p1_ch = True
+            _p1_cache = {}
+
+            def _allowed_post_vt(_ci1):
+                _mm1 = _p1_cache.get(_ci1)
+                if _mm1 is None:
+                    _mm1 = 0
+                    if _ci1 in _p1_cap:
+                        _mm1 |= (1 << _ci1)
+                    for _d1 in _p1_desc[_ci1]:
+                        if _d1 in _p1_cap:
+                            _mm1 |= (1 << _d1)
+                    _p1_cache[_ci1] = _mm1
+                return _mm1
+
+            _p1_roots_rtti = sum(1 for _bs1 in _p1_rba.values()
+                                 if isinstance(_bs1, (list, tuple)) and len(_bs1) == 1)
+            _p1_roots_pdom = sum(1 for _u1 in (_p1_pdom.get("unknown") or [])
+                                 if isinstance(_u1, dict) and _u1.get("domain") == 0)
+            _p1_hist = collections.Counter()
+            _p1_aw = []
+            _p1_shrink = 0
+            for _k1 in sorted(_p1_auth):
+                _c1 = resolve(_k1)
+                if _c1 is None:
+                    continue
+                _w1 = _allowed_post_vt(_c1).bit_count()
+                _p1_aw.append(_w1)
+                _p1_hist['1' if _w1 == 1 else '2-8' if _w1 <= 8 else
+                          '9-64' if _w1 <= 64 else '65-256' if _w1 <= 256
+                          else '>256'] += 1
+                _pre1 = len({_c1} | U["desc"][_c1] | _anc_unknown)
+                if _w1 < _pre1:
+                    _p1_shrink += 1
+            _p1_led = {
+                "meta": {
+                    "edges_added_rtti": _p1_miss_rtti,
+                    "edges_added_class_db": _p1_miss_db,
+                    "edges_added_yrpp": len(_p1_extra),
+                    "roots_proven_rtti_len1": _p1_roots_rtti,
+                    "roots_proven_parent_domain0": _p1_roots_pdom,
+                    "anc_unknown_excluded": len(_anc_unknown),
+                    "capable_classes": len(_p1_cap),
+                    "authority_classes": len(_p1_aw),
+                    "allowed_post_vt_shrinks_vs_allowed_of": _p1_shrink,
+                    "width_hist": dict(sorted(_p1_hist.items())),
+                    "width_min": min(_p1_aw) if _p1_aw else None,
+                    "width_max": max(_p1_aw) if _p1_aw else None,
+                    "width_singletons": sum(1 for _w1 in _p1_aw if _w1 == 1),
+                },
+                "yrpp_edges": [{"parent": names[_a1], "child": names[_b1]}
+                               for (_a1, _b1) in sorted(_p1_extra)],
+            }
+            try:
+                os.makedirs(os.path.join(ROOT, ".omo/agents/csp"), exist_ok=True)
+                with io.open(os.path.join(
+                        ROOT, ".omo/agents/csp/p1_ancestry_ledger.json"), "w",
+                        encoding="utf-8") as _p1f:
+                    json.dump(_p1_led, _p1f, ensure_ascii=False, indent=0,
+                              sort_keys=True)
+            except Exception:
+                pass
+            print("[P1-ANC] capable_classes=%d auth_classes=%d edges(rtti=%d db=%d "
+                  "yrpp=%d) roots(rtti1=%d pdom0=%d) anc_unknown_excluded=%d "
+                  "width_hist=%s shrink=%d/%.0fs"
+                  % (len(_p1_cap), len(_p1_aw), _p1_miss_rtti, _p1_miss_db,
+                     len(_p1_extra), _p1_roots_rtti, _p1_roots_pdom,
+                     len(_anc_unknown), dict(sorted(_p1_hist.items())),
+                     _p1_shrink, time.time() - _p1_t0), flush=True)
+
+            # ---- P2/P3: SLOT family (exact vtable-slot owners) ----
+            if _SLOT_ON:
+                _p2_t0 = time.time()
+                if "SLOT" not in FAMILIES:
+                    FAMILIES.append("SLOT")
+                fam["SLOT"] = {}
+                census["SLOT"] = 0
+                _p2_memo = _incr_cell.get("on")
+                if _p2_memo:
+                    _incr_cell["on"] = False
+                try:
+                    _slot_snap = cluster_domains(list(FAMILIES))
+                finally:
+                    if _p2_memo:
+                        _incr_cell["on"] = True
+                _slot_dom = {}
+                _slot_root = {}
+                _slot_covered = set()
+                for (_cl2, _m2s, _e2s, _es2s, _fl2s) in _slot_snap:
+                    _r2 = str(_cl2.get("root"))
+                    _slot_dom[_r2] = _m2s
+                    for _e2b in _cl2["ents"]:
+                        _slot_root[str(_e2b)] = _r2
+                        _slot_covered.add(str(_e2b))
+                _p2 = collections.Counter()
+                _p2_led = {"meta": {}, "applied": [], "slot_wide": [],
+                           "icf_wide": []}
+                for _fn2 in sorted(c9_owner):
+                    _om2 = c9_owner[_fn2]
+                    _owners2 = [_i2 for _i2 in range(n) if (_om2 >> _i2) & 1]
+                    if not _owners2:
+                        continue
+                    _m2v = 0
+                    for _o2 in _owners2:
+                        _m2v |= _allowed_post_vt(_o2)
+                    if _m2v == 0:
+                        continue
+                    _e2n = "T:%X" % _fn2
+                    _w2 = _m2v.bit_count()
+                    _single2 = (len(_owners2) == 1)
+                    if _e2n not in _slot_covered:
+                        if _w2 == 1:
+                            touch(_e2n, _e2n)
+                            clusters.append({"root": _e2n, "ents": [_e2n],
+                                             "obs": set(), "exact": {}})
+                            _slot_covered.add(_e2n)
+                            fam["SLOT"][_e2n] = _m2v
+                            _p2["exact_new_cluster"] += 1
+                            _p2_led["applied"].append(
+                                {"ent": _e2n, "reason": "exact_materialized",
+                                 "owner": names[_owners2[0]] if _single2 else None,
+                                 "owners": len(_owners2), "w": _w2})
+                        else:
+                            _p2["slot_wide" if _single2 else "icf_wide"] += 1
+                            _p2_led["slot_wide" if _single2 else "icf_wide"].append(
+                                {"fn": "0x%X" % _fn2,
+                                 "owners": [names[_o2] for _o2 in _owners2],
+                                 "w": _w2})
+                        continue
+                    _r2 = _slot_root.get(_e2n)
+                    _bd2 = _slot_dom.get(_r2, FULL)
+                    if _bd2 == FULL:
+                        if _w2 == 1:
+                            fam["SLOT"][_e2n] = _m2v
+                            _p2["exact_free_applied"] += 1
+                        else:
+                            _p2["free_wide_skip"] += 1
+                        continue
+                    if _bd2.bit_count() == 1:
+                        if _bd2 & _m2v:
+                            _p2["already_forced"] += 1
+                        else:
+                            _p2["target_conflict"] += 1
+                            _p2_led["slot_wide"].append(
+                                {"ent": _e2n, "reason": "target_conflict"})
+                        continue
+                    _comb2 = _bd2 & _m2v
+                    if _comb2 == 0:
+                        _p2["target_conflict"] += 1
+                    elif _comb2 == _bd2:
+                        _p2["no_change"] += 1
+                    else:
+                        fam["SLOT"][_e2n] = _m2v
+                        _p2["applied_narrow"] += 1
+                        _p2_led["applied"].append(
+                            {"ent": _e2n, "reason": "narrowed",
+                             "base_w": _bd2.bit_count(), "new_w": _comb2.bit_count()})
+                census["SLOT"] = len(fam["SLOT"])
+                _p2_led["meta"] = dict(sorted(_p2.items()))
+                _p2_led["meta"]["entities"] = len(fam["SLOT"])
+                try:
+                    with io.open(os.path.join(
+                            ROOT, ".omo/agents/csp/slot_ledger.json"), "w",
+                            encoding="utf-8") as _p2f:
+                        json.dump(_p2_led, _p2f, ensure_ascii=False, indent=0,
+                                  sort_keys=True)
+                except Exception:
+                    pass
+                print("[P4-SLOT] fns=%d exact_materialized=%d exact_free=%d "
+                      "applied_narrow=%d already_forced=%d target_conflict=%d "
+                      "slot_wide=%d icf_wide=%d free_wide_skip=%d no_change=%d "
+                      "entities=%d %.1fs"
+                      % (len(c9_owner), _p2["exact_new_cluster"],
+                         _p2["exact_free_applied"], _p2["applied_narrow"],
+                         _p2["already_forced"], _p2["target_conflict"],
+                         _p2["slot_wide"], _p2["icf_wide"],
+                         _p2["free_wide_skip"], _p2["no_change"],
+                         len(fam["SLOT"]), time.time() - _p2_t0), flush=True)
+                _p4_need_rs_rebuild = True
+
+            # ---- P5: CALLARG family (receiver from `(Class *)this` call args) ----
+            if _CALLARG_ON:
+                _p5_t0 = time.time()
+                if "CALLARG" not in FAMILIES:
+                    FAMILIES.append("CALLARG")
+                fam["CALLARG"] = {}
+                census["CALLARG"] = 0
+                _rxaddr5 = re.compile(r"^//\s*addr=0x([0-9A-Fa-f]+)")
+                _rxcall5 = re.compile(
+                    r"([A-Za-z_]\w*::[A-Za-z_]\w*)\s*\(\s*"
+                    r"\(([A-Za-z_]\w*)\s*\*\)\s*(this|a1)\b")
+                _rxglob5 = re.compile(
+                    r"\(([A-Za-z_]\w*)\s*\*\)\s*&\s*[A-Za-z_]\w*")
+                _p5_rows = {}
+                _p5_raw = 0
+                _p5_glob = 0
+                _cur5 = None
+                for _fp5 in sorted(glob.glob(os.path.join(
+                        ROOT, "decompile-results", "full_export", "src", "*.cpp"))):
+                    try:
+                        _fh5 = io.open(_fp5, encoding="utf-8", errors="ignore")
+                    except Exception:
+                        continue
+                    for _ln5 in _fh5:
+                        _ma5 = _rxaddr5.match(_ln5.strip())
+                        if _ma5:
+                            try:
+                                _cur5 = int(_ma5.group(1), 16)
+                            except ValueError:
+                                _cur5 = None
+                            continue
+                        if _cur5 is None:
+                            continue
+                        _mc5 = _rxcall5.search(_ln5)
+                        if _mc5:
+                            _cls5 = _mc5.group(2)
+                            _ci5c = resolve(_cls5)
+                            if (_ci5c is not None and 0 <= _ci5c < n
+                                    and ((_CLASSMASK >> _ci5c) & 1)):
+                                _p5_raw += 1
+                                _p5_rows[(_cur5, _ci5c)] = _p5_rows.get(
+                                    (_cur5, _ci5c), 0) + 1
+                            continue
+                        if _rxglob5.search(_ln5):
+                            _p5_glob += 1
+                    _fh5.close()
+                _p5_memo = _incr_cell.get("on")
+                if _p5_memo:
+                    _incr_cell["on"] = False
+                try:
+                    _ca_snap = cluster_domains(list(FAMILIES))
+                finally:
+                    if _p5_memo:
+                        _incr_cell["on"] = True
+                _ca_dom = {}
+                _ca_root = {}
+                for (_cl5, _m5s, _e5s, _es5s, _fl5s) in _ca_snap:
+                    _r5 = str(_cl5.get("root"))
+                    _ca_dom[_r5] = _m5s
+                    for _e5b in _cl5["ents"]:
+                        _ca_root[str(_e5b)] = _r5
+                _p5 = collections.Counter()
+                _p5_led = {"meta": {}, "applied": [], "skipped": []}
+                _ca_em = {}          # entity -> accumulated mask
+                _ca_eroot = {}       # entity -> cluster root
+                for (_fn5, _ci5) in sorted(_p5_rows):
+                    _m5 = _allowed_post_vt(_ci5)
+                    if _m5 == 0:
+                        continue
+                    for _e5 in ("T:%X" % _fn5, "R:%X:ecx" % _fn5):
+                        _r5 = _ca_root.get(_e5)
+                        if _r5 is None:
+                            _p5["no_entity"] += 1
+                            continue
+                        _bd5 = _ca_dom.get(_r5, FULL)
+                        if _bd5 != FULL and _bd5.bit_count() == 1:
+                            if _bd5 & _m5:
+                                _p5["already_forced"] += 1
+                            else:
+                                _p5["target_conflict"] += 1
+                                _p5_led["skipped"].append(
+                                    {"ent": _e5, "reason": "target_conflict"})
+                            continue
+                        if _bd5 == FULL and _m5.bit_count() != 1:
+                            _p5["free_wide_skip"] += 1
+                            continue
+                        _ca_em[_e5] = _ca_em.get(_e5, FULL) & _m5
+                        _ca_eroot[_e5] = _r5
+                # cluster-level combination: never write a mask that empties a cluster
+                _ca_rcomb = {}
+                for _e5, _m5 in _ca_em.items():
+                    _r5 = _ca_eroot[_e5]
+                    _ca_rcomb[_r5] = _ca_rcomb.get(_r5, FULL) & _m5
+                _ca_rconf = set()
+                for _e5 in sorted(_ca_em):
+                    _r5 = _ca_eroot[_e5]
+                    _bd5 = _ca_dom.get(_r5, FULL)
+                    _comb5 = (_bd5 & _ca_rcomb[_r5]) if _bd5 != FULL else _ca_rcomb[_r5]
+                    if _comb5 == 0:
+                        if _r5 not in _ca_rconf:
+                            _ca_rconf.add(_r5)
+                            _p5["target_conflict"] += 1
+                            _p5_led["skipped"].append(
+                                {"ent": _e5, "reason": "intra_family_conflict"})
+                        continue
+                    if _bd5 != FULL and _comb5 == _bd5:
+                        _p5["no_change"] += 1
+                        continue
+                    fam["CALLARG"][_e5] = _ca_em[_e5]
+                    _p5["applied"] += 1
+                    _p5_led["applied"].append(
+                        {"ent": _e5, "base_w": (None if _bd5 == FULL
+                                                else _bd5.bit_count()),
+                         "new_w": _comb5.bit_count()})
+                census["CALLARG"] = len(fam["CALLARG"])
+                _p5_led["meta"] = dict(sorted(_p5.items()))
+                _p5_led["meta"]["raw_rows"] = _p5_raw
+                _p5_led["meta"]["dedup_rows"] = len(_p5_rows)
+                _p5_led["meta"]["global_cast_excluded"] = _p5_glob
+                _p5_led["meta"]["entities"] = len(fam["CALLARG"])
+                try:
+                    with io.open(os.path.join(
+                            ROOT, ".omo/agents/csp/callarg_ledger.json"), "w",
+                            encoding="utf-8") as _p5f:
+                        json.dump(_p5_led, _p5f, ensure_ascii=False, indent=0,
+                                  sort_keys=True)
+                except Exception:
+                    pass
+                print("[P5-CALLARG] raw_rows=%d dedup=%d applied=%d "
+                      "already_forced=%d target_conflict=%d no_change=%d "
+                      "no_entity=%d free_wide_skip=%d global_excluded=%d "
+                      "entities=%d %.1fs"
+                      % (_p5_raw, len(_p5_rows), _p5["applied"],
+                         _p5["already_forced"], _p5["target_conflict"],
+                         _p5["no_change"], _p5["no_entity"],
+                         _p5["free_wide_skip"], _p5_glob,
+                         len(fam["CALLARG"]), time.time() - _p5_t0), flush=True)
+                _p4_need_rs_rebuild = True
         # P4-IDAT2/IDAT3: the atoms/layouts were appended/merged after C10;
         # rebuild the Rust solver so the final solve sees the extended universe,
         # the merged layouts and every family mask at the new width.
         if ((_IDAT2_ON and _idat2_added)
                 or (_IDAT3_ON and (_idat3_cls_added or _idat3_promoted
                                    or _idat3_layout_changed))
+                or _p4_need_rs_rebuild
                 ) and _rs_mod_cell[0] is not None:
             _rs_build_now()
         # ---- M14c 变体 2：子实体 C10 use 掩码的本地一次性计算（隔离层）----
