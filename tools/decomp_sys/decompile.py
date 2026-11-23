@@ -386,6 +386,68 @@ _PRIM_DOMAIN = {
 }
 
 
+_DECLARED_CLASSES = None
+_TYPE_NAME = re.compile(r"^[A-Za-z_]\w*$")
+_TYPE_SUFFIX = re.compile(r"^(.*?)\s*(?:[*&]|\[\d*\])+\s*$")
+
+
+def _base_type_name(ty):
+    """Plain identifier base of a type spelling ('Point2D *' -> 'Point2D')."""
+    if not ty or not isinstance(ty, str):
+        return None
+    s = ty.strip()
+    while True:
+        m = _TYPE_SUFFIX.match(s)
+        if not m or not m.group(1).strip():
+            break
+        s = m.group(1).strip()
+    return s if _TYPE_NAME.match(s) else None
+
+
+def _declared_classes():
+    """Cached set of type names a generated signature may spell as `T *`.
+
+    Sources: class_layouts keys + class_db class keys (layouts) and the
+    decompiler registry (class keys + plain identifiers used as member type
+    spellings -- covers using-aliases like Point2D and plain structs like
+    RectangleStruct that have no class record of their own).  A missing
+    source contributes nothing."""
+    global _DECLARED_CLASSES
+    if _DECLARED_CLASSES is not None:
+        return _DECLARED_CLASSES
+    names = set()
+    sources = ((os.path.join(ROOT, "tools", "class_layouts.json"), None),
+               (os.path.join(ROOT, "anchors", "class_db.json"), "classes"))
+    for path, key in sources:
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f)
+        except (OSError, ValueError):
+            continue
+        if key is not None:
+            if not isinstance(raw, dict):
+                continue
+            raw = raw.get(key) or {}
+        if isinstance(raw, dict):
+            names.update(raw.keys())
+    try:
+        reg = Registry.get()
+        classes = reg.classes
+        names.update(classes.keys())
+        for rec in classes.values():
+            for mem in (rec.get("members") or {}).values():
+                spellings = [mem.get("type")]
+                spellings.extend(mem.get("gran_types") or ())
+                for ty in spellings:
+                    base = _base_type_name(ty)
+                    if base:
+                        names.add(base)
+    except (OSError, ValueError, KeyError, AttributeError, TypeError):
+        pass
+    _DECLARED_CLASSES = names
+    return names
+
+
 def _domain_answer(cands, ledger, ent):
     """(spelling, confidence) of a unique domain answer, else None."""
     if not cands:
@@ -395,8 +457,32 @@ def _domain_answer(cands, ledger, ent):
         c = uniq[0]
         if c in _PRIM_DOMAIN:
             return (c, None)
-        # class candidate: pointer to it
+        if c == "wchar_t":
+            # keyword, not a class: keep the wide-char pointer spelling
+            return ("wchar_t *", None)
+        if c.endswith("*") or c.endswith("&"):
+            # pointer/reference pass-through: keep the solver's original
+            # spelling when the pointee is a known primitive, wchar_t or a
+            # declared class (class-branch sanitizing would corrupt it into
+            # `char_ *`).  Arrays do not come here on purpose.
+            _b = c
+            while _b and _b[-1] in "*&":
+                _b = _b[:-1].strip()
+            if _b in _PRIM_DOMAIN or _b == "wchar_t":
+                return (c, None)
+            if _TYPE_NAME.match(_b) and _b in _declared_classes():
+                return (c, None)
+            return None
+        # class candidate: pointer to it, only when the raw spelling is a
+        # plain identifier of a class that actually has a declared layout
+        # (template / nested mangled names must not leak into parameter
+        # signatures; the '_' substitution is lossy and can alias a real
+        # class, e.g. GameOption@WorldDominationTour).
+        if not _TYPE_NAME.match(c):
+            return None
         ident = re.sub(r"[^A-Za-z0-9_]", "_", c)
+        if ident not in _declared_classes():
+            return None
         return ("%s *" % ident, None)
     # signed pair: ledger policy (signed default)
     if len(uniq) == 2 and all(c in _PRIM_DOMAIN and "*" not in c
