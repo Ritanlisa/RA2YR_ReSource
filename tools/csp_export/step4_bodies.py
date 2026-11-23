@@ -378,7 +378,11 @@ STAGE_DEFS = [
                     'anchors/mangled_alias.json',
                     'anchors/til_seeded_classes.json',
                     'tools/class_layouts.json',
-                    'tools/csp/full_report/csp_functions.json'],
+                    'tools/csp/full_report/csp_functions.json',
+                    # P4: min-class CSP is the canon type source (step1
+                    # solves it; gen_cpp_canon overlays it).  Must be in the
+                    # stage fingerprint or a fresh solve would be invisible.
+                    'anchors/minclass_assignments.json'],
         out_scope=['src', 'anchors/csp_canon_members.json',
                    'anchors/csp_canon_manifest.json',
                    'anchors/canon_member_names.json',

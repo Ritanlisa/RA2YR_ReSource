@@ -17,6 +17,16 @@
 各步细节见 step1_csp.py / step2_canon.py / step3_export.py /
 step4_bodies.py / step5_baseline.py 的 docstring。
 
+单遍类型源 (用户要求: CSP 求解 → 一趟 → 全部声明和定义):
+  Step1 末尾运行 min-class CSP 求解 (MINCLASS_STEP1, 默认 1; 失败 fail-closed),
+  产出 anchors/minclass_assignments.json (T/P/RET/M/G 唯一候选域)。
+  Step2 的 gen_cpp_canon.py 在 MINCLASS_CANON=1 (默认) 时把唯一候选作为
+  类型覆盖层叠加到 cspf/signals 结果上, 生成 classes.hpp / functions.hpp /
+  globals.hpp 以及成员权威表; Step2 S4 签名权威阶段 (fix_def_decl_arity_unify
+  / fix_def_heads_from_cache / fix_hdr_from_def) 把声明同步到已有定义头,
+  Step4 B 的 rematerialize_defs 再按声明物化函数体。完整一趟命令 =
+  `python tools/csp_export/run_all_steps.py --mechanical-only`。
+
 X47 收敛波 (X30..X44b: gen_x30/x31/x37, x33-x43 fixer, x44 merge, x44b format)
 不在本链内 — 其机器可读顺序在 _absorbed/convergence/ORDER.json, 驱动 =
 convergence_driver.py (--verify-current = 已收敛树 no-op 验收)。

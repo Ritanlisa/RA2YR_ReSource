@@ -3,13 +3,26 @@
 
 Pure algorithm. No per-symbol manual handling. Deterministic.
 
+Type source: cspf/signals are the base; the min-class CSP result
+(anchors/minclass_assignments.json) is applied as an ADDITIVE overlay of its
+unique-candidate domains (gate MINCLASS_CANON, default 1).  Overlay keys:
+  T:<addr>@..   this/owner class        -> func_sig cls
+  P:<addr>:<k>  stack param k (no this) -> func_sig params[k].type
+  RET:<addr>    return type             -> func_sig ret
+  M:<addr>:this:<off> member type       -> build_members overlay (owner T)
+  G:<addr>      global type             -> globals_ type
+Overlay values pass a strict declared-type guard (primitive / pointer-to-
+primitive / pointer-to-declared-class / wchar_t / declared class); templates
+(?$..), @-nested aliases, arrays and undeclared names are rejected and the
+old cspf/signals spelling is kept.  Arity and parameter names never change.
+
 Outputs:
   src/csp_canon/classes.hpp
   src/csp_canon/functions.hpp
   src/csp_canon/globals.hpp
   anchors/csp_canon_manifest.json   per-addr provenance
 """
-import json, re, sys
+import json, os, re, sys
 from pathlib import Path
 from collections import defaultdict
 
@@ -89,6 +102,74 @@ except Exception:
     alias = {}
 
 rtti2canon = align.get('rtti_to_canon', {})
+
+# ---- min-class CSP overlay load (MINCLASS_CANON, default 1) --------------
+# Only entities with exactly ONE distinct candidate are usable as answers;
+# keys are the solver cluster roots (T:/P:/RET:/M:/G:), NOT the `ents` list.
+# Address spellings vary (leading zeros / @suffix), so normalize on int and
+# drop an entity that the JSON spells twice with conflicting answers.
+MINCLASS_CANON = os.environ.get('MINCLASS_CANON', '1') != '0'
+min_T = {}      # addr -> raw class
+min_P = {}      # (addr, k) -> raw type (k = stack param index, this excluded)
+min_RET = {}    # addr -> raw type
+min_M = {}      # (owner addr, off) -> raw member type (owner via min_T)
+min_G = {}      # addr -> raw type
+_mc_conflicts = defaultdict(set)   # prefix -> normalized keys with 2 answers
+
+
+def _mc_add(store, prefix, key, cand):
+    if key in _mc_conflicts[prefix]:
+        return
+    old = store.get(key)
+    if old is None:
+        store[key] = cand
+    elif old != cand:
+        _mc_conflicts[prefix].add(key)
+        store.pop(key, None)
+
+
+def _mc_parse(asg):
+    for k, v in asg.items():
+        if not isinstance(v, dict) or not k:
+            continue
+        uniq = set(v.get('candidates') or ())
+        if len(uniq) != 1:
+            continue
+        c = next(iter(uniq))
+        p = k.split(':')
+        try:
+            if k.startswith('T:'):
+                _mc_add(min_T, 'T', int(p[1].split('@')[0], 16), c)
+            elif k.startswith('P:') and len(p) >= 3:
+                _mc_add(min_P, 'P', (int(p[1], 16), int(p[2])), c)
+            elif k.startswith('RET:'):
+                _mc_add(min_RET, 'RET', int(p[1], 16), c)
+            elif k.startswith('M:') and len(p) >= 4:
+                off = int(p[3], 16) if p[3].lower().startswith('0x') \
+                    else int(p[3], 10)
+                _mc_add(min_M, 'M', (int(p[1], 16), off), c)
+            elif k.startswith('G:'):
+                _mc_add(min_G, 'G', int(p[1], 16), c)
+        except (ValueError, IndexError, TypeError):
+            continue
+
+
+if MINCLASS_CANON:
+    _mc_path = ROOT / 'anchors/minclass_assignments.json'
+    if not _mc_path.exists():
+        print('!! MINCLASS_CANON=1 but anchors/minclass_assignments.json is '
+              'missing -- run step1 (MINCLASS_STEP1=1) first, or set '
+              'MINCLASS_CANON=0 for the legacy cspf/signals-only export.',
+              file=sys.stderr)
+        sys.exit(2)
+    print('loading min-class assignments...', flush=True)
+    _mc_parse(J(_mc_path))
+    del _mc_path
+    print('  unique domains: T=%d P=%d RET=%d M=%d G=%d'
+          % (len(min_T), len(min_P), len(min_RET), len(min_M), len(min_G)),
+          flush=True)
+else:
+    print('MINCLASS_CANON=0 (legacy cspf/signals-only export)', flush=True)
 
 KEYWORDS = {'int','char','bool','void','float','double','long','short','unsigned','signed',
             'class','struct','union','enum','const','static','virtual','public','private',
@@ -324,6 +405,220 @@ n_csp = sum(1 for v in func_sig.values() if v['src'] == 'csp')
 print('signatures:', len(func_sig), '(csp:', n_csp, ')', flush=True)
 
 known_cls = set(canon_of) | set(db) | set(layouts)
+
+# ---- min-class overlay application (strict declared-type guard) ----------
+# Additive: every accepted answer only REPLACES a spelling already produced
+# by cspf/signals.  Arity is fixed (out-of-range P index is rejected), param
+# names are untouched, and rejected answers fall back to the old spelling.
+_GUARD_PRIM = set(PRIM.keys()) | set(PRIM.values()) | {
+    'wchar_t', 'signed char', '__int8', '__int16', '__int32', '__int64',
+    'long long', 'unsigned long long', 'unsigned __int8', 'unsigned __int16',
+    'unsigned __int64', '_QWORD', 'UINT', 'USHORT', 'SHORT', 'CHAR', 'WCHAR',
+    'TCHAR', 'BOOLEAN', 'UINT8', 'UINT16', 'UINT32', 'UINT64', 'INT', 'INT8',
+    'INT16', 'INT32', 'INT64', 'FLOAT', 'DOUBLE'}
+
+_mc_stats = defaultdict(int)
+_mc_samples = defaultdict(list)
+
+
+def _mc_guard(raw, for_member=False):
+    """(spelling, None) when raw is a safe declared type, else (None, reason).
+
+    Accepts primitives, pointer/reference-to-primitive, pointer-to-declared-
+    class, wchar_t and declared class identifiers.  Rejects templates
+    (?$/<>/comma), @-nested aliases, arrays and undeclared names.
+    A bare declared class becomes `Class *` for params/returns (decompile.py
+    `_domain_answer` semantics) and stays by-value for members."""
+    if not isinstance(raw, str):
+        return None, 'shape'
+    t = raw.strip()
+    if not t:
+        return None, 'shape'
+    if '?' in t or '<' in t or '>' in t or ',' in t or '(' in t or ')' in t:
+        return None, 'template'
+    if '@' in t:
+        return None, 'nested'
+    if '[' in t or ']' in t:
+        return None, 'array'
+    base, stars = t, ''
+    while base and base[-1] in '*&':
+        stars = base[-1] + stars
+        base = base[:-1].strip()
+    if not base:
+        return None, 'shape'
+    if base in _GUARD_PRIM:
+        return PRIM.get(base, base) + stars, None
+    if re.match(r'^[A-Za-z_]\w*$', base):
+        cc = canon(base)
+        if cc in known_cls or base in known_cls:
+            cc = cc if cc in known_cls else base
+            if stars:
+                return cc + stars, None
+            return (cc if for_member else cc + ' *'), None
+        return None, 'undeclared'
+    return None, 'shape'
+
+
+def _mc_guard_class(raw):
+    """(canonical declared class, None) or (None, reason) for a T owner."""
+    if not isinstance(raw, str):
+        return None, 'shape'
+    c = raw.strip()
+    if '?' in c or '<' in c or '>' in c or ',' in c:
+        return None, 'template'
+    if '@' in c:
+        return None, 'nested'
+    if '[' in c or ']' in c:
+        return None, 'array'
+    if not re.match(r'^[A-Za-z_]\w*$', c):
+        return None, 'shape'
+    cc = canon(c)
+    if cc in known_cls:
+        return cc, None
+    if c in known_cls:
+        return c, None
+    return None, 'undeclared'
+
+
+def _mc_sample(cat, rec):
+    if len(_mc_samples[cat]) < 12:
+        _mc_samples[cat].append(rec)
+
+
+min_members = defaultdict(dict)
+_mc_member_absent = set()
+
+if MINCLASS_CANON:
+    # T: this/owner class overlay (func_sig cls -> method routing)
+    for ai in sorted(min_T):
+        cc, why = _mc_guard_class(min_T[ai])
+        if cc is None:
+            _mc_stats['T_reject_' + why] += 1
+            continue
+        s = func_sig.get(ai)
+        if s is None:
+            _mc_stats['T_reject_nofunc'] += 1
+            continue
+        old = s.get('cls')
+        if old == cc:
+            _mc_stats['T_same'] += 1
+            continue
+        if old in (None, 'unknown'):
+            _mc_stats['T_unknown_to_class'] += 1
+        s['cls'] = cc
+        _mc_stats['T_changed'] += 1
+        _mc_sample('T_changed', {'addr': '0x%X' % ai, 'old': old, 'new': cc})
+
+    # RET: return type overlay
+    for ai in sorted(min_RET):
+        gt, why = _mc_guard(min_RET[ai])
+        if gt is None:
+            _mc_stats['RET_reject_' + why] += 1
+            continue
+        s = func_sig.get(ai)
+        if s is None:
+            _mc_stats['RET_reject_nofunc'] += 1
+            continue
+        if s['ret'] == gt:
+            _mc_stats['RET_same'] += 1
+            continue
+        _mc_stats['RET_changed'] += 1
+        _mc_sample('RET_changed',
+                   {'addr': '0x%X' % ai, 'old': s['ret'], 'new': gt})
+        s['ret'] = gt
+
+    # P: stack parameter type overlay (index excludes this; arity fixed)
+    for ai, k in sorted(min_P):
+        gt, why = _mc_guard(min_P[(ai, k)])
+        if gt is None:
+            _mc_stats['P_reject_' + why] += 1
+            continue
+        s = func_sig.get(ai)
+        if s is None:
+            _mc_stats['P_reject_nofunc'] += 1
+            continue
+        if k < 0 or k >= len(s['params']):
+            _mc_stats['P_reject_index'] += 1
+            continue
+        ot, nm = s['params'][k]
+        if ot == gt:
+            _mc_stats['P_same'] += 1
+            continue
+        s['params'][k] = (gt, nm)
+        _mc_stats['P_changed'] += 1
+        _mc_sample('P_changed', {'addr': '0x%X' % ai, 'k': k,
+                                 'old': ot, 'new': gt})
+
+    # M: member type overlay; owner = unique T[addr] (canonical declared class)
+    for ai, off in sorted(min_M):
+        owner = min_T.get(ai)
+        if owner is None:
+            _mc_stats['M_reject_noowner'] += 1
+            continue
+        cc, why = _mc_guard_class(owner)
+        if cc is None:
+            _mc_stats['M_reject_owner_' + why] += 1
+            continue
+        gt, why = _mc_guard(min_M[(ai, off)], for_member=True)
+        if gt is None:
+            _mc_stats['M_reject_' + why] += 1
+            continue
+        d = min_members[cc]
+        if off in d:
+            if d[off] == gt:
+                _mc_stats['M_same'] += 1
+            else:
+                _mc_stats['M_conflict'] += 1   # sorted-ai first wins (deter.)
+            continue
+        d[off] = gt
+        _mc_stats['M_rows_applied'] += 1
+        _mc_sample('M_rows_applied',
+                   {'addr': '0x%X' % ai, 'owner': cc, 'off': '0x%X' % off,
+                    'type': gt})
+
+    # G: global type overlay
+    _gaddr = {}
+    for a in globals_:
+        try:
+            _gaddr.setdefault(int(a, 16), a)
+        except ValueError:
+            continue
+    for ai in sorted(min_G):
+        gt, why = _mc_guard(min_G[ai])
+        if gt is None:
+            _mc_stats['G_reject_' + why] += 1
+            continue
+        key = _gaddr.get(ai)
+        if key is None:
+            _mc_stats['G_reject_noglobal'] += 1
+            continue
+        old = globals_[key].get('type')
+        if old == gt:
+            _mc_stats['G_same'] += 1
+            continue
+        globals_[key]['type'] = gt
+        _mc_stats['G_changed'] += 1
+        _mc_sample('G_changed', {'addr': '0x%X' % ai, 'old': old, 'new': gt})
+
+    print('  minclass overlay applied: T=%d P=%d RET=%d M=%d G=%d'
+          % (_mc_stats['T_changed'], _mc_stats['P_changed'],
+             _mc_stats['RET_changed'], _mc_stats['M_rows_applied'],
+             _mc_stats['G_changed']), flush=True)
+    _mc_out = ROOT / '.omo' / 'canon_overlay_stats.json'
+    _mc_out.parent.mkdir(parents=True, exist_ok=True)
+    _mc_out.write_text(json.dumps({
+        '_meta': {'gate': 'MINCLASS_CANON', 'source':
+                  'anchors/minclass_assignments.json'},
+        'unique_domains': {'T': len(min_T), 'P': len(min_P),
+                           'RET': len(min_RET), 'M': len(min_M),
+                           'G': len(min_G)},
+        'conflicts': {p: sorted('0x%X' % k if isinstance(k, int)
+                                else '0x%X:%d' % k for k in v)
+                      for p, v in sorted(_mc_conflicts.items())},
+        'stats': dict(sorted(_mc_stats.items())),
+        'samples': {c: v for c, v in sorted(_mc_samples.items())},
+    }, indent=1), encoding='utf-8')
+
 cls_methods = defaultdict(dict)
 free_funcs = {}
 for ai, s in func_sig.items():
@@ -455,6 +750,18 @@ def build_members(cc):
             members[o] = {'name': m.get('name') or '', 'type': m.get('type') or '',
                           'size': 4, 'obs': []}
     total = lay.get('size') or e.get('size') or 0
+    # min-class overlay: override the TYPE of member offsets that already
+    # exist (offset present from db/layouts/mt/ml).  Never invent an unnamed
+    # member here -- that would trip the RC1 no-placeholder fail-loud exit.
+    for _off, _gt in (min_members.get(cc) or {}).items():
+        _cur = members.get(_off)
+        if _cur is None:
+            _k = (cc, _off)
+            if _k not in _mc_member_absent:
+                _mc_member_absent.add(_k)
+                _mc_stats['M_member_offset_absent'] += 1
+            continue
+        _cur['type'] = _gt
     # data-quality bound: an offset at/beyond the class layout size is CSP
     # call-site pollution, never a member (audit: 204K junk entries, e.g.
     # TActionClass size=188 carrying 2,067). Bounded out before padding so
