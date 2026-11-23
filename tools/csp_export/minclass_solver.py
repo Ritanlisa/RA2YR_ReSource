@@ -4034,6 +4034,12 @@ def main():
     c5_link = []
     size_obs = collections.defaultdict(collections.Counter)
     size_mask_cache = {}
+    # Class-width candidate filters are disabled.  Measured effect: the
+    # whole-domain C5/AS/AV size masks force 296 primitive entities to a class
+    # and suppress 1,096 primitive unique; class-axis-only masking is neutral
+    # (N 93 vs 100, class 27,165 vs 27,166).  Size is a necessary condition at
+    # most, not a candidate generator.  The C5 alloc-ctor link below remains:
+    # constructor identity is a binary fact.
 
     def size_mask(sz):
         m = size_mask_cache.get(sz)
@@ -4070,9 +4076,8 @@ def main():
                 _c5_fallback += 1
             else:
                 _c5_exact += 1
-            if m and m != FULL:
-                fam["C5"][eid] = fam["C5"].get(eid, FULL) & m
-                census["C5"] += 1
+            # size mask disabled (see above); only the alloc-ctor link is used
+            _ = m
             if not dest:
                 continue
             for (ca, tgt, reg) in ctor_calls.get(fn, ()):
@@ -4599,8 +4604,8 @@ def main():
                     continue
                 if _ea2 not in ents:
                     touch(_ea2, _ea2)
-                fam["AS"][_ea2] = fam["AS"].get(_ea2, FULL) & m2
-                _n_as += 1
+                # AS size mask disabled: class-width is not a sound candidate filter
+                _ = m2
             census["AS"] = _n_as
             print("[AS] alloc size types: %d" % _n_as, flush=True)
         except Exception as _e_as:
@@ -4989,8 +4994,8 @@ def main():
                 continue
             if _eav not in ents:
                 touch(_eav, _eav)
-            fam["AV"][_eav] = fam["AV"].get(_eav, FULL) & _m_av
-            _n_av += 1
+            # AV size mask disabled: class-width is not a sound candidate filter
+            _ = _m_av
         census["AV"] = _n_av
         print("[AS] alloc v2 sizes (family AV): evidence=%d entities=%d "
               "combos(ent-agg)=%d with-candidates=%d"
